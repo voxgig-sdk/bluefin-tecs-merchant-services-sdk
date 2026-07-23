@@ -1,0 +1,6521 @@
+{
+ "openapi": "3.1.0",
+ "info": {
+  "title": "Merchant Services",
+  "description": "Merchant Services",
+  "version": "2.42.53",
+  "summary": "Merchant Services"
+ },
+ "servers": [
+  {
+   "url": "https://test.tecs.at/merchantservices",
+   "description": "Generated server url"
+  }
+ ],
+ "paths": {
+  "/storeTerminalParameters": {
+   "post": {
+    "tags": [
+     "Merchant Portal services API"
+    ],
+    "summary": "Store Terminal Parameters",
+    "description": "\nUpdates TecsTerm with configVersion value.<br>\nUpdates Term with termn value.<br>\nSupports authentication:<br>\n* <b>Basic</b> &lt;credentials&gt;, where credentials is the Base64 encoding of username and password joined by a single colon :, CAS login service will be called for the given username and password for validating credentials.\n",
+    "operationId": "storeProtocolParameters",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/StoreTerminalParametersRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful operation",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "400": {
+      "description": "SerialNumber parameter not provided",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "401": {
+      "description": "Unauthorized - Authentication failed",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "500": {
+      "description": "Internal server error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "basic-key": []
+     }
+    ]
+   }
+  },
+  "/registerTerminal": {
+   "post": {
+    "tags": [
+     "Merchant Portal services API"
+    ],
+    "summary": "Register new Terminal",
+    "description": "\nRegister new Terminal by given template name.<br>\nRegister Enable Acquiring.<br>\nRegisters also new merchant in TecsWeb, if merchant's target is 'tecsweb' in template.<br>\nRequired role for operation: TE_MERCHANT_TERMINAL_MANAGEMENT.<br>\nCreate MPauditlog table record with event type : RegisterTerminal<br> \nSupported authentication:<br>\n* Bearer &lt;token&gt; - which is a Bearer token authentication\n",
+    "operationId": "registerTerminal",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/RegisterTerminalRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful operation",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/RegisterTerminalResponse"
+        }
+       }
+      }
+     },
+     "400": {
+      "description": "\n* Mandator not found\n* Invalid template \n* Invalid TECS company specified\n* MandatorConfig not found\n* Invalid country code Alpha3 specified \n",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "401": {
+      "description": "Unauthorized - Authentication failed, e.g. when user is not active",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "403": {
+      "description": "Forbidden - Missing role: TE_MERCHANT_TERMINAL_MANAGEMENT",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "500": {
+      "description": "\n* Internal server error\n* Error getting Corporate Account\n",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-key": []
+     }
+    ]
+   }
+  },
+  "/registerTecsCompany": {
+   "post": {
+    "tags": [
+     "Merchant Portal services API"
+    ],
+    "summary": "Register new Tecs Company",
+    "description": "\nRegister new Tecs Company by given template name.<br> \nRequired role for operation: TE_MERCHANT_TERMINAL_MANAGEMENT.<br>\nCreate MPauditlog table record with event type : RegisterCompany <br>\nSupported authentication:<br>\n* Bearer &lt;token&gt; - which is a Bearer token authentication\n",
+    "operationId": "registerTecsCompany",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/RegisterTecsCompanyRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful operation",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "400": {
+      "description": "\n* Mandator not found\n* Invalid template \n              ",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "string"
+        }
+       }
+      }
+     },
+     "401": {
+      "description": "Unauthorized - Authentication failed, e.g. when user is not active",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "string"
+        }
+       }
+      }
+     },
+     "403": {
+      "description": "Forbidden - Missing role: TE_MERCHANT_TERMINAL_MANAGEMENT",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "string"
+        }
+       }
+      }
+     },
+     "500": {
+      "description": "Internal server error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "string"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-key": []
+     }
+    ]
+   }
+  },
+  "/reactivateTerminal": {
+   "post": {
+    "tags": [
+     "Merchant Portal services API"
+    ],
+    "summary": "Reactivate Terminal",
+    "description": "\nReactivates teminal by given TerminalId.<br>\nRequired role for operation: TE_MERCHANT_TERMINAL_MANAGEMENT.<br>\nCreate MPauditlog table record with event type : ReactivateTerminal<br>\nSupported authentication:<br>\n* Bearer &lt;token&gt; - which is a Bearer token authentication<br>\n",
+    "operationId": "reactivateTerminal",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/ReactivateTerminalRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful operation",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ReactivateTerminalResponse"
+        }
+       }
+      }
+     },
+     "400": {
+      "description": "\n* Terminal not found\n* Mandator not found\n* MandatorConfig not found\n",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "string"
+        }
+       }
+      }
+     },
+     "401": {
+      "description": "Unauthorized - Authentication failed, e.g. MandatorId does not march",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "403": {
+      "description": "Forbidden - Missing role: TE_MERCHANT_TERMINAL_MANAGEMENT",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "500": {
+      "description": "\n* Internal server error\n* Tecscompany2Tecsterm record not found\n* Tecscompany record not found\n",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-key": []
+     }
+    ]
+   }
+  },
+  "/public/updateTemplateXml": {
+   "post": {
+    "tags": [
+     "Merchant Portal services API"
+    ],
+    "summary": "Updates XML data for a given template searched by name",
+    "description": "\nTemplateXML parameter must be Base64 encoded<br>\n\nRequired role for operation: BO_MP_UPDATE_XML_TEMPLATE.<br>\nCreate MPauditlog record with event type : UPDATE TEMPLATE XML (31).<br>\n\nSupports authentication with the following types of tokens:<br>\n- <b>Bearer</b> <token>, which is a Bearer token authentication. The bearer token is a cryptic string, usually generated by the server in response to a login request.\n- <b>Basic</b> &lt;credentials&gt;, where credentials is the Base64 encoding of username and password joined by a single colon :, CAS login service will be called for the given username and password for validating credentials.  \n",
+    "operationId": "updateTemplateXml",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/UpdateTemplateXmlRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful operation",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "400": {
+      "description": "Bad request",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "401": {
+      "description": "Unauthenticated - Authentication failed",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "403": {
+      "description": "Unauthorized - Missing role BO_MP_UPDATE_XML_TEMPLATE",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "500": {
+      "description": "Internal server error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-key": []
+     },
+     {
+      "basic-key": []
+     }
+    ]
+   }
+  },
+  "/public/updateMerchant": {
+   "post": {
+    "tags": [
+     "Merchant Portal services API"
+    ],
+    "summary": "Get ECR Data",
+    "description": "\nUpdates Merchant with given data. Merchant is searched by Corporate UUID<br>\n\nRequired role for operation: BO_USERMANAGEMENT_UPDATE_CORPORATE.<br>\nCreate MPauditlog record with event type : UpdateMerchant (21).<br>\n\nSupports authentication with the following types of tokens:<br>\n- <b>Bearer</b> <token>, which is a Bearer token authentication. The bearer token is a cryptic string, usually generated by the server in response to a login request.\n- <b>Basic</b> &lt;credentials&gt;, where credentials is the Base64 encoding of username and password joined by a single colon :, CAS login service will be called for the given username and password for validating credentials.  \n",
+    "operationId": "updateMerchant",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/UpdateMerchantRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful operation",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "400": {
+      "description": "Bad request",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "401": {
+      "description": "Unauthenticated - Authentication failed",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "403": {
+      "description": "Unauthorized - Missing role BO_USERMANAGEMENT_UPDATE_CORPORATE",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "500": {
+      "description": "Internal server error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-key": []
+     },
+     {
+      "basic-key": []
+     }
+    ]
+   }
+  },
+  "/public/transactionTurnover": {
+   "post": {
+    "tags": [
+     "Merchant Portal services API"
+    ],
+    "summary": "Turnover (sum) of all transactions",
+    "description": "\nReturns sum (Debit - Credit) of transactions by given dates (from-to).<br>\n\nRequired role for operation: MP_CORPORATE or TE_MERCHANT_TERMINAL_MANAGEMENT.<br>\nCreate MPauditlog record with event type : DashboardTransactionTurnover (12).<br>\n\nSupports authentication with the following types of tokens:\n- Bearer <token>, which is a Bearer token authentication. The bearer token is a cryptic string, usually generated by the server in response to a login request.\n\nReturns periods: HOUR, DAY, MONTH, YEAR<br>\nPeriod is computed by the following criteria:<br>\n- If days between date (from-to) <= 1, returns period HOUR and sum of transactions by hours \n- If days between date (from-to) <= 31, returns period DAY and sum of transactions by days, datePart in format yyyy-MM-dd\n- If days between date (from-to) <= 365, returns period MONTH and sum of transactions by months, datePart in format yyyy-MM\n- Otherwise returns period YEAR and sum of transactions by years                \n",
+    "operationId": "transactionTurnover",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/TransactionTurnoverRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful operation",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/TransactionsTurnoverResponse"
+        }
+       }
+      }
+     },
+     "400": {
+      "description": "Bad request",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "401": {
+      "description": "Unauthenticated - Authentication failed",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "403": {
+      "description": "Unauthorized - Missing role TE_MERCHANT_TERMINAL_MANAGEMENT or MP_CORPORATE",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "500": {
+      "description": "Internal server error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-key": []
+     }
+    ]
+   }
+  },
+  "/public/transactionHistory": {
+   "post": {
+    "tags": [
+     "Merchant Portal services API"
+    ],
+    "summary": "Transaction History",
+    "description": "\nSearch for transactions by given parameters<br>\nRequired role for operation: MP_CORPORATE or BO_TE_TRANSACTION_HISTORY.<br>\nWhen user has role MP_CORPORATE, then all terminalIds are taken from UserProfile, otherwise terminalIds are taken from TecsCompany2TecsTerm entity.<br>\nCreate MPauditlog table record with event type : TransactionHistory.<br>\nSupports filtering by wallet type: APAY (Apple Pay), GPAY (Google Pay), GPAY3D (Google Pay 3D Secure).<br>\nSupports authentication with the following types of tokens:<br>\n* <b>Bearer</b> &lt;token&gt;, which is a Bearer token authentication. The bearer token is a cryptic string, usually generated by the server in response to a login request.\n",
+    "operationId": "transactionHistory",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/TransactionHistoryRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful operation",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/TransactionHistoryResponse"
+        }
+       }
+      }
+     },
+     "400": {
+      "description": "\n* Invalid combination of transactionId and referencedTransactionId parameters\n* ReferencedTransactionId is set and TerminalId not set\n* ReferencedTransactionId not set and TransactionDateFrom not set\n* ReferencedTransactionId not set and TransactionDateTo parameters not set\n* Mandator not found\n* Invalid TerminalId\n",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "401": {
+      "description": "\nUnauthorized - Authentication failed:<br>\n* MandatorId does not march\n* Inactive user\n",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "403": {
+      "description": "Forbidden - Missing role: MP_CORPORATE or BO_TE_TRANSACTION_HISTORY",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "500": {
+      "description": "Internal server error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-key": []
+     }
+    ]
+   }
+  },
+  "/public/transactionHistoryCsv": {
+   "post": {
+    "tags": [
+     "Merchant Portal services API"
+    ],
+    "summary": "Call service Transaction History and export response to CSV.",
+    "description": "\nSearch for transactions by given parameters<br>\nRequired role for operation: MP_CORPORATE or BO_TE_TRANSACTION_HISTORY.<br>\nWhen user has role MP_CORPORATE, then all terminalIds are taken from UserProfile, otherwise terminalIds are taken from TecsCompany2TecsTerm entity.<br>\nCreate MPauditlog table record with event type : TransactionHistoryCsv.<br>\nSupports filtering by wallet type: APAY (Apple Pay), GPAY (Google Pay), GPAY3D (Google Pay 3D Secure).<br>\nSupports authentication with the following types of tokens:<br>\n* <b>Bearer</b> &lt;token&gt;, which is a Bearer token authentication. The bearer token is a cryptic string, usually generated by the server in response to a login request.\n",
+    "operationId": "transactionHistoryCsv",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/TransactionHistoryRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful operation",
+      "content": {
+       "text/plain": {}
+      }
+     },
+     "400": {
+      "description": "\n* Invalid combination of transactionId and referencedTransactionId parameters\n* ReferencedTransactionId is set and TerminalId not set\n* ReferencedTransactionId not set and TransactionDateFrom not set\n* ReferencedTransactionId not set and TransactionDateTo parameters not set\n* Mandator not found\n* Invalid TerminalId\n",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "string"
+        }
+       }
+      }
+     },
+     "401": {
+      "description": "\nUnauthorized - Authentication failed:<br>\n* MandatorId does not march\n* Inactive user\n",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "string"
+        }
+       }
+      }
+     },
+     "403": {
+      "description": "Forbidden - Missing role: MP_CORPORATE or BO_TE_TRANSACTION_HISTORY",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "string"
+        }
+       }
+      }
+     },
+     "500": {
+      "description": "Internal server error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "string"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-key": []
+     }
+    ]
+   }
+  },
+  "/public/statusTransaction": {
+   "post": {
+    "tags": [
+     "Merchant Portal services API"
+    ],
+    "summary": "Status Transaction",
+    "description": "\nReturns status of a transaction searched by: <b>transactionSeqNumber</b> or by combination of: <b>transactionId + terminalId + sourceId</b><br>\nCreate MPauditlog table record with event type : StatusTransaction.<br>\nRequired role: BO_TE_TRANSACTION_HISTORY<br>\nSupports authentication with the following types of tokens:<br>\n* <b>Bearer</b> &lt;token&gt;, which is a Bearer token authentication. The bearer token is a cryptic string, usually generated by the server in response to a login request.\n* <b>Basic</b> &lt;credentials&gt;, where credentials is the Base64 encoding of username and password joined by a single colon :, CAS login service will be called for the given username and password for validating credentials.  \n* <b>TecsWebToken</b> &lt;token&gt;, is used for verifying a TecsWeb signature. Token must be hashed with SHA-256 algorithm in HEX format and constructed in format: <pre>transactionId + | + terminalId + | + secretKey</pre>\n ",
+    "operationId": "statusTransaction",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/StatusTransactionRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful operation",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/StatusTransactionResponse"
+        }
+       }
+      }
+     },
+     "400": {
+      "description": "\n* Transaction not found\n* Mandator not found\n* MandatorConfig not found\n              ",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "401": {
+      "description": "Unauthorized - Authentication failed: \n* Authorization header was not provided\n* MandatorId does not match\n",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "403": {
+      "description": "Forbidden - Missing role: BO_TE_TRANSACTION_HISTORY",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "500": {
+      "description": "Internal server error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-key": []
+     },
+     {
+      "basic-key": []
+     },
+     {
+      "tecsweb-key": []
+     }
+    ]
+   }
+  },
+  "/public/refundTransaction": {
+   "post": {
+    "tags": [
+     "Merchant Portal services API"
+    ],
+    "summary": "Refund Transaction",
+    "description": "\nSearches for a transaction by given parameters: <b>originalTransactionId + terminalId + sourceId</b><br> \nand sends a Refund via TecsXml Interface.<br>\nRequired role for operation: BO_TRANSACTIONMANAGEMENT_REFUND.<br>\nCreate MPauditlog table record with event type : RefundTransaction.<br>\nSupports authentication with the following types of tokens:<br>\n* <b>Bearer</b> &lt;token&gt;, which is a Bearer token authentication. The bearer token is a cryptic string, usually generated by the server in response to a login request.\n* <b>Basic</b> &lt;credentials&gt;, where credentials is the Base64 encoding of username and password joined by a single colon :, CAS login service will be called for the given username and password for validating credentials.\n* <b>TecsWebToken</b> &lt;token&gt;, is used for verifying a TecsWeb signature. Token must be hashed with SHA-256 algorithm in HEX format and constructed in format: <pre>transactionId + | + terminalId + | + secretKey</pre>\n",
+    "operationId": "refundTransaction",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/RefundTransactionRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful operation",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/RefundTransactionResponse"
+        }
+       }
+      }
+     },
+     "400": {
+      "description": "\n* Transaction not found\n* Mandator not found\n",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "401": {
+      "description": "Unauthorized - Authentication failed, e.g. MandatorId does not march",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "403": {
+      "description": "Forbidden - Missing role: BO_TRANSACTIONMANAGEMENT_REFUND",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "500": {
+      "description": "Internal server error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-key": []
+     },
+     {
+      "basic-key": []
+     },
+     {
+      "tecsweb-key": []
+     }
+    ]
+   }
+  },
+  "/public/preAuthCompletionTransaction": {
+   "post": {
+    "tags": [
+     "Merchant Portal services API"
+    ],
+    "summary": "PreAuthCompletion Transaction",
+    "description": "\nSearches for a transaction by given parameters: <b>originalTransactionId + terminalId + sourceId</b><br> \nand sends a PreAuthCompletionTransaction via TecsXml Interface.<br>\nSend XML MessageType: 0013 and TransactionOriginId: 4<br>\nRequired role for operation: BO_TRANSACTIONMANAGEMENT_COMPLETION.<br>\nCreate MPauditlog table record with event type : CompleteTransaction.<br>\nSupports authentication with the following types of tokens:<br>\n* <b>Bearer</b> &lt;token&gt;, which is a Bearer token authentication. The bearer token is a cryptic string, usually generated by the server in response to a login request.\n* <b>TecsWebToken</b> &lt;token&gt;, is used for verifying a TecsWeb signature. Token must be hashed with SHA-256 algorithm in HEX format and constructed in format: <pre>transactionId + | + terminalId + | + secretKey</pre>\n",
+    "operationId": "preAuthCompletionTransaction",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/PreAuthTransactionCompletionRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful operation",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/PreAuthTransactionCompletionResponse"
+        }
+       }
+      }
+     },
+     "400": {
+      "description": "\n* Transaction not found\n* Mandator not found\n",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "401": {
+      "description": "Unauthorized - Authentication failed, e.g. MandatorId does not march",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "403": {
+      "description": "Forbidden - Missing role: BO_TRANSACTIONMANAGEMENT_COMPLETION",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "500": {
+      "description": "Internal server error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-key": []
+     },
+     {
+      "tecsweb-key": []
+     }
+    ]
+   }
+  },
+  "/public/paymentTransaction": {
+   "post": {
+    "tags": [
+     "Merchant Portal services API"
+    ],
+    "summary": "Payment Transaction",
+    "description": "\nSearches for a transaction by given parameters: <b>TransactionId + terminalId + sourceId</b><br> \nand sends a PaymentTransaction via TecsXml Interface.<br>\nSend XML MessageType: 0001 and when TransactionType == 'AUTHORIZATION', then TransactionOriginId: 2, else if TransactionType == 'PRE-AUTH' then TransactionOriginId: 5<br>\nRequired role for operation: BO_TRANSACTIONMANAGEMENT_PAYMENT.<br>\nCreate MPauditlog table record with event type : PaymentTransaction.<br>\nSupports authentication with the following types of tokens:<br>\n* <b>Bearer</b> &lt;token&gt;, which is a Bearer token authentication. The bearer token is a cryptic string, usually generated by the server in response to a login request.\n",
+    "operationId": "paymentTransaction",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/PaymentTransactionRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful operation",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/PreAuthTransactionCompletionResponse"
+        }
+       }
+      }
+     },
+     "400": {
+      "description": "\n* Transaction not found\n* Mandator not found\n",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "401": {
+      "description": "Unauthorized - Authentication failed, e.g. MandatorId does not march",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "403": {
+      "description": "Forbidden - Missing role: BO_TRANSACTIONMANAGEMENT_PAYMENT",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "500": {
+      "description": "Internal server error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-key": []
+     },
+     {
+      "tecsweb-key": []
+     }
+    ]
+   }
+  },
+  "/public/paymentSred": {
+   "post": {
+    "tags": [
+     "Merchant Portal services API"
+    ],
+    "summary": "Payment SRED - Process card-present SRED payload via DecryptX and TECS XML gateway",
+    "description": "\nProcesses a card-present SRED payload by decrypting device data via DecryptX API, then authorizing via TECS XML gateway.<br>\n\n<b>Flow:</b><br>\n1. Decrypt device payload via DecryptX API (partnerId, partnerKey, deviceType, devicePayload)<br>\n2. Extract PAN (12-19 digits, Luhn-valid), EXPY (MMYY), ServiceCode<br>\n3. Build and send TECS XML authorization request<br>\n4. Parse and return response with SRED data<br>\n\nRequired role for operation: BO_VIRTUAL_TERMINAL or VIRTUAL_TERMINAL.<br>\nCreate MPauditlog record with event type : PaymentSred (36).<br>\n\nTransaction ID is generated automatically as YYYYMMDDhhmmss.<br>\nTX-Origin is set to 2 for SALE, 5 for PRE-AUTH.<br>\nCVC2 = ServiceCode from decrypted payload.<br>\n\nSupports authentication with Bearer token.<br>\n",
+    "operationId": "paymentSred",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/PaymentSredRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful operation",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/PaymentSredResponse"
+        }
+       }
+      }
+     },
+     "400": {
+      "description": "\n* Invalid JSON\n* Invalid terminalId - must be 8 digits\n* Invalid currency - must be 3 uppercase letters\n* Invalid amount - must be greater than 0\n* Invalid txtype - must be SALE or PRE-AUTH\n* Invalid devicePayload - must be at least 32 characters\n* Decrypt error - DecryptX API returned non-2xx or success=false\n* Decrypt error - PAN not found in response\n* Decrypt error - Invalid PAN length (must be 12-19 digits)\n* Decrypt error - Invalid PAN - Luhn check failed\n* Decrypt error - Invalid expiry date\n* Gateway error - TECS XML gateway error\n",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "401": {
+      "description": "Unauthorized - Authentication failed",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "403": {
+      "description": "Forbidden - Missing role: BO_VIRTUAL_TERMINAL or VIRTUAL_TERMINAL",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "500": {
+      "description": "\n* Internal server error\n* DecryptX configuration is missing\n",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-key": []
+     }
+    ]
+   }
+  },
+  "/public/paymentManual": {
+   "post": {
+    "tags": [
+     "Merchant Portal services API"
+    ],
+    "summary": "Payment Manual - Process card payment via TECS XML gateway",
+    "description": "\nProcesses a card payment via TECS XML gateway.<br>\nCollects data from request, transforms it to TecsXML message, and sends it for processing.<br>\nResponse from TecsXML is extracted and mapped to JSON response.<br>\n\nRequired role for operation: BO_VIRTUAL_TERMINAL or VIRTUAL_TERMINAL.<br>\nCreate MPauditlog record with event type : PaymentManual (35).<br>\n\nTransaction ID is generated automatically as YYYYMMDDhhmmss.<br>\nTX-Origin is set to 2 for SALE, 5 for PRE-AUTH.<br>\n\nCard number must pass Luhn validation.<br>\nExpiry date must not be in the past (end-of-month check).<br>\n\nSupports authentication with Bearer token.<br>\n",
+    "operationId": "paymentManual",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/PaymentManualRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful operation",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/PaymentManualResponse"
+        }
+       }
+      }
+     },
+     "400": {
+      "description": "\n* Invalid JSON\n* Invalid terminalId - must be 8 digits\n* Invalid currency - must be 3 uppercase letters\n* Invalid amount - must be greater than 0\n* Invalid txtype - must be SALE or PRE-AUTH\n* Invalid cardNumber - must be 12-19 digits and Luhn-valid\n* Invalid expDate - must be MMYY format and not expired\n* Invalid cvc - must be 3-4 digits if provided\n",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "401": {
+      "description": "Unauthorized - Authentication failed",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "403": {
+      "description": "Forbidden - Missing role: BO_VIRTUAL_TERMINAL or VIRTUAL_TERMINAL",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "500": {
+      "description": "Internal server error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "502": {
+      "description": "Gateway error - TECS XML gateway error or invalid XML response",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-key": []
+     }
+    ]
+   }
+  },
+  "/public/mcom/transactionHistory": {
+   "post": {
+    "tags": [
+     "MCOM services API"
+    ],
+    "summary": "Transaction History for MCOM",
+    "description": "\nSearch for transactions by given parameters<br>\nRequired role for operation: MCOM_WEBAPP_TX_HISTORY<br>\nCreate MPauditlog table record with event type : TransactionHistoryMcom (19).<br>\nSupports authentication with the following types of tokens:<br>\n* <b>Bearer</b> &lt;token&gt;, which is a Bearer token authentication. The bearer token is a cryptic string, usually generated by the server in response to a login request.\n",
+    "operationId": "transactionHistory_1",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/TransactionHistoryMcomRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful operation",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/TransactionHistoryMcomResponse"
+        }
+       }
+      }
+     },
+     "400": {
+      "description": "\n* Invalid combination of transactionId and referencedTransactionId parameters\n* ReferencedTransactionId is set and TerminalId not set\n* ReferencedTransactionId not set and TransactionDateFrom not set\n* ReferencedTransactionId not set and TransactionDateTo parameters not set\n* Mandator not found\n* Invalid TerminalId\n",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "401": {
+      "description": "\nUnauthorized - Authentication failed:<br>\n* MandatorId does not march\n* Inactive user\n",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "403": {
+      "description": "Forbidden - Missing role: MCOM_WEBAPP_TX_HISTORY or BO_TE_TRANSACTION_HISTORY",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "500": {
+      "description": "Internal server error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-key": []
+     }
+    ]
+   }
+  },
+  "/public/listTerminals": {
+   "post": {
+    "tags": [
+     "Merchant Portal services API"
+    ],
+    "summary": "List registered terminals",
+    "description": "\nReturns list of registered terminals by given parameter corporateUuid.<br>\n\nRequired role for operation: TE_MERCHANT_TERMINAL_MANAGEMENT.<br>\nCreate MPauditlog record with event type : ListTerminals (13).<br>\n\nSupports authentication with the following types of tokens:<br>\n- Bearer <token>, which is a Bearer token authentication. The bearer token is a cryptic string, usually generated by the server in response to a login request.                             \n",
+    "operationId": "listTerminals",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/ListTerminalsRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful operation",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/ListTerminalsResponse"
+        }
+       }
+      }
+     },
+     "400": {
+      "description": "Bad request",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "401": {
+      "description": "Unauthenticated - Authentication failed",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "403": {
+      "description": "Unauthorized - Missing role TE_MERCHANT_TERMINAL_MANAGEMENT",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "500": {
+      "description": "Internal server error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-key": []
+     }
+    ]
+   }
+  },
+  "/public/keepalive": {
+   "post": {
+    "tags": [
+     "Merchant Portal services API"
+    ],
+    "summary": "Get KeepAlive data for a given terminal ID",
+    "description": "\nReturns Keep Alive data for a given Terminal Id.<br>\nRequired role for operation: TE_KEEP_ALIVE_LIST.<br>\nCreate MPauditlog table record with event type : KeepAlive (28)<br>\nSupported authentication:<br>\n* <b>Bearer</b> &lt;token&gt;, which is a Bearer token authentication. The bearer token is a cryptic string, usually generated by the server in response to a login request.\n* <b>Basic</b> &lt;credentials&gt;, where credentials is the Base64 encoding of username and password joined by a single colon :, CAS login service will be called for the given username and password for validating credentials.  \n",
+    "operationId": "keepAlive",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/KeepAliveRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful operation",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/KeepAliveResponse"
+        }
+       }
+      }
+     },
+     "401": {
+      "description": "Unauthorized - Authentication failed, e.g. MandatorId does not march",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "403": {
+      "description": "Forbidden - Missing role: TE_KEEP_ALIVE_LIST",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "500": {
+      "description": "\n* Internal server error\n",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-key": []
+     }
+    ]
+   }
+  },
+  "/public/getTerminalId": {
+   "post": {
+    "tags": [
+     "Merchant Portal services API"
+    ],
+    "summary": "Get Terminal ID",
+    "description": "\nSearches by given array of deviceSerialNumbers in 'TecsTerm' table in columns hwSerialNo or mpExpectedserialno.<br> \nIf any duplicates mpExpectedserialno are found, put them the response objects to property duplicateTerminalIds.<br>\n\nRequired role for operation: SYSTEM_GET_TERMINAL_ID.<br>\nCreate MPauditlog record with event type : GetTerminalId (24).<br>\n\nSupports authentication with the following types of tokens:<br>\n* <b>Bearer</b> <token>, which is a Bearer token authentication. The bearer token is a cryptic string, usually generated by the server in response to a login request.  \n* <b>Basic</b> &lt;credentials&gt;, where credentials is the Base64 encoding of username and password joined by a single colon :, CAS login service will be called for the given username and password for validating credentials.\n",
+    "operationId": "getTerminalId",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/GetTerminalIdRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful operation",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GetTerminalIdResponse"
+        }
+       }
+      }
+     },
+     "400": {
+      "description": "Bad request. e.g, Input validation failed or there already exist a template with the same name.",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "401": {
+      "description": "Unauthenticated - Authentication failed",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "403": {
+      "description": "Unauthorized - Missing role SYSTEM_GET_TERMINAL_ID",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "500": {
+      "description": "Internal server error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-key": []
+     },
+     {
+      "basic-key": []
+     }
+    ]
+   }
+  },
+  "/public/getTemplateXml": {
+   "post": {
+    "tags": [
+     "Merchant Portal services API"
+    ],
+    "summary": "Retrieves XML data for a given template searched by template name",
+    "description": "\nTemplateXML in the response will be Base64 encoded<br>\n\nRequired role for operation: BO_MP_GET_XML_TEMPLATE.<br>\nCreate MPauditlog record with event type : GET TEMPLATE XML (32).<br>\n\nSupports authentication with the following types of tokens:<br>\n- <b>Bearer</b> <token>, which is a Bearer token authentication. The bearer token is a cryptic string, usually generated by the server in response to a login request.\n- <b>Basic</b> &lt;credentials&gt;, where credentials is the Base64 encoding of username and password joined by a single colon :, CAS login service will be called for the given username and password for validating credentials.  \n",
+    "operationId": "getTemplateXml",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/GetTemplateXmlRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful operation",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "400": {
+      "description": "Bad request",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "401": {
+      "description": "Unauthenticated - Authentication failed",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "403": {
+      "description": "Unauthorized - Missing role BO_MP_GET_XML_TEMPLATE",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "500": {
+      "description": "Internal server error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-key": []
+     },
+     {
+      "basic-key": []
+     }
+    ]
+   }
+  },
+  "/public/getEmvData": {
+   "post": {
+    "tags": [
+     "Merchant Portal services API"
+    ],
+    "summary": "Get EMV Data",
+    "description": "\nReturns EMV data for a given transaction.<br>\n\nRequired role for operation: BO_TRANSACTIONMANAGEMENT_EMV.<br>\nCreate MPauditlog record with event type : GetEmvData (14).<br>\n\nSupports authentication with the following types of tokens:<br>\n- <b>Bearer</b> <token>, which is a Bearer token authentication. The bearer token is a cryptic string, usually generated by the server in response to a login request.\n- <b>Basic</b> &lt;credentials&gt;, where credentials is the Base64 encoding of username and password joined by a single colon :, CAS login service will be called for the given username and password for validating credentials.  \n",
+    "operationId": "getEmvData",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/GetEmvDataRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful operation",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GetEmvDataResponse"
+        }
+       }
+      }
+     },
+     "400": {
+      "description": "Bad request",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "401": {
+      "description": "Unauthenticated - Authentication failed",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "403": {
+      "description": "Unauthorized - Missing role TE_MERCHANT_TERMINAL_MANAGEMENT",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "500": {
+      "description": "Internal server error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-key": []
+     },
+     {
+      "basic-key": []
+     }
+    ]
+   }
+  },
+  "/public/getEcrData": {
+   "post": {
+    "tags": [
+     "Merchant Portal services API"
+    ],
+    "summary": "Get ECR Data",
+    "description": "\nReturns ECR data for a given transaction.<br>\n\nRequired role for operation: BO_TRANSACTIONMANAGEMENT_ECR.<br>\nCreate MPauditlog record with event type : GetEcrData (15).<br>\n\nSupports authentication with the following types of tokens:<br>\n- <b>Bearer</b> <token>, which is a Bearer token authentication. The bearer token is a cryptic string, usually generated by the server in response to a login request.\n- <b>Basic</b> &lt;credentials&gt;, where credentials is the Base64 encoding of username and password joined by a single colon :, CAS login service will be called for the given username and password for validating credentials.  \n",
+    "operationId": "getEcrData",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/GetEcrDataRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful operation",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GetEcrDataResponse"
+        }
+       }
+      }
+     },
+     "400": {
+      "description": "Bad request",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "401": {
+      "description": "Unauthenticated - Authentication failed",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "403": {
+      "description": "Unauthorized - Missing role BO_TRANSACTIONMANAGEMENT_ECR",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "500": {
+      "description": "Internal server error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-key": []
+     },
+     {
+      "basic-key": []
+     }
+    ]
+   }
+  },
+  "/public/getEcomParameters": {
+   "post": {
+    "tags": [
+     "Merchant Portal services API"
+    ],
+    "summary": "Get ECOM Parameters",
+    "description": "\nReturns ECOM Parameters (skey and a password) for a given terminalId.<br>\n\nRequired role for operation: TW_GET_ECOM_PARAMETERS.<br>\nCreate MPauditlog record with event type : GET ECOM PARAMETERS (25).<br>\n\nSupports authentication with the following types of tokens:<br>\n- <b>Bearer</b> <token>, which is a Bearer token authentication. The bearer token is a cryptic string, usually generated by the server in response to a login request.\n- <b>Basic</b> &lt;credentials&gt;, where credentials is the Base64 encoding of username and password joined by a single colon :, CAS login service will be called for the given username and password for validating credentials.  \n",
+    "operationId": "getEcomParameters",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/GetEcomParametersRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful operation",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GetEcomParametersResponse"
+        }
+       }
+      }
+     },
+     "400": {
+      "description": "Bad request",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "401": {
+      "description": "Unauthenticated - Authentication failed",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "403": {
+      "description": "Unauthorized - Missing role TW_GET_ECOM_PARAMETERS",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "500": {
+      "description": "Internal server error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-key": []
+     },
+     {
+      "basic-key": []
+     }
+    ]
+   }
+  },
+  "/public/getEcData": {
+   "post": {
+    "tags": [
+     "Merchant Portal services API"
+    ],
+    "summary": "Get EC Data for Ecom",
+    "description": "\nReturns EC data for a given transaction.<br>\n\nRequired role for operation: BO_TRANSACTIONMANAGEMENT_ECOM.<br>\nCreate MPauditlog record with event type : GetEcData (29).<br>\n\nSupports authentication with the following types of tokens:<br>\n- <b>Bearer</b> <token>, which is a Bearer token authentication. The bearer token is a cryptic string, usually generated by the server in response to a login request.\n- <b>Basic</b> &lt;credentials&gt;, where credentials is the Base64 encoding of username and password joined by a single colon :, CAS login service will be called for the given username and password for validating credentials.  \n",
+    "operationId": "getEcData",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/GetEcDataEcomRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful operation",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GetEcDataEcomResponse"
+        }
+       }
+      }
+     },
+     "400": {
+      "description": "Bad request",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "401": {
+      "description": "Unauthenticated - Authentication failed",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "403": {
+      "description": "Unauthorized - Missing role BO_TRANSACTIONMANAGEMENT_ECOM",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "500": {
+      "description": "Internal server error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-key": []
+     },
+     {
+      "basic-key": []
+     }
+    ]
+   }
+  },
+  "/public/digitalservices/reportData": {
+   "post": {
+    "tags": [
+     "Digital Services API"
+    ],
+    "summary": "Get Report Data for Digital Services for creating a Report Instance",
+    "description": "\nCollects: \n * SUMs over DEBIT Tx's\n * SUMs over CREDIT Tx's\n * Collects all card brand for Debit and Credit transactions and collects count and total sums for them.\n <br>\nRequired role for operation: DAILY_REPORTS_VIEW or DAILY_BO_REPORTS_VIEW or BO_DAILY_REPORTS_CUSTOM or DAILY_REPORTS_CUSTOM<br>\nSupports authentication with the following types of tokens:<br>\n* <b>Bearer</b> &lt;token&gt;, which is a Bearer token authentication. The bearer token is a cryptic string, usually generated by the server in response to a login request.\n",
+    "operationId": "getReportData",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/GetReportDataRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful operation",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GetReportDataResponse"
+        }
+       }
+      }
+     },
+     "400": {
+      "description": "\n* Invalid request data. Bad request\n",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "401": {
+      "description": "\nUnauthorized - Authentication failed:<br>\n",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "403": {
+      "description": "Forbidden - Missing role: DAILY_REPORTS_VIEW or DAILY_BO_REPORTS_VIEW",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "500": {
+      "description": "Internal server error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-key": []
+     }
+    ]
+   }
+  },
+  "/public/digitalservices/mandatorClearingExport": {
+   "post": {
+    "tags": [
+     "Digital Services API"
+    ],
+    "summary": "Exports Clearing data for a given Mandator and given Timestamp range",
+    "description": "\nRequired role for operation: DAILY_REPORTS_VIEW or DAILY_BO_REPORTS_VIEW or BO_DAILY_REPORTS_CUSTOM or DAILY_REPORTS_CUSTOM<br>\nSupports authentication with the following types of tokens:<br>\n* <b>Bearer</b> &lt;token&gt;, which is a Bearer token authentication. The bearer token is a cryptic string, usually generated by the server in response to a login request.\n",
+    "operationId": "mandatorClearingExport",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/MandatorClearingExportRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful operation",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/MandatorClearingExportResponse"
+        }
+       }
+      }
+     },
+     "400": {
+      "description": "\n* Invalid request data. Bad request\n",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "401": {
+      "description": "\nUnauthorized - Authentication failed:<br>\n",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "403": {
+      "description": "Forbidden - Missing role: DAILY_REPORTS_VIEW or DAILY_BO_REPORTS_VIEW or BO_DAILY_REPORTS_CUSTOM or DAILY_REPORTS_CUSTOM",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "500": {
+      "description": "Internal server error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-key": []
+     }
+    ]
+   }
+  },
+  "/public/digitalservices/mandatorClearingExportSummary": {
+   "post": {
+    "tags": [
+     "Digital Services API"
+    ],
+    "summary": "Exports Summary Clearing data for a given Mandator and given Timestamp range",
+    "description": "\nRequired role for operation: BO_MANDATOR_CLEARING_EXPORT<br>\nSupports authentication with the following types of tokens:<br>\n* <b>Bearer</b> &lt;token&gt;, which is a Bearer token authentication. The bearer token is a cryptic string, usually generated by the server in response to a login request.\n",
+    "operationId": "mandatorClearingExportSummary",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/MandatorClearingExportSummaryRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful operation",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/MandatorClearingExportSummaryResponse"
+        }
+       }
+      }
+     },
+     "400": {
+      "description": "\n* Invalid request data. Bad request\n",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "401": {
+      "description": "\nUnauthorized - Authentication failed:<br>\n",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "403": {
+      "description": "Forbidden - Missing role: BO_MANDATOR_CLEARING_EXPORT",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "500": {
+      "description": "Internal server error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-key": []
+     }
+    ]
+   }
+  },
+  "/public/digitalservices/mandatorClearingExportMetadata": {
+   "post": {
+    "tags": [
+     "Digital Services API"
+    ],
+    "summary": "Exports Clearing Transaction metadata data: e.g. TxIdStart, TxIdEnd,TxSeqNoStart, TxSeqNoEnd...,  for a given Mandator and given Timestamp range",
+    "description": "\nRequired role for operation: BO_MANDATOR_CLEARING_EXPORT<br>\nSupports authentication with the following types of tokens:<br>\n* <b>Bearer</b> &lt;token&gt;, which is a Bearer token authentication. The bearer token is a cryptic string, usually generated by the server in response to a login request.\n",
+    "operationId": "mandatorClearingExportMetadata",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/MandatorClearingExportMetadataRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful operation",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/MandatorClearingExportMetadataResponse"
+        }
+       }
+      }
+     },
+     "400": {
+      "description": "\n* Invalid request data. Bad request\n",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "401": {
+      "description": "\nUnauthorized - Authentication failed:<br>\n",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "403": {
+      "description": "Forbidden - Missing role: BO_MANDATOR_CLEARING_EXPORT",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "500": {
+      "description": "Internal server error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-key": []
+     }
+    ]
+   }
+  },
+  "/public/digitalservices/mandatorClearingExportDownload": {
+   "post": {
+    "tags": [
+     "Digital Services API"
+    ],
+    "summary": "Start async export of Clearing data for a given Mandator and given Timestamp range",
+    "description": "\nStarts asynchronous processing of clearing data export. Returns immediately with a fileId for tracking.\nRequired role for operation: BO_MANDATOR_CLEARING_EXPORT<br>\nSupports authentication with the following types of tokens:<br>\n* <b>Bearer</b> &lt;token&gt;, which is a Bearer token authentication. The bearer token is a cryptic string, usually generated by the server in response to a login request.\n",
+    "operationId": "mandatorClearingExportDownload",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/MandatorClearingExportDownloadRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful operation - processing started",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/MandatorClearingExportDownloadResponse"
+        }
+       }
+      }
+     },
+     "400": {
+      "description": "\n* Invalid request data. Bad request\n* System is busy processing another file\n",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "401": {
+      "description": "\nUnauthorized - Authentication failed:<br>\n",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "403": {
+      "description": "Forbidden - Missing role: BO_MANDATOR_CLEARING_EXPORT",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "500": {
+      "description": "Internal server error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-key": []
+     }
+    ]
+   }
+  },
+  "/public/digitalservices/mandatorClearingExportDownload/{fileId}": {
+   "get": {
+    "tags": [
+     "Digital Services API"
+    ],
+    "summary": "Check status of async clearing export",
+    "description": "\nChecks the current status of an async clearing export. Returns status information.\nRequired role for operation: BO_MANDATOR_CLEARING_EXPORT<br>\nSupports authentication with the following types of tokens:<br>\n* <b>Bearer</b> &lt;token&gt;, which is a Bearer token authentication. The bearer token is a cryptic string, usually generated by the server in response to a login request.\n",
+    "operationId": "checkMandatorClearingExportStatus",
+    "parameters": [
+     {
+      "name": "fileId",
+      "in": "path",
+      "description": "File ID returned from the initial export request",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "Status information",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/MandatorClearingExportDownloadResponse"
+        }
+       }
+      }
+     },
+     "401": {
+      "description": "\nUnauthorized - Authentication failed:<br>\n",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "403": {
+      "description": "Forbidden - Missing role: BO_MANDATOR_CLEARING_EXPORT",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "404": {
+      "description": "File not found",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "500": {
+      "description": "Internal server error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-key": []
+     }
+    ]
+   },
+   "post": {
+    "tags": [
+     "Digital Services API"
+    ],
+    "summary": "Download completed clearing export file",
+    "description": "\nDownloads the completed clearing export file as a ZIP file containing CSV data.\nRequired role for operation: BO_MANDATOR_CLEARING_EXPORT<br>\nSupports authentication with the following types of tokens:<br>\n* <b>Bearer</b> &lt;token&gt;, which is a Bearer token authentication. The bearer token is a cryptic string, usually generated by the server in response to a login request.\n",
+    "operationId": "downloadMandatorClearingExport",
+    "parameters": [
+     {
+      "name": "fileId",
+      "in": "path",
+      "description": "File ID returned from the initial export request",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "ZIP file download containing CSV data",
+      "content": {
+       "application/zip": {}
+      }
+     },
+     "400": {
+      "description": "File is still processing",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "401": {
+      "description": "\nUnauthorized - Authentication failed:<br>\n",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "403": {
+      "description": "Forbidden - Missing role: BO_MANDATOR_CLEARING_EXPORT",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "404": {
+      "description": "File not found",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "500": {
+      "description": "Internal server error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-key": []
+     }
+    ]
+   }
+  },
+  "/public/countTransactionsByCardBrand": {
+   "post": {
+    "tags": [
+     "Merchant Portal services API"
+    ],
+    "summary": "Count authorised transactions by CardBrand",
+    "description": "\nReturns count transaction by given dates (from-to) and group by card brand.<br>\n\nRequired role for operation: MP_CORPORATE or TE_MERCHANT_TERMINAL_MANAGEMENT.<br>\nCreate MPauditlog record with event type : DashboardTransactionsCountByCardBrand (23).<br>\n\nReturns periods: HOUR, DAY, MONTH, YEAR<br>\nPeriod is computed by the following criteria:<br>\n- If days between date (from-to) <= 1, returns period HOUR and counts transactions by hours \n- If days between date (from-to) <= 31, returns period DAY and counts transactions by days, datePart in format yyyy-MM-dd\n- If days between date (from-to) <= 365, returns period MONTH and counts transactions by months, datePart in format yyyy-MM\n- Otherwise returns period YEAR and counts transactions by years     \n\nSupports authentication with the following types of tokens:<br>\n- Bearer <token>, which is a Bearer token authentication. The bearer token is a cryptic string, usually generated by the server in response to a login request.\n",
+    "operationId": "countTransactionsByCardBrand",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/TransactionsCountRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful operation",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/TransactionsCountCardBrandResponse"
+        }
+       }
+      }
+     },
+     "400": {
+      "description": "Bad request",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "401": {
+      "description": "Unauthenticated - Authentication failed",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "403": {
+      "description": "Unauthorized - Missing role TE_MERCHANT_TERMINAL_MANAGEMENT or MP_CORPORATE",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "500": {
+      "description": "Internal server error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-key": []
+     }
+    ]
+   }
+  },
+  "/public/countNotAuthorisedTransactions": {
+   "post": {
+    "tags": [
+     "Merchant Portal services API"
+    ],
+    "summary": "Count not authorised transactions",
+    "description": "\nReturns count of not authorised transaction by given dates (from-to).<br>\n\nRequired role for operation: MP_CORPORATE or TE_MERCHANT_TERMINAL_MANAGEMENT.<br>\nCreate MPauditlog record with event type : DashboardNotAuthorizedTransactionsCount (11).<br>\n\nSupports authentication with the following types of tokens:<br>\n- Bearer <token>, which is a Bearer token authentication. The bearer token is a cryptic string, usually generated by the server in response to a login request.\n\nReturns periods: HOUR, DAY, MONTH, YEAR<br>\nPeriod is computed by the following criteria:<br>\n- If days between date (from-to) <= 1, returns period HOUR and counts transactions by hours  \n- If days between date (from-to) <= 31, returns period DAY and counts transactions by days, datePart in format yyyy-MM-dd\n- If days between date (from-to) <= 365, returns period MONTH and counts transactions by months, datePart in format yyyy-MM\n- Otherwise returns period YEAR and counts transactions by years          \n",
+    "operationId": "countNotAuthorisedTransactions",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/TransactionsCountRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful operation",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/TransactionsCountResponse"
+        }
+       }
+      }
+     },
+     "400": {
+      "description": "Bad request",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "401": {
+      "description": "Unauthenticated - Authentication failed",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "403": {
+      "description": "Unauthorized - Missing role TE_MERCHANT_TERMINAL_MANAGEMENT or MP_CORPORATE",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "500": {
+      "description": "Internal server error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-key": []
+     }
+    ]
+   }
+  },
+  "/public/countAuthorisedTransactions": {
+   "post": {
+    "tags": [
+     "Merchant Portal services API"
+    ],
+    "summary": "Count authorised transactions",
+    "description": "\nReturns count of authorised transaction by given dates (from-to).<br>\n\nRequired role for operation: MP_CORPORATE or TE_MERCHANT_TERMINAL_MANAGEMENT.<br>\nCreate MPauditlog record with event type : DashboardAuthorizedTransactionsCount (10).<br>\n\nReturns periods: HOUR, DAY, MONTH, YEAR<br>\nPeriod is computed by the following criteria:<br>\n- If days between date (from-to) <= 1, returns period HOUR and counts transactions by hours \n- If days between date (from-to) <= 31, returns period DAY and counts transactions by days, datePart in format yyyy-MM-dd\n- If days between date (from-to) <= 365, returns period MONTH and counts transactions by months, datePart in format yyyy-MM\n- Otherwise returns period YEAR and counts transactions by years     \n\nSupports authentication with the following types of tokens:<br>\n- Bearer <token>, which is a Bearer token authentication. The bearer token is a cryptic string, usually generated by the server in response to a login request.\n",
+    "operationId": "countAuthorisedTransactions",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/TransactionsCountRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful operation",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/TransactionsCountResponse"
+        }
+       }
+      }
+     },
+     "400": {
+      "description": "Bad request",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "401": {
+      "description": "Unauthenticated - Authentication failed",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "403": {
+      "description": "Unauthorized - Missing role TE_MERCHANT_TERMINAL_MANAGEMENT or MP_CORPORATE",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "500": {
+      "description": "Internal server error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-key": []
+     }
+    ]
+   }
+  },
+  "/public/cancelTransaction": {
+   "post": {
+    "tags": [
+     "Merchant Portal services API"
+    ],
+    "summary": "Cancel Transaction",
+    "description": "\nSearches for a transaction by given parameters: <b>originalTransactionId + terminalId + sourceId</b> <br>\nand cancels it via TecsXml Interface.<br>\nRequired role for operation: BO_TRANSACTIONMANAGEMENT_CANCEL.<br>\nCreate MPauditlog table record with event type : CancelTransaction.<br>\nSupports authentication with the following types of tokens:<br>\n* <b>Bearer</b> &lt;token&gt;, which is a Bearer token authentication. The bearer token is a cryptic string, usually generated by the server in response to a login request.\n* <b>Basic</b> &lt;credentials&gt;, where credentials is the Base64 encoding of username and password joined by a single colon :, CAS login service will be called for the given username and password for validating credentials.\n* <b>TecsWebToken</b> &lt;token&gt;, is used for verifying a TecsWeb signature. Token must be hashed with SHA-256 algorithm in HEX format and constructed in format: <pre>transactionId + | + terminalId + | + secretKey</pre>\n",
+    "operationId": "cancelTransaction",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/CancelTransactionRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful operation",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/CancelTransactionResponse"
+        }
+       }
+      }
+     },
+     "400": {
+      "description": "\n* Transaction not found\n* Mandator not found\n",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "401": {
+      "description": "Unauthorized - Authentication failed, e.g. MandatorId does not march",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "403": {
+      "description": "Forbidden - Missing role: BO_TRANSACTIONMANAGEMENT_CANCEL",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "500": {
+      "description": "Internal server error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-key": []
+     },
+     {
+      "basic-key": []
+     },
+     {
+      "tecsweb-key": []
+     }
+    ]
+   }
+  },
+  "/moveTid": {
+   "post": {
+    "tags": [
+     "Merchant Portal services API"
+    ],
+    "summary": "Move terminal ID to different mandator",
+    "description": "\nUpdates TecsTerm's mpPackageOrderUuid from request value.<br>\nUpdates Term's VU number and MPenableacquiringid \n\nRequired role for operation: BO_MP_MOVE_TID.<br>\nCreate MPauditlog record with event type : MOVE_TID (34).<br>\n\nSupports authentication with the following types of tokens:<br>\n- <b>Bearer</b> <token>, which is a Bearer token authentication. The bearer token is a cryptic string, usually generated by the server in response to a login request.\n- <b>Basic</b> &lt;credentials&gt;, where credentials is the Base64 encoding of username and password joined by a single colon :, CAS login service will be called for the given username and password for validating credentials.  \n",
+    "operationId": "moveTid",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/MoveTidRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "In case the terminal ID is moved successfully",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "400": {
+      "description": "Bad request",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "401": {
+      "description": "Unauthenticated - Authentication failed",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "403": {
+      "description": "Unauthorized - Missing role BO_MP_MOVE_TID",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "500": {
+      "description": "Internal server error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-key": []
+     },
+     {
+      "basic-key": []
+     }
+    ]
+   }
+  },
+  "/introducePackage": {
+   "post": {
+    "tags": [
+     "Merchant Portal services API"
+    ],
+    "summary": "Introduce new package for Mandator",
+    "description": "\n             Creates new record in MPmandatorConfig\n",
+    "operationId": "introducePackage",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/IntroducePackageRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful operation",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "400": {
+      "description": "Bad request",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "401": {
+      "description": "Unauthenticated - Authentication failed",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "403": {
+      "description": "Unauthorized - Missing role BO_USERMANAGEMENT_MANDATOR_MANAGER",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "500": {
+      "description": "Internal server error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-key": []
+     }
+    ]
+   }
+  },
+  "/introduceMandator": {
+   "post": {
+    "tags": [
+     "Merchant Portal services API"
+    ],
+    "summary": "Introduce new Mandator",
+    "description": "\n             Creates new record in MPmandatorConfig\n",
+    "operationId": "introducePackage_1",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/IntroduceMandatorRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful operation",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "400": {
+      "description": "Bad request",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "401": {
+      "description": "Unauthenticated - Authentication failed",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "403": {
+      "description": "Unauthorized - Missing role BO_USERMANAGEMENT_MANDATOR_MANAGER",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "500": {
+      "description": "Internal server error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-key": []
+     }
+    ]
+   }
+  },
+  "/getMerchantContractNumber": {
+   "post": {
+    "tags": [
+     "Merchant Portal services API"
+    ],
+    "summary": "Check whether the merchant contract number is already registered.",
+    "description": "\nCheck for existence in the database following database tables: MPenableacquiring, company, Merchant for the given merchant contract number.<br>\n\nRequired role for operation: SYSTEM_REGISTER_MERCHANT_TERMINAL.<br>\nCreate MPauditlog record with event type : GET MERCHANT CONTRACT NUMBER (33).<br>\n\nSupports authentication with the following types of tokens:<br>\n- <b>Bearer</b> <token>, which is a Bearer token authentication. The bearer token is a cryptic string, usually generated by the server in response to a login request.\n- <b>Basic</b> &lt;credentials&gt;, where credentials is the Base64 encoding of username and password joined by a single colon :, CAS login service will be called for the given username and password for validating credentials.  \n",
+    "operationId": "getMerchantContractNumber",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/GetMerchantContractNumberRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "In case the merchant contract number is not registered yet",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "400": {
+      "description": "Bad request",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "401": {
+      "description": "Unauthenticated - Authentication failed",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "403": {
+      "description": "Unauthorized - Missing role SYSTEM_REGISTER_MERCHANT_TERMINAL",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "409": {
+      "description": "In case the merchant contract number is already registered",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "500": {
+      "description": "Internal server error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-key": []
+     },
+     {
+      "basic-key": []
+     }
+    ]
+   }
+  },
+  "/enableAcquiring": {
+   "post": {
+    "tags": [
+     "Merchant Portal services API"
+    ],
+    "summary": "Enable Acquiring",
+    "description": "\nRegister Enable Acquiring by given template name.<br>                 \nRegisters Merchant Card in TecsWeb, if merchant's target is 'tecsweb' in template.<br>\nUpdate Terminal Password in TecsWeb for given terminal.<br>\nRequired role for operation: TE_MERCHANT_TERMINAL_MANAGEMENT.<br>\nCreate MPauditlog table record with event type : EnableAcquiring <br>\nSupported authentication:<br>\n* Bearer &lt;token&gt; - which is a Bearer token authentication\n",
+    "operationId": "enableAcquiring",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/EnableAcquiringRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful operation",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "400": {
+      "description": "\n* Mandator not found\n* Invalid template \n* Invalid TECS company specified\n* MandatorConfig not found\n* Invalid country code Alpha3 specified \n* Vu-nummer has to be unique\n",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "string"
+        }
+       }
+      }
+     },
+     "401": {
+      "description": "Unauthorized - Authentication failed, e.g. when user is not active",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "403": {
+      "description": "Forbidden - Missing role: TE_MERCHANT_TERMINAL_MANAGEMENT",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "500": {
+      "description": "\n* Internal server error\n* Error getting Corporate Account\n",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-key": []
+     }
+    ]
+   }
+  },
+  "/deactivateTerminal": {
+   "post": {
+    "tags": [
+     "Merchant Portal services API"
+    ],
+    "summary": "Deactivate Terminal",
+    "description": "\nDeactivates teminal by given TerminalId.<br>\nRequired role for operation: TE_MERCHANT_TERMINAL_MANAGEMENT.<br>\nCreate MPauditlog table record with event type : DeactivateTerminal<br>\nSupported authentication:<br>\n* Bearer &lt;token&gt; - which is a Bearer token authentication<br>\n",
+    "operationId": "deactivateTerminal",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/DeactivateTerminalRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful operation",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/DeactivateTerminalResponse"
+        }
+       }
+      }
+     },
+     "400": {
+      "description": "\n* Terminal not found\n* Mandator not found\n* MandatorConfig not found\n",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "string"
+        }
+       }
+      }
+     },
+     "401": {
+      "description": "Unauthorized - Authentication failed, e.g. MandatorId does not march",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "403": {
+      "description": "Forbidden - Missing role: TE_MERCHANT_TERMINAL_MANAGEMENT",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "500": {
+      "description": "\n* Internal server error\n* Tecscompany2Tecsterm record not found\n* Tecscompany record not found\n",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-key": []
+     }
+    ]
+   }
+  },
+  "/createProduct": {
+   "post": {
+    "tags": [
+     "Merchant Portal services API"
+    ],
+    "summary": "Create Product",
+    "description": "\nCreate Product with given data. Insert a new record into table MPTemplates.<br>\nIf there is already existing record with the same name, then return error 400 Bad Request.<br>\n\nRequired role for operation: BO_MP_CREATE_NEW_PRODUCT.<br>\nCreate MPauditlog record with event type : CreateProduct (22).<br>\n\nSupports authentication with the following types of tokens:<br>\n- <b>Bearer</b> <token>, which is a Bearer token authentication. The bearer token is a cryptic string, usually generated by the server in response to a login request.  \n",
+    "operationId": "createProduct",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/CreateProductRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful operation",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "400": {
+      "description": "Bad request. e.g, Input validation failed or there already exist a template with the same name.",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "401": {
+      "description": "Unauthenticated - Authentication failed",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "403": {
+      "description": "Unauthorized - Missing role BO_MP_CREATE_NEW_PRODUCT",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "500": {
+      "description": "Internal server error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "bearer-key": []
+     },
+     {
+      "basic-key": []
+     }
+    ]
+   }
+  },
+  "/checkCardBlackListed": {
+   "post": {
+    "tags": [
+     "Merchant Portal services API"
+    ],
+    "summary": "Check Card BlackListed",
+    "description": "\nChecks whether given card is blacklisted.<br>\nRequired role for operation: SERVICE_BLACKLISTCHECK.<br>\nSupports authentication with the following types of tokens:<br>\n* <b>Basic</b> &lt;credentials&gt;, where credentials is the Base64 encoding of username and password joined by a single colon :, CAS login service will be called for the given username and password for validating credentials.\n",
+    "operationId": "checkCardBlackListed",
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "$ref": "#/components/schemas/CheckCardBlackListedRequest"
+       }
+      }
+     },
+     "required": true
+    },
+    "responses": {
+     "200": {
+      "description": "Successful operation",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/CheckCardBlackListedResponse"
+        }
+       }
+      }
+     },
+     "400": {
+      "description": "Mandator not found",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "401": {
+      "description": "Unauthorized - Authentication failed, e.g. CAS authentication failed",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "403": {
+      "description": "Forbidden - Missing role: SERVICE_BLACKLISTCHECK",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "500": {
+      "description": "Internal server error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "basic-key": []
+     }
+    ]
+   }
+  },
+  "/public/version": {
+   "get": {
+    "tags": [
+     "Merchant Portal services API"
+    ],
+    "summary": "Returns application version and build date",
+    "operationId": "getVersion",
+    "responses": {
+     "200": {
+      "description": "Successful operation",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/Version"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "/public/digitalservices/mandatorClearingExportDownload/status": {
+   "get": {
+    "tags": [
+     "Digital Services API"
+    ],
+    "summary": "Get Mandator Clearing Export Concurrency Status",
+    "description": "Returns the current status of the async export system including how many exports are currently running",
+    "operationId": "getMandatorClearingExportConcurrencyStatus",
+    "responses": {
+     "200": {
+      "description": "Export concurrency status retrieved successfully",
+      "content": {
+       "application/json": {
+        "schema": {
+         "type": "string"
+        }
+       }
+      }
+     },
+     "401": {
+      "description": "Unauthorized",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "403": {
+      "description": "Forbidden - no permissions",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     },
+     "500": {
+      "description": "Internal server error",
+      "content": {
+       "application/json": {
+        "schema": {
+         "$ref": "#/components/schemas/GenericResponse"
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "components": {
+  "schemas": {
+   "AcqTabNexo": {
+    "type": "object",
+    "properties": {
+     "acqId": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "initPartyId": {
+      "type": "string"
+     },
+     "onLnCmplXchgIfFaild": {
+      "type": "boolean"
+     },
+     "onLnCmplXchgIfDclnd": {
+      "type": "boolean"
+     },
+     "offLnCmplXchgIfFaild": {
+      "type": "boolean"
+     },
+     "offLnCmplXchgIfDclnd": {
+      "type": "boolean"
+     },
+     "prtctCardData": {
+      "type": "boolean"
+     },
+     "msgItms": {
+      "type": "string"
+     }
+    }
+   },
+   "StoreTerminalParametersRequest": {
+    "type": "object",
+    "properties": {
+     "serialNumber": {
+      "type": "string",
+      "minLength": 1
+     },
+     "configVersion": {
+      "type": "string"
+     },
+     "tidSent": {
+      "type": "string"
+     },
+     "acqTabNexo": {
+      "$ref": "#/components/schemas/AcqTabNexo"
+     }
+    },
+    "required": [
+     "serialNumber"
+    ]
+   },
+   "GenericResponse": {
+    "type": "object",
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "responseMessage": {
+      "type": "string"
+     }
+    }
+   },
+   "RegisterTerminalRequest": {
+    "type": "object",
+    "properties": {
+     "corporateUuid": {
+      "type": "string",
+      "minLength": 1
+     },
+     "packageOrderUuid": {
+      "type": "string",
+      "minLength": 1
+     },
+     "productOrderUuid": {
+      "type": "string",
+      "minLength": 1
+     },
+     "templateName": {
+      "type": "string",
+      "minLength": 1
+     },
+     "terminalLocation": {
+      "type": "string",
+      "minLength": 1
+     },
+     "terminalCountryCode": {
+      "type": "string",
+      "minLength": 1
+     },
+     "terminalLanguageCode": {
+      "type": "string",
+      "minLength": 1
+     },
+     "terminalSerialNumber": {
+      "type": "string"
+     },
+     "webShopUrl": {
+      "type": "string"
+     },
+     "tokenIOIban": {
+      "type": "string"
+     },
+     "terminalIdAcq": {
+      "type": "string"
+     },
+     "additionalData": {
+      "type": "object",
+      "additionalProperties": {
+       "type": "string"
+      }
+     }
+    },
+    "required": [
+     "corporateUuid",
+     "packageOrderUuid",
+     "productOrderUuid",
+     "templateName",
+     "terminalCountryCode",
+     "terminalLanguageCode",
+     "terminalLocation"
+    ]
+   },
+   "RegisterTerminalResponse": {
+    "type": "object",
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "responseMessage": {
+      "type": "string"
+     },
+     "terminalId": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "tecsWebSecretKey": {
+      "type": "string"
+     },
+     "tokenIOAlias": {
+      "type": "string"
+     },
+     "tokenIOMemberId": {
+      "type": "string"
+     }
+    }
+   },
+   "RegisterTecsCompanyRequest": {
+    "type": "object",
+    "properties": {
+     "corporateUuid": {
+      "type": "string",
+      "minLength": 1
+     },
+     "packageOrderUuid": {
+      "type": "string",
+      "minLength": 1
+     },
+     "productOrderUuid": {
+      "type": "string",
+      "minLength": 1
+     },
+     "templateName": {
+      "type": "string",
+      "minLength": 1
+     },
+     "partnerId": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "partnerName": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "corporateUuid",
+     "packageOrderUuid",
+     "productOrderUuid",
+     "templateName"
+    ]
+   },
+   "ReactivateTerminalRequest": {
+    "type": "object",
+    "properties": {
+     "terminalId": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "reactivationReason": {
+      "type": "string",
+      "minLength": 1
+     }
+    },
+    "required": [
+     "reactivationReason",
+     "terminalId"
+    ]
+   },
+   "ReactivateTerminalResponse": {
+    "type": "object",
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "responseMessage": {
+      "type": "string"
+     },
+     "packageOrderUuid": {
+      "type": "string"
+     },
+     "corporateUuid": {
+      "type": "string"
+     },
+     "productOrderUuid": {
+      "type": "string"
+     }
+    }
+   },
+   "UpdateTemplateXmlRequest": {
+    "type": "object",
+    "properties": {
+     "templateName": {
+      "type": "string",
+      "minLength": 1
+     },
+     "templateXml": {
+      "type": "string",
+      "minLength": 1
+     }
+    },
+    "required": [
+     "templateName",
+     "templateXml"
+    ]
+   },
+   "UpdateMerchantRequest": {
+    "type": "object",
+    "properties": {
+     "corporateUuid": {
+      "type": "string",
+      "minLength": 1
+     },
+     "name": {
+      "type": "string"
+     },
+     "vuNummer": {
+      "type": "string",
+      "maxLength": 15,
+      "minLength": 0
+     },
+     "country": {
+      "type": "string"
+     },
+     "city": {
+      "type": "string"
+     },
+     "state": {
+      "type": "string"
+     },
+     "zipcode": {
+      "type": "string"
+     },
+     "street": {
+      "type": "string"
+     },
+     "merchantCategoryCode": {
+      "type": "string",
+      "maxLength": 100,
+      "minLength": 0
+     }
+    },
+    "required": [
+     "corporateUuid"
+    ]
+   },
+   "TransactionTurnoverRequest": {
+    "type": "object",
+    "properties": {
+     "transactionDateFrom": {
+      "type": "string",
+      "format": "date-time"
+     },
+     "transactionDateTo": {
+      "type": "string",
+      "format": "date-time"
+     },
+     "period": {
+      "type": "string",
+      "pattern": "HOUR|DAY|MONTH|YEAR"
+     }
+    },
+    "required": [
+     "transactionDateFrom",
+     "transactionDateTo"
+    ]
+   },
+   "TransactionsTurnoverResponse": {
+    "type": "object",
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "responseMessage": {
+      "type": "string"
+     },
+     "transactionDateFrom": {
+      "type": "string",
+      "format": "date-time"
+     },
+     "transactionDateTo": {
+      "type": "string",
+      "format": "date-time"
+     },
+     "period": {
+      "type": "string"
+     },
+     "turnovers": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/TurnoverPerCurrency"
+      }
+     }
+    }
+   },
+   "Turnover": {
+    "type": "object",
+    "properties": {
+     "amount": {
+      "type": "integer",
+      "format": "int64"
+     },
+     "datePart": {
+      "type": "string"
+     }
+    }
+   },
+   "TurnoverPerCurrency": {
+    "type": "object",
+    "properties": {
+     "currency": {
+      "type": "string"
+     },
+     "turnover": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/Turnover"
+      }
+     }
+    }
+   },
+   "PaginationRequest": {
+    "type": "object",
+    "properties": {
+     "page": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "size": {
+      "type": "integer",
+      "format": "int32"
+     }
+    }
+   },
+   "TransactionHistoryRequest": {
+    "type": "object",
+    "properties": {
+     "transactionId": {
+      "type": "string"
+     },
+     "referencedTransactionId": {
+      "type": "string"
+     },
+     "terminalId": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "sourceId": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "transactionType": {
+      "type": "string"
+     },
+     "transactionAmountFrom": {
+      "type": "string"
+     },
+     "transactionAmountTo": {
+      "type": "string"
+     },
+     "clearingAmountFrom": {
+      "type": "string"
+     },
+     "clearingAmountTo": {
+      "type": "string"
+     },
+     "clearingCurrency": {
+      "type": "string"
+     },
+     "transactionDateFrom": {
+      "type": "string",
+      "format": "date-time"
+     },
+     "transactionDateTo": {
+      "type": "string",
+      "format": "date-time"
+     },
+     "authorizationCode": {
+      "type": "string"
+     },
+     "tecsengineResponseCodeFrom": {
+      "type": "string"
+     },
+     "tecsengineResponseCodeTo": {
+      "type": "string"
+     },
+     "receiptNumber": {
+      "type": "string"
+     },
+     "retrievalReferenceNumber": {
+      "type": "string"
+     },
+     "traceNumber": {
+      "type": "string"
+     },
+     "clearingStatus": {
+      "type": "string"
+     },
+     "cardBrand": {
+      "type": "string"
+     },
+     "pagination": {
+      "$ref": "#/components/schemas/PaginationRequest"
+     },
+     "corporateUUID": {
+      "type": "string"
+     },
+     "orderByTransactionDate": {
+      "type": "string",
+      "pattern": "asc|desc"
+     },
+     "wallet": {
+      "type": "string",
+      "description": "Filter by wallet type. Allowed values: APAY, GPAY, GPAY3D",
+      "enum": [
+       "APAY",
+       "GPAY",
+       "GPAY3D"
+      ],
+      "pattern": "APAY|GPAY|GPAY3D"
+     },
+     "3DSecure": {
+      "type": "string"
+     }
+    }
+   },
+   "PaginationResponse": {
+    "type": "object",
+    "properties": {
+     "page": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "size": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "totalElements": {
+      "type": "integer",
+      "format": "int64"
+     },
+     "totalPages": {
+      "type": "integer",
+      "format": "int32"
+     }
+    }
+   },
+   "TransactionHistory": {
+    "type": "object",
+    "properties": {
+     "transactionId": {
+      "type": "string"
+     },
+     "transactionType": {
+      "type": "string"
+     },
+     "terminalId": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "transactionDate": {
+      "type": "string",
+      "format": "date-time"
+     },
+     "authorizationCode": {
+      "type": "string"
+     },
+     "tecsengineResponseCode": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "tecsengineResponseText": {
+      "type": "string"
+     },
+     "responseCodeFromAS": {
+      "type": "string"
+     },
+     "receiptNumber": {
+      "type": "string"
+     },
+     "cardNumber": {
+      "type": "string"
+     },
+     "cardExpiration": {
+      "type": "string"
+     },
+     "cardBrand": {
+      "type": "string"
+     },
+     "retrievalReferenceNumber": {
+      "type": "string"
+     },
+     "traceNumber": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "transactionSource": {
+      "type": "string"
+     },
+     "cardEntry": {
+      "type": "string"
+     },
+     "clearingStatus": {
+      "type": "string"
+     },
+     "clearingAmount": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "clearingCurrency": {
+      "type": "string"
+     },
+     "transactionAmount": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "transactionCurrency": {
+      "type": "string"
+     },
+     "merchantNumber": {
+      "type": "string"
+     },
+     "corporateName": {
+      "type": "string"
+     },
+     "clientId": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "paymentReason": {
+      "type": "string"
+     },
+     "dateTimeCreate": {
+      "type": "string",
+      "format": "date-time"
+     },
+     "seqNo": {
+      "type": "integer",
+      "format": "int64"
+     },
+     "requestIssuerDate": {
+      "type": "string",
+      "format": "date-time"
+     },
+     "responseIssuerDate": {
+      "type": "string",
+      "format": "date-time"
+     },
+     "paymentTokenPublicId": {
+      "type": "string"
+     }
+    }
+   },
+   "TransactionHistoryResponse": {
+    "type": "object",
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "responseMessage": {
+      "type": "string"
+     },
+     "pagination": {
+      "$ref": "#/components/schemas/PaginationResponse"
+     },
+     "transactionHistories": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/TransactionHistory"
+      }
+     }
+    }
+   },
+   "StatusTransactionRequest": {
+    "type": "object",
+    "properties": {
+     "transactionSeqNumber": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "transactionId": {
+      "type": "string"
+     },
+     "terminalId": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "sourceId": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "clientId": {
+      "type": "integer",
+      "format": "int32"
+     }
+    }
+   },
+   "StatusTransactionResponse": {
+    "type": "object",
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "responseMessage": {
+      "type": "string"
+     },
+     "transactionSeqNumber": {
+      "type": "integer",
+      "format": "int64"
+     },
+     "transactionId": {
+      "type": "string"
+     },
+     "transactionType": {
+      "type": "string"
+     },
+     "merchantNumber": {
+      "type": "string"
+     },
+     "merchantName": {
+      "type": "string"
+     },
+     "terminalId": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "originalTerminalId": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "acquirerTerminalId": {
+      "type": "string"
+     },
+     "acquirerName": {
+      "type": "string"
+     },
+     "amount": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "currency": {
+      "type": "string"
+     },
+     "transactionDate": {
+      "type": "string",
+      "format": "date-time"
+     },
+     "transactionServerDate": {
+      "type": "string",
+      "format": "date-time"
+     },
+     "authorizationDate": {
+      "type": "string",
+      "format": "date-time"
+     },
+     "transactionClearingDate": {
+      "type": "string",
+      "format": "date-time"
+     },
+     "authorizationCode": {
+      "type": [
+       "string",
+       "null"
+      ],
+      "description": "Authorization code returned by the acquirer; null when not available"
+     },
+     "tecsengineResponseCode": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "tecsengineResponseText": {
+      "type": "string"
+     },
+     "responseCodeFromAS": {
+      "type": "string"
+     },
+     "receiptNumber": {
+      "type": "string"
+     },
+     "cardNumber": {
+      "type": "string"
+     },
+     "cardExpiration": {
+      "type": "string"
+     },
+     "paymentReason": {
+      "type": "string"
+     },
+     "cardBrand": {
+      "type": "string"
+     },
+     "retrievalReferenceNumber": {
+      "type": "string"
+     },
+     "traceNumber": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "clientId": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "originalClientId": {
+      "type": "string"
+     },
+     "emvApplicationId": {
+      "type": "string"
+     },
+     "emvApplicationLabel": {
+      "type": "string"
+     },
+     "cvm": {
+      "type": "string"
+     },
+     "applicationCryptogram": {
+      "type": "string"
+     },
+     "serviceCode": {
+      "type": "string"
+     },
+     "transactionSource": {
+      "type": "string"
+     },
+     "cardEntry": {
+      "type": "string"
+     },
+     "terminalLocation": {
+      "type": "string"
+     },
+     "originalTransactionId": {
+      "type": "string"
+     },
+     "clearingStatus": {
+      "type": "string"
+     },
+     "clearingAmount": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "clearingCurrency": {
+      "type": "string"
+     },
+     "clearingProcessedDate": {
+      "type": "string",
+      "format": "date-time"
+     },
+     "clearingBatchId": {
+      "type": "string"
+     },
+     "clearingDate": {
+      "type": "string",
+      "format": "date-time"
+     },
+     "tipAmount": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "settlementStatus": {
+      "type": "string"
+     },
+     "terminalEndOfDayDate": {
+      "type": "string",
+      "format": "date-time"
+     },
+     "ecrData": {
+      "type": "string"
+     }
+    }
+   },
+   "RefundTransactionRequest": {
+    "type": "object",
+    "properties": {
+     "transactionId": {
+      "type": "string",
+      "minLength": 1
+     },
+     "transactionDate": {
+      "type": "string",
+      "example": "20230509114131",
+      "pattern": "(\\d{4}(0[0-9]|1[0-2])([0-2][0-9]|3[0-1])([0-1][0-9]|2[0-4])(([0-5][0-9]){2}))"
+     },
+     "terminalId": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "clientId": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "originalTransactionId": {
+      "type": "string",
+      "minLength": 1
+     },
+     "cvc": {
+      "type": "string"
+     },
+     "amount": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "currency": {
+      "type": "string",
+      "minLength": 1
+     },
+     "receiptNumber": {
+      "type": "string",
+      "minLength": 1
+     },
+     "paymentReason": {
+      "type": "string"
+     },
+     "terminalLocation": {
+      "type": "string"
+     },
+     "password": {
+      "type": "string"
+     },
+     "ecData": {
+      "type": "string"
+     },
+     "ecrData": {
+      "type": "string"
+     },
+     "emvData": {
+      "type": "string"
+     },
+     "languageCode": {
+      "type": "string"
+     },
+     "receiptLayout": {
+      "type": "integer",
+      "format": "int32",
+      "maximum": 99,
+      "minimum": 1
+     }
+    },
+    "required": [
+     "amount",
+     "clientId",
+     "currency",
+     "originalTransactionId",
+     "receiptNumber",
+     "terminalId",
+     "transactionDate",
+     "transactionId"
+    ]
+   },
+   "RefundTransactionResponse": {
+    "type": "object",
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "responseMessage": {
+      "type": "string"
+     },
+     "transactionId": {
+      "type": "string"
+     },
+     "messageType": {
+      "type": "string"
+     },
+     "cardNumber": {
+      "type": "string"
+     },
+     "originalTransactionId": {
+      "type": "string"
+     },
+     "amount": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "ecrData": {
+      "type": "string"
+     },
+     "emvData": {
+      "type": "string"
+     },
+     "userData": {
+      "type": "string"
+     },
+     "transactionDate": {
+      "type": "string",
+      "format": "date-time"
+     },
+     "authorizationCode": {
+      "type": "string"
+     },
+     "txType": {
+      "type": "string"
+     },
+     "acquirerName": {
+      "type": "string"
+     },
+     "acquirerId": {
+      "type": "string"
+     },
+     "cardBrand": {
+      "type": "string"
+     },
+     "merchantNumber": {
+      "type": "string"
+     },
+     "serialNumber": {
+      "type": "string"
+     },
+     "traceNumber": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "originalTraceNumber": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "svc": {
+      "type": "string"
+     },
+     "balanceAmount": {
+      "type": "string"
+     },
+     "exchangeRate": {
+      "type": "string"
+     },
+     "merchantName": {
+      "type": "string"
+     },
+     "merchantAddress": {
+      "type": "string"
+     },
+     "receiptHeader": {
+      "type": "string"
+     },
+     "receiptFooter": {
+      "type": "string"
+     },
+     "actualBonusPoints": {
+      "type": "string"
+     },
+     "exchangeFee": {
+      "type": "integer",
+      "format": "int64"
+     }
+    }
+   },
+   "PreAuthTransactionCompletionRequest": {
+    "type": "object",
+    "properties": {
+     "transactionId": {
+      "type": "string",
+      "minLength": 1
+     },
+     "transactionDate": {
+      "type": "string",
+      "example": "20230509114131",
+      "pattern": "(\\d{4}(0[0-9]|1[0-2])([0-2][0-9]|3[0-1])([0-1][0-9]|2[0-4])(([0-5][0-9]){2}))"
+     },
+     "terminalId": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "clientId": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "originalTransactionId": {
+      "type": "string",
+      "minLength": 1
+     },
+     "cvc": {
+      "type": "string"
+     },
+     "amount": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "currency": {
+      "type": "string",
+      "minLength": 1
+     },
+     "receiptNumber": {
+      "type": "string",
+      "minLength": 1
+     },
+     "paymentReason": {
+      "type": "string"
+     },
+     "terminalLocation": {
+      "type": "string"
+     },
+     "password": {
+      "type": "string"
+     },
+     "ecData": {
+      "type": "string"
+     },
+     "ecrData": {
+      "type": "string"
+     },
+     "emvData": {
+      "type": "string"
+     },
+     "languageCode": {
+      "type": "string"
+     },
+     "receiptLayout": {
+      "type": "integer",
+      "format": "int32",
+      "maximum": 99,
+      "minimum": 1
+     }
+    },
+    "required": [
+     "amount",
+     "clientId",
+     "currency",
+     "originalTransactionId",
+     "receiptNumber",
+     "terminalId",
+     "transactionDate",
+     "transactionId"
+    ]
+   },
+   "PreAuthTransactionCompletionResponse": {
+    "type": "object",
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "responseMessage": {
+      "type": "string"
+     },
+     "transactionId": {
+      "type": "string"
+     },
+     "messageType": {
+      "type": "string"
+     },
+     "cardNumber": {
+      "type": "string"
+     },
+     "originalTransactionId": {
+      "type": "string"
+     },
+     "amount": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "ecrData": {
+      "type": "string"
+     },
+     "emvData": {
+      "type": "string"
+     },
+     "userData": {
+      "type": "string"
+     },
+     "transactionDate": {
+      "type": "string",
+      "format": "date-time"
+     },
+     "authorizationCode": {
+      "type": "string"
+     },
+     "txType": {
+      "type": "string"
+     },
+     "acquirerName": {
+      "type": "string"
+     },
+     "acquirerId": {
+      "type": "string"
+     },
+     "cardBrand": {
+      "type": "string"
+     },
+     "merchantNumber": {
+      "type": "string"
+     },
+     "serialNumber": {
+      "type": "string"
+     },
+     "traceNumber": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "originalTraceNumber": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "svc": {
+      "type": "string"
+     },
+     "balanceAmount": {
+      "type": "string"
+     },
+     "exchangeRate": {
+      "type": "string"
+     },
+     "merchantName": {
+      "type": "string"
+     },
+     "merchantAddress": {
+      "type": "string"
+     },
+     "receiptHeader": {
+      "type": "string"
+     },
+     "receiptFooter": {
+      "type": "string"
+     },
+     "actualBonusPoints": {
+      "type": "string"
+     },
+     "exchangeFee": {
+      "type": "integer",
+      "format": "int64"
+     }
+    }
+   },
+   "PaymentTransactionRequest": {
+    "type": "object",
+    "properties": {
+     "cardNumberReference": {
+      "type": "string",
+      "minLength": 1
+     },
+     "transactionType": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "AUTHORIZATION|PRE-AUTH"
+     },
+     "transactionId": {
+      "type": "string"
+     },
+     "transactionDate": {
+      "type": "string",
+      "example": "20230509114131",
+      "pattern": "(\\d{4}(0[0-9]|1[0-2])([0-2][0-9]|3[0-1])([0-1][0-9]|2[0-4])(([0-5][0-9]){2}))"
+     },
+     "terminalId": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "clientId": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "cvc": {
+      "type": "string"
+     },
+     "amount": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "currency": {
+      "type": "string",
+      "minLength": 1
+     },
+     "receiptNumber": {
+      "type": "string",
+      "minLength": 1
+     },
+     "paymentReason": {
+      "type": "string"
+     },
+     "terminalLocation": {
+      "type": "string"
+     },
+     "password": {
+      "type": "string"
+     },
+     "ecData": {
+      "type": "string"
+     },
+     "ecrData": {
+      "type": "string"
+     },
+     "emvData": {
+      "type": "string"
+     },
+     "languageCode": {
+      "type": "string"
+     },
+     "receiptLayout": {
+      "type": "integer",
+      "format": "int32",
+      "maximum": 99,
+      "minimum": 1
+     }
+    },
+    "required": [
+     "amount",
+     "cardNumberReference",
+     "clientId",
+     "currency",
+     "receiptNumber",
+     "terminalId",
+     "transactionDate",
+     "transactionType"
+    ]
+   },
+   "PaymentSredRequest": {
+    "type": "object",
+    "description": "Payment SRED request for processing card-present SRED payload via DecryptX and TECS XML gateway",
+    "properties": {
+     "terminalId": {
+      "type": "string",
+      "description": "Terminal ID - 8 digits",
+      "example": "88092010",
+      "minLength": 1,
+      "pattern": "^\\d{8}$"
+     },
+     "currency": {
+      "type": "string",
+      "description": "Currency code - 3 uppercase letters (ISO 4217)",
+      "example": "EUR",
+      "minLength": 1,
+      "pattern": "^[A-Z]{3}$"
+     },
+     "amount": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Transaction amount in minor units (cents)",
+      "example": 1234,
+      "minimum": 1
+     },
+     "txtype": {
+      "type": "string",
+      "description": "Transaction type",
+      "enum": [
+       "SALE",
+       "PRE-AUTH"
+      ],
+      "example": "SALE",
+      "minLength": 1,
+      "pattern": "^(SALE|PRE-AUTH)$"
+     },
+     "devicePayload": {
+      "type": "string",
+      "description": "SRED encrypted device payload from the device (minimum 32 characters)",
+      "example": "<SRED_PAYLOAD_FROM_DEVICE>",
+      "maxLength": 2147483647,
+      "minLength": 32
+     },
+     "password": {
+      "type": "string",
+      "description": "Terminal password sent as Kennwort in TECS XML (optional)",
+      "example": "testPWD"
+     }
+    },
+    "required": [
+     "amount",
+     "currency",
+     "devicePayload",
+     "terminalId",
+     "txtype"
+    ]
+   },
+   "PaymentSredResponse": {
+    "type": "object",
+    "description": "Payment SRED response from TECS XML gateway with DecryptX data",
+    "properties": {
+     "responseCode": {
+      "type": "string",
+      "description": "Response code - 00 for success, otherwise error code",
+      "example": "00"
+     },
+     "responseMessage": {
+      "type": "string",
+      "description": "Response message - 'Approved' for success, error description otherwise",
+      "example": "Approved"
+     },
+     "transactionId": {
+      "type": "string",
+      "description": "Transaction ID generated by the backend",
+      "example": "20251008160321"
+     },
+     "originalTransactionId": {
+      "type": "string",
+      "description": "Original transaction ID from gateway",
+      "example": 20251008160321
+     },
+     "terminalId": {
+      "type": "string",
+      "description": "Terminal ID used for the transaction",
+      "example": "88092010"
+     },
+     "dateTimeTx": {
+      "type": "string",
+      "description": "Date and time of the transaction",
+      "example": "20251008160321"
+     },
+     "authorizationNumber": {
+      "type": "string",
+      "description": "Authorization number from the gateway",
+      "example": 68529
+     },
+     "merchantId": {
+      "type": "string",
+      "description": "Merchant ID (VU-NUMMER)",
+      "example": "123456789012345"
+     },
+     "acquirerName": {
+      "type": "string",
+      "description": "Acquirer name parsed from KKG field",
+      "example": "TECS Offline"
+     },
+     "cardType": {
+      "type": "string",
+      "description": "Card type parsed from KKG field",
+      "example": "MASTERCARD"
+     },
+     "sred": {
+      "$ref": "#/components/schemas/SredInfo",
+      "description": "SRED-specific data from DecryptX"
+     }
+    }
+   },
+   "SredInfo": {
+    "type": "object",
+    "description": "SRED information from DecryptX decryption",
+    "properties": {
+     "panMasked": {
+      "type": "string",
+      "description": "Masked PAN (first 6 and last 4 digits)",
+      "example": "541333******3537"
+     },
+     "expDate": {
+      "type": "string",
+      "description": "Card expiry date in MMYY format",
+      "example": "1027"
+     },
+     "serviceCode": {
+      "type": "string",
+      "description": "Service code from the card",
+      "example": "201"
+     },
+     "device": {
+      "type": "string",
+      "description": "Device type that provided the SRED payload",
+      "example": "IDTECH"
+     },
+     "serial": {
+      "type": "string",
+      "description": "Device serial number",
+      "example": "1234567890"
+     },
+     "mode": {
+      "type": "string",
+      "description": "Decryption mode",
+      "example": "SRED"
+     }
+    }
+   },
+   "PaymentManualRequest": {
+    "type": "object",
+    "description": "Payment Manual request for processing card payments via TECS XML gateway",
+    "properties": {
+     "terminalId": {
+      "type": "string",
+      "description": "Terminal ID - 8 digits",
+      "example": "88092010",
+      "minLength": 1,
+      "pattern": "^\\d{8}$"
+     },
+     "currency": {
+      "type": "string",
+      "description": "Currency code - 3 uppercase letters (ISO 4217)",
+      "example": "EUR",
+      "minLength": 1,
+      "pattern": "^[A-Z]{3}$"
+     },
+     "amount": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Transaction amount in minor units (cents)",
+      "example": 1234,
+      "minimum": 1
+     },
+     "txtype": {
+      "type": "string",
+      "description": "Transaction type",
+      "enum": [
+       "SALE",
+       "PRE-AUTH"
+      ],
+      "example": "SALE",
+      "minLength": 1,
+      "pattern": "^(SALE|PRE-AUTH)$"
+     },
+     "cardNumber": {
+      "type": "string",
+      "description": "Card number - 12 to 19 digits, must pass Luhn validation",
+      "example": "5413330056003537",
+      "minLength": 1,
+      "pattern": "^\\d{12,19}$"
+     },
+     "expDate": {
+      "type": "string",
+      "description": "Card expiry date in MMYY format",
+      "example": "1027",
+      "minLength": 1,
+      "pattern": "^(0[1-9]|1[0-2])\\d{2}$"
+     },
+     "cvc": {
+      "type": "string",
+      "description": "Card verification code - 3-4 digits (optional)",
+      "example": "123",
+      "pattern": "^\\d{3,4}$"
+     },
+     "password": {
+      "type": "string",
+      "description": "Terminal password sent as Kennwort in TECS XML (optional)",
+      "example": "testPWD"
+     }
+    },
+    "required": [
+     "amount",
+     "cardNumber",
+     "currency",
+     "expDate",
+     "terminalId",
+     "txtype"
+    ]
+   },
+   "PaymentManualResponse": {
+    "type": "object",
+    "description": "Payment Manual response from TECS XML gateway",
+    "properties": {
+     "responseCode": {
+      "type": "string",
+      "description": "Response code - 00 for success, otherwise error code",
+      "example": "00"
+     },
+     "responseMessage": {
+      "type": "string",
+      "description": "Response message - 'Approved' for success, error description otherwise",
+      "example": "Approved"
+     },
+     "transactionId": {
+      "type": "string",
+      "description": "Transaction ID generated by the backend",
+      "example": "20251008160321"
+     },
+     "originalTransactionId": {
+      "type": "string",
+      "description": "Original transaction ID from gateway",
+      "example": 20251008160321
+     },
+     "terminalId": {
+      "type": "string",
+      "description": "Terminal ID used for the transaction",
+      "example": "88092010"
+     },
+     "dateTimeTx": {
+      "type": "string",
+      "description": "Date and time of the transaction",
+      "example": "20251008160321"
+     },
+     "authorizationNumber": {
+      "type": "string",
+      "description": "Authorization number from the gateway",
+      "example": 68529
+     },
+     "merchantId": {
+      "type": "string",
+      "description": "Merchant ID (VU-NUMMER)",
+      "example": "123456789012345"
+     },
+     "acquirerName": {
+      "type": "string",
+      "description": "Acquirer name parsed from KKG field",
+      "example": "TECS Offline"
+     },
+     "cardType": {
+      "type": "string",
+      "description": "Card type parsed from KKG field",
+      "example": "MASTERCARD"
+     }
+    }
+   },
+   "TransactionHistoryMcomRequest": {
+    "type": "object",
+    "properties": {
+     "transactionId": {
+      "type": "string"
+     },
+     "referencedTransactionId": {
+      "type": "string"
+     },
+     "terminalId": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "sourceId": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "transactionType": {
+      "type": "string"
+     },
+     "transactionAmountFrom": {
+      "type": "string"
+     },
+     "transactionAmountTo": {
+      "type": "string"
+     },
+     "clearingAmountFrom": {
+      "type": "string"
+     },
+     "clearingAmountTo": {
+      "type": "string"
+     },
+     "clearingCurrency": {
+      "type": "string"
+     },
+     "transactionDateFrom": {
+      "type": "string",
+      "format": "date-time"
+     },
+     "transactionDateTo": {
+      "type": "string",
+      "format": "date-time"
+     },
+     "authorizationCode": {
+      "type": "string"
+     },
+     "tecsengineResponseCodeFrom": {
+      "type": "string"
+     },
+     "tecsengineResponseCodeTo": {
+      "type": "string"
+     },
+     "receiptNumber": {
+      "type": "string"
+     },
+     "retrievalReferenceNumber": {
+      "type": "string"
+     },
+     "traceNumber": {
+      "type": "string"
+     },
+     "clearingStatus": {
+      "type": "string"
+     },
+     "cardBrand": {
+      "type": "string"
+     },
+     "pagination": {
+      "$ref": "#/components/schemas/PaginationRequest"
+     },
+     "corporateUUID": {
+      "type": "string"
+     },
+     "paymentTokenPublicId": {
+      "type": "string"
+     }
+    }
+   },
+   "TransactionHistoryMcomResponse": {
+    "type": "object",
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "responseMessage": {
+      "type": "string"
+     },
+     "pagination": {
+      "$ref": "#/components/schemas/PaginationResponse"
+     },
+     "transactionHistories": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/TransactionHistory"
+      }
+     }
+    }
+   },
+   "Filter": {
+    "type": "object",
+    "properties": {
+     "corporateUuid": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "hwserialno": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "fulltextSearch": {
+      "type": "string"
+     },
+     "terminalType": {
+      "type": "string"
+     }
+    }
+   },
+   "ListTerminalsRequest": {
+    "type": "object",
+    "properties": {
+     "corporateUuid": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "filter": {
+      "$ref": "#/components/schemas/Filter"
+     },
+     "pagination": {
+      "$ref": "#/components/schemas/PaginationRequest"
+     }
+    }
+   },
+   "ListTerminalsResponse": {
+    "type": "object",
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "responseMessage": {
+      "type": "string"
+     },
+     "terminals": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/Terminal"
+      }
+     }
+    }
+   },
+   "Terminal": {
+    "type": "object",
+    "properties": {
+     "packageOrderUuid": {
+      "type": "string"
+     },
+     "termn": {
+      "type": "string"
+     },
+     "no": {
+      "type": "string"
+     },
+     "currency": {
+      "type": "string"
+     },
+     "hwSerialNo": {
+      "type": "string"
+     },
+     "status": {
+      "type": "string"
+     },
+     "termModel": {
+      "type": "string"
+     },
+     "termLocation": {
+      "type": "string"
+     },
+     "mpExpectedSerialNo": {
+      "type": "string"
+     },
+     "keepAliveStatus": {
+      "type": "string"
+     },
+     "kaDateTimeCreate": {
+      "type": "string",
+      "format": "date-time"
+     },
+     "acquirings": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/TerminalAcquiringDto"
+      }
+     }
+    }
+   },
+   "TerminalAcquiringDto": {
+    "type": "object",
+    "properties": {
+     "productOrderUuid": {
+      "type": "string"
+     },
+     "name": {
+      "type": "string"
+     }
+    }
+   },
+   "KeepAliveRequest": {
+    "type": "object",
+    "properties": {
+     "terminalId": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "hwserialno": {
+      "type": "string"
+     },
+     "kaDateTimeFrom": {
+      "type": "string",
+      "example": "2024-04-11T11:41:31",
+      "pattern": "yyyy-MM-dd'T'HH:mm:ss"
+     },
+     "kaDateTimeTo": {
+      "type": "string",
+      "example": "2024-04-11T11:41:31",
+      "pattern": "yyyy-MM-dd'T'HH:mm:ss"
+     },
+     "terminalDateTimeFrom": {
+      "type": "string",
+      "example": "2024-04-11T11:41:31",
+      "pattern": "yyyy-MM-dd'T'HH:mm:ss"
+     },
+     "terminalDateTimeTo": {
+      "type": "string",
+      "example": "2024-04-11T11:41:31",
+      "pattern": "yyyy-MM-dd'T'HH:mm:ss"
+     },
+     "pagination": {
+      "$ref": "#/components/schemas/PaginationRequest"
+     }
+    }
+   },
+   "KeepAlive": {
+    "type": "object",
+    "properties": {
+     "terminalId": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "hwSerialNo": {
+      "type": "string"
+     },
+     "kaDateTime": {
+      "type": "string",
+      "format": "date-time"
+     },
+     "terminalDateTime": {
+      "type": "string",
+      "format": "date-time"
+     },
+     "swVersion": {
+      "type": "string"
+     },
+     "swVersionExpec": {
+      "type": "string"
+     },
+     "pinPadSn": {
+      "type": "string"
+     },
+     "pinPadSnExpec": {
+      "type": "string"
+     },
+     "pinPadFw": {
+      "type": "string"
+     },
+     "pinPadFwExpec": {
+      "type": "string"
+     },
+     "responseDateTime": {
+      "type": "string",
+      "format": "date-time"
+     },
+     "responseConfigParam": {
+      "type": "string"
+     },
+     "kaResponseCode": {
+      "type": "number"
+     },
+     "kaConfigParams": {
+      "type": "string"
+     },
+     "termConfigParams": {
+      "type": "string"
+     }
+    }
+   },
+   "KeepAliveResponse": {
+    "type": "object",
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "responseMessage": {
+      "type": "string"
+     },
+     "keepAliveData": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/KeepAlive"
+      }
+     },
+     "pagination": {
+      "$ref": "#/components/schemas/PaginationResponse"
+     }
+    }
+   },
+   "GetTerminalIdRequest": {
+    "type": "object",
+    "properties": {
+     "deviceSerialNumber": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      },
+      "maxItems": 2147483647,
+      "minItems": 1
+     }
+    },
+    "required": [
+     "deviceSerialNumber"
+    ]
+   },
+   "GetTerminalIdResponse": {
+    "type": "object",
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "responseMessage": {
+      "type": "string"
+     },
+     "terminals": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/TerminalInfo"
+      }
+     },
+     "duplicateTerminalIds": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     }
+    }
+   },
+   "TerminalInfo": {
+    "type": "object",
+    "properties": {
+     "termn": {
+      "type": "string"
+     },
+     "hwSerialNo": {
+      "type": "string"
+     },
+     "mpExpectedSerialNo": {
+      "type": "string"
+     }
+    }
+   },
+   "GetTemplateXmlRequest": {
+    "type": "object",
+    "properties": {
+     "templateName": {
+      "type": "string",
+      "minLength": 1
+     }
+    },
+    "required": [
+     "templateName"
+    ]
+   },
+   "GetEmvDataRequest": {
+    "type": "object",
+    "properties": {
+     "transactionId": {
+      "type": "string",
+      "minLength": 1
+     },
+     "terminalId": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "transactionType": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "terminalId",
+     "transactionId",
+     "transactionType"
+    ]
+   },
+   "GetEmvDataResponse": {
+    "type": "object",
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "responseMessage": {
+      "type": "string"
+     },
+     "emvData": {
+      "type": "string"
+     }
+    }
+   },
+   "GetEcrDataRequest": {
+    "type": "object",
+    "properties": {
+     "transactionId": {
+      "type": "string",
+      "minLength": 1
+     },
+     "terminalId": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "transactionType": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "terminalId",
+     "transactionId",
+     "transactionType"
+    ]
+   },
+   "GetEcrDataResponse": {
+    "type": "object",
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "responseMessage": {
+      "type": "string"
+     },
+     "ecrData": {
+      "type": "string"
+     }
+    }
+   },
+   "GetEcomParametersRequest": {
+    "type": "object",
+    "properties": {
+     "terminalId": {
+      "type": "integer",
+      "format": "int32"
+     }
+    },
+    "required": [
+     "terminalId"
+    ]
+   },
+   "GetEcomParametersResponse": {
+    "type": "object",
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "responseMessage": {
+      "type": "string"
+     },
+     "ecomSkey": {
+      "type": "string"
+     },
+     "ecomPass": {
+      "type": "string"
+     }
+    }
+   },
+   "GetEcDataEcomRequest": {
+    "type": "object",
+    "properties": {
+     "transactionId": {
+      "type": "string",
+      "minLength": 1
+     },
+     "terminalId": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "transactionType": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "terminalId",
+     "transactionId",
+     "transactionType"
+    ]
+   },
+   "GetEcDataEcomResponse": {
+    "type": "object",
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "responseMessage": {
+      "type": "string"
+     },
+     "ecomData": {
+      "type": "string"
+     }
+    }
+   },
+   "GetReportDataRequest": {
+    "type": "object",
+    "properties": {
+     "terminalId": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "corporateId": {
+      "type": "string"
+     },
+     "currency": {
+      "type": "string",
+      "maxLength": 3,
+      "minLength": 3
+     },
+     "clearingDateFrom": {
+      "type": "string",
+      "description": "Date and time in the format yyyy-MM-dd'T'HH:mm:ss",
+      "example": "2024-04-11T11:41:31",
+      "pattern": "yyyy-MM-dd'T'HH:mm:ss"
+     },
+     "clearingDateTo": {
+      "type": "string",
+      "description": "Date and time in the format yyyy-MM-dd'T'HH:mm:ss",
+      "example": "2024-04-11T11:41:31",
+      "pattern": "yyyy-MM-dd'T'HH:mm:ss"
+     }
+    },
+    "required": [
+     "clearingDateFrom",
+     "clearingDateTo",
+     "corporateId",
+     "currency"
+    ]
+   },
+   "CardBrandReportData": {
+    "type": "object",
+    "properties": {
+     "cardBrand": {
+      "type": "string"
+     },
+     "debitCount": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "debitTotal": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "tipAmount": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "creditCount": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "creditTotal": {
+      "type": "integer",
+      "format": "int32"
+     }
+    }
+   },
+   "GetReportDataResponse": {
+    "type": "object",
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "responseMessage": {
+      "type": "string"
+     },
+     "sumOverDebitTx": {
+      "$ref": "#/components/schemas/SumOverDebitTx"
+     },
+     "sumOverCreditTx": {
+      "$ref": "#/components/schemas/SumOverCreditTx"
+     },
+     "cardBrandReportData": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/CardBrandReportData"
+      }
+     }
+    }
+   },
+   "SumOverCreditTx": {
+    "type": "object",
+    "properties": {
+     "creditCountSum": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "creditTotalSum": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "firstTx": {
+      "type": "number"
+     },
+     "lastTx": {
+      "type": "number"
+     }
+    }
+   },
+   "SumOverDebitTx": {
+    "type": "object",
+    "properties": {
+     "debitCountSum": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "tipAmountSum": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "debitTotalSum": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "firstTx": {
+      "type": "number"
+     },
+     "lastTx": {
+      "type": "number"
+     }
+    }
+   },
+   "MandatorClearingExportRequest": {
+    "type": "object",
+    "properties": {
+     "clearingDateFrom": {
+      "type": "string",
+      "description": "Date and time in the format yyyy-MM-dd'T'HH:mm:ssZ",
+      "example": "2024-04-11T11:41:31+02:00",
+      "pattern": "yyyy-MM-dd'T'HH:mm:ssZ"
+     },
+     "clearingDateTo": {
+      "type": "string",
+      "description": "Date and time in the format yyyy-MM-dd'T'HH:mm:ssZ",
+      "example": "2024-04-11T11:41:31+02:00",
+      "pattern": "yyyy-MM-dd'T'HH:mm:ssZ"
+     },
+     "pagination": {
+      "$ref": "#/components/schemas/PaginationRequest"
+     }
+    },
+    "required": [
+     "clearingDateFrom",
+     "clearingDateTo"
+    ]
+   },
+   "MandatorClearingExportResponse": {
+    "type": "object",
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "responseMessage": {
+      "type": "string"
+     },
+     "records": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/MandatorClearingExportResponseDto"
+      }
+     }
+    }
+   },
+   "MandatorClearingExportResponseDto": {
+    "type": "object",
+    "properties": {
+     "transactionSeqNumber": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "transactionId": {
+      "type": "string"
+     },
+     "transactionType": {
+      "type": "string"
+     },
+     "merchantNumber": {
+      "type": "string"
+     },
+     "merchantName": {
+      "type": "string"
+     },
+     "terminalId": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "terminalLocation": {
+      "type": "string"
+     },
+     "acquirerTerminalId": {
+      "type": "string"
+     },
+     "acquirerName": {
+      "type": "string"
+     },
+     "amount": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "currency": {
+      "type": "string"
+     },
+     "transactionDate": {
+      "type": "string",
+      "description": "Date and time in the format yyyy-MM-dd'T'HH:mm:ss",
+      "example": "2024-04-11T11:41:31",
+      "pattern": "yyyy-MM-dd'T'HH:mm:ss"
+     },
+     "transactionServerDate": {
+      "type": "string",
+      "description": "Date and time in the format yyyy-MM-dd'T'HH:mm:ss",
+      "example": "2024-04-11T11:41:31",
+      "pattern": "yyyy-MM-dd'T'HH:mm:ss"
+     },
+     "authorizationDate": {
+      "type": "string",
+      "description": "Date and time in the format yyyy-MM-dd'T'HH:mm:ss",
+      "example": "2024-04-11T11:41:31",
+      "pattern": "yyyy-MM-dd'T'HH:mm:ss"
+     },
+     "authorizationCode": {
+      "type": "string"
+     },
+     "responseCode": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "responseMessage": {
+      "type": "string"
+     },
+     "responseCodeFromAS": {
+      "type": "string"
+     },
+     "receiptNumber": {
+      "type": "string"
+     },
+     "cardNumber": {
+      "type": "string"
+     },
+     "cardExpiration": {
+      "type": "string"
+     },
+     "paymentReason": {
+      "type": "string"
+     },
+     "cardBrand": {
+      "type": "string"
+     },
+     "retrievalReferenceNumber": {
+      "type": "integer",
+      "format": "int64"
+     },
+     "traceNumber": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "clientId": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "serviceCode": {
+      "type": "string"
+     },
+     "clearingStatus": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "clearingAmount": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "clearingCurrency": {
+      "type": "string"
+     },
+     "clearingProcessedDate": {
+      "type": "string",
+      "description": "Date and time in the format yyyy-MM-dd'T'HH:mm:ss",
+      "example": "2024-04-11T11:41:31",
+      "pattern": "yyyy-MM-dd'T'HH:mm:ss"
+     },
+     "clearingBatchId": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "tipamt": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "clearingDate": {
+      "type": "string",
+      "description": "Date and time in the format yyyy-MM-dd'T'HH:mm:ss",
+      "example": "2024-04-11T11:41:31",
+      "pattern": "yyyy-MM-dd'T'HH:mm:ss"
+     },
+     "transactionSource": {
+      "type": "string"
+     },
+     "cardEntry": {
+      "type": "string"
+     },
+     "partnerId": {
+      "type": "string"
+     },
+     "partnerName": {
+      "type": "string"
+     }
+    }
+   },
+   "MandatorClearingExportSummaryRequest": {
+    "type": "object",
+    "properties": {
+     "clearingDateFrom": {
+      "type": "string",
+      "description": "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz",
+      "example": "2024-04-11T11:41:31+02:00",
+      "pattern": "yyyy-MM-dd'T'HH:mm:ssZ"
+     },
+     "clearingDateTo": {
+      "type": "string",
+      "description": "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz",
+      "example": "2024-04-11T11:41:31+02:00",
+      "pattern": "yyyy-MM-dd'T'HH:mm:ssZ"
+     }
+    },
+    "required": [
+     "clearingDateFrom",
+     "clearingDateTo"
+    ]
+   },
+   "MandatorClearingExportSummaryResponse": {
+    "type": "object",
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "responseMessage": {
+      "type": "string"
+     },
+     "records": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/MandatorClearingExportSummaryResponseDto"
+      }
+     }
+    }
+   },
+   "MandatorClearingExportSummaryResponseDto": {
+    "type": "object",
+    "properties": {
+     "cardType": {
+      "type": "string"
+     },
+     "txFlag": {
+      "type": "string"
+     },
+     "currency": {
+      "type": "string"
+     },
+     "tipTotal": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "txCount": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "txTotal": {
+      "type": "integer",
+      "format": "int64"
+     }
+    }
+   },
+   "MandatorClearingExportMetadataRequest": {
+    "type": "object",
+    "properties": {
+     "clearingDateFrom": {
+      "type": "string",
+      "description": "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz",
+      "example": "2024-04-11T11:41:31+02:00",
+      "pattern": "yyyy-MM-dd'T'HH:mm:ssZ"
+     },
+     "clearingDateTo": {
+      "type": "string",
+      "description": "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz",
+      "example": "2024-04-11T11:41:31+02:00",
+      "pattern": "yyyy-MM-dd'T'HH:mm:ssZ"
+     }
+    },
+    "required": [
+     "clearingDateFrom",
+     "clearingDateTo"
+    ]
+   },
+   "MandatorClearingExportMetadataResponse": {
+    "type": "object",
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "responseMessage": {
+      "type": "string"
+     },
+     "txIdStart": {
+      "type": "string"
+     },
+     "txIdEnd": {
+      "type": "string"
+     },
+     "txSeqNoStart": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "txSeqNoEnd": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "txTotal": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "txCount": {
+      "type": "integer",
+      "format": "int32"
+     }
+    }
+   },
+   "MandatorClearingExportDownloadRequest": {
+    "type": "object",
+    "description": "Request for async mandator clearing export download",
+    "properties": {
+     "clearingDateFrom": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Start date for clearing export (inclusive)",
+      "example": "2024-04-25T01:00:00+02:00"
+     },
+     "clearingDateTo": {
+      "type": "string",
+      "format": "date-time",
+      "description": "End date for clearing export (inclusive)",
+      "example": "2025-01-01T01:00:00+02:00"
+     },
+     "filenameTemplate": {
+      "type": "string",
+      "description": "Optional filename template for the export file",
+      "example": "{mandator}-clearing-transactions-{clearingDateFrom}-{clearingDateTo}"
+     }
+    },
+    "required": [
+     "clearingDateFrom",
+     "clearingDateTo"
+    ]
+   },
+   "MandatorClearingExportDownloadResponse": {
+    "type": "object",
+    "description": "Response for async mandator clearing export download request",
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "responseMessage": {
+      "type": "string"
+     },
+     "status": {
+      "type": "string",
+      "description": "Processing status of the export request",
+      "example": "PROCESSING"
+     },
+     "fileId": {
+      "type": "string",
+      "description": "Unique file identifier for tracking and downloading",
+      "example": "ad6352d9-b992-45f7-adce-ee306a01ef68"
+     }
+    }
+   },
+   "TransactionsCountRequest": {
+    "type": "object",
+    "properties": {
+     "transactionDateFrom": {
+      "type": "string",
+      "format": "date-time"
+     },
+     "transactionDateTo": {
+      "type": "string",
+      "format": "date-time"
+     },
+     "period": {
+      "type": "string",
+      "pattern": "HOUR|DAY|MONTH|YEAR"
+     }
+    },
+    "required": [
+     "transactionDateFrom",
+     "transactionDateTo"
+    ]
+   },
+   "TransactionCount": {
+    "type": "object",
+    "properties": {
+     "amount": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "datePart": {
+      "type": "string"
+     }
+    }
+   },
+   "TransactionsCountCardBrandResponse": {
+    "type": "object",
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "responseMessage": {
+      "type": "string"
+     },
+     "transactionDateFrom": {
+      "type": "string",
+      "format": "date-time"
+     },
+     "transactionDateTo": {
+      "type": "string",
+      "format": "date-time"
+     },
+     "period": {
+      "type": "string"
+     },
+     "transactionsCount": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/TransactionCount"
+      }
+     }
+    }
+   },
+   "TransactionsCountResponse": {
+    "type": "object",
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "responseMessage": {
+      "type": "string"
+     },
+     "transactionDateFrom": {
+      "type": "string",
+      "format": "date-time"
+     },
+     "transactionDateTo": {
+      "type": "string",
+      "format": "date-time"
+     },
+     "period": {
+      "type": "string"
+     },
+     "transactionsCount": {
+      "type": "array",
+      "items": {
+       "$ref": "#/components/schemas/TransactionCount"
+      }
+     }
+    }
+   },
+   "CancelTransactionRequest": {
+    "type": "object",
+    "properties": {
+     "transactionId": {
+      "type": "string",
+      "minLength": 1
+     },
+     "messageType": {
+      "type": "string"
+     },
+     "terminalId": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "clientId": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "originalTransactionId": {
+      "type": "string",
+      "minLength": 1
+     },
+     "cvc": {
+      "type": "string"
+     },
+     "amount": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "currency": {
+      "type": "string",
+      "minLength": 1
+     },
+     "receiptNumber": {
+      "type": "string",
+      "minLength": 1
+     },
+     "paymentReason": {
+      "type": "string"
+     },
+     "terminalLocation": {
+      "type": "string"
+     },
+     "password": {
+      "type": "string"
+     },
+     "ecData": {
+      "type": "string"
+     },
+     "ecrData": {
+      "type": "string"
+     },
+     "emvData": {
+      "type": "string"
+     },
+     "languageCode": {
+      "type": "string"
+     },
+     "receiptLayout": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "transactionDate": {
+      "type": "string",
+      "example": "20230509114131",
+      "pattern": "(\\d{4}(0[0-9]|1[0-2])([0-2][0-9]|3[0-1])([0-1][0-9]|2[0-4])(([0-5][0-9]){2}))"
+     }
+    },
+    "required": [
+     "amount",
+     "clientId",
+     "currency",
+     "messageType",
+     "originalTransactionId",
+     "receiptNumber",
+     "terminalId",
+     "transactionDate",
+     "transactionId"
+    ]
+   },
+   "CancelTransactionResponse": {
+    "type": "object",
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "responseMessage": {
+      "type": "string"
+     },
+     "transactionId": {
+      "type": "string"
+     },
+     "messageType": {
+      "type": "string"
+     },
+     "cardNumber": {
+      "type": "string"
+     },
+     "originalTransactionId": {
+      "type": "string"
+     },
+     "amount": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "ecrData": {
+      "type": "string"
+     },
+     "emvData": {
+      "type": "string"
+     },
+     "userData": {
+      "type": "string"
+     },
+     "transactionDate": {
+      "type": "string",
+      "format": "date-time"
+     },
+     "authorizationCode": {
+      "type": "string"
+     },
+     "txType": {
+      "type": "string"
+     },
+     "acquirerName": {
+      "type": "string"
+     },
+     "acquirerId": {
+      "type": "string"
+     },
+     "cardBrand": {
+      "type": "string"
+     },
+     "merchantNumber": {
+      "type": "string"
+     },
+     "serialNumber": {
+      "type": "string"
+     },
+     "traceNumber": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "originalTraceNumber": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "svc": {
+      "type": "string"
+     },
+     "balanceAmount": {
+      "type": "string"
+     },
+     "exchangeRate": {
+      "type": "string"
+     },
+     "merchantName": {
+      "type": "string"
+     },
+     "merchantAddress": {
+      "type": "string"
+     },
+     "receiptHeader": {
+      "type": "string"
+     },
+     "receiptFooter": {
+      "type": "string"
+     },
+     "actualBonusPoints": {
+      "type": "string"
+     },
+     "exchangeFee": {
+      "type": "integer",
+      "format": "int64"
+     }
+    }
+   },
+   "MoveTidRequest": {
+    "type": "object",
+    "properties": {
+     "productorderuuids": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      },
+      "minItems": 1
+     },
+     "targetPackageorderuuid": {
+      "type": "string"
+     },
+     "targetProductorderuuid": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "productorderuuids"
+    ]
+   },
+   "IntroducePackageRequest": {
+    "type": "object",
+    "properties": {
+     "terminalTemplateDescription": {
+      "type": "string",
+      "minLength": 1
+     }
+    },
+    "required": [
+     "terminalTemplateDescription"
+    ]
+   },
+   "IntroduceMandatorRequest": {
+    "type": "object",
+    "properties": {
+     "mandatorName": {
+      "type": "string",
+      "minLength": 1
+     }
+    },
+    "required": [
+     "mandatorName"
+    ]
+   },
+   "GetMerchantContractNumberRequest": {
+    "type": "object",
+    "properties": {
+     "merchantContractNumber": {
+      "type": "string",
+      "minLength": 1
+     }
+    },
+    "required": [
+     "merchantContractNumber"
+    ]
+   },
+   "EnableAcquiringRequest": {
+    "type": "object",
+    "properties": {
+     "packageOrderUuid": {
+      "type": "string",
+      "minLength": 1
+     },
+     "corporateUuid": {
+      "type": "string",
+      "minLength": 1
+     },
+     "productOrderUuid": {
+      "type": "string",
+      "minLength": 1
+     },
+     "templateName": {
+      "type": "string",
+      "minLength": 1
+     },
+     "vuNummer": {
+      "type": "string",
+      "maxLength": 15,
+      "minLength": 1
+     },
+     "currency": {
+      "type": "string",
+      "maxLength": 3,
+      "minLength": 3
+     },
+     "merchantCategoryCode": {
+      "type": "integer",
+      "format": "int32",
+      "minimum": 0
+     },
+     "sortingCode": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "accountNo": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "terminalIdAcq": {
+      "type": "string"
+     },
+     "additionalData": {
+      "type": "object",
+      "additionalProperties": {
+       "type": "string"
+      }
+     },
+     "terminalIds": {
+      "type": "array",
+      "items": {
+       "type": "integer",
+       "format": "int32"
+      }
+     }
+    },
+    "required": [
+     "corporateUuid",
+     "currency",
+     "merchantCategoryCode",
+     "packageOrderUuid",
+     "productOrderUuid",
+     "templateName"
+    ]
+   },
+   "DeactivateTerminalRequest": {
+    "type": "object",
+    "properties": {
+     "terminalId": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "deactivationReason": {
+      "type": "string",
+      "minLength": 1
+     }
+    },
+    "required": [
+     "deactivationReason",
+     "terminalId"
+    ]
+   },
+   "DeactivateTerminalResponse": {
+    "type": "object",
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "responseMessage": {
+      "type": "string"
+     },
+     "packageOrderUuid": {
+      "type": "string"
+     },
+     "corporateUuid": {
+      "type": "string"
+     },
+     "productOrderUuid": {
+      "type": "string"
+     }
+    }
+   },
+   "CreateProductRequest": {
+    "type": "object",
+    "properties": {
+     "templateName": {
+      "type": "string",
+      "maxLength": 100,
+      "minLength": 0
+     },
+     "templateXml": {
+      "type": "string",
+      "minLength": 1
+     },
+     "templateType": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "acquirer|terminal"
+     },
+     "terminalType": {
+      "type": "string",
+      "maxLength": 100,
+      "minLength": 0
+     },
+     "acquirerId": {
+      "type": "integer",
+      "format": "int32"
+     }
+    },
+    "required": [
+     "templateName",
+     "templateType",
+     "templateXml",
+     "terminalType"
+    ]
+   },
+   "CheckCardBlackListedRequest": {
+    "type": "object",
+    "properties": {
+     "cardNo": {
+      "type": "string"
+     }
+    }
+   },
+   "CheckCardBlackListedResponse": {
+    "type": "object",
+    "properties": {
+     "responseCode": {
+      "type": "integer",
+      "format": "int32"
+     },
+     "responseMessage": {
+      "type": "string"
+     }
+    }
+   },
+   "Version": {
+    "type": "object",
+    "properties": {
+     "appName": {
+      "type": "string"
+     },
+     "version": {
+      "type": "string"
+     },
+     "buildDate": {
+      "type": "string"
+     }
+    }
+   }
+  },
+  "securitySchemes": {
+   "bearer-key": {
+    "type": "http",
+    "scheme": "bearer",
+    "bearerFormat": "JWT"
+   },
+   "basic-key": {
+    "type": "http",
+    "scheme": "basic"
+   },
+   "tecsweb-key": {
+    "type": "apiKey",
+    "description": "TecsWeb token",
+    "name": "TecsWebToken",
+    "in": "header"
+   }
+  }
+ }
+}
