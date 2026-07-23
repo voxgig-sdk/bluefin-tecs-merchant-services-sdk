@@ -10,7 +10,7 @@ Complete API reference for the BluefinTecsMerchantServices C SDK.
 ```c
 #include "core/api.h"
 
-BluefinTecsMerchantServicesSDK* client = bluefin_tecs_merchant_services_sdk_new(options);
+BluefinTecsMerchantServicesSDK* client = bluefintecsmerchantservices_sdk_new(options);
 ```
 
 Create a new SDK client instance. `options` is a `voxgig_value*` map
@@ -43,197 +43,197 @@ BluefinTecsMerchantServicesSDK* client = test_sdk(NULL, NULL);
 
 ### Entity Accessors
 
-#### `Entity* bluefin_tecs_merchant_services_cancel_transaction(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsmerchantservices_cancel_transaction(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
 
 Create a new `CancelTransaction` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_merchant_services_check_card_black_listed(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsmerchantservices_check_card_black_listed(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
 
 Create a new `CheckCardBlackListed` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_merchant_services_create_product(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsmerchantservices_create_product(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
 
 Create a new `CreateProduct` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_merchant_services_deactivate_terminal(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsmerchantservices_deactivate_terminal(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
 
 Create a new `DeactivateTerminal` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_merchant_services_digital_services_api(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsmerchantservices_digital_services_api(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
 
 Create a new `DigitalServicesApi` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_merchant_services_ec_data_ecom(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsmerchantservices_ec_data_ecom(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
 
 Create a new `EcDataEcom` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_merchant_services_ecom_parameter(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsmerchantservices_ecom_parameter(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
 
 Create a new `EcomParameter` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_merchant_services_ecr_data(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsmerchantservices_ecr_data(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
 
 Create a new `EcrData` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_merchant_services_emv_data(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsmerchantservices_emv_data(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
 
 Create a new `EmvData` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_merchant_services_enable_acquiring(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsmerchantservices_enable_acquiring(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
 
 Create a new `EnableAcquiring` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_merchant_services_get_merchant_contract_number(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsmerchantservices_get_merchant_contract_number(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
 
 Create a new `GetMerchantContractNumber` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_merchant_services_get_template_xml(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsmerchantservices_get_template_xml(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
 
 Create a new `GetTemplateXml` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_merchant_services_introduce_mandator(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsmerchantservices_introduce_mandator(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
 
 Create a new `IntroduceMandator` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_merchant_services_introduce_package(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsmerchantservices_introduce_package(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
 
 Create a new `IntroducePackage` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_merchant_services_keep_alive(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsmerchantservices_keep_alive(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
 
 Create a new `KeepAlive` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_merchant_services_list_terminal(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsmerchantservices_list_terminal(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
 
 Create a new `ListTerminal` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_merchant_services_mandator_clearing_export(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsmerchantservices_mandator_clearing_export(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
 
 Create a new `MandatorClearingExport` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_merchant_services_mandator_clearing_export_download(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsmerchantservices_mandator_clearing_export_download(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
 
 Create a new `MandatorClearingExportDownload` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_merchant_services_mandator_clearing_export_summary(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsmerchantservices_mandator_clearing_export_summary(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
 
 Create a new `MandatorClearingExportSummary` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_merchant_services_merchant_portal_services_api(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsmerchantservices_merchant_portal_services_api(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
 
 Create a new `MerchantPortalServicesApi` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_merchant_services_move_tid(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsmerchantservices_move_tid(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
 
 Create a new `MoveTid` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_merchant_services_payment_manual(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsmerchantservices_payment_manual(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
 
 Create a new `PaymentManual` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_merchant_services_payment_sred(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsmerchantservices_payment_sred(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
 
 Create a new `PaymentSred` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_merchant_services_pre_auth_transaction_completion(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsmerchantservices_pre_auth_transaction_completion(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
 
 Create a new `PreAuthTransactionCompletion` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_merchant_services_reactivate_terminal(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsmerchantservices_reactivate_terminal(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
 
 Create a new `ReactivateTerminal` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_merchant_services_refund_transaction(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsmerchantservices_refund_transaction(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
 
 Create a new `RefundTransaction` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_merchant_services_register_tecs_company(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsmerchantservices_register_tecs_company(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
 
 Create a new `RegisterTecsCompany` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_merchant_services_register_terminal(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsmerchantservices_register_terminal(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
 
 Create a new `RegisterTerminal` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_merchant_services_report_data(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsmerchantservices_report_data(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
 
 Create a new `ReportData` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_merchant_services_status_transaction(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsmerchantservices_status_transaction(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
 
 Create a new `StatusTransaction` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_merchant_services_store_terminal_parameter(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsmerchantservices_store_terminal_parameter(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
 
 Create a new `StoreTerminalParameter` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_merchant_services_terminal_id(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsmerchantservices_terminal_id(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
 
 Create a new `TerminalId` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_merchant_services_transaction_history(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsmerchantservices_transaction_history(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
 
 Create a new `TransactionHistory` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_merchant_services_transactions_count(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsmerchantservices_transactions_count(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
 
 Create a new `TransactionsCount` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_merchant_services_transactions_count_card_brand(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsmerchantservices_transactions_count_card_brand(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
 
 Create a new `TransactionsCountCardBrand` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_merchant_services_transactions_turnover(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsmerchantservices_transactions_turnover(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
 
 Create a new `TransactionsTurnover` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_merchant_services_update_merchant(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsmerchantservices_update_merchant(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
 
 Create a new `UpdateMerchant` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_merchant_services_update_template_xml(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsmerchantservices_update_template_xml(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
 
 Create a new `UpdateTemplateXml` entity instance. Pass `NULL` for no initial
 options.
 
-#### `Entity* bluefin_tecs_merchant_services_version(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
+#### `Entity* bluefintecsmerchantservices_version(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts)`
 
 Create a new `Version` entity instance. Pass `NULL` for no initial
 options.
@@ -267,7 +267,7 @@ Prepare a fetch definition without sending. Returns the fetchdef and sets
 ## CancelTransaction
 
 ```c
-Entity* cancel_transaction = bluefin_tecs_merchant_services_cancel_transaction(client, NULL);
+Entity* cancel_transaction = bluefintecsmerchantservices_cancel_transaction(client, NULL);
 ```
 
 ### Fields
@@ -367,7 +367,7 @@ Entity* cancel_transaction = bluefin_tecs_merchant_services_cancel_transaction(c
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* cancel_transaction = bluefin_tecs_merchant_services_cancel_transaction(client, NULL);
+Entity* cancel_transaction = bluefintecsmerchantservices_cancel_transaction(client, NULL);
 voxgig_value* result = cancel_transaction->vt->create(cancel_transaction, cmap(4,
     "client_id", v_num(1),  // int64_t
     "currency", v_str("example_currency"),  // char*
@@ -400,7 +400,7 @@ Return the entity name.
 ## CheckCardBlackListed
 
 ```c
-Entity* check_card_black_listed = bluefin_tecs_merchant_services_check_card_black_listed(client, NULL);
+Entity* check_card_black_listed = bluefintecsmerchantservices_check_card_black_listed(client, NULL);
 ```
 
 ### Fields
@@ -418,7 +418,7 @@ Entity* check_card_black_listed = bluefin_tecs_merchant_services_check_card_blac
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* check_card_black_listed = bluefin_tecs_merchant_services_check_card_black_listed(client, NULL);
+Entity* check_card_black_listed = bluefintecsmerchantservices_check_card_black_listed(client, NULL);
 voxgig_value* result = check_card_black_listed->vt->create(check_card_black_listed, NULL, NULL, &err);
 ```
 
@@ -446,7 +446,7 @@ Return the entity name.
 ## CreateProduct
 
 ```c
-Entity* create_product = bluefin_tecs_merchant_services_create_product(client, NULL);
+Entity* create_product = bluefintecsmerchantservices_create_product(client, NULL);
 ```
 
 ### Fields
@@ -468,7 +468,7 @@ Entity* create_product = bluefin_tecs_merchant_services_create_product(client, N
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* create_product = bluefin_tecs_merchant_services_create_product(client, NULL);
+Entity* create_product = bluefintecsmerchantservices_create_product(client, NULL);
 voxgig_value* result = create_product->vt->create(create_product, cmap(4,
     "template_name", v_str("example_template_name"),  // char*
     "template_type", v_str("example_template_type"),  // char*
@@ -501,7 +501,7 @@ Return the entity name.
 ## DeactivateTerminal
 
 ```c
-Entity* deactivate_terminal = bluefin_tecs_merchant_services_deactivate_terminal(client, NULL);
+Entity* deactivate_terminal = bluefintecsmerchantservices_deactivate_terminal(client, NULL);
 ```
 
 ### Fields
@@ -523,7 +523,7 @@ Entity* deactivate_terminal = bluefin_tecs_merchant_services_deactivate_terminal
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* deactivate_terminal = bluefin_tecs_merchant_services_deactivate_terminal(client, NULL);
+Entity* deactivate_terminal = bluefintecsmerchantservices_deactivate_terminal(client, NULL);
 voxgig_value* result = deactivate_terminal->vt->create(deactivate_terminal, cmap(2,
     "deactivation_reason", v_str("example_deactivation_reason"),  // char*
     "terminal_id", v_num(1))  // int64_t
@@ -554,7 +554,7 @@ Return the entity name.
 ## DigitalServicesApi
 
 ```c
-Entity* digital_services_api = bluefin_tecs_merchant_services_digital_services_api(client, NULL);
+Entity* digital_services_api = bluefintecsmerchantservices_digital_services_api(client, NULL);
 ```
 
 ### Fields
@@ -579,7 +579,7 @@ Entity* digital_services_api = bluefin_tecs_merchant_services_digital_services_a
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* digital_services_api = bluefin_tecs_merchant_services_digital_services_api(client, NULL);
+Entity* digital_services_api = bluefintecsmerchantservices_digital_services_api(client, NULL);
 voxgig_value* result = digital_services_api->vt->create(digital_services_api, NULL, NULL, &err);
 ```
 
@@ -588,7 +588,7 @@ voxgig_value* result = digital_services_api->vt->create(digital_services_api, NU
 Load a single entity matching the given criteria. Returns the entity data and sets `*err` on failure.
 
 ```c
-Entity* digital_services_api = bluefin_tecs_merchant_services_digital_services_api(client, NULL);
+Entity* digital_services_api = bluefintecsmerchantservices_digital_services_api(client, NULL);
 voxgig_value* result = digital_services_api->vt->load(digital_services_api, NULL, NULL, &err);
 ```
 
@@ -616,7 +616,7 @@ Return the entity name.
 ## EcDataEcom
 
 ```c
-Entity* ec_data_ecom = bluefin_tecs_merchant_services_ec_data_ecom(client, NULL);
+Entity* ec_data_ecom = bluefintecsmerchantservices_ec_data_ecom(client, NULL);
 ```
 
 ### Fields
@@ -637,7 +637,7 @@ Entity* ec_data_ecom = bluefin_tecs_merchant_services_ec_data_ecom(client, NULL)
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* ec_data_ecom = bluefin_tecs_merchant_services_ec_data_ecom(client, NULL);
+Entity* ec_data_ecom = bluefintecsmerchantservices_ec_data_ecom(client, NULL);
 voxgig_value* result = ec_data_ecom->vt->create(ec_data_ecom, cmap(3,
     "terminal_id", v_num(1),  // int64_t
     "transaction_id", v_str("example_transaction_id"),  // char*
@@ -669,7 +669,7 @@ Return the entity name.
 ## EcomParameter
 
 ```c
-Entity* ecom_parameter = bluefin_tecs_merchant_services_ecom_parameter(client, NULL);
+Entity* ecom_parameter = bluefintecsmerchantservices_ecom_parameter(client, NULL);
 ```
 
 ### Fields
@@ -689,7 +689,7 @@ Entity* ecom_parameter = bluefin_tecs_merchant_services_ecom_parameter(client, N
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* ecom_parameter = bluefin_tecs_merchant_services_ecom_parameter(client, NULL);
+Entity* ecom_parameter = bluefintecsmerchantservices_ecom_parameter(client, NULL);
 voxgig_value* result = ecom_parameter->vt->create(ecom_parameter, cmap(1,
     "terminal_id", v_num(1))  // int64_t
 , NULL, &err);
@@ -719,7 +719,7 @@ Return the entity name.
 ## EcrData
 
 ```c
-Entity* ecr_data = bluefin_tecs_merchant_services_ecr_data(client, NULL);
+Entity* ecr_data = bluefintecsmerchantservices_ecr_data(client, NULL);
 ```
 
 ### Fields
@@ -740,7 +740,7 @@ Entity* ecr_data = bluefin_tecs_merchant_services_ecr_data(client, NULL);
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* ecr_data = bluefin_tecs_merchant_services_ecr_data(client, NULL);
+Entity* ecr_data = bluefintecsmerchantservices_ecr_data(client, NULL);
 voxgig_value* result = ecr_data->vt->create(ecr_data, cmap(3,
     "terminal_id", v_num(1),  // int64_t
     "transaction_id", v_str("example_transaction_id"),  // char*
@@ -772,7 +772,7 @@ Return the entity name.
 ## EmvData
 
 ```c
-Entity* emv_data = bluefin_tecs_merchant_services_emv_data(client, NULL);
+Entity* emv_data = bluefintecsmerchantservices_emv_data(client, NULL);
 ```
 
 ### Fields
@@ -793,7 +793,7 @@ Entity* emv_data = bluefin_tecs_merchant_services_emv_data(client, NULL);
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* emv_data = bluefin_tecs_merchant_services_emv_data(client, NULL);
+Entity* emv_data = bluefintecsmerchantservices_emv_data(client, NULL);
 voxgig_value* result = emv_data->vt->create(emv_data, cmap(3,
     "terminal_id", v_num(1),  // int64_t
     "transaction_id", v_str("example_transaction_id"),  // char*
@@ -825,7 +825,7 @@ Return the entity name.
 ## EnableAcquiring
 
 ```c
-Entity* enable_acquiring = bluefin_tecs_merchant_services_enable_acquiring(client, NULL);
+Entity* enable_acquiring = bluefintecsmerchantservices_enable_acquiring(client, NULL);
 ```
 
 ### Fields
@@ -854,7 +854,7 @@ Entity* enable_acquiring = bluefin_tecs_merchant_services_enable_acquiring(clien
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* enable_acquiring = bluefin_tecs_merchant_services_enable_acquiring(client, NULL);
+Entity* enable_acquiring = bluefintecsmerchantservices_enable_acquiring(client, NULL);
 voxgig_value* result = enable_acquiring->vt->create(enable_acquiring, cmap(6,
     "corporate_uuid", v_str("example_corporate_uuid"),  // char*
     "currency", v_str("example_currency"),  // char*
@@ -889,7 +889,7 @@ Return the entity name.
 ## GetMerchantContractNumber
 
 ```c
-Entity* get_merchant_contract_number = bluefin_tecs_merchant_services_get_merchant_contract_number(client, NULL);
+Entity* get_merchant_contract_number = bluefintecsmerchantservices_get_merchant_contract_number(client, NULL);
 ```
 
 ### Fields
@@ -907,7 +907,7 @@ Entity* get_merchant_contract_number = bluefin_tecs_merchant_services_get_mercha
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* get_merchant_contract_number = bluefin_tecs_merchant_services_get_merchant_contract_number(client, NULL);
+Entity* get_merchant_contract_number = bluefintecsmerchantservices_get_merchant_contract_number(client, NULL);
 voxgig_value* result = get_merchant_contract_number->vt->create(get_merchant_contract_number, cmap(1,
     "merchant_contract_number", v_str("example_merchant_contract_number"))  // char*
 , NULL, &err);
@@ -937,7 +937,7 @@ Return the entity name.
 ## GetTemplateXml
 
 ```c
-Entity* get_template_xml = bluefin_tecs_merchant_services_get_template_xml(client, NULL);
+Entity* get_template_xml = bluefintecsmerchantservices_get_template_xml(client, NULL);
 ```
 
 ### Fields
@@ -955,7 +955,7 @@ Entity* get_template_xml = bluefin_tecs_merchant_services_get_template_xml(clien
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* get_template_xml = bluefin_tecs_merchant_services_get_template_xml(client, NULL);
+Entity* get_template_xml = bluefintecsmerchantservices_get_template_xml(client, NULL);
 voxgig_value* result = get_template_xml->vt->create(get_template_xml, cmap(1,
     "template_name", v_str("example_template_name"))  // char*
 , NULL, &err);
@@ -985,7 +985,7 @@ Return the entity name.
 ## IntroduceMandator
 
 ```c
-Entity* introduce_mandator = bluefin_tecs_merchant_services_introduce_mandator(client, NULL);
+Entity* introduce_mandator = bluefintecsmerchantservices_introduce_mandator(client, NULL);
 ```
 
 ### Fields
@@ -1003,7 +1003,7 @@ Entity* introduce_mandator = bluefin_tecs_merchant_services_introduce_mandator(c
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* introduce_mandator = bluefin_tecs_merchant_services_introduce_mandator(client, NULL);
+Entity* introduce_mandator = bluefintecsmerchantservices_introduce_mandator(client, NULL);
 voxgig_value* result = introduce_mandator->vt->create(introduce_mandator, cmap(1,
     "mandator_name", v_str("example_mandator_name"))  // char*
 , NULL, &err);
@@ -1033,7 +1033,7 @@ Return the entity name.
 ## IntroducePackage
 
 ```c
-Entity* introduce_package = bluefin_tecs_merchant_services_introduce_package(client, NULL);
+Entity* introduce_package = bluefintecsmerchantservices_introduce_package(client, NULL);
 ```
 
 ### Fields
@@ -1051,7 +1051,7 @@ Entity* introduce_package = bluefin_tecs_merchant_services_introduce_package(cli
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* introduce_package = bluefin_tecs_merchant_services_introduce_package(client, NULL);
+Entity* introduce_package = bluefintecsmerchantservices_introduce_package(client, NULL);
 voxgig_value* result = introduce_package->vt->create(introduce_package, cmap(1,
     "terminal_template_description", v_str("example_terminal_template_description"))  // char*
 , NULL, &err);
@@ -1081,7 +1081,7 @@ Return the entity name.
 ## KeepAlive
 
 ```c
-Entity* keep_alive = bluefin_tecs_merchant_services_keep_alive(client, NULL);
+Entity* keep_alive = bluefintecsmerchantservices_keep_alive(client, NULL);
 ```
 
 ### Fields
@@ -1106,7 +1106,7 @@ Entity* keep_alive = bluefin_tecs_merchant_services_keep_alive(client, NULL);
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* keep_alive = bluefin_tecs_merchant_services_keep_alive(client, NULL);
+Entity* keep_alive = bluefintecsmerchantservices_keep_alive(client, NULL);
 voxgig_value* result = keep_alive->vt->create(keep_alive, NULL, NULL, &err);
 ```
 
@@ -1134,7 +1134,7 @@ Return the entity name.
 ## ListTerminal
 
 ```c
-Entity* list_terminal = bluefin_tecs_merchant_services_list_terminal(client, NULL);
+Entity* list_terminal = bluefintecsmerchantservices_list_terminal(client, NULL);
 ```
 
 ### Fields
@@ -1155,7 +1155,7 @@ Entity* list_terminal = bluefin_tecs_merchant_services_list_terminal(client, NUL
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* list_terminal = bluefin_tecs_merchant_services_list_terminal(client, NULL);
+Entity* list_terminal = bluefintecsmerchantservices_list_terminal(client, NULL);
 voxgig_value* result = list_terminal->vt->create(list_terminal, NULL, NULL, &err);
 ```
 
@@ -1183,7 +1183,7 @@ Return the entity name.
 ## MandatorClearingExport
 
 ```c
-Entity* mandator_clearing_export = bluefin_tecs_merchant_services_mandator_clearing_export(client, NULL);
+Entity* mandator_clearing_export = bluefintecsmerchantservices_mandator_clearing_export(client, NULL);
 ```
 
 ### Fields
@@ -1204,7 +1204,7 @@ Entity* mandator_clearing_export = bluefin_tecs_merchant_services_mandator_clear
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* mandator_clearing_export = bluefin_tecs_merchant_services_mandator_clearing_export(client, NULL);
+Entity* mandator_clearing_export = bluefintecsmerchantservices_mandator_clearing_export(client, NULL);
 voxgig_value* result = mandator_clearing_export->vt->create(mandator_clearing_export, cmap(2,
     "clearing_date_from", v_str("example_clearing_date_from"),  // char*
     "clearing_date_to", v_str("example_clearing_date_to"))  // char*
@@ -1235,7 +1235,7 @@ Return the entity name.
 ## MandatorClearingExportDownload
 
 ```c
-Entity* mandator_clearing_export_download = bluefin_tecs_merchant_services_mandator_clearing_export_download(client, NULL);
+Entity* mandator_clearing_export_download = bluefintecsmerchantservices_mandator_clearing_export_download(client, NULL);
 ```
 
 ### Fields
@@ -1257,7 +1257,7 @@ Entity* mandator_clearing_export_download = bluefin_tecs_merchant_services_manda
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* mandator_clearing_export_download = bluefin_tecs_merchant_services_mandator_clearing_export_download(client, NULL);
+Entity* mandator_clearing_export_download = bluefintecsmerchantservices_mandator_clearing_export_download(client, NULL);
 voxgig_value* result = mandator_clearing_export_download->vt->create(mandator_clearing_export_download, cmap(2,
     "clearing_date_from", v_str("example_clearing_date_from"),  // char*
     "clearing_date_to", v_str("example_clearing_date_to"))  // char*
@@ -1269,7 +1269,7 @@ voxgig_value* result = mandator_clearing_export_download->vt->create(mandator_cl
 Load a single entity matching the given criteria. Returns the entity data and sets `*err` on failure.
 
 ```c
-Entity* mandator_clearing_export_download = bluefin_tecs_merchant_services_mandator_clearing_export_download(client, NULL);
+Entity* mandator_clearing_export_download = bluefintecsmerchantservices_mandator_clearing_export_download(client, NULL);
 voxgig_value* result = mandator_clearing_export_download->vt->load(mandator_clearing_export_download, cmap(1, "id", v_str("mandator_clearing_export_download_id")), NULL, &err);
 ```
 
@@ -1297,7 +1297,7 @@ Return the entity name.
 ## MandatorClearingExportSummary
 
 ```c
-Entity* mandator_clearing_export_summary = bluefin_tecs_merchant_services_mandator_clearing_export_summary(client, NULL);
+Entity* mandator_clearing_export_summary = bluefintecsmerchantservices_mandator_clearing_export_summary(client, NULL);
 ```
 
 ### Fields
@@ -1317,7 +1317,7 @@ Entity* mandator_clearing_export_summary = bluefin_tecs_merchant_services_mandat
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* mandator_clearing_export_summary = bluefin_tecs_merchant_services_mandator_clearing_export_summary(client, NULL);
+Entity* mandator_clearing_export_summary = bluefintecsmerchantservices_mandator_clearing_export_summary(client, NULL);
 voxgig_value* result = mandator_clearing_export_summary->vt->create(mandator_clearing_export_summary, cmap(2,
     "clearing_date_from", v_str("example_clearing_date_from"),  // char*
     "clearing_date_to", v_str("example_clearing_date_to"))  // char*
@@ -1348,7 +1348,7 @@ Return the entity name.
 ## MerchantPortalServicesApi
 
 ```c
-Entity* merchant_portal_services_api = bluefin_tecs_merchant_services_merchant_portal_services_api(client, NULL);
+Entity* merchant_portal_services_api = bluefintecsmerchantservices_merchant_portal_services_api(client, NULL);
 ```
 
 ### Fields
@@ -1388,7 +1388,7 @@ Entity* merchant_portal_services_api = bluefin_tecs_merchant_services_merchant_p
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* merchant_portal_services_api = bluefin_tecs_merchant_services_merchant_portal_services_api(client, NULL);
+Entity* merchant_portal_services_api = bluefintecsmerchantservices_merchant_portal_services_api(client, NULL);
 voxgig_value* result = merchant_portal_services_api->vt->create(merchant_portal_services_api, NULL, NULL, &err);
 ```
 
@@ -1416,7 +1416,7 @@ Return the entity name.
 ## MoveTid
 
 ```c
-Entity* move_tid = bluefin_tecs_merchant_services_move_tid(client, NULL);
+Entity* move_tid = bluefintecsmerchantservices_move_tid(client, NULL);
 ```
 
 ### Fields
@@ -1436,7 +1436,7 @@ Entity* move_tid = bluefin_tecs_merchant_services_move_tid(client, NULL);
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* move_tid = bluefin_tecs_merchant_services_move_tid(client, NULL);
+Entity* move_tid = bluefintecsmerchantservices_move_tid(client, NULL);
 voxgig_value* result = move_tid->vt->create(move_tid, cmap(1,
     "productorderuuid", v_list())  // voxgig_value* (list)
 , NULL, &err);
@@ -1466,7 +1466,7 @@ Return the entity name.
 ## PaymentManual
 
 ```c
-Entity* payment_manual = bluefin_tecs_merchant_services_payment_manual(client, NULL);
+Entity* payment_manual = bluefintecsmerchantservices_payment_manual(client, NULL);
 ```
 
 ### Fields
@@ -1520,7 +1520,7 @@ Entity* payment_manual = bluefin_tecs_merchant_services_payment_manual(client, N
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* payment_manual = bluefin_tecs_merchant_services_payment_manual(client, NULL);
+Entity* payment_manual = bluefintecsmerchantservices_payment_manual(client, NULL);
 voxgig_value* result = payment_manual->vt->create(payment_manual, cmap(5,
     "amount", v_num(1),  // int64_t
     "card_number", v_str("example_card_number"),  // char*
@@ -1554,7 +1554,7 @@ Return the entity name.
 ## PaymentSred
 
 ```c
-Entity* payment_sred = bluefin_tecs_merchant_services_payment_sred(client, NULL);
+Entity* payment_sred = bluefintecsmerchantservices_payment_sred(client, NULL);
 ```
 
 ### Fields
@@ -1606,7 +1606,7 @@ Entity* payment_sred = bluefin_tecs_merchant_services_payment_sred(client, NULL)
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* payment_sred = bluefin_tecs_merchant_services_payment_sred(client, NULL);
+Entity* payment_sred = bluefintecsmerchantservices_payment_sred(client, NULL);
 voxgig_value* result = payment_sred->vt->create(payment_sred, cmap(4,
     "amount", v_num(1),  // int64_t
     "currency", v_str("example_currency"),  // char*
@@ -1639,7 +1639,7 @@ Return the entity name.
 ## PreAuthTransactionCompletion
 
 ```c
-Entity* pre_auth_transaction_completion = bluefin_tecs_merchant_services_pre_auth_transaction_completion(client, NULL);
+Entity* pre_auth_transaction_completion = bluefintecsmerchantservices_pre_auth_transaction_completion(client, NULL);
 ```
 
 ### Fields
@@ -1743,7 +1743,7 @@ Entity* pre_auth_transaction_completion = bluefin_tecs_merchant_services_pre_aut
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* pre_auth_transaction_completion = bluefin_tecs_merchant_services_pre_auth_transaction_completion(client, NULL);
+Entity* pre_auth_transaction_completion = bluefintecsmerchantservices_pre_auth_transaction_completion(client, NULL);
 voxgig_value* result = pre_auth_transaction_completion->vt->create(pre_auth_transaction_completion, cmap(6,
     "card_number_reference", v_str("example_card_number_reference"),  // char*
     "client_id", v_num(1),  // int64_t
@@ -1778,7 +1778,7 @@ Return the entity name.
 ## ReactivateTerminal
 
 ```c
-Entity* reactivate_terminal = bluefin_tecs_merchant_services_reactivate_terminal(client, NULL);
+Entity* reactivate_terminal = bluefintecsmerchantservices_reactivate_terminal(client, NULL);
 ```
 
 ### Fields
@@ -1800,7 +1800,7 @@ Entity* reactivate_terminal = bluefin_tecs_merchant_services_reactivate_terminal
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* reactivate_terminal = bluefin_tecs_merchant_services_reactivate_terminal(client, NULL);
+Entity* reactivate_terminal = bluefintecsmerchantservices_reactivate_terminal(client, NULL);
 voxgig_value* result = reactivate_terminal->vt->create(reactivate_terminal, cmap(2,
     "reactivation_reason", v_str("example_reactivation_reason"),  // char*
     "terminal_id", v_num(1))  // int64_t
@@ -1831,7 +1831,7 @@ Return the entity name.
 ## RefundTransaction
 
 ```c
-Entity* refund_transaction = bluefin_tecs_merchant_services_refund_transaction(client, NULL);
+Entity* refund_transaction = bluefintecsmerchantservices_refund_transaction(client, NULL);
 ```
 
 ### Fields
@@ -1931,7 +1931,7 @@ Entity* refund_transaction = bluefin_tecs_merchant_services_refund_transaction(c
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* refund_transaction = bluefin_tecs_merchant_services_refund_transaction(client, NULL);
+Entity* refund_transaction = bluefintecsmerchantservices_refund_transaction(client, NULL);
 voxgig_value* result = refund_transaction->vt->create(refund_transaction, cmap(4,
     "client_id", v_num(1),  // int64_t
     "currency", v_str("example_currency"),  // char*
@@ -1964,7 +1964,7 @@ Return the entity name.
 ## RegisterTecsCompany
 
 ```c
-Entity* register_tecs_company = bluefin_tecs_merchant_services_register_tecs_company(client, NULL);
+Entity* register_tecs_company = bluefintecsmerchantservices_register_tecs_company(client, NULL);
 ```
 
 ### Fields
@@ -1987,7 +1987,7 @@ Entity* register_tecs_company = bluefin_tecs_merchant_services_register_tecs_com
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* register_tecs_company = bluefin_tecs_merchant_services_register_tecs_company(client, NULL);
+Entity* register_tecs_company = bluefintecsmerchantservices_register_tecs_company(client, NULL);
 voxgig_value* result = register_tecs_company->vt->create(register_tecs_company, cmap(4,
     "corporate_uuid", v_str("example_corporate_uuid"),  // char*
     "package_order_uuid", v_str("example_package_order_uuid"),  // char*
@@ -2020,7 +2020,7 @@ Return the entity name.
 ## RegisterTerminal
 
 ```c
-Entity* register_terminal = bluefin_tecs_merchant_services_register_terminal(client, NULL);
+Entity* register_terminal = bluefintecsmerchantservices_register_terminal(client, NULL);
 ```
 
 ### Fields
@@ -2053,7 +2053,7 @@ Entity* register_terminal = bluefin_tecs_merchant_services_register_terminal(cli
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* register_terminal = bluefin_tecs_merchant_services_register_terminal(client, NULL);
+Entity* register_terminal = bluefintecsmerchantservices_register_terminal(client, NULL);
 voxgig_value* result = register_terminal->vt->create(register_terminal, cmap(7,
     "corporate_uuid", v_str("example_corporate_uuid"),  // char*
     "package_order_uuid", v_str("example_package_order_uuid"),  // char*
@@ -2089,7 +2089,7 @@ Return the entity name.
 ## ReportData
 
 ```c
-Entity* report_data = bluefin_tecs_merchant_services_report_data(client, NULL);
+Entity* report_data = bluefintecsmerchantservices_report_data(client, NULL);
 ```
 
 ### Fields
@@ -2114,7 +2114,7 @@ Entity* report_data = bluefin_tecs_merchant_services_report_data(client, NULL);
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* report_data = bluefin_tecs_merchant_services_report_data(client, NULL);
+Entity* report_data = bluefintecsmerchantservices_report_data(client, NULL);
 voxgig_value* result = report_data->vt->create(report_data, cmap(4,
     "clearing_date_from", v_str("example_clearing_date_from"),  // char*
     "clearing_date_to", v_str("example_clearing_date_to"),  // char*
@@ -2147,7 +2147,7 @@ Return the entity name.
 ## StatusTransaction
 
 ```c
-Entity* status_transaction = bluefin_tecs_merchant_services_status_transaction(client, NULL);
+Entity* status_transaction = bluefintecsmerchantservices_status_transaction(client, NULL);
 ```
 
 ### Fields
@@ -2212,7 +2212,7 @@ Entity* status_transaction = bluefin_tecs_merchant_services_status_transaction(c
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* status_transaction = bluefin_tecs_merchant_services_status_transaction(client, NULL);
+Entity* status_transaction = bluefintecsmerchantservices_status_transaction(client, NULL);
 voxgig_value* result = status_transaction->vt->create(status_transaction, NULL, NULL, &err);
 ```
 
@@ -2240,7 +2240,7 @@ Return the entity name.
 ## StoreTerminalParameter
 
 ```c
-Entity* store_terminal_parameter = bluefin_tecs_merchant_services_store_terminal_parameter(client, NULL);
+Entity* store_terminal_parameter = bluefintecsmerchantservices_store_terminal_parameter(client, NULL);
 ```
 
 ### Fields
@@ -2261,7 +2261,7 @@ Entity* store_terminal_parameter = bluefin_tecs_merchant_services_store_terminal
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* store_terminal_parameter = bluefin_tecs_merchant_services_store_terminal_parameter(client, NULL);
+Entity* store_terminal_parameter = bluefintecsmerchantservices_store_terminal_parameter(client, NULL);
 voxgig_value* result = store_terminal_parameter->vt->create(store_terminal_parameter, cmap(1,
     "serial_number", v_str("example_serial_number"))  // char*
 , NULL, &err);
@@ -2291,7 +2291,7 @@ Return the entity name.
 ## TerminalId
 
 ```c
-Entity* terminal_id = bluefin_tecs_merchant_services_terminal_id(client, NULL);
+Entity* terminal_id = bluefintecsmerchantservices_terminal_id(client, NULL);
 ```
 
 ### Fields
@@ -2311,7 +2311,7 @@ Entity* terminal_id = bluefin_tecs_merchant_services_terminal_id(client, NULL);
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* terminal_id = bluefin_tecs_merchant_services_terminal_id(client, NULL);
+Entity* terminal_id = bluefintecsmerchantservices_terminal_id(client, NULL);
 voxgig_value* result = terminal_id->vt->create(terminal_id, cmap(1,
     "device_serial_number", v_list())  // voxgig_value* (list)
 , NULL, &err);
@@ -2341,7 +2341,7 @@ Return the entity name.
 ## TransactionHistory
 
 ```c
-Entity* transaction_history = bluefin_tecs_merchant_services_transaction_history(client, NULL);
+Entity* transaction_history = bluefintecsmerchantservices_transaction_history(client, NULL);
 ```
 
 ### Fields
@@ -2385,7 +2385,7 @@ Entity* transaction_history = bluefin_tecs_merchant_services_transaction_history
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* transaction_history = bluefin_tecs_merchant_services_transaction_history(client, NULL);
+Entity* transaction_history = bluefintecsmerchantservices_transaction_history(client, NULL);
 voxgig_value* result = transaction_history->vt->create(transaction_history, NULL, NULL, &err);
 ```
 
@@ -2413,7 +2413,7 @@ Return the entity name.
 ## TransactionsCount
 
 ```c
-Entity* transactions_count = bluefin_tecs_merchant_services_transactions_count(client, NULL);
+Entity* transactions_count = bluefintecsmerchantservices_transactions_count(client, NULL);
 ```
 
 ### Fields
@@ -2445,7 +2445,7 @@ Entity* transactions_count = bluefin_tecs_merchant_services_transactions_count(c
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* transactions_count = bluefin_tecs_merchant_services_transactions_count(client, NULL);
+Entity* transactions_count = bluefintecsmerchantservices_transactions_count(client, NULL);
 voxgig_value* result = transactions_count->vt->create(transactions_count, NULL, NULL, &err);
 ```
 
@@ -2473,7 +2473,7 @@ Return the entity name.
 ## TransactionsCountCardBrand
 
 ```c
-Entity* transactions_count_card_brand = bluefin_tecs_merchant_services_transactions_count_card_brand(client, NULL);
+Entity* transactions_count_card_brand = bluefintecsmerchantservices_transactions_count_card_brand(client, NULL);
 ```
 
 ### Fields
@@ -2505,7 +2505,7 @@ Entity* transactions_count_card_brand = bluefin_tecs_merchant_services_transacti
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* transactions_count_card_brand = bluefin_tecs_merchant_services_transactions_count_card_brand(client, NULL);
+Entity* transactions_count_card_brand = bluefintecsmerchantservices_transactions_count_card_brand(client, NULL);
 voxgig_value* result = transactions_count_card_brand->vt->create(transactions_count_card_brand, NULL, NULL, &err);
 ```
 
@@ -2533,7 +2533,7 @@ Return the entity name.
 ## TransactionsTurnover
 
 ```c
-Entity* transactions_turnover = bluefin_tecs_merchant_services_transactions_turnover(client, NULL);
+Entity* transactions_turnover = bluefintecsmerchantservices_transactions_turnover(client, NULL);
 ```
 
 ### Fields
@@ -2565,7 +2565,7 @@ Entity* transactions_turnover = bluefin_tecs_merchant_services_transactions_turn
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* transactions_turnover = bluefin_tecs_merchant_services_transactions_turnover(client, NULL);
+Entity* transactions_turnover = bluefintecsmerchantservices_transactions_turnover(client, NULL);
 voxgig_value* result = transactions_turnover->vt->create(transactions_turnover, NULL, NULL, &err);
 ```
 
@@ -2593,7 +2593,7 @@ Return the entity name.
 ## UpdateMerchant
 
 ```c
-Entity* update_merchant = bluefin_tecs_merchant_services_update_merchant(client, NULL);
+Entity* update_merchant = bluefintecsmerchantservices_update_merchant(client, NULL);
 ```
 
 ### Fields
@@ -2619,7 +2619,7 @@ Entity* update_merchant = bluefin_tecs_merchant_services_update_merchant(client,
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* update_merchant = bluefin_tecs_merchant_services_update_merchant(client, NULL);
+Entity* update_merchant = bluefintecsmerchantservices_update_merchant(client, NULL);
 voxgig_value* result = update_merchant->vt->create(update_merchant, cmap(1,
     "corporate_uuid", v_str("example_corporate_uuid"))  // char*
 , NULL, &err);
@@ -2649,7 +2649,7 @@ Return the entity name.
 ## UpdateTemplateXml
 
 ```c
-Entity* update_template_xml = bluefin_tecs_merchant_services_update_template_xml(client, NULL);
+Entity* update_template_xml = bluefintecsmerchantservices_update_template_xml(client, NULL);
 ```
 
 ### Fields
@@ -2668,7 +2668,7 @@ Entity* update_template_xml = bluefin_tecs_merchant_services_update_template_xml
 Create a new entity with the given data. Returns the created entity data and sets `*err` on failure.
 
 ```c
-Entity* update_template_xml = bluefin_tecs_merchant_services_update_template_xml(client, NULL);
+Entity* update_template_xml = bluefintecsmerchantservices_update_template_xml(client, NULL);
 voxgig_value* result = update_template_xml->vt->create(update_template_xml, cmap(2,
     "template_name", v_str("example_template_name"),  // char*
     "template_xml", v_str("example_template_xml"))  // char*
@@ -2699,7 +2699,7 @@ Return the entity name.
 ## Version
 
 ```c
-Entity* version = bluefin_tecs_merchant_services_version(client, NULL);
+Entity* version = bluefintecsmerchantservices_version(client, NULL);
 ```
 
 ### Fields
@@ -2717,7 +2717,7 @@ Entity* version = bluefin_tecs_merchant_services_version(client, NULL);
 Load a single entity matching the given criteria. Returns the entity data and sets `*err` on failure.
 
 ```c
-Entity* version = bluefin_tecs_merchant_services_version(client, NULL);
+Entity* version = bluefintecsmerchantservices_version(client, NULL);
 voxgig_value* result = version->vt->load(version, NULL, NULL, &err);
 ```
 
@@ -2752,7 +2752,7 @@ Return the entity name.
 Features are activated via the `feature` option:
 
 ```c
-BluefinTecsMerchantServicesSDK* client = bluefin_tecs_merchant_services_sdk_new(cmap(1,
+BluefinTecsMerchantServicesSDK* client = bluefintecsmerchantservices_sdk_new(cmap(1,
     "feature", cmap(1,
         "test", cmap(1, "active", v_bool(true)))
 ));

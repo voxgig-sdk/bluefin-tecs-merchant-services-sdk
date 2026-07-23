@@ -28,7 +28,7 @@ static BluefinTecsMerchantServicesSDK* mandator_clearing_export_download_direct_
   voxgig_value* opts = cmap(2,
     "base", v_str("http://localhost:8080"),
     "system", cmap(1, "fetch", vfn(mandator_clearing_export_download_mock, mockres)));
-  return bluefin_tecs_merchant_services_sdk_new(opts);
+  return bluefintecsmerchantservices_sdk_new(opts);
 }
 
 int main(void) {
@@ -58,5 +58,5 @@ int main(void) {
     CHECK(strstr(LAST_URL, "direct01") != NULL, "load: url has direct01");
   }
 
-  TEST_SUMMARY("bluefin_tecs_merchant_services_mandator_clearing_export_download_direct");
+  TEST_SUMMARY("bluefintecsmerchantservices_mandator_clearing_export_download_direct");
 }

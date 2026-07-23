@@ -204,197 +204,197 @@ voxgig_value* sdk_direct(BluefinTecsMerchantServicesSDK* sdk, voxgig_value* fetc
 
 
 // CancelTransaction entity bound to this client.
-Entity* bluefin_tecs_merchant_services_cancel_transaction(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsmerchantservices_cancel_transaction(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
   return cancel_transaction_entity_new(client, entopts);
 }
 
 // CheckCardBlackListed entity bound to this client.
-Entity* bluefin_tecs_merchant_services_check_card_black_listed(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsmerchantservices_check_card_black_listed(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
   return check_card_black_listed_entity_new(client, entopts);
 }
 
 // CreateProduct entity bound to this client.
-Entity* bluefin_tecs_merchant_services_create_product(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsmerchantservices_create_product(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
   return create_product_entity_new(client, entopts);
 }
 
 // DeactivateTerminal entity bound to this client.
-Entity* bluefin_tecs_merchant_services_deactivate_terminal(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsmerchantservices_deactivate_terminal(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
   return deactivate_terminal_entity_new(client, entopts);
 }
 
 // DigitalServicesApi entity bound to this client.
-Entity* bluefin_tecs_merchant_services_digital_services_api(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsmerchantservices_digital_services_api(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
   return digital_services_api_entity_new(client, entopts);
 }
 
 // EcDataEcom entity bound to this client.
-Entity* bluefin_tecs_merchant_services_ec_data_ecom(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsmerchantservices_ec_data_ecom(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
   return ec_data_ecom_entity_new(client, entopts);
 }
 
 // EcomParameter entity bound to this client.
-Entity* bluefin_tecs_merchant_services_ecom_parameter(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsmerchantservices_ecom_parameter(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
   return ecom_parameter_entity_new(client, entopts);
 }
 
 // EcrData entity bound to this client.
-Entity* bluefin_tecs_merchant_services_ecr_data(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsmerchantservices_ecr_data(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
   return ecr_data_entity_new(client, entopts);
 }
 
 // EmvData entity bound to this client.
-Entity* bluefin_tecs_merchant_services_emv_data(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsmerchantservices_emv_data(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
   return emv_data_entity_new(client, entopts);
 }
 
 // EnableAcquiring entity bound to this client.
-Entity* bluefin_tecs_merchant_services_enable_acquiring(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsmerchantservices_enable_acquiring(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
   return enable_acquiring_entity_new(client, entopts);
 }
 
 // GetMerchantContractNumber entity bound to this client.
-Entity* bluefin_tecs_merchant_services_get_merchant_contract_number(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsmerchantservices_get_merchant_contract_number(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
   return get_merchant_contract_number_entity_new(client, entopts);
 }
 
 // GetTemplateXml entity bound to this client.
-Entity* bluefin_tecs_merchant_services_get_template_xml(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsmerchantservices_get_template_xml(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
   return get_template_xml_entity_new(client, entopts);
 }
 
 // IntroduceMandator entity bound to this client.
-Entity* bluefin_tecs_merchant_services_introduce_mandator(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsmerchantservices_introduce_mandator(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
   return introduce_mandator_entity_new(client, entopts);
 }
 
 // IntroducePackage entity bound to this client.
-Entity* bluefin_tecs_merchant_services_introduce_package(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsmerchantservices_introduce_package(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
   return introduce_package_entity_new(client, entopts);
 }
 
 // KeepAlive entity bound to this client.
-Entity* bluefin_tecs_merchant_services_keep_alive(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsmerchantservices_keep_alive(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
   return keep_alive_entity_new(client, entopts);
 }
 
 // ListTerminal entity bound to this client.
-Entity* bluefin_tecs_merchant_services_list_terminal(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsmerchantservices_list_terminal(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
   return list_terminal_entity_new(client, entopts);
 }
 
 // MandatorClearingExport entity bound to this client.
-Entity* bluefin_tecs_merchant_services_mandator_clearing_export(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsmerchantservices_mandator_clearing_export(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
   return mandator_clearing_export_entity_new(client, entopts);
 }
 
 // MandatorClearingExportDownload entity bound to this client.
-Entity* bluefin_tecs_merchant_services_mandator_clearing_export_download(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsmerchantservices_mandator_clearing_export_download(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
   return mandator_clearing_export_download_entity_new(client, entopts);
 }
 
 // MandatorClearingExportSummary entity bound to this client.
-Entity* bluefin_tecs_merchant_services_mandator_clearing_export_summary(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsmerchantservices_mandator_clearing_export_summary(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
   return mandator_clearing_export_summary_entity_new(client, entopts);
 }
 
 // MerchantPortalServicesApi entity bound to this client.
-Entity* bluefin_tecs_merchant_services_merchant_portal_services_api(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsmerchantservices_merchant_portal_services_api(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
   return merchant_portal_services_api_entity_new(client, entopts);
 }
 
 // MoveTid entity bound to this client.
-Entity* bluefin_tecs_merchant_services_move_tid(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsmerchantservices_move_tid(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
   return move_tid_entity_new(client, entopts);
 }
 
 // PaymentManual entity bound to this client.
-Entity* bluefin_tecs_merchant_services_payment_manual(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsmerchantservices_payment_manual(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
   return payment_manual_entity_new(client, entopts);
 }
 
 // PaymentSred entity bound to this client.
-Entity* bluefin_tecs_merchant_services_payment_sred(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsmerchantservices_payment_sred(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
   return payment_sred_entity_new(client, entopts);
 }
 
 // PreAuthTransactionCompletion entity bound to this client.
-Entity* bluefin_tecs_merchant_services_pre_auth_transaction_completion(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsmerchantservices_pre_auth_transaction_completion(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
   return pre_auth_transaction_completion_entity_new(client, entopts);
 }
 
 // ReactivateTerminal entity bound to this client.
-Entity* bluefin_tecs_merchant_services_reactivate_terminal(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsmerchantservices_reactivate_terminal(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
   return reactivate_terminal_entity_new(client, entopts);
 }
 
 // RefundTransaction entity bound to this client.
-Entity* bluefin_tecs_merchant_services_refund_transaction(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsmerchantservices_refund_transaction(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
   return refund_transaction_entity_new(client, entopts);
 }
 
 // RegisterTecsCompany entity bound to this client.
-Entity* bluefin_tecs_merchant_services_register_tecs_company(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsmerchantservices_register_tecs_company(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
   return register_tecs_company_entity_new(client, entopts);
 }
 
 // RegisterTerminal entity bound to this client.
-Entity* bluefin_tecs_merchant_services_register_terminal(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsmerchantservices_register_terminal(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
   return register_terminal_entity_new(client, entopts);
 }
 
 // ReportData entity bound to this client.
-Entity* bluefin_tecs_merchant_services_report_data(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsmerchantservices_report_data(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
   return report_data_entity_new(client, entopts);
 }
 
 // StatusTransaction entity bound to this client.
-Entity* bluefin_tecs_merchant_services_status_transaction(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsmerchantservices_status_transaction(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
   return status_transaction_entity_new(client, entopts);
 }
 
 // StoreTerminalParameter entity bound to this client.
-Entity* bluefin_tecs_merchant_services_store_terminal_parameter(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsmerchantservices_store_terminal_parameter(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
   return store_terminal_parameter_entity_new(client, entopts);
 }
 
 // TerminalId entity bound to this client.
-Entity* bluefin_tecs_merchant_services_terminal_id(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsmerchantservices_terminal_id(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
   return terminal_id_entity_new(client, entopts);
 }
 
 // TransactionHistory entity bound to this client.
-Entity* bluefin_tecs_merchant_services_transaction_history(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsmerchantservices_transaction_history(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
   return transaction_history_entity_new(client, entopts);
 }
 
 // TransactionsCount entity bound to this client.
-Entity* bluefin_tecs_merchant_services_transactions_count(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsmerchantservices_transactions_count(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
   return transactions_count_entity_new(client, entopts);
 }
 
 // TransactionsCountCardBrand entity bound to this client.
-Entity* bluefin_tecs_merchant_services_transactions_count_card_brand(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsmerchantservices_transactions_count_card_brand(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
   return transactions_count_card_brand_entity_new(client, entopts);
 }
 
 // TransactionsTurnover entity bound to this client.
-Entity* bluefin_tecs_merchant_services_transactions_turnover(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsmerchantservices_transactions_turnover(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
   return transactions_turnover_entity_new(client, entopts);
 }
 
 // UpdateMerchant entity bound to this client.
-Entity* bluefin_tecs_merchant_services_update_merchant(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsmerchantservices_update_merchant(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
   return update_merchant_entity_new(client, entopts);
 }
 
 // UpdateTemplateXml entity bound to this client.
-Entity* bluefin_tecs_merchant_services_update_template_xml(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsmerchantservices_update_template_xml(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
   return update_template_xml_entity_new(client, entopts);
 }
 
 // Version entity bound to this client.
-Entity* bluefin_tecs_merchant_services_version(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
+Entity* bluefintecsmerchantservices_version(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
   return version_entity_new(client, entopts);
 }
 

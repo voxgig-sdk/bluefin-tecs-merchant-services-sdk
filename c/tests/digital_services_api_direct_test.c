@@ -28,7 +28,7 @@ static BluefinTecsMerchantServicesSDK* digital_services_api_direct_setup(voxgig_
   voxgig_value* opts = cmap(2,
     "base", v_str("http://localhost:8080"),
     "system", cmap(1, "fetch", vfn(digital_services_api_mock, mockres)));
-  return bluefin_tecs_merchant_services_sdk_new(opts);
+  return bluefintecsmerchantservices_sdk_new(opts);
 }
 
 int main(void) {
@@ -56,5 +56,5 @@ int main(void) {
     CHECK_INT_EQ(CALLS, 1, "load: one call");
   }
 
-  TEST_SUMMARY("bluefin_tecs_merchant_services_digital_services_api_direct");
+  TEST_SUMMARY("bluefintecsmerchantservices_digital_services_api_direct");
 }

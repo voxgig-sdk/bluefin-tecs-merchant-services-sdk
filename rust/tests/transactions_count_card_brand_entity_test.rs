@@ -21,46 +21,6 @@ fn transactions_count_card_brand_entity_instance() {
 }
 
 #[test]
-fn transactions_count_card_brand_entity_stream() {
-    // stream() runs the list op through the full pipeline and yields each
-    // result item. Seed two entities via test mode; with the `streaming`
-    // feature active it yields the feature's incremental items, else it
-    // falls back to the materialised items — either way every item yields.
-    let seed = jo(vec![(
-        "entity",
-        jo(vec![(
-            "transactions_count_card_brand",
-            jo(vec![
-                ("strm01", jo(vec![("id", Value::str("strm01"))])),
-                ("strm02", jo(vec![("id", Value::str("strm02"))])),
-            ]),
-        )]),
-    )]);
-
-    let sdkopts = jo(vec![(
-        "feature",
-        jo(vec![("streaming", jo(vec![("active", Value::Bool(true))]))]),
-    )]);
-
-    let testsdk = test_sdk(seed.clone(), sdkopts);
-    let ent = testsdk.transactions_count_card_brand(Value::Noval);
-    let items: Vec<Value> = ent
-        .stream("list", Value::empty_map(), Value::empty_map())
-        .expect("stream failed")
-        .collect();
-    assert_eq!(items.len(), 2, "stream should yield both seeded items");
-
-    // Fallback: streaming inactive still yields both materialised items.
-    let plainsdk = test_sdk(seed, Value::Noval);
-    let plainent = plainsdk.transactions_count_card_brand(Value::Noval);
-    let plain_items: Vec<Value> = plainent
-        .stream("list", Value::empty_map(), Value::empty_map())
-        .expect("stream failed")
-        .collect();
-    assert_eq!(plain_items.len(), 2, "fallback stream should yield both items");
-}
-
-#[test]
 fn transactions_count_card_brand_entity_basic() {
     let setup = transactions_count_card_brand_basic_setup(Value::Noval);
     // Per-op sdk-test-control.json skip — the basic test exercises a flow

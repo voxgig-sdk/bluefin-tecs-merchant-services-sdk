@@ -98,7 +98,7 @@ local result, err = client:DigitalServicesApi():load()
 
 BluefinTecsMerchantServicesSDK* client = test_sdk(NULL, NULL);
 PNError* err = NULL;
-Entity* digital_services_api = bluefin_tecs_merchant_services_digital_services_api(client, NULL);
+Entity* digital_services_api = bluefintecsmerchantservices_digital_services_api(client, NULL);
 voxgig_value* digital_services_api_rec = digital_services_api->vt->load(digital_services_api, NULL, NULL, &err);
 printf("%s\n", voxgig_to_json(digital_services_api_rec));
 ```
@@ -443,7 +443,7 @@ local client = sdk.new({
 ```c
 #include "core/api.h"
 
-BluefinTecsMerchantServicesSDK* client = bluefin_tecs_merchant_services_sdk_new(cmap(1,
+BluefinTecsMerchantServicesSDK* client = bluefintecsmerchantservices_sdk_new(cmap(1,
     "apikey", v_str(getenv("BLUEFIN_TECS_MERCHANT_SERVICES_APIKEY"))));
 PNError* err = NULL;
 
