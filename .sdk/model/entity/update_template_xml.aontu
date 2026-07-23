@@ -1,0 +1,53 @@
+# Entity: update_template_xml
+
+main: kit: entity: update_template_xml: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "response_code"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "response_message"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "template_name"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "template_xml"
+      req: true
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "update_template_xml"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          method: "POST"
+          orig: "/public/updateTemplateXml"
+          parts: [
+            "public"
+            "updateTemplateXml"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

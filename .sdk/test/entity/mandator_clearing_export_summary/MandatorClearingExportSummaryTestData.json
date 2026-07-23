@@ -1,0 +1,41 @@
+{
+  "existing": {
+    "mandator_clearing_export_summary": {
+      "MANDATOR_CLEARING_EXPORT_SUMMARY00": {
+        "clearing_date_from": "s32",
+        "clearing_date_to": "s33",
+        "record": [],
+        "response_code": "s35",
+        "response_message": "s36",
+        "id": "MANDATOR_CLEARING_EXPORT_SUMMARY00"
+      },
+      "MANDATOR_CLEARING_EXPORT_SUMMARY01": {
+        "clearing_date_from": "s64",
+        "clearing_date_to": "s65",
+        "record": [],
+        "response_code": "s67",
+        "response_message": "s68",
+        "id": "MANDATOR_CLEARING_EXPORT_SUMMARY01"
+      },
+      "MANDATOR_CLEARING_EXPORT_SUMMARY02": {
+        "clearing_date_from": "s96",
+        "clearing_date_to": "s97",
+        "record": [],
+        "response_code": "s99",
+        "response_message": "s9a",
+        "id": "MANDATOR_CLEARING_EXPORT_SUMMARY02"
+      }
+    }
+  },
+  "new": {
+    "mandator_clearing_export_summary": {
+      "mandator_clearing_export_summary_ref01": {
+        "clearing_date_from": "sc8",
+        "clearing_date_to": "sc9",
+        "record": [],
+        "response_code": "scb",
+        "response_message": "scc"
+      }
+    }
+  }
+}

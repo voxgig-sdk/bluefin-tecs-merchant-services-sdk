@@ -1,0 +1,93 @@
+{
+  "existing": {
+    "register_terminal": {
+      "REGISTER_TERMINAL00": {
+        "additional_data": {},
+        "corporate_uuid": "sb5",
+        "package_order_uuid": "sb6",
+        "product_order_uuid": "sb7",
+        "response_code": "sb8",
+        "response_message": "sb9",
+        "tecs_web_secret_key": "sba",
+        "template_name": "sbb",
+        "terminal_country_code": "sbc",
+        "terminal_id": "TERMINAL01",
+        "terminal_id_acq": "sbe",
+        "terminal_language_code": "sbf",
+        "terminal_location": "sc0",
+        "terminal_serial_number": "sc1",
+        "token_io_alia": "sc2",
+        "token_io_iban": "sc3",
+        "token_io_member_id": "TOKEN_IO_MEMBER01",
+        "web_shop_url": "sc5",
+        "id": "REGISTER_TERMINAL00"
+      },
+      "REGISTER_TERMINAL01": {
+        "additional_data": {},
+        "corporate_uuid": "s169",
+        "package_order_uuid": "s16a",
+        "product_order_uuid": "s16b",
+        "response_code": "s16c",
+        "response_message": "s16d",
+        "tecs_web_secret_key": "s16e",
+        "template_name": "s16f",
+        "terminal_country_code": "s170",
+        "terminal_id": "TERMINAL01",
+        "terminal_id_acq": "s172",
+        "terminal_language_code": "s173",
+        "terminal_location": "s174",
+        "terminal_serial_number": "s175",
+        "token_io_alia": "s176",
+        "token_io_iban": "s177",
+        "token_io_member_id": "TOKEN_IO_MEMBER01",
+        "web_shop_url": "s179",
+        "id": "REGISTER_TERMINAL01"
+      },
+      "REGISTER_TERMINAL02": {
+        "additional_data": {},
+        "corporate_uuid": "s21d",
+        "package_order_uuid": "s21e",
+        "product_order_uuid": "s21f",
+        "response_code": "s220",
+        "response_message": "s221",
+        "tecs_web_secret_key": "s222",
+        "template_name": "s223",
+        "terminal_country_code": "s224",
+        "terminal_id": "TERMINAL01",
+        "terminal_id_acq": "s226",
+        "terminal_language_code": "s227",
+        "terminal_location": "s228",
+        "terminal_serial_number": "s229",
+        "token_io_alia": "s22a",
+        "token_io_iban": "s22b",
+        "token_io_member_id": "TOKEN_IO_MEMBER01",
+        "web_shop_url": "s22d",
+        "id": "REGISTER_TERMINAL02"
+      }
+    }
+  },
+  "new": {
+    "register_terminal": {
+      "register_terminal_ref01": {
+        "additional_data": {},
+        "corporate_uuid": "s2d1",
+        "package_order_uuid": "s2d2",
+        "product_order_uuid": "s2d3",
+        "response_code": "s2d4",
+        "response_message": "s2d5",
+        "tecs_web_secret_key": "s2d6",
+        "template_name": "s2d7",
+        "terminal_country_code": "s2d8",
+        "terminal_id": "TERMINAL01",
+        "terminal_id_acq": "s2da",
+        "terminal_language_code": "s2db",
+        "terminal_location": "s2dc",
+        "terminal_serial_number": "s2dd",
+        "token_io_alia": "s2de",
+        "token_io_iban": "s2df",
+        "token_io_member_id": "TOKEN_IO_MEMBER01",
+        "web_shop_url": "s2e1"
+      }
+    }
+  }
+}

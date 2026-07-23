@@ -1,0 +1,18 @@
+# BasicRefundTransactionFlow
+
+main: kit: flow: BasicRefundTransactionFlow:
+{
+  entity: "refund_transaction",
+  kind: "basic",
+  name: "BasicRefundTransactionFlow",
+  step: [
+    {
+      input: {
+        ref: "refund_transaction_ref01"
+      }
+
+      op: "create"
+    }
+  ],
+  "key$": "BasicRefundTransactionFlow"
+}

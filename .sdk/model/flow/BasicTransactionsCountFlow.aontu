@@ -1,0 +1,18 @@
+# BasicTransactionsCountFlow
+
+main: kit: flow: BasicTransactionsCountFlow:
+{
+  entity: "transactions_count",
+  kind: "basic",
+  name: "BasicTransactionsCountFlow",
+  step: [
+    {
+      input: {
+        ref: "transactions_count_ref01"
+      }
+
+      op: "create"
+    }
+  ],
+  "key$": "BasicTransactionsCountFlow"
+}

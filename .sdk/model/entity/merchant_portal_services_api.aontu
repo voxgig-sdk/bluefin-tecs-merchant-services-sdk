@@ -1,0 +1,158 @@
+# Entity: merchant_portal_services_api
+
+main: kit: entity: merchant_portal_services_api: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "3_d_secure"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "authorization_code"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "card_brand"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "clearing_amount_from"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "clearing_amount_to"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "clearing_currency"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "clearing_status"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "corporate_uuid"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "order_by_transaction_date"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "pagination"
+      req: false
+      type: "`$OBJECT`"
+    }
+    {
+      name: "receipt_number"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "referenced_transaction_id"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "retrieval_reference_number"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "source_id"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "tecsengine_response_code_from"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "tecsengine_response_code_to"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "terminal_id"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "trace_number"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "transaction_amount_from"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "transaction_amount_to"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "transaction_date_from"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "transaction_date_to"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "transaction_id"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "transaction_type"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "wallet"
+      req: false
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "merchant_portal_services_api"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          method: "POST"
+          orig: "/public/transactionHistoryCsv"
+          parts: [
+            "public"
+            "transactionHistoryCsv"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

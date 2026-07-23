@@ -1,0 +1,18 @@
+# BasicEnableAcquiringFlow
+
+main: kit: flow: BasicEnableAcquiringFlow:
+{
+  entity: "enable_acquiring",
+  kind: "basic",
+  name: "BasicEnableAcquiringFlow",
+  step: [
+    {
+      input: {
+        ref: "enable_acquiring_ref01"
+      }
+
+      op: "create"
+    }
+  ],
+  "key$": "BasicEnableAcquiringFlow"
+}

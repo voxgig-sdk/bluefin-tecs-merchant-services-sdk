@@ -1,0 +1,18 @@
+# BasicMoveTidFlow
+
+main: kit: flow: BasicMoveTidFlow:
+{
+  entity: "move_tid",
+  kind: "basic",
+  name: "BasicMoveTidFlow",
+  step: [
+    {
+      input: {
+        ref: "move_tid_ref01"
+      }
+
+      op: "create"
+    }
+  ],
+  "key$": "BasicMoveTidFlow"
+}

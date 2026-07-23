@@ -1,0 +1,45 @@
+{
+  "existing": {
+    "transactions_count": {
+      "TRANSACTIONS_COUNT00": {
+        "period": "s3c",
+        "response_code": "s3d",
+        "response_message": "s3e",
+        "transaction_date_from": "s3f",
+        "transaction_date_to": "s40",
+        "transactions_count": [],
+        "id": "TRANSACTIONS_COUNT00"
+      },
+      "TRANSACTIONS_COUNT01": {
+        "period": "s78",
+        "response_code": "s79",
+        "response_message": "s7a",
+        "transaction_date_from": "s7b",
+        "transaction_date_to": "s7c",
+        "transactions_count": [],
+        "id": "TRANSACTIONS_COUNT01"
+      },
+      "TRANSACTIONS_COUNT02": {
+        "period": "sb4",
+        "response_code": "sb5",
+        "response_message": "sb6",
+        "transaction_date_from": "sb7",
+        "transaction_date_to": "sb8",
+        "transactions_count": [],
+        "id": "TRANSACTIONS_COUNT02"
+      }
+    }
+  },
+  "new": {
+    "transactions_count": {
+      "transactions_count_ref01": {
+        "period": "sf0",
+        "response_code": "sf1",
+        "response_message": "sf2",
+        "transaction_date_from": "sf3",
+        "transaction_date_to": "sf4",
+        "transactions_count": []
+      }
+    }
+  }
+}

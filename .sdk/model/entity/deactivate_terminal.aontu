@@ -1,0 +1,67 @@
+# Entity: deactivate_terminal
+
+main: kit: entity: deactivate_terminal: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "corporate_uuid"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "deactivation_reason"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "package_order_uuid"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "product_order_uuid"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "response_code"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "response_message"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "terminal_id"
+      req: true
+      type: "`$INTEGER`"
+    }
+  ]
+
+  name: "deactivate_terminal"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          method: "POST"
+          orig: "/deactivateTerminal"
+          parts: [
+            "deactivateTerminal"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

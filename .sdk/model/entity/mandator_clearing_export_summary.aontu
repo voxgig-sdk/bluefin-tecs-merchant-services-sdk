@@ -1,0 +1,59 @@
+# Entity: mandator_clearing_export_summary
+
+main: kit: entity: mandator_clearing_export_summary: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "clearing_date_from"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "clearing_date_to"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "record"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "response_code"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "response_message"
+      req: false
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "mandator_clearing_export_summary"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          method: "POST"
+          orig: "/public/digitalservices/mandatorClearingExportSummary"
+          parts: [
+            "public"
+            "digitalservices"
+            "mandatorClearingExportSummary"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

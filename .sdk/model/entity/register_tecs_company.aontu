@@ -1,0 +1,72 @@
+# Entity: register_tecs_company
+
+main: kit: entity: register_tecs_company: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "corporate_uuid"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "package_order_uuid"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "partner_id"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "partner_name"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "product_order_uuid"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "response_code"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "response_message"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "template_name"
+      req: true
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "register_tecs_company"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          method: "POST"
+          orig: "/registerTecsCompany"
+          parts: [
+            "registerTecsCompany"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

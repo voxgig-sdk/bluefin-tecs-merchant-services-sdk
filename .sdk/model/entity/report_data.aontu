@@ -1,0 +1,84 @@
+# Entity: report_data
+
+main: kit: entity: report_data: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "card_brand_report_data"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "clearing_date_from"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "clearing_date_to"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "corporate_id"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "currency"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "response_code"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "response_message"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "sum_over_credit_tx"
+      req: false
+      type: "`$OBJECT`"
+    }
+    {
+      name: "sum_over_debit_tx"
+      req: false
+      type: "`$OBJECT`"
+    }
+    {
+      name: "terminal_id"
+      req: false
+      type: "`$INTEGER`"
+    }
+  ]
+
+  name: "report_data"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          method: "POST"
+          orig: "/public/digitalservices/reportData"
+          parts: [
+            "public"
+            "digitalservices"
+            "reportData"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

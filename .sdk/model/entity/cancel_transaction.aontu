@@ -1,0 +1,263 @@
+# Entity: cancel_transaction
+
+main: kit: entity: cancel_transaction: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "acquirer_id"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "acquirer_name"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "actual_bonus_point"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "amount"
+      op: {
+        create: {
+          req: true
+          type: "`$INTEGER`"
+        }
+      }
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "authorization_code"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "balance_amount"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "card_brand"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "card_number"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "client_id"
+      req: true
+      type: "`$INTEGER`"
+    }
+    {
+      name: "currency"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "cvc"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "ec_data"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "ecr_data"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "emv_data"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "exchange_fee"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "exchange_rate"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "language_code"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "merchant_address"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "merchant_name"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "merchant_number"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "message_type"
+      op: {
+        create: {
+          req: true
+          type: "`$STRING`"
+        }
+      }
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "original_trace_number"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "original_transaction_id"
+      op: {
+        create: {
+          req: true
+          type: "`$STRING`"
+        }
+      }
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "password"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "payment_reason"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "receipt_footer"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "receipt_header"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "receipt_layout"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "receipt_number"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "response_code"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "response_message"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "serial_number"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "svc"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "terminal_id"
+      req: true
+      type: "`$INTEGER`"
+    }
+    {
+      name: "terminal_location"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "trace_number"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "transaction_date"
+      op: {
+        create: {
+          req: true
+          type: "`$STRING`"
+        }
+      }
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "transaction_id"
+      op: {
+        create: {
+          req: true
+          type: "`$STRING`"
+        }
+      }
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "tx_type"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "user_data"
+      req: false
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "cancel_transaction"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          method: "POST"
+          orig: "/public/cancelTransaction"
+          parts: [
+            "public"
+            "cancelTransaction"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

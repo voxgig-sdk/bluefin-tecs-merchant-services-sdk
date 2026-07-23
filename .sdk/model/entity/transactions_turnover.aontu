@@ -1,0 +1,75 @@
+# Entity: transactions_turnover
+
+main: kit: entity: transactions_turnover: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "period"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "response_code"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "response_message"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "transaction_date_from"
+      op: {
+        create: {
+          req: true
+          type: "`$STRING`"
+        }
+      }
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "transaction_date_to"
+      op: {
+        create: {
+          req: true
+          type: "`$STRING`"
+        }
+      }
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "turnover"
+      req: false
+      type: "`$ARRAY`"
+    }
+  ]
+
+  name: "transactions_turnover"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          method: "POST"
+          orig: "/public/transactionTurnover"
+          parts: [
+            "public"
+            "transactionTurnover"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

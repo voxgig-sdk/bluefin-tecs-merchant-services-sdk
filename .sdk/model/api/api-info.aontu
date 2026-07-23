@@ -1,0 +1,28 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      description: "Merchant Services"
+      security: {
+        in: "header"
+        name: "Authorization"
+        prefix: "Bearer"
+        scheme: "bearer-key"
+        type: "http"
+      }
+      servers: [
+        {
+          description: "Generated server url"
+          url: "https://test.tecs.at/merchantservices"
+        }
+      ]
+      summary: "Merchant Services"
+      title: "Merchant Services"
+      version: "2.42.53"
+      website: "https://test.tecs.at"
+    }
+  }
+}
+

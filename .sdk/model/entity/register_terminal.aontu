@@ -1,0 +1,122 @@
+# Entity: register_terminal
+
+main: kit: entity: register_terminal: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "additional_data"
+      req: false
+      type: "`$OBJECT`"
+    }
+    {
+      name: "corporate_uuid"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "package_order_uuid"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "product_order_uuid"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "response_code"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "response_message"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "tecs_web_secret_key"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "template_name"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "terminal_country_code"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "terminal_id"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "terminal_id_acq"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "terminal_language_code"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "terminal_location"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "terminal_serial_number"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "token_io_alia"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "token_io_iban"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "token_io_member_id"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "web_shop_url"
+      req: false
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "register_terminal"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          method: "POST"
+          orig: "/registerTerminal"
+          parts: [
+            "registerTerminal"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

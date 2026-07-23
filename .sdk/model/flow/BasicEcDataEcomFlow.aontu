@@ -1,0 +1,18 @@
+# BasicEcDataEcomFlow
+
+main: kit: flow: BasicEcDataEcomFlow:
+{
+  entity: "ec_data_ecom",
+  kind: "basic",
+  name: "BasicEcDataEcomFlow",
+  step: [
+    {
+      input: {
+        ref: "ec_data_ecom_ref01"
+      }
+
+      op: "create"
+    }
+  ],
+  "key$": "BasicEcDataEcomFlow"
+}

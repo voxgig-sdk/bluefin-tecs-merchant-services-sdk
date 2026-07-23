@@ -1,0 +1,45 @@
+{
+  "existing": {
+    "ecr_data": {
+      "ECR_DATA00": {
+        "ecr_data": "s3c",
+        "response_code": "s3d",
+        "response_message": "s3e",
+        "terminal_id": "TERMINAL01",
+        "transaction_id": "TRANSACTION01",
+        "transaction_type": "s41",
+        "id": "ECR_DATA00"
+      },
+      "ECR_DATA01": {
+        "ecr_data": "s78",
+        "response_code": "s79",
+        "response_message": "s7a",
+        "terminal_id": "TERMINAL01",
+        "transaction_id": "TRANSACTION01",
+        "transaction_type": "s7d",
+        "id": "ECR_DATA01"
+      },
+      "ECR_DATA02": {
+        "ecr_data": "sb4",
+        "response_code": "sb5",
+        "response_message": "sb6",
+        "terminal_id": "TERMINAL01",
+        "transaction_id": "TRANSACTION01",
+        "transaction_type": "sb9",
+        "id": "ECR_DATA02"
+      }
+    }
+  },
+  "new": {
+    "ecr_data": {
+      "ecr_data_ref01": {
+        "ecr_data": "sf0",
+        "response_code": "sf1",
+        "response_message": "sf2",
+        "terminal_id": "TERMINAL01",
+        "transaction_id": "TRANSACTION01",
+        "transaction_type": "sf5"
+      }
+    }
+  }
+}

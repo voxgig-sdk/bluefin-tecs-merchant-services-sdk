@@ -1,0 +1,18 @@
+# BasicUpdateMerchantFlow
+
+main: kit: flow: BasicUpdateMerchantFlow:
+{
+  entity: "update_merchant",
+  kind: "basic",
+  name: "BasicUpdateMerchantFlow",
+  step: [
+    {
+      input: {
+        ref: "update_merchant_ref01"
+      }
+
+      op: "create"
+    }
+  ],
+  "key$": "BasicUpdateMerchantFlow"
+}

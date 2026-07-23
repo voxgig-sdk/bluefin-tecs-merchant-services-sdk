@@ -1,0 +1,63 @@
+# Entity: ec_data_ecom
+
+main: kit: entity: ec_data_ecom: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "ecom_data"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "response_code"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "response_message"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "terminal_id"
+      req: true
+      type: "`$INTEGER`"
+    }
+    {
+      name: "transaction_id"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "transaction_type"
+      req: true
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "ec_data_ecom"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          method: "POST"
+          orig: "/public/getEcData"
+          parts: [
+            "public"
+            "getEcData"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

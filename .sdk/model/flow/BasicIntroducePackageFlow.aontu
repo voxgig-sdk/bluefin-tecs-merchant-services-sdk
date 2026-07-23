@@ -1,0 +1,18 @@
+# BasicIntroducePackageFlow
+
+main: kit: flow: BasicIntroducePackageFlow:
+{
+  entity: "introduce_package",
+  kind: "basic",
+  name: "BasicIntroducePackageFlow",
+  step: [
+    {
+      input: {
+        ref: "introduce_package_ref01"
+      }
+
+      op: "create"
+    }
+  ],
+  "key$": "BasicIntroducePackageFlow"
+}

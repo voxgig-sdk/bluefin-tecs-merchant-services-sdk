@@ -1,0 +1,146 @@
+# Entity: digital_services_api
+
+main: kit: entity: digital_services_api: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "clearing_date_from"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "clearing_date_to"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "response_code"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "response_message"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "tx_count"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "tx_id_end"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "tx_id_start"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "tx_seq_no_end"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "tx_seq_no_start"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "tx_total"
+      req: false
+      type: "`$INTEGER`"
+    }
+  ]
+
+  name: "digital_services_api"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          args: {
+            params: [
+              {
+                kind: "param"
+                name: "file_id"
+                orig: "file_id"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "POST"
+          orig: "/public/digitalservices/mandatorClearingExportDownload/{fileId}"
+          parts: [
+            "public"
+            "digitalservices"
+            "mandatorClearingExportDownload"
+            "{file_id}"
+          ]
+          rename: {
+            param: {
+              fileId: "file_id"
+            }
+          }
+          select: {
+            exist: [
+              "file_id"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          method: "POST"
+          orig: "/public/digitalservices/mandatorClearingExportMetadata"
+          parts: [
+            "public"
+            "digitalservices"
+            "mandatorClearingExportMetadata"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          method: "GET"
+          orig: "/public/digitalservices/mandatorClearingExportDownload/status"
+          parts: [
+            "public"
+            "digitalservices"
+            "mandatorClearingExportDownload"
+            "status"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+  relations: {
+    ancestors: [
+      [
+        "mandator_clearing_export_download"
+      ]
+    ]
+  }
+
+
+
+}

@@ -1,0 +1,33 @@
+{
+  "existing": {
+    "introduce_package": {
+      "INTRODUCE_PACKAGE00": {
+        "response_code": "s1e",
+        "response_message": "s1f",
+        "terminal_template_description": "s20",
+        "id": "INTRODUCE_PACKAGE00"
+      },
+      "INTRODUCE_PACKAGE01": {
+        "response_code": "s3c",
+        "response_message": "s3d",
+        "terminal_template_description": "s3e",
+        "id": "INTRODUCE_PACKAGE01"
+      },
+      "INTRODUCE_PACKAGE02": {
+        "response_code": "s5a",
+        "response_message": "s5b",
+        "terminal_template_description": "s5c",
+        "id": "INTRODUCE_PACKAGE02"
+      }
+    }
+  },
+  "new": {
+    "introduce_package": {
+      "introduce_package_ref01": {
+        "response_code": "s78",
+        "response_message": "s79",
+        "terminal_template_description": "s7a"
+      }
+    }
+  }
+}

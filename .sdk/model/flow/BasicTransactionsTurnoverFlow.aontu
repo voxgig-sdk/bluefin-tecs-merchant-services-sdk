@@ -1,0 +1,18 @@
+# BasicTransactionsTurnoverFlow
+
+main: kit: flow: BasicTransactionsTurnoverFlow:
+{
+  entity: "transactions_turnover",
+  kind: "basic",
+  name: "BasicTransactionsTurnoverFlow",
+  step: [
+    {
+      input: {
+        ref: "transactions_turnover_ref01"
+      }
+
+      op: "create"
+    }
+  ],
+  "key$": "BasicTransactionsTurnoverFlow"
+}

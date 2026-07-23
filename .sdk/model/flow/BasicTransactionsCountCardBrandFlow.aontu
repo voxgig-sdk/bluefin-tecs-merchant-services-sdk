@@ -1,0 +1,18 @@
+# BasicTransactionsCountCardBrandFlow
+
+main: kit: flow: BasicTransactionsCountCardBrandFlow:
+{
+  entity: "transactions_count_card_brand",
+  kind: "basic",
+  name: "BasicTransactionsCountCardBrandFlow",
+  step: [
+    {
+      input: {
+        ref: "transactions_count_card_brand_ref01"
+      }
+
+      op: "create"
+    }
+  ],
+  "key$": "BasicTransactionsCountCardBrandFlow"
+}

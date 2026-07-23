@@ -1,0 +1,18 @@
+# BasicKeepAliveFlow
+
+main: kit: flow: BasicKeepAliveFlow:
+{
+  entity: "keep_alive",
+  kind: "basic",
+  name: "BasicKeepAliveFlow",
+  step: [
+    {
+      input: {
+        ref: "keep_alive_ref01"
+      }
+
+      op: "create"
+    }
+  ],
+  "key$": "BasicKeepAliveFlow"
+}

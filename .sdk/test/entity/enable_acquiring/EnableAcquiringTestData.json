@@ -1,0 +1,77 @@
+{
+  "existing": {
+    "enable_acquiring": {
+      "ENABLE_ACQUIRING00": {
+        "account_no": "s8c",
+        "additional_data": {},
+        "corporate_uuid": "s8e",
+        "currency": "s8f",
+        "merchant_category_code": "s90",
+        "package_order_uuid": "s91",
+        "product_order_uuid": "s92",
+        "response_code": "s93",
+        "response_message": "s94",
+        "sorting_code": "s95",
+        "template_name": "s96",
+        "terminal_id": "TERMINAL01",
+        "terminal_id_acq": "s98",
+        "vu_nummer": "s99",
+        "id": "ENABLE_ACQUIRING00"
+      },
+      "ENABLE_ACQUIRING01": {
+        "account_no": "s118",
+        "additional_data": {},
+        "corporate_uuid": "s11a",
+        "currency": "s11b",
+        "merchant_category_code": "s11c",
+        "package_order_uuid": "s11d",
+        "product_order_uuid": "s11e",
+        "response_code": "s11f",
+        "response_message": "s120",
+        "sorting_code": "s121",
+        "template_name": "s122",
+        "terminal_id": "TERMINAL01",
+        "terminal_id_acq": "s124",
+        "vu_nummer": "s125",
+        "id": "ENABLE_ACQUIRING01"
+      },
+      "ENABLE_ACQUIRING02": {
+        "account_no": "s1a4",
+        "additional_data": {},
+        "corporate_uuid": "s1a6",
+        "currency": "s1a7",
+        "merchant_category_code": "s1a8",
+        "package_order_uuid": "s1a9",
+        "product_order_uuid": "s1aa",
+        "response_code": "s1ab",
+        "response_message": "s1ac",
+        "sorting_code": "s1ad",
+        "template_name": "s1ae",
+        "terminal_id": "TERMINAL01",
+        "terminal_id_acq": "s1b0",
+        "vu_nummer": "s1b1",
+        "id": "ENABLE_ACQUIRING02"
+      }
+    }
+  },
+  "new": {
+    "enable_acquiring": {
+      "enable_acquiring_ref01": {
+        "account_no": "s230",
+        "additional_data": {},
+        "corporate_uuid": "s232",
+        "currency": "s233",
+        "merchant_category_code": "s234",
+        "package_order_uuid": "s235",
+        "product_order_uuid": "s236",
+        "response_code": "s237",
+        "response_message": "s238",
+        "sorting_code": "s239",
+        "template_name": "s23a",
+        "terminal_id": "TERMINAL01",
+        "terminal_id_acq": "s23c",
+        "vu_nummer": "s23d"
+      }
+    }
+  }
+}

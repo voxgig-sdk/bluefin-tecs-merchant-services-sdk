@@ -1,0 +1,63 @@
+# Entity: list_terminal
+
+main: kit: entity: list_terminal: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "corporate_uuid"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "filter"
+      req: false
+      type: "`$OBJECT`"
+    }
+    {
+      name: "pagination"
+      req: false
+      type: "`$OBJECT`"
+    }
+    {
+      name: "response_code"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "response_message"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "terminal"
+      req: false
+      type: "`$ARRAY`"
+    }
+  ]
+
+  name: "list_terminal"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          method: "POST"
+          orig: "/public/listTerminals"
+          parts: [
+            "public"
+            "listTerminals"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

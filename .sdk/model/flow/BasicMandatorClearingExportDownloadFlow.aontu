@@ -1,0 +1,40 @@
+# BasicMandatorClearingExportDownloadFlow
+
+main: kit: flow: BasicMandatorClearingExportDownloadFlow:
+{
+  entity: "mandator_clearing_export_download",
+  kind: "basic",
+  name: "BasicMandatorClearingExportDownloadFlow",
+  step: [
+    {
+      input: {
+        ref: "mandator_clearing_export_download_ref01"
+      }
+
+      op: "create"
+    }
+
+    {
+      input: {
+        ref: "mandator_clearing_export_download_ref01",
+        srcdatavar: "mandator_clearing_export_download_ref01_data",
+        suffix: "_dt0"
+      }
+
+      match: {
+        id: "mandator_clearing_export_download01"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-mandator_clearing_export_download_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicMandatorClearingExportDownloadFlow"
+}

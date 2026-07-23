@@ -1,0 +1,89 @@
+{
+  "existing": {
+    "payment_manual": {
+      "PAYMENT_MANUAL00": {
+        "acquirer_name": "saa",
+        "amount": "sab",
+        "authorization_number": "sac",
+        "card_number": "sad",
+        "card_type": "sae",
+        "currency": "saf",
+        "cvc": "sb0",
+        "date_time_tx": "sb1",
+        "exp_date": "sb2",
+        "merchant_id": "MERCHANT01",
+        "original_transaction_id": "ORIGINAL_TRANSACTION01",
+        "password": "sb5",
+        "response_code": "sb6",
+        "response_message": "sb7",
+        "terminal_id": "TERMINAL01",
+        "transaction_id": "TRANSACTION01",
+        "txtype": "sba",
+        "id": "PAYMENT_MANUAL00"
+      },
+      "PAYMENT_MANUAL01": {
+        "acquirer_name": "s154",
+        "amount": "s155",
+        "authorization_number": "s156",
+        "card_number": "s157",
+        "card_type": "s158",
+        "currency": "s159",
+        "cvc": "s15a",
+        "date_time_tx": "s15b",
+        "exp_date": "s15c",
+        "merchant_id": "MERCHANT01",
+        "original_transaction_id": "ORIGINAL_TRANSACTION01",
+        "password": "s15f",
+        "response_code": "s160",
+        "response_message": "s161",
+        "terminal_id": "TERMINAL01",
+        "transaction_id": "TRANSACTION01",
+        "txtype": "s164",
+        "id": "PAYMENT_MANUAL01"
+      },
+      "PAYMENT_MANUAL02": {
+        "acquirer_name": "s1fe",
+        "amount": "s1ff",
+        "authorization_number": "s200",
+        "card_number": "s201",
+        "card_type": "s202",
+        "currency": "s203",
+        "cvc": "s204",
+        "date_time_tx": "s205",
+        "exp_date": "s206",
+        "merchant_id": "MERCHANT01",
+        "original_transaction_id": "ORIGINAL_TRANSACTION01",
+        "password": "s209",
+        "response_code": "s20a",
+        "response_message": "s20b",
+        "terminal_id": "TERMINAL01",
+        "transaction_id": "TRANSACTION01",
+        "txtype": "s20e",
+        "id": "PAYMENT_MANUAL02"
+      }
+    }
+  },
+  "new": {
+    "payment_manual": {
+      "payment_manual_ref01": {
+        "acquirer_name": "s2a8",
+        "amount": "s2a9",
+        "authorization_number": "s2aa",
+        "card_number": "s2ab",
+        "card_type": "s2ac",
+        "currency": "s2ad",
+        "cvc": "s2ae",
+        "date_time_tx": "s2af",
+        "exp_date": "s2b0",
+        "merchant_id": "MERCHANT01",
+        "original_transaction_id": "ORIGINAL_TRANSACTION01",
+        "password": "s2b3",
+        "response_code": "s2b4",
+        "response_message": "s2b5",
+        "terminal_id": "TERMINAL01",
+        "transaction_id": "TRANSACTION01",
+        "txtype": "s2b8"
+      }
+    }
+  }
+}

@@ -1,0 +1,87 @@
+# Entity: transactions_count
+
+main: kit: entity: transactions_count: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "period"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "response_code"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "response_message"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "transaction_date_from"
+      op: {
+        create: {
+          req: true
+          type: "`$STRING`"
+        }
+      }
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "transaction_date_to"
+      op: {
+        create: {
+          req: true
+          type: "`$STRING`"
+        }
+      }
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "transactions_count"
+      req: false
+      type: "`$ARRAY`"
+    }
+  ]
+
+  name: "transactions_count"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          method: "POST"
+          orig: "/public/countAuthorisedTransactions"
+          parts: [
+            "public"
+            "countAuthorisedTransactions"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          method: "POST"
+          orig: "/public/countNotAuthorisedTransactions"
+          parts: [
+            "public"
+            "countNotAuthorisedTransactions"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

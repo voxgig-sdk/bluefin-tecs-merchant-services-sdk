@@ -1,0 +1,63 @@
+# Entity: ecr_data
+
+main: kit: entity: ecr_data: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "ecr_data"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "response_code"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "response_message"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "terminal_id"
+      req: true
+      type: "`$INTEGER`"
+    }
+    {
+      name: "transaction_id"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "transaction_type"
+      req: true
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "ecr_data"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          method: "POST"
+          orig: "/public/getEcrData"
+          parts: [
+            "public"
+            "getEcrData"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

@@ -1,0 +1,18 @@
+# BasicRegisterTerminalFlow
+
+main: kit: flow: BasicRegisterTerminalFlow:
+{
+  entity: "register_terminal",
+  kind: "basic",
+  name: "BasicRegisterTerminalFlow",
+  step: [
+    {
+      input: {
+        ref: "register_terminal_ref01"
+      }
+
+      op: "create"
+    }
+  ],
+  "key$": "BasicRegisterTerminalFlow"
+}

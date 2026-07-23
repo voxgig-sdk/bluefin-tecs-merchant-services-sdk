@@ -1,0 +1,49 @@
+{
+  "existing": {
+    "create_product": {
+      "CREATE_PRODUCT00": {
+        "acquirer_id": "ACQUIRER01",
+        "response_code": "s47",
+        "response_message": "s48",
+        "template_name": "s49",
+        "template_type": "s4a",
+        "template_xml": "s4b",
+        "terminal_type": "s4c",
+        "id": "CREATE_PRODUCT00"
+      },
+      "CREATE_PRODUCT01": {
+        "acquirer_id": "ACQUIRER01",
+        "response_code": "s8d",
+        "response_message": "s8e",
+        "template_name": "s8f",
+        "template_type": "s90",
+        "template_xml": "s91",
+        "terminal_type": "s92",
+        "id": "CREATE_PRODUCT01"
+      },
+      "CREATE_PRODUCT02": {
+        "acquirer_id": "ACQUIRER01",
+        "response_code": "sd3",
+        "response_message": "sd4",
+        "template_name": "sd5",
+        "template_type": "sd6",
+        "template_xml": "sd7",
+        "terminal_type": "sd8",
+        "id": "CREATE_PRODUCT02"
+      }
+    }
+  },
+  "new": {
+    "create_product": {
+      "create_product_ref01": {
+        "acquirer_id": "ACQUIRER01",
+        "response_code": "s119",
+        "response_message": "s11a",
+        "template_name": "s11b",
+        "template_type": "s11c",
+        "template_xml": "s11d",
+        "terminal_type": "s11e"
+      }
+    }
+  }
+}

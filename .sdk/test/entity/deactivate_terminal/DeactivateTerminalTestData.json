@@ -1,0 +1,49 @@
+{
+  "existing": {
+    "deactivate_terminal": {
+      "DEACTIVATE_TERMINAL00": {
+        "corporate_uuid": "s46",
+        "deactivation_reason": "s47",
+        "package_order_uuid": "s48",
+        "product_order_uuid": "s49",
+        "response_code": "s4a",
+        "response_message": "s4b",
+        "terminal_id": "TERMINAL01",
+        "id": "DEACTIVATE_TERMINAL00"
+      },
+      "DEACTIVATE_TERMINAL01": {
+        "corporate_uuid": "s8c",
+        "deactivation_reason": "s8d",
+        "package_order_uuid": "s8e",
+        "product_order_uuid": "s8f",
+        "response_code": "s90",
+        "response_message": "s91",
+        "terminal_id": "TERMINAL01",
+        "id": "DEACTIVATE_TERMINAL01"
+      },
+      "DEACTIVATE_TERMINAL02": {
+        "corporate_uuid": "sd2",
+        "deactivation_reason": "sd3",
+        "package_order_uuid": "sd4",
+        "product_order_uuid": "sd5",
+        "response_code": "sd6",
+        "response_message": "sd7",
+        "terminal_id": "TERMINAL01",
+        "id": "DEACTIVATE_TERMINAL02"
+      }
+    }
+  },
+  "new": {
+    "deactivate_terminal": {
+      "deactivate_terminal_ref01": {
+        "corporate_uuid": "s118",
+        "deactivation_reason": "s119",
+        "package_order_uuid": "s11a",
+        "product_order_uuid": "s11b",
+        "response_code": "s11c",
+        "response_message": "s11d",
+        "terminal_id": "TERMINAL01"
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "existing": {
+    "move_tid": {
+      "MOVE_TID00": {
+        "productorderuuid": [],
+        "response_code": "s33",
+        "response_message": "s34",
+        "target_packageorderuuid": "s35",
+        "target_productorderuuid": "s36",
+        "id": "MOVE_TID00"
+      },
+      "MOVE_TID01": {
+        "productorderuuid": [],
+        "response_code": "s65",
+        "response_message": "s66",
+        "target_packageorderuuid": "s67",
+        "target_productorderuuid": "s68",
+        "id": "MOVE_TID01"
+      },
+      "MOVE_TID02": {
+        "productorderuuid": [],
+        "response_code": "s97",
+        "response_message": "s98",
+        "target_packageorderuuid": "s99",
+        "target_productorderuuid": "s9a",
+        "id": "MOVE_TID02"
+      }
+    }
+  },
+  "new": {
+    "move_tid": {
+      "move_tid_ref01": {
+        "productorderuuid": [],
+        "response_code": "sc9",
+        "response_message": "sca",
+        "target_packageorderuuid": "scb",
+        "target_productorderuuid": "scc"
+      }
+    }
+  }
+}

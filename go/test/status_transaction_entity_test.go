@@ -1,0 +1,142 @@
+package sdktest
+
+import (
+	"encoding/json"
+	"os"
+	"path/filepath"
+	"runtime"
+	"strings"
+	"testing"
+	"time"
+
+	sdk "github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk/go"
+	"github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk/go/core"
+
+	vs "github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk/go/utility/struct"
+)
+
+func TestStatusTransactionEntity(t *testing.T) {
+	t.Run("instance", func(t *testing.T) {
+		testsdk := sdk.TestSDK(nil, nil)
+		ent := testsdk.StatusTransaction(nil)
+		if ent == nil {
+			t.Fatal("expected non-nil StatusTransactionEntity")
+		}
+	})
+
+	t.Run("basic", func(t *testing.T) {
+		setup := status_transactionBasicSetup(nil)
+		// Per-op sdk-test-control.json skip — basic test exercises a flow
+		// with multiple ops; skipping any op skips the whole flow.
+		_mode := "unit"
+		if setup.live {
+			_mode = "live"
+		}
+		for _, _op := range []string{"create"} {
+			if _shouldSkip, _reason := isControlSkipped("entityOp", "status_transaction." + _op, _mode); _shouldSkip {
+				if _reason == "" {
+					_reason = "skipped via sdk-test-control.json"
+				}
+				t.Skip(_reason)
+				return
+			}
+		}
+		// The basic flow consumes synthetic IDs from the fixture. In live mode
+		// without an *_ENTID env override, those IDs hit the live API and 4xx.
+		if setup.syntheticOnly {
+			t.Skip("live entity test uses synthetic IDs from fixture — set BLUEFINTECSMERCHANTSERVICES_TEST_STATUS_TRANSACTION_ENTID JSON to run live")
+			return
+		}
+		client := setup.client
+
+		// CREATE
+		statusTransactionRef01Ent := client.StatusTransaction(nil)
+		statusTransactionRef01Data := core.ToMapAny(vs.GetProp(
+			vs.GetPath([]any{"new", "status_transaction"}, setup.data), "status_transaction_ref01"))
+
+		statusTransactionRef01DataResult, err := statusTransactionRef01Ent.Create(statusTransactionRef01Data, nil)
+		if err != nil {
+			t.Fatalf("create failed: %v", err)
+		}
+		statusTransactionRef01Data = core.ToMapAny(statusTransactionRef01DataResult)
+		if statusTransactionRef01Data == nil {
+			t.Fatal("expected create result to be a map")
+		}
+
+	})
+}
+
+func status_transactionBasicSetup(extra map[string]any) *entityTestSetup {
+	loadEnvLocal()
+
+	_, filename, _, _ := runtime.Caller(0)
+	dir := filepath.Dir(filename)
+
+	entityDataFile := filepath.Join(dir, "..", "..", ".sdk", "test", "entity", "status_transaction", "StatusTransactionTestData.json")
+
+	entityDataSource, err := os.ReadFile(entityDataFile)
+	if err != nil {
+		panic("failed to read status_transaction test data: " + err.Error())
+	}
+
+	var entityData map[string]any
+	if err := json.Unmarshal(entityDataSource, &entityData); err != nil {
+		panic("failed to parse status_transaction test data: " + err.Error())
+	}
+
+	options := map[string]any{}
+	options["entity"] = entityData["existing"]
+
+	client := sdk.TestSDK(options, extra)
+
+	// Generate idmap via transform, matching TS pattern.
+	idmap := vs.Transform(
+		[]any{"status_transaction01", "status_transaction02", "status_transaction03"},
+		map[string]any{
+			"`$PACK`": []any{"", map[string]any{
+				"`$KEY`": "`$COPY`",
+				"`$VAL`": []any{"`$FORMAT`", "upper", "`$COPY`"},
+			}},
+		},
+	)
+
+	// Detect ENTID env override before envOverride consumes it. When live
+	// mode is on without a real override, the basic test runs against synthetic
+	// IDs from the fixture and 4xx's. Surface this so the test can skip.
+	entidEnvRaw := os.Getenv("BLUEFINTECSMERCHANTSERVICES_TEST_STATUS_TRANSACTION_ENTID")
+	idmapOverridden := entidEnvRaw != "" && strings.HasPrefix(strings.TrimSpace(entidEnvRaw), "{")
+
+	env := envOverride(map[string]any{
+		"BLUEFINTECSMERCHANTSERVICES_TEST_STATUS_TRANSACTION_ENTID": idmap,
+		"BLUEFINTECSMERCHANTSERVICES_TEST_LIVE":      "FALSE",
+		"BLUEFINTECSMERCHANTSERVICES_TEST_EXPLAIN":   "FALSE",
+		"BLUEFINTECSMERCHANTSERVICES_APIKEY":         "NONE",
+	})
+
+	idmapResolved := core.ToMapAny(env["BLUEFINTECSMERCHANTSERVICES_TEST_STATUS_TRANSACTION_ENTID"])
+	if idmapResolved == nil {
+		idmapResolved = core.ToMapAny(idmap)
+	}
+
+	if env["BLUEFINTECSMERCHANTSERVICES_TEST_LIVE"] == "TRUE" {
+		mergedOpts := vs.Merge([]any{
+			map[string]any{
+				"apikey": env["BLUEFINTECSMERCHANTSERVICES_APIKEY"],
+			},
+			extra,
+		})
+		client = sdk.NewBluefinTecsMerchantServicesSDK(core.ToMapAny(mergedOpts))
+	}
+
+	live := env["BLUEFINTECSMERCHANTSERVICES_TEST_LIVE"] == "TRUE"
+	return &entityTestSetup{
+		client:        client,
+		data:          entityData,
+		idmap:         idmapResolved,
+		env:           env,
+		explain:       env["BLUEFINTECSMERCHANTSERVICES_TEST_EXPLAIN"] == "TRUE",
+		live:          live,
+		syntheticOnly: live && !idmapOverridden,
+		now:           time.Now().UnixMilli(),
+	}
+}

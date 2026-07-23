@@ -1,0 +1,67 @@
+# Entity: reactivate_terminal
+
+main: kit: entity: reactivate_terminal: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "corporate_uuid"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "package_order_uuid"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "product_order_uuid"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "reactivation_reason"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "response_code"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "response_message"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "terminal_id"
+      req: true
+      type: "`$INTEGER`"
+    }
+  ]
+
+  name: "reactivate_terminal"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          method: "POST"
+          orig: "/reactivateTerminal"
+          parts: [
+            "reactivateTerminal"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

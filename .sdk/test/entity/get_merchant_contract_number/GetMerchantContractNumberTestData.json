@@ -1,0 +1,33 @@
+{
+  "existing": {
+    "get_merchant_contract_number": {
+      "GET_MERCHANT_CONTRACT_NUMBER00": {
+        "merchant_contract_number": "s1e",
+        "response_code": "s1f",
+        "response_message": "s20",
+        "id": "GET_MERCHANT_CONTRACT_NUMBER00"
+      },
+      "GET_MERCHANT_CONTRACT_NUMBER01": {
+        "merchant_contract_number": "s3c",
+        "response_code": "s3d",
+        "response_message": "s3e",
+        "id": "GET_MERCHANT_CONTRACT_NUMBER01"
+      },
+      "GET_MERCHANT_CONTRACT_NUMBER02": {
+        "merchant_contract_number": "s5a",
+        "response_code": "s5b",
+        "response_message": "s5c",
+        "id": "GET_MERCHANT_CONTRACT_NUMBER02"
+      }
+    }
+  },
+  "new": {
+    "get_merchant_contract_number": {
+      "get_merchant_contract_number_ref01": {
+        "merchant_contract_number": "s78",
+        "response_code": "s79",
+        "response_message": "s7a"
+      }
+    }
+  }
+}

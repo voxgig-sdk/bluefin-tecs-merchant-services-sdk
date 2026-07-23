@@ -1,0 +1,18 @@
+# BasicStoreTerminalParameterFlow
+
+main: kit: flow: BasicStoreTerminalParameterFlow:
+{
+  entity: "store_terminal_parameter",
+  kind: "basic",
+  name: "BasicStoreTerminalParameterFlow",
+  step: [
+    {
+      input: {
+        ref: "store_terminal_parameter_ref01"
+      }
+
+      op: "create"
+    }
+  ],
+  "key$": "BasicStoreTerminalParameterFlow"
+}

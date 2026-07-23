@@ -1,0 +1,62 @@
+# Entity: store_terminal_parameter
+
+main: kit: entity: store_terminal_parameter: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "acq_tab_nexo"
+      req: false
+      type: "`$OBJECT`"
+    }
+    {
+      name: "config_version"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "response_code"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "response_message"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "serial_number"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "tid_sent"
+      req: false
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "store_terminal_parameter"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          method: "POST"
+          orig: "/storeTerminalParameters"
+          parts: [
+            "storeTerminalParameters"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

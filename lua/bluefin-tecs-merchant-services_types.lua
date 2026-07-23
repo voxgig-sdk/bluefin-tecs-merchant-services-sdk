@@ -1,0 +1,1101 @@
+-- Typed models for the BluefinTecsMerchantServices SDK (LuaLS annotations).
+--
+-- GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
+-- params (op.<name>.points[].args.params[]). Field/param types come from the
+-- canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
+-- @voxgig/apidef VALID_CANON). Annotations only — no runtime effect. Do not
+-- edit by hand.
+
+---@class CancelTransaction
+---@field acquirer_id? string
+---@field acquirer_name? string
+---@field actual_bonus_point? string
+---@field amount? number
+---@field authorization_code? string
+---@field balance_amount? string
+---@field card_brand? string
+---@field card_number? string
+---@field client_id number
+---@field currency string
+---@field cvc? string
+---@field ec_data? string
+---@field ecr_data? string
+---@field emv_data? string
+---@field exchange_fee? number
+---@field exchange_rate? string
+---@field language_code? string
+---@field merchant_address? string
+---@field merchant_name? string
+---@field merchant_number? string
+---@field message_type? string
+---@field original_trace_number? number
+---@field original_transaction_id? string
+---@field password? string
+---@field payment_reason? string
+---@field receipt_footer? string
+---@field receipt_header? string
+---@field receipt_layout? number
+---@field receipt_number string
+---@field response_code? number
+---@field response_message? string
+---@field serial_number? string
+---@field svc? string
+---@field terminal_id number
+---@field terminal_location? string
+---@field trace_number? number
+---@field transaction_date? string
+---@field transaction_id? string
+---@field tx_type? string
+---@field user_data? string
+
+---@class CancelTransactionCreateData
+---@field acquirer_id? string
+---@field acquirer_name? string
+---@field actual_bonus_point? string
+---@field amount? number
+---@field authorization_code? string
+---@field balance_amount? string
+---@field card_brand? string
+---@field card_number? string
+---@field client_id number
+---@field currency string
+---@field cvc? string
+---@field ec_data? string
+---@field ecr_data? string
+---@field emv_data? string
+---@field exchange_fee? number
+---@field exchange_rate? string
+---@field language_code? string
+---@field merchant_address? string
+---@field merchant_name? string
+---@field merchant_number? string
+---@field message_type? string
+---@field original_trace_number? number
+---@field original_transaction_id? string
+---@field password? string
+---@field payment_reason? string
+---@field receipt_footer? string
+---@field receipt_header? string
+---@field receipt_layout? number
+---@field receipt_number string
+---@field response_code? number
+---@field response_message? string
+---@field serial_number? string
+---@field svc? string
+---@field terminal_id number
+---@field terminal_location? string
+---@field trace_number? number
+---@field transaction_date? string
+---@field transaction_id? string
+---@field tx_type? string
+---@field user_data? string
+
+---@class CheckCardBlackListed
+---@field card_no? string
+---@field response_code? number
+---@field response_message? string
+
+---@class CheckCardBlackListedCreateData
+---@field card_no? string
+---@field response_code? number
+---@field response_message? string
+
+---@class CreateProduct
+---@field acquirer_id? number
+---@field response_code? number
+---@field response_message? string
+---@field template_name string
+---@field template_type string
+---@field template_xml string
+---@field terminal_type string
+
+---@class CreateProductCreateData
+---@field acquirer_id? number
+---@field response_code? number
+---@field response_message? string
+---@field template_name string
+---@field template_type string
+---@field template_xml string
+---@field terminal_type string
+
+---@class DeactivateTerminal
+---@field corporate_uuid? string
+---@field deactivation_reason string
+---@field package_order_uuid? string
+---@field product_order_uuid? string
+---@field response_code? number
+---@field response_message? string
+---@field terminal_id number
+
+---@class DeactivateTerminalCreateData
+---@field corporate_uuid? string
+---@field deactivation_reason string
+---@field package_order_uuid? string
+---@field product_order_uuid? string
+---@field response_code? number
+---@field response_message? string
+---@field terminal_id number
+
+---@class DigitalServicesApi
+---@field clearing_date_from string
+---@field clearing_date_to string
+---@field response_code? number
+---@field response_message? string
+---@field tx_count? number
+---@field tx_id_end? string
+---@field tx_id_start? string
+---@field tx_seq_no_end? number
+---@field tx_seq_no_start? number
+---@field tx_total? number
+
+---@class DigitalServicesApiLoadMatch
+---@field clearing_date_from? string
+---@field clearing_date_to? string
+---@field response_code? number
+---@field response_message? string
+---@field tx_count? number
+---@field tx_id_end? string
+---@field tx_id_start? string
+---@field tx_seq_no_end? number
+---@field tx_seq_no_start? number
+---@field tx_total? number
+
+---@class DigitalServicesApiCreateData
+---@field file_id? string
+
+---@class EcDataEcom
+---@field ecom_data? string
+---@field response_code? number
+---@field response_message? string
+---@field terminal_id number
+---@field transaction_id string
+---@field transaction_type string
+
+---@class EcDataEcomCreateData
+---@field ecom_data? string
+---@field response_code? number
+---@field response_message? string
+---@field terminal_id number
+---@field transaction_id string
+---@field transaction_type string
+
+---@class EcomParameter
+---@field ecom_pass? string
+---@field ecom_skey? string
+---@field response_code? number
+---@field response_message? string
+---@field terminal_id number
+
+---@class EcomParameterCreateData
+---@field ecom_pass? string
+---@field ecom_skey? string
+---@field response_code? number
+---@field response_message? string
+---@field terminal_id number
+
+---@class EcrData
+---@field ecr_data? string
+---@field response_code? number
+---@field response_message? string
+---@field terminal_id number
+---@field transaction_id string
+---@field transaction_type string
+
+---@class EcrDataCreateData
+---@field ecr_data? string
+---@field response_code? number
+---@field response_message? string
+---@field terminal_id number
+---@field transaction_id string
+---@field transaction_type string
+
+---@class EmvData
+---@field emv_data? string
+---@field response_code? number
+---@field response_message? string
+---@field terminal_id number
+---@field transaction_id string
+---@field transaction_type string
+
+---@class EmvDataCreateData
+---@field emv_data? string
+---@field response_code? number
+---@field response_message? string
+---@field terminal_id number
+---@field transaction_id string
+---@field transaction_type string
+
+---@class EnableAcquiring
+---@field account_no? number
+---@field additional_data? table
+---@field corporate_uuid string
+---@field currency string
+---@field merchant_category_code number
+---@field package_order_uuid string
+---@field product_order_uuid string
+---@field response_code? number
+---@field response_message? string
+---@field sorting_code? number
+---@field template_name string
+---@field terminal_id? table
+---@field terminal_id_acq? string
+---@field vu_nummer? string
+
+---@class EnableAcquiringCreateData
+---@field account_no? number
+---@field additional_data? table
+---@field corporate_uuid string
+---@field currency string
+---@field merchant_category_code number
+---@field package_order_uuid string
+---@field product_order_uuid string
+---@field response_code? number
+---@field response_message? string
+---@field sorting_code? number
+---@field template_name string
+---@field terminal_id? table
+---@field terminal_id_acq? string
+---@field vu_nummer? string
+
+---@class GetMerchantContractNumber
+---@field merchant_contract_number string
+---@field response_code? number
+---@field response_message? string
+
+---@class GetMerchantContractNumberCreateData
+---@field merchant_contract_number string
+---@field response_code? number
+---@field response_message? string
+
+---@class GetTemplateXml
+---@field response_code? number
+---@field response_message? string
+---@field template_name string
+
+---@class GetTemplateXmlCreateData
+---@field response_code? number
+---@field response_message? string
+---@field template_name string
+
+---@class IntroduceMandator
+---@field mandator_name string
+---@field response_code? number
+---@field response_message? string
+
+---@class IntroduceMandatorCreateData
+---@field mandator_name string
+---@field response_code? number
+---@field response_message? string
+
+---@class IntroducePackage
+---@field response_code? number
+---@field response_message? string
+---@field terminal_template_description string
+
+---@class IntroducePackageCreateData
+---@field response_code? number
+---@field response_message? string
+---@field terminal_template_description string
+
+---@class KeepAlive
+---@field hwserialno? string
+---@field ka_date_time_from? string
+---@field ka_date_time_to? string
+---@field keep_alive_data? table
+---@field pagination? table
+---@field response_code? number
+---@field response_message? string
+---@field terminal_date_time_from? string
+---@field terminal_date_time_to? string
+---@field terminal_id? number
+
+---@class KeepAliveCreateData
+---@field hwserialno? string
+---@field ka_date_time_from? string
+---@field ka_date_time_to? string
+---@field keep_alive_data? table
+---@field pagination? table
+---@field response_code? number
+---@field response_message? string
+---@field terminal_date_time_from? string
+---@field terminal_date_time_to? string
+---@field terminal_id? number
+
+---@class ListTerminal
+---@field corporate_uuid? table
+---@field filter? table
+---@field pagination? table
+---@field response_code? number
+---@field response_message? string
+---@field terminal? table
+
+---@class ListTerminalCreateData
+---@field corporate_uuid? table
+---@field filter? table
+---@field pagination? table
+---@field response_code? number
+---@field response_message? string
+---@field terminal? table
+
+---@class MandatorClearingExport
+---@field clearing_date_from string
+---@field clearing_date_to string
+---@field pagination? table
+---@field record? table
+---@field response_code? number
+---@field response_message? string
+
+---@class MandatorClearingExportCreateData
+---@field clearing_date_from string
+---@field clearing_date_to string
+---@field pagination? table
+---@field record? table
+---@field response_code? number
+---@field response_message? string
+
+---@class MandatorClearingExportDownload
+---@field clearing_date_from string
+---@field clearing_date_to string
+---@field file_id? string
+---@field filename_template? string
+---@field response_code? number
+---@field response_message? string
+---@field status? string
+
+---@class MandatorClearingExportDownloadLoadMatch
+---@field id string
+
+---@class MandatorClearingExportDownloadCreateData
+---@field clearing_date_from string
+---@field clearing_date_to string
+---@field file_id? string
+---@field filename_template? string
+---@field response_code? number
+---@field response_message? string
+---@field status? string
+
+---@class MandatorClearingExportSummary
+---@field clearing_date_from string
+---@field clearing_date_to string
+---@field record? table
+---@field response_code? number
+---@field response_message? string
+
+---@class MandatorClearingExportSummaryCreateData
+---@field clearing_date_from string
+---@field clearing_date_to string
+---@field record? table
+---@field response_code? number
+---@field response_message? string
+
+---@class MerchantPortalServicesApi
+---@field ["3_d_secure"]? string
+---@field authorization_code? string
+---@field card_brand? string
+---@field clearing_amount_from? string
+---@field clearing_amount_to? string
+---@field clearing_currency? string
+---@field clearing_status? string
+---@field corporate_uuid? string
+---@field order_by_transaction_date? string
+---@field pagination? table
+---@field receipt_number? string
+---@field referenced_transaction_id? string
+---@field retrieval_reference_number? string
+---@field source_id? number
+---@field tecsengine_response_code_from? string
+---@field tecsengine_response_code_to? string
+---@field terminal_id? number
+---@field trace_number? string
+---@field transaction_amount_from? string
+---@field transaction_amount_to? string
+---@field transaction_date_from? string
+---@field transaction_date_to? string
+---@field transaction_id? string
+---@field transaction_type? string
+---@field wallet? string
+
+---@class MerchantPortalServicesApiCreateData
+---@field ["3_d_secure"]? string
+---@field authorization_code? string
+---@field card_brand? string
+---@field clearing_amount_from? string
+---@field clearing_amount_to? string
+---@field clearing_currency? string
+---@field clearing_status? string
+---@field corporate_uuid? string
+---@field order_by_transaction_date? string
+---@field pagination? table
+---@field receipt_number? string
+---@field referenced_transaction_id? string
+---@field retrieval_reference_number? string
+---@field source_id? number
+---@field tecsengine_response_code_from? string
+---@field tecsengine_response_code_to? string
+---@field terminal_id? number
+---@field trace_number? string
+---@field transaction_amount_from? string
+---@field transaction_amount_to? string
+---@field transaction_date_from? string
+---@field transaction_date_to? string
+---@field transaction_id? string
+---@field transaction_type? string
+---@field wallet? string
+
+---@class MoveTid
+---@field productorderuuid table
+---@field response_code? number
+---@field response_message? string
+---@field target_packageorderuuid? string
+---@field target_productorderuuid? string
+
+---@class MoveTidCreateData
+---@field productorderuuid table
+---@field response_code? number
+---@field response_message? string
+---@field target_packageorderuuid? string
+---@field target_productorderuuid? string
+
+---@class PaymentManual
+---@field acquirer_name? string
+---@field amount number
+---@field authorization_number? string
+---@field card_number string
+---@field card_type? string
+---@field currency string
+---@field cvc? string
+---@field date_time_tx? string
+---@field exp_date string
+---@field merchant_id? string
+---@field original_transaction_id? string
+---@field password? string
+---@field response_code? string
+---@field response_message? string
+---@field terminal_id? string
+---@field transaction_id? string
+---@field txtype string
+
+---@class PaymentManualCreateData
+---@field acquirer_name? string
+---@field amount number
+---@field authorization_number? string
+---@field card_number string
+---@field card_type? string
+---@field currency string
+---@field cvc? string
+---@field date_time_tx? string
+---@field exp_date string
+---@field merchant_id? string
+---@field original_transaction_id? string
+---@field password? string
+---@field response_code? string
+---@field response_message? string
+---@field terminal_id? string
+---@field transaction_id? string
+---@field txtype string
+
+---@class PaymentSred
+---@field acquirer_name? string
+---@field amount number
+---@field authorization_number? string
+---@field card_type? string
+---@field currency string
+---@field date_time_tx? string
+---@field device_payload string
+---@field merchant_id? string
+---@field original_transaction_id? string
+---@field password? string
+---@field response_code? string
+---@field response_message? string
+---@field sred? table
+---@field terminal_id? string
+---@field transaction_id? string
+---@field txtype string
+
+---@class PaymentSredCreateData
+---@field acquirer_name? string
+---@field amount number
+---@field authorization_number? string
+---@field card_type? string
+---@field currency string
+---@field date_time_tx? string
+---@field device_payload string
+---@field merchant_id? string
+---@field original_transaction_id? string
+---@field password? string
+---@field response_code? string
+---@field response_message? string
+---@field sred? table
+---@field terminal_id? string
+---@field transaction_id? string
+---@field txtype string
+
+---@class PreAuthTransactionCompletion
+---@field acquirer_id? string
+---@field acquirer_name? string
+---@field actual_bonus_point? string
+---@field amount? number
+---@field authorization_code? string
+---@field balance_amount? string
+---@field card_brand? string
+---@field card_number? string
+---@field card_number_reference string
+---@field client_id number
+---@field currency string
+---@field cvc? string
+---@field ec_data? string
+---@field ecr_data? string
+---@field emv_data? string
+---@field exchange_fee? number
+---@field exchange_rate? string
+---@field language_code? string
+---@field merchant_address? string
+---@field merchant_name? string
+---@field merchant_number? string
+---@field message_type? string
+---@field original_trace_number? number
+---@field original_transaction_id? string
+---@field password? string
+---@field payment_reason? string
+---@field receipt_footer? string
+---@field receipt_header? string
+---@field receipt_layout? number
+---@field receipt_number string
+---@field response_code? number
+---@field response_message? string
+---@field serial_number? string
+---@field svc? string
+---@field terminal_id number
+---@field terminal_location? string
+---@field trace_number? number
+---@field transaction_date? string
+---@field transaction_id? string
+---@field transaction_type string
+---@field tx_type? string
+---@field user_data? string
+
+---@class PreAuthTransactionCompletionCreateData
+---@field acquirer_id? string
+---@field acquirer_name? string
+---@field actual_bonus_point? string
+---@field amount? number
+---@field authorization_code? string
+---@field balance_amount? string
+---@field card_brand? string
+---@field card_number? string
+---@field card_number_reference string
+---@field client_id number
+---@field currency string
+---@field cvc? string
+---@field ec_data? string
+---@field ecr_data? string
+---@field emv_data? string
+---@field exchange_fee? number
+---@field exchange_rate? string
+---@field language_code? string
+---@field merchant_address? string
+---@field merchant_name? string
+---@field merchant_number? string
+---@field message_type? string
+---@field original_trace_number? number
+---@field original_transaction_id? string
+---@field password? string
+---@field payment_reason? string
+---@field receipt_footer? string
+---@field receipt_header? string
+---@field receipt_layout? number
+---@field receipt_number string
+---@field response_code? number
+---@field response_message? string
+---@field serial_number? string
+---@field svc? string
+---@field terminal_id number
+---@field terminal_location? string
+---@field trace_number? number
+---@field transaction_date? string
+---@field transaction_id? string
+---@field transaction_type string
+---@field tx_type? string
+---@field user_data? string
+
+---@class ReactivateTerminal
+---@field corporate_uuid? string
+---@field package_order_uuid? string
+---@field product_order_uuid? string
+---@field reactivation_reason string
+---@field response_code? number
+---@field response_message? string
+---@field terminal_id number
+
+---@class ReactivateTerminalCreateData
+---@field corporate_uuid? string
+---@field package_order_uuid? string
+---@field product_order_uuid? string
+---@field reactivation_reason string
+---@field response_code? number
+---@field response_message? string
+---@field terminal_id number
+
+---@class RefundTransaction
+---@field acquirer_id? string
+---@field acquirer_name? string
+---@field actual_bonus_point? string
+---@field amount? number
+---@field authorization_code? string
+---@field balance_amount? string
+---@field card_brand? string
+---@field card_number? string
+---@field client_id number
+---@field currency string
+---@field cvc? string
+---@field ec_data? string
+---@field ecr_data? string
+---@field emv_data? string
+---@field exchange_fee? number
+---@field exchange_rate? string
+---@field language_code? string
+---@field merchant_address? string
+---@field merchant_name? string
+---@field merchant_number? string
+---@field message_type? string
+---@field original_trace_number? number
+---@field original_transaction_id? string
+---@field password? string
+---@field payment_reason? string
+---@field receipt_footer? string
+---@field receipt_header? string
+---@field receipt_layout? number
+---@field receipt_number string
+---@field response_code? number
+---@field response_message? string
+---@field serial_number? string
+---@field svc? string
+---@field terminal_id number
+---@field terminal_location? string
+---@field trace_number? number
+---@field transaction_date? string
+---@field transaction_id? string
+---@field tx_type? string
+---@field user_data? string
+
+---@class RefundTransactionCreateData
+---@field acquirer_id? string
+---@field acquirer_name? string
+---@field actual_bonus_point? string
+---@field amount? number
+---@field authorization_code? string
+---@field balance_amount? string
+---@field card_brand? string
+---@field card_number? string
+---@field client_id number
+---@field currency string
+---@field cvc? string
+---@field ec_data? string
+---@field ecr_data? string
+---@field emv_data? string
+---@field exchange_fee? number
+---@field exchange_rate? string
+---@field language_code? string
+---@field merchant_address? string
+---@field merchant_name? string
+---@field merchant_number? string
+---@field message_type? string
+---@field original_trace_number? number
+---@field original_transaction_id? string
+---@field password? string
+---@field payment_reason? string
+---@field receipt_footer? string
+---@field receipt_header? string
+---@field receipt_layout? number
+---@field receipt_number string
+---@field response_code? number
+---@field response_message? string
+---@field serial_number? string
+---@field svc? string
+---@field terminal_id number
+---@field terminal_location? string
+---@field trace_number? number
+---@field transaction_date? string
+---@field transaction_id? string
+---@field tx_type? string
+---@field user_data? string
+
+---@class RegisterTecsCompany
+---@field corporate_uuid string
+---@field package_order_uuid string
+---@field partner_id? number
+---@field partner_name? string
+---@field product_order_uuid string
+---@field response_code? number
+---@field response_message? string
+---@field template_name string
+
+---@class RegisterTecsCompanyCreateData
+---@field corporate_uuid string
+---@field package_order_uuid string
+---@field partner_id? number
+---@field partner_name? string
+---@field product_order_uuid string
+---@field response_code? number
+---@field response_message? string
+---@field template_name string
+
+---@class RegisterTerminal
+---@field additional_data? table
+---@field corporate_uuid string
+---@field package_order_uuid string
+---@field product_order_uuid string
+---@field response_code? number
+---@field response_message? string
+---@field tecs_web_secret_key? string
+---@field template_name string
+---@field terminal_country_code string
+---@field terminal_id? number
+---@field terminal_id_acq? string
+---@field terminal_language_code string
+---@field terminal_location string
+---@field terminal_serial_number? string
+---@field token_io_alia? string
+---@field token_io_iban? string
+---@field token_io_member_id? string
+---@field web_shop_url? string
+
+---@class RegisterTerminalCreateData
+---@field additional_data? table
+---@field corporate_uuid string
+---@field package_order_uuid string
+---@field product_order_uuid string
+---@field response_code? number
+---@field response_message? string
+---@field tecs_web_secret_key? string
+---@field template_name string
+---@field terminal_country_code string
+---@field terminal_id? number
+---@field terminal_id_acq? string
+---@field terminal_language_code string
+---@field terminal_location string
+---@field terminal_serial_number? string
+---@field token_io_alia? string
+---@field token_io_iban? string
+---@field token_io_member_id? string
+---@field web_shop_url? string
+
+---@class ReportData
+---@field card_brand_report_data? table
+---@field clearing_date_from string
+---@field clearing_date_to string
+---@field corporate_id string
+---@field currency string
+---@field response_code? number
+---@field response_message? string
+---@field sum_over_credit_tx? table
+---@field sum_over_debit_tx? table
+---@field terminal_id? number
+
+---@class ReportDataCreateData
+---@field card_brand_report_data? table
+---@field clearing_date_from string
+---@field clearing_date_to string
+---@field corporate_id string
+---@field currency string
+---@field response_code? number
+---@field response_message? string
+---@field sum_over_credit_tx? table
+---@field sum_over_debit_tx? table
+---@field terminal_id? number
+
+---@class StatusTransaction
+---@field acquirer_name? string
+---@field acquirer_terminal_id? string
+---@field amount? number
+---@field application_cryptogram? string
+---@field authorization_code? string|nil
+---@field authorization_date? string
+---@field card_brand? string
+---@field card_entry? string
+---@field card_expiration? string
+---@field card_number? string
+---@field clearing_amount? number
+---@field clearing_batch_id? string
+---@field clearing_currency? string
+---@field clearing_date? string
+---@field clearing_processed_date? string
+---@field clearing_status? string
+---@field client_id? number
+---@field currency? string
+---@field cvm? string
+---@field ecr_data? string
+---@field emv_application_id? string
+---@field emv_application_label? string
+---@field merchant_name? string
+---@field merchant_number? string
+---@field original_client_id? string
+---@field original_terminal_id? number
+---@field original_transaction_id? string
+---@field payment_reason? string
+---@field receipt_number? string
+---@field response_code? number
+---@field response_code_from_a? string
+---@field response_message? string
+---@field retrieval_reference_number? string
+---@field service_code? string
+---@field settlement_status? string
+---@field source_id? number
+---@field tecsengine_response_code? number
+---@field tecsengine_response_text? string
+---@field terminal_end_of_day_date? string
+---@field terminal_id? number
+---@field terminal_location? string
+---@field tip_amount? number
+---@field trace_number? number
+---@field transaction_clearing_date? string
+---@field transaction_date? string
+---@field transaction_id? string
+---@field transaction_seq_number? number
+---@field transaction_server_date? string
+---@field transaction_source? string
+---@field transaction_type? string
+
+---@class StatusTransactionCreateData
+---@field acquirer_name? string
+---@field acquirer_terminal_id? string
+---@field amount? number
+---@field application_cryptogram? string
+---@field authorization_code? string|nil
+---@field authorization_date? string
+---@field card_brand? string
+---@field card_entry? string
+---@field card_expiration? string
+---@field card_number? string
+---@field clearing_amount? number
+---@field clearing_batch_id? string
+---@field clearing_currency? string
+---@field clearing_date? string
+---@field clearing_processed_date? string
+---@field clearing_status? string
+---@field client_id? number
+---@field currency? string
+---@field cvm? string
+---@field ecr_data? string
+---@field emv_application_id? string
+---@field emv_application_label? string
+---@field merchant_name? string
+---@field merchant_number? string
+---@field original_client_id? string
+---@field original_terminal_id? number
+---@field original_transaction_id? string
+---@field payment_reason? string
+---@field receipt_number? string
+---@field response_code? number
+---@field response_code_from_a? string
+---@field response_message? string
+---@field retrieval_reference_number? string
+---@field service_code? string
+---@field settlement_status? string
+---@field source_id? number
+---@field tecsengine_response_code? number
+---@field tecsengine_response_text? string
+---@field terminal_end_of_day_date? string
+---@field terminal_id? number
+---@field terminal_location? string
+---@field tip_amount? number
+---@field trace_number? number
+---@field transaction_clearing_date? string
+---@field transaction_date? string
+---@field transaction_id? string
+---@field transaction_seq_number? number
+---@field transaction_server_date? string
+---@field transaction_source? string
+---@field transaction_type? string
+
+---@class StoreTerminalParameter
+---@field acq_tab_nexo? table
+---@field config_version? string
+---@field response_code? number
+---@field response_message? string
+---@field serial_number string
+---@field tid_sent? string
+
+---@class StoreTerminalParameterCreateData
+---@field acq_tab_nexo? table
+---@field config_version? string
+---@field response_code? number
+---@field response_message? string
+---@field serial_number string
+---@field tid_sent? string
+
+---@class TerminalId
+---@field device_serial_number table
+---@field duplicate_terminal_id? table
+---@field response_code? number
+---@field response_message? string
+---@field terminal? table
+
+---@class TerminalIdCreateData
+---@field device_serial_number table
+---@field duplicate_terminal_id? table
+---@field response_code? number
+---@field response_message? string
+---@field terminal? table
+
+---@class TransactionHistory
+---@field ["3_d_secure"]? string
+---@field authorization_code? string
+---@field card_brand? string
+---@field clearing_amount_from? string
+---@field clearing_amount_to? string
+---@field clearing_currency? string
+---@field clearing_status? string
+---@field corporate_uuid? string
+---@field order_by_transaction_date? string
+---@field pagination? table
+---@field payment_token_public_id? string
+---@field receipt_number? string
+---@field referenced_transaction_id? string
+---@field response_code? number
+---@field response_message? string
+---@field retrieval_reference_number? string
+---@field source_id? number
+---@field tecsengine_response_code_from? string
+---@field tecsengine_response_code_to? string
+---@field terminal_id? number
+---@field trace_number? string
+---@field transaction_amount_from? string
+---@field transaction_amount_to? string
+---@field transaction_date_from? string
+---@field transaction_date_to? string
+---@field transaction_history? table
+---@field transaction_id? string
+---@field transaction_type? string
+---@field wallet? string
+
+---@class TransactionHistoryCreateData
+---@field ["3_d_secure"]? string
+---@field authorization_code? string
+---@field card_brand? string
+---@field clearing_amount_from? string
+---@field clearing_amount_to? string
+---@field clearing_currency? string
+---@field clearing_status? string
+---@field corporate_uuid? string
+---@field order_by_transaction_date? string
+---@field pagination? table
+---@field payment_token_public_id? string
+---@field receipt_number? string
+---@field referenced_transaction_id? string
+---@field response_code? number
+---@field response_message? string
+---@field retrieval_reference_number? string
+---@field source_id? number
+---@field tecsengine_response_code_from? string
+---@field tecsengine_response_code_to? string
+---@field terminal_id? number
+---@field trace_number? string
+---@field transaction_amount_from? string
+---@field transaction_amount_to? string
+---@field transaction_date_from? string
+---@field transaction_date_to? string
+---@field transaction_history? table
+---@field transaction_id? string
+---@field transaction_type? string
+---@field wallet? string
+
+---@class TransactionsCount
+---@field period? string
+---@field response_code? number
+---@field response_message? string
+---@field transaction_date_from? string
+---@field transaction_date_to? string
+---@field transactions_count? table
+
+---@class TransactionsCountCreateData
+---@field period? string
+---@field response_code? number
+---@field response_message? string
+---@field transaction_date_from? string
+---@field transaction_date_to? string
+---@field transactions_count? table
+
+---@class TransactionsCountCardBrand
+---@field period? string
+---@field response_code? number
+---@field response_message? string
+---@field transaction_date_from? string
+---@field transaction_date_to? string
+---@field transactions_count? table
+
+---@class TransactionsCountCardBrandCreateData
+---@field period? string
+---@field response_code? number
+---@field response_message? string
+---@field transaction_date_from? string
+---@field transaction_date_to? string
+---@field transactions_count? table
+
+---@class TransactionsTurnover
+---@field period? string
+---@field response_code? number
+---@field response_message? string
+---@field transaction_date_from? string
+---@field transaction_date_to? string
+---@field turnover? table
+
+---@class TransactionsTurnoverCreateData
+---@field period? string
+---@field response_code? number
+---@field response_message? string
+---@field transaction_date_from? string
+---@field transaction_date_to? string
+---@field turnover? table
+
+---@class UpdateMerchant
+---@field city? string
+---@field corporate_uuid string
+---@field country? string
+---@field merchant_category_code? string
+---@field name? string
+---@field response_code? number
+---@field response_message? string
+---@field state? string
+---@field street? string
+---@field vu_nummer? string
+---@field zipcode? string
+
+---@class UpdateMerchantCreateData
+---@field city? string
+---@field corporate_uuid string
+---@field country? string
+---@field merchant_category_code? string
+---@field name? string
+---@field response_code? number
+---@field response_message? string
+---@field state? string
+---@field street? string
+---@field vu_nummer? string
+---@field zipcode? string
+
+---@class UpdateTemplateXml
+---@field response_code? number
+---@field response_message? string
+---@field template_name string
+---@field template_xml string
+
+---@class UpdateTemplateXmlCreateData
+---@field response_code? number
+---@field response_message? string
+---@field template_name string
+---@field template_xml string
+
+---@class Version
+---@field app_name? string
+---@field build_date? string
+---@field version? string
+
+---@class VersionLoadMatch
+---@field app_name? string
+---@field build_date? string
+---@field version? string
+
+local M = {}
+
+return M

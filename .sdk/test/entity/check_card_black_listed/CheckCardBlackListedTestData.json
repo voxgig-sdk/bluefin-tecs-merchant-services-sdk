@@ -1,0 +1,33 @@
+{
+  "existing": {
+    "check_card_black_listed": {
+      "CHECK_CARD_BLACK_LISTED00": {
+        "card_no": "s1e",
+        "response_code": "s1f",
+        "response_message": "s20",
+        "id": "CHECK_CARD_BLACK_LISTED00"
+      },
+      "CHECK_CARD_BLACK_LISTED01": {
+        "card_no": "s3c",
+        "response_code": "s3d",
+        "response_message": "s3e",
+        "id": "CHECK_CARD_BLACK_LISTED01"
+      },
+      "CHECK_CARD_BLACK_LISTED02": {
+        "card_no": "s5a",
+        "response_code": "s5b",
+        "response_message": "s5c",
+        "id": "CHECK_CARD_BLACK_LISTED02"
+      }
+    }
+  },
+  "new": {
+    "check_card_black_listed": {
+      "check_card_black_listed_ref01": {
+        "card_no": "s78",
+        "response_code": "s79",
+        "response_message": "s7a"
+      }
+    }
+  }
+}

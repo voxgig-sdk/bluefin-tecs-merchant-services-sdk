@@ -1,0 +1,18 @@
+# BasicEcrDataFlow
+
+main: kit: flow: BasicEcrDataFlow:
+{
+  entity: "ecr_data",
+  kind: "basic",
+  name: "BasicEcrDataFlow",
+  step: [
+    {
+      input: {
+        ref: "ecr_data_ref01"
+      }
+
+      op: "create"
+    }
+  ],
+  "key$": "BasicEcrDataFlow"
+}

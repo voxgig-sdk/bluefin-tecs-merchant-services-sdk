@@ -1,0 +1,47 @@
+# Entity: get_merchant_contract_number
+
+main: kit: entity: get_merchant_contract_number: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "merchant_contract_number"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "response_code"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "response_message"
+      req: false
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "get_merchant_contract_number"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          method: "POST"
+          orig: "/getMerchantContractNumber"
+          parts: [
+            "getMerchantContractNumber"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

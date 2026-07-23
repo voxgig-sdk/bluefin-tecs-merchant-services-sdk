@@ -1,0 +1,45 @@
+{
+  "existing": {
+    "mandator_clearing_export": {
+      "MANDATOR_CLEARING_EXPORT00": {
+        "clearing_date_from": "s3c",
+        "clearing_date_to": "s3d",
+        "pagination": {},
+        "record": [],
+        "response_code": "s40",
+        "response_message": "s41",
+        "id": "MANDATOR_CLEARING_EXPORT00"
+      },
+      "MANDATOR_CLEARING_EXPORT01": {
+        "clearing_date_from": "s78",
+        "clearing_date_to": "s79",
+        "pagination": {},
+        "record": [],
+        "response_code": "s7c",
+        "response_message": "s7d",
+        "id": "MANDATOR_CLEARING_EXPORT01"
+      },
+      "MANDATOR_CLEARING_EXPORT02": {
+        "clearing_date_from": "sb4",
+        "clearing_date_to": "sb5",
+        "pagination": {},
+        "record": [],
+        "response_code": "sb8",
+        "response_message": "sb9",
+        "id": "MANDATOR_CLEARING_EXPORT02"
+      }
+    }
+  },
+  "new": {
+    "mandator_clearing_export": {
+      "mandator_clearing_export_ref01": {
+        "clearing_date_from": "sf0",
+        "clearing_date_to": "sf1",
+        "pagination": {},
+        "record": [],
+        "response_code": "sf4",
+        "response_message": "sf5"
+      }
+    }
+  }
+}

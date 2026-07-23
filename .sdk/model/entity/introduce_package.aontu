@@ -1,0 +1,47 @@
+# Entity: introduce_package
+
+main: kit: entity: introduce_package: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "response_code"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "response_message"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "terminal_template_description"
+      req: true
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "introduce_package"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          method: "POST"
+          orig: "/introducePackage"
+          parts: [
+            "introducePackage"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

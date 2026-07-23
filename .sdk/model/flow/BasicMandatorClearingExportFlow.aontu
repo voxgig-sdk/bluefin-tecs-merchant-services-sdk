@@ -1,0 +1,18 @@
+# BasicMandatorClearingExportFlow
+
+main: kit: flow: BasicMandatorClearingExportFlow:
+{
+  entity: "mandator_clearing_export",
+  kind: "basic",
+  name: "BasicMandatorClearingExportFlow",
+  step: [
+    {
+      input: {
+        ref: "mandator_clearing_export_ref01"
+      }
+
+      op: "create"
+    }
+  ],
+  "key$": "BasicMandatorClearingExportFlow"
+}

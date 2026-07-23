@@ -1,0 +1,58 @@
+# Entity: ecom_parameter
+
+main: kit: entity: ecom_parameter: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "ecom_pass"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "ecom_skey"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "response_code"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "response_message"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "terminal_id"
+      req: true
+      type: "`$INTEGER`"
+    }
+  ]
+
+  name: "ecom_parameter"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          method: "POST"
+          orig: "/public/getEcomParameters"
+          parts: [
+            "public"
+            "getEcomParameters"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

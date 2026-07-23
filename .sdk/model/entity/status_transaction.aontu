@@ -1,0 +1,289 @@
+# Entity: status_transaction
+
+main: kit: entity: status_transaction: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "acquirer_name"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "acquirer_terminal_id"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "amount"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "application_cryptogram"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "authorization_code"
+      req: false
+      type: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    {
+      name: "authorization_date"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "card_brand"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "card_entry"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "card_expiration"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "card_number"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "clearing_amount"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "clearing_batch_id"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "clearing_currency"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "clearing_date"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "clearing_processed_date"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "clearing_status"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "client_id"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "currency"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "cvm"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "ecr_data"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "emv_application_id"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "emv_application_label"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "merchant_name"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "merchant_number"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "original_client_id"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "original_terminal_id"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "original_transaction_id"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "payment_reason"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "receipt_number"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "response_code"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "response_code_from_a"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "response_message"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "retrieval_reference_number"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "service_code"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "settlement_status"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "source_id"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "tecsengine_response_code"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "tecsengine_response_text"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "terminal_end_of_day_date"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "terminal_id"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "terminal_location"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "tip_amount"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "trace_number"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "transaction_clearing_date"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "transaction_date"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "transaction_id"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "transaction_seq_number"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "transaction_server_date"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "transaction_source"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "transaction_type"
+      req: false
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "status_transaction"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          method: "POST"
+          orig: "/public/statusTransaction"
+          parts: [
+            "public"
+            "statusTransaction"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

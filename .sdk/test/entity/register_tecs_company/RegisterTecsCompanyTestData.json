@@ -1,0 +1,53 @@
+{
+  "existing": {
+    "register_tecs_company": {
+      "REGISTER_TECS_COMPANY00": {
+        "corporate_uuid": "s50",
+        "package_order_uuid": "s51",
+        "partner_id": "PARTNER01",
+        "partner_name": "s53",
+        "product_order_uuid": "s54",
+        "response_code": "s55",
+        "response_message": "s56",
+        "template_name": "s57",
+        "id": "REGISTER_TECS_COMPANY00"
+      },
+      "REGISTER_TECS_COMPANY01": {
+        "corporate_uuid": "sa0",
+        "package_order_uuid": "sa1",
+        "partner_id": "PARTNER01",
+        "partner_name": "sa3",
+        "product_order_uuid": "sa4",
+        "response_code": "sa5",
+        "response_message": "sa6",
+        "template_name": "sa7",
+        "id": "REGISTER_TECS_COMPANY01"
+      },
+      "REGISTER_TECS_COMPANY02": {
+        "corporate_uuid": "sf0",
+        "package_order_uuid": "sf1",
+        "partner_id": "PARTNER01",
+        "partner_name": "sf3",
+        "product_order_uuid": "sf4",
+        "response_code": "sf5",
+        "response_message": "sf6",
+        "template_name": "sf7",
+        "id": "REGISTER_TECS_COMPANY02"
+      }
+    }
+  },
+  "new": {
+    "register_tecs_company": {
+      "register_tecs_company_ref01": {
+        "corporate_uuid": "s140",
+        "package_order_uuid": "s141",
+        "partner_id": "PARTNER01",
+        "partner_name": "s143",
+        "product_order_uuid": "s144",
+        "response_code": "s145",
+        "response_message": "s146",
+        "template_name": "s147"
+      }
+    }
+  }
+}

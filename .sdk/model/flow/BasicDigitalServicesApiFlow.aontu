@@ -1,0 +1,36 @@
+# BasicDigitalServicesApiFlow
+
+main: kit: flow: BasicDigitalServicesApiFlow:
+{
+  entity: "digital_services_api",
+  kind: "basic",
+  name: "BasicDigitalServicesApiFlow",
+  step: [
+    {
+      input: {
+        ref: "digital_services_api_ref01"
+      }
+
+      op: "create"
+    }
+
+    {
+      input: {
+        ref: "digital_services_api_ref01",
+        srcdatavar: "digital_services_api_ref01_data",
+        suffix: "_dt0"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-digital_services_api_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicDigitalServicesApiFlow"
+}

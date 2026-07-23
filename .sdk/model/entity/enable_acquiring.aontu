@@ -1,0 +1,102 @@
+# Entity: enable_acquiring
+
+main: kit: entity: enable_acquiring: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "account_no"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "additional_data"
+      req: false
+      type: "`$OBJECT`"
+    }
+    {
+      name: "corporate_uuid"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "currency"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "merchant_category_code"
+      req: true
+      type: "`$INTEGER`"
+    }
+    {
+      name: "package_order_uuid"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "product_order_uuid"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "response_code"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "response_message"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "sorting_code"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "template_name"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "terminal_id"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "terminal_id_acq"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "vu_nummer"
+      req: false
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "enable_acquiring"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          method: "POST"
+          orig: "/enableAcquiring"
+          parts: [
+            "enableAcquiring"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

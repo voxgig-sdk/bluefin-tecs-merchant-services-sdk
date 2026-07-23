@@ -1,0 +1,18 @@
+# BasicGetMerchantContractNumberFlow
+
+main: kit: flow: BasicGetMerchantContractNumberFlow:
+{
+  entity: "get_merchant_contract_number",
+  kind: "basic",
+  name: "BasicGetMerchantContractNumberFlow",
+  step: [
+    {
+      input: {
+        ref: "get_merchant_contract_number_ref01"
+      }
+
+      op: "create"
+    }
+  ],
+  "key$": "BasicGetMerchantContractNumberFlow"
+}

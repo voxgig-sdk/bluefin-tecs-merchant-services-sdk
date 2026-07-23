@@ -1,0 +1,48 @@
+# Entity: get_template_xml
+
+main: kit: entity: get_template_xml: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "response_code"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "response_message"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "template_name"
+      req: true
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "get_template_xml"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          method: "POST"
+          orig: "/public/getTemplateXml"
+          parts: [
+            "public"
+            "getTemplateXml"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

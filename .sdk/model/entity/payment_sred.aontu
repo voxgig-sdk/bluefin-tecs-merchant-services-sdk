@@ -1,0 +1,119 @@
+# Entity: payment_sred
+
+main: kit: entity: payment_sred: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "acquirer_name"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "amount"
+      req: true
+      type: "`$INTEGER`"
+    }
+    {
+      name: "authorization_number"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "card_type"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "currency"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "date_time_tx"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "device_payload"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "merchant_id"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "original_transaction_id"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "password"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "response_code"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "response_message"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "sred"
+      req: false
+      type: "`$OBJECT`"
+    }
+    {
+      name: "terminal_id"
+      op: {
+        create: {
+          req: true
+          type: "`$STRING`"
+        }
+      }
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "transaction_id"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "txtype"
+      req: true
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "payment_sred"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          method: "POST"
+          orig: "/public/paymentSred"
+          parts: [
+            "public"
+            "paymentSred"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

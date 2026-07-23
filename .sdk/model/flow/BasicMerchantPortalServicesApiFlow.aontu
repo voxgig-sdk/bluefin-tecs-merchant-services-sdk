@@ -1,0 +1,18 @@
+# BasicMerchantPortalServicesApiFlow
+
+main: kit: flow: BasicMerchantPortalServicesApiFlow:
+{
+  entity: "merchant_portal_services_api",
+  kind: "basic",
+  name: "BasicMerchantPortalServicesApiFlow",
+  step: [
+    {
+      input: {
+        ref: "merchant_portal_services_api_ref01"
+      }
+
+      op: "create"
+    }
+  ],
+  "key$": "BasicMerchantPortalServicesApiFlow"
+}

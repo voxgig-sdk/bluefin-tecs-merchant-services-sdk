@@ -1,0 +1,83 @@
+# Entity: keep_alive
+
+main: kit: entity: keep_alive: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "hwserialno"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "ka_date_time_from"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "ka_date_time_to"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "keep_alive_data"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "pagination"
+      req: false
+      type: "`$OBJECT`"
+    }
+    {
+      name: "response_code"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "response_message"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "terminal_date_time_from"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "terminal_date_time_to"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "terminal_id"
+      req: false
+      type: "`$INTEGER`"
+    }
+  ]
+
+  name: "keep_alive"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          method: "POST"
+          orig: "/public/keepalive"
+          parts: [
+            "public"
+            "keepalive"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

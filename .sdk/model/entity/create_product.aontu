@@ -1,0 +1,67 @@
+# Entity: create_product
+
+main: kit: entity: create_product: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "acquirer_id"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "response_code"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "response_message"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "template_name"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "template_type"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "template_xml"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "terminal_type"
+      req: true
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "create_product"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          method: "POST"
+          orig: "/createProduct"
+          parts: [
+            "createProduct"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

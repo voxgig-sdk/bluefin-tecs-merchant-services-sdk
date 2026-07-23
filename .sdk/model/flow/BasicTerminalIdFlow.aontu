@@ -1,0 +1,18 @@
+# BasicTerminalIdFlow
+
+main: kit: flow: BasicTerminalIdFlow:
+{
+  entity: "terminal_id",
+  kind: "basic",
+  name: "BasicTerminalIdFlow",
+  step: [
+    {
+      input: {
+        ref: "terminal_id_ref01"
+      }
+
+      op: "create"
+    }
+  ],
+  "key$": "BasicTerminalIdFlow"
+}

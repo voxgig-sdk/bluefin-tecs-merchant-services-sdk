@@ -1,0 +1,18 @@
+# BasicStatusTransactionFlow
+
+main: kit: flow: BasicStatusTransactionFlow:
+{
+  entity: "status_transaction",
+  kind: "basic",
+  name: "BasicStatusTransactionFlow",
+  step: [
+    {
+      input: {
+        ref: "status_transaction_ref01"
+      }
+
+      op: "create"
+    }
+  ],
+  "key$": "BasicStatusTransactionFlow"
+}

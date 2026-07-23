@@ -1,0 +1,18 @@
+# BasicEcomParameterFlow
+
+main: kit: flow: BasicEcomParameterFlow:
+{
+  entity: "ecom_parameter",
+  kind: "basic",
+  name: "BasicEcomParameterFlow",
+  step: [
+    {
+      input: {
+        ref: "ecom_parameter_ref01"
+      }
+
+      op: "create"
+    }
+  ],
+  "key$": "BasicEcomParameterFlow"
+}

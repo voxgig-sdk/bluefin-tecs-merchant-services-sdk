@@ -1,0 +1,45 @@
+{
+  "existing": {
+    "list_terminal": {
+      "LIST_TERMINAL00": {
+        "corporate_uuid": [],
+        "filter": {},
+        "pagination": {},
+        "response_code": "s3f",
+        "response_message": "s40",
+        "terminal": [],
+        "id": "LIST_TERMINAL00"
+      },
+      "LIST_TERMINAL01": {
+        "corporate_uuid": [],
+        "filter": {},
+        "pagination": {},
+        "response_code": "s7b",
+        "response_message": "s7c",
+        "terminal": [],
+        "id": "LIST_TERMINAL01"
+      },
+      "LIST_TERMINAL02": {
+        "corporate_uuid": [],
+        "filter": {},
+        "pagination": {},
+        "response_code": "sb7",
+        "response_message": "sb8",
+        "terminal": [],
+        "id": "LIST_TERMINAL02"
+      }
+    }
+  },
+  "new": {
+    "list_terminal": {
+      "list_terminal_ref01": {
+        "corporate_uuid": [],
+        "filter": {},
+        "pagination": {},
+        "response_code": "sf3",
+        "response_message": "sf4",
+        "terminal": []
+      }
+    }
+  }
+}

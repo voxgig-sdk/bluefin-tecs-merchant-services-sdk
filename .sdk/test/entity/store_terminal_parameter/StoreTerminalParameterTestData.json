@@ -1,0 +1,45 @@
+{
+  "existing": {
+    "store_terminal_parameter": {
+      "STORE_TERMINAL_PARAMETER00": {
+        "acq_tab_nexo": {},
+        "config_version": "s3d",
+        "response_code": "s3e",
+        "response_message": "s3f",
+        "serial_number": "s40",
+        "tid_sent": "s41",
+        "id": "STORE_TERMINAL_PARAMETER00"
+      },
+      "STORE_TERMINAL_PARAMETER01": {
+        "acq_tab_nexo": {},
+        "config_version": "s79",
+        "response_code": "s7a",
+        "response_message": "s7b",
+        "serial_number": "s7c",
+        "tid_sent": "s7d",
+        "id": "STORE_TERMINAL_PARAMETER01"
+      },
+      "STORE_TERMINAL_PARAMETER02": {
+        "acq_tab_nexo": {},
+        "config_version": "sb5",
+        "response_code": "sb6",
+        "response_message": "sb7",
+        "serial_number": "sb8",
+        "tid_sent": "sb9",
+        "id": "STORE_TERMINAL_PARAMETER02"
+      }
+    }
+  },
+  "new": {
+    "store_terminal_parameter": {
+      "store_terminal_parameter_ref01": {
+        "acq_tab_nexo": {},
+        "config_version": "sf1",
+        "response_code": "sf2",
+        "response_message": "sf3",
+        "serial_number": "sf4",
+        "tid_sent": "sf5"
+      }
+    }
+  }
+}

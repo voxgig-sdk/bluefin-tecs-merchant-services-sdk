@@ -1,0 +1,18 @@
+# BasicGetTemplateXmlFlow
+
+main: kit: flow: BasicGetTemplateXmlFlow:
+{
+  entity: "get_template_xml",
+  kind: "basic",
+  name: "BasicGetTemplateXmlFlow",
+  step: [
+    {
+      input: {
+        ref: "get_template_xml_ref01"
+      }
+
+      op: "create"
+    }
+  ],
+  "key$": "BasicGetTemplateXmlFlow"
+}

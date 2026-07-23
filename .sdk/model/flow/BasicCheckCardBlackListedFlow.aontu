@@ -1,0 +1,18 @@
+# BasicCheckCardBlackListedFlow
+
+main: kit: flow: BasicCheckCardBlackListedFlow:
+{
+  entity: "check_card_black_listed",
+  kind: "basic",
+  name: "BasicCheckCardBlackListedFlow",
+  step: [
+    {
+      input: {
+        ref: "check_card_black_listed_ref01"
+      }
+
+      op: "create"
+    }
+  ],
+  "key$": "BasicCheckCardBlackListedFlow"
+}

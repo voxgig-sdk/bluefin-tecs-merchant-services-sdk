@@ -1,0 +1,58 @@
+# Entity: terminal_id
+
+main: kit: entity: terminal_id: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "device_serial_number"
+      req: true
+      type: "`$ARRAY`"
+    }
+    {
+      name: "duplicate_terminal_id"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "response_code"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "response_message"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "terminal"
+      req: false
+      type: "`$ARRAY`"
+    }
+  ]
+
+  name: "terminal_id"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          method: "POST"
+          orig: "/public/getTerminalId"
+          parts: [
+            "public"
+            "getTerminalId"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

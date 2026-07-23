@@ -1,0 +1,41 @@
+{
+  "existing": {
+    "terminal_id": {
+      "TERMINAL_ID00": {
+        "device_serial_number": [],
+        "duplicate_terminal_id": "DUPLICATE_TERMINAL01",
+        "response_code": "s34",
+        "response_message": "s35",
+        "terminal": [],
+        "id": "TERMINAL_ID00"
+      },
+      "TERMINAL_ID01": {
+        "device_serial_number": [],
+        "duplicate_terminal_id": "DUPLICATE_TERMINAL01",
+        "response_code": "s66",
+        "response_message": "s67",
+        "terminal": [],
+        "id": "TERMINAL_ID01"
+      },
+      "TERMINAL_ID02": {
+        "device_serial_number": [],
+        "duplicate_terminal_id": "DUPLICATE_TERMINAL01",
+        "response_code": "s98",
+        "response_message": "s99",
+        "terminal": [],
+        "id": "TERMINAL_ID02"
+      }
+    }
+  },
+  "new": {
+    "terminal_id": {
+      "terminal_id_ref01": {
+        "device_serial_number": [],
+        "duplicate_terminal_id": "DUPLICATE_TERMINAL01",
+        "response_code": "sca",
+        "response_message": "scb",
+        "terminal": []
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+# BasicRegisterTecsCompanyFlow
+
+main: kit: flow: BasicRegisterTecsCompanyFlow:
+{
+  entity: "register_tecs_company",
+  kind: "basic",
+  name: "BasicRegisterTecsCompanyFlow",
+  step: [
+    {
+      input: {
+        ref: "register_tecs_company_ref01"
+      }
+
+      op: "create"
+    }
+  ],
+  "key$": "BasicRegisterTecsCompanyFlow"
+}

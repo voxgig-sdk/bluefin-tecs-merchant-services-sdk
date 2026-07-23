@@ -1,0 +1,47 @@
+# Entity: introduce_mandator
+
+main: kit: entity: introduce_mandator: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "mandator_name"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "response_code"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "response_message"
+      req: false
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "introduce_mandator"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          method: "POST"
+          orig: "/introduceMandator"
+          parts: [
+            "introduceMandator"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

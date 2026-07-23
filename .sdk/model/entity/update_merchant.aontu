@@ -1,0 +1,88 @@
+# Entity: update_merchant
+
+main: kit: entity: update_merchant: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "city"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "corporate_uuid"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "country"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "merchant_category_code"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "name"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "response_code"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "response_message"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "state"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "street"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "vu_nummer"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "zipcode"
+      req: false
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "update_merchant"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          method: "POST"
+          orig: "/public/updateMerchant"
+          parts: [
+            "public"
+            "updateMerchant"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

@@ -1,0 +1,109 @@
+# Entity: mandator_clearing_export_download
+
+main: kit: entity: mandator_clearing_export_download: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "clearing_date_from"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "clearing_date_to"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "file_id"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "filename_template"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "response_code"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "response_message"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "status"
+      req: false
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "mandator_clearing_export_download"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          method: "POST"
+          orig: "/public/digitalservices/mandatorClearingExportDownload"
+          parts: [
+            "public"
+            "digitalservices"
+            "mandatorClearingExportDownload"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          args: {
+            params: [
+              {
+                kind: "param"
+                name: "id"
+                orig: "file_id"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/public/digitalservices/mandatorClearingExportDownload/{fileId}"
+          parts: [
+            "public"
+            "digitalservices"
+            "mandatorClearingExportDownload"
+            "{id}"
+          ]
+          rename: {
+            param: {
+              fileId: "id"
+            }
+          }
+          select: {
+            exist: [
+              "id"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

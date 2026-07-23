@@ -1,0 +1,85 @@
+{
+  "existing": {
+    "payment_sred": {
+      "PAYMENT_SRED00": {
+        "acquirer_name": "sa0",
+        "amount": "sa1",
+        "authorization_number": "sa2",
+        "card_type": "sa3",
+        "currency": "sa4",
+        "date_time_tx": "sa5",
+        "device_payload": "sa6",
+        "merchant_id": "MERCHANT01",
+        "original_transaction_id": "ORIGINAL_TRANSACTION01",
+        "password": "sa9",
+        "response_code": "saa",
+        "response_message": "sab",
+        "sred": {},
+        "terminal_id": "TERMINAL01",
+        "transaction_id": "TRANSACTION01",
+        "txtype": "saf",
+        "id": "PAYMENT_SRED00"
+      },
+      "PAYMENT_SRED01": {
+        "acquirer_name": "s140",
+        "amount": "s141",
+        "authorization_number": "s142",
+        "card_type": "s143",
+        "currency": "s144",
+        "date_time_tx": "s145",
+        "device_payload": "s146",
+        "merchant_id": "MERCHANT01",
+        "original_transaction_id": "ORIGINAL_TRANSACTION01",
+        "password": "s149",
+        "response_code": "s14a",
+        "response_message": "s14b",
+        "sred": {},
+        "terminal_id": "TERMINAL01",
+        "transaction_id": "TRANSACTION01",
+        "txtype": "s14f",
+        "id": "PAYMENT_SRED01"
+      },
+      "PAYMENT_SRED02": {
+        "acquirer_name": "s1e0",
+        "amount": "s1e1",
+        "authorization_number": "s1e2",
+        "card_type": "s1e3",
+        "currency": "s1e4",
+        "date_time_tx": "s1e5",
+        "device_payload": "s1e6",
+        "merchant_id": "MERCHANT01",
+        "original_transaction_id": "ORIGINAL_TRANSACTION01",
+        "password": "s1e9",
+        "response_code": "s1ea",
+        "response_message": "s1eb",
+        "sred": {},
+        "terminal_id": "TERMINAL01",
+        "transaction_id": "TRANSACTION01",
+        "txtype": "s1ef",
+        "id": "PAYMENT_SRED02"
+      }
+    }
+  },
+  "new": {
+    "payment_sred": {
+      "payment_sred_ref01": {
+        "acquirer_name": "s280",
+        "amount": "s281",
+        "authorization_number": "s282",
+        "card_type": "s283",
+        "currency": "s284",
+        "date_time_tx": "s285",
+        "device_payload": "s286",
+        "merchant_id": "MERCHANT01",
+        "original_transaction_id": "ORIGINAL_TRANSACTION01",
+        "password": "s289",
+        "response_code": "s28a",
+        "response_message": "s28b",
+        "sred": {},
+        "terminal_id": "TERMINAL01",
+        "transaction_id": "TRANSACTION01",
+        "txtype": "s28f"
+      }
+    }
+  }
+}

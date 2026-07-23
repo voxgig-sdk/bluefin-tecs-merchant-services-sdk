@@ -1,0 +1,65 @@
+{
+  "existing": {
+    "update_merchant": {
+      "UPDATE_MERCHANT00": {
+        "city": "s6e",
+        "corporate_uuid": "s6f",
+        "country": "s70",
+        "merchant_category_code": "s71",
+        "name": "s72",
+        "response_code": "s73",
+        "response_message": "s74",
+        "state": "s75",
+        "street": "s76",
+        "vu_nummer": "s77",
+        "zipcode": "s78",
+        "id": "UPDATE_MERCHANT00"
+      },
+      "UPDATE_MERCHANT01": {
+        "city": "sdc",
+        "corporate_uuid": "sdd",
+        "country": "sde",
+        "merchant_category_code": "sdf",
+        "name": "se0",
+        "response_code": "se1",
+        "response_message": "se2",
+        "state": "se3",
+        "street": "se4",
+        "vu_nummer": "se5",
+        "zipcode": "se6",
+        "id": "UPDATE_MERCHANT01"
+      },
+      "UPDATE_MERCHANT02": {
+        "city": "s14a",
+        "corporate_uuid": "s14b",
+        "country": "s14c",
+        "merchant_category_code": "s14d",
+        "name": "s14e",
+        "response_code": "s14f",
+        "response_message": "s150",
+        "state": "s151",
+        "street": "s152",
+        "vu_nummer": "s153",
+        "zipcode": "s154",
+        "id": "UPDATE_MERCHANT02"
+      }
+    }
+  },
+  "new": {
+    "update_merchant": {
+      "update_merchant_ref01": {
+        "city": "s1b8",
+        "corporate_uuid": "s1b9",
+        "country": "s1ba",
+        "merchant_category_code": "s1bb",
+        "name": "s1bc",
+        "response_code": "s1bd",
+        "response_message": "s1be",
+        "state": "s1bf",
+        "street": "s1c0",
+        "vu_nummer": "s1c1",
+        "zipcode": "s1c2"
+      }
+    }
+  }
+}
