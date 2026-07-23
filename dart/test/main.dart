@@ -1,0 +1,114 @@
+// BluefinTecsMerchantServices SDK test suite entry. GENERATED — do not edit.
+
+import 'dart:io';
+
+import 'harness.dart' as harness;
+
+import 'exists_test.dart' as exists_test;
+import 'struct_test.dart' as struct_test;
+import 'primary_test.dart' as primary_test;
+import 'pipeline_test.dart' as pipeline_test;
+import 'feature_test.dart' as feature_test;
+import 'netsim_test.dart' as netsim_test;
+import 'custom_test.dart' as custom_test;
+import 'readme_examples_test.dart' as readme_examples_test;
+import 'entity/cancel_transaction/CancelTransactionEntity_test.dart' as cancel_transaction_entity_test;
+import 'entity/check_card_black_listed/CheckCardBlackListedEntity_test.dart' as check_card_black_listed_entity_test;
+import 'entity/create_product/CreateProductEntity_test.dart' as create_product_entity_test;
+import 'entity/deactivate_terminal/DeactivateTerminalEntity_test.dart' as deactivate_terminal_entity_test;
+import 'entity/digital_services_api/DigitalServicesApiEntity_test.dart' as digital_services_api_entity_test;
+import 'entity/digital_services_api/DigitalServicesApiDirect_test.dart' as digital_services_api_direct_test;
+import 'entity/ec_data_ecom/EcDataEcomEntity_test.dart' as ec_data_ecom_entity_test;
+import 'entity/ecom_parameter/EcomParameterEntity_test.dart' as ecom_parameter_entity_test;
+import 'entity/ecr_data/EcrDataEntity_test.dart' as ecr_data_entity_test;
+import 'entity/emv_data/EmvDataEntity_test.dart' as emv_data_entity_test;
+import 'entity/enable_acquiring/EnableAcquiringEntity_test.dart' as enable_acquiring_entity_test;
+import 'entity/get_merchant_contract_number/GetMerchantContractNumberEntity_test.dart' as get_merchant_contract_number_entity_test;
+import 'entity/get_template_xml/GetTemplateXmlEntity_test.dart' as get_template_xml_entity_test;
+import 'entity/introduce_mandator/IntroduceMandatorEntity_test.dart' as introduce_mandator_entity_test;
+import 'entity/introduce_package/IntroducePackageEntity_test.dart' as introduce_package_entity_test;
+import 'entity/keep_alive/KeepAliveEntity_test.dart' as keep_alive_entity_test;
+import 'entity/list_terminal/ListTerminalEntity_test.dart' as list_terminal_entity_test;
+import 'entity/mandator_clearing_export/MandatorClearingExportEntity_test.dart' as mandator_clearing_export_entity_test;
+import 'entity/mandator_clearing_export_download/MandatorClearingExportDownloadEntity_test.dart' as mandator_clearing_export_download_entity_test;
+import 'entity/mandator_clearing_export_download/MandatorClearingExportDownloadDirect_test.dart' as mandator_clearing_export_download_direct_test;
+import 'entity/mandator_clearing_export_summary/MandatorClearingExportSummaryEntity_test.dart' as mandator_clearing_export_summary_entity_test;
+import 'entity/merchant_portal_services_api/MerchantPortalServicesApiEntity_test.dart' as merchant_portal_services_api_entity_test;
+import 'entity/move_tid/MoveTidEntity_test.dart' as move_tid_entity_test;
+import 'entity/payment_manual/PaymentManualEntity_test.dart' as payment_manual_entity_test;
+import 'entity/payment_sred/PaymentSredEntity_test.dart' as payment_sred_entity_test;
+import 'entity/pre_auth_transaction_completion/PreAuthTransactionCompletionEntity_test.dart' as pre_auth_transaction_completion_entity_test;
+import 'entity/reactivate_terminal/ReactivateTerminalEntity_test.dart' as reactivate_terminal_entity_test;
+import 'entity/refund_transaction/RefundTransactionEntity_test.dart' as refund_transaction_entity_test;
+import 'entity/register_tecs_company/RegisterTecsCompanyEntity_test.dart' as register_tecs_company_entity_test;
+import 'entity/register_terminal/RegisterTerminalEntity_test.dart' as register_terminal_entity_test;
+import 'entity/report_data/ReportDataEntity_test.dart' as report_data_entity_test;
+import 'entity/status_transaction/StatusTransactionEntity_test.dart' as status_transaction_entity_test;
+import 'entity/store_terminal_parameter/StoreTerminalParameterEntity_test.dart' as store_terminal_parameter_entity_test;
+import 'entity/terminal_id/TerminalIdEntity_test.dart' as terminal_id_entity_test;
+import 'entity/transaction_history/TransactionHistoryEntity_test.dart' as transaction_history_entity_test;
+import 'entity/transactions_count/TransactionsCountEntity_test.dart' as transactions_count_entity_test;
+import 'entity/transactions_count_card_brand/TransactionsCountCardBrandEntity_test.dart' as transactions_count_card_brand_entity_test;
+import 'entity/transactions_turnover/TransactionsTurnoverEntity_test.dart' as transactions_turnover_entity_test;
+import 'entity/update_merchant/UpdateMerchantEntity_test.dart' as update_merchant_entity_test;
+import 'entity/update_template_xml/UpdateTemplateXmlEntity_test.dart' as update_template_xml_entity_test;
+import 'entity/version/VersionEntity_test.dart' as version_entity_test;
+import 'entity/version/VersionDirect_test.dart' as version_direct_test;
+
+Future<void> main() async {
+  exists_test.tests();
+  struct_test.tests();
+  primary_test.tests();
+  pipeline_test.tests();
+  feature_test.tests();
+  netsim_test.tests();
+  custom_test.tests();
+  readme_examples_test.tests();
+  cancel_transaction_entity_test.tests();
+  check_card_black_listed_entity_test.tests();
+  create_product_entity_test.tests();
+  deactivate_terminal_entity_test.tests();
+  digital_services_api_entity_test.tests();
+  digital_services_api_direct_test.tests();
+  ec_data_ecom_entity_test.tests();
+  ecom_parameter_entity_test.tests();
+  ecr_data_entity_test.tests();
+  emv_data_entity_test.tests();
+  enable_acquiring_entity_test.tests();
+  get_merchant_contract_number_entity_test.tests();
+  get_template_xml_entity_test.tests();
+  introduce_mandator_entity_test.tests();
+  introduce_package_entity_test.tests();
+  keep_alive_entity_test.tests();
+  list_terminal_entity_test.tests();
+  mandator_clearing_export_entity_test.tests();
+  mandator_clearing_export_download_entity_test.tests();
+  mandator_clearing_export_download_direct_test.tests();
+  mandator_clearing_export_summary_entity_test.tests();
+  merchant_portal_services_api_entity_test.tests();
+  move_tid_entity_test.tests();
+  payment_manual_entity_test.tests();
+  payment_sred_entity_test.tests();
+  pre_auth_transaction_completion_entity_test.tests();
+  reactivate_terminal_entity_test.tests();
+  refund_transaction_entity_test.tests();
+  register_tecs_company_entity_test.tests();
+  register_terminal_entity_test.tests();
+  report_data_entity_test.tests();
+  status_transaction_entity_test.tests();
+  store_terminal_parameter_entity_test.tests();
+  terminal_id_entity_test.tests();
+  transaction_history_entity_test.tests();
+  transactions_count_entity_test.tests();
+  transactions_count_card_brand_entity_test.tests();
+  transactions_turnover_entity_test.tests();
+  update_merchant_entity_test.tests();
+  update_template_xml_entity_test.tests();
+  version_entity_test.tests();
+  version_direct_test.tests();
+
+  final failed = await harness.runAll();
+  if (0 < failed) {
+    exitCode = 1;
+  }
+}

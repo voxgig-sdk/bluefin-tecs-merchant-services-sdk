@@ -1,0 +1,15 @@
+name: bluefin_tecs_merchant_services_sdk
+description: >-
+  Unofficial generated dart SDK for the Merchant Services public API. Not affiliated with or endorsed by the upstream API provider.
+version: 0.0.1
+homepage: https://github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk
+repository: https://github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk
+issue_tracker: https://github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk/issues
+topics:
+  - voxgig
+  - sdk
+  - generated-sdk
+  - openapi
+  - api-client
+environment:
+  sdk: '>=3.0.0 <4.0.0'

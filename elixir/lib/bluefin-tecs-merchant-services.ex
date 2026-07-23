@@ -1,0 +1,413 @@
+# BluefinTecsMerchantServices SDK
+#
+# The client is a reference-stable struct map node (mode/features/options
+# plus the root ctx and utility). Functional API: build one with new/1 or
+# test/2, then call entity factories or direct/2.
+
+defmodule BluefinTecsMerchantServices do
+  alias Voxgig.Struct, as: S
+  alias BluefinTecsMerchantServices.Helpers, as: H
+  alias BluefinTecsMerchantServices.{Utility, Context, Spec}
+
+  def new(options \\ nil) do
+    client = S.jm([])
+    S.setprop(client, "mode", "live")
+    S.setprop(client, "features", [])
+    S.setprop(client, "options", nil)
+
+    utility = Utility.new()
+    S.setprop(client, "_utility", utility)
+
+    config = BluefinTecsMerchantServices.Config.make_config()
+
+    rootctx =
+      Context.new(
+        S.jm([
+          "client", client,
+          "utility", utility,
+          "config", config,
+          "options", if(options != nil, do: options, else: S.jm([])),
+          "shared", S.jm([])
+        ]),
+        nil
+      )
+
+    S.setprop(client, "_rootctx", rootctx)
+
+    opts = Utility.make_options(rootctx)
+    S.setprop(client, "options", opts)
+
+    if S.getpath(opts, "feature.test.active") == true, do: S.setprop(client, "mode", "test")
+    S.setprop(rootctx, "options", opts)
+
+    # Add features in the resolved order (make_options records an explicit
+    # array order, else defaults to test-first). Ordering matters: the `test`
+    # feature installs the base mock transport and the transport features
+    # (retry/cache/netsim/proxy/ratelimit) wrap whatever is current, so `test`
+    # must be added before them to sit at the base of the wrapper chain.
+    feature_opts = H.or_(H.to_map(S.getprop(opts, "feature")), S.jm([]))
+    feature_order = S.getpath(opts, "__derived__.featureorder")
+
+    if S.islist(feature_order) and S.size(feature_order) > 0 do
+      Enum.each(0..(S.size(feature_order) - 1), fn i ->
+        fname = S.getelem(feature_order, i)
+        fom = H.to_map(S.getprop(feature_opts, fname))
+
+        if fom != nil and S.getprop(fom, "active") == true do
+          Utility.feature_add(rootctx, BluefinTecsMerchantServices.Features.make_feature(fname))
+        end
+      end)
+    end
+
+    extend = S.getprop(opts, "extend")
+
+    if S.islist(extend) and S.size(extend) > 0 do
+      Enum.each(0..(S.size(extend) - 1), fn i ->
+        fx = S.getelem(extend, i)
+        if S.ismap(fx), do: Utility.feature_add(rootctx, fx)
+      end)
+    end
+
+    Enum.each(S.getprop(client, "features"), fn fe -> Utility.feature_init(rootctx, fe) end)
+    Utility.feature_hook(rootctx, "PostConstruct")
+
+    client
+  end
+
+  def options_map(client) do
+    out = S.clone(S.getprop(client, "options"))
+    if S.ismap(out), do: out, else: S.jm([])
+  end
+
+  def get_utility(client), do: S.getprop(client, "_utility")
+  def get_root_ctx(client), do: S.getprop(client, "_rootctx")
+  def mode(client), do: S.getprop(client, "mode")
+
+  def test(testopts \\ nil, sdkopts \\ nil) do
+    sdkopts = S.clone(if(sdkopts != nil, do: sdkopts, else: S.jm([])))
+    sdkopts = if S.ismap(sdkopts), do: sdkopts, else: S.jm([])
+
+    testopts = S.clone(if(testopts != nil, do: testopts, else: S.jm([])))
+    testopts = if S.ismap(testopts), do: testopts, else: S.jm([])
+    S.setprop(testopts, "active", true)
+
+    S.setpath(sdkopts, "feature.test", testopts)
+
+    client = new(sdkopts)
+    S.setprop(client, "mode", "test")
+    client
+  end
+
+  def prepare(client, fetchargs \\ nil) do
+    fetchargs = if S.ismap(fetchargs), do: fetchargs, else: S.jm([])
+    ctrl = H.or_(H.to_map(S.getprop(fetchargs, "ctrl")), S.jm([]))
+
+    ctx = Context.new(S.jm(["opname", "prepare", "ctrl", ctrl]), get_root_ctx(client))
+    options = S.getprop(client, "options")
+
+    path0 = H.or_(S.getprop(fetchargs, "path"), "")
+    path = if is_binary(path0), do: path0, else: ""
+    method0 = H.or_(S.getprop(fetchargs, "method"), "GET")
+    method = if is_binary(method0), do: method0, else: "GET"
+    params = H.or_(H.to_map(S.getprop(fetchargs, "params")), S.jm([]))
+    query = H.or_(H.to_map(S.getprop(fetchargs, "query")), S.jm([]))
+
+    headers = Utility.prepare_headers(ctx)
+
+    base = strp(S.getprop(options, "base"))
+    prefix = strp(S.getprop(options, "prefix"))
+    suffix = strp(S.getprop(options, "suffix"))
+
+    spec =
+      Spec.new(
+        S.jm([
+          "base", base,
+          "prefix", prefix,
+          "suffix", suffix,
+          "path", path,
+          "method", method,
+          "params", params,
+          "query", query,
+          "headers", headers,
+          "body", S.getprop(fetchargs, "body"),
+          "step", "start"
+        ])
+      )
+
+    S.setprop(ctx, "spec", spec)
+
+    uh = S.getprop(fetchargs, "headers")
+
+    if S.ismap(uh) do
+      Enum.each(H.entries(uh), fn {k, v} -> S.setprop(S.getprop(spec, "headers"), k, v) end)
+    end
+
+    {_spec, err} = Utility.prepare_auth(ctx)
+    if err != nil, do: raise(err)
+
+    {fetchdef, err2} = Utility.make_fetch_def(ctx)
+    if err2 != nil, do: raise(err2)
+
+    fetchdef
+  end
+
+  def direct(client, fetchargs \\ nil) do
+    fetchdef =
+      try do
+        prepare(client, fetchargs)
+      rescue
+        err -> {:direct_err, err}
+      end
+
+    case fetchdef do
+      {:direct_err, err} ->
+        S.jm(["ok", false, "err", err])
+
+      _ ->
+        fetchargs = if S.ismap(fetchargs), do: fetchargs, else: S.jm([])
+        ctrl = H.or_(H.to_map(S.getprop(fetchargs, "ctrl")), S.jm([]))
+        ctx = Context.new(S.jm(["opname", "direct", "ctrl", ctrl]), get_root_ctx(client))
+
+        url = H.or_(S.getprop(fetchdef, "url"), "")
+        {fetched, fetch_err} = Utility.fetcher(ctx, url, fetchdef)
+
+        cond do
+          fetch_err != nil ->
+            S.jm(["ok", false, "err", fetch_err])
+
+          fetched == nil ->
+            S.jm(["ok", false, "err", Context.make_error(ctx, "direct_no_response", "response: undefined")])
+
+          S.ismap(fetched) ->
+            status = H.to_int(S.getprop(fetched, "status"))
+            headers = H.or_(S.getprop(fetched, "headers"), S.jm([]))
+
+            content_length =
+              if S.ismap(headers), do: BluefinTecsMerchantServices.Feature.header_get(headers, "content-length"), else: nil
+
+            no_body = status in [204, 304] or to_string(content_length) == "0"
+
+            json_data =
+              if no_body do
+                nil
+              else
+                jf = S.getprop(fetched, "json")
+
+                if S.isfunc(jf) do
+                  try do
+                    jf.()
+                  rescue
+                    _ -> nil
+                  end
+                else
+                  nil
+                end
+              end
+
+            S.jm(["ok", status >= 200 and status < 300, "status", status, "headers", headers, "data", json_data])
+
+          true ->
+            S.jm(["ok", false, "err", Context.make_error(ctx, "direct_invalid", "invalid response type")])
+        end
+    end
+  end
+
+  defp strp(v), do: if(is_binary(v), do: v, else: "")
+
+
+  @doc "Entity factory for cancel_transaction."
+  def cancel_transaction(client, entopts \\ nil) do
+    BluefinTecsMerchantServices.Entity.CancelTransaction.new(client, entopts)
+  end
+
+  @doc "Entity factory for check_card_black_listed."
+  def check_card_black_listed(client, entopts \\ nil) do
+    BluefinTecsMerchantServices.Entity.CheckCardBlackListed.new(client, entopts)
+  end
+
+  @doc "Entity factory for create_product."
+  def create_product(client, entopts \\ nil) do
+    BluefinTecsMerchantServices.Entity.CreateProduct.new(client, entopts)
+  end
+
+  @doc "Entity factory for deactivate_terminal."
+  def deactivate_terminal(client, entopts \\ nil) do
+    BluefinTecsMerchantServices.Entity.DeactivateTerminal.new(client, entopts)
+  end
+
+  @doc "Entity factory for digital_services_api."
+  def digital_services_api(client, entopts \\ nil) do
+    BluefinTecsMerchantServices.Entity.DigitalServicesApi.new(client, entopts)
+  end
+
+  @doc "Entity factory for ec_data_ecom."
+  def ec_data_ecom(client, entopts \\ nil) do
+    BluefinTecsMerchantServices.Entity.EcDataEcom.new(client, entopts)
+  end
+
+  @doc "Entity factory for ecom_parameter."
+  def ecom_parameter(client, entopts \\ nil) do
+    BluefinTecsMerchantServices.Entity.EcomParameter.new(client, entopts)
+  end
+
+  @doc "Entity factory for ecr_data."
+  def ecr_data(client, entopts \\ nil) do
+    BluefinTecsMerchantServices.Entity.EcrData.new(client, entopts)
+  end
+
+  @doc "Entity factory for emv_data."
+  def emv_data(client, entopts \\ nil) do
+    BluefinTecsMerchantServices.Entity.EmvData.new(client, entopts)
+  end
+
+  @doc "Entity factory for enable_acquiring."
+  def enable_acquiring(client, entopts \\ nil) do
+    BluefinTecsMerchantServices.Entity.EnableAcquiring.new(client, entopts)
+  end
+
+  @doc "Entity factory for get_merchant_contract_number."
+  def get_merchant_contract_number(client, entopts \\ nil) do
+    BluefinTecsMerchantServices.Entity.GetMerchantContractNumber.new(client, entopts)
+  end
+
+  @doc "Entity factory for get_template_xml."
+  def get_template_xml(client, entopts \\ nil) do
+    BluefinTecsMerchantServices.Entity.GetTemplateXml.new(client, entopts)
+  end
+
+  @doc "Entity factory for introduce_mandator."
+  def introduce_mandator(client, entopts \\ nil) do
+    BluefinTecsMerchantServices.Entity.IntroduceMandator.new(client, entopts)
+  end
+
+  @doc "Entity factory for introduce_package."
+  def introduce_package(client, entopts \\ nil) do
+    BluefinTecsMerchantServices.Entity.IntroducePackage.new(client, entopts)
+  end
+
+  @doc "Entity factory for keep_alive."
+  def keep_alive(client, entopts \\ nil) do
+    BluefinTecsMerchantServices.Entity.KeepAlive.new(client, entopts)
+  end
+
+  @doc "Entity factory for list_terminal."
+  def list_terminal(client, entopts \\ nil) do
+    BluefinTecsMerchantServices.Entity.ListTerminal.new(client, entopts)
+  end
+
+  @doc "Entity factory for mandator_clearing_export."
+  def mandator_clearing_export(client, entopts \\ nil) do
+    BluefinTecsMerchantServices.Entity.MandatorClearingExport.new(client, entopts)
+  end
+
+  @doc "Entity factory for mandator_clearing_export_download."
+  def mandator_clearing_export_download(client, entopts \\ nil) do
+    BluefinTecsMerchantServices.Entity.MandatorClearingExportDownload.new(client, entopts)
+  end
+
+  @doc "Entity factory for mandator_clearing_export_summary."
+  def mandator_clearing_export_summary(client, entopts \\ nil) do
+    BluefinTecsMerchantServices.Entity.MandatorClearingExportSummary.new(client, entopts)
+  end
+
+  @doc "Entity factory for merchant_portal_services_api."
+  def merchant_portal_services_api(client, entopts \\ nil) do
+    BluefinTecsMerchantServices.Entity.MerchantPortalServicesApi.new(client, entopts)
+  end
+
+  @doc "Entity factory for move_tid."
+  def move_tid(client, entopts \\ nil) do
+    BluefinTecsMerchantServices.Entity.MoveTid.new(client, entopts)
+  end
+
+  @doc "Entity factory for payment_manual."
+  def payment_manual(client, entopts \\ nil) do
+    BluefinTecsMerchantServices.Entity.PaymentManual.new(client, entopts)
+  end
+
+  @doc "Entity factory for payment_sred."
+  def payment_sred(client, entopts \\ nil) do
+    BluefinTecsMerchantServices.Entity.PaymentSred.new(client, entopts)
+  end
+
+  @doc "Entity factory for pre_auth_transaction_completion."
+  def pre_auth_transaction_completion(client, entopts \\ nil) do
+    BluefinTecsMerchantServices.Entity.PreAuthTransactionCompletion.new(client, entopts)
+  end
+
+  @doc "Entity factory for reactivate_terminal."
+  def reactivate_terminal(client, entopts \\ nil) do
+    BluefinTecsMerchantServices.Entity.ReactivateTerminal.new(client, entopts)
+  end
+
+  @doc "Entity factory for refund_transaction."
+  def refund_transaction(client, entopts \\ nil) do
+    BluefinTecsMerchantServices.Entity.RefundTransaction.new(client, entopts)
+  end
+
+  @doc "Entity factory for register_tecs_company."
+  def register_tecs_company(client, entopts \\ nil) do
+    BluefinTecsMerchantServices.Entity.RegisterTecsCompany.new(client, entopts)
+  end
+
+  @doc "Entity factory for register_terminal."
+  def register_terminal(client, entopts \\ nil) do
+    BluefinTecsMerchantServices.Entity.RegisterTerminal.new(client, entopts)
+  end
+
+  @doc "Entity factory for report_data."
+  def report_data(client, entopts \\ nil) do
+    BluefinTecsMerchantServices.Entity.ReportData.new(client, entopts)
+  end
+
+  @doc "Entity factory for status_transaction."
+  def status_transaction(client, entopts \\ nil) do
+    BluefinTecsMerchantServices.Entity.StatusTransaction.new(client, entopts)
+  end
+
+  @doc "Entity factory for store_terminal_parameter."
+  def store_terminal_parameter(client, entopts \\ nil) do
+    BluefinTecsMerchantServices.Entity.StoreTerminalParameter.new(client, entopts)
+  end
+
+  @doc "Entity factory for terminal_id."
+  def terminal_id(client, entopts \\ nil) do
+    BluefinTecsMerchantServices.Entity.TerminalId.new(client, entopts)
+  end
+
+  @doc "Entity factory for transaction_history."
+  def transaction_history(client, entopts \\ nil) do
+    BluefinTecsMerchantServices.Entity.TransactionHistory.new(client, entopts)
+  end
+
+  @doc "Entity factory for transactions_count."
+  def transactions_count(client, entopts \\ nil) do
+    BluefinTecsMerchantServices.Entity.TransactionsCount.new(client, entopts)
+  end
+
+  @doc "Entity factory for transactions_count_card_brand."
+  def transactions_count_card_brand(client, entopts \\ nil) do
+    BluefinTecsMerchantServices.Entity.TransactionsCountCardBrand.new(client, entopts)
+  end
+
+  @doc "Entity factory for transactions_turnover."
+  def transactions_turnover(client, entopts \\ nil) do
+    BluefinTecsMerchantServices.Entity.TransactionsTurnover.new(client, entopts)
+  end
+
+  @doc "Entity factory for update_merchant."
+  def update_merchant(client, entopts \\ nil) do
+    BluefinTecsMerchantServices.Entity.UpdateMerchant.new(client, entopts)
+  end
+
+  @doc "Entity factory for update_template_xml."
+  def update_template_xml(client, entopts \\ nil) do
+    BluefinTecsMerchantServices.Entity.UpdateTemplateXml.new(client, entopts)
+  end
+
+  @doc "Entity factory for version."
+  def version(client, entopts \\ nil) do
+    BluefinTecsMerchantServices.Entity.Version.new(client, entopts)
+  end
+
+end

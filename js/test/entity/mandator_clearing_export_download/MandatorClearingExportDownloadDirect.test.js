@@ -1,0 +1,99 @@
+
+const envlocal = __dirname + '/../../../.env.local'
+require('dotenv').config({ quiet: true, path: [envlocal] })
+
+const { test, describe } = require('node:test')
+const assert = require('node:assert')
+
+
+const { BluefinTecsMerchantServicesSDK } = require('../../..')
+
+const {
+  envOverride,
+} = require('../../utility')
+
+
+describe('MandatorClearingExportDownloadDirect', async () => {
+
+  test('direct-exists', async () => {
+    const sdk = new BluefinTecsMerchantServicesSDK({
+      system: { fetch: async () => ({}) }
+    })
+    assert('function' === typeof sdk.direct)
+    assert('function' === typeof sdk.prepare)
+  })
+
+
+  test('direct-load-mandator_clearing_export_download', async () => {
+    const setup = directSetup({ id: 'direct01' })
+    const { client, calls } = setup
+
+    const params = {}
+    if (!setup.live) {
+      params.id = 'direct01'
+    }
+
+    const result = await client.direct({
+      path: 'public/digitalservices/mandatorClearingExportDownload/{id}',
+      method: 'GET',
+      params,
+    })
+
+    assert(result.ok === true)
+    assert(result.status === 200)
+    assert(null != result.data)
+
+    if (!setup.live) {
+      assert(result.data.id === 'direct01')
+      assert(calls.length === 1)
+      assert(calls[0].init.method === 'GET')
+      assert(calls[0].url.includes('direct01'))
+    }
+  })
+
+})
+
+
+
+function directSetup(mockres) {
+  const calls = []
+
+  const env = envOverride({
+    'BLUEFINTECSMERCHANTSERVICES_TEST_MANDATOR_CLEARING_EXPORT_DOWNLOAD_ENTID': {},
+    'BLUEFINTECSMERCHANTSERVICES_TEST_LIVE': 'FALSE',
+    'BLUEFINTECSMERCHANTSERVICES_APIKEY': 'NONE',
+  })
+
+  const live = 'TRUE' === env.BLUEFINTECSMERCHANTSERVICES_TEST_LIVE
+
+  if (live) {
+    const client = new BluefinTecsMerchantServicesSDK({
+      apikey: env.BLUEFINTECSMERCHANTSERVICES_APIKEY,
+    })
+
+    let idmap = env['BLUEFINTECSMERCHANTSERVICES_TEST_MANDATOR_CLEARING_EXPORT_DOWNLOAD_ENTID']
+    if ('string' === typeof idmap && idmap.startsWith('{')) {
+      idmap = JSON.parse(idmap)
+    }
+
+    return { client, calls, live, idmap }
+  }
+
+  const mockFetch = async (url, init) => {
+    calls.push({ url, init })
+    return {
+      status: 200,
+      statusText: 'OK',
+      headers: {},
+      json: async () => (null != mockres ? mockres : { id: 'direct01' }),
+    }
+  }
+
+  const client = new BluefinTecsMerchantServicesSDK({
+    base: 'http://localhost:8080',
+    system: { fetch: mockFetch },
+  })
+
+  return { client, calls, live, idmap: {} }
+}
+  
