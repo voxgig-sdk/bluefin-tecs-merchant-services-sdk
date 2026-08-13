@@ -6,12 +6,12 @@ main: kit: entity: mandator_clearing_export: {
 
   fields: [
     {
-      name: "clearing_date_from"
+      name: "clearingDateFrom"
       req: true
       type: "`$STRING`"
     }
     {
-      name: "clearing_date_to"
+      name: "clearingDateTo"
       req: true
       type: "`$STRING`"
     }
@@ -21,17 +21,17 @@ main: kit: entity: mandator_clearing_export: {
       type: "`$OBJECT`"
     }
     {
-      name: "record"
+      name: "records"
       req: false
       type: "`$ARRAY`"
     }
     {
-      name: "response_code"
+      name: "responseCode"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "response_message"
+      name: "responseMessage"
       req: false
       type: "`$STRING`"
     }

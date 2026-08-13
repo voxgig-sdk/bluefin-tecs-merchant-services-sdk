@@ -14,7 +14,7 @@ import Foundation
 public struct CancelTransaction {
   public var acquirerId: String?
   public var acquirerName: String?
-  public var actualBonusPoint: String?
+  public var actualBonusPoints: String?
   public var amount: Int?
   public var authorizationCode: String?
   public var balanceAmount: String?
@@ -58,7 +58,7 @@ public struct CancelTransaction {
 public struct CancelTransactionCreateData {
   public var acquirerId: String?
   public var acquirerName: String?
-  public var actualBonusPoint: String?
+  public var actualBonusPoints: String?
   public var amount: Int?
   public var authorizationCode: String?
   public var balanceAmount: String?
@@ -187,6 +187,16 @@ public struct DigitalServicesApiLoadMatch {
 /// DigitalServicesApiCreateData is the typed request payload for DigitalServicesApi.create.
 public struct DigitalServicesApiCreateData {
   public var fileId: String?
+  public var clearingDateFrom: String
+  public var clearingDateTo: String
+  public var responseCode: Int?
+  public var responseMessage: String?
+  public var txCount: Int?
+  public var txIdEnd: String?
+  public var txIdStart: String?
+  public var txSeqNoEnd: Int?
+  public var txSeqNoStart: Int?
+  public var txTotal: Int?
 }
 
 /// EcDataEcom is the typed data model for the ec_data_ecom entity.
@@ -280,8 +290,8 @@ public struct EnableAcquiring {
   public var responseMessage: String?
   public var sortingCode: Int?
   public var templateName: String
-  public var terminalId: [Value]?
   public var terminalIdAcq: String?
+  public var terminalIds: [Value]?
   public var vuNummer: String?
 }
 
@@ -298,8 +308,8 @@ public struct EnableAcquiringCreateData {
   public var responseMessage: String?
   public var sortingCode: Int?
   public var templateName: String
-  public var terminalId: [Value]?
   public var terminalIdAcq: String?
+  public var terminalIds: [Value]?
   public var vuNummer: String?
 }
 
@@ -394,7 +404,7 @@ public struct ListTerminal {
   public var pagination: VMap?
   public var responseCode: Int?
   public var responseMessage: String?
-  public var terminal: [Value]?
+  public var terminals: [Value]?
 }
 
 /// ListTerminalCreateData is the typed request payload for ListTerminal.create.
@@ -404,7 +414,7 @@ public struct ListTerminalCreateData {
   public var pagination: VMap?
   public var responseCode: Int?
   public var responseMessage: String?
-  public var terminal: [Value]?
+  public var terminals: [Value]?
 }
 
 /// MandatorClearingExport is the typed data model for the mandator_clearing_export entity.
@@ -412,7 +422,7 @@ public struct MandatorClearingExport {
   public var clearingDateFrom: String
   public var clearingDateTo: String
   public var pagination: VMap?
-  public var record: [Value]?
+  public var records: [Value]?
   public var responseCode: Int?
   public var responseMessage: String?
 }
@@ -422,7 +432,7 @@ public struct MandatorClearingExportCreateData {
   public var clearingDateFrom: String
   public var clearingDateTo: String
   public var pagination: VMap?
-  public var record: [Value]?
+  public var records: [Value]?
   public var responseCode: Int?
   public var responseMessage: String?
 }
@@ -458,7 +468,7 @@ public struct MandatorClearingExportDownloadCreateData {
 public struct MandatorClearingExportSummary {
   public var clearingDateFrom: String
   public var clearingDateTo: String
-  public var record: [Value]?
+  public var records: [Value]?
   public var responseCode: Int?
   public var responseMessage: String?
 }
@@ -467,7 +477,7 @@ public struct MandatorClearingExportSummary {
 public struct MandatorClearingExportSummaryCreateData {
   public var clearingDateFrom: String
   public var clearingDateTo: String
-  public var record: [Value]?
+  public var records: [Value]?
   public var responseCode: Int?
   public var responseMessage: String?
 }
@@ -532,7 +542,7 @@ public struct MerchantPortalServicesApiCreateData {
 
 /// MoveTid is the typed data model for the move_tid entity.
 public struct MoveTid {
-  public var productorderuuid: [Value]
+  public var productorderuuids: [Value]
   public var responseCode: Int?
   public var responseMessage: String?
   public var targetPackageorderuuid: String?
@@ -541,7 +551,7 @@ public struct MoveTid {
 
 /// MoveTidCreateData is the typed request payload for MoveTid.create.
 public struct MoveTidCreateData {
-  public var productorderuuid: [Value]
+  public var productorderuuids: [Value]
   public var responseCode: Int?
   public var responseMessage: String?
   public var targetPackageorderuuid: String?
@@ -592,41 +602,33 @@ public struct PaymentManualCreateData {
 
 /// PaymentSred is the typed data model for the payment_sred entity.
 public struct PaymentSred {
-  public var acquirerName: String?
   public var amount: Int
-  public var authorizationNumber: String?
-  public var cardType: String?
   public var currency: String
-  public var dateTimeTx: String?
+  public var device: String?
   public var devicePayload: String
-  public var merchantId: String?
-  public var originalTransactionId: String?
+  public var expDate: String?
+  public var mode: String?
+  public var panMasked: String?
   public var password: String?
-  public var responseCode: String?
-  public var responseMessage: String?
-  public var sred: VMap?
-  public var terminalId: String?
-  public var transactionId: String?
+  public var serial: String?
+  public var serviceCode: String?
+  public var terminalId: String
   public var txtype: String
 }
 
 /// PaymentSredCreateData is the typed request payload for PaymentSred.create.
 public struct PaymentSredCreateData {
-  public var acquirerName: String?
   public var amount: Int
-  public var authorizationNumber: String?
-  public var cardType: String?
   public var currency: String
-  public var dateTimeTx: String?
+  public var device: String?
   public var devicePayload: String
-  public var merchantId: String?
-  public var originalTransactionId: String?
+  public var expDate: String?
+  public var mode: String?
+  public var panMasked: String?
   public var password: String?
-  public var responseCode: String?
-  public var responseMessage: String?
-  public var sred: VMap?
-  public var terminalId: String?
-  public var transactionId: String?
+  public var serial: String?
+  public var serviceCode: String?
+  public var terminalId: String
   public var txtype: String
 }
 
@@ -634,7 +636,7 @@ public struct PaymentSredCreateData {
 public struct PreAuthTransactionCompletion {
   public var acquirerId: String?
   public var acquirerName: String?
-  public var actualBonusPoint: String?
+  public var actualBonusPoints: String?
   public var amount: Int?
   public var authorizationCode: String?
   public var balanceAmount: String?
@@ -680,7 +682,7 @@ public struct PreAuthTransactionCompletion {
 public struct PreAuthTransactionCompletionCreateData {
   public var acquirerId: String?
   public var acquirerName: String?
-  public var actualBonusPoint: String?
+  public var actualBonusPoints: String?
   public var amount: Int?
   public var authorizationCode: String?
   public var balanceAmount: String?
@@ -748,7 +750,7 @@ public struct ReactivateTerminalCreateData {
 public struct RefundTransaction {
   public var acquirerId: String?
   public var acquirerName: String?
-  public var actualBonusPoint: String?
+  public var actualBonusPoints: String?
   public var amount: Int?
   public var authorizationCode: String?
   public var balanceAmount: String?
@@ -792,7 +794,7 @@ public struct RefundTransaction {
 public struct RefundTransactionCreateData {
   public var acquirerId: String?
   public var acquirerName: String?
-  public var actualBonusPoint: String?
+  public var actualBonusPoints: String?
   public var amount: Int?
   public var authorizationCode: String?
   public var balanceAmount: String?
@@ -872,7 +874,7 @@ public struct RegisterTerminal {
   public var terminalLanguageCode: String
   public var terminalLocation: String
   public var terminalSerialNumber: String?
-  public var tokenIoAlia: String?
+  public var tokenIoAlias: String?
   public var tokenIoIban: String?
   public var tokenIoMemberId: String?
   public var webShopUrl: String?
@@ -894,7 +896,7 @@ public struct RegisterTerminalCreateData {
   public var terminalLanguageCode: String
   public var terminalLocation: String
   public var terminalSerialNumber: String?
-  public var tokenIoAlia: String?
+  public var tokenIoAlias: String?
   public var tokenIoIban: String?
   public var tokenIoMemberId: String?
   public var webShopUrl: String?
@@ -960,7 +962,7 @@ public struct StatusTransaction {
   public var paymentReason: String?
   public var receiptNumber: String?
   public var responseCode: Int?
-  public var responseCodeFromA: String?
+  public var responseCodeFromAs: String?
   public var responseMessage: String?
   public var retrievalReferenceNumber: String?
   public var serviceCode: String?
@@ -1014,7 +1016,7 @@ public struct StatusTransactionCreateData {
   public var paymentReason: String?
   public var receiptNumber: String?
   public var responseCode: Int?
-  public var responseCodeFromA: String?
+  public var responseCodeFromAs: String?
   public var responseMessage: String?
   public var retrievalReferenceNumber: String?
   public var serviceCode: String?
@@ -1059,19 +1061,19 @@ public struct StoreTerminalParameterCreateData {
 /// TerminalId is the typed data model for the terminal_id entity.
 public struct TerminalId {
   public var deviceSerialNumber: [Value]
-  public var duplicateTerminalId: [Value]?
+  public var duplicateTerminalIds: [Value]?
   public var responseCode: Int?
   public var responseMessage: String?
-  public var terminal: [Value]?
+  public var terminals: [Value]?
 }
 
 /// TerminalIdCreateData is the typed request payload for TerminalId.create.
 public struct TerminalIdCreateData {
   public var deviceSerialNumber: [Value]
-  public var duplicateTerminalId: [Value]?
+  public var duplicateTerminalIds: [Value]?
   public var responseCode: Int?
   public var responseMessage: String?
-  public var terminal: [Value]?
+  public var terminals: [Value]?
 }
 
 /// TransactionHistory is the typed data model for the transaction_history entity.
@@ -1101,7 +1103,7 @@ public struct TransactionHistory {
   public var transactionAmountTo: String?
   public var transactionDateFrom: String?
   public var transactionDateTo: String?
-  public var transactionHistory: [Value]?
+  public var transactionHistories: [Value]?
   public var transactionId: String?
   public var transactionType: String?
   public var wallet: String?
@@ -1134,7 +1136,7 @@ public struct TransactionHistoryCreateData {
   public var transactionAmountTo: String?
   public var transactionDateFrom: String?
   public var transactionDateTo: String?
-  public var transactionHistory: [Value]?
+  public var transactionHistories: [Value]?
   public var transactionId: String?
   public var transactionType: String?
   public var wallet: String?
@@ -1187,7 +1189,7 @@ public struct TransactionsTurnover {
   public var responseMessage: String?
   public var transactionDateFrom: String?
   public var transactionDateTo: String?
-  public var turnover: [Value]?
+  public var turnovers: [Value]?
 }
 
 /// TransactionsTurnoverCreateData is the typed request payload for TransactionsTurnover.create.
@@ -1197,7 +1199,7 @@ public struct TransactionsTurnoverCreateData {
   public var responseMessage: String?
   public var transactionDateFrom: String?
   public var transactionDateTo: String?
-  public var turnover: [Value]?
+  public var turnovers: [Value]?
 }
 
 /// UpdateMerchant is the typed data model for the update_merchant entity.

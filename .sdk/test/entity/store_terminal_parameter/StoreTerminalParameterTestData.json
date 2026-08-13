@@ -2,30 +2,30 @@
   "existing": {
     "store_terminal_parameter": {
       "STORE_TERMINAL_PARAMETER00": {
-        "acq_tab_nexo": {},
-        "config_version": "s3d",
-        "response_code": "s3e",
-        "response_message": "s3f",
-        "serial_number": "s40",
-        "tid_sent": "s41",
+        "acqTabNexo": {},
+        "configVersion": "s3d",
+        "responseCode": "s3e",
+        "responseMessage": "s3f",
+        "serialNumber": "s40",
+        "tidSent": "s41",
         "id": "STORE_TERMINAL_PARAMETER00"
       },
       "STORE_TERMINAL_PARAMETER01": {
-        "acq_tab_nexo": {},
-        "config_version": "s79",
-        "response_code": "s7a",
-        "response_message": "s7b",
-        "serial_number": "s7c",
-        "tid_sent": "s7d",
+        "acqTabNexo": {},
+        "configVersion": "s79",
+        "responseCode": "s7a",
+        "responseMessage": "s7b",
+        "serialNumber": "s7c",
+        "tidSent": "s7d",
         "id": "STORE_TERMINAL_PARAMETER01"
       },
       "STORE_TERMINAL_PARAMETER02": {
-        "acq_tab_nexo": {},
-        "config_version": "sb5",
-        "response_code": "sb6",
-        "response_message": "sb7",
-        "serial_number": "sb8",
-        "tid_sent": "sb9",
+        "acqTabNexo": {},
+        "configVersion": "sb5",
+        "responseCode": "sb6",
+        "responseMessage": "sb7",
+        "serialNumber": "sb8",
+        "tidSent": "sb9",
         "id": "STORE_TERMINAL_PARAMETER02"
       }
     }
@@ -33,12 +33,12 @@
   "new": {
     "store_terminal_parameter": {
       "store_terminal_parameter_ref01": {
-        "acq_tab_nexo": {},
-        "config_version": "sf1",
-        "response_code": "sf2",
-        "response_message": "sf3",
-        "serial_number": "sf4",
-        "tid_sent": "sf5"
+        "acqTabNexo": {},
+        "configVersion": "sf1",
+        "responseCode": "sf2",
+        "responseMessage": "sf3",
+        "serialNumber": "sf4",
+        "tidSent": "sf5"
       }
     }
   }

@@ -26,8 +26,8 @@ import {
 describe('StoreTerminalParameterEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when BLUEFINTECSMERCHANTSERVICES_TEST_LIVE=TRUE.
-  afterEach(liveDelay('BLUEFINTECSMERCHANTSERVICES_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE=TRUE.
+  afterEach(liveDelay('BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = BluefinTecsMerchantServicesSDK.test()
@@ -62,7 +62,7 @@ describe('StoreTerminalParameterEntity', async () => {
     const store_terminal_parameter_ref01_ent = client.StoreTerminalParameter()
     let store_terminal_parameter_ref01_data = setup.data.new.store_terminal_parameter['store_terminal_parameter_ref01']
 
-    store_terminal_parameter_ref01_data = await store_terminal_parameter_ref01_ent.create(store_terminal_parameter_ref01_data)
+    store_terminal_parameter_ref01_data = (await store_terminal_parameter_ref01_ent.create(store_terminal_parameter_ref01_data)).data()
     assert(null != store_terminal_parameter_ref01_data)
 
 

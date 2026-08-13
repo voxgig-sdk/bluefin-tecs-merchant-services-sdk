@@ -14,6 +14,8 @@ typedef struct pre_auth_transaction_completion_entity {
   voxgig_value* data;     // Map
   voxgig_value* mtch;     // Map
   Context* entctx;
+  // Set once a successful `remove` resolves on this instance.
+  bool deleted;
 } pre_auth_transaction_completion_entity;
 
 typedef void (*pre_auth_transaction_completion_postdone_fn)(pre_auth_transaction_completion_entity* self, Context* ctx);
@@ -24,11 +26,14 @@ static const char* pre_auth_transaction_completion_get_name(Entity* e);
 static Entity* pre_auth_transaction_completion_make(Entity* e);
 static voxgig_value* pre_auth_transaction_completion_data(Entity* e, voxgig_value* args);
 static voxgig_value* pre_auth_transaction_completion_matchv(Entity* e, voxgig_value* args);
-static voxgig_value* pre_auth_transaction_completion_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
-static voxgig_value* pre_auth_transaction_completion_list(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
-static voxgig_value* pre_auth_transaction_completion_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
-static voxgig_value* pre_auth_transaction_completion_update(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
-static voxgig_value* pre_auth_transaction_completion_remove(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+// Ops resolve to the ENTITY (`list` to a NULL-terminated array of them).
+static Entity* pre_auth_transaction_completion_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static Entity** pre_auth_transaction_completion_list(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static Entity* pre_auth_transaction_completion_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
+static Entity* pre_auth_transaction_completion_update(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
+static Entity* pre_auth_transaction_completion_remove(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static void pre_auth_transaction_completion_mark_deleted(Entity* e);
+static bool pre_auth_transaction_completion_deleted(Entity* e);
 
 static Context* pre_auth_transaction_completion_ent_ctx(pre_auth_transaction_completion_entity* self) {
   return self->entctx;
@@ -236,13 +241,13 @@ static voxgig_value* pre_auth_transaction_completion_matchv(Entity* e, voxgig_va
   return voxgig_clone(self->mtch);
 }
 
-static voxgig_value* pre_auth_transaction_completion_load(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* pre_auth_transaction_completion_load(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("load", "pre_auth_transaction_completion");
   return NULL;
 }
 
-static voxgig_value* pre_auth_transaction_completion_list(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity** pre_auth_transaction_completion_list(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("list", "pre_auth_transaction_completion");
   return NULL;
@@ -260,7 +265,7 @@ static void pre_auth_transaction_completion_create_postdone(pre_auth_transaction
   }
 }
 
-static voxgig_value* pre_auth_transaction_completion_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err) {
+static Entity* pre_auth_transaction_completion_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err) {
   pre_auth_transaction_completion_entity* self = (pre_auth_transaction_completion_entity*)e;
   CtxSpec cs;
   memset(&cs, 0, sizeof(cs));
@@ -270,20 +275,38 @@ static voxgig_value* pre_auth_transaction_completion_create(Entity* e, voxgig_va
   cs.data = self->data;
   cs.reqdata = reqdata;
   Context* ctx = make_context_util(cs, pre_auth_transaction_completion_ent_ctx(self));
-  return pre_auth_transaction_completion_run_op(self, ctx, pre_auth_transaction_completion_create_postdone, err);
+  pre_auth_transaction_completion_run_op(self, ctx, pre_auth_transaction_completion_create_postdone, err);
+  if (*err) return NULL;
+
+  // The operation resolves to THIS entity: run_op has just absorbed the
+  // result into it, and the caller reaches the record through vt->data.
+  // See AGENTS.md "Entity operations return ENTITIES".
+
+  return e;
 }
 
 
-static voxgig_value* pre_auth_transaction_completion_update(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* pre_auth_transaction_completion_update(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("update", "pre_auth_transaction_completion");
   return NULL;
 }
 
-static voxgig_value* pre_auth_transaction_completion_remove(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* pre_auth_transaction_completion_remove(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("remove", "pre_auth_transaction_completion");
   return NULL;
+}
+
+// `remove` resolves to the entity, marked. The instance KEEPS the data it
+// held - a caller can still read what was deleted - but it is no longer a
+// live record.
+static void pre_auth_transaction_completion_mark_deleted(Entity* e) {
+  ((pre_auth_transaction_completion_entity*)e)->deleted = true;
+}
+
+static bool pre_auth_transaction_completion_deleted(Entity* e) {
+  return ((pre_auth_transaction_completion_entity*)e)->deleted;
 }
 
 static const EntityVT pre_auth_transaction_completion_VT = {
@@ -291,6 +314,8 @@ static const EntityVT pre_auth_transaction_completion_VT = {
   pre_auth_transaction_completion_make,
   pre_auth_transaction_completion_data,
   pre_auth_transaction_completion_matchv,
+  pre_auth_transaction_completion_mark_deleted,
+  pre_auth_transaction_completion_deleted,
   pre_auth_transaction_completion_load,
   pre_auth_transaction_completion_list,
   pre_auth_transaction_completion_create,

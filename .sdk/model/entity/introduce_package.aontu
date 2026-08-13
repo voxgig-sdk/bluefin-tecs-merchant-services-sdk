@@ -6,17 +6,17 @@ main: kit: entity: introduce_package: {
 
   fields: [
     {
-      name: "response_code"
+      name: "responseCode"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "response_message"
+      name: "responseMessage"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "terminal_template_description"
+      name: "terminalTemplateDescription"
       req: true
       type: "`$STRING`"
     }

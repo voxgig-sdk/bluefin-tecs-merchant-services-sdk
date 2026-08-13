@@ -6,17 +6,17 @@ main: kit: entity: get_template_xml: {
 
   fields: [
     {
-      name: "response_code"
+      name: "responseCode"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "response_message"
+      name: "responseMessage"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "template_name"
+      name: "templateName"
       req: true
       type: "`$STRING`"
     }

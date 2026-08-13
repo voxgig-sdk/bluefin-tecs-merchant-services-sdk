@@ -53,7 +53,7 @@ PNError* err = NULL;
 ```c
 Entity* cancel_transaction = bluefintecsmerchantservices_cancel_transaction(client, NULL);
 // Create — returns the bare created record
-voxgig_value* created = cancel_transaction->vt->create(cancel_transaction, cmap(4, "client_id", v_num(1), "currency", v_str("example_currency"), "receipt_number", v_str("example_receipt_number"), "terminal_id", v_num(1)), NULL, &err);
+voxgig_value* created = cancel_transaction->vt->create(cancel_transaction, cmap(4, "clientId", v_num(1), "currency", v_str("example_currency"), "receiptNumber", v_str("example_receiptNumber"), "terminalId", v_num(1)), NULL, &err);
 
 ```
 
@@ -301,46 +301,46 @@ On error, `ok` is `false` and `err` carries the error value.
 
 | Field | Description |
 | --- | --- |
-| `acquirer_id` |  |
-| `acquirer_name` |  |
-| `actual_bonus_point` |  |
+| `acquirerId` |  |
+| `acquirerName` |  |
+| `actualBonusPoints` |  |
 | `amount` |  |
-| `authorization_code` |  |
-| `balance_amount` |  |
-| `card_brand` |  |
-| `card_number` |  |
-| `client_id` |  |
+| `authorizationCode` |  |
+| `balanceAmount` |  |
+| `cardBrand` |  |
+| `cardNumber` |  |
+| `clientId` |  |
 | `currency` |  |
 | `cvc` |  |
-| `ec_data` |  |
-| `ecr_data` |  |
-| `emv_data` |  |
-| `exchange_fee` |  |
-| `exchange_rate` |  |
-| `language_code` |  |
-| `merchant_address` |  |
-| `merchant_name` |  |
-| `merchant_number` |  |
-| `message_type` |  |
-| `original_trace_number` |  |
-| `original_transaction_id` |  |
+| `ecData` |  |
+| `ecrData` |  |
+| `emvData` |  |
+| `exchangeFee` |  |
+| `exchangeRate` |  |
+| `languageCode` |  |
+| `merchantAddress` |  |
+| `merchantName` |  |
+| `merchantNumber` |  |
+| `messageType` |  |
+| `originalTraceNumber` |  |
+| `originalTransactionId` |  |
 | `password` |  |
-| `payment_reason` |  |
-| `receipt_footer` |  |
-| `receipt_header` |  |
-| `receipt_layout` |  |
-| `receipt_number` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `serial_number` |  |
+| `paymentReason` |  |
+| `receiptFooter` |  |
+| `receiptHeader` |  |
+| `receiptLayout` |  |
+| `receiptNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `serialNumber` |  |
 | `svc` |  |
-| `terminal_id` |  |
-| `terminal_location` |  |
-| `trace_number` |  |
-| `transaction_date` |  |
-| `transaction_id` |  |
-| `tx_type` |  |
-| `user_data` |  |
+| `terminalId` |  |
+| `terminalLocation` |  |
+| `traceNumber` |  |
+| `transactionDate` |  |
+| `transactionId` |  |
+| `txType` |  |
+| `userData` |  |
 
 Operations: Create.
 
@@ -350,9 +350,9 @@ API path: `/public/cancelTransaction`
 
 | Field | Description |
 | --- | --- |
-| `card_no` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `cardNo` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -362,13 +362,13 @@ API path: `/checkCardBlackListed`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_id` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `template_name` |  |
-| `template_type` |  |
-| `template_xml` |  |
-| `terminal_type` |  |
+| `acquirerId` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `templateName` |  |
+| `templateType` |  |
+| `templateXml` |  |
+| `terminalType` |  |
 
 Operations: Create.
 
@@ -378,13 +378,13 @@ API path: `/createProduct`
 
 | Field | Description |
 | --- | --- |
-| `corporate_uuid` |  |
-| `deactivation_reason` |  |
-| `package_order_uuid` |  |
-| `product_order_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
+| `corporateUuid` |  |
+| `deactivationReason` |  |
+| `packageOrderUuid` |  |
+| `productOrderUuid` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
 
 Operations: Create.
 
@@ -394,16 +394,16 @@ API path: `/deactivateTerminal`
 
 | Field | Description |
 | --- | --- |
-| `clearing_date_from` |  |
-| `clearing_date_to` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `tx_count` |  |
-| `tx_id_end` |  |
-| `tx_id_start` |  |
-| `tx_seq_no_end` |  |
-| `tx_seq_no_start` |  |
-| `tx_total` |  |
+| `clearingDateFrom` |  |
+| `clearingDateTo` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `txCount` |  |
+| `txIdEnd` |  |
+| `txIdStart` |  |
+| `txSeqNoEnd` |  |
+| `txSeqNoStart` |  |
+| `txTotal` |  |
 
 Operations: Create, Load.
 
@@ -413,12 +413,12 @@ API path: `/public/digitalservices/mandatorClearingExportDownload/{fileId}`
 
 | Field | Description |
 | --- | --- |
-| `ecom_data` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
-| `transaction_id` |  |
-| `transaction_type` |  |
+| `ecomData` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
+| `transactionId` |  |
+| `transactionType` |  |
 
 Operations: Create.
 
@@ -428,11 +428,11 @@ API path: `/public/getEcData`
 
 | Field | Description |
 | --- | --- |
-| `ecom_pass` |  |
-| `ecom_skey` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
+| `ecomPass` |  |
+| `ecomSkey` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
 
 Operations: Create.
 
@@ -442,12 +442,12 @@ API path: `/public/getEcomParameters`
 
 | Field | Description |
 | --- | --- |
-| `ecr_data` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
-| `transaction_id` |  |
-| `transaction_type` |  |
+| `ecrData` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
+| `transactionId` |  |
+| `transactionType` |  |
 
 Operations: Create.
 
@@ -457,12 +457,12 @@ API path: `/public/getEcrData`
 
 | Field | Description |
 | --- | --- |
-| `emv_data` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
-| `transaction_id` |  |
-| `transaction_type` |  |
+| `emvData` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
+| `transactionId` |  |
+| `transactionType` |  |
 
 Operations: Create.
 
@@ -472,20 +472,20 @@ API path: `/public/getEmvData`
 
 | Field | Description |
 | --- | --- |
-| `account_no` |  |
-| `additional_data` |  |
-| `corporate_uuid` |  |
+| `accountNo` |  |
+| `additionalData` |  |
+| `corporateUuid` |  |
 | `currency` |  |
-| `merchant_category_code` |  |
-| `package_order_uuid` |  |
-| `product_order_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `sorting_code` |  |
-| `template_name` |  |
-| `terminal_id` |  |
-| `terminal_id_acq` |  |
-| `vu_nummer` |  |
+| `merchantCategoryCode` |  |
+| `packageOrderUuid` |  |
+| `productOrderUuid` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `sortingCode` |  |
+| `templateName` |  |
+| `terminalIdAcq` |  |
+| `terminalIds` |  |
+| `vuNummer` |  |
 
 Operations: Create.
 
@@ -495,9 +495,9 @@ API path: `/enableAcquiring`
 
 | Field | Description |
 | --- | --- |
-| `merchant_contract_number` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `merchantContractNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -507,9 +507,9 @@ API path: `/getMerchantContractNumber`
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
-| `template_name` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `templateName` |  |
 
 Operations: Create.
 
@@ -519,9 +519,9 @@ API path: `/public/getTemplateXml`
 
 | Field | Description |
 | --- | --- |
-| `mandator_name` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `mandatorName` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -531,9 +531,9 @@ API path: `/introduceMandator`
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_template_description` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalTemplateDescription` |  |
 
 Operations: Create.
 
@@ -544,15 +544,15 @@ API path: `/introducePackage`
 | Field | Description |
 | --- | --- |
 | `hwserialno` |  |
-| `ka_date_time_from` |  |
-| `ka_date_time_to` |  |
-| `keep_alive_data` |  |
+| `kaDateTimeFrom` |  |
+| `kaDateTimeTo` |  |
+| `keepAliveData` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_date_time_from` |  |
-| `terminal_date_time_to` |  |
-| `terminal_id` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalDateTimeFrom` |  |
+| `terminalDateTimeTo` |  |
+| `terminalId` |  |
 
 Operations: Create.
 
@@ -562,12 +562,12 @@ API path: `/public/keepalive`
 
 | Field | Description |
 | --- | --- |
-| `corporate_uuid` |  |
+| `corporateUuid` |  |
 | `filter` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminals` |  |
 
 Operations: Create.
 
@@ -577,12 +577,12 @@ API path: `/public/listTerminals`
 
 | Field | Description |
 | --- | --- |
-| `clearing_date_from` |  |
-| `clearing_date_to` |  |
+| `clearingDateFrom` |  |
+| `clearingDateTo` |  |
 | `pagination` |  |
-| `record` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `records` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -592,12 +592,12 @@ API path: `/public/digitalservices/mandatorClearingExport`
 
 | Field | Description |
 | --- | --- |
-| `clearing_date_from` |  |
-| `clearing_date_to` |  |
-| `file_id` |  |
-| `filename_template` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `clearingDateFrom` |  |
+| `clearingDateTo` |  |
+| `fileId` |  |
+| `filenameTemplate` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `status` |  |
 
 Operations: Create, Load.
@@ -608,11 +608,11 @@ API path: `/public/digitalservices/mandatorClearingExportDownload`
 
 | Field | Description |
 | --- | --- |
-| `clearing_date_from` |  |
-| `clearing_date_to` |  |
-| `record` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `clearingDateFrom` |  |
+| `clearingDateTo` |  |
+| `records` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -622,30 +622,30 @@ API path: `/public/digitalservices/mandatorClearingExportSummary`
 
 | Field | Description |
 | --- | --- |
-| `3_d_secure` |  |
-| `authorization_code` |  |
-| `card_brand` |  |
-| `clearing_amount_from` |  |
-| `clearing_amount_to` |  |
-| `clearing_currency` |  |
-| `clearing_status` |  |
-| `corporate_uuid` |  |
-| `order_by_transaction_date` |  |
+| `3DSecure` |  |
+| `authorizationCode` |  |
+| `cardBrand` |  |
+| `clearingAmountFrom` |  |
+| `clearingAmountTo` |  |
+| `clearingCurrency` |  |
+| `clearingStatus` |  |
+| `corporateUUID` |  |
+| `orderByTransactionDate` |  |
 | `pagination` |  |
-| `receipt_number` |  |
-| `referenced_transaction_id` |  |
-| `retrieval_reference_number` |  |
-| `source_id` |  |
-| `tecsengine_response_code_from` |  |
-| `tecsengine_response_code_to` |  |
-| `terminal_id` |  |
-| `trace_number` |  |
-| `transaction_amount_from` |  |
-| `transaction_amount_to` |  |
-| `transaction_date_from` |  |
-| `transaction_date_to` |  |
-| `transaction_id` |  |
-| `transaction_type` |  |
+| `receiptNumber` |  |
+| `referencedTransactionId` |  |
+| `retrievalReferenceNumber` |  |
+| `sourceId` |  |
+| `tecsengineResponseCodeFrom` |  |
+| `tecsengineResponseCodeTo` |  |
+| `terminalId` |  |
+| `traceNumber` |  |
+| `transactionAmountFrom` |  |
+| `transactionAmountTo` |  |
+| `transactionDateFrom` |  |
+| `transactionDateTo` |  |
+| `transactionId` |  |
+| `transactionType` |  |
 | `wallet` |  |
 
 Operations: Create.
@@ -656,11 +656,11 @@ API path: `/public/transactionHistoryCsv`
 
 | Field | Description |
 | --- | --- |
-| `productorderuuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `target_packageorderuuid` |  |
-| `target_productorderuuid` |  |
+| `productorderuuids` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `targetPackageorderuuid` |  |
+| `targetProductorderuuid` |  |
 
 Operations: Create.
 
@@ -670,22 +670,22 @@ API path: `/moveTid`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_name` |  |
+| `acquirerName` |  |
 | `amount` |  |
-| `authorization_number` |  |
-| `card_number` |  |
-| `card_type` |  |
+| `authorizationNumber` |  |
+| `cardNumber` |  |
+| `cardType` |  |
 | `currency` |  |
 | `cvc` |  |
-| `date_time_tx` |  |
-| `exp_date` |  |
-| `merchant_id` |  |
-| `original_transaction_id` |  |
+| `dateTimeTx` |  |
+| `expDate` |  |
+| `merchantId` |  |
+| `originalTransactionId` |  |
 | `password` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
-| `transaction_id` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
+| `transactionId` |  |
 | `txtype` |  |
 
 Operations: Create.
@@ -696,21 +696,17 @@ API path: `/public/paymentManual`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_name` |  |
 | `amount` |  |
-| `authorization_number` |  |
-| `card_type` |  |
 | `currency` |  |
-| `date_time_tx` |  |
-| `device_payload` |  |
-| `merchant_id` |  |
-| `original_transaction_id` |  |
+| `device` |  |
+| `devicePayload` |  |
+| `expDate` |  |
+| `mode` |  |
+| `panMasked` |  |
 | `password` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `sred` |  |
-| `terminal_id` |  |
-| `transaction_id` |  |
+| `serial` |  |
+| `serviceCode` |  |
+| `terminalId` |  |
 | `txtype` |  |
 
 Operations: Create.
@@ -721,48 +717,48 @@ API path: `/public/paymentSred`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_id` |  |
-| `acquirer_name` |  |
-| `actual_bonus_point` |  |
+| `acquirerId` |  |
+| `acquirerName` |  |
+| `actualBonusPoints` |  |
 | `amount` |  |
-| `authorization_code` |  |
-| `balance_amount` |  |
-| `card_brand` |  |
-| `card_number` |  |
-| `card_number_reference` |  |
-| `client_id` |  |
+| `authorizationCode` |  |
+| `balanceAmount` |  |
+| `cardBrand` |  |
+| `cardNumber` |  |
+| `cardNumberReference` |  |
+| `clientId` |  |
 | `currency` |  |
 | `cvc` |  |
-| `ec_data` |  |
-| `ecr_data` |  |
-| `emv_data` |  |
-| `exchange_fee` |  |
-| `exchange_rate` |  |
-| `language_code` |  |
-| `merchant_address` |  |
-| `merchant_name` |  |
-| `merchant_number` |  |
-| `message_type` |  |
-| `original_trace_number` |  |
-| `original_transaction_id` |  |
+| `ecData` |  |
+| `ecrData` |  |
+| `emvData` |  |
+| `exchangeFee` |  |
+| `exchangeRate` |  |
+| `languageCode` |  |
+| `merchantAddress` |  |
+| `merchantName` |  |
+| `merchantNumber` |  |
+| `messageType` |  |
+| `originalTraceNumber` |  |
+| `originalTransactionId` |  |
 | `password` |  |
-| `payment_reason` |  |
-| `receipt_footer` |  |
-| `receipt_header` |  |
-| `receipt_layout` |  |
-| `receipt_number` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `serial_number` |  |
+| `paymentReason` |  |
+| `receiptFooter` |  |
+| `receiptHeader` |  |
+| `receiptLayout` |  |
+| `receiptNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `serialNumber` |  |
 | `svc` |  |
-| `terminal_id` |  |
-| `terminal_location` |  |
-| `trace_number` |  |
-| `transaction_date` |  |
-| `transaction_id` |  |
-| `transaction_type` |  |
-| `tx_type` |  |
-| `user_data` |  |
+| `terminalId` |  |
+| `terminalLocation` |  |
+| `traceNumber` |  |
+| `transactionDate` |  |
+| `transactionId` |  |
+| `transactionType` |  |
+| `txType` |  |
+| `userData` |  |
 
 Operations: Create.
 
@@ -772,13 +768,13 @@ API path: `/public/paymentTransaction`
 
 | Field | Description |
 | --- | --- |
-| `corporate_uuid` |  |
-| `package_order_uuid` |  |
-| `product_order_uuid` |  |
-| `reactivation_reason` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
+| `corporateUuid` |  |
+| `packageOrderUuid` |  |
+| `productOrderUuid` |  |
+| `reactivationReason` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
 
 Operations: Create.
 
@@ -788,46 +784,46 @@ API path: `/reactivateTerminal`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_id` |  |
-| `acquirer_name` |  |
-| `actual_bonus_point` |  |
+| `acquirerId` |  |
+| `acquirerName` |  |
+| `actualBonusPoints` |  |
 | `amount` |  |
-| `authorization_code` |  |
-| `balance_amount` |  |
-| `card_brand` |  |
-| `card_number` |  |
-| `client_id` |  |
+| `authorizationCode` |  |
+| `balanceAmount` |  |
+| `cardBrand` |  |
+| `cardNumber` |  |
+| `clientId` |  |
 | `currency` |  |
 | `cvc` |  |
-| `ec_data` |  |
-| `ecr_data` |  |
-| `emv_data` |  |
-| `exchange_fee` |  |
-| `exchange_rate` |  |
-| `language_code` |  |
-| `merchant_address` |  |
-| `merchant_name` |  |
-| `merchant_number` |  |
-| `message_type` |  |
-| `original_trace_number` |  |
-| `original_transaction_id` |  |
+| `ecData` |  |
+| `ecrData` |  |
+| `emvData` |  |
+| `exchangeFee` |  |
+| `exchangeRate` |  |
+| `languageCode` |  |
+| `merchantAddress` |  |
+| `merchantName` |  |
+| `merchantNumber` |  |
+| `messageType` |  |
+| `originalTraceNumber` |  |
+| `originalTransactionId` |  |
 | `password` |  |
-| `payment_reason` |  |
-| `receipt_footer` |  |
-| `receipt_header` |  |
-| `receipt_layout` |  |
-| `receipt_number` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `serial_number` |  |
+| `paymentReason` |  |
+| `receiptFooter` |  |
+| `receiptHeader` |  |
+| `receiptLayout` |  |
+| `receiptNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `serialNumber` |  |
 | `svc` |  |
-| `terminal_id` |  |
-| `terminal_location` |  |
-| `trace_number` |  |
-| `transaction_date` |  |
-| `transaction_id` |  |
-| `tx_type` |  |
-| `user_data` |  |
+| `terminalId` |  |
+| `terminalLocation` |  |
+| `traceNumber` |  |
+| `transactionDate` |  |
+| `transactionId` |  |
+| `txType` |  |
+| `userData` |  |
 
 Operations: Create.
 
@@ -837,14 +833,14 @@ API path: `/public/refundTransaction`
 
 | Field | Description |
 | --- | --- |
-| `corporate_uuid` |  |
-| `package_order_uuid` |  |
-| `partner_id` |  |
-| `partner_name` |  |
-| `product_order_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `template_name` |  |
+| `corporateUuid` |  |
+| `packageOrderUuid` |  |
+| `partnerId` |  |
+| `partnerName` |  |
+| `productOrderUuid` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `templateName` |  |
 
 Operations: Create.
 
@@ -854,24 +850,24 @@ API path: `/registerTecsCompany`
 
 | Field | Description |
 | --- | --- |
-| `additional_data` |  |
-| `corporate_uuid` |  |
-| `package_order_uuid` |  |
-| `product_order_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `tecs_web_secret_key` |  |
-| `template_name` |  |
-| `terminal_country_code` |  |
-| `terminal_id` |  |
-| `terminal_id_acq` |  |
-| `terminal_language_code` |  |
-| `terminal_location` |  |
-| `terminal_serial_number` |  |
-| `token_io_alia` |  |
-| `token_io_iban` |  |
-| `token_io_member_id` |  |
-| `web_shop_url` |  |
+| `additionalData` |  |
+| `corporateUuid` |  |
+| `packageOrderUuid` |  |
+| `productOrderUuid` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `tecsWebSecretKey` |  |
+| `templateName` |  |
+| `terminalCountryCode` |  |
+| `terminalId` |  |
+| `terminalIdAcq` |  |
+| `terminalLanguageCode` |  |
+| `terminalLocation` |  |
+| `terminalSerialNumber` |  |
+| `tokenIOAlias` |  |
+| `tokenIOIban` |  |
+| `tokenIOMemberId` |  |
+| `webShopUrl` |  |
 
 Operations: Create.
 
@@ -881,16 +877,16 @@ API path: `/registerTerminal`
 
 | Field | Description |
 | --- | --- |
-| `card_brand_report_data` |  |
-| `clearing_date_from` |  |
-| `clearing_date_to` |  |
-| `corporate_id` |  |
+| `cardBrandReportData` |  |
+| `clearingDateFrom` |  |
+| `clearingDateTo` |  |
+| `corporateId` |  |
 | `currency` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `sum_over_credit_tx` |  |
-| `sum_over_debit_tx` |  |
-| `terminal_id` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `sumOverCreditTx` |  |
+| `sumOverDebitTx` |  |
+| `terminalId` |  |
 
 Operations: Create.
 
@@ -900,56 +896,56 @@ API path: `/public/digitalservices/reportData`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_name` |  |
-| `acquirer_terminal_id` |  |
+| `acquirerName` |  |
+| `acquirerTerminalId` |  |
 | `amount` |  |
-| `application_cryptogram` |  |
-| `authorization_code` |  |
-| `authorization_date` |  |
-| `card_brand` |  |
-| `card_entry` |  |
-| `card_expiration` |  |
-| `card_number` |  |
-| `clearing_amount` |  |
-| `clearing_batch_id` |  |
-| `clearing_currency` |  |
-| `clearing_date` |  |
-| `clearing_processed_date` |  |
-| `clearing_status` |  |
-| `client_id` |  |
+| `applicationCryptogram` |  |
+| `authorizationCode` |  |
+| `authorizationDate` |  |
+| `cardBrand` |  |
+| `cardEntry` |  |
+| `cardExpiration` |  |
+| `cardNumber` |  |
+| `clearingAmount` |  |
+| `clearingBatchId` |  |
+| `clearingCurrency` |  |
+| `clearingDate` |  |
+| `clearingProcessedDate` |  |
+| `clearingStatus` |  |
+| `clientId` |  |
 | `currency` |  |
 | `cvm` |  |
-| `ecr_data` |  |
-| `emv_application_id` |  |
-| `emv_application_label` |  |
-| `merchant_name` |  |
-| `merchant_number` |  |
-| `original_client_id` |  |
-| `original_terminal_id` |  |
-| `original_transaction_id` |  |
-| `payment_reason` |  |
-| `receipt_number` |  |
-| `response_code` |  |
-| `response_code_from_a` |  |
-| `response_message` |  |
-| `retrieval_reference_number` |  |
-| `service_code` |  |
-| `settlement_status` |  |
-| `source_id` |  |
-| `tecsengine_response_code` |  |
-| `tecsengine_response_text` |  |
-| `terminal_end_of_day_date` |  |
-| `terminal_id` |  |
-| `terminal_location` |  |
-| `tip_amount` |  |
-| `trace_number` |  |
-| `transaction_clearing_date` |  |
-| `transaction_date` |  |
-| `transaction_id` |  |
-| `transaction_seq_number` |  |
-| `transaction_server_date` |  |
-| `transaction_source` |  |
-| `transaction_type` |  |
+| `ecrData` |  |
+| `emvApplicationId` |  |
+| `emvApplicationLabel` |  |
+| `merchantName` |  |
+| `merchantNumber` |  |
+| `originalClientId` |  |
+| `originalTerminalId` |  |
+| `originalTransactionId` |  |
+| `paymentReason` |  |
+| `receiptNumber` |  |
+| `responseCode` |  |
+| `responseCodeFromAS` |  |
+| `responseMessage` |  |
+| `retrievalReferenceNumber` |  |
+| `serviceCode` |  |
+| `settlementStatus` |  |
+| `sourceId` |  |
+| `tecsengineResponseCode` |  |
+| `tecsengineResponseText` |  |
+| `terminalEndOfDayDate` |  |
+| `terminalId` |  |
+| `terminalLocation` |  |
+| `tipAmount` |  |
+| `traceNumber` |  |
+| `transactionClearingDate` |  |
+| `transactionDate` |  |
+| `transactionId` |  |
+| `transactionSeqNumber` |  |
+| `transactionServerDate` |  |
+| `transactionSource` |  |
+| `transactionType` |  |
 
 Operations: Create.
 
@@ -959,12 +955,12 @@ API path: `/public/statusTransaction`
 
 | Field | Description |
 | --- | --- |
-| `acq_tab_nexo` |  |
-| `config_version` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `serial_number` |  |
-| `tid_sent` |  |
+| `acqTabNexo` |  |
+| `configVersion` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `serialNumber` |  |
+| `tidSent` |  |
 
 Operations: Create.
 
@@ -974,11 +970,11 @@ API path: `/storeTerminalParameters`
 
 | Field | Description |
 | --- | --- |
-| `device_serial_number` |  |
-| `duplicate_terminal_id` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal` |  |
+| `deviceSerialNumber` |  |
+| `duplicateTerminalIds` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminals` |  |
 
 Operations: Create.
 
@@ -988,34 +984,34 @@ API path: `/public/getTerminalId`
 
 | Field | Description |
 | --- | --- |
-| `3_d_secure` |  |
-| `authorization_code` |  |
-| `card_brand` |  |
-| `clearing_amount_from` |  |
-| `clearing_amount_to` |  |
-| `clearing_currency` |  |
-| `clearing_status` |  |
-| `corporate_uuid` |  |
-| `order_by_transaction_date` |  |
+| `3DSecure` |  |
+| `authorizationCode` |  |
+| `cardBrand` |  |
+| `clearingAmountFrom` |  |
+| `clearingAmountTo` |  |
+| `clearingCurrency` |  |
+| `clearingStatus` |  |
+| `corporateUUID` |  |
+| `orderByTransactionDate` |  |
 | `pagination` |  |
-| `payment_token_public_id` |  |
-| `receipt_number` |  |
-| `referenced_transaction_id` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `retrieval_reference_number` |  |
-| `source_id` |  |
-| `tecsengine_response_code_from` |  |
-| `tecsengine_response_code_to` |  |
-| `terminal_id` |  |
-| `trace_number` |  |
-| `transaction_amount_from` |  |
-| `transaction_amount_to` |  |
-| `transaction_date_from` |  |
-| `transaction_date_to` |  |
-| `transaction_history` |  |
-| `transaction_id` |  |
-| `transaction_type` |  |
+| `paymentTokenPublicId` |  |
+| `receiptNumber` |  |
+| `referencedTransactionId` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `retrievalReferenceNumber` |  |
+| `sourceId` |  |
+| `tecsengineResponseCodeFrom` |  |
+| `tecsengineResponseCodeTo` |  |
+| `terminalId` |  |
+| `traceNumber` |  |
+| `transactionAmountFrom` |  |
+| `transactionAmountTo` |  |
+| `transactionDateFrom` |  |
+| `transactionDateTo` |  |
+| `transactionHistories` |  |
+| `transactionId` |  |
+| `transactionType` |  |
 | `wallet` |  |
 
 Operations: Create.
@@ -1027,11 +1023,11 @@ API path: `/public/mcom/transactionHistory`
 | Field | Description |
 | --- | --- |
 | `period` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `transaction_date_from` |  |
-| `transaction_date_to` |  |
-| `transactions_count` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `transactionDateFrom` |  |
+| `transactionDateTo` |  |
+| `transactionsCount` |  |
 
 Operations: Create.
 
@@ -1042,11 +1038,11 @@ API path: `/public/countAuthorisedTransactions`
 | Field | Description |
 | --- | --- |
 | `period` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `transaction_date_from` |  |
-| `transaction_date_to` |  |
-| `transactions_count` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `transactionDateFrom` |  |
+| `transactionDateTo` |  |
+| `transactionsCount` |  |
 
 Operations: Create.
 
@@ -1057,11 +1053,11 @@ API path: `/public/countTransactionsByCardBrand`
 | Field | Description |
 | --- | --- |
 | `period` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `transaction_date_from` |  |
-| `transaction_date_to` |  |
-| `turnover` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `transactionDateFrom` |  |
+| `transactionDateTo` |  |
+| `turnovers` |  |
 
 Operations: Create.
 
@@ -1072,15 +1068,15 @@ API path: `/public/transactionTurnover`
 | Field | Description |
 | --- | --- |
 | `city` |  |
-| `corporate_uuid` |  |
+| `corporateUuid` |  |
 | `country` |  |
-| `merchant_category_code` |  |
+| `merchantCategoryCode` |  |
 | `name` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `state` |  |
 | `street` |  |
-| `vu_nummer` |  |
+| `vuNummer` |  |
 | `zipcode` |  |
 
 Operations: Create.
@@ -1091,10 +1087,10 @@ API path: `/public/updateMerchant`
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
-| `template_name` |  |
-| `template_xml` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `templateName` |  |
+| `templateXml` |  |
 
 Operations: Create.
 
@@ -1104,8 +1100,8 @@ API path: `/public/updateTemplateXml`
 
 | Field | Description |
 | --- | --- |
-| `app_name` |  |
-| `build_date` |  |
+| `appName` |  |
+| `buildDate` |  |
 | `version` |  |
 
 Operations: Load.
@@ -1131,56 +1127,56 @@ Create an instance: `Entity* cancel_transaction = bluefintecsmerchantservices_ca
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_id` | `char*` |  |
-| `acquirer_name` | `char*` |  |
-| `actual_bonus_point` | `char*` |  |
+| `acquirerId` | `char*` |  |
+| `acquirerName` | `char*` |  |
+| `actualBonusPoints` | `char*` |  |
 | `amount` | `int64_t` |  |
-| `authorization_code` | `char*` |  |
-| `balance_amount` | `char*` |  |
-| `card_brand` | `char*` |  |
-| `card_number` | `char*` |  |
-| `client_id` | `int64_t` |  |
+| `authorizationCode` | `char*` |  |
+| `balanceAmount` | `char*` |  |
+| `cardBrand` | `char*` |  |
+| `cardNumber` | `char*` |  |
+| `clientId` | `int64_t` |  |
 | `currency` | `char*` |  |
 | `cvc` | `char*` |  |
-| `ec_data` | `char*` |  |
-| `ecr_data` | `char*` |  |
-| `emv_data` | `char*` |  |
-| `exchange_fee` | `int64_t` |  |
-| `exchange_rate` | `char*` |  |
-| `language_code` | `char*` |  |
-| `merchant_address` | `char*` |  |
-| `merchant_name` | `char*` |  |
-| `merchant_number` | `char*` |  |
-| `message_type` | `char*` |  |
-| `original_trace_number` | `int64_t` |  |
-| `original_transaction_id` | `char*` |  |
+| `ecData` | `char*` |  |
+| `ecrData` | `char*` |  |
+| `emvData` | `char*` |  |
+| `exchangeFee` | `int64_t` |  |
+| `exchangeRate` | `char*` |  |
+| `languageCode` | `char*` |  |
+| `merchantAddress` | `char*` |  |
+| `merchantName` | `char*` |  |
+| `merchantNumber` | `char*` |  |
+| `messageType` | `char*` |  |
+| `originalTraceNumber` | `int64_t` |  |
+| `originalTransactionId` | `char*` |  |
 | `password` | `char*` |  |
-| `payment_reason` | `char*` |  |
-| `receipt_footer` | `char*` |  |
-| `receipt_header` | `char*` |  |
-| `receipt_layout` | `int64_t` |  |
-| `receipt_number` | `char*` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
-| `serial_number` | `char*` |  |
+| `paymentReason` | `char*` |  |
+| `receiptFooter` | `char*` |  |
+| `receiptHeader` | `char*` |  |
+| `receiptLayout` | `int64_t` |  |
+| `receiptNumber` | `char*` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
+| `serialNumber` | `char*` |  |
 | `svc` | `char*` |  |
-| `terminal_id` | `int64_t` |  |
-| `terminal_location` | `char*` |  |
-| `trace_number` | `int64_t` |  |
-| `transaction_date` | `char*` |  |
-| `transaction_id` | `char*` |  |
-| `tx_type` | `char*` |  |
-| `user_data` | `char*` |  |
+| `terminalId` | `int64_t` |  |
+| `terminalLocation` | `char*` |  |
+| `traceNumber` | `int64_t` |  |
+| `transactionDate` | `char*` |  |
+| `transactionId` | `char*` |  |
+| `txType` | `char*` |  |
+| `userData` | `char*` |  |
 
 #### Example: Create
 
 ```c
 Entity* cancel_transaction = bluefintecsmerchantservices_cancel_transaction(client, NULL);
 voxgig_value* cancel_transaction_rec = cancel_transaction->vt->create(cancel_transaction, cmap(4,
-    "client_id", v_num(1),  // int64_t
+    "clientId", v_num(1),  // int64_t
     "currency", v_str("example_currency"),  // char*
-    "receipt_number", v_str("example_receipt_number"),  // char*
-    "terminal_id", v_num(1))  // int64_t
+    "receiptNumber", v_str("example_receiptNumber"),  // char*
+    "terminalId", v_num(1))  // int64_t
 , NULL, &err);
 ```
 
@@ -1199,9 +1195,9 @@ Create an instance: `Entity* check_card_black_listed = bluefintecsmerchantservic
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `card_no` | `char*` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
+| `cardNo` | `char*` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
 
 #### Example: Create
 
@@ -1225,23 +1221,23 @@ Create an instance: `Entity* create_product = bluefintecsmerchantservices_create
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_id` | `int64_t` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
-| `template_name` | `char*` |  |
-| `template_type` | `char*` |  |
-| `template_xml` | `char*` |  |
-| `terminal_type` | `char*` |  |
+| `acquirerId` | `int64_t` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
+| `templateName` | `char*` |  |
+| `templateType` | `char*` |  |
+| `templateXml` | `char*` |  |
+| `terminalType` | `char*` |  |
 
 #### Example: Create
 
 ```c
 Entity* create_product = bluefintecsmerchantservices_create_product(client, NULL);
 voxgig_value* create_product_rec = create_product->vt->create(create_product, cmap(4,
-    "template_name", v_str("example_template_name"),  // char*
-    "template_type", v_str("example_template_type"),  // char*
-    "template_xml", v_str("example_template_xml"),  // char*
-    "terminal_type", v_str("example_terminal_type"))  // char*
+    "templateName", v_str("example_templateName"),  // char*
+    "templateType", v_str("example_templateType"),  // char*
+    "templateXml", v_str("example_templateXml"),  // char*
+    "terminalType", v_str("example_terminalType"))  // char*
 , NULL, &err);
 ```
 
@@ -1260,21 +1256,21 @@ Create an instance: `Entity* deactivate_terminal = bluefintecsmerchantservices_d
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `corporate_uuid` | `char*` |  |
-| `deactivation_reason` | `char*` |  |
-| `package_order_uuid` | `char*` |  |
-| `product_order_uuid` | `char*` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
-| `terminal_id` | `int64_t` |  |
+| `corporateUuid` | `char*` |  |
+| `deactivationReason` | `char*` |  |
+| `packageOrderUuid` | `char*` |  |
+| `productOrderUuid` | `char*` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
+| `terminalId` | `int64_t` |  |
 
 #### Example: Create
 
 ```c
 Entity* deactivate_terminal = bluefintecsmerchantservices_deactivate_terminal(client, NULL);
 voxgig_value* deactivate_terminal_rec = deactivate_terminal->vt->create(deactivate_terminal, cmap(2,
-    "deactivation_reason", v_str("example_deactivation_reason"),  // char*
-    "terminal_id", v_num(1))  // int64_t
+    "deactivationReason", v_str("example_deactivationReason"),  // char*
+    "terminalId", v_num(1))  // int64_t
 , NULL, &err);
 ```
 
@@ -1294,16 +1290,16 @@ Create an instance: `Entity* digital_services_api = bluefintecsmerchantservices_
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `clearing_date_from` | `char*` |  |
-| `clearing_date_to` | `char*` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
-| `tx_count` | `int64_t` |  |
-| `tx_id_end` | `char*` |  |
-| `tx_id_start` | `char*` |  |
-| `tx_seq_no_end` | `int64_t` |  |
-| `tx_seq_no_start` | `int64_t` |  |
-| `tx_total` | `int64_t` |  |
+| `clearingDateFrom` | `char*` |  |
+| `clearingDateTo` | `char*` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
+| `txCount` | `int64_t` |  |
+| `txIdEnd` | `char*` |  |
+| `txIdStart` | `char*` |  |
+| `txSeqNoEnd` | `int64_t` |  |
+| `txSeqNoStart` | `int64_t` |  |
+| `txTotal` | `int64_t` |  |
 
 #### Example: Load
 
@@ -1316,7 +1312,10 @@ voxgig_value* digital_services_api_rec = digital_services_api->vt->load(digital_
 
 ```c
 Entity* digital_services_api = bluefintecsmerchantservices_digital_services_api(client, NULL);
-voxgig_value* digital_services_api_rec = digital_services_api->vt->create(digital_services_api, NULL, NULL, &err);
+voxgig_value* digital_services_api_rec = digital_services_api->vt->create(digital_services_api, cmap(2,
+    "clearingDateFrom", v_str("example_clearingDateFrom"),  // char*
+    "clearingDateTo", v_str("example_clearingDateTo"))  // char*
+, NULL, &err);
 ```
 
 
@@ -1334,21 +1333,21 @@ Create an instance: `Entity* ec_data_ecom = bluefintecsmerchantservices_ec_data_
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `ecom_data` | `char*` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
-| `terminal_id` | `int64_t` |  |
-| `transaction_id` | `char*` |  |
-| `transaction_type` | `char*` |  |
+| `ecomData` | `char*` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
+| `terminalId` | `int64_t` |  |
+| `transactionId` | `char*` |  |
+| `transactionType` | `char*` |  |
 
 #### Example: Create
 
 ```c
 Entity* ec_data_ecom = bluefintecsmerchantservices_ec_data_ecom(client, NULL);
 voxgig_value* ec_data_ecom_rec = ec_data_ecom->vt->create(ec_data_ecom, cmap(3,
-    "terminal_id", v_num(1),  // int64_t
-    "transaction_id", v_str("example_transaction_id"),  // char*
-    "transaction_type", v_str("example_transaction_type"))  // char*
+    "terminalId", v_num(1),  // int64_t
+    "transactionId", v_str("example_transactionId"),  // char*
+    "transactionType", v_str("example_transactionType"))  // char*
 , NULL, &err);
 ```
 
@@ -1367,18 +1366,18 @@ Create an instance: `Entity* ecom_parameter = bluefintecsmerchantservices_ecom_p
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `ecom_pass` | `char*` |  |
-| `ecom_skey` | `char*` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
-| `terminal_id` | `int64_t` |  |
+| `ecomPass` | `char*` |  |
+| `ecomSkey` | `char*` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
+| `terminalId` | `int64_t` |  |
 
 #### Example: Create
 
 ```c
 Entity* ecom_parameter = bluefintecsmerchantservices_ecom_parameter(client, NULL);
 voxgig_value* ecom_parameter_rec = ecom_parameter->vt->create(ecom_parameter, cmap(1,
-    "terminal_id", v_num(1))  // int64_t
+    "terminalId", v_num(1))  // int64_t
 , NULL, &err);
 ```
 
@@ -1397,21 +1396,21 @@ Create an instance: `Entity* ecr_data = bluefintecsmerchantservices_ecr_data(cli
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `ecr_data` | `char*` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
-| `terminal_id` | `int64_t` |  |
-| `transaction_id` | `char*` |  |
-| `transaction_type` | `char*` |  |
+| `ecrData` | `char*` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
+| `terminalId` | `int64_t` |  |
+| `transactionId` | `char*` |  |
+| `transactionType` | `char*` |  |
 
 #### Example: Create
 
 ```c
 Entity* ecr_data = bluefintecsmerchantservices_ecr_data(client, NULL);
 voxgig_value* ecr_data_rec = ecr_data->vt->create(ecr_data, cmap(3,
-    "terminal_id", v_num(1),  // int64_t
-    "transaction_id", v_str("example_transaction_id"),  // char*
-    "transaction_type", v_str("example_transaction_type"))  // char*
+    "terminalId", v_num(1),  // int64_t
+    "transactionId", v_str("example_transactionId"),  // char*
+    "transactionType", v_str("example_transactionType"))  // char*
 , NULL, &err);
 ```
 
@@ -1430,21 +1429,21 @@ Create an instance: `Entity* emv_data = bluefintecsmerchantservices_emv_data(cli
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `emv_data` | `char*` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
-| `terminal_id` | `int64_t` |  |
-| `transaction_id` | `char*` |  |
-| `transaction_type` | `char*` |  |
+| `emvData` | `char*` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
+| `terminalId` | `int64_t` |  |
+| `transactionId` | `char*` |  |
+| `transactionType` | `char*` |  |
 
 #### Example: Create
 
 ```c
 Entity* emv_data = bluefintecsmerchantservices_emv_data(client, NULL);
 voxgig_value* emv_data_rec = emv_data->vt->create(emv_data, cmap(3,
-    "terminal_id", v_num(1),  // int64_t
-    "transaction_id", v_str("example_transaction_id"),  // char*
-    "transaction_type", v_str("example_transaction_type"))  // char*
+    "terminalId", v_num(1),  // int64_t
+    "transactionId", v_str("example_transactionId"),  // char*
+    "transactionType", v_str("example_transactionType"))  // char*
 , NULL, &err);
 ```
 
@@ -1463,32 +1462,32 @@ Create an instance: `Entity* enable_acquiring = bluefintecsmerchantservices_enab
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `account_no` | `int64_t` |  |
-| `additional_data` | `voxgig_value* (map)` |  |
-| `corporate_uuid` | `char*` |  |
+| `accountNo` | `int64_t` |  |
+| `additionalData` | `voxgig_value* (map)` |  |
+| `corporateUuid` | `char*` |  |
 | `currency` | `char*` |  |
-| `merchant_category_code` | `int64_t` |  |
-| `package_order_uuid` | `char*` |  |
-| `product_order_uuid` | `char*` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
-| `sorting_code` | `int64_t` |  |
-| `template_name` | `char*` |  |
-| `terminal_id` | `voxgig_value* (list)` |  |
-| `terminal_id_acq` | `char*` |  |
-| `vu_nummer` | `char*` |  |
+| `merchantCategoryCode` | `int64_t` |  |
+| `packageOrderUuid` | `char*` |  |
+| `productOrderUuid` | `char*` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
+| `sortingCode` | `int64_t` |  |
+| `templateName` | `char*` |  |
+| `terminalIdAcq` | `char*` |  |
+| `terminalIds` | `voxgig_value* (list)` |  |
+| `vuNummer` | `char*` |  |
 
 #### Example: Create
 
 ```c
 Entity* enable_acquiring = bluefintecsmerchantservices_enable_acquiring(client, NULL);
 voxgig_value* enable_acquiring_rec = enable_acquiring->vt->create(enable_acquiring, cmap(6,
-    "corporate_uuid", v_str("example_corporate_uuid"),  // char*
+    "corporateUuid", v_str("example_corporateUuid"),  // char*
     "currency", v_str("example_currency"),  // char*
-    "merchant_category_code", v_num(1),  // int64_t
-    "package_order_uuid", v_str("example_package_order_uuid"),  // char*
-    "product_order_uuid", v_str("example_product_order_uuid"),  // char*
-    "template_name", v_str("example_template_name"))  // char*
+    "merchantCategoryCode", v_num(1),  // int64_t
+    "packageOrderUuid", v_str("example_packageOrderUuid"),  // char*
+    "productOrderUuid", v_str("example_productOrderUuid"),  // char*
+    "templateName", v_str("example_templateName"))  // char*
 , NULL, &err);
 ```
 
@@ -1507,16 +1506,16 @@ Create an instance: `Entity* get_merchant_contract_number = bluefintecsmerchants
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `merchant_contract_number` | `char*` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
+| `merchantContractNumber` | `char*` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
 
 #### Example: Create
 
 ```c
 Entity* get_merchant_contract_number = bluefintecsmerchantservices_get_merchant_contract_number(client, NULL);
 voxgig_value* get_merchant_contract_number_rec = get_merchant_contract_number->vt->create(get_merchant_contract_number, cmap(1,
-    "merchant_contract_number", v_str("example_merchant_contract_number"))  // char*
+    "merchantContractNumber", v_str("example_merchantContractNumber"))  // char*
 , NULL, &err);
 ```
 
@@ -1535,16 +1534,16 @@ Create an instance: `Entity* get_template_xml = bluefintecsmerchantservices_get_
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
-| `template_name` | `char*` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
+| `templateName` | `char*` |  |
 
 #### Example: Create
 
 ```c
 Entity* get_template_xml = bluefintecsmerchantservices_get_template_xml(client, NULL);
 voxgig_value* get_template_xml_rec = get_template_xml->vt->create(get_template_xml, cmap(1,
-    "template_name", v_str("example_template_name"))  // char*
+    "templateName", v_str("example_templateName"))  // char*
 , NULL, &err);
 ```
 
@@ -1563,16 +1562,16 @@ Create an instance: `Entity* introduce_mandator = bluefintecsmerchantservices_in
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `mandator_name` | `char*` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
+| `mandatorName` | `char*` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
 
 #### Example: Create
 
 ```c
 Entity* introduce_mandator = bluefintecsmerchantservices_introduce_mandator(client, NULL);
 voxgig_value* introduce_mandator_rec = introduce_mandator->vt->create(introduce_mandator, cmap(1,
-    "mandator_name", v_str("example_mandator_name"))  // char*
+    "mandatorName", v_str("example_mandatorName"))  // char*
 , NULL, &err);
 ```
 
@@ -1591,16 +1590,16 @@ Create an instance: `Entity* introduce_package = bluefintecsmerchantservices_int
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
-| `terminal_template_description` | `char*` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
+| `terminalTemplateDescription` | `char*` |  |
 
 #### Example: Create
 
 ```c
 Entity* introduce_package = bluefintecsmerchantservices_introduce_package(client, NULL);
 voxgig_value* introduce_package_rec = introduce_package->vt->create(introduce_package, cmap(1,
-    "terminal_template_description", v_str("example_terminal_template_description"))  // char*
+    "terminalTemplateDescription", v_str("example_terminalTemplateDescription"))  // char*
 , NULL, &err);
 ```
 
@@ -1620,15 +1619,15 @@ Create an instance: `Entity* keep_alive = bluefintecsmerchantservices_keep_alive
 | Field | Type | Description |
 | --- | --- | --- |
 | `hwserialno` | `char*` |  |
-| `ka_date_time_from` | `char*` |  |
-| `ka_date_time_to` | `char*` |  |
-| `keep_alive_data` | `voxgig_value* (list)` |  |
+| `kaDateTimeFrom` | `char*` |  |
+| `kaDateTimeTo` | `char*` |  |
+| `keepAliveData` | `voxgig_value* (list)` |  |
 | `pagination` | `voxgig_value* (map)` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
-| `terminal_date_time_from` | `char*` |  |
-| `terminal_date_time_to` | `char*` |  |
-| `terminal_id` | `int64_t` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
+| `terminalDateTimeFrom` | `char*` |  |
+| `terminalDateTimeTo` | `char*` |  |
+| `terminalId` | `int64_t` |  |
 
 #### Example: Create
 
@@ -1652,12 +1651,12 @@ Create an instance: `Entity* list_terminal = bluefintecsmerchantservices_list_te
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `corporate_uuid` | `voxgig_value* (list)` |  |
+| `corporateUuid` | `voxgig_value* (list)` |  |
 | `filter` | `voxgig_value* (map)` |  |
 | `pagination` | `voxgig_value* (map)` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
-| `terminal` | `voxgig_value* (list)` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
+| `terminals` | `voxgig_value* (list)` |  |
 
 #### Example: Create
 
@@ -1681,20 +1680,20 @@ Create an instance: `Entity* mandator_clearing_export = bluefintecsmerchantservi
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `clearing_date_from` | `char*` |  |
-| `clearing_date_to` | `char*` |  |
+| `clearingDateFrom` | `char*` |  |
+| `clearingDateTo` | `char*` |  |
 | `pagination` | `voxgig_value* (map)` |  |
-| `record` | `voxgig_value* (list)` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
+| `records` | `voxgig_value* (list)` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
 
 #### Example: Create
 
 ```c
 Entity* mandator_clearing_export = bluefintecsmerchantservices_mandator_clearing_export(client, NULL);
 voxgig_value* mandator_clearing_export_rec = mandator_clearing_export->vt->create(mandator_clearing_export, cmap(2,
-    "clearing_date_from", v_str("example_clearing_date_from"),  // char*
-    "clearing_date_to", v_str("example_clearing_date_to"))  // char*
+    "clearingDateFrom", v_str("example_clearingDateFrom"),  // char*
+    "clearingDateTo", v_str("example_clearingDateTo"))  // char*
 , NULL, &err);
 ```
 
@@ -1714,12 +1713,12 @@ Create an instance: `Entity* mandator_clearing_export_download = bluefintecsmerc
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `clearing_date_from` | `char*` |  |
-| `clearing_date_to` | `char*` |  |
-| `file_id` | `char*` |  |
-| `filename_template` | `char*` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
+| `clearingDateFrom` | `char*` |  |
+| `clearingDateTo` | `char*` |  |
+| `fileId` | `char*` |  |
+| `filenameTemplate` | `char*` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
 | `status` | `char*` |  |
 
 #### Example: Load
@@ -1734,8 +1733,8 @@ voxgig_value* mandator_clearing_export_download_rec = mandator_clearing_export_d
 ```c
 Entity* mandator_clearing_export_download = bluefintecsmerchantservices_mandator_clearing_export_download(client, NULL);
 voxgig_value* mandator_clearing_export_download_rec = mandator_clearing_export_download->vt->create(mandator_clearing_export_download, cmap(2,
-    "clearing_date_from", v_str("example_clearing_date_from"),  // char*
-    "clearing_date_to", v_str("example_clearing_date_to"))  // char*
+    "clearingDateFrom", v_str("example_clearingDateFrom"),  // char*
+    "clearingDateTo", v_str("example_clearingDateTo"))  // char*
 , NULL, &err);
 ```
 
@@ -1754,19 +1753,19 @@ Create an instance: `Entity* mandator_clearing_export_summary = bluefintecsmerch
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `clearing_date_from` | `char*` |  |
-| `clearing_date_to` | `char*` |  |
-| `record` | `voxgig_value* (list)` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
+| `clearingDateFrom` | `char*` |  |
+| `clearingDateTo` | `char*` |  |
+| `records` | `voxgig_value* (list)` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
 
 #### Example: Create
 
 ```c
 Entity* mandator_clearing_export_summary = bluefintecsmerchantservices_mandator_clearing_export_summary(client, NULL);
 voxgig_value* mandator_clearing_export_summary_rec = mandator_clearing_export_summary->vt->create(mandator_clearing_export_summary, cmap(2,
-    "clearing_date_from", v_str("example_clearing_date_from"),  // char*
-    "clearing_date_to", v_str("example_clearing_date_to"))  // char*
+    "clearingDateFrom", v_str("example_clearingDateFrom"),  // char*
+    "clearingDateTo", v_str("example_clearingDateTo"))  // char*
 , NULL, &err);
 ```
 
@@ -1785,30 +1784,30 @@ Create an instance: `Entity* merchant_portal_services_api = bluefintecsmerchants
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `3_d_secure` | `char*` |  |
-| `authorization_code` | `char*` |  |
-| `card_brand` | `char*` |  |
-| `clearing_amount_from` | `char*` |  |
-| `clearing_amount_to` | `char*` |  |
-| `clearing_currency` | `char*` |  |
-| `clearing_status` | `char*` |  |
-| `corporate_uuid` | `char*` |  |
-| `order_by_transaction_date` | `char*` |  |
+| `3DSecure` | `char*` |  |
+| `authorizationCode` | `char*` |  |
+| `cardBrand` | `char*` |  |
+| `clearingAmountFrom` | `char*` |  |
+| `clearingAmountTo` | `char*` |  |
+| `clearingCurrency` | `char*` |  |
+| `clearingStatus` | `char*` |  |
+| `corporateUUID` | `char*` |  |
+| `orderByTransactionDate` | `char*` |  |
 | `pagination` | `voxgig_value* (map)` |  |
-| `receipt_number` | `char*` |  |
-| `referenced_transaction_id` | `char*` |  |
-| `retrieval_reference_number` | `char*` |  |
-| `source_id` | `int64_t` |  |
-| `tecsengine_response_code_from` | `char*` |  |
-| `tecsengine_response_code_to` | `char*` |  |
-| `terminal_id` | `int64_t` |  |
-| `trace_number` | `char*` |  |
-| `transaction_amount_from` | `char*` |  |
-| `transaction_amount_to` | `char*` |  |
-| `transaction_date_from` | `char*` |  |
-| `transaction_date_to` | `char*` |  |
-| `transaction_id` | `char*` |  |
-| `transaction_type` | `char*` |  |
+| `receiptNumber` | `char*` |  |
+| `referencedTransactionId` | `char*` |  |
+| `retrievalReferenceNumber` | `char*` |  |
+| `sourceId` | `int64_t` |  |
+| `tecsengineResponseCodeFrom` | `char*` |  |
+| `tecsengineResponseCodeTo` | `char*` |  |
+| `terminalId` | `int64_t` |  |
+| `traceNumber` | `char*` |  |
+| `transactionAmountFrom` | `char*` |  |
+| `transactionAmountTo` | `char*` |  |
+| `transactionDateFrom` | `char*` |  |
+| `transactionDateTo` | `char*` |  |
+| `transactionId` | `char*` |  |
+| `transactionType` | `char*` |  |
 | `wallet` | `char*` |  |
 
 #### Example: Create
@@ -1833,18 +1832,18 @@ Create an instance: `Entity* move_tid = bluefintecsmerchantservices_move_tid(cli
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `productorderuuid` | `voxgig_value* (list)` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
-| `target_packageorderuuid` | `char*` |  |
-| `target_productorderuuid` | `char*` |  |
+| `productorderuuids` | `voxgig_value* (list)` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
+| `targetPackageorderuuid` | `char*` |  |
+| `targetProductorderuuid` | `char*` |  |
 
 #### Example: Create
 
 ```c
 Entity* move_tid = bluefintecsmerchantservices_move_tid(client, NULL);
 voxgig_value* move_tid_rec = move_tid->vt->create(move_tid, cmap(1,
-    "productorderuuid", v_list())  // voxgig_value* (list)
+    "productorderuuids", v_list())  // voxgig_value* (list)
 , NULL, &err);
 ```
 
@@ -1863,22 +1862,22 @@ Create an instance: `Entity* payment_manual = bluefintecsmerchantservices_paymen
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_name` | `char*` |  |
+| `acquirerName` | `char*` |  |
 | `amount` | `int64_t` |  |
-| `authorization_number` | `char*` |  |
-| `card_number` | `char*` |  |
-| `card_type` | `char*` |  |
+| `authorizationNumber` | `char*` |  |
+| `cardNumber` | `char*` |  |
+| `cardType` | `char*` |  |
 | `currency` | `char*` |  |
 | `cvc` | `char*` |  |
-| `date_time_tx` | `char*` |  |
-| `exp_date` | `char*` |  |
-| `merchant_id` | `char*` |  |
-| `original_transaction_id` | `char*` |  |
+| `dateTimeTx` | `char*` |  |
+| `expDate` | `char*` |  |
+| `merchantId` | `char*` |  |
+| `originalTransactionId` | `char*` |  |
 | `password` | `char*` |  |
-| `response_code` | `char*` |  |
-| `response_message` | `char*` |  |
-| `terminal_id` | `char*` |  |
-| `transaction_id` | `char*` |  |
+| `responseCode` | `char*` |  |
+| `responseMessage` | `char*` |  |
+| `terminalId` | `char*` |  |
+| `transactionId` | `char*` |  |
 | `txtype` | `char*` |  |
 
 #### Example: Create
@@ -1887,9 +1886,9 @@ Create an instance: `Entity* payment_manual = bluefintecsmerchantservices_paymen
 Entity* payment_manual = bluefintecsmerchantservices_payment_manual(client, NULL);
 voxgig_value* payment_manual_rec = payment_manual->vt->create(payment_manual, cmap(5,
     "amount", v_num(1),  // int64_t
-    "card_number", v_str("example_card_number"),  // char*
+    "cardNumber", v_str("example_cardNumber"),  // char*
     "currency", v_str("example_currency"),  // char*
-    "exp_date", v_str("example_exp_date"),  // char*
+    "expDate", v_str("example_expDate"),  // char*
     "txtype", v_str("example_txtype"))  // char*
 , NULL, &err);
 ```
@@ -1909,31 +1908,28 @@ Create an instance: `Entity* payment_sred = bluefintecsmerchantservices_payment_
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_name` | `char*` |  |
 | `amount` | `int64_t` |  |
-| `authorization_number` | `char*` |  |
-| `card_type` | `char*` |  |
 | `currency` | `char*` |  |
-| `date_time_tx` | `char*` |  |
-| `device_payload` | `char*` |  |
-| `merchant_id` | `char*` |  |
-| `original_transaction_id` | `char*` |  |
+| `device` | `char*` |  |
+| `devicePayload` | `char*` |  |
+| `expDate` | `char*` |  |
+| `mode` | `char*` |  |
+| `panMasked` | `char*` |  |
 | `password` | `char*` |  |
-| `response_code` | `char*` |  |
-| `response_message` | `char*` |  |
-| `sred` | `voxgig_value* (map)` |  |
-| `terminal_id` | `char*` |  |
-| `transaction_id` | `char*` |  |
+| `serial` | `char*` |  |
+| `serviceCode` | `char*` |  |
+| `terminalId` | `char*` |  |
 | `txtype` | `char*` |  |
 
 #### Example: Create
 
 ```c
 Entity* payment_sred = bluefintecsmerchantservices_payment_sred(client, NULL);
-voxgig_value* payment_sred_rec = payment_sred->vt->create(payment_sred, cmap(4,
+voxgig_value* payment_sred_rec = payment_sred->vt->create(payment_sred, cmap(5,
     "amount", v_num(1),  // int64_t
     "currency", v_str("example_currency"),  // char*
-    "device_payload", v_str("example_device_payload"),  // char*
+    "devicePayload", v_str("example_devicePayload"),  // char*
+    "terminalId", v_str("example_terminalId"),  // char*
     "txtype", v_str("example_txtype"))  // char*
 , NULL, &err);
 ```
@@ -1953,60 +1949,60 @@ Create an instance: `Entity* pre_auth_transaction_completion = bluefintecsmercha
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_id` | `char*` |  |
-| `acquirer_name` | `char*` |  |
-| `actual_bonus_point` | `char*` |  |
+| `acquirerId` | `char*` |  |
+| `acquirerName` | `char*` |  |
+| `actualBonusPoints` | `char*` |  |
 | `amount` | `int64_t` |  |
-| `authorization_code` | `char*` |  |
-| `balance_amount` | `char*` |  |
-| `card_brand` | `char*` |  |
-| `card_number` | `char*` |  |
-| `card_number_reference` | `char*` |  |
-| `client_id` | `int64_t` |  |
+| `authorizationCode` | `char*` |  |
+| `balanceAmount` | `char*` |  |
+| `cardBrand` | `char*` |  |
+| `cardNumber` | `char*` |  |
+| `cardNumberReference` | `char*` |  |
+| `clientId` | `int64_t` |  |
 | `currency` | `char*` |  |
 | `cvc` | `char*` |  |
-| `ec_data` | `char*` |  |
-| `ecr_data` | `char*` |  |
-| `emv_data` | `char*` |  |
-| `exchange_fee` | `int64_t` |  |
-| `exchange_rate` | `char*` |  |
-| `language_code` | `char*` |  |
-| `merchant_address` | `char*` |  |
-| `merchant_name` | `char*` |  |
-| `merchant_number` | `char*` |  |
-| `message_type` | `char*` |  |
-| `original_trace_number` | `int64_t` |  |
-| `original_transaction_id` | `char*` |  |
+| `ecData` | `char*` |  |
+| `ecrData` | `char*` |  |
+| `emvData` | `char*` |  |
+| `exchangeFee` | `int64_t` |  |
+| `exchangeRate` | `char*` |  |
+| `languageCode` | `char*` |  |
+| `merchantAddress` | `char*` |  |
+| `merchantName` | `char*` |  |
+| `merchantNumber` | `char*` |  |
+| `messageType` | `char*` |  |
+| `originalTraceNumber` | `int64_t` |  |
+| `originalTransactionId` | `char*` |  |
 | `password` | `char*` |  |
-| `payment_reason` | `char*` |  |
-| `receipt_footer` | `char*` |  |
-| `receipt_header` | `char*` |  |
-| `receipt_layout` | `int64_t` |  |
-| `receipt_number` | `char*` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
-| `serial_number` | `char*` |  |
+| `paymentReason` | `char*` |  |
+| `receiptFooter` | `char*` |  |
+| `receiptHeader` | `char*` |  |
+| `receiptLayout` | `int64_t` |  |
+| `receiptNumber` | `char*` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
+| `serialNumber` | `char*` |  |
 | `svc` | `char*` |  |
-| `terminal_id` | `int64_t` |  |
-| `terminal_location` | `char*` |  |
-| `trace_number` | `int64_t` |  |
-| `transaction_date` | `char*` |  |
-| `transaction_id` | `char*` |  |
-| `transaction_type` | `char*` |  |
-| `tx_type` | `char*` |  |
-| `user_data` | `char*` |  |
+| `terminalId` | `int64_t` |  |
+| `terminalLocation` | `char*` |  |
+| `traceNumber` | `int64_t` |  |
+| `transactionDate` | `char*` |  |
+| `transactionId` | `char*` |  |
+| `transactionType` | `char*` |  |
+| `txType` | `char*` |  |
+| `userData` | `char*` |  |
 
 #### Example: Create
 
 ```c
 Entity* pre_auth_transaction_completion = bluefintecsmerchantservices_pre_auth_transaction_completion(client, NULL);
 voxgig_value* pre_auth_transaction_completion_rec = pre_auth_transaction_completion->vt->create(pre_auth_transaction_completion, cmap(6,
-    "card_number_reference", v_str("example_card_number_reference"),  // char*
-    "client_id", v_num(1),  // int64_t
+    "cardNumberReference", v_str("example_cardNumberReference"),  // char*
+    "clientId", v_num(1),  // int64_t
     "currency", v_str("example_currency"),  // char*
-    "receipt_number", v_str("example_receipt_number"),  // char*
-    "terminal_id", v_num(1),  // int64_t
-    "transaction_type", v_str("example_transaction_type"))  // char*
+    "receiptNumber", v_str("example_receiptNumber"),  // char*
+    "terminalId", v_num(1),  // int64_t
+    "transactionType", v_str("example_transactionType"))  // char*
 , NULL, &err);
 ```
 
@@ -2025,21 +2021,21 @@ Create an instance: `Entity* reactivate_terminal = bluefintecsmerchantservices_r
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `corporate_uuid` | `char*` |  |
-| `package_order_uuid` | `char*` |  |
-| `product_order_uuid` | `char*` |  |
-| `reactivation_reason` | `char*` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
-| `terminal_id` | `int64_t` |  |
+| `corporateUuid` | `char*` |  |
+| `packageOrderUuid` | `char*` |  |
+| `productOrderUuid` | `char*` |  |
+| `reactivationReason` | `char*` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
+| `terminalId` | `int64_t` |  |
 
 #### Example: Create
 
 ```c
 Entity* reactivate_terminal = bluefintecsmerchantservices_reactivate_terminal(client, NULL);
 voxgig_value* reactivate_terminal_rec = reactivate_terminal->vt->create(reactivate_terminal, cmap(2,
-    "reactivation_reason", v_str("example_reactivation_reason"),  // char*
-    "terminal_id", v_num(1))  // int64_t
+    "reactivationReason", v_str("example_reactivationReason"),  // char*
+    "terminalId", v_num(1))  // int64_t
 , NULL, &err);
 ```
 
@@ -2058,56 +2054,56 @@ Create an instance: `Entity* refund_transaction = bluefintecsmerchantservices_re
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_id` | `char*` |  |
-| `acquirer_name` | `char*` |  |
-| `actual_bonus_point` | `char*` |  |
+| `acquirerId` | `char*` |  |
+| `acquirerName` | `char*` |  |
+| `actualBonusPoints` | `char*` |  |
 | `amount` | `int64_t` |  |
-| `authorization_code` | `char*` |  |
-| `balance_amount` | `char*` |  |
-| `card_brand` | `char*` |  |
-| `card_number` | `char*` |  |
-| `client_id` | `int64_t` |  |
+| `authorizationCode` | `char*` |  |
+| `balanceAmount` | `char*` |  |
+| `cardBrand` | `char*` |  |
+| `cardNumber` | `char*` |  |
+| `clientId` | `int64_t` |  |
 | `currency` | `char*` |  |
 | `cvc` | `char*` |  |
-| `ec_data` | `char*` |  |
-| `ecr_data` | `char*` |  |
-| `emv_data` | `char*` |  |
-| `exchange_fee` | `int64_t` |  |
-| `exchange_rate` | `char*` |  |
-| `language_code` | `char*` |  |
-| `merchant_address` | `char*` |  |
-| `merchant_name` | `char*` |  |
-| `merchant_number` | `char*` |  |
-| `message_type` | `char*` |  |
-| `original_trace_number` | `int64_t` |  |
-| `original_transaction_id` | `char*` |  |
+| `ecData` | `char*` |  |
+| `ecrData` | `char*` |  |
+| `emvData` | `char*` |  |
+| `exchangeFee` | `int64_t` |  |
+| `exchangeRate` | `char*` |  |
+| `languageCode` | `char*` |  |
+| `merchantAddress` | `char*` |  |
+| `merchantName` | `char*` |  |
+| `merchantNumber` | `char*` |  |
+| `messageType` | `char*` |  |
+| `originalTraceNumber` | `int64_t` |  |
+| `originalTransactionId` | `char*` |  |
 | `password` | `char*` |  |
-| `payment_reason` | `char*` |  |
-| `receipt_footer` | `char*` |  |
-| `receipt_header` | `char*` |  |
-| `receipt_layout` | `int64_t` |  |
-| `receipt_number` | `char*` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
-| `serial_number` | `char*` |  |
+| `paymentReason` | `char*` |  |
+| `receiptFooter` | `char*` |  |
+| `receiptHeader` | `char*` |  |
+| `receiptLayout` | `int64_t` |  |
+| `receiptNumber` | `char*` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
+| `serialNumber` | `char*` |  |
 | `svc` | `char*` |  |
-| `terminal_id` | `int64_t` |  |
-| `terminal_location` | `char*` |  |
-| `trace_number` | `int64_t` |  |
-| `transaction_date` | `char*` |  |
-| `transaction_id` | `char*` |  |
-| `tx_type` | `char*` |  |
-| `user_data` | `char*` |  |
+| `terminalId` | `int64_t` |  |
+| `terminalLocation` | `char*` |  |
+| `traceNumber` | `int64_t` |  |
+| `transactionDate` | `char*` |  |
+| `transactionId` | `char*` |  |
+| `txType` | `char*` |  |
+| `userData` | `char*` |  |
 
 #### Example: Create
 
 ```c
 Entity* refund_transaction = bluefintecsmerchantservices_refund_transaction(client, NULL);
 voxgig_value* refund_transaction_rec = refund_transaction->vt->create(refund_transaction, cmap(4,
-    "client_id", v_num(1),  // int64_t
+    "clientId", v_num(1),  // int64_t
     "currency", v_str("example_currency"),  // char*
-    "receipt_number", v_str("example_receipt_number"),  // char*
-    "terminal_id", v_num(1))  // int64_t
+    "receiptNumber", v_str("example_receiptNumber"),  // char*
+    "terminalId", v_num(1))  // int64_t
 , NULL, &err);
 ```
 
@@ -2126,24 +2122,24 @@ Create an instance: `Entity* register_tecs_company = bluefintecsmerchantservices
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `corporate_uuid` | `char*` |  |
-| `package_order_uuid` | `char*` |  |
-| `partner_id` | `int64_t` |  |
-| `partner_name` | `char*` |  |
-| `product_order_uuid` | `char*` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
-| `template_name` | `char*` |  |
+| `corporateUuid` | `char*` |  |
+| `packageOrderUuid` | `char*` |  |
+| `partnerId` | `int64_t` |  |
+| `partnerName` | `char*` |  |
+| `productOrderUuid` | `char*` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
+| `templateName` | `char*` |  |
 
 #### Example: Create
 
 ```c
 Entity* register_tecs_company = bluefintecsmerchantservices_register_tecs_company(client, NULL);
 voxgig_value* register_tecs_company_rec = register_tecs_company->vt->create(register_tecs_company, cmap(4,
-    "corporate_uuid", v_str("example_corporate_uuid"),  // char*
-    "package_order_uuid", v_str("example_package_order_uuid"),  // char*
-    "product_order_uuid", v_str("example_product_order_uuid"),  // char*
-    "template_name", v_str("example_template_name"))  // char*
+    "corporateUuid", v_str("example_corporateUuid"),  // char*
+    "packageOrderUuid", v_str("example_packageOrderUuid"),  // char*
+    "productOrderUuid", v_str("example_productOrderUuid"),  // char*
+    "templateName", v_str("example_templateName"))  // char*
 , NULL, &err);
 ```
 
@@ -2162,37 +2158,37 @@ Create an instance: `Entity* register_terminal = bluefintecsmerchantservices_reg
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `additional_data` | `voxgig_value* (map)` |  |
-| `corporate_uuid` | `char*` |  |
-| `package_order_uuid` | `char*` |  |
-| `product_order_uuid` | `char*` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
-| `tecs_web_secret_key` | `char*` |  |
-| `template_name` | `char*` |  |
-| `terminal_country_code` | `char*` |  |
-| `terminal_id` | `int64_t` |  |
-| `terminal_id_acq` | `char*` |  |
-| `terminal_language_code` | `char*` |  |
-| `terminal_location` | `char*` |  |
-| `terminal_serial_number` | `char*` |  |
-| `token_io_alia` | `char*` |  |
-| `token_io_iban` | `char*` |  |
-| `token_io_member_id` | `char*` |  |
-| `web_shop_url` | `char*` |  |
+| `additionalData` | `voxgig_value* (map)` |  |
+| `corporateUuid` | `char*` |  |
+| `packageOrderUuid` | `char*` |  |
+| `productOrderUuid` | `char*` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
+| `tecsWebSecretKey` | `char*` |  |
+| `templateName` | `char*` |  |
+| `terminalCountryCode` | `char*` |  |
+| `terminalId` | `int64_t` |  |
+| `terminalIdAcq` | `char*` |  |
+| `terminalLanguageCode` | `char*` |  |
+| `terminalLocation` | `char*` |  |
+| `terminalSerialNumber` | `char*` |  |
+| `tokenIOAlias` | `char*` |  |
+| `tokenIOIban` | `char*` |  |
+| `tokenIOMemberId` | `char*` |  |
+| `webShopUrl` | `char*` |  |
 
 #### Example: Create
 
 ```c
 Entity* register_terminal = bluefintecsmerchantservices_register_terminal(client, NULL);
 voxgig_value* register_terminal_rec = register_terminal->vt->create(register_terminal, cmap(7,
-    "corporate_uuid", v_str("example_corporate_uuid"),  // char*
-    "package_order_uuid", v_str("example_package_order_uuid"),  // char*
-    "product_order_uuid", v_str("example_product_order_uuid"),  // char*
-    "template_name", v_str("example_template_name"),  // char*
-    "terminal_country_code", v_str("example_terminal_country_code"),  // char*
-    "terminal_language_code", v_str("example_terminal_language_code"),  // char*
-    "terminal_location", v_str("example_terminal_location"))  // char*
+    "corporateUuid", v_str("example_corporateUuid"),  // char*
+    "packageOrderUuid", v_str("example_packageOrderUuid"),  // char*
+    "productOrderUuid", v_str("example_productOrderUuid"),  // char*
+    "templateName", v_str("example_templateName"),  // char*
+    "terminalCountryCode", v_str("example_terminalCountryCode"),  // char*
+    "terminalLanguageCode", v_str("example_terminalLanguageCode"),  // char*
+    "terminalLocation", v_str("example_terminalLocation"))  // char*
 , NULL, &err);
 ```
 
@@ -2211,25 +2207,25 @@ Create an instance: `Entity* report_data = bluefintecsmerchantservices_report_da
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `card_brand_report_data` | `voxgig_value* (list)` |  |
-| `clearing_date_from` | `char*` |  |
-| `clearing_date_to` | `char*` |  |
-| `corporate_id` | `char*` |  |
+| `cardBrandReportData` | `voxgig_value* (list)` |  |
+| `clearingDateFrom` | `char*` |  |
+| `clearingDateTo` | `char*` |  |
+| `corporateId` | `char*` |  |
 | `currency` | `char*` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
-| `sum_over_credit_tx` | `voxgig_value* (map)` |  |
-| `sum_over_debit_tx` | `voxgig_value* (map)` |  |
-| `terminal_id` | `int64_t` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
+| `sumOverCreditTx` | `voxgig_value* (map)` |  |
+| `sumOverDebitTx` | `voxgig_value* (map)` |  |
+| `terminalId` | `int64_t` |  |
 
 #### Example: Create
 
 ```c
 Entity* report_data = bluefintecsmerchantservices_report_data(client, NULL);
 voxgig_value* report_data_rec = report_data->vt->create(report_data, cmap(4,
-    "clearing_date_from", v_str("example_clearing_date_from"),  // char*
-    "clearing_date_to", v_str("example_clearing_date_to"),  // char*
-    "corporate_id", v_str("example_corporate_id"),  // char*
+    "clearingDateFrom", v_str("example_clearingDateFrom"),  // char*
+    "clearingDateTo", v_str("example_clearingDateTo"),  // char*
+    "corporateId", v_str("example_corporateId"),  // char*
     "currency", v_str("example_currency"))  // char*
 , NULL, &err);
 ```
@@ -2249,56 +2245,56 @@ Create an instance: `Entity* status_transaction = bluefintecsmerchantservices_st
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_name` | `char*` |  |
-| `acquirer_terminal_id` | `char*` |  |
+| `acquirerName` | `char*` |  |
+| `acquirerTerminalId` | `char*` |  |
 | `amount` | `int64_t` |  |
-| `application_cryptogram` | `char*` |  |
-| `authorization_code` | `voxgig_value*` |  |
-| `authorization_date` | `char*` |  |
-| `card_brand` | `char*` |  |
-| `card_entry` | `char*` |  |
-| `card_expiration` | `char*` |  |
-| `card_number` | `char*` |  |
-| `clearing_amount` | `int64_t` |  |
-| `clearing_batch_id` | `char*` |  |
-| `clearing_currency` | `char*` |  |
-| `clearing_date` | `char*` |  |
-| `clearing_processed_date` | `char*` |  |
-| `clearing_status` | `char*` |  |
-| `client_id` | `int64_t` |  |
+| `applicationCryptogram` | `char*` |  |
+| `authorizationCode` | `voxgig_value*` |  |
+| `authorizationDate` | `char*` |  |
+| `cardBrand` | `char*` |  |
+| `cardEntry` | `char*` |  |
+| `cardExpiration` | `char*` |  |
+| `cardNumber` | `char*` |  |
+| `clearingAmount` | `int64_t` |  |
+| `clearingBatchId` | `char*` |  |
+| `clearingCurrency` | `char*` |  |
+| `clearingDate` | `char*` |  |
+| `clearingProcessedDate` | `char*` |  |
+| `clearingStatus` | `char*` |  |
+| `clientId` | `int64_t` |  |
 | `currency` | `char*` |  |
 | `cvm` | `char*` |  |
-| `ecr_data` | `char*` |  |
-| `emv_application_id` | `char*` |  |
-| `emv_application_label` | `char*` |  |
-| `merchant_name` | `char*` |  |
-| `merchant_number` | `char*` |  |
-| `original_client_id` | `char*` |  |
-| `original_terminal_id` | `int64_t` |  |
-| `original_transaction_id` | `char*` |  |
-| `payment_reason` | `char*` |  |
-| `receipt_number` | `char*` |  |
-| `response_code` | `int64_t` |  |
-| `response_code_from_a` | `char*` |  |
-| `response_message` | `char*` |  |
-| `retrieval_reference_number` | `char*` |  |
-| `service_code` | `char*` |  |
-| `settlement_status` | `char*` |  |
-| `source_id` | `int64_t` |  |
-| `tecsengine_response_code` | `int64_t` |  |
-| `tecsengine_response_text` | `char*` |  |
-| `terminal_end_of_day_date` | `char*` |  |
-| `terminal_id` | `int64_t` |  |
-| `terminal_location` | `char*` |  |
-| `tip_amount` | `int64_t` |  |
-| `trace_number` | `int64_t` |  |
-| `transaction_clearing_date` | `char*` |  |
-| `transaction_date` | `char*` |  |
-| `transaction_id` | `char*` |  |
-| `transaction_seq_number` | `int64_t` |  |
-| `transaction_server_date` | `char*` |  |
-| `transaction_source` | `char*` |  |
-| `transaction_type` | `char*` |  |
+| `ecrData` | `char*` |  |
+| `emvApplicationId` | `char*` |  |
+| `emvApplicationLabel` | `char*` |  |
+| `merchantName` | `char*` |  |
+| `merchantNumber` | `char*` |  |
+| `originalClientId` | `char*` |  |
+| `originalTerminalId` | `int64_t` |  |
+| `originalTransactionId` | `char*` |  |
+| `paymentReason` | `char*` |  |
+| `receiptNumber` | `char*` |  |
+| `responseCode` | `int64_t` |  |
+| `responseCodeFromAS` | `char*` |  |
+| `responseMessage` | `char*` |  |
+| `retrievalReferenceNumber` | `char*` |  |
+| `serviceCode` | `char*` |  |
+| `settlementStatus` | `char*` |  |
+| `sourceId` | `int64_t` |  |
+| `tecsengineResponseCode` | `int64_t` |  |
+| `tecsengineResponseText` | `char*` |  |
+| `terminalEndOfDayDate` | `char*` |  |
+| `terminalId` | `int64_t` |  |
+| `terminalLocation` | `char*` |  |
+| `tipAmount` | `int64_t` |  |
+| `traceNumber` | `int64_t` |  |
+| `transactionClearingDate` | `char*` |  |
+| `transactionDate` | `char*` |  |
+| `transactionId` | `char*` |  |
+| `transactionSeqNumber` | `int64_t` |  |
+| `transactionServerDate` | `char*` |  |
+| `transactionSource` | `char*` |  |
+| `transactionType` | `char*` |  |
 
 #### Example: Create
 
@@ -2322,19 +2318,19 @@ Create an instance: `Entity* store_terminal_parameter = bluefintecsmerchantservi
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acq_tab_nexo` | `voxgig_value* (map)` |  |
-| `config_version` | `char*` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
-| `serial_number` | `char*` |  |
-| `tid_sent` | `char*` |  |
+| `acqTabNexo` | `voxgig_value* (map)` |  |
+| `configVersion` | `char*` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
+| `serialNumber` | `char*` |  |
+| `tidSent` | `char*` |  |
 
 #### Example: Create
 
 ```c
 Entity* store_terminal_parameter = bluefintecsmerchantservices_store_terminal_parameter(client, NULL);
 voxgig_value* store_terminal_parameter_rec = store_terminal_parameter->vt->create(store_terminal_parameter, cmap(1,
-    "serial_number", v_str("example_serial_number"))  // char*
+    "serialNumber", v_str("example_serialNumber"))  // char*
 , NULL, &err);
 ```
 
@@ -2353,18 +2349,18 @@ Create an instance: `Entity* terminal_id = bluefintecsmerchantservices_terminal_
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `device_serial_number` | `voxgig_value* (list)` |  |
-| `duplicate_terminal_id` | `voxgig_value* (list)` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
-| `terminal` | `voxgig_value* (list)` |  |
+| `deviceSerialNumber` | `voxgig_value* (list)` |  |
+| `duplicateTerminalIds` | `voxgig_value* (list)` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
+| `terminals` | `voxgig_value* (list)` |  |
 
 #### Example: Create
 
 ```c
 Entity* terminal_id = bluefintecsmerchantservices_terminal_id(client, NULL);
 voxgig_value* terminal_id_rec = terminal_id->vt->create(terminal_id, cmap(1,
-    "device_serial_number", v_list())  // voxgig_value* (list)
+    "deviceSerialNumber", v_list())  // voxgig_value* (list)
 , NULL, &err);
 ```
 
@@ -2383,34 +2379,34 @@ Create an instance: `Entity* transaction_history = bluefintecsmerchantservices_t
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `3_d_secure` | `char*` |  |
-| `authorization_code` | `char*` |  |
-| `card_brand` | `char*` |  |
-| `clearing_amount_from` | `char*` |  |
-| `clearing_amount_to` | `char*` |  |
-| `clearing_currency` | `char*` |  |
-| `clearing_status` | `char*` |  |
-| `corporate_uuid` | `char*` |  |
-| `order_by_transaction_date` | `char*` |  |
+| `3DSecure` | `char*` |  |
+| `authorizationCode` | `char*` |  |
+| `cardBrand` | `char*` |  |
+| `clearingAmountFrom` | `char*` |  |
+| `clearingAmountTo` | `char*` |  |
+| `clearingCurrency` | `char*` |  |
+| `clearingStatus` | `char*` |  |
+| `corporateUUID` | `char*` |  |
+| `orderByTransactionDate` | `char*` |  |
 | `pagination` | `voxgig_value* (map)` |  |
-| `payment_token_public_id` | `char*` |  |
-| `receipt_number` | `char*` |  |
-| `referenced_transaction_id` | `char*` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
-| `retrieval_reference_number` | `char*` |  |
-| `source_id` | `int64_t` |  |
-| `tecsengine_response_code_from` | `char*` |  |
-| `tecsengine_response_code_to` | `char*` |  |
-| `terminal_id` | `int64_t` |  |
-| `trace_number` | `char*` |  |
-| `transaction_amount_from` | `char*` |  |
-| `transaction_amount_to` | `char*` |  |
-| `transaction_date_from` | `char*` |  |
-| `transaction_date_to` | `char*` |  |
-| `transaction_history` | `voxgig_value* (list)` |  |
-| `transaction_id` | `char*` |  |
-| `transaction_type` | `char*` |  |
+| `paymentTokenPublicId` | `char*` |  |
+| `receiptNumber` | `char*` |  |
+| `referencedTransactionId` | `char*` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
+| `retrievalReferenceNumber` | `char*` |  |
+| `sourceId` | `int64_t` |  |
+| `tecsengineResponseCodeFrom` | `char*` |  |
+| `tecsengineResponseCodeTo` | `char*` |  |
+| `terminalId` | `int64_t` |  |
+| `traceNumber` | `char*` |  |
+| `transactionAmountFrom` | `char*` |  |
+| `transactionAmountTo` | `char*` |  |
+| `transactionDateFrom` | `char*` |  |
+| `transactionDateTo` | `char*` |  |
+| `transactionHistories` | `voxgig_value* (list)` |  |
+| `transactionId` | `char*` |  |
+| `transactionType` | `char*` |  |
 | `wallet` | `char*` |  |
 
 #### Example: Create
@@ -2436,11 +2432,11 @@ Create an instance: `Entity* transactions_count = bluefintecsmerchantservices_tr
 | Field | Type | Description |
 | --- | --- | --- |
 | `period` | `char*` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
-| `transaction_date_from` | `char*` |  |
-| `transaction_date_to` | `char*` |  |
-| `transactions_count` | `voxgig_value* (list)` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
+| `transactionDateFrom` | `char*` |  |
+| `transactionDateTo` | `char*` |  |
+| `transactionsCount` | `voxgig_value* (list)` |  |
 
 #### Example: Create
 
@@ -2465,11 +2461,11 @@ Create an instance: `Entity* transactions_count_card_brand = bluefintecsmerchant
 | Field | Type | Description |
 | --- | --- | --- |
 | `period` | `char*` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
-| `transaction_date_from` | `char*` |  |
-| `transaction_date_to` | `char*` |  |
-| `transactions_count` | `voxgig_value* (list)` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
+| `transactionDateFrom` | `char*` |  |
+| `transactionDateTo` | `char*` |  |
+| `transactionsCount` | `voxgig_value* (list)` |  |
 
 #### Example: Create
 
@@ -2494,11 +2490,11 @@ Create an instance: `Entity* transactions_turnover = bluefintecsmerchantservices
 | Field | Type | Description |
 | --- | --- | --- |
 | `period` | `char*` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
-| `transaction_date_from` | `char*` |  |
-| `transaction_date_to` | `char*` |  |
-| `turnover` | `voxgig_value* (list)` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
+| `transactionDateFrom` | `char*` |  |
+| `transactionDateTo` | `char*` |  |
+| `turnovers` | `voxgig_value* (list)` |  |
 
 #### Example: Create
 
@@ -2523,15 +2519,15 @@ Create an instance: `Entity* update_merchant = bluefintecsmerchantservices_updat
 | Field | Type | Description |
 | --- | --- | --- |
 | `city` | `char*` |  |
-| `corporate_uuid` | `char*` |  |
+| `corporateUuid` | `char*` |  |
 | `country` | `char*` |  |
-| `merchant_category_code` | `char*` |  |
+| `merchantCategoryCode` | `char*` |  |
 | `name` | `char*` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
 | `state` | `char*` |  |
 | `street` | `char*` |  |
-| `vu_nummer` | `char*` |  |
+| `vuNummer` | `char*` |  |
 | `zipcode` | `char*` |  |
 
 #### Example: Create
@@ -2539,7 +2535,7 @@ Create an instance: `Entity* update_merchant = bluefintecsmerchantservices_updat
 ```c
 Entity* update_merchant = bluefintecsmerchantservices_update_merchant(client, NULL);
 voxgig_value* update_merchant_rec = update_merchant->vt->create(update_merchant, cmap(1,
-    "corporate_uuid", v_str("example_corporate_uuid"))  // char*
+    "corporateUuid", v_str("example_corporateUuid"))  // char*
 , NULL, &err);
 ```
 
@@ -2558,18 +2554,18 @@ Create an instance: `Entity* update_template_xml = bluefintecsmerchantservices_u
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `int64_t` |  |
-| `response_message` | `char*` |  |
-| `template_name` | `char*` |  |
-| `template_xml` | `char*` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `char*` |  |
+| `templateName` | `char*` |  |
+| `templateXml` | `char*` |  |
 
 #### Example: Create
 
 ```c
 Entity* update_template_xml = bluefintecsmerchantservices_update_template_xml(client, NULL);
 voxgig_value* update_template_xml_rec = update_template_xml->vt->create(update_template_xml, cmap(2,
-    "template_name", v_str("example_template_name"),  // char*
-    "template_xml", v_str("example_template_xml"))  // char*
+    "templateName", v_str("example_templateName"),  // char*
+    "templateXml", v_str("example_templateXml"))  // char*
 , NULL, &err);
 ```
 
@@ -2588,8 +2584,8 @@ Create an instance: `Entity* version = bluefintecsmerchantservices_version(clien
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `app_name` | `char*` |  |
-| `build_date` | `char*` |  |
+| `appName` | `char*` |  |
+| `buildDate` | `char*` |  |
 | `version` | `char*` |  |
 
 #### Example: Load

@@ -3,29 +3,29 @@
     "transactions_turnover": {
       "TRANSACTIONS_TURNOVER00": {
         "period": "s3c",
-        "response_code": "s3d",
-        "response_message": "s3e",
-        "transaction_date_from": "s3f",
-        "transaction_date_to": "s40",
-        "turnover": [],
+        "responseCode": "s3d",
+        "responseMessage": "s3e",
+        "transactionDateFrom": "s3f",
+        "transactionDateTo": "s40",
+        "turnovers": [],
         "id": "TRANSACTIONS_TURNOVER00"
       },
       "TRANSACTIONS_TURNOVER01": {
         "period": "s78",
-        "response_code": "s79",
-        "response_message": "s7a",
-        "transaction_date_from": "s7b",
-        "transaction_date_to": "s7c",
-        "turnover": [],
+        "responseCode": "s79",
+        "responseMessage": "s7a",
+        "transactionDateFrom": "s7b",
+        "transactionDateTo": "s7c",
+        "turnovers": [],
         "id": "TRANSACTIONS_TURNOVER01"
       },
       "TRANSACTIONS_TURNOVER02": {
         "period": "sb4",
-        "response_code": "sb5",
-        "response_message": "sb6",
-        "transaction_date_from": "sb7",
-        "transaction_date_to": "sb8",
-        "turnover": [],
+        "responseCode": "sb5",
+        "responseMessage": "sb6",
+        "transactionDateFrom": "sb7",
+        "transactionDateTo": "sb8",
+        "turnovers": [],
         "id": "TRANSACTIONS_TURNOVER02"
       }
     }
@@ -34,11 +34,11 @@
     "transactions_turnover": {
       "transactions_turnover_ref01": {
         "period": "sf0",
-        "response_code": "sf1",
-        "response_message": "sf2",
-        "transaction_date_from": "sf3",
-        "transaction_date_to": "sf4",
-        "turnover": []
+        "responseCode": "sf1",
+        "responseMessage": "sf2",
+        "transactionDateFrom": "sf3",
+        "transactionDateTo": "sf4",
+        "turnovers": []
       }
     }
   }

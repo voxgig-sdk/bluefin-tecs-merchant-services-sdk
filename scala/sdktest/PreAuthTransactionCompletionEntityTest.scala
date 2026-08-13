@@ -35,7 +35,7 @@ object PreAuthTransactionCompletionEntityTest {
       var preAuthTransactionCompletionRef01Data = Helpers.toMapAny(Struct.getprop(
           Struct.getpath(entityData, "new.pre_auth_transaction_completion"), "pre_auth_transaction_completion_ref01"))
       val preAuthTransactionCompletionRef01DataResult = preAuthTransactionCompletionRef01Ent.create(preAuthTransactionCompletionRef01Data, null)
-      preAuthTransactionCompletionRef01Data = Helpers.toMapAny(preAuthTransactionCompletionRef01DataResult)
+      preAuthTransactionCompletionRef01Data = Helpers.toMapAny(preAuthTransactionCompletionRef01DataResult match { case e: SdkEntity => e.data(); case o => o })
       rep.check("pre_auth_transaction_completion.create.map", preAuthTransactionCompletionRef01Data != null, "expected create result to be a map")
     }
   }

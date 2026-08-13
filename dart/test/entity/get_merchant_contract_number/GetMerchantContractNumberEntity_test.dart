@@ -47,7 +47,7 @@ void tests() {
       final get_merchant_contract_number_ref01_ent = client.GetMerchantContractNumber();
       dynamic get_merchant_contract_number_ref01_data = setup['data']['new']['get_merchant_contract_number']['get_merchant_contract_number_ref01'];
 
-      get_merchant_contract_number_ref01_data = await get_merchant_contract_number_ref01_ent.create(get_merchant_contract_number_ref01_data);
+      get_merchant_contract_number_ref01_data = (await get_merchant_contract_number_ref01_ent.create(get_merchant_contract_number_ref01_data)).data();
       ok(null != get_merchant_contract_number_ref01_data);
 
 

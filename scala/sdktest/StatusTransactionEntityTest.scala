@@ -35,7 +35,7 @@ object StatusTransactionEntityTest {
       var statusTransactionRef01Data = Helpers.toMapAny(Struct.getprop(
           Struct.getpath(entityData, "new.status_transaction"), "status_transaction_ref01"))
       val statusTransactionRef01DataResult = statusTransactionRef01Ent.create(statusTransactionRef01Data, null)
-      statusTransactionRef01Data = Helpers.toMapAny(statusTransactionRef01DataResult)
+      statusTransactionRef01Data = Helpers.toMapAny(statusTransactionRef01DataResult match { case e: SdkEntity => e.data(); case o => o })
       rep.check("status_transaction.create.map", statusTransactionRef01Data != null, "expected create result to be a map")
     }
   }

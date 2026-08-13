@@ -35,7 +35,7 @@ object MandatorClearingExportSummaryEntityTest {
       var mandatorClearingExportSummaryRef01Data = Helpers.toMapAny(Struct.getprop(
           Struct.getpath(entityData, "new.mandator_clearing_export_summary"), "mandator_clearing_export_summary_ref01"))
       val mandatorClearingExportSummaryRef01DataResult = mandatorClearingExportSummaryRef01Ent.create(mandatorClearingExportSummaryRef01Data, null)
-      mandatorClearingExportSummaryRef01Data = Helpers.toMapAny(mandatorClearingExportSummaryRef01DataResult)
+      mandatorClearingExportSummaryRef01Data = Helpers.toMapAny(mandatorClearingExportSummaryRef01DataResult match { case e: SdkEntity => e.data(); case o => o })
       rep.check("mandator_clearing_export_summary.create.map", mandatorClearingExportSummaryRef01Data != null, "expected create result to be a map")
     }
   }

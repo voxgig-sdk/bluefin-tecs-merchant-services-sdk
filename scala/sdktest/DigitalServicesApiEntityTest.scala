@@ -38,7 +38,7 @@ object DigitalServicesApiEntityTest {
       var digitalServicesApiRef01Data = Helpers.toMapAny(Struct.getprop(
           Struct.getpath(entityData, "new.digital_services_api"), "digital_services_api_ref01"))
       val digitalServicesApiRef01DataResult = digitalServicesApiRef01Ent.create(digitalServicesApiRef01Data, null)
-      digitalServicesApiRef01Data = Helpers.toMapAny(digitalServicesApiRef01DataResult)
+      digitalServicesApiRef01Data = Helpers.toMapAny(digitalServicesApiRef01DataResult match { case e: SdkEntity => e.data(); case o => o })
       rep.check("digital_services_api.create.map", digitalServicesApiRef01Data != null, "expected create result to be a map")
 
       // LOAD

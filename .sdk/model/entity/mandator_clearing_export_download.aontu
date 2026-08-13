@@ -6,32 +6,32 @@ main: kit: entity: mandator_clearing_export_download: {
 
   fields: [
     {
-      name: "clearing_date_from"
+      name: "clearingDateFrom"
       req: true
       type: "`$STRING`"
     }
     {
-      name: "clearing_date_to"
+      name: "clearingDateTo"
       req: true
       type: "`$STRING`"
     }
     {
-      name: "file_id"
+      name: "fileId"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "filename_template"
+      name: "filenameTemplate"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "response_code"
+      name: "responseCode"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "response_message"
+      name: "responseMessage"
       req: false
       type: "`$STRING`"
     }

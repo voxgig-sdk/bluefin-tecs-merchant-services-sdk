@@ -242,91 +242,91 @@ Prepare a fetch definition without sending. Returns the `fetchdef` and raises on
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `string` | No |  |
-| `acquirer_name` | `string` | No |  |
-| `actual_bonus_point` | `string` | No |  |
+| `acquirerId` | `string` | No |  |
+| `acquirerName` | `string` | No |  |
+| `actualBonusPoints` | `string` | No |  |
 | `amount` | `long` | No |  |
-| `authorization_code` | `string` | No |  |
-| `balance_amount` | `string` | No |  |
-| `card_brand` | `string` | No |  |
-| `card_number` | `string` | No |  |
-| `client_id` | `long` | Yes |  |
+| `authorizationCode` | `string` | No |  |
+| `balanceAmount` | `string` | No |  |
+| `cardBrand` | `string` | No |  |
+| `cardNumber` | `string` | No |  |
+| `clientId` | `long` | Yes |  |
 | `currency` | `string` | Yes |  |
 | `cvc` | `string` | No |  |
-| `ec_data` | `string` | No |  |
-| `ecr_data` | `string` | No |  |
-| `emv_data` | `string` | No |  |
-| `exchange_fee` | `long` | No |  |
-| `exchange_rate` | `string` | No |  |
-| `language_code` | `string` | No |  |
-| `merchant_address` | `string` | No |  |
-| `merchant_name` | `string` | No |  |
-| `merchant_number` | `string` | No |  |
-| `message_type` | `string` | No |  |
-| `original_trace_number` | `long` | No |  |
-| `original_transaction_id` | `string` | No |  |
+| `ecData` | `string` | No |  |
+| `ecrData` | `string` | No |  |
+| `emvData` | `string` | No |  |
+| `exchangeFee` | `long` | No |  |
+| `exchangeRate` | `string` | No |  |
+| `languageCode` | `string` | No |  |
+| `merchantAddress` | `string` | No |  |
+| `merchantName` | `string` | No |  |
+| `merchantNumber` | `string` | No |  |
+| `messageType` | `string` | No |  |
+| `originalTraceNumber` | `long` | No |  |
+| `originalTransactionId` | `string` | No |  |
 | `password` | `string` | No |  |
-| `payment_reason` | `string` | No |  |
-| `receipt_footer` | `string` | No |  |
-| `receipt_header` | `string` | No |  |
-| `receipt_layout` | `long` | No |  |
-| `receipt_number` | `string` | Yes |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
-| `serial_number` | `string` | No |  |
+| `paymentReason` | `string` | No |  |
+| `receiptFooter` | `string` | No |  |
+| `receiptHeader` | `string` | No |  |
+| `receiptLayout` | `long` | No |  |
+| `receiptNumber` | `string` | Yes |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `serialNumber` | `string` | No |  |
 | `svc` | `string` | No |  |
-| `terminal_id` | `long` | Yes |  |
-| `terminal_location` | `string` | No |  |
-| `trace_number` | `long` | No |  |
-| `transaction_date` | `string` | No |  |
-| `transaction_id` | `string` | No |  |
-| `tx_type` | `string` | No |  |
-| `user_data` | `string` | No |  |
+| `terminalId` | `long` | Yes |  |
+| `terminalLocation` | `string` | No |  |
+| `traceNumber` | `long` | No |  |
+| `transactionDate` | `string` | No |  |
+| `transactionId` | `string` | No |  |
+| `txType` | `string` | No |  |
+| `userData` | `string` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `acquirer_id` | - |
-| `acquirer_name` | - |
-| `actual_bonus_point` | - |
+| `acquirerId` | - |
+| `acquirerName` | - |
+| `actualBonusPoints` | - |
 | `amount` | Yes |
-| `authorization_code` | - |
-| `balance_amount` | - |
-| `card_brand` | - |
-| `card_number` | - |
-| `client_id` | - |
+| `authorizationCode` | - |
+| `balanceAmount` | - |
+| `cardBrand` | - |
+| `cardNumber` | - |
+| `clientId` | - |
 | `currency` | - |
 | `cvc` | - |
-| `ec_data` | - |
-| `ecr_data` | - |
-| `emv_data` | - |
-| `exchange_fee` | - |
-| `exchange_rate` | - |
-| `language_code` | - |
-| `merchant_address` | - |
-| `merchant_name` | - |
-| `merchant_number` | - |
-| `message_type` | Yes |
-| `original_trace_number` | - |
-| `original_transaction_id` | Yes |
+| `ecData` | - |
+| `ecrData` | - |
+| `emvData` | - |
+| `exchangeFee` | - |
+| `exchangeRate` | - |
+| `languageCode` | - |
+| `merchantAddress` | - |
+| `merchantName` | - |
+| `merchantNumber` | - |
+| `messageType` | Yes |
+| `originalTraceNumber` | - |
+| `originalTransactionId` | Yes |
 | `password` | - |
-| `payment_reason` | - |
-| `receipt_footer` | - |
-| `receipt_header` | - |
-| `receipt_layout` | - |
-| `receipt_number` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `serial_number` | - |
+| `paymentReason` | - |
+| `receiptFooter` | - |
+| `receiptHeader` | - |
+| `receiptLayout` | - |
+| `receiptNumber` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `serialNumber` | - |
 | `svc` | - |
-| `terminal_id` | - |
-| `terminal_location` | - |
-| `trace_number` | - |
-| `transaction_date` | Yes |
-| `transaction_id` | Yes |
-| `tx_type` | - |
-| `user_data` | - |
+| `terminalId` | - |
+| `terminalLocation` | - |
+| `traceNumber` | - |
+| `transactionDate` | Yes |
+| `transactionId` | Yes |
+| `txType` | - |
+| `userData` | - |
 
 ### Operations
 
@@ -338,10 +338,10 @@ Create a new entity with the given data. Returns the created entity data and rai
 (def result
   (e-cancel_transaction/create (api/cancel_transaction client nil)
     (vs/jm
-      "client_id" 1  ;; long
+      "clientId" 1  ;; long
       "currency" "example_currency"  ;; string
-      "receipt_number" "example_receipt_number"  ;; string
-      "terminal_id" 1  ;; long
+      "receiptNumber" "example_receiptNumber"  ;; string
+      "terminalId" 1  ;; long
       )
     nil))
 ```
@@ -389,9 +389,9 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `card_no` | `string` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
+| `cardNo` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -450,13 +450,13 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `long` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
-| `template_name` | `string` | Yes |  |
-| `template_type` | `string` | Yes |  |
-| `template_xml` | `string` | Yes |  |
-| `terminal_type` | `string` | Yes |  |
+| `acquirerId` | `long` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `templateName` | `string` | Yes |  |
+| `templateType` | `string` | Yes |  |
+| `templateXml` | `string` | Yes |  |
+| `terminalType` | `string` | Yes |  |
 
 ### Operations
 
@@ -468,10 +468,10 @@ Create a new entity with the given data. Returns the created entity data and rai
 (def result
   (e-create_product/create (api/create_product client nil)
     (vs/jm
-      "template_name" "example_template_name"  ;; string
-      "template_type" "example_template_type"  ;; string
-      "template_xml" "example_template_xml"  ;; string
-      "terminal_type" "example_terminal_type"  ;; string
+      "templateName" "example_templateName"  ;; string
+      "templateType" "example_templateType"  ;; string
+      "templateXml" "example_templateXml"  ;; string
+      "terminalType" "example_terminalType"  ;; string
       )
     nil))
 ```
@@ -519,13 +519,13 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `corporate_uuid` | `string` | No |  |
-| `deactivation_reason` | `string` | Yes |  |
-| `package_order_uuid` | `string` | No |  |
-| `product_order_uuid` | `string` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
-| `terminal_id` | `long` | Yes |  |
+| `corporateUuid` | `string` | No |  |
+| `deactivationReason` | `string` | Yes |  |
+| `packageOrderUuid` | `string` | No |  |
+| `productOrderUuid` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `terminalId` | `long` | Yes |  |
 
 ### Operations
 
@@ -537,8 +537,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 (def result
   (e-deactivate_terminal/create (api/deactivate_terminal client nil)
     (vs/jm
-      "deactivation_reason" "example_deactivation_reason"  ;; string
-      "terminal_id" 1  ;; long
+      "deactivationReason" "example_deactivationReason"  ;; string
+      "terminalId" 1  ;; long
       )
     nil))
 ```
@@ -586,16 +586,16 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearing_date_from` | `string` | Yes |  |
-| `clearing_date_to` | `string` | Yes |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
-| `tx_count` | `long` | No |  |
-| `tx_id_end` | `string` | No |  |
-| `tx_id_start` | `string` | No |  |
-| `tx_seq_no_end` | `long` | No |  |
-| `tx_seq_no_start` | `long` | No |  |
-| `tx_total` | `long` | No |  |
+| `clearingDateFrom` | `string` | Yes |  |
+| `clearingDateTo` | `string` | Yes |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `txCount` | `long` | No |  |
+| `txIdEnd` | `string` | No |  |
+| `txIdStart` | `string` | No |  |
+| `txSeqNoEnd` | `long` | No |  |
+| `txSeqNoStart` | `long` | No |  |
+| `txTotal` | `long` | No |  |
 
 ### Operations
 
@@ -607,6 +607,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 (def result
   (e-digital_services_api/create (api/digital_services_api client nil)
     (vs/jm
+      "clearingDateFrom" "example_clearingDateFrom"  ;; string
+      "clearingDateTo" "example_clearingDateTo"  ;; string
       )
     nil))
 ```
@@ -662,12 +664,12 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ecom_data` | `string` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
-| `terminal_id` | `long` | Yes |  |
-| `transaction_id` | `string` | Yes |  |
-| `transaction_type` | `string` | Yes |  |
+| `ecomData` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `terminalId` | `long` | Yes |  |
+| `transactionId` | `string` | Yes |  |
+| `transactionType` | `string` | Yes |  |
 
 ### Operations
 
@@ -679,9 +681,9 @@ Create a new entity with the given data. Returns the created entity data and rai
 (def result
   (e-ec_data_ecom/create (api/ec_data_ecom client nil)
     (vs/jm
-      "terminal_id" 1  ;; long
-      "transaction_id" "example_transaction_id"  ;; string
-      "transaction_type" "example_transaction_type"  ;; string
+      "terminalId" 1  ;; long
+      "transactionId" "example_transactionId"  ;; string
+      "transactionType" "example_transactionType"  ;; string
       )
     nil))
 ```
@@ -729,11 +731,11 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ecom_pass` | `string` | No |  |
-| `ecom_skey` | `string` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
-| `terminal_id` | `long` | Yes |  |
+| `ecomPass` | `string` | No |  |
+| `ecomSkey` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `terminalId` | `long` | Yes |  |
 
 ### Operations
 
@@ -745,7 +747,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 (def result
   (e-ecom_parameter/create (api/ecom_parameter client nil)
     (vs/jm
-      "terminal_id" 1  ;; long
+      "terminalId" 1  ;; long
       )
     nil))
 ```
@@ -793,12 +795,12 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ecr_data` | `string` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
-| `terminal_id` | `long` | Yes |  |
-| `transaction_id` | `string` | Yes |  |
-| `transaction_type` | `string` | Yes |  |
+| `ecrData` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `terminalId` | `long` | Yes |  |
+| `transactionId` | `string` | Yes |  |
+| `transactionType` | `string` | Yes |  |
 
 ### Operations
 
@@ -810,9 +812,9 @@ Create a new entity with the given data. Returns the created entity data and rai
 (def result
   (e-ecr_data/create (api/ecr_data client nil)
     (vs/jm
-      "terminal_id" 1  ;; long
-      "transaction_id" "example_transaction_id"  ;; string
-      "transaction_type" "example_transaction_type"  ;; string
+      "terminalId" 1  ;; long
+      "transactionId" "example_transactionId"  ;; string
+      "transactionType" "example_transactionType"  ;; string
       )
     nil))
 ```
@@ -860,12 +862,12 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `emv_data` | `string` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
-| `terminal_id` | `long` | Yes |  |
-| `transaction_id` | `string` | Yes |  |
-| `transaction_type` | `string` | Yes |  |
+| `emvData` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `terminalId` | `long` | Yes |  |
+| `transactionId` | `string` | Yes |  |
+| `transactionType` | `string` | Yes |  |
 
 ### Operations
 
@@ -877,9 +879,9 @@ Create a new entity with the given data. Returns the created entity data and rai
 (def result
   (e-emv_data/create (api/emv_data client nil)
     (vs/jm
-      "terminal_id" 1  ;; long
-      "transaction_id" "example_transaction_id"  ;; string
-      "transaction_type" "example_transaction_type"  ;; string
+      "terminalId" 1  ;; long
+      "transactionId" "example_transactionId"  ;; string
+      "transactionType" "example_transactionType"  ;; string
       )
     nil))
 ```
@@ -927,20 +929,20 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `account_no` | `long` | No |  |
-| `additional_data` | `map` | No |  |
-| `corporate_uuid` | `string` | Yes |  |
+| `accountNo` | `long` | No |  |
+| `additionalData` | `map` | No |  |
+| `corporateUuid` | `string` | Yes |  |
 | `currency` | `string` | Yes |  |
-| `merchant_category_code` | `long` | Yes |  |
-| `package_order_uuid` | `string` | Yes |  |
-| `product_order_uuid` | `string` | Yes |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
-| `sorting_code` | `long` | No |  |
-| `template_name` | `string` | Yes |  |
-| `terminal_id` | `vector` | No |  |
-| `terminal_id_acq` | `string` | No |  |
-| `vu_nummer` | `string` | No |  |
+| `merchantCategoryCode` | `long` | Yes |  |
+| `packageOrderUuid` | `string` | Yes |  |
+| `productOrderUuid` | `string` | Yes |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `sortingCode` | `long` | No |  |
+| `templateName` | `string` | Yes |  |
+| `terminalIdAcq` | `string` | No |  |
+| `terminalIds` | `vector` | No |  |
+| `vuNummer` | `string` | No |  |
 
 ### Operations
 
@@ -952,12 +954,12 @@ Create a new entity with the given data. Returns the created entity data and rai
 (def result
   (e-enable_acquiring/create (api/enable_acquiring client nil)
     (vs/jm
-      "corporate_uuid" "example_corporate_uuid"  ;; string
+      "corporateUuid" "example_corporateUuid"  ;; string
       "currency" "example_currency"  ;; string
-      "merchant_category_code" 1  ;; long
-      "package_order_uuid" "example_package_order_uuid"  ;; string
-      "product_order_uuid" "example_product_order_uuid"  ;; string
-      "template_name" "example_template_name"  ;; string
+      "merchantCategoryCode" 1  ;; long
+      "packageOrderUuid" "example_packageOrderUuid"  ;; string
+      "productOrderUuid" "example_productOrderUuid"  ;; string
+      "templateName" "example_templateName"  ;; string
       )
     nil))
 ```
@@ -1005,9 +1007,9 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `merchant_contract_number` | `string` | Yes |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
+| `merchantContractNumber` | `string` | Yes |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -1019,7 +1021,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 (def result
   (e-get_merchant_contract_number/create (api/get_merchant_contract_number client nil)
     (vs/jm
-      "merchant_contract_number" "example_merchant_contract_number"  ;; string
+      "merchantContractNumber" "example_merchantContractNumber"  ;; string
       )
     nil))
 ```
@@ -1067,9 +1069,9 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
-| `template_name` | `string` | Yes |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `templateName` | `string` | Yes |  |
 
 ### Operations
 
@@ -1081,7 +1083,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 (def result
   (e-get_template_xml/create (api/get_template_xml client nil)
     (vs/jm
-      "template_name" "example_template_name"  ;; string
+      "templateName" "example_templateName"  ;; string
       )
     nil))
 ```
@@ -1129,9 +1131,9 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `mandator_name` | `string` | Yes |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
+| `mandatorName` | `string` | Yes |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -1143,7 +1145,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 (def result
   (e-introduce_mandator/create (api/introduce_mandator client nil)
     (vs/jm
-      "mandator_name" "example_mandator_name"  ;; string
+      "mandatorName" "example_mandatorName"  ;; string
       )
     nil))
 ```
@@ -1191,9 +1193,9 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
-| `terminal_template_description` | `string` | Yes |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `terminalTemplateDescription` | `string` | Yes |  |
 
 ### Operations
 
@@ -1205,7 +1207,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 (def result
   (e-introduce_package/create (api/introduce_package client nil)
     (vs/jm
-      "terminal_template_description" "example_terminal_template_description"  ;; string
+      "terminalTemplateDescription" "example_terminalTemplateDescription"  ;; string
       )
     nil))
 ```
@@ -1254,15 +1256,15 @@ Return the entity name.
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `hwserialno` | `string` | No |  |
-| `ka_date_time_from` | `string` | No |  |
-| `ka_date_time_to` | `string` | No |  |
-| `keep_alive_data` | `vector` | No |  |
+| `kaDateTimeFrom` | `string` | No |  |
+| `kaDateTimeTo` | `string` | No |  |
+| `keepAliveData` | `vector` | No |  |
 | `pagination` | `map` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
-| `terminal_date_time_from` | `string` | No |  |
-| `terminal_date_time_to` | `string` | No |  |
-| `terminal_id` | `long` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `terminalDateTimeFrom` | `string` | No |  |
+| `terminalDateTimeTo` | `string` | No |  |
+| `terminalId` | `long` | No |  |
 
 ### Operations
 
@@ -1321,12 +1323,12 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `corporate_uuid` | `vector` | No |  |
+| `corporateUuid` | `vector` | No |  |
 | `filter` | `map` | No |  |
 | `pagination` | `map` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
-| `terminal` | `vector` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `terminals` | `vector` | No |  |
 
 ### Operations
 
@@ -1385,12 +1387,12 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearing_date_from` | `string` | Yes |  |
-| `clearing_date_to` | `string` | Yes |  |
+| `clearingDateFrom` | `string` | Yes |  |
+| `clearingDateTo` | `string` | Yes |  |
 | `pagination` | `map` | No |  |
-| `record` | `vector` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
+| `records` | `vector` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -1402,8 +1404,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 (def result
   (e-mandator_clearing_export/create (api/mandator_clearing_export client nil)
     (vs/jm
-      "clearing_date_from" "example_clearing_date_from"  ;; string
-      "clearing_date_to" "example_clearing_date_to"  ;; string
+      "clearingDateFrom" "example_clearingDateFrom"  ;; string
+      "clearingDateTo" "example_clearingDateTo"  ;; string
       )
     nil))
 ```
@@ -1451,12 +1453,12 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearing_date_from` | `string` | Yes |  |
-| `clearing_date_to` | `string` | Yes |  |
-| `file_id` | `string` | No |  |
-| `filename_template` | `string` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
+| `clearingDateFrom` | `string` | Yes |  |
+| `clearingDateTo` | `string` | Yes |  |
+| `fileId` | `string` | No |  |
+| `filenameTemplate` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
 | `status` | `string` | No |  |
 
 ### Operations
@@ -1469,8 +1471,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 (def result
   (e-mandator_clearing_export_download/create (api/mandator_clearing_export_download client nil)
     (vs/jm
-      "clearing_date_from" "example_clearing_date_from"  ;; string
-      "clearing_date_to" "example_clearing_date_to"  ;; string
+      "clearingDateFrom" "example_clearingDateFrom"  ;; string
+      "clearingDateTo" "example_clearingDateTo"  ;; string
       )
     nil))
 ```
@@ -1526,11 +1528,11 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearing_date_from` | `string` | Yes |  |
-| `clearing_date_to` | `string` | Yes |  |
-| `record` | `vector` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
+| `clearingDateFrom` | `string` | Yes |  |
+| `clearingDateTo` | `string` | Yes |  |
+| `records` | `vector` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -1542,8 +1544,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 (def result
   (e-mandator_clearing_export_summary/create (api/mandator_clearing_export_summary client nil)
     (vs/jm
-      "clearing_date_from" "example_clearing_date_from"  ;; string
-      "clearing_date_to" "example_clearing_date_to"  ;; string
+      "clearingDateFrom" "example_clearingDateFrom"  ;; string
+      "clearingDateTo" "example_clearingDateTo"  ;; string
       )
     nil))
 ```
@@ -1591,30 +1593,30 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `3_d_secure` | `string` | No |  |
-| `authorization_code` | `string` | No |  |
-| `card_brand` | `string` | No |  |
-| `clearing_amount_from` | `string` | No |  |
-| `clearing_amount_to` | `string` | No |  |
-| `clearing_currency` | `string` | No |  |
-| `clearing_status` | `string` | No |  |
-| `corporate_uuid` | `string` | No |  |
-| `order_by_transaction_date` | `string` | No |  |
+| `3DSecure` | `string` | No |  |
+| `authorizationCode` | `string` | No |  |
+| `cardBrand` | `string` | No |  |
+| `clearingAmountFrom` | `string` | No |  |
+| `clearingAmountTo` | `string` | No |  |
+| `clearingCurrency` | `string` | No |  |
+| `clearingStatus` | `string` | No |  |
+| `corporateUUID` | `string` | No |  |
+| `orderByTransactionDate` | `string` | No |  |
 | `pagination` | `map` | No |  |
-| `receipt_number` | `string` | No |  |
-| `referenced_transaction_id` | `string` | No |  |
-| `retrieval_reference_number` | `string` | No |  |
-| `source_id` | `long` | No |  |
-| `tecsengine_response_code_from` | `string` | No |  |
-| `tecsengine_response_code_to` | `string` | No |  |
-| `terminal_id` | `long` | No |  |
-| `trace_number` | `string` | No |  |
-| `transaction_amount_from` | `string` | No |  |
-| `transaction_amount_to` | `string` | No |  |
-| `transaction_date_from` | `string` | No |  |
-| `transaction_date_to` | `string` | No |  |
-| `transaction_id` | `string` | No |  |
-| `transaction_type` | `string` | No |  |
+| `receiptNumber` | `string` | No |  |
+| `referencedTransactionId` | `string` | No |  |
+| `retrievalReferenceNumber` | `string` | No |  |
+| `sourceId` | `long` | No |  |
+| `tecsengineResponseCodeFrom` | `string` | No |  |
+| `tecsengineResponseCodeTo` | `string` | No |  |
+| `terminalId` | `long` | No |  |
+| `traceNumber` | `string` | No |  |
+| `transactionAmountFrom` | `string` | No |  |
+| `transactionAmountTo` | `string` | No |  |
+| `transactionDateFrom` | `string` | No |  |
+| `transactionDateTo` | `string` | No |  |
+| `transactionId` | `string` | No |  |
+| `transactionType` | `string` | No |  |
 | `wallet` | `string` | No |  |
 
 ### Operations
@@ -1674,11 +1676,11 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `productorderuuid` | `vector` | Yes |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
-| `target_packageorderuuid` | `string` | No |  |
-| `target_productorderuuid` | `string` | No |  |
+| `productorderuuids` | `vector` | Yes |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `targetPackageorderuuid` | `string` | No |  |
+| `targetProductorderuuid` | `string` | No |  |
 
 ### Operations
 
@@ -1690,7 +1692,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 (def result
   (e-move_tid/create (api/move_tid client nil)
     (vs/jm
-      "productorderuuid" (vs/jt)  ;; vector
+      "productorderuuids" (vs/jt)  ;; vector
       )
     nil))
 ```
@@ -1738,44 +1740,44 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_name` | `string` | No |  |
+| `acquirerName` | `string` | No |  |
 | `amount` | `long` | Yes |  |
-| `authorization_number` | `string` | No |  |
-| `card_number` | `string` | Yes |  |
-| `card_type` | `string` | No |  |
+| `authorizationNumber` | `string` | No |  |
+| `cardNumber` | `string` | Yes |  |
+| `cardType` | `string` | No |  |
 | `currency` | `string` | Yes |  |
 | `cvc` | `string` | No |  |
-| `date_time_tx` | `string` | No |  |
-| `exp_date` | `string` | Yes |  |
-| `merchant_id` | `string` | No |  |
-| `original_transaction_id` | `string` | No |  |
+| `dateTimeTx` | `string` | No |  |
+| `expDate` | `string` | Yes |  |
+| `merchantId` | `string` | No |  |
+| `originalTransactionId` | `string` | No |  |
 | `password` | `string` | No |  |
-| `response_code` | `string` | No |  |
-| `response_message` | `string` | No |  |
-| `terminal_id` | `string` | No |  |
-| `transaction_id` | `string` | No |  |
+| `responseCode` | `string` | No |  |
+| `responseMessage` | `string` | No |  |
+| `terminalId` | `string` | No |  |
+| `transactionId` | `string` | No |  |
 | `txtype` | `string` | Yes |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `acquirer_name` | - |
+| `acquirerName` | - |
 | `amount` | - |
-| `authorization_number` | - |
-| `card_number` | - |
-| `card_type` | - |
+| `authorizationNumber` | - |
+| `cardNumber` | - |
+| `cardType` | - |
 | `currency` | - |
 | `cvc` | - |
-| `date_time_tx` | - |
-| `exp_date` | - |
-| `merchant_id` | - |
-| `original_transaction_id` | - |
+| `dateTimeTx` | - |
+| `expDate` | - |
+| `merchantId` | - |
+| `originalTransactionId` | - |
 | `password` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `terminal_id` | Yes |
-| `transaction_id` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `terminalId` | Yes |
+| `transactionId` | - |
 | `txtype` | - |
 
 ### Operations
@@ -1789,9 +1791,9 @@ Create a new entity with the given data. Returns the created entity data and rai
   (e-payment_manual/create (api/payment_manual client nil)
     (vs/jm
       "amount" 1  ;; long
-      "card_number" "example_card_number"  ;; string
+      "cardNumber" "example_cardNumber"  ;; string
       "currency" "example_currency"  ;; string
-      "exp_date" "example_exp_date"  ;; string
+      "expDate" "example_expDate"  ;; string
       "txtype" "example_txtype"  ;; string
       )
     nil))
@@ -1840,43 +1842,18 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_name` | `string` | No |  |
 | `amount` | `long` | Yes |  |
-| `authorization_number` | `string` | No |  |
-| `card_type` | `string` | No |  |
 | `currency` | `string` | Yes |  |
-| `date_time_tx` | `string` | No |  |
-| `device_payload` | `string` | Yes |  |
-| `merchant_id` | `string` | No |  |
-| `original_transaction_id` | `string` | No |  |
+| `device` | `string` | No |  |
+| `devicePayload` | `string` | Yes |  |
+| `expDate` | `string` | No |  |
+| `mode` | `string` | No |  |
+| `panMasked` | `string` | No |  |
 | `password` | `string` | No |  |
-| `response_code` | `string` | No |  |
-| `response_message` | `string` | No |  |
-| `sred` | `map` | No |  |
-| `terminal_id` | `string` | No |  |
-| `transaction_id` | `string` | No |  |
+| `serial` | `string` | No |  |
+| `serviceCode` | `string` | No |  |
+| `terminalId` | `string` | Yes |  |
 | `txtype` | `string` | Yes |  |
-
-### Field Usage by Operation
-
-| Field | create |
-| --- | --- |
-| `acquirer_name` | - |
-| `amount` | - |
-| `authorization_number` | - |
-| `card_type` | - |
-| `currency` | - |
-| `date_time_tx` | - |
-| `device_payload` | - |
-| `merchant_id` | - |
-| `original_transaction_id` | - |
-| `password` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `sred` | - |
-| `terminal_id` | Yes |
-| `transaction_id` | - |
-| `txtype` | - |
 
 ### Operations
 
@@ -1890,7 +1867,8 @@ Create a new entity with the given data. Returns the created entity data and rai
     (vs/jm
       "amount" 1  ;; long
       "currency" "example_currency"  ;; string
-      "device_payload" "example_device_payload"  ;; string
+      "devicePayload" "example_devicePayload"  ;; string
+      "terminalId" "example_terminalId"  ;; string
       "txtype" "example_txtype"  ;; string
       )
     nil))
@@ -1939,95 +1917,95 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `string` | No |  |
-| `acquirer_name` | `string` | No |  |
-| `actual_bonus_point` | `string` | No |  |
+| `acquirerId` | `string` | No |  |
+| `acquirerName` | `string` | No |  |
+| `actualBonusPoints` | `string` | No |  |
 | `amount` | `long` | No |  |
-| `authorization_code` | `string` | No |  |
-| `balance_amount` | `string` | No |  |
-| `card_brand` | `string` | No |  |
-| `card_number` | `string` | No |  |
-| `card_number_reference` | `string` | Yes |  |
-| `client_id` | `long` | Yes |  |
+| `authorizationCode` | `string` | No |  |
+| `balanceAmount` | `string` | No |  |
+| `cardBrand` | `string` | No |  |
+| `cardNumber` | `string` | No |  |
+| `cardNumberReference` | `string` | Yes |  |
+| `clientId` | `long` | Yes |  |
 | `currency` | `string` | Yes |  |
 | `cvc` | `string` | No |  |
-| `ec_data` | `string` | No |  |
-| `ecr_data` | `string` | No |  |
-| `emv_data` | `string` | No |  |
-| `exchange_fee` | `long` | No |  |
-| `exchange_rate` | `string` | No |  |
-| `language_code` | `string` | No |  |
-| `merchant_address` | `string` | No |  |
-| `merchant_name` | `string` | No |  |
-| `merchant_number` | `string` | No |  |
-| `message_type` | `string` | No |  |
-| `original_trace_number` | `long` | No |  |
-| `original_transaction_id` | `string` | No |  |
+| `ecData` | `string` | No |  |
+| `ecrData` | `string` | No |  |
+| `emvData` | `string` | No |  |
+| `exchangeFee` | `long` | No |  |
+| `exchangeRate` | `string` | No |  |
+| `languageCode` | `string` | No |  |
+| `merchantAddress` | `string` | No |  |
+| `merchantName` | `string` | No |  |
+| `merchantNumber` | `string` | No |  |
+| `messageType` | `string` | No |  |
+| `originalTraceNumber` | `long` | No |  |
+| `originalTransactionId` | `string` | No |  |
 | `password` | `string` | No |  |
-| `payment_reason` | `string` | No |  |
-| `receipt_footer` | `string` | No |  |
-| `receipt_header` | `string` | No |  |
-| `receipt_layout` | `long` | No |  |
-| `receipt_number` | `string` | Yes |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
-| `serial_number` | `string` | No |  |
+| `paymentReason` | `string` | No |  |
+| `receiptFooter` | `string` | No |  |
+| `receiptHeader` | `string` | No |  |
+| `receiptLayout` | `long` | No |  |
+| `receiptNumber` | `string` | Yes |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `serialNumber` | `string` | No |  |
 | `svc` | `string` | No |  |
-| `terminal_id` | `long` | Yes |  |
-| `terminal_location` | `string` | No |  |
-| `trace_number` | `long` | No |  |
-| `transaction_date` | `string` | No |  |
-| `transaction_id` | `string` | No |  |
-| `transaction_type` | `string` | Yes |  |
-| `tx_type` | `string` | No |  |
-| `user_data` | `string` | No |  |
+| `terminalId` | `long` | Yes |  |
+| `terminalLocation` | `string` | No |  |
+| `traceNumber` | `long` | No |  |
+| `transactionDate` | `string` | No |  |
+| `transactionId` | `string` | No |  |
+| `transactionType` | `string` | Yes |  |
+| `txType` | `string` | No |  |
+| `userData` | `string` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `acquirer_id` | - |
-| `acquirer_name` | - |
-| `actual_bonus_point` | - |
+| `acquirerId` | - |
+| `acquirerName` | - |
+| `actualBonusPoints` | - |
 | `amount` | Yes |
-| `authorization_code` | - |
-| `balance_amount` | - |
-| `card_brand` | - |
-| `card_number` | - |
-| `card_number_reference` | - |
-| `client_id` | - |
+| `authorizationCode` | - |
+| `balanceAmount` | - |
+| `cardBrand` | - |
+| `cardNumber` | - |
+| `cardNumberReference` | - |
+| `clientId` | - |
 | `currency` | - |
 | `cvc` | - |
-| `ec_data` | - |
-| `ecr_data` | - |
-| `emv_data` | - |
-| `exchange_fee` | - |
-| `exchange_rate` | - |
-| `language_code` | - |
-| `merchant_address` | - |
-| `merchant_name` | - |
-| `merchant_number` | - |
-| `message_type` | - |
-| `original_trace_number` | - |
-| `original_transaction_id` | Yes |
+| `ecData` | - |
+| `ecrData` | - |
+| `emvData` | - |
+| `exchangeFee` | - |
+| `exchangeRate` | - |
+| `languageCode` | - |
+| `merchantAddress` | - |
+| `merchantName` | - |
+| `merchantNumber` | - |
+| `messageType` | - |
+| `originalTraceNumber` | - |
+| `originalTransactionId` | Yes |
 | `password` | - |
-| `payment_reason` | - |
-| `receipt_footer` | - |
-| `receipt_header` | - |
-| `receipt_layout` | - |
-| `receipt_number` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `serial_number` | - |
+| `paymentReason` | - |
+| `receiptFooter` | - |
+| `receiptHeader` | - |
+| `receiptLayout` | - |
+| `receiptNumber` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `serialNumber` | - |
 | `svc` | - |
-| `terminal_id` | - |
-| `terminal_location` | - |
-| `trace_number` | - |
-| `transaction_date` | Yes |
-| `transaction_id` | Yes |
-| `transaction_type` | - |
-| `tx_type` | - |
-| `user_data` | - |
+| `terminalId` | - |
+| `terminalLocation` | - |
+| `traceNumber` | - |
+| `transactionDate` | Yes |
+| `transactionId` | Yes |
+| `transactionType` | - |
+| `txType` | - |
+| `userData` | - |
 
 ### Operations
 
@@ -2039,12 +2017,12 @@ Create a new entity with the given data. Returns the created entity data and rai
 (def result
   (e-pre_auth_transaction_completion/create (api/pre_auth_transaction_completion client nil)
     (vs/jm
-      "card_number_reference" "example_card_number_reference"  ;; string
-      "client_id" 1  ;; long
+      "cardNumberReference" "example_cardNumberReference"  ;; string
+      "clientId" 1  ;; long
       "currency" "example_currency"  ;; string
-      "receipt_number" "example_receipt_number"  ;; string
-      "terminal_id" 1  ;; long
-      "transaction_type" "example_transaction_type"  ;; string
+      "receiptNumber" "example_receiptNumber"  ;; string
+      "terminalId" 1  ;; long
+      "transactionType" "example_transactionType"  ;; string
       )
     nil))
 ```
@@ -2092,13 +2070,13 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `corporate_uuid` | `string` | No |  |
-| `package_order_uuid` | `string` | No |  |
-| `product_order_uuid` | `string` | No |  |
-| `reactivation_reason` | `string` | Yes |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
-| `terminal_id` | `long` | Yes |  |
+| `corporateUuid` | `string` | No |  |
+| `packageOrderUuid` | `string` | No |  |
+| `productOrderUuid` | `string` | No |  |
+| `reactivationReason` | `string` | Yes |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `terminalId` | `long` | Yes |  |
 
 ### Operations
 
@@ -2110,8 +2088,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 (def result
   (e-reactivate_terminal/create (api/reactivate_terminal client nil)
     (vs/jm
-      "reactivation_reason" "example_reactivation_reason"  ;; string
-      "terminal_id" 1  ;; long
+      "reactivationReason" "example_reactivationReason"  ;; string
+      "terminalId" 1  ;; long
       )
     nil))
 ```
@@ -2159,91 +2137,91 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `string` | No |  |
-| `acquirer_name` | `string` | No |  |
-| `actual_bonus_point` | `string` | No |  |
+| `acquirerId` | `string` | No |  |
+| `acquirerName` | `string` | No |  |
+| `actualBonusPoints` | `string` | No |  |
 | `amount` | `long` | No |  |
-| `authorization_code` | `string` | No |  |
-| `balance_amount` | `string` | No |  |
-| `card_brand` | `string` | No |  |
-| `card_number` | `string` | No |  |
-| `client_id` | `long` | Yes |  |
+| `authorizationCode` | `string` | No |  |
+| `balanceAmount` | `string` | No |  |
+| `cardBrand` | `string` | No |  |
+| `cardNumber` | `string` | No |  |
+| `clientId` | `long` | Yes |  |
 | `currency` | `string` | Yes |  |
 | `cvc` | `string` | No |  |
-| `ec_data` | `string` | No |  |
-| `ecr_data` | `string` | No |  |
-| `emv_data` | `string` | No |  |
-| `exchange_fee` | `long` | No |  |
-| `exchange_rate` | `string` | No |  |
-| `language_code` | `string` | No |  |
-| `merchant_address` | `string` | No |  |
-| `merchant_name` | `string` | No |  |
-| `merchant_number` | `string` | No |  |
-| `message_type` | `string` | No |  |
-| `original_trace_number` | `long` | No |  |
-| `original_transaction_id` | `string` | No |  |
+| `ecData` | `string` | No |  |
+| `ecrData` | `string` | No |  |
+| `emvData` | `string` | No |  |
+| `exchangeFee` | `long` | No |  |
+| `exchangeRate` | `string` | No |  |
+| `languageCode` | `string` | No |  |
+| `merchantAddress` | `string` | No |  |
+| `merchantName` | `string` | No |  |
+| `merchantNumber` | `string` | No |  |
+| `messageType` | `string` | No |  |
+| `originalTraceNumber` | `long` | No |  |
+| `originalTransactionId` | `string` | No |  |
 | `password` | `string` | No |  |
-| `payment_reason` | `string` | No |  |
-| `receipt_footer` | `string` | No |  |
-| `receipt_header` | `string` | No |  |
-| `receipt_layout` | `long` | No |  |
-| `receipt_number` | `string` | Yes |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
-| `serial_number` | `string` | No |  |
+| `paymentReason` | `string` | No |  |
+| `receiptFooter` | `string` | No |  |
+| `receiptHeader` | `string` | No |  |
+| `receiptLayout` | `long` | No |  |
+| `receiptNumber` | `string` | Yes |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `serialNumber` | `string` | No |  |
 | `svc` | `string` | No |  |
-| `terminal_id` | `long` | Yes |  |
-| `terminal_location` | `string` | No |  |
-| `trace_number` | `long` | No |  |
-| `transaction_date` | `string` | No |  |
-| `transaction_id` | `string` | No |  |
-| `tx_type` | `string` | No |  |
-| `user_data` | `string` | No |  |
+| `terminalId` | `long` | Yes |  |
+| `terminalLocation` | `string` | No |  |
+| `traceNumber` | `long` | No |  |
+| `transactionDate` | `string` | No |  |
+| `transactionId` | `string` | No |  |
+| `txType` | `string` | No |  |
+| `userData` | `string` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `acquirer_id` | - |
-| `acquirer_name` | - |
-| `actual_bonus_point` | - |
+| `acquirerId` | - |
+| `acquirerName` | - |
+| `actualBonusPoints` | - |
 | `amount` | Yes |
-| `authorization_code` | - |
-| `balance_amount` | - |
-| `card_brand` | - |
-| `card_number` | - |
-| `client_id` | - |
+| `authorizationCode` | - |
+| `balanceAmount` | - |
+| `cardBrand` | - |
+| `cardNumber` | - |
+| `clientId` | - |
 | `currency` | - |
 | `cvc` | - |
-| `ec_data` | - |
-| `ecr_data` | - |
-| `emv_data` | - |
-| `exchange_fee` | - |
-| `exchange_rate` | - |
-| `language_code` | - |
-| `merchant_address` | - |
-| `merchant_name` | - |
-| `merchant_number` | - |
-| `message_type` | - |
-| `original_trace_number` | - |
-| `original_transaction_id` | Yes |
+| `ecData` | - |
+| `ecrData` | - |
+| `emvData` | - |
+| `exchangeFee` | - |
+| `exchangeRate` | - |
+| `languageCode` | - |
+| `merchantAddress` | - |
+| `merchantName` | - |
+| `merchantNumber` | - |
+| `messageType` | - |
+| `originalTraceNumber` | - |
+| `originalTransactionId` | Yes |
 | `password` | - |
-| `payment_reason` | - |
-| `receipt_footer` | - |
-| `receipt_header` | - |
-| `receipt_layout` | - |
-| `receipt_number` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `serial_number` | - |
+| `paymentReason` | - |
+| `receiptFooter` | - |
+| `receiptHeader` | - |
+| `receiptLayout` | - |
+| `receiptNumber` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `serialNumber` | - |
 | `svc` | - |
-| `terminal_id` | - |
-| `terminal_location` | - |
-| `trace_number` | - |
-| `transaction_date` | Yes |
-| `transaction_id` | Yes |
-| `tx_type` | - |
-| `user_data` | - |
+| `terminalId` | - |
+| `terminalLocation` | - |
+| `traceNumber` | - |
+| `transactionDate` | Yes |
+| `transactionId` | Yes |
+| `txType` | - |
+| `userData` | - |
 
 ### Operations
 
@@ -2255,10 +2233,10 @@ Create a new entity with the given data. Returns the created entity data and rai
 (def result
   (e-refund_transaction/create (api/refund_transaction client nil)
     (vs/jm
-      "client_id" 1  ;; long
+      "clientId" 1  ;; long
       "currency" "example_currency"  ;; string
-      "receipt_number" "example_receipt_number"  ;; string
-      "terminal_id" 1  ;; long
+      "receiptNumber" "example_receiptNumber"  ;; string
+      "terminalId" 1  ;; long
       )
     nil))
 ```
@@ -2306,14 +2284,14 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `corporate_uuid` | `string` | Yes |  |
-| `package_order_uuid` | `string` | Yes |  |
-| `partner_id` | `long` | No |  |
-| `partner_name` | `string` | No |  |
-| `product_order_uuid` | `string` | Yes |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
-| `template_name` | `string` | Yes |  |
+| `corporateUuid` | `string` | Yes |  |
+| `packageOrderUuid` | `string` | Yes |  |
+| `partnerId` | `long` | No |  |
+| `partnerName` | `string` | No |  |
+| `productOrderUuid` | `string` | Yes |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `templateName` | `string` | Yes |  |
 
 ### Operations
 
@@ -2325,10 +2303,10 @@ Create a new entity with the given data. Returns the created entity data and rai
 (def result
   (e-register_tecs_company/create (api/register_tecs_company client nil)
     (vs/jm
-      "corporate_uuid" "example_corporate_uuid"  ;; string
-      "package_order_uuid" "example_package_order_uuid"  ;; string
-      "product_order_uuid" "example_product_order_uuid"  ;; string
-      "template_name" "example_template_name"  ;; string
+      "corporateUuid" "example_corporateUuid"  ;; string
+      "packageOrderUuid" "example_packageOrderUuid"  ;; string
+      "productOrderUuid" "example_productOrderUuid"  ;; string
+      "templateName" "example_templateName"  ;; string
       )
     nil))
 ```
@@ -2376,24 +2354,24 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `additional_data` | `map` | No |  |
-| `corporate_uuid` | `string` | Yes |  |
-| `package_order_uuid` | `string` | Yes |  |
-| `product_order_uuid` | `string` | Yes |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
-| `tecs_web_secret_key` | `string` | No |  |
-| `template_name` | `string` | Yes |  |
-| `terminal_country_code` | `string` | Yes |  |
-| `terminal_id` | `long` | No |  |
-| `terminal_id_acq` | `string` | No |  |
-| `terminal_language_code` | `string` | Yes |  |
-| `terminal_location` | `string` | Yes |  |
-| `terminal_serial_number` | `string` | No |  |
-| `token_io_alia` | `string` | No |  |
-| `token_io_iban` | `string` | No |  |
-| `token_io_member_id` | `string` | No |  |
-| `web_shop_url` | `string` | No |  |
+| `additionalData` | `map` | No |  |
+| `corporateUuid` | `string` | Yes |  |
+| `packageOrderUuid` | `string` | Yes |  |
+| `productOrderUuid` | `string` | Yes |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `tecsWebSecretKey` | `string` | No |  |
+| `templateName` | `string` | Yes |  |
+| `terminalCountryCode` | `string` | Yes |  |
+| `terminalId` | `long` | No |  |
+| `terminalIdAcq` | `string` | No |  |
+| `terminalLanguageCode` | `string` | Yes |  |
+| `terminalLocation` | `string` | Yes |  |
+| `terminalSerialNumber` | `string` | No |  |
+| `tokenIOAlias` | `string` | No |  |
+| `tokenIOIban` | `string` | No |  |
+| `tokenIOMemberId` | `string` | No |  |
+| `webShopUrl` | `string` | No |  |
 
 ### Operations
 
@@ -2405,13 +2383,13 @@ Create a new entity with the given data. Returns the created entity data and rai
 (def result
   (e-register_terminal/create (api/register_terminal client nil)
     (vs/jm
-      "corporate_uuid" "example_corporate_uuid"  ;; string
-      "package_order_uuid" "example_package_order_uuid"  ;; string
-      "product_order_uuid" "example_product_order_uuid"  ;; string
-      "template_name" "example_template_name"  ;; string
-      "terminal_country_code" "example_terminal_country_code"  ;; string
-      "terminal_language_code" "example_terminal_language_code"  ;; string
-      "terminal_location" "example_terminal_location"  ;; string
+      "corporateUuid" "example_corporateUuid"  ;; string
+      "packageOrderUuid" "example_packageOrderUuid"  ;; string
+      "productOrderUuid" "example_productOrderUuid"  ;; string
+      "templateName" "example_templateName"  ;; string
+      "terminalCountryCode" "example_terminalCountryCode"  ;; string
+      "terminalLanguageCode" "example_terminalLanguageCode"  ;; string
+      "terminalLocation" "example_terminalLocation"  ;; string
       )
     nil))
 ```
@@ -2459,16 +2437,16 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `card_brand_report_data` | `vector` | No |  |
-| `clearing_date_from` | `string` | Yes |  |
-| `clearing_date_to` | `string` | Yes |  |
-| `corporate_id` | `string` | Yes |  |
+| `cardBrandReportData` | `vector` | No |  |
+| `clearingDateFrom` | `string` | Yes |  |
+| `clearingDateTo` | `string` | Yes |  |
+| `corporateId` | `string` | Yes |  |
 | `currency` | `string` | Yes |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
-| `sum_over_credit_tx` | `map` | No |  |
-| `sum_over_debit_tx` | `map` | No |  |
-| `terminal_id` | `long` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `sumOverCreditTx` | `map` | No |  |
+| `sumOverDebitTx` | `map` | No |  |
+| `terminalId` | `long` | No |  |
 
 ### Operations
 
@@ -2480,9 +2458,9 @@ Create a new entity with the given data. Returns the created entity data and rai
 (def result
   (e-report_data/create (api/report_data client nil)
     (vs/jm
-      "clearing_date_from" "example_clearing_date_from"  ;; string
-      "clearing_date_to" "example_clearing_date_to"  ;; string
-      "corporate_id" "example_corporate_id"  ;; string
+      "clearingDateFrom" "example_clearingDateFrom"  ;; string
+      "clearingDateTo" "example_clearingDateTo"  ;; string
+      "corporateId" "example_corporateId"  ;; string
       "currency" "example_currency"  ;; string
       )
     nil))
@@ -2531,56 +2509,56 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_name` | `string` | No |  |
-| `acquirer_terminal_id` | `string` | No |  |
+| `acquirerName` | `string` | No |  |
+| `acquirerTerminalId` | `string` | No |  |
 | `amount` | `long` | No |  |
-| `application_cryptogram` | `string` | No |  |
-| `authorization_code` | `any` | No |  |
-| `authorization_date` | `string` | No |  |
-| `card_brand` | `string` | No |  |
-| `card_entry` | `string` | No |  |
-| `card_expiration` | `string` | No |  |
-| `card_number` | `string` | No |  |
-| `clearing_amount` | `long` | No |  |
-| `clearing_batch_id` | `string` | No |  |
-| `clearing_currency` | `string` | No |  |
-| `clearing_date` | `string` | No |  |
-| `clearing_processed_date` | `string` | No |  |
-| `clearing_status` | `string` | No |  |
-| `client_id` | `long` | No |  |
+| `applicationCryptogram` | `string` | No |  |
+| `authorizationCode` | `any` | No |  |
+| `authorizationDate` | `string` | No |  |
+| `cardBrand` | `string` | No |  |
+| `cardEntry` | `string` | No |  |
+| `cardExpiration` | `string` | No |  |
+| `cardNumber` | `string` | No |  |
+| `clearingAmount` | `long` | No |  |
+| `clearingBatchId` | `string` | No |  |
+| `clearingCurrency` | `string` | No |  |
+| `clearingDate` | `string` | No |  |
+| `clearingProcessedDate` | `string` | No |  |
+| `clearingStatus` | `string` | No |  |
+| `clientId` | `long` | No |  |
 | `currency` | `string` | No |  |
 | `cvm` | `string` | No |  |
-| `ecr_data` | `string` | No |  |
-| `emv_application_id` | `string` | No |  |
-| `emv_application_label` | `string` | No |  |
-| `merchant_name` | `string` | No |  |
-| `merchant_number` | `string` | No |  |
-| `original_client_id` | `string` | No |  |
-| `original_terminal_id` | `long` | No |  |
-| `original_transaction_id` | `string` | No |  |
-| `payment_reason` | `string` | No |  |
-| `receipt_number` | `string` | No |  |
-| `response_code` | `long` | No |  |
-| `response_code_from_a` | `string` | No |  |
-| `response_message` | `string` | No |  |
-| `retrieval_reference_number` | `string` | No |  |
-| `service_code` | `string` | No |  |
-| `settlement_status` | `string` | No |  |
-| `source_id` | `long` | No |  |
-| `tecsengine_response_code` | `long` | No |  |
-| `tecsengine_response_text` | `string` | No |  |
-| `terminal_end_of_day_date` | `string` | No |  |
-| `terminal_id` | `long` | No |  |
-| `terminal_location` | `string` | No |  |
-| `tip_amount` | `long` | No |  |
-| `trace_number` | `long` | No |  |
-| `transaction_clearing_date` | `string` | No |  |
-| `transaction_date` | `string` | No |  |
-| `transaction_id` | `string` | No |  |
-| `transaction_seq_number` | `long` | No |  |
-| `transaction_server_date` | `string` | No |  |
-| `transaction_source` | `string` | No |  |
-| `transaction_type` | `string` | No |  |
+| `ecrData` | `string` | No |  |
+| `emvApplicationId` | `string` | No |  |
+| `emvApplicationLabel` | `string` | No |  |
+| `merchantName` | `string` | No |  |
+| `merchantNumber` | `string` | No |  |
+| `originalClientId` | `string` | No |  |
+| `originalTerminalId` | `long` | No |  |
+| `originalTransactionId` | `string` | No |  |
+| `paymentReason` | `string` | No |  |
+| `receiptNumber` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseCodeFromAS` | `string` | No |  |
+| `responseMessage` | `string` | No |  |
+| `retrievalReferenceNumber` | `string` | No |  |
+| `serviceCode` | `string` | No |  |
+| `settlementStatus` | `string` | No |  |
+| `sourceId` | `long` | No |  |
+| `tecsengineResponseCode` | `long` | No |  |
+| `tecsengineResponseText` | `string` | No |  |
+| `terminalEndOfDayDate` | `string` | No |  |
+| `terminalId` | `long` | No |  |
+| `terminalLocation` | `string` | No |  |
+| `tipAmount` | `long` | No |  |
+| `traceNumber` | `long` | No |  |
+| `transactionClearingDate` | `string` | No |  |
+| `transactionDate` | `string` | No |  |
+| `transactionId` | `string` | No |  |
+| `transactionSeqNumber` | `long` | No |  |
+| `transactionServerDate` | `string` | No |  |
+| `transactionSource` | `string` | No |  |
+| `transactionType` | `string` | No |  |
 
 ### Operations
 
@@ -2639,12 +2617,12 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acq_tab_nexo` | `map` | No |  |
-| `config_version` | `string` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
-| `serial_number` | `string` | Yes |  |
-| `tid_sent` | `string` | No |  |
+| `acqTabNexo` | `map` | No |  |
+| `configVersion` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `serialNumber` | `string` | Yes |  |
+| `tidSent` | `string` | No |  |
 
 ### Operations
 
@@ -2656,7 +2634,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 (def result
   (e-store_terminal_parameter/create (api/store_terminal_parameter client nil)
     (vs/jm
-      "serial_number" "example_serial_number"  ;; string
+      "serialNumber" "example_serialNumber"  ;; string
       )
     nil))
 ```
@@ -2704,11 +2682,11 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `device_serial_number` | `vector` | Yes |  |
-| `duplicate_terminal_id` | `vector` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
-| `terminal` | `vector` | No |  |
+| `deviceSerialNumber` | `vector` | Yes |  |
+| `duplicateTerminalIds` | `vector` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `terminals` | `vector` | No |  |
 
 ### Operations
 
@@ -2720,7 +2698,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 (def result
   (e-terminal_id/create (api/terminal_id client nil)
     (vs/jm
-      "device_serial_number" (vs/jt)  ;; vector
+      "deviceSerialNumber" (vs/jt)  ;; vector
       )
     nil))
 ```
@@ -2768,34 +2746,34 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `3_d_secure` | `string` | No |  |
-| `authorization_code` | `string` | No |  |
-| `card_brand` | `string` | No |  |
-| `clearing_amount_from` | `string` | No |  |
-| `clearing_amount_to` | `string` | No |  |
-| `clearing_currency` | `string` | No |  |
-| `clearing_status` | `string` | No |  |
-| `corporate_uuid` | `string` | No |  |
-| `order_by_transaction_date` | `string` | No |  |
+| `3DSecure` | `string` | No |  |
+| `authorizationCode` | `string` | No |  |
+| `cardBrand` | `string` | No |  |
+| `clearingAmountFrom` | `string` | No |  |
+| `clearingAmountTo` | `string` | No |  |
+| `clearingCurrency` | `string` | No |  |
+| `clearingStatus` | `string` | No |  |
+| `corporateUUID` | `string` | No |  |
+| `orderByTransactionDate` | `string` | No |  |
 | `pagination` | `map` | No |  |
-| `payment_token_public_id` | `string` | No |  |
-| `receipt_number` | `string` | No |  |
-| `referenced_transaction_id` | `string` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
-| `retrieval_reference_number` | `string` | No |  |
-| `source_id` | `long` | No |  |
-| `tecsengine_response_code_from` | `string` | No |  |
-| `tecsengine_response_code_to` | `string` | No |  |
-| `terminal_id` | `long` | No |  |
-| `trace_number` | `string` | No |  |
-| `transaction_amount_from` | `string` | No |  |
-| `transaction_amount_to` | `string` | No |  |
-| `transaction_date_from` | `string` | No |  |
-| `transaction_date_to` | `string` | No |  |
-| `transaction_history` | `vector` | No |  |
-| `transaction_id` | `string` | No |  |
-| `transaction_type` | `string` | No |  |
+| `paymentTokenPublicId` | `string` | No |  |
+| `receiptNumber` | `string` | No |  |
+| `referencedTransactionId` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `retrievalReferenceNumber` | `string` | No |  |
+| `sourceId` | `long` | No |  |
+| `tecsengineResponseCodeFrom` | `string` | No |  |
+| `tecsengineResponseCodeTo` | `string` | No |  |
+| `terminalId` | `long` | No |  |
+| `traceNumber` | `string` | No |  |
+| `transactionAmountFrom` | `string` | No |  |
+| `transactionAmountTo` | `string` | No |  |
+| `transactionDateFrom` | `string` | No |  |
+| `transactionDateTo` | `string` | No |  |
+| `transactionHistories` | `vector` | No |  |
+| `transactionId` | `string` | No |  |
+| `transactionType` | `string` | No |  |
 | `wallet` | `string` | No |  |
 
 ### Operations
@@ -2856,22 +2834,22 @@ Return the entity name.
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `period` | `string` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
-| `transaction_date_from` | `string` | No |  |
-| `transaction_date_to` | `string` | No |  |
-| `transactions_count` | `vector` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `transactionDateFrom` | `string` | No |  |
+| `transactionDateTo` | `string` | No |  |
+| `transactionsCount` | `vector` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
 | `period` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `transaction_date_from` | Yes |
-| `transaction_date_to` | Yes |
-| `transactions_count` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `transactionDateFrom` | Yes |
+| `transactionDateTo` | Yes |
+| `transactionsCount` | - |
 
 ### Operations
 
@@ -2931,22 +2909,22 @@ Return the entity name.
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `period` | `string` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
-| `transaction_date_from` | `string` | No |  |
-| `transaction_date_to` | `string` | No |  |
-| `transactions_count` | `vector` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `transactionDateFrom` | `string` | No |  |
+| `transactionDateTo` | `string` | No |  |
+| `transactionsCount` | `vector` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
 | `period` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `transaction_date_from` | Yes |
-| `transaction_date_to` | Yes |
-| `transactions_count` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `transactionDateFrom` | Yes |
+| `transactionDateTo` | Yes |
+| `transactionsCount` | - |
 
 ### Operations
 
@@ -3006,22 +2984,22 @@ Return the entity name.
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `period` | `string` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
-| `transaction_date_from` | `string` | No |  |
-| `transaction_date_to` | `string` | No |  |
-| `turnover` | `vector` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `transactionDateFrom` | `string` | No |  |
+| `transactionDateTo` | `string` | No |  |
+| `turnovers` | `vector` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
 | `period` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `transaction_date_from` | Yes |
-| `transaction_date_to` | Yes |
-| `turnover` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `transactionDateFrom` | Yes |
+| `transactionDateTo` | Yes |
+| `turnovers` | - |
 
 ### Operations
 
@@ -3081,15 +3059,15 @@ Return the entity name.
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `city` | `string` | No |  |
-| `corporate_uuid` | `string` | Yes |  |
+| `corporateUuid` | `string` | Yes |  |
 | `country` | `string` | No |  |
-| `merchant_category_code` | `string` | No |  |
+| `merchantCategoryCode` | `string` | No |  |
 | `name` | `string` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
 | `state` | `string` | No |  |
 | `street` | `string` | No |  |
-| `vu_nummer` | `string` | No |  |
+| `vuNummer` | `string` | No |  |
 | `zipcode` | `string` | No |  |
 
 ### Operations
@@ -3102,7 +3080,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 (def result
   (e-update_merchant/create (api/update_merchant client nil)
     (vs/jm
-      "corporate_uuid" "example_corporate_uuid"  ;; string
+      "corporateUuid" "example_corporateUuid"  ;; string
       )
     nil))
 ```
@@ -3150,10 +3128,10 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
-| `template_name` | `string` | Yes |  |
-| `template_xml` | `string` | Yes |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `templateName` | `string` | Yes |  |
+| `templateXml` | `string` | Yes |  |
 
 ### Operations
 
@@ -3165,8 +3143,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 (def result
   (e-update_template_xml/create (api/update_template_xml client nil)
     (vs/jm
-      "template_name" "example_template_name"  ;; string
-      "template_xml" "example_template_xml"  ;; string
+      "templateName" "example_templateName"  ;; string
+      "templateXml" "example_templateXml"  ;; string
       )
     nil))
 ```
@@ -3214,8 +3192,8 @@ Return the entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `app_name` | `string` | No |  |
-| `build_date` | `string` | No |  |
+| `appName` | `string` | No |  |
+| `buildDate` | `string` | No |  |
 | `version` | `string` | No |  |
 
 ### Operations

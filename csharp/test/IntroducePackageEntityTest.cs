@@ -35,7 +35,7 @@ public class IntroducePackageEntityTest
         }
         // The basic flow consumes synthetic IDs from the fixture. In live
         // mode without an *_ENTID env override, those IDs hit the live API
-        // and 4xx; set BLUEFINTECSMERCHANTSERVICES_TEST_INTRODUCE_PACKAGE_ENTID JSON to run live.
+        // and 4xx; set BLUEFIN_TECS_MERCHANT_SERVICES_TEST_INTRODUCE_PACKAGE_ENTID JSON to run live.
         if (setup.SyntheticOnly)
         {
             return;
@@ -49,7 +49,7 @@ public class IntroducePackageEntityTest
             "introduce_package_ref01"));
 
         var introducePackageRef01DataResult = introducePackageRef01Ent.Create(introducePackageRef01Data, null);
-        introducePackageRef01Data = Helpers.ToMapAny(introducePackageRef01DataResult);
+        introducePackageRef01Data = Helpers.ToMapAny(introducePackageRef01DataResult is IEntity ce ? ce.Data() : introducePackageRef01DataResult);
         Assert.True(introducePackageRef01Data != null, "expected create result to be a map");
 
     }
@@ -97,43 +97,43 @@ public class IntroducePackageEntityTest
         // live mode is on without a real override, the basic test runs
         // against synthetic IDs from the fixture and 4xx's.
         var entidEnvRaw = Environment.GetEnvironmentVariable(
-            "BLUEFINTECSMERCHANTSERVICES_TEST_INTRODUCE_PACKAGE_ENTID") ?? "";
+            "BLUEFIN_TECS_MERCHANT_SERVICES_TEST_INTRODUCE_PACKAGE_ENTID") ?? "";
         var idmapOverridden = entidEnvRaw != "" &&
             entidEnvRaw.Trim().StartsWith("{");
 
         var env = TestRunner.EnvOverride(new Dictionary<string, object?>
         {
-            ["BLUEFINTECSMERCHANTSERVICES_TEST_INTRODUCE_PACKAGE_ENTID"] = idmap,
-            ["BLUEFINTECSMERCHANTSERVICES_TEST_LIVE"] = "FALSE",
-            ["BLUEFINTECSMERCHANTSERVICES_TEST_EXPLAIN"] = "FALSE",
-            ["BLUEFINTECSMERCHANTSERVICES_APIKEY"] = "NONE",
+            ["BLUEFIN_TECS_MERCHANT_SERVICES_TEST_INTRODUCE_PACKAGE_ENTID"] = idmap,
+            ["BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE"] = "FALSE",
+            ["BLUEFIN_TECS_MERCHANT_SERVICES_TEST_EXPLAIN"] = "FALSE",
+            ["BLUEFIN_TECS_MERCHANT_SERVICES_APIKEY"] = "NONE",
         });
 
-        var idmapResolved = Helpers.ToMapAny(env["BLUEFINTECSMERCHANTSERVICES_TEST_INTRODUCE_PACKAGE_ENTID"])
+        var idmapResolved = Helpers.ToMapAny(env["BLUEFIN_TECS_MERCHANT_SERVICES_TEST_INTRODUCE_PACKAGE_ENTID"])
             ?? Helpers.ToMapAny(idmap)
             ?? new Dictionary<string, object?>();
 
-        if (Equals(env["BLUEFINTECSMERCHANTSERVICES_TEST_LIVE"], "TRUE"))
+        if (Equals(env["BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE"], "TRUE"))
         {
             var mergedOpts = StructUtils.Merge(new List<object?>
             {
                 new Dictionary<string, object?>
                 {
-                    ["apikey"] = env["BLUEFINTECSMERCHANTSERVICES_APIKEY"],
+                    ["apikey"] = env["BLUEFIN_TECS_MERCHANT_SERVICES_APIKEY"],
                 },
                 extra,
             });
             client = new BluefinTecsMerchantServicesSDK(Helpers.ToMapAny(mergedOpts));
         }
 
-        var live = Equals(env["BLUEFINTECSMERCHANTSERVICES_TEST_LIVE"], "TRUE");
+        var live = Equals(env["BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE"], "TRUE");
         return new EntityTestSetup
         {
             Client = client,
             Data = entityData,
             Idmap = idmapResolved,
             Env = env,
-            Explain = Equals(env["BLUEFINTECSMERCHANTSERVICES_TEST_EXPLAIN"], "TRUE"),
+            Explain = Equals(env["BLUEFIN_TECS_MERCHANT_SERVICES_TEST_EXPLAIN"], "TRUE"),
             Live = live,
             SyntheticOnly = live && !idmapOverridden,
             Now = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds(),

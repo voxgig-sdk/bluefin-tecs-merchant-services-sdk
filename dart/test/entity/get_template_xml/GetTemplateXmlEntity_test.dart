@@ -47,7 +47,7 @@ void tests() {
       final get_template_xml_ref01_ent = client.GetTemplateXml();
       dynamic get_template_xml_ref01_data = setup['data']['new']['get_template_xml']['get_template_xml_ref01'];
 
-      get_template_xml_ref01_data = await get_template_xml_ref01_ent.create(get_template_xml_ref01_data);
+      get_template_xml_ref01_data = (await get_template_xml_ref01_ent.create(get_template_xml_ref01_data)).data();
       ok(null != get_template_xml_ref01_data);
 
 

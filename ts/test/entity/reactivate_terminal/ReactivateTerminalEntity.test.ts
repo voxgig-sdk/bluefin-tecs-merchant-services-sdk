@@ -26,8 +26,8 @@ import {
 describe('ReactivateTerminalEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when BLUEFINTECSMERCHANTSERVICES_TEST_LIVE=TRUE.
-  afterEach(liveDelay('BLUEFINTECSMERCHANTSERVICES_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE=TRUE.
+  afterEach(liveDelay('BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = BluefinTecsMerchantServicesSDK.test()
@@ -62,7 +62,7 @@ describe('ReactivateTerminalEntity', async () => {
     const reactivate_terminal_ref01_ent = client.ReactivateTerminal()
     let reactivate_terminal_ref01_data = setup.data.new.reactivate_terminal['reactivate_terminal_ref01']
 
-    reactivate_terminal_ref01_data = await reactivate_terminal_ref01_ent.create(reactivate_terminal_ref01_data)
+    reactivate_terminal_ref01_data = (await reactivate_terminal_ref01_ent.create(reactivate_terminal_ref01_data)).data()
     assert(null != reactivate_terminal_ref01_data)
 
 

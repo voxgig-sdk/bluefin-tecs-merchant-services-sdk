@@ -26,8 +26,8 @@ import {
 describe('MandatorClearingExportDownloadEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when BLUEFINTECSMERCHANTSERVICES_TEST_LIVE=TRUE.
-  afterEach(liveDelay('BLUEFINTECSMERCHANTSERVICES_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE=TRUE.
+  afterEach(liveDelay('BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = BluefinTecsMerchantServicesSDK.test()
@@ -62,7 +62,7 @@ describe('MandatorClearingExportDownloadEntity', async () => {
     const mandator_clearing_export_download_ref01_ent = client.MandatorClearingExportDownload()
     let mandator_clearing_export_download_ref01_data = setup.data.new.mandator_clearing_export_download['mandator_clearing_export_download_ref01']
 
-    mandator_clearing_export_download_ref01_data = await mandator_clearing_export_download_ref01_ent.create(mandator_clearing_export_download_ref01_data)
+    mandator_clearing_export_download_ref01_data = (await mandator_clearing_export_download_ref01_ent.create(mandator_clearing_export_download_ref01_data)).data()
     assert(null != mandator_clearing_export_download_ref01_data)
 
 

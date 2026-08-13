@@ -26,8 +26,8 @@ import {
 describe('DigitalServicesApiEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when BLUEFINTECSMERCHANTSERVICES_TEST_LIVE=TRUE.
-  afterEach(liveDelay('BLUEFINTECSMERCHANTSERVICES_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE=TRUE.
+  afterEach(liveDelay('BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = BluefinTecsMerchantServicesSDK.test()
@@ -62,13 +62,13 @@ describe('DigitalServicesApiEntity', async () => {
     const digital_services_api_ref01_ent = client.DigitalServicesApi()
     let digital_services_api_ref01_data = setup.data.new.digital_services_api['digital_services_api_ref01']
 
-    digital_services_api_ref01_data = await digital_services_api_ref01_ent.create(digital_services_api_ref01_data)
+    digital_services_api_ref01_data = (await digital_services_api_ref01_ent.create(digital_services_api_ref01_data)).data()
     assert(null != digital_services_api_ref01_data)
 
 
     // LOAD
     const digital_services_api_ref01_match_dt0: any = {}
-    const digital_services_api_ref01_data_dt0 = await digital_services_api_ref01_ent.load(digital_services_api_ref01_match_dt0)
+    const digital_services_api_ref01_data_dt0 = (await digital_services_api_ref01_ent.load(digital_services_api_ref01_match_dt0)).data()
     assert(null != digital_services_api_ref01_data_dt0)
 
 

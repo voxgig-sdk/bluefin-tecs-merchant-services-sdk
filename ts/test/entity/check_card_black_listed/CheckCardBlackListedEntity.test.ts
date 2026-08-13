@@ -26,8 +26,8 @@ import {
 describe('CheckCardBlackListedEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when BLUEFINTECSMERCHANTSERVICES_TEST_LIVE=TRUE.
-  afterEach(liveDelay('BLUEFINTECSMERCHANTSERVICES_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE=TRUE.
+  afterEach(liveDelay('BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = BluefinTecsMerchantServicesSDK.test()
@@ -62,7 +62,7 @@ describe('CheckCardBlackListedEntity', async () => {
     const check_card_black_listed_ref01_ent = client.CheckCardBlackListed()
     let check_card_black_listed_ref01_data = setup.data.new.check_card_black_listed['check_card_black_listed_ref01']
 
-    check_card_black_listed_ref01_data = await check_card_black_listed_ref01_ent.create(check_card_black_listed_ref01_data)
+    check_card_black_listed_ref01_data = (await check_card_black_listed_ref01_ent.create(check_card_black_listed_ref01_data)).data()
     assert(null != check_card_black_listed_ref01_data)
 
 

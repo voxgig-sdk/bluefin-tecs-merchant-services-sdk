@@ -180,8 +180,9 @@ cancel_transactionBasicTest c = do
     d <- newRefData fixture "cancel_transaction"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 cancel_transactionDirectTest :: Counters -> IO ()
 cancel_transactionDirectTest c = runTest c "cancel_transaction.direct" $ do
@@ -219,8 +220,9 @@ check_card_black_listedBasicTest c = do
     d <- newRefData fixture "check_card_black_listed"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 check_card_black_listedDirectTest :: Counters -> IO ()
 check_card_black_listedDirectTest c = runTest c "check_card_black_listed.direct" $ do
@@ -258,8 +260,9 @@ create_productBasicTest c = do
     d <- newRefData fixture "create_product"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 create_productDirectTest :: Counters -> IO ()
 create_productDirectTest c = runTest c "create_product.direct" $ do
@@ -297,8 +300,9 @@ deactivate_terminalBasicTest c = do
     d <- newRefData fixture "deactivate_terminal"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 deactivate_terminalDirectTest :: Counters -> IO ()
 deactivate_terminalDirectTest c = runTest c "deactivate_terminal.direct" $ do
@@ -340,16 +344,18 @@ digital_services_apiBasicTest c = do
       (id0 : _) -> do
         m <- jo [("id", VStr id0)]; ctrl <- emptyMap
         loaded <- eLoad ent m ctrl
-        lid <- getp loaded "id"
-        pure (ismap loaded && vstring lid == id0)
+        ld <- eDataGet loaded
+        lid <- getp ld "id"
+        pure (ismap ld && vstring lid == id0)
   runTest c "digital_services_api.create" $ do
     sdk <- C.testSdk opts VNoval
     ent <- C.digital_services_api sdk VNoval
     d <- newRefData fixture "digital_services_api"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 digital_services_apiDirectTest :: Counters -> IO ()
 digital_services_apiDirectTest c = runTest c "digital_services_api.direct" $ do
@@ -387,8 +393,9 @@ ec_data_ecomBasicTest c = do
     d <- newRefData fixture "ec_data_ecom"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 ec_data_ecomDirectTest :: Counters -> IO ()
 ec_data_ecomDirectTest c = runTest c "ec_data_ecom.direct" $ do
@@ -426,8 +433,9 @@ ecom_parameterBasicTest c = do
     d <- newRefData fixture "ecom_parameter"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 ecom_parameterDirectTest :: Counters -> IO ()
 ecom_parameterDirectTest c = runTest c "ecom_parameter.direct" $ do
@@ -465,8 +473,9 @@ ecr_dataBasicTest c = do
     d <- newRefData fixture "ecr_data"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 ecr_dataDirectTest :: Counters -> IO ()
 ecr_dataDirectTest c = runTest c "ecr_data.direct" $ do
@@ -504,8 +513,9 @@ emv_dataBasicTest c = do
     d <- newRefData fixture "emv_data"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 emv_dataDirectTest :: Counters -> IO ()
 emv_dataDirectTest c = runTest c "emv_data.direct" $ do
@@ -543,8 +553,9 @@ enable_acquiringBasicTest c = do
     d <- newRefData fixture "enable_acquiring"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 enable_acquiringDirectTest :: Counters -> IO ()
 enable_acquiringDirectTest c = runTest c "enable_acquiring.direct" $ do
@@ -582,8 +593,9 @@ get_merchant_contract_numberBasicTest c = do
     d <- newRefData fixture "get_merchant_contract_number"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 get_merchant_contract_numberDirectTest :: Counters -> IO ()
 get_merchant_contract_numberDirectTest c = runTest c "get_merchant_contract_number.direct" $ do
@@ -621,8 +633,9 @@ get_template_xmlBasicTest c = do
     d <- newRefData fixture "get_template_xml"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 get_template_xmlDirectTest :: Counters -> IO ()
 get_template_xmlDirectTest c = runTest c "get_template_xml.direct" $ do
@@ -660,8 +673,9 @@ introduce_mandatorBasicTest c = do
     d <- newRefData fixture "introduce_mandator"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 introduce_mandatorDirectTest :: Counters -> IO ()
 introduce_mandatorDirectTest c = runTest c "introduce_mandator.direct" $ do
@@ -699,8 +713,9 @@ introduce_packageBasicTest c = do
     d <- newRefData fixture "introduce_package"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 introduce_packageDirectTest :: Counters -> IO ()
 introduce_packageDirectTest c = runTest c "introduce_package.direct" $ do
@@ -738,8 +753,9 @@ keep_aliveBasicTest c = do
     d <- newRefData fixture "keep_alive"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 keep_aliveDirectTest :: Counters -> IO ()
 keep_aliveDirectTest c = runTest c "keep_alive.direct" $ do
@@ -777,8 +793,9 @@ list_terminalBasicTest c = do
     d <- newRefData fixture "list_terminal"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 list_terminalDirectTest :: Counters -> IO ()
 list_terminalDirectTest c = runTest c "list_terminal.direct" $ do
@@ -816,8 +833,9 @@ mandator_clearing_exportBasicTest c = do
     d <- newRefData fixture "mandator_clearing_export"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 mandator_clearing_exportDirectTest :: Counters -> IO ()
 mandator_clearing_exportDirectTest c = runTest c "mandator_clearing_export.direct" $ do
@@ -859,16 +877,18 @@ mandator_clearing_export_downloadBasicTest c = do
       (id0 : _) -> do
         m <- jo [("id", VStr id0)]; ctrl <- emptyMap
         loaded <- eLoad ent m ctrl
-        lid <- getp loaded "id"
-        pure (ismap loaded && vstring lid == id0)
+        ld <- eDataGet loaded
+        lid <- getp ld "id"
+        pure (ismap ld && vstring lid == id0)
   runTest c "mandator_clearing_export_download.create" $ do
     sdk <- C.testSdk opts VNoval
     ent <- C.mandator_clearing_export_download sdk VNoval
     d <- newRefData fixture "mandator_clearing_export_download"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 mandator_clearing_export_downloadDirectTest :: Counters -> IO ()
 mandator_clearing_export_downloadDirectTest c = runTest c "mandator_clearing_export_download.direct" $ do
@@ -906,8 +926,9 @@ mandator_clearing_export_summaryBasicTest c = do
     d <- newRefData fixture "mandator_clearing_export_summary"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 mandator_clearing_export_summaryDirectTest :: Counters -> IO ()
 mandator_clearing_export_summaryDirectTest c = runTest c "mandator_clearing_export_summary.direct" $ do
@@ -945,8 +966,9 @@ merchant_portal_services_apiBasicTest c = do
     d <- newRefData fixture "merchant_portal_services_api"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 merchant_portal_services_apiDirectTest :: Counters -> IO ()
 merchant_portal_services_apiDirectTest c = runTest c "merchant_portal_services_api.direct" $ do
@@ -984,8 +1006,9 @@ move_tidBasicTest c = do
     d <- newRefData fixture "move_tid"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 move_tidDirectTest :: Counters -> IO ()
 move_tidDirectTest c = runTest c "move_tid.direct" $ do
@@ -1023,8 +1046,9 @@ payment_manualBasicTest c = do
     d <- newRefData fixture "payment_manual"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 payment_manualDirectTest :: Counters -> IO ()
 payment_manualDirectTest c = runTest c "payment_manual.direct" $ do
@@ -1062,8 +1086,9 @@ payment_sredBasicTest c = do
     d <- newRefData fixture "payment_sred"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 payment_sredDirectTest :: Counters -> IO ()
 payment_sredDirectTest c = runTest c "payment_sred.direct" $ do
@@ -1101,8 +1126,9 @@ pre_auth_transaction_completionBasicTest c = do
     d <- newRefData fixture "pre_auth_transaction_completion"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 pre_auth_transaction_completionDirectTest :: Counters -> IO ()
 pre_auth_transaction_completionDirectTest c = runTest c "pre_auth_transaction_completion.direct" $ do
@@ -1140,8 +1166,9 @@ reactivate_terminalBasicTest c = do
     d <- newRefData fixture "reactivate_terminal"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 reactivate_terminalDirectTest :: Counters -> IO ()
 reactivate_terminalDirectTest c = runTest c "reactivate_terminal.direct" $ do
@@ -1179,8 +1206,9 @@ refund_transactionBasicTest c = do
     d <- newRefData fixture "refund_transaction"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 refund_transactionDirectTest :: Counters -> IO ()
 refund_transactionDirectTest c = runTest c "refund_transaction.direct" $ do
@@ -1218,8 +1246,9 @@ register_tecs_companyBasicTest c = do
     d <- newRefData fixture "register_tecs_company"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 register_tecs_companyDirectTest :: Counters -> IO ()
 register_tecs_companyDirectTest c = runTest c "register_tecs_company.direct" $ do
@@ -1257,8 +1286,9 @@ register_terminalBasicTest c = do
     d <- newRefData fixture "register_terminal"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 register_terminalDirectTest :: Counters -> IO ()
 register_terminalDirectTest c = runTest c "register_terminal.direct" $ do
@@ -1296,8 +1326,9 @@ report_dataBasicTest c = do
     d <- newRefData fixture "report_data"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 report_dataDirectTest :: Counters -> IO ()
 report_dataDirectTest c = runTest c "report_data.direct" $ do
@@ -1335,8 +1366,9 @@ status_transactionBasicTest c = do
     d <- newRefData fixture "status_transaction"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 status_transactionDirectTest :: Counters -> IO ()
 status_transactionDirectTest c = runTest c "status_transaction.direct" $ do
@@ -1374,8 +1406,9 @@ store_terminal_parameterBasicTest c = do
     d <- newRefData fixture "store_terminal_parameter"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 store_terminal_parameterDirectTest :: Counters -> IO ()
 store_terminal_parameterDirectTest c = runTest c "store_terminal_parameter.direct" $ do
@@ -1413,8 +1446,9 @@ terminal_idBasicTest c = do
     d <- newRefData fixture "terminal_id"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 terminal_idDirectTest :: Counters -> IO ()
 terminal_idDirectTest c = runTest c "terminal_id.direct" $ do
@@ -1452,8 +1486,9 @@ transaction_historyBasicTest c = do
     d <- newRefData fixture "transaction_history"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 transaction_historyDirectTest :: Counters -> IO ()
 transaction_historyDirectTest c = runTest c "transaction_history.direct" $ do
@@ -1491,8 +1526,9 @@ transactions_countBasicTest c = do
     d <- newRefData fixture "transactions_count"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 transactions_countDirectTest :: Counters -> IO ()
 transactions_countDirectTest c = runTest c "transactions_count.direct" $ do
@@ -1530,8 +1566,9 @@ transactions_count_card_brandBasicTest c = do
     d <- newRefData fixture "transactions_count_card_brand"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 transactions_count_card_brandDirectTest :: Counters -> IO ()
 transactions_count_card_brandDirectTest c = runTest c "transactions_count_card_brand.direct" $ do
@@ -1569,8 +1606,9 @@ transactions_turnoverBasicTest c = do
     d <- newRefData fixture "transactions_turnover"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 transactions_turnoverDirectTest :: Counters -> IO ()
 transactions_turnoverDirectTest c = runTest c "transactions_turnover.direct" $ do
@@ -1608,8 +1646,9 @@ update_merchantBasicTest c = do
     d <- newRefData fixture "update_merchant"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 update_merchantDirectTest :: Counters -> IO ()
 update_merchantDirectTest c = runTest c "update_merchant.direct" $ do
@@ -1647,8 +1686,9 @@ update_template_xmlBasicTest c = do
     d <- newRefData fixture "update_template_xml"
     ctrl <- emptyMap
     created <- eCreate ent d ctrl
-    cid <- getp created "id"
-    pure (ismap created && not (isNoval cid))
+    cd <- eDataGet created
+    cid <- getp cd "id"
+    pure (ismap cd && not (isNoval cid))
 
 update_template_xmlDirectTest :: Counters -> IO ()
 update_template_xmlDirectTest c = runTest c "update_template_xml.direct" $ do
@@ -1690,8 +1730,9 @@ versionBasicTest c = do
       (id0 : _) -> do
         m <- jo [("id", VStr id0)]; ctrl <- emptyMap
         loaded <- eLoad ent m ctrl
-        lid <- getp loaded "id"
-        pure (ismap loaded && vstring lid == id0)
+        ld <- eDataGet loaded
+        lid <- getp ld "id"
+        pure (ismap ld && vstring lid == id0)
 
 versionDirectTest :: Counters -> IO ()
 versionDirectTest c = runTest c "version.direct" $ do

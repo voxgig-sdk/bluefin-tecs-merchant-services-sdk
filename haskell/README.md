@@ -59,10 +59,10 @@ to recover from failures.
 
 ```haskell
   createEnt <- Sdk.cancel_transaction sdk VNoval
-  d <- jo [("client_id", VNum 1), ("currency", VStr "example_currency"), ("receipt_number", VStr "example_receipt_number"), ("terminal_id", VNum 1)]
+  d <- jo [("clientId", VNum 1), ("currency", VStr "example_currency"), ("receiptNumber", VStr "example_receiptNumber"), ("terminalId", VNum 1)]
   cctrl <- emptyMap
   created <- Sdk.eCreate createEnt d cctrl
-  print created
+  print =<< Sdk.eDataGet created
 ```
 
 
@@ -297,8 +297,8 @@ All entities share the same record interface (fields of the `Entity` type).
 
 | Field | Signature | Description |
 | --- | --- | --- |
-| `eLoad` | `Value -> Value -> IO Value` | Load a single entity by match criteria. Raises on error. |
-| `eCreate` | `Value -> Value -> IO Value` | Create a new entity. Raises on error. |
+| `eLoad` | `Value -> Value -> IO Entity` | Load a single entity by match criteria. Resolves to the entity. Raises on error. |
+| `eCreate` | `Value -> Value -> IO Entity` | Create a new entity. Resolves to the entity. Raises on error. |
 | `eDataGet` | `IO Value` | Get entity data. |
 | `eDataSet` | `Value -> IO ()` | Set entity data. |
 | `eStream` | `String -> Value -> Value -> IO [Value]` | Run an op as a lazy stream of items. |
@@ -307,9 +307,11 @@ All entities share the same record interface (fields of the `Entity` type).
 
 ### Result shape
 
-Entity operations return the bare result `Value` (a map for single-entity
-ops, a list for `eList`) and raise on error. Wrap calls in
-`Control.Exception.try` to handle failures.
+Entity operations resolve to the ENTITY, not the raw record — `eList` to
+one entity per record — and raise on error. The record is reached through
+`eDataGet`, which returns the entity's data container. `eRemove` resolves to
+the entity marked deleted (`eDeleted`); it keeps the data it held. Wrap calls
+in `Control.Exception.try` to handle failures.
 
 The `direct` escape hatch never raises — it returns a result `Value`
 you branch on via its `ok` field (read with `getp result "ok"`):
@@ -329,46 +331,46 @@ On error, `ok` is `False` and `err` carries the error value.
 
 | Field | Description |
 | --- | --- |
-| `acquirer_id` |  |
-| `acquirer_name` |  |
-| `actual_bonus_point` |  |
+| `acquirerId` |  |
+| `acquirerName` |  |
+| `actualBonusPoints` |  |
 | `amount` |  |
-| `authorization_code` |  |
-| `balance_amount` |  |
-| `card_brand` |  |
-| `card_number` |  |
-| `client_id` |  |
+| `authorizationCode` |  |
+| `balanceAmount` |  |
+| `cardBrand` |  |
+| `cardNumber` |  |
+| `clientId` |  |
 | `currency` |  |
 | `cvc` |  |
-| `ec_data` |  |
-| `ecr_data` |  |
-| `emv_data` |  |
-| `exchange_fee` |  |
-| `exchange_rate` |  |
-| `language_code` |  |
-| `merchant_address` |  |
-| `merchant_name` |  |
-| `merchant_number` |  |
-| `message_type` |  |
-| `original_trace_number` |  |
-| `original_transaction_id` |  |
+| `ecData` |  |
+| `ecrData` |  |
+| `emvData` |  |
+| `exchangeFee` |  |
+| `exchangeRate` |  |
+| `languageCode` |  |
+| `merchantAddress` |  |
+| `merchantName` |  |
+| `merchantNumber` |  |
+| `messageType` |  |
+| `originalTraceNumber` |  |
+| `originalTransactionId` |  |
 | `password` |  |
-| `payment_reason` |  |
-| `receipt_footer` |  |
-| `receipt_header` |  |
-| `receipt_layout` |  |
-| `receipt_number` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `serial_number` |  |
+| `paymentReason` |  |
+| `receiptFooter` |  |
+| `receiptHeader` |  |
+| `receiptLayout` |  |
+| `receiptNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `serialNumber` |  |
 | `svc` |  |
-| `terminal_id` |  |
-| `terminal_location` |  |
-| `trace_number` |  |
-| `transaction_date` |  |
-| `transaction_id` |  |
-| `tx_type` |  |
-| `user_data` |  |
+| `terminalId` |  |
+| `terminalLocation` |  |
+| `traceNumber` |  |
+| `transactionDate` |  |
+| `transactionId` |  |
+| `txType` |  |
+| `userData` |  |
 
 Operations: Create.
 
@@ -378,9 +380,9 @@ API path: `/public/cancelTransaction`
 
 | Field | Description |
 | --- | --- |
-| `card_no` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `cardNo` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -390,13 +392,13 @@ API path: `/checkCardBlackListed`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_id` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `template_name` |  |
-| `template_type` |  |
-| `template_xml` |  |
-| `terminal_type` |  |
+| `acquirerId` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `templateName` |  |
+| `templateType` |  |
+| `templateXml` |  |
+| `terminalType` |  |
 
 Operations: Create.
 
@@ -406,13 +408,13 @@ API path: `/createProduct`
 
 | Field | Description |
 | --- | --- |
-| `corporate_uuid` |  |
-| `deactivation_reason` |  |
-| `package_order_uuid` |  |
-| `product_order_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
+| `corporateUuid` |  |
+| `deactivationReason` |  |
+| `packageOrderUuid` |  |
+| `productOrderUuid` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
 
 Operations: Create.
 
@@ -422,16 +424,16 @@ API path: `/deactivateTerminal`
 
 | Field | Description |
 | --- | --- |
-| `clearing_date_from` |  |
-| `clearing_date_to` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `tx_count` |  |
-| `tx_id_end` |  |
-| `tx_id_start` |  |
-| `tx_seq_no_end` |  |
-| `tx_seq_no_start` |  |
-| `tx_total` |  |
+| `clearingDateFrom` |  |
+| `clearingDateTo` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `txCount` |  |
+| `txIdEnd` |  |
+| `txIdStart` |  |
+| `txSeqNoEnd` |  |
+| `txSeqNoStart` |  |
+| `txTotal` |  |
 
 Operations: Create, Load.
 
@@ -441,12 +443,12 @@ API path: `/public/digitalservices/mandatorClearingExportDownload/{fileId}`
 
 | Field | Description |
 | --- | --- |
-| `ecom_data` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
-| `transaction_id` |  |
-| `transaction_type` |  |
+| `ecomData` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
+| `transactionId` |  |
+| `transactionType` |  |
 
 Operations: Create.
 
@@ -456,11 +458,11 @@ API path: `/public/getEcData`
 
 | Field | Description |
 | --- | --- |
-| `ecom_pass` |  |
-| `ecom_skey` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
+| `ecomPass` |  |
+| `ecomSkey` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
 
 Operations: Create.
 
@@ -470,12 +472,12 @@ API path: `/public/getEcomParameters`
 
 | Field | Description |
 | --- | --- |
-| `ecr_data` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
-| `transaction_id` |  |
-| `transaction_type` |  |
+| `ecrData` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
+| `transactionId` |  |
+| `transactionType` |  |
 
 Operations: Create.
 
@@ -485,12 +487,12 @@ API path: `/public/getEcrData`
 
 | Field | Description |
 | --- | --- |
-| `emv_data` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
-| `transaction_id` |  |
-| `transaction_type` |  |
+| `emvData` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
+| `transactionId` |  |
+| `transactionType` |  |
 
 Operations: Create.
 
@@ -500,20 +502,20 @@ API path: `/public/getEmvData`
 
 | Field | Description |
 | --- | --- |
-| `account_no` |  |
-| `additional_data` |  |
-| `corporate_uuid` |  |
+| `accountNo` |  |
+| `additionalData` |  |
+| `corporateUuid` |  |
 | `currency` |  |
-| `merchant_category_code` |  |
-| `package_order_uuid` |  |
-| `product_order_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `sorting_code` |  |
-| `template_name` |  |
-| `terminal_id` |  |
-| `terminal_id_acq` |  |
-| `vu_nummer` |  |
+| `merchantCategoryCode` |  |
+| `packageOrderUuid` |  |
+| `productOrderUuid` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `sortingCode` |  |
+| `templateName` |  |
+| `terminalIdAcq` |  |
+| `terminalIds` |  |
+| `vuNummer` |  |
 
 Operations: Create.
 
@@ -523,9 +525,9 @@ API path: `/enableAcquiring`
 
 | Field | Description |
 | --- | --- |
-| `merchant_contract_number` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `merchantContractNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -535,9 +537,9 @@ API path: `/getMerchantContractNumber`
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
-| `template_name` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `templateName` |  |
 
 Operations: Create.
 
@@ -547,9 +549,9 @@ API path: `/public/getTemplateXml`
 
 | Field | Description |
 | --- | --- |
-| `mandator_name` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `mandatorName` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -559,9 +561,9 @@ API path: `/introduceMandator`
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_template_description` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalTemplateDescription` |  |
 
 Operations: Create.
 
@@ -572,15 +574,15 @@ API path: `/introducePackage`
 | Field | Description |
 | --- | --- |
 | `hwserialno` |  |
-| `ka_date_time_from` |  |
-| `ka_date_time_to` |  |
-| `keep_alive_data` |  |
+| `kaDateTimeFrom` |  |
+| `kaDateTimeTo` |  |
+| `keepAliveData` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_date_time_from` |  |
-| `terminal_date_time_to` |  |
-| `terminal_id` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalDateTimeFrom` |  |
+| `terminalDateTimeTo` |  |
+| `terminalId` |  |
 
 Operations: Create.
 
@@ -590,12 +592,12 @@ API path: `/public/keepalive`
 
 | Field | Description |
 | --- | --- |
-| `corporate_uuid` |  |
+| `corporateUuid` |  |
 | `filter` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminals` |  |
 
 Operations: Create.
 
@@ -605,12 +607,12 @@ API path: `/public/listTerminals`
 
 | Field | Description |
 | --- | --- |
-| `clearing_date_from` |  |
-| `clearing_date_to` |  |
+| `clearingDateFrom` |  |
+| `clearingDateTo` |  |
 | `pagination` |  |
-| `record` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `records` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -620,12 +622,12 @@ API path: `/public/digitalservices/mandatorClearingExport`
 
 | Field | Description |
 | --- | --- |
-| `clearing_date_from` |  |
-| `clearing_date_to` |  |
-| `file_id` |  |
-| `filename_template` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `clearingDateFrom` |  |
+| `clearingDateTo` |  |
+| `fileId` |  |
+| `filenameTemplate` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `status` |  |
 
 Operations: Create, Load.
@@ -636,11 +638,11 @@ API path: `/public/digitalservices/mandatorClearingExportDownload`
 
 | Field | Description |
 | --- | --- |
-| `clearing_date_from` |  |
-| `clearing_date_to` |  |
-| `record` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `clearingDateFrom` |  |
+| `clearingDateTo` |  |
+| `records` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -650,30 +652,30 @@ API path: `/public/digitalservices/mandatorClearingExportSummary`
 
 | Field | Description |
 | --- | --- |
-| `3_d_secure` |  |
-| `authorization_code` |  |
-| `card_brand` |  |
-| `clearing_amount_from` |  |
-| `clearing_amount_to` |  |
-| `clearing_currency` |  |
-| `clearing_status` |  |
-| `corporate_uuid` |  |
-| `order_by_transaction_date` |  |
+| `3DSecure` |  |
+| `authorizationCode` |  |
+| `cardBrand` |  |
+| `clearingAmountFrom` |  |
+| `clearingAmountTo` |  |
+| `clearingCurrency` |  |
+| `clearingStatus` |  |
+| `corporateUUID` |  |
+| `orderByTransactionDate` |  |
 | `pagination` |  |
-| `receipt_number` |  |
-| `referenced_transaction_id` |  |
-| `retrieval_reference_number` |  |
-| `source_id` |  |
-| `tecsengine_response_code_from` |  |
-| `tecsengine_response_code_to` |  |
-| `terminal_id` |  |
-| `trace_number` |  |
-| `transaction_amount_from` |  |
-| `transaction_amount_to` |  |
-| `transaction_date_from` |  |
-| `transaction_date_to` |  |
-| `transaction_id` |  |
-| `transaction_type` |  |
+| `receiptNumber` |  |
+| `referencedTransactionId` |  |
+| `retrievalReferenceNumber` |  |
+| `sourceId` |  |
+| `tecsengineResponseCodeFrom` |  |
+| `tecsengineResponseCodeTo` |  |
+| `terminalId` |  |
+| `traceNumber` |  |
+| `transactionAmountFrom` |  |
+| `transactionAmountTo` |  |
+| `transactionDateFrom` |  |
+| `transactionDateTo` |  |
+| `transactionId` |  |
+| `transactionType` |  |
 | `wallet` |  |
 
 Operations: Create.
@@ -684,11 +686,11 @@ API path: `/public/transactionHistoryCsv`
 
 | Field | Description |
 | --- | --- |
-| `productorderuuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `target_packageorderuuid` |  |
-| `target_productorderuuid` |  |
+| `productorderuuids` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `targetPackageorderuuid` |  |
+| `targetProductorderuuid` |  |
 
 Operations: Create.
 
@@ -698,22 +700,22 @@ API path: `/moveTid`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_name` |  |
+| `acquirerName` |  |
 | `amount` |  |
-| `authorization_number` |  |
-| `card_number` |  |
-| `card_type` |  |
+| `authorizationNumber` |  |
+| `cardNumber` |  |
+| `cardType` |  |
 | `currency` |  |
 | `cvc` |  |
-| `date_time_tx` |  |
-| `exp_date` |  |
-| `merchant_id` |  |
-| `original_transaction_id` |  |
+| `dateTimeTx` |  |
+| `expDate` |  |
+| `merchantId` |  |
+| `originalTransactionId` |  |
 | `password` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
-| `transaction_id` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
+| `transactionId` |  |
 | `txtype` |  |
 
 Operations: Create.
@@ -724,21 +726,17 @@ API path: `/public/paymentManual`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_name` |  |
 | `amount` |  |
-| `authorization_number` |  |
-| `card_type` |  |
 | `currency` |  |
-| `date_time_tx` |  |
-| `device_payload` |  |
-| `merchant_id` |  |
-| `original_transaction_id` |  |
+| `device` |  |
+| `devicePayload` |  |
+| `expDate` |  |
+| `mode` |  |
+| `panMasked` |  |
 | `password` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `sred` |  |
-| `terminal_id` |  |
-| `transaction_id` |  |
+| `serial` |  |
+| `serviceCode` |  |
+| `terminalId` |  |
 | `txtype` |  |
 
 Operations: Create.
@@ -749,48 +747,48 @@ API path: `/public/paymentSred`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_id` |  |
-| `acquirer_name` |  |
-| `actual_bonus_point` |  |
+| `acquirerId` |  |
+| `acquirerName` |  |
+| `actualBonusPoints` |  |
 | `amount` |  |
-| `authorization_code` |  |
-| `balance_amount` |  |
-| `card_brand` |  |
-| `card_number` |  |
-| `card_number_reference` |  |
-| `client_id` |  |
+| `authorizationCode` |  |
+| `balanceAmount` |  |
+| `cardBrand` |  |
+| `cardNumber` |  |
+| `cardNumberReference` |  |
+| `clientId` |  |
 | `currency` |  |
 | `cvc` |  |
-| `ec_data` |  |
-| `ecr_data` |  |
-| `emv_data` |  |
-| `exchange_fee` |  |
-| `exchange_rate` |  |
-| `language_code` |  |
-| `merchant_address` |  |
-| `merchant_name` |  |
-| `merchant_number` |  |
-| `message_type` |  |
-| `original_trace_number` |  |
-| `original_transaction_id` |  |
+| `ecData` |  |
+| `ecrData` |  |
+| `emvData` |  |
+| `exchangeFee` |  |
+| `exchangeRate` |  |
+| `languageCode` |  |
+| `merchantAddress` |  |
+| `merchantName` |  |
+| `merchantNumber` |  |
+| `messageType` |  |
+| `originalTraceNumber` |  |
+| `originalTransactionId` |  |
 | `password` |  |
-| `payment_reason` |  |
-| `receipt_footer` |  |
-| `receipt_header` |  |
-| `receipt_layout` |  |
-| `receipt_number` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `serial_number` |  |
+| `paymentReason` |  |
+| `receiptFooter` |  |
+| `receiptHeader` |  |
+| `receiptLayout` |  |
+| `receiptNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `serialNumber` |  |
 | `svc` |  |
-| `terminal_id` |  |
-| `terminal_location` |  |
-| `trace_number` |  |
-| `transaction_date` |  |
-| `transaction_id` |  |
-| `transaction_type` |  |
-| `tx_type` |  |
-| `user_data` |  |
+| `terminalId` |  |
+| `terminalLocation` |  |
+| `traceNumber` |  |
+| `transactionDate` |  |
+| `transactionId` |  |
+| `transactionType` |  |
+| `txType` |  |
+| `userData` |  |
 
 Operations: Create.
 
@@ -800,13 +798,13 @@ API path: `/public/paymentTransaction`
 
 | Field | Description |
 | --- | --- |
-| `corporate_uuid` |  |
-| `package_order_uuid` |  |
-| `product_order_uuid` |  |
-| `reactivation_reason` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
+| `corporateUuid` |  |
+| `packageOrderUuid` |  |
+| `productOrderUuid` |  |
+| `reactivationReason` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
 
 Operations: Create.
 
@@ -816,46 +814,46 @@ API path: `/reactivateTerminal`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_id` |  |
-| `acquirer_name` |  |
-| `actual_bonus_point` |  |
+| `acquirerId` |  |
+| `acquirerName` |  |
+| `actualBonusPoints` |  |
 | `amount` |  |
-| `authorization_code` |  |
-| `balance_amount` |  |
-| `card_brand` |  |
-| `card_number` |  |
-| `client_id` |  |
+| `authorizationCode` |  |
+| `balanceAmount` |  |
+| `cardBrand` |  |
+| `cardNumber` |  |
+| `clientId` |  |
 | `currency` |  |
 | `cvc` |  |
-| `ec_data` |  |
-| `ecr_data` |  |
-| `emv_data` |  |
-| `exchange_fee` |  |
-| `exchange_rate` |  |
-| `language_code` |  |
-| `merchant_address` |  |
-| `merchant_name` |  |
-| `merchant_number` |  |
-| `message_type` |  |
-| `original_trace_number` |  |
-| `original_transaction_id` |  |
+| `ecData` |  |
+| `ecrData` |  |
+| `emvData` |  |
+| `exchangeFee` |  |
+| `exchangeRate` |  |
+| `languageCode` |  |
+| `merchantAddress` |  |
+| `merchantName` |  |
+| `merchantNumber` |  |
+| `messageType` |  |
+| `originalTraceNumber` |  |
+| `originalTransactionId` |  |
 | `password` |  |
-| `payment_reason` |  |
-| `receipt_footer` |  |
-| `receipt_header` |  |
-| `receipt_layout` |  |
-| `receipt_number` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `serial_number` |  |
+| `paymentReason` |  |
+| `receiptFooter` |  |
+| `receiptHeader` |  |
+| `receiptLayout` |  |
+| `receiptNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `serialNumber` |  |
 | `svc` |  |
-| `terminal_id` |  |
-| `terminal_location` |  |
-| `trace_number` |  |
-| `transaction_date` |  |
-| `transaction_id` |  |
-| `tx_type` |  |
-| `user_data` |  |
+| `terminalId` |  |
+| `terminalLocation` |  |
+| `traceNumber` |  |
+| `transactionDate` |  |
+| `transactionId` |  |
+| `txType` |  |
+| `userData` |  |
 
 Operations: Create.
 
@@ -865,14 +863,14 @@ API path: `/public/refundTransaction`
 
 | Field | Description |
 | --- | --- |
-| `corporate_uuid` |  |
-| `package_order_uuid` |  |
-| `partner_id` |  |
-| `partner_name` |  |
-| `product_order_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `template_name` |  |
+| `corporateUuid` |  |
+| `packageOrderUuid` |  |
+| `partnerId` |  |
+| `partnerName` |  |
+| `productOrderUuid` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `templateName` |  |
 
 Operations: Create.
 
@@ -882,24 +880,24 @@ API path: `/registerTecsCompany`
 
 | Field | Description |
 | --- | --- |
-| `additional_data` |  |
-| `corporate_uuid` |  |
-| `package_order_uuid` |  |
-| `product_order_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `tecs_web_secret_key` |  |
-| `template_name` |  |
-| `terminal_country_code` |  |
-| `terminal_id` |  |
-| `terminal_id_acq` |  |
-| `terminal_language_code` |  |
-| `terminal_location` |  |
-| `terminal_serial_number` |  |
-| `token_io_alia` |  |
-| `token_io_iban` |  |
-| `token_io_member_id` |  |
-| `web_shop_url` |  |
+| `additionalData` |  |
+| `corporateUuid` |  |
+| `packageOrderUuid` |  |
+| `productOrderUuid` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `tecsWebSecretKey` |  |
+| `templateName` |  |
+| `terminalCountryCode` |  |
+| `terminalId` |  |
+| `terminalIdAcq` |  |
+| `terminalLanguageCode` |  |
+| `terminalLocation` |  |
+| `terminalSerialNumber` |  |
+| `tokenIOAlias` |  |
+| `tokenIOIban` |  |
+| `tokenIOMemberId` |  |
+| `webShopUrl` |  |
 
 Operations: Create.
 
@@ -909,16 +907,16 @@ API path: `/registerTerminal`
 
 | Field | Description |
 | --- | --- |
-| `card_brand_report_data` |  |
-| `clearing_date_from` |  |
-| `clearing_date_to` |  |
-| `corporate_id` |  |
+| `cardBrandReportData` |  |
+| `clearingDateFrom` |  |
+| `clearingDateTo` |  |
+| `corporateId` |  |
 | `currency` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `sum_over_credit_tx` |  |
-| `sum_over_debit_tx` |  |
-| `terminal_id` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `sumOverCreditTx` |  |
+| `sumOverDebitTx` |  |
+| `terminalId` |  |
 
 Operations: Create.
 
@@ -928,56 +926,56 @@ API path: `/public/digitalservices/reportData`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_name` |  |
-| `acquirer_terminal_id` |  |
+| `acquirerName` |  |
+| `acquirerTerminalId` |  |
 | `amount` |  |
-| `application_cryptogram` |  |
-| `authorization_code` |  |
-| `authorization_date` |  |
-| `card_brand` |  |
-| `card_entry` |  |
-| `card_expiration` |  |
-| `card_number` |  |
-| `clearing_amount` |  |
-| `clearing_batch_id` |  |
-| `clearing_currency` |  |
-| `clearing_date` |  |
-| `clearing_processed_date` |  |
-| `clearing_status` |  |
-| `client_id` |  |
+| `applicationCryptogram` |  |
+| `authorizationCode` |  |
+| `authorizationDate` |  |
+| `cardBrand` |  |
+| `cardEntry` |  |
+| `cardExpiration` |  |
+| `cardNumber` |  |
+| `clearingAmount` |  |
+| `clearingBatchId` |  |
+| `clearingCurrency` |  |
+| `clearingDate` |  |
+| `clearingProcessedDate` |  |
+| `clearingStatus` |  |
+| `clientId` |  |
 | `currency` |  |
 | `cvm` |  |
-| `ecr_data` |  |
-| `emv_application_id` |  |
-| `emv_application_label` |  |
-| `merchant_name` |  |
-| `merchant_number` |  |
-| `original_client_id` |  |
-| `original_terminal_id` |  |
-| `original_transaction_id` |  |
-| `payment_reason` |  |
-| `receipt_number` |  |
-| `response_code` |  |
-| `response_code_from_a` |  |
-| `response_message` |  |
-| `retrieval_reference_number` |  |
-| `service_code` |  |
-| `settlement_status` |  |
-| `source_id` |  |
-| `tecsengine_response_code` |  |
-| `tecsengine_response_text` |  |
-| `terminal_end_of_day_date` |  |
-| `terminal_id` |  |
-| `terminal_location` |  |
-| `tip_amount` |  |
-| `trace_number` |  |
-| `transaction_clearing_date` |  |
-| `transaction_date` |  |
-| `transaction_id` |  |
-| `transaction_seq_number` |  |
-| `transaction_server_date` |  |
-| `transaction_source` |  |
-| `transaction_type` |  |
+| `ecrData` |  |
+| `emvApplicationId` |  |
+| `emvApplicationLabel` |  |
+| `merchantName` |  |
+| `merchantNumber` |  |
+| `originalClientId` |  |
+| `originalTerminalId` |  |
+| `originalTransactionId` |  |
+| `paymentReason` |  |
+| `receiptNumber` |  |
+| `responseCode` |  |
+| `responseCodeFromAS` |  |
+| `responseMessage` |  |
+| `retrievalReferenceNumber` |  |
+| `serviceCode` |  |
+| `settlementStatus` |  |
+| `sourceId` |  |
+| `tecsengineResponseCode` |  |
+| `tecsengineResponseText` |  |
+| `terminalEndOfDayDate` |  |
+| `terminalId` |  |
+| `terminalLocation` |  |
+| `tipAmount` |  |
+| `traceNumber` |  |
+| `transactionClearingDate` |  |
+| `transactionDate` |  |
+| `transactionId` |  |
+| `transactionSeqNumber` |  |
+| `transactionServerDate` |  |
+| `transactionSource` |  |
+| `transactionType` |  |
 
 Operations: Create.
 
@@ -987,12 +985,12 @@ API path: `/public/statusTransaction`
 
 | Field | Description |
 | --- | --- |
-| `acq_tab_nexo` |  |
-| `config_version` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `serial_number` |  |
-| `tid_sent` |  |
+| `acqTabNexo` |  |
+| `configVersion` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `serialNumber` |  |
+| `tidSent` |  |
 
 Operations: Create.
 
@@ -1002,11 +1000,11 @@ API path: `/storeTerminalParameters`
 
 | Field | Description |
 | --- | --- |
-| `device_serial_number` |  |
-| `duplicate_terminal_id` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal` |  |
+| `deviceSerialNumber` |  |
+| `duplicateTerminalIds` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminals` |  |
 
 Operations: Create.
 
@@ -1016,34 +1014,34 @@ API path: `/public/getTerminalId`
 
 | Field | Description |
 | --- | --- |
-| `3_d_secure` |  |
-| `authorization_code` |  |
-| `card_brand` |  |
-| `clearing_amount_from` |  |
-| `clearing_amount_to` |  |
-| `clearing_currency` |  |
-| `clearing_status` |  |
-| `corporate_uuid` |  |
-| `order_by_transaction_date` |  |
+| `3DSecure` |  |
+| `authorizationCode` |  |
+| `cardBrand` |  |
+| `clearingAmountFrom` |  |
+| `clearingAmountTo` |  |
+| `clearingCurrency` |  |
+| `clearingStatus` |  |
+| `corporateUUID` |  |
+| `orderByTransactionDate` |  |
 | `pagination` |  |
-| `payment_token_public_id` |  |
-| `receipt_number` |  |
-| `referenced_transaction_id` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `retrieval_reference_number` |  |
-| `source_id` |  |
-| `tecsengine_response_code_from` |  |
-| `tecsengine_response_code_to` |  |
-| `terminal_id` |  |
-| `trace_number` |  |
-| `transaction_amount_from` |  |
-| `transaction_amount_to` |  |
-| `transaction_date_from` |  |
-| `transaction_date_to` |  |
-| `transaction_history` |  |
-| `transaction_id` |  |
-| `transaction_type` |  |
+| `paymentTokenPublicId` |  |
+| `receiptNumber` |  |
+| `referencedTransactionId` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `retrievalReferenceNumber` |  |
+| `sourceId` |  |
+| `tecsengineResponseCodeFrom` |  |
+| `tecsengineResponseCodeTo` |  |
+| `terminalId` |  |
+| `traceNumber` |  |
+| `transactionAmountFrom` |  |
+| `transactionAmountTo` |  |
+| `transactionDateFrom` |  |
+| `transactionDateTo` |  |
+| `transactionHistories` |  |
+| `transactionId` |  |
+| `transactionType` |  |
 | `wallet` |  |
 
 Operations: Create.
@@ -1055,11 +1053,11 @@ API path: `/public/mcom/transactionHistory`
 | Field | Description |
 | --- | --- |
 | `period` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `transaction_date_from` |  |
-| `transaction_date_to` |  |
-| `transactions_count` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `transactionDateFrom` |  |
+| `transactionDateTo` |  |
+| `transactionsCount` |  |
 
 Operations: Create.
 
@@ -1070,11 +1068,11 @@ API path: `/public/countAuthorisedTransactions`
 | Field | Description |
 | --- | --- |
 | `period` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `transaction_date_from` |  |
-| `transaction_date_to` |  |
-| `transactions_count` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `transactionDateFrom` |  |
+| `transactionDateTo` |  |
+| `transactionsCount` |  |
 
 Operations: Create.
 
@@ -1085,11 +1083,11 @@ API path: `/public/countTransactionsByCardBrand`
 | Field | Description |
 | --- | --- |
 | `period` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `transaction_date_from` |  |
-| `transaction_date_to` |  |
-| `turnover` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `transactionDateFrom` |  |
+| `transactionDateTo` |  |
+| `turnovers` |  |
 
 Operations: Create.
 
@@ -1100,15 +1098,15 @@ API path: `/public/transactionTurnover`
 | Field | Description |
 | --- | --- |
 | `city` |  |
-| `corporate_uuid` |  |
+| `corporateUuid` |  |
 | `country` |  |
-| `merchant_category_code` |  |
+| `merchantCategoryCode` |  |
 | `name` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `state` |  |
 | `street` |  |
-| `vu_nummer` |  |
+| `vuNummer` |  |
 | `zipcode` |  |
 
 Operations: Create.
@@ -1119,10 +1117,10 @@ API path: `/public/updateMerchant`
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
-| `template_name` |  |
-| `template_xml` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `templateName` |  |
+| `templateXml` |  |
 
 Operations: Create.
 
@@ -1132,8 +1130,8 @@ API path: `/public/updateTemplateXml`
 
 | Field | Description |
 | --- | --- |
-| `app_name` |  |
-| `build_date` |  |
+| `appName` |  |
+| `buildDate` |  |
 | `version` |  |
 
 Operations: Load.
@@ -1153,65 +1151,66 @@ Create an instance: `cancel_transaction <- Sdk.cancel_transaction sdk VNoval`
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_id` | `String` |  |
-| `acquirer_name` | `String` |  |
-| `actual_bonus_point` | `String` |  |
+| `acquirerId` | `String` |  |
+| `acquirerName` | `String` |  |
+| `actualBonusPoints` | `String` |  |
 | `amount` | `Int` |  |
-| `authorization_code` | `String` |  |
-| `balance_amount` | `String` |  |
-| `card_brand` | `String` |  |
-| `card_number` | `String` |  |
-| `client_id` | `Int` |  |
+| `authorizationCode` | `String` |  |
+| `balanceAmount` | `String` |  |
+| `cardBrand` | `String` |  |
+| `cardNumber` | `String` |  |
+| `clientId` | `Int` |  |
 | `currency` | `String` |  |
 | `cvc` | `String` |  |
-| `ec_data` | `String` |  |
-| `ecr_data` | `String` |  |
-| `emv_data` | `String` |  |
-| `exchange_fee` | `Int` |  |
-| `exchange_rate` | `String` |  |
-| `language_code` | `String` |  |
-| `merchant_address` | `String` |  |
-| `merchant_name` | `String` |  |
-| `merchant_number` | `String` |  |
-| `message_type` | `String` |  |
-| `original_trace_number` | `Int` |  |
-| `original_transaction_id` | `String` |  |
+| `ecData` | `String` |  |
+| `ecrData` | `String` |  |
+| `emvData` | `String` |  |
+| `exchangeFee` | `Int` |  |
+| `exchangeRate` | `String` |  |
+| `languageCode` | `String` |  |
+| `merchantAddress` | `String` |  |
+| `merchantName` | `String` |  |
+| `merchantNumber` | `String` |  |
+| `messageType` | `String` |  |
+| `originalTraceNumber` | `Int` |  |
+| `originalTransactionId` | `String` |  |
 | `password` | `String` |  |
-| `payment_reason` | `String` |  |
-| `receipt_footer` | `String` |  |
-| `receipt_header` | `String` |  |
-| `receipt_layout` | `Int` |  |
-| `receipt_number` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `serial_number` | `String` |  |
+| `paymentReason` | `String` |  |
+| `receiptFooter` | `String` |  |
+| `receiptHeader` | `String` |  |
+| `receiptLayout` | `Int` |  |
+| `receiptNumber` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `serialNumber` | `String` |  |
 | `svc` | `String` |  |
-| `terminal_id` | `Int` |  |
-| `terminal_location` | `String` |  |
-| `trace_number` | `Int` |  |
-| `transaction_date` | `String` |  |
-| `transaction_id` | `String` |  |
-| `tx_type` | `String` |  |
-| `user_data` | `String` |  |
+| `terminalId` | `Int` |  |
+| `terminalLocation` | `String` |  |
+| `traceNumber` | `Int` |  |
+| `transactionDate` | `String` |  |
+| `transactionId` | `String` |  |
+| `txType` | `String` |  |
+| `userData` | `String` |  |
 
 #### Example: Create
 
 ```haskell
   ent <- Sdk.cancel_transaction sdk VNoval
   d <- jo
-    [ ("client_id", VNum 1)   -- Int
+    [ ("clientId", VNum 1)   -- Int
     , ("currency", VStr "example_currency")   -- String
-    , ("receipt_number", VStr "example_receipt_number")   -- String
-    , ("terminal_id", VNum 1)   -- Int
+    , ("receiptNumber", VStr "example_receiptNumber")   -- String
+    , ("terminalId", VNum 1)   -- Int
     ]
   ctrl <- emptyMap
   cancel_transaction <- Sdk.eCreate ent d ctrl
+  cancel_transactionData <- Sdk.eDataGet cancel_transaction
 ```
 
 
@@ -1223,15 +1222,15 @@ Create an instance: `check_card_black_listed <- Sdk.check_card_black_listed sdk 
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `card_no` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `cardNo` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
@@ -1241,6 +1240,7 @@ Create an instance: `check_card_black_listed <- Sdk.check_card_black_listed sdk 
     []
   ctrl <- emptyMap
   check_card_black_listed <- Sdk.eCreate ent d ctrl
+  check_card_black_listedData <- Sdk.eDataGet check_card_black_listed
 ```
 
 
@@ -1252,32 +1252,33 @@ Create an instance: `create_product <- Sdk.create_product sdk VNoval`
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_id` | `Int` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `template_name` | `String` |  |
-| `template_type` | `String` |  |
-| `template_xml` | `String` |  |
-| `terminal_type` | `String` |  |
+| `acquirerId` | `Int` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `templateName` | `String` |  |
+| `templateType` | `String` |  |
+| `templateXml` | `String` |  |
+| `terminalType` | `String` |  |
 
 #### Example: Create
 
 ```haskell
   ent <- Sdk.create_product sdk VNoval
   d <- jo
-    [ ("template_name", VStr "example_template_name")   -- String
-    , ("template_type", VStr "example_template_type")   -- String
-    , ("template_xml", VStr "example_template_xml")   -- String
-    , ("terminal_type", VStr "example_terminal_type")   -- String
+    [ ("templateName", VStr "example_templateName")   -- String
+    , ("templateType", VStr "example_templateType")   -- String
+    , ("templateXml", VStr "example_templateXml")   -- String
+    , ("terminalType", VStr "example_terminalType")   -- String
     ]
   ctrl <- emptyMap
   create_product <- Sdk.eCreate ent d ctrl
+  create_productData <- Sdk.eDataGet create_product
 ```
 
 
@@ -1289,30 +1290,31 @@ Create an instance: `deactivate_terminal <- Sdk.deactivate_terminal sdk VNoval`
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `corporate_uuid` | `String` |  |
-| `deactivation_reason` | `String` |  |
-| `package_order_uuid` | `String` |  |
-| `product_order_uuid` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `terminal_id` | `Int` |  |
+| `corporateUuid` | `String` |  |
+| `deactivationReason` | `String` |  |
+| `packageOrderUuid` | `String` |  |
+| `productOrderUuid` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `terminalId` | `Int` |  |
 
 #### Example: Create
 
 ```haskell
   ent <- Sdk.deactivate_terminal sdk VNoval
   d <- jo
-    [ ("deactivation_reason", VStr "example_deactivation_reason")   -- String
-    , ("terminal_id", VNum 1)   -- Int
+    [ ("deactivationReason", VStr "example_deactivationReason")   -- String
+    , ("terminalId", VNum 1)   -- Int
     ]
   ctrl <- emptyMap
   deactivate_terminal <- Sdk.eCreate ent d ctrl
+  deactivate_terminalData <- Sdk.eDataGet deactivate_terminal
 ```
 
 
@@ -1324,23 +1326,23 @@ Create an instance: `digital_services_api <- Sdk.digital_services_api sdk VNoval
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
-| `eLoad ent match ctrl` | Load a single entity by match criteria. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
+| `eLoad ent match ctrl` | Load a single entity by match criteria. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `clearing_date_from` | `String` |  |
-| `clearing_date_to` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `tx_count` | `Int` |  |
-| `tx_id_end` | `String` |  |
-| `tx_id_start` | `String` |  |
-| `tx_seq_no_end` | `Int` |  |
-| `tx_seq_no_start` | `Int` |  |
-| `tx_total` | `Int` |  |
+| `clearingDateFrom` | `String` |  |
+| `clearingDateTo` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `txCount` | `Int` |  |
+| `txIdEnd` | `String` |  |
+| `txIdStart` | `String` |  |
+| `txSeqNoEnd` | `Int` |  |
+| `txSeqNoStart` | `Int` |  |
+| `txTotal` | `Int` |  |
 
 #### Example: Load
 
@@ -1349,6 +1351,8 @@ Create an instance: `digital_services_api <- Sdk.digital_services_api sdk VNoval
   match <- jo []
   ctrl <- emptyMap
   digital_services_api <- Sdk.eLoad ent match ctrl
+  -- The op resolves to the ENTITY; the record is inside it.
+  digital_services_apiData <- Sdk.eDataGet digital_services_api
 ```
 
 #### Example: Create
@@ -1356,9 +1360,12 @@ Create an instance: `digital_services_api <- Sdk.digital_services_api sdk VNoval
 ```haskell
   ent <- Sdk.digital_services_api sdk VNoval
   d <- jo
-    []
+    [ ("clearingDateFrom", VStr "example_clearingDateFrom")   -- String
+    , ("clearingDateTo", VStr "example_clearingDateTo")   -- String
+    ]
   ctrl <- emptyMap
   digital_services_api <- Sdk.eCreate ent d ctrl
+  digital_services_apiData <- Sdk.eDataGet digital_services_api
 ```
 
 
@@ -1370,30 +1377,31 @@ Create an instance: `ec_data_ecom <- Sdk.ec_data_ecom sdk VNoval`
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `ecom_data` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `terminal_id` | `Int` |  |
-| `transaction_id` | `String` |  |
-| `transaction_type` | `String` |  |
+| `ecomData` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `terminalId` | `Int` |  |
+| `transactionId` | `String` |  |
+| `transactionType` | `String` |  |
 
 #### Example: Create
 
 ```haskell
   ent <- Sdk.ec_data_ecom sdk VNoval
   d <- jo
-    [ ("terminal_id", VNum 1)   -- Int
-    , ("transaction_id", VStr "example_transaction_id")   -- String
-    , ("transaction_type", VStr "example_transaction_type")   -- String
+    [ ("terminalId", VNum 1)   -- Int
+    , ("transactionId", VStr "example_transactionId")   -- String
+    , ("transactionType", VStr "example_transactionType")   -- String
     ]
   ctrl <- emptyMap
   ec_data_ecom <- Sdk.eCreate ent d ctrl
+  ec_data_ecomData <- Sdk.eDataGet ec_data_ecom
 ```
 
 
@@ -1405,27 +1413,28 @@ Create an instance: `ecom_parameter <- Sdk.ecom_parameter sdk VNoval`
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `ecom_pass` | `String` |  |
-| `ecom_skey` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `terminal_id` | `Int` |  |
+| `ecomPass` | `String` |  |
+| `ecomSkey` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `terminalId` | `Int` |  |
 
 #### Example: Create
 
 ```haskell
   ent <- Sdk.ecom_parameter sdk VNoval
   d <- jo
-    [ ("terminal_id", VNum 1)   -- Int
+    [ ("terminalId", VNum 1)   -- Int
     ]
   ctrl <- emptyMap
   ecom_parameter <- Sdk.eCreate ent d ctrl
+  ecom_parameterData <- Sdk.eDataGet ecom_parameter
 ```
 
 
@@ -1437,30 +1446,31 @@ Create an instance: `ecr_data <- Sdk.ecr_data sdk VNoval`
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `ecr_data` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `terminal_id` | `Int` |  |
-| `transaction_id` | `String` |  |
-| `transaction_type` | `String` |  |
+| `ecrData` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `terminalId` | `Int` |  |
+| `transactionId` | `String` |  |
+| `transactionType` | `String` |  |
 
 #### Example: Create
 
 ```haskell
   ent <- Sdk.ecr_data sdk VNoval
   d <- jo
-    [ ("terminal_id", VNum 1)   -- Int
-    , ("transaction_id", VStr "example_transaction_id")   -- String
-    , ("transaction_type", VStr "example_transaction_type")   -- String
+    [ ("terminalId", VNum 1)   -- Int
+    , ("transactionId", VStr "example_transactionId")   -- String
+    , ("transactionType", VStr "example_transactionType")   -- String
     ]
   ctrl <- emptyMap
   ecr_data <- Sdk.eCreate ent d ctrl
+  ecr_dataData <- Sdk.eDataGet ecr_data
 ```
 
 
@@ -1472,30 +1482,31 @@ Create an instance: `emv_data <- Sdk.emv_data sdk VNoval`
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `emv_data` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `terminal_id` | `Int` |  |
-| `transaction_id` | `String` |  |
-| `transaction_type` | `String` |  |
+| `emvData` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `terminalId` | `Int` |  |
+| `transactionId` | `String` |  |
+| `transactionType` | `String` |  |
 
 #### Example: Create
 
 ```haskell
   ent <- Sdk.emv_data sdk VNoval
   d <- jo
-    [ ("terminal_id", VNum 1)   -- Int
-    , ("transaction_id", VStr "example_transaction_id")   -- String
-    , ("transaction_type", VStr "example_transaction_type")   -- String
+    [ ("terminalId", VNum 1)   -- Int
+    , ("transactionId", VStr "example_transactionId")   -- String
+    , ("transactionType", VStr "example_transactionType")   -- String
     ]
   ctrl <- emptyMap
   emv_data <- Sdk.eCreate ent d ctrl
+  emv_dataData <- Sdk.eDataGet emv_data
 ```
 
 
@@ -1507,41 +1518,42 @@ Create an instance: `enable_acquiring <- Sdk.enable_acquiring sdk VNoval`
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `account_no` | `Int` |  |
-| `additional_data` | `Value` |  |
-| `corporate_uuid` | `String` |  |
+| `accountNo` | `Int` |  |
+| `additionalData` | `Value` |  |
+| `corporateUuid` | `String` |  |
 | `currency` | `String` |  |
-| `merchant_category_code` | `Int` |  |
-| `package_order_uuid` | `String` |  |
-| `product_order_uuid` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `sorting_code` | `Int` |  |
-| `template_name` | `String` |  |
-| `terminal_id` | `[Value]` |  |
-| `terminal_id_acq` | `String` |  |
-| `vu_nummer` | `String` |  |
+| `merchantCategoryCode` | `Int` |  |
+| `packageOrderUuid` | `String` |  |
+| `productOrderUuid` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `sortingCode` | `Int` |  |
+| `templateName` | `String` |  |
+| `terminalIdAcq` | `String` |  |
+| `terminalIds` | `[Value]` |  |
+| `vuNummer` | `String` |  |
 
 #### Example: Create
 
 ```haskell
   ent <- Sdk.enable_acquiring sdk VNoval
   d <- jo
-    [ ("corporate_uuid", VStr "example_corporate_uuid")   -- String
+    [ ("corporateUuid", VStr "example_corporateUuid")   -- String
     , ("currency", VStr "example_currency")   -- String
-    , ("merchant_category_code", VNum 1)   -- Int
-    , ("package_order_uuid", VStr "example_package_order_uuid")   -- String
-    , ("product_order_uuid", VStr "example_product_order_uuid")   -- String
-    , ("template_name", VStr "example_template_name")   -- String
+    , ("merchantCategoryCode", VNum 1)   -- Int
+    , ("packageOrderUuid", VStr "example_packageOrderUuid")   -- String
+    , ("productOrderUuid", VStr "example_productOrderUuid")   -- String
+    , ("templateName", VStr "example_templateName")   -- String
     ]
   ctrl <- emptyMap
   enable_acquiring <- Sdk.eCreate ent d ctrl
+  enable_acquiringData <- Sdk.eDataGet enable_acquiring
 ```
 
 
@@ -1553,25 +1565,26 @@ Create an instance: `get_merchant_contract_number <- Sdk.get_merchant_contract_n
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `merchant_contract_number` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `merchantContractNumber` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
 ```haskell
   ent <- Sdk.get_merchant_contract_number sdk VNoval
   d <- jo
-    [ ("merchant_contract_number", VStr "example_merchant_contract_number")   -- String
+    [ ("merchantContractNumber", VStr "example_merchantContractNumber")   -- String
     ]
   ctrl <- emptyMap
   get_merchant_contract_number <- Sdk.eCreate ent d ctrl
+  get_merchant_contract_numberData <- Sdk.eDataGet get_merchant_contract_number
 ```
 
 
@@ -1583,25 +1596,26 @@ Create an instance: `get_template_xml <- Sdk.get_template_xml sdk VNoval`
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `template_name` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `templateName` | `String` |  |
 
 #### Example: Create
 
 ```haskell
   ent <- Sdk.get_template_xml sdk VNoval
   d <- jo
-    [ ("template_name", VStr "example_template_name")   -- String
+    [ ("templateName", VStr "example_templateName")   -- String
     ]
   ctrl <- emptyMap
   get_template_xml <- Sdk.eCreate ent d ctrl
+  get_template_xmlData <- Sdk.eDataGet get_template_xml
 ```
 
 
@@ -1613,25 +1627,26 @@ Create an instance: `introduce_mandator <- Sdk.introduce_mandator sdk VNoval`
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `mandator_name` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `mandatorName` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
 ```haskell
   ent <- Sdk.introduce_mandator sdk VNoval
   d <- jo
-    [ ("mandator_name", VStr "example_mandator_name")   -- String
+    [ ("mandatorName", VStr "example_mandatorName")   -- String
     ]
   ctrl <- emptyMap
   introduce_mandator <- Sdk.eCreate ent d ctrl
+  introduce_mandatorData <- Sdk.eDataGet introduce_mandator
 ```
 
 
@@ -1643,25 +1658,26 @@ Create an instance: `introduce_package <- Sdk.introduce_package sdk VNoval`
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `terminal_template_description` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `terminalTemplateDescription` | `String` |  |
 
 #### Example: Create
 
 ```haskell
   ent <- Sdk.introduce_package sdk VNoval
   d <- jo
-    [ ("terminal_template_description", VStr "example_terminal_template_description")   -- String
+    [ ("terminalTemplateDescription", VStr "example_terminalTemplateDescription")   -- String
     ]
   ctrl <- emptyMap
   introduce_package <- Sdk.eCreate ent d ctrl
+  introduce_packageData <- Sdk.eDataGet introduce_package
 ```
 
 
@@ -1673,22 +1689,22 @@ Create an instance: `keep_alive <- Sdk.keep_alive sdk VNoval`
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
 | `hwserialno` | `String` |  |
-| `ka_date_time_from` | `String` |  |
-| `ka_date_time_to` | `String` |  |
-| `keep_alive_data` | `[Value]` |  |
+| `kaDateTimeFrom` | `String` |  |
+| `kaDateTimeTo` | `String` |  |
+| `keepAliveData` | `[Value]` |  |
 | `pagination` | `Value` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `terminal_date_time_from` | `String` |  |
-| `terminal_date_time_to` | `String` |  |
-| `terminal_id` | `Int` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `terminalDateTimeFrom` | `String` |  |
+| `terminalDateTimeTo` | `String` |  |
+| `terminalId` | `Int` |  |
 
 #### Example: Create
 
@@ -1698,6 +1714,7 @@ Create an instance: `keep_alive <- Sdk.keep_alive sdk VNoval`
     []
   ctrl <- emptyMap
   keep_alive <- Sdk.eCreate ent d ctrl
+  keep_aliveData <- Sdk.eDataGet keep_alive
 ```
 
 
@@ -1709,18 +1726,18 @@ Create an instance: `list_terminal <- Sdk.list_terminal sdk VNoval`
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `corporate_uuid` | `[Value]` |  |
+| `corporateUuid` | `[Value]` |  |
 | `filter` | `Value` |  |
 | `pagination` | `Value` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `terminal` | `[Value]` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `terminals` | `[Value]` |  |
 
 #### Example: Create
 
@@ -1730,6 +1747,7 @@ Create an instance: `list_terminal <- Sdk.list_terminal sdk VNoval`
     []
   ctrl <- emptyMap
   list_terminal <- Sdk.eCreate ent d ctrl
+  list_terminalData <- Sdk.eDataGet list_terminal
 ```
 
 
@@ -1741,29 +1759,30 @@ Create an instance: `mandator_clearing_export <- Sdk.mandator_clearing_export sd
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `clearing_date_from` | `String` |  |
-| `clearing_date_to` | `String` |  |
+| `clearingDateFrom` | `String` |  |
+| `clearingDateTo` | `String` |  |
 | `pagination` | `Value` |  |
-| `record` | `[Value]` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `records` | `[Value]` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
 ```haskell
   ent <- Sdk.mandator_clearing_export sdk VNoval
   d <- jo
-    [ ("clearing_date_from", VStr "example_clearing_date_from")   -- String
-    , ("clearing_date_to", VStr "example_clearing_date_to")   -- String
+    [ ("clearingDateFrom", VStr "example_clearingDateFrom")   -- String
+    , ("clearingDateTo", VStr "example_clearingDateTo")   -- String
     ]
   ctrl <- emptyMap
   mandator_clearing_export <- Sdk.eCreate ent d ctrl
+  mandator_clearing_exportData <- Sdk.eDataGet mandator_clearing_export
 ```
 
 
@@ -1775,19 +1794,19 @@ Create an instance: `mandator_clearing_export_download <- Sdk.mandator_clearing_
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
-| `eLoad ent match ctrl` | Load a single entity by match criteria. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
+| `eLoad ent match ctrl` | Load a single entity by match criteria. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `clearing_date_from` | `String` |  |
-| `clearing_date_to` | `String` |  |
-| `file_id` | `String` |  |
-| `filename_template` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `clearingDateFrom` | `String` |  |
+| `clearingDateTo` | `String` |  |
+| `fileId` | `String` |  |
+| `filenameTemplate` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 | `status` | `String` |  |
 
 #### Example: Load
@@ -1797,6 +1816,8 @@ Create an instance: `mandator_clearing_export_download <- Sdk.mandator_clearing_
   match <- jo [("id", VStr "mandator_clearing_export_download_id")]
   ctrl <- emptyMap
   mandator_clearing_export_download <- Sdk.eLoad ent match ctrl
+  -- The op resolves to the ENTITY; the record is inside it.
+  mandator_clearing_export_downloadData <- Sdk.eDataGet mandator_clearing_export_download
 ```
 
 #### Example: Create
@@ -1804,11 +1825,12 @@ Create an instance: `mandator_clearing_export_download <- Sdk.mandator_clearing_
 ```haskell
   ent <- Sdk.mandator_clearing_export_download sdk VNoval
   d <- jo
-    [ ("clearing_date_from", VStr "example_clearing_date_from")   -- String
-    , ("clearing_date_to", VStr "example_clearing_date_to")   -- String
+    [ ("clearingDateFrom", VStr "example_clearingDateFrom")   -- String
+    , ("clearingDateTo", VStr "example_clearingDateTo")   -- String
     ]
   ctrl <- emptyMap
   mandator_clearing_export_download <- Sdk.eCreate ent d ctrl
+  mandator_clearing_export_downloadData <- Sdk.eDataGet mandator_clearing_export_download
 ```
 
 
@@ -1820,28 +1842,29 @@ Create an instance: `mandator_clearing_export_summary <- Sdk.mandator_clearing_e
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `clearing_date_from` | `String` |  |
-| `clearing_date_to` | `String` |  |
-| `record` | `[Value]` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `clearingDateFrom` | `String` |  |
+| `clearingDateTo` | `String` |  |
+| `records` | `[Value]` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
 ```haskell
   ent <- Sdk.mandator_clearing_export_summary sdk VNoval
   d <- jo
-    [ ("clearing_date_from", VStr "example_clearing_date_from")   -- String
-    , ("clearing_date_to", VStr "example_clearing_date_to")   -- String
+    [ ("clearingDateFrom", VStr "example_clearingDateFrom")   -- String
+    , ("clearingDateTo", VStr "example_clearingDateTo")   -- String
     ]
   ctrl <- emptyMap
   mandator_clearing_export_summary <- Sdk.eCreate ent d ctrl
+  mandator_clearing_export_summaryData <- Sdk.eDataGet mandator_clearing_export_summary
 ```
 
 
@@ -1853,36 +1876,36 @@ Create an instance: `merchant_portal_services_api <- Sdk.merchant_portal_service
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `3_d_secure` | `String` |  |
-| `authorization_code` | `String` |  |
-| `card_brand` | `String` |  |
-| `clearing_amount_from` | `String` |  |
-| `clearing_amount_to` | `String` |  |
-| `clearing_currency` | `String` |  |
-| `clearing_status` | `String` |  |
-| `corporate_uuid` | `String` |  |
-| `order_by_transaction_date` | `String` |  |
+| `3DSecure` | `String` |  |
+| `authorizationCode` | `String` |  |
+| `cardBrand` | `String` |  |
+| `clearingAmountFrom` | `String` |  |
+| `clearingAmountTo` | `String` |  |
+| `clearingCurrency` | `String` |  |
+| `clearingStatus` | `String` |  |
+| `corporateUUID` | `String` |  |
+| `orderByTransactionDate` | `String` |  |
 | `pagination` | `Value` |  |
-| `receipt_number` | `String` |  |
-| `referenced_transaction_id` | `String` |  |
-| `retrieval_reference_number` | `String` |  |
-| `source_id` | `Int` |  |
-| `tecsengine_response_code_from` | `String` |  |
-| `tecsengine_response_code_to` | `String` |  |
-| `terminal_id` | `Int` |  |
-| `trace_number` | `String` |  |
-| `transaction_amount_from` | `String` |  |
-| `transaction_amount_to` | `String` |  |
-| `transaction_date_from` | `String` |  |
-| `transaction_date_to` | `String` |  |
-| `transaction_id` | `String` |  |
-| `transaction_type` | `String` |  |
+| `receiptNumber` | `String` |  |
+| `referencedTransactionId` | `String` |  |
+| `retrievalReferenceNumber` | `String` |  |
+| `sourceId` | `Int` |  |
+| `tecsengineResponseCodeFrom` | `String` |  |
+| `tecsengineResponseCodeTo` | `String` |  |
+| `terminalId` | `Int` |  |
+| `traceNumber` | `String` |  |
+| `transactionAmountFrom` | `String` |  |
+| `transactionAmountTo` | `String` |  |
+| `transactionDateFrom` | `String` |  |
+| `transactionDateTo` | `String` |  |
+| `transactionId` | `String` |  |
+| `transactionType` | `String` |  |
 | `wallet` | `String` |  |
 
 #### Example: Create
@@ -1893,6 +1916,7 @@ Create an instance: `merchant_portal_services_api <- Sdk.merchant_portal_service
     []
   ctrl <- emptyMap
   merchant_portal_services_api <- Sdk.eCreate ent d ctrl
+  merchant_portal_services_apiData <- Sdk.eDataGet merchant_portal_services_api
 ```
 
 
@@ -1904,27 +1928,28 @@ Create an instance: `move_tid <- Sdk.move_tid sdk VNoval`
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `productorderuuid` | `[Value]` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `target_packageorderuuid` | `String` |  |
-| `target_productorderuuid` | `String` |  |
+| `productorderuuids` | `[Value]` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `targetPackageorderuuid` | `String` |  |
+| `targetProductorderuuid` | `String` |  |
 
 #### Example: Create
 
 ```haskell
   ent <- Sdk.move_tid sdk VNoval
   d <- jo
-    [ ("productorderuuid", VNoval)   -- [Value]
+    [ ("productorderuuids", VNoval)   -- [Value]
     ]
   ctrl <- emptyMap
   move_tid <- Sdk.eCreate ent d ctrl
+  move_tidData <- Sdk.eDataGet move_tid
 ```
 
 
@@ -1936,28 +1961,28 @@ Create an instance: `payment_manual <- Sdk.payment_manual sdk VNoval`
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_name` | `String` |  |
+| `acquirerName` | `String` |  |
 | `amount` | `Int` |  |
-| `authorization_number` | `String` |  |
-| `card_number` | `String` |  |
-| `card_type` | `String` |  |
+| `authorizationNumber` | `String` |  |
+| `cardNumber` | `String` |  |
+| `cardType` | `String` |  |
 | `currency` | `String` |  |
 | `cvc` | `String` |  |
-| `date_time_tx` | `String` |  |
-| `exp_date` | `String` |  |
-| `merchant_id` | `String` |  |
-| `original_transaction_id` | `String` |  |
+| `dateTimeTx` | `String` |  |
+| `expDate` | `String` |  |
+| `merchantId` | `String` |  |
+| `originalTransactionId` | `String` |  |
 | `password` | `String` |  |
-| `response_code` | `String` |  |
-| `response_message` | `String` |  |
-| `terminal_id` | `String` |  |
-| `transaction_id` | `String` |  |
+| `responseCode` | `String` |  |
+| `responseMessage` | `String` |  |
+| `terminalId` | `String` |  |
+| `transactionId` | `String` |  |
 | `txtype` | `String` |  |
 
 #### Example: Create
@@ -1966,13 +1991,14 @@ Create an instance: `payment_manual <- Sdk.payment_manual sdk VNoval`
   ent <- Sdk.payment_manual sdk VNoval
   d <- jo
     [ ("amount", VNum 1)   -- Int
-    , ("card_number", VStr "example_card_number")   -- String
+    , ("cardNumber", VStr "example_cardNumber")   -- String
     , ("currency", VStr "example_currency")   -- String
-    , ("exp_date", VStr "example_exp_date")   -- String
+    , ("expDate", VStr "example_expDate")   -- String
     , ("txtype", VStr "example_txtype")   -- String
     ]
   ctrl <- emptyMap
   payment_manual <- Sdk.eCreate ent d ctrl
+  payment_manualData <- Sdk.eDataGet payment_manual
 ```
 
 
@@ -1984,27 +2010,23 @@ Create an instance: `payment_sred <- Sdk.payment_sred sdk VNoval`
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_name` | `String` |  |
 | `amount` | `Int` |  |
-| `authorization_number` | `String` |  |
-| `card_type` | `String` |  |
 | `currency` | `String` |  |
-| `date_time_tx` | `String` |  |
-| `device_payload` | `String` |  |
-| `merchant_id` | `String` |  |
-| `original_transaction_id` | `String` |  |
+| `device` | `String` |  |
+| `devicePayload` | `String` |  |
+| `expDate` | `String` |  |
+| `mode` | `String` |  |
+| `panMasked` | `String` |  |
 | `password` | `String` |  |
-| `response_code` | `String` |  |
-| `response_message` | `String` |  |
-| `sred` | `Value` |  |
-| `terminal_id` | `String` |  |
-| `transaction_id` | `String` |  |
+| `serial` | `String` |  |
+| `serviceCode` | `String` |  |
+| `terminalId` | `String` |  |
 | `txtype` | `String` |  |
 
 #### Example: Create
@@ -2014,11 +2036,13 @@ Create an instance: `payment_sred <- Sdk.payment_sred sdk VNoval`
   d <- jo
     [ ("amount", VNum 1)   -- Int
     , ("currency", VStr "example_currency")   -- String
-    , ("device_payload", VStr "example_device_payload")   -- String
+    , ("devicePayload", VStr "example_devicePayload")   -- String
+    , ("terminalId", VStr "example_terminalId")   -- String
     , ("txtype", VStr "example_txtype")   -- String
     ]
   ctrl <- emptyMap
   payment_sred <- Sdk.eCreate ent d ctrl
+  payment_sredData <- Sdk.eDataGet payment_sred
 ```
 
 
@@ -2030,69 +2054,70 @@ Create an instance: `pre_auth_transaction_completion <- Sdk.pre_auth_transaction
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_id` | `String` |  |
-| `acquirer_name` | `String` |  |
-| `actual_bonus_point` | `String` |  |
+| `acquirerId` | `String` |  |
+| `acquirerName` | `String` |  |
+| `actualBonusPoints` | `String` |  |
 | `amount` | `Int` |  |
-| `authorization_code` | `String` |  |
-| `balance_amount` | `String` |  |
-| `card_brand` | `String` |  |
-| `card_number` | `String` |  |
-| `card_number_reference` | `String` |  |
-| `client_id` | `Int` |  |
+| `authorizationCode` | `String` |  |
+| `balanceAmount` | `String` |  |
+| `cardBrand` | `String` |  |
+| `cardNumber` | `String` |  |
+| `cardNumberReference` | `String` |  |
+| `clientId` | `Int` |  |
 | `currency` | `String` |  |
 | `cvc` | `String` |  |
-| `ec_data` | `String` |  |
-| `ecr_data` | `String` |  |
-| `emv_data` | `String` |  |
-| `exchange_fee` | `Int` |  |
-| `exchange_rate` | `String` |  |
-| `language_code` | `String` |  |
-| `merchant_address` | `String` |  |
-| `merchant_name` | `String` |  |
-| `merchant_number` | `String` |  |
-| `message_type` | `String` |  |
-| `original_trace_number` | `Int` |  |
-| `original_transaction_id` | `String` |  |
+| `ecData` | `String` |  |
+| `ecrData` | `String` |  |
+| `emvData` | `String` |  |
+| `exchangeFee` | `Int` |  |
+| `exchangeRate` | `String` |  |
+| `languageCode` | `String` |  |
+| `merchantAddress` | `String` |  |
+| `merchantName` | `String` |  |
+| `merchantNumber` | `String` |  |
+| `messageType` | `String` |  |
+| `originalTraceNumber` | `Int` |  |
+| `originalTransactionId` | `String` |  |
 | `password` | `String` |  |
-| `payment_reason` | `String` |  |
-| `receipt_footer` | `String` |  |
-| `receipt_header` | `String` |  |
-| `receipt_layout` | `Int` |  |
-| `receipt_number` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `serial_number` | `String` |  |
+| `paymentReason` | `String` |  |
+| `receiptFooter` | `String` |  |
+| `receiptHeader` | `String` |  |
+| `receiptLayout` | `Int` |  |
+| `receiptNumber` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `serialNumber` | `String` |  |
 | `svc` | `String` |  |
-| `terminal_id` | `Int` |  |
-| `terminal_location` | `String` |  |
-| `trace_number` | `Int` |  |
-| `transaction_date` | `String` |  |
-| `transaction_id` | `String` |  |
-| `transaction_type` | `String` |  |
-| `tx_type` | `String` |  |
-| `user_data` | `String` |  |
+| `terminalId` | `Int` |  |
+| `terminalLocation` | `String` |  |
+| `traceNumber` | `Int` |  |
+| `transactionDate` | `String` |  |
+| `transactionId` | `String` |  |
+| `transactionType` | `String` |  |
+| `txType` | `String` |  |
+| `userData` | `String` |  |
 
 #### Example: Create
 
 ```haskell
   ent <- Sdk.pre_auth_transaction_completion sdk VNoval
   d <- jo
-    [ ("card_number_reference", VStr "example_card_number_reference")   -- String
-    , ("client_id", VNum 1)   -- Int
+    [ ("cardNumberReference", VStr "example_cardNumberReference")   -- String
+    , ("clientId", VNum 1)   -- Int
     , ("currency", VStr "example_currency")   -- String
-    , ("receipt_number", VStr "example_receipt_number")   -- String
-    , ("terminal_id", VNum 1)   -- Int
-    , ("transaction_type", VStr "example_transaction_type")   -- String
+    , ("receiptNumber", VStr "example_receiptNumber")   -- String
+    , ("terminalId", VNum 1)   -- Int
+    , ("transactionType", VStr "example_transactionType")   -- String
     ]
   ctrl <- emptyMap
   pre_auth_transaction_completion <- Sdk.eCreate ent d ctrl
+  pre_auth_transaction_completionData <- Sdk.eDataGet pre_auth_transaction_completion
 ```
 
 
@@ -2104,30 +2129,31 @@ Create an instance: `reactivate_terminal <- Sdk.reactivate_terminal sdk VNoval`
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `corporate_uuid` | `String` |  |
-| `package_order_uuid` | `String` |  |
-| `product_order_uuid` | `String` |  |
-| `reactivation_reason` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `terminal_id` | `Int` |  |
+| `corporateUuid` | `String` |  |
+| `packageOrderUuid` | `String` |  |
+| `productOrderUuid` | `String` |  |
+| `reactivationReason` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `terminalId` | `Int` |  |
 
 #### Example: Create
 
 ```haskell
   ent <- Sdk.reactivate_terminal sdk VNoval
   d <- jo
-    [ ("reactivation_reason", VStr "example_reactivation_reason")   -- String
-    , ("terminal_id", VNum 1)   -- Int
+    [ ("reactivationReason", VStr "example_reactivationReason")   -- String
+    , ("terminalId", VNum 1)   -- Int
     ]
   ctrl <- emptyMap
   reactivate_terminal <- Sdk.eCreate ent d ctrl
+  reactivate_terminalData <- Sdk.eDataGet reactivate_terminal
 ```
 
 
@@ -2139,65 +2165,66 @@ Create an instance: `refund_transaction <- Sdk.refund_transaction sdk VNoval`
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_id` | `String` |  |
-| `acquirer_name` | `String` |  |
-| `actual_bonus_point` | `String` |  |
+| `acquirerId` | `String` |  |
+| `acquirerName` | `String` |  |
+| `actualBonusPoints` | `String` |  |
 | `amount` | `Int` |  |
-| `authorization_code` | `String` |  |
-| `balance_amount` | `String` |  |
-| `card_brand` | `String` |  |
-| `card_number` | `String` |  |
-| `client_id` | `Int` |  |
+| `authorizationCode` | `String` |  |
+| `balanceAmount` | `String` |  |
+| `cardBrand` | `String` |  |
+| `cardNumber` | `String` |  |
+| `clientId` | `Int` |  |
 | `currency` | `String` |  |
 | `cvc` | `String` |  |
-| `ec_data` | `String` |  |
-| `ecr_data` | `String` |  |
-| `emv_data` | `String` |  |
-| `exchange_fee` | `Int` |  |
-| `exchange_rate` | `String` |  |
-| `language_code` | `String` |  |
-| `merchant_address` | `String` |  |
-| `merchant_name` | `String` |  |
-| `merchant_number` | `String` |  |
-| `message_type` | `String` |  |
-| `original_trace_number` | `Int` |  |
-| `original_transaction_id` | `String` |  |
+| `ecData` | `String` |  |
+| `ecrData` | `String` |  |
+| `emvData` | `String` |  |
+| `exchangeFee` | `Int` |  |
+| `exchangeRate` | `String` |  |
+| `languageCode` | `String` |  |
+| `merchantAddress` | `String` |  |
+| `merchantName` | `String` |  |
+| `merchantNumber` | `String` |  |
+| `messageType` | `String` |  |
+| `originalTraceNumber` | `Int` |  |
+| `originalTransactionId` | `String` |  |
 | `password` | `String` |  |
-| `payment_reason` | `String` |  |
-| `receipt_footer` | `String` |  |
-| `receipt_header` | `String` |  |
-| `receipt_layout` | `Int` |  |
-| `receipt_number` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `serial_number` | `String` |  |
+| `paymentReason` | `String` |  |
+| `receiptFooter` | `String` |  |
+| `receiptHeader` | `String` |  |
+| `receiptLayout` | `Int` |  |
+| `receiptNumber` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `serialNumber` | `String` |  |
 | `svc` | `String` |  |
-| `terminal_id` | `Int` |  |
-| `terminal_location` | `String` |  |
-| `trace_number` | `Int` |  |
-| `transaction_date` | `String` |  |
-| `transaction_id` | `String` |  |
-| `tx_type` | `String` |  |
-| `user_data` | `String` |  |
+| `terminalId` | `Int` |  |
+| `terminalLocation` | `String` |  |
+| `traceNumber` | `Int` |  |
+| `transactionDate` | `String` |  |
+| `transactionId` | `String` |  |
+| `txType` | `String` |  |
+| `userData` | `String` |  |
 
 #### Example: Create
 
 ```haskell
   ent <- Sdk.refund_transaction sdk VNoval
   d <- jo
-    [ ("client_id", VNum 1)   -- Int
+    [ ("clientId", VNum 1)   -- Int
     , ("currency", VStr "example_currency")   -- String
-    , ("receipt_number", VStr "example_receipt_number")   -- String
-    , ("terminal_id", VNum 1)   -- Int
+    , ("receiptNumber", VStr "example_receiptNumber")   -- String
+    , ("terminalId", VNum 1)   -- Int
     ]
   ctrl <- emptyMap
   refund_transaction <- Sdk.eCreate ent d ctrl
+  refund_transactionData <- Sdk.eDataGet refund_transaction
 ```
 
 
@@ -2209,33 +2236,34 @@ Create an instance: `register_tecs_company <- Sdk.register_tecs_company sdk VNov
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `corporate_uuid` | `String` |  |
-| `package_order_uuid` | `String` |  |
-| `partner_id` | `Int` |  |
-| `partner_name` | `String` |  |
-| `product_order_uuid` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `template_name` | `String` |  |
+| `corporateUuid` | `String` |  |
+| `packageOrderUuid` | `String` |  |
+| `partnerId` | `Int` |  |
+| `partnerName` | `String` |  |
+| `productOrderUuid` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `templateName` | `String` |  |
 
 #### Example: Create
 
 ```haskell
   ent <- Sdk.register_tecs_company sdk VNoval
   d <- jo
-    [ ("corporate_uuid", VStr "example_corporate_uuid")   -- String
-    , ("package_order_uuid", VStr "example_package_order_uuid")   -- String
-    , ("product_order_uuid", VStr "example_product_order_uuid")   -- String
-    , ("template_name", VStr "example_template_name")   -- String
+    [ ("corporateUuid", VStr "example_corporateUuid")   -- String
+    , ("packageOrderUuid", VStr "example_packageOrderUuid")   -- String
+    , ("productOrderUuid", VStr "example_productOrderUuid")   -- String
+    , ("templateName", VStr "example_templateName")   -- String
     ]
   ctrl <- emptyMap
   register_tecs_company <- Sdk.eCreate ent d ctrl
+  register_tecs_companyData <- Sdk.eDataGet register_tecs_company
 ```
 
 
@@ -2247,46 +2275,47 @@ Create an instance: `register_terminal <- Sdk.register_terminal sdk VNoval`
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `additional_data` | `Value` |  |
-| `corporate_uuid` | `String` |  |
-| `package_order_uuid` | `String` |  |
-| `product_order_uuid` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `tecs_web_secret_key` | `String` |  |
-| `template_name` | `String` |  |
-| `terminal_country_code` | `String` |  |
-| `terminal_id` | `Int` |  |
-| `terminal_id_acq` | `String` |  |
-| `terminal_language_code` | `String` |  |
-| `terminal_location` | `String` |  |
-| `terminal_serial_number` | `String` |  |
-| `token_io_alia` | `String` |  |
-| `token_io_iban` | `String` |  |
-| `token_io_member_id` | `String` |  |
-| `web_shop_url` | `String` |  |
+| `additionalData` | `Value` |  |
+| `corporateUuid` | `String` |  |
+| `packageOrderUuid` | `String` |  |
+| `productOrderUuid` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `tecsWebSecretKey` | `String` |  |
+| `templateName` | `String` |  |
+| `terminalCountryCode` | `String` |  |
+| `terminalId` | `Int` |  |
+| `terminalIdAcq` | `String` |  |
+| `terminalLanguageCode` | `String` |  |
+| `terminalLocation` | `String` |  |
+| `terminalSerialNumber` | `String` |  |
+| `tokenIOAlias` | `String` |  |
+| `tokenIOIban` | `String` |  |
+| `tokenIOMemberId` | `String` |  |
+| `webShopUrl` | `String` |  |
 
 #### Example: Create
 
 ```haskell
   ent <- Sdk.register_terminal sdk VNoval
   d <- jo
-    [ ("corporate_uuid", VStr "example_corporate_uuid")   -- String
-    , ("package_order_uuid", VStr "example_package_order_uuid")   -- String
-    , ("product_order_uuid", VStr "example_product_order_uuid")   -- String
-    , ("template_name", VStr "example_template_name")   -- String
-    , ("terminal_country_code", VStr "example_terminal_country_code")   -- String
-    , ("terminal_language_code", VStr "example_terminal_language_code")   -- String
-    , ("terminal_location", VStr "example_terminal_location")   -- String
+    [ ("corporateUuid", VStr "example_corporateUuid")   -- String
+    , ("packageOrderUuid", VStr "example_packageOrderUuid")   -- String
+    , ("productOrderUuid", VStr "example_productOrderUuid")   -- String
+    , ("templateName", VStr "example_templateName")   -- String
+    , ("terminalCountryCode", VStr "example_terminalCountryCode")   -- String
+    , ("terminalLanguageCode", VStr "example_terminalLanguageCode")   -- String
+    , ("terminalLocation", VStr "example_terminalLocation")   -- String
     ]
   ctrl <- emptyMap
   register_terminal <- Sdk.eCreate ent d ctrl
+  register_terminalData <- Sdk.eDataGet register_terminal
 ```
 
 
@@ -2298,35 +2327,36 @@ Create an instance: `report_data <- Sdk.report_data sdk VNoval`
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `card_brand_report_data` | `[Value]` |  |
-| `clearing_date_from` | `String` |  |
-| `clearing_date_to` | `String` |  |
-| `corporate_id` | `String` |  |
+| `cardBrandReportData` | `[Value]` |  |
+| `clearingDateFrom` | `String` |  |
+| `clearingDateTo` | `String` |  |
+| `corporateId` | `String` |  |
 | `currency` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `sum_over_credit_tx` | `Value` |  |
-| `sum_over_debit_tx` | `Value` |  |
-| `terminal_id` | `Int` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `sumOverCreditTx` | `Value` |  |
+| `sumOverDebitTx` | `Value` |  |
+| `terminalId` | `Int` |  |
 
 #### Example: Create
 
 ```haskell
   ent <- Sdk.report_data sdk VNoval
   d <- jo
-    [ ("clearing_date_from", VStr "example_clearing_date_from")   -- String
-    , ("clearing_date_to", VStr "example_clearing_date_to")   -- String
-    , ("corporate_id", VStr "example_corporate_id")   -- String
+    [ ("clearingDateFrom", VStr "example_clearingDateFrom")   -- String
+    , ("clearingDateTo", VStr "example_clearingDateTo")   -- String
+    , ("corporateId", VStr "example_corporateId")   -- String
     , ("currency", VStr "example_currency")   -- String
     ]
   ctrl <- emptyMap
   report_data <- Sdk.eCreate ent d ctrl
+  report_dataData <- Sdk.eDataGet report_data
 ```
 
 
@@ -2338,62 +2368,62 @@ Create an instance: `status_transaction <- Sdk.status_transaction sdk VNoval`
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_name` | `String` |  |
-| `acquirer_terminal_id` | `String` |  |
+| `acquirerName` | `String` |  |
+| `acquirerTerminalId` | `String` |  |
 | `amount` | `Int` |  |
-| `application_cryptogram` | `String` |  |
-| `authorization_code` | `Value` |  |
-| `authorization_date` | `String` |  |
-| `card_brand` | `String` |  |
-| `card_entry` | `String` |  |
-| `card_expiration` | `String` |  |
-| `card_number` | `String` |  |
-| `clearing_amount` | `Int` |  |
-| `clearing_batch_id` | `String` |  |
-| `clearing_currency` | `String` |  |
-| `clearing_date` | `String` |  |
-| `clearing_processed_date` | `String` |  |
-| `clearing_status` | `String` |  |
-| `client_id` | `Int` |  |
+| `applicationCryptogram` | `String` |  |
+| `authorizationCode` | `Value` |  |
+| `authorizationDate` | `String` |  |
+| `cardBrand` | `String` |  |
+| `cardEntry` | `String` |  |
+| `cardExpiration` | `String` |  |
+| `cardNumber` | `String` |  |
+| `clearingAmount` | `Int` |  |
+| `clearingBatchId` | `String` |  |
+| `clearingCurrency` | `String` |  |
+| `clearingDate` | `String` |  |
+| `clearingProcessedDate` | `String` |  |
+| `clearingStatus` | `String` |  |
+| `clientId` | `Int` |  |
 | `currency` | `String` |  |
 | `cvm` | `String` |  |
-| `ecr_data` | `String` |  |
-| `emv_application_id` | `String` |  |
-| `emv_application_label` | `String` |  |
-| `merchant_name` | `String` |  |
-| `merchant_number` | `String` |  |
-| `original_client_id` | `String` |  |
-| `original_terminal_id` | `Int` |  |
-| `original_transaction_id` | `String` |  |
-| `payment_reason` | `String` |  |
-| `receipt_number` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_code_from_a` | `String` |  |
-| `response_message` | `String` |  |
-| `retrieval_reference_number` | `String` |  |
-| `service_code` | `String` |  |
-| `settlement_status` | `String` |  |
-| `source_id` | `Int` |  |
-| `tecsengine_response_code` | `Int` |  |
-| `tecsengine_response_text` | `String` |  |
-| `terminal_end_of_day_date` | `String` |  |
-| `terminal_id` | `Int` |  |
-| `terminal_location` | `String` |  |
-| `tip_amount` | `Int` |  |
-| `trace_number` | `Int` |  |
-| `transaction_clearing_date` | `String` |  |
-| `transaction_date` | `String` |  |
-| `transaction_id` | `String` |  |
-| `transaction_seq_number` | `Int` |  |
-| `transaction_server_date` | `String` |  |
-| `transaction_source` | `String` |  |
-| `transaction_type` | `String` |  |
+| `ecrData` | `String` |  |
+| `emvApplicationId` | `String` |  |
+| `emvApplicationLabel` | `String` |  |
+| `merchantName` | `String` |  |
+| `merchantNumber` | `String` |  |
+| `originalClientId` | `String` |  |
+| `originalTerminalId` | `Int` |  |
+| `originalTransactionId` | `String` |  |
+| `paymentReason` | `String` |  |
+| `receiptNumber` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseCodeFromAS` | `String` |  |
+| `responseMessage` | `String` |  |
+| `retrievalReferenceNumber` | `String` |  |
+| `serviceCode` | `String` |  |
+| `settlementStatus` | `String` |  |
+| `sourceId` | `Int` |  |
+| `tecsengineResponseCode` | `Int` |  |
+| `tecsengineResponseText` | `String` |  |
+| `terminalEndOfDayDate` | `String` |  |
+| `terminalId` | `Int` |  |
+| `terminalLocation` | `String` |  |
+| `tipAmount` | `Int` |  |
+| `traceNumber` | `Int` |  |
+| `transactionClearingDate` | `String` |  |
+| `transactionDate` | `String` |  |
+| `transactionId` | `String` |  |
+| `transactionSeqNumber` | `Int` |  |
+| `transactionServerDate` | `String` |  |
+| `transactionSource` | `String` |  |
+| `transactionType` | `String` |  |
 
 #### Example: Create
 
@@ -2403,6 +2433,7 @@ Create an instance: `status_transaction <- Sdk.status_transaction sdk VNoval`
     []
   ctrl <- emptyMap
   status_transaction <- Sdk.eCreate ent d ctrl
+  status_transactionData <- Sdk.eDataGet status_transaction
 ```
 
 
@@ -2414,28 +2445,29 @@ Create an instance: `store_terminal_parameter <- Sdk.store_terminal_parameter sd
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acq_tab_nexo` | `Value` |  |
-| `config_version` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `serial_number` | `String` |  |
-| `tid_sent` | `String` |  |
+| `acqTabNexo` | `Value` |  |
+| `configVersion` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `serialNumber` | `String` |  |
+| `tidSent` | `String` |  |
 
 #### Example: Create
 
 ```haskell
   ent <- Sdk.store_terminal_parameter sdk VNoval
   d <- jo
-    [ ("serial_number", VStr "example_serial_number")   -- String
+    [ ("serialNumber", VStr "example_serialNumber")   -- String
     ]
   ctrl <- emptyMap
   store_terminal_parameter <- Sdk.eCreate ent d ctrl
+  store_terminal_parameterData <- Sdk.eDataGet store_terminal_parameter
 ```
 
 
@@ -2447,27 +2479,28 @@ Create an instance: `terminal_id <- Sdk.terminal_id sdk VNoval`
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `device_serial_number` | `[Value]` |  |
-| `duplicate_terminal_id` | `[Value]` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `terminal` | `[Value]` |  |
+| `deviceSerialNumber` | `[Value]` |  |
+| `duplicateTerminalIds` | `[Value]` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `terminals` | `[Value]` |  |
 
 #### Example: Create
 
 ```haskell
   ent <- Sdk.terminal_id sdk VNoval
   d <- jo
-    [ ("device_serial_number", VNoval)   -- [Value]
+    [ ("deviceSerialNumber", VNoval)   -- [Value]
     ]
   ctrl <- emptyMap
   terminal_id <- Sdk.eCreate ent d ctrl
+  terminal_idData <- Sdk.eDataGet terminal_id
 ```
 
 
@@ -2479,40 +2512,40 @@ Create an instance: `transaction_history <- Sdk.transaction_history sdk VNoval`
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `3_d_secure` | `String` |  |
-| `authorization_code` | `String` |  |
-| `card_brand` | `String` |  |
-| `clearing_amount_from` | `String` |  |
-| `clearing_amount_to` | `String` |  |
-| `clearing_currency` | `String` |  |
-| `clearing_status` | `String` |  |
-| `corporate_uuid` | `String` |  |
-| `order_by_transaction_date` | `String` |  |
+| `3DSecure` | `String` |  |
+| `authorizationCode` | `String` |  |
+| `cardBrand` | `String` |  |
+| `clearingAmountFrom` | `String` |  |
+| `clearingAmountTo` | `String` |  |
+| `clearingCurrency` | `String` |  |
+| `clearingStatus` | `String` |  |
+| `corporateUUID` | `String` |  |
+| `orderByTransactionDate` | `String` |  |
 | `pagination` | `Value` |  |
-| `payment_token_public_id` | `String` |  |
-| `receipt_number` | `String` |  |
-| `referenced_transaction_id` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `retrieval_reference_number` | `String` |  |
-| `source_id` | `Int` |  |
-| `tecsengine_response_code_from` | `String` |  |
-| `tecsengine_response_code_to` | `String` |  |
-| `terminal_id` | `Int` |  |
-| `trace_number` | `String` |  |
-| `transaction_amount_from` | `String` |  |
-| `transaction_amount_to` | `String` |  |
-| `transaction_date_from` | `String` |  |
-| `transaction_date_to` | `String` |  |
-| `transaction_history` | `[Value]` |  |
-| `transaction_id` | `String` |  |
-| `transaction_type` | `String` |  |
+| `paymentTokenPublicId` | `String` |  |
+| `receiptNumber` | `String` |  |
+| `referencedTransactionId` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `retrievalReferenceNumber` | `String` |  |
+| `sourceId` | `Int` |  |
+| `tecsengineResponseCodeFrom` | `String` |  |
+| `tecsengineResponseCodeTo` | `String` |  |
+| `terminalId` | `Int` |  |
+| `traceNumber` | `String` |  |
+| `transactionAmountFrom` | `String` |  |
+| `transactionAmountTo` | `String` |  |
+| `transactionDateFrom` | `String` |  |
+| `transactionDateTo` | `String` |  |
+| `transactionHistories` | `[Value]` |  |
+| `transactionId` | `String` |  |
+| `transactionType` | `String` |  |
 | `wallet` | `String` |  |
 
 #### Example: Create
@@ -2523,6 +2556,7 @@ Create an instance: `transaction_history <- Sdk.transaction_history sdk VNoval`
     []
   ctrl <- emptyMap
   transaction_history <- Sdk.eCreate ent d ctrl
+  transaction_historyData <- Sdk.eDataGet transaction_history
 ```
 
 
@@ -2534,18 +2568,18 @@ Create an instance: `transactions_count <- Sdk.transactions_count sdk VNoval`
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
 | `period` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `transaction_date_from` | `String` |  |
-| `transaction_date_to` | `String` |  |
-| `transactions_count` | `[Value]` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `transactionDateFrom` | `String` |  |
+| `transactionDateTo` | `String` |  |
+| `transactionsCount` | `[Value]` |  |
 
 #### Example: Create
 
@@ -2555,6 +2589,7 @@ Create an instance: `transactions_count <- Sdk.transactions_count sdk VNoval`
     []
   ctrl <- emptyMap
   transactions_count <- Sdk.eCreate ent d ctrl
+  transactions_countData <- Sdk.eDataGet transactions_count
 ```
 
 
@@ -2566,18 +2601,18 @@ Create an instance: `transactions_count_card_brand <- Sdk.transactions_count_car
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
 | `period` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `transaction_date_from` | `String` |  |
-| `transaction_date_to` | `String` |  |
-| `transactions_count` | `[Value]` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `transactionDateFrom` | `String` |  |
+| `transactionDateTo` | `String` |  |
+| `transactionsCount` | `[Value]` |  |
 
 #### Example: Create
 
@@ -2587,6 +2622,7 @@ Create an instance: `transactions_count_card_brand <- Sdk.transactions_count_car
     []
   ctrl <- emptyMap
   transactions_count_card_brand <- Sdk.eCreate ent d ctrl
+  transactions_count_card_brandData <- Sdk.eDataGet transactions_count_card_brand
 ```
 
 
@@ -2598,18 +2634,18 @@ Create an instance: `transactions_turnover <- Sdk.transactions_turnover sdk VNov
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
 | `period` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `transaction_date_from` | `String` |  |
-| `transaction_date_to` | `String` |  |
-| `turnover` | `[Value]` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `transactionDateFrom` | `String` |  |
+| `transactionDateTo` | `String` |  |
+| `turnovers` | `[Value]` |  |
 
 #### Example: Create
 
@@ -2619,6 +2655,7 @@ Create an instance: `transactions_turnover <- Sdk.transactions_turnover sdk VNov
     []
   ctrl <- emptyMap
   transactions_turnover <- Sdk.eCreate ent d ctrl
+  transactions_turnoverData <- Sdk.eDataGet transactions_turnover
 ```
 
 
@@ -2630,22 +2667,22 @@ Create an instance: `update_merchant <- Sdk.update_merchant sdk VNoval`
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
 | `city` | `String` |  |
-| `corporate_uuid` | `String` |  |
+| `corporateUuid` | `String` |  |
 | `country` | `String` |  |
-| `merchant_category_code` | `String` |  |
+| `merchantCategoryCode` | `String` |  |
 | `name` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 | `state` | `String` |  |
 | `street` | `String` |  |
-| `vu_nummer` | `String` |  |
+| `vuNummer` | `String` |  |
 | `zipcode` | `String` |  |
 
 #### Example: Create
@@ -2653,10 +2690,11 @@ Create an instance: `update_merchant <- Sdk.update_merchant sdk VNoval`
 ```haskell
   ent <- Sdk.update_merchant sdk VNoval
   d <- jo
-    [ ("corporate_uuid", VStr "example_corporate_uuid")   -- String
+    [ ("corporateUuid", VStr "example_corporateUuid")   -- String
     ]
   ctrl <- emptyMap
   update_merchant <- Sdk.eCreate ent d ctrl
+  update_merchantData <- Sdk.eDataGet update_merchant
 ```
 
 
@@ -2668,27 +2706,28 @@ Create an instance: `update_template_xml <- Sdk.update_template_xml sdk VNoval`
 
 | Method | Description |
 | --- | --- |
-| `eCreate ent data ctrl` | Create a new entity with the given data. |
+| `eCreate ent data ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `template_name` | `String` |  |
-| `template_xml` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `templateName` | `String` |  |
+| `templateXml` | `String` |  |
 
 #### Example: Create
 
 ```haskell
   ent <- Sdk.update_template_xml sdk VNoval
   d <- jo
-    [ ("template_name", VStr "example_template_name")   -- String
-    , ("template_xml", VStr "example_template_xml")   -- String
+    [ ("templateName", VStr "example_templateName")   -- String
+    , ("templateXml", VStr "example_templateXml")   -- String
     ]
   ctrl <- emptyMap
   update_template_xml <- Sdk.eCreate ent d ctrl
+  update_template_xmlData <- Sdk.eDataGet update_template_xml
 ```
 
 
@@ -2700,14 +2739,14 @@ Create an instance: `version <- Sdk.version sdk VNoval`
 
 | Method | Description |
 | --- | --- |
-| `eLoad ent match ctrl` | Load a single entity by match criteria. |
+| `eLoad ent match ctrl` | Load a single entity by match criteria. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `app_name` | `String` |  |
-| `build_date` | `String` |  |
+| `appName` | `String` |  |
+| `buildDate` | `String` |  |
 | `version` | `String` |  |
 
 #### Example: Load
@@ -2717,6 +2756,8 @@ Create an instance: `version <- Sdk.version sdk VNoval`
   match <- jo []
   ctrl <- emptyMap
   version <- Sdk.eLoad ent match ctrl
+  -- The op resolves to the ENTITY; the record is inside it.
+  versionData <- Sdk.eDataGet version
 ```
 
 

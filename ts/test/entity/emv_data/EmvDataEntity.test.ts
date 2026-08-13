@@ -26,8 +26,8 @@ import {
 describe('EmvDataEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when BLUEFINTECSMERCHANTSERVICES_TEST_LIVE=TRUE.
-  afterEach(liveDelay('BLUEFINTECSMERCHANTSERVICES_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE=TRUE.
+  afterEach(liveDelay('BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = BluefinTecsMerchantServicesSDK.test()
@@ -62,7 +62,7 @@ describe('EmvDataEntity', async () => {
     const emv_data_ref01_ent = client.EmvData()
     let emv_data_ref01_data = setup.data.new.emv_data['emv_data_ref01']
 
-    emv_data_ref01_data = await emv_data_ref01_ent.create(emv_data_ref01_data)
+    emv_data_ref01_data = (await emv_data_ref01_ent.create(emv_data_ref01_data)).data()
     assert(null != emv_data_ref01_data)
 
 

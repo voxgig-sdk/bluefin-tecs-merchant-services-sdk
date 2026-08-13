@@ -31,7 +31,8 @@ defmodule BluefinTecsMerchantServices.EcDataEcomEntityTest do
   test "should create then read back" do
     sdk = BluefinTecsMerchantServices.test(S.jm(["entity", S.jm(["ec_data_ecom", S.jm([])])]))
     ent = BluefinTecsMerchantServices.ec_data_ecom(sdk)
-    made = BluefinTecsMerchantServices.Entity.EcDataEcom.create(ent, S.jm(["name", "test-create"]))
+    created = BluefinTecsMerchantServices.Entity.EcDataEcom.create(ent, S.jm(["name", "test-create"]))
+    made = BluefinTecsMerchantServices.EntityBase.data_get(created)
     assert S.ismap(made)
     assert S.getprop(made, "id") != nil
   end

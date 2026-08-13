@@ -35,7 +35,7 @@ object CheckCardBlackListedEntityTest {
       var checkCardBlackListedRef01Data = Helpers.toMapAny(Struct.getprop(
           Struct.getpath(entityData, "new.check_card_black_listed"), "check_card_black_listed_ref01"))
       val checkCardBlackListedRef01DataResult = checkCardBlackListedRef01Ent.create(checkCardBlackListedRef01Data, null)
-      checkCardBlackListedRef01Data = Helpers.toMapAny(checkCardBlackListedRef01DataResult)
+      checkCardBlackListedRef01Data = Helpers.toMapAny(checkCardBlackListedRef01DataResult match { case e: SdkEntity => e.data(); case o => o })
       rep.check("check_card_black_listed.create.map", checkCardBlackListedRef01Data != null, "expected create result to be a map")
     }
   }

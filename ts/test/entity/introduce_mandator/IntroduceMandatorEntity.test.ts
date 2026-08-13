@@ -26,8 +26,8 @@ import {
 describe('IntroduceMandatorEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when BLUEFINTECSMERCHANTSERVICES_TEST_LIVE=TRUE.
-  afterEach(liveDelay('BLUEFINTECSMERCHANTSERVICES_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE=TRUE.
+  afterEach(liveDelay('BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = BluefinTecsMerchantServicesSDK.test()
@@ -62,7 +62,7 @@ describe('IntroduceMandatorEntity', async () => {
     const introduce_mandator_ref01_ent = client.IntroduceMandator()
     let introduce_mandator_ref01_data = setup.data.new.introduce_mandator['introduce_mandator_ref01']
 
-    introduce_mandator_ref01_data = await introduce_mandator_ref01_ent.create(introduce_mandator_ref01_data)
+    introduce_mandator_ref01_data = (await introduce_mandator_ref01_ent.create(introduce_mandator_ref01_data)).data()
     assert(null != introduce_mandator_ref01_data)
 
 

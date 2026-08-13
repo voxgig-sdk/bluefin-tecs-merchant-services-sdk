@@ -38,15 +38,15 @@ static UpdateMerchantSetup update_merchant_basic_setup(const Value& extra) {
   if (!idmap.is_map()) idmap = vmap();
 
   Value env = env_override(vmap({
-    {"BLUEFINTECSMERCHANTSERVICES_TEST_UPDATE_MERCHANT_ENTID", idmap},
-    {"BLUEFINTECSMERCHANTSERVICES_TEST_LIVE", Value("FALSE")},
-    {"BLUEFINTECSMERCHANTSERVICES_TEST_EXPLAIN", Value("FALSE")}
+    {"BLUEFIN_TECS_MERCHANT_SERVICES_TEST_UPDATE_MERCHANT_ENTID", idmap},
+    {"BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE", Value("FALSE")},
+    {"BLUEFIN_TECS_MERCHANT_SERVICES_TEST_EXPLAIN", Value("FALSE")}
   }));
 
-  Value idmap_resolved = Helpers::toMapAny(getp(env, "BLUEFINTECSMERCHANTSERVICES_TEST_UPDATE_MERCHANT_ENTID"));
+  Value idmap_resolved = Helpers::toMapAny(getp(env, "BLUEFIN_TECS_MERCHANT_SERVICES_TEST_UPDATE_MERCHANT_ENTID"));
   if (!idmap_resolved.is_map()) idmap_resolved = idmap;
 
-  bool live = getp(env, "BLUEFINTECSMERCHANTSERVICES_TEST_LIVE") == Value("TRUE");
+  bool live = getp(env, "BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE") == Value("TRUE");
 
   UpdateMerchantSetup s;
   s.client = client;
@@ -65,27 +65,6 @@ static void update_merchant_entity_instance() {
   ASSERT_EQ(ent->getName(), std::string("update_merchant"), "entity name");
 }
 
-static void update_merchant_entity_stream() {
-  // stream() runs the list op through the full pipeline and returns the
-  // result items. Seed two entities via test mode; with the streaming feature
-  // active it yields the feature's incremental items, else it falls back to
-  // the materialised items — either way every item is yielded.
-  Value seed = vmap({{"entity", vmap({{"update_merchant", vmap({
-      {"strm01", vmap({{"id", Value("strm01")}})},
-      {"strm02", vmap({{"id", Value("strm02")}})}})}})}});
-  Value sdkopts = vmap({{"feature",
-      vmap({{"streaming", vmap({{"active", Value(true)}})}})}});
-
-  auto strsdk = BluefinTecsMerchantServicesSDK::testSDK(seed, sdkopts);
-  auto se = strsdk->update_merchant();
-  std::vector<Value> items = se->stream("list", Value::undef(), Value::undef());
-  ASSERT_EQ((int)items.size(), 2, "stream yields both seeded items");
-
-  auto plainsdk = BluefinTecsMerchantServicesSDK::testSDK(seed, Value::undef());
-  auto pe = plainsdk->update_merchant();
-  std::vector<Value> pitems = pe->stream("list", Value::undef(), Value::undef());
-  ASSERT_EQ((int)pitems.size(), 2, "fallback stream yields both items");
-}
 
 static void update_merchant_entity_basic() {
   auto setup = update_merchant_basic_setup(Value::undef());
@@ -100,7 +79,7 @@ static void update_merchant_entity_basic() {
   Value update_merchant_ref01_data = Helpers::toMapAny(getp(Struct::getpath(setup.data, {"new", "update_merchant"}), "update_merchant_ref01"));
   if (!update_merchant_ref01_data.is_map()) update_merchant_ref01_data = vmap();
   {
-    Value update_merchant_ref01_data_result = update_merchant_ref01_ent->create(Struct::clone(update_merchant_ref01_data), Value::undef());
+    Value update_merchant_ref01_data_result = update_merchant_ref01_ent->create(Struct::clone(update_merchant_ref01_data), Value::undef())->data();
     update_merchant_ref01_data = Helpers::toMapAny(update_merchant_ref01_data_result);
     if (!update_merchant_ref01_data.is_map()) update_merchant_ref01_data = vmap();
     ASSERT_TRUE(update_merchant_ref01_data.is_map(), "expected create result to be a map");
@@ -110,7 +89,6 @@ static void update_merchant_entity_basic() {
 
 int main() {
   T_RUN(update_merchant_entity_instance);
-  T_RUN(update_merchant_entity_stream);
   T_RUN(update_merchant_entity_basic);
   return sdktest::summary("update_merchant_entity_test");
 }

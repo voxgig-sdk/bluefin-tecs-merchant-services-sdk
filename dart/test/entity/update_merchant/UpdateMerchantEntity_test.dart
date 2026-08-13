@@ -47,7 +47,7 @@ void tests() {
       final update_merchant_ref01_ent = client.UpdateMerchant();
       dynamic update_merchant_ref01_data = setup['data']['new']['update_merchant']['update_merchant_ref01'];
 
-      update_merchant_ref01_data = await update_merchant_ref01_ent.create(update_merchant_ref01_data);
+      update_merchant_ref01_data = (await update_merchant_ref01_ent.create(update_merchant_ref01_data)).data();
       ok(null != update_merchant_ref01_data);
 
 

@@ -47,7 +47,7 @@ void tests() {
       final introduce_package_ref01_ent = client.IntroducePackage();
       dynamic introduce_package_ref01_data = setup['data']['new']['introduce_package']['introduce_package_ref01'];
 
-      introduce_package_ref01_data = await introduce_package_ref01_ent.create(introduce_package_ref01_data);
+      introduce_package_ref01_data = (await introduce_package_ref01_ent.create(introduce_package_ref01_data)).data();
       ok(null != introduce_package_ref01_data);
 
 

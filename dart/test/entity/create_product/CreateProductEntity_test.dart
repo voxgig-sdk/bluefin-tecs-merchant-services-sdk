@@ -47,7 +47,7 @@ void tests() {
       final create_product_ref01_ent = client.CreateProduct();
       dynamic create_product_ref01_data = setup['data']['new']['create_product']['create_product_ref01'];
 
-      create_product_ref01_data = await create_product_ref01_ent.create(create_product_ref01_data);
+      create_product_ref01_data = (await create_product_ref01_ent.create(create_product_ref01_data)).data();
       ok(null != create_product_ref01_data);
 
 

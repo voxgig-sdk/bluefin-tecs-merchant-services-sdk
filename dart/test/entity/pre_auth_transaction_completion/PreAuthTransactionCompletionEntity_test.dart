@@ -47,7 +47,7 @@ void tests() {
       final pre_auth_transaction_completion_ref01_ent = client.PreAuthTransactionCompletion();
       dynamic pre_auth_transaction_completion_ref01_data = setup['data']['new']['pre_auth_transaction_completion']['pre_auth_transaction_completion_ref01'];
 
-      pre_auth_transaction_completion_ref01_data = await pre_auth_transaction_completion_ref01_ent.create(pre_auth_transaction_completion_ref01_data);
+      pre_auth_transaction_completion_ref01_data = (await pre_auth_transaction_completion_ref01_ent.create(pre_auth_transaction_completion_ref01_data)).data();
       ok(null != pre_auth_transaction_completion_ref01_data);
 
 

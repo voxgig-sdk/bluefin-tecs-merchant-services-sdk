@@ -280,91 +280,91 @@ SdkEntity cancelTransaction = client.cancelTransaction(null);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `String` | No |  |
-| `acquirer_name` | `String` | No |  |
-| `actual_bonus_point` | `String` | No |  |
+| `acquirerId` | `String` | No |  |
+| `acquirerName` | `String` | No |  |
+| `actualBonusPoints` | `String` | No |  |
 | `amount` | `Long` | No |  |
-| `authorization_code` | `String` | No |  |
-| `balance_amount` | `String` | No |  |
-| `card_brand` | `String` | No |  |
-| `card_number` | `String` | No |  |
-| `client_id` | `Long` | Yes |  |
+| `authorizationCode` | `String` | No |  |
+| `balanceAmount` | `String` | No |  |
+| `cardBrand` | `String` | No |  |
+| `cardNumber` | `String` | No |  |
+| `clientId` | `Long` | Yes |  |
 | `currency` | `String` | Yes |  |
 | `cvc` | `String` | No |  |
-| `ec_data` | `String` | No |  |
-| `ecr_data` | `String` | No |  |
-| `emv_data` | `String` | No |  |
-| `exchange_fee` | `Long` | No |  |
-| `exchange_rate` | `String` | No |  |
-| `language_code` | `String` | No |  |
-| `merchant_address` | `String` | No |  |
-| `merchant_name` | `String` | No |  |
-| `merchant_number` | `String` | No |  |
-| `message_type` | `String` | No |  |
-| `original_trace_number` | `Long` | No |  |
-| `original_transaction_id` | `String` | No |  |
+| `ecData` | `String` | No |  |
+| `ecrData` | `String` | No |  |
+| `emvData` | `String` | No |  |
+| `exchangeFee` | `Long` | No |  |
+| `exchangeRate` | `String` | No |  |
+| `languageCode` | `String` | No |  |
+| `merchantAddress` | `String` | No |  |
+| `merchantName` | `String` | No |  |
+| `merchantNumber` | `String` | No |  |
+| `messageType` | `String` | No |  |
+| `originalTraceNumber` | `Long` | No |  |
+| `originalTransactionId` | `String` | No |  |
 | `password` | `String` | No |  |
-| `payment_reason` | `String` | No |  |
-| `receipt_footer` | `String` | No |  |
-| `receipt_header` | `String` | No |  |
-| `receipt_layout` | `Long` | No |  |
-| `receipt_number` | `String` | Yes |  |
-| `response_code` | `Long` | No |  |
-| `response_message` | `String` | No |  |
-| `serial_number` | `String` | No |  |
+| `paymentReason` | `String` | No |  |
+| `receiptFooter` | `String` | No |  |
+| `receiptHeader` | `String` | No |  |
+| `receiptLayout` | `Long` | No |  |
+| `receiptNumber` | `String` | Yes |  |
+| `responseCode` | `Long` | No |  |
+| `responseMessage` | `String` | No |  |
+| `serialNumber` | `String` | No |  |
 | `svc` | `String` | No |  |
-| `terminal_id` | `Long` | Yes |  |
-| `terminal_location` | `String` | No |  |
-| `trace_number` | `Long` | No |  |
-| `transaction_date` | `String` | No |  |
-| `transaction_id` | `String` | No |  |
-| `tx_type` | `String` | No |  |
-| `user_data` | `String` | No |  |
+| `terminalId` | `Long` | Yes |  |
+| `terminalLocation` | `String` | No |  |
+| `traceNumber` | `Long` | No |  |
+| `transactionDate` | `String` | No |  |
+| `transactionId` | `String` | No |  |
+| `txType` | `String` | No |  |
+| `userData` | `String` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `acquirer_id` | - |
-| `acquirer_name` | - |
-| `actual_bonus_point` | - |
+| `acquirerId` | - |
+| `acquirerName` | - |
+| `actualBonusPoints` | - |
 | `amount` | Yes |
-| `authorization_code` | - |
-| `balance_amount` | - |
-| `card_brand` | - |
-| `card_number` | - |
-| `client_id` | - |
+| `authorizationCode` | - |
+| `balanceAmount` | - |
+| `cardBrand` | - |
+| `cardNumber` | - |
+| `clientId` | - |
 | `currency` | - |
 | `cvc` | - |
-| `ec_data` | - |
-| `ecr_data` | - |
-| `emv_data` | - |
-| `exchange_fee` | - |
-| `exchange_rate` | - |
-| `language_code` | - |
-| `merchant_address` | - |
-| `merchant_name` | - |
-| `merchant_number` | - |
-| `message_type` | Yes |
-| `original_trace_number` | - |
-| `original_transaction_id` | Yes |
+| `ecData` | - |
+| `ecrData` | - |
+| `emvData` | - |
+| `exchangeFee` | - |
+| `exchangeRate` | - |
+| `languageCode` | - |
+| `merchantAddress` | - |
+| `merchantName` | - |
+| `merchantNumber` | - |
+| `messageType` | Yes |
+| `originalTraceNumber` | - |
+| `originalTransactionId` | Yes |
 | `password` | - |
-| `payment_reason` | - |
-| `receipt_footer` | - |
-| `receipt_header` | - |
-| `receipt_layout` | - |
-| `receipt_number` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `serial_number` | - |
+| `paymentReason` | - |
+| `receiptFooter` | - |
+| `receiptHeader` | - |
+| `receiptLayout` | - |
+| `receiptNumber` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `serialNumber` | - |
 | `svc` | - |
-| `terminal_id` | - |
-| `terminal_location` | - |
-| `trace_number` | - |
-| `transaction_date` | Yes |
-| `transaction_id` | Yes |
-| `tx_type` | - |
-| `user_data` | - |
+| `terminalId` | - |
+| `terminalLocation` | - |
+| `traceNumber` | - |
+| `transactionDate` | Yes |
+| `transactionId` | Yes |
+| `txType` | - |
+| `userData` | - |
 
 ### Operations
 
@@ -374,10 +374,10 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```java
 Object result = client.cancelTransaction(null).create(Map.of(
-    "client_id", 1L,  // Long
+    "clientId", 1L,  // Long
     "currency", "example_currency",  // String
-    "receipt_number", "example_receipt_number",  // String
-    "terminal_id", 1L  // Long
+    "receiptNumber", "example_receiptNumber",  // String
+    "terminalId", 1L  // Long
 ), null);
 ```
 
@@ -412,9 +412,9 @@ SdkEntity checkCardBlackListed = client.checkCardBlackListed(null);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `card_no` | `String` | No |  |
-| `response_code` | `Long` | No |  |
-| `response_message` | `String` | No |  |
+| `cardNo` | `String` | No |  |
+| `responseCode` | `Long` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -458,13 +458,13 @@ SdkEntity createProduct = client.createProduct(null);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `Long` | No |  |
-| `response_code` | `Long` | No |  |
-| `response_message` | `String` | No |  |
-| `template_name` | `String` | Yes |  |
-| `template_type` | `String` | Yes |  |
-| `template_xml` | `String` | Yes |  |
-| `terminal_type` | `String` | Yes |  |
+| `acquirerId` | `Long` | No |  |
+| `responseCode` | `Long` | No |  |
+| `responseMessage` | `String` | No |  |
+| `templateName` | `String` | Yes |  |
+| `templateType` | `String` | Yes |  |
+| `templateXml` | `String` | Yes |  |
+| `terminalType` | `String` | Yes |  |
 
 ### Operations
 
@@ -474,10 +474,10 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```java
 Object result = client.createProduct(null).create(Map.of(
-    "template_name", "example_template_name",  // String
-    "template_type", "example_template_type",  // String
-    "template_xml", "example_template_xml",  // String
-    "terminal_type", "example_terminal_type"  // String
+    "templateName", "example_templateName",  // String
+    "templateType", "example_templateType",  // String
+    "templateXml", "example_templateXml",  // String
+    "terminalType", "example_terminalType"  // String
 ), null);
 ```
 
@@ -512,13 +512,13 @@ SdkEntity deactivateTerminal = client.deactivateTerminal(null);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `corporate_uuid` | `String` | No |  |
-| `deactivation_reason` | `String` | Yes |  |
-| `package_order_uuid` | `String` | No |  |
-| `product_order_uuid` | `String` | No |  |
-| `response_code` | `Long` | No |  |
-| `response_message` | `String` | No |  |
-| `terminal_id` | `Long` | Yes |  |
+| `corporateUuid` | `String` | No |  |
+| `deactivationReason` | `String` | Yes |  |
+| `packageOrderUuid` | `String` | No |  |
+| `productOrderUuid` | `String` | No |  |
+| `responseCode` | `Long` | No |  |
+| `responseMessage` | `String` | No |  |
+| `terminalId` | `Long` | Yes |  |
 
 ### Operations
 
@@ -528,8 +528,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```java
 Object result = client.deactivateTerminal(null).create(Map.of(
-    "deactivation_reason", "example_deactivation_reason",  // String
-    "terminal_id", 1L  // Long
+    "deactivationReason", "example_deactivationReason",  // String
+    "terminalId", 1L  // Long
 ), null);
 ```
 
@@ -564,16 +564,16 @@ SdkEntity digitalServicesApi = client.digitalServicesApi(null);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearing_date_from` | `String` | Yes |  |
-| `clearing_date_to` | `String` | Yes |  |
-| `response_code` | `Long` | No |  |
-| `response_message` | `String` | No |  |
-| `tx_count` | `Long` | No |  |
-| `tx_id_end` | `String` | No |  |
-| `tx_id_start` | `String` | No |  |
-| `tx_seq_no_end` | `Long` | No |  |
-| `tx_seq_no_start` | `Long` | No |  |
-| `tx_total` | `Long` | No |  |
+| `clearingDateFrom` | `String` | Yes |  |
+| `clearingDateTo` | `String` | Yes |  |
+| `responseCode` | `Long` | No |  |
+| `responseMessage` | `String` | No |  |
+| `txCount` | `Long` | No |  |
+| `txIdEnd` | `String` | No |  |
+| `txIdStart` | `String` | No |  |
+| `txSeqNoEnd` | `Long` | No |  |
+| `txSeqNoStart` | `Long` | No |  |
+| `txTotal` | `Long` | No |  |
 
 ### Operations
 
@@ -583,6 +583,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```java
 Object result = client.digitalServicesApi(null).create(Map.of(
+    "clearingDateFrom", "example_clearingDateFrom",  // String
+    "clearingDateTo", "example_clearingDateTo"  // String
 ), null);
 ```
 
@@ -625,12 +627,12 @@ SdkEntity ecDataEcom = client.ecDataEcom(null);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ecom_data` | `String` | No |  |
-| `response_code` | `Long` | No |  |
-| `response_message` | `String` | No |  |
-| `terminal_id` | `Long` | Yes |  |
-| `transaction_id` | `String` | Yes |  |
-| `transaction_type` | `String` | Yes |  |
+| `ecomData` | `String` | No |  |
+| `responseCode` | `Long` | No |  |
+| `responseMessage` | `String` | No |  |
+| `terminalId` | `Long` | Yes |  |
+| `transactionId` | `String` | Yes |  |
+| `transactionType` | `String` | Yes |  |
 
 ### Operations
 
@@ -640,9 +642,9 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```java
 Object result = client.ecDataEcom(null).create(Map.of(
-    "terminal_id", 1L,  // Long
-    "transaction_id", "example_transaction_id",  // String
-    "transaction_type", "example_transaction_type"  // String
+    "terminalId", 1L,  // Long
+    "transactionId", "example_transactionId",  // String
+    "transactionType", "example_transactionType"  // String
 ), null);
 ```
 
@@ -677,11 +679,11 @@ SdkEntity ecomParameter = client.ecomParameter(null);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ecom_pass` | `String` | No |  |
-| `ecom_skey` | `String` | No |  |
-| `response_code` | `Long` | No |  |
-| `response_message` | `String` | No |  |
-| `terminal_id` | `Long` | Yes |  |
+| `ecomPass` | `String` | No |  |
+| `ecomSkey` | `String` | No |  |
+| `responseCode` | `Long` | No |  |
+| `responseMessage` | `String` | No |  |
+| `terminalId` | `Long` | Yes |  |
 
 ### Operations
 
@@ -691,7 +693,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```java
 Object result = client.ecomParameter(null).create(Map.of(
-    "terminal_id", 1L  // Long
+    "terminalId", 1L  // Long
 ), null);
 ```
 
@@ -726,12 +728,12 @@ SdkEntity ecrData = client.ecrData(null);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ecr_data` | `String` | No |  |
-| `response_code` | `Long` | No |  |
-| `response_message` | `String` | No |  |
-| `terminal_id` | `Long` | Yes |  |
-| `transaction_id` | `String` | Yes |  |
-| `transaction_type` | `String` | Yes |  |
+| `ecrData` | `String` | No |  |
+| `responseCode` | `Long` | No |  |
+| `responseMessage` | `String` | No |  |
+| `terminalId` | `Long` | Yes |  |
+| `transactionId` | `String` | Yes |  |
+| `transactionType` | `String` | Yes |  |
 
 ### Operations
 
@@ -741,9 +743,9 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```java
 Object result = client.ecrData(null).create(Map.of(
-    "terminal_id", 1L,  // Long
-    "transaction_id", "example_transaction_id",  // String
-    "transaction_type", "example_transaction_type"  // String
+    "terminalId", 1L,  // Long
+    "transactionId", "example_transactionId",  // String
+    "transactionType", "example_transactionType"  // String
 ), null);
 ```
 
@@ -778,12 +780,12 @@ SdkEntity emvData = client.emvData(null);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `emv_data` | `String` | No |  |
-| `response_code` | `Long` | No |  |
-| `response_message` | `String` | No |  |
-| `terminal_id` | `Long` | Yes |  |
-| `transaction_id` | `String` | Yes |  |
-| `transaction_type` | `String` | Yes |  |
+| `emvData` | `String` | No |  |
+| `responseCode` | `Long` | No |  |
+| `responseMessage` | `String` | No |  |
+| `terminalId` | `Long` | Yes |  |
+| `transactionId` | `String` | Yes |  |
+| `transactionType` | `String` | Yes |  |
 
 ### Operations
 
@@ -793,9 +795,9 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```java
 Object result = client.emvData(null).create(Map.of(
-    "terminal_id", 1L,  // Long
-    "transaction_id", "example_transaction_id",  // String
-    "transaction_type", "example_transaction_type"  // String
+    "terminalId", 1L,  // Long
+    "transactionId", "example_transactionId",  // String
+    "transactionType", "example_transactionType"  // String
 ), null);
 ```
 
@@ -830,20 +832,20 @@ SdkEntity enableAcquiring = client.enableAcquiring(null);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `account_no` | `Long` | No |  |
-| `additional_data` | `Map<String, Object>` | No |  |
-| `corporate_uuid` | `String` | Yes |  |
+| `accountNo` | `Long` | No |  |
+| `additionalData` | `Map<String, Object>` | No |  |
+| `corporateUuid` | `String` | Yes |  |
 | `currency` | `String` | Yes |  |
-| `merchant_category_code` | `Long` | Yes |  |
-| `package_order_uuid` | `String` | Yes |  |
-| `product_order_uuid` | `String` | Yes |  |
-| `response_code` | `Long` | No |  |
-| `response_message` | `String` | No |  |
-| `sorting_code` | `Long` | No |  |
-| `template_name` | `String` | Yes |  |
-| `terminal_id` | `List<Object>` | No |  |
-| `terminal_id_acq` | `String` | No |  |
-| `vu_nummer` | `String` | No |  |
+| `merchantCategoryCode` | `Long` | Yes |  |
+| `packageOrderUuid` | `String` | Yes |  |
+| `productOrderUuid` | `String` | Yes |  |
+| `responseCode` | `Long` | No |  |
+| `responseMessage` | `String` | No |  |
+| `sortingCode` | `Long` | No |  |
+| `templateName` | `String` | Yes |  |
+| `terminalIdAcq` | `String` | No |  |
+| `terminalIds` | `List<Object>` | No |  |
+| `vuNummer` | `String` | No |  |
 
 ### Operations
 
@@ -853,12 +855,12 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```java
 Object result = client.enableAcquiring(null).create(Map.of(
-    "corporate_uuid", "example_corporate_uuid",  // String
+    "corporateUuid", "example_corporateUuid",  // String
     "currency", "example_currency",  // String
-    "merchant_category_code", 1L,  // Long
-    "package_order_uuid", "example_package_order_uuid",  // String
-    "product_order_uuid", "example_product_order_uuid",  // String
-    "template_name", "example_template_name"  // String
+    "merchantCategoryCode", 1L,  // Long
+    "packageOrderUuid", "example_packageOrderUuid",  // String
+    "productOrderUuid", "example_productOrderUuid",  // String
+    "templateName", "example_templateName"  // String
 ), null);
 ```
 
@@ -893,9 +895,9 @@ SdkEntity getMerchantContractNumber = client.getMerchantContractNumber(null);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `merchant_contract_number` | `String` | Yes |  |
-| `response_code` | `Long` | No |  |
-| `response_message` | `String` | No |  |
+| `merchantContractNumber` | `String` | Yes |  |
+| `responseCode` | `Long` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -905,7 +907,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```java
 Object result = client.getMerchantContractNumber(null).create(Map.of(
-    "merchant_contract_number", "example_merchant_contract_number"  // String
+    "merchantContractNumber", "example_merchantContractNumber"  // String
 ), null);
 ```
 
@@ -940,9 +942,9 @@ SdkEntity getTemplateXml = client.getTemplateXml(null);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `Long` | No |  |
-| `response_message` | `String` | No |  |
-| `template_name` | `String` | Yes |  |
+| `responseCode` | `Long` | No |  |
+| `responseMessage` | `String` | No |  |
+| `templateName` | `String` | Yes |  |
 
 ### Operations
 
@@ -952,7 +954,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```java
 Object result = client.getTemplateXml(null).create(Map.of(
-    "template_name", "example_template_name"  // String
+    "templateName", "example_templateName"  // String
 ), null);
 ```
 
@@ -987,9 +989,9 @@ SdkEntity introduceMandator = client.introduceMandator(null);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `mandator_name` | `String` | Yes |  |
-| `response_code` | `Long` | No |  |
-| `response_message` | `String` | No |  |
+| `mandatorName` | `String` | Yes |  |
+| `responseCode` | `Long` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -999,7 +1001,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```java
 Object result = client.introduceMandator(null).create(Map.of(
-    "mandator_name", "example_mandator_name"  // String
+    "mandatorName", "example_mandatorName"  // String
 ), null);
 ```
 
@@ -1034,9 +1036,9 @@ SdkEntity introducePackage = client.introducePackage(null);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `Long` | No |  |
-| `response_message` | `String` | No |  |
-| `terminal_template_description` | `String` | Yes |  |
+| `responseCode` | `Long` | No |  |
+| `responseMessage` | `String` | No |  |
+| `terminalTemplateDescription` | `String` | Yes |  |
 
 ### Operations
 
@@ -1046,7 +1048,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```java
 Object result = client.introducePackage(null).create(Map.of(
-    "terminal_template_description", "example_terminal_template_description"  // String
+    "terminalTemplateDescription", "example_terminalTemplateDescription"  // String
 ), null);
 ```
 
@@ -1082,15 +1084,15 @@ SdkEntity keepAlive = client.keepAlive(null);
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `hwserialno` | `String` | No |  |
-| `ka_date_time_from` | `String` | No |  |
-| `ka_date_time_to` | `String` | No |  |
-| `keep_alive_data` | `List<Object>` | No |  |
+| `kaDateTimeFrom` | `String` | No |  |
+| `kaDateTimeTo` | `String` | No |  |
+| `keepAliveData` | `List<Object>` | No |  |
 | `pagination` | `Map<String, Object>` | No |  |
-| `response_code` | `Long` | No |  |
-| `response_message` | `String` | No |  |
-| `terminal_date_time_from` | `String` | No |  |
-| `terminal_date_time_to` | `String` | No |  |
-| `terminal_id` | `Long` | No |  |
+| `responseCode` | `Long` | No |  |
+| `responseMessage` | `String` | No |  |
+| `terminalDateTimeFrom` | `String` | No |  |
+| `terminalDateTimeTo` | `String` | No |  |
+| `terminalId` | `Long` | No |  |
 
 ### Operations
 
@@ -1134,12 +1136,12 @@ SdkEntity listTerminal = client.listTerminal(null);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `corporate_uuid` | `List<Object>` | No |  |
+| `corporateUuid` | `List<Object>` | No |  |
 | `filter` | `Map<String, Object>` | No |  |
 | `pagination` | `Map<String, Object>` | No |  |
-| `response_code` | `Long` | No |  |
-| `response_message` | `String` | No |  |
-| `terminal` | `List<Object>` | No |  |
+| `responseCode` | `Long` | No |  |
+| `responseMessage` | `String` | No |  |
+| `terminals` | `List<Object>` | No |  |
 
 ### Operations
 
@@ -1183,12 +1185,12 @@ SdkEntity mandatorClearingExport = client.mandatorClearingExport(null);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearing_date_from` | `String` | Yes |  |
-| `clearing_date_to` | `String` | Yes |  |
+| `clearingDateFrom` | `String` | Yes |  |
+| `clearingDateTo` | `String` | Yes |  |
 | `pagination` | `Map<String, Object>` | No |  |
-| `record` | `List<Object>` | No |  |
-| `response_code` | `Long` | No |  |
-| `response_message` | `String` | No |  |
+| `records` | `List<Object>` | No |  |
+| `responseCode` | `Long` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -1198,8 +1200,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```java
 Object result = client.mandatorClearingExport(null).create(Map.of(
-    "clearing_date_from", "example_clearing_date_from",  // String
-    "clearing_date_to", "example_clearing_date_to"  // String
+    "clearingDateFrom", "example_clearingDateFrom",  // String
+    "clearingDateTo", "example_clearingDateTo"  // String
 ), null);
 ```
 
@@ -1234,12 +1236,12 @@ SdkEntity mandatorClearingExportDownload = client.mandatorClearingExportDownload
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearing_date_from` | `String` | Yes |  |
-| `clearing_date_to` | `String` | Yes |  |
-| `file_id` | `String` | No |  |
-| `filename_template` | `String` | No |  |
-| `response_code` | `Long` | No |  |
-| `response_message` | `String` | No |  |
+| `clearingDateFrom` | `String` | Yes |  |
+| `clearingDateTo` | `String` | Yes |  |
+| `fileId` | `String` | No |  |
+| `filenameTemplate` | `String` | No |  |
+| `responseCode` | `Long` | No |  |
+| `responseMessage` | `String` | No |  |
 | `status` | `String` | No |  |
 
 ### Operations
@@ -1250,8 +1252,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```java
 Object result = client.mandatorClearingExportDownload(null).create(Map.of(
-    "clearing_date_from", "example_clearing_date_from",  // String
-    "clearing_date_to", "example_clearing_date_to"  // String
+    "clearingDateFrom", "example_clearingDateFrom",  // String
+    "clearingDateTo", "example_clearingDateTo"  // String
 ), null);
 ```
 
@@ -1294,11 +1296,11 @@ SdkEntity mandatorClearingExportSummary = client.mandatorClearingExportSummary(n
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearing_date_from` | `String` | Yes |  |
-| `clearing_date_to` | `String` | Yes |  |
-| `record` | `List<Object>` | No |  |
-| `response_code` | `Long` | No |  |
-| `response_message` | `String` | No |  |
+| `clearingDateFrom` | `String` | Yes |  |
+| `clearingDateTo` | `String` | Yes |  |
+| `records` | `List<Object>` | No |  |
+| `responseCode` | `Long` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -1308,8 +1310,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```java
 Object result = client.mandatorClearingExportSummary(null).create(Map.of(
-    "clearing_date_from", "example_clearing_date_from",  // String
-    "clearing_date_to", "example_clearing_date_to"  // String
+    "clearingDateFrom", "example_clearingDateFrom",  // String
+    "clearingDateTo", "example_clearingDateTo"  // String
 ), null);
 ```
 
@@ -1344,30 +1346,30 @@ SdkEntity merchantPortalServicesApi = client.merchantPortalServicesApi(null);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `3_d_secure` | `String` | No |  |
-| `authorization_code` | `String` | No |  |
-| `card_brand` | `String` | No |  |
-| `clearing_amount_from` | `String` | No |  |
-| `clearing_amount_to` | `String` | No |  |
-| `clearing_currency` | `String` | No |  |
-| `clearing_status` | `String` | No |  |
-| `corporate_uuid` | `String` | No |  |
-| `order_by_transaction_date` | `String` | No |  |
+| `3DSecure` | `String` | No |  |
+| `authorizationCode` | `String` | No |  |
+| `cardBrand` | `String` | No |  |
+| `clearingAmountFrom` | `String` | No |  |
+| `clearingAmountTo` | `String` | No |  |
+| `clearingCurrency` | `String` | No |  |
+| `clearingStatus` | `String` | No |  |
+| `corporateUUID` | `String` | No |  |
+| `orderByTransactionDate` | `String` | No |  |
 | `pagination` | `Map<String, Object>` | No |  |
-| `receipt_number` | `String` | No |  |
-| `referenced_transaction_id` | `String` | No |  |
-| `retrieval_reference_number` | `String` | No |  |
-| `source_id` | `Long` | No |  |
-| `tecsengine_response_code_from` | `String` | No |  |
-| `tecsengine_response_code_to` | `String` | No |  |
-| `terminal_id` | `Long` | No |  |
-| `trace_number` | `String` | No |  |
-| `transaction_amount_from` | `String` | No |  |
-| `transaction_amount_to` | `String` | No |  |
-| `transaction_date_from` | `String` | No |  |
-| `transaction_date_to` | `String` | No |  |
-| `transaction_id` | `String` | No |  |
-| `transaction_type` | `String` | No |  |
+| `receiptNumber` | `String` | No |  |
+| `referencedTransactionId` | `String` | No |  |
+| `retrievalReferenceNumber` | `String` | No |  |
+| `sourceId` | `Long` | No |  |
+| `tecsengineResponseCodeFrom` | `String` | No |  |
+| `tecsengineResponseCodeTo` | `String` | No |  |
+| `terminalId` | `Long` | No |  |
+| `traceNumber` | `String` | No |  |
+| `transactionAmountFrom` | `String` | No |  |
+| `transactionAmountTo` | `String` | No |  |
+| `transactionDateFrom` | `String` | No |  |
+| `transactionDateTo` | `String` | No |  |
+| `transactionId` | `String` | No |  |
+| `transactionType` | `String` | No |  |
 | `wallet` | `String` | No |  |
 
 ### Operations
@@ -1412,11 +1414,11 @@ SdkEntity moveTid = client.moveTid(null);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `productorderuuid` | `List<Object>` | Yes |  |
-| `response_code` | `Long` | No |  |
-| `response_message` | `String` | No |  |
-| `target_packageorderuuid` | `String` | No |  |
-| `target_productorderuuid` | `String` | No |  |
+| `productorderuuids` | `List<Object>` | Yes |  |
+| `responseCode` | `Long` | No |  |
+| `responseMessage` | `String` | No |  |
+| `targetPackageorderuuid` | `String` | No |  |
+| `targetProductorderuuid` | `String` | No |  |
 
 ### Operations
 
@@ -1426,7 +1428,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```java
 Object result = client.moveTid(null).create(Map.of(
-    "productorderuuid", List.of()  // List<Object>
+    "productorderuuids", List.of()  // List<Object>
 ), null);
 ```
 
@@ -1461,44 +1463,44 @@ SdkEntity paymentManual = client.paymentManual(null);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_name` | `String` | No |  |
+| `acquirerName` | `String` | No |  |
 | `amount` | `Long` | Yes |  |
-| `authorization_number` | `String` | No |  |
-| `card_number` | `String` | Yes |  |
-| `card_type` | `String` | No |  |
+| `authorizationNumber` | `String` | No |  |
+| `cardNumber` | `String` | Yes |  |
+| `cardType` | `String` | No |  |
 | `currency` | `String` | Yes |  |
 | `cvc` | `String` | No |  |
-| `date_time_tx` | `String` | No |  |
-| `exp_date` | `String` | Yes |  |
-| `merchant_id` | `String` | No |  |
-| `original_transaction_id` | `String` | No |  |
+| `dateTimeTx` | `String` | No |  |
+| `expDate` | `String` | Yes |  |
+| `merchantId` | `String` | No |  |
+| `originalTransactionId` | `String` | No |  |
 | `password` | `String` | No |  |
-| `response_code` | `String` | No |  |
-| `response_message` | `String` | No |  |
-| `terminal_id` | `String` | No |  |
-| `transaction_id` | `String` | No |  |
+| `responseCode` | `String` | No |  |
+| `responseMessage` | `String` | No |  |
+| `terminalId` | `String` | No |  |
+| `transactionId` | `String` | No |  |
 | `txtype` | `String` | Yes |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `acquirer_name` | - |
+| `acquirerName` | - |
 | `amount` | - |
-| `authorization_number` | - |
-| `card_number` | - |
-| `card_type` | - |
+| `authorizationNumber` | - |
+| `cardNumber` | - |
+| `cardType` | - |
 | `currency` | - |
 | `cvc` | - |
-| `date_time_tx` | - |
-| `exp_date` | - |
-| `merchant_id` | - |
-| `original_transaction_id` | - |
+| `dateTimeTx` | - |
+| `expDate` | - |
+| `merchantId` | - |
+| `originalTransactionId` | - |
 | `password` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `terminal_id` | Yes |
-| `transaction_id` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `terminalId` | Yes |
+| `transactionId` | - |
 | `txtype` | - |
 
 ### Operations
@@ -1510,9 +1512,9 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```java
 Object result = client.paymentManual(null).create(Map.of(
     "amount", 1L,  // Long
-    "card_number", "example_card_number",  // String
+    "cardNumber", "example_cardNumber",  // String
     "currency", "example_currency",  // String
-    "exp_date", "example_exp_date",  // String
+    "expDate", "example_expDate",  // String
     "txtype", "example_txtype"  // String
 ), null);
 ```
@@ -1548,43 +1550,18 @@ SdkEntity paymentSred = client.paymentSred(null);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_name` | `String` | No |  |
 | `amount` | `Long` | Yes |  |
-| `authorization_number` | `String` | No |  |
-| `card_type` | `String` | No |  |
 | `currency` | `String` | Yes |  |
-| `date_time_tx` | `String` | No |  |
-| `device_payload` | `String` | Yes |  |
-| `merchant_id` | `String` | No |  |
-| `original_transaction_id` | `String` | No |  |
+| `device` | `String` | No |  |
+| `devicePayload` | `String` | Yes |  |
+| `expDate` | `String` | No |  |
+| `mode` | `String` | No |  |
+| `panMasked` | `String` | No |  |
 | `password` | `String` | No |  |
-| `response_code` | `String` | No |  |
-| `response_message` | `String` | No |  |
-| `sred` | `Map<String, Object>` | No |  |
-| `terminal_id` | `String` | No |  |
-| `transaction_id` | `String` | No |  |
+| `serial` | `String` | No |  |
+| `serviceCode` | `String` | No |  |
+| `terminalId` | `String` | Yes |  |
 | `txtype` | `String` | Yes |  |
-
-### Field Usage by Operation
-
-| Field | create |
-| --- | --- |
-| `acquirer_name` | - |
-| `amount` | - |
-| `authorization_number` | - |
-| `card_type` | - |
-| `currency` | - |
-| `date_time_tx` | - |
-| `device_payload` | - |
-| `merchant_id` | - |
-| `original_transaction_id` | - |
-| `password` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `sred` | - |
-| `terminal_id` | Yes |
-| `transaction_id` | - |
-| `txtype` | - |
 
 ### Operations
 
@@ -1596,7 +1573,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 Object result = client.paymentSred(null).create(Map.of(
     "amount", 1L,  // Long
     "currency", "example_currency",  // String
-    "device_payload", "example_device_payload",  // String
+    "devicePayload", "example_devicePayload",  // String
+    "terminalId", "example_terminalId",  // String
     "txtype", "example_txtype"  // String
 ), null);
 ```
@@ -1632,95 +1610,95 @@ SdkEntity preAuthTransactionCompletion = client.preAuthTransactionCompletion(nul
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `String` | No |  |
-| `acquirer_name` | `String` | No |  |
-| `actual_bonus_point` | `String` | No |  |
+| `acquirerId` | `String` | No |  |
+| `acquirerName` | `String` | No |  |
+| `actualBonusPoints` | `String` | No |  |
 | `amount` | `Long` | No |  |
-| `authorization_code` | `String` | No |  |
-| `balance_amount` | `String` | No |  |
-| `card_brand` | `String` | No |  |
-| `card_number` | `String` | No |  |
-| `card_number_reference` | `String` | Yes |  |
-| `client_id` | `Long` | Yes |  |
+| `authorizationCode` | `String` | No |  |
+| `balanceAmount` | `String` | No |  |
+| `cardBrand` | `String` | No |  |
+| `cardNumber` | `String` | No |  |
+| `cardNumberReference` | `String` | Yes |  |
+| `clientId` | `Long` | Yes |  |
 | `currency` | `String` | Yes |  |
 | `cvc` | `String` | No |  |
-| `ec_data` | `String` | No |  |
-| `ecr_data` | `String` | No |  |
-| `emv_data` | `String` | No |  |
-| `exchange_fee` | `Long` | No |  |
-| `exchange_rate` | `String` | No |  |
-| `language_code` | `String` | No |  |
-| `merchant_address` | `String` | No |  |
-| `merchant_name` | `String` | No |  |
-| `merchant_number` | `String` | No |  |
-| `message_type` | `String` | No |  |
-| `original_trace_number` | `Long` | No |  |
-| `original_transaction_id` | `String` | No |  |
+| `ecData` | `String` | No |  |
+| `ecrData` | `String` | No |  |
+| `emvData` | `String` | No |  |
+| `exchangeFee` | `Long` | No |  |
+| `exchangeRate` | `String` | No |  |
+| `languageCode` | `String` | No |  |
+| `merchantAddress` | `String` | No |  |
+| `merchantName` | `String` | No |  |
+| `merchantNumber` | `String` | No |  |
+| `messageType` | `String` | No |  |
+| `originalTraceNumber` | `Long` | No |  |
+| `originalTransactionId` | `String` | No |  |
 | `password` | `String` | No |  |
-| `payment_reason` | `String` | No |  |
-| `receipt_footer` | `String` | No |  |
-| `receipt_header` | `String` | No |  |
-| `receipt_layout` | `Long` | No |  |
-| `receipt_number` | `String` | Yes |  |
-| `response_code` | `Long` | No |  |
-| `response_message` | `String` | No |  |
-| `serial_number` | `String` | No |  |
+| `paymentReason` | `String` | No |  |
+| `receiptFooter` | `String` | No |  |
+| `receiptHeader` | `String` | No |  |
+| `receiptLayout` | `Long` | No |  |
+| `receiptNumber` | `String` | Yes |  |
+| `responseCode` | `Long` | No |  |
+| `responseMessage` | `String` | No |  |
+| `serialNumber` | `String` | No |  |
 | `svc` | `String` | No |  |
-| `terminal_id` | `Long` | Yes |  |
-| `terminal_location` | `String` | No |  |
-| `trace_number` | `Long` | No |  |
-| `transaction_date` | `String` | No |  |
-| `transaction_id` | `String` | No |  |
-| `transaction_type` | `String` | Yes |  |
-| `tx_type` | `String` | No |  |
-| `user_data` | `String` | No |  |
+| `terminalId` | `Long` | Yes |  |
+| `terminalLocation` | `String` | No |  |
+| `traceNumber` | `Long` | No |  |
+| `transactionDate` | `String` | No |  |
+| `transactionId` | `String` | No |  |
+| `transactionType` | `String` | Yes |  |
+| `txType` | `String` | No |  |
+| `userData` | `String` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `acquirer_id` | - |
-| `acquirer_name` | - |
-| `actual_bonus_point` | - |
+| `acquirerId` | - |
+| `acquirerName` | - |
+| `actualBonusPoints` | - |
 | `amount` | Yes |
-| `authorization_code` | - |
-| `balance_amount` | - |
-| `card_brand` | - |
-| `card_number` | - |
-| `card_number_reference` | - |
-| `client_id` | - |
+| `authorizationCode` | - |
+| `balanceAmount` | - |
+| `cardBrand` | - |
+| `cardNumber` | - |
+| `cardNumberReference` | - |
+| `clientId` | - |
 | `currency` | - |
 | `cvc` | - |
-| `ec_data` | - |
-| `ecr_data` | - |
-| `emv_data` | - |
-| `exchange_fee` | - |
-| `exchange_rate` | - |
-| `language_code` | - |
-| `merchant_address` | - |
-| `merchant_name` | - |
-| `merchant_number` | - |
-| `message_type` | - |
-| `original_trace_number` | - |
-| `original_transaction_id` | Yes |
+| `ecData` | - |
+| `ecrData` | - |
+| `emvData` | - |
+| `exchangeFee` | - |
+| `exchangeRate` | - |
+| `languageCode` | - |
+| `merchantAddress` | - |
+| `merchantName` | - |
+| `merchantNumber` | - |
+| `messageType` | - |
+| `originalTraceNumber` | - |
+| `originalTransactionId` | Yes |
 | `password` | - |
-| `payment_reason` | - |
-| `receipt_footer` | - |
-| `receipt_header` | - |
-| `receipt_layout` | - |
-| `receipt_number` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `serial_number` | - |
+| `paymentReason` | - |
+| `receiptFooter` | - |
+| `receiptHeader` | - |
+| `receiptLayout` | - |
+| `receiptNumber` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `serialNumber` | - |
 | `svc` | - |
-| `terminal_id` | - |
-| `terminal_location` | - |
-| `trace_number` | - |
-| `transaction_date` | Yes |
-| `transaction_id` | Yes |
-| `transaction_type` | - |
-| `tx_type` | - |
-| `user_data` | - |
+| `terminalId` | - |
+| `terminalLocation` | - |
+| `traceNumber` | - |
+| `transactionDate` | Yes |
+| `transactionId` | Yes |
+| `transactionType` | - |
+| `txType` | - |
+| `userData` | - |
 
 ### Operations
 
@@ -1730,12 +1708,12 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```java
 Object result = client.preAuthTransactionCompletion(null).create(Map.of(
-    "card_number_reference", "example_card_number_reference",  // String
-    "client_id", 1L,  // Long
+    "cardNumberReference", "example_cardNumberReference",  // String
+    "clientId", 1L,  // Long
     "currency", "example_currency",  // String
-    "receipt_number", "example_receipt_number",  // String
-    "terminal_id", 1L,  // Long
-    "transaction_type", "example_transaction_type"  // String
+    "receiptNumber", "example_receiptNumber",  // String
+    "terminalId", 1L,  // Long
+    "transactionType", "example_transactionType"  // String
 ), null);
 ```
 
@@ -1770,13 +1748,13 @@ SdkEntity reactivateTerminal = client.reactivateTerminal(null);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `corporate_uuid` | `String` | No |  |
-| `package_order_uuid` | `String` | No |  |
-| `product_order_uuid` | `String` | No |  |
-| `reactivation_reason` | `String` | Yes |  |
-| `response_code` | `Long` | No |  |
-| `response_message` | `String` | No |  |
-| `terminal_id` | `Long` | Yes |  |
+| `corporateUuid` | `String` | No |  |
+| `packageOrderUuid` | `String` | No |  |
+| `productOrderUuid` | `String` | No |  |
+| `reactivationReason` | `String` | Yes |  |
+| `responseCode` | `Long` | No |  |
+| `responseMessage` | `String` | No |  |
+| `terminalId` | `Long` | Yes |  |
 
 ### Operations
 
@@ -1786,8 +1764,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```java
 Object result = client.reactivateTerminal(null).create(Map.of(
-    "reactivation_reason", "example_reactivation_reason",  // String
-    "terminal_id", 1L  // Long
+    "reactivationReason", "example_reactivationReason",  // String
+    "terminalId", 1L  // Long
 ), null);
 ```
 
@@ -1822,91 +1800,91 @@ SdkEntity refundTransaction = client.refundTransaction(null);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `String` | No |  |
-| `acquirer_name` | `String` | No |  |
-| `actual_bonus_point` | `String` | No |  |
+| `acquirerId` | `String` | No |  |
+| `acquirerName` | `String` | No |  |
+| `actualBonusPoints` | `String` | No |  |
 | `amount` | `Long` | No |  |
-| `authorization_code` | `String` | No |  |
-| `balance_amount` | `String` | No |  |
-| `card_brand` | `String` | No |  |
-| `card_number` | `String` | No |  |
-| `client_id` | `Long` | Yes |  |
+| `authorizationCode` | `String` | No |  |
+| `balanceAmount` | `String` | No |  |
+| `cardBrand` | `String` | No |  |
+| `cardNumber` | `String` | No |  |
+| `clientId` | `Long` | Yes |  |
 | `currency` | `String` | Yes |  |
 | `cvc` | `String` | No |  |
-| `ec_data` | `String` | No |  |
-| `ecr_data` | `String` | No |  |
-| `emv_data` | `String` | No |  |
-| `exchange_fee` | `Long` | No |  |
-| `exchange_rate` | `String` | No |  |
-| `language_code` | `String` | No |  |
-| `merchant_address` | `String` | No |  |
-| `merchant_name` | `String` | No |  |
-| `merchant_number` | `String` | No |  |
-| `message_type` | `String` | No |  |
-| `original_trace_number` | `Long` | No |  |
-| `original_transaction_id` | `String` | No |  |
+| `ecData` | `String` | No |  |
+| `ecrData` | `String` | No |  |
+| `emvData` | `String` | No |  |
+| `exchangeFee` | `Long` | No |  |
+| `exchangeRate` | `String` | No |  |
+| `languageCode` | `String` | No |  |
+| `merchantAddress` | `String` | No |  |
+| `merchantName` | `String` | No |  |
+| `merchantNumber` | `String` | No |  |
+| `messageType` | `String` | No |  |
+| `originalTraceNumber` | `Long` | No |  |
+| `originalTransactionId` | `String` | No |  |
 | `password` | `String` | No |  |
-| `payment_reason` | `String` | No |  |
-| `receipt_footer` | `String` | No |  |
-| `receipt_header` | `String` | No |  |
-| `receipt_layout` | `Long` | No |  |
-| `receipt_number` | `String` | Yes |  |
-| `response_code` | `Long` | No |  |
-| `response_message` | `String` | No |  |
-| `serial_number` | `String` | No |  |
+| `paymentReason` | `String` | No |  |
+| `receiptFooter` | `String` | No |  |
+| `receiptHeader` | `String` | No |  |
+| `receiptLayout` | `Long` | No |  |
+| `receiptNumber` | `String` | Yes |  |
+| `responseCode` | `Long` | No |  |
+| `responseMessage` | `String` | No |  |
+| `serialNumber` | `String` | No |  |
 | `svc` | `String` | No |  |
-| `terminal_id` | `Long` | Yes |  |
-| `terminal_location` | `String` | No |  |
-| `trace_number` | `Long` | No |  |
-| `transaction_date` | `String` | No |  |
-| `transaction_id` | `String` | No |  |
-| `tx_type` | `String` | No |  |
-| `user_data` | `String` | No |  |
+| `terminalId` | `Long` | Yes |  |
+| `terminalLocation` | `String` | No |  |
+| `traceNumber` | `Long` | No |  |
+| `transactionDate` | `String` | No |  |
+| `transactionId` | `String` | No |  |
+| `txType` | `String` | No |  |
+| `userData` | `String` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `acquirer_id` | - |
-| `acquirer_name` | - |
-| `actual_bonus_point` | - |
+| `acquirerId` | - |
+| `acquirerName` | - |
+| `actualBonusPoints` | - |
 | `amount` | Yes |
-| `authorization_code` | - |
-| `balance_amount` | - |
-| `card_brand` | - |
-| `card_number` | - |
-| `client_id` | - |
+| `authorizationCode` | - |
+| `balanceAmount` | - |
+| `cardBrand` | - |
+| `cardNumber` | - |
+| `clientId` | - |
 | `currency` | - |
 | `cvc` | - |
-| `ec_data` | - |
-| `ecr_data` | - |
-| `emv_data` | - |
-| `exchange_fee` | - |
-| `exchange_rate` | - |
-| `language_code` | - |
-| `merchant_address` | - |
-| `merchant_name` | - |
-| `merchant_number` | - |
-| `message_type` | - |
-| `original_trace_number` | - |
-| `original_transaction_id` | Yes |
+| `ecData` | - |
+| `ecrData` | - |
+| `emvData` | - |
+| `exchangeFee` | - |
+| `exchangeRate` | - |
+| `languageCode` | - |
+| `merchantAddress` | - |
+| `merchantName` | - |
+| `merchantNumber` | - |
+| `messageType` | - |
+| `originalTraceNumber` | - |
+| `originalTransactionId` | Yes |
 | `password` | - |
-| `payment_reason` | - |
-| `receipt_footer` | - |
-| `receipt_header` | - |
-| `receipt_layout` | - |
-| `receipt_number` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `serial_number` | - |
+| `paymentReason` | - |
+| `receiptFooter` | - |
+| `receiptHeader` | - |
+| `receiptLayout` | - |
+| `receiptNumber` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `serialNumber` | - |
 | `svc` | - |
-| `terminal_id` | - |
-| `terminal_location` | - |
-| `trace_number` | - |
-| `transaction_date` | Yes |
-| `transaction_id` | Yes |
-| `tx_type` | - |
-| `user_data` | - |
+| `terminalId` | - |
+| `terminalLocation` | - |
+| `traceNumber` | - |
+| `transactionDate` | Yes |
+| `transactionId` | Yes |
+| `txType` | - |
+| `userData` | - |
 
 ### Operations
 
@@ -1916,10 +1894,10 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```java
 Object result = client.refundTransaction(null).create(Map.of(
-    "client_id", 1L,  // Long
+    "clientId", 1L,  // Long
     "currency", "example_currency",  // String
-    "receipt_number", "example_receipt_number",  // String
-    "terminal_id", 1L  // Long
+    "receiptNumber", "example_receiptNumber",  // String
+    "terminalId", 1L  // Long
 ), null);
 ```
 
@@ -1954,14 +1932,14 @@ SdkEntity registerTecsCompany = client.registerTecsCompany(null);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `corporate_uuid` | `String` | Yes |  |
-| `package_order_uuid` | `String` | Yes |  |
-| `partner_id` | `Long` | No |  |
-| `partner_name` | `String` | No |  |
-| `product_order_uuid` | `String` | Yes |  |
-| `response_code` | `Long` | No |  |
-| `response_message` | `String` | No |  |
-| `template_name` | `String` | Yes |  |
+| `corporateUuid` | `String` | Yes |  |
+| `packageOrderUuid` | `String` | Yes |  |
+| `partnerId` | `Long` | No |  |
+| `partnerName` | `String` | No |  |
+| `productOrderUuid` | `String` | Yes |  |
+| `responseCode` | `Long` | No |  |
+| `responseMessage` | `String` | No |  |
+| `templateName` | `String` | Yes |  |
 
 ### Operations
 
@@ -1971,10 +1949,10 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```java
 Object result = client.registerTecsCompany(null).create(Map.of(
-    "corporate_uuid", "example_corporate_uuid",  // String
-    "package_order_uuid", "example_package_order_uuid",  // String
-    "product_order_uuid", "example_product_order_uuid",  // String
-    "template_name", "example_template_name"  // String
+    "corporateUuid", "example_corporateUuid",  // String
+    "packageOrderUuid", "example_packageOrderUuid",  // String
+    "productOrderUuid", "example_productOrderUuid",  // String
+    "templateName", "example_templateName"  // String
 ), null);
 ```
 
@@ -2009,24 +1987,24 @@ SdkEntity registerTerminal = client.registerTerminal(null);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `additional_data` | `Map<String, Object>` | No |  |
-| `corporate_uuid` | `String` | Yes |  |
-| `package_order_uuid` | `String` | Yes |  |
-| `product_order_uuid` | `String` | Yes |  |
-| `response_code` | `Long` | No |  |
-| `response_message` | `String` | No |  |
-| `tecs_web_secret_key` | `String` | No |  |
-| `template_name` | `String` | Yes |  |
-| `terminal_country_code` | `String` | Yes |  |
-| `terminal_id` | `Long` | No |  |
-| `terminal_id_acq` | `String` | No |  |
-| `terminal_language_code` | `String` | Yes |  |
-| `terminal_location` | `String` | Yes |  |
-| `terminal_serial_number` | `String` | No |  |
-| `token_io_alia` | `String` | No |  |
-| `token_io_iban` | `String` | No |  |
-| `token_io_member_id` | `String` | No |  |
-| `web_shop_url` | `String` | No |  |
+| `additionalData` | `Map<String, Object>` | No |  |
+| `corporateUuid` | `String` | Yes |  |
+| `packageOrderUuid` | `String` | Yes |  |
+| `productOrderUuid` | `String` | Yes |  |
+| `responseCode` | `Long` | No |  |
+| `responseMessage` | `String` | No |  |
+| `tecsWebSecretKey` | `String` | No |  |
+| `templateName` | `String` | Yes |  |
+| `terminalCountryCode` | `String` | Yes |  |
+| `terminalId` | `Long` | No |  |
+| `terminalIdAcq` | `String` | No |  |
+| `terminalLanguageCode` | `String` | Yes |  |
+| `terminalLocation` | `String` | Yes |  |
+| `terminalSerialNumber` | `String` | No |  |
+| `tokenIOAlias` | `String` | No |  |
+| `tokenIOIban` | `String` | No |  |
+| `tokenIOMemberId` | `String` | No |  |
+| `webShopUrl` | `String` | No |  |
 
 ### Operations
 
@@ -2036,13 +2014,13 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```java
 Object result = client.registerTerminal(null).create(Map.of(
-    "corporate_uuid", "example_corporate_uuid",  // String
-    "package_order_uuid", "example_package_order_uuid",  // String
-    "product_order_uuid", "example_product_order_uuid",  // String
-    "template_name", "example_template_name",  // String
-    "terminal_country_code", "example_terminal_country_code",  // String
-    "terminal_language_code", "example_terminal_language_code",  // String
-    "terminal_location", "example_terminal_location"  // String
+    "corporateUuid", "example_corporateUuid",  // String
+    "packageOrderUuid", "example_packageOrderUuid",  // String
+    "productOrderUuid", "example_productOrderUuid",  // String
+    "templateName", "example_templateName",  // String
+    "terminalCountryCode", "example_terminalCountryCode",  // String
+    "terminalLanguageCode", "example_terminalLanguageCode",  // String
+    "terminalLocation", "example_terminalLocation"  // String
 ), null);
 ```
 
@@ -2077,16 +2055,16 @@ SdkEntity reportData = client.reportData(null);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `card_brand_report_data` | `List<Object>` | No |  |
-| `clearing_date_from` | `String` | Yes |  |
-| `clearing_date_to` | `String` | Yes |  |
-| `corporate_id` | `String` | Yes |  |
+| `cardBrandReportData` | `List<Object>` | No |  |
+| `clearingDateFrom` | `String` | Yes |  |
+| `clearingDateTo` | `String` | Yes |  |
+| `corporateId` | `String` | Yes |  |
 | `currency` | `String` | Yes |  |
-| `response_code` | `Long` | No |  |
-| `response_message` | `String` | No |  |
-| `sum_over_credit_tx` | `Map<String, Object>` | No |  |
-| `sum_over_debit_tx` | `Map<String, Object>` | No |  |
-| `terminal_id` | `Long` | No |  |
+| `responseCode` | `Long` | No |  |
+| `responseMessage` | `String` | No |  |
+| `sumOverCreditTx` | `Map<String, Object>` | No |  |
+| `sumOverDebitTx` | `Map<String, Object>` | No |  |
+| `terminalId` | `Long` | No |  |
 
 ### Operations
 
@@ -2096,9 +2074,9 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```java
 Object result = client.reportData(null).create(Map.of(
-    "clearing_date_from", "example_clearing_date_from",  // String
-    "clearing_date_to", "example_clearing_date_to",  // String
-    "corporate_id", "example_corporate_id",  // String
+    "clearingDateFrom", "example_clearingDateFrom",  // String
+    "clearingDateTo", "example_clearingDateTo",  // String
+    "corporateId", "example_corporateId",  // String
     "currency", "example_currency"  // String
 ), null);
 ```
@@ -2134,56 +2112,56 @@ SdkEntity statusTransaction = client.statusTransaction(null);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_name` | `String` | No |  |
-| `acquirer_terminal_id` | `String` | No |  |
+| `acquirerName` | `String` | No |  |
+| `acquirerTerminalId` | `String` | No |  |
 | `amount` | `Long` | No |  |
-| `application_cryptogram` | `String` | No |  |
-| `authorization_code` | `Object` | No |  |
-| `authorization_date` | `String` | No |  |
-| `card_brand` | `String` | No |  |
-| `card_entry` | `String` | No |  |
-| `card_expiration` | `String` | No |  |
-| `card_number` | `String` | No |  |
-| `clearing_amount` | `Long` | No |  |
-| `clearing_batch_id` | `String` | No |  |
-| `clearing_currency` | `String` | No |  |
-| `clearing_date` | `String` | No |  |
-| `clearing_processed_date` | `String` | No |  |
-| `clearing_status` | `String` | No |  |
-| `client_id` | `Long` | No |  |
+| `applicationCryptogram` | `String` | No |  |
+| `authorizationCode` | `Object` | No |  |
+| `authorizationDate` | `String` | No |  |
+| `cardBrand` | `String` | No |  |
+| `cardEntry` | `String` | No |  |
+| `cardExpiration` | `String` | No |  |
+| `cardNumber` | `String` | No |  |
+| `clearingAmount` | `Long` | No |  |
+| `clearingBatchId` | `String` | No |  |
+| `clearingCurrency` | `String` | No |  |
+| `clearingDate` | `String` | No |  |
+| `clearingProcessedDate` | `String` | No |  |
+| `clearingStatus` | `String` | No |  |
+| `clientId` | `Long` | No |  |
 | `currency` | `String` | No |  |
 | `cvm` | `String` | No |  |
-| `ecr_data` | `String` | No |  |
-| `emv_application_id` | `String` | No |  |
-| `emv_application_label` | `String` | No |  |
-| `merchant_name` | `String` | No |  |
-| `merchant_number` | `String` | No |  |
-| `original_client_id` | `String` | No |  |
-| `original_terminal_id` | `Long` | No |  |
-| `original_transaction_id` | `String` | No |  |
-| `payment_reason` | `String` | No |  |
-| `receipt_number` | `String` | No |  |
-| `response_code` | `Long` | No |  |
-| `response_code_from_a` | `String` | No |  |
-| `response_message` | `String` | No |  |
-| `retrieval_reference_number` | `String` | No |  |
-| `service_code` | `String` | No |  |
-| `settlement_status` | `String` | No |  |
-| `source_id` | `Long` | No |  |
-| `tecsengine_response_code` | `Long` | No |  |
-| `tecsengine_response_text` | `String` | No |  |
-| `terminal_end_of_day_date` | `String` | No |  |
-| `terminal_id` | `Long` | No |  |
-| `terminal_location` | `String` | No |  |
-| `tip_amount` | `Long` | No |  |
-| `trace_number` | `Long` | No |  |
-| `transaction_clearing_date` | `String` | No |  |
-| `transaction_date` | `String` | No |  |
-| `transaction_id` | `String` | No |  |
-| `transaction_seq_number` | `Long` | No |  |
-| `transaction_server_date` | `String` | No |  |
-| `transaction_source` | `String` | No |  |
-| `transaction_type` | `String` | No |  |
+| `ecrData` | `String` | No |  |
+| `emvApplicationId` | `String` | No |  |
+| `emvApplicationLabel` | `String` | No |  |
+| `merchantName` | `String` | No |  |
+| `merchantNumber` | `String` | No |  |
+| `originalClientId` | `String` | No |  |
+| `originalTerminalId` | `Long` | No |  |
+| `originalTransactionId` | `String` | No |  |
+| `paymentReason` | `String` | No |  |
+| `receiptNumber` | `String` | No |  |
+| `responseCode` | `Long` | No |  |
+| `responseCodeFromAS` | `String` | No |  |
+| `responseMessage` | `String` | No |  |
+| `retrievalReferenceNumber` | `String` | No |  |
+| `serviceCode` | `String` | No |  |
+| `settlementStatus` | `String` | No |  |
+| `sourceId` | `Long` | No |  |
+| `tecsengineResponseCode` | `Long` | No |  |
+| `tecsengineResponseText` | `String` | No |  |
+| `terminalEndOfDayDate` | `String` | No |  |
+| `terminalId` | `Long` | No |  |
+| `terminalLocation` | `String` | No |  |
+| `tipAmount` | `Long` | No |  |
+| `traceNumber` | `Long` | No |  |
+| `transactionClearingDate` | `String` | No |  |
+| `transactionDate` | `String` | No |  |
+| `transactionId` | `String` | No |  |
+| `transactionSeqNumber` | `Long` | No |  |
+| `transactionServerDate` | `String` | No |  |
+| `transactionSource` | `String` | No |  |
+| `transactionType` | `String` | No |  |
 
 ### Operations
 
@@ -2227,12 +2205,12 @@ SdkEntity storeTerminalParameter = client.storeTerminalParameter(null);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acq_tab_nexo` | `Map<String, Object>` | No |  |
-| `config_version` | `String` | No |  |
-| `response_code` | `Long` | No |  |
-| `response_message` | `String` | No |  |
-| `serial_number` | `String` | Yes |  |
-| `tid_sent` | `String` | No |  |
+| `acqTabNexo` | `Map<String, Object>` | No |  |
+| `configVersion` | `String` | No |  |
+| `responseCode` | `Long` | No |  |
+| `responseMessage` | `String` | No |  |
+| `serialNumber` | `String` | Yes |  |
+| `tidSent` | `String` | No |  |
 
 ### Operations
 
@@ -2242,7 +2220,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```java
 Object result = client.storeTerminalParameter(null).create(Map.of(
-    "serial_number", "example_serial_number"  // String
+    "serialNumber", "example_serialNumber"  // String
 ), null);
 ```
 
@@ -2277,11 +2255,11 @@ SdkEntity terminalId = client.terminalId(null);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `device_serial_number` | `List<Object>` | Yes |  |
-| `duplicate_terminal_id` | `List<Object>` | No |  |
-| `response_code` | `Long` | No |  |
-| `response_message` | `String` | No |  |
-| `terminal` | `List<Object>` | No |  |
+| `deviceSerialNumber` | `List<Object>` | Yes |  |
+| `duplicateTerminalIds` | `List<Object>` | No |  |
+| `responseCode` | `Long` | No |  |
+| `responseMessage` | `String` | No |  |
+| `terminals` | `List<Object>` | No |  |
 
 ### Operations
 
@@ -2291,7 +2269,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```java
 Object result = client.terminalId(null).create(Map.of(
-    "device_serial_number", List.of()  // List<Object>
+    "deviceSerialNumber", List.of()  // List<Object>
 ), null);
 ```
 
@@ -2326,34 +2304,34 @@ SdkEntity transactionHistory = client.transactionHistory(null);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `3_d_secure` | `String` | No |  |
-| `authorization_code` | `String` | No |  |
-| `card_brand` | `String` | No |  |
-| `clearing_amount_from` | `String` | No |  |
-| `clearing_amount_to` | `String` | No |  |
-| `clearing_currency` | `String` | No |  |
-| `clearing_status` | `String` | No |  |
-| `corporate_uuid` | `String` | No |  |
-| `order_by_transaction_date` | `String` | No |  |
+| `3DSecure` | `String` | No |  |
+| `authorizationCode` | `String` | No |  |
+| `cardBrand` | `String` | No |  |
+| `clearingAmountFrom` | `String` | No |  |
+| `clearingAmountTo` | `String` | No |  |
+| `clearingCurrency` | `String` | No |  |
+| `clearingStatus` | `String` | No |  |
+| `corporateUUID` | `String` | No |  |
+| `orderByTransactionDate` | `String` | No |  |
 | `pagination` | `Map<String, Object>` | No |  |
-| `payment_token_public_id` | `String` | No |  |
-| `receipt_number` | `String` | No |  |
-| `referenced_transaction_id` | `String` | No |  |
-| `response_code` | `Long` | No |  |
-| `response_message` | `String` | No |  |
-| `retrieval_reference_number` | `String` | No |  |
-| `source_id` | `Long` | No |  |
-| `tecsengine_response_code_from` | `String` | No |  |
-| `tecsengine_response_code_to` | `String` | No |  |
-| `terminal_id` | `Long` | No |  |
-| `trace_number` | `String` | No |  |
-| `transaction_amount_from` | `String` | No |  |
-| `transaction_amount_to` | `String` | No |  |
-| `transaction_date_from` | `String` | No |  |
-| `transaction_date_to` | `String` | No |  |
-| `transaction_history` | `List<Object>` | No |  |
-| `transaction_id` | `String` | No |  |
-| `transaction_type` | `String` | No |  |
+| `paymentTokenPublicId` | `String` | No |  |
+| `receiptNumber` | `String` | No |  |
+| `referencedTransactionId` | `String` | No |  |
+| `responseCode` | `Long` | No |  |
+| `responseMessage` | `String` | No |  |
+| `retrievalReferenceNumber` | `String` | No |  |
+| `sourceId` | `Long` | No |  |
+| `tecsengineResponseCodeFrom` | `String` | No |  |
+| `tecsengineResponseCodeTo` | `String` | No |  |
+| `terminalId` | `Long` | No |  |
+| `traceNumber` | `String` | No |  |
+| `transactionAmountFrom` | `String` | No |  |
+| `transactionAmountTo` | `String` | No |  |
+| `transactionDateFrom` | `String` | No |  |
+| `transactionDateTo` | `String` | No |  |
+| `transactionHistories` | `List<Object>` | No |  |
+| `transactionId` | `String` | No |  |
+| `transactionType` | `String` | No |  |
 | `wallet` | `String` | No |  |
 
 ### Operations
@@ -2399,22 +2377,22 @@ SdkEntity transactionsCount = client.transactionsCount(null);
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `period` | `String` | No |  |
-| `response_code` | `Long` | No |  |
-| `response_message` | `String` | No |  |
-| `transaction_date_from` | `String` | No |  |
-| `transaction_date_to` | `String` | No |  |
-| `transactions_count` | `List<Object>` | No |  |
+| `responseCode` | `Long` | No |  |
+| `responseMessage` | `String` | No |  |
+| `transactionDateFrom` | `String` | No |  |
+| `transactionDateTo` | `String` | No |  |
+| `transactionsCount` | `List<Object>` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
 | `period` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `transaction_date_from` | Yes |
-| `transaction_date_to` | Yes |
-| `transactions_count` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `transactionDateFrom` | Yes |
+| `transactionDateTo` | Yes |
+| `transactionsCount` | - |
 
 ### Operations
 
@@ -2459,22 +2437,22 @@ SdkEntity transactionsCountCardBrand = client.transactionsCountCardBrand(null);
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `period` | `String` | No |  |
-| `response_code` | `Long` | No |  |
-| `response_message` | `String` | No |  |
-| `transaction_date_from` | `String` | No |  |
-| `transaction_date_to` | `String` | No |  |
-| `transactions_count` | `List<Object>` | No |  |
+| `responseCode` | `Long` | No |  |
+| `responseMessage` | `String` | No |  |
+| `transactionDateFrom` | `String` | No |  |
+| `transactionDateTo` | `String` | No |  |
+| `transactionsCount` | `List<Object>` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
 | `period` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `transaction_date_from` | Yes |
-| `transaction_date_to` | Yes |
-| `transactions_count` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `transactionDateFrom` | Yes |
+| `transactionDateTo` | Yes |
+| `transactionsCount` | - |
 
 ### Operations
 
@@ -2519,22 +2497,22 @@ SdkEntity transactionsTurnover = client.transactionsTurnover(null);
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `period` | `String` | No |  |
-| `response_code` | `Long` | No |  |
-| `response_message` | `String` | No |  |
-| `transaction_date_from` | `String` | No |  |
-| `transaction_date_to` | `String` | No |  |
-| `turnover` | `List<Object>` | No |  |
+| `responseCode` | `Long` | No |  |
+| `responseMessage` | `String` | No |  |
+| `transactionDateFrom` | `String` | No |  |
+| `transactionDateTo` | `String` | No |  |
+| `turnovers` | `List<Object>` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
 | `period` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `transaction_date_from` | Yes |
-| `transaction_date_to` | Yes |
-| `turnover` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `transactionDateFrom` | Yes |
+| `transactionDateTo` | Yes |
+| `turnovers` | - |
 
 ### Operations
 
@@ -2579,15 +2557,15 @@ SdkEntity updateMerchant = client.updateMerchant(null);
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `city` | `String` | No |  |
-| `corporate_uuid` | `String` | Yes |  |
+| `corporateUuid` | `String` | Yes |  |
 | `country` | `String` | No |  |
-| `merchant_category_code` | `String` | No |  |
+| `merchantCategoryCode` | `String` | No |  |
 | `name` | `String` | No |  |
-| `response_code` | `Long` | No |  |
-| `response_message` | `String` | No |  |
+| `responseCode` | `Long` | No |  |
+| `responseMessage` | `String` | No |  |
 | `state` | `String` | No |  |
 | `street` | `String` | No |  |
-| `vu_nummer` | `String` | No |  |
+| `vuNummer` | `String` | No |  |
 | `zipcode` | `String` | No |  |
 
 ### Operations
@@ -2598,7 +2576,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```java
 Object result = client.updateMerchant(null).create(Map.of(
-    "corporate_uuid", "example_corporate_uuid"  // String
+    "corporateUuid", "example_corporateUuid"  // String
 ), null);
 ```
 
@@ -2633,10 +2611,10 @@ SdkEntity updateTemplateXml = client.updateTemplateXml(null);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `Long` | No |  |
-| `response_message` | `String` | No |  |
-| `template_name` | `String` | Yes |  |
-| `template_xml` | `String` | Yes |  |
+| `responseCode` | `Long` | No |  |
+| `responseMessage` | `String` | No |  |
+| `templateName` | `String` | Yes |  |
+| `templateXml` | `String` | Yes |  |
 
 ### Operations
 
@@ -2646,8 +2624,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```java
 Object result = client.updateTemplateXml(null).create(Map.of(
-    "template_name", "example_template_name",  // String
-    "template_xml", "example_template_xml"  // String
+    "templateName", "example_templateName",  // String
+    "templateXml", "example_templateXml"  // String
 ), null);
 ```
 
@@ -2682,8 +2660,8 @@ SdkEntity version = client.version(null);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `app_name` | `String` | No |  |
-| `build_date` | `String` | No |  |
+| `appName` | `String` | No |  |
+| `buildDate` | `String` | No |  |
 | `version` | `String` | No |  |
 
 ### Operations

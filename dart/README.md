@@ -55,8 +55,8 @@ final client = BluefinTecsMerchantServicesSDK({
 ### 4. Create, update, and remove
 
 ```dart
-// Create — returns the bare created record (a Map)
-final created = await client.CancelTransaction().create({'client_id': 1, 'currency': 'example_currency', 'receipt_number': 'example_receipt_number', 'terminal_id': 1});
+// Create — returns the ENTITY (call data() for the record)
+final created = await client.CancelTransaction().create({'clientId': 1, 'currency': 'example_currency', 'receiptNumber': 'example_receiptNumber', 'terminalId': 1});
 
 ```
 
@@ -137,7 +137,8 @@ Create a mock client for unit testing — no server required:
 ```dart
 final client = BluefinTecsMerchantServicesSDK.test();
 
-// Entity ops return the bare record and throw on error.
+// Entity ops return the ENTITY and throws on error;
+// call data() for the record.
 final digitalservicesapi = await client.DigitalServicesApi().load();
 // digitalservicesapi contains the mock response record
 print(digitalservicesapi);
@@ -275,7 +276,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (a `Map` for single-entity
+Entity operations return the ENTITY (call data() for the record) (a `Map` for single-entity
 ops, a `List` of entity instances for `list`) and throw on error. Wrap calls
 in `try`/`catch` to handle failures.
 
@@ -297,46 +298,46 @@ On error, `ok` is `false` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `acquirer_id` |  |
-| `acquirer_name` |  |
-| `actual_bonus_point` |  |
+| `acquirerId` |  |
+| `acquirerName` |  |
+| `actualBonusPoints` |  |
 | `amount` |  |
-| `authorization_code` |  |
-| `balance_amount` |  |
-| `card_brand` |  |
-| `card_number` |  |
-| `client_id` |  |
+| `authorizationCode` |  |
+| `balanceAmount` |  |
+| `cardBrand` |  |
+| `cardNumber` |  |
+| `clientId` |  |
 | `currency` |  |
 | `cvc` |  |
-| `ec_data` |  |
-| `ecr_data` |  |
-| `emv_data` |  |
-| `exchange_fee` |  |
-| `exchange_rate` |  |
-| `language_code` |  |
-| `merchant_address` |  |
-| `merchant_name` |  |
-| `merchant_number` |  |
-| `message_type` |  |
-| `original_trace_number` |  |
-| `original_transaction_id` |  |
+| `ecData` |  |
+| `ecrData` |  |
+| `emvData` |  |
+| `exchangeFee` |  |
+| `exchangeRate` |  |
+| `languageCode` |  |
+| `merchantAddress` |  |
+| `merchantName` |  |
+| `merchantNumber` |  |
+| `messageType` |  |
+| `originalTraceNumber` |  |
+| `originalTransactionId` |  |
 | `password` |  |
-| `payment_reason` |  |
-| `receipt_footer` |  |
-| `receipt_header` |  |
-| `receipt_layout` |  |
-| `receipt_number` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `serial_number` |  |
+| `paymentReason` |  |
+| `receiptFooter` |  |
+| `receiptHeader` |  |
+| `receiptLayout` |  |
+| `receiptNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `serialNumber` |  |
 | `svc` |  |
-| `terminal_id` |  |
-| `terminal_location` |  |
-| `trace_number` |  |
-| `transaction_date` |  |
-| `transaction_id` |  |
-| `tx_type` |  |
-| `user_data` |  |
+| `terminalId` |  |
+| `terminalLocation` |  |
+| `traceNumber` |  |
+| `transactionDate` |  |
+| `transactionId` |  |
+| `txType` |  |
+| `userData` |  |
 
 Operations: Create.
 
@@ -346,9 +347,9 @@ API path: `/public/cancelTransaction`
 
 | Field | Description |
 | --- | --- |
-| `card_no` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `cardNo` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -358,13 +359,13 @@ API path: `/checkCardBlackListed`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_id` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `template_name` |  |
-| `template_type` |  |
-| `template_xml` |  |
-| `terminal_type` |  |
+| `acquirerId` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `templateName` |  |
+| `templateType` |  |
+| `templateXml` |  |
+| `terminalType` |  |
 
 Operations: Create.
 
@@ -374,13 +375,13 @@ API path: `/createProduct`
 
 | Field | Description |
 | --- | --- |
-| `corporate_uuid` |  |
-| `deactivation_reason` |  |
-| `package_order_uuid` |  |
-| `product_order_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
+| `corporateUuid` |  |
+| `deactivationReason` |  |
+| `packageOrderUuid` |  |
+| `productOrderUuid` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
 
 Operations: Create.
 
@@ -390,16 +391,16 @@ API path: `/deactivateTerminal`
 
 | Field | Description |
 | --- | --- |
-| `clearing_date_from` |  |
-| `clearing_date_to` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `tx_count` |  |
-| `tx_id_end` |  |
-| `tx_id_start` |  |
-| `tx_seq_no_end` |  |
-| `tx_seq_no_start` |  |
-| `tx_total` |  |
+| `clearingDateFrom` |  |
+| `clearingDateTo` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `txCount` |  |
+| `txIdEnd` |  |
+| `txIdStart` |  |
+| `txSeqNoEnd` |  |
+| `txSeqNoStart` |  |
+| `txTotal` |  |
 
 Operations: Create, Load.
 
@@ -409,12 +410,12 @@ API path: `/public/digitalservices/mandatorClearingExportDownload/{fileId}`
 
 | Field | Description |
 | --- | --- |
-| `ecom_data` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
-| `transaction_id` |  |
-| `transaction_type` |  |
+| `ecomData` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
+| `transactionId` |  |
+| `transactionType` |  |
 
 Operations: Create.
 
@@ -424,11 +425,11 @@ API path: `/public/getEcData`
 
 | Field | Description |
 | --- | --- |
-| `ecom_pass` |  |
-| `ecom_skey` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
+| `ecomPass` |  |
+| `ecomSkey` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
 
 Operations: Create.
 
@@ -438,12 +439,12 @@ API path: `/public/getEcomParameters`
 
 | Field | Description |
 | --- | --- |
-| `ecr_data` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
-| `transaction_id` |  |
-| `transaction_type` |  |
+| `ecrData` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
+| `transactionId` |  |
+| `transactionType` |  |
 
 Operations: Create.
 
@@ -453,12 +454,12 @@ API path: `/public/getEcrData`
 
 | Field | Description |
 | --- | --- |
-| `emv_data` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
-| `transaction_id` |  |
-| `transaction_type` |  |
+| `emvData` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
+| `transactionId` |  |
+| `transactionType` |  |
 
 Operations: Create.
 
@@ -468,20 +469,20 @@ API path: `/public/getEmvData`
 
 | Field | Description |
 | --- | --- |
-| `account_no` |  |
-| `additional_data` |  |
-| `corporate_uuid` |  |
+| `accountNo` |  |
+| `additionalData` |  |
+| `corporateUuid` |  |
 | `currency` |  |
-| `merchant_category_code` |  |
-| `package_order_uuid` |  |
-| `product_order_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `sorting_code` |  |
-| `template_name` |  |
-| `terminal_id` |  |
-| `terminal_id_acq` |  |
-| `vu_nummer` |  |
+| `merchantCategoryCode` |  |
+| `packageOrderUuid` |  |
+| `productOrderUuid` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `sortingCode` |  |
+| `templateName` |  |
+| `terminalIdAcq` |  |
+| `terminalIds` |  |
+| `vuNummer` |  |
 
 Operations: Create.
 
@@ -491,9 +492,9 @@ API path: `/enableAcquiring`
 
 | Field | Description |
 | --- | --- |
-| `merchant_contract_number` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `merchantContractNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -503,9 +504,9 @@ API path: `/getMerchantContractNumber`
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
-| `template_name` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `templateName` |  |
 
 Operations: Create.
 
@@ -515,9 +516,9 @@ API path: `/public/getTemplateXml`
 
 | Field | Description |
 | --- | --- |
-| `mandator_name` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `mandatorName` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -527,9 +528,9 @@ API path: `/introduceMandator`
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_template_description` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalTemplateDescription` |  |
 
 Operations: Create.
 
@@ -540,15 +541,15 @@ API path: `/introducePackage`
 | Field | Description |
 | --- | --- |
 | `hwserialno` |  |
-| `ka_date_time_from` |  |
-| `ka_date_time_to` |  |
-| `keep_alive_data` |  |
+| `kaDateTimeFrom` |  |
+| `kaDateTimeTo` |  |
+| `keepAliveData` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_date_time_from` |  |
-| `terminal_date_time_to` |  |
-| `terminal_id` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalDateTimeFrom` |  |
+| `terminalDateTimeTo` |  |
+| `terminalId` |  |
 
 Operations: Create.
 
@@ -558,12 +559,12 @@ API path: `/public/keepalive`
 
 | Field | Description |
 | --- | --- |
-| `corporate_uuid` |  |
+| `corporateUuid` |  |
 | `filter` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminals` |  |
 
 Operations: Create.
 
@@ -573,12 +574,12 @@ API path: `/public/listTerminals`
 
 | Field | Description |
 | --- | --- |
-| `clearing_date_from` |  |
-| `clearing_date_to` |  |
+| `clearingDateFrom` |  |
+| `clearingDateTo` |  |
 | `pagination` |  |
-| `record` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `records` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -588,12 +589,12 @@ API path: `/public/digitalservices/mandatorClearingExport`
 
 | Field | Description |
 | --- | --- |
-| `clearing_date_from` |  |
-| `clearing_date_to` |  |
-| `file_id` |  |
-| `filename_template` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `clearingDateFrom` |  |
+| `clearingDateTo` |  |
+| `fileId` |  |
+| `filenameTemplate` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `status` |  |
 
 Operations: Create, Load.
@@ -604,11 +605,11 @@ API path: `/public/digitalservices/mandatorClearingExportDownload`
 
 | Field | Description |
 | --- | --- |
-| `clearing_date_from` |  |
-| `clearing_date_to` |  |
-| `record` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `clearingDateFrom` |  |
+| `clearingDateTo` |  |
+| `records` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -618,30 +619,30 @@ API path: `/public/digitalservices/mandatorClearingExportSummary`
 
 | Field | Description |
 | --- | --- |
-| `3_d_secure` |  |
-| `authorization_code` |  |
-| `card_brand` |  |
-| `clearing_amount_from` |  |
-| `clearing_amount_to` |  |
-| `clearing_currency` |  |
-| `clearing_status` |  |
-| `corporate_uuid` |  |
-| `order_by_transaction_date` |  |
+| `3DSecure` |  |
+| `authorizationCode` |  |
+| `cardBrand` |  |
+| `clearingAmountFrom` |  |
+| `clearingAmountTo` |  |
+| `clearingCurrency` |  |
+| `clearingStatus` |  |
+| `corporateUUID` |  |
+| `orderByTransactionDate` |  |
 | `pagination` |  |
-| `receipt_number` |  |
-| `referenced_transaction_id` |  |
-| `retrieval_reference_number` |  |
-| `source_id` |  |
-| `tecsengine_response_code_from` |  |
-| `tecsengine_response_code_to` |  |
-| `terminal_id` |  |
-| `trace_number` |  |
-| `transaction_amount_from` |  |
-| `transaction_amount_to` |  |
-| `transaction_date_from` |  |
-| `transaction_date_to` |  |
-| `transaction_id` |  |
-| `transaction_type` |  |
+| `receiptNumber` |  |
+| `referencedTransactionId` |  |
+| `retrievalReferenceNumber` |  |
+| `sourceId` |  |
+| `tecsengineResponseCodeFrom` |  |
+| `tecsengineResponseCodeTo` |  |
+| `terminalId` |  |
+| `traceNumber` |  |
+| `transactionAmountFrom` |  |
+| `transactionAmountTo` |  |
+| `transactionDateFrom` |  |
+| `transactionDateTo` |  |
+| `transactionId` |  |
+| `transactionType` |  |
 | `wallet` |  |
 
 Operations: Create.
@@ -652,11 +653,11 @@ API path: `/public/transactionHistoryCsv`
 
 | Field | Description |
 | --- | --- |
-| `productorderuuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `target_packageorderuuid` |  |
-| `target_productorderuuid` |  |
+| `productorderuuids` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `targetPackageorderuuid` |  |
+| `targetProductorderuuid` |  |
 
 Operations: Create.
 
@@ -666,22 +667,22 @@ API path: `/moveTid`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_name` |  |
+| `acquirerName` |  |
 | `amount` |  |
-| `authorization_number` |  |
-| `card_number` |  |
-| `card_type` |  |
+| `authorizationNumber` |  |
+| `cardNumber` |  |
+| `cardType` |  |
 | `currency` |  |
 | `cvc` |  |
-| `date_time_tx` |  |
-| `exp_date` |  |
-| `merchant_id` |  |
-| `original_transaction_id` |  |
+| `dateTimeTx` |  |
+| `expDate` |  |
+| `merchantId` |  |
+| `originalTransactionId` |  |
 | `password` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
-| `transaction_id` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
+| `transactionId` |  |
 | `txtype` |  |
 
 Operations: Create.
@@ -692,21 +693,17 @@ API path: `/public/paymentManual`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_name` |  |
 | `amount` |  |
-| `authorization_number` |  |
-| `card_type` |  |
 | `currency` |  |
-| `date_time_tx` |  |
-| `device_payload` |  |
-| `merchant_id` |  |
-| `original_transaction_id` |  |
+| `device` |  |
+| `devicePayload` |  |
+| `expDate` |  |
+| `mode` |  |
+| `panMasked` |  |
 | `password` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `sred` |  |
-| `terminal_id` |  |
-| `transaction_id` |  |
+| `serial` |  |
+| `serviceCode` |  |
+| `terminalId` |  |
 | `txtype` |  |
 
 Operations: Create.
@@ -717,48 +714,48 @@ API path: `/public/paymentSred`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_id` |  |
-| `acquirer_name` |  |
-| `actual_bonus_point` |  |
+| `acquirerId` |  |
+| `acquirerName` |  |
+| `actualBonusPoints` |  |
 | `amount` |  |
-| `authorization_code` |  |
-| `balance_amount` |  |
-| `card_brand` |  |
-| `card_number` |  |
-| `card_number_reference` |  |
-| `client_id` |  |
+| `authorizationCode` |  |
+| `balanceAmount` |  |
+| `cardBrand` |  |
+| `cardNumber` |  |
+| `cardNumberReference` |  |
+| `clientId` |  |
 | `currency` |  |
 | `cvc` |  |
-| `ec_data` |  |
-| `ecr_data` |  |
-| `emv_data` |  |
-| `exchange_fee` |  |
-| `exchange_rate` |  |
-| `language_code` |  |
-| `merchant_address` |  |
-| `merchant_name` |  |
-| `merchant_number` |  |
-| `message_type` |  |
-| `original_trace_number` |  |
-| `original_transaction_id` |  |
+| `ecData` |  |
+| `ecrData` |  |
+| `emvData` |  |
+| `exchangeFee` |  |
+| `exchangeRate` |  |
+| `languageCode` |  |
+| `merchantAddress` |  |
+| `merchantName` |  |
+| `merchantNumber` |  |
+| `messageType` |  |
+| `originalTraceNumber` |  |
+| `originalTransactionId` |  |
 | `password` |  |
-| `payment_reason` |  |
-| `receipt_footer` |  |
-| `receipt_header` |  |
-| `receipt_layout` |  |
-| `receipt_number` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `serial_number` |  |
+| `paymentReason` |  |
+| `receiptFooter` |  |
+| `receiptHeader` |  |
+| `receiptLayout` |  |
+| `receiptNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `serialNumber` |  |
 | `svc` |  |
-| `terminal_id` |  |
-| `terminal_location` |  |
-| `trace_number` |  |
-| `transaction_date` |  |
-| `transaction_id` |  |
-| `transaction_type` |  |
-| `tx_type` |  |
-| `user_data` |  |
+| `terminalId` |  |
+| `terminalLocation` |  |
+| `traceNumber` |  |
+| `transactionDate` |  |
+| `transactionId` |  |
+| `transactionType` |  |
+| `txType` |  |
+| `userData` |  |
 
 Operations: Create.
 
@@ -768,13 +765,13 @@ API path: `/public/paymentTransaction`
 
 | Field | Description |
 | --- | --- |
-| `corporate_uuid` |  |
-| `package_order_uuid` |  |
-| `product_order_uuid` |  |
-| `reactivation_reason` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
+| `corporateUuid` |  |
+| `packageOrderUuid` |  |
+| `productOrderUuid` |  |
+| `reactivationReason` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
 
 Operations: Create.
 
@@ -784,46 +781,46 @@ API path: `/reactivateTerminal`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_id` |  |
-| `acquirer_name` |  |
-| `actual_bonus_point` |  |
+| `acquirerId` |  |
+| `acquirerName` |  |
+| `actualBonusPoints` |  |
 | `amount` |  |
-| `authorization_code` |  |
-| `balance_amount` |  |
-| `card_brand` |  |
-| `card_number` |  |
-| `client_id` |  |
+| `authorizationCode` |  |
+| `balanceAmount` |  |
+| `cardBrand` |  |
+| `cardNumber` |  |
+| `clientId` |  |
 | `currency` |  |
 | `cvc` |  |
-| `ec_data` |  |
-| `ecr_data` |  |
-| `emv_data` |  |
-| `exchange_fee` |  |
-| `exchange_rate` |  |
-| `language_code` |  |
-| `merchant_address` |  |
-| `merchant_name` |  |
-| `merchant_number` |  |
-| `message_type` |  |
-| `original_trace_number` |  |
-| `original_transaction_id` |  |
+| `ecData` |  |
+| `ecrData` |  |
+| `emvData` |  |
+| `exchangeFee` |  |
+| `exchangeRate` |  |
+| `languageCode` |  |
+| `merchantAddress` |  |
+| `merchantName` |  |
+| `merchantNumber` |  |
+| `messageType` |  |
+| `originalTraceNumber` |  |
+| `originalTransactionId` |  |
 | `password` |  |
-| `payment_reason` |  |
-| `receipt_footer` |  |
-| `receipt_header` |  |
-| `receipt_layout` |  |
-| `receipt_number` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `serial_number` |  |
+| `paymentReason` |  |
+| `receiptFooter` |  |
+| `receiptHeader` |  |
+| `receiptLayout` |  |
+| `receiptNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `serialNumber` |  |
 | `svc` |  |
-| `terminal_id` |  |
-| `terminal_location` |  |
-| `trace_number` |  |
-| `transaction_date` |  |
-| `transaction_id` |  |
-| `tx_type` |  |
-| `user_data` |  |
+| `terminalId` |  |
+| `terminalLocation` |  |
+| `traceNumber` |  |
+| `transactionDate` |  |
+| `transactionId` |  |
+| `txType` |  |
+| `userData` |  |
 
 Operations: Create.
 
@@ -833,14 +830,14 @@ API path: `/public/refundTransaction`
 
 | Field | Description |
 | --- | --- |
-| `corporate_uuid` |  |
-| `package_order_uuid` |  |
-| `partner_id` |  |
-| `partner_name` |  |
-| `product_order_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `template_name` |  |
+| `corporateUuid` |  |
+| `packageOrderUuid` |  |
+| `partnerId` |  |
+| `partnerName` |  |
+| `productOrderUuid` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `templateName` |  |
 
 Operations: Create.
 
@@ -850,24 +847,24 @@ API path: `/registerTecsCompany`
 
 | Field | Description |
 | --- | --- |
-| `additional_data` |  |
-| `corporate_uuid` |  |
-| `package_order_uuid` |  |
-| `product_order_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `tecs_web_secret_key` |  |
-| `template_name` |  |
-| `terminal_country_code` |  |
-| `terminal_id` |  |
-| `terminal_id_acq` |  |
-| `terminal_language_code` |  |
-| `terminal_location` |  |
-| `terminal_serial_number` |  |
-| `token_io_alia` |  |
-| `token_io_iban` |  |
-| `token_io_member_id` |  |
-| `web_shop_url` |  |
+| `additionalData` |  |
+| `corporateUuid` |  |
+| `packageOrderUuid` |  |
+| `productOrderUuid` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `tecsWebSecretKey` |  |
+| `templateName` |  |
+| `terminalCountryCode` |  |
+| `terminalId` |  |
+| `terminalIdAcq` |  |
+| `terminalLanguageCode` |  |
+| `terminalLocation` |  |
+| `terminalSerialNumber` |  |
+| `tokenIOAlias` |  |
+| `tokenIOIban` |  |
+| `tokenIOMemberId` |  |
+| `webShopUrl` |  |
 
 Operations: Create.
 
@@ -877,16 +874,16 @@ API path: `/registerTerminal`
 
 | Field | Description |
 | --- | --- |
-| `card_brand_report_data` |  |
-| `clearing_date_from` |  |
-| `clearing_date_to` |  |
-| `corporate_id` |  |
+| `cardBrandReportData` |  |
+| `clearingDateFrom` |  |
+| `clearingDateTo` |  |
+| `corporateId` |  |
 | `currency` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `sum_over_credit_tx` |  |
-| `sum_over_debit_tx` |  |
-| `terminal_id` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `sumOverCreditTx` |  |
+| `sumOverDebitTx` |  |
+| `terminalId` |  |
 
 Operations: Create.
 
@@ -896,56 +893,56 @@ API path: `/public/digitalservices/reportData`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_name` |  |
-| `acquirer_terminal_id` |  |
+| `acquirerName` |  |
+| `acquirerTerminalId` |  |
 | `amount` |  |
-| `application_cryptogram` |  |
-| `authorization_code` |  |
-| `authorization_date` |  |
-| `card_brand` |  |
-| `card_entry` |  |
-| `card_expiration` |  |
-| `card_number` |  |
-| `clearing_amount` |  |
-| `clearing_batch_id` |  |
-| `clearing_currency` |  |
-| `clearing_date` |  |
-| `clearing_processed_date` |  |
-| `clearing_status` |  |
-| `client_id` |  |
+| `applicationCryptogram` |  |
+| `authorizationCode` |  |
+| `authorizationDate` |  |
+| `cardBrand` |  |
+| `cardEntry` |  |
+| `cardExpiration` |  |
+| `cardNumber` |  |
+| `clearingAmount` |  |
+| `clearingBatchId` |  |
+| `clearingCurrency` |  |
+| `clearingDate` |  |
+| `clearingProcessedDate` |  |
+| `clearingStatus` |  |
+| `clientId` |  |
 | `currency` |  |
 | `cvm` |  |
-| `ecr_data` |  |
-| `emv_application_id` |  |
-| `emv_application_label` |  |
-| `merchant_name` |  |
-| `merchant_number` |  |
-| `original_client_id` |  |
-| `original_terminal_id` |  |
-| `original_transaction_id` |  |
-| `payment_reason` |  |
-| `receipt_number` |  |
-| `response_code` |  |
-| `response_code_from_a` |  |
-| `response_message` |  |
-| `retrieval_reference_number` |  |
-| `service_code` |  |
-| `settlement_status` |  |
-| `source_id` |  |
-| `tecsengine_response_code` |  |
-| `tecsengine_response_text` |  |
-| `terminal_end_of_day_date` |  |
-| `terminal_id` |  |
-| `terminal_location` |  |
-| `tip_amount` |  |
-| `trace_number` |  |
-| `transaction_clearing_date` |  |
-| `transaction_date` |  |
-| `transaction_id` |  |
-| `transaction_seq_number` |  |
-| `transaction_server_date` |  |
-| `transaction_source` |  |
-| `transaction_type` |  |
+| `ecrData` |  |
+| `emvApplicationId` |  |
+| `emvApplicationLabel` |  |
+| `merchantName` |  |
+| `merchantNumber` |  |
+| `originalClientId` |  |
+| `originalTerminalId` |  |
+| `originalTransactionId` |  |
+| `paymentReason` |  |
+| `receiptNumber` |  |
+| `responseCode` |  |
+| `responseCodeFromAS` |  |
+| `responseMessage` |  |
+| `retrievalReferenceNumber` |  |
+| `serviceCode` |  |
+| `settlementStatus` |  |
+| `sourceId` |  |
+| `tecsengineResponseCode` |  |
+| `tecsengineResponseText` |  |
+| `terminalEndOfDayDate` |  |
+| `terminalId` |  |
+| `terminalLocation` |  |
+| `tipAmount` |  |
+| `traceNumber` |  |
+| `transactionClearingDate` |  |
+| `transactionDate` |  |
+| `transactionId` |  |
+| `transactionSeqNumber` |  |
+| `transactionServerDate` |  |
+| `transactionSource` |  |
+| `transactionType` |  |
 
 Operations: Create.
 
@@ -955,12 +952,12 @@ API path: `/public/statusTransaction`
 
 | Field | Description |
 | --- | --- |
-| `acq_tab_nexo` |  |
-| `config_version` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `serial_number` |  |
-| `tid_sent` |  |
+| `acqTabNexo` |  |
+| `configVersion` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `serialNumber` |  |
+| `tidSent` |  |
 
 Operations: Create.
 
@@ -970,11 +967,11 @@ API path: `/storeTerminalParameters`
 
 | Field | Description |
 | --- | --- |
-| `device_serial_number` |  |
-| `duplicate_terminal_id` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal` |  |
+| `deviceSerialNumber` |  |
+| `duplicateTerminalIds` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminals` |  |
 
 Operations: Create.
 
@@ -984,34 +981,34 @@ API path: `/public/getTerminalId`
 
 | Field | Description |
 | --- | --- |
-| `3_d_secure` |  |
-| `authorization_code` |  |
-| `card_brand` |  |
-| `clearing_amount_from` |  |
-| `clearing_amount_to` |  |
-| `clearing_currency` |  |
-| `clearing_status` |  |
-| `corporate_uuid` |  |
-| `order_by_transaction_date` |  |
+| `3DSecure` |  |
+| `authorizationCode` |  |
+| `cardBrand` |  |
+| `clearingAmountFrom` |  |
+| `clearingAmountTo` |  |
+| `clearingCurrency` |  |
+| `clearingStatus` |  |
+| `corporateUUID` |  |
+| `orderByTransactionDate` |  |
 | `pagination` |  |
-| `payment_token_public_id` |  |
-| `receipt_number` |  |
-| `referenced_transaction_id` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `retrieval_reference_number` |  |
-| `source_id` |  |
-| `tecsengine_response_code_from` |  |
-| `tecsengine_response_code_to` |  |
-| `terminal_id` |  |
-| `trace_number` |  |
-| `transaction_amount_from` |  |
-| `transaction_amount_to` |  |
-| `transaction_date_from` |  |
-| `transaction_date_to` |  |
-| `transaction_history` |  |
-| `transaction_id` |  |
-| `transaction_type` |  |
+| `paymentTokenPublicId` |  |
+| `receiptNumber` |  |
+| `referencedTransactionId` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `retrievalReferenceNumber` |  |
+| `sourceId` |  |
+| `tecsengineResponseCodeFrom` |  |
+| `tecsengineResponseCodeTo` |  |
+| `terminalId` |  |
+| `traceNumber` |  |
+| `transactionAmountFrom` |  |
+| `transactionAmountTo` |  |
+| `transactionDateFrom` |  |
+| `transactionDateTo` |  |
+| `transactionHistories` |  |
+| `transactionId` |  |
+| `transactionType` |  |
 | `wallet` |  |
 
 Operations: Create.
@@ -1023,11 +1020,11 @@ API path: `/public/mcom/transactionHistory`
 | Field | Description |
 | --- | --- |
 | `period` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `transaction_date_from` |  |
-| `transaction_date_to` |  |
-| `transactions_count` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `transactionDateFrom` |  |
+| `transactionDateTo` |  |
+| `transactionsCount` |  |
 
 Operations: Create.
 
@@ -1038,11 +1035,11 @@ API path: `/public/countAuthorisedTransactions`
 | Field | Description |
 | --- | --- |
 | `period` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `transaction_date_from` |  |
-| `transaction_date_to` |  |
-| `transactions_count` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `transactionDateFrom` |  |
+| `transactionDateTo` |  |
+| `transactionsCount` |  |
 
 Operations: Create.
 
@@ -1053,11 +1050,11 @@ API path: `/public/countTransactionsByCardBrand`
 | Field | Description |
 | --- | --- |
 | `period` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `transaction_date_from` |  |
-| `transaction_date_to` |  |
-| `turnover` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `transactionDateFrom` |  |
+| `transactionDateTo` |  |
+| `turnovers` |  |
 
 Operations: Create.
 
@@ -1068,15 +1065,15 @@ API path: `/public/transactionTurnover`
 | Field | Description |
 | --- | --- |
 | `city` |  |
-| `corporate_uuid` |  |
+| `corporateUuid` |  |
 | `country` |  |
-| `merchant_category_code` |  |
+| `merchantCategoryCode` |  |
 | `name` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `state` |  |
 | `street` |  |
-| `vu_nummer` |  |
+| `vuNummer` |  |
 | `zipcode` |  |
 
 Operations: Create.
@@ -1087,10 +1084,10 @@ API path: `/public/updateMerchant`
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
-| `template_name` |  |
-| `template_xml` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `templateName` |  |
+| `templateXml` |  |
 
 Operations: Create.
 
@@ -1100,8 +1097,8 @@ API path: `/public/updateTemplateXml`
 
 | Field | Description |
 | --- | --- |
-| `app_name` |  |
-| `build_date` |  |
+| `appName` |  |
+| `buildDate` |  |
 | `version` |  |
 
 Operations: Load.
@@ -1127,55 +1124,55 @@ Create an instance: `final cancel_transaction = client.CancelTransaction();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_id` | `String` |  |
-| `acquirer_name` | `String` |  |
-| `actual_bonus_point` | `String` |  |
+| `acquirerId` | `String` |  |
+| `acquirerName` | `String` |  |
+| `actualBonusPoints` | `String` |  |
 | `amount` | `int` |  |
-| `authorization_code` | `String` |  |
-| `balance_amount` | `String` |  |
-| `card_brand` | `String` |  |
-| `card_number` | `String` |  |
-| `client_id` | `int` |  |
+| `authorizationCode` | `String` |  |
+| `balanceAmount` | `String` |  |
+| `cardBrand` | `String` |  |
+| `cardNumber` | `String` |  |
+| `clientId` | `int` |  |
 | `currency` | `String` |  |
 | `cvc` | `String` |  |
-| `ec_data` | `String` |  |
-| `ecr_data` | `String` |  |
-| `emv_data` | `String` |  |
-| `exchange_fee` | `int` |  |
-| `exchange_rate` | `String` |  |
-| `language_code` | `String` |  |
-| `merchant_address` | `String` |  |
-| `merchant_name` | `String` |  |
-| `merchant_number` | `String` |  |
-| `message_type` | `String` |  |
-| `original_trace_number` | `int` |  |
-| `original_transaction_id` | `String` |  |
+| `ecData` | `String` |  |
+| `ecrData` | `String` |  |
+| `emvData` | `String` |  |
+| `exchangeFee` | `int` |  |
+| `exchangeRate` | `String` |  |
+| `languageCode` | `String` |  |
+| `merchantAddress` | `String` |  |
+| `merchantName` | `String` |  |
+| `merchantNumber` | `String` |  |
+| `messageType` | `String` |  |
+| `originalTraceNumber` | `int` |  |
+| `originalTransactionId` | `String` |  |
 | `password` | `String` |  |
-| `payment_reason` | `String` |  |
-| `receipt_footer` | `String` |  |
-| `receipt_header` | `String` |  |
-| `receipt_layout` | `int` |  |
-| `receipt_number` | `String` |  |
-| `response_code` | `int` |  |
-| `response_message` | `String` |  |
-| `serial_number` | `String` |  |
+| `paymentReason` | `String` |  |
+| `receiptFooter` | `String` |  |
+| `receiptHeader` | `String` |  |
+| `receiptLayout` | `int` |  |
+| `receiptNumber` | `String` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `String` |  |
+| `serialNumber` | `String` |  |
 | `svc` | `String` |  |
-| `terminal_id` | `int` |  |
-| `terminal_location` | `String` |  |
-| `trace_number` | `int` |  |
-| `transaction_date` | `String` |  |
-| `transaction_id` | `String` |  |
-| `tx_type` | `String` |  |
-| `user_data` | `String` |  |
+| `terminalId` | `int` |  |
+| `terminalLocation` | `String` |  |
+| `traceNumber` | `int` |  |
+| `transactionDate` | `String` |  |
+| `transactionId` | `String` |  |
+| `txType` | `String` |  |
+| `userData` | `String` |  |
 
 #### Example: Create
 
 ```dart
 final cancel_transaction = await client.CancelTransaction().create({
-  'client_id': 1,  // int
+  'clientId': 1,  // int
   'currency': 'example_currency',  // String
-  'receipt_number': 'example_receipt_number',  // String
-  'terminal_id': 1,  // int
+  'receiptNumber': 'example_receiptNumber',  // String
+  'terminalId': 1,  // int
 });
 ```
 
@@ -1194,9 +1191,9 @@ Create an instance: `final check_card_black_listed = client.CheckCardBlackListed
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `card_no` | `String` |  |
-| `response_code` | `int` |  |
-| `response_message` | `String` |  |
+| `cardNo` | `String` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
@@ -1220,22 +1217,22 @@ Create an instance: `final create_product = client.CreateProduct();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_id` | `int` |  |
-| `response_code` | `int` |  |
-| `response_message` | `String` |  |
-| `template_name` | `String` |  |
-| `template_type` | `String` |  |
-| `template_xml` | `String` |  |
-| `terminal_type` | `String` |  |
+| `acquirerId` | `int` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `String` |  |
+| `templateName` | `String` |  |
+| `templateType` | `String` |  |
+| `templateXml` | `String` |  |
+| `terminalType` | `String` |  |
 
 #### Example: Create
 
 ```dart
 final create_product = await client.CreateProduct().create({
-  'template_name': 'example_template_name',  // String
-  'template_type': 'example_template_type',  // String
-  'template_xml': 'example_template_xml',  // String
-  'terminal_type': 'example_terminal_type',  // String
+  'templateName': 'example_templateName',  // String
+  'templateType': 'example_templateType',  // String
+  'templateXml': 'example_templateXml',  // String
+  'terminalType': 'example_terminalType',  // String
 });
 ```
 
@@ -1254,20 +1251,20 @@ Create an instance: `final deactivate_terminal = client.DeactivateTerminal();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `corporate_uuid` | `String` |  |
-| `deactivation_reason` | `String` |  |
-| `package_order_uuid` | `String` |  |
-| `product_order_uuid` | `String` |  |
-| `response_code` | `int` |  |
-| `response_message` | `String` |  |
-| `terminal_id` | `int` |  |
+| `corporateUuid` | `String` |  |
+| `deactivationReason` | `String` |  |
+| `packageOrderUuid` | `String` |  |
+| `productOrderUuid` | `String` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `String` |  |
+| `terminalId` | `int` |  |
 
 #### Example: Create
 
 ```dart
 final deactivate_terminal = await client.DeactivateTerminal().create({
-  'deactivation_reason': 'example_deactivation_reason',  // String
-  'terminal_id': 1,  // int
+  'deactivationReason': 'example_deactivationReason',  // String
+  'terminalId': 1,  // int
 });
 ```
 
@@ -1287,16 +1284,16 @@ Create an instance: `final digital_services_api = client.DigitalServicesApi();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `clearing_date_from` | `String` |  |
-| `clearing_date_to` | `String` |  |
-| `response_code` | `int` |  |
-| `response_message` | `String` |  |
-| `tx_count` | `int` |  |
-| `tx_id_end` | `String` |  |
-| `tx_id_start` | `String` |  |
-| `tx_seq_no_end` | `int` |  |
-| `tx_seq_no_start` | `int` |  |
-| `tx_total` | `int` |  |
+| `clearingDateFrom` | `String` |  |
+| `clearingDateTo` | `String` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `String` |  |
+| `txCount` | `int` |  |
+| `txIdEnd` | `String` |  |
+| `txIdStart` | `String` |  |
+| `txSeqNoEnd` | `int` |  |
+| `txSeqNoStart` | `int` |  |
+| `txTotal` | `int` |  |
 
 #### Example: Load
 
@@ -1308,6 +1305,8 @@ final digital_services_api = await client.DigitalServicesApi().load();
 
 ```dart
 final digital_services_api = await client.DigitalServicesApi().create({
+  'clearingDateFrom': 'example_clearingDateFrom',  // String
+  'clearingDateTo': 'example_clearingDateTo',  // String
 });
 ```
 
@@ -1326,20 +1325,20 @@ Create an instance: `final ec_data_ecom = client.EcDataEcom();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `ecom_data` | `String` |  |
-| `response_code` | `int` |  |
-| `response_message` | `String` |  |
-| `terminal_id` | `int` |  |
-| `transaction_id` | `String` |  |
-| `transaction_type` | `String` |  |
+| `ecomData` | `String` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `String` |  |
+| `terminalId` | `int` |  |
+| `transactionId` | `String` |  |
+| `transactionType` | `String` |  |
 
 #### Example: Create
 
 ```dart
 final ec_data_ecom = await client.EcDataEcom().create({
-  'terminal_id': 1,  // int
-  'transaction_id': 'example_transaction_id',  // String
-  'transaction_type': 'example_transaction_type',  // String
+  'terminalId': 1,  // int
+  'transactionId': 'example_transactionId',  // String
+  'transactionType': 'example_transactionType',  // String
 });
 ```
 
@@ -1358,17 +1357,17 @@ Create an instance: `final ecom_parameter = client.EcomParameter();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `ecom_pass` | `String` |  |
-| `ecom_skey` | `String` |  |
-| `response_code` | `int` |  |
-| `response_message` | `String` |  |
-| `terminal_id` | `int` |  |
+| `ecomPass` | `String` |  |
+| `ecomSkey` | `String` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `String` |  |
+| `terminalId` | `int` |  |
 
 #### Example: Create
 
 ```dart
 final ecom_parameter = await client.EcomParameter().create({
-  'terminal_id': 1,  // int
+  'terminalId': 1,  // int
 });
 ```
 
@@ -1387,20 +1386,20 @@ Create an instance: `final ecr_data = client.EcrData();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `ecr_data` | `String` |  |
-| `response_code` | `int` |  |
-| `response_message` | `String` |  |
-| `terminal_id` | `int` |  |
-| `transaction_id` | `String` |  |
-| `transaction_type` | `String` |  |
+| `ecrData` | `String` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `String` |  |
+| `terminalId` | `int` |  |
+| `transactionId` | `String` |  |
+| `transactionType` | `String` |  |
 
 #### Example: Create
 
 ```dart
 final ecr_data = await client.EcrData().create({
-  'terminal_id': 1,  // int
-  'transaction_id': 'example_transaction_id',  // String
-  'transaction_type': 'example_transaction_type',  // String
+  'terminalId': 1,  // int
+  'transactionId': 'example_transactionId',  // String
+  'transactionType': 'example_transactionType',  // String
 });
 ```
 
@@ -1419,20 +1418,20 @@ Create an instance: `final emv_data = client.EmvData();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `emv_data` | `String` |  |
-| `response_code` | `int` |  |
-| `response_message` | `String` |  |
-| `terminal_id` | `int` |  |
-| `transaction_id` | `String` |  |
-| `transaction_type` | `String` |  |
+| `emvData` | `String` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `String` |  |
+| `terminalId` | `int` |  |
+| `transactionId` | `String` |  |
+| `transactionType` | `String` |  |
 
 #### Example: Create
 
 ```dart
 final emv_data = await client.EmvData().create({
-  'terminal_id': 1,  // int
-  'transaction_id': 'example_transaction_id',  // String
-  'transaction_type': 'example_transaction_type',  // String
+  'terminalId': 1,  // int
+  'transactionId': 'example_transactionId',  // String
+  'transactionType': 'example_transactionType',  // String
 });
 ```
 
@@ -1451,31 +1450,31 @@ Create an instance: `final enable_acquiring = client.EnableAcquiring();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `account_no` | `int` |  |
-| `additional_data` | `Map<String, dynamic>` |  |
-| `corporate_uuid` | `String` |  |
+| `accountNo` | `int` |  |
+| `additionalData` | `Map<String, dynamic>` |  |
+| `corporateUuid` | `String` |  |
 | `currency` | `String` |  |
-| `merchant_category_code` | `int` |  |
-| `package_order_uuid` | `String` |  |
-| `product_order_uuid` | `String` |  |
-| `response_code` | `int` |  |
-| `response_message` | `String` |  |
-| `sorting_code` | `int` |  |
-| `template_name` | `String` |  |
-| `terminal_id` | `List<dynamic>` |  |
-| `terminal_id_acq` | `String` |  |
-| `vu_nummer` | `String` |  |
+| `merchantCategoryCode` | `int` |  |
+| `packageOrderUuid` | `String` |  |
+| `productOrderUuid` | `String` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `String` |  |
+| `sortingCode` | `int` |  |
+| `templateName` | `String` |  |
+| `terminalIdAcq` | `String` |  |
+| `terminalIds` | `List<dynamic>` |  |
+| `vuNummer` | `String` |  |
 
 #### Example: Create
 
 ```dart
 final enable_acquiring = await client.EnableAcquiring().create({
-  'corporate_uuid': 'example_corporate_uuid',  // String
+  'corporateUuid': 'example_corporateUuid',  // String
   'currency': 'example_currency',  // String
-  'merchant_category_code': 1,  // int
-  'package_order_uuid': 'example_package_order_uuid',  // String
-  'product_order_uuid': 'example_product_order_uuid',  // String
-  'template_name': 'example_template_name',  // String
+  'merchantCategoryCode': 1,  // int
+  'packageOrderUuid': 'example_packageOrderUuid',  // String
+  'productOrderUuid': 'example_productOrderUuid',  // String
+  'templateName': 'example_templateName',  // String
 });
 ```
 
@@ -1494,15 +1493,15 @@ Create an instance: `final get_merchant_contract_number = client.GetMerchantCont
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `merchant_contract_number` | `String` |  |
-| `response_code` | `int` |  |
-| `response_message` | `String` |  |
+| `merchantContractNumber` | `String` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
 ```dart
 final get_merchant_contract_number = await client.GetMerchantContractNumber().create({
-  'merchant_contract_number': 'example_merchant_contract_number',  // String
+  'merchantContractNumber': 'example_merchantContractNumber',  // String
 });
 ```
 
@@ -1521,15 +1520,15 @@ Create an instance: `final get_template_xml = client.GetTemplateXml();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `int` |  |
-| `response_message` | `String` |  |
-| `template_name` | `String` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `String` |  |
+| `templateName` | `String` |  |
 
 #### Example: Create
 
 ```dart
 final get_template_xml = await client.GetTemplateXml().create({
-  'template_name': 'example_template_name',  // String
+  'templateName': 'example_templateName',  // String
 });
 ```
 
@@ -1548,15 +1547,15 @@ Create an instance: `final introduce_mandator = client.IntroduceMandator();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `mandator_name` | `String` |  |
-| `response_code` | `int` |  |
-| `response_message` | `String` |  |
+| `mandatorName` | `String` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
 ```dart
 final introduce_mandator = await client.IntroduceMandator().create({
-  'mandator_name': 'example_mandator_name',  // String
+  'mandatorName': 'example_mandatorName',  // String
 });
 ```
 
@@ -1575,15 +1574,15 @@ Create an instance: `final introduce_package = client.IntroducePackage();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `int` |  |
-| `response_message` | `String` |  |
-| `terminal_template_description` | `String` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `String` |  |
+| `terminalTemplateDescription` | `String` |  |
 
 #### Example: Create
 
 ```dart
 final introduce_package = await client.IntroducePackage().create({
-  'terminal_template_description': 'example_terminal_template_description',  // String
+  'terminalTemplateDescription': 'example_terminalTemplateDescription',  // String
 });
 ```
 
@@ -1603,15 +1602,15 @@ Create an instance: `final keep_alive = client.KeepAlive();`
 | Field | Type | Description |
 | --- | --- | --- |
 | `hwserialno` | `String` |  |
-| `ka_date_time_from` | `String` |  |
-| `ka_date_time_to` | `String` |  |
-| `keep_alive_data` | `List<dynamic>` |  |
+| `kaDateTimeFrom` | `String` |  |
+| `kaDateTimeTo` | `String` |  |
+| `keepAliveData` | `List<dynamic>` |  |
 | `pagination` | `Map<String, dynamic>` |  |
-| `response_code` | `int` |  |
-| `response_message` | `String` |  |
-| `terminal_date_time_from` | `String` |  |
-| `terminal_date_time_to` | `String` |  |
-| `terminal_id` | `int` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `String` |  |
+| `terminalDateTimeFrom` | `String` |  |
+| `terminalDateTimeTo` | `String` |  |
+| `terminalId` | `int` |  |
 
 #### Example: Create
 
@@ -1635,12 +1634,12 @@ Create an instance: `final list_terminal = client.ListTerminal();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `corporate_uuid` | `List<dynamic>` |  |
+| `corporateUuid` | `List<dynamic>` |  |
 | `filter` | `Map<String, dynamic>` |  |
 | `pagination` | `Map<String, dynamic>` |  |
-| `response_code` | `int` |  |
-| `response_message` | `String` |  |
-| `terminal` | `List<dynamic>` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `String` |  |
+| `terminals` | `List<dynamic>` |  |
 
 #### Example: Create
 
@@ -1664,19 +1663,19 @@ Create an instance: `final mandator_clearing_export = client.MandatorClearingExp
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `clearing_date_from` | `String` |  |
-| `clearing_date_to` | `String` |  |
+| `clearingDateFrom` | `String` |  |
+| `clearingDateTo` | `String` |  |
 | `pagination` | `Map<String, dynamic>` |  |
-| `record` | `List<dynamic>` |  |
-| `response_code` | `int` |  |
-| `response_message` | `String` |  |
+| `records` | `List<dynamic>` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
 ```dart
 final mandator_clearing_export = await client.MandatorClearingExport().create({
-  'clearing_date_from': 'example_clearing_date_from',  // String
-  'clearing_date_to': 'example_clearing_date_to',  // String
+  'clearingDateFrom': 'example_clearingDateFrom',  // String
+  'clearingDateTo': 'example_clearingDateTo',  // String
 });
 ```
 
@@ -1696,12 +1695,12 @@ Create an instance: `final mandator_clearing_export_download = client.MandatorCl
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `clearing_date_from` | `String` |  |
-| `clearing_date_to` | `String` |  |
-| `file_id` | `String` |  |
-| `filename_template` | `String` |  |
-| `response_code` | `int` |  |
-| `response_message` | `String` |  |
+| `clearingDateFrom` | `String` |  |
+| `clearingDateTo` | `String` |  |
+| `fileId` | `String` |  |
+| `filenameTemplate` | `String` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `String` |  |
 | `status` | `String` |  |
 
 #### Example: Load
@@ -1714,8 +1713,8 @@ final mandator_clearing_export_download = await client.MandatorClearingExportDow
 
 ```dart
 final mandator_clearing_export_download = await client.MandatorClearingExportDownload().create({
-  'clearing_date_from': 'example_clearing_date_from',  // String
-  'clearing_date_to': 'example_clearing_date_to',  // String
+  'clearingDateFrom': 'example_clearingDateFrom',  // String
+  'clearingDateTo': 'example_clearingDateTo',  // String
 });
 ```
 
@@ -1734,18 +1733,18 @@ Create an instance: `final mandator_clearing_export_summary = client.MandatorCle
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `clearing_date_from` | `String` |  |
-| `clearing_date_to` | `String` |  |
-| `record` | `List<dynamic>` |  |
-| `response_code` | `int` |  |
-| `response_message` | `String` |  |
+| `clearingDateFrom` | `String` |  |
+| `clearingDateTo` | `String` |  |
+| `records` | `List<dynamic>` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
 ```dart
 final mandator_clearing_export_summary = await client.MandatorClearingExportSummary().create({
-  'clearing_date_from': 'example_clearing_date_from',  // String
-  'clearing_date_to': 'example_clearing_date_to',  // String
+  'clearingDateFrom': 'example_clearingDateFrom',  // String
+  'clearingDateTo': 'example_clearingDateTo',  // String
 });
 ```
 
@@ -1764,30 +1763,30 @@ Create an instance: `final merchant_portal_services_api = client.MerchantPortalS
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `3_d_secure` | `String` |  |
-| `authorization_code` | `String` |  |
-| `card_brand` | `String` |  |
-| `clearing_amount_from` | `String` |  |
-| `clearing_amount_to` | `String` |  |
-| `clearing_currency` | `String` |  |
-| `clearing_status` | `String` |  |
-| `corporate_uuid` | `String` |  |
-| `order_by_transaction_date` | `String` |  |
+| `3DSecure` | `String` |  |
+| `authorizationCode` | `String` |  |
+| `cardBrand` | `String` |  |
+| `clearingAmountFrom` | `String` |  |
+| `clearingAmountTo` | `String` |  |
+| `clearingCurrency` | `String` |  |
+| `clearingStatus` | `String` |  |
+| `corporateUUID` | `String` |  |
+| `orderByTransactionDate` | `String` |  |
 | `pagination` | `Map<String, dynamic>` |  |
-| `receipt_number` | `String` |  |
-| `referenced_transaction_id` | `String` |  |
-| `retrieval_reference_number` | `String` |  |
-| `source_id` | `int` |  |
-| `tecsengine_response_code_from` | `String` |  |
-| `tecsengine_response_code_to` | `String` |  |
-| `terminal_id` | `int` |  |
-| `trace_number` | `String` |  |
-| `transaction_amount_from` | `String` |  |
-| `transaction_amount_to` | `String` |  |
-| `transaction_date_from` | `String` |  |
-| `transaction_date_to` | `String` |  |
-| `transaction_id` | `String` |  |
-| `transaction_type` | `String` |  |
+| `receiptNumber` | `String` |  |
+| `referencedTransactionId` | `String` |  |
+| `retrievalReferenceNumber` | `String` |  |
+| `sourceId` | `int` |  |
+| `tecsengineResponseCodeFrom` | `String` |  |
+| `tecsengineResponseCodeTo` | `String` |  |
+| `terminalId` | `int` |  |
+| `traceNumber` | `String` |  |
+| `transactionAmountFrom` | `String` |  |
+| `transactionAmountTo` | `String` |  |
+| `transactionDateFrom` | `String` |  |
+| `transactionDateTo` | `String` |  |
+| `transactionId` | `String` |  |
+| `transactionType` | `String` |  |
 | `wallet` | `String` |  |
 
 #### Example: Create
@@ -1812,17 +1811,17 @@ Create an instance: `final move_tid = client.MoveTid();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `productorderuuid` | `List<dynamic>` |  |
-| `response_code` | `int` |  |
-| `response_message` | `String` |  |
-| `target_packageorderuuid` | `String` |  |
-| `target_productorderuuid` | `String` |  |
+| `productorderuuids` | `List<dynamic>` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `String` |  |
+| `targetPackageorderuuid` | `String` |  |
+| `targetProductorderuuid` | `String` |  |
 
 #### Example: Create
 
 ```dart
 final move_tid = await client.MoveTid().create({
-  'productorderuuid': <dynamic>[],  // List<dynamic>
+  'productorderuuids': <dynamic>[],  // List<dynamic>
 });
 ```
 
@@ -1841,22 +1840,22 @@ Create an instance: `final payment_manual = client.PaymentManual();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_name` | `String` |  |
+| `acquirerName` | `String` |  |
 | `amount` | `int` |  |
-| `authorization_number` | `String` |  |
-| `card_number` | `String` |  |
-| `card_type` | `String` |  |
+| `authorizationNumber` | `String` |  |
+| `cardNumber` | `String` |  |
+| `cardType` | `String` |  |
 | `currency` | `String` |  |
 | `cvc` | `String` |  |
-| `date_time_tx` | `String` |  |
-| `exp_date` | `String` |  |
-| `merchant_id` | `String` |  |
-| `original_transaction_id` | `String` |  |
+| `dateTimeTx` | `String` |  |
+| `expDate` | `String` |  |
+| `merchantId` | `String` |  |
+| `originalTransactionId` | `String` |  |
 | `password` | `String` |  |
-| `response_code` | `String` |  |
-| `response_message` | `String` |  |
-| `terminal_id` | `String` |  |
-| `transaction_id` | `String` |  |
+| `responseCode` | `String` |  |
+| `responseMessage` | `String` |  |
+| `terminalId` | `String` |  |
+| `transactionId` | `String` |  |
 | `txtype` | `String` |  |
 
 #### Example: Create
@@ -1864,9 +1863,9 @@ Create an instance: `final payment_manual = client.PaymentManual();`
 ```dart
 final payment_manual = await client.PaymentManual().create({
   'amount': 1,  // int
-  'card_number': 'example_card_number',  // String
+  'cardNumber': 'example_cardNumber',  // String
   'currency': 'example_currency',  // String
-  'exp_date': 'example_exp_date',  // String
+  'expDate': 'example_expDate',  // String
   'txtype': 'example_txtype',  // String
 });
 ```
@@ -1886,21 +1885,17 @@ Create an instance: `final payment_sred = client.PaymentSred();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_name` | `String` |  |
 | `amount` | `int` |  |
-| `authorization_number` | `String` |  |
-| `card_type` | `String` |  |
 | `currency` | `String` |  |
-| `date_time_tx` | `String` |  |
-| `device_payload` | `String` |  |
-| `merchant_id` | `String` |  |
-| `original_transaction_id` | `String` |  |
+| `device` | `String` |  |
+| `devicePayload` | `String` |  |
+| `expDate` | `String` |  |
+| `mode` | `String` |  |
+| `panMasked` | `String` |  |
 | `password` | `String` |  |
-| `response_code` | `String` |  |
-| `response_message` | `String` |  |
-| `sred` | `Map<String, dynamic>` |  |
-| `terminal_id` | `String` |  |
-| `transaction_id` | `String` |  |
+| `serial` | `String` |  |
+| `serviceCode` | `String` |  |
+| `terminalId` | `String` |  |
 | `txtype` | `String` |  |
 
 #### Example: Create
@@ -1909,7 +1904,8 @@ Create an instance: `final payment_sred = client.PaymentSred();`
 final payment_sred = await client.PaymentSred().create({
   'amount': 1,  // int
   'currency': 'example_currency',  // String
-  'device_payload': 'example_device_payload',  // String
+  'devicePayload': 'example_devicePayload',  // String
+  'terminalId': 'example_terminalId',  // String
   'txtype': 'example_txtype',  // String
 });
 ```
@@ -1929,59 +1925,59 @@ Create an instance: `final pre_auth_transaction_completion = client.PreAuthTrans
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_id` | `String` |  |
-| `acquirer_name` | `String` |  |
-| `actual_bonus_point` | `String` |  |
+| `acquirerId` | `String` |  |
+| `acquirerName` | `String` |  |
+| `actualBonusPoints` | `String` |  |
 | `amount` | `int` |  |
-| `authorization_code` | `String` |  |
-| `balance_amount` | `String` |  |
-| `card_brand` | `String` |  |
-| `card_number` | `String` |  |
-| `card_number_reference` | `String` |  |
-| `client_id` | `int` |  |
+| `authorizationCode` | `String` |  |
+| `balanceAmount` | `String` |  |
+| `cardBrand` | `String` |  |
+| `cardNumber` | `String` |  |
+| `cardNumberReference` | `String` |  |
+| `clientId` | `int` |  |
 | `currency` | `String` |  |
 | `cvc` | `String` |  |
-| `ec_data` | `String` |  |
-| `ecr_data` | `String` |  |
-| `emv_data` | `String` |  |
-| `exchange_fee` | `int` |  |
-| `exchange_rate` | `String` |  |
-| `language_code` | `String` |  |
-| `merchant_address` | `String` |  |
-| `merchant_name` | `String` |  |
-| `merchant_number` | `String` |  |
-| `message_type` | `String` |  |
-| `original_trace_number` | `int` |  |
-| `original_transaction_id` | `String` |  |
+| `ecData` | `String` |  |
+| `ecrData` | `String` |  |
+| `emvData` | `String` |  |
+| `exchangeFee` | `int` |  |
+| `exchangeRate` | `String` |  |
+| `languageCode` | `String` |  |
+| `merchantAddress` | `String` |  |
+| `merchantName` | `String` |  |
+| `merchantNumber` | `String` |  |
+| `messageType` | `String` |  |
+| `originalTraceNumber` | `int` |  |
+| `originalTransactionId` | `String` |  |
 | `password` | `String` |  |
-| `payment_reason` | `String` |  |
-| `receipt_footer` | `String` |  |
-| `receipt_header` | `String` |  |
-| `receipt_layout` | `int` |  |
-| `receipt_number` | `String` |  |
-| `response_code` | `int` |  |
-| `response_message` | `String` |  |
-| `serial_number` | `String` |  |
+| `paymentReason` | `String` |  |
+| `receiptFooter` | `String` |  |
+| `receiptHeader` | `String` |  |
+| `receiptLayout` | `int` |  |
+| `receiptNumber` | `String` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `String` |  |
+| `serialNumber` | `String` |  |
 | `svc` | `String` |  |
-| `terminal_id` | `int` |  |
-| `terminal_location` | `String` |  |
-| `trace_number` | `int` |  |
-| `transaction_date` | `String` |  |
-| `transaction_id` | `String` |  |
-| `transaction_type` | `String` |  |
-| `tx_type` | `String` |  |
-| `user_data` | `String` |  |
+| `terminalId` | `int` |  |
+| `terminalLocation` | `String` |  |
+| `traceNumber` | `int` |  |
+| `transactionDate` | `String` |  |
+| `transactionId` | `String` |  |
+| `transactionType` | `String` |  |
+| `txType` | `String` |  |
+| `userData` | `String` |  |
 
 #### Example: Create
 
 ```dart
 final pre_auth_transaction_completion = await client.PreAuthTransactionCompletion().create({
-  'card_number_reference': 'example_card_number_reference',  // String
-  'client_id': 1,  // int
+  'cardNumberReference': 'example_cardNumberReference',  // String
+  'clientId': 1,  // int
   'currency': 'example_currency',  // String
-  'receipt_number': 'example_receipt_number',  // String
-  'terminal_id': 1,  // int
-  'transaction_type': 'example_transaction_type',  // String
+  'receiptNumber': 'example_receiptNumber',  // String
+  'terminalId': 1,  // int
+  'transactionType': 'example_transactionType',  // String
 });
 ```
 
@@ -2000,20 +1996,20 @@ Create an instance: `final reactivate_terminal = client.ReactivateTerminal();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `corporate_uuid` | `String` |  |
-| `package_order_uuid` | `String` |  |
-| `product_order_uuid` | `String` |  |
-| `reactivation_reason` | `String` |  |
-| `response_code` | `int` |  |
-| `response_message` | `String` |  |
-| `terminal_id` | `int` |  |
+| `corporateUuid` | `String` |  |
+| `packageOrderUuid` | `String` |  |
+| `productOrderUuid` | `String` |  |
+| `reactivationReason` | `String` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `String` |  |
+| `terminalId` | `int` |  |
 
 #### Example: Create
 
 ```dart
 final reactivate_terminal = await client.ReactivateTerminal().create({
-  'reactivation_reason': 'example_reactivation_reason',  // String
-  'terminal_id': 1,  // int
+  'reactivationReason': 'example_reactivationReason',  // String
+  'terminalId': 1,  // int
 });
 ```
 
@@ -2032,55 +2028,55 @@ Create an instance: `final refund_transaction = client.RefundTransaction();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_id` | `String` |  |
-| `acquirer_name` | `String` |  |
-| `actual_bonus_point` | `String` |  |
+| `acquirerId` | `String` |  |
+| `acquirerName` | `String` |  |
+| `actualBonusPoints` | `String` |  |
 | `amount` | `int` |  |
-| `authorization_code` | `String` |  |
-| `balance_amount` | `String` |  |
-| `card_brand` | `String` |  |
-| `card_number` | `String` |  |
-| `client_id` | `int` |  |
+| `authorizationCode` | `String` |  |
+| `balanceAmount` | `String` |  |
+| `cardBrand` | `String` |  |
+| `cardNumber` | `String` |  |
+| `clientId` | `int` |  |
 | `currency` | `String` |  |
 | `cvc` | `String` |  |
-| `ec_data` | `String` |  |
-| `ecr_data` | `String` |  |
-| `emv_data` | `String` |  |
-| `exchange_fee` | `int` |  |
-| `exchange_rate` | `String` |  |
-| `language_code` | `String` |  |
-| `merchant_address` | `String` |  |
-| `merchant_name` | `String` |  |
-| `merchant_number` | `String` |  |
-| `message_type` | `String` |  |
-| `original_trace_number` | `int` |  |
-| `original_transaction_id` | `String` |  |
+| `ecData` | `String` |  |
+| `ecrData` | `String` |  |
+| `emvData` | `String` |  |
+| `exchangeFee` | `int` |  |
+| `exchangeRate` | `String` |  |
+| `languageCode` | `String` |  |
+| `merchantAddress` | `String` |  |
+| `merchantName` | `String` |  |
+| `merchantNumber` | `String` |  |
+| `messageType` | `String` |  |
+| `originalTraceNumber` | `int` |  |
+| `originalTransactionId` | `String` |  |
 | `password` | `String` |  |
-| `payment_reason` | `String` |  |
-| `receipt_footer` | `String` |  |
-| `receipt_header` | `String` |  |
-| `receipt_layout` | `int` |  |
-| `receipt_number` | `String` |  |
-| `response_code` | `int` |  |
-| `response_message` | `String` |  |
-| `serial_number` | `String` |  |
+| `paymentReason` | `String` |  |
+| `receiptFooter` | `String` |  |
+| `receiptHeader` | `String` |  |
+| `receiptLayout` | `int` |  |
+| `receiptNumber` | `String` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `String` |  |
+| `serialNumber` | `String` |  |
 | `svc` | `String` |  |
-| `terminal_id` | `int` |  |
-| `terminal_location` | `String` |  |
-| `trace_number` | `int` |  |
-| `transaction_date` | `String` |  |
-| `transaction_id` | `String` |  |
-| `tx_type` | `String` |  |
-| `user_data` | `String` |  |
+| `terminalId` | `int` |  |
+| `terminalLocation` | `String` |  |
+| `traceNumber` | `int` |  |
+| `transactionDate` | `String` |  |
+| `transactionId` | `String` |  |
+| `txType` | `String` |  |
+| `userData` | `String` |  |
 
 #### Example: Create
 
 ```dart
 final refund_transaction = await client.RefundTransaction().create({
-  'client_id': 1,  // int
+  'clientId': 1,  // int
   'currency': 'example_currency',  // String
-  'receipt_number': 'example_receipt_number',  // String
-  'terminal_id': 1,  // int
+  'receiptNumber': 'example_receiptNumber',  // String
+  'terminalId': 1,  // int
 });
 ```
 
@@ -2099,23 +2095,23 @@ Create an instance: `final register_tecs_company = client.RegisterTecsCompany();
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `corporate_uuid` | `String` |  |
-| `package_order_uuid` | `String` |  |
-| `partner_id` | `int` |  |
-| `partner_name` | `String` |  |
-| `product_order_uuid` | `String` |  |
-| `response_code` | `int` |  |
-| `response_message` | `String` |  |
-| `template_name` | `String` |  |
+| `corporateUuid` | `String` |  |
+| `packageOrderUuid` | `String` |  |
+| `partnerId` | `int` |  |
+| `partnerName` | `String` |  |
+| `productOrderUuid` | `String` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `String` |  |
+| `templateName` | `String` |  |
 
 #### Example: Create
 
 ```dart
 final register_tecs_company = await client.RegisterTecsCompany().create({
-  'corporate_uuid': 'example_corporate_uuid',  // String
-  'package_order_uuid': 'example_package_order_uuid',  // String
-  'product_order_uuid': 'example_product_order_uuid',  // String
-  'template_name': 'example_template_name',  // String
+  'corporateUuid': 'example_corporateUuid',  // String
+  'packageOrderUuid': 'example_packageOrderUuid',  // String
+  'productOrderUuid': 'example_productOrderUuid',  // String
+  'templateName': 'example_templateName',  // String
 });
 ```
 
@@ -2134,36 +2130,36 @@ Create an instance: `final register_terminal = client.RegisterTerminal();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `additional_data` | `Map<String, dynamic>` |  |
-| `corporate_uuid` | `String` |  |
-| `package_order_uuid` | `String` |  |
-| `product_order_uuid` | `String` |  |
-| `response_code` | `int` |  |
-| `response_message` | `String` |  |
-| `tecs_web_secret_key` | `String` |  |
-| `template_name` | `String` |  |
-| `terminal_country_code` | `String` |  |
-| `terminal_id` | `int` |  |
-| `terminal_id_acq` | `String` |  |
-| `terminal_language_code` | `String` |  |
-| `terminal_location` | `String` |  |
-| `terminal_serial_number` | `String` |  |
-| `token_io_alia` | `String` |  |
-| `token_io_iban` | `String` |  |
-| `token_io_member_id` | `String` |  |
-| `web_shop_url` | `String` |  |
+| `additionalData` | `Map<String, dynamic>` |  |
+| `corporateUuid` | `String` |  |
+| `packageOrderUuid` | `String` |  |
+| `productOrderUuid` | `String` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `String` |  |
+| `tecsWebSecretKey` | `String` |  |
+| `templateName` | `String` |  |
+| `terminalCountryCode` | `String` |  |
+| `terminalId` | `int` |  |
+| `terminalIdAcq` | `String` |  |
+| `terminalLanguageCode` | `String` |  |
+| `terminalLocation` | `String` |  |
+| `terminalSerialNumber` | `String` |  |
+| `tokenIOAlias` | `String` |  |
+| `tokenIOIban` | `String` |  |
+| `tokenIOMemberId` | `String` |  |
+| `webShopUrl` | `String` |  |
 
 #### Example: Create
 
 ```dart
 final register_terminal = await client.RegisterTerminal().create({
-  'corporate_uuid': 'example_corporate_uuid',  // String
-  'package_order_uuid': 'example_package_order_uuid',  // String
-  'product_order_uuid': 'example_product_order_uuid',  // String
-  'template_name': 'example_template_name',  // String
-  'terminal_country_code': 'example_terminal_country_code',  // String
-  'terminal_language_code': 'example_terminal_language_code',  // String
-  'terminal_location': 'example_terminal_location',  // String
+  'corporateUuid': 'example_corporateUuid',  // String
+  'packageOrderUuid': 'example_packageOrderUuid',  // String
+  'productOrderUuid': 'example_productOrderUuid',  // String
+  'templateName': 'example_templateName',  // String
+  'terminalCountryCode': 'example_terminalCountryCode',  // String
+  'terminalLanguageCode': 'example_terminalLanguageCode',  // String
+  'terminalLocation': 'example_terminalLocation',  // String
 });
 ```
 
@@ -2182,24 +2178,24 @@ Create an instance: `final report_data = client.ReportData();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `card_brand_report_data` | `List<dynamic>` |  |
-| `clearing_date_from` | `String` |  |
-| `clearing_date_to` | `String` |  |
-| `corporate_id` | `String` |  |
+| `cardBrandReportData` | `List<dynamic>` |  |
+| `clearingDateFrom` | `String` |  |
+| `clearingDateTo` | `String` |  |
+| `corporateId` | `String` |  |
 | `currency` | `String` |  |
-| `response_code` | `int` |  |
-| `response_message` | `String` |  |
-| `sum_over_credit_tx` | `Map<String, dynamic>` |  |
-| `sum_over_debit_tx` | `Map<String, dynamic>` |  |
-| `terminal_id` | `int` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `String` |  |
+| `sumOverCreditTx` | `Map<String, dynamic>` |  |
+| `sumOverDebitTx` | `Map<String, dynamic>` |  |
+| `terminalId` | `int` |  |
 
 #### Example: Create
 
 ```dart
 final report_data = await client.ReportData().create({
-  'clearing_date_from': 'example_clearing_date_from',  // String
-  'clearing_date_to': 'example_clearing_date_to',  // String
-  'corporate_id': 'example_corporate_id',  // String
+  'clearingDateFrom': 'example_clearingDateFrom',  // String
+  'clearingDateTo': 'example_clearingDateTo',  // String
+  'corporateId': 'example_corporateId',  // String
   'currency': 'example_currency',  // String
 });
 ```
@@ -2219,56 +2215,56 @@ Create an instance: `final status_transaction = client.StatusTransaction();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_name` | `String` |  |
-| `acquirer_terminal_id` | `String` |  |
+| `acquirerName` | `String` |  |
+| `acquirerTerminalId` | `String` |  |
 | `amount` | `int` |  |
-| `application_cryptogram` | `String` |  |
-| `authorization_code` | `dynamic` |  |
-| `authorization_date` | `String` |  |
-| `card_brand` | `String` |  |
-| `card_entry` | `String` |  |
-| `card_expiration` | `String` |  |
-| `card_number` | `String` |  |
-| `clearing_amount` | `int` |  |
-| `clearing_batch_id` | `String` |  |
-| `clearing_currency` | `String` |  |
-| `clearing_date` | `String` |  |
-| `clearing_processed_date` | `String` |  |
-| `clearing_status` | `String` |  |
-| `client_id` | `int` |  |
+| `applicationCryptogram` | `String` |  |
+| `authorizationCode` | `dynamic` |  |
+| `authorizationDate` | `String` |  |
+| `cardBrand` | `String` |  |
+| `cardEntry` | `String` |  |
+| `cardExpiration` | `String` |  |
+| `cardNumber` | `String` |  |
+| `clearingAmount` | `int` |  |
+| `clearingBatchId` | `String` |  |
+| `clearingCurrency` | `String` |  |
+| `clearingDate` | `String` |  |
+| `clearingProcessedDate` | `String` |  |
+| `clearingStatus` | `String` |  |
+| `clientId` | `int` |  |
 | `currency` | `String` |  |
 | `cvm` | `String` |  |
-| `ecr_data` | `String` |  |
-| `emv_application_id` | `String` |  |
-| `emv_application_label` | `String` |  |
-| `merchant_name` | `String` |  |
-| `merchant_number` | `String` |  |
-| `original_client_id` | `String` |  |
-| `original_terminal_id` | `int` |  |
-| `original_transaction_id` | `String` |  |
-| `payment_reason` | `String` |  |
-| `receipt_number` | `String` |  |
-| `response_code` | `int` |  |
-| `response_code_from_a` | `String` |  |
-| `response_message` | `String` |  |
-| `retrieval_reference_number` | `String` |  |
-| `service_code` | `String` |  |
-| `settlement_status` | `String` |  |
-| `source_id` | `int` |  |
-| `tecsengine_response_code` | `int` |  |
-| `tecsengine_response_text` | `String` |  |
-| `terminal_end_of_day_date` | `String` |  |
-| `terminal_id` | `int` |  |
-| `terminal_location` | `String` |  |
-| `tip_amount` | `int` |  |
-| `trace_number` | `int` |  |
-| `transaction_clearing_date` | `String` |  |
-| `transaction_date` | `String` |  |
-| `transaction_id` | `String` |  |
-| `transaction_seq_number` | `int` |  |
-| `transaction_server_date` | `String` |  |
-| `transaction_source` | `String` |  |
-| `transaction_type` | `String` |  |
+| `ecrData` | `String` |  |
+| `emvApplicationId` | `String` |  |
+| `emvApplicationLabel` | `String` |  |
+| `merchantName` | `String` |  |
+| `merchantNumber` | `String` |  |
+| `originalClientId` | `String` |  |
+| `originalTerminalId` | `int` |  |
+| `originalTransactionId` | `String` |  |
+| `paymentReason` | `String` |  |
+| `receiptNumber` | `String` |  |
+| `responseCode` | `int` |  |
+| `responseCodeFromAS` | `String` |  |
+| `responseMessage` | `String` |  |
+| `retrievalReferenceNumber` | `String` |  |
+| `serviceCode` | `String` |  |
+| `settlementStatus` | `String` |  |
+| `sourceId` | `int` |  |
+| `tecsengineResponseCode` | `int` |  |
+| `tecsengineResponseText` | `String` |  |
+| `terminalEndOfDayDate` | `String` |  |
+| `terminalId` | `int` |  |
+| `terminalLocation` | `String` |  |
+| `tipAmount` | `int` |  |
+| `traceNumber` | `int` |  |
+| `transactionClearingDate` | `String` |  |
+| `transactionDate` | `String` |  |
+| `transactionId` | `String` |  |
+| `transactionSeqNumber` | `int` |  |
+| `transactionServerDate` | `String` |  |
+| `transactionSource` | `String` |  |
+| `transactionType` | `String` |  |
 
 #### Example: Create
 
@@ -2292,18 +2288,18 @@ Create an instance: `final store_terminal_parameter = client.StoreTerminalParame
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acq_tab_nexo` | `Map<String, dynamic>` |  |
-| `config_version` | `String` |  |
-| `response_code` | `int` |  |
-| `response_message` | `String` |  |
-| `serial_number` | `String` |  |
-| `tid_sent` | `String` |  |
+| `acqTabNexo` | `Map<String, dynamic>` |  |
+| `configVersion` | `String` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `String` |  |
+| `serialNumber` | `String` |  |
+| `tidSent` | `String` |  |
 
 #### Example: Create
 
 ```dart
 final store_terminal_parameter = await client.StoreTerminalParameter().create({
-  'serial_number': 'example_serial_number',  // String
+  'serialNumber': 'example_serialNumber',  // String
 });
 ```
 
@@ -2322,17 +2318,17 @@ Create an instance: `final terminal_id = client.TerminalId();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `device_serial_number` | `List<dynamic>` |  |
-| `duplicate_terminal_id` | `List<dynamic>` |  |
-| `response_code` | `int` |  |
-| `response_message` | `String` |  |
-| `terminal` | `List<dynamic>` |  |
+| `deviceSerialNumber` | `List<dynamic>` |  |
+| `duplicateTerminalIds` | `List<dynamic>` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `String` |  |
+| `terminals` | `List<dynamic>` |  |
 
 #### Example: Create
 
 ```dart
 final terminal_id = await client.TerminalId().create({
-  'device_serial_number': <dynamic>[],  // List<dynamic>
+  'deviceSerialNumber': <dynamic>[],  // List<dynamic>
 });
 ```
 
@@ -2351,34 +2347,34 @@ Create an instance: `final transaction_history = client.TransactionHistory();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `3_d_secure` | `String` |  |
-| `authorization_code` | `String` |  |
-| `card_brand` | `String` |  |
-| `clearing_amount_from` | `String` |  |
-| `clearing_amount_to` | `String` |  |
-| `clearing_currency` | `String` |  |
-| `clearing_status` | `String` |  |
-| `corporate_uuid` | `String` |  |
-| `order_by_transaction_date` | `String` |  |
+| `3DSecure` | `String` |  |
+| `authorizationCode` | `String` |  |
+| `cardBrand` | `String` |  |
+| `clearingAmountFrom` | `String` |  |
+| `clearingAmountTo` | `String` |  |
+| `clearingCurrency` | `String` |  |
+| `clearingStatus` | `String` |  |
+| `corporateUUID` | `String` |  |
+| `orderByTransactionDate` | `String` |  |
 | `pagination` | `Map<String, dynamic>` |  |
-| `payment_token_public_id` | `String` |  |
-| `receipt_number` | `String` |  |
-| `referenced_transaction_id` | `String` |  |
-| `response_code` | `int` |  |
-| `response_message` | `String` |  |
-| `retrieval_reference_number` | `String` |  |
-| `source_id` | `int` |  |
-| `tecsengine_response_code_from` | `String` |  |
-| `tecsengine_response_code_to` | `String` |  |
-| `terminal_id` | `int` |  |
-| `trace_number` | `String` |  |
-| `transaction_amount_from` | `String` |  |
-| `transaction_amount_to` | `String` |  |
-| `transaction_date_from` | `String` |  |
-| `transaction_date_to` | `String` |  |
-| `transaction_history` | `List<dynamic>` |  |
-| `transaction_id` | `String` |  |
-| `transaction_type` | `String` |  |
+| `paymentTokenPublicId` | `String` |  |
+| `receiptNumber` | `String` |  |
+| `referencedTransactionId` | `String` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `String` |  |
+| `retrievalReferenceNumber` | `String` |  |
+| `sourceId` | `int` |  |
+| `tecsengineResponseCodeFrom` | `String` |  |
+| `tecsengineResponseCodeTo` | `String` |  |
+| `terminalId` | `int` |  |
+| `traceNumber` | `String` |  |
+| `transactionAmountFrom` | `String` |  |
+| `transactionAmountTo` | `String` |  |
+| `transactionDateFrom` | `String` |  |
+| `transactionDateTo` | `String` |  |
+| `transactionHistories` | `List<dynamic>` |  |
+| `transactionId` | `String` |  |
+| `transactionType` | `String` |  |
 | `wallet` | `String` |  |
 
 #### Example: Create
@@ -2404,11 +2400,11 @@ Create an instance: `final transactions_count = client.TransactionsCount();`
 | Field | Type | Description |
 | --- | --- | --- |
 | `period` | `String` |  |
-| `response_code` | `int` |  |
-| `response_message` | `String` |  |
-| `transaction_date_from` | `String` |  |
-| `transaction_date_to` | `String` |  |
-| `transactions_count` | `List<dynamic>` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `String` |  |
+| `transactionDateFrom` | `String` |  |
+| `transactionDateTo` | `String` |  |
+| `transactionsCount` | `List<dynamic>` |  |
 
 #### Example: Create
 
@@ -2433,11 +2429,11 @@ Create an instance: `final transactions_count_card_brand = client.TransactionsCo
 | Field | Type | Description |
 | --- | --- | --- |
 | `period` | `String` |  |
-| `response_code` | `int` |  |
-| `response_message` | `String` |  |
-| `transaction_date_from` | `String` |  |
-| `transaction_date_to` | `String` |  |
-| `transactions_count` | `List<dynamic>` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `String` |  |
+| `transactionDateFrom` | `String` |  |
+| `transactionDateTo` | `String` |  |
+| `transactionsCount` | `List<dynamic>` |  |
 
 #### Example: Create
 
@@ -2462,11 +2458,11 @@ Create an instance: `final transactions_turnover = client.TransactionsTurnover()
 | Field | Type | Description |
 | --- | --- | --- |
 | `period` | `String` |  |
-| `response_code` | `int` |  |
-| `response_message` | `String` |  |
-| `transaction_date_from` | `String` |  |
-| `transaction_date_to` | `String` |  |
-| `turnover` | `List<dynamic>` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `String` |  |
+| `transactionDateFrom` | `String` |  |
+| `transactionDateTo` | `String` |  |
+| `turnovers` | `List<dynamic>` |  |
 
 #### Example: Create
 
@@ -2491,22 +2487,22 @@ Create an instance: `final update_merchant = client.UpdateMerchant();`
 | Field | Type | Description |
 | --- | --- | --- |
 | `city` | `String` |  |
-| `corporate_uuid` | `String` |  |
+| `corporateUuid` | `String` |  |
 | `country` | `String` |  |
-| `merchant_category_code` | `String` |  |
+| `merchantCategoryCode` | `String` |  |
 | `name` | `String` |  |
-| `response_code` | `int` |  |
-| `response_message` | `String` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `String` |  |
 | `state` | `String` |  |
 | `street` | `String` |  |
-| `vu_nummer` | `String` |  |
+| `vuNummer` | `String` |  |
 | `zipcode` | `String` |  |
 
 #### Example: Create
 
 ```dart
 final update_merchant = await client.UpdateMerchant().create({
-  'corporate_uuid': 'example_corporate_uuid',  // String
+  'corporateUuid': 'example_corporateUuid',  // String
 });
 ```
 
@@ -2525,17 +2521,17 @@ Create an instance: `final update_template_xml = client.UpdateTemplateXml();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `int` |  |
-| `response_message` | `String` |  |
-| `template_name` | `String` |  |
-| `template_xml` | `String` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `String` |  |
+| `templateName` | `String` |  |
+| `templateXml` | `String` |  |
 
 #### Example: Create
 
 ```dart
 final update_template_xml = await client.UpdateTemplateXml().create({
-  'template_name': 'example_template_name',  // String
-  'template_xml': 'example_template_xml',  // String
+  'templateName': 'example_templateName',  // String
+  'templateXml': 'example_templateXml',  // String
 });
 ```
 
@@ -2554,8 +2550,8 @@ Create an instance: `final version = client.Version();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `app_name` | `String` |  |
-| `build_date` | `String` |  |
+| `appName` | `String` |  |
+| `buildDate` | `String` |  |
 | `version` | `String` |  |
 
 #### Example: Load

@@ -47,7 +47,7 @@ void tests() {
       final store_terminal_parameter_ref01_ent = client.StoreTerminalParameter();
       dynamic store_terminal_parameter_ref01_data = setup['data']['new']['store_terminal_parameter']['store_terminal_parameter_ref01'];
 
-      store_terminal_parameter_ref01_data = await store_terminal_parameter_ref01_ent.create(store_terminal_parameter_ref01_data);
+      store_terminal_parameter_ref01_data = (await store_terminal_parameter_ref01_ent.create(store_terminal_parameter_ref01_data)).data();
       ok(null != store_terminal_parameter_ref01_data);
 
 

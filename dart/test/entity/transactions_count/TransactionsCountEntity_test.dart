@@ -47,7 +47,7 @@ void tests() {
       final transactions_count_ref01_ent = client.TransactionsCount();
       dynamic transactions_count_ref01_data = setup['data']['new']['transactions_count']['transactions_count_ref01'];
 
-      transactions_count_ref01_data = await transactions_count_ref01_ent.create(transactions_count_ref01_data);
+      transactions_count_ref01_data = (await transactions_count_ref01_ent.create(transactions_count_ref01_data)).data();
       ok(null != transactions_count_ref01_data);
 
 

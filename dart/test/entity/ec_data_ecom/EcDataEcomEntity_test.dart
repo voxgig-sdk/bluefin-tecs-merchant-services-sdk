@@ -47,7 +47,7 @@ void tests() {
       final ec_data_ecom_ref01_ent = client.EcDataEcom();
       dynamic ec_data_ecom_ref01_data = setup['data']['new']['ec_data_ecom']['ec_data_ecom_ref01'];
 
-      ec_data_ecom_ref01_data = await ec_data_ecom_ref01_ent.create(ec_data_ecom_ref01_data);
+      ec_data_ecom_ref01_data = (await ec_data_ecom_ref01_ent.create(ec_data_ecom_ref01_data)).data();
       ok(null != ec_data_ecom_ref01_data);
 
 

@@ -2,27 +2,27 @@
   "existing": {
     "ecom_parameter": {
       "ECOM_PARAMETER00": {
-        "ecom_pass": "s32",
-        "ecom_skey": "s33",
-        "response_code": "s34",
-        "response_message": "s35",
-        "terminal_id": "TERMINAL01",
+        "ecomPass": "s32",
+        "ecomSkey": "s33",
+        "responseCode": "s34",
+        "responseMessage": "s35",
+        "terminalId": "s36",
         "id": "ECOM_PARAMETER00"
       },
       "ECOM_PARAMETER01": {
-        "ecom_pass": "s64",
-        "ecom_skey": "s65",
-        "response_code": "s66",
-        "response_message": "s67",
-        "terminal_id": "TERMINAL01",
+        "ecomPass": "s64",
+        "ecomSkey": "s65",
+        "responseCode": "s66",
+        "responseMessage": "s67",
+        "terminalId": "s68",
         "id": "ECOM_PARAMETER01"
       },
       "ECOM_PARAMETER02": {
-        "ecom_pass": "s96",
-        "ecom_skey": "s97",
-        "response_code": "s98",
-        "response_message": "s99",
-        "terminal_id": "TERMINAL01",
+        "ecomPass": "s96",
+        "ecomSkey": "s97",
+        "responseCode": "s98",
+        "responseMessage": "s99",
+        "terminalId": "s9a",
         "id": "ECOM_PARAMETER02"
       }
     }
@@ -30,11 +30,11 @@
   "new": {
     "ecom_parameter": {
       "ecom_parameter_ref01": {
-        "ecom_pass": "sc8",
-        "ecom_skey": "sc9",
-        "response_code": "sca",
-        "response_message": "scb",
-        "terminal_id": "TERMINAL01"
+        "ecomPass": "sc8",
+        "ecomSkey": "sc9",
+        "responseCode": "sca",
+        "responseMessage": "scb",
+        "terminalId": "scc"
       }
     }
   }

@@ -14,6 +14,8 @@ typedef struct ecom_parameter_entity {
   voxgig_value* data;     // Map
   voxgig_value* mtch;     // Map
   Context* entctx;
+  // Set once a successful `remove` resolves on this instance.
+  bool deleted;
 } ecom_parameter_entity;
 
 typedef void (*ecom_parameter_postdone_fn)(ecom_parameter_entity* self, Context* ctx);
@@ -24,11 +26,14 @@ static const char* ecom_parameter_get_name(Entity* e);
 static Entity* ecom_parameter_make(Entity* e);
 static voxgig_value* ecom_parameter_data(Entity* e, voxgig_value* args);
 static voxgig_value* ecom_parameter_matchv(Entity* e, voxgig_value* args);
-static voxgig_value* ecom_parameter_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
-static voxgig_value* ecom_parameter_list(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
-static voxgig_value* ecom_parameter_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
-static voxgig_value* ecom_parameter_update(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
-static voxgig_value* ecom_parameter_remove(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+// Ops resolve to the ENTITY (`list` to a NULL-terminated array of them).
+static Entity* ecom_parameter_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static Entity** ecom_parameter_list(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static Entity* ecom_parameter_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
+static Entity* ecom_parameter_update(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
+static Entity* ecom_parameter_remove(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static void ecom_parameter_mark_deleted(Entity* e);
+static bool ecom_parameter_deleted(Entity* e);
 
 static Context* ecom_parameter_ent_ctx(ecom_parameter_entity* self) {
   return self->entctx;
@@ -236,13 +241,13 @@ static voxgig_value* ecom_parameter_matchv(Entity* e, voxgig_value* args) {
   return voxgig_clone(self->mtch);
 }
 
-static voxgig_value* ecom_parameter_load(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* ecom_parameter_load(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("load", "ecom_parameter");
   return NULL;
 }
 
-static voxgig_value* ecom_parameter_list(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity** ecom_parameter_list(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("list", "ecom_parameter");
   return NULL;
@@ -260,7 +265,7 @@ static void ecom_parameter_create_postdone(ecom_parameter_entity* self, Context*
   }
 }
 
-static voxgig_value* ecom_parameter_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err) {
+static Entity* ecom_parameter_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err) {
   ecom_parameter_entity* self = (ecom_parameter_entity*)e;
   CtxSpec cs;
   memset(&cs, 0, sizeof(cs));
@@ -270,20 +275,38 @@ static voxgig_value* ecom_parameter_create(Entity* e, voxgig_value* reqdata, vox
   cs.data = self->data;
   cs.reqdata = reqdata;
   Context* ctx = make_context_util(cs, ecom_parameter_ent_ctx(self));
-  return ecom_parameter_run_op(self, ctx, ecom_parameter_create_postdone, err);
+  ecom_parameter_run_op(self, ctx, ecom_parameter_create_postdone, err);
+  if (*err) return NULL;
+
+  // The operation resolves to THIS entity: run_op has just absorbed the
+  // result into it, and the caller reaches the record through vt->data.
+  // See AGENTS.md "Entity operations return ENTITIES".
+
+  return e;
 }
 
 
-static voxgig_value* ecom_parameter_update(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* ecom_parameter_update(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("update", "ecom_parameter");
   return NULL;
 }
 
-static voxgig_value* ecom_parameter_remove(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* ecom_parameter_remove(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("remove", "ecom_parameter");
   return NULL;
+}
+
+// `remove` resolves to the entity, marked. The instance KEEPS the data it
+// held - a caller can still read what was deleted - but it is no longer a
+// live record.
+static void ecom_parameter_mark_deleted(Entity* e) {
+  ((ecom_parameter_entity*)e)->deleted = true;
+}
+
+static bool ecom_parameter_deleted(Entity* e) {
+  return ((ecom_parameter_entity*)e)->deleted;
 }
 
 static const EntityVT ecom_parameter_VT = {
@@ -291,6 +314,8 @@ static const EntityVT ecom_parameter_VT = {
   ecom_parameter_make,
   ecom_parameter_data,
   ecom_parameter_matchv,
+  ecom_parameter_mark_deleted,
+  ecom_parameter_deleted,
   ecom_parameter_load,
   ecom_parameter_list,
   ecom_parameter_create,

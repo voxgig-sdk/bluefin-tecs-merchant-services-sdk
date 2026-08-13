@@ -2,33 +2,33 @@
   "existing": {
     "reactivate_terminal": {
       "REACTIVATE_TERMINAL00": {
-        "corporate_uuid": "s46",
-        "package_order_uuid": "s47",
-        "product_order_uuid": "s48",
-        "reactivation_reason": "s49",
-        "response_code": "s4a",
-        "response_message": "s4b",
-        "terminal_id": "TERMINAL01",
+        "corporateUuid": "s46",
+        "packageOrderUuid": "s47",
+        "productOrderUuid": "s48",
+        "reactivationReason": "s49",
+        "responseCode": "s4a",
+        "responseMessage": "s4b",
+        "terminalId": "s4c",
         "id": "REACTIVATE_TERMINAL00"
       },
       "REACTIVATE_TERMINAL01": {
-        "corporate_uuid": "s8c",
-        "package_order_uuid": "s8d",
-        "product_order_uuid": "s8e",
-        "reactivation_reason": "s8f",
-        "response_code": "s90",
-        "response_message": "s91",
-        "terminal_id": "TERMINAL01",
+        "corporateUuid": "s8c",
+        "packageOrderUuid": "s8d",
+        "productOrderUuid": "s8e",
+        "reactivationReason": "s8f",
+        "responseCode": "s90",
+        "responseMessage": "s91",
+        "terminalId": "s92",
         "id": "REACTIVATE_TERMINAL01"
       },
       "REACTIVATE_TERMINAL02": {
-        "corporate_uuid": "sd2",
-        "package_order_uuid": "sd3",
-        "product_order_uuid": "sd4",
-        "reactivation_reason": "sd5",
-        "response_code": "sd6",
-        "response_message": "sd7",
-        "terminal_id": "TERMINAL01",
+        "corporateUuid": "sd2",
+        "packageOrderUuid": "sd3",
+        "productOrderUuid": "sd4",
+        "reactivationReason": "sd5",
+        "responseCode": "sd6",
+        "responseMessage": "sd7",
+        "terminalId": "sd8",
         "id": "REACTIVATE_TERMINAL02"
       }
     }
@@ -36,13 +36,13 @@
   "new": {
     "reactivate_terminal": {
       "reactivate_terminal_ref01": {
-        "corporate_uuid": "s118",
-        "package_order_uuid": "s119",
-        "product_order_uuid": "s11a",
-        "reactivation_reason": "s11b",
-        "response_code": "s11c",
-        "response_message": "s11d",
-        "terminal_id": "TERMINAL01"
+        "corporateUuid": "s118",
+        "packageOrderUuid": "s119",
+        "productOrderUuid": "s11a",
+        "reactivationReason": "s11b",
+        "responseCode": "s11c",
+        "responseMessage": "s11d",
+        "terminalId": "s11e"
       }
     }
   }

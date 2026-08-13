@@ -14,6 +14,8 @@ typedef struct terminal_id_entity {
   voxgig_value* data;     // Map
   voxgig_value* mtch;     // Map
   Context* entctx;
+  // Set once a successful `remove` resolves on this instance.
+  bool deleted;
 } terminal_id_entity;
 
 typedef void (*terminal_id_postdone_fn)(terminal_id_entity* self, Context* ctx);
@@ -24,11 +26,14 @@ static const char* terminal_id_get_name(Entity* e);
 static Entity* terminal_id_make(Entity* e);
 static voxgig_value* terminal_id_data(Entity* e, voxgig_value* args);
 static voxgig_value* terminal_id_matchv(Entity* e, voxgig_value* args);
-static voxgig_value* terminal_id_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
-static voxgig_value* terminal_id_list(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
-static voxgig_value* terminal_id_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
-static voxgig_value* terminal_id_update(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
-static voxgig_value* terminal_id_remove(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+// Ops resolve to the ENTITY (`list` to a NULL-terminated array of them).
+static Entity* terminal_id_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static Entity** terminal_id_list(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static Entity* terminal_id_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
+static Entity* terminal_id_update(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
+static Entity* terminal_id_remove(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static void terminal_id_mark_deleted(Entity* e);
+static bool terminal_id_deleted(Entity* e);
 
 static Context* terminal_id_ent_ctx(terminal_id_entity* self) {
   return self->entctx;
@@ -236,13 +241,13 @@ static voxgig_value* terminal_id_matchv(Entity* e, voxgig_value* args) {
   return voxgig_clone(self->mtch);
 }
 
-static voxgig_value* terminal_id_load(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* terminal_id_load(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("load", "terminal_id");
   return NULL;
 }
 
-static voxgig_value* terminal_id_list(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity** terminal_id_list(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("list", "terminal_id");
   return NULL;
@@ -260,7 +265,7 @@ static void terminal_id_create_postdone(terminal_id_entity* self, Context* ctx) 
   }
 }
 
-static voxgig_value* terminal_id_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err) {
+static Entity* terminal_id_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err) {
   terminal_id_entity* self = (terminal_id_entity*)e;
   CtxSpec cs;
   memset(&cs, 0, sizeof(cs));
@@ -270,20 +275,38 @@ static voxgig_value* terminal_id_create(Entity* e, voxgig_value* reqdata, voxgig
   cs.data = self->data;
   cs.reqdata = reqdata;
   Context* ctx = make_context_util(cs, terminal_id_ent_ctx(self));
-  return terminal_id_run_op(self, ctx, terminal_id_create_postdone, err);
+  terminal_id_run_op(self, ctx, terminal_id_create_postdone, err);
+  if (*err) return NULL;
+
+  // The operation resolves to THIS entity: run_op has just absorbed the
+  // result into it, and the caller reaches the record through vt->data.
+  // See AGENTS.md "Entity operations return ENTITIES".
+
+  return e;
 }
 
 
-static voxgig_value* terminal_id_update(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* terminal_id_update(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("update", "terminal_id");
   return NULL;
 }
 
-static voxgig_value* terminal_id_remove(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* terminal_id_remove(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("remove", "terminal_id");
   return NULL;
+}
+
+// `remove` resolves to the entity, marked. The instance KEEPS the data it
+// held - a caller can still read what was deleted - but it is no longer a
+// live record.
+static void terminal_id_mark_deleted(Entity* e) {
+  ((terminal_id_entity*)e)->deleted = true;
+}
+
+static bool terminal_id_deleted(Entity* e) {
+  return ((terminal_id_entity*)e)->deleted;
 }
 
 static const EntityVT terminal_id_VT = {
@@ -291,6 +314,8 @@ static const EntityVT terminal_id_VT = {
   terminal_id_make,
   terminal_id_data,
   terminal_id_matchv,
+  terminal_id_mark_deleted,
+  terminal_id_deleted,
   terminal_id_load,
   terminal_id_list,
   terminal_id_create,

@@ -26,8 +26,8 @@ import {
 describe('EcrDataEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when BLUEFINTECSMERCHANTSERVICES_TEST_LIVE=TRUE.
-  afterEach(liveDelay('BLUEFINTECSMERCHANTSERVICES_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE=TRUE.
+  afterEach(liveDelay('BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = BluefinTecsMerchantServicesSDK.test()
@@ -62,7 +62,7 @@ describe('EcrDataEntity', async () => {
     const ecr_data_ref01_ent = client.EcrData()
     let ecr_data_ref01_data = setup.data.new.ecr_data['ecr_data_ref01']
 
-    ecr_data_ref01_data = await ecr_data_ref01_ent.create(ecr_data_ref01_data)
+    ecr_data_ref01_data = (await ecr_data_ref01_ent.create(ecr_data_ref01_data)).data()
     assert(null != ecr_data_ref01_data)
 
 

@@ -15,429 +15,439 @@ namespace BluefinTecsMerchantServicesSdk.Types;
 
 public record CancelTransaction
 {
-    public string? acquirer_id { get; init; }
-    public string? acquirer_name { get; init; }
-    public string? actual_bonus_point { get; init; }
+    public string? acquirerId { get; init; }
+    public string? acquirerName { get; init; }
+    public string? actualBonusPoints { get; init; }
     public long? amount { get; init; }
-    public string? authorization_code { get; init; }
-    public string? balance_amount { get; init; }
-    public string? card_brand { get; init; }
-    public string? card_number { get; init; }
-    public long client_id { get; init; }
+    public string? authorizationCode { get; init; }
+    public string? balanceAmount { get; init; }
+    public string? cardBrand { get; init; }
+    public string? cardNumber { get; init; }
+    public long clientId { get; init; }
     public string currency { get; init; }
     public string? cvc { get; init; }
-    public string? ec_data { get; init; }
-    public string? ecr_data { get; init; }
-    public string? emv_data { get; init; }
-    public long? exchange_fee { get; init; }
-    public string? exchange_rate { get; init; }
-    public string? language_code { get; init; }
-    public string? merchant_address { get; init; }
-    public string? merchant_name { get; init; }
-    public string? merchant_number { get; init; }
-    public string? message_type { get; init; }
-    public long? original_trace_number { get; init; }
-    public string? original_transaction_id { get; init; }
+    public string? ecData { get; init; }
+    public string? ecrData { get; init; }
+    public string? emvData { get; init; }
+    public long? exchangeFee { get; init; }
+    public string? exchangeRate { get; init; }
+    public string? languageCode { get; init; }
+    public string? merchantAddress { get; init; }
+    public string? merchantName { get; init; }
+    public string? merchantNumber { get; init; }
+    public string? messageType { get; init; }
+    public long? originalTraceNumber { get; init; }
+    public string? originalTransactionId { get; init; }
     public string? password { get; init; }
-    public string? payment_reason { get; init; }
-    public string? receipt_footer { get; init; }
-    public string? receipt_header { get; init; }
-    public long? receipt_layout { get; init; }
-    public string receipt_number { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
-    public string? serial_number { get; init; }
+    public string? paymentReason { get; init; }
+    public string? receiptFooter { get; init; }
+    public string? receiptHeader { get; init; }
+    public long? receiptLayout { get; init; }
+    public string receiptNumber { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public string? serialNumber { get; init; }
     public string? svc { get; init; }
-    public long terminal_id { get; init; }
-    public string? terminal_location { get; init; }
-    public long? trace_number { get; init; }
-    public string? transaction_date { get; init; }
-    public string? transaction_id { get; init; }
-    public string? tx_type { get; init; }
-    public string? user_data { get; init; }
+    public long terminalId { get; init; }
+    public string? terminalLocation { get; init; }
+    public long? traceNumber { get; init; }
+    public string? transactionDate { get; init; }
+    public string? transactionId { get; init; }
+    public string? txType { get; init; }
+    public string? userData { get; init; }
 }
 
 public record CancelTransactionCreateData
 {
-    public string? acquirer_id { get; init; }
-    public string? acquirer_name { get; init; }
-    public string? actual_bonus_point { get; init; }
+    public string? acquirerId { get; init; }
+    public string? acquirerName { get; init; }
+    public string? actualBonusPoints { get; init; }
     public long? amount { get; init; }
-    public string? authorization_code { get; init; }
-    public string? balance_amount { get; init; }
-    public string? card_brand { get; init; }
-    public string? card_number { get; init; }
-    public long client_id { get; init; }
+    public string? authorizationCode { get; init; }
+    public string? balanceAmount { get; init; }
+    public string? cardBrand { get; init; }
+    public string? cardNumber { get; init; }
+    public long clientId { get; init; }
     public string currency { get; init; }
     public string? cvc { get; init; }
-    public string? ec_data { get; init; }
-    public string? ecr_data { get; init; }
-    public string? emv_data { get; init; }
-    public long? exchange_fee { get; init; }
-    public string? exchange_rate { get; init; }
-    public string? language_code { get; init; }
-    public string? merchant_address { get; init; }
-    public string? merchant_name { get; init; }
-    public string? merchant_number { get; init; }
-    public string? message_type { get; init; }
-    public long? original_trace_number { get; init; }
-    public string? original_transaction_id { get; init; }
+    public string? ecData { get; init; }
+    public string? ecrData { get; init; }
+    public string? emvData { get; init; }
+    public long? exchangeFee { get; init; }
+    public string? exchangeRate { get; init; }
+    public string? languageCode { get; init; }
+    public string? merchantAddress { get; init; }
+    public string? merchantName { get; init; }
+    public string? merchantNumber { get; init; }
+    public string? messageType { get; init; }
+    public long? originalTraceNumber { get; init; }
+    public string? originalTransactionId { get; init; }
     public string? password { get; init; }
-    public string? payment_reason { get; init; }
-    public string? receipt_footer { get; init; }
-    public string? receipt_header { get; init; }
-    public long? receipt_layout { get; init; }
-    public string receipt_number { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
-    public string? serial_number { get; init; }
+    public string? paymentReason { get; init; }
+    public string? receiptFooter { get; init; }
+    public string? receiptHeader { get; init; }
+    public long? receiptLayout { get; init; }
+    public string receiptNumber { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public string? serialNumber { get; init; }
     public string? svc { get; init; }
-    public long terminal_id { get; init; }
-    public string? terminal_location { get; init; }
-    public long? trace_number { get; init; }
-    public string? transaction_date { get; init; }
-    public string? transaction_id { get; init; }
-    public string? tx_type { get; init; }
-    public string? user_data { get; init; }
+    public long terminalId { get; init; }
+    public string? terminalLocation { get; init; }
+    public long? traceNumber { get; init; }
+    public string? transactionDate { get; init; }
+    public string? transactionId { get; init; }
+    public string? txType { get; init; }
+    public string? userData { get; init; }
 }
 
 public record CheckCardBlackListed
 {
-    public string? card_no { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
+    public string? cardNo { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
 }
 
 public record CheckCardBlackListedCreateData
 {
-    public string? card_no { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
+    public string? cardNo { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
 }
 
 public record CreateProduct
 {
-    public long? acquirer_id { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
-    public string template_name { get; init; }
-    public string template_type { get; init; }
-    public string template_xml { get; init; }
-    public string terminal_type { get; init; }
+    public long? acquirerId { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public string templateName { get; init; }
+    public string templateType { get; init; }
+    public string templateXml { get; init; }
+    public string terminalType { get; init; }
 }
 
 public record CreateProductCreateData
 {
-    public long? acquirer_id { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
-    public string template_name { get; init; }
-    public string template_type { get; init; }
-    public string template_xml { get; init; }
-    public string terminal_type { get; init; }
+    public long? acquirerId { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public string templateName { get; init; }
+    public string templateType { get; init; }
+    public string templateXml { get; init; }
+    public string terminalType { get; init; }
 }
 
 public record DeactivateTerminal
 {
-    public string? corporate_uuid { get; init; }
-    public string deactivation_reason { get; init; }
-    public string? package_order_uuid { get; init; }
-    public string? product_order_uuid { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
-    public long terminal_id { get; init; }
+    public string? corporateUuid { get; init; }
+    public string deactivationReason { get; init; }
+    public string? packageOrderUuid { get; init; }
+    public string? productOrderUuid { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public long terminalId { get; init; }
 }
 
 public record DeactivateTerminalCreateData
 {
-    public string? corporate_uuid { get; init; }
-    public string deactivation_reason { get; init; }
-    public string? package_order_uuid { get; init; }
-    public string? product_order_uuid { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
-    public long terminal_id { get; init; }
+    public string? corporateUuid { get; init; }
+    public string deactivationReason { get; init; }
+    public string? packageOrderUuid { get; init; }
+    public string? productOrderUuid { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public long terminalId { get; init; }
 }
 
 public record DigitalServicesApi
 {
-    public string clearing_date_from { get; init; }
-    public string clearing_date_to { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
-    public long? tx_count { get; init; }
-    public string? tx_id_end { get; init; }
-    public string? tx_id_start { get; init; }
-    public long? tx_seq_no_end { get; init; }
-    public long? tx_seq_no_start { get; init; }
-    public long? tx_total { get; init; }
+    public string clearingDateFrom { get; init; }
+    public string clearingDateTo { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public long? txCount { get; init; }
+    public string? txIdEnd { get; init; }
+    public string? txIdStart { get; init; }
+    public long? txSeqNoEnd { get; init; }
+    public long? txSeqNoStart { get; init; }
+    public long? txTotal { get; init; }
 }
 
 public record DigitalServicesApiLoadMatch
 {
-    public string? clearing_date_from { get; init; }
-    public string? clearing_date_to { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
-    public long? tx_count { get; init; }
-    public string? tx_id_end { get; init; }
-    public string? tx_id_start { get; init; }
-    public long? tx_seq_no_end { get; init; }
-    public long? tx_seq_no_start { get; init; }
-    public long? tx_total { get; init; }
+    public string? clearingDateFrom { get; init; }
+    public string? clearingDateTo { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public long? txCount { get; init; }
+    public string? txIdEnd { get; init; }
+    public string? txIdStart { get; init; }
+    public long? txSeqNoEnd { get; init; }
+    public long? txSeqNoStart { get; init; }
+    public long? txTotal { get; init; }
 }
 
 public record DigitalServicesApiCreateData
 {
     public string? file_id { get; init; }
+    public string clearingDateFrom { get; init; }
+    public string clearingDateTo { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public long? txCount { get; init; }
+    public string? txIdEnd { get; init; }
+    public string? txIdStart { get; init; }
+    public long? txSeqNoEnd { get; init; }
+    public long? txSeqNoStart { get; init; }
+    public long? txTotal { get; init; }
 }
 
 public record EcDataEcom
 {
-    public string? ecom_data { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
-    public long terminal_id { get; init; }
-    public string transaction_id { get; init; }
-    public string transaction_type { get; init; }
+    public string? ecomData { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public long terminalId { get; init; }
+    public string transactionId { get; init; }
+    public string transactionType { get; init; }
 }
 
 public record EcDataEcomCreateData
 {
-    public string? ecom_data { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
-    public long terminal_id { get; init; }
-    public string transaction_id { get; init; }
-    public string transaction_type { get; init; }
+    public string? ecomData { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public long terminalId { get; init; }
+    public string transactionId { get; init; }
+    public string transactionType { get; init; }
 }
 
 public record EcomParameter
 {
-    public string? ecom_pass { get; init; }
-    public string? ecom_skey { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
-    public long terminal_id { get; init; }
+    public string? ecomPass { get; init; }
+    public string? ecomSkey { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public long terminalId { get; init; }
 }
 
 public record EcomParameterCreateData
 {
-    public string? ecom_pass { get; init; }
-    public string? ecom_skey { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
-    public long terminal_id { get; init; }
+    public string? ecomPass { get; init; }
+    public string? ecomSkey { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public long terminalId { get; init; }
 }
 
 public record EcrData
 {
-    public string? ecr_data { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
-    public long terminal_id { get; init; }
-    public string transaction_id { get; init; }
-    public string transaction_type { get; init; }
+    public string? ecrData { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public long terminalId { get; init; }
+    public string transactionId { get; init; }
+    public string transactionType { get; init; }
 }
 
 public record EcrDataCreateData
 {
-    public string? ecr_data { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
-    public long terminal_id { get; init; }
-    public string transaction_id { get; init; }
-    public string transaction_type { get; init; }
+    public string? ecrData { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public long terminalId { get; init; }
+    public string transactionId { get; init; }
+    public string transactionType { get; init; }
 }
 
 public record EmvData
 {
-    public string? emv_data { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
-    public long terminal_id { get; init; }
-    public string transaction_id { get; init; }
-    public string transaction_type { get; init; }
+    public string? emvData { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public long terminalId { get; init; }
+    public string transactionId { get; init; }
+    public string transactionType { get; init; }
 }
 
 public record EmvDataCreateData
 {
-    public string? emv_data { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
-    public long terminal_id { get; init; }
-    public string transaction_id { get; init; }
-    public string transaction_type { get; init; }
+    public string? emvData { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public long terminalId { get; init; }
+    public string transactionId { get; init; }
+    public string transactionType { get; init; }
 }
 
 public record EnableAcquiring
 {
-    public long? account_no { get; init; }
-    public Dictionary<string, object?>? additional_data { get; init; }
-    public string corporate_uuid { get; init; }
+    public long? accountNo { get; init; }
+    public Dictionary<string, object?>? additionalData { get; init; }
+    public string corporateUuid { get; init; }
     public string currency { get; init; }
-    public long merchant_category_code { get; init; }
-    public string package_order_uuid { get; init; }
-    public string product_order_uuid { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
-    public long? sorting_code { get; init; }
-    public string template_name { get; init; }
-    public List<object?>? terminal_id { get; init; }
-    public string? terminal_id_acq { get; init; }
-    public string? vu_nummer { get; init; }
+    public long merchantCategoryCode { get; init; }
+    public string packageOrderUuid { get; init; }
+    public string productOrderUuid { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public long? sortingCode { get; init; }
+    public string templateName { get; init; }
+    public string? terminalIdAcq { get; init; }
+    public List<object?>? terminalIds { get; init; }
+    public string? vuNummer { get; init; }
 }
 
 public record EnableAcquiringCreateData
 {
-    public long? account_no { get; init; }
-    public Dictionary<string, object?>? additional_data { get; init; }
-    public string corporate_uuid { get; init; }
+    public long? accountNo { get; init; }
+    public Dictionary<string, object?>? additionalData { get; init; }
+    public string corporateUuid { get; init; }
     public string currency { get; init; }
-    public long merchant_category_code { get; init; }
-    public string package_order_uuid { get; init; }
-    public string product_order_uuid { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
-    public long? sorting_code { get; init; }
-    public string template_name { get; init; }
-    public List<object?>? terminal_id { get; init; }
-    public string? terminal_id_acq { get; init; }
-    public string? vu_nummer { get; init; }
+    public long merchantCategoryCode { get; init; }
+    public string packageOrderUuid { get; init; }
+    public string productOrderUuid { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public long? sortingCode { get; init; }
+    public string templateName { get; init; }
+    public string? terminalIdAcq { get; init; }
+    public List<object?>? terminalIds { get; init; }
+    public string? vuNummer { get; init; }
 }
 
 public record GetMerchantContractNumber
 {
-    public string merchant_contract_number { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
+    public string merchantContractNumber { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
 }
 
 public record GetMerchantContractNumberCreateData
 {
-    public string merchant_contract_number { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
+    public string merchantContractNumber { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
 }
 
 public record GetTemplateXml
 {
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
-    public string template_name { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public string templateName { get; init; }
 }
 
 public record GetTemplateXmlCreateData
 {
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
-    public string template_name { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public string templateName { get; init; }
 }
 
 public record IntroduceMandator
 {
-    public string mandator_name { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
+    public string mandatorName { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
 }
 
 public record IntroduceMandatorCreateData
 {
-    public string mandator_name { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
+    public string mandatorName { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
 }
 
 public record IntroducePackage
 {
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
-    public string terminal_template_description { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public string terminalTemplateDescription { get; init; }
 }
 
 public record IntroducePackageCreateData
 {
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
-    public string terminal_template_description { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public string terminalTemplateDescription { get; init; }
 }
 
 public record KeepAlive
 {
     public string? hwserialno { get; init; }
-    public string? ka_date_time_from { get; init; }
-    public string? ka_date_time_to { get; init; }
-    public List<object?>? keep_alive_data { get; init; }
+    public string? kaDateTimeFrom { get; init; }
+    public string? kaDateTimeTo { get; init; }
+    public List<object?>? keepAliveData { get; init; }
     public Dictionary<string, object?>? pagination { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
-    public string? terminal_date_time_from { get; init; }
-    public string? terminal_date_time_to { get; init; }
-    public long? terminal_id { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public string? terminalDateTimeFrom { get; init; }
+    public string? terminalDateTimeTo { get; init; }
+    public long? terminalId { get; init; }
 }
 
 public record KeepAliveCreateData
 {
     public string? hwserialno { get; init; }
-    public string? ka_date_time_from { get; init; }
-    public string? ka_date_time_to { get; init; }
-    public List<object?>? keep_alive_data { get; init; }
+    public string? kaDateTimeFrom { get; init; }
+    public string? kaDateTimeTo { get; init; }
+    public List<object?>? keepAliveData { get; init; }
     public Dictionary<string, object?>? pagination { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
-    public string? terminal_date_time_from { get; init; }
-    public string? terminal_date_time_to { get; init; }
-    public long? terminal_id { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public string? terminalDateTimeFrom { get; init; }
+    public string? terminalDateTimeTo { get; init; }
+    public long? terminalId { get; init; }
 }
 
 public record ListTerminal
 {
-    public List<object?>? corporate_uuid { get; init; }
+    public List<object?>? corporateUuid { get; init; }
     public Dictionary<string, object?>? filter { get; init; }
     public Dictionary<string, object?>? pagination { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
-    public List<object?>? terminal { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public List<object?>? terminals { get; init; }
 }
 
 public record ListTerminalCreateData
 {
-    public List<object?>? corporate_uuid { get; init; }
+    public List<object?>? corporateUuid { get; init; }
     public Dictionary<string, object?>? filter { get; init; }
     public Dictionary<string, object?>? pagination { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
-    public List<object?>? terminal { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public List<object?>? terminals { get; init; }
 }
 
 public record MandatorClearingExport
 {
-    public string clearing_date_from { get; init; }
-    public string clearing_date_to { get; init; }
+    public string clearingDateFrom { get; init; }
+    public string clearingDateTo { get; init; }
     public Dictionary<string, object?>? pagination { get; init; }
-    public List<object?>? record { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
+    public List<object?>? records { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
 }
 
 public record MandatorClearingExportCreateData
 {
-    public string clearing_date_from { get; init; }
-    public string clearing_date_to { get; init; }
+    public string clearingDateFrom { get; init; }
+    public string clearingDateTo { get; init; }
     public Dictionary<string, object?>? pagination { get; init; }
-    public List<object?>? record { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
+    public List<object?>? records { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
 }
 
 public record MandatorClearingExportDownload
 {
-    public string clearing_date_from { get; init; }
-    public string clearing_date_to { get; init; }
-    public string? file_id { get; init; }
-    public string? filename_template { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
+    public string clearingDateFrom { get; init; }
+    public string clearingDateTo { get; init; }
+    public string? fileId { get; init; }
+    public string? filenameTemplate { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
     public string? status { get; init; }
 }
 
@@ -448,814 +458,806 @@ public record MandatorClearingExportDownloadLoadMatch
 
 public record MandatorClearingExportDownloadCreateData
 {
-    public string clearing_date_from { get; init; }
-    public string clearing_date_to { get; init; }
-    public string? file_id { get; init; }
-    public string? filename_template { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
+    public string clearingDateFrom { get; init; }
+    public string clearingDateTo { get; init; }
+    public string? fileId { get; init; }
+    public string? filenameTemplate { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
     public string? status { get; init; }
 }
 
 public record MandatorClearingExportSummary
 {
-    public string clearing_date_from { get; init; }
-    public string clearing_date_to { get; init; }
-    public List<object?>? record { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
+    public string clearingDateFrom { get; init; }
+    public string clearingDateTo { get; init; }
+    public List<object?>? records { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
 }
 
 public record MandatorClearingExportSummaryCreateData
 {
-    public string clearing_date_from { get; init; }
-    public string clearing_date_to { get; init; }
-    public List<object?>? record { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
+    public string clearingDateFrom { get; init; }
+    public string clearingDateTo { get; init; }
+    public List<object?>? records { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
 }
 
 public record MerchantPortalServicesApi
 {
-    public string? authorization_code { get; init; }
-    public string? card_brand { get; init; }
-    public string? clearing_amount_from { get; init; }
-    public string? clearing_amount_to { get; init; }
-    public string? clearing_currency { get; init; }
-    public string? clearing_status { get; init; }
-    public string? corporate_uuid { get; init; }
-    public string? order_by_transaction_date { get; init; }
+    public string? authorizationCode { get; init; }
+    public string? cardBrand { get; init; }
+    public string? clearingAmountFrom { get; init; }
+    public string? clearingAmountTo { get; init; }
+    public string? clearingCurrency { get; init; }
+    public string? clearingStatus { get; init; }
+    public string? corporateUUID { get; init; }
+    public string? orderByTransactionDate { get; init; }
     public Dictionary<string, object?>? pagination { get; init; }
-    public string? receipt_number { get; init; }
-    public string? referenced_transaction_id { get; init; }
-    public string? retrieval_reference_number { get; init; }
-    public long? source_id { get; init; }
-    public string? tecsengine_response_code_from { get; init; }
-    public string? tecsengine_response_code_to { get; init; }
-    public long? terminal_id { get; init; }
-    public string? trace_number { get; init; }
-    public string? transaction_amount_from { get; init; }
-    public string? transaction_amount_to { get; init; }
-    public string? transaction_date_from { get; init; }
-    public string? transaction_date_to { get; init; }
-    public string? transaction_id { get; init; }
-    public string? transaction_type { get; init; }
+    public string? receiptNumber { get; init; }
+    public string? referencedTransactionId { get; init; }
+    public string? retrievalReferenceNumber { get; init; }
+    public long? sourceId { get; init; }
+    public string? tecsengineResponseCodeFrom { get; init; }
+    public string? tecsengineResponseCodeTo { get; init; }
+    public long? terminalId { get; init; }
+    public string? traceNumber { get; init; }
+    public string? transactionAmountFrom { get; init; }
+    public string? transactionAmountTo { get; init; }
+    public string? transactionDateFrom { get; init; }
+    public string? transactionDateTo { get; init; }
+    public string? transactionId { get; init; }
+    public string? transactionType { get; init; }
     public string? wallet { get; init; }
 }
 
 public record MerchantPortalServicesApiCreateData
 {
-    public string? authorization_code { get; init; }
-    public string? card_brand { get; init; }
-    public string? clearing_amount_from { get; init; }
-    public string? clearing_amount_to { get; init; }
-    public string? clearing_currency { get; init; }
-    public string? clearing_status { get; init; }
-    public string? corporate_uuid { get; init; }
-    public string? order_by_transaction_date { get; init; }
+    public string? authorizationCode { get; init; }
+    public string? cardBrand { get; init; }
+    public string? clearingAmountFrom { get; init; }
+    public string? clearingAmountTo { get; init; }
+    public string? clearingCurrency { get; init; }
+    public string? clearingStatus { get; init; }
+    public string? corporateUUID { get; init; }
+    public string? orderByTransactionDate { get; init; }
     public Dictionary<string, object?>? pagination { get; init; }
-    public string? receipt_number { get; init; }
-    public string? referenced_transaction_id { get; init; }
-    public string? retrieval_reference_number { get; init; }
-    public long? source_id { get; init; }
-    public string? tecsengine_response_code_from { get; init; }
-    public string? tecsengine_response_code_to { get; init; }
-    public long? terminal_id { get; init; }
-    public string? trace_number { get; init; }
-    public string? transaction_amount_from { get; init; }
-    public string? transaction_amount_to { get; init; }
-    public string? transaction_date_from { get; init; }
-    public string? transaction_date_to { get; init; }
-    public string? transaction_id { get; init; }
-    public string? transaction_type { get; init; }
+    public string? receiptNumber { get; init; }
+    public string? referencedTransactionId { get; init; }
+    public string? retrievalReferenceNumber { get; init; }
+    public long? sourceId { get; init; }
+    public string? tecsengineResponseCodeFrom { get; init; }
+    public string? tecsengineResponseCodeTo { get; init; }
+    public long? terminalId { get; init; }
+    public string? traceNumber { get; init; }
+    public string? transactionAmountFrom { get; init; }
+    public string? transactionAmountTo { get; init; }
+    public string? transactionDateFrom { get; init; }
+    public string? transactionDateTo { get; init; }
+    public string? transactionId { get; init; }
+    public string? transactionType { get; init; }
     public string? wallet { get; init; }
 }
 
 public record MoveTid
 {
-    public List<object?> productorderuuid { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
-    public string? target_packageorderuuid { get; init; }
-    public string? target_productorderuuid { get; init; }
+    public List<object?> productorderuuids { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public string? targetPackageorderuuid { get; init; }
+    public string? targetProductorderuuid { get; init; }
 }
 
 public record MoveTidCreateData
 {
-    public List<object?> productorderuuid { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
-    public string? target_packageorderuuid { get; init; }
-    public string? target_productorderuuid { get; init; }
+    public List<object?> productorderuuids { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public string? targetPackageorderuuid { get; init; }
+    public string? targetProductorderuuid { get; init; }
 }
 
 public record PaymentManual
 {
-    public string? acquirer_name { get; init; }
+    public string? acquirerName { get; init; }
     public long amount { get; init; }
-    public string? authorization_number { get; init; }
-    public string card_number { get; init; }
-    public string? card_type { get; init; }
+    public string? authorizationNumber { get; init; }
+    public string cardNumber { get; init; }
+    public string? cardType { get; init; }
     public string currency { get; init; }
     public string? cvc { get; init; }
-    public string? date_time_tx { get; init; }
-    public string exp_date { get; init; }
-    public string? merchant_id { get; init; }
-    public string? original_transaction_id { get; init; }
+    public string? dateTimeTx { get; init; }
+    public string expDate { get; init; }
+    public string? merchantId { get; init; }
+    public string? originalTransactionId { get; init; }
     public string? password { get; init; }
-    public string? response_code { get; init; }
-    public string? response_message { get; init; }
-    public string? terminal_id { get; init; }
-    public string? transaction_id { get; init; }
+    public string? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public string? terminalId { get; init; }
+    public string? transactionId { get; init; }
     public string txtype { get; init; }
 }
 
 public record PaymentManualCreateData
 {
-    public string? acquirer_name { get; init; }
+    public string? acquirerName { get; init; }
     public long amount { get; init; }
-    public string? authorization_number { get; init; }
-    public string card_number { get; init; }
-    public string? card_type { get; init; }
+    public string? authorizationNumber { get; init; }
+    public string cardNumber { get; init; }
+    public string? cardType { get; init; }
     public string currency { get; init; }
     public string? cvc { get; init; }
-    public string? date_time_tx { get; init; }
-    public string exp_date { get; init; }
-    public string? merchant_id { get; init; }
-    public string? original_transaction_id { get; init; }
+    public string? dateTimeTx { get; init; }
+    public string expDate { get; init; }
+    public string? merchantId { get; init; }
+    public string? originalTransactionId { get; init; }
     public string? password { get; init; }
-    public string? response_code { get; init; }
-    public string? response_message { get; init; }
-    public string? terminal_id { get; init; }
-    public string? transaction_id { get; init; }
+    public string? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public string? terminalId { get; init; }
+    public string? transactionId { get; init; }
     public string txtype { get; init; }
 }
 
 public record PaymentSred
 {
-    public string? acquirer_name { get; init; }
     public long amount { get; init; }
-    public string? authorization_number { get; init; }
-    public string? card_type { get; init; }
     public string currency { get; init; }
-    public string? date_time_tx { get; init; }
-    public string device_payload { get; init; }
-    public string? merchant_id { get; init; }
-    public string? original_transaction_id { get; init; }
+    public string? device { get; init; }
+    public string devicePayload { get; init; }
+    public string? expDate { get; init; }
+    public string? mode { get; init; }
+    public string? panMasked { get; init; }
     public string? password { get; init; }
-    public string? response_code { get; init; }
-    public string? response_message { get; init; }
-    public Dictionary<string, object?>? sred { get; init; }
-    public string? terminal_id { get; init; }
-    public string? transaction_id { get; init; }
+    public string? serial { get; init; }
+    public string? serviceCode { get; init; }
+    public string terminalId { get; init; }
     public string txtype { get; init; }
 }
 
 public record PaymentSredCreateData
 {
-    public string? acquirer_name { get; init; }
     public long amount { get; init; }
-    public string? authorization_number { get; init; }
-    public string? card_type { get; init; }
     public string currency { get; init; }
-    public string? date_time_tx { get; init; }
-    public string device_payload { get; init; }
-    public string? merchant_id { get; init; }
-    public string? original_transaction_id { get; init; }
+    public string? device { get; init; }
+    public string devicePayload { get; init; }
+    public string? expDate { get; init; }
+    public string? mode { get; init; }
+    public string? panMasked { get; init; }
     public string? password { get; init; }
-    public string? response_code { get; init; }
-    public string? response_message { get; init; }
-    public Dictionary<string, object?>? sred { get; init; }
-    public string? terminal_id { get; init; }
-    public string? transaction_id { get; init; }
+    public string? serial { get; init; }
+    public string? serviceCode { get; init; }
+    public string terminalId { get; init; }
     public string txtype { get; init; }
 }
 
 public record PreAuthTransactionCompletion
 {
-    public string? acquirer_id { get; init; }
-    public string? acquirer_name { get; init; }
-    public string? actual_bonus_point { get; init; }
+    public string? acquirerId { get; init; }
+    public string? acquirerName { get; init; }
+    public string? actualBonusPoints { get; init; }
     public long? amount { get; init; }
-    public string? authorization_code { get; init; }
-    public string? balance_amount { get; init; }
-    public string? card_brand { get; init; }
-    public string? card_number { get; init; }
-    public string card_number_reference { get; init; }
-    public long client_id { get; init; }
+    public string? authorizationCode { get; init; }
+    public string? balanceAmount { get; init; }
+    public string? cardBrand { get; init; }
+    public string? cardNumber { get; init; }
+    public string cardNumberReference { get; init; }
+    public long clientId { get; init; }
     public string currency { get; init; }
     public string? cvc { get; init; }
-    public string? ec_data { get; init; }
-    public string? ecr_data { get; init; }
-    public string? emv_data { get; init; }
-    public long? exchange_fee { get; init; }
-    public string? exchange_rate { get; init; }
-    public string? language_code { get; init; }
-    public string? merchant_address { get; init; }
-    public string? merchant_name { get; init; }
-    public string? merchant_number { get; init; }
-    public string? message_type { get; init; }
-    public long? original_trace_number { get; init; }
-    public string? original_transaction_id { get; init; }
+    public string? ecData { get; init; }
+    public string? ecrData { get; init; }
+    public string? emvData { get; init; }
+    public long? exchangeFee { get; init; }
+    public string? exchangeRate { get; init; }
+    public string? languageCode { get; init; }
+    public string? merchantAddress { get; init; }
+    public string? merchantName { get; init; }
+    public string? merchantNumber { get; init; }
+    public string? messageType { get; init; }
+    public long? originalTraceNumber { get; init; }
+    public string? originalTransactionId { get; init; }
     public string? password { get; init; }
-    public string? payment_reason { get; init; }
-    public string? receipt_footer { get; init; }
-    public string? receipt_header { get; init; }
-    public long? receipt_layout { get; init; }
-    public string receipt_number { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
-    public string? serial_number { get; init; }
+    public string? paymentReason { get; init; }
+    public string? receiptFooter { get; init; }
+    public string? receiptHeader { get; init; }
+    public long? receiptLayout { get; init; }
+    public string receiptNumber { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public string? serialNumber { get; init; }
     public string? svc { get; init; }
-    public long terminal_id { get; init; }
-    public string? terminal_location { get; init; }
-    public long? trace_number { get; init; }
-    public string? transaction_date { get; init; }
-    public string? transaction_id { get; init; }
-    public string transaction_type { get; init; }
-    public string? tx_type { get; init; }
-    public string? user_data { get; init; }
+    public long terminalId { get; init; }
+    public string? terminalLocation { get; init; }
+    public long? traceNumber { get; init; }
+    public string? transactionDate { get; init; }
+    public string? transactionId { get; init; }
+    public string transactionType { get; init; }
+    public string? txType { get; init; }
+    public string? userData { get; init; }
 }
 
 public record PreAuthTransactionCompletionCreateData
 {
-    public string? acquirer_id { get; init; }
-    public string? acquirer_name { get; init; }
-    public string? actual_bonus_point { get; init; }
+    public string? acquirerId { get; init; }
+    public string? acquirerName { get; init; }
+    public string? actualBonusPoints { get; init; }
     public long? amount { get; init; }
-    public string? authorization_code { get; init; }
-    public string? balance_amount { get; init; }
-    public string? card_brand { get; init; }
-    public string? card_number { get; init; }
-    public string card_number_reference { get; init; }
-    public long client_id { get; init; }
+    public string? authorizationCode { get; init; }
+    public string? balanceAmount { get; init; }
+    public string? cardBrand { get; init; }
+    public string? cardNumber { get; init; }
+    public string cardNumberReference { get; init; }
+    public long clientId { get; init; }
     public string currency { get; init; }
     public string? cvc { get; init; }
-    public string? ec_data { get; init; }
-    public string? ecr_data { get; init; }
-    public string? emv_data { get; init; }
-    public long? exchange_fee { get; init; }
-    public string? exchange_rate { get; init; }
-    public string? language_code { get; init; }
-    public string? merchant_address { get; init; }
-    public string? merchant_name { get; init; }
-    public string? merchant_number { get; init; }
-    public string? message_type { get; init; }
-    public long? original_trace_number { get; init; }
-    public string? original_transaction_id { get; init; }
+    public string? ecData { get; init; }
+    public string? ecrData { get; init; }
+    public string? emvData { get; init; }
+    public long? exchangeFee { get; init; }
+    public string? exchangeRate { get; init; }
+    public string? languageCode { get; init; }
+    public string? merchantAddress { get; init; }
+    public string? merchantName { get; init; }
+    public string? merchantNumber { get; init; }
+    public string? messageType { get; init; }
+    public long? originalTraceNumber { get; init; }
+    public string? originalTransactionId { get; init; }
     public string? password { get; init; }
-    public string? payment_reason { get; init; }
-    public string? receipt_footer { get; init; }
-    public string? receipt_header { get; init; }
-    public long? receipt_layout { get; init; }
-    public string receipt_number { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
-    public string? serial_number { get; init; }
+    public string? paymentReason { get; init; }
+    public string? receiptFooter { get; init; }
+    public string? receiptHeader { get; init; }
+    public long? receiptLayout { get; init; }
+    public string receiptNumber { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public string? serialNumber { get; init; }
     public string? svc { get; init; }
-    public long terminal_id { get; init; }
-    public string? terminal_location { get; init; }
-    public long? trace_number { get; init; }
-    public string? transaction_date { get; init; }
-    public string? transaction_id { get; init; }
-    public string transaction_type { get; init; }
-    public string? tx_type { get; init; }
-    public string? user_data { get; init; }
+    public long terminalId { get; init; }
+    public string? terminalLocation { get; init; }
+    public long? traceNumber { get; init; }
+    public string? transactionDate { get; init; }
+    public string? transactionId { get; init; }
+    public string transactionType { get; init; }
+    public string? txType { get; init; }
+    public string? userData { get; init; }
 }
 
 public record ReactivateTerminal
 {
-    public string? corporate_uuid { get; init; }
-    public string? package_order_uuid { get; init; }
-    public string? product_order_uuid { get; init; }
-    public string reactivation_reason { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
-    public long terminal_id { get; init; }
+    public string? corporateUuid { get; init; }
+    public string? packageOrderUuid { get; init; }
+    public string? productOrderUuid { get; init; }
+    public string reactivationReason { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public long terminalId { get; init; }
 }
 
 public record ReactivateTerminalCreateData
 {
-    public string? corporate_uuid { get; init; }
-    public string? package_order_uuid { get; init; }
-    public string? product_order_uuid { get; init; }
-    public string reactivation_reason { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
-    public long terminal_id { get; init; }
+    public string? corporateUuid { get; init; }
+    public string? packageOrderUuid { get; init; }
+    public string? productOrderUuid { get; init; }
+    public string reactivationReason { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public long terminalId { get; init; }
 }
 
 public record RefundTransaction
 {
-    public string? acquirer_id { get; init; }
-    public string? acquirer_name { get; init; }
-    public string? actual_bonus_point { get; init; }
+    public string? acquirerId { get; init; }
+    public string? acquirerName { get; init; }
+    public string? actualBonusPoints { get; init; }
     public long? amount { get; init; }
-    public string? authorization_code { get; init; }
-    public string? balance_amount { get; init; }
-    public string? card_brand { get; init; }
-    public string? card_number { get; init; }
-    public long client_id { get; init; }
+    public string? authorizationCode { get; init; }
+    public string? balanceAmount { get; init; }
+    public string? cardBrand { get; init; }
+    public string? cardNumber { get; init; }
+    public long clientId { get; init; }
     public string currency { get; init; }
     public string? cvc { get; init; }
-    public string? ec_data { get; init; }
-    public string? ecr_data { get; init; }
-    public string? emv_data { get; init; }
-    public long? exchange_fee { get; init; }
-    public string? exchange_rate { get; init; }
-    public string? language_code { get; init; }
-    public string? merchant_address { get; init; }
-    public string? merchant_name { get; init; }
-    public string? merchant_number { get; init; }
-    public string? message_type { get; init; }
-    public long? original_trace_number { get; init; }
-    public string? original_transaction_id { get; init; }
+    public string? ecData { get; init; }
+    public string? ecrData { get; init; }
+    public string? emvData { get; init; }
+    public long? exchangeFee { get; init; }
+    public string? exchangeRate { get; init; }
+    public string? languageCode { get; init; }
+    public string? merchantAddress { get; init; }
+    public string? merchantName { get; init; }
+    public string? merchantNumber { get; init; }
+    public string? messageType { get; init; }
+    public long? originalTraceNumber { get; init; }
+    public string? originalTransactionId { get; init; }
     public string? password { get; init; }
-    public string? payment_reason { get; init; }
-    public string? receipt_footer { get; init; }
-    public string? receipt_header { get; init; }
-    public long? receipt_layout { get; init; }
-    public string receipt_number { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
-    public string? serial_number { get; init; }
+    public string? paymentReason { get; init; }
+    public string? receiptFooter { get; init; }
+    public string? receiptHeader { get; init; }
+    public long? receiptLayout { get; init; }
+    public string receiptNumber { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public string? serialNumber { get; init; }
     public string? svc { get; init; }
-    public long terminal_id { get; init; }
-    public string? terminal_location { get; init; }
-    public long? trace_number { get; init; }
-    public string? transaction_date { get; init; }
-    public string? transaction_id { get; init; }
-    public string? tx_type { get; init; }
-    public string? user_data { get; init; }
+    public long terminalId { get; init; }
+    public string? terminalLocation { get; init; }
+    public long? traceNumber { get; init; }
+    public string? transactionDate { get; init; }
+    public string? transactionId { get; init; }
+    public string? txType { get; init; }
+    public string? userData { get; init; }
 }
 
 public record RefundTransactionCreateData
 {
-    public string? acquirer_id { get; init; }
-    public string? acquirer_name { get; init; }
-    public string? actual_bonus_point { get; init; }
+    public string? acquirerId { get; init; }
+    public string? acquirerName { get; init; }
+    public string? actualBonusPoints { get; init; }
     public long? amount { get; init; }
-    public string? authorization_code { get; init; }
-    public string? balance_amount { get; init; }
-    public string? card_brand { get; init; }
-    public string? card_number { get; init; }
-    public long client_id { get; init; }
+    public string? authorizationCode { get; init; }
+    public string? balanceAmount { get; init; }
+    public string? cardBrand { get; init; }
+    public string? cardNumber { get; init; }
+    public long clientId { get; init; }
     public string currency { get; init; }
     public string? cvc { get; init; }
-    public string? ec_data { get; init; }
-    public string? ecr_data { get; init; }
-    public string? emv_data { get; init; }
-    public long? exchange_fee { get; init; }
-    public string? exchange_rate { get; init; }
-    public string? language_code { get; init; }
-    public string? merchant_address { get; init; }
-    public string? merchant_name { get; init; }
-    public string? merchant_number { get; init; }
-    public string? message_type { get; init; }
-    public long? original_trace_number { get; init; }
-    public string? original_transaction_id { get; init; }
+    public string? ecData { get; init; }
+    public string? ecrData { get; init; }
+    public string? emvData { get; init; }
+    public long? exchangeFee { get; init; }
+    public string? exchangeRate { get; init; }
+    public string? languageCode { get; init; }
+    public string? merchantAddress { get; init; }
+    public string? merchantName { get; init; }
+    public string? merchantNumber { get; init; }
+    public string? messageType { get; init; }
+    public long? originalTraceNumber { get; init; }
+    public string? originalTransactionId { get; init; }
     public string? password { get; init; }
-    public string? payment_reason { get; init; }
-    public string? receipt_footer { get; init; }
-    public string? receipt_header { get; init; }
-    public long? receipt_layout { get; init; }
-    public string receipt_number { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
-    public string? serial_number { get; init; }
+    public string? paymentReason { get; init; }
+    public string? receiptFooter { get; init; }
+    public string? receiptHeader { get; init; }
+    public long? receiptLayout { get; init; }
+    public string receiptNumber { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public string? serialNumber { get; init; }
     public string? svc { get; init; }
-    public long terminal_id { get; init; }
-    public string? terminal_location { get; init; }
-    public long? trace_number { get; init; }
-    public string? transaction_date { get; init; }
-    public string? transaction_id { get; init; }
-    public string? tx_type { get; init; }
-    public string? user_data { get; init; }
+    public long terminalId { get; init; }
+    public string? terminalLocation { get; init; }
+    public long? traceNumber { get; init; }
+    public string? transactionDate { get; init; }
+    public string? transactionId { get; init; }
+    public string? txType { get; init; }
+    public string? userData { get; init; }
 }
 
 public record RegisterTecsCompany
 {
-    public string corporate_uuid { get; init; }
-    public string package_order_uuid { get; init; }
-    public long? partner_id { get; init; }
-    public string? partner_name { get; init; }
-    public string product_order_uuid { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
-    public string template_name { get; init; }
+    public string corporateUuid { get; init; }
+    public string packageOrderUuid { get; init; }
+    public long? partnerId { get; init; }
+    public string? partnerName { get; init; }
+    public string productOrderUuid { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public string templateName { get; init; }
 }
 
 public record RegisterTecsCompanyCreateData
 {
-    public string corporate_uuid { get; init; }
-    public string package_order_uuid { get; init; }
-    public long? partner_id { get; init; }
-    public string? partner_name { get; init; }
-    public string product_order_uuid { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
-    public string template_name { get; init; }
+    public string corporateUuid { get; init; }
+    public string packageOrderUuid { get; init; }
+    public long? partnerId { get; init; }
+    public string? partnerName { get; init; }
+    public string productOrderUuid { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public string templateName { get; init; }
 }
 
 public record RegisterTerminal
 {
-    public Dictionary<string, object?>? additional_data { get; init; }
-    public string corporate_uuid { get; init; }
-    public string package_order_uuid { get; init; }
-    public string product_order_uuid { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
-    public string? tecs_web_secret_key { get; init; }
-    public string template_name { get; init; }
-    public string terminal_country_code { get; init; }
-    public long? terminal_id { get; init; }
-    public string? terminal_id_acq { get; init; }
-    public string terminal_language_code { get; init; }
-    public string terminal_location { get; init; }
-    public string? terminal_serial_number { get; init; }
-    public string? token_io_alia { get; init; }
-    public string? token_io_iban { get; init; }
-    public string? token_io_member_id { get; init; }
-    public string? web_shop_url { get; init; }
+    public Dictionary<string, object?>? additionalData { get; init; }
+    public string corporateUuid { get; init; }
+    public string packageOrderUuid { get; init; }
+    public string productOrderUuid { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public string? tecsWebSecretKey { get; init; }
+    public string templateName { get; init; }
+    public string terminalCountryCode { get; init; }
+    public long? terminalId { get; init; }
+    public string? terminalIdAcq { get; init; }
+    public string terminalLanguageCode { get; init; }
+    public string terminalLocation { get; init; }
+    public string? terminalSerialNumber { get; init; }
+    public string? tokenIOAlias { get; init; }
+    public string? tokenIOIban { get; init; }
+    public string? tokenIOMemberId { get; init; }
+    public string? webShopUrl { get; init; }
 }
 
 public record RegisterTerminalCreateData
 {
-    public Dictionary<string, object?>? additional_data { get; init; }
-    public string corporate_uuid { get; init; }
-    public string package_order_uuid { get; init; }
-    public string product_order_uuid { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
-    public string? tecs_web_secret_key { get; init; }
-    public string template_name { get; init; }
-    public string terminal_country_code { get; init; }
-    public long? terminal_id { get; init; }
-    public string? terminal_id_acq { get; init; }
-    public string terminal_language_code { get; init; }
-    public string terminal_location { get; init; }
-    public string? terminal_serial_number { get; init; }
-    public string? token_io_alia { get; init; }
-    public string? token_io_iban { get; init; }
-    public string? token_io_member_id { get; init; }
-    public string? web_shop_url { get; init; }
+    public Dictionary<string, object?>? additionalData { get; init; }
+    public string corporateUuid { get; init; }
+    public string packageOrderUuid { get; init; }
+    public string productOrderUuid { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public string? tecsWebSecretKey { get; init; }
+    public string templateName { get; init; }
+    public string terminalCountryCode { get; init; }
+    public long? terminalId { get; init; }
+    public string? terminalIdAcq { get; init; }
+    public string terminalLanguageCode { get; init; }
+    public string terminalLocation { get; init; }
+    public string? terminalSerialNumber { get; init; }
+    public string? tokenIOAlias { get; init; }
+    public string? tokenIOIban { get; init; }
+    public string? tokenIOMemberId { get; init; }
+    public string? webShopUrl { get; init; }
 }
 
 public record ReportData
 {
-    public List<object?>? card_brand_report_data { get; init; }
-    public string clearing_date_from { get; init; }
-    public string clearing_date_to { get; init; }
-    public string corporate_id { get; init; }
+    public List<object?>? cardBrandReportData { get; init; }
+    public string clearingDateFrom { get; init; }
+    public string clearingDateTo { get; init; }
+    public string corporateId { get; init; }
     public string currency { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
-    public Dictionary<string, object?>? sum_over_credit_tx { get; init; }
-    public Dictionary<string, object?>? sum_over_debit_tx { get; init; }
-    public long? terminal_id { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public Dictionary<string, object?>? sumOverCreditTx { get; init; }
+    public Dictionary<string, object?>? sumOverDebitTx { get; init; }
+    public long? terminalId { get; init; }
 }
 
 public record ReportDataCreateData
 {
-    public List<object?>? card_brand_report_data { get; init; }
-    public string clearing_date_from { get; init; }
-    public string clearing_date_to { get; init; }
-    public string corporate_id { get; init; }
+    public List<object?>? cardBrandReportData { get; init; }
+    public string clearingDateFrom { get; init; }
+    public string clearingDateTo { get; init; }
+    public string corporateId { get; init; }
     public string currency { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
-    public Dictionary<string, object?>? sum_over_credit_tx { get; init; }
-    public Dictionary<string, object?>? sum_over_debit_tx { get; init; }
-    public long? terminal_id { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public Dictionary<string, object?>? sumOverCreditTx { get; init; }
+    public Dictionary<string, object?>? sumOverDebitTx { get; init; }
+    public long? terminalId { get; init; }
 }
 
 public record StatusTransaction
 {
-    public string? acquirer_name { get; init; }
-    public string? acquirer_terminal_id { get; init; }
+    public string? acquirerName { get; init; }
+    public string? acquirerTerminalId { get; init; }
     public long? amount { get; init; }
-    public string? application_cryptogram { get; init; }
-    public object? authorization_code { get; init; }
-    public string? authorization_date { get; init; }
-    public string? card_brand { get; init; }
-    public string? card_entry { get; init; }
-    public string? card_expiration { get; init; }
-    public string? card_number { get; init; }
-    public long? clearing_amount { get; init; }
-    public string? clearing_batch_id { get; init; }
-    public string? clearing_currency { get; init; }
-    public string? clearing_date { get; init; }
-    public string? clearing_processed_date { get; init; }
-    public string? clearing_status { get; init; }
-    public long? client_id { get; init; }
+    public string? applicationCryptogram { get; init; }
+    public object? authorizationCode { get; init; }
+    public string? authorizationDate { get; init; }
+    public string? cardBrand { get; init; }
+    public string? cardEntry { get; init; }
+    public string? cardExpiration { get; init; }
+    public string? cardNumber { get; init; }
+    public long? clearingAmount { get; init; }
+    public string? clearingBatchId { get; init; }
+    public string? clearingCurrency { get; init; }
+    public string? clearingDate { get; init; }
+    public string? clearingProcessedDate { get; init; }
+    public string? clearingStatus { get; init; }
+    public long? clientId { get; init; }
     public string? currency { get; init; }
     public string? cvm { get; init; }
-    public string? ecr_data { get; init; }
-    public string? emv_application_id { get; init; }
-    public string? emv_application_label { get; init; }
-    public string? merchant_name { get; init; }
-    public string? merchant_number { get; init; }
-    public string? original_client_id { get; init; }
-    public long? original_terminal_id { get; init; }
-    public string? original_transaction_id { get; init; }
-    public string? payment_reason { get; init; }
-    public string? receipt_number { get; init; }
-    public long? response_code { get; init; }
-    public string? response_code_from_a { get; init; }
-    public string? response_message { get; init; }
-    public string? retrieval_reference_number { get; init; }
-    public string? service_code { get; init; }
-    public string? settlement_status { get; init; }
-    public long? source_id { get; init; }
-    public long? tecsengine_response_code { get; init; }
-    public string? tecsengine_response_text { get; init; }
-    public string? terminal_end_of_day_date { get; init; }
-    public long? terminal_id { get; init; }
-    public string? terminal_location { get; init; }
-    public long? tip_amount { get; init; }
-    public long? trace_number { get; init; }
-    public string? transaction_clearing_date { get; init; }
-    public string? transaction_date { get; init; }
-    public string? transaction_id { get; init; }
-    public long? transaction_seq_number { get; init; }
-    public string? transaction_server_date { get; init; }
-    public string? transaction_source { get; init; }
-    public string? transaction_type { get; init; }
+    public string? ecrData { get; init; }
+    public string? emvApplicationId { get; init; }
+    public string? emvApplicationLabel { get; init; }
+    public string? merchantName { get; init; }
+    public string? merchantNumber { get; init; }
+    public string? originalClientId { get; init; }
+    public long? originalTerminalId { get; init; }
+    public string? originalTransactionId { get; init; }
+    public string? paymentReason { get; init; }
+    public string? receiptNumber { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseCodeFromAS { get; init; }
+    public string? responseMessage { get; init; }
+    public string? retrievalReferenceNumber { get; init; }
+    public string? serviceCode { get; init; }
+    public string? settlementStatus { get; init; }
+    public long? sourceId { get; init; }
+    public long? tecsengineResponseCode { get; init; }
+    public string? tecsengineResponseText { get; init; }
+    public string? terminalEndOfDayDate { get; init; }
+    public long? terminalId { get; init; }
+    public string? terminalLocation { get; init; }
+    public long? tipAmount { get; init; }
+    public long? traceNumber { get; init; }
+    public string? transactionClearingDate { get; init; }
+    public string? transactionDate { get; init; }
+    public string? transactionId { get; init; }
+    public long? transactionSeqNumber { get; init; }
+    public string? transactionServerDate { get; init; }
+    public string? transactionSource { get; init; }
+    public string? transactionType { get; init; }
 }
 
 public record StatusTransactionCreateData
 {
-    public string? acquirer_name { get; init; }
-    public string? acquirer_terminal_id { get; init; }
+    public string? acquirerName { get; init; }
+    public string? acquirerTerminalId { get; init; }
     public long? amount { get; init; }
-    public string? application_cryptogram { get; init; }
-    public object? authorization_code { get; init; }
-    public string? authorization_date { get; init; }
-    public string? card_brand { get; init; }
-    public string? card_entry { get; init; }
-    public string? card_expiration { get; init; }
-    public string? card_number { get; init; }
-    public long? clearing_amount { get; init; }
-    public string? clearing_batch_id { get; init; }
-    public string? clearing_currency { get; init; }
-    public string? clearing_date { get; init; }
-    public string? clearing_processed_date { get; init; }
-    public string? clearing_status { get; init; }
-    public long? client_id { get; init; }
+    public string? applicationCryptogram { get; init; }
+    public object? authorizationCode { get; init; }
+    public string? authorizationDate { get; init; }
+    public string? cardBrand { get; init; }
+    public string? cardEntry { get; init; }
+    public string? cardExpiration { get; init; }
+    public string? cardNumber { get; init; }
+    public long? clearingAmount { get; init; }
+    public string? clearingBatchId { get; init; }
+    public string? clearingCurrency { get; init; }
+    public string? clearingDate { get; init; }
+    public string? clearingProcessedDate { get; init; }
+    public string? clearingStatus { get; init; }
+    public long? clientId { get; init; }
     public string? currency { get; init; }
     public string? cvm { get; init; }
-    public string? ecr_data { get; init; }
-    public string? emv_application_id { get; init; }
-    public string? emv_application_label { get; init; }
-    public string? merchant_name { get; init; }
-    public string? merchant_number { get; init; }
-    public string? original_client_id { get; init; }
-    public long? original_terminal_id { get; init; }
-    public string? original_transaction_id { get; init; }
-    public string? payment_reason { get; init; }
-    public string? receipt_number { get; init; }
-    public long? response_code { get; init; }
-    public string? response_code_from_a { get; init; }
-    public string? response_message { get; init; }
-    public string? retrieval_reference_number { get; init; }
-    public string? service_code { get; init; }
-    public string? settlement_status { get; init; }
-    public long? source_id { get; init; }
-    public long? tecsengine_response_code { get; init; }
-    public string? tecsengine_response_text { get; init; }
-    public string? terminal_end_of_day_date { get; init; }
-    public long? terminal_id { get; init; }
-    public string? terminal_location { get; init; }
-    public long? tip_amount { get; init; }
-    public long? trace_number { get; init; }
-    public string? transaction_clearing_date { get; init; }
-    public string? transaction_date { get; init; }
-    public string? transaction_id { get; init; }
-    public long? transaction_seq_number { get; init; }
-    public string? transaction_server_date { get; init; }
-    public string? transaction_source { get; init; }
-    public string? transaction_type { get; init; }
+    public string? ecrData { get; init; }
+    public string? emvApplicationId { get; init; }
+    public string? emvApplicationLabel { get; init; }
+    public string? merchantName { get; init; }
+    public string? merchantNumber { get; init; }
+    public string? originalClientId { get; init; }
+    public long? originalTerminalId { get; init; }
+    public string? originalTransactionId { get; init; }
+    public string? paymentReason { get; init; }
+    public string? receiptNumber { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseCodeFromAS { get; init; }
+    public string? responseMessage { get; init; }
+    public string? retrievalReferenceNumber { get; init; }
+    public string? serviceCode { get; init; }
+    public string? settlementStatus { get; init; }
+    public long? sourceId { get; init; }
+    public long? tecsengineResponseCode { get; init; }
+    public string? tecsengineResponseText { get; init; }
+    public string? terminalEndOfDayDate { get; init; }
+    public long? terminalId { get; init; }
+    public string? terminalLocation { get; init; }
+    public long? tipAmount { get; init; }
+    public long? traceNumber { get; init; }
+    public string? transactionClearingDate { get; init; }
+    public string? transactionDate { get; init; }
+    public string? transactionId { get; init; }
+    public long? transactionSeqNumber { get; init; }
+    public string? transactionServerDate { get; init; }
+    public string? transactionSource { get; init; }
+    public string? transactionType { get; init; }
 }
 
 public record StoreTerminalParameter
 {
-    public Dictionary<string, object?>? acq_tab_nexo { get; init; }
-    public string? config_version { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
-    public string serial_number { get; init; }
-    public string? tid_sent { get; init; }
+    public Dictionary<string, object?>? acqTabNexo { get; init; }
+    public string? configVersion { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public string serialNumber { get; init; }
+    public string? tidSent { get; init; }
 }
 
 public record StoreTerminalParameterCreateData
 {
-    public Dictionary<string, object?>? acq_tab_nexo { get; init; }
-    public string? config_version { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
-    public string serial_number { get; init; }
-    public string? tid_sent { get; init; }
+    public Dictionary<string, object?>? acqTabNexo { get; init; }
+    public string? configVersion { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public string serialNumber { get; init; }
+    public string? tidSent { get; init; }
 }
 
 public record TerminalId
 {
-    public List<object?> device_serial_number { get; init; }
-    public List<object?>? duplicate_terminal_id { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
-    public List<object?>? terminal { get; init; }
+    public List<object?> deviceSerialNumber { get; init; }
+    public List<object?>? duplicateTerminalIds { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public List<object?>? terminals { get; init; }
 }
 
 public record TerminalIdCreateData
 {
-    public List<object?> device_serial_number { get; init; }
-    public List<object?>? duplicate_terminal_id { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
-    public List<object?>? terminal { get; init; }
+    public List<object?> deviceSerialNumber { get; init; }
+    public List<object?>? duplicateTerminalIds { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public List<object?>? terminals { get; init; }
 }
 
 public record TransactionHistory
 {
-    public string? authorization_code { get; init; }
-    public string? card_brand { get; init; }
-    public string? clearing_amount_from { get; init; }
-    public string? clearing_amount_to { get; init; }
-    public string? clearing_currency { get; init; }
-    public string? clearing_status { get; init; }
-    public string? corporate_uuid { get; init; }
-    public string? order_by_transaction_date { get; init; }
+    public string? authorizationCode { get; init; }
+    public string? cardBrand { get; init; }
+    public string? clearingAmountFrom { get; init; }
+    public string? clearingAmountTo { get; init; }
+    public string? clearingCurrency { get; init; }
+    public string? clearingStatus { get; init; }
+    public string? corporateUUID { get; init; }
+    public string? orderByTransactionDate { get; init; }
     public Dictionary<string, object?>? pagination { get; init; }
-    public string? payment_token_public_id { get; init; }
-    public string? receipt_number { get; init; }
-    public string? referenced_transaction_id { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
-    public string? retrieval_reference_number { get; init; }
-    public long? source_id { get; init; }
-    public string? tecsengine_response_code_from { get; init; }
-    public string? tecsengine_response_code_to { get; init; }
-    public long? terminal_id { get; init; }
-    public string? trace_number { get; init; }
-    public string? transaction_amount_from { get; init; }
-    public string? transaction_amount_to { get; init; }
-    public string? transaction_date_from { get; init; }
-    public string? transaction_date_to { get; init; }
-    public List<object?>? transaction_history { get; init; }
-    public string? transaction_id { get; init; }
-    public string? transaction_type { get; init; }
+    public string? paymentTokenPublicId { get; init; }
+    public string? receiptNumber { get; init; }
+    public string? referencedTransactionId { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public string? retrievalReferenceNumber { get; init; }
+    public long? sourceId { get; init; }
+    public string? tecsengineResponseCodeFrom { get; init; }
+    public string? tecsengineResponseCodeTo { get; init; }
+    public long? terminalId { get; init; }
+    public string? traceNumber { get; init; }
+    public string? transactionAmountFrom { get; init; }
+    public string? transactionAmountTo { get; init; }
+    public string? transactionDateFrom { get; init; }
+    public string? transactionDateTo { get; init; }
+    public List<object?>? transactionHistories { get; init; }
+    public string? transactionId { get; init; }
+    public string? transactionType { get; init; }
     public string? wallet { get; init; }
 }
 
 public record TransactionHistoryCreateData
 {
-    public string? authorization_code { get; init; }
-    public string? card_brand { get; init; }
-    public string? clearing_amount_from { get; init; }
-    public string? clearing_amount_to { get; init; }
-    public string? clearing_currency { get; init; }
-    public string? clearing_status { get; init; }
-    public string? corporate_uuid { get; init; }
-    public string? order_by_transaction_date { get; init; }
+    public string? authorizationCode { get; init; }
+    public string? cardBrand { get; init; }
+    public string? clearingAmountFrom { get; init; }
+    public string? clearingAmountTo { get; init; }
+    public string? clearingCurrency { get; init; }
+    public string? clearingStatus { get; init; }
+    public string? corporateUUID { get; init; }
+    public string? orderByTransactionDate { get; init; }
     public Dictionary<string, object?>? pagination { get; init; }
-    public string? payment_token_public_id { get; init; }
-    public string? receipt_number { get; init; }
-    public string? referenced_transaction_id { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
-    public string? retrieval_reference_number { get; init; }
-    public long? source_id { get; init; }
-    public string? tecsengine_response_code_from { get; init; }
-    public string? tecsengine_response_code_to { get; init; }
-    public long? terminal_id { get; init; }
-    public string? trace_number { get; init; }
-    public string? transaction_amount_from { get; init; }
-    public string? transaction_amount_to { get; init; }
-    public string? transaction_date_from { get; init; }
-    public string? transaction_date_to { get; init; }
-    public List<object?>? transaction_history { get; init; }
-    public string? transaction_id { get; init; }
-    public string? transaction_type { get; init; }
+    public string? paymentTokenPublicId { get; init; }
+    public string? receiptNumber { get; init; }
+    public string? referencedTransactionId { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public string? retrievalReferenceNumber { get; init; }
+    public long? sourceId { get; init; }
+    public string? tecsengineResponseCodeFrom { get; init; }
+    public string? tecsengineResponseCodeTo { get; init; }
+    public long? terminalId { get; init; }
+    public string? traceNumber { get; init; }
+    public string? transactionAmountFrom { get; init; }
+    public string? transactionAmountTo { get; init; }
+    public string? transactionDateFrom { get; init; }
+    public string? transactionDateTo { get; init; }
+    public List<object?>? transactionHistories { get; init; }
+    public string? transactionId { get; init; }
+    public string? transactionType { get; init; }
     public string? wallet { get; init; }
 }
 
 public record TransactionsCount
 {
     public string? period { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
-    public string? transaction_date_from { get; init; }
-    public string? transaction_date_to { get; init; }
-    public List<object?>? transactions_count { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public string? transactionDateFrom { get; init; }
+    public string? transactionDateTo { get; init; }
+    public List<object?>? transactionsCount { get; init; }
 }
 
 public record TransactionsCountCreateData
 {
     public string? period { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
-    public string? transaction_date_from { get; init; }
-    public string? transaction_date_to { get; init; }
-    public List<object?>? transactions_count { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public string? transactionDateFrom { get; init; }
+    public string? transactionDateTo { get; init; }
+    public List<object?>? transactionsCount { get; init; }
 }
 
 public record TransactionsCountCardBrand
 {
     public string? period { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
-    public string? transaction_date_from { get; init; }
-    public string? transaction_date_to { get; init; }
-    public List<object?>? transactions_count { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public string? transactionDateFrom { get; init; }
+    public string? transactionDateTo { get; init; }
+    public List<object?>? transactionsCount { get; init; }
 }
 
 public record TransactionsCountCardBrandCreateData
 {
     public string? period { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
-    public string? transaction_date_from { get; init; }
-    public string? transaction_date_to { get; init; }
-    public List<object?>? transactions_count { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public string? transactionDateFrom { get; init; }
+    public string? transactionDateTo { get; init; }
+    public List<object?>? transactionsCount { get; init; }
 }
 
 public record TransactionsTurnover
 {
     public string? period { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
-    public string? transaction_date_from { get; init; }
-    public string? transaction_date_to { get; init; }
-    public List<object?>? turnover { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public string? transactionDateFrom { get; init; }
+    public string? transactionDateTo { get; init; }
+    public List<object?>? turnovers { get; init; }
 }
 
 public record TransactionsTurnoverCreateData
 {
     public string? period { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
-    public string? transaction_date_from { get; init; }
-    public string? transaction_date_to { get; init; }
-    public List<object?>? turnover { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public string? transactionDateFrom { get; init; }
+    public string? transactionDateTo { get; init; }
+    public List<object?>? turnovers { get; init; }
 }
 
 public record UpdateMerchant
 {
     public string? city { get; init; }
-    public string corporate_uuid { get; init; }
+    public string corporateUuid { get; init; }
     public string? country { get; init; }
-    public string? merchant_category_code { get; init; }
+    public string? merchantCategoryCode { get; init; }
     public string? name { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
     public string? state { get; init; }
     public string? street { get; init; }
-    public string? vu_nummer { get; init; }
+    public string? vuNummer { get; init; }
     public string? zipcode { get; init; }
 }
 
 public record UpdateMerchantCreateData
 {
     public string? city { get; init; }
-    public string corporate_uuid { get; init; }
+    public string corporateUuid { get; init; }
     public string? country { get; init; }
-    public string? merchant_category_code { get; init; }
+    public string? merchantCategoryCode { get; init; }
     public string? name { get; init; }
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
     public string? state { get; init; }
     public string? street { get; init; }
-    public string? vu_nummer { get; init; }
+    public string? vuNummer { get; init; }
     public string? zipcode { get; init; }
 }
 
 public record UpdateTemplateXml
 {
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
-    public string template_name { get; init; }
-    public string template_xml { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public string templateName { get; init; }
+    public string templateXml { get; init; }
 }
 
 public record UpdateTemplateXmlCreateData
 {
-    public long? response_code { get; init; }
-    public string? response_message { get; init; }
-    public string template_name { get; init; }
-    public string template_xml { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public string templateName { get; init; }
+    public string templateXml { get; init; }
 }
 
 public record Version
 {
-    public string? app_name { get; init; }
-    public string? build_date { get; init; }
+    public string? appName { get; init; }
+    public string? buildDate { get; init; }
     public string? version { get; init; }
 }
 
 public record VersionLoadMatch
 {
-    public string? app_name { get; init; }
-    public string? build_date { get; init; }
+    public string? appName { get; init; }
+    public string? buildDate { get; init; }
     public string? version { get; init; }
 }
 

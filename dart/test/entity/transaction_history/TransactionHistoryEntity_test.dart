@@ -47,7 +47,7 @@ void tests() {
       final transaction_history_ref01_ent = client.TransactionHistory();
       dynamic transaction_history_ref01_data = setup['data']['new']['transaction_history']['transaction_history_ref01'];
 
-      transaction_history_ref01_data = await transaction_history_ref01_ent.create(transaction_history_ref01_data);
+      transaction_history_ref01_data = (await transaction_history_ref01_ent.create(transaction_history_ref01_data)).data();
       ok(null != transaction_history_ref01_data);
 
 

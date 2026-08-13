@@ -35,7 +35,7 @@ object TerminalIdEntityTest {
       var terminalIdRef01Data = Helpers.toMapAny(Struct.getprop(
           Struct.getpath(entityData, "new.terminal_id"), "terminal_id_ref01"))
       val terminalIdRef01DataResult = terminalIdRef01Ent.create(terminalIdRef01Data, null)
-      terminalIdRef01Data = Helpers.toMapAny(terminalIdRef01DataResult)
+      terminalIdRef01Data = Helpers.toMapAny(terminalIdRef01DataResult match { case e: SdkEntity => e.data(); case o => o })
       rep.check("terminal_id.create.map", terminalIdRef01Data != null, "expected create result to be a map")
     }
   }

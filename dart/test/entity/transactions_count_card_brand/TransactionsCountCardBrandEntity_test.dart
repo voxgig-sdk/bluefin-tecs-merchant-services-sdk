@@ -47,7 +47,7 @@ void tests() {
       final transactions_count_card_brand_ref01_ent = client.TransactionsCountCardBrand();
       dynamic transactions_count_card_brand_ref01_data = setup['data']['new']['transactions_count_card_brand']['transactions_count_card_brand_ref01'];
 
-      transactions_count_card_brand_ref01_data = await transactions_count_card_brand_ref01_ent.create(transactions_count_card_brand_ref01_data);
+      transactions_count_card_brand_ref01_data = (await transactions_count_card_brand_ref01_ent.create(transactions_count_card_brand_ref01_data)).data();
       ok(null != transactions_count_card_brand_ref01_data);
 
 

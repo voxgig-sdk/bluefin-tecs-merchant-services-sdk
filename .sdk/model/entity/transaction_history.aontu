@@ -6,47 +6,47 @@ main: kit: entity: transaction_history: {
 
   fields: [
     {
-      name: "3_d_secure"
+      name: "3DSecure"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "authorization_code"
+      name: "authorizationCode"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "card_brand"
+      name: "cardBrand"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "clearing_amount_from"
+      name: "clearingAmountFrom"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "clearing_amount_to"
+      name: "clearingAmountTo"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "clearing_currency"
+      name: "clearingCurrency"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "clearing_status"
+      name: "clearingStatus"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "corporate_uuid"
+      name: "corporateUUID"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "order_by_transaction_date"
+      name: "orderByTransactionDate"
       req: false
       type: "`$STRING`"
     }
@@ -56,92 +56,92 @@ main: kit: entity: transaction_history: {
       type: "`$OBJECT`"
     }
     {
-      name: "payment_token_public_id"
+      name: "paymentTokenPublicId"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "receipt_number"
+      name: "receiptNumber"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "referenced_transaction_id"
+      name: "referencedTransactionId"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "response_code"
+      name: "responseCode"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "response_message"
+      name: "responseMessage"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "retrieval_reference_number"
+      name: "retrievalReferenceNumber"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "source_id"
+      name: "sourceId"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "tecsengine_response_code_from"
+      name: "tecsengineResponseCodeFrom"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "tecsengine_response_code_to"
+      name: "tecsengineResponseCodeTo"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "terminal_id"
+      name: "terminalId"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "trace_number"
+      name: "traceNumber"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "transaction_amount_from"
+      name: "transactionAmountFrom"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "transaction_amount_to"
+      name: "transactionAmountTo"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "transaction_date_from"
+      name: "transactionDateFrom"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "transaction_date_to"
+      name: "transactionDateTo"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "transaction_history"
+      name: "transactionHistories"
       req: false
       type: "`$ARRAY`"
     }
     {
-      name: "transaction_id"
+      name: "transactionId"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "transaction_type"
+      name: "transactionType"
       req: false
       type: "`$STRING`"
     }

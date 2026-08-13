@@ -26,8 +26,8 @@ import {
 describe('MerchantPortalServicesApiEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when BLUEFINTECSMERCHANTSERVICES_TEST_LIVE=TRUE.
-  afterEach(liveDelay('BLUEFINTECSMERCHANTSERVICES_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE=TRUE.
+  afterEach(liveDelay('BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = BluefinTecsMerchantServicesSDK.test()
@@ -62,7 +62,7 @@ describe('MerchantPortalServicesApiEntity', async () => {
     const merchant_portal_services_api_ref01_ent = client.MerchantPortalServicesApi()
     let merchant_portal_services_api_ref01_data = setup.data.new.merchant_portal_services_api['merchant_portal_services_api_ref01']
 
-    merchant_portal_services_api_ref01_data = await merchant_portal_services_api_ref01_ent.create(merchant_portal_services_api_ref01_data)
+    merchant_portal_services_api_ref01_data = (await merchant_portal_services_api_ref01_ent.create(merchant_portal_services_api_ref01_data)).data()
     assert(null != merchant_portal_services_api_ref01_data)
 
 

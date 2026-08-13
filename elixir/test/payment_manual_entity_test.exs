@@ -31,7 +31,8 @@ defmodule BluefinTecsMerchantServices.PaymentManualEntityTest do
   test "should create then read back" do
     sdk = BluefinTecsMerchantServices.test(S.jm(["entity", S.jm(["payment_manual", S.jm([])])]))
     ent = BluefinTecsMerchantServices.payment_manual(sdk)
-    made = BluefinTecsMerchantServices.Entity.PaymentManual.create(ent, S.jm(["name", "test-create"]))
+    created = BluefinTecsMerchantServices.Entity.PaymentManual.create(ent, S.jm(["name", "test-create"]))
+    made = BluefinTecsMerchantServices.EntityBase.data_get(created)
     assert S.ismap(made)
     assert S.getprop(made, "id") != nil
   end

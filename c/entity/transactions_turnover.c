@@ -14,6 +14,8 @@ typedef struct transactions_turnover_entity {
   voxgig_value* data;     // Map
   voxgig_value* mtch;     // Map
   Context* entctx;
+  // Set once a successful `remove` resolves on this instance.
+  bool deleted;
 } transactions_turnover_entity;
 
 typedef void (*transactions_turnover_postdone_fn)(transactions_turnover_entity* self, Context* ctx);
@@ -24,11 +26,14 @@ static const char* transactions_turnover_get_name(Entity* e);
 static Entity* transactions_turnover_make(Entity* e);
 static voxgig_value* transactions_turnover_data(Entity* e, voxgig_value* args);
 static voxgig_value* transactions_turnover_matchv(Entity* e, voxgig_value* args);
-static voxgig_value* transactions_turnover_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
-static voxgig_value* transactions_turnover_list(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
-static voxgig_value* transactions_turnover_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
-static voxgig_value* transactions_turnover_update(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
-static voxgig_value* transactions_turnover_remove(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+// Ops resolve to the ENTITY (`list` to a NULL-terminated array of them).
+static Entity* transactions_turnover_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static Entity** transactions_turnover_list(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static Entity* transactions_turnover_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
+static Entity* transactions_turnover_update(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
+static Entity* transactions_turnover_remove(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static void transactions_turnover_mark_deleted(Entity* e);
+static bool transactions_turnover_deleted(Entity* e);
 
 static Context* transactions_turnover_ent_ctx(transactions_turnover_entity* self) {
   return self->entctx;
@@ -236,13 +241,13 @@ static voxgig_value* transactions_turnover_matchv(Entity* e, voxgig_value* args)
   return voxgig_clone(self->mtch);
 }
 
-static voxgig_value* transactions_turnover_load(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* transactions_turnover_load(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("load", "transactions_turnover");
   return NULL;
 }
 
-static voxgig_value* transactions_turnover_list(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity** transactions_turnover_list(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("list", "transactions_turnover");
   return NULL;
@@ -260,7 +265,7 @@ static void transactions_turnover_create_postdone(transactions_turnover_entity* 
   }
 }
 
-static voxgig_value* transactions_turnover_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err) {
+static Entity* transactions_turnover_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err) {
   transactions_turnover_entity* self = (transactions_turnover_entity*)e;
   CtxSpec cs;
   memset(&cs, 0, sizeof(cs));
@@ -270,20 +275,38 @@ static voxgig_value* transactions_turnover_create(Entity* e, voxgig_value* reqda
   cs.data = self->data;
   cs.reqdata = reqdata;
   Context* ctx = make_context_util(cs, transactions_turnover_ent_ctx(self));
-  return transactions_turnover_run_op(self, ctx, transactions_turnover_create_postdone, err);
+  transactions_turnover_run_op(self, ctx, transactions_turnover_create_postdone, err);
+  if (*err) return NULL;
+
+  // The operation resolves to THIS entity: run_op has just absorbed the
+  // result into it, and the caller reaches the record through vt->data.
+  // See AGENTS.md "Entity operations return ENTITIES".
+
+  return e;
 }
 
 
-static voxgig_value* transactions_turnover_update(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* transactions_turnover_update(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("update", "transactions_turnover");
   return NULL;
 }
 
-static voxgig_value* transactions_turnover_remove(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* transactions_turnover_remove(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("remove", "transactions_turnover");
   return NULL;
+}
+
+// `remove` resolves to the entity, marked. The instance KEEPS the data it
+// held - a caller can still read what was deleted - but it is no longer a
+// live record.
+static void transactions_turnover_mark_deleted(Entity* e) {
+  ((transactions_turnover_entity*)e)->deleted = true;
+}
+
+static bool transactions_turnover_deleted(Entity* e) {
+  return ((transactions_turnover_entity*)e)->deleted;
 }
 
 static const EntityVT transactions_turnover_VT = {
@@ -291,6 +314,8 @@ static const EntityVT transactions_turnover_VT = {
   transactions_turnover_make,
   transactions_turnover_data,
   transactions_turnover_matchv,
+  transactions_turnover_mark_deleted,
+  transactions_turnover_deleted,
   transactions_turnover_load,
   transactions_turnover_list,
   transactions_turnover_create,

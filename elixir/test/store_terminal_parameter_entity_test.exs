@@ -31,7 +31,8 @@ defmodule BluefinTecsMerchantServices.StoreTerminalParameterEntityTest do
   test "should create then read back" do
     sdk = BluefinTecsMerchantServices.test(S.jm(["entity", S.jm(["store_terminal_parameter", S.jm([])])]))
     ent = BluefinTecsMerchantServices.store_terminal_parameter(sdk)
-    made = BluefinTecsMerchantServices.Entity.StoreTerminalParameter.create(ent, S.jm(["name", "test-create"]))
+    created = BluefinTecsMerchantServices.Entity.StoreTerminalParameter.create(ent, S.jm(["name", "test-create"]))
+    made = BluefinTecsMerchantServices.EntityBase.data_get(created)
     assert S.ismap(made)
     assert S.getprop(made, "id") != nil
   end

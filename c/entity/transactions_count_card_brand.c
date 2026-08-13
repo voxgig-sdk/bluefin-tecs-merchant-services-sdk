@@ -14,6 +14,8 @@ typedef struct transactions_count_card_brand_entity {
   voxgig_value* data;     // Map
   voxgig_value* mtch;     // Map
   Context* entctx;
+  // Set once a successful `remove` resolves on this instance.
+  bool deleted;
 } transactions_count_card_brand_entity;
 
 typedef void (*transactions_count_card_brand_postdone_fn)(transactions_count_card_brand_entity* self, Context* ctx);
@@ -24,11 +26,14 @@ static const char* transactions_count_card_brand_get_name(Entity* e);
 static Entity* transactions_count_card_brand_make(Entity* e);
 static voxgig_value* transactions_count_card_brand_data(Entity* e, voxgig_value* args);
 static voxgig_value* transactions_count_card_brand_matchv(Entity* e, voxgig_value* args);
-static voxgig_value* transactions_count_card_brand_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
-static voxgig_value* transactions_count_card_brand_list(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
-static voxgig_value* transactions_count_card_brand_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
-static voxgig_value* transactions_count_card_brand_update(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
-static voxgig_value* transactions_count_card_brand_remove(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+// Ops resolve to the ENTITY (`list` to a NULL-terminated array of them).
+static Entity* transactions_count_card_brand_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static Entity** transactions_count_card_brand_list(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static Entity* transactions_count_card_brand_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
+static Entity* transactions_count_card_brand_update(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
+static Entity* transactions_count_card_brand_remove(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static void transactions_count_card_brand_mark_deleted(Entity* e);
+static bool transactions_count_card_brand_deleted(Entity* e);
 
 static Context* transactions_count_card_brand_ent_ctx(transactions_count_card_brand_entity* self) {
   return self->entctx;
@@ -236,13 +241,13 @@ static voxgig_value* transactions_count_card_brand_matchv(Entity* e, voxgig_valu
   return voxgig_clone(self->mtch);
 }
 
-static voxgig_value* transactions_count_card_brand_load(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* transactions_count_card_brand_load(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("load", "transactions_count_card_brand");
   return NULL;
 }
 
-static voxgig_value* transactions_count_card_brand_list(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity** transactions_count_card_brand_list(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("list", "transactions_count_card_brand");
   return NULL;
@@ -260,7 +265,7 @@ static void transactions_count_card_brand_create_postdone(transactions_count_car
   }
 }
 
-static voxgig_value* transactions_count_card_brand_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err) {
+static Entity* transactions_count_card_brand_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err) {
   transactions_count_card_brand_entity* self = (transactions_count_card_brand_entity*)e;
   CtxSpec cs;
   memset(&cs, 0, sizeof(cs));
@@ -270,20 +275,38 @@ static voxgig_value* transactions_count_card_brand_create(Entity* e, voxgig_valu
   cs.data = self->data;
   cs.reqdata = reqdata;
   Context* ctx = make_context_util(cs, transactions_count_card_brand_ent_ctx(self));
-  return transactions_count_card_brand_run_op(self, ctx, transactions_count_card_brand_create_postdone, err);
+  transactions_count_card_brand_run_op(self, ctx, transactions_count_card_brand_create_postdone, err);
+  if (*err) return NULL;
+
+  // The operation resolves to THIS entity: run_op has just absorbed the
+  // result into it, and the caller reaches the record through vt->data.
+  // See AGENTS.md "Entity operations return ENTITIES".
+
+  return e;
 }
 
 
-static voxgig_value* transactions_count_card_brand_update(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* transactions_count_card_brand_update(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("update", "transactions_count_card_brand");
   return NULL;
 }
 
-static voxgig_value* transactions_count_card_brand_remove(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* transactions_count_card_brand_remove(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("remove", "transactions_count_card_brand");
   return NULL;
+}
+
+// `remove` resolves to the entity, marked. The instance KEEPS the data it
+// held - a caller can still read what was deleted - but it is no longer a
+// live record.
+static void transactions_count_card_brand_mark_deleted(Entity* e) {
+  ((transactions_count_card_brand_entity*)e)->deleted = true;
+}
+
+static bool transactions_count_card_brand_deleted(Entity* e) {
+  return ((transactions_count_card_brand_entity*)e)->deleted;
 }
 
 static const EntityVT transactions_count_card_brand_VT = {
@@ -291,6 +314,8 @@ static const EntityVT transactions_count_card_brand_VT = {
   transactions_count_card_brand_make,
   transactions_count_card_brand_data,
   transactions_count_card_brand_matchv,
+  transactions_count_card_brand_mark_deleted,
+  transactions_count_card_brand_deleted,
   transactions_count_card_brand_load,
   transactions_count_card_brand_list,
   transactions_count_card_brand_create,

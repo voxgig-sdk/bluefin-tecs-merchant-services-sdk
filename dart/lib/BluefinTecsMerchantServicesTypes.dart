@@ -10,200 +10,200 @@
 
 class CancelTransaction {
   /// STRING
-  String? acquirer_id;
+  String? acquirerId;
   /// STRING
-  String? acquirer_name;
+  String? acquirerName;
   /// STRING
-  String? actual_bonus_point;
+  String? actualBonusPoints;
   /// INTEGER
   int? amount;
   /// STRING
-  String? authorization_code;
+  String? authorizationCode;
   /// STRING
-  String? balance_amount;
+  String? balanceAmount;
   /// STRING
-  String? card_brand;
+  String? cardBrand;
   /// STRING
-  String? card_number;
+  String? cardNumber;
   /// INTEGER (required at the API)
-  int? client_id;
+  int? clientId;
   /// STRING (required at the API)
   String? currency;
   /// STRING
   String? cvc;
   /// STRING
-  String? ec_data;
+  String? ecData;
   /// STRING
-  String? ecr_data;
+  String? ecrData;
   /// STRING
-  String? emv_data;
+  String? emvData;
   /// INTEGER
-  int? exchange_fee;
+  int? exchangeFee;
   /// STRING
-  String? exchange_rate;
+  String? exchangeRate;
   /// STRING
-  String? language_code;
+  String? languageCode;
   /// STRING
-  String? merchant_address;
+  String? merchantAddress;
   /// STRING
-  String? merchant_name;
+  String? merchantName;
   /// STRING
-  String? merchant_number;
+  String? merchantNumber;
   /// STRING
-  String? message_type;
+  String? messageType;
   /// INTEGER
-  int? original_trace_number;
+  int? originalTraceNumber;
   /// STRING
-  String? original_transaction_id;
+  String? originalTransactionId;
   /// STRING
   String? password;
   /// STRING
-  String? payment_reason;
+  String? paymentReason;
   /// STRING
-  String? receipt_footer;
+  String? receiptFooter;
   /// STRING
-  String? receipt_header;
+  String? receiptHeader;
   /// INTEGER
-  int? receipt_layout;
+  int? receiptLayout;
   /// STRING (required at the API)
-  String? receipt_number;
+  String? receiptNumber;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// STRING
-  String? serial_number;
+  String? serialNumber;
   /// STRING
   String? svc;
   /// INTEGER (required at the API)
-  int? terminal_id;
+  int? terminalId;
   /// STRING
-  String? terminal_location;
+  String? terminalLocation;
   /// INTEGER
-  int? trace_number;
+  int? traceNumber;
   /// STRING
-  String? transaction_date;
+  String? transactionDate;
   /// STRING
-  String? transaction_id;
+  String? transactionId;
   /// STRING
-  String? tx_type;
+  String? txType;
   /// STRING
-  String? user_data;
+  String? userData;
 
   CancelTransaction({
-    this.acquirer_id,
-    this.acquirer_name,
-    this.actual_bonus_point,
+    this.acquirerId,
+    this.acquirerName,
+    this.actualBonusPoints,
     this.amount,
-    this.authorization_code,
-    this.balance_amount,
-    this.card_brand,
-    this.card_number,
-    this.client_id,
+    this.authorizationCode,
+    this.balanceAmount,
+    this.cardBrand,
+    this.cardNumber,
+    this.clientId,
     this.currency,
     this.cvc,
-    this.ec_data,
-    this.ecr_data,
-    this.emv_data,
-    this.exchange_fee,
-    this.exchange_rate,
-    this.language_code,
-    this.merchant_address,
-    this.merchant_name,
-    this.merchant_number,
-    this.message_type,
-    this.original_trace_number,
-    this.original_transaction_id,
+    this.ecData,
+    this.ecrData,
+    this.emvData,
+    this.exchangeFee,
+    this.exchangeRate,
+    this.languageCode,
+    this.merchantAddress,
+    this.merchantName,
+    this.merchantNumber,
+    this.messageType,
+    this.originalTraceNumber,
+    this.originalTransactionId,
     this.password,
-    this.payment_reason,
-    this.receipt_footer,
-    this.receipt_header,
-    this.receipt_layout,
-    this.receipt_number,
-    this.response_code,
-    this.response_message,
-    this.serial_number,
+    this.paymentReason,
+    this.receiptFooter,
+    this.receiptHeader,
+    this.receiptLayout,
+    this.receiptNumber,
+    this.responseCode,
+    this.responseMessage,
+    this.serialNumber,
     this.svc,
-    this.terminal_id,
-    this.terminal_location,
-    this.trace_number,
-    this.transaction_date,
-    this.transaction_id,
-    this.tx_type,
-    this.user_data,
+    this.terminalId,
+    this.terminalLocation,
+    this.traceNumber,
+    this.transactionDate,
+    this.transactionId,
+    this.txType,
+    this.userData,
   });
 
   factory CancelTransaction.fromMap(Map<String, dynamic> m) => CancelTransaction(
-        acquirer_id: m['acquirer_id'] is String ? m['acquirer_id'] : null,
-        acquirer_name: m['acquirer_name'] is String ? m['acquirer_name'] : null,
-        actual_bonus_point: m['actual_bonus_point'] is String ? m['actual_bonus_point'] : null,
+        acquirerId: m['acquirerId'] is String ? m['acquirerId'] : null,
+        acquirerName: m['acquirerName'] is String ? m['acquirerName'] : null,
+        actualBonusPoints: m['actualBonusPoints'] is String ? m['actualBonusPoints'] : null,
         amount: m['amount'] is int ? m['amount'] : null,
-        authorization_code: m['authorization_code'] is String ? m['authorization_code'] : null,
-        balance_amount: m['balance_amount'] is String ? m['balance_amount'] : null,
-        card_brand: m['card_brand'] is String ? m['card_brand'] : null,
-        card_number: m['card_number'] is String ? m['card_number'] : null,
-        client_id: m['client_id'] is int ? m['client_id'] : null,
+        authorizationCode: m['authorizationCode'] is String ? m['authorizationCode'] : null,
+        balanceAmount: m['balanceAmount'] is String ? m['balanceAmount'] : null,
+        cardBrand: m['cardBrand'] is String ? m['cardBrand'] : null,
+        cardNumber: m['cardNumber'] is String ? m['cardNumber'] : null,
+        clientId: m['clientId'] is int ? m['clientId'] : null,
         currency: m['currency'] is String ? m['currency'] : null,
         cvc: m['cvc'] is String ? m['cvc'] : null,
-        ec_data: m['ec_data'] is String ? m['ec_data'] : null,
-        ecr_data: m['ecr_data'] is String ? m['ecr_data'] : null,
-        emv_data: m['emv_data'] is String ? m['emv_data'] : null,
-        exchange_fee: m['exchange_fee'] is int ? m['exchange_fee'] : null,
-        exchange_rate: m['exchange_rate'] is String ? m['exchange_rate'] : null,
-        language_code: m['language_code'] is String ? m['language_code'] : null,
-        merchant_address: m['merchant_address'] is String ? m['merchant_address'] : null,
-        merchant_name: m['merchant_name'] is String ? m['merchant_name'] : null,
-        merchant_number: m['merchant_number'] is String ? m['merchant_number'] : null,
-        message_type: m['message_type'] is String ? m['message_type'] : null,
-        original_trace_number: m['original_trace_number'] is int ? m['original_trace_number'] : null,
-        original_transaction_id: m['original_transaction_id'] is String ? m['original_transaction_id'] : null,
+        ecData: m['ecData'] is String ? m['ecData'] : null,
+        ecrData: m['ecrData'] is String ? m['ecrData'] : null,
+        emvData: m['emvData'] is String ? m['emvData'] : null,
+        exchangeFee: m['exchangeFee'] is int ? m['exchangeFee'] : null,
+        exchangeRate: m['exchangeRate'] is String ? m['exchangeRate'] : null,
+        languageCode: m['languageCode'] is String ? m['languageCode'] : null,
+        merchantAddress: m['merchantAddress'] is String ? m['merchantAddress'] : null,
+        merchantName: m['merchantName'] is String ? m['merchantName'] : null,
+        merchantNumber: m['merchantNumber'] is String ? m['merchantNumber'] : null,
+        messageType: m['messageType'] is String ? m['messageType'] : null,
+        originalTraceNumber: m['originalTraceNumber'] is int ? m['originalTraceNumber'] : null,
+        originalTransactionId: m['originalTransactionId'] is String ? m['originalTransactionId'] : null,
         password: m['password'] is String ? m['password'] : null,
-        payment_reason: m['payment_reason'] is String ? m['payment_reason'] : null,
-        receipt_footer: m['receipt_footer'] is String ? m['receipt_footer'] : null,
-        receipt_header: m['receipt_header'] is String ? m['receipt_header'] : null,
-        receipt_layout: m['receipt_layout'] is int ? m['receipt_layout'] : null,
-        receipt_number: m['receipt_number'] is String ? m['receipt_number'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        serial_number: m['serial_number'] is String ? m['serial_number'] : null,
+        paymentReason: m['paymentReason'] is String ? m['paymentReason'] : null,
+        receiptFooter: m['receiptFooter'] is String ? m['receiptFooter'] : null,
+        receiptHeader: m['receiptHeader'] is String ? m['receiptHeader'] : null,
+        receiptLayout: m['receiptLayout'] is int ? m['receiptLayout'] : null,
+        receiptNumber: m['receiptNumber'] is String ? m['receiptNumber'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        serialNumber: m['serialNumber'] is String ? m['serialNumber'] : null,
         svc: m['svc'] is String ? m['svc'] : null,
-        terminal_id: m['terminal_id'] is int ? m['terminal_id'] : null,
-        terminal_location: m['terminal_location'] is String ? m['terminal_location'] : null,
-        trace_number: m['trace_number'] is int ? m['trace_number'] : null,
-        transaction_date: m['transaction_date'] is String ? m['transaction_date'] : null,
-        transaction_id: m['transaction_id'] is String ? m['transaction_id'] : null,
-        tx_type: m['tx_type'] is String ? m['tx_type'] : null,
-        user_data: m['user_data'] is String ? m['user_data'] : null,
+        terminalId: m['terminalId'] is int ? m['terminalId'] : null,
+        terminalLocation: m['terminalLocation'] is String ? m['terminalLocation'] : null,
+        traceNumber: m['traceNumber'] is int ? m['traceNumber'] : null,
+        transactionDate: m['transactionDate'] is String ? m['transactionDate'] : null,
+        transactionId: m['transactionId'] is String ? m['transactionId'] : null,
+        txType: m['txType'] is String ? m['txType'] : null,
+        userData: m['userData'] is String ? m['userData'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != acquirer_id) {
-      m['acquirer_id'] = acquirer_id;
+    if (null != acquirerId) {
+      m['acquirerId'] = acquirerId;
     }
-    if (null != acquirer_name) {
-      m['acquirer_name'] = acquirer_name;
+    if (null != acquirerName) {
+      m['acquirerName'] = acquirerName;
     }
-    if (null != actual_bonus_point) {
-      m['actual_bonus_point'] = actual_bonus_point;
+    if (null != actualBonusPoints) {
+      m['actualBonusPoints'] = actualBonusPoints;
     }
     if (null != amount) {
       m['amount'] = amount;
     }
-    if (null != authorization_code) {
-      m['authorization_code'] = authorization_code;
+    if (null != authorizationCode) {
+      m['authorizationCode'] = authorizationCode;
     }
-    if (null != balance_amount) {
-      m['balance_amount'] = balance_amount;
+    if (null != balanceAmount) {
+      m['balanceAmount'] = balanceAmount;
     }
-    if (null != card_brand) {
-      m['card_brand'] = card_brand;
+    if (null != cardBrand) {
+      m['cardBrand'] = cardBrand;
     }
-    if (null != card_number) {
-      m['card_number'] = card_number;
+    if (null != cardNumber) {
+      m['cardNumber'] = cardNumber;
     }
-    if (null != client_id) {
-      m['client_id'] = client_id;
+    if (null != clientId) {
+      m['clientId'] = clientId;
     }
     if (null != currency) {
       m['currency'] = currency;
@@ -211,92 +211,92 @@ class CancelTransaction {
     if (null != cvc) {
       m['cvc'] = cvc;
     }
-    if (null != ec_data) {
-      m['ec_data'] = ec_data;
+    if (null != ecData) {
+      m['ecData'] = ecData;
     }
-    if (null != ecr_data) {
-      m['ecr_data'] = ecr_data;
+    if (null != ecrData) {
+      m['ecrData'] = ecrData;
     }
-    if (null != emv_data) {
-      m['emv_data'] = emv_data;
+    if (null != emvData) {
+      m['emvData'] = emvData;
     }
-    if (null != exchange_fee) {
-      m['exchange_fee'] = exchange_fee;
+    if (null != exchangeFee) {
+      m['exchangeFee'] = exchangeFee;
     }
-    if (null != exchange_rate) {
-      m['exchange_rate'] = exchange_rate;
+    if (null != exchangeRate) {
+      m['exchangeRate'] = exchangeRate;
     }
-    if (null != language_code) {
-      m['language_code'] = language_code;
+    if (null != languageCode) {
+      m['languageCode'] = languageCode;
     }
-    if (null != merchant_address) {
-      m['merchant_address'] = merchant_address;
+    if (null != merchantAddress) {
+      m['merchantAddress'] = merchantAddress;
     }
-    if (null != merchant_name) {
-      m['merchant_name'] = merchant_name;
+    if (null != merchantName) {
+      m['merchantName'] = merchantName;
     }
-    if (null != merchant_number) {
-      m['merchant_number'] = merchant_number;
+    if (null != merchantNumber) {
+      m['merchantNumber'] = merchantNumber;
     }
-    if (null != message_type) {
-      m['message_type'] = message_type;
+    if (null != messageType) {
+      m['messageType'] = messageType;
     }
-    if (null != original_trace_number) {
-      m['original_trace_number'] = original_trace_number;
+    if (null != originalTraceNumber) {
+      m['originalTraceNumber'] = originalTraceNumber;
     }
-    if (null != original_transaction_id) {
-      m['original_transaction_id'] = original_transaction_id;
+    if (null != originalTransactionId) {
+      m['originalTransactionId'] = originalTransactionId;
     }
     if (null != password) {
       m['password'] = password;
     }
-    if (null != payment_reason) {
-      m['payment_reason'] = payment_reason;
+    if (null != paymentReason) {
+      m['paymentReason'] = paymentReason;
     }
-    if (null != receipt_footer) {
-      m['receipt_footer'] = receipt_footer;
+    if (null != receiptFooter) {
+      m['receiptFooter'] = receiptFooter;
     }
-    if (null != receipt_header) {
-      m['receipt_header'] = receipt_header;
+    if (null != receiptHeader) {
+      m['receiptHeader'] = receiptHeader;
     }
-    if (null != receipt_layout) {
-      m['receipt_layout'] = receipt_layout;
+    if (null != receiptLayout) {
+      m['receiptLayout'] = receiptLayout;
     }
-    if (null != receipt_number) {
-      m['receipt_number'] = receipt_number;
+    if (null != receiptNumber) {
+      m['receiptNumber'] = receiptNumber;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != serial_number) {
-      m['serial_number'] = serial_number;
+    if (null != serialNumber) {
+      m['serialNumber'] = serialNumber;
     }
     if (null != svc) {
       m['svc'] = svc;
     }
-    if (null != terminal_id) {
-      m['terminal_id'] = terminal_id;
+    if (null != terminalId) {
+      m['terminalId'] = terminalId;
     }
-    if (null != terminal_location) {
-      m['terminal_location'] = terminal_location;
+    if (null != terminalLocation) {
+      m['terminalLocation'] = terminalLocation;
     }
-    if (null != trace_number) {
-      m['trace_number'] = trace_number;
+    if (null != traceNumber) {
+      m['traceNumber'] = traceNumber;
     }
-    if (null != transaction_date) {
-      m['transaction_date'] = transaction_date;
+    if (null != transactionDate) {
+      m['transactionDate'] = transactionDate;
     }
-    if (null != transaction_id) {
-      m['transaction_id'] = transaction_id;
+    if (null != transactionId) {
+      m['transactionId'] = transactionId;
     }
-    if (null != tx_type) {
-      m['tx_type'] = tx_type;
+    if (null != txType) {
+      m['txType'] = txType;
     }
-    if (null != user_data) {
-      m['user_data'] = user_data;
+    if (null != userData) {
+      m['userData'] = userData;
     }
     return m;
   }
@@ -304,200 +304,200 @@ class CancelTransaction {
 
 class CancelTransactionCreateData {
   /// STRING
-  String? acquirer_id;
+  String? acquirerId;
   /// STRING
-  String? acquirer_name;
+  String? acquirerName;
   /// STRING
-  String? actual_bonus_point;
+  String? actualBonusPoints;
   /// INTEGER
   int? amount;
   /// STRING
-  String? authorization_code;
+  String? authorizationCode;
   /// STRING
-  String? balance_amount;
+  String? balanceAmount;
   /// STRING
-  String? card_brand;
+  String? cardBrand;
   /// STRING
-  String? card_number;
+  String? cardNumber;
   /// INTEGER (required at the API)
-  int? client_id;
+  int? clientId;
   /// STRING (required at the API)
   String? currency;
   /// STRING
   String? cvc;
   /// STRING
-  String? ec_data;
+  String? ecData;
   /// STRING
-  String? ecr_data;
+  String? ecrData;
   /// STRING
-  String? emv_data;
+  String? emvData;
   /// INTEGER
-  int? exchange_fee;
+  int? exchangeFee;
   /// STRING
-  String? exchange_rate;
+  String? exchangeRate;
   /// STRING
-  String? language_code;
+  String? languageCode;
   /// STRING
-  String? merchant_address;
+  String? merchantAddress;
   /// STRING
-  String? merchant_name;
+  String? merchantName;
   /// STRING
-  String? merchant_number;
+  String? merchantNumber;
   /// STRING
-  String? message_type;
+  String? messageType;
   /// INTEGER
-  int? original_trace_number;
+  int? originalTraceNumber;
   /// STRING
-  String? original_transaction_id;
+  String? originalTransactionId;
   /// STRING
   String? password;
   /// STRING
-  String? payment_reason;
+  String? paymentReason;
   /// STRING
-  String? receipt_footer;
+  String? receiptFooter;
   /// STRING
-  String? receipt_header;
+  String? receiptHeader;
   /// INTEGER
-  int? receipt_layout;
+  int? receiptLayout;
   /// STRING (required at the API)
-  String? receipt_number;
+  String? receiptNumber;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// STRING
-  String? serial_number;
+  String? serialNumber;
   /// STRING
   String? svc;
   /// INTEGER (required at the API)
-  int? terminal_id;
+  int? terminalId;
   /// STRING
-  String? terminal_location;
+  String? terminalLocation;
   /// INTEGER
-  int? trace_number;
+  int? traceNumber;
   /// STRING
-  String? transaction_date;
+  String? transactionDate;
   /// STRING
-  String? transaction_id;
+  String? transactionId;
   /// STRING
-  String? tx_type;
+  String? txType;
   /// STRING
-  String? user_data;
+  String? userData;
 
   CancelTransactionCreateData({
-    this.acquirer_id,
-    this.acquirer_name,
-    this.actual_bonus_point,
+    this.acquirerId,
+    this.acquirerName,
+    this.actualBonusPoints,
     this.amount,
-    this.authorization_code,
-    this.balance_amount,
-    this.card_brand,
-    this.card_number,
-    this.client_id,
+    this.authorizationCode,
+    this.balanceAmount,
+    this.cardBrand,
+    this.cardNumber,
+    this.clientId,
     this.currency,
     this.cvc,
-    this.ec_data,
-    this.ecr_data,
-    this.emv_data,
-    this.exchange_fee,
-    this.exchange_rate,
-    this.language_code,
-    this.merchant_address,
-    this.merchant_name,
-    this.merchant_number,
-    this.message_type,
-    this.original_trace_number,
-    this.original_transaction_id,
+    this.ecData,
+    this.ecrData,
+    this.emvData,
+    this.exchangeFee,
+    this.exchangeRate,
+    this.languageCode,
+    this.merchantAddress,
+    this.merchantName,
+    this.merchantNumber,
+    this.messageType,
+    this.originalTraceNumber,
+    this.originalTransactionId,
     this.password,
-    this.payment_reason,
-    this.receipt_footer,
-    this.receipt_header,
-    this.receipt_layout,
-    this.receipt_number,
-    this.response_code,
-    this.response_message,
-    this.serial_number,
+    this.paymentReason,
+    this.receiptFooter,
+    this.receiptHeader,
+    this.receiptLayout,
+    this.receiptNumber,
+    this.responseCode,
+    this.responseMessage,
+    this.serialNumber,
     this.svc,
-    this.terminal_id,
-    this.terminal_location,
-    this.trace_number,
-    this.transaction_date,
-    this.transaction_id,
-    this.tx_type,
-    this.user_data,
+    this.terminalId,
+    this.terminalLocation,
+    this.traceNumber,
+    this.transactionDate,
+    this.transactionId,
+    this.txType,
+    this.userData,
   });
 
   factory CancelTransactionCreateData.fromMap(Map<String, dynamic> m) => CancelTransactionCreateData(
-        acquirer_id: m['acquirer_id'] is String ? m['acquirer_id'] : null,
-        acquirer_name: m['acquirer_name'] is String ? m['acquirer_name'] : null,
-        actual_bonus_point: m['actual_bonus_point'] is String ? m['actual_bonus_point'] : null,
+        acquirerId: m['acquirerId'] is String ? m['acquirerId'] : null,
+        acquirerName: m['acquirerName'] is String ? m['acquirerName'] : null,
+        actualBonusPoints: m['actualBonusPoints'] is String ? m['actualBonusPoints'] : null,
         amount: m['amount'] is int ? m['amount'] : null,
-        authorization_code: m['authorization_code'] is String ? m['authorization_code'] : null,
-        balance_amount: m['balance_amount'] is String ? m['balance_amount'] : null,
-        card_brand: m['card_brand'] is String ? m['card_brand'] : null,
-        card_number: m['card_number'] is String ? m['card_number'] : null,
-        client_id: m['client_id'] is int ? m['client_id'] : null,
+        authorizationCode: m['authorizationCode'] is String ? m['authorizationCode'] : null,
+        balanceAmount: m['balanceAmount'] is String ? m['balanceAmount'] : null,
+        cardBrand: m['cardBrand'] is String ? m['cardBrand'] : null,
+        cardNumber: m['cardNumber'] is String ? m['cardNumber'] : null,
+        clientId: m['clientId'] is int ? m['clientId'] : null,
         currency: m['currency'] is String ? m['currency'] : null,
         cvc: m['cvc'] is String ? m['cvc'] : null,
-        ec_data: m['ec_data'] is String ? m['ec_data'] : null,
-        ecr_data: m['ecr_data'] is String ? m['ecr_data'] : null,
-        emv_data: m['emv_data'] is String ? m['emv_data'] : null,
-        exchange_fee: m['exchange_fee'] is int ? m['exchange_fee'] : null,
-        exchange_rate: m['exchange_rate'] is String ? m['exchange_rate'] : null,
-        language_code: m['language_code'] is String ? m['language_code'] : null,
-        merchant_address: m['merchant_address'] is String ? m['merchant_address'] : null,
-        merchant_name: m['merchant_name'] is String ? m['merchant_name'] : null,
-        merchant_number: m['merchant_number'] is String ? m['merchant_number'] : null,
-        message_type: m['message_type'] is String ? m['message_type'] : null,
-        original_trace_number: m['original_trace_number'] is int ? m['original_trace_number'] : null,
-        original_transaction_id: m['original_transaction_id'] is String ? m['original_transaction_id'] : null,
+        ecData: m['ecData'] is String ? m['ecData'] : null,
+        ecrData: m['ecrData'] is String ? m['ecrData'] : null,
+        emvData: m['emvData'] is String ? m['emvData'] : null,
+        exchangeFee: m['exchangeFee'] is int ? m['exchangeFee'] : null,
+        exchangeRate: m['exchangeRate'] is String ? m['exchangeRate'] : null,
+        languageCode: m['languageCode'] is String ? m['languageCode'] : null,
+        merchantAddress: m['merchantAddress'] is String ? m['merchantAddress'] : null,
+        merchantName: m['merchantName'] is String ? m['merchantName'] : null,
+        merchantNumber: m['merchantNumber'] is String ? m['merchantNumber'] : null,
+        messageType: m['messageType'] is String ? m['messageType'] : null,
+        originalTraceNumber: m['originalTraceNumber'] is int ? m['originalTraceNumber'] : null,
+        originalTransactionId: m['originalTransactionId'] is String ? m['originalTransactionId'] : null,
         password: m['password'] is String ? m['password'] : null,
-        payment_reason: m['payment_reason'] is String ? m['payment_reason'] : null,
-        receipt_footer: m['receipt_footer'] is String ? m['receipt_footer'] : null,
-        receipt_header: m['receipt_header'] is String ? m['receipt_header'] : null,
-        receipt_layout: m['receipt_layout'] is int ? m['receipt_layout'] : null,
-        receipt_number: m['receipt_number'] is String ? m['receipt_number'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        serial_number: m['serial_number'] is String ? m['serial_number'] : null,
+        paymentReason: m['paymentReason'] is String ? m['paymentReason'] : null,
+        receiptFooter: m['receiptFooter'] is String ? m['receiptFooter'] : null,
+        receiptHeader: m['receiptHeader'] is String ? m['receiptHeader'] : null,
+        receiptLayout: m['receiptLayout'] is int ? m['receiptLayout'] : null,
+        receiptNumber: m['receiptNumber'] is String ? m['receiptNumber'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        serialNumber: m['serialNumber'] is String ? m['serialNumber'] : null,
         svc: m['svc'] is String ? m['svc'] : null,
-        terminal_id: m['terminal_id'] is int ? m['terminal_id'] : null,
-        terminal_location: m['terminal_location'] is String ? m['terminal_location'] : null,
-        trace_number: m['trace_number'] is int ? m['trace_number'] : null,
-        transaction_date: m['transaction_date'] is String ? m['transaction_date'] : null,
-        transaction_id: m['transaction_id'] is String ? m['transaction_id'] : null,
-        tx_type: m['tx_type'] is String ? m['tx_type'] : null,
-        user_data: m['user_data'] is String ? m['user_data'] : null,
+        terminalId: m['terminalId'] is int ? m['terminalId'] : null,
+        terminalLocation: m['terminalLocation'] is String ? m['terminalLocation'] : null,
+        traceNumber: m['traceNumber'] is int ? m['traceNumber'] : null,
+        transactionDate: m['transactionDate'] is String ? m['transactionDate'] : null,
+        transactionId: m['transactionId'] is String ? m['transactionId'] : null,
+        txType: m['txType'] is String ? m['txType'] : null,
+        userData: m['userData'] is String ? m['userData'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != acquirer_id) {
-      m['acquirer_id'] = acquirer_id;
+    if (null != acquirerId) {
+      m['acquirerId'] = acquirerId;
     }
-    if (null != acquirer_name) {
-      m['acquirer_name'] = acquirer_name;
+    if (null != acquirerName) {
+      m['acquirerName'] = acquirerName;
     }
-    if (null != actual_bonus_point) {
-      m['actual_bonus_point'] = actual_bonus_point;
+    if (null != actualBonusPoints) {
+      m['actualBonusPoints'] = actualBonusPoints;
     }
     if (null != amount) {
       m['amount'] = amount;
     }
-    if (null != authorization_code) {
-      m['authorization_code'] = authorization_code;
+    if (null != authorizationCode) {
+      m['authorizationCode'] = authorizationCode;
     }
-    if (null != balance_amount) {
-      m['balance_amount'] = balance_amount;
+    if (null != balanceAmount) {
+      m['balanceAmount'] = balanceAmount;
     }
-    if (null != card_brand) {
-      m['card_brand'] = card_brand;
+    if (null != cardBrand) {
+      m['cardBrand'] = cardBrand;
     }
-    if (null != card_number) {
-      m['card_number'] = card_number;
+    if (null != cardNumber) {
+      m['cardNumber'] = cardNumber;
     }
-    if (null != client_id) {
-      m['client_id'] = client_id;
+    if (null != clientId) {
+      m['clientId'] = clientId;
     }
     if (null != currency) {
       m['currency'] = currency;
@@ -505,92 +505,92 @@ class CancelTransactionCreateData {
     if (null != cvc) {
       m['cvc'] = cvc;
     }
-    if (null != ec_data) {
-      m['ec_data'] = ec_data;
+    if (null != ecData) {
+      m['ecData'] = ecData;
     }
-    if (null != ecr_data) {
-      m['ecr_data'] = ecr_data;
+    if (null != ecrData) {
+      m['ecrData'] = ecrData;
     }
-    if (null != emv_data) {
-      m['emv_data'] = emv_data;
+    if (null != emvData) {
+      m['emvData'] = emvData;
     }
-    if (null != exchange_fee) {
-      m['exchange_fee'] = exchange_fee;
+    if (null != exchangeFee) {
+      m['exchangeFee'] = exchangeFee;
     }
-    if (null != exchange_rate) {
-      m['exchange_rate'] = exchange_rate;
+    if (null != exchangeRate) {
+      m['exchangeRate'] = exchangeRate;
     }
-    if (null != language_code) {
-      m['language_code'] = language_code;
+    if (null != languageCode) {
+      m['languageCode'] = languageCode;
     }
-    if (null != merchant_address) {
-      m['merchant_address'] = merchant_address;
+    if (null != merchantAddress) {
+      m['merchantAddress'] = merchantAddress;
     }
-    if (null != merchant_name) {
-      m['merchant_name'] = merchant_name;
+    if (null != merchantName) {
+      m['merchantName'] = merchantName;
     }
-    if (null != merchant_number) {
-      m['merchant_number'] = merchant_number;
+    if (null != merchantNumber) {
+      m['merchantNumber'] = merchantNumber;
     }
-    if (null != message_type) {
-      m['message_type'] = message_type;
+    if (null != messageType) {
+      m['messageType'] = messageType;
     }
-    if (null != original_trace_number) {
-      m['original_trace_number'] = original_trace_number;
+    if (null != originalTraceNumber) {
+      m['originalTraceNumber'] = originalTraceNumber;
     }
-    if (null != original_transaction_id) {
-      m['original_transaction_id'] = original_transaction_id;
+    if (null != originalTransactionId) {
+      m['originalTransactionId'] = originalTransactionId;
     }
     if (null != password) {
       m['password'] = password;
     }
-    if (null != payment_reason) {
-      m['payment_reason'] = payment_reason;
+    if (null != paymentReason) {
+      m['paymentReason'] = paymentReason;
     }
-    if (null != receipt_footer) {
-      m['receipt_footer'] = receipt_footer;
+    if (null != receiptFooter) {
+      m['receiptFooter'] = receiptFooter;
     }
-    if (null != receipt_header) {
-      m['receipt_header'] = receipt_header;
+    if (null != receiptHeader) {
+      m['receiptHeader'] = receiptHeader;
     }
-    if (null != receipt_layout) {
-      m['receipt_layout'] = receipt_layout;
+    if (null != receiptLayout) {
+      m['receiptLayout'] = receiptLayout;
     }
-    if (null != receipt_number) {
-      m['receipt_number'] = receipt_number;
+    if (null != receiptNumber) {
+      m['receiptNumber'] = receiptNumber;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != serial_number) {
-      m['serial_number'] = serial_number;
+    if (null != serialNumber) {
+      m['serialNumber'] = serialNumber;
     }
     if (null != svc) {
       m['svc'] = svc;
     }
-    if (null != terminal_id) {
-      m['terminal_id'] = terminal_id;
+    if (null != terminalId) {
+      m['terminalId'] = terminalId;
     }
-    if (null != terminal_location) {
-      m['terminal_location'] = terminal_location;
+    if (null != terminalLocation) {
+      m['terminalLocation'] = terminalLocation;
     }
-    if (null != trace_number) {
-      m['trace_number'] = trace_number;
+    if (null != traceNumber) {
+      m['traceNumber'] = traceNumber;
     }
-    if (null != transaction_date) {
-      m['transaction_date'] = transaction_date;
+    if (null != transactionDate) {
+      m['transactionDate'] = transactionDate;
     }
-    if (null != transaction_id) {
-      m['transaction_id'] = transaction_id;
+    if (null != transactionId) {
+      m['transactionId'] = transactionId;
     }
-    if (null != tx_type) {
-      m['tx_type'] = tx_type;
+    if (null != txType) {
+      m['txType'] = txType;
     }
-    if (null != user_data) {
-      m['user_data'] = user_data;
+    if (null != userData) {
+      m['userData'] = userData;
     }
     return m;
   }
@@ -598,34 +598,34 @@ class CancelTransactionCreateData {
 
 class CheckCardBlackListed {
   /// STRING
-  String? card_no;
+  String? cardNo;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
 
   CheckCardBlackListed({
-    this.card_no,
-    this.response_code,
-    this.response_message,
+    this.cardNo,
+    this.responseCode,
+    this.responseMessage,
   });
 
   factory CheckCardBlackListed.fromMap(Map<String, dynamic> m) => CheckCardBlackListed(
-        card_no: m['card_no'] is String ? m['card_no'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        cardNo: m['cardNo'] is String ? m['cardNo'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != card_no) {
-      m['card_no'] = card_no;
+    if (null != cardNo) {
+      m['cardNo'] = cardNo;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     return m;
   }
@@ -633,34 +633,34 @@ class CheckCardBlackListed {
 
 class CheckCardBlackListedCreateData {
   /// STRING
-  String? card_no;
+  String? cardNo;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
 
   CheckCardBlackListedCreateData({
-    this.card_no,
-    this.response_code,
-    this.response_message,
+    this.cardNo,
+    this.responseCode,
+    this.responseMessage,
   });
 
   factory CheckCardBlackListedCreateData.fromMap(Map<String, dynamic> m) => CheckCardBlackListedCreateData(
-        card_no: m['card_no'] is String ? m['card_no'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        cardNo: m['cardNo'] is String ? m['cardNo'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != card_no) {
-      m['card_no'] = card_no;
+    if (null != cardNo) {
+      m['cardNo'] = cardNo;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     return m;
   }
@@ -668,62 +668,62 @@ class CheckCardBlackListedCreateData {
 
 class CreateProduct {
   /// INTEGER
-  int? acquirer_id;
+  int? acquirerId;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// STRING (required at the API)
-  String? template_name;
+  String? templateName;
   /// STRING (required at the API)
-  String? template_type;
+  String? templateType;
   /// STRING (required at the API)
-  String? template_xml;
+  String? templateXml;
   /// STRING (required at the API)
-  String? terminal_type;
+  String? terminalType;
 
   CreateProduct({
-    this.acquirer_id,
-    this.response_code,
-    this.response_message,
-    this.template_name,
-    this.template_type,
-    this.template_xml,
-    this.terminal_type,
+    this.acquirerId,
+    this.responseCode,
+    this.responseMessage,
+    this.templateName,
+    this.templateType,
+    this.templateXml,
+    this.terminalType,
   });
 
   factory CreateProduct.fromMap(Map<String, dynamic> m) => CreateProduct(
-        acquirer_id: m['acquirer_id'] is int ? m['acquirer_id'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        template_name: m['template_name'] is String ? m['template_name'] : null,
-        template_type: m['template_type'] is String ? m['template_type'] : null,
-        template_xml: m['template_xml'] is String ? m['template_xml'] : null,
-        terminal_type: m['terminal_type'] is String ? m['terminal_type'] : null,
+        acquirerId: m['acquirerId'] is int ? m['acquirerId'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        templateName: m['templateName'] is String ? m['templateName'] : null,
+        templateType: m['templateType'] is String ? m['templateType'] : null,
+        templateXml: m['templateXml'] is String ? m['templateXml'] : null,
+        terminalType: m['terminalType'] is String ? m['terminalType'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != acquirer_id) {
-      m['acquirer_id'] = acquirer_id;
+    if (null != acquirerId) {
+      m['acquirerId'] = acquirerId;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != template_name) {
-      m['template_name'] = template_name;
+    if (null != templateName) {
+      m['templateName'] = templateName;
     }
-    if (null != template_type) {
-      m['template_type'] = template_type;
+    if (null != templateType) {
+      m['templateType'] = templateType;
     }
-    if (null != template_xml) {
-      m['template_xml'] = template_xml;
+    if (null != templateXml) {
+      m['templateXml'] = templateXml;
     }
-    if (null != terminal_type) {
-      m['terminal_type'] = terminal_type;
+    if (null != terminalType) {
+      m['terminalType'] = terminalType;
     }
     return m;
   }
@@ -731,62 +731,62 @@ class CreateProduct {
 
 class CreateProductCreateData {
   /// INTEGER
-  int? acquirer_id;
+  int? acquirerId;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// STRING (required at the API)
-  String? template_name;
+  String? templateName;
   /// STRING (required at the API)
-  String? template_type;
+  String? templateType;
   /// STRING (required at the API)
-  String? template_xml;
+  String? templateXml;
   /// STRING (required at the API)
-  String? terminal_type;
+  String? terminalType;
 
   CreateProductCreateData({
-    this.acquirer_id,
-    this.response_code,
-    this.response_message,
-    this.template_name,
-    this.template_type,
-    this.template_xml,
-    this.terminal_type,
+    this.acquirerId,
+    this.responseCode,
+    this.responseMessage,
+    this.templateName,
+    this.templateType,
+    this.templateXml,
+    this.terminalType,
   });
 
   factory CreateProductCreateData.fromMap(Map<String, dynamic> m) => CreateProductCreateData(
-        acquirer_id: m['acquirer_id'] is int ? m['acquirer_id'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        template_name: m['template_name'] is String ? m['template_name'] : null,
-        template_type: m['template_type'] is String ? m['template_type'] : null,
-        template_xml: m['template_xml'] is String ? m['template_xml'] : null,
-        terminal_type: m['terminal_type'] is String ? m['terminal_type'] : null,
+        acquirerId: m['acquirerId'] is int ? m['acquirerId'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        templateName: m['templateName'] is String ? m['templateName'] : null,
+        templateType: m['templateType'] is String ? m['templateType'] : null,
+        templateXml: m['templateXml'] is String ? m['templateXml'] : null,
+        terminalType: m['terminalType'] is String ? m['terminalType'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != acquirer_id) {
-      m['acquirer_id'] = acquirer_id;
+    if (null != acquirerId) {
+      m['acquirerId'] = acquirerId;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != template_name) {
-      m['template_name'] = template_name;
+    if (null != templateName) {
+      m['templateName'] = templateName;
     }
-    if (null != template_type) {
-      m['template_type'] = template_type;
+    if (null != templateType) {
+      m['templateType'] = templateType;
     }
-    if (null != template_xml) {
-      m['template_xml'] = template_xml;
+    if (null != templateXml) {
+      m['templateXml'] = templateXml;
     }
-    if (null != terminal_type) {
-      m['terminal_type'] = terminal_type;
+    if (null != terminalType) {
+      m['terminalType'] = terminalType;
     }
     return m;
   }
@@ -794,62 +794,62 @@ class CreateProductCreateData {
 
 class DeactivateTerminal {
   /// STRING
-  String? corporate_uuid;
+  String? corporateUuid;
   /// STRING (required at the API)
-  String? deactivation_reason;
+  String? deactivationReason;
   /// STRING
-  String? package_order_uuid;
+  String? packageOrderUuid;
   /// STRING
-  String? product_order_uuid;
+  String? productOrderUuid;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// INTEGER (required at the API)
-  int? terminal_id;
+  int? terminalId;
 
   DeactivateTerminal({
-    this.corporate_uuid,
-    this.deactivation_reason,
-    this.package_order_uuid,
-    this.product_order_uuid,
-    this.response_code,
-    this.response_message,
-    this.terminal_id,
+    this.corporateUuid,
+    this.deactivationReason,
+    this.packageOrderUuid,
+    this.productOrderUuid,
+    this.responseCode,
+    this.responseMessage,
+    this.terminalId,
   });
 
   factory DeactivateTerminal.fromMap(Map<String, dynamic> m) => DeactivateTerminal(
-        corporate_uuid: m['corporate_uuid'] is String ? m['corporate_uuid'] : null,
-        deactivation_reason: m['deactivation_reason'] is String ? m['deactivation_reason'] : null,
-        package_order_uuid: m['package_order_uuid'] is String ? m['package_order_uuid'] : null,
-        product_order_uuid: m['product_order_uuid'] is String ? m['product_order_uuid'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        terminal_id: m['terminal_id'] is int ? m['terminal_id'] : null,
+        corporateUuid: m['corporateUuid'] is String ? m['corporateUuid'] : null,
+        deactivationReason: m['deactivationReason'] is String ? m['deactivationReason'] : null,
+        packageOrderUuid: m['packageOrderUuid'] is String ? m['packageOrderUuid'] : null,
+        productOrderUuid: m['productOrderUuid'] is String ? m['productOrderUuid'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        terminalId: m['terminalId'] is int ? m['terminalId'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != corporate_uuid) {
-      m['corporate_uuid'] = corporate_uuid;
+    if (null != corporateUuid) {
+      m['corporateUuid'] = corporateUuid;
     }
-    if (null != deactivation_reason) {
-      m['deactivation_reason'] = deactivation_reason;
+    if (null != deactivationReason) {
+      m['deactivationReason'] = deactivationReason;
     }
-    if (null != package_order_uuid) {
-      m['package_order_uuid'] = package_order_uuid;
+    if (null != packageOrderUuid) {
+      m['packageOrderUuid'] = packageOrderUuid;
     }
-    if (null != product_order_uuid) {
-      m['product_order_uuid'] = product_order_uuid;
+    if (null != productOrderUuid) {
+      m['productOrderUuid'] = productOrderUuid;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != terminal_id) {
-      m['terminal_id'] = terminal_id;
+    if (null != terminalId) {
+      m['terminalId'] = terminalId;
     }
     return m;
   }
@@ -857,62 +857,62 @@ class DeactivateTerminal {
 
 class DeactivateTerminalCreateData {
   /// STRING
-  String? corporate_uuid;
+  String? corporateUuid;
   /// STRING (required at the API)
-  String? deactivation_reason;
+  String? deactivationReason;
   /// STRING
-  String? package_order_uuid;
+  String? packageOrderUuid;
   /// STRING
-  String? product_order_uuid;
+  String? productOrderUuid;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// INTEGER (required at the API)
-  int? terminal_id;
+  int? terminalId;
 
   DeactivateTerminalCreateData({
-    this.corporate_uuid,
-    this.deactivation_reason,
-    this.package_order_uuid,
-    this.product_order_uuid,
-    this.response_code,
-    this.response_message,
-    this.terminal_id,
+    this.corporateUuid,
+    this.deactivationReason,
+    this.packageOrderUuid,
+    this.productOrderUuid,
+    this.responseCode,
+    this.responseMessage,
+    this.terminalId,
   });
 
   factory DeactivateTerminalCreateData.fromMap(Map<String, dynamic> m) => DeactivateTerminalCreateData(
-        corporate_uuid: m['corporate_uuid'] is String ? m['corporate_uuid'] : null,
-        deactivation_reason: m['deactivation_reason'] is String ? m['deactivation_reason'] : null,
-        package_order_uuid: m['package_order_uuid'] is String ? m['package_order_uuid'] : null,
-        product_order_uuid: m['product_order_uuid'] is String ? m['product_order_uuid'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        terminal_id: m['terminal_id'] is int ? m['terminal_id'] : null,
+        corporateUuid: m['corporateUuid'] is String ? m['corporateUuid'] : null,
+        deactivationReason: m['deactivationReason'] is String ? m['deactivationReason'] : null,
+        packageOrderUuid: m['packageOrderUuid'] is String ? m['packageOrderUuid'] : null,
+        productOrderUuid: m['productOrderUuid'] is String ? m['productOrderUuid'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        terminalId: m['terminalId'] is int ? m['terminalId'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != corporate_uuid) {
-      m['corporate_uuid'] = corporate_uuid;
+    if (null != corporateUuid) {
+      m['corporateUuid'] = corporateUuid;
     }
-    if (null != deactivation_reason) {
-      m['deactivation_reason'] = deactivation_reason;
+    if (null != deactivationReason) {
+      m['deactivationReason'] = deactivationReason;
     }
-    if (null != package_order_uuid) {
-      m['package_order_uuid'] = package_order_uuid;
+    if (null != packageOrderUuid) {
+      m['packageOrderUuid'] = packageOrderUuid;
     }
-    if (null != product_order_uuid) {
-      m['product_order_uuid'] = product_order_uuid;
+    if (null != productOrderUuid) {
+      m['productOrderUuid'] = productOrderUuid;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != terminal_id) {
-      m['terminal_id'] = terminal_id;
+    if (null != terminalId) {
+      m['terminalId'] = terminalId;
     }
     return m;
   }
@@ -920,83 +920,83 @@ class DeactivateTerminalCreateData {
 
 class DigitalServicesApi {
   /// STRING (required at the API)
-  String? clearing_date_from;
+  String? clearingDateFrom;
   /// STRING (required at the API)
-  String? clearing_date_to;
+  String? clearingDateTo;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// INTEGER
-  int? tx_count;
+  int? txCount;
   /// STRING
-  String? tx_id_end;
+  String? txIdEnd;
   /// STRING
-  String? tx_id_start;
+  String? txIdStart;
   /// INTEGER
-  int? tx_seq_no_end;
+  int? txSeqNoEnd;
   /// INTEGER
-  int? tx_seq_no_start;
+  int? txSeqNoStart;
   /// INTEGER
-  int? tx_total;
+  int? txTotal;
 
   DigitalServicesApi({
-    this.clearing_date_from,
-    this.clearing_date_to,
-    this.response_code,
-    this.response_message,
-    this.tx_count,
-    this.tx_id_end,
-    this.tx_id_start,
-    this.tx_seq_no_end,
-    this.tx_seq_no_start,
-    this.tx_total,
+    this.clearingDateFrom,
+    this.clearingDateTo,
+    this.responseCode,
+    this.responseMessage,
+    this.txCount,
+    this.txIdEnd,
+    this.txIdStart,
+    this.txSeqNoEnd,
+    this.txSeqNoStart,
+    this.txTotal,
   });
 
   factory DigitalServicesApi.fromMap(Map<String, dynamic> m) => DigitalServicesApi(
-        clearing_date_from: m['clearing_date_from'] is String ? m['clearing_date_from'] : null,
-        clearing_date_to: m['clearing_date_to'] is String ? m['clearing_date_to'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        tx_count: m['tx_count'] is int ? m['tx_count'] : null,
-        tx_id_end: m['tx_id_end'] is String ? m['tx_id_end'] : null,
-        tx_id_start: m['tx_id_start'] is String ? m['tx_id_start'] : null,
-        tx_seq_no_end: m['tx_seq_no_end'] is int ? m['tx_seq_no_end'] : null,
-        tx_seq_no_start: m['tx_seq_no_start'] is int ? m['tx_seq_no_start'] : null,
-        tx_total: m['tx_total'] is int ? m['tx_total'] : null,
+        clearingDateFrom: m['clearingDateFrom'] is String ? m['clearingDateFrom'] : null,
+        clearingDateTo: m['clearingDateTo'] is String ? m['clearingDateTo'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        txCount: m['txCount'] is int ? m['txCount'] : null,
+        txIdEnd: m['txIdEnd'] is String ? m['txIdEnd'] : null,
+        txIdStart: m['txIdStart'] is String ? m['txIdStart'] : null,
+        txSeqNoEnd: m['txSeqNoEnd'] is int ? m['txSeqNoEnd'] : null,
+        txSeqNoStart: m['txSeqNoStart'] is int ? m['txSeqNoStart'] : null,
+        txTotal: m['txTotal'] is int ? m['txTotal'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != clearing_date_from) {
-      m['clearing_date_from'] = clearing_date_from;
+    if (null != clearingDateFrom) {
+      m['clearingDateFrom'] = clearingDateFrom;
     }
-    if (null != clearing_date_to) {
-      m['clearing_date_to'] = clearing_date_to;
+    if (null != clearingDateTo) {
+      m['clearingDateTo'] = clearingDateTo;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != tx_count) {
-      m['tx_count'] = tx_count;
+    if (null != txCount) {
+      m['txCount'] = txCount;
     }
-    if (null != tx_id_end) {
-      m['tx_id_end'] = tx_id_end;
+    if (null != txIdEnd) {
+      m['txIdEnd'] = txIdEnd;
     }
-    if (null != tx_id_start) {
-      m['tx_id_start'] = tx_id_start;
+    if (null != txIdStart) {
+      m['txIdStart'] = txIdStart;
     }
-    if (null != tx_seq_no_end) {
-      m['tx_seq_no_end'] = tx_seq_no_end;
+    if (null != txSeqNoEnd) {
+      m['txSeqNoEnd'] = txSeqNoEnd;
     }
-    if (null != tx_seq_no_start) {
-      m['tx_seq_no_start'] = tx_seq_no_start;
+    if (null != txSeqNoStart) {
+      m['txSeqNoStart'] = txSeqNoStart;
     }
-    if (null != tx_total) {
-      m['tx_total'] = tx_total;
+    if (null != txTotal) {
+      m['txTotal'] = txTotal;
     }
     return m;
   }
@@ -1004,83 +1004,83 @@ class DigitalServicesApi {
 
 class DigitalServicesApiLoadMatch {
   /// STRING
-  String? clearing_date_from;
+  String? clearingDateFrom;
   /// STRING
-  String? clearing_date_to;
+  String? clearingDateTo;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// INTEGER
-  int? tx_count;
+  int? txCount;
   /// STRING
-  String? tx_id_end;
+  String? txIdEnd;
   /// STRING
-  String? tx_id_start;
+  String? txIdStart;
   /// INTEGER
-  int? tx_seq_no_end;
+  int? txSeqNoEnd;
   /// INTEGER
-  int? tx_seq_no_start;
+  int? txSeqNoStart;
   /// INTEGER
-  int? tx_total;
+  int? txTotal;
 
   DigitalServicesApiLoadMatch({
-    this.clearing_date_from,
-    this.clearing_date_to,
-    this.response_code,
-    this.response_message,
-    this.tx_count,
-    this.tx_id_end,
-    this.tx_id_start,
-    this.tx_seq_no_end,
-    this.tx_seq_no_start,
-    this.tx_total,
+    this.clearingDateFrom,
+    this.clearingDateTo,
+    this.responseCode,
+    this.responseMessage,
+    this.txCount,
+    this.txIdEnd,
+    this.txIdStart,
+    this.txSeqNoEnd,
+    this.txSeqNoStart,
+    this.txTotal,
   });
 
   factory DigitalServicesApiLoadMatch.fromMap(Map<String, dynamic> m) => DigitalServicesApiLoadMatch(
-        clearing_date_from: m['clearing_date_from'] is String ? m['clearing_date_from'] : null,
-        clearing_date_to: m['clearing_date_to'] is String ? m['clearing_date_to'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        tx_count: m['tx_count'] is int ? m['tx_count'] : null,
-        tx_id_end: m['tx_id_end'] is String ? m['tx_id_end'] : null,
-        tx_id_start: m['tx_id_start'] is String ? m['tx_id_start'] : null,
-        tx_seq_no_end: m['tx_seq_no_end'] is int ? m['tx_seq_no_end'] : null,
-        tx_seq_no_start: m['tx_seq_no_start'] is int ? m['tx_seq_no_start'] : null,
-        tx_total: m['tx_total'] is int ? m['tx_total'] : null,
+        clearingDateFrom: m['clearingDateFrom'] is String ? m['clearingDateFrom'] : null,
+        clearingDateTo: m['clearingDateTo'] is String ? m['clearingDateTo'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        txCount: m['txCount'] is int ? m['txCount'] : null,
+        txIdEnd: m['txIdEnd'] is String ? m['txIdEnd'] : null,
+        txIdStart: m['txIdStart'] is String ? m['txIdStart'] : null,
+        txSeqNoEnd: m['txSeqNoEnd'] is int ? m['txSeqNoEnd'] : null,
+        txSeqNoStart: m['txSeqNoStart'] is int ? m['txSeqNoStart'] : null,
+        txTotal: m['txTotal'] is int ? m['txTotal'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != clearing_date_from) {
-      m['clearing_date_from'] = clearing_date_from;
+    if (null != clearingDateFrom) {
+      m['clearingDateFrom'] = clearingDateFrom;
     }
-    if (null != clearing_date_to) {
-      m['clearing_date_to'] = clearing_date_to;
+    if (null != clearingDateTo) {
+      m['clearingDateTo'] = clearingDateTo;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != tx_count) {
-      m['tx_count'] = tx_count;
+    if (null != txCount) {
+      m['txCount'] = txCount;
     }
-    if (null != tx_id_end) {
-      m['tx_id_end'] = tx_id_end;
+    if (null != txIdEnd) {
+      m['txIdEnd'] = txIdEnd;
     }
-    if (null != tx_id_start) {
-      m['tx_id_start'] = tx_id_start;
+    if (null != txIdStart) {
+      m['txIdStart'] = txIdStart;
     }
-    if (null != tx_seq_no_end) {
-      m['tx_seq_no_end'] = tx_seq_no_end;
+    if (null != txSeqNoEnd) {
+      m['txSeqNoEnd'] = txSeqNoEnd;
     }
-    if (null != tx_seq_no_start) {
-      m['tx_seq_no_start'] = tx_seq_no_start;
+    if (null != txSeqNoStart) {
+      m['txSeqNoStart'] = txSeqNoStart;
     }
-    if (null != tx_total) {
-      m['tx_total'] = tx_total;
+    if (null != txTotal) {
+      m['txTotal'] = txTotal;
     }
     return m;
   }
@@ -1089,13 +1089,53 @@ class DigitalServicesApiLoadMatch {
 class DigitalServicesApiCreateData {
   /// STRING
   String? file_id;
+  /// STRING (required at the API)
+  String? clearingDateFrom;
+  /// STRING (required at the API)
+  String? clearingDateTo;
+  /// INTEGER
+  int? responseCode;
+  /// STRING
+  String? responseMessage;
+  /// INTEGER
+  int? txCount;
+  /// STRING
+  String? txIdEnd;
+  /// STRING
+  String? txIdStart;
+  /// INTEGER
+  int? txSeqNoEnd;
+  /// INTEGER
+  int? txSeqNoStart;
+  /// INTEGER
+  int? txTotal;
 
   DigitalServicesApiCreateData({
     this.file_id,
+    this.clearingDateFrom,
+    this.clearingDateTo,
+    this.responseCode,
+    this.responseMessage,
+    this.txCount,
+    this.txIdEnd,
+    this.txIdStart,
+    this.txSeqNoEnd,
+    this.txSeqNoStart,
+    this.txTotal,
   });
 
   factory DigitalServicesApiCreateData.fromMap(Map<String, dynamic> m) => DigitalServicesApiCreateData(
         file_id: m['file_id'] is String ? m['file_id'] : null,
+        clearingDateFrom: m['clearingDateFrom'] is String ? m['clearingDateFrom'] : null,
+        clearingDateTo: m['clearingDateTo'] is String ? m['clearingDateTo'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        txCount: m['txCount'] is int ? m['txCount'] : null,
+        txIdEnd: m['txIdEnd'] is String ? m['txIdEnd'] : null,
+        txIdStart: m['txIdStart'] is String ? m['txIdStart'] : null,
+        txSeqNoEnd: m['txSeqNoEnd'] is int ? m['txSeqNoEnd'] : null,
+        txSeqNoStart: m['txSeqNoStart'] is int ? m['txSeqNoStart'] : null,
+        txTotal: m['txTotal'] is int ? m['txTotal'] : null,
       );
 
   Map<String, dynamic> toMap() {
@@ -1103,61 +1143,91 @@ class DigitalServicesApiCreateData {
     if (null != file_id) {
       m['file_id'] = file_id;
     }
+    if (null != clearingDateFrom) {
+      m['clearingDateFrom'] = clearingDateFrom;
+    }
+    if (null != clearingDateTo) {
+      m['clearingDateTo'] = clearingDateTo;
+    }
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
+    }
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
+    }
+    if (null != txCount) {
+      m['txCount'] = txCount;
+    }
+    if (null != txIdEnd) {
+      m['txIdEnd'] = txIdEnd;
+    }
+    if (null != txIdStart) {
+      m['txIdStart'] = txIdStart;
+    }
+    if (null != txSeqNoEnd) {
+      m['txSeqNoEnd'] = txSeqNoEnd;
+    }
+    if (null != txSeqNoStart) {
+      m['txSeqNoStart'] = txSeqNoStart;
+    }
+    if (null != txTotal) {
+      m['txTotal'] = txTotal;
+    }
     return m;
   }
 }
 
 class EcDataEcom {
   /// STRING
-  String? ecom_data;
+  String? ecomData;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// INTEGER (required at the API)
-  int? terminal_id;
+  int? terminalId;
   /// STRING (required at the API)
-  String? transaction_id;
+  String? transactionId;
   /// STRING (required at the API)
-  String? transaction_type;
+  String? transactionType;
 
   EcDataEcom({
-    this.ecom_data,
-    this.response_code,
-    this.response_message,
-    this.terminal_id,
-    this.transaction_id,
-    this.transaction_type,
+    this.ecomData,
+    this.responseCode,
+    this.responseMessage,
+    this.terminalId,
+    this.transactionId,
+    this.transactionType,
   });
 
   factory EcDataEcom.fromMap(Map<String, dynamic> m) => EcDataEcom(
-        ecom_data: m['ecom_data'] is String ? m['ecom_data'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        terminal_id: m['terminal_id'] is int ? m['terminal_id'] : null,
-        transaction_id: m['transaction_id'] is String ? m['transaction_id'] : null,
-        transaction_type: m['transaction_type'] is String ? m['transaction_type'] : null,
+        ecomData: m['ecomData'] is String ? m['ecomData'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        terminalId: m['terminalId'] is int ? m['terminalId'] : null,
+        transactionId: m['transactionId'] is String ? m['transactionId'] : null,
+        transactionType: m['transactionType'] is String ? m['transactionType'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != ecom_data) {
-      m['ecom_data'] = ecom_data;
+    if (null != ecomData) {
+      m['ecomData'] = ecomData;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != terminal_id) {
-      m['terminal_id'] = terminal_id;
+    if (null != terminalId) {
+      m['terminalId'] = terminalId;
     }
-    if (null != transaction_id) {
-      m['transaction_id'] = transaction_id;
+    if (null != transactionId) {
+      m['transactionId'] = transactionId;
     }
-    if (null != transaction_type) {
-      m['transaction_type'] = transaction_type;
+    if (null != transactionType) {
+      m['transactionType'] = transactionType;
     }
     return m;
   }
@@ -1165,55 +1235,55 @@ class EcDataEcom {
 
 class EcDataEcomCreateData {
   /// STRING
-  String? ecom_data;
+  String? ecomData;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// INTEGER (required at the API)
-  int? terminal_id;
+  int? terminalId;
   /// STRING (required at the API)
-  String? transaction_id;
+  String? transactionId;
   /// STRING (required at the API)
-  String? transaction_type;
+  String? transactionType;
 
   EcDataEcomCreateData({
-    this.ecom_data,
-    this.response_code,
-    this.response_message,
-    this.terminal_id,
-    this.transaction_id,
-    this.transaction_type,
+    this.ecomData,
+    this.responseCode,
+    this.responseMessage,
+    this.terminalId,
+    this.transactionId,
+    this.transactionType,
   });
 
   factory EcDataEcomCreateData.fromMap(Map<String, dynamic> m) => EcDataEcomCreateData(
-        ecom_data: m['ecom_data'] is String ? m['ecom_data'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        terminal_id: m['terminal_id'] is int ? m['terminal_id'] : null,
-        transaction_id: m['transaction_id'] is String ? m['transaction_id'] : null,
-        transaction_type: m['transaction_type'] is String ? m['transaction_type'] : null,
+        ecomData: m['ecomData'] is String ? m['ecomData'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        terminalId: m['terminalId'] is int ? m['terminalId'] : null,
+        transactionId: m['transactionId'] is String ? m['transactionId'] : null,
+        transactionType: m['transactionType'] is String ? m['transactionType'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != ecom_data) {
-      m['ecom_data'] = ecom_data;
+    if (null != ecomData) {
+      m['ecomData'] = ecomData;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != terminal_id) {
-      m['terminal_id'] = terminal_id;
+    if (null != terminalId) {
+      m['terminalId'] = terminalId;
     }
-    if (null != transaction_id) {
-      m['transaction_id'] = transaction_id;
+    if (null != transactionId) {
+      m['transactionId'] = transactionId;
     }
-    if (null != transaction_type) {
-      m['transaction_type'] = transaction_type;
+    if (null != transactionType) {
+      m['transactionType'] = transactionType;
     }
     return m;
   }
@@ -1221,48 +1291,48 @@ class EcDataEcomCreateData {
 
 class EcomParameter {
   /// STRING
-  String? ecom_pass;
+  String? ecomPass;
   /// STRING
-  String? ecom_skey;
+  String? ecomSkey;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// INTEGER (required at the API)
-  int? terminal_id;
+  int? terminalId;
 
   EcomParameter({
-    this.ecom_pass,
-    this.ecom_skey,
-    this.response_code,
-    this.response_message,
-    this.terminal_id,
+    this.ecomPass,
+    this.ecomSkey,
+    this.responseCode,
+    this.responseMessage,
+    this.terminalId,
   });
 
   factory EcomParameter.fromMap(Map<String, dynamic> m) => EcomParameter(
-        ecom_pass: m['ecom_pass'] is String ? m['ecom_pass'] : null,
-        ecom_skey: m['ecom_skey'] is String ? m['ecom_skey'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        terminal_id: m['terminal_id'] is int ? m['terminal_id'] : null,
+        ecomPass: m['ecomPass'] is String ? m['ecomPass'] : null,
+        ecomSkey: m['ecomSkey'] is String ? m['ecomSkey'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        terminalId: m['terminalId'] is int ? m['terminalId'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != ecom_pass) {
-      m['ecom_pass'] = ecom_pass;
+    if (null != ecomPass) {
+      m['ecomPass'] = ecomPass;
     }
-    if (null != ecom_skey) {
-      m['ecom_skey'] = ecom_skey;
+    if (null != ecomSkey) {
+      m['ecomSkey'] = ecomSkey;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != terminal_id) {
-      m['terminal_id'] = terminal_id;
+    if (null != terminalId) {
+      m['terminalId'] = terminalId;
     }
     return m;
   }
@@ -1270,48 +1340,48 @@ class EcomParameter {
 
 class EcomParameterCreateData {
   /// STRING
-  String? ecom_pass;
+  String? ecomPass;
   /// STRING
-  String? ecom_skey;
+  String? ecomSkey;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// INTEGER (required at the API)
-  int? terminal_id;
+  int? terminalId;
 
   EcomParameterCreateData({
-    this.ecom_pass,
-    this.ecom_skey,
-    this.response_code,
-    this.response_message,
-    this.terminal_id,
+    this.ecomPass,
+    this.ecomSkey,
+    this.responseCode,
+    this.responseMessage,
+    this.terminalId,
   });
 
   factory EcomParameterCreateData.fromMap(Map<String, dynamic> m) => EcomParameterCreateData(
-        ecom_pass: m['ecom_pass'] is String ? m['ecom_pass'] : null,
-        ecom_skey: m['ecom_skey'] is String ? m['ecom_skey'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        terminal_id: m['terminal_id'] is int ? m['terminal_id'] : null,
+        ecomPass: m['ecomPass'] is String ? m['ecomPass'] : null,
+        ecomSkey: m['ecomSkey'] is String ? m['ecomSkey'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        terminalId: m['terminalId'] is int ? m['terminalId'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != ecom_pass) {
-      m['ecom_pass'] = ecom_pass;
+    if (null != ecomPass) {
+      m['ecomPass'] = ecomPass;
     }
-    if (null != ecom_skey) {
-      m['ecom_skey'] = ecom_skey;
+    if (null != ecomSkey) {
+      m['ecomSkey'] = ecomSkey;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != terminal_id) {
-      m['terminal_id'] = terminal_id;
+    if (null != terminalId) {
+      m['terminalId'] = terminalId;
     }
     return m;
   }
@@ -1319,55 +1389,55 @@ class EcomParameterCreateData {
 
 class EcrData {
   /// STRING
-  String? ecr_data;
+  String? ecrData;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// INTEGER (required at the API)
-  int? terminal_id;
+  int? terminalId;
   /// STRING (required at the API)
-  String? transaction_id;
+  String? transactionId;
   /// STRING (required at the API)
-  String? transaction_type;
+  String? transactionType;
 
   EcrData({
-    this.ecr_data,
-    this.response_code,
-    this.response_message,
-    this.terminal_id,
-    this.transaction_id,
-    this.transaction_type,
+    this.ecrData,
+    this.responseCode,
+    this.responseMessage,
+    this.terminalId,
+    this.transactionId,
+    this.transactionType,
   });
 
   factory EcrData.fromMap(Map<String, dynamic> m) => EcrData(
-        ecr_data: m['ecr_data'] is String ? m['ecr_data'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        terminal_id: m['terminal_id'] is int ? m['terminal_id'] : null,
-        transaction_id: m['transaction_id'] is String ? m['transaction_id'] : null,
-        transaction_type: m['transaction_type'] is String ? m['transaction_type'] : null,
+        ecrData: m['ecrData'] is String ? m['ecrData'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        terminalId: m['terminalId'] is int ? m['terminalId'] : null,
+        transactionId: m['transactionId'] is String ? m['transactionId'] : null,
+        transactionType: m['transactionType'] is String ? m['transactionType'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != ecr_data) {
-      m['ecr_data'] = ecr_data;
+    if (null != ecrData) {
+      m['ecrData'] = ecrData;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != terminal_id) {
-      m['terminal_id'] = terminal_id;
+    if (null != terminalId) {
+      m['terminalId'] = terminalId;
     }
-    if (null != transaction_id) {
-      m['transaction_id'] = transaction_id;
+    if (null != transactionId) {
+      m['transactionId'] = transactionId;
     }
-    if (null != transaction_type) {
-      m['transaction_type'] = transaction_type;
+    if (null != transactionType) {
+      m['transactionType'] = transactionType;
     }
     return m;
   }
@@ -1375,55 +1445,55 @@ class EcrData {
 
 class EcrDataCreateData {
   /// STRING
-  String? ecr_data;
+  String? ecrData;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// INTEGER (required at the API)
-  int? terminal_id;
+  int? terminalId;
   /// STRING (required at the API)
-  String? transaction_id;
+  String? transactionId;
   /// STRING (required at the API)
-  String? transaction_type;
+  String? transactionType;
 
   EcrDataCreateData({
-    this.ecr_data,
-    this.response_code,
-    this.response_message,
-    this.terminal_id,
-    this.transaction_id,
-    this.transaction_type,
+    this.ecrData,
+    this.responseCode,
+    this.responseMessage,
+    this.terminalId,
+    this.transactionId,
+    this.transactionType,
   });
 
   factory EcrDataCreateData.fromMap(Map<String, dynamic> m) => EcrDataCreateData(
-        ecr_data: m['ecr_data'] is String ? m['ecr_data'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        terminal_id: m['terminal_id'] is int ? m['terminal_id'] : null,
-        transaction_id: m['transaction_id'] is String ? m['transaction_id'] : null,
-        transaction_type: m['transaction_type'] is String ? m['transaction_type'] : null,
+        ecrData: m['ecrData'] is String ? m['ecrData'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        terminalId: m['terminalId'] is int ? m['terminalId'] : null,
+        transactionId: m['transactionId'] is String ? m['transactionId'] : null,
+        transactionType: m['transactionType'] is String ? m['transactionType'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != ecr_data) {
-      m['ecr_data'] = ecr_data;
+    if (null != ecrData) {
+      m['ecrData'] = ecrData;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != terminal_id) {
-      m['terminal_id'] = terminal_id;
+    if (null != terminalId) {
+      m['terminalId'] = terminalId;
     }
-    if (null != transaction_id) {
-      m['transaction_id'] = transaction_id;
+    if (null != transactionId) {
+      m['transactionId'] = transactionId;
     }
-    if (null != transaction_type) {
-      m['transaction_type'] = transaction_type;
+    if (null != transactionType) {
+      m['transactionType'] = transactionType;
     }
     return m;
   }
@@ -1431,55 +1501,55 @@ class EcrDataCreateData {
 
 class EmvData {
   /// STRING
-  String? emv_data;
+  String? emvData;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// INTEGER (required at the API)
-  int? terminal_id;
+  int? terminalId;
   /// STRING (required at the API)
-  String? transaction_id;
+  String? transactionId;
   /// STRING (required at the API)
-  String? transaction_type;
+  String? transactionType;
 
   EmvData({
-    this.emv_data,
-    this.response_code,
-    this.response_message,
-    this.terminal_id,
-    this.transaction_id,
-    this.transaction_type,
+    this.emvData,
+    this.responseCode,
+    this.responseMessage,
+    this.terminalId,
+    this.transactionId,
+    this.transactionType,
   });
 
   factory EmvData.fromMap(Map<String, dynamic> m) => EmvData(
-        emv_data: m['emv_data'] is String ? m['emv_data'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        terminal_id: m['terminal_id'] is int ? m['terminal_id'] : null,
-        transaction_id: m['transaction_id'] is String ? m['transaction_id'] : null,
-        transaction_type: m['transaction_type'] is String ? m['transaction_type'] : null,
+        emvData: m['emvData'] is String ? m['emvData'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        terminalId: m['terminalId'] is int ? m['terminalId'] : null,
+        transactionId: m['transactionId'] is String ? m['transactionId'] : null,
+        transactionType: m['transactionType'] is String ? m['transactionType'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != emv_data) {
-      m['emv_data'] = emv_data;
+    if (null != emvData) {
+      m['emvData'] = emvData;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != terminal_id) {
-      m['terminal_id'] = terminal_id;
+    if (null != terminalId) {
+      m['terminalId'] = terminalId;
     }
-    if (null != transaction_id) {
-      m['transaction_id'] = transaction_id;
+    if (null != transactionId) {
+      m['transactionId'] = transactionId;
     }
-    if (null != transaction_type) {
-      m['transaction_type'] = transaction_type;
+    if (null != transactionType) {
+      m['transactionType'] = transactionType;
     }
     return m;
   }
@@ -1487,55 +1557,55 @@ class EmvData {
 
 class EmvDataCreateData {
   /// STRING
-  String? emv_data;
+  String? emvData;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// INTEGER (required at the API)
-  int? terminal_id;
+  int? terminalId;
   /// STRING (required at the API)
-  String? transaction_id;
+  String? transactionId;
   /// STRING (required at the API)
-  String? transaction_type;
+  String? transactionType;
 
   EmvDataCreateData({
-    this.emv_data,
-    this.response_code,
-    this.response_message,
-    this.terminal_id,
-    this.transaction_id,
-    this.transaction_type,
+    this.emvData,
+    this.responseCode,
+    this.responseMessage,
+    this.terminalId,
+    this.transactionId,
+    this.transactionType,
   });
 
   factory EmvDataCreateData.fromMap(Map<String, dynamic> m) => EmvDataCreateData(
-        emv_data: m['emv_data'] is String ? m['emv_data'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        terminal_id: m['terminal_id'] is int ? m['terminal_id'] : null,
-        transaction_id: m['transaction_id'] is String ? m['transaction_id'] : null,
-        transaction_type: m['transaction_type'] is String ? m['transaction_type'] : null,
+        emvData: m['emvData'] is String ? m['emvData'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        terminalId: m['terminalId'] is int ? m['terminalId'] : null,
+        transactionId: m['transactionId'] is String ? m['transactionId'] : null,
+        transactionType: m['transactionType'] is String ? m['transactionType'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != emv_data) {
-      m['emv_data'] = emv_data;
+    if (null != emvData) {
+      m['emvData'] = emvData;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != terminal_id) {
-      m['terminal_id'] = terminal_id;
+    if (null != terminalId) {
+      m['terminalId'] = terminalId;
     }
-    if (null != transaction_id) {
-      m['transaction_id'] = transaction_id;
+    if (null != transactionId) {
+      m['transactionId'] = transactionId;
     }
-    if (null != transaction_type) {
-      m['transaction_type'] = transaction_type;
+    if (null != transactionType) {
+      m['transactionType'] = transactionType;
     }
     return m;
   }
@@ -1543,111 +1613,111 @@ class EmvDataCreateData {
 
 class EnableAcquiring {
   /// INTEGER
-  int? account_no;
+  int? accountNo;
   /// OBJECT
-  Map<String, dynamic>? additional_data;
+  Map<String, dynamic>? additionalData;
   /// STRING (required at the API)
-  String? corporate_uuid;
+  String? corporateUuid;
   /// STRING (required at the API)
   String? currency;
   /// INTEGER (required at the API)
-  int? merchant_category_code;
+  int? merchantCategoryCode;
   /// STRING (required at the API)
-  String? package_order_uuid;
+  String? packageOrderUuid;
   /// STRING (required at the API)
-  String? product_order_uuid;
+  String? productOrderUuid;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// INTEGER
-  int? sorting_code;
+  int? sortingCode;
   /// STRING (required at the API)
-  String? template_name;
+  String? templateName;
+  /// STRING
+  String? terminalIdAcq;
   /// ARRAY
-  List<dynamic>? terminal_id;
+  List<dynamic>? terminalIds;
   /// STRING
-  String? terminal_id_acq;
-  /// STRING
-  String? vu_nummer;
+  String? vuNummer;
 
   EnableAcquiring({
-    this.account_no,
-    this.additional_data,
-    this.corporate_uuid,
+    this.accountNo,
+    this.additionalData,
+    this.corporateUuid,
     this.currency,
-    this.merchant_category_code,
-    this.package_order_uuid,
-    this.product_order_uuid,
-    this.response_code,
-    this.response_message,
-    this.sorting_code,
-    this.template_name,
-    this.terminal_id,
-    this.terminal_id_acq,
-    this.vu_nummer,
+    this.merchantCategoryCode,
+    this.packageOrderUuid,
+    this.productOrderUuid,
+    this.responseCode,
+    this.responseMessage,
+    this.sortingCode,
+    this.templateName,
+    this.terminalIdAcq,
+    this.terminalIds,
+    this.vuNummer,
   });
 
   factory EnableAcquiring.fromMap(Map<String, dynamic> m) => EnableAcquiring(
-        account_no: m['account_no'] is int ? m['account_no'] : null,
-        additional_data: m['additional_data'] is Map<String, dynamic> ? m['additional_data'] : null,
-        corporate_uuid: m['corporate_uuid'] is String ? m['corporate_uuid'] : null,
+        accountNo: m['accountNo'] is int ? m['accountNo'] : null,
+        additionalData: m['additionalData'] is Map<String, dynamic> ? m['additionalData'] : null,
+        corporateUuid: m['corporateUuid'] is String ? m['corporateUuid'] : null,
         currency: m['currency'] is String ? m['currency'] : null,
-        merchant_category_code: m['merchant_category_code'] is int ? m['merchant_category_code'] : null,
-        package_order_uuid: m['package_order_uuid'] is String ? m['package_order_uuid'] : null,
-        product_order_uuid: m['product_order_uuid'] is String ? m['product_order_uuid'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        sorting_code: m['sorting_code'] is int ? m['sorting_code'] : null,
-        template_name: m['template_name'] is String ? m['template_name'] : null,
-        terminal_id: m['terminal_id'] is List<dynamic> ? m['terminal_id'] : null,
-        terminal_id_acq: m['terminal_id_acq'] is String ? m['terminal_id_acq'] : null,
-        vu_nummer: m['vu_nummer'] is String ? m['vu_nummer'] : null,
+        merchantCategoryCode: m['merchantCategoryCode'] is int ? m['merchantCategoryCode'] : null,
+        packageOrderUuid: m['packageOrderUuid'] is String ? m['packageOrderUuid'] : null,
+        productOrderUuid: m['productOrderUuid'] is String ? m['productOrderUuid'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        sortingCode: m['sortingCode'] is int ? m['sortingCode'] : null,
+        templateName: m['templateName'] is String ? m['templateName'] : null,
+        terminalIdAcq: m['terminalIdAcq'] is String ? m['terminalIdAcq'] : null,
+        terminalIds: m['terminalIds'] is List<dynamic> ? m['terminalIds'] : null,
+        vuNummer: m['vuNummer'] is String ? m['vuNummer'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != account_no) {
-      m['account_no'] = account_no;
+    if (null != accountNo) {
+      m['accountNo'] = accountNo;
     }
-    if (null != additional_data) {
-      m['additional_data'] = additional_data;
+    if (null != additionalData) {
+      m['additionalData'] = additionalData;
     }
-    if (null != corporate_uuid) {
-      m['corporate_uuid'] = corporate_uuid;
+    if (null != corporateUuid) {
+      m['corporateUuid'] = corporateUuid;
     }
     if (null != currency) {
       m['currency'] = currency;
     }
-    if (null != merchant_category_code) {
-      m['merchant_category_code'] = merchant_category_code;
+    if (null != merchantCategoryCode) {
+      m['merchantCategoryCode'] = merchantCategoryCode;
     }
-    if (null != package_order_uuid) {
-      m['package_order_uuid'] = package_order_uuid;
+    if (null != packageOrderUuid) {
+      m['packageOrderUuid'] = packageOrderUuid;
     }
-    if (null != product_order_uuid) {
-      m['product_order_uuid'] = product_order_uuid;
+    if (null != productOrderUuid) {
+      m['productOrderUuid'] = productOrderUuid;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != sorting_code) {
-      m['sorting_code'] = sorting_code;
+    if (null != sortingCode) {
+      m['sortingCode'] = sortingCode;
     }
-    if (null != template_name) {
-      m['template_name'] = template_name;
+    if (null != templateName) {
+      m['templateName'] = templateName;
     }
-    if (null != terminal_id) {
-      m['terminal_id'] = terminal_id;
+    if (null != terminalIdAcq) {
+      m['terminalIdAcq'] = terminalIdAcq;
     }
-    if (null != terminal_id_acq) {
-      m['terminal_id_acq'] = terminal_id_acq;
+    if (null != terminalIds) {
+      m['terminalIds'] = terminalIds;
     }
-    if (null != vu_nummer) {
-      m['vu_nummer'] = vu_nummer;
+    if (null != vuNummer) {
+      m['vuNummer'] = vuNummer;
     }
     return m;
   }
@@ -1655,111 +1725,111 @@ class EnableAcquiring {
 
 class EnableAcquiringCreateData {
   /// INTEGER
-  int? account_no;
+  int? accountNo;
   /// OBJECT
-  Map<String, dynamic>? additional_data;
+  Map<String, dynamic>? additionalData;
   /// STRING (required at the API)
-  String? corporate_uuid;
+  String? corporateUuid;
   /// STRING (required at the API)
   String? currency;
   /// INTEGER (required at the API)
-  int? merchant_category_code;
+  int? merchantCategoryCode;
   /// STRING (required at the API)
-  String? package_order_uuid;
+  String? packageOrderUuid;
   /// STRING (required at the API)
-  String? product_order_uuid;
+  String? productOrderUuid;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// INTEGER
-  int? sorting_code;
+  int? sortingCode;
   /// STRING (required at the API)
-  String? template_name;
+  String? templateName;
+  /// STRING
+  String? terminalIdAcq;
   /// ARRAY
-  List<dynamic>? terminal_id;
+  List<dynamic>? terminalIds;
   /// STRING
-  String? terminal_id_acq;
-  /// STRING
-  String? vu_nummer;
+  String? vuNummer;
 
   EnableAcquiringCreateData({
-    this.account_no,
-    this.additional_data,
-    this.corporate_uuid,
+    this.accountNo,
+    this.additionalData,
+    this.corporateUuid,
     this.currency,
-    this.merchant_category_code,
-    this.package_order_uuid,
-    this.product_order_uuid,
-    this.response_code,
-    this.response_message,
-    this.sorting_code,
-    this.template_name,
-    this.terminal_id,
-    this.terminal_id_acq,
-    this.vu_nummer,
+    this.merchantCategoryCode,
+    this.packageOrderUuid,
+    this.productOrderUuid,
+    this.responseCode,
+    this.responseMessage,
+    this.sortingCode,
+    this.templateName,
+    this.terminalIdAcq,
+    this.terminalIds,
+    this.vuNummer,
   });
 
   factory EnableAcquiringCreateData.fromMap(Map<String, dynamic> m) => EnableAcquiringCreateData(
-        account_no: m['account_no'] is int ? m['account_no'] : null,
-        additional_data: m['additional_data'] is Map<String, dynamic> ? m['additional_data'] : null,
-        corporate_uuid: m['corporate_uuid'] is String ? m['corporate_uuid'] : null,
+        accountNo: m['accountNo'] is int ? m['accountNo'] : null,
+        additionalData: m['additionalData'] is Map<String, dynamic> ? m['additionalData'] : null,
+        corporateUuid: m['corporateUuid'] is String ? m['corporateUuid'] : null,
         currency: m['currency'] is String ? m['currency'] : null,
-        merchant_category_code: m['merchant_category_code'] is int ? m['merchant_category_code'] : null,
-        package_order_uuid: m['package_order_uuid'] is String ? m['package_order_uuid'] : null,
-        product_order_uuid: m['product_order_uuid'] is String ? m['product_order_uuid'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        sorting_code: m['sorting_code'] is int ? m['sorting_code'] : null,
-        template_name: m['template_name'] is String ? m['template_name'] : null,
-        terminal_id: m['terminal_id'] is List<dynamic> ? m['terminal_id'] : null,
-        terminal_id_acq: m['terminal_id_acq'] is String ? m['terminal_id_acq'] : null,
-        vu_nummer: m['vu_nummer'] is String ? m['vu_nummer'] : null,
+        merchantCategoryCode: m['merchantCategoryCode'] is int ? m['merchantCategoryCode'] : null,
+        packageOrderUuid: m['packageOrderUuid'] is String ? m['packageOrderUuid'] : null,
+        productOrderUuid: m['productOrderUuid'] is String ? m['productOrderUuid'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        sortingCode: m['sortingCode'] is int ? m['sortingCode'] : null,
+        templateName: m['templateName'] is String ? m['templateName'] : null,
+        terminalIdAcq: m['terminalIdAcq'] is String ? m['terminalIdAcq'] : null,
+        terminalIds: m['terminalIds'] is List<dynamic> ? m['terminalIds'] : null,
+        vuNummer: m['vuNummer'] is String ? m['vuNummer'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != account_no) {
-      m['account_no'] = account_no;
+    if (null != accountNo) {
+      m['accountNo'] = accountNo;
     }
-    if (null != additional_data) {
-      m['additional_data'] = additional_data;
+    if (null != additionalData) {
+      m['additionalData'] = additionalData;
     }
-    if (null != corporate_uuid) {
-      m['corporate_uuid'] = corporate_uuid;
+    if (null != corporateUuid) {
+      m['corporateUuid'] = corporateUuid;
     }
     if (null != currency) {
       m['currency'] = currency;
     }
-    if (null != merchant_category_code) {
-      m['merchant_category_code'] = merchant_category_code;
+    if (null != merchantCategoryCode) {
+      m['merchantCategoryCode'] = merchantCategoryCode;
     }
-    if (null != package_order_uuid) {
-      m['package_order_uuid'] = package_order_uuid;
+    if (null != packageOrderUuid) {
+      m['packageOrderUuid'] = packageOrderUuid;
     }
-    if (null != product_order_uuid) {
-      m['product_order_uuid'] = product_order_uuid;
+    if (null != productOrderUuid) {
+      m['productOrderUuid'] = productOrderUuid;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != sorting_code) {
-      m['sorting_code'] = sorting_code;
+    if (null != sortingCode) {
+      m['sortingCode'] = sortingCode;
     }
-    if (null != template_name) {
-      m['template_name'] = template_name;
+    if (null != templateName) {
+      m['templateName'] = templateName;
     }
-    if (null != terminal_id) {
-      m['terminal_id'] = terminal_id;
+    if (null != terminalIdAcq) {
+      m['terminalIdAcq'] = terminalIdAcq;
     }
-    if (null != terminal_id_acq) {
-      m['terminal_id_acq'] = terminal_id_acq;
+    if (null != terminalIds) {
+      m['terminalIds'] = terminalIds;
     }
-    if (null != vu_nummer) {
-      m['vu_nummer'] = vu_nummer;
+    if (null != vuNummer) {
+      m['vuNummer'] = vuNummer;
     }
     return m;
   }
@@ -1767,34 +1837,34 @@ class EnableAcquiringCreateData {
 
 class GetMerchantContractNumber {
   /// STRING (required at the API)
-  String? merchant_contract_number;
+  String? merchantContractNumber;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
 
   GetMerchantContractNumber({
-    this.merchant_contract_number,
-    this.response_code,
-    this.response_message,
+    this.merchantContractNumber,
+    this.responseCode,
+    this.responseMessage,
   });
 
   factory GetMerchantContractNumber.fromMap(Map<String, dynamic> m) => GetMerchantContractNumber(
-        merchant_contract_number: m['merchant_contract_number'] is String ? m['merchant_contract_number'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        merchantContractNumber: m['merchantContractNumber'] is String ? m['merchantContractNumber'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != merchant_contract_number) {
-      m['merchant_contract_number'] = merchant_contract_number;
+    if (null != merchantContractNumber) {
+      m['merchantContractNumber'] = merchantContractNumber;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     return m;
   }
@@ -1802,34 +1872,34 @@ class GetMerchantContractNumber {
 
 class GetMerchantContractNumberCreateData {
   /// STRING (required at the API)
-  String? merchant_contract_number;
+  String? merchantContractNumber;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
 
   GetMerchantContractNumberCreateData({
-    this.merchant_contract_number,
-    this.response_code,
-    this.response_message,
+    this.merchantContractNumber,
+    this.responseCode,
+    this.responseMessage,
   });
 
   factory GetMerchantContractNumberCreateData.fromMap(Map<String, dynamic> m) => GetMerchantContractNumberCreateData(
-        merchant_contract_number: m['merchant_contract_number'] is String ? m['merchant_contract_number'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        merchantContractNumber: m['merchantContractNumber'] is String ? m['merchantContractNumber'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != merchant_contract_number) {
-      m['merchant_contract_number'] = merchant_contract_number;
+    if (null != merchantContractNumber) {
+      m['merchantContractNumber'] = merchantContractNumber;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     return m;
   }
@@ -1837,34 +1907,34 @@ class GetMerchantContractNumberCreateData {
 
 class GetTemplateXml {
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// STRING (required at the API)
-  String? template_name;
+  String? templateName;
 
   GetTemplateXml({
-    this.response_code,
-    this.response_message,
-    this.template_name,
+    this.responseCode,
+    this.responseMessage,
+    this.templateName,
   });
 
   factory GetTemplateXml.fromMap(Map<String, dynamic> m) => GetTemplateXml(
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        template_name: m['template_name'] is String ? m['template_name'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        templateName: m['templateName'] is String ? m['templateName'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != template_name) {
-      m['template_name'] = template_name;
+    if (null != templateName) {
+      m['templateName'] = templateName;
     }
     return m;
   }
@@ -1872,34 +1942,34 @@ class GetTemplateXml {
 
 class GetTemplateXmlCreateData {
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// STRING (required at the API)
-  String? template_name;
+  String? templateName;
 
   GetTemplateXmlCreateData({
-    this.response_code,
-    this.response_message,
-    this.template_name,
+    this.responseCode,
+    this.responseMessage,
+    this.templateName,
   });
 
   factory GetTemplateXmlCreateData.fromMap(Map<String, dynamic> m) => GetTemplateXmlCreateData(
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        template_name: m['template_name'] is String ? m['template_name'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        templateName: m['templateName'] is String ? m['templateName'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != template_name) {
-      m['template_name'] = template_name;
+    if (null != templateName) {
+      m['templateName'] = templateName;
     }
     return m;
   }
@@ -1907,34 +1977,34 @@ class GetTemplateXmlCreateData {
 
 class IntroduceMandator {
   /// STRING (required at the API)
-  String? mandator_name;
+  String? mandatorName;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
 
   IntroduceMandator({
-    this.mandator_name,
-    this.response_code,
-    this.response_message,
+    this.mandatorName,
+    this.responseCode,
+    this.responseMessage,
   });
 
   factory IntroduceMandator.fromMap(Map<String, dynamic> m) => IntroduceMandator(
-        mandator_name: m['mandator_name'] is String ? m['mandator_name'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        mandatorName: m['mandatorName'] is String ? m['mandatorName'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != mandator_name) {
-      m['mandator_name'] = mandator_name;
+    if (null != mandatorName) {
+      m['mandatorName'] = mandatorName;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     return m;
   }
@@ -1942,34 +2012,34 @@ class IntroduceMandator {
 
 class IntroduceMandatorCreateData {
   /// STRING (required at the API)
-  String? mandator_name;
+  String? mandatorName;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
 
   IntroduceMandatorCreateData({
-    this.mandator_name,
-    this.response_code,
-    this.response_message,
+    this.mandatorName,
+    this.responseCode,
+    this.responseMessage,
   });
 
   factory IntroduceMandatorCreateData.fromMap(Map<String, dynamic> m) => IntroduceMandatorCreateData(
-        mandator_name: m['mandator_name'] is String ? m['mandator_name'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        mandatorName: m['mandatorName'] is String ? m['mandatorName'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != mandator_name) {
-      m['mandator_name'] = mandator_name;
+    if (null != mandatorName) {
+      m['mandatorName'] = mandatorName;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     return m;
   }
@@ -1977,34 +2047,34 @@ class IntroduceMandatorCreateData {
 
 class IntroducePackage {
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// STRING (required at the API)
-  String? terminal_template_description;
+  String? terminalTemplateDescription;
 
   IntroducePackage({
-    this.response_code,
-    this.response_message,
-    this.terminal_template_description,
+    this.responseCode,
+    this.responseMessage,
+    this.terminalTemplateDescription,
   });
 
   factory IntroducePackage.fromMap(Map<String, dynamic> m) => IntroducePackage(
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        terminal_template_description: m['terminal_template_description'] is String ? m['terminal_template_description'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        terminalTemplateDescription: m['terminalTemplateDescription'] is String ? m['terminalTemplateDescription'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != terminal_template_description) {
-      m['terminal_template_description'] = terminal_template_description;
+    if (null != terminalTemplateDescription) {
+      m['terminalTemplateDescription'] = terminalTemplateDescription;
     }
     return m;
   }
@@ -2012,34 +2082,34 @@ class IntroducePackage {
 
 class IntroducePackageCreateData {
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// STRING (required at the API)
-  String? terminal_template_description;
+  String? terminalTemplateDescription;
 
   IntroducePackageCreateData({
-    this.response_code,
-    this.response_message,
-    this.terminal_template_description,
+    this.responseCode,
+    this.responseMessage,
+    this.terminalTemplateDescription,
   });
 
   factory IntroducePackageCreateData.fromMap(Map<String, dynamic> m) => IntroducePackageCreateData(
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        terminal_template_description: m['terminal_template_description'] is String ? m['terminal_template_description'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        terminalTemplateDescription: m['terminalTemplateDescription'] is String ? m['terminalTemplateDescription'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != terminal_template_description) {
-      m['terminal_template_description'] = terminal_template_description;
+    if (null != terminalTemplateDescription) {
+      m['terminalTemplateDescription'] = terminalTemplateDescription;
     }
     return m;
   }
@@ -2049,48 +2119,48 @@ class KeepAlive {
   /// STRING
   String? hwserialno;
   /// STRING
-  String? ka_date_time_from;
+  String? kaDateTimeFrom;
   /// STRING
-  String? ka_date_time_to;
+  String? kaDateTimeTo;
   /// ARRAY
-  List<dynamic>? keep_alive_data;
+  List<dynamic>? keepAliveData;
   /// OBJECT
   Map<String, dynamic>? pagination;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// STRING
-  String? terminal_date_time_from;
+  String? terminalDateTimeFrom;
   /// STRING
-  String? terminal_date_time_to;
+  String? terminalDateTimeTo;
   /// INTEGER
-  int? terminal_id;
+  int? terminalId;
 
   KeepAlive({
     this.hwserialno,
-    this.ka_date_time_from,
-    this.ka_date_time_to,
-    this.keep_alive_data,
+    this.kaDateTimeFrom,
+    this.kaDateTimeTo,
+    this.keepAliveData,
     this.pagination,
-    this.response_code,
-    this.response_message,
-    this.terminal_date_time_from,
-    this.terminal_date_time_to,
-    this.terminal_id,
+    this.responseCode,
+    this.responseMessage,
+    this.terminalDateTimeFrom,
+    this.terminalDateTimeTo,
+    this.terminalId,
   });
 
   factory KeepAlive.fromMap(Map<String, dynamic> m) => KeepAlive(
         hwserialno: m['hwserialno'] is String ? m['hwserialno'] : null,
-        ka_date_time_from: m['ka_date_time_from'] is String ? m['ka_date_time_from'] : null,
-        ka_date_time_to: m['ka_date_time_to'] is String ? m['ka_date_time_to'] : null,
-        keep_alive_data: m['keep_alive_data'] is List<dynamic> ? m['keep_alive_data'] : null,
+        kaDateTimeFrom: m['kaDateTimeFrom'] is String ? m['kaDateTimeFrom'] : null,
+        kaDateTimeTo: m['kaDateTimeTo'] is String ? m['kaDateTimeTo'] : null,
+        keepAliveData: m['keepAliveData'] is List<dynamic> ? m['keepAliveData'] : null,
         pagination: m['pagination'] is Map<String, dynamic> ? m['pagination'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        terminal_date_time_from: m['terminal_date_time_from'] is String ? m['terminal_date_time_from'] : null,
-        terminal_date_time_to: m['terminal_date_time_to'] is String ? m['terminal_date_time_to'] : null,
-        terminal_id: m['terminal_id'] is int ? m['terminal_id'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        terminalDateTimeFrom: m['terminalDateTimeFrom'] is String ? m['terminalDateTimeFrom'] : null,
+        terminalDateTimeTo: m['terminalDateTimeTo'] is String ? m['terminalDateTimeTo'] : null,
+        terminalId: m['terminalId'] is int ? m['terminalId'] : null,
       );
 
   Map<String, dynamic> toMap() {
@@ -2098,32 +2168,32 @@ class KeepAlive {
     if (null != hwserialno) {
       m['hwserialno'] = hwserialno;
     }
-    if (null != ka_date_time_from) {
-      m['ka_date_time_from'] = ka_date_time_from;
+    if (null != kaDateTimeFrom) {
+      m['kaDateTimeFrom'] = kaDateTimeFrom;
     }
-    if (null != ka_date_time_to) {
-      m['ka_date_time_to'] = ka_date_time_to;
+    if (null != kaDateTimeTo) {
+      m['kaDateTimeTo'] = kaDateTimeTo;
     }
-    if (null != keep_alive_data) {
-      m['keep_alive_data'] = keep_alive_data;
+    if (null != keepAliveData) {
+      m['keepAliveData'] = keepAliveData;
     }
     if (null != pagination) {
       m['pagination'] = pagination;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != terminal_date_time_from) {
-      m['terminal_date_time_from'] = terminal_date_time_from;
+    if (null != terminalDateTimeFrom) {
+      m['terminalDateTimeFrom'] = terminalDateTimeFrom;
     }
-    if (null != terminal_date_time_to) {
-      m['terminal_date_time_to'] = terminal_date_time_to;
+    if (null != terminalDateTimeTo) {
+      m['terminalDateTimeTo'] = terminalDateTimeTo;
     }
-    if (null != terminal_id) {
-      m['terminal_id'] = terminal_id;
+    if (null != terminalId) {
+      m['terminalId'] = terminalId;
     }
     return m;
   }
@@ -2133,48 +2203,48 @@ class KeepAliveCreateData {
   /// STRING
   String? hwserialno;
   /// STRING
-  String? ka_date_time_from;
+  String? kaDateTimeFrom;
   /// STRING
-  String? ka_date_time_to;
+  String? kaDateTimeTo;
   /// ARRAY
-  List<dynamic>? keep_alive_data;
+  List<dynamic>? keepAliveData;
   /// OBJECT
   Map<String, dynamic>? pagination;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// STRING
-  String? terminal_date_time_from;
+  String? terminalDateTimeFrom;
   /// STRING
-  String? terminal_date_time_to;
+  String? terminalDateTimeTo;
   /// INTEGER
-  int? terminal_id;
+  int? terminalId;
 
   KeepAliveCreateData({
     this.hwserialno,
-    this.ka_date_time_from,
-    this.ka_date_time_to,
-    this.keep_alive_data,
+    this.kaDateTimeFrom,
+    this.kaDateTimeTo,
+    this.keepAliveData,
     this.pagination,
-    this.response_code,
-    this.response_message,
-    this.terminal_date_time_from,
-    this.terminal_date_time_to,
-    this.terminal_id,
+    this.responseCode,
+    this.responseMessage,
+    this.terminalDateTimeFrom,
+    this.terminalDateTimeTo,
+    this.terminalId,
   });
 
   factory KeepAliveCreateData.fromMap(Map<String, dynamic> m) => KeepAliveCreateData(
         hwserialno: m['hwserialno'] is String ? m['hwserialno'] : null,
-        ka_date_time_from: m['ka_date_time_from'] is String ? m['ka_date_time_from'] : null,
-        ka_date_time_to: m['ka_date_time_to'] is String ? m['ka_date_time_to'] : null,
-        keep_alive_data: m['keep_alive_data'] is List<dynamic> ? m['keep_alive_data'] : null,
+        kaDateTimeFrom: m['kaDateTimeFrom'] is String ? m['kaDateTimeFrom'] : null,
+        kaDateTimeTo: m['kaDateTimeTo'] is String ? m['kaDateTimeTo'] : null,
+        keepAliveData: m['keepAliveData'] is List<dynamic> ? m['keepAliveData'] : null,
         pagination: m['pagination'] is Map<String, dynamic> ? m['pagination'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        terminal_date_time_from: m['terminal_date_time_from'] is String ? m['terminal_date_time_from'] : null,
-        terminal_date_time_to: m['terminal_date_time_to'] is String ? m['terminal_date_time_to'] : null,
-        terminal_id: m['terminal_id'] is int ? m['terminal_id'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        terminalDateTimeFrom: m['terminalDateTimeFrom'] is String ? m['terminalDateTimeFrom'] : null,
+        terminalDateTimeTo: m['terminalDateTimeTo'] is String ? m['terminalDateTimeTo'] : null,
+        terminalId: m['terminalId'] is int ? m['terminalId'] : null,
       );
 
   Map<String, dynamic> toMap() {
@@ -2182,32 +2252,32 @@ class KeepAliveCreateData {
     if (null != hwserialno) {
       m['hwserialno'] = hwserialno;
     }
-    if (null != ka_date_time_from) {
-      m['ka_date_time_from'] = ka_date_time_from;
+    if (null != kaDateTimeFrom) {
+      m['kaDateTimeFrom'] = kaDateTimeFrom;
     }
-    if (null != ka_date_time_to) {
-      m['ka_date_time_to'] = ka_date_time_to;
+    if (null != kaDateTimeTo) {
+      m['kaDateTimeTo'] = kaDateTimeTo;
     }
-    if (null != keep_alive_data) {
-      m['keep_alive_data'] = keep_alive_data;
+    if (null != keepAliveData) {
+      m['keepAliveData'] = keepAliveData;
     }
     if (null != pagination) {
       m['pagination'] = pagination;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != terminal_date_time_from) {
-      m['terminal_date_time_from'] = terminal_date_time_from;
+    if (null != terminalDateTimeFrom) {
+      m['terminalDateTimeFrom'] = terminalDateTimeFrom;
     }
-    if (null != terminal_date_time_to) {
-      m['terminal_date_time_to'] = terminal_date_time_to;
+    if (null != terminalDateTimeTo) {
+      m['terminalDateTimeTo'] = terminalDateTimeTo;
     }
-    if (null != terminal_id) {
-      m['terminal_id'] = terminal_id;
+    if (null != terminalId) {
+      m['terminalId'] = terminalId;
     }
     return m;
   }
@@ -2215,40 +2285,40 @@ class KeepAliveCreateData {
 
 class ListTerminal {
   /// ARRAY
-  List<dynamic>? corporate_uuid;
+  List<dynamic>? corporateUuid;
   /// OBJECT
   Map<String, dynamic>? filter;
   /// OBJECT
   Map<String, dynamic>? pagination;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// ARRAY
-  List<dynamic>? terminal;
+  List<dynamic>? terminals;
 
   ListTerminal({
-    this.corporate_uuid,
+    this.corporateUuid,
     this.filter,
     this.pagination,
-    this.response_code,
-    this.response_message,
-    this.terminal,
+    this.responseCode,
+    this.responseMessage,
+    this.terminals,
   });
 
   factory ListTerminal.fromMap(Map<String, dynamic> m) => ListTerminal(
-        corporate_uuid: m['corporate_uuid'] is List<dynamic> ? m['corporate_uuid'] : null,
+        corporateUuid: m['corporateUuid'] is List<dynamic> ? m['corporateUuid'] : null,
         filter: m['filter'] is Map<String, dynamic> ? m['filter'] : null,
         pagination: m['pagination'] is Map<String, dynamic> ? m['pagination'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        terminal: m['terminal'] is List<dynamic> ? m['terminal'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        terminals: m['terminals'] is List<dynamic> ? m['terminals'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != corporate_uuid) {
-      m['corporate_uuid'] = corporate_uuid;
+    if (null != corporateUuid) {
+      m['corporateUuid'] = corporateUuid;
     }
     if (null != filter) {
       m['filter'] = filter;
@@ -2256,14 +2326,14 @@ class ListTerminal {
     if (null != pagination) {
       m['pagination'] = pagination;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != terminal) {
-      m['terminal'] = terminal;
+    if (null != terminals) {
+      m['terminals'] = terminals;
     }
     return m;
   }
@@ -2271,40 +2341,40 @@ class ListTerminal {
 
 class ListTerminalCreateData {
   /// ARRAY
-  List<dynamic>? corporate_uuid;
+  List<dynamic>? corporateUuid;
   /// OBJECT
   Map<String, dynamic>? filter;
   /// OBJECT
   Map<String, dynamic>? pagination;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// ARRAY
-  List<dynamic>? terminal;
+  List<dynamic>? terminals;
 
   ListTerminalCreateData({
-    this.corporate_uuid,
+    this.corporateUuid,
     this.filter,
     this.pagination,
-    this.response_code,
-    this.response_message,
-    this.terminal,
+    this.responseCode,
+    this.responseMessage,
+    this.terminals,
   });
 
   factory ListTerminalCreateData.fromMap(Map<String, dynamic> m) => ListTerminalCreateData(
-        corporate_uuid: m['corporate_uuid'] is List<dynamic> ? m['corporate_uuid'] : null,
+        corporateUuid: m['corporateUuid'] is List<dynamic> ? m['corporateUuid'] : null,
         filter: m['filter'] is Map<String, dynamic> ? m['filter'] : null,
         pagination: m['pagination'] is Map<String, dynamic> ? m['pagination'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        terminal: m['terminal'] is List<dynamic> ? m['terminal'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        terminals: m['terminals'] is List<dynamic> ? m['terminals'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != corporate_uuid) {
-      m['corporate_uuid'] = corporate_uuid;
+    if (null != corporateUuid) {
+      m['corporateUuid'] = corporateUuid;
     }
     if (null != filter) {
       m['filter'] = filter;
@@ -2312,14 +2382,14 @@ class ListTerminalCreateData {
     if (null != pagination) {
       m['pagination'] = pagination;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != terminal) {
-      m['terminal'] = terminal;
+    if (null != terminals) {
+      m['terminals'] = terminals;
     }
     return m;
   }
@@ -2327,55 +2397,55 @@ class ListTerminalCreateData {
 
 class MandatorClearingExport {
   /// STRING (required at the API)
-  String? clearing_date_from;
+  String? clearingDateFrom;
   /// STRING (required at the API)
-  String? clearing_date_to;
+  String? clearingDateTo;
   /// OBJECT
   Map<String, dynamic>? pagination;
   /// ARRAY
-  List<dynamic>? record;
+  List<dynamic>? records;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
 
   MandatorClearingExport({
-    this.clearing_date_from,
-    this.clearing_date_to,
+    this.clearingDateFrom,
+    this.clearingDateTo,
     this.pagination,
-    this.record,
-    this.response_code,
-    this.response_message,
+    this.records,
+    this.responseCode,
+    this.responseMessage,
   });
 
   factory MandatorClearingExport.fromMap(Map<String, dynamic> m) => MandatorClearingExport(
-        clearing_date_from: m['clearing_date_from'] is String ? m['clearing_date_from'] : null,
-        clearing_date_to: m['clearing_date_to'] is String ? m['clearing_date_to'] : null,
+        clearingDateFrom: m['clearingDateFrom'] is String ? m['clearingDateFrom'] : null,
+        clearingDateTo: m['clearingDateTo'] is String ? m['clearingDateTo'] : null,
         pagination: m['pagination'] is Map<String, dynamic> ? m['pagination'] : null,
-        record: m['record'] is List<dynamic> ? m['record'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        records: m['records'] is List<dynamic> ? m['records'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != clearing_date_from) {
-      m['clearing_date_from'] = clearing_date_from;
+    if (null != clearingDateFrom) {
+      m['clearingDateFrom'] = clearingDateFrom;
     }
-    if (null != clearing_date_to) {
-      m['clearing_date_to'] = clearing_date_to;
+    if (null != clearingDateTo) {
+      m['clearingDateTo'] = clearingDateTo;
     }
     if (null != pagination) {
       m['pagination'] = pagination;
     }
-    if (null != record) {
-      m['record'] = record;
+    if (null != records) {
+      m['records'] = records;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     return m;
   }
@@ -2383,55 +2453,55 @@ class MandatorClearingExport {
 
 class MandatorClearingExportCreateData {
   /// STRING (required at the API)
-  String? clearing_date_from;
+  String? clearingDateFrom;
   /// STRING (required at the API)
-  String? clearing_date_to;
+  String? clearingDateTo;
   /// OBJECT
   Map<String, dynamic>? pagination;
   /// ARRAY
-  List<dynamic>? record;
+  List<dynamic>? records;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
 
   MandatorClearingExportCreateData({
-    this.clearing_date_from,
-    this.clearing_date_to,
+    this.clearingDateFrom,
+    this.clearingDateTo,
     this.pagination,
-    this.record,
-    this.response_code,
-    this.response_message,
+    this.records,
+    this.responseCode,
+    this.responseMessage,
   });
 
   factory MandatorClearingExportCreateData.fromMap(Map<String, dynamic> m) => MandatorClearingExportCreateData(
-        clearing_date_from: m['clearing_date_from'] is String ? m['clearing_date_from'] : null,
-        clearing_date_to: m['clearing_date_to'] is String ? m['clearing_date_to'] : null,
+        clearingDateFrom: m['clearingDateFrom'] is String ? m['clearingDateFrom'] : null,
+        clearingDateTo: m['clearingDateTo'] is String ? m['clearingDateTo'] : null,
         pagination: m['pagination'] is Map<String, dynamic> ? m['pagination'] : null,
-        record: m['record'] is List<dynamic> ? m['record'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        records: m['records'] is List<dynamic> ? m['records'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != clearing_date_from) {
-      m['clearing_date_from'] = clearing_date_from;
+    if (null != clearingDateFrom) {
+      m['clearingDateFrom'] = clearingDateFrom;
     }
-    if (null != clearing_date_to) {
-      m['clearing_date_to'] = clearing_date_to;
+    if (null != clearingDateTo) {
+      m['clearingDateTo'] = clearingDateTo;
     }
     if (null != pagination) {
       m['pagination'] = pagination;
     }
-    if (null != record) {
-      m['record'] = record;
+    if (null != records) {
+      m['records'] = records;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     return m;
   }
@@ -2439,59 +2509,59 @@ class MandatorClearingExportCreateData {
 
 class MandatorClearingExportDownload {
   /// STRING (required at the API)
-  String? clearing_date_from;
+  String? clearingDateFrom;
   /// STRING (required at the API)
-  String? clearing_date_to;
+  String? clearingDateTo;
   /// STRING
-  String? file_id;
+  String? fileId;
   /// STRING
-  String? filename_template;
+  String? filenameTemplate;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// STRING
   String? status;
 
   MandatorClearingExportDownload({
-    this.clearing_date_from,
-    this.clearing_date_to,
-    this.file_id,
-    this.filename_template,
-    this.response_code,
-    this.response_message,
+    this.clearingDateFrom,
+    this.clearingDateTo,
+    this.fileId,
+    this.filenameTemplate,
+    this.responseCode,
+    this.responseMessage,
     this.status,
   });
 
   factory MandatorClearingExportDownload.fromMap(Map<String, dynamic> m) => MandatorClearingExportDownload(
-        clearing_date_from: m['clearing_date_from'] is String ? m['clearing_date_from'] : null,
-        clearing_date_to: m['clearing_date_to'] is String ? m['clearing_date_to'] : null,
-        file_id: m['file_id'] is String ? m['file_id'] : null,
-        filename_template: m['filename_template'] is String ? m['filename_template'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        clearingDateFrom: m['clearingDateFrom'] is String ? m['clearingDateFrom'] : null,
+        clearingDateTo: m['clearingDateTo'] is String ? m['clearingDateTo'] : null,
+        fileId: m['fileId'] is String ? m['fileId'] : null,
+        filenameTemplate: m['filenameTemplate'] is String ? m['filenameTemplate'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
         status: m['status'] is String ? m['status'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != clearing_date_from) {
-      m['clearing_date_from'] = clearing_date_from;
+    if (null != clearingDateFrom) {
+      m['clearingDateFrom'] = clearingDateFrom;
     }
-    if (null != clearing_date_to) {
-      m['clearing_date_to'] = clearing_date_to;
+    if (null != clearingDateTo) {
+      m['clearingDateTo'] = clearingDateTo;
     }
-    if (null != file_id) {
-      m['file_id'] = file_id;
+    if (null != fileId) {
+      m['fileId'] = fileId;
     }
-    if (null != filename_template) {
-      m['filename_template'] = filename_template;
+    if (null != filenameTemplate) {
+      m['filenameTemplate'] = filenameTemplate;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     if (null != status) {
       m['status'] = status;
@@ -2523,59 +2593,59 @@ class MandatorClearingExportDownloadLoadMatch {
 
 class MandatorClearingExportDownloadCreateData {
   /// STRING (required at the API)
-  String? clearing_date_from;
+  String? clearingDateFrom;
   /// STRING (required at the API)
-  String? clearing_date_to;
+  String? clearingDateTo;
   /// STRING
-  String? file_id;
+  String? fileId;
   /// STRING
-  String? filename_template;
+  String? filenameTemplate;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// STRING
   String? status;
 
   MandatorClearingExportDownloadCreateData({
-    this.clearing_date_from,
-    this.clearing_date_to,
-    this.file_id,
-    this.filename_template,
-    this.response_code,
-    this.response_message,
+    this.clearingDateFrom,
+    this.clearingDateTo,
+    this.fileId,
+    this.filenameTemplate,
+    this.responseCode,
+    this.responseMessage,
     this.status,
   });
 
   factory MandatorClearingExportDownloadCreateData.fromMap(Map<String, dynamic> m) => MandatorClearingExportDownloadCreateData(
-        clearing_date_from: m['clearing_date_from'] is String ? m['clearing_date_from'] : null,
-        clearing_date_to: m['clearing_date_to'] is String ? m['clearing_date_to'] : null,
-        file_id: m['file_id'] is String ? m['file_id'] : null,
-        filename_template: m['filename_template'] is String ? m['filename_template'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        clearingDateFrom: m['clearingDateFrom'] is String ? m['clearingDateFrom'] : null,
+        clearingDateTo: m['clearingDateTo'] is String ? m['clearingDateTo'] : null,
+        fileId: m['fileId'] is String ? m['fileId'] : null,
+        filenameTemplate: m['filenameTemplate'] is String ? m['filenameTemplate'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
         status: m['status'] is String ? m['status'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != clearing_date_from) {
-      m['clearing_date_from'] = clearing_date_from;
+    if (null != clearingDateFrom) {
+      m['clearingDateFrom'] = clearingDateFrom;
     }
-    if (null != clearing_date_to) {
-      m['clearing_date_to'] = clearing_date_to;
+    if (null != clearingDateTo) {
+      m['clearingDateTo'] = clearingDateTo;
     }
-    if (null != file_id) {
-      m['file_id'] = file_id;
+    if (null != fileId) {
+      m['fileId'] = fileId;
     }
-    if (null != filename_template) {
-      m['filename_template'] = filename_template;
+    if (null != filenameTemplate) {
+      m['filenameTemplate'] = filenameTemplate;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     if (null != status) {
       m['status'] = status;
@@ -2586,48 +2656,48 @@ class MandatorClearingExportDownloadCreateData {
 
 class MandatorClearingExportSummary {
   /// STRING (required at the API)
-  String? clearing_date_from;
+  String? clearingDateFrom;
   /// STRING (required at the API)
-  String? clearing_date_to;
+  String? clearingDateTo;
   /// ARRAY
-  List<dynamic>? record;
+  List<dynamic>? records;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
 
   MandatorClearingExportSummary({
-    this.clearing_date_from,
-    this.clearing_date_to,
-    this.record,
-    this.response_code,
-    this.response_message,
+    this.clearingDateFrom,
+    this.clearingDateTo,
+    this.records,
+    this.responseCode,
+    this.responseMessage,
   });
 
   factory MandatorClearingExportSummary.fromMap(Map<String, dynamic> m) => MandatorClearingExportSummary(
-        clearing_date_from: m['clearing_date_from'] is String ? m['clearing_date_from'] : null,
-        clearing_date_to: m['clearing_date_to'] is String ? m['clearing_date_to'] : null,
-        record: m['record'] is List<dynamic> ? m['record'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        clearingDateFrom: m['clearingDateFrom'] is String ? m['clearingDateFrom'] : null,
+        clearingDateTo: m['clearingDateTo'] is String ? m['clearingDateTo'] : null,
+        records: m['records'] is List<dynamic> ? m['records'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != clearing_date_from) {
-      m['clearing_date_from'] = clearing_date_from;
+    if (null != clearingDateFrom) {
+      m['clearingDateFrom'] = clearingDateFrom;
     }
-    if (null != clearing_date_to) {
-      m['clearing_date_to'] = clearing_date_to;
+    if (null != clearingDateTo) {
+      m['clearingDateTo'] = clearingDateTo;
     }
-    if (null != record) {
-      m['record'] = record;
+    if (null != records) {
+      m['records'] = records;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     return m;
   }
@@ -2635,48 +2705,48 @@ class MandatorClearingExportSummary {
 
 class MandatorClearingExportSummaryCreateData {
   /// STRING (required at the API)
-  String? clearing_date_from;
+  String? clearingDateFrom;
   /// STRING (required at the API)
-  String? clearing_date_to;
+  String? clearingDateTo;
   /// ARRAY
-  List<dynamic>? record;
+  List<dynamic>? records;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
 
   MandatorClearingExportSummaryCreateData({
-    this.clearing_date_from,
-    this.clearing_date_to,
-    this.record,
-    this.response_code,
-    this.response_message,
+    this.clearingDateFrom,
+    this.clearingDateTo,
+    this.records,
+    this.responseCode,
+    this.responseMessage,
   });
 
   factory MandatorClearingExportSummaryCreateData.fromMap(Map<String, dynamic> m) => MandatorClearingExportSummaryCreateData(
-        clearing_date_from: m['clearing_date_from'] is String ? m['clearing_date_from'] : null,
-        clearing_date_to: m['clearing_date_to'] is String ? m['clearing_date_to'] : null,
-        record: m['record'] is List<dynamic> ? m['record'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        clearingDateFrom: m['clearingDateFrom'] is String ? m['clearingDateFrom'] : null,
+        clearingDateTo: m['clearingDateTo'] is String ? m['clearingDateTo'] : null,
+        records: m['records'] is List<dynamic> ? m['records'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != clearing_date_from) {
-      m['clearing_date_from'] = clearing_date_from;
+    if (null != clearingDateFrom) {
+      m['clearingDateFrom'] = clearingDateFrom;
     }
-    if (null != clearing_date_to) {
-      m['clearing_date_to'] = clearing_date_to;
+    if (null != clearingDateTo) {
+      m['clearingDateTo'] = clearingDateTo;
     }
-    if (null != record) {
-      m['record'] = record;
+    if (null != records) {
+      m['records'] = records;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     return m;
   }
@@ -2684,178 +2754,178 @@ class MandatorClearingExportSummaryCreateData {
 
 class MerchantPortalServicesApi {
   /// STRING
-  String? authorization_code;
+  String? authorizationCode;
   /// STRING
-  String? card_brand;
+  String? cardBrand;
   /// STRING
-  String? clearing_amount_from;
+  String? clearingAmountFrom;
   /// STRING
-  String? clearing_amount_to;
+  String? clearingAmountTo;
   /// STRING
-  String? clearing_currency;
+  String? clearingCurrency;
   /// STRING
-  String? clearing_status;
+  String? clearingStatus;
   /// STRING
-  String? corporate_uuid;
+  String? corporateUUID;
   /// STRING
-  String? order_by_transaction_date;
+  String? orderByTransactionDate;
   /// OBJECT
   Map<String, dynamic>? pagination;
   /// STRING
-  String? receipt_number;
+  String? receiptNumber;
   /// STRING
-  String? referenced_transaction_id;
+  String? referencedTransactionId;
   /// STRING
-  String? retrieval_reference_number;
+  String? retrievalReferenceNumber;
   /// INTEGER
-  int? source_id;
+  int? sourceId;
   /// STRING
-  String? tecsengine_response_code_from;
+  String? tecsengineResponseCodeFrom;
   /// STRING
-  String? tecsengine_response_code_to;
+  String? tecsengineResponseCodeTo;
   /// INTEGER
-  int? terminal_id;
+  int? terminalId;
   /// STRING
-  String? trace_number;
+  String? traceNumber;
   /// STRING
-  String? transaction_amount_from;
+  String? transactionAmountFrom;
   /// STRING
-  String? transaction_amount_to;
+  String? transactionAmountTo;
   /// STRING
-  String? transaction_date_from;
+  String? transactionDateFrom;
   /// STRING
-  String? transaction_date_to;
+  String? transactionDateTo;
   /// STRING
-  String? transaction_id;
+  String? transactionId;
   /// STRING
-  String? transaction_type;
+  String? transactionType;
   /// STRING
   String? wallet;
 
   MerchantPortalServicesApi({
-    this.authorization_code,
-    this.card_brand,
-    this.clearing_amount_from,
-    this.clearing_amount_to,
-    this.clearing_currency,
-    this.clearing_status,
-    this.corporate_uuid,
-    this.order_by_transaction_date,
+    this.authorizationCode,
+    this.cardBrand,
+    this.clearingAmountFrom,
+    this.clearingAmountTo,
+    this.clearingCurrency,
+    this.clearingStatus,
+    this.corporateUUID,
+    this.orderByTransactionDate,
     this.pagination,
-    this.receipt_number,
-    this.referenced_transaction_id,
-    this.retrieval_reference_number,
-    this.source_id,
-    this.tecsengine_response_code_from,
-    this.tecsengine_response_code_to,
-    this.terminal_id,
-    this.trace_number,
-    this.transaction_amount_from,
-    this.transaction_amount_to,
-    this.transaction_date_from,
-    this.transaction_date_to,
-    this.transaction_id,
-    this.transaction_type,
+    this.receiptNumber,
+    this.referencedTransactionId,
+    this.retrievalReferenceNumber,
+    this.sourceId,
+    this.tecsengineResponseCodeFrom,
+    this.tecsengineResponseCodeTo,
+    this.terminalId,
+    this.traceNumber,
+    this.transactionAmountFrom,
+    this.transactionAmountTo,
+    this.transactionDateFrom,
+    this.transactionDateTo,
+    this.transactionId,
+    this.transactionType,
     this.wallet,
   });
 
   factory MerchantPortalServicesApi.fromMap(Map<String, dynamic> m) => MerchantPortalServicesApi(
-        authorization_code: m['authorization_code'] is String ? m['authorization_code'] : null,
-        card_brand: m['card_brand'] is String ? m['card_brand'] : null,
-        clearing_amount_from: m['clearing_amount_from'] is String ? m['clearing_amount_from'] : null,
-        clearing_amount_to: m['clearing_amount_to'] is String ? m['clearing_amount_to'] : null,
-        clearing_currency: m['clearing_currency'] is String ? m['clearing_currency'] : null,
-        clearing_status: m['clearing_status'] is String ? m['clearing_status'] : null,
-        corporate_uuid: m['corporate_uuid'] is String ? m['corporate_uuid'] : null,
-        order_by_transaction_date: m['order_by_transaction_date'] is String ? m['order_by_transaction_date'] : null,
+        authorizationCode: m['authorizationCode'] is String ? m['authorizationCode'] : null,
+        cardBrand: m['cardBrand'] is String ? m['cardBrand'] : null,
+        clearingAmountFrom: m['clearingAmountFrom'] is String ? m['clearingAmountFrom'] : null,
+        clearingAmountTo: m['clearingAmountTo'] is String ? m['clearingAmountTo'] : null,
+        clearingCurrency: m['clearingCurrency'] is String ? m['clearingCurrency'] : null,
+        clearingStatus: m['clearingStatus'] is String ? m['clearingStatus'] : null,
+        corporateUUID: m['corporateUUID'] is String ? m['corporateUUID'] : null,
+        orderByTransactionDate: m['orderByTransactionDate'] is String ? m['orderByTransactionDate'] : null,
         pagination: m['pagination'] is Map<String, dynamic> ? m['pagination'] : null,
-        receipt_number: m['receipt_number'] is String ? m['receipt_number'] : null,
-        referenced_transaction_id: m['referenced_transaction_id'] is String ? m['referenced_transaction_id'] : null,
-        retrieval_reference_number: m['retrieval_reference_number'] is String ? m['retrieval_reference_number'] : null,
-        source_id: m['source_id'] is int ? m['source_id'] : null,
-        tecsengine_response_code_from: m['tecsengine_response_code_from'] is String ? m['tecsengine_response_code_from'] : null,
-        tecsengine_response_code_to: m['tecsengine_response_code_to'] is String ? m['tecsengine_response_code_to'] : null,
-        terminal_id: m['terminal_id'] is int ? m['terminal_id'] : null,
-        trace_number: m['trace_number'] is String ? m['trace_number'] : null,
-        transaction_amount_from: m['transaction_amount_from'] is String ? m['transaction_amount_from'] : null,
-        transaction_amount_to: m['transaction_amount_to'] is String ? m['transaction_amount_to'] : null,
-        transaction_date_from: m['transaction_date_from'] is String ? m['transaction_date_from'] : null,
-        transaction_date_to: m['transaction_date_to'] is String ? m['transaction_date_to'] : null,
-        transaction_id: m['transaction_id'] is String ? m['transaction_id'] : null,
-        transaction_type: m['transaction_type'] is String ? m['transaction_type'] : null,
+        receiptNumber: m['receiptNumber'] is String ? m['receiptNumber'] : null,
+        referencedTransactionId: m['referencedTransactionId'] is String ? m['referencedTransactionId'] : null,
+        retrievalReferenceNumber: m['retrievalReferenceNumber'] is String ? m['retrievalReferenceNumber'] : null,
+        sourceId: m['sourceId'] is int ? m['sourceId'] : null,
+        tecsengineResponseCodeFrom: m['tecsengineResponseCodeFrom'] is String ? m['tecsengineResponseCodeFrom'] : null,
+        tecsengineResponseCodeTo: m['tecsengineResponseCodeTo'] is String ? m['tecsengineResponseCodeTo'] : null,
+        terminalId: m['terminalId'] is int ? m['terminalId'] : null,
+        traceNumber: m['traceNumber'] is String ? m['traceNumber'] : null,
+        transactionAmountFrom: m['transactionAmountFrom'] is String ? m['transactionAmountFrom'] : null,
+        transactionAmountTo: m['transactionAmountTo'] is String ? m['transactionAmountTo'] : null,
+        transactionDateFrom: m['transactionDateFrom'] is String ? m['transactionDateFrom'] : null,
+        transactionDateTo: m['transactionDateTo'] is String ? m['transactionDateTo'] : null,
+        transactionId: m['transactionId'] is String ? m['transactionId'] : null,
+        transactionType: m['transactionType'] is String ? m['transactionType'] : null,
         wallet: m['wallet'] is String ? m['wallet'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != authorization_code) {
-      m['authorization_code'] = authorization_code;
+    if (null != authorizationCode) {
+      m['authorizationCode'] = authorizationCode;
     }
-    if (null != card_brand) {
-      m['card_brand'] = card_brand;
+    if (null != cardBrand) {
+      m['cardBrand'] = cardBrand;
     }
-    if (null != clearing_amount_from) {
-      m['clearing_amount_from'] = clearing_amount_from;
+    if (null != clearingAmountFrom) {
+      m['clearingAmountFrom'] = clearingAmountFrom;
     }
-    if (null != clearing_amount_to) {
-      m['clearing_amount_to'] = clearing_amount_to;
+    if (null != clearingAmountTo) {
+      m['clearingAmountTo'] = clearingAmountTo;
     }
-    if (null != clearing_currency) {
-      m['clearing_currency'] = clearing_currency;
+    if (null != clearingCurrency) {
+      m['clearingCurrency'] = clearingCurrency;
     }
-    if (null != clearing_status) {
-      m['clearing_status'] = clearing_status;
+    if (null != clearingStatus) {
+      m['clearingStatus'] = clearingStatus;
     }
-    if (null != corporate_uuid) {
-      m['corporate_uuid'] = corporate_uuid;
+    if (null != corporateUUID) {
+      m['corporateUUID'] = corporateUUID;
     }
-    if (null != order_by_transaction_date) {
-      m['order_by_transaction_date'] = order_by_transaction_date;
+    if (null != orderByTransactionDate) {
+      m['orderByTransactionDate'] = orderByTransactionDate;
     }
     if (null != pagination) {
       m['pagination'] = pagination;
     }
-    if (null != receipt_number) {
-      m['receipt_number'] = receipt_number;
+    if (null != receiptNumber) {
+      m['receiptNumber'] = receiptNumber;
     }
-    if (null != referenced_transaction_id) {
-      m['referenced_transaction_id'] = referenced_transaction_id;
+    if (null != referencedTransactionId) {
+      m['referencedTransactionId'] = referencedTransactionId;
     }
-    if (null != retrieval_reference_number) {
-      m['retrieval_reference_number'] = retrieval_reference_number;
+    if (null != retrievalReferenceNumber) {
+      m['retrievalReferenceNumber'] = retrievalReferenceNumber;
     }
-    if (null != source_id) {
-      m['source_id'] = source_id;
+    if (null != sourceId) {
+      m['sourceId'] = sourceId;
     }
-    if (null != tecsengine_response_code_from) {
-      m['tecsengine_response_code_from'] = tecsengine_response_code_from;
+    if (null != tecsengineResponseCodeFrom) {
+      m['tecsengineResponseCodeFrom'] = tecsengineResponseCodeFrom;
     }
-    if (null != tecsengine_response_code_to) {
-      m['tecsengine_response_code_to'] = tecsengine_response_code_to;
+    if (null != tecsengineResponseCodeTo) {
+      m['tecsengineResponseCodeTo'] = tecsengineResponseCodeTo;
     }
-    if (null != terminal_id) {
-      m['terminal_id'] = terminal_id;
+    if (null != terminalId) {
+      m['terminalId'] = terminalId;
     }
-    if (null != trace_number) {
-      m['trace_number'] = trace_number;
+    if (null != traceNumber) {
+      m['traceNumber'] = traceNumber;
     }
-    if (null != transaction_amount_from) {
-      m['transaction_amount_from'] = transaction_amount_from;
+    if (null != transactionAmountFrom) {
+      m['transactionAmountFrom'] = transactionAmountFrom;
     }
-    if (null != transaction_amount_to) {
-      m['transaction_amount_to'] = transaction_amount_to;
+    if (null != transactionAmountTo) {
+      m['transactionAmountTo'] = transactionAmountTo;
     }
-    if (null != transaction_date_from) {
-      m['transaction_date_from'] = transaction_date_from;
+    if (null != transactionDateFrom) {
+      m['transactionDateFrom'] = transactionDateFrom;
     }
-    if (null != transaction_date_to) {
-      m['transaction_date_to'] = transaction_date_to;
+    if (null != transactionDateTo) {
+      m['transactionDateTo'] = transactionDateTo;
     }
-    if (null != transaction_id) {
-      m['transaction_id'] = transaction_id;
+    if (null != transactionId) {
+      m['transactionId'] = transactionId;
     }
-    if (null != transaction_type) {
-      m['transaction_type'] = transaction_type;
+    if (null != transactionType) {
+      m['transactionType'] = transactionType;
     }
     if (null != wallet) {
       m['wallet'] = wallet;
@@ -2866,178 +2936,178 @@ class MerchantPortalServicesApi {
 
 class MerchantPortalServicesApiCreateData {
   /// STRING
-  String? authorization_code;
+  String? authorizationCode;
   /// STRING
-  String? card_brand;
+  String? cardBrand;
   /// STRING
-  String? clearing_amount_from;
+  String? clearingAmountFrom;
   /// STRING
-  String? clearing_amount_to;
+  String? clearingAmountTo;
   /// STRING
-  String? clearing_currency;
+  String? clearingCurrency;
   /// STRING
-  String? clearing_status;
+  String? clearingStatus;
   /// STRING
-  String? corporate_uuid;
+  String? corporateUUID;
   /// STRING
-  String? order_by_transaction_date;
+  String? orderByTransactionDate;
   /// OBJECT
   Map<String, dynamic>? pagination;
   /// STRING
-  String? receipt_number;
+  String? receiptNumber;
   /// STRING
-  String? referenced_transaction_id;
+  String? referencedTransactionId;
   /// STRING
-  String? retrieval_reference_number;
+  String? retrievalReferenceNumber;
   /// INTEGER
-  int? source_id;
+  int? sourceId;
   /// STRING
-  String? tecsengine_response_code_from;
+  String? tecsengineResponseCodeFrom;
   /// STRING
-  String? tecsengine_response_code_to;
+  String? tecsengineResponseCodeTo;
   /// INTEGER
-  int? terminal_id;
+  int? terminalId;
   /// STRING
-  String? trace_number;
+  String? traceNumber;
   /// STRING
-  String? transaction_amount_from;
+  String? transactionAmountFrom;
   /// STRING
-  String? transaction_amount_to;
+  String? transactionAmountTo;
   /// STRING
-  String? transaction_date_from;
+  String? transactionDateFrom;
   /// STRING
-  String? transaction_date_to;
+  String? transactionDateTo;
   /// STRING
-  String? transaction_id;
+  String? transactionId;
   /// STRING
-  String? transaction_type;
+  String? transactionType;
   /// STRING
   String? wallet;
 
   MerchantPortalServicesApiCreateData({
-    this.authorization_code,
-    this.card_brand,
-    this.clearing_amount_from,
-    this.clearing_amount_to,
-    this.clearing_currency,
-    this.clearing_status,
-    this.corporate_uuid,
-    this.order_by_transaction_date,
+    this.authorizationCode,
+    this.cardBrand,
+    this.clearingAmountFrom,
+    this.clearingAmountTo,
+    this.clearingCurrency,
+    this.clearingStatus,
+    this.corporateUUID,
+    this.orderByTransactionDate,
     this.pagination,
-    this.receipt_number,
-    this.referenced_transaction_id,
-    this.retrieval_reference_number,
-    this.source_id,
-    this.tecsengine_response_code_from,
-    this.tecsengine_response_code_to,
-    this.terminal_id,
-    this.trace_number,
-    this.transaction_amount_from,
-    this.transaction_amount_to,
-    this.transaction_date_from,
-    this.transaction_date_to,
-    this.transaction_id,
-    this.transaction_type,
+    this.receiptNumber,
+    this.referencedTransactionId,
+    this.retrievalReferenceNumber,
+    this.sourceId,
+    this.tecsengineResponseCodeFrom,
+    this.tecsengineResponseCodeTo,
+    this.terminalId,
+    this.traceNumber,
+    this.transactionAmountFrom,
+    this.transactionAmountTo,
+    this.transactionDateFrom,
+    this.transactionDateTo,
+    this.transactionId,
+    this.transactionType,
     this.wallet,
   });
 
   factory MerchantPortalServicesApiCreateData.fromMap(Map<String, dynamic> m) => MerchantPortalServicesApiCreateData(
-        authorization_code: m['authorization_code'] is String ? m['authorization_code'] : null,
-        card_brand: m['card_brand'] is String ? m['card_brand'] : null,
-        clearing_amount_from: m['clearing_amount_from'] is String ? m['clearing_amount_from'] : null,
-        clearing_amount_to: m['clearing_amount_to'] is String ? m['clearing_amount_to'] : null,
-        clearing_currency: m['clearing_currency'] is String ? m['clearing_currency'] : null,
-        clearing_status: m['clearing_status'] is String ? m['clearing_status'] : null,
-        corporate_uuid: m['corporate_uuid'] is String ? m['corporate_uuid'] : null,
-        order_by_transaction_date: m['order_by_transaction_date'] is String ? m['order_by_transaction_date'] : null,
+        authorizationCode: m['authorizationCode'] is String ? m['authorizationCode'] : null,
+        cardBrand: m['cardBrand'] is String ? m['cardBrand'] : null,
+        clearingAmountFrom: m['clearingAmountFrom'] is String ? m['clearingAmountFrom'] : null,
+        clearingAmountTo: m['clearingAmountTo'] is String ? m['clearingAmountTo'] : null,
+        clearingCurrency: m['clearingCurrency'] is String ? m['clearingCurrency'] : null,
+        clearingStatus: m['clearingStatus'] is String ? m['clearingStatus'] : null,
+        corporateUUID: m['corporateUUID'] is String ? m['corporateUUID'] : null,
+        orderByTransactionDate: m['orderByTransactionDate'] is String ? m['orderByTransactionDate'] : null,
         pagination: m['pagination'] is Map<String, dynamic> ? m['pagination'] : null,
-        receipt_number: m['receipt_number'] is String ? m['receipt_number'] : null,
-        referenced_transaction_id: m['referenced_transaction_id'] is String ? m['referenced_transaction_id'] : null,
-        retrieval_reference_number: m['retrieval_reference_number'] is String ? m['retrieval_reference_number'] : null,
-        source_id: m['source_id'] is int ? m['source_id'] : null,
-        tecsengine_response_code_from: m['tecsengine_response_code_from'] is String ? m['tecsengine_response_code_from'] : null,
-        tecsengine_response_code_to: m['tecsengine_response_code_to'] is String ? m['tecsengine_response_code_to'] : null,
-        terminal_id: m['terminal_id'] is int ? m['terminal_id'] : null,
-        trace_number: m['trace_number'] is String ? m['trace_number'] : null,
-        transaction_amount_from: m['transaction_amount_from'] is String ? m['transaction_amount_from'] : null,
-        transaction_amount_to: m['transaction_amount_to'] is String ? m['transaction_amount_to'] : null,
-        transaction_date_from: m['transaction_date_from'] is String ? m['transaction_date_from'] : null,
-        transaction_date_to: m['transaction_date_to'] is String ? m['transaction_date_to'] : null,
-        transaction_id: m['transaction_id'] is String ? m['transaction_id'] : null,
-        transaction_type: m['transaction_type'] is String ? m['transaction_type'] : null,
+        receiptNumber: m['receiptNumber'] is String ? m['receiptNumber'] : null,
+        referencedTransactionId: m['referencedTransactionId'] is String ? m['referencedTransactionId'] : null,
+        retrievalReferenceNumber: m['retrievalReferenceNumber'] is String ? m['retrievalReferenceNumber'] : null,
+        sourceId: m['sourceId'] is int ? m['sourceId'] : null,
+        tecsengineResponseCodeFrom: m['tecsengineResponseCodeFrom'] is String ? m['tecsengineResponseCodeFrom'] : null,
+        tecsengineResponseCodeTo: m['tecsengineResponseCodeTo'] is String ? m['tecsengineResponseCodeTo'] : null,
+        terminalId: m['terminalId'] is int ? m['terminalId'] : null,
+        traceNumber: m['traceNumber'] is String ? m['traceNumber'] : null,
+        transactionAmountFrom: m['transactionAmountFrom'] is String ? m['transactionAmountFrom'] : null,
+        transactionAmountTo: m['transactionAmountTo'] is String ? m['transactionAmountTo'] : null,
+        transactionDateFrom: m['transactionDateFrom'] is String ? m['transactionDateFrom'] : null,
+        transactionDateTo: m['transactionDateTo'] is String ? m['transactionDateTo'] : null,
+        transactionId: m['transactionId'] is String ? m['transactionId'] : null,
+        transactionType: m['transactionType'] is String ? m['transactionType'] : null,
         wallet: m['wallet'] is String ? m['wallet'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != authorization_code) {
-      m['authorization_code'] = authorization_code;
+    if (null != authorizationCode) {
+      m['authorizationCode'] = authorizationCode;
     }
-    if (null != card_brand) {
-      m['card_brand'] = card_brand;
+    if (null != cardBrand) {
+      m['cardBrand'] = cardBrand;
     }
-    if (null != clearing_amount_from) {
-      m['clearing_amount_from'] = clearing_amount_from;
+    if (null != clearingAmountFrom) {
+      m['clearingAmountFrom'] = clearingAmountFrom;
     }
-    if (null != clearing_amount_to) {
-      m['clearing_amount_to'] = clearing_amount_to;
+    if (null != clearingAmountTo) {
+      m['clearingAmountTo'] = clearingAmountTo;
     }
-    if (null != clearing_currency) {
-      m['clearing_currency'] = clearing_currency;
+    if (null != clearingCurrency) {
+      m['clearingCurrency'] = clearingCurrency;
     }
-    if (null != clearing_status) {
-      m['clearing_status'] = clearing_status;
+    if (null != clearingStatus) {
+      m['clearingStatus'] = clearingStatus;
     }
-    if (null != corporate_uuid) {
-      m['corporate_uuid'] = corporate_uuid;
+    if (null != corporateUUID) {
+      m['corporateUUID'] = corporateUUID;
     }
-    if (null != order_by_transaction_date) {
-      m['order_by_transaction_date'] = order_by_transaction_date;
+    if (null != orderByTransactionDate) {
+      m['orderByTransactionDate'] = orderByTransactionDate;
     }
     if (null != pagination) {
       m['pagination'] = pagination;
     }
-    if (null != receipt_number) {
-      m['receipt_number'] = receipt_number;
+    if (null != receiptNumber) {
+      m['receiptNumber'] = receiptNumber;
     }
-    if (null != referenced_transaction_id) {
-      m['referenced_transaction_id'] = referenced_transaction_id;
+    if (null != referencedTransactionId) {
+      m['referencedTransactionId'] = referencedTransactionId;
     }
-    if (null != retrieval_reference_number) {
-      m['retrieval_reference_number'] = retrieval_reference_number;
+    if (null != retrievalReferenceNumber) {
+      m['retrievalReferenceNumber'] = retrievalReferenceNumber;
     }
-    if (null != source_id) {
-      m['source_id'] = source_id;
+    if (null != sourceId) {
+      m['sourceId'] = sourceId;
     }
-    if (null != tecsengine_response_code_from) {
-      m['tecsengine_response_code_from'] = tecsengine_response_code_from;
+    if (null != tecsengineResponseCodeFrom) {
+      m['tecsengineResponseCodeFrom'] = tecsengineResponseCodeFrom;
     }
-    if (null != tecsengine_response_code_to) {
-      m['tecsengine_response_code_to'] = tecsengine_response_code_to;
+    if (null != tecsengineResponseCodeTo) {
+      m['tecsengineResponseCodeTo'] = tecsengineResponseCodeTo;
     }
-    if (null != terminal_id) {
-      m['terminal_id'] = terminal_id;
+    if (null != terminalId) {
+      m['terminalId'] = terminalId;
     }
-    if (null != trace_number) {
-      m['trace_number'] = trace_number;
+    if (null != traceNumber) {
+      m['traceNumber'] = traceNumber;
     }
-    if (null != transaction_amount_from) {
-      m['transaction_amount_from'] = transaction_amount_from;
+    if (null != transactionAmountFrom) {
+      m['transactionAmountFrom'] = transactionAmountFrom;
     }
-    if (null != transaction_amount_to) {
-      m['transaction_amount_to'] = transaction_amount_to;
+    if (null != transactionAmountTo) {
+      m['transactionAmountTo'] = transactionAmountTo;
     }
-    if (null != transaction_date_from) {
-      m['transaction_date_from'] = transaction_date_from;
+    if (null != transactionDateFrom) {
+      m['transactionDateFrom'] = transactionDateFrom;
     }
-    if (null != transaction_date_to) {
-      m['transaction_date_to'] = transaction_date_to;
+    if (null != transactionDateTo) {
+      m['transactionDateTo'] = transactionDateTo;
     }
-    if (null != transaction_id) {
-      m['transaction_id'] = transaction_id;
+    if (null != transactionId) {
+      m['transactionId'] = transactionId;
     }
-    if (null != transaction_type) {
-      m['transaction_type'] = transaction_type;
+    if (null != transactionType) {
+      m['transactionType'] = transactionType;
     }
     if (null != wallet) {
       m['wallet'] = wallet;
@@ -3048,48 +3118,48 @@ class MerchantPortalServicesApiCreateData {
 
 class MoveTid {
   /// ARRAY (required at the API)
-  List<dynamic>? productorderuuid;
+  List<dynamic>? productorderuuids;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// STRING
-  String? target_packageorderuuid;
+  String? targetPackageorderuuid;
   /// STRING
-  String? target_productorderuuid;
+  String? targetProductorderuuid;
 
   MoveTid({
-    this.productorderuuid,
-    this.response_code,
-    this.response_message,
-    this.target_packageorderuuid,
-    this.target_productorderuuid,
+    this.productorderuuids,
+    this.responseCode,
+    this.responseMessage,
+    this.targetPackageorderuuid,
+    this.targetProductorderuuid,
   });
 
   factory MoveTid.fromMap(Map<String, dynamic> m) => MoveTid(
-        productorderuuid: m['productorderuuid'] is List<dynamic> ? m['productorderuuid'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        target_packageorderuuid: m['target_packageorderuuid'] is String ? m['target_packageorderuuid'] : null,
-        target_productorderuuid: m['target_productorderuuid'] is String ? m['target_productorderuuid'] : null,
+        productorderuuids: m['productorderuuids'] is List<dynamic> ? m['productorderuuids'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        targetPackageorderuuid: m['targetPackageorderuuid'] is String ? m['targetPackageorderuuid'] : null,
+        targetProductorderuuid: m['targetProductorderuuid'] is String ? m['targetProductorderuuid'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != productorderuuid) {
-      m['productorderuuid'] = productorderuuid;
+    if (null != productorderuuids) {
+      m['productorderuuids'] = productorderuuids;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != target_packageorderuuid) {
-      m['target_packageorderuuid'] = target_packageorderuuid;
+    if (null != targetPackageorderuuid) {
+      m['targetPackageorderuuid'] = targetPackageorderuuid;
     }
-    if (null != target_productorderuuid) {
-      m['target_productorderuuid'] = target_productorderuuid;
+    if (null != targetProductorderuuid) {
+      m['targetProductorderuuid'] = targetProductorderuuid;
     }
     return m;
   }
@@ -3097,48 +3167,48 @@ class MoveTid {
 
 class MoveTidCreateData {
   /// ARRAY (required at the API)
-  List<dynamic>? productorderuuid;
+  List<dynamic>? productorderuuids;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// STRING
-  String? target_packageorderuuid;
+  String? targetPackageorderuuid;
   /// STRING
-  String? target_productorderuuid;
+  String? targetProductorderuuid;
 
   MoveTidCreateData({
-    this.productorderuuid,
-    this.response_code,
-    this.response_message,
-    this.target_packageorderuuid,
-    this.target_productorderuuid,
+    this.productorderuuids,
+    this.responseCode,
+    this.responseMessage,
+    this.targetPackageorderuuid,
+    this.targetProductorderuuid,
   });
 
   factory MoveTidCreateData.fromMap(Map<String, dynamic> m) => MoveTidCreateData(
-        productorderuuid: m['productorderuuid'] is List<dynamic> ? m['productorderuuid'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        target_packageorderuuid: m['target_packageorderuuid'] is String ? m['target_packageorderuuid'] : null,
-        target_productorderuuid: m['target_productorderuuid'] is String ? m['target_productorderuuid'] : null,
+        productorderuuids: m['productorderuuids'] is List<dynamic> ? m['productorderuuids'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        targetPackageorderuuid: m['targetPackageorderuuid'] is String ? m['targetPackageorderuuid'] : null,
+        targetProductorderuuid: m['targetProductorderuuid'] is String ? m['targetProductorderuuid'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != productorderuuid) {
-      m['productorderuuid'] = productorderuuid;
+    if (null != productorderuuids) {
+      m['productorderuuids'] = productorderuuids;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != target_packageorderuuid) {
-      m['target_packageorderuuid'] = target_packageorderuuid;
+    if (null != targetPackageorderuuid) {
+      m['targetPackageorderuuid'] = targetPackageorderuuid;
     }
-    if (null != target_productorderuuid) {
-      m['target_productorderuuid'] = target_productorderuuid;
+    if (null != targetProductorderuuid) {
+      m['targetProductorderuuid'] = targetProductorderuuid;
     }
     return m;
   }
@@ -3146,96 +3216,96 @@ class MoveTidCreateData {
 
 class PaymentManual {
   /// STRING
-  String? acquirer_name;
+  String? acquirerName;
   /// INTEGER (required at the API)
   int? amount;
   /// STRING
-  String? authorization_number;
+  String? authorizationNumber;
   /// STRING (required at the API)
-  String? card_number;
+  String? cardNumber;
   /// STRING
-  String? card_type;
+  String? cardType;
   /// STRING (required at the API)
   String? currency;
   /// STRING
   String? cvc;
   /// STRING
-  String? date_time_tx;
+  String? dateTimeTx;
   /// STRING (required at the API)
-  String? exp_date;
+  String? expDate;
   /// STRING
-  String? merchant_id;
+  String? merchantId;
   /// STRING
-  String? original_transaction_id;
+  String? originalTransactionId;
   /// STRING
   String? password;
   /// STRING
-  String? response_code;
+  String? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// STRING
-  String? terminal_id;
+  String? terminalId;
   /// STRING
-  String? transaction_id;
+  String? transactionId;
   /// STRING (required at the API)
   String? txtype;
 
   PaymentManual({
-    this.acquirer_name,
+    this.acquirerName,
     this.amount,
-    this.authorization_number,
-    this.card_number,
-    this.card_type,
+    this.authorizationNumber,
+    this.cardNumber,
+    this.cardType,
     this.currency,
     this.cvc,
-    this.date_time_tx,
-    this.exp_date,
-    this.merchant_id,
-    this.original_transaction_id,
+    this.dateTimeTx,
+    this.expDate,
+    this.merchantId,
+    this.originalTransactionId,
     this.password,
-    this.response_code,
-    this.response_message,
-    this.terminal_id,
-    this.transaction_id,
+    this.responseCode,
+    this.responseMessage,
+    this.terminalId,
+    this.transactionId,
     this.txtype,
   });
 
   factory PaymentManual.fromMap(Map<String, dynamic> m) => PaymentManual(
-        acquirer_name: m['acquirer_name'] is String ? m['acquirer_name'] : null,
+        acquirerName: m['acquirerName'] is String ? m['acquirerName'] : null,
         amount: m['amount'] is int ? m['amount'] : null,
-        authorization_number: m['authorization_number'] is String ? m['authorization_number'] : null,
-        card_number: m['card_number'] is String ? m['card_number'] : null,
-        card_type: m['card_type'] is String ? m['card_type'] : null,
+        authorizationNumber: m['authorizationNumber'] is String ? m['authorizationNumber'] : null,
+        cardNumber: m['cardNumber'] is String ? m['cardNumber'] : null,
+        cardType: m['cardType'] is String ? m['cardType'] : null,
         currency: m['currency'] is String ? m['currency'] : null,
         cvc: m['cvc'] is String ? m['cvc'] : null,
-        date_time_tx: m['date_time_tx'] is String ? m['date_time_tx'] : null,
-        exp_date: m['exp_date'] is String ? m['exp_date'] : null,
-        merchant_id: m['merchant_id'] is String ? m['merchant_id'] : null,
-        original_transaction_id: m['original_transaction_id'] is String ? m['original_transaction_id'] : null,
+        dateTimeTx: m['dateTimeTx'] is String ? m['dateTimeTx'] : null,
+        expDate: m['expDate'] is String ? m['expDate'] : null,
+        merchantId: m['merchantId'] is String ? m['merchantId'] : null,
+        originalTransactionId: m['originalTransactionId'] is String ? m['originalTransactionId'] : null,
         password: m['password'] is String ? m['password'] : null,
-        response_code: m['response_code'] is String ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        terminal_id: m['terminal_id'] is String ? m['terminal_id'] : null,
-        transaction_id: m['transaction_id'] is String ? m['transaction_id'] : null,
+        responseCode: m['responseCode'] is String ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        terminalId: m['terminalId'] is String ? m['terminalId'] : null,
+        transactionId: m['transactionId'] is String ? m['transactionId'] : null,
         txtype: m['txtype'] is String ? m['txtype'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != acquirer_name) {
-      m['acquirer_name'] = acquirer_name;
+    if (null != acquirerName) {
+      m['acquirerName'] = acquirerName;
     }
     if (null != amount) {
       m['amount'] = amount;
     }
-    if (null != authorization_number) {
-      m['authorization_number'] = authorization_number;
+    if (null != authorizationNumber) {
+      m['authorizationNumber'] = authorizationNumber;
     }
-    if (null != card_number) {
-      m['card_number'] = card_number;
+    if (null != cardNumber) {
+      m['cardNumber'] = cardNumber;
     }
-    if (null != card_type) {
-      m['card_type'] = card_type;
+    if (null != cardType) {
+      m['cardType'] = cardType;
     }
     if (null != currency) {
       m['currency'] = currency;
@@ -3243,32 +3313,32 @@ class PaymentManual {
     if (null != cvc) {
       m['cvc'] = cvc;
     }
-    if (null != date_time_tx) {
-      m['date_time_tx'] = date_time_tx;
+    if (null != dateTimeTx) {
+      m['dateTimeTx'] = dateTimeTx;
     }
-    if (null != exp_date) {
-      m['exp_date'] = exp_date;
+    if (null != expDate) {
+      m['expDate'] = expDate;
     }
-    if (null != merchant_id) {
-      m['merchant_id'] = merchant_id;
+    if (null != merchantId) {
+      m['merchantId'] = merchantId;
     }
-    if (null != original_transaction_id) {
-      m['original_transaction_id'] = original_transaction_id;
+    if (null != originalTransactionId) {
+      m['originalTransactionId'] = originalTransactionId;
     }
     if (null != password) {
       m['password'] = password;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != terminal_id) {
-      m['terminal_id'] = terminal_id;
+    if (null != terminalId) {
+      m['terminalId'] = terminalId;
     }
-    if (null != transaction_id) {
-      m['transaction_id'] = transaction_id;
+    if (null != transactionId) {
+      m['transactionId'] = transactionId;
     }
     if (null != txtype) {
       m['txtype'] = txtype;
@@ -3279,96 +3349,96 @@ class PaymentManual {
 
 class PaymentManualCreateData {
   /// STRING
-  String? acquirer_name;
+  String? acquirerName;
   /// INTEGER (required at the API)
   int? amount;
   /// STRING
-  String? authorization_number;
+  String? authorizationNumber;
   /// STRING (required at the API)
-  String? card_number;
+  String? cardNumber;
   /// STRING
-  String? card_type;
+  String? cardType;
   /// STRING (required at the API)
   String? currency;
   /// STRING
   String? cvc;
   /// STRING
-  String? date_time_tx;
+  String? dateTimeTx;
   /// STRING (required at the API)
-  String? exp_date;
+  String? expDate;
   /// STRING
-  String? merchant_id;
+  String? merchantId;
   /// STRING
-  String? original_transaction_id;
+  String? originalTransactionId;
   /// STRING
   String? password;
   /// STRING
-  String? response_code;
+  String? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// STRING
-  String? terminal_id;
+  String? terminalId;
   /// STRING
-  String? transaction_id;
+  String? transactionId;
   /// STRING (required at the API)
   String? txtype;
 
   PaymentManualCreateData({
-    this.acquirer_name,
+    this.acquirerName,
     this.amount,
-    this.authorization_number,
-    this.card_number,
-    this.card_type,
+    this.authorizationNumber,
+    this.cardNumber,
+    this.cardType,
     this.currency,
     this.cvc,
-    this.date_time_tx,
-    this.exp_date,
-    this.merchant_id,
-    this.original_transaction_id,
+    this.dateTimeTx,
+    this.expDate,
+    this.merchantId,
+    this.originalTransactionId,
     this.password,
-    this.response_code,
-    this.response_message,
-    this.terminal_id,
-    this.transaction_id,
+    this.responseCode,
+    this.responseMessage,
+    this.terminalId,
+    this.transactionId,
     this.txtype,
   });
 
   factory PaymentManualCreateData.fromMap(Map<String, dynamic> m) => PaymentManualCreateData(
-        acquirer_name: m['acquirer_name'] is String ? m['acquirer_name'] : null,
+        acquirerName: m['acquirerName'] is String ? m['acquirerName'] : null,
         amount: m['amount'] is int ? m['amount'] : null,
-        authorization_number: m['authorization_number'] is String ? m['authorization_number'] : null,
-        card_number: m['card_number'] is String ? m['card_number'] : null,
-        card_type: m['card_type'] is String ? m['card_type'] : null,
+        authorizationNumber: m['authorizationNumber'] is String ? m['authorizationNumber'] : null,
+        cardNumber: m['cardNumber'] is String ? m['cardNumber'] : null,
+        cardType: m['cardType'] is String ? m['cardType'] : null,
         currency: m['currency'] is String ? m['currency'] : null,
         cvc: m['cvc'] is String ? m['cvc'] : null,
-        date_time_tx: m['date_time_tx'] is String ? m['date_time_tx'] : null,
-        exp_date: m['exp_date'] is String ? m['exp_date'] : null,
-        merchant_id: m['merchant_id'] is String ? m['merchant_id'] : null,
-        original_transaction_id: m['original_transaction_id'] is String ? m['original_transaction_id'] : null,
+        dateTimeTx: m['dateTimeTx'] is String ? m['dateTimeTx'] : null,
+        expDate: m['expDate'] is String ? m['expDate'] : null,
+        merchantId: m['merchantId'] is String ? m['merchantId'] : null,
+        originalTransactionId: m['originalTransactionId'] is String ? m['originalTransactionId'] : null,
         password: m['password'] is String ? m['password'] : null,
-        response_code: m['response_code'] is String ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        terminal_id: m['terminal_id'] is String ? m['terminal_id'] : null,
-        transaction_id: m['transaction_id'] is String ? m['transaction_id'] : null,
+        responseCode: m['responseCode'] is String ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        terminalId: m['terminalId'] is String ? m['terminalId'] : null,
+        transactionId: m['transactionId'] is String ? m['transactionId'] : null,
         txtype: m['txtype'] is String ? m['txtype'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != acquirer_name) {
-      m['acquirer_name'] = acquirer_name;
+    if (null != acquirerName) {
+      m['acquirerName'] = acquirerName;
     }
     if (null != amount) {
       m['amount'] = amount;
     }
-    if (null != authorization_number) {
-      m['authorization_number'] = authorization_number;
+    if (null != authorizationNumber) {
+      m['authorizationNumber'] = authorizationNumber;
     }
-    if (null != card_number) {
-      m['card_number'] = card_number;
+    if (null != cardNumber) {
+      m['cardNumber'] = cardNumber;
     }
-    if (null != card_type) {
-      m['card_type'] = card_type;
+    if (null != cardType) {
+      m['cardType'] = cardType;
     }
     if (null != currency) {
       m['currency'] = currency;
@@ -3376,32 +3446,32 @@ class PaymentManualCreateData {
     if (null != cvc) {
       m['cvc'] = cvc;
     }
-    if (null != date_time_tx) {
-      m['date_time_tx'] = date_time_tx;
+    if (null != dateTimeTx) {
+      m['dateTimeTx'] = dateTimeTx;
     }
-    if (null != exp_date) {
-      m['exp_date'] = exp_date;
+    if (null != expDate) {
+      m['expDate'] = expDate;
     }
-    if (null != merchant_id) {
-      m['merchant_id'] = merchant_id;
+    if (null != merchantId) {
+      m['merchantId'] = merchantId;
     }
-    if (null != original_transaction_id) {
-      m['original_transaction_id'] = original_transaction_id;
+    if (null != originalTransactionId) {
+      m['originalTransactionId'] = originalTransactionId;
     }
     if (null != password) {
       m['password'] = password;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != terminal_id) {
-      m['terminal_id'] = terminal_id;
+    if (null != terminalId) {
+      m['terminalId'] = terminalId;
     }
-    if (null != transaction_id) {
-      m['transaction_id'] = transaction_id;
+    if (null != transactionId) {
+      m['transactionId'] = transactionId;
     }
     if (null != txtype) {
       m['txtype'] = txtype;
@@ -3411,123 +3481,95 @@ class PaymentManualCreateData {
 }
 
 class PaymentSred {
-  /// STRING
-  String? acquirer_name;
   /// INTEGER (required at the API)
   int? amount;
-  /// STRING
-  String? authorization_number;
-  /// STRING
-  String? card_type;
   /// STRING (required at the API)
   String? currency;
   /// STRING
-  String? date_time_tx;
+  String? device;
   /// STRING (required at the API)
-  String? device_payload;
+  String? devicePayload;
   /// STRING
-  String? merchant_id;
+  String? expDate;
   /// STRING
-  String? original_transaction_id;
+  String? mode;
+  /// STRING
+  String? panMasked;
   /// STRING
   String? password;
   /// STRING
-  String? response_code;
+  String? serial;
   /// STRING
-  String? response_message;
-  /// OBJECT
-  Map<String, dynamic>? sred;
-  /// STRING
-  String? terminal_id;
-  /// STRING
-  String? transaction_id;
+  String? serviceCode;
+  /// STRING (required at the API)
+  String? terminalId;
   /// STRING (required at the API)
   String? txtype;
 
   PaymentSred({
-    this.acquirer_name,
     this.amount,
-    this.authorization_number,
-    this.card_type,
     this.currency,
-    this.date_time_tx,
-    this.device_payload,
-    this.merchant_id,
-    this.original_transaction_id,
+    this.device,
+    this.devicePayload,
+    this.expDate,
+    this.mode,
+    this.panMasked,
     this.password,
-    this.response_code,
-    this.response_message,
-    this.sred,
-    this.terminal_id,
-    this.transaction_id,
+    this.serial,
+    this.serviceCode,
+    this.terminalId,
     this.txtype,
   });
 
   factory PaymentSred.fromMap(Map<String, dynamic> m) => PaymentSred(
-        acquirer_name: m['acquirer_name'] is String ? m['acquirer_name'] : null,
         amount: m['amount'] is int ? m['amount'] : null,
-        authorization_number: m['authorization_number'] is String ? m['authorization_number'] : null,
-        card_type: m['card_type'] is String ? m['card_type'] : null,
         currency: m['currency'] is String ? m['currency'] : null,
-        date_time_tx: m['date_time_tx'] is String ? m['date_time_tx'] : null,
-        device_payload: m['device_payload'] is String ? m['device_payload'] : null,
-        merchant_id: m['merchant_id'] is String ? m['merchant_id'] : null,
-        original_transaction_id: m['original_transaction_id'] is String ? m['original_transaction_id'] : null,
+        device: m['device'] is String ? m['device'] : null,
+        devicePayload: m['devicePayload'] is String ? m['devicePayload'] : null,
+        expDate: m['expDate'] is String ? m['expDate'] : null,
+        mode: m['mode'] is String ? m['mode'] : null,
+        panMasked: m['panMasked'] is String ? m['panMasked'] : null,
         password: m['password'] is String ? m['password'] : null,
-        response_code: m['response_code'] is String ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        sred: m['sred'] is Map<String, dynamic> ? m['sred'] : null,
-        terminal_id: m['terminal_id'] is String ? m['terminal_id'] : null,
-        transaction_id: m['transaction_id'] is String ? m['transaction_id'] : null,
+        serial: m['serial'] is String ? m['serial'] : null,
+        serviceCode: m['serviceCode'] is String ? m['serviceCode'] : null,
+        terminalId: m['terminalId'] is String ? m['terminalId'] : null,
         txtype: m['txtype'] is String ? m['txtype'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != acquirer_name) {
-      m['acquirer_name'] = acquirer_name;
-    }
     if (null != amount) {
       m['amount'] = amount;
-    }
-    if (null != authorization_number) {
-      m['authorization_number'] = authorization_number;
-    }
-    if (null != card_type) {
-      m['card_type'] = card_type;
     }
     if (null != currency) {
       m['currency'] = currency;
     }
-    if (null != date_time_tx) {
-      m['date_time_tx'] = date_time_tx;
+    if (null != device) {
+      m['device'] = device;
     }
-    if (null != device_payload) {
-      m['device_payload'] = device_payload;
+    if (null != devicePayload) {
+      m['devicePayload'] = devicePayload;
     }
-    if (null != merchant_id) {
-      m['merchant_id'] = merchant_id;
+    if (null != expDate) {
+      m['expDate'] = expDate;
     }
-    if (null != original_transaction_id) {
-      m['original_transaction_id'] = original_transaction_id;
+    if (null != mode) {
+      m['mode'] = mode;
+    }
+    if (null != panMasked) {
+      m['panMasked'] = panMasked;
     }
     if (null != password) {
       m['password'] = password;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != serial) {
+      m['serial'] = serial;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != serviceCode) {
+      m['serviceCode'] = serviceCode;
     }
-    if (null != sred) {
-      m['sred'] = sred;
-    }
-    if (null != terminal_id) {
-      m['terminal_id'] = terminal_id;
-    }
-    if (null != transaction_id) {
-      m['transaction_id'] = transaction_id;
+    if (null != terminalId) {
+      m['terminalId'] = terminalId;
     }
     if (null != txtype) {
       m['txtype'] = txtype;
@@ -3537,123 +3579,95 @@ class PaymentSred {
 }
 
 class PaymentSredCreateData {
-  /// STRING
-  String? acquirer_name;
   /// INTEGER (required at the API)
   int? amount;
-  /// STRING
-  String? authorization_number;
-  /// STRING
-  String? card_type;
   /// STRING (required at the API)
   String? currency;
   /// STRING
-  String? date_time_tx;
+  String? device;
   /// STRING (required at the API)
-  String? device_payload;
+  String? devicePayload;
   /// STRING
-  String? merchant_id;
+  String? expDate;
   /// STRING
-  String? original_transaction_id;
+  String? mode;
+  /// STRING
+  String? panMasked;
   /// STRING
   String? password;
   /// STRING
-  String? response_code;
+  String? serial;
   /// STRING
-  String? response_message;
-  /// OBJECT
-  Map<String, dynamic>? sred;
-  /// STRING
-  String? terminal_id;
-  /// STRING
-  String? transaction_id;
+  String? serviceCode;
+  /// STRING (required at the API)
+  String? terminalId;
   /// STRING (required at the API)
   String? txtype;
 
   PaymentSredCreateData({
-    this.acquirer_name,
     this.amount,
-    this.authorization_number,
-    this.card_type,
     this.currency,
-    this.date_time_tx,
-    this.device_payload,
-    this.merchant_id,
-    this.original_transaction_id,
+    this.device,
+    this.devicePayload,
+    this.expDate,
+    this.mode,
+    this.panMasked,
     this.password,
-    this.response_code,
-    this.response_message,
-    this.sred,
-    this.terminal_id,
-    this.transaction_id,
+    this.serial,
+    this.serviceCode,
+    this.terminalId,
     this.txtype,
   });
 
   factory PaymentSredCreateData.fromMap(Map<String, dynamic> m) => PaymentSredCreateData(
-        acquirer_name: m['acquirer_name'] is String ? m['acquirer_name'] : null,
         amount: m['amount'] is int ? m['amount'] : null,
-        authorization_number: m['authorization_number'] is String ? m['authorization_number'] : null,
-        card_type: m['card_type'] is String ? m['card_type'] : null,
         currency: m['currency'] is String ? m['currency'] : null,
-        date_time_tx: m['date_time_tx'] is String ? m['date_time_tx'] : null,
-        device_payload: m['device_payload'] is String ? m['device_payload'] : null,
-        merchant_id: m['merchant_id'] is String ? m['merchant_id'] : null,
-        original_transaction_id: m['original_transaction_id'] is String ? m['original_transaction_id'] : null,
+        device: m['device'] is String ? m['device'] : null,
+        devicePayload: m['devicePayload'] is String ? m['devicePayload'] : null,
+        expDate: m['expDate'] is String ? m['expDate'] : null,
+        mode: m['mode'] is String ? m['mode'] : null,
+        panMasked: m['panMasked'] is String ? m['panMasked'] : null,
         password: m['password'] is String ? m['password'] : null,
-        response_code: m['response_code'] is String ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        sred: m['sred'] is Map<String, dynamic> ? m['sred'] : null,
-        terminal_id: m['terminal_id'] is String ? m['terminal_id'] : null,
-        transaction_id: m['transaction_id'] is String ? m['transaction_id'] : null,
+        serial: m['serial'] is String ? m['serial'] : null,
+        serviceCode: m['serviceCode'] is String ? m['serviceCode'] : null,
+        terminalId: m['terminalId'] is String ? m['terminalId'] : null,
         txtype: m['txtype'] is String ? m['txtype'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != acquirer_name) {
-      m['acquirer_name'] = acquirer_name;
-    }
     if (null != amount) {
       m['amount'] = amount;
-    }
-    if (null != authorization_number) {
-      m['authorization_number'] = authorization_number;
-    }
-    if (null != card_type) {
-      m['card_type'] = card_type;
     }
     if (null != currency) {
       m['currency'] = currency;
     }
-    if (null != date_time_tx) {
-      m['date_time_tx'] = date_time_tx;
+    if (null != device) {
+      m['device'] = device;
     }
-    if (null != device_payload) {
-      m['device_payload'] = device_payload;
+    if (null != devicePayload) {
+      m['devicePayload'] = devicePayload;
     }
-    if (null != merchant_id) {
-      m['merchant_id'] = merchant_id;
+    if (null != expDate) {
+      m['expDate'] = expDate;
     }
-    if (null != original_transaction_id) {
-      m['original_transaction_id'] = original_transaction_id;
+    if (null != mode) {
+      m['mode'] = mode;
+    }
+    if (null != panMasked) {
+      m['panMasked'] = panMasked;
     }
     if (null != password) {
       m['password'] = password;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != serial) {
+      m['serial'] = serial;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != serviceCode) {
+      m['serviceCode'] = serviceCode;
     }
-    if (null != sred) {
-      m['sred'] = sred;
-    }
-    if (null != terminal_id) {
-      m['terminal_id'] = terminal_id;
-    }
-    if (null != transaction_id) {
-      m['transaction_id'] = transaction_id;
+    if (null != terminalId) {
+      m['terminalId'] = terminalId;
     }
     if (null != txtype) {
       m['txtype'] = txtype;
@@ -3664,211 +3678,211 @@ class PaymentSredCreateData {
 
 class PreAuthTransactionCompletion {
   /// STRING
-  String? acquirer_id;
+  String? acquirerId;
   /// STRING
-  String? acquirer_name;
+  String? acquirerName;
   /// STRING
-  String? actual_bonus_point;
+  String? actualBonusPoints;
   /// INTEGER
   int? amount;
   /// STRING
-  String? authorization_code;
+  String? authorizationCode;
   /// STRING
-  String? balance_amount;
+  String? balanceAmount;
   /// STRING
-  String? card_brand;
+  String? cardBrand;
   /// STRING
-  String? card_number;
+  String? cardNumber;
   /// STRING (required at the API)
-  String? card_number_reference;
+  String? cardNumberReference;
   /// INTEGER (required at the API)
-  int? client_id;
+  int? clientId;
   /// STRING (required at the API)
   String? currency;
   /// STRING
   String? cvc;
   /// STRING
-  String? ec_data;
+  String? ecData;
   /// STRING
-  String? ecr_data;
+  String? ecrData;
   /// STRING
-  String? emv_data;
+  String? emvData;
   /// INTEGER
-  int? exchange_fee;
+  int? exchangeFee;
   /// STRING
-  String? exchange_rate;
+  String? exchangeRate;
   /// STRING
-  String? language_code;
+  String? languageCode;
   /// STRING
-  String? merchant_address;
+  String? merchantAddress;
   /// STRING
-  String? merchant_name;
+  String? merchantName;
   /// STRING
-  String? merchant_number;
+  String? merchantNumber;
   /// STRING
-  String? message_type;
+  String? messageType;
   /// INTEGER
-  int? original_trace_number;
+  int? originalTraceNumber;
   /// STRING
-  String? original_transaction_id;
+  String? originalTransactionId;
   /// STRING
   String? password;
   /// STRING
-  String? payment_reason;
+  String? paymentReason;
   /// STRING
-  String? receipt_footer;
+  String? receiptFooter;
   /// STRING
-  String? receipt_header;
+  String? receiptHeader;
   /// INTEGER
-  int? receipt_layout;
+  int? receiptLayout;
   /// STRING (required at the API)
-  String? receipt_number;
+  String? receiptNumber;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// STRING
-  String? serial_number;
+  String? serialNumber;
   /// STRING
   String? svc;
   /// INTEGER (required at the API)
-  int? terminal_id;
+  int? terminalId;
   /// STRING
-  String? terminal_location;
+  String? terminalLocation;
   /// INTEGER
-  int? trace_number;
+  int? traceNumber;
   /// STRING
-  String? transaction_date;
+  String? transactionDate;
   /// STRING
-  String? transaction_id;
+  String? transactionId;
   /// STRING (required at the API)
-  String? transaction_type;
+  String? transactionType;
   /// STRING
-  String? tx_type;
+  String? txType;
   /// STRING
-  String? user_data;
+  String? userData;
 
   PreAuthTransactionCompletion({
-    this.acquirer_id,
-    this.acquirer_name,
-    this.actual_bonus_point,
+    this.acquirerId,
+    this.acquirerName,
+    this.actualBonusPoints,
     this.amount,
-    this.authorization_code,
-    this.balance_amount,
-    this.card_brand,
-    this.card_number,
-    this.card_number_reference,
-    this.client_id,
+    this.authorizationCode,
+    this.balanceAmount,
+    this.cardBrand,
+    this.cardNumber,
+    this.cardNumberReference,
+    this.clientId,
     this.currency,
     this.cvc,
-    this.ec_data,
-    this.ecr_data,
-    this.emv_data,
-    this.exchange_fee,
-    this.exchange_rate,
-    this.language_code,
-    this.merchant_address,
-    this.merchant_name,
-    this.merchant_number,
-    this.message_type,
-    this.original_trace_number,
-    this.original_transaction_id,
+    this.ecData,
+    this.ecrData,
+    this.emvData,
+    this.exchangeFee,
+    this.exchangeRate,
+    this.languageCode,
+    this.merchantAddress,
+    this.merchantName,
+    this.merchantNumber,
+    this.messageType,
+    this.originalTraceNumber,
+    this.originalTransactionId,
     this.password,
-    this.payment_reason,
-    this.receipt_footer,
-    this.receipt_header,
-    this.receipt_layout,
-    this.receipt_number,
-    this.response_code,
-    this.response_message,
-    this.serial_number,
+    this.paymentReason,
+    this.receiptFooter,
+    this.receiptHeader,
+    this.receiptLayout,
+    this.receiptNumber,
+    this.responseCode,
+    this.responseMessage,
+    this.serialNumber,
     this.svc,
-    this.terminal_id,
-    this.terminal_location,
-    this.trace_number,
-    this.transaction_date,
-    this.transaction_id,
-    this.transaction_type,
-    this.tx_type,
-    this.user_data,
+    this.terminalId,
+    this.terminalLocation,
+    this.traceNumber,
+    this.transactionDate,
+    this.transactionId,
+    this.transactionType,
+    this.txType,
+    this.userData,
   });
 
   factory PreAuthTransactionCompletion.fromMap(Map<String, dynamic> m) => PreAuthTransactionCompletion(
-        acquirer_id: m['acquirer_id'] is String ? m['acquirer_id'] : null,
-        acquirer_name: m['acquirer_name'] is String ? m['acquirer_name'] : null,
-        actual_bonus_point: m['actual_bonus_point'] is String ? m['actual_bonus_point'] : null,
+        acquirerId: m['acquirerId'] is String ? m['acquirerId'] : null,
+        acquirerName: m['acquirerName'] is String ? m['acquirerName'] : null,
+        actualBonusPoints: m['actualBonusPoints'] is String ? m['actualBonusPoints'] : null,
         amount: m['amount'] is int ? m['amount'] : null,
-        authorization_code: m['authorization_code'] is String ? m['authorization_code'] : null,
-        balance_amount: m['balance_amount'] is String ? m['balance_amount'] : null,
-        card_brand: m['card_brand'] is String ? m['card_brand'] : null,
-        card_number: m['card_number'] is String ? m['card_number'] : null,
-        card_number_reference: m['card_number_reference'] is String ? m['card_number_reference'] : null,
-        client_id: m['client_id'] is int ? m['client_id'] : null,
+        authorizationCode: m['authorizationCode'] is String ? m['authorizationCode'] : null,
+        balanceAmount: m['balanceAmount'] is String ? m['balanceAmount'] : null,
+        cardBrand: m['cardBrand'] is String ? m['cardBrand'] : null,
+        cardNumber: m['cardNumber'] is String ? m['cardNumber'] : null,
+        cardNumberReference: m['cardNumberReference'] is String ? m['cardNumberReference'] : null,
+        clientId: m['clientId'] is int ? m['clientId'] : null,
         currency: m['currency'] is String ? m['currency'] : null,
         cvc: m['cvc'] is String ? m['cvc'] : null,
-        ec_data: m['ec_data'] is String ? m['ec_data'] : null,
-        ecr_data: m['ecr_data'] is String ? m['ecr_data'] : null,
-        emv_data: m['emv_data'] is String ? m['emv_data'] : null,
-        exchange_fee: m['exchange_fee'] is int ? m['exchange_fee'] : null,
-        exchange_rate: m['exchange_rate'] is String ? m['exchange_rate'] : null,
-        language_code: m['language_code'] is String ? m['language_code'] : null,
-        merchant_address: m['merchant_address'] is String ? m['merchant_address'] : null,
-        merchant_name: m['merchant_name'] is String ? m['merchant_name'] : null,
-        merchant_number: m['merchant_number'] is String ? m['merchant_number'] : null,
-        message_type: m['message_type'] is String ? m['message_type'] : null,
-        original_trace_number: m['original_trace_number'] is int ? m['original_trace_number'] : null,
-        original_transaction_id: m['original_transaction_id'] is String ? m['original_transaction_id'] : null,
+        ecData: m['ecData'] is String ? m['ecData'] : null,
+        ecrData: m['ecrData'] is String ? m['ecrData'] : null,
+        emvData: m['emvData'] is String ? m['emvData'] : null,
+        exchangeFee: m['exchangeFee'] is int ? m['exchangeFee'] : null,
+        exchangeRate: m['exchangeRate'] is String ? m['exchangeRate'] : null,
+        languageCode: m['languageCode'] is String ? m['languageCode'] : null,
+        merchantAddress: m['merchantAddress'] is String ? m['merchantAddress'] : null,
+        merchantName: m['merchantName'] is String ? m['merchantName'] : null,
+        merchantNumber: m['merchantNumber'] is String ? m['merchantNumber'] : null,
+        messageType: m['messageType'] is String ? m['messageType'] : null,
+        originalTraceNumber: m['originalTraceNumber'] is int ? m['originalTraceNumber'] : null,
+        originalTransactionId: m['originalTransactionId'] is String ? m['originalTransactionId'] : null,
         password: m['password'] is String ? m['password'] : null,
-        payment_reason: m['payment_reason'] is String ? m['payment_reason'] : null,
-        receipt_footer: m['receipt_footer'] is String ? m['receipt_footer'] : null,
-        receipt_header: m['receipt_header'] is String ? m['receipt_header'] : null,
-        receipt_layout: m['receipt_layout'] is int ? m['receipt_layout'] : null,
-        receipt_number: m['receipt_number'] is String ? m['receipt_number'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        serial_number: m['serial_number'] is String ? m['serial_number'] : null,
+        paymentReason: m['paymentReason'] is String ? m['paymentReason'] : null,
+        receiptFooter: m['receiptFooter'] is String ? m['receiptFooter'] : null,
+        receiptHeader: m['receiptHeader'] is String ? m['receiptHeader'] : null,
+        receiptLayout: m['receiptLayout'] is int ? m['receiptLayout'] : null,
+        receiptNumber: m['receiptNumber'] is String ? m['receiptNumber'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        serialNumber: m['serialNumber'] is String ? m['serialNumber'] : null,
         svc: m['svc'] is String ? m['svc'] : null,
-        terminal_id: m['terminal_id'] is int ? m['terminal_id'] : null,
-        terminal_location: m['terminal_location'] is String ? m['terminal_location'] : null,
-        trace_number: m['trace_number'] is int ? m['trace_number'] : null,
-        transaction_date: m['transaction_date'] is String ? m['transaction_date'] : null,
-        transaction_id: m['transaction_id'] is String ? m['transaction_id'] : null,
-        transaction_type: m['transaction_type'] is String ? m['transaction_type'] : null,
-        tx_type: m['tx_type'] is String ? m['tx_type'] : null,
-        user_data: m['user_data'] is String ? m['user_data'] : null,
+        terminalId: m['terminalId'] is int ? m['terminalId'] : null,
+        terminalLocation: m['terminalLocation'] is String ? m['terminalLocation'] : null,
+        traceNumber: m['traceNumber'] is int ? m['traceNumber'] : null,
+        transactionDate: m['transactionDate'] is String ? m['transactionDate'] : null,
+        transactionId: m['transactionId'] is String ? m['transactionId'] : null,
+        transactionType: m['transactionType'] is String ? m['transactionType'] : null,
+        txType: m['txType'] is String ? m['txType'] : null,
+        userData: m['userData'] is String ? m['userData'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != acquirer_id) {
-      m['acquirer_id'] = acquirer_id;
+    if (null != acquirerId) {
+      m['acquirerId'] = acquirerId;
     }
-    if (null != acquirer_name) {
-      m['acquirer_name'] = acquirer_name;
+    if (null != acquirerName) {
+      m['acquirerName'] = acquirerName;
     }
-    if (null != actual_bonus_point) {
-      m['actual_bonus_point'] = actual_bonus_point;
+    if (null != actualBonusPoints) {
+      m['actualBonusPoints'] = actualBonusPoints;
     }
     if (null != amount) {
       m['amount'] = amount;
     }
-    if (null != authorization_code) {
-      m['authorization_code'] = authorization_code;
+    if (null != authorizationCode) {
+      m['authorizationCode'] = authorizationCode;
     }
-    if (null != balance_amount) {
-      m['balance_amount'] = balance_amount;
+    if (null != balanceAmount) {
+      m['balanceAmount'] = balanceAmount;
     }
-    if (null != card_brand) {
-      m['card_brand'] = card_brand;
+    if (null != cardBrand) {
+      m['cardBrand'] = cardBrand;
     }
-    if (null != card_number) {
-      m['card_number'] = card_number;
+    if (null != cardNumber) {
+      m['cardNumber'] = cardNumber;
     }
-    if (null != card_number_reference) {
-      m['card_number_reference'] = card_number_reference;
+    if (null != cardNumberReference) {
+      m['cardNumberReference'] = cardNumberReference;
     }
-    if (null != client_id) {
-      m['client_id'] = client_id;
+    if (null != clientId) {
+      m['clientId'] = clientId;
     }
     if (null != currency) {
       m['currency'] = currency;
@@ -3876,95 +3890,95 @@ class PreAuthTransactionCompletion {
     if (null != cvc) {
       m['cvc'] = cvc;
     }
-    if (null != ec_data) {
-      m['ec_data'] = ec_data;
+    if (null != ecData) {
+      m['ecData'] = ecData;
     }
-    if (null != ecr_data) {
-      m['ecr_data'] = ecr_data;
+    if (null != ecrData) {
+      m['ecrData'] = ecrData;
     }
-    if (null != emv_data) {
-      m['emv_data'] = emv_data;
+    if (null != emvData) {
+      m['emvData'] = emvData;
     }
-    if (null != exchange_fee) {
-      m['exchange_fee'] = exchange_fee;
+    if (null != exchangeFee) {
+      m['exchangeFee'] = exchangeFee;
     }
-    if (null != exchange_rate) {
-      m['exchange_rate'] = exchange_rate;
+    if (null != exchangeRate) {
+      m['exchangeRate'] = exchangeRate;
     }
-    if (null != language_code) {
-      m['language_code'] = language_code;
+    if (null != languageCode) {
+      m['languageCode'] = languageCode;
     }
-    if (null != merchant_address) {
-      m['merchant_address'] = merchant_address;
+    if (null != merchantAddress) {
+      m['merchantAddress'] = merchantAddress;
     }
-    if (null != merchant_name) {
-      m['merchant_name'] = merchant_name;
+    if (null != merchantName) {
+      m['merchantName'] = merchantName;
     }
-    if (null != merchant_number) {
-      m['merchant_number'] = merchant_number;
+    if (null != merchantNumber) {
+      m['merchantNumber'] = merchantNumber;
     }
-    if (null != message_type) {
-      m['message_type'] = message_type;
+    if (null != messageType) {
+      m['messageType'] = messageType;
     }
-    if (null != original_trace_number) {
-      m['original_trace_number'] = original_trace_number;
+    if (null != originalTraceNumber) {
+      m['originalTraceNumber'] = originalTraceNumber;
     }
-    if (null != original_transaction_id) {
-      m['original_transaction_id'] = original_transaction_id;
+    if (null != originalTransactionId) {
+      m['originalTransactionId'] = originalTransactionId;
     }
     if (null != password) {
       m['password'] = password;
     }
-    if (null != payment_reason) {
-      m['payment_reason'] = payment_reason;
+    if (null != paymentReason) {
+      m['paymentReason'] = paymentReason;
     }
-    if (null != receipt_footer) {
-      m['receipt_footer'] = receipt_footer;
+    if (null != receiptFooter) {
+      m['receiptFooter'] = receiptFooter;
     }
-    if (null != receipt_header) {
-      m['receipt_header'] = receipt_header;
+    if (null != receiptHeader) {
+      m['receiptHeader'] = receiptHeader;
     }
-    if (null != receipt_layout) {
-      m['receipt_layout'] = receipt_layout;
+    if (null != receiptLayout) {
+      m['receiptLayout'] = receiptLayout;
     }
-    if (null != receipt_number) {
-      m['receipt_number'] = receipt_number;
+    if (null != receiptNumber) {
+      m['receiptNumber'] = receiptNumber;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != serial_number) {
-      m['serial_number'] = serial_number;
+    if (null != serialNumber) {
+      m['serialNumber'] = serialNumber;
     }
     if (null != svc) {
       m['svc'] = svc;
     }
-    if (null != terminal_id) {
-      m['terminal_id'] = terminal_id;
+    if (null != terminalId) {
+      m['terminalId'] = terminalId;
     }
-    if (null != terminal_location) {
-      m['terminal_location'] = terminal_location;
+    if (null != terminalLocation) {
+      m['terminalLocation'] = terminalLocation;
     }
-    if (null != trace_number) {
-      m['trace_number'] = trace_number;
+    if (null != traceNumber) {
+      m['traceNumber'] = traceNumber;
     }
-    if (null != transaction_date) {
-      m['transaction_date'] = transaction_date;
+    if (null != transactionDate) {
+      m['transactionDate'] = transactionDate;
     }
-    if (null != transaction_id) {
-      m['transaction_id'] = transaction_id;
+    if (null != transactionId) {
+      m['transactionId'] = transactionId;
     }
-    if (null != transaction_type) {
-      m['transaction_type'] = transaction_type;
+    if (null != transactionType) {
+      m['transactionType'] = transactionType;
     }
-    if (null != tx_type) {
-      m['tx_type'] = tx_type;
+    if (null != txType) {
+      m['txType'] = txType;
     }
-    if (null != user_data) {
-      m['user_data'] = user_data;
+    if (null != userData) {
+      m['userData'] = userData;
     }
     return m;
   }
@@ -3972,211 +3986,211 @@ class PreAuthTransactionCompletion {
 
 class PreAuthTransactionCompletionCreateData {
   /// STRING
-  String? acquirer_id;
+  String? acquirerId;
   /// STRING
-  String? acquirer_name;
+  String? acquirerName;
   /// STRING
-  String? actual_bonus_point;
+  String? actualBonusPoints;
   /// INTEGER
   int? amount;
   /// STRING
-  String? authorization_code;
+  String? authorizationCode;
   /// STRING
-  String? balance_amount;
+  String? balanceAmount;
   /// STRING
-  String? card_brand;
+  String? cardBrand;
   /// STRING
-  String? card_number;
+  String? cardNumber;
   /// STRING (required at the API)
-  String? card_number_reference;
+  String? cardNumberReference;
   /// INTEGER (required at the API)
-  int? client_id;
+  int? clientId;
   /// STRING (required at the API)
   String? currency;
   /// STRING
   String? cvc;
   /// STRING
-  String? ec_data;
+  String? ecData;
   /// STRING
-  String? ecr_data;
+  String? ecrData;
   /// STRING
-  String? emv_data;
+  String? emvData;
   /// INTEGER
-  int? exchange_fee;
+  int? exchangeFee;
   /// STRING
-  String? exchange_rate;
+  String? exchangeRate;
   /// STRING
-  String? language_code;
+  String? languageCode;
   /// STRING
-  String? merchant_address;
+  String? merchantAddress;
   /// STRING
-  String? merchant_name;
+  String? merchantName;
   /// STRING
-  String? merchant_number;
+  String? merchantNumber;
   /// STRING
-  String? message_type;
+  String? messageType;
   /// INTEGER
-  int? original_trace_number;
+  int? originalTraceNumber;
   /// STRING
-  String? original_transaction_id;
+  String? originalTransactionId;
   /// STRING
   String? password;
   /// STRING
-  String? payment_reason;
+  String? paymentReason;
   /// STRING
-  String? receipt_footer;
+  String? receiptFooter;
   /// STRING
-  String? receipt_header;
+  String? receiptHeader;
   /// INTEGER
-  int? receipt_layout;
+  int? receiptLayout;
   /// STRING (required at the API)
-  String? receipt_number;
+  String? receiptNumber;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// STRING
-  String? serial_number;
+  String? serialNumber;
   /// STRING
   String? svc;
   /// INTEGER (required at the API)
-  int? terminal_id;
+  int? terminalId;
   /// STRING
-  String? terminal_location;
+  String? terminalLocation;
   /// INTEGER
-  int? trace_number;
+  int? traceNumber;
   /// STRING
-  String? transaction_date;
+  String? transactionDate;
   /// STRING
-  String? transaction_id;
+  String? transactionId;
   /// STRING (required at the API)
-  String? transaction_type;
+  String? transactionType;
   /// STRING
-  String? tx_type;
+  String? txType;
   /// STRING
-  String? user_data;
+  String? userData;
 
   PreAuthTransactionCompletionCreateData({
-    this.acquirer_id,
-    this.acquirer_name,
-    this.actual_bonus_point,
+    this.acquirerId,
+    this.acquirerName,
+    this.actualBonusPoints,
     this.amount,
-    this.authorization_code,
-    this.balance_amount,
-    this.card_brand,
-    this.card_number,
-    this.card_number_reference,
-    this.client_id,
+    this.authorizationCode,
+    this.balanceAmount,
+    this.cardBrand,
+    this.cardNumber,
+    this.cardNumberReference,
+    this.clientId,
     this.currency,
     this.cvc,
-    this.ec_data,
-    this.ecr_data,
-    this.emv_data,
-    this.exchange_fee,
-    this.exchange_rate,
-    this.language_code,
-    this.merchant_address,
-    this.merchant_name,
-    this.merchant_number,
-    this.message_type,
-    this.original_trace_number,
-    this.original_transaction_id,
+    this.ecData,
+    this.ecrData,
+    this.emvData,
+    this.exchangeFee,
+    this.exchangeRate,
+    this.languageCode,
+    this.merchantAddress,
+    this.merchantName,
+    this.merchantNumber,
+    this.messageType,
+    this.originalTraceNumber,
+    this.originalTransactionId,
     this.password,
-    this.payment_reason,
-    this.receipt_footer,
-    this.receipt_header,
-    this.receipt_layout,
-    this.receipt_number,
-    this.response_code,
-    this.response_message,
-    this.serial_number,
+    this.paymentReason,
+    this.receiptFooter,
+    this.receiptHeader,
+    this.receiptLayout,
+    this.receiptNumber,
+    this.responseCode,
+    this.responseMessage,
+    this.serialNumber,
     this.svc,
-    this.terminal_id,
-    this.terminal_location,
-    this.trace_number,
-    this.transaction_date,
-    this.transaction_id,
-    this.transaction_type,
-    this.tx_type,
-    this.user_data,
+    this.terminalId,
+    this.terminalLocation,
+    this.traceNumber,
+    this.transactionDate,
+    this.transactionId,
+    this.transactionType,
+    this.txType,
+    this.userData,
   });
 
   factory PreAuthTransactionCompletionCreateData.fromMap(Map<String, dynamic> m) => PreAuthTransactionCompletionCreateData(
-        acquirer_id: m['acquirer_id'] is String ? m['acquirer_id'] : null,
-        acquirer_name: m['acquirer_name'] is String ? m['acquirer_name'] : null,
-        actual_bonus_point: m['actual_bonus_point'] is String ? m['actual_bonus_point'] : null,
+        acquirerId: m['acquirerId'] is String ? m['acquirerId'] : null,
+        acquirerName: m['acquirerName'] is String ? m['acquirerName'] : null,
+        actualBonusPoints: m['actualBonusPoints'] is String ? m['actualBonusPoints'] : null,
         amount: m['amount'] is int ? m['amount'] : null,
-        authorization_code: m['authorization_code'] is String ? m['authorization_code'] : null,
-        balance_amount: m['balance_amount'] is String ? m['balance_amount'] : null,
-        card_brand: m['card_brand'] is String ? m['card_brand'] : null,
-        card_number: m['card_number'] is String ? m['card_number'] : null,
-        card_number_reference: m['card_number_reference'] is String ? m['card_number_reference'] : null,
-        client_id: m['client_id'] is int ? m['client_id'] : null,
+        authorizationCode: m['authorizationCode'] is String ? m['authorizationCode'] : null,
+        balanceAmount: m['balanceAmount'] is String ? m['balanceAmount'] : null,
+        cardBrand: m['cardBrand'] is String ? m['cardBrand'] : null,
+        cardNumber: m['cardNumber'] is String ? m['cardNumber'] : null,
+        cardNumberReference: m['cardNumberReference'] is String ? m['cardNumberReference'] : null,
+        clientId: m['clientId'] is int ? m['clientId'] : null,
         currency: m['currency'] is String ? m['currency'] : null,
         cvc: m['cvc'] is String ? m['cvc'] : null,
-        ec_data: m['ec_data'] is String ? m['ec_data'] : null,
-        ecr_data: m['ecr_data'] is String ? m['ecr_data'] : null,
-        emv_data: m['emv_data'] is String ? m['emv_data'] : null,
-        exchange_fee: m['exchange_fee'] is int ? m['exchange_fee'] : null,
-        exchange_rate: m['exchange_rate'] is String ? m['exchange_rate'] : null,
-        language_code: m['language_code'] is String ? m['language_code'] : null,
-        merchant_address: m['merchant_address'] is String ? m['merchant_address'] : null,
-        merchant_name: m['merchant_name'] is String ? m['merchant_name'] : null,
-        merchant_number: m['merchant_number'] is String ? m['merchant_number'] : null,
-        message_type: m['message_type'] is String ? m['message_type'] : null,
-        original_trace_number: m['original_trace_number'] is int ? m['original_trace_number'] : null,
-        original_transaction_id: m['original_transaction_id'] is String ? m['original_transaction_id'] : null,
+        ecData: m['ecData'] is String ? m['ecData'] : null,
+        ecrData: m['ecrData'] is String ? m['ecrData'] : null,
+        emvData: m['emvData'] is String ? m['emvData'] : null,
+        exchangeFee: m['exchangeFee'] is int ? m['exchangeFee'] : null,
+        exchangeRate: m['exchangeRate'] is String ? m['exchangeRate'] : null,
+        languageCode: m['languageCode'] is String ? m['languageCode'] : null,
+        merchantAddress: m['merchantAddress'] is String ? m['merchantAddress'] : null,
+        merchantName: m['merchantName'] is String ? m['merchantName'] : null,
+        merchantNumber: m['merchantNumber'] is String ? m['merchantNumber'] : null,
+        messageType: m['messageType'] is String ? m['messageType'] : null,
+        originalTraceNumber: m['originalTraceNumber'] is int ? m['originalTraceNumber'] : null,
+        originalTransactionId: m['originalTransactionId'] is String ? m['originalTransactionId'] : null,
         password: m['password'] is String ? m['password'] : null,
-        payment_reason: m['payment_reason'] is String ? m['payment_reason'] : null,
-        receipt_footer: m['receipt_footer'] is String ? m['receipt_footer'] : null,
-        receipt_header: m['receipt_header'] is String ? m['receipt_header'] : null,
-        receipt_layout: m['receipt_layout'] is int ? m['receipt_layout'] : null,
-        receipt_number: m['receipt_number'] is String ? m['receipt_number'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        serial_number: m['serial_number'] is String ? m['serial_number'] : null,
+        paymentReason: m['paymentReason'] is String ? m['paymentReason'] : null,
+        receiptFooter: m['receiptFooter'] is String ? m['receiptFooter'] : null,
+        receiptHeader: m['receiptHeader'] is String ? m['receiptHeader'] : null,
+        receiptLayout: m['receiptLayout'] is int ? m['receiptLayout'] : null,
+        receiptNumber: m['receiptNumber'] is String ? m['receiptNumber'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        serialNumber: m['serialNumber'] is String ? m['serialNumber'] : null,
         svc: m['svc'] is String ? m['svc'] : null,
-        terminal_id: m['terminal_id'] is int ? m['terminal_id'] : null,
-        terminal_location: m['terminal_location'] is String ? m['terminal_location'] : null,
-        trace_number: m['trace_number'] is int ? m['trace_number'] : null,
-        transaction_date: m['transaction_date'] is String ? m['transaction_date'] : null,
-        transaction_id: m['transaction_id'] is String ? m['transaction_id'] : null,
-        transaction_type: m['transaction_type'] is String ? m['transaction_type'] : null,
-        tx_type: m['tx_type'] is String ? m['tx_type'] : null,
-        user_data: m['user_data'] is String ? m['user_data'] : null,
+        terminalId: m['terminalId'] is int ? m['terminalId'] : null,
+        terminalLocation: m['terminalLocation'] is String ? m['terminalLocation'] : null,
+        traceNumber: m['traceNumber'] is int ? m['traceNumber'] : null,
+        transactionDate: m['transactionDate'] is String ? m['transactionDate'] : null,
+        transactionId: m['transactionId'] is String ? m['transactionId'] : null,
+        transactionType: m['transactionType'] is String ? m['transactionType'] : null,
+        txType: m['txType'] is String ? m['txType'] : null,
+        userData: m['userData'] is String ? m['userData'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != acquirer_id) {
-      m['acquirer_id'] = acquirer_id;
+    if (null != acquirerId) {
+      m['acquirerId'] = acquirerId;
     }
-    if (null != acquirer_name) {
-      m['acquirer_name'] = acquirer_name;
+    if (null != acquirerName) {
+      m['acquirerName'] = acquirerName;
     }
-    if (null != actual_bonus_point) {
-      m['actual_bonus_point'] = actual_bonus_point;
+    if (null != actualBonusPoints) {
+      m['actualBonusPoints'] = actualBonusPoints;
     }
     if (null != amount) {
       m['amount'] = amount;
     }
-    if (null != authorization_code) {
-      m['authorization_code'] = authorization_code;
+    if (null != authorizationCode) {
+      m['authorizationCode'] = authorizationCode;
     }
-    if (null != balance_amount) {
-      m['balance_amount'] = balance_amount;
+    if (null != balanceAmount) {
+      m['balanceAmount'] = balanceAmount;
     }
-    if (null != card_brand) {
-      m['card_brand'] = card_brand;
+    if (null != cardBrand) {
+      m['cardBrand'] = cardBrand;
     }
-    if (null != card_number) {
-      m['card_number'] = card_number;
+    if (null != cardNumber) {
+      m['cardNumber'] = cardNumber;
     }
-    if (null != card_number_reference) {
-      m['card_number_reference'] = card_number_reference;
+    if (null != cardNumberReference) {
+      m['cardNumberReference'] = cardNumberReference;
     }
-    if (null != client_id) {
-      m['client_id'] = client_id;
+    if (null != clientId) {
+      m['clientId'] = clientId;
     }
     if (null != currency) {
       m['currency'] = currency;
@@ -4184,95 +4198,95 @@ class PreAuthTransactionCompletionCreateData {
     if (null != cvc) {
       m['cvc'] = cvc;
     }
-    if (null != ec_data) {
-      m['ec_data'] = ec_data;
+    if (null != ecData) {
+      m['ecData'] = ecData;
     }
-    if (null != ecr_data) {
-      m['ecr_data'] = ecr_data;
+    if (null != ecrData) {
+      m['ecrData'] = ecrData;
     }
-    if (null != emv_data) {
-      m['emv_data'] = emv_data;
+    if (null != emvData) {
+      m['emvData'] = emvData;
     }
-    if (null != exchange_fee) {
-      m['exchange_fee'] = exchange_fee;
+    if (null != exchangeFee) {
+      m['exchangeFee'] = exchangeFee;
     }
-    if (null != exchange_rate) {
-      m['exchange_rate'] = exchange_rate;
+    if (null != exchangeRate) {
+      m['exchangeRate'] = exchangeRate;
     }
-    if (null != language_code) {
-      m['language_code'] = language_code;
+    if (null != languageCode) {
+      m['languageCode'] = languageCode;
     }
-    if (null != merchant_address) {
-      m['merchant_address'] = merchant_address;
+    if (null != merchantAddress) {
+      m['merchantAddress'] = merchantAddress;
     }
-    if (null != merchant_name) {
-      m['merchant_name'] = merchant_name;
+    if (null != merchantName) {
+      m['merchantName'] = merchantName;
     }
-    if (null != merchant_number) {
-      m['merchant_number'] = merchant_number;
+    if (null != merchantNumber) {
+      m['merchantNumber'] = merchantNumber;
     }
-    if (null != message_type) {
-      m['message_type'] = message_type;
+    if (null != messageType) {
+      m['messageType'] = messageType;
     }
-    if (null != original_trace_number) {
-      m['original_trace_number'] = original_trace_number;
+    if (null != originalTraceNumber) {
+      m['originalTraceNumber'] = originalTraceNumber;
     }
-    if (null != original_transaction_id) {
-      m['original_transaction_id'] = original_transaction_id;
+    if (null != originalTransactionId) {
+      m['originalTransactionId'] = originalTransactionId;
     }
     if (null != password) {
       m['password'] = password;
     }
-    if (null != payment_reason) {
-      m['payment_reason'] = payment_reason;
+    if (null != paymentReason) {
+      m['paymentReason'] = paymentReason;
     }
-    if (null != receipt_footer) {
-      m['receipt_footer'] = receipt_footer;
+    if (null != receiptFooter) {
+      m['receiptFooter'] = receiptFooter;
     }
-    if (null != receipt_header) {
-      m['receipt_header'] = receipt_header;
+    if (null != receiptHeader) {
+      m['receiptHeader'] = receiptHeader;
     }
-    if (null != receipt_layout) {
-      m['receipt_layout'] = receipt_layout;
+    if (null != receiptLayout) {
+      m['receiptLayout'] = receiptLayout;
     }
-    if (null != receipt_number) {
-      m['receipt_number'] = receipt_number;
+    if (null != receiptNumber) {
+      m['receiptNumber'] = receiptNumber;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != serial_number) {
-      m['serial_number'] = serial_number;
+    if (null != serialNumber) {
+      m['serialNumber'] = serialNumber;
     }
     if (null != svc) {
       m['svc'] = svc;
     }
-    if (null != terminal_id) {
-      m['terminal_id'] = terminal_id;
+    if (null != terminalId) {
+      m['terminalId'] = terminalId;
     }
-    if (null != terminal_location) {
-      m['terminal_location'] = terminal_location;
+    if (null != terminalLocation) {
+      m['terminalLocation'] = terminalLocation;
     }
-    if (null != trace_number) {
-      m['trace_number'] = trace_number;
+    if (null != traceNumber) {
+      m['traceNumber'] = traceNumber;
     }
-    if (null != transaction_date) {
-      m['transaction_date'] = transaction_date;
+    if (null != transactionDate) {
+      m['transactionDate'] = transactionDate;
     }
-    if (null != transaction_id) {
-      m['transaction_id'] = transaction_id;
+    if (null != transactionId) {
+      m['transactionId'] = transactionId;
     }
-    if (null != transaction_type) {
-      m['transaction_type'] = transaction_type;
+    if (null != transactionType) {
+      m['transactionType'] = transactionType;
     }
-    if (null != tx_type) {
-      m['tx_type'] = tx_type;
+    if (null != txType) {
+      m['txType'] = txType;
     }
-    if (null != user_data) {
-      m['user_data'] = user_data;
+    if (null != userData) {
+      m['userData'] = userData;
     }
     return m;
   }
@@ -4280,62 +4294,62 @@ class PreAuthTransactionCompletionCreateData {
 
 class ReactivateTerminal {
   /// STRING
-  String? corporate_uuid;
+  String? corporateUuid;
   /// STRING
-  String? package_order_uuid;
+  String? packageOrderUuid;
   /// STRING
-  String? product_order_uuid;
+  String? productOrderUuid;
   /// STRING (required at the API)
-  String? reactivation_reason;
+  String? reactivationReason;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// INTEGER (required at the API)
-  int? terminal_id;
+  int? terminalId;
 
   ReactivateTerminal({
-    this.corporate_uuid,
-    this.package_order_uuid,
-    this.product_order_uuid,
-    this.reactivation_reason,
-    this.response_code,
-    this.response_message,
-    this.terminal_id,
+    this.corporateUuid,
+    this.packageOrderUuid,
+    this.productOrderUuid,
+    this.reactivationReason,
+    this.responseCode,
+    this.responseMessage,
+    this.terminalId,
   });
 
   factory ReactivateTerminal.fromMap(Map<String, dynamic> m) => ReactivateTerminal(
-        corporate_uuid: m['corporate_uuid'] is String ? m['corporate_uuid'] : null,
-        package_order_uuid: m['package_order_uuid'] is String ? m['package_order_uuid'] : null,
-        product_order_uuid: m['product_order_uuid'] is String ? m['product_order_uuid'] : null,
-        reactivation_reason: m['reactivation_reason'] is String ? m['reactivation_reason'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        terminal_id: m['terminal_id'] is int ? m['terminal_id'] : null,
+        corporateUuid: m['corporateUuid'] is String ? m['corporateUuid'] : null,
+        packageOrderUuid: m['packageOrderUuid'] is String ? m['packageOrderUuid'] : null,
+        productOrderUuid: m['productOrderUuid'] is String ? m['productOrderUuid'] : null,
+        reactivationReason: m['reactivationReason'] is String ? m['reactivationReason'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        terminalId: m['terminalId'] is int ? m['terminalId'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != corporate_uuid) {
-      m['corporate_uuid'] = corporate_uuid;
+    if (null != corporateUuid) {
+      m['corporateUuid'] = corporateUuid;
     }
-    if (null != package_order_uuid) {
-      m['package_order_uuid'] = package_order_uuid;
+    if (null != packageOrderUuid) {
+      m['packageOrderUuid'] = packageOrderUuid;
     }
-    if (null != product_order_uuid) {
-      m['product_order_uuid'] = product_order_uuid;
+    if (null != productOrderUuid) {
+      m['productOrderUuid'] = productOrderUuid;
     }
-    if (null != reactivation_reason) {
-      m['reactivation_reason'] = reactivation_reason;
+    if (null != reactivationReason) {
+      m['reactivationReason'] = reactivationReason;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != terminal_id) {
-      m['terminal_id'] = terminal_id;
+    if (null != terminalId) {
+      m['terminalId'] = terminalId;
     }
     return m;
   }
@@ -4343,62 +4357,62 @@ class ReactivateTerminal {
 
 class ReactivateTerminalCreateData {
   /// STRING
-  String? corporate_uuid;
+  String? corporateUuid;
   /// STRING
-  String? package_order_uuid;
+  String? packageOrderUuid;
   /// STRING
-  String? product_order_uuid;
+  String? productOrderUuid;
   /// STRING (required at the API)
-  String? reactivation_reason;
+  String? reactivationReason;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// INTEGER (required at the API)
-  int? terminal_id;
+  int? terminalId;
 
   ReactivateTerminalCreateData({
-    this.corporate_uuid,
-    this.package_order_uuid,
-    this.product_order_uuid,
-    this.reactivation_reason,
-    this.response_code,
-    this.response_message,
-    this.terminal_id,
+    this.corporateUuid,
+    this.packageOrderUuid,
+    this.productOrderUuid,
+    this.reactivationReason,
+    this.responseCode,
+    this.responseMessage,
+    this.terminalId,
   });
 
   factory ReactivateTerminalCreateData.fromMap(Map<String, dynamic> m) => ReactivateTerminalCreateData(
-        corporate_uuid: m['corporate_uuid'] is String ? m['corporate_uuid'] : null,
-        package_order_uuid: m['package_order_uuid'] is String ? m['package_order_uuid'] : null,
-        product_order_uuid: m['product_order_uuid'] is String ? m['product_order_uuid'] : null,
-        reactivation_reason: m['reactivation_reason'] is String ? m['reactivation_reason'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        terminal_id: m['terminal_id'] is int ? m['terminal_id'] : null,
+        corporateUuid: m['corporateUuid'] is String ? m['corporateUuid'] : null,
+        packageOrderUuid: m['packageOrderUuid'] is String ? m['packageOrderUuid'] : null,
+        productOrderUuid: m['productOrderUuid'] is String ? m['productOrderUuid'] : null,
+        reactivationReason: m['reactivationReason'] is String ? m['reactivationReason'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        terminalId: m['terminalId'] is int ? m['terminalId'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != corporate_uuid) {
-      m['corporate_uuid'] = corporate_uuid;
+    if (null != corporateUuid) {
+      m['corporateUuid'] = corporateUuid;
     }
-    if (null != package_order_uuid) {
-      m['package_order_uuid'] = package_order_uuid;
+    if (null != packageOrderUuid) {
+      m['packageOrderUuid'] = packageOrderUuid;
     }
-    if (null != product_order_uuid) {
-      m['product_order_uuid'] = product_order_uuid;
+    if (null != productOrderUuid) {
+      m['productOrderUuid'] = productOrderUuid;
     }
-    if (null != reactivation_reason) {
-      m['reactivation_reason'] = reactivation_reason;
+    if (null != reactivationReason) {
+      m['reactivationReason'] = reactivationReason;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != terminal_id) {
-      m['terminal_id'] = terminal_id;
+    if (null != terminalId) {
+      m['terminalId'] = terminalId;
     }
     return m;
   }
@@ -4406,200 +4420,200 @@ class ReactivateTerminalCreateData {
 
 class RefundTransaction {
   /// STRING
-  String? acquirer_id;
+  String? acquirerId;
   /// STRING
-  String? acquirer_name;
+  String? acquirerName;
   /// STRING
-  String? actual_bonus_point;
+  String? actualBonusPoints;
   /// INTEGER
   int? amount;
   /// STRING
-  String? authorization_code;
+  String? authorizationCode;
   /// STRING
-  String? balance_amount;
+  String? balanceAmount;
   /// STRING
-  String? card_brand;
+  String? cardBrand;
   /// STRING
-  String? card_number;
+  String? cardNumber;
   /// INTEGER (required at the API)
-  int? client_id;
+  int? clientId;
   /// STRING (required at the API)
   String? currency;
   /// STRING
   String? cvc;
   /// STRING
-  String? ec_data;
+  String? ecData;
   /// STRING
-  String? ecr_data;
+  String? ecrData;
   /// STRING
-  String? emv_data;
+  String? emvData;
   /// INTEGER
-  int? exchange_fee;
+  int? exchangeFee;
   /// STRING
-  String? exchange_rate;
+  String? exchangeRate;
   /// STRING
-  String? language_code;
+  String? languageCode;
   /// STRING
-  String? merchant_address;
+  String? merchantAddress;
   /// STRING
-  String? merchant_name;
+  String? merchantName;
   /// STRING
-  String? merchant_number;
+  String? merchantNumber;
   /// STRING
-  String? message_type;
+  String? messageType;
   /// INTEGER
-  int? original_trace_number;
+  int? originalTraceNumber;
   /// STRING
-  String? original_transaction_id;
+  String? originalTransactionId;
   /// STRING
   String? password;
   /// STRING
-  String? payment_reason;
+  String? paymentReason;
   /// STRING
-  String? receipt_footer;
+  String? receiptFooter;
   /// STRING
-  String? receipt_header;
+  String? receiptHeader;
   /// INTEGER
-  int? receipt_layout;
+  int? receiptLayout;
   /// STRING (required at the API)
-  String? receipt_number;
+  String? receiptNumber;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// STRING
-  String? serial_number;
+  String? serialNumber;
   /// STRING
   String? svc;
   /// INTEGER (required at the API)
-  int? terminal_id;
+  int? terminalId;
   /// STRING
-  String? terminal_location;
+  String? terminalLocation;
   /// INTEGER
-  int? trace_number;
+  int? traceNumber;
   /// STRING
-  String? transaction_date;
+  String? transactionDate;
   /// STRING
-  String? transaction_id;
+  String? transactionId;
   /// STRING
-  String? tx_type;
+  String? txType;
   /// STRING
-  String? user_data;
+  String? userData;
 
   RefundTransaction({
-    this.acquirer_id,
-    this.acquirer_name,
-    this.actual_bonus_point,
+    this.acquirerId,
+    this.acquirerName,
+    this.actualBonusPoints,
     this.amount,
-    this.authorization_code,
-    this.balance_amount,
-    this.card_brand,
-    this.card_number,
-    this.client_id,
+    this.authorizationCode,
+    this.balanceAmount,
+    this.cardBrand,
+    this.cardNumber,
+    this.clientId,
     this.currency,
     this.cvc,
-    this.ec_data,
-    this.ecr_data,
-    this.emv_data,
-    this.exchange_fee,
-    this.exchange_rate,
-    this.language_code,
-    this.merchant_address,
-    this.merchant_name,
-    this.merchant_number,
-    this.message_type,
-    this.original_trace_number,
-    this.original_transaction_id,
+    this.ecData,
+    this.ecrData,
+    this.emvData,
+    this.exchangeFee,
+    this.exchangeRate,
+    this.languageCode,
+    this.merchantAddress,
+    this.merchantName,
+    this.merchantNumber,
+    this.messageType,
+    this.originalTraceNumber,
+    this.originalTransactionId,
     this.password,
-    this.payment_reason,
-    this.receipt_footer,
-    this.receipt_header,
-    this.receipt_layout,
-    this.receipt_number,
-    this.response_code,
-    this.response_message,
-    this.serial_number,
+    this.paymentReason,
+    this.receiptFooter,
+    this.receiptHeader,
+    this.receiptLayout,
+    this.receiptNumber,
+    this.responseCode,
+    this.responseMessage,
+    this.serialNumber,
     this.svc,
-    this.terminal_id,
-    this.terminal_location,
-    this.trace_number,
-    this.transaction_date,
-    this.transaction_id,
-    this.tx_type,
-    this.user_data,
+    this.terminalId,
+    this.terminalLocation,
+    this.traceNumber,
+    this.transactionDate,
+    this.transactionId,
+    this.txType,
+    this.userData,
   });
 
   factory RefundTransaction.fromMap(Map<String, dynamic> m) => RefundTransaction(
-        acquirer_id: m['acquirer_id'] is String ? m['acquirer_id'] : null,
-        acquirer_name: m['acquirer_name'] is String ? m['acquirer_name'] : null,
-        actual_bonus_point: m['actual_bonus_point'] is String ? m['actual_bonus_point'] : null,
+        acquirerId: m['acquirerId'] is String ? m['acquirerId'] : null,
+        acquirerName: m['acquirerName'] is String ? m['acquirerName'] : null,
+        actualBonusPoints: m['actualBonusPoints'] is String ? m['actualBonusPoints'] : null,
         amount: m['amount'] is int ? m['amount'] : null,
-        authorization_code: m['authorization_code'] is String ? m['authorization_code'] : null,
-        balance_amount: m['balance_amount'] is String ? m['balance_amount'] : null,
-        card_brand: m['card_brand'] is String ? m['card_brand'] : null,
-        card_number: m['card_number'] is String ? m['card_number'] : null,
-        client_id: m['client_id'] is int ? m['client_id'] : null,
+        authorizationCode: m['authorizationCode'] is String ? m['authorizationCode'] : null,
+        balanceAmount: m['balanceAmount'] is String ? m['balanceAmount'] : null,
+        cardBrand: m['cardBrand'] is String ? m['cardBrand'] : null,
+        cardNumber: m['cardNumber'] is String ? m['cardNumber'] : null,
+        clientId: m['clientId'] is int ? m['clientId'] : null,
         currency: m['currency'] is String ? m['currency'] : null,
         cvc: m['cvc'] is String ? m['cvc'] : null,
-        ec_data: m['ec_data'] is String ? m['ec_data'] : null,
-        ecr_data: m['ecr_data'] is String ? m['ecr_data'] : null,
-        emv_data: m['emv_data'] is String ? m['emv_data'] : null,
-        exchange_fee: m['exchange_fee'] is int ? m['exchange_fee'] : null,
-        exchange_rate: m['exchange_rate'] is String ? m['exchange_rate'] : null,
-        language_code: m['language_code'] is String ? m['language_code'] : null,
-        merchant_address: m['merchant_address'] is String ? m['merchant_address'] : null,
-        merchant_name: m['merchant_name'] is String ? m['merchant_name'] : null,
-        merchant_number: m['merchant_number'] is String ? m['merchant_number'] : null,
-        message_type: m['message_type'] is String ? m['message_type'] : null,
-        original_trace_number: m['original_trace_number'] is int ? m['original_trace_number'] : null,
-        original_transaction_id: m['original_transaction_id'] is String ? m['original_transaction_id'] : null,
+        ecData: m['ecData'] is String ? m['ecData'] : null,
+        ecrData: m['ecrData'] is String ? m['ecrData'] : null,
+        emvData: m['emvData'] is String ? m['emvData'] : null,
+        exchangeFee: m['exchangeFee'] is int ? m['exchangeFee'] : null,
+        exchangeRate: m['exchangeRate'] is String ? m['exchangeRate'] : null,
+        languageCode: m['languageCode'] is String ? m['languageCode'] : null,
+        merchantAddress: m['merchantAddress'] is String ? m['merchantAddress'] : null,
+        merchantName: m['merchantName'] is String ? m['merchantName'] : null,
+        merchantNumber: m['merchantNumber'] is String ? m['merchantNumber'] : null,
+        messageType: m['messageType'] is String ? m['messageType'] : null,
+        originalTraceNumber: m['originalTraceNumber'] is int ? m['originalTraceNumber'] : null,
+        originalTransactionId: m['originalTransactionId'] is String ? m['originalTransactionId'] : null,
         password: m['password'] is String ? m['password'] : null,
-        payment_reason: m['payment_reason'] is String ? m['payment_reason'] : null,
-        receipt_footer: m['receipt_footer'] is String ? m['receipt_footer'] : null,
-        receipt_header: m['receipt_header'] is String ? m['receipt_header'] : null,
-        receipt_layout: m['receipt_layout'] is int ? m['receipt_layout'] : null,
-        receipt_number: m['receipt_number'] is String ? m['receipt_number'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        serial_number: m['serial_number'] is String ? m['serial_number'] : null,
+        paymentReason: m['paymentReason'] is String ? m['paymentReason'] : null,
+        receiptFooter: m['receiptFooter'] is String ? m['receiptFooter'] : null,
+        receiptHeader: m['receiptHeader'] is String ? m['receiptHeader'] : null,
+        receiptLayout: m['receiptLayout'] is int ? m['receiptLayout'] : null,
+        receiptNumber: m['receiptNumber'] is String ? m['receiptNumber'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        serialNumber: m['serialNumber'] is String ? m['serialNumber'] : null,
         svc: m['svc'] is String ? m['svc'] : null,
-        terminal_id: m['terminal_id'] is int ? m['terminal_id'] : null,
-        terminal_location: m['terminal_location'] is String ? m['terminal_location'] : null,
-        trace_number: m['trace_number'] is int ? m['trace_number'] : null,
-        transaction_date: m['transaction_date'] is String ? m['transaction_date'] : null,
-        transaction_id: m['transaction_id'] is String ? m['transaction_id'] : null,
-        tx_type: m['tx_type'] is String ? m['tx_type'] : null,
-        user_data: m['user_data'] is String ? m['user_data'] : null,
+        terminalId: m['terminalId'] is int ? m['terminalId'] : null,
+        terminalLocation: m['terminalLocation'] is String ? m['terminalLocation'] : null,
+        traceNumber: m['traceNumber'] is int ? m['traceNumber'] : null,
+        transactionDate: m['transactionDate'] is String ? m['transactionDate'] : null,
+        transactionId: m['transactionId'] is String ? m['transactionId'] : null,
+        txType: m['txType'] is String ? m['txType'] : null,
+        userData: m['userData'] is String ? m['userData'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != acquirer_id) {
-      m['acquirer_id'] = acquirer_id;
+    if (null != acquirerId) {
+      m['acquirerId'] = acquirerId;
     }
-    if (null != acquirer_name) {
-      m['acquirer_name'] = acquirer_name;
+    if (null != acquirerName) {
+      m['acquirerName'] = acquirerName;
     }
-    if (null != actual_bonus_point) {
-      m['actual_bonus_point'] = actual_bonus_point;
+    if (null != actualBonusPoints) {
+      m['actualBonusPoints'] = actualBonusPoints;
     }
     if (null != amount) {
       m['amount'] = amount;
     }
-    if (null != authorization_code) {
-      m['authorization_code'] = authorization_code;
+    if (null != authorizationCode) {
+      m['authorizationCode'] = authorizationCode;
     }
-    if (null != balance_amount) {
-      m['balance_amount'] = balance_amount;
+    if (null != balanceAmount) {
+      m['balanceAmount'] = balanceAmount;
     }
-    if (null != card_brand) {
-      m['card_brand'] = card_brand;
+    if (null != cardBrand) {
+      m['cardBrand'] = cardBrand;
     }
-    if (null != card_number) {
-      m['card_number'] = card_number;
+    if (null != cardNumber) {
+      m['cardNumber'] = cardNumber;
     }
-    if (null != client_id) {
-      m['client_id'] = client_id;
+    if (null != clientId) {
+      m['clientId'] = clientId;
     }
     if (null != currency) {
       m['currency'] = currency;
@@ -4607,92 +4621,92 @@ class RefundTransaction {
     if (null != cvc) {
       m['cvc'] = cvc;
     }
-    if (null != ec_data) {
-      m['ec_data'] = ec_data;
+    if (null != ecData) {
+      m['ecData'] = ecData;
     }
-    if (null != ecr_data) {
-      m['ecr_data'] = ecr_data;
+    if (null != ecrData) {
+      m['ecrData'] = ecrData;
     }
-    if (null != emv_data) {
-      m['emv_data'] = emv_data;
+    if (null != emvData) {
+      m['emvData'] = emvData;
     }
-    if (null != exchange_fee) {
-      m['exchange_fee'] = exchange_fee;
+    if (null != exchangeFee) {
+      m['exchangeFee'] = exchangeFee;
     }
-    if (null != exchange_rate) {
-      m['exchange_rate'] = exchange_rate;
+    if (null != exchangeRate) {
+      m['exchangeRate'] = exchangeRate;
     }
-    if (null != language_code) {
-      m['language_code'] = language_code;
+    if (null != languageCode) {
+      m['languageCode'] = languageCode;
     }
-    if (null != merchant_address) {
-      m['merchant_address'] = merchant_address;
+    if (null != merchantAddress) {
+      m['merchantAddress'] = merchantAddress;
     }
-    if (null != merchant_name) {
-      m['merchant_name'] = merchant_name;
+    if (null != merchantName) {
+      m['merchantName'] = merchantName;
     }
-    if (null != merchant_number) {
-      m['merchant_number'] = merchant_number;
+    if (null != merchantNumber) {
+      m['merchantNumber'] = merchantNumber;
     }
-    if (null != message_type) {
-      m['message_type'] = message_type;
+    if (null != messageType) {
+      m['messageType'] = messageType;
     }
-    if (null != original_trace_number) {
-      m['original_trace_number'] = original_trace_number;
+    if (null != originalTraceNumber) {
+      m['originalTraceNumber'] = originalTraceNumber;
     }
-    if (null != original_transaction_id) {
-      m['original_transaction_id'] = original_transaction_id;
+    if (null != originalTransactionId) {
+      m['originalTransactionId'] = originalTransactionId;
     }
     if (null != password) {
       m['password'] = password;
     }
-    if (null != payment_reason) {
-      m['payment_reason'] = payment_reason;
+    if (null != paymentReason) {
+      m['paymentReason'] = paymentReason;
     }
-    if (null != receipt_footer) {
-      m['receipt_footer'] = receipt_footer;
+    if (null != receiptFooter) {
+      m['receiptFooter'] = receiptFooter;
     }
-    if (null != receipt_header) {
-      m['receipt_header'] = receipt_header;
+    if (null != receiptHeader) {
+      m['receiptHeader'] = receiptHeader;
     }
-    if (null != receipt_layout) {
-      m['receipt_layout'] = receipt_layout;
+    if (null != receiptLayout) {
+      m['receiptLayout'] = receiptLayout;
     }
-    if (null != receipt_number) {
-      m['receipt_number'] = receipt_number;
+    if (null != receiptNumber) {
+      m['receiptNumber'] = receiptNumber;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != serial_number) {
-      m['serial_number'] = serial_number;
+    if (null != serialNumber) {
+      m['serialNumber'] = serialNumber;
     }
     if (null != svc) {
       m['svc'] = svc;
     }
-    if (null != terminal_id) {
-      m['terminal_id'] = terminal_id;
+    if (null != terminalId) {
+      m['terminalId'] = terminalId;
     }
-    if (null != terminal_location) {
-      m['terminal_location'] = terminal_location;
+    if (null != terminalLocation) {
+      m['terminalLocation'] = terminalLocation;
     }
-    if (null != trace_number) {
-      m['trace_number'] = trace_number;
+    if (null != traceNumber) {
+      m['traceNumber'] = traceNumber;
     }
-    if (null != transaction_date) {
-      m['transaction_date'] = transaction_date;
+    if (null != transactionDate) {
+      m['transactionDate'] = transactionDate;
     }
-    if (null != transaction_id) {
-      m['transaction_id'] = transaction_id;
+    if (null != transactionId) {
+      m['transactionId'] = transactionId;
     }
-    if (null != tx_type) {
-      m['tx_type'] = tx_type;
+    if (null != txType) {
+      m['txType'] = txType;
     }
-    if (null != user_data) {
-      m['user_data'] = user_data;
+    if (null != userData) {
+      m['userData'] = userData;
     }
     return m;
   }
@@ -4700,200 +4714,200 @@ class RefundTransaction {
 
 class RefundTransactionCreateData {
   /// STRING
-  String? acquirer_id;
+  String? acquirerId;
   /// STRING
-  String? acquirer_name;
+  String? acquirerName;
   /// STRING
-  String? actual_bonus_point;
+  String? actualBonusPoints;
   /// INTEGER
   int? amount;
   /// STRING
-  String? authorization_code;
+  String? authorizationCode;
   /// STRING
-  String? balance_amount;
+  String? balanceAmount;
   /// STRING
-  String? card_brand;
+  String? cardBrand;
   /// STRING
-  String? card_number;
+  String? cardNumber;
   /// INTEGER (required at the API)
-  int? client_id;
+  int? clientId;
   /// STRING (required at the API)
   String? currency;
   /// STRING
   String? cvc;
   /// STRING
-  String? ec_data;
+  String? ecData;
   /// STRING
-  String? ecr_data;
+  String? ecrData;
   /// STRING
-  String? emv_data;
+  String? emvData;
   /// INTEGER
-  int? exchange_fee;
+  int? exchangeFee;
   /// STRING
-  String? exchange_rate;
+  String? exchangeRate;
   /// STRING
-  String? language_code;
+  String? languageCode;
   /// STRING
-  String? merchant_address;
+  String? merchantAddress;
   /// STRING
-  String? merchant_name;
+  String? merchantName;
   /// STRING
-  String? merchant_number;
+  String? merchantNumber;
   /// STRING
-  String? message_type;
+  String? messageType;
   /// INTEGER
-  int? original_trace_number;
+  int? originalTraceNumber;
   /// STRING
-  String? original_transaction_id;
+  String? originalTransactionId;
   /// STRING
   String? password;
   /// STRING
-  String? payment_reason;
+  String? paymentReason;
   /// STRING
-  String? receipt_footer;
+  String? receiptFooter;
   /// STRING
-  String? receipt_header;
+  String? receiptHeader;
   /// INTEGER
-  int? receipt_layout;
+  int? receiptLayout;
   /// STRING (required at the API)
-  String? receipt_number;
+  String? receiptNumber;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// STRING
-  String? serial_number;
+  String? serialNumber;
   /// STRING
   String? svc;
   /// INTEGER (required at the API)
-  int? terminal_id;
+  int? terminalId;
   /// STRING
-  String? terminal_location;
+  String? terminalLocation;
   /// INTEGER
-  int? trace_number;
+  int? traceNumber;
   /// STRING
-  String? transaction_date;
+  String? transactionDate;
   /// STRING
-  String? transaction_id;
+  String? transactionId;
   /// STRING
-  String? tx_type;
+  String? txType;
   /// STRING
-  String? user_data;
+  String? userData;
 
   RefundTransactionCreateData({
-    this.acquirer_id,
-    this.acquirer_name,
-    this.actual_bonus_point,
+    this.acquirerId,
+    this.acquirerName,
+    this.actualBonusPoints,
     this.amount,
-    this.authorization_code,
-    this.balance_amount,
-    this.card_brand,
-    this.card_number,
-    this.client_id,
+    this.authorizationCode,
+    this.balanceAmount,
+    this.cardBrand,
+    this.cardNumber,
+    this.clientId,
     this.currency,
     this.cvc,
-    this.ec_data,
-    this.ecr_data,
-    this.emv_data,
-    this.exchange_fee,
-    this.exchange_rate,
-    this.language_code,
-    this.merchant_address,
-    this.merchant_name,
-    this.merchant_number,
-    this.message_type,
-    this.original_trace_number,
-    this.original_transaction_id,
+    this.ecData,
+    this.ecrData,
+    this.emvData,
+    this.exchangeFee,
+    this.exchangeRate,
+    this.languageCode,
+    this.merchantAddress,
+    this.merchantName,
+    this.merchantNumber,
+    this.messageType,
+    this.originalTraceNumber,
+    this.originalTransactionId,
     this.password,
-    this.payment_reason,
-    this.receipt_footer,
-    this.receipt_header,
-    this.receipt_layout,
-    this.receipt_number,
-    this.response_code,
-    this.response_message,
-    this.serial_number,
+    this.paymentReason,
+    this.receiptFooter,
+    this.receiptHeader,
+    this.receiptLayout,
+    this.receiptNumber,
+    this.responseCode,
+    this.responseMessage,
+    this.serialNumber,
     this.svc,
-    this.terminal_id,
-    this.terminal_location,
-    this.trace_number,
-    this.transaction_date,
-    this.transaction_id,
-    this.tx_type,
-    this.user_data,
+    this.terminalId,
+    this.terminalLocation,
+    this.traceNumber,
+    this.transactionDate,
+    this.transactionId,
+    this.txType,
+    this.userData,
   });
 
   factory RefundTransactionCreateData.fromMap(Map<String, dynamic> m) => RefundTransactionCreateData(
-        acquirer_id: m['acquirer_id'] is String ? m['acquirer_id'] : null,
-        acquirer_name: m['acquirer_name'] is String ? m['acquirer_name'] : null,
-        actual_bonus_point: m['actual_bonus_point'] is String ? m['actual_bonus_point'] : null,
+        acquirerId: m['acquirerId'] is String ? m['acquirerId'] : null,
+        acquirerName: m['acquirerName'] is String ? m['acquirerName'] : null,
+        actualBonusPoints: m['actualBonusPoints'] is String ? m['actualBonusPoints'] : null,
         amount: m['amount'] is int ? m['amount'] : null,
-        authorization_code: m['authorization_code'] is String ? m['authorization_code'] : null,
-        balance_amount: m['balance_amount'] is String ? m['balance_amount'] : null,
-        card_brand: m['card_brand'] is String ? m['card_brand'] : null,
-        card_number: m['card_number'] is String ? m['card_number'] : null,
-        client_id: m['client_id'] is int ? m['client_id'] : null,
+        authorizationCode: m['authorizationCode'] is String ? m['authorizationCode'] : null,
+        balanceAmount: m['balanceAmount'] is String ? m['balanceAmount'] : null,
+        cardBrand: m['cardBrand'] is String ? m['cardBrand'] : null,
+        cardNumber: m['cardNumber'] is String ? m['cardNumber'] : null,
+        clientId: m['clientId'] is int ? m['clientId'] : null,
         currency: m['currency'] is String ? m['currency'] : null,
         cvc: m['cvc'] is String ? m['cvc'] : null,
-        ec_data: m['ec_data'] is String ? m['ec_data'] : null,
-        ecr_data: m['ecr_data'] is String ? m['ecr_data'] : null,
-        emv_data: m['emv_data'] is String ? m['emv_data'] : null,
-        exchange_fee: m['exchange_fee'] is int ? m['exchange_fee'] : null,
-        exchange_rate: m['exchange_rate'] is String ? m['exchange_rate'] : null,
-        language_code: m['language_code'] is String ? m['language_code'] : null,
-        merchant_address: m['merchant_address'] is String ? m['merchant_address'] : null,
-        merchant_name: m['merchant_name'] is String ? m['merchant_name'] : null,
-        merchant_number: m['merchant_number'] is String ? m['merchant_number'] : null,
-        message_type: m['message_type'] is String ? m['message_type'] : null,
-        original_trace_number: m['original_trace_number'] is int ? m['original_trace_number'] : null,
-        original_transaction_id: m['original_transaction_id'] is String ? m['original_transaction_id'] : null,
+        ecData: m['ecData'] is String ? m['ecData'] : null,
+        ecrData: m['ecrData'] is String ? m['ecrData'] : null,
+        emvData: m['emvData'] is String ? m['emvData'] : null,
+        exchangeFee: m['exchangeFee'] is int ? m['exchangeFee'] : null,
+        exchangeRate: m['exchangeRate'] is String ? m['exchangeRate'] : null,
+        languageCode: m['languageCode'] is String ? m['languageCode'] : null,
+        merchantAddress: m['merchantAddress'] is String ? m['merchantAddress'] : null,
+        merchantName: m['merchantName'] is String ? m['merchantName'] : null,
+        merchantNumber: m['merchantNumber'] is String ? m['merchantNumber'] : null,
+        messageType: m['messageType'] is String ? m['messageType'] : null,
+        originalTraceNumber: m['originalTraceNumber'] is int ? m['originalTraceNumber'] : null,
+        originalTransactionId: m['originalTransactionId'] is String ? m['originalTransactionId'] : null,
         password: m['password'] is String ? m['password'] : null,
-        payment_reason: m['payment_reason'] is String ? m['payment_reason'] : null,
-        receipt_footer: m['receipt_footer'] is String ? m['receipt_footer'] : null,
-        receipt_header: m['receipt_header'] is String ? m['receipt_header'] : null,
-        receipt_layout: m['receipt_layout'] is int ? m['receipt_layout'] : null,
-        receipt_number: m['receipt_number'] is String ? m['receipt_number'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        serial_number: m['serial_number'] is String ? m['serial_number'] : null,
+        paymentReason: m['paymentReason'] is String ? m['paymentReason'] : null,
+        receiptFooter: m['receiptFooter'] is String ? m['receiptFooter'] : null,
+        receiptHeader: m['receiptHeader'] is String ? m['receiptHeader'] : null,
+        receiptLayout: m['receiptLayout'] is int ? m['receiptLayout'] : null,
+        receiptNumber: m['receiptNumber'] is String ? m['receiptNumber'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        serialNumber: m['serialNumber'] is String ? m['serialNumber'] : null,
         svc: m['svc'] is String ? m['svc'] : null,
-        terminal_id: m['terminal_id'] is int ? m['terminal_id'] : null,
-        terminal_location: m['terminal_location'] is String ? m['terminal_location'] : null,
-        trace_number: m['trace_number'] is int ? m['trace_number'] : null,
-        transaction_date: m['transaction_date'] is String ? m['transaction_date'] : null,
-        transaction_id: m['transaction_id'] is String ? m['transaction_id'] : null,
-        tx_type: m['tx_type'] is String ? m['tx_type'] : null,
-        user_data: m['user_data'] is String ? m['user_data'] : null,
+        terminalId: m['terminalId'] is int ? m['terminalId'] : null,
+        terminalLocation: m['terminalLocation'] is String ? m['terminalLocation'] : null,
+        traceNumber: m['traceNumber'] is int ? m['traceNumber'] : null,
+        transactionDate: m['transactionDate'] is String ? m['transactionDate'] : null,
+        transactionId: m['transactionId'] is String ? m['transactionId'] : null,
+        txType: m['txType'] is String ? m['txType'] : null,
+        userData: m['userData'] is String ? m['userData'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != acquirer_id) {
-      m['acquirer_id'] = acquirer_id;
+    if (null != acquirerId) {
+      m['acquirerId'] = acquirerId;
     }
-    if (null != acquirer_name) {
-      m['acquirer_name'] = acquirer_name;
+    if (null != acquirerName) {
+      m['acquirerName'] = acquirerName;
     }
-    if (null != actual_bonus_point) {
-      m['actual_bonus_point'] = actual_bonus_point;
+    if (null != actualBonusPoints) {
+      m['actualBonusPoints'] = actualBonusPoints;
     }
     if (null != amount) {
       m['amount'] = amount;
     }
-    if (null != authorization_code) {
-      m['authorization_code'] = authorization_code;
+    if (null != authorizationCode) {
+      m['authorizationCode'] = authorizationCode;
     }
-    if (null != balance_amount) {
-      m['balance_amount'] = balance_amount;
+    if (null != balanceAmount) {
+      m['balanceAmount'] = balanceAmount;
     }
-    if (null != card_brand) {
-      m['card_brand'] = card_brand;
+    if (null != cardBrand) {
+      m['cardBrand'] = cardBrand;
     }
-    if (null != card_number) {
-      m['card_number'] = card_number;
+    if (null != cardNumber) {
+      m['cardNumber'] = cardNumber;
     }
-    if (null != client_id) {
-      m['client_id'] = client_id;
+    if (null != clientId) {
+      m['clientId'] = clientId;
     }
     if (null != currency) {
       m['currency'] = currency;
@@ -4901,92 +4915,92 @@ class RefundTransactionCreateData {
     if (null != cvc) {
       m['cvc'] = cvc;
     }
-    if (null != ec_data) {
-      m['ec_data'] = ec_data;
+    if (null != ecData) {
+      m['ecData'] = ecData;
     }
-    if (null != ecr_data) {
-      m['ecr_data'] = ecr_data;
+    if (null != ecrData) {
+      m['ecrData'] = ecrData;
     }
-    if (null != emv_data) {
-      m['emv_data'] = emv_data;
+    if (null != emvData) {
+      m['emvData'] = emvData;
     }
-    if (null != exchange_fee) {
-      m['exchange_fee'] = exchange_fee;
+    if (null != exchangeFee) {
+      m['exchangeFee'] = exchangeFee;
     }
-    if (null != exchange_rate) {
-      m['exchange_rate'] = exchange_rate;
+    if (null != exchangeRate) {
+      m['exchangeRate'] = exchangeRate;
     }
-    if (null != language_code) {
-      m['language_code'] = language_code;
+    if (null != languageCode) {
+      m['languageCode'] = languageCode;
     }
-    if (null != merchant_address) {
-      m['merchant_address'] = merchant_address;
+    if (null != merchantAddress) {
+      m['merchantAddress'] = merchantAddress;
     }
-    if (null != merchant_name) {
-      m['merchant_name'] = merchant_name;
+    if (null != merchantName) {
+      m['merchantName'] = merchantName;
     }
-    if (null != merchant_number) {
-      m['merchant_number'] = merchant_number;
+    if (null != merchantNumber) {
+      m['merchantNumber'] = merchantNumber;
     }
-    if (null != message_type) {
-      m['message_type'] = message_type;
+    if (null != messageType) {
+      m['messageType'] = messageType;
     }
-    if (null != original_trace_number) {
-      m['original_trace_number'] = original_trace_number;
+    if (null != originalTraceNumber) {
+      m['originalTraceNumber'] = originalTraceNumber;
     }
-    if (null != original_transaction_id) {
-      m['original_transaction_id'] = original_transaction_id;
+    if (null != originalTransactionId) {
+      m['originalTransactionId'] = originalTransactionId;
     }
     if (null != password) {
       m['password'] = password;
     }
-    if (null != payment_reason) {
-      m['payment_reason'] = payment_reason;
+    if (null != paymentReason) {
+      m['paymentReason'] = paymentReason;
     }
-    if (null != receipt_footer) {
-      m['receipt_footer'] = receipt_footer;
+    if (null != receiptFooter) {
+      m['receiptFooter'] = receiptFooter;
     }
-    if (null != receipt_header) {
-      m['receipt_header'] = receipt_header;
+    if (null != receiptHeader) {
+      m['receiptHeader'] = receiptHeader;
     }
-    if (null != receipt_layout) {
-      m['receipt_layout'] = receipt_layout;
+    if (null != receiptLayout) {
+      m['receiptLayout'] = receiptLayout;
     }
-    if (null != receipt_number) {
-      m['receipt_number'] = receipt_number;
+    if (null != receiptNumber) {
+      m['receiptNumber'] = receiptNumber;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != serial_number) {
-      m['serial_number'] = serial_number;
+    if (null != serialNumber) {
+      m['serialNumber'] = serialNumber;
     }
     if (null != svc) {
       m['svc'] = svc;
     }
-    if (null != terminal_id) {
-      m['terminal_id'] = terminal_id;
+    if (null != terminalId) {
+      m['terminalId'] = terminalId;
     }
-    if (null != terminal_location) {
-      m['terminal_location'] = terminal_location;
+    if (null != terminalLocation) {
+      m['terminalLocation'] = terminalLocation;
     }
-    if (null != trace_number) {
-      m['trace_number'] = trace_number;
+    if (null != traceNumber) {
+      m['traceNumber'] = traceNumber;
     }
-    if (null != transaction_date) {
-      m['transaction_date'] = transaction_date;
+    if (null != transactionDate) {
+      m['transactionDate'] = transactionDate;
     }
-    if (null != transaction_id) {
-      m['transaction_id'] = transaction_id;
+    if (null != transactionId) {
+      m['transactionId'] = transactionId;
     }
-    if (null != tx_type) {
-      m['tx_type'] = tx_type;
+    if (null != txType) {
+      m['txType'] = txType;
     }
-    if (null != user_data) {
-      m['user_data'] = user_data;
+    if (null != userData) {
+      m['userData'] = userData;
     }
     return m;
   }
@@ -4994,69 +5008,69 @@ class RefundTransactionCreateData {
 
 class RegisterTecsCompany {
   /// STRING (required at the API)
-  String? corporate_uuid;
+  String? corporateUuid;
   /// STRING (required at the API)
-  String? package_order_uuid;
+  String? packageOrderUuid;
   /// INTEGER
-  int? partner_id;
+  int? partnerId;
   /// STRING
-  String? partner_name;
+  String? partnerName;
   /// STRING (required at the API)
-  String? product_order_uuid;
+  String? productOrderUuid;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// STRING (required at the API)
-  String? template_name;
+  String? templateName;
 
   RegisterTecsCompany({
-    this.corporate_uuid,
-    this.package_order_uuid,
-    this.partner_id,
-    this.partner_name,
-    this.product_order_uuid,
-    this.response_code,
-    this.response_message,
-    this.template_name,
+    this.corporateUuid,
+    this.packageOrderUuid,
+    this.partnerId,
+    this.partnerName,
+    this.productOrderUuid,
+    this.responseCode,
+    this.responseMessage,
+    this.templateName,
   });
 
   factory RegisterTecsCompany.fromMap(Map<String, dynamic> m) => RegisterTecsCompany(
-        corporate_uuid: m['corporate_uuid'] is String ? m['corporate_uuid'] : null,
-        package_order_uuid: m['package_order_uuid'] is String ? m['package_order_uuid'] : null,
-        partner_id: m['partner_id'] is int ? m['partner_id'] : null,
-        partner_name: m['partner_name'] is String ? m['partner_name'] : null,
-        product_order_uuid: m['product_order_uuid'] is String ? m['product_order_uuid'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        template_name: m['template_name'] is String ? m['template_name'] : null,
+        corporateUuid: m['corporateUuid'] is String ? m['corporateUuid'] : null,
+        packageOrderUuid: m['packageOrderUuid'] is String ? m['packageOrderUuid'] : null,
+        partnerId: m['partnerId'] is int ? m['partnerId'] : null,
+        partnerName: m['partnerName'] is String ? m['partnerName'] : null,
+        productOrderUuid: m['productOrderUuid'] is String ? m['productOrderUuid'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        templateName: m['templateName'] is String ? m['templateName'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != corporate_uuid) {
-      m['corporate_uuid'] = corporate_uuid;
+    if (null != corporateUuid) {
+      m['corporateUuid'] = corporateUuid;
     }
-    if (null != package_order_uuid) {
-      m['package_order_uuid'] = package_order_uuid;
+    if (null != packageOrderUuid) {
+      m['packageOrderUuid'] = packageOrderUuid;
     }
-    if (null != partner_id) {
-      m['partner_id'] = partner_id;
+    if (null != partnerId) {
+      m['partnerId'] = partnerId;
     }
-    if (null != partner_name) {
-      m['partner_name'] = partner_name;
+    if (null != partnerName) {
+      m['partnerName'] = partnerName;
     }
-    if (null != product_order_uuid) {
-      m['product_order_uuid'] = product_order_uuid;
+    if (null != productOrderUuid) {
+      m['productOrderUuid'] = productOrderUuid;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != template_name) {
-      m['template_name'] = template_name;
+    if (null != templateName) {
+      m['templateName'] = templateName;
     }
     return m;
   }
@@ -5064,69 +5078,69 @@ class RegisterTecsCompany {
 
 class RegisterTecsCompanyCreateData {
   /// STRING (required at the API)
-  String? corporate_uuid;
+  String? corporateUuid;
   /// STRING (required at the API)
-  String? package_order_uuid;
+  String? packageOrderUuid;
   /// INTEGER
-  int? partner_id;
+  int? partnerId;
   /// STRING
-  String? partner_name;
+  String? partnerName;
   /// STRING (required at the API)
-  String? product_order_uuid;
+  String? productOrderUuid;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// STRING (required at the API)
-  String? template_name;
+  String? templateName;
 
   RegisterTecsCompanyCreateData({
-    this.corporate_uuid,
-    this.package_order_uuid,
-    this.partner_id,
-    this.partner_name,
-    this.product_order_uuid,
-    this.response_code,
-    this.response_message,
-    this.template_name,
+    this.corporateUuid,
+    this.packageOrderUuid,
+    this.partnerId,
+    this.partnerName,
+    this.productOrderUuid,
+    this.responseCode,
+    this.responseMessage,
+    this.templateName,
   });
 
   factory RegisterTecsCompanyCreateData.fromMap(Map<String, dynamic> m) => RegisterTecsCompanyCreateData(
-        corporate_uuid: m['corporate_uuid'] is String ? m['corporate_uuid'] : null,
-        package_order_uuid: m['package_order_uuid'] is String ? m['package_order_uuid'] : null,
-        partner_id: m['partner_id'] is int ? m['partner_id'] : null,
-        partner_name: m['partner_name'] is String ? m['partner_name'] : null,
-        product_order_uuid: m['product_order_uuid'] is String ? m['product_order_uuid'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        template_name: m['template_name'] is String ? m['template_name'] : null,
+        corporateUuid: m['corporateUuid'] is String ? m['corporateUuid'] : null,
+        packageOrderUuid: m['packageOrderUuid'] is String ? m['packageOrderUuid'] : null,
+        partnerId: m['partnerId'] is int ? m['partnerId'] : null,
+        partnerName: m['partnerName'] is String ? m['partnerName'] : null,
+        productOrderUuid: m['productOrderUuid'] is String ? m['productOrderUuid'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        templateName: m['templateName'] is String ? m['templateName'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != corporate_uuid) {
-      m['corporate_uuid'] = corporate_uuid;
+    if (null != corporateUuid) {
+      m['corporateUuid'] = corporateUuid;
     }
-    if (null != package_order_uuid) {
-      m['package_order_uuid'] = package_order_uuid;
+    if (null != packageOrderUuid) {
+      m['packageOrderUuid'] = packageOrderUuid;
     }
-    if (null != partner_id) {
-      m['partner_id'] = partner_id;
+    if (null != partnerId) {
+      m['partnerId'] = partnerId;
     }
-    if (null != partner_name) {
-      m['partner_name'] = partner_name;
+    if (null != partnerName) {
+      m['partnerName'] = partnerName;
     }
-    if (null != product_order_uuid) {
-      m['product_order_uuid'] = product_order_uuid;
+    if (null != productOrderUuid) {
+      m['productOrderUuid'] = productOrderUuid;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != template_name) {
-      m['template_name'] = template_name;
+    if (null != templateName) {
+      m['templateName'] = templateName;
     }
     return m;
   }
@@ -5134,139 +5148,139 @@ class RegisterTecsCompanyCreateData {
 
 class RegisterTerminal {
   /// OBJECT
-  Map<String, dynamic>? additional_data;
+  Map<String, dynamic>? additionalData;
   /// STRING (required at the API)
-  String? corporate_uuid;
+  String? corporateUuid;
   /// STRING (required at the API)
-  String? package_order_uuid;
+  String? packageOrderUuid;
   /// STRING (required at the API)
-  String? product_order_uuid;
+  String? productOrderUuid;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// STRING
-  String? tecs_web_secret_key;
+  String? tecsWebSecretKey;
   /// STRING (required at the API)
-  String? template_name;
+  String? templateName;
   /// STRING (required at the API)
-  String? terminal_country_code;
+  String? terminalCountryCode;
   /// INTEGER
-  int? terminal_id;
+  int? terminalId;
   /// STRING
-  String? terminal_id_acq;
+  String? terminalIdAcq;
   /// STRING (required at the API)
-  String? terminal_language_code;
+  String? terminalLanguageCode;
   /// STRING (required at the API)
-  String? terminal_location;
+  String? terminalLocation;
   /// STRING
-  String? terminal_serial_number;
+  String? terminalSerialNumber;
   /// STRING
-  String? token_io_alia;
+  String? tokenIOAlias;
   /// STRING
-  String? token_io_iban;
+  String? tokenIOIban;
   /// STRING
-  String? token_io_member_id;
+  String? tokenIOMemberId;
   /// STRING
-  String? web_shop_url;
+  String? webShopUrl;
 
   RegisterTerminal({
-    this.additional_data,
-    this.corporate_uuid,
-    this.package_order_uuid,
-    this.product_order_uuid,
-    this.response_code,
-    this.response_message,
-    this.tecs_web_secret_key,
-    this.template_name,
-    this.terminal_country_code,
-    this.terminal_id,
-    this.terminal_id_acq,
-    this.terminal_language_code,
-    this.terminal_location,
-    this.terminal_serial_number,
-    this.token_io_alia,
-    this.token_io_iban,
-    this.token_io_member_id,
-    this.web_shop_url,
+    this.additionalData,
+    this.corporateUuid,
+    this.packageOrderUuid,
+    this.productOrderUuid,
+    this.responseCode,
+    this.responseMessage,
+    this.tecsWebSecretKey,
+    this.templateName,
+    this.terminalCountryCode,
+    this.terminalId,
+    this.terminalIdAcq,
+    this.terminalLanguageCode,
+    this.terminalLocation,
+    this.terminalSerialNumber,
+    this.tokenIOAlias,
+    this.tokenIOIban,
+    this.tokenIOMemberId,
+    this.webShopUrl,
   });
 
   factory RegisterTerminal.fromMap(Map<String, dynamic> m) => RegisterTerminal(
-        additional_data: m['additional_data'] is Map<String, dynamic> ? m['additional_data'] : null,
-        corporate_uuid: m['corporate_uuid'] is String ? m['corporate_uuid'] : null,
-        package_order_uuid: m['package_order_uuid'] is String ? m['package_order_uuid'] : null,
-        product_order_uuid: m['product_order_uuid'] is String ? m['product_order_uuid'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        tecs_web_secret_key: m['tecs_web_secret_key'] is String ? m['tecs_web_secret_key'] : null,
-        template_name: m['template_name'] is String ? m['template_name'] : null,
-        terminal_country_code: m['terminal_country_code'] is String ? m['terminal_country_code'] : null,
-        terminal_id: m['terminal_id'] is int ? m['terminal_id'] : null,
-        terminal_id_acq: m['terminal_id_acq'] is String ? m['terminal_id_acq'] : null,
-        terminal_language_code: m['terminal_language_code'] is String ? m['terminal_language_code'] : null,
-        terminal_location: m['terminal_location'] is String ? m['terminal_location'] : null,
-        terminal_serial_number: m['terminal_serial_number'] is String ? m['terminal_serial_number'] : null,
-        token_io_alia: m['token_io_alia'] is String ? m['token_io_alia'] : null,
-        token_io_iban: m['token_io_iban'] is String ? m['token_io_iban'] : null,
-        token_io_member_id: m['token_io_member_id'] is String ? m['token_io_member_id'] : null,
-        web_shop_url: m['web_shop_url'] is String ? m['web_shop_url'] : null,
+        additionalData: m['additionalData'] is Map<String, dynamic> ? m['additionalData'] : null,
+        corporateUuid: m['corporateUuid'] is String ? m['corporateUuid'] : null,
+        packageOrderUuid: m['packageOrderUuid'] is String ? m['packageOrderUuid'] : null,
+        productOrderUuid: m['productOrderUuid'] is String ? m['productOrderUuid'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        tecsWebSecretKey: m['tecsWebSecretKey'] is String ? m['tecsWebSecretKey'] : null,
+        templateName: m['templateName'] is String ? m['templateName'] : null,
+        terminalCountryCode: m['terminalCountryCode'] is String ? m['terminalCountryCode'] : null,
+        terminalId: m['terminalId'] is int ? m['terminalId'] : null,
+        terminalIdAcq: m['terminalIdAcq'] is String ? m['terminalIdAcq'] : null,
+        terminalLanguageCode: m['terminalLanguageCode'] is String ? m['terminalLanguageCode'] : null,
+        terminalLocation: m['terminalLocation'] is String ? m['terminalLocation'] : null,
+        terminalSerialNumber: m['terminalSerialNumber'] is String ? m['terminalSerialNumber'] : null,
+        tokenIOAlias: m['tokenIOAlias'] is String ? m['tokenIOAlias'] : null,
+        tokenIOIban: m['tokenIOIban'] is String ? m['tokenIOIban'] : null,
+        tokenIOMemberId: m['tokenIOMemberId'] is String ? m['tokenIOMemberId'] : null,
+        webShopUrl: m['webShopUrl'] is String ? m['webShopUrl'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != additional_data) {
-      m['additional_data'] = additional_data;
+    if (null != additionalData) {
+      m['additionalData'] = additionalData;
     }
-    if (null != corporate_uuid) {
-      m['corporate_uuid'] = corporate_uuid;
+    if (null != corporateUuid) {
+      m['corporateUuid'] = corporateUuid;
     }
-    if (null != package_order_uuid) {
-      m['package_order_uuid'] = package_order_uuid;
+    if (null != packageOrderUuid) {
+      m['packageOrderUuid'] = packageOrderUuid;
     }
-    if (null != product_order_uuid) {
-      m['product_order_uuid'] = product_order_uuid;
+    if (null != productOrderUuid) {
+      m['productOrderUuid'] = productOrderUuid;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != tecs_web_secret_key) {
-      m['tecs_web_secret_key'] = tecs_web_secret_key;
+    if (null != tecsWebSecretKey) {
+      m['tecsWebSecretKey'] = tecsWebSecretKey;
     }
-    if (null != template_name) {
-      m['template_name'] = template_name;
+    if (null != templateName) {
+      m['templateName'] = templateName;
     }
-    if (null != terminal_country_code) {
-      m['terminal_country_code'] = terminal_country_code;
+    if (null != terminalCountryCode) {
+      m['terminalCountryCode'] = terminalCountryCode;
     }
-    if (null != terminal_id) {
-      m['terminal_id'] = terminal_id;
+    if (null != terminalId) {
+      m['terminalId'] = terminalId;
     }
-    if (null != terminal_id_acq) {
-      m['terminal_id_acq'] = terminal_id_acq;
+    if (null != terminalIdAcq) {
+      m['terminalIdAcq'] = terminalIdAcq;
     }
-    if (null != terminal_language_code) {
-      m['terminal_language_code'] = terminal_language_code;
+    if (null != terminalLanguageCode) {
+      m['terminalLanguageCode'] = terminalLanguageCode;
     }
-    if (null != terminal_location) {
-      m['terminal_location'] = terminal_location;
+    if (null != terminalLocation) {
+      m['terminalLocation'] = terminalLocation;
     }
-    if (null != terminal_serial_number) {
-      m['terminal_serial_number'] = terminal_serial_number;
+    if (null != terminalSerialNumber) {
+      m['terminalSerialNumber'] = terminalSerialNumber;
     }
-    if (null != token_io_alia) {
-      m['token_io_alia'] = token_io_alia;
+    if (null != tokenIOAlias) {
+      m['tokenIOAlias'] = tokenIOAlias;
     }
-    if (null != token_io_iban) {
-      m['token_io_iban'] = token_io_iban;
+    if (null != tokenIOIban) {
+      m['tokenIOIban'] = tokenIOIban;
     }
-    if (null != token_io_member_id) {
-      m['token_io_member_id'] = token_io_member_id;
+    if (null != tokenIOMemberId) {
+      m['tokenIOMemberId'] = tokenIOMemberId;
     }
-    if (null != web_shop_url) {
-      m['web_shop_url'] = web_shop_url;
+    if (null != webShopUrl) {
+      m['webShopUrl'] = webShopUrl;
     }
     return m;
   }
@@ -5274,139 +5288,139 @@ class RegisterTerminal {
 
 class RegisterTerminalCreateData {
   /// OBJECT
-  Map<String, dynamic>? additional_data;
+  Map<String, dynamic>? additionalData;
   /// STRING (required at the API)
-  String? corporate_uuid;
+  String? corporateUuid;
   /// STRING (required at the API)
-  String? package_order_uuid;
+  String? packageOrderUuid;
   /// STRING (required at the API)
-  String? product_order_uuid;
+  String? productOrderUuid;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// STRING
-  String? tecs_web_secret_key;
+  String? tecsWebSecretKey;
   /// STRING (required at the API)
-  String? template_name;
+  String? templateName;
   /// STRING (required at the API)
-  String? terminal_country_code;
+  String? terminalCountryCode;
   /// INTEGER
-  int? terminal_id;
+  int? terminalId;
   /// STRING
-  String? terminal_id_acq;
+  String? terminalIdAcq;
   /// STRING (required at the API)
-  String? terminal_language_code;
+  String? terminalLanguageCode;
   /// STRING (required at the API)
-  String? terminal_location;
+  String? terminalLocation;
   /// STRING
-  String? terminal_serial_number;
+  String? terminalSerialNumber;
   /// STRING
-  String? token_io_alia;
+  String? tokenIOAlias;
   /// STRING
-  String? token_io_iban;
+  String? tokenIOIban;
   /// STRING
-  String? token_io_member_id;
+  String? tokenIOMemberId;
   /// STRING
-  String? web_shop_url;
+  String? webShopUrl;
 
   RegisterTerminalCreateData({
-    this.additional_data,
-    this.corporate_uuid,
-    this.package_order_uuid,
-    this.product_order_uuid,
-    this.response_code,
-    this.response_message,
-    this.tecs_web_secret_key,
-    this.template_name,
-    this.terminal_country_code,
-    this.terminal_id,
-    this.terminal_id_acq,
-    this.terminal_language_code,
-    this.terminal_location,
-    this.terminal_serial_number,
-    this.token_io_alia,
-    this.token_io_iban,
-    this.token_io_member_id,
-    this.web_shop_url,
+    this.additionalData,
+    this.corporateUuid,
+    this.packageOrderUuid,
+    this.productOrderUuid,
+    this.responseCode,
+    this.responseMessage,
+    this.tecsWebSecretKey,
+    this.templateName,
+    this.terminalCountryCode,
+    this.terminalId,
+    this.terminalIdAcq,
+    this.terminalLanguageCode,
+    this.terminalLocation,
+    this.terminalSerialNumber,
+    this.tokenIOAlias,
+    this.tokenIOIban,
+    this.tokenIOMemberId,
+    this.webShopUrl,
   });
 
   factory RegisterTerminalCreateData.fromMap(Map<String, dynamic> m) => RegisterTerminalCreateData(
-        additional_data: m['additional_data'] is Map<String, dynamic> ? m['additional_data'] : null,
-        corporate_uuid: m['corporate_uuid'] is String ? m['corporate_uuid'] : null,
-        package_order_uuid: m['package_order_uuid'] is String ? m['package_order_uuid'] : null,
-        product_order_uuid: m['product_order_uuid'] is String ? m['product_order_uuid'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        tecs_web_secret_key: m['tecs_web_secret_key'] is String ? m['tecs_web_secret_key'] : null,
-        template_name: m['template_name'] is String ? m['template_name'] : null,
-        terminal_country_code: m['terminal_country_code'] is String ? m['terminal_country_code'] : null,
-        terminal_id: m['terminal_id'] is int ? m['terminal_id'] : null,
-        terminal_id_acq: m['terminal_id_acq'] is String ? m['terminal_id_acq'] : null,
-        terminal_language_code: m['terminal_language_code'] is String ? m['terminal_language_code'] : null,
-        terminal_location: m['terminal_location'] is String ? m['terminal_location'] : null,
-        terminal_serial_number: m['terminal_serial_number'] is String ? m['terminal_serial_number'] : null,
-        token_io_alia: m['token_io_alia'] is String ? m['token_io_alia'] : null,
-        token_io_iban: m['token_io_iban'] is String ? m['token_io_iban'] : null,
-        token_io_member_id: m['token_io_member_id'] is String ? m['token_io_member_id'] : null,
-        web_shop_url: m['web_shop_url'] is String ? m['web_shop_url'] : null,
+        additionalData: m['additionalData'] is Map<String, dynamic> ? m['additionalData'] : null,
+        corporateUuid: m['corporateUuid'] is String ? m['corporateUuid'] : null,
+        packageOrderUuid: m['packageOrderUuid'] is String ? m['packageOrderUuid'] : null,
+        productOrderUuid: m['productOrderUuid'] is String ? m['productOrderUuid'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        tecsWebSecretKey: m['tecsWebSecretKey'] is String ? m['tecsWebSecretKey'] : null,
+        templateName: m['templateName'] is String ? m['templateName'] : null,
+        terminalCountryCode: m['terminalCountryCode'] is String ? m['terminalCountryCode'] : null,
+        terminalId: m['terminalId'] is int ? m['terminalId'] : null,
+        terminalIdAcq: m['terminalIdAcq'] is String ? m['terminalIdAcq'] : null,
+        terminalLanguageCode: m['terminalLanguageCode'] is String ? m['terminalLanguageCode'] : null,
+        terminalLocation: m['terminalLocation'] is String ? m['terminalLocation'] : null,
+        terminalSerialNumber: m['terminalSerialNumber'] is String ? m['terminalSerialNumber'] : null,
+        tokenIOAlias: m['tokenIOAlias'] is String ? m['tokenIOAlias'] : null,
+        tokenIOIban: m['tokenIOIban'] is String ? m['tokenIOIban'] : null,
+        tokenIOMemberId: m['tokenIOMemberId'] is String ? m['tokenIOMemberId'] : null,
+        webShopUrl: m['webShopUrl'] is String ? m['webShopUrl'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != additional_data) {
-      m['additional_data'] = additional_data;
+    if (null != additionalData) {
+      m['additionalData'] = additionalData;
     }
-    if (null != corporate_uuid) {
-      m['corporate_uuid'] = corporate_uuid;
+    if (null != corporateUuid) {
+      m['corporateUuid'] = corporateUuid;
     }
-    if (null != package_order_uuid) {
-      m['package_order_uuid'] = package_order_uuid;
+    if (null != packageOrderUuid) {
+      m['packageOrderUuid'] = packageOrderUuid;
     }
-    if (null != product_order_uuid) {
-      m['product_order_uuid'] = product_order_uuid;
+    if (null != productOrderUuid) {
+      m['productOrderUuid'] = productOrderUuid;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != tecs_web_secret_key) {
-      m['tecs_web_secret_key'] = tecs_web_secret_key;
+    if (null != tecsWebSecretKey) {
+      m['tecsWebSecretKey'] = tecsWebSecretKey;
     }
-    if (null != template_name) {
-      m['template_name'] = template_name;
+    if (null != templateName) {
+      m['templateName'] = templateName;
     }
-    if (null != terminal_country_code) {
-      m['terminal_country_code'] = terminal_country_code;
+    if (null != terminalCountryCode) {
+      m['terminalCountryCode'] = terminalCountryCode;
     }
-    if (null != terminal_id) {
-      m['terminal_id'] = terminal_id;
+    if (null != terminalId) {
+      m['terminalId'] = terminalId;
     }
-    if (null != terminal_id_acq) {
-      m['terminal_id_acq'] = terminal_id_acq;
+    if (null != terminalIdAcq) {
+      m['terminalIdAcq'] = terminalIdAcq;
     }
-    if (null != terminal_language_code) {
-      m['terminal_language_code'] = terminal_language_code;
+    if (null != terminalLanguageCode) {
+      m['terminalLanguageCode'] = terminalLanguageCode;
     }
-    if (null != terminal_location) {
-      m['terminal_location'] = terminal_location;
+    if (null != terminalLocation) {
+      m['terminalLocation'] = terminalLocation;
     }
-    if (null != terminal_serial_number) {
-      m['terminal_serial_number'] = terminal_serial_number;
+    if (null != terminalSerialNumber) {
+      m['terminalSerialNumber'] = terminalSerialNumber;
     }
-    if (null != token_io_alia) {
-      m['token_io_alia'] = token_io_alia;
+    if (null != tokenIOAlias) {
+      m['tokenIOAlias'] = tokenIOAlias;
     }
-    if (null != token_io_iban) {
-      m['token_io_iban'] = token_io_iban;
+    if (null != tokenIOIban) {
+      m['tokenIOIban'] = tokenIOIban;
     }
-    if (null != token_io_member_id) {
-      m['token_io_member_id'] = token_io_member_id;
+    if (null != tokenIOMemberId) {
+      m['tokenIOMemberId'] = tokenIOMemberId;
     }
-    if (null != web_shop_url) {
-      m['web_shop_url'] = web_shop_url;
+    if (null != webShopUrl) {
+      m['webShopUrl'] = webShopUrl;
     }
     return m;
   }
@@ -5414,83 +5428,83 @@ class RegisterTerminalCreateData {
 
 class ReportData {
   /// ARRAY
-  List<dynamic>? card_brand_report_data;
+  List<dynamic>? cardBrandReportData;
   /// STRING (required at the API)
-  String? clearing_date_from;
+  String? clearingDateFrom;
   /// STRING (required at the API)
-  String? clearing_date_to;
+  String? clearingDateTo;
   /// STRING (required at the API)
-  String? corporate_id;
+  String? corporateId;
   /// STRING (required at the API)
   String? currency;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// OBJECT
-  Map<String, dynamic>? sum_over_credit_tx;
+  Map<String, dynamic>? sumOverCreditTx;
   /// OBJECT
-  Map<String, dynamic>? sum_over_debit_tx;
+  Map<String, dynamic>? sumOverDebitTx;
   /// INTEGER
-  int? terminal_id;
+  int? terminalId;
 
   ReportData({
-    this.card_brand_report_data,
-    this.clearing_date_from,
-    this.clearing_date_to,
-    this.corporate_id,
+    this.cardBrandReportData,
+    this.clearingDateFrom,
+    this.clearingDateTo,
+    this.corporateId,
     this.currency,
-    this.response_code,
-    this.response_message,
-    this.sum_over_credit_tx,
-    this.sum_over_debit_tx,
-    this.terminal_id,
+    this.responseCode,
+    this.responseMessage,
+    this.sumOverCreditTx,
+    this.sumOverDebitTx,
+    this.terminalId,
   });
 
   factory ReportData.fromMap(Map<String, dynamic> m) => ReportData(
-        card_brand_report_data: m['card_brand_report_data'] is List<dynamic> ? m['card_brand_report_data'] : null,
-        clearing_date_from: m['clearing_date_from'] is String ? m['clearing_date_from'] : null,
-        clearing_date_to: m['clearing_date_to'] is String ? m['clearing_date_to'] : null,
-        corporate_id: m['corporate_id'] is String ? m['corporate_id'] : null,
+        cardBrandReportData: m['cardBrandReportData'] is List<dynamic> ? m['cardBrandReportData'] : null,
+        clearingDateFrom: m['clearingDateFrom'] is String ? m['clearingDateFrom'] : null,
+        clearingDateTo: m['clearingDateTo'] is String ? m['clearingDateTo'] : null,
+        corporateId: m['corporateId'] is String ? m['corporateId'] : null,
         currency: m['currency'] is String ? m['currency'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        sum_over_credit_tx: m['sum_over_credit_tx'] is Map<String, dynamic> ? m['sum_over_credit_tx'] : null,
-        sum_over_debit_tx: m['sum_over_debit_tx'] is Map<String, dynamic> ? m['sum_over_debit_tx'] : null,
-        terminal_id: m['terminal_id'] is int ? m['terminal_id'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        sumOverCreditTx: m['sumOverCreditTx'] is Map<String, dynamic> ? m['sumOverCreditTx'] : null,
+        sumOverDebitTx: m['sumOverDebitTx'] is Map<String, dynamic> ? m['sumOverDebitTx'] : null,
+        terminalId: m['terminalId'] is int ? m['terminalId'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != card_brand_report_data) {
-      m['card_brand_report_data'] = card_brand_report_data;
+    if (null != cardBrandReportData) {
+      m['cardBrandReportData'] = cardBrandReportData;
     }
-    if (null != clearing_date_from) {
-      m['clearing_date_from'] = clearing_date_from;
+    if (null != clearingDateFrom) {
+      m['clearingDateFrom'] = clearingDateFrom;
     }
-    if (null != clearing_date_to) {
-      m['clearing_date_to'] = clearing_date_to;
+    if (null != clearingDateTo) {
+      m['clearingDateTo'] = clearingDateTo;
     }
-    if (null != corporate_id) {
-      m['corporate_id'] = corporate_id;
+    if (null != corporateId) {
+      m['corporateId'] = corporateId;
     }
     if (null != currency) {
       m['currency'] = currency;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != sum_over_credit_tx) {
-      m['sum_over_credit_tx'] = sum_over_credit_tx;
+    if (null != sumOverCreditTx) {
+      m['sumOverCreditTx'] = sumOverCreditTx;
     }
-    if (null != sum_over_debit_tx) {
-      m['sum_over_debit_tx'] = sum_over_debit_tx;
+    if (null != sumOverDebitTx) {
+      m['sumOverDebitTx'] = sumOverDebitTx;
     }
-    if (null != terminal_id) {
-      m['terminal_id'] = terminal_id;
+    if (null != terminalId) {
+      m['terminalId'] = terminalId;
     }
     return m;
   }
@@ -5498,83 +5512,83 @@ class ReportData {
 
 class ReportDataCreateData {
   /// ARRAY
-  List<dynamic>? card_brand_report_data;
+  List<dynamic>? cardBrandReportData;
   /// STRING (required at the API)
-  String? clearing_date_from;
+  String? clearingDateFrom;
   /// STRING (required at the API)
-  String? clearing_date_to;
+  String? clearingDateTo;
   /// STRING (required at the API)
-  String? corporate_id;
+  String? corporateId;
   /// STRING (required at the API)
   String? currency;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// OBJECT
-  Map<String, dynamic>? sum_over_credit_tx;
+  Map<String, dynamic>? sumOverCreditTx;
   /// OBJECT
-  Map<String, dynamic>? sum_over_debit_tx;
+  Map<String, dynamic>? sumOverDebitTx;
   /// INTEGER
-  int? terminal_id;
+  int? terminalId;
 
   ReportDataCreateData({
-    this.card_brand_report_data,
-    this.clearing_date_from,
-    this.clearing_date_to,
-    this.corporate_id,
+    this.cardBrandReportData,
+    this.clearingDateFrom,
+    this.clearingDateTo,
+    this.corporateId,
     this.currency,
-    this.response_code,
-    this.response_message,
-    this.sum_over_credit_tx,
-    this.sum_over_debit_tx,
-    this.terminal_id,
+    this.responseCode,
+    this.responseMessage,
+    this.sumOverCreditTx,
+    this.sumOverDebitTx,
+    this.terminalId,
   });
 
   factory ReportDataCreateData.fromMap(Map<String, dynamic> m) => ReportDataCreateData(
-        card_brand_report_data: m['card_brand_report_data'] is List<dynamic> ? m['card_brand_report_data'] : null,
-        clearing_date_from: m['clearing_date_from'] is String ? m['clearing_date_from'] : null,
-        clearing_date_to: m['clearing_date_to'] is String ? m['clearing_date_to'] : null,
-        corporate_id: m['corporate_id'] is String ? m['corporate_id'] : null,
+        cardBrandReportData: m['cardBrandReportData'] is List<dynamic> ? m['cardBrandReportData'] : null,
+        clearingDateFrom: m['clearingDateFrom'] is String ? m['clearingDateFrom'] : null,
+        clearingDateTo: m['clearingDateTo'] is String ? m['clearingDateTo'] : null,
+        corporateId: m['corporateId'] is String ? m['corporateId'] : null,
         currency: m['currency'] is String ? m['currency'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        sum_over_credit_tx: m['sum_over_credit_tx'] is Map<String, dynamic> ? m['sum_over_credit_tx'] : null,
-        sum_over_debit_tx: m['sum_over_debit_tx'] is Map<String, dynamic> ? m['sum_over_debit_tx'] : null,
-        terminal_id: m['terminal_id'] is int ? m['terminal_id'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        sumOverCreditTx: m['sumOverCreditTx'] is Map<String, dynamic> ? m['sumOverCreditTx'] : null,
+        sumOverDebitTx: m['sumOverDebitTx'] is Map<String, dynamic> ? m['sumOverDebitTx'] : null,
+        terminalId: m['terminalId'] is int ? m['terminalId'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != card_brand_report_data) {
-      m['card_brand_report_data'] = card_brand_report_data;
+    if (null != cardBrandReportData) {
+      m['cardBrandReportData'] = cardBrandReportData;
     }
-    if (null != clearing_date_from) {
-      m['clearing_date_from'] = clearing_date_from;
+    if (null != clearingDateFrom) {
+      m['clearingDateFrom'] = clearingDateFrom;
     }
-    if (null != clearing_date_to) {
-      m['clearing_date_to'] = clearing_date_to;
+    if (null != clearingDateTo) {
+      m['clearingDateTo'] = clearingDateTo;
     }
-    if (null != corporate_id) {
-      m['corporate_id'] = corporate_id;
+    if (null != corporateId) {
+      m['corporateId'] = corporateId;
     }
     if (null != currency) {
       m['currency'] = currency;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != sum_over_credit_tx) {
-      m['sum_over_credit_tx'] = sum_over_credit_tx;
+    if (null != sumOverCreditTx) {
+      m['sumOverCreditTx'] = sumOverCreditTx;
     }
-    if (null != sum_over_debit_tx) {
-      m['sum_over_debit_tx'] = sum_over_debit_tx;
+    if (null != sumOverDebitTx) {
+      m['sumOverDebitTx'] = sumOverDebitTx;
     }
-    if (null != terminal_id) {
-      m['terminal_id'] = terminal_id;
+    if (null != terminalId) {
+      m['terminalId'] = terminalId;
     }
     return m;
   }
@@ -5582,264 +5596,264 @@ class ReportDataCreateData {
 
 class StatusTransaction {
   /// STRING
-  String? acquirer_name;
+  String? acquirerName;
   /// STRING
-  String? acquirer_terminal_id;
+  String? acquirerTerminalId;
   /// INTEGER
   int? amount;
   /// STRING
-  String? application_cryptogram;
+  String? applicationCryptogram;
   /// ONE,STRING,NULL
-  dynamic authorization_code;
+  dynamic authorizationCode;
   /// STRING
-  String? authorization_date;
+  String? authorizationDate;
   /// STRING
-  String? card_brand;
+  String? cardBrand;
   /// STRING
-  String? card_entry;
+  String? cardEntry;
   /// STRING
-  String? card_expiration;
+  String? cardExpiration;
   /// STRING
-  String? card_number;
+  String? cardNumber;
   /// INTEGER
-  int? clearing_amount;
+  int? clearingAmount;
   /// STRING
-  String? clearing_batch_id;
+  String? clearingBatchId;
   /// STRING
-  String? clearing_currency;
+  String? clearingCurrency;
   /// STRING
-  String? clearing_date;
+  String? clearingDate;
   /// STRING
-  String? clearing_processed_date;
+  String? clearingProcessedDate;
   /// STRING
-  String? clearing_status;
+  String? clearingStatus;
   /// INTEGER
-  int? client_id;
+  int? clientId;
   /// STRING
   String? currency;
   /// STRING
   String? cvm;
   /// STRING
-  String? ecr_data;
+  String? ecrData;
   /// STRING
-  String? emv_application_id;
+  String? emvApplicationId;
   /// STRING
-  String? emv_application_label;
+  String? emvApplicationLabel;
   /// STRING
-  String? merchant_name;
+  String? merchantName;
   /// STRING
-  String? merchant_number;
+  String? merchantNumber;
   /// STRING
-  String? original_client_id;
+  String? originalClientId;
   /// INTEGER
-  int? original_terminal_id;
+  int? originalTerminalId;
   /// STRING
-  String? original_transaction_id;
+  String? originalTransactionId;
   /// STRING
-  String? payment_reason;
+  String? paymentReason;
   /// STRING
-  String? receipt_number;
+  String? receiptNumber;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_code_from_a;
+  String? responseCodeFromAS;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// STRING
-  String? retrieval_reference_number;
+  String? retrievalReferenceNumber;
   /// STRING
-  String? service_code;
+  String? serviceCode;
   /// STRING
-  String? settlement_status;
+  String? settlementStatus;
   /// INTEGER
-  int? source_id;
+  int? sourceId;
   /// INTEGER
-  int? tecsengine_response_code;
+  int? tecsengineResponseCode;
   /// STRING
-  String? tecsengine_response_text;
+  String? tecsengineResponseText;
   /// STRING
-  String? terminal_end_of_day_date;
+  String? terminalEndOfDayDate;
   /// INTEGER
-  int? terminal_id;
+  int? terminalId;
   /// STRING
-  String? terminal_location;
+  String? terminalLocation;
   /// INTEGER
-  int? tip_amount;
+  int? tipAmount;
   /// INTEGER
-  int? trace_number;
+  int? traceNumber;
   /// STRING
-  String? transaction_clearing_date;
+  String? transactionClearingDate;
   /// STRING
-  String? transaction_date;
+  String? transactionDate;
   /// STRING
-  String? transaction_id;
+  String? transactionId;
   /// INTEGER
-  int? transaction_seq_number;
+  int? transactionSeqNumber;
   /// STRING
-  String? transaction_server_date;
+  String? transactionServerDate;
   /// STRING
-  String? transaction_source;
+  String? transactionSource;
   /// STRING
-  String? transaction_type;
+  String? transactionType;
 
   StatusTransaction({
-    this.acquirer_name,
-    this.acquirer_terminal_id,
+    this.acquirerName,
+    this.acquirerTerminalId,
     this.amount,
-    this.application_cryptogram,
-    this.authorization_code,
-    this.authorization_date,
-    this.card_brand,
-    this.card_entry,
-    this.card_expiration,
-    this.card_number,
-    this.clearing_amount,
-    this.clearing_batch_id,
-    this.clearing_currency,
-    this.clearing_date,
-    this.clearing_processed_date,
-    this.clearing_status,
-    this.client_id,
+    this.applicationCryptogram,
+    this.authorizationCode,
+    this.authorizationDate,
+    this.cardBrand,
+    this.cardEntry,
+    this.cardExpiration,
+    this.cardNumber,
+    this.clearingAmount,
+    this.clearingBatchId,
+    this.clearingCurrency,
+    this.clearingDate,
+    this.clearingProcessedDate,
+    this.clearingStatus,
+    this.clientId,
     this.currency,
     this.cvm,
-    this.ecr_data,
-    this.emv_application_id,
-    this.emv_application_label,
-    this.merchant_name,
-    this.merchant_number,
-    this.original_client_id,
-    this.original_terminal_id,
-    this.original_transaction_id,
-    this.payment_reason,
-    this.receipt_number,
-    this.response_code,
-    this.response_code_from_a,
-    this.response_message,
-    this.retrieval_reference_number,
-    this.service_code,
-    this.settlement_status,
-    this.source_id,
-    this.tecsengine_response_code,
-    this.tecsengine_response_text,
-    this.terminal_end_of_day_date,
-    this.terminal_id,
-    this.terminal_location,
-    this.tip_amount,
-    this.trace_number,
-    this.transaction_clearing_date,
-    this.transaction_date,
-    this.transaction_id,
-    this.transaction_seq_number,
-    this.transaction_server_date,
-    this.transaction_source,
-    this.transaction_type,
+    this.ecrData,
+    this.emvApplicationId,
+    this.emvApplicationLabel,
+    this.merchantName,
+    this.merchantNumber,
+    this.originalClientId,
+    this.originalTerminalId,
+    this.originalTransactionId,
+    this.paymentReason,
+    this.receiptNumber,
+    this.responseCode,
+    this.responseCodeFromAS,
+    this.responseMessage,
+    this.retrievalReferenceNumber,
+    this.serviceCode,
+    this.settlementStatus,
+    this.sourceId,
+    this.tecsengineResponseCode,
+    this.tecsengineResponseText,
+    this.terminalEndOfDayDate,
+    this.terminalId,
+    this.terminalLocation,
+    this.tipAmount,
+    this.traceNumber,
+    this.transactionClearingDate,
+    this.transactionDate,
+    this.transactionId,
+    this.transactionSeqNumber,
+    this.transactionServerDate,
+    this.transactionSource,
+    this.transactionType,
   });
 
   factory StatusTransaction.fromMap(Map<String, dynamic> m) => StatusTransaction(
-        acquirer_name: m['acquirer_name'] is String ? m['acquirer_name'] : null,
-        acquirer_terminal_id: m['acquirer_terminal_id'] is String ? m['acquirer_terminal_id'] : null,
+        acquirerName: m['acquirerName'] is String ? m['acquirerName'] : null,
+        acquirerTerminalId: m['acquirerTerminalId'] is String ? m['acquirerTerminalId'] : null,
         amount: m['amount'] is int ? m['amount'] : null,
-        application_cryptogram: m['application_cryptogram'] is String ? m['application_cryptogram'] : null,
-        authorization_code: m['authorization_code'],
-        authorization_date: m['authorization_date'] is String ? m['authorization_date'] : null,
-        card_brand: m['card_brand'] is String ? m['card_brand'] : null,
-        card_entry: m['card_entry'] is String ? m['card_entry'] : null,
-        card_expiration: m['card_expiration'] is String ? m['card_expiration'] : null,
-        card_number: m['card_number'] is String ? m['card_number'] : null,
-        clearing_amount: m['clearing_amount'] is int ? m['clearing_amount'] : null,
-        clearing_batch_id: m['clearing_batch_id'] is String ? m['clearing_batch_id'] : null,
-        clearing_currency: m['clearing_currency'] is String ? m['clearing_currency'] : null,
-        clearing_date: m['clearing_date'] is String ? m['clearing_date'] : null,
-        clearing_processed_date: m['clearing_processed_date'] is String ? m['clearing_processed_date'] : null,
-        clearing_status: m['clearing_status'] is String ? m['clearing_status'] : null,
-        client_id: m['client_id'] is int ? m['client_id'] : null,
+        applicationCryptogram: m['applicationCryptogram'] is String ? m['applicationCryptogram'] : null,
+        authorizationCode: m['authorizationCode'],
+        authorizationDate: m['authorizationDate'] is String ? m['authorizationDate'] : null,
+        cardBrand: m['cardBrand'] is String ? m['cardBrand'] : null,
+        cardEntry: m['cardEntry'] is String ? m['cardEntry'] : null,
+        cardExpiration: m['cardExpiration'] is String ? m['cardExpiration'] : null,
+        cardNumber: m['cardNumber'] is String ? m['cardNumber'] : null,
+        clearingAmount: m['clearingAmount'] is int ? m['clearingAmount'] : null,
+        clearingBatchId: m['clearingBatchId'] is String ? m['clearingBatchId'] : null,
+        clearingCurrency: m['clearingCurrency'] is String ? m['clearingCurrency'] : null,
+        clearingDate: m['clearingDate'] is String ? m['clearingDate'] : null,
+        clearingProcessedDate: m['clearingProcessedDate'] is String ? m['clearingProcessedDate'] : null,
+        clearingStatus: m['clearingStatus'] is String ? m['clearingStatus'] : null,
+        clientId: m['clientId'] is int ? m['clientId'] : null,
         currency: m['currency'] is String ? m['currency'] : null,
         cvm: m['cvm'] is String ? m['cvm'] : null,
-        ecr_data: m['ecr_data'] is String ? m['ecr_data'] : null,
-        emv_application_id: m['emv_application_id'] is String ? m['emv_application_id'] : null,
-        emv_application_label: m['emv_application_label'] is String ? m['emv_application_label'] : null,
-        merchant_name: m['merchant_name'] is String ? m['merchant_name'] : null,
-        merchant_number: m['merchant_number'] is String ? m['merchant_number'] : null,
-        original_client_id: m['original_client_id'] is String ? m['original_client_id'] : null,
-        original_terminal_id: m['original_terminal_id'] is int ? m['original_terminal_id'] : null,
-        original_transaction_id: m['original_transaction_id'] is String ? m['original_transaction_id'] : null,
-        payment_reason: m['payment_reason'] is String ? m['payment_reason'] : null,
-        receipt_number: m['receipt_number'] is String ? m['receipt_number'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_code_from_a: m['response_code_from_a'] is String ? m['response_code_from_a'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        retrieval_reference_number: m['retrieval_reference_number'] is String ? m['retrieval_reference_number'] : null,
-        service_code: m['service_code'] is String ? m['service_code'] : null,
-        settlement_status: m['settlement_status'] is String ? m['settlement_status'] : null,
-        source_id: m['source_id'] is int ? m['source_id'] : null,
-        tecsengine_response_code: m['tecsengine_response_code'] is int ? m['tecsengine_response_code'] : null,
-        tecsengine_response_text: m['tecsengine_response_text'] is String ? m['tecsengine_response_text'] : null,
-        terminal_end_of_day_date: m['terminal_end_of_day_date'] is String ? m['terminal_end_of_day_date'] : null,
-        terminal_id: m['terminal_id'] is int ? m['terminal_id'] : null,
-        terminal_location: m['terminal_location'] is String ? m['terminal_location'] : null,
-        tip_amount: m['tip_amount'] is int ? m['tip_amount'] : null,
-        trace_number: m['trace_number'] is int ? m['trace_number'] : null,
-        transaction_clearing_date: m['transaction_clearing_date'] is String ? m['transaction_clearing_date'] : null,
-        transaction_date: m['transaction_date'] is String ? m['transaction_date'] : null,
-        transaction_id: m['transaction_id'] is String ? m['transaction_id'] : null,
-        transaction_seq_number: m['transaction_seq_number'] is int ? m['transaction_seq_number'] : null,
-        transaction_server_date: m['transaction_server_date'] is String ? m['transaction_server_date'] : null,
-        transaction_source: m['transaction_source'] is String ? m['transaction_source'] : null,
-        transaction_type: m['transaction_type'] is String ? m['transaction_type'] : null,
+        ecrData: m['ecrData'] is String ? m['ecrData'] : null,
+        emvApplicationId: m['emvApplicationId'] is String ? m['emvApplicationId'] : null,
+        emvApplicationLabel: m['emvApplicationLabel'] is String ? m['emvApplicationLabel'] : null,
+        merchantName: m['merchantName'] is String ? m['merchantName'] : null,
+        merchantNumber: m['merchantNumber'] is String ? m['merchantNumber'] : null,
+        originalClientId: m['originalClientId'] is String ? m['originalClientId'] : null,
+        originalTerminalId: m['originalTerminalId'] is int ? m['originalTerminalId'] : null,
+        originalTransactionId: m['originalTransactionId'] is String ? m['originalTransactionId'] : null,
+        paymentReason: m['paymentReason'] is String ? m['paymentReason'] : null,
+        receiptNumber: m['receiptNumber'] is String ? m['receiptNumber'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseCodeFromAS: m['responseCodeFromAS'] is String ? m['responseCodeFromAS'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        retrievalReferenceNumber: m['retrievalReferenceNumber'] is String ? m['retrievalReferenceNumber'] : null,
+        serviceCode: m['serviceCode'] is String ? m['serviceCode'] : null,
+        settlementStatus: m['settlementStatus'] is String ? m['settlementStatus'] : null,
+        sourceId: m['sourceId'] is int ? m['sourceId'] : null,
+        tecsengineResponseCode: m['tecsengineResponseCode'] is int ? m['tecsengineResponseCode'] : null,
+        tecsengineResponseText: m['tecsengineResponseText'] is String ? m['tecsengineResponseText'] : null,
+        terminalEndOfDayDate: m['terminalEndOfDayDate'] is String ? m['terminalEndOfDayDate'] : null,
+        terminalId: m['terminalId'] is int ? m['terminalId'] : null,
+        terminalLocation: m['terminalLocation'] is String ? m['terminalLocation'] : null,
+        tipAmount: m['tipAmount'] is int ? m['tipAmount'] : null,
+        traceNumber: m['traceNumber'] is int ? m['traceNumber'] : null,
+        transactionClearingDate: m['transactionClearingDate'] is String ? m['transactionClearingDate'] : null,
+        transactionDate: m['transactionDate'] is String ? m['transactionDate'] : null,
+        transactionId: m['transactionId'] is String ? m['transactionId'] : null,
+        transactionSeqNumber: m['transactionSeqNumber'] is int ? m['transactionSeqNumber'] : null,
+        transactionServerDate: m['transactionServerDate'] is String ? m['transactionServerDate'] : null,
+        transactionSource: m['transactionSource'] is String ? m['transactionSource'] : null,
+        transactionType: m['transactionType'] is String ? m['transactionType'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != acquirer_name) {
-      m['acquirer_name'] = acquirer_name;
+    if (null != acquirerName) {
+      m['acquirerName'] = acquirerName;
     }
-    if (null != acquirer_terminal_id) {
-      m['acquirer_terminal_id'] = acquirer_terminal_id;
+    if (null != acquirerTerminalId) {
+      m['acquirerTerminalId'] = acquirerTerminalId;
     }
     if (null != amount) {
       m['amount'] = amount;
     }
-    if (null != application_cryptogram) {
-      m['application_cryptogram'] = application_cryptogram;
+    if (null != applicationCryptogram) {
+      m['applicationCryptogram'] = applicationCryptogram;
     }
-    if (null != authorization_code) {
-      m['authorization_code'] = authorization_code;
+    if (null != authorizationCode) {
+      m['authorizationCode'] = authorizationCode;
     }
-    if (null != authorization_date) {
-      m['authorization_date'] = authorization_date;
+    if (null != authorizationDate) {
+      m['authorizationDate'] = authorizationDate;
     }
-    if (null != card_brand) {
-      m['card_brand'] = card_brand;
+    if (null != cardBrand) {
+      m['cardBrand'] = cardBrand;
     }
-    if (null != card_entry) {
-      m['card_entry'] = card_entry;
+    if (null != cardEntry) {
+      m['cardEntry'] = cardEntry;
     }
-    if (null != card_expiration) {
-      m['card_expiration'] = card_expiration;
+    if (null != cardExpiration) {
+      m['cardExpiration'] = cardExpiration;
     }
-    if (null != card_number) {
-      m['card_number'] = card_number;
+    if (null != cardNumber) {
+      m['cardNumber'] = cardNumber;
     }
-    if (null != clearing_amount) {
-      m['clearing_amount'] = clearing_amount;
+    if (null != clearingAmount) {
+      m['clearingAmount'] = clearingAmount;
     }
-    if (null != clearing_batch_id) {
-      m['clearing_batch_id'] = clearing_batch_id;
+    if (null != clearingBatchId) {
+      m['clearingBatchId'] = clearingBatchId;
     }
-    if (null != clearing_currency) {
-      m['clearing_currency'] = clearing_currency;
+    if (null != clearingCurrency) {
+      m['clearingCurrency'] = clearingCurrency;
     }
-    if (null != clearing_date) {
-      m['clearing_date'] = clearing_date;
+    if (null != clearingDate) {
+      m['clearingDate'] = clearingDate;
     }
-    if (null != clearing_processed_date) {
-      m['clearing_processed_date'] = clearing_processed_date;
+    if (null != clearingProcessedDate) {
+      m['clearingProcessedDate'] = clearingProcessedDate;
     }
-    if (null != clearing_status) {
-      m['clearing_status'] = clearing_status;
+    if (null != clearingStatus) {
+      m['clearingStatus'] = clearingStatus;
     }
-    if (null != client_id) {
-      m['client_id'] = client_id;
+    if (null != clientId) {
+      m['clientId'] = clientId;
     }
     if (null != currency) {
       m['currency'] = currency;
@@ -5847,98 +5861,98 @@ class StatusTransaction {
     if (null != cvm) {
       m['cvm'] = cvm;
     }
-    if (null != ecr_data) {
-      m['ecr_data'] = ecr_data;
+    if (null != ecrData) {
+      m['ecrData'] = ecrData;
     }
-    if (null != emv_application_id) {
-      m['emv_application_id'] = emv_application_id;
+    if (null != emvApplicationId) {
+      m['emvApplicationId'] = emvApplicationId;
     }
-    if (null != emv_application_label) {
-      m['emv_application_label'] = emv_application_label;
+    if (null != emvApplicationLabel) {
+      m['emvApplicationLabel'] = emvApplicationLabel;
     }
-    if (null != merchant_name) {
-      m['merchant_name'] = merchant_name;
+    if (null != merchantName) {
+      m['merchantName'] = merchantName;
     }
-    if (null != merchant_number) {
-      m['merchant_number'] = merchant_number;
+    if (null != merchantNumber) {
+      m['merchantNumber'] = merchantNumber;
     }
-    if (null != original_client_id) {
-      m['original_client_id'] = original_client_id;
+    if (null != originalClientId) {
+      m['originalClientId'] = originalClientId;
     }
-    if (null != original_terminal_id) {
-      m['original_terminal_id'] = original_terminal_id;
+    if (null != originalTerminalId) {
+      m['originalTerminalId'] = originalTerminalId;
     }
-    if (null != original_transaction_id) {
-      m['original_transaction_id'] = original_transaction_id;
+    if (null != originalTransactionId) {
+      m['originalTransactionId'] = originalTransactionId;
     }
-    if (null != payment_reason) {
-      m['payment_reason'] = payment_reason;
+    if (null != paymentReason) {
+      m['paymentReason'] = paymentReason;
     }
-    if (null != receipt_number) {
-      m['receipt_number'] = receipt_number;
+    if (null != receiptNumber) {
+      m['receiptNumber'] = receiptNumber;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_code_from_a) {
-      m['response_code_from_a'] = response_code_from_a;
+    if (null != responseCodeFromAS) {
+      m['responseCodeFromAS'] = responseCodeFromAS;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != retrieval_reference_number) {
-      m['retrieval_reference_number'] = retrieval_reference_number;
+    if (null != retrievalReferenceNumber) {
+      m['retrievalReferenceNumber'] = retrievalReferenceNumber;
     }
-    if (null != service_code) {
-      m['service_code'] = service_code;
+    if (null != serviceCode) {
+      m['serviceCode'] = serviceCode;
     }
-    if (null != settlement_status) {
-      m['settlement_status'] = settlement_status;
+    if (null != settlementStatus) {
+      m['settlementStatus'] = settlementStatus;
     }
-    if (null != source_id) {
-      m['source_id'] = source_id;
+    if (null != sourceId) {
+      m['sourceId'] = sourceId;
     }
-    if (null != tecsengine_response_code) {
-      m['tecsengine_response_code'] = tecsengine_response_code;
+    if (null != tecsengineResponseCode) {
+      m['tecsengineResponseCode'] = tecsengineResponseCode;
     }
-    if (null != tecsengine_response_text) {
-      m['tecsengine_response_text'] = tecsengine_response_text;
+    if (null != tecsengineResponseText) {
+      m['tecsengineResponseText'] = tecsengineResponseText;
     }
-    if (null != terminal_end_of_day_date) {
-      m['terminal_end_of_day_date'] = terminal_end_of_day_date;
+    if (null != terminalEndOfDayDate) {
+      m['terminalEndOfDayDate'] = terminalEndOfDayDate;
     }
-    if (null != terminal_id) {
-      m['terminal_id'] = terminal_id;
+    if (null != terminalId) {
+      m['terminalId'] = terminalId;
     }
-    if (null != terminal_location) {
-      m['terminal_location'] = terminal_location;
+    if (null != terminalLocation) {
+      m['terminalLocation'] = terminalLocation;
     }
-    if (null != tip_amount) {
-      m['tip_amount'] = tip_amount;
+    if (null != tipAmount) {
+      m['tipAmount'] = tipAmount;
     }
-    if (null != trace_number) {
-      m['trace_number'] = trace_number;
+    if (null != traceNumber) {
+      m['traceNumber'] = traceNumber;
     }
-    if (null != transaction_clearing_date) {
-      m['transaction_clearing_date'] = transaction_clearing_date;
+    if (null != transactionClearingDate) {
+      m['transactionClearingDate'] = transactionClearingDate;
     }
-    if (null != transaction_date) {
-      m['transaction_date'] = transaction_date;
+    if (null != transactionDate) {
+      m['transactionDate'] = transactionDate;
     }
-    if (null != transaction_id) {
-      m['transaction_id'] = transaction_id;
+    if (null != transactionId) {
+      m['transactionId'] = transactionId;
     }
-    if (null != transaction_seq_number) {
-      m['transaction_seq_number'] = transaction_seq_number;
+    if (null != transactionSeqNumber) {
+      m['transactionSeqNumber'] = transactionSeqNumber;
     }
-    if (null != transaction_server_date) {
-      m['transaction_server_date'] = transaction_server_date;
+    if (null != transactionServerDate) {
+      m['transactionServerDate'] = transactionServerDate;
     }
-    if (null != transaction_source) {
-      m['transaction_source'] = transaction_source;
+    if (null != transactionSource) {
+      m['transactionSource'] = transactionSource;
     }
-    if (null != transaction_type) {
-      m['transaction_type'] = transaction_type;
+    if (null != transactionType) {
+      m['transactionType'] = transactionType;
     }
     return m;
   }
@@ -5946,264 +5960,264 @@ class StatusTransaction {
 
 class StatusTransactionCreateData {
   /// STRING
-  String? acquirer_name;
+  String? acquirerName;
   /// STRING
-  String? acquirer_terminal_id;
+  String? acquirerTerminalId;
   /// INTEGER
   int? amount;
   /// STRING
-  String? application_cryptogram;
+  String? applicationCryptogram;
   /// ONE,STRING,NULL
-  dynamic authorization_code;
+  dynamic authorizationCode;
   /// STRING
-  String? authorization_date;
+  String? authorizationDate;
   /// STRING
-  String? card_brand;
+  String? cardBrand;
   /// STRING
-  String? card_entry;
+  String? cardEntry;
   /// STRING
-  String? card_expiration;
+  String? cardExpiration;
   /// STRING
-  String? card_number;
+  String? cardNumber;
   /// INTEGER
-  int? clearing_amount;
+  int? clearingAmount;
   /// STRING
-  String? clearing_batch_id;
+  String? clearingBatchId;
   /// STRING
-  String? clearing_currency;
+  String? clearingCurrency;
   /// STRING
-  String? clearing_date;
+  String? clearingDate;
   /// STRING
-  String? clearing_processed_date;
+  String? clearingProcessedDate;
   /// STRING
-  String? clearing_status;
+  String? clearingStatus;
   /// INTEGER
-  int? client_id;
+  int? clientId;
   /// STRING
   String? currency;
   /// STRING
   String? cvm;
   /// STRING
-  String? ecr_data;
+  String? ecrData;
   /// STRING
-  String? emv_application_id;
+  String? emvApplicationId;
   /// STRING
-  String? emv_application_label;
+  String? emvApplicationLabel;
   /// STRING
-  String? merchant_name;
+  String? merchantName;
   /// STRING
-  String? merchant_number;
+  String? merchantNumber;
   /// STRING
-  String? original_client_id;
+  String? originalClientId;
   /// INTEGER
-  int? original_terminal_id;
+  int? originalTerminalId;
   /// STRING
-  String? original_transaction_id;
+  String? originalTransactionId;
   /// STRING
-  String? payment_reason;
+  String? paymentReason;
   /// STRING
-  String? receipt_number;
+  String? receiptNumber;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_code_from_a;
+  String? responseCodeFromAS;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// STRING
-  String? retrieval_reference_number;
+  String? retrievalReferenceNumber;
   /// STRING
-  String? service_code;
+  String? serviceCode;
   /// STRING
-  String? settlement_status;
+  String? settlementStatus;
   /// INTEGER
-  int? source_id;
+  int? sourceId;
   /// INTEGER
-  int? tecsengine_response_code;
+  int? tecsengineResponseCode;
   /// STRING
-  String? tecsengine_response_text;
+  String? tecsengineResponseText;
   /// STRING
-  String? terminal_end_of_day_date;
+  String? terminalEndOfDayDate;
   /// INTEGER
-  int? terminal_id;
+  int? terminalId;
   /// STRING
-  String? terminal_location;
+  String? terminalLocation;
   /// INTEGER
-  int? tip_amount;
+  int? tipAmount;
   /// INTEGER
-  int? trace_number;
+  int? traceNumber;
   /// STRING
-  String? transaction_clearing_date;
+  String? transactionClearingDate;
   /// STRING
-  String? transaction_date;
+  String? transactionDate;
   /// STRING
-  String? transaction_id;
+  String? transactionId;
   /// INTEGER
-  int? transaction_seq_number;
+  int? transactionSeqNumber;
   /// STRING
-  String? transaction_server_date;
+  String? transactionServerDate;
   /// STRING
-  String? transaction_source;
+  String? transactionSource;
   /// STRING
-  String? transaction_type;
+  String? transactionType;
 
   StatusTransactionCreateData({
-    this.acquirer_name,
-    this.acquirer_terminal_id,
+    this.acquirerName,
+    this.acquirerTerminalId,
     this.amount,
-    this.application_cryptogram,
-    this.authorization_code,
-    this.authorization_date,
-    this.card_brand,
-    this.card_entry,
-    this.card_expiration,
-    this.card_number,
-    this.clearing_amount,
-    this.clearing_batch_id,
-    this.clearing_currency,
-    this.clearing_date,
-    this.clearing_processed_date,
-    this.clearing_status,
-    this.client_id,
+    this.applicationCryptogram,
+    this.authorizationCode,
+    this.authorizationDate,
+    this.cardBrand,
+    this.cardEntry,
+    this.cardExpiration,
+    this.cardNumber,
+    this.clearingAmount,
+    this.clearingBatchId,
+    this.clearingCurrency,
+    this.clearingDate,
+    this.clearingProcessedDate,
+    this.clearingStatus,
+    this.clientId,
     this.currency,
     this.cvm,
-    this.ecr_data,
-    this.emv_application_id,
-    this.emv_application_label,
-    this.merchant_name,
-    this.merchant_number,
-    this.original_client_id,
-    this.original_terminal_id,
-    this.original_transaction_id,
-    this.payment_reason,
-    this.receipt_number,
-    this.response_code,
-    this.response_code_from_a,
-    this.response_message,
-    this.retrieval_reference_number,
-    this.service_code,
-    this.settlement_status,
-    this.source_id,
-    this.tecsengine_response_code,
-    this.tecsengine_response_text,
-    this.terminal_end_of_day_date,
-    this.terminal_id,
-    this.terminal_location,
-    this.tip_amount,
-    this.trace_number,
-    this.transaction_clearing_date,
-    this.transaction_date,
-    this.transaction_id,
-    this.transaction_seq_number,
-    this.transaction_server_date,
-    this.transaction_source,
-    this.transaction_type,
+    this.ecrData,
+    this.emvApplicationId,
+    this.emvApplicationLabel,
+    this.merchantName,
+    this.merchantNumber,
+    this.originalClientId,
+    this.originalTerminalId,
+    this.originalTransactionId,
+    this.paymentReason,
+    this.receiptNumber,
+    this.responseCode,
+    this.responseCodeFromAS,
+    this.responseMessage,
+    this.retrievalReferenceNumber,
+    this.serviceCode,
+    this.settlementStatus,
+    this.sourceId,
+    this.tecsengineResponseCode,
+    this.tecsengineResponseText,
+    this.terminalEndOfDayDate,
+    this.terminalId,
+    this.terminalLocation,
+    this.tipAmount,
+    this.traceNumber,
+    this.transactionClearingDate,
+    this.transactionDate,
+    this.transactionId,
+    this.transactionSeqNumber,
+    this.transactionServerDate,
+    this.transactionSource,
+    this.transactionType,
   });
 
   factory StatusTransactionCreateData.fromMap(Map<String, dynamic> m) => StatusTransactionCreateData(
-        acquirer_name: m['acquirer_name'] is String ? m['acquirer_name'] : null,
-        acquirer_terminal_id: m['acquirer_terminal_id'] is String ? m['acquirer_terminal_id'] : null,
+        acquirerName: m['acquirerName'] is String ? m['acquirerName'] : null,
+        acquirerTerminalId: m['acquirerTerminalId'] is String ? m['acquirerTerminalId'] : null,
         amount: m['amount'] is int ? m['amount'] : null,
-        application_cryptogram: m['application_cryptogram'] is String ? m['application_cryptogram'] : null,
-        authorization_code: m['authorization_code'],
-        authorization_date: m['authorization_date'] is String ? m['authorization_date'] : null,
-        card_brand: m['card_brand'] is String ? m['card_brand'] : null,
-        card_entry: m['card_entry'] is String ? m['card_entry'] : null,
-        card_expiration: m['card_expiration'] is String ? m['card_expiration'] : null,
-        card_number: m['card_number'] is String ? m['card_number'] : null,
-        clearing_amount: m['clearing_amount'] is int ? m['clearing_amount'] : null,
-        clearing_batch_id: m['clearing_batch_id'] is String ? m['clearing_batch_id'] : null,
-        clearing_currency: m['clearing_currency'] is String ? m['clearing_currency'] : null,
-        clearing_date: m['clearing_date'] is String ? m['clearing_date'] : null,
-        clearing_processed_date: m['clearing_processed_date'] is String ? m['clearing_processed_date'] : null,
-        clearing_status: m['clearing_status'] is String ? m['clearing_status'] : null,
-        client_id: m['client_id'] is int ? m['client_id'] : null,
+        applicationCryptogram: m['applicationCryptogram'] is String ? m['applicationCryptogram'] : null,
+        authorizationCode: m['authorizationCode'],
+        authorizationDate: m['authorizationDate'] is String ? m['authorizationDate'] : null,
+        cardBrand: m['cardBrand'] is String ? m['cardBrand'] : null,
+        cardEntry: m['cardEntry'] is String ? m['cardEntry'] : null,
+        cardExpiration: m['cardExpiration'] is String ? m['cardExpiration'] : null,
+        cardNumber: m['cardNumber'] is String ? m['cardNumber'] : null,
+        clearingAmount: m['clearingAmount'] is int ? m['clearingAmount'] : null,
+        clearingBatchId: m['clearingBatchId'] is String ? m['clearingBatchId'] : null,
+        clearingCurrency: m['clearingCurrency'] is String ? m['clearingCurrency'] : null,
+        clearingDate: m['clearingDate'] is String ? m['clearingDate'] : null,
+        clearingProcessedDate: m['clearingProcessedDate'] is String ? m['clearingProcessedDate'] : null,
+        clearingStatus: m['clearingStatus'] is String ? m['clearingStatus'] : null,
+        clientId: m['clientId'] is int ? m['clientId'] : null,
         currency: m['currency'] is String ? m['currency'] : null,
         cvm: m['cvm'] is String ? m['cvm'] : null,
-        ecr_data: m['ecr_data'] is String ? m['ecr_data'] : null,
-        emv_application_id: m['emv_application_id'] is String ? m['emv_application_id'] : null,
-        emv_application_label: m['emv_application_label'] is String ? m['emv_application_label'] : null,
-        merchant_name: m['merchant_name'] is String ? m['merchant_name'] : null,
-        merchant_number: m['merchant_number'] is String ? m['merchant_number'] : null,
-        original_client_id: m['original_client_id'] is String ? m['original_client_id'] : null,
-        original_terminal_id: m['original_terminal_id'] is int ? m['original_terminal_id'] : null,
-        original_transaction_id: m['original_transaction_id'] is String ? m['original_transaction_id'] : null,
-        payment_reason: m['payment_reason'] is String ? m['payment_reason'] : null,
-        receipt_number: m['receipt_number'] is String ? m['receipt_number'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_code_from_a: m['response_code_from_a'] is String ? m['response_code_from_a'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        retrieval_reference_number: m['retrieval_reference_number'] is String ? m['retrieval_reference_number'] : null,
-        service_code: m['service_code'] is String ? m['service_code'] : null,
-        settlement_status: m['settlement_status'] is String ? m['settlement_status'] : null,
-        source_id: m['source_id'] is int ? m['source_id'] : null,
-        tecsengine_response_code: m['tecsengine_response_code'] is int ? m['tecsengine_response_code'] : null,
-        tecsengine_response_text: m['tecsengine_response_text'] is String ? m['tecsengine_response_text'] : null,
-        terminal_end_of_day_date: m['terminal_end_of_day_date'] is String ? m['terminal_end_of_day_date'] : null,
-        terminal_id: m['terminal_id'] is int ? m['terminal_id'] : null,
-        terminal_location: m['terminal_location'] is String ? m['terminal_location'] : null,
-        tip_amount: m['tip_amount'] is int ? m['tip_amount'] : null,
-        trace_number: m['trace_number'] is int ? m['trace_number'] : null,
-        transaction_clearing_date: m['transaction_clearing_date'] is String ? m['transaction_clearing_date'] : null,
-        transaction_date: m['transaction_date'] is String ? m['transaction_date'] : null,
-        transaction_id: m['transaction_id'] is String ? m['transaction_id'] : null,
-        transaction_seq_number: m['transaction_seq_number'] is int ? m['transaction_seq_number'] : null,
-        transaction_server_date: m['transaction_server_date'] is String ? m['transaction_server_date'] : null,
-        transaction_source: m['transaction_source'] is String ? m['transaction_source'] : null,
-        transaction_type: m['transaction_type'] is String ? m['transaction_type'] : null,
+        ecrData: m['ecrData'] is String ? m['ecrData'] : null,
+        emvApplicationId: m['emvApplicationId'] is String ? m['emvApplicationId'] : null,
+        emvApplicationLabel: m['emvApplicationLabel'] is String ? m['emvApplicationLabel'] : null,
+        merchantName: m['merchantName'] is String ? m['merchantName'] : null,
+        merchantNumber: m['merchantNumber'] is String ? m['merchantNumber'] : null,
+        originalClientId: m['originalClientId'] is String ? m['originalClientId'] : null,
+        originalTerminalId: m['originalTerminalId'] is int ? m['originalTerminalId'] : null,
+        originalTransactionId: m['originalTransactionId'] is String ? m['originalTransactionId'] : null,
+        paymentReason: m['paymentReason'] is String ? m['paymentReason'] : null,
+        receiptNumber: m['receiptNumber'] is String ? m['receiptNumber'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseCodeFromAS: m['responseCodeFromAS'] is String ? m['responseCodeFromAS'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        retrievalReferenceNumber: m['retrievalReferenceNumber'] is String ? m['retrievalReferenceNumber'] : null,
+        serviceCode: m['serviceCode'] is String ? m['serviceCode'] : null,
+        settlementStatus: m['settlementStatus'] is String ? m['settlementStatus'] : null,
+        sourceId: m['sourceId'] is int ? m['sourceId'] : null,
+        tecsengineResponseCode: m['tecsengineResponseCode'] is int ? m['tecsengineResponseCode'] : null,
+        tecsengineResponseText: m['tecsengineResponseText'] is String ? m['tecsengineResponseText'] : null,
+        terminalEndOfDayDate: m['terminalEndOfDayDate'] is String ? m['terminalEndOfDayDate'] : null,
+        terminalId: m['terminalId'] is int ? m['terminalId'] : null,
+        terminalLocation: m['terminalLocation'] is String ? m['terminalLocation'] : null,
+        tipAmount: m['tipAmount'] is int ? m['tipAmount'] : null,
+        traceNumber: m['traceNumber'] is int ? m['traceNumber'] : null,
+        transactionClearingDate: m['transactionClearingDate'] is String ? m['transactionClearingDate'] : null,
+        transactionDate: m['transactionDate'] is String ? m['transactionDate'] : null,
+        transactionId: m['transactionId'] is String ? m['transactionId'] : null,
+        transactionSeqNumber: m['transactionSeqNumber'] is int ? m['transactionSeqNumber'] : null,
+        transactionServerDate: m['transactionServerDate'] is String ? m['transactionServerDate'] : null,
+        transactionSource: m['transactionSource'] is String ? m['transactionSource'] : null,
+        transactionType: m['transactionType'] is String ? m['transactionType'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != acquirer_name) {
-      m['acquirer_name'] = acquirer_name;
+    if (null != acquirerName) {
+      m['acquirerName'] = acquirerName;
     }
-    if (null != acquirer_terminal_id) {
-      m['acquirer_terminal_id'] = acquirer_terminal_id;
+    if (null != acquirerTerminalId) {
+      m['acquirerTerminalId'] = acquirerTerminalId;
     }
     if (null != amount) {
       m['amount'] = amount;
     }
-    if (null != application_cryptogram) {
-      m['application_cryptogram'] = application_cryptogram;
+    if (null != applicationCryptogram) {
+      m['applicationCryptogram'] = applicationCryptogram;
     }
-    if (null != authorization_code) {
-      m['authorization_code'] = authorization_code;
+    if (null != authorizationCode) {
+      m['authorizationCode'] = authorizationCode;
     }
-    if (null != authorization_date) {
-      m['authorization_date'] = authorization_date;
+    if (null != authorizationDate) {
+      m['authorizationDate'] = authorizationDate;
     }
-    if (null != card_brand) {
-      m['card_brand'] = card_brand;
+    if (null != cardBrand) {
+      m['cardBrand'] = cardBrand;
     }
-    if (null != card_entry) {
-      m['card_entry'] = card_entry;
+    if (null != cardEntry) {
+      m['cardEntry'] = cardEntry;
     }
-    if (null != card_expiration) {
-      m['card_expiration'] = card_expiration;
+    if (null != cardExpiration) {
+      m['cardExpiration'] = cardExpiration;
     }
-    if (null != card_number) {
-      m['card_number'] = card_number;
+    if (null != cardNumber) {
+      m['cardNumber'] = cardNumber;
     }
-    if (null != clearing_amount) {
-      m['clearing_amount'] = clearing_amount;
+    if (null != clearingAmount) {
+      m['clearingAmount'] = clearingAmount;
     }
-    if (null != clearing_batch_id) {
-      m['clearing_batch_id'] = clearing_batch_id;
+    if (null != clearingBatchId) {
+      m['clearingBatchId'] = clearingBatchId;
     }
-    if (null != clearing_currency) {
-      m['clearing_currency'] = clearing_currency;
+    if (null != clearingCurrency) {
+      m['clearingCurrency'] = clearingCurrency;
     }
-    if (null != clearing_date) {
-      m['clearing_date'] = clearing_date;
+    if (null != clearingDate) {
+      m['clearingDate'] = clearingDate;
     }
-    if (null != clearing_processed_date) {
-      m['clearing_processed_date'] = clearing_processed_date;
+    if (null != clearingProcessedDate) {
+      m['clearingProcessedDate'] = clearingProcessedDate;
     }
-    if (null != clearing_status) {
-      m['clearing_status'] = clearing_status;
+    if (null != clearingStatus) {
+      m['clearingStatus'] = clearingStatus;
     }
-    if (null != client_id) {
-      m['client_id'] = client_id;
+    if (null != clientId) {
+      m['clientId'] = clientId;
     }
     if (null != currency) {
       m['currency'] = currency;
@@ -6211,98 +6225,98 @@ class StatusTransactionCreateData {
     if (null != cvm) {
       m['cvm'] = cvm;
     }
-    if (null != ecr_data) {
-      m['ecr_data'] = ecr_data;
+    if (null != ecrData) {
+      m['ecrData'] = ecrData;
     }
-    if (null != emv_application_id) {
-      m['emv_application_id'] = emv_application_id;
+    if (null != emvApplicationId) {
+      m['emvApplicationId'] = emvApplicationId;
     }
-    if (null != emv_application_label) {
-      m['emv_application_label'] = emv_application_label;
+    if (null != emvApplicationLabel) {
+      m['emvApplicationLabel'] = emvApplicationLabel;
     }
-    if (null != merchant_name) {
-      m['merchant_name'] = merchant_name;
+    if (null != merchantName) {
+      m['merchantName'] = merchantName;
     }
-    if (null != merchant_number) {
-      m['merchant_number'] = merchant_number;
+    if (null != merchantNumber) {
+      m['merchantNumber'] = merchantNumber;
     }
-    if (null != original_client_id) {
-      m['original_client_id'] = original_client_id;
+    if (null != originalClientId) {
+      m['originalClientId'] = originalClientId;
     }
-    if (null != original_terminal_id) {
-      m['original_terminal_id'] = original_terminal_id;
+    if (null != originalTerminalId) {
+      m['originalTerminalId'] = originalTerminalId;
     }
-    if (null != original_transaction_id) {
-      m['original_transaction_id'] = original_transaction_id;
+    if (null != originalTransactionId) {
+      m['originalTransactionId'] = originalTransactionId;
     }
-    if (null != payment_reason) {
-      m['payment_reason'] = payment_reason;
+    if (null != paymentReason) {
+      m['paymentReason'] = paymentReason;
     }
-    if (null != receipt_number) {
-      m['receipt_number'] = receipt_number;
+    if (null != receiptNumber) {
+      m['receiptNumber'] = receiptNumber;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_code_from_a) {
-      m['response_code_from_a'] = response_code_from_a;
+    if (null != responseCodeFromAS) {
+      m['responseCodeFromAS'] = responseCodeFromAS;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != retrieval_reference_number) {
-      m['retrieval_reference_number'] = retrieval_reference_number;
+    if (null != retrievalReferenceNumber) {
+      m['retrievalReferenceNumber'] = retrievalReferenceNumber;
     }
-    if (null != service_code) {
-      m['service_code'] = service_code;
+    if (null != serviceCode) {
+      m['serviceCode'] = serviceCode;
     }
-    if (null != settlement_status) {
-      m['settlement_status'] = settlement_status;
+    if (null != settlementStatus) {
+      m['settlementStatus'] = settlementStatus;
     }
-    if (null != source_id) {
-      m['source_id'] = source_id;
+    if (null != sourceId) {
+      m['sourceId'] = sourceId;
     }
-    if (null != tecsengine_response_code) {
-      m['tecsengine_response_code'] = tecsengine_response_code;
+    if (null != tecsengineResponseCode) {
+      m['tecsengineResponseCode'] = tecsengineResponseCode;
     }
-    if (null != tecsengine_response_text) {
-      m['tecsengine_response_text'] = tecsengine_response_text;
+    if (null != tecsengineResponseText) {
+      m['tecsengineResponseText'] = tecsengineResponseText;
     }
-    if (null != terminal_end_of_day_date) {
-      m['terminal_end_of_day_date'] = terminal_end_of_day_date;
+    if (null != terminalEndOfDayDate) {
+      m['terminalEndOfDayDate'] = terminalEndOfDayDate;
     }
-    if (null != terminal_id) {
-      m['terminal_id'] = terminal_id;
+    if (null != terminalId) {
+      m['terminalId'] = terminalId;
     }
-    if (null != terminal_location) {
-      m['terminal_location'] = terminal_location;
+    if (null != terminalLocation) {
+      m['terminalLocation'] = terminalLocation;
     }
-    if (null != tip_amount) {
-      m['tip_amount'] = tip_amount;
+    if (null != tipAmount) {
+      m['tipAmount'] = tipAmount;
     }
-    if (null != trace_number) {
-      m['trace_number'] = trace_number;
+    if (null != traceNumber) {
+      m['traceNumber'] = traceNumber;
     }
-    if (null != transaction_clearing_date) {
-      m['transaction_clearing_date'] = transaction_clearing_date;
+    if (null != transactionClearingDate) {
+      m['transactionClearingDate'] = transactionClearingDate;
     }
-    if (null != transaction_date) {
-      m['transaction_date'] = transaction_date;
+    if (null != transactionDate) {
+      m['transactionDate'] = transactionDate;
     }
-    if (null != transaction_id) {
-      m['transaction_id'] = transaction_id;
+    if (null != transactionId) {
+      m['transactionId'] = transactionId;
     }
-    if (null != transaction_seq_number) {
-      m['transaction_seq_number'] = transaction_seq_number;
+    if (null != transactionSeqNumber) {
+      m['transactionSeqNumber'] = transactionSeqNumber;
     }
-    if (null != transaction_server_date) {
-      m['transaction_server_date'] = transaction_server_date;
+    if (null != transactionServerDate) {
+      m['transactionServerDate'] = transactionServerDate;
     }
-    if (null != transaction_source) {
-      m['transaction_source'] = transaction_source;
+    if (null != transactionSource) {
+      m['transactionSource'] = transactionSource;
     }
-    if (null != transaction_type) {
-      m['transaction_type'] = transaction_type;
+    if (null != transactionType) {
+      m['transactionType'] = transactionType;
     }
     return m;
   }
@@ -6310,55 +6324,55 @@ class StatusTransactionCreateData {
 
 class StoreTerminalParameter {
   /// OBJECT
-  Map<String, dynamic>? acq_tab_nexo;
+  Map<String, dynamic>? acqTabNexo;
   /// STRING
-  String? config_version;
+  String? configVersion;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// STRING (required at the API)
-  String? serial_number;
+  String? serialNumber;
   /// STRING
-  String? tid_sent;
+  String? tidSent;
 
   StoreTerminalParameter({
-    this.acq_tab_nexo,
-    this.config_version,
-    this.response_code,
-    this.response_message,
-    this.serial_number,
-    this.tid_sent,
+    this.acqTabNexo,
+    this.configVersion,
+    this.responseCode,
+    this.responseMessage,
+    this.serialNumber,
+    this.tidSent,
   });
 
   factory StoreTerminalParameter.fromMap(Map<String, dynamic> m) => StoreTerminalParameter(
-        acq_tab_nexo: m['acq_tab_nexo'] is Map<String, dynamic> ? m['acq_tab_nexo'] : null,
-        config_version: m['config_version'] is String ? m['config_version'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        serial_number: m['serial_number'] is String ? m['serial_number'] : null,
-        tid_sent: m['tid_sent'] is String ? m['tid_sent'] : null,
+        acqTabNexo: m['acqTabNexo'] is Map<String, dynamic> ? m['acqTabNexo'] : null,
+        configVersion: m['configVersion'] is String ? m['configVersion'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        serialNumber: m['serialNumber'] is String ? m['serialNumber'] : null,
+        tidSent: m['tidSent'] is String ? m['tidSent'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != acq_tab_nexo) {
-      m['acq_tab_nexo'] = acq_tab_nexo;
+    if (null != acqTabNexo) {
+      m['acqTabNexo'] = acqTabNexo;
     }
-    if (null != config_version) {
-      m['config_version'] = config_version;
+    if (null != configVersion) {
+      m['configVersion'] = configVersion;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != serial_number) {
-      m['serial_number'] = serial_number;
+    if (null != serialNumber) {
+      m['serialNumber'] = serialNumber;
     }
-    if (null != tid_sent) {
-      m['tid_sent'] = tid_sent;
+    if (null != tidSent) {
+      m['tidSent'] = tidSent;
     }
     return m;
   }
@@ -6366,55 +6380,55 @@ class StoreTerminalParameter {
 
 class StoreTerminalParameterCreateData {
   /// OBJECT
-  Map<String, dynamic>? acq_tab_nexo;
+  Map<String, dynamic>? acqTabNexo;
   /// STRING
-  String? config_version;
+  String? configVersion;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// STRING (required at the API)
-  String? serial_number;
+  String? serialNumber;
   /// STRING
-  String? tid_sent;
+  String? tidSent;
 
   StoreTerminalParameterCreateData({
-    this.acq_tab_nexo,
-    this.config_version,
-    this.response_code,
-    this.response_message,
-    this.serial_number,
-    this.tid_sent,
+    this.acqTabNexo,
+    this.configVersion,
+    this.responseCode,
+    this.responseMessage,
+    this.serialNumber,
+    this.tidSent,
   });
 
   factory StoreTerminalParameterCreateData.fromMap(Map<String, dynamic> m) => StoreTerminalParameterCreateData(
-        acq_tab_nexo: m['acq_tab_nexo'] is Map<String, dynamic> ? m['acq_tab_nexo'] : null,
-        config_version: m['config_version'] is String ? m['config_version'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        serial_number: m['serial_number'] is String ? m['serial_number'] : null,
-        tid_sent: m['tid_sent'] is String ? m['tid_sent'] : null,
+        acqTabNexo: m['acqTabNexo'] is Map<String, dynamic> ? m['acqTabNexo'] : null,
+        configVersion: m['configVersion'] is String ? m['configVersion'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        serialNumber: m['serialNumber'] is String ? m['serialNumber'] : null,
+        tidSent: m['tidSent'] is String ? m['tidSent'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != acq_tab_nexo) {
-      m['acq_tab_nexo'] = acq_tab_nexo;
+    if (null != acqTabNexo) {
+      m['acqTabNexo'] = acqTabNexo;
     }
-    if (null != config_version) {
-      m['config_version'] = config_version;
+    if (null != configVersion) {
+      m['configVersion'] = configVersion;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != serial_number) {
-      m['serial_number'] = serial_number;
+    if (null != serialNumber) {
+      m['serialNumber'] = serialNumber;
     }
-    if (null != tid_sent) {
-      m['tid_sent'] = tid_sent;
+    if (null != tidSent) {
+      m['tidSent'] = tidSent;
     }
     return m;
   }
@@ -6422,48 +6436,48 @@ class StoreTerminalParameterCreateData {
 
 class TerminalId {
   /// ARRAY (required at the API)
-  List<dynamic>? device_serial_number;
+  List<dynamic>? deviceSerialNumber;
   /// ARRAY
-  List<dynamic>? duplicate_terminal_id;
+  List<dynamic>? duplicateTerminalIds;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// ARRAY
-  List<dynamic>? terminal;
+  List<dynamic>? terminals;
 
   TerminalId({
-    this.device_serial_number,
-    this.duplicate_terminal_id,
-    this.response_code,
-    this.response_message,
-    this.terminal,
+    this.deviceSerialNumber,
+    this.duplicateTerminalIds,
+    this.responseCode,
+    this.responseMessage,
+    this.terminals,
   });
 
   factory TerminalId.fromMap(Map<String, dynamic> m) => TerminalId(
-        device_serial_number: m['device_serial_number'] is List<dynamic> ? m['device_serial_number'] : null,
-        duplicate_terminal_id: m['duplicate_terminal_id'] is List<dynamic> ? m['duplicate_terminal_id'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        terminal: m['terminal'] is List<dynamic> ? m['terminal'] : null,
+        deviceSerialNumber: m['deviceSerialNumber'] is List<dynamic> ? m['deviceSerialNumber'] : null,
+        duplicateTerminalIds: m['duplicateTerminalIds'] is List<dynamic> ? m['duplicateTerminalIds'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        terminals: m['terminals'] is List<dynamic> ? m['terminals'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != device_serial_number) {
-      m['device_serial_number'] = device_serial_number;
+    if (null != deviceSerialNumber) {
+      m['deviceSerialNumber'] = deviceSerialNumber;
     }
-    if (null != duplicate_terminal_id) {
-      m['duplicate_terminal_id'] = duplicate_terminal_id;
+    if (null != duplicateTerminalIds) {
+      m['duplicateTerminalIds'] = duplicateTerminalIds;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != terminal) {
-      m['terminal'] = terminal;
+    if (null != terminals) {
+      m['terminals'] = terminals;
     }
     return m;
   }
@@ -6471,48 +6485,48 @@ class TerminalId {
 
 class TerminalIdCreateData {
   /// ARRAY (required at the API)
-  List<dynamic>? device_serial_number;
+  List<dynamic>? deviceSerialNumber;
   /// ARRAY
-  List<dynamic>? duplicate_terminal_id;
+  List<dynamic>? duplicateTerminalIds;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// ARRAY
-  List<dynamic>? terminal;
+  List<dynamic>? terminals;
 
   TerminalIdCreateData({
-    this.device_serial_number,
-    this.duplicate_terminal_id,
-    this.response_code,
-    this.response_message,
-    this.terminal,
+    this.deviceSerialNumber,
+    this.duplicateTerminalIds,
+    this.responseCode,
+    this.responseMessage,
+    this.terminals,
   });
 
   factory TerminalIdCreateData.fromMap(Map<String, dynamic> m) => TerminalIdCreateData(
-        device_serial_number: m['device_serial_number'] is List<dynamic> ? m['device_serial_number'] : null,
-        duplicate_terminal_id: m['duplicate_terminal_id'] is List<dynamic> ? m['duplicate_terminal_id'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        terminal: m['terminal'] is List<dynamic> ? m['terminal'] : null,
+        deviceSerialNumber: m['deviceSerialNumber'] is List<dynamic> ? m['deviceSerialNumber'] : null,
+        duplicateTerminalIds: m['duplicateTerminalIds'] is List<dynamic> ? m['duplicateTerminalIds'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        terminals: m['terminals'] is List<dynamic> ? m['terminals'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != device_serial_number) {
-      m['device_serial_number'] = device_serial_number;
+    if (null != deviceSerialNumber) {
+      m['deviceSerialNumber'] = deviceSerialNumber;
     }
-    if (null != duplicate_terminal_id) {
-      m['duplicate_terminal_id'] = duplicate_terminal_id;
+    if (null != duplicateTerminalIds) {
+      m['duplicateTerminalIds'] = duplicateTerminalIds;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != terminal) {
-      m['terminal'] = terminal;
+    if (null != terminals) {
+      m['terminals'] = terminals;
     }
     return m;
   }
@@ -6520,206 +6534,206 @@ class TerminalIdCreateData {
 
 class TransactionHistory {
   /// STRING
-  String? authorization_code;
+  String? authorizationCode;
   /// STRING
-  String? card_brand;
+  String? cardBrand;
   /// STRING
-  String? clearing_amount_from;
+  String? clearingAmountFrom;
   /// STRING
-  String? clearing_amount_to;
+  String? clearingAmountTo;
   /// STRING
-  String? clearing_currency;
+  String? clearingCurrency;
   /// STRING
-  String? clearing_status;
+  String? clearingStatus;
   /// STRING
-  String? corporate_uuid;
+  String? corporateUUID;
   /// STRING
-  String? order_by_transaction_date;
+  String? orderByTransactionDate;
   /// OBJECT
   Map<String, dynamic>? pagination;
   /// STRING
-  String? payment_token_public_id;
+  String? paymentTokenPublicId;
   /// STRING
-  String? receipt_number;
+  String? receiptNumber;
   /// STRING
-  String? referenced_transaction_id;
+  String? referencedTransactionId;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// STRING
-  String? retrieval_reference_number;
+  String? retrievalReferenceNumber;
   /// INTEGER
-  int? source_id;
+  int? sourceId;
   /// STRING
-  String? tecsengine_response_code_from;
+  String? tecsengineResponseCodeFrom;
   /// STRING
-  String? tecsengine_response_code_to;
+  String? tecsengineResponseCodeTo;
   /// INTEGER
-  int? terminal_id;
+  int? terminalId;
   /// STRING
-  String? trace_number;
+  String? traceNumber;
   /// STRING
-  String? transaction_amount_from;
+  String? transactionAmountFrom;
   /// STRING
-  String? transaction_amount_to;
+  String? transactionAmountTo;
   /// STRING
-  String? transaction_date_from;
+  String? transactionDateFrom;
   /// STRING
-  String? transaction_date_to;
+  String? transactionDateTo;
   /// ARRAY
-  List<dynamic>? transaction_history;
+  List<dynamic>? transactionHistories;
   /// STRING
-  String? transaction_id;
+  String? transactionId;
   /// STRING
-  String? transaction_type;
+  String? transactionType;
   /// STRING
   String? wallet;
 
   TransactionHistory({
-    this.authorization_code,
-    this.card_brand,
-    this.clearing_amount_from,
-    this.clearing_amount_to,
-    this.clearing_currency,
-    this.clearing_status,
-    this.corporate_uuid,
-    this.order_by_transaction_date,
+    this.authorizationCode,
+    this.cardBrand,
+    this.clearingAmountFrom,
+    this.clearingAmountTo,
+    this.clearingCurrency,
+    this.clearingStatus,
+    this.corporateUUID,
+    this.orderByTransactionDate,
     this.pagination,
-    this.payment_token_public_id,
-    this.receipt_number,
-    this.referenced_transaction_id,
-    this.response_code,
-    this.response_message,
-    this.retrieval_reference_number,
-    this.source_id,
-    this.tecsengine_response_code_from,
-    this.tecsengine_response_code_to,
-    this.terminal_id,
-    this.trace_number,
-    this.transaction_amount_from,
-    this.transaction_amount_to,
-    this.transaction_date_from,
-    this.transaction_date_to,
-    this.transaction_history,
-    this.transaction_id,
-    this.transaction_type,
+    this.paymentTokenPublicId,
+    this.receiptNumber,
+    this.referencedTransactionId,
+    this.responseCode,
+    this.responseMessage,
+    this.retrievalReferenceNumber,
+    this.sourceId,
+    this.tecsengineResponseCodeFrom,
+    this.tecsengineResponseCodeTo,
+    this.terminalId,
+    this.traceNumber,
+    this.transactionAmountFrom,
+    this.transactionAmountTo,
+    this.transactionDateFrom,
+    this.transactionDateTo,
+    this.transactionHistories,
+    this.transactionId,
+    this.transactionType,
     this.wallet,
   });
 
   factory TransactionHistory.fromMap(Map<String, dynamic> m) => TransactionHistory(
-        authorization_code: m['authorization_code'] is String ? m['authorization_code'] : null,
-        card_brand: m['card_brand'] is String ? m['card_brand'] : null,
-        clearing_amount_from: m['clearing_amount_from'] is String ? m['clearing_amount_from'] : null,
-        clearing_amount_to: m['clearing_amount_to'] is String ? m['clearing_amount_to'] : null,
-        clearing_currency: m['clearing_currency'] is String ? m['clearing_currency'] : null,
-        clearing_status: m['clearing_status'] is String ? m['clearing_status'] : null,
-        corporate_uuid: m['corporate_uuid'] is String ? m['corporate_uuid'] : null,
-        order_by_transaction_date: m['order_by_transaction_date'] is String ? m['order_by_transaction_date'] : null,
+        authorizationCode: m['authorizationCode'] is String ? m['authorizationCode'] : null,
+        cardBrand: m['cardBrand'] is String ? m['cardBrand'] : null,
+        clearingAmountFrom: m['clearingAmountFrom'] is String ? m['clearingAmountFrom'] : null,
+        clearingAmountTo: m['clearingAmountTo'] is String ? m['clearingAmountTo'] : null,
+        clearingCurrency: m['clearingCurrency'] is String ? m['clearingCurrency'] : null,
+        clearingStatus: m['clearingStatus'] is String ? m['clearingStatus'] : null,
+        corporateUUID: m['corporateUUID'] is String ? m['corporateUUID'] : null,
+        orderByTransactionDate: m['orderByTransactionDate'] is String ? m['orderByTransactionDate'] : null,
         pagination: m['pagination'] is Map<String, dynamic> ? m['pagination'] : null,
-        payment_token_public_id: m['payment_token_public_id'] is String ? m['payment_token_public_id'] : null,
-        receipt_number: m['receipt_number'] is String ? m['receipt_number'] : null,
-        referenced_transaction_id: m['referenced_transaction_id'] is String ? m['referenced_transaction_id'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        retrieval_reference_number: m['retrieval_reference_number'] is String ? m['retrieval_reference_number'] : null,
-        source_id: m['source_id'] is int ? m['source_id'] : null,
-        tecsengine_response_code_from: m['tecsengine_response_code_from'] is String ? m['tecsengine_response_code_from'] : null,
-        tecsengine_response_code_to: m['tecsengine_response_code_to'] is String ? m['tecsengine_response_code_to'] : null,
-        terminal_id: m['terminal_id'] is int ? m['terminal_id'] : null,
-        trace_number: m['trace_number'] is String ? m['trace_number'] : null,
-        transaction_amount_from: m['transaction_amount_from'] is String ? m['transaction_amount_from'] : null,
-        transaction_amount_to: m['transaction_amount_to'] is String ? m['transaction_amount_to'] : null,
-        transaction_date_from: m['transaction_date_from'] is String ? m['transaction_date_from'] : null,
-        transaction_date_to: m['transaction_date_to'] is String ? m['transaction_date_to'] : null,
-        transaction_history: m['transaction_history'] is List<dynamic> ? m['transaction_history'] : null,
-        transaction_id: m['transaction_id'] is String ? m['transaction_id'] : null,
-        transaction_type: m['transaction_type'] is String ? m['transaction_type'] : null,
+        paymentTokenPublicId: m['paymentTokenPublicId'] is String ? m['paymentTokenPublicId'] : null,
+        receiptNumber: m['receiptNumber'] is String ? m['receiptNumber'] : null,
+        referencedTransactionId: m['referencedTransactionId'] is String ? m['referencedTransactionId'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        retrievalReferenceNumber: m['retrievalReferenceNumber'] is String ? m['retrievalReferenceNumber'] : null,
+        sourceId: m['sourceId'] is int ? m['sourceId'] : null,
+        tecsengineResponseCodeFrom: m['tecsengineResponseCodeFrom'] is String ? m['tecsengineResponseCodeFrom'] : null,
+        tecsengineResponseCodeTo: m['tecsengineResponseCodeTo'] is String ? m['tecsengineResponseCodeTo'] : null,
+        terminalId: m['terminalId'] is int ? m['terminalId'] : null,
+        traceNumber: m['traceNumber'] is String ? m['traceNumber'] : null,
+        transactionAmountFrom: m['transactionAmountFrom'] is String ? m['transactionAmountFrom'] : null,
+        transactionAmountTo: m['transactionAmountTo'] is String ? m['transactionAmountTo'] : null,
+        transactionDateFrom: m['transactionDateFrom'] is String ? m['transactionDateFrom'] : null,
+        transactionDateTo: m['transactionDateTo'] is String ? m['transactionDateTo'] : null,
+        transactionHistories: m['transactionHistories'] is List<dynamic> ? m['transactionHistories'] : null,
+        transactionId: m['transactionId'] is String ? m['transactionId'] : null,
+        transactionType: m['transactionType'] is String ? m['transactionType'] : null,
         wallet: m['wallet'] is String ? m['wallet'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != authorization_code) {
-      m['authorization_code'] = authorization_code;
+    if (null != authorizationCode) {
+      m['authorizationCode'] = authorizationCode;
     }
-    if (null != card_brand) {
-      m['card_brand'] = card_brand;
+    if (null != cardBrand) {
+      m['cardBrand'] = cardBrand;
     }
-    if (null != clearing_amount_from) {
-      m['clearing_amount_from'] = clearing_amount_from;
+    if (null != clearingAmountFrom) {
+      m['clearingAmountFrom'] = clearingAmountFrom;
     }
-    if (null != clearing_amount_to) {
-      m['clearing_amount_to'] = clearing_amount_to;
+    if (null != clearingAmountTo) {
+      m['clearingAmountTo'] = clearingAmountTo;
     }
-    if (null != clearing_currency) {
-      m['clearing_currency'] = clearing_currency;
+    if (null != clearingCurrency) {
+      m['clearingCurrency'] = clearingCurrency;
     }
-    if (null != clearing_status) {
-      m['clearing_status'] = clearing_status;
+    if (null != clearingStatus) {
+      m['clearingStatus'] = clearingStatus;
     }
-    if (null != corporate_uuid) {
-      m['corporate_uuid'] = corporate_uuid;
+    if (null != corporateUUID) {
+      m['corporateUUID'] = corporateUUID;
     }
-    if (null != order_by_transaction_date) {
-      m['order_by_transaction_date'] = order_by_transaction_date;
+    if (null != orderByTransactionDate) {
+      m['orderByTransactionDate'] = orderByTransactionDate;
     }
     if (null != pagination) {
       m['pagination'] = pagination;
     }
-    if (null != payment_token_public_id) {
-      m['payment_token_public_id'] = payment_token_public_id;
+    if (null != paymentTokenPublicId) {
+      m['paymentTokenPublicId'] = paymentTokenPublicId;
     }
-    if (null != receipt_number) {
-      m['receipt_number'] = receipt_number;
+    if (null != receiptNumber) {
+      m['receiptNumber'] = receiptNumber;
     }
-    if (null != referenced_transaction_id) {
-      m['referenced_transaction_id'] = referenced_transaction_id;
+    if (null != referencedTransactionId) {
+      m['referencedTransactionId'] = referencedTransactionId;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != retrieval_reference_number) {
-      m['retrieval_reference_number'] = retrieval_reference_number;
+    if (null != retrievalReferenceNumber) {
+      m['retrievalReferenceNumber'] = retrievalReferenceNumber;
     }
-    if (null != source_id) {
-      m['source_id'] = source_id;
+    if (null != sourceId) {
+      m['sourceId'] = sourceId;
     }
-    if (null != tecsengine_response_code_from) {
-      m['tecsengine_response_code_from'] = tecsengine_response_code_from;
+    if (null != tecsengineResponseCodeFrom) {
+      m['tecsengineResponseCodeFrom'] = tecsengineResponseCodeFrom;
     }
-    if (null != tecsengine_response_code_to) {
-      m['tecsengine_response_code_to'] = tecsengine_response_code_to;
+    if (null != tecsengineResponseCodeTo) {
+      m['tecsengineResponseCodeTo'] = tecsengineResponseCodeTo;
     }
-    if (null != terminal_id) {
-      m['terminal_id'] = terminal_id;
+    if (null != terminalId) {
+      m['terminalId'] = terminalId;
     }
-    if (null != trace_number) {
-      m['trace_number'] = trace_number;
+    if (null != traceNumber) {
+      m['traceNumber'] = traceNumber;
     }
-    if (null != transaction_amount_from) {
-      m['transaction_amount_from'] = transaction_amount_from;
+    if (null != transactionAmountFrom) {
+      m['transactionAmountFrom'] = transactionAmountFrom;
     }
-    if (null != transaction_amount_to) {
-      m['transaction_amount_to'] = transaction_amount_to;
+    if (null != transactionAmountTo) {
+      m['transactionAmountTo'] = transactionAmountTo;
     }
-    if (null != transaction_date_from) {
-      m['transaction_date_from'] = transaction_date_from;
+    if (null != transactionDateFrom) {
+      m['transactionDateFrom'] = transactionDateFrom;
     }
-    if (null != transaction_date_to) {
-      m['transaction_date_to'] = transaction_date_to;
+    if (null != transactionDateTo) {
+      m['transactionDateTo'] = transactionDateTo;
     }
-    if (null != transaction_history) {
-      m['transaction_history'] = transaction_history;
+    if (null != transactionHistories) {
+      m['transactionHistories'] = transactionHistories;
     }
-    if (null != transaction_id) {
-      m['transaction_id'] = transaction_id;
+    if (null != transactionId) {
+      m['transactionId'] = transactionId;
     }
-    if (null != transaction_type) {
-      m['transaction_type'] = transaction_type;
+    if (null != transactionType) {
+      m['transactionType'] = transactionType;
     }
     if (null != wallet) {
       m['wallet'] = wallet;
@@ -6730,206 +6744,206 @@ class TransactionHistory {
 
 class TransactionHistoryCreateData {
   /// STRING
-  String? authorization_code;
+  String? authorizationCode;
   /// STRING
-  String? card_brand;
+  String? cardBrand;
   /// STRING
-  String? clearing_amount_from;
+  String? clearingAmountFrom;
   /// STRING
-  String? clearing_amount_to;
+  String? clearingAmountTo;
   /// STRING
-  String? clearing_currency;
+  String? clearingCurrency;
   /// STRING
-  String? clearing_status;
+  String? clearingStatus;
   /// STRING
-  String? corporate_uuid;
+  String? corporateUUID;
   /// STRING
-  String? order_by_transaction_date;
+  String? orderByTransactionDate;
   /// OBJECT
   Map<String, dynamic>? pagination;
   /// STRING
-  String? payment_token_public_id;
+  String? paymentTokenPublicId;
   /// STRING
-  String? receipt_number;
+  String? receiptNumber;
   /// STRING
-  String? referenced_transaction_id;
+  String? referencedTransactionId;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// STRING
-  String? retrieval_reference_number;
+  String? retrievalReferenceNumber;
   /// INTEGER
-  int? source_id;
+  int? sourceId;
   /// STRING
-  String? tecsengine_response_code_from;
+  String? tecsengineResponseCodeFrom;
   /// STRING
-  String? tecsengine_response_code_to;
+  String? tecsengineResponseCodeTo;
   /// INTEGER
-  int? terminal_id;
+  int? terminalId;
   /// STRING
-  String? trace_number;
+  String? traceNumber;
   /// STRING
-  String? transaction_amount_from;
+  String? transactionAmountFrom;
   /// STRING
-  String? transaction_amount_to;
+  String? transactionAmountTo;
   /// STRING
-  String? transaction_date_from;
+  String? transactionDateFrom;
   /// STRING
-  String? transaction_date_to;
+  String? transactionDateTo;
   /// ARRAY
-  List<dynamic>? transaction_history;
+  List<dynamic>? transactionHistories;
   /// STRING
-  String? transaction_id;
+  String? transactionId;
   /// STRING
-  String? transaction_type;
+  String? transactionType;
   /// STRING
   String? wallet;
 
   TransactionHistoryCreateData({
-    this.authorization_code,
-    this.card_brand,
-    this.clearing_amount_from,
-    this.clearing_amount_to,
-    this.clearing_currency,
-    this.clearing_status,
-    this.corporate_uuid,
-    this.order_by_transaction_date,
+    this.authorizationCode,
+    this.cardBrand,
+    this.clearingAmountFrom,
+    this.clearingAmountTo,
+    this.clearingCurrency,
+    this.clearingStatus,
+    this.corporateUUID,
+    this.orderByTransactionDate,
     this.pagination,
-    this.payment_token_public_id,
-    this.receipt_number,
-    this.referenced_transaction_id,
-    this.response_code,
-    this.response_message,
-    this.retrieval_reference_number,
-    this.source_id,
-    this.tecsengine_response_code_from,
-    this.tecsengine_response_code_to,
-    this.terminal_id,
-    this.trace_number,
-    this.transaction_amount_from,
-    this.transaction_amount_to,
-    this.transaction_date_from,
-    this.transaction_date_to,
-    this.transaction_history,
-    this.transaction_id,
-    this.transaction_type,
+    this.paymentTokenPublicId,
+    this.receiptNumber,
+    this.referencedTransactionId,
+    this.responseCode,
+    this.responseMessage,
+    this.retrievalReferenceNumber,
+    this.sourceId,
+    this.tecsengineResponseCodeFrom,
+    this.tecsengineResponseCodeTo,
+    this.terminalId,
+    this.traceNumber,
+    this.transactionAmountFrom,
+    this.transactionAmountTo,
+    this.transactionDateFrom,
+    this.transactionDateTo,
+    this.transactionHistories,
+    this.transactionId,
+    this.transactionType,
     this.wallet,
   });
 
   factory TransactionHistoryCreateData.fromMap(Map<String, dynamic> m) => TransactionHistoryCreateData(
-        authorization_code: m['authorization_code'] is String ? m['authorization_code'] : null,
-        card_brand: m['card_brand'] is String ? m['card_brand'] : null,
-        clearing_amount_from: m['clearing_amount_from'] is String ? m['clearing_amount_from'] : null,
-        clearing_amount_to: m['clearing_amount_to'] is String ? m['clearing_amount_to'] : null,
-        clearing_currency: m['clearing_currency'] is String ? m['clearing_currency'] : null,
-        clearing_status: m['clearing_status'] is String ? m['clearing_status'] : null,
-        corporate_uuid: m['corporate_uuid'] is String ? m['corporate_uuid'] : null,
-        order_by_transaction_date: m['order_by_transaction_date'] is String ? m['order_by_transaction_date'] : null,
+        authorizationCode: m['authorizationCode'] is String ? m['authorizationCode'] : null,
+        cardBrand: m['cardBrand'] is String ? m['cardBrand'] : null,
+        clearingAmountFrom: m['clearingAmountFrom'] is String ? m['clearingAmountFrom'] : null,
+        clearingAmountTo: m['clearingAmountTo'] is String ? m['clearingAmountTo'] : null,
+        clearingCurrency: m['clearingCurrency'] is String ? m['clearingCurrency'] : null,
+        clearingStatus: m['clearingStatus'] is String ? m['clearingStatus'] : null,
+        corporateUUID: m['corporateUUID'] is String ? m['corporateUUID'] : null,
+        orderByTransactionDate: m['orderByTransactionDate'] is String ? m['orderByTransactionDate'] : null,
         pagination: m['pagination'] is Map<String, dynamic> ? m['pagination'] : null,
-        payment_token_public_id: m['payment_token_public_id'] is String ? m['payment_token_public_id'] : null,
-        receipt_number: m['receipt_number'] is String ? m['receipt_number'] : null,
-        referenced_transaction_id: m['referenced_transaction_id'] is String ? m['referenced_transaction_id'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        retrieval_reference_number: m['retrieval_reference_number'] is String ? m['retrieval_reference_number'] : null,
-        source_id: m['source_id'] is int ? m['source_id'] : null,
-        tecsengine_response_code_from: m['tecsengine_response_code_from'] is String ? m['tecsengine_response_code_from'] : null,
-        tecsengine_response_code_to: m['tecsengine_response_code_to'] is String ? m['tecsengine_response_code_to'] : null,
-        terminal_id: m['terminal_id'] is int ? m['terminal_id'] : null,
-        trace_number: m['trace_number'] is String ? m['trace_number'] : null,
-        transaction_amount_from: m['transaction_amount_from'] is String ? m['transaction_amount_from'] : null,
-        transaction_amount_to: m['transaction_amount_to'] is String ? m['transaction_amount_to'] : null,
-        transaction_date_from: m['transaction_date_from'] is String ? m['transaction_date_from'] : null,
-        transaction_date_to: m['transaction_date_to'] is String ? m['transaction_date_to'] : null,
-        transaction_history: m['transaction_history'] is List<dynamic> ? m['transaction_history'] : null,
-        transaction_id: m['transaction_id'] is String ? m['transaction_id'] : null,
-        transaction_type: m['transaction_type'] is String ? m['transaction_type'] : null,
+        paymentTokenPublicId: m['paymentTokenPublicId'] is String ? m['paymentTokenPublicId'] : null,
+        receiptNumber: m['receiptNumber'] is String ? m['receiptNumber'] : null,
+        referencedTransactionId: m['referencedTransactionId'] is String ? m['referencedTransactionId'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        retrievalReferenceNumber: m['retrievalReferenceNumber'] is String ? m['retrievalReferenceNumber'] : null,
+        sourceId: m['sourceId'] is int ? m['sourceId'] : null,
+        tecsengineResponseCodeFrom: m['tecsengineResponseCodeFrom'] is String ? m['tecsengineResponseCodeFrom'] : null,
+        tecsengineResponseCodeTo: m['tecsengineResponseCodeTo'] is String ? m['tecsengineResponseCodeTo'] : null,
+        terminalId: m['terminalId'] is int ? m['terminalId'] : null,
+        traceNumber: m['traceNumber'] is String ? m['traceNumber'] : null,
+        transactionAmountFrom: m['transactionAmountFrom'] is String ? m['transactionAmountFrom'] : null,
+        transactionAmountTo: m['transactionAmountTo'] is String ? m['transactionAmountTo'] : null,
+        transactionDateFrom: m['transactionDateFrom'] is String ? m['transactionDateFrom'] : null,
+        transactionDateTo: m['transactionDateTo'] is String ? m['transactionDateTo'] : null,
+        transactionHistories: m['transactionHistories'] is List<dynamic> ? m['transactionHistories'] : null,
+        transactionId: m['transactionId'] is String ? m['transactionId'] : null,
+        transactionType: m['transactionType'] is String ? m['transactionType'] : null,
         wallet: m['wallet'] is String ? m['wallet'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != authorization_code) {
-      m['authorization_code'] = authorization_code;
+    if (null != authorizationCode) {
+      m['authorizationCode'] = authorizationCode;
     }
-    if (null != card_brand) {
-      m['card_brand'] = card_brand;
+    if (null != cardBrand) {
+      m['cardBrand'] = cardBrand;
     }
-    if (null != clearing_amount_from) {
-      m['clearing_amount_from'] = clearing_amount_from;
+    if (null != clearingAmountFrom) {
+      m['clearingAmountFrom'] = clearingAmountFrom;
     }
-    if (null != clearing_amount_to) {
-      m['clearing_amount_to'] = clearing_amount_to;
+    if (null != clearingAmountTo) {
+      m['clearingAmountTo'] = clearingAmountTo;
     }
-    if (null != clearing_currency) {
-      m['clearing_currency'] = clearing_currency;
+    if (null != clearingCurrency) {
+      m['clearingCurrency'] = clearingCurrency;
     }
-    if (null != clearing_status) {
-      m['clearing_status'] = clearing_status;
+    if (null != clearingStatus) {
+      m['clearingStatus'] = clearingStatus;
     }
-    if (null != corporate_uuid) {
-      m['corporate_uuid'] = corporate_uuid;
+    if (null != corporateUUID) {
+      m['corporateUUID'] = corporateUUID;
     }
-    if (null != order_by_transaction_date) {
-      m['order_by_transaction_date'] = order_by_transaction_date;
+    if (null != orderByTransactionDate) {
+      m['orderByTransactionDate'] = orderByTransactionDate;
     }
     if (null != pagination) {
       m['pagination'] = pagination;
     }
-    if (null != payment_token_public_id) {
-      m['payment_token_public_id'] = payment_token_public_id;
+    if (null != paymentTokenPublicId) {
+      m['paymentTokenPublicId'] = paymentTokenPublicId;
     }
-    if (null != receipt_number) {
-      m['receipt_number'] = receipt_number;
+    if (null != receiptNumber) {
+      m['receiptNumber'] = receiptNumber;
     }
-    if (null != referenced_transaction_id) {
-      m['referenced_transaction_id'] = referenced_transaction_id;
+    if (null != referencedTransactionId) {
+      m['referencedTransactionId'] = referencedTransactionId;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != retrieval_reference_number) {
-      m['retrieval_reference_number'] = retrieval_reference_number;
+    if (null != retrievalReferenceNumber) {
+      m['retrievalReferenceNumber'] = retrievalReferenceNumber;
     }
-    if (null != source_id) {
-      m['source_id'] = source_id;
+    if (null != sourceId) {
+      m['sourceId'] = sourceId;
     }
-    if (null != tecsengine_response_code_from) {
-      m['tecsengine_response_code_from'] = tecsengine_response_code_from;
+    if (null != tecsengineResponseCodeFrom) {
+      m['tecsengineResponseCodeFrom'] = tecsengineResponseCodeFrom;
     }
-    if (null != tecsengine_response_code_to) {
-      m['tecsengine_response_code_to'] = tecsengine_response_code_to;
+    if (null != tecsengineResponseCodeTo) {
+      m['tecsengineResponseCodeTo'] = tecsengineResponseCodeTo;
     }
-    if (null != terminal_id) {
-      m['terminal_id'] = terminal_id;
+    if (null != terminalId) {
+      m['terminalId'] = terminalId;
     }
-    if (null != trace_number) {
-      m['trace_number'] = trace_number;
+    if (null != traceNumber) {
+      m['traceNumber'] = traceNumber;
     }
-    if (null != transaction_amount_from) {
-      m['transaction_amount_from'] = transaction_amount_from;
+    if (null != transactionAmountFrom) {
+      m['transactionAmountFrom'] = transactionAmountFrom;
     }
-    if (null != transaction_amount_to) {
-      m['transaction_amount_to'] = transaction_amount_to;
+    if (null != transactionAmountTo) {
+      m['transactionAmountTo'] = transactionAmountTo;
     }
-    if (null != transaction_date_from) {
-      m['transaction_date_from'] = transaction_date_from;
+    if (null != transactionDateFrom) {
+      m['transactionDateFrom'] = transactionDateFrom;
     }
-    if (null != transaction_date_to) {
-      m['transaction_date_to'] = transaction_date_to;
+    if (null != transactionDateTo) {
+      m['transactionDateTo'] = transactionDateTo;
     }
-    if (null != transaction_history) {
-      m['transaction_history'] = transaction_history;
+    if (null != transactionHistories) {
+      m['transactionHistories'] = transactionHistories;
     }
-    if (null != transaction_id) {
-      m['transaction_id'] = transaction_id;
+    if (null != transactionId) {
+      m['transactionId'] = transactionId;
     }
-    if (null != transaction_type) {
-      m['transaction_type'] = transaction_type;
+    if (null != transactionType) {
+      m['transactionType'] = transactionType;
     }
     if (null != wallet) {
       m['wallet'] = wallet;
@@ -6942,32 +6956,32 @@ class TransactionsCount {
   /// STRING
   String? period;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// STRING
-  String? transaction_date_from;
+  String? transactionDateFrom;
   /// STRING
-  String? transaction_date_to;
+  String? transactionDateTo;
   /// ARRAY
-  List<dynamic>? transactions_count;
+  List<dynamic>? transactionsCount;
 
   TransactionsCount({
     this.period,
-    this.response_code,
-    this.response_message,
-    this.transaction_date_from,
-    this.transaction_date_to,
-    this.transactions_count,
+    this.responseCode,
+    this.responseMessage,
+    this.transactionDateFrom,
+    this.transactionDateTo,
+    this.transactionsCount,
   });
 
   factory TransactionsCount.fromMap(Map<String, dynamic> m) => TransactionsCount(
         period: m['period'] is String ? m['period'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        transaction_date_from: m['transaction_date_from'] is String ? m['transaction_date_from'] : null,
-        transaction_date_to: m['transaction_date_to'] is String ? m['transaction_date_to'] : null,
-        transactions_count: m['transactions_count'] is List<dynamic> ? m['transactions_count'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        transactionDateFrom: m['transactionDateFrom'] is String ? m['transactionDateFrom'] : null,
+        transactionDateTo: m['transactionDateTo'] is String ? m['transactionDateTo'] : null,
+        transactionsCount: m['transactionsCount'] is List<dynamic> ? m['transactionsCount'] : null,
       );
 
   Map<String, dynamic> toMap() {
@@ -6975,20 +6989,20 @@ class TransactionsCount {
     if (null != period) {
       m['period'] = period;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != transaction_date_from) {
-      m['transaction_date_from'] = transaction_date_from;
+    if (null != transactionDateFrom) {
+      m['transactionDateFrom'] = transactionDateFrom;
     }
-    if (null != transaction_date_to) {
-      m['transaction_date_to'] = transaction_date_to;
+    if (null != transactionDateTo) {
+      m['transactionDateTo'] = transactionDateTo;
     }
-    if (null != transactions_count) {
-      m['transactions_count'] = transactions_count;
+    if (null != transactionsCount) {
+      m['transactionsCount'] = transactionsCount;
     }
     return m;
   }
@@ -6998,32 +7012,32 @@ class TransactionsCountCreateData {
   /// STRING
   String? period;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// STRING
-  String? transaction_date_from;
+  String? transactionDateFrom;
   /// STRING
-  String? transaction_date_to;
+  String? transactionDateTo;
   /// ARRAY
-  List<dynamic>? transactions_count;
+  List<dynamic>? transactionsCount;
 
   TransactionsCountCreateData({
     this.period,
-    this.response_code,
-    this.response_message,
-    this.transaction_date_from,
-    this.transaction_date_to,
-    this.transactions_count,
+    this.responseCode,
+    this.responseMessage,
+    this.transactionDateFrom,
+    this.transactionDateTo,
+    this.transactionsCount,
   });
 
   factory TransactionsCountCreateData.fromMap(Map<String, dynamic> m) => TransactionsCountCreateData(
         period: m['period'] is String ? m['period'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        transaction_date_from: m['transaction_date_from'] is String ? m['transaction_date_from'] : null,
-        transaction_date_to: m['transaction_date_to'] is String ? m['transaction_date_to'] : null,
-        transactions_count: m['transactions_count'] is List<dynamic> ? m['transactions_count'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        transactionDateFrom: m['transactionDateFrom'] is String ? m['transactionDateFrom'] : null,
+        transactionDateTo: m['transactionDateTo'] is String ? m['transactionDateTo'] : null,
+        transactionsCount: m['transactionsCount'] is List<dynamic> ? m['transactionsCount'] : null,
       );
 
   Map<String, dynamic> toMap() {
@@ -7031,20 +7045,20 @@ class TransactionsCountCreateData {
     if (null != period) {
       m['period'] = period;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != transaction_date_from) {
-      m['transaction_date_from'] = transaction_date_from;
+    if (null != transactionDateFrom) {
+      m['transactionDateFrom'] = transactionDateFrom;
     }
-    if (null != transaction_date_to) {
-      m['transaction_date_to'] = transaction_date_to;
+    if (null != transactionDateTo) {
+      m['transactionDateTo'] = transactionDateTo;
     }
-    if (null != transactions_count) {
-      m['transactions_count'] = transactions_count;
+    if (null != transactionsCount) {
+      m['transactionsCount'] = transactionsCount;
     }
     return m;
   }
@@ -7054,32 +7068,32 @@ class TransactionsCountCardBrand {
   /// STRING
   String? period;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// STRING
-  String? transaction_date_from;
+  String? transactionDateFrom;
   /// STRING
-  String? transaction_date_to;
+  String? transactionDateTo;
   /// ARRAY
-  List<dynamic>? transactions_count;
+  List<dynamic>? transactionsCount;
 
   TransactionsCountCardBrand({
     this.period,
-    this.response_code,
-    this.response_message,
-    this.transaction_date_from,
-    this.transaction_date_to,
-    this.transactions_count,
+    this.responseCode,
+    this.responseMessage,
+    this.transactionDateFrom,
+    this.transactionDateTo,
+    this.transactionsCount,
   });
 
   factory TransactionsCountCardBrand.fromMap(Map<String, dynamic> m) => TransactionsCountCardBrand(
         period: m['period'] is String ? m['period'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        transaction_date_from: m['transaction_date_from'] is String ? m['transaction_date_from'] : null,
-        transaction_date_to: m['transaction_date_to'] is String ? m['transaction_date_to'] : null,
-        transactions_count: m['transactions_count'] is List<dynamic> ? m['transactions_count'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        transactionDateFrom: m['transactionDateFrom'] is String ? m['transactionDateFrom'] : null,
+        transactionDateTo: m['transactionDateTo'] is String ? m['transactionDateTo'] : null,
+        transactionsCount: m['transactionsCount'] is List<dynamic> ? m['transactionsCount'] : null,
       );
 
   Map<String, dynamic> toMap() {
@@ -7087,20 +7101,20 @@ class TransactionsCountCardBrand {
     if (null != period) {
       m['period'] = period;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != transaction_date_from) {
-      m['transaction_date_from'] = transaction_date_from;
+    if (null != transactionDateFrom) {
+      m['transactionDateFrom'] = transactionDateFrom;
     }
-    if (null != transaction_date_to) {
-      m['transaction_date_to'] = transaction_date_to;
+    if (null != transactionDateTo) {
+      m['transactionDateTo'] = transactionDateTo;
     }
-    if (null != transactions_count) {
-      m['transactions_count'] = transactions_count;
+    if (null != transactionsCount) {
+      m['transactionsCount'] = transactionsCount;
     }
     return m;
   }
@@ -7110,32 +7124,32 @@ class TransactionsCountCardBrandCreateData {
   /// STRING
   String? period;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// STRING
-  String? transaction_date_from;
+  String? transactionDateFrom;
   /// STRING
-  String? transaction_date_to;
+  String? transactionDateTo;
   /// ARRAY
-  List<dynamic>? transactions_count;
+  List<dynamic>? transactionsCount;
 
   TransactionsCountCardBrandCreateData({
     this.period,
-    this.response_code,
-    this.response_message,
-    this.transaction_date_from,
-    this.transaction_date_to,
-    this.transactions_count,
+    this.responseCode,
+    this.responseMessage,
+    this.transactionDateFrom,
+    this.transactionDateTo,
+    this.transactionsCount,
   });
 
   factory TransactionsCountCardBrandCreateData.fromMap(Map<String, dynamic> m) => TransactionsCountCardBrandCreateData(
         period: m['period'] is String ? m['period'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        transaction_date_from: m['transaction_date_from'] is String ? m['transaction_date_from'] : null,
-        transaction_date_to: m['transaction_date_to'] is String ? m['transaction_date_to'] : null,
-        transactions_count: m['transactions_count'] is List<dynamic> ? m['transactions_count'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        transactionDateFrom: m['transactionDateFrom'] is String ? m['transactionDateFrom'] : null,
+        transactionDateTo: m['transactionDateTo'] is String ? m['transactionDateTo'] : null,
+        transactionsCount: m['transactionsCount'] is List<dynamic> ? m['transactionsCount'] : null,
       );
 
   Map<String, dynamic> toMap() {
@@ -7143,20 +7157,20 @@ class TransactionsCountCardBrandCreateData {
     if (null != period) {
       m['period'] = period;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != transaction_date_from) {
-      m['transaction_date_from'] = transaction_date_from;
+    if (null != transactionDateFrom) {
+      m['transactionDateFrom'] = transactionDateFrom;
     }
-    if (null != transaction_date_to) {
-      m['transaction_date_to'] = transaction_date_to;
+    if (null != transactionDateTo) {
+      m['transactionDateTo'] = transactionDateTo;
     }
-    if (null != transactions_count) {
-      m['transactions_count'] = transactions_count;
+    if (null != transactionsCount) {
+      m['transactionsCount'] = transactionsCount;
     }
     return m;
   }
@@ -7166,32 +7180,32 @@ class TransactionsTurnover {
   /// STRING
   String? period;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// STRING
-  String? transaction_date_from;
+  String? transactionDateFrom;
   /// STRING
-  String? transaction_date_to;
+  String? transactionDateTo;
   /// ARRAY
-  List<dynamic>? turnover;
+  List<dynamic>? turnovers;
 
   TransactionsTurnover({
     this.period,
-    this.response_code,
-    this.response_message,
-    this.transaction_date_from,
-    this.transaction_date_to,
-    this.turnover,
+    this.responseCode,
+    this.responseMessage,
+    this.transactionDateFrom,
+    this.transactionDateTo,
+    this.turnovers,
   });
 
   factory TransactionsTurnover.fromMap(Map<String, dynamic> m) => TransactionsTurnover(
         period: m['period'] is String ? m['period'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        transaction_date_from: m['transaction_date_from'] is String ? m['transaction_date_from'] : null,
-        transaction_date_to: m['transaction_date_to'] is String ? m['transaction_date_to'] : null,
-        turnover: m['turnover'] is List<dynamic> ? m['turnover'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        transactionDateFrom: m['transactionDateFrom'] is String ? m['transactionDateFrom'] : null,
+        transactionDateTo: m['transactionDateTo'] is String ? m['transactionDateTo'] : null,
+        turnovers: m['turnovers'] is List<dynamic> ? m['turnovers'] : null,
       );
 
   Map<String, dynamic> toMap() {
@@ -7199,20 +7213,20 @@ class TransactionsTurnover {
     if (null != period) {
       m['period'] = period;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != transaction_date_from) {
-      m['transaction_date_from'] = transaction_date_from;
+    if (null != transactionDateFrom) {
+      m['transactionDateFrom'] = transactionDateFrom;
     }
-    if (null != transaction_date_to) {
-      m['transaction_date_to'] = transaction_date_to;
+    if (null != transactionDateTo) {
+      m['transactionDateTo'] = transactionDateTo;
     }
-    if (null != turnover) {
-      m['turnover'] = turnover;
+    if (null != turnovers) {
+      m['turnovers'] = turnovers;
     }
     return m;
   }
@@ -7222,32 +7236,32 @@ class TransactionsTurnoverCreateData {
   /// STRING
   String? period;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// STRING
-  String? transaction_date_from;
+  String? transactionDateFrom;
   /// STRING
-  String? transaction_date_to;
+  String? transactionDateTo;
   /// ARRAY
-  List<dynamic>? turnover;
+  List<dynamic>? turnovers;
 
   TransactionsTurnoverCreateData({
     this.period,
-    this.response_code,
-    this.response_message,
-    this.transaction_date_from,
-    this.transaction_date_to,
-    this.turnover,
+    this.responseCode,
+    this.responseMessage,
+    this.transactionDateFrom,
+    this.transactionDateTo,
+    this.turnovers,
   });
 
   factory TransactionsTurnoverCreateData.fromMap(Map<String, dynamic> m) => TransactionsTurnoverCreateData(
         period: m['period'] is String ? m['period'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        transaction_date_from: m['transaction_date_from'] is String ? m['transaction_date_from'] : null,
-        transaction_date_to: m['transaction_date_to'] is String ? m['transaction_date_to'] : null,
-        turnover: m['turnover'] is List<dynamic> ? m['turnover'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        transactionDateFrom: m['transactionDateFrom'] is String ? m['transactionDateFrom'] : null,
+        transactionDateTo: m['transactionDateTo'] is String ? m['transactionDateTo'] : null,
+        turnovers: m['turnovers'] is List<dynamic> ? m['turnovers'] : null,
       );
 
   Map<String, dynamic> toMap() {
@@ -7255,20 +7269,20 @@ class TransactionsTurnoverCreateData {
     if (null != period) {
       m['period'] = period;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != transaction_date_from) {
-      m['transaction_date_from'] = transaction_date_from;
+    if (null != transactionDateFrom) {
+      m['transactionDateFrom'] = transactionDateFrom;
     }
-    if (null != transaction_date_to) {
-      m['transaction_date_to'] = transaction_date_to;
+    if (null != transactionDateTo) {
+      m['transactionDateTo'] = transactionDateTo;
     }
-    if (null != turnover) {
-      m['turnover'] = turnover;
+    if (null != turnovers) {
+      m['turnovers'] = turnovers;
     }
     return m;
   }
@@ -7278,51 +7292,51 @@ class UpdateMerchant {
   /// STRING
   String? city;
   /// STRING (required at the API)
-  String? corporate_uuid;
+  String? corporateUuid;
   /// STRING
   String? country;
   /// STRING
-  String? merchant_category_code;
+  String? merchantCategoryCode;
   /// STRING
   String? name;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// STRING
   String? state;
   /// STRING
   String? street;
   /// STRING
-  String? vu_nummer;
+  String? vuNummer;
   /// STRING
   String? zipcode;
 
   UpdateMerchant({
     this.city,
-    this.corporate_uuid,
+    this.corporateUuid,
     this.country,
-    this.merchant_category_code,
+    this.merchantCategoryCode,
     this.name,
-    this.response_code,
-    this.response_message,
+    this.responseCode,
+    this.responseMessage,
     this.state,
     this.street,
-    this.vu_nummer,
+    this.vuNummer,
     this.zipcode,
   });
 
   factory UpdateMerchant.fromMap(Map<String, dynamic> m) => UpdateMerchant(
         city: m['city'] is String ? m['city'] : null,
-        corporate_uuid: m['corporate_uuid'] is String ? m['corporate_uuid'] : null,
+        corporateUuid: m['corporateUuid'] is String ? m['corporateUuid'] : null,
         country: m['country'] is String ? m['country'] : null,
-        merchant_category_code: m['merchant_category_code'] is String ? m['merchant_category_code'] : null,
+        merchantCategoryCode: m['merchantCategoryCode'] is String ? m['merchantCategoryCode'] : null,
         name: m['name'] is String ? m['name'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
         state: m['state'] is String ? m['state'] : null,
         street: m['street'] is String ? m['street'] : null,
-        vu_nummer: m['vu_nummer'] is String ? m['vu_nummer'] : null,
+        vuNummer: m['vuNummer'] is String ? m['vuNummer'] : null,
         zipcode: m['zipcode'] is String ? m['zipcode'] : null,
       );
 
@@ -7331,23 +7345,23 @@ class UpdateMerchant {
     if (null != city) {
       m['city'] = city;
     }
-    if (null != corporate_uuid) {
-      m['corporate_uuid'] = corporate_uuid;
+    if (null != corporateUuid) {
+      m['corporateUuid'] = corporateUuid;
     }
     if (null != country) {
       m['country'] = country;
     }
-    if (null != merchant_category_code) {
-      m['merchant_category_code'] = merchant_category_code;
+    if (null != merchantCategoryCode) {
+      m['merchantCategoryCode'] = merchantCategoryCode;
     }
     if (null != name) {
       m['name'] = name;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     if (null != state) {
       m['state'] = state;
@@ -7355,8 +7369,8 @@ class UpdateMerchant {
     if (null != street) {
       m['street'] = street;
     }
-    if (null != vu_nummer) {
-      m['vu_nummer'] = vu_nummer;
+    if (null != vuNummer) {
+      m['vuNummer'] = vuNummer;
     }
     if (null != zipcode) {
       m['zipcode'] = zipcode;
@@ -7369,51 +7383,51 @@ class UpdateMerchantCreateData {
   /// STRING
   String? city;
   /// STRING (required at the API)
-  String? corporate_uuid;
+  String? corporateUuid;
   /// STRING
   String? country;
   /// STRING
-  String? merchant_category_code;
+  String? merchantCategoryCode;
   /// STRING
   String? name;
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// STRING
   String? state;
   /// STRING
   String? street;
   /// STRING
-  String? vu_nummer;
+  String? vuNummer;
   /// STRING
   String? zipcode;
 
   UpdateMerchantCreateData({
     this.city,
-    this.corporate_uuid,
+    this.corporateUuid,
     this.country,
-    this.merchant_category_code,
+    this.merchantCategoryCode,
     this.name,
-    this.response_code,
-    this.response_message,
+    this.responseCode,
+    this.responseMessage,
     this.state,
     this.street,
-    this.vu_nummer,
+    this.vuNummer,
     this.zipcode,
   });
 
   factory UpdateMerchantCreateData.fromMap(Map<String, dynamic> m) => UpdateMerchantCreateData(
         city: m['city'] is String ? m['city'] : null,
-        corporate_uuid: m['corporate_uuid'] is String ? m['corporate_uuid'] : null,
+        corporateUuid: m['corporateUuid'] is String ? m['corporateUuid'] : null,
         country: m['country'] is String ? m['country'] : null,
-        merchant_category_code: m['merchant_category_code'] is String ? m['merchant_category_code'] : null,
+        merchantCategoryCode: m['merchantCategoryCode'] is String ? m['merchantCategoryCode'] : null,
         name: m['name'] is String ? m['name'] : null,
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
         state: m['state'] is String ? m['state'] : null,
         street: m['street'] is String ? m['street'] : null,
-        vu_nummer: m['vu_nummer'] is String ? m['vu_nummer'] : null,
+        vuNummer: m['vuNummer'] is String ? m['vuNummer'] : null,
         zipcode: m['zipcode'] is String ? m['zipcode'] : null,
       );
 
@@ -7422,23 +7436,23 @@ class UpdateMerchantCreateData {
     if (null != city) {
       m['city'] = city;
     }
-    if (null != corporate_uuid) {
-      m['corporate_uuid'] = corporate_uuid;
+    if (null != corporateUuid) {
+      m['corporateUuid'] = corporateUuid;
     }
     if (null != country) {
       m['country'] = country;
     }
-    if (null != merchant_category_code) {
-      m['merchant_category_code'] = merchant_category_code;
+    if (null != merchantCategoryCode) {
+      m['merchantCategoryCode'] = merchantCategoryCode;
     }
     if (null != name) {
       m['name'] = name;
     }
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
     if (null != state) {
       m['state'] = state;
@@ -7446,8 +7460,8 @@ class UpdateMerchantCreateData {
     if (null != street) {
       m['street'] = street;
     }
-    if (null != vu_nummer) {
-      m['vu_nummer'] = vu_nummer;
+    if (null != vuNummer) {
+      m['vuNummer'] = vuNummer;
     }
     if (null != zipcode) {
       m['zipcode'] = zipcode;
@@ -7458,41 +7472,41 @@ class UpdateMerchantCreateData {
 
 class UpdateTemplateXml {
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// STRING (required at the API)
-  String? template_name;
+  String? templateName;
   /// STRING (required at the API)
-  String? template_xml;
+  String? templateXml;
 
   UpdateTemplateXml({
-    this.response_code,
-    this.response_message,
-    this.template_name,
-    this.template_xml,
+    this.responseCode,
+    this.responseMessage,
+    this.templateName,
+    this.templateXml,
   });
 
   factory UpdateTemplateXml.fromMap(Map<String, dynamic> m) => UpdateTemplateXml(
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        template_name: m['template_name'] is String ? m['template_name'] : null,
-        template_xml: m['template_xml'] is String ? m['template_xml'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        templateName: m['templateName'] is String ? m['templateName'] : null,
+        templateXml: m['templateXml'] is String ? m['templateXml'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != template_name) {
-      m['template_name'] = template_name;
+    if (null != templateName) {
+      m['templateName'] = templateName;
     }
-    if (null != template_xml) {
-      m['template_xml'] = template_xml;
+    if (null != templateXml) {
+      m['templateXml'] = templateXml;
     }
     return m;
   }
@@ -7500,41 +7514,41 @@ class UpdateTemplateXml {
 
 class UpdateTemplateXmlCreateData {
   /// INTEGER
-  int? response_code;
+  int? responseCode;
   /// STRING
-  String? response_message;
+  String? responseMessage;
   /// STRING (required at the API)
-  String? template_name;
+  String? templateName;
   /// STRING (required at the API)
-  String? template_xml;
+  String? templateXml;
 
   UpdateTemplateXmlCreateData({
-    this.response_code,
-    this.response_message,
-    this.template_name,
-    this.template_xml,
+    this.responseCode,
+    this.responseMessage,
+    this.templateName,
+    this.templateXml,
   });
 
   factory UpdateTemplateXmlCreateData.fromMap(Map<String, dynamic> m) => UpdateTemplateXmlCreateData(
-        response_code: m['response_code'] is int ? m['response_code'] : null,
-        response_message: m['response_message'] is String ? m['response_message'] : null,
-        template_name: m['template_name'] is String ? m['template_name'] : null,
-        template_xml: m['template_xml'] is String ? m['template_xml'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        templateName: m['templateName'] is String ? m['templateName'] : null,
+        templateXml: m['templateXml'] is String ? m['templateXml'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != response_code) {
-      m['response_code'] = response_code;
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
     }
-    if (null != response_message) {
-      m['response_message'] = response_message;
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
     }
-    if (null != template_name) {
-      m['template_name'] = template_name;
+    if (null != templateName) {
+      m['templateName'] = templateName;
     }
-    if (null != template_xml) {
-      m['template_xml'] = template_xml;
+    if (null != templateXml) {
+      m['templateXml'] = templateXml;
     }
     return m;
   }
@@ -7542,31 +7556,31 @@ class UpdateTemplateXmlCreateData {
 
 class Version {
   /// STRING
-  String? app_name;
+  String? appName;
   /// STRING
-  String? build_date;
+  String? buildDate;
   /// STRING
   String? version;
 
   Version({
-    this.app_name,
-    this.build_date,
+    this.appName,
+    this.buildDate,
     this.version,
   });
 
   factory Version.fromMap(Map<String, dynamic> m) => Version(
-        app_name: m['app_name'] is String ? m['app_name'] : null,
-        build_date: m['build_date'] is String ? m['build_date'] : null,
+        appName: m['appName'] is String ? m['appName'] : null,
+        buildDate: m['buildDate'] is String ? m['buildDate'] : null,
         version: m['version'] is String ? m['version'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != app_name) {
-      m['app_name'] = app_name;
+    if (null != appName) {
+      m['appName'] = appName;
     }
-    if (null != build_date) {
-      m['build_date'] = build_date;
+    if (null != buildDate) {
+      m['buildDate'] = buildDate;
     }
     if (null != version) {
       m['version'] = version;
@@ -7577,31 +7591,31 @@ class Version {
 
 class VersionLoadMatch {
   /// STRING
-  String? app_name;
+  String? appName;
   /// STRING
-  String? build_date;
+  String? buildDate;
   /// STRING
   String? version;
 
   VersionLoadMatch({
-    this.app_name,
-    this.build_date,
+    this.appName,
+    this.buildDate,
     this.version,
   });
 
   factory VersionLoadMatch.fromMap(Map<String, dynamic> m) => VersionLoadMatch(
-        app_name: m['app_name'] is String ? m['app_name'] : null,
-        build_date: m['build_date'] is String ? m['build_date'] : null,
+        appName: m['appName'] is String ? m['appName'] : null,
+        buildDate: m['buildDate'] is String ? m['buildDate'] : null,
         version: m['version'] is String ? m['version'] : null,
       );
 
   Map<String, dynamic> toMap() {
     final m = <String, dynamic>{};
-    if (null != app_name) {
-      m['app_name'] = app_name;
+    if (null != appName) {
+      m['appName'] = appName;
     }
-    if (null != build_date) {
-      m['build_date'] = build_date;
+    if (null != buildDate) {
+      m['buildDate'] = buildDate;
     }
     if (null != version) {
       m['version'] = version;

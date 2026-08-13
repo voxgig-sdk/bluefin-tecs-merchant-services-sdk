@@ -26,8 +26,8 @@ import {
 describe('TransactionHistoryEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when BLUEFINTECSMERCHANTSERVICES_TEST_LIVE=TRUE.
-  afterEach(liveDelay('BLUEFINTECSMERCHANTSERVICES_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE=TRUE.
+  afterEach(liveDelay('BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = BluefinTecsMerchantServicesSDK.test()
@@ -62,7 +62,7 @@ describe('TransactionHistoryEntity', async () => {
     const transaction_history_ref01_ent = client.TransactionHistory()
     let transaction_history_ref01_data = setup.data.new.transaction_history['transaction_history_ref01']
 
-    transaction_history_ref01_data = await transaction_history_ref01_ent.create(transaction_history_ref01_data)
+    transaction_history_ref01_data = (await transaction_history_ref01_ent.create(transaction_history_ref01_data)).data()
     assert(null != transaction_history_ref01_data)
 
 

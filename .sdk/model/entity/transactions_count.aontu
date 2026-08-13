@@ -11,17 +11,17 @@ main: kit: entity: transactions_count: {
       type: "`$STRING`"
     }
     {
-      name: "response_code"
+      name: "responseCode"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "response_message"
+      name: "responseMessage"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "transaction_date_from"
+      name: "transactionDateFrom"
       op: {
         create: {
           req: true
@@ -32,7 +32,7 @@ main: kit: entity: transactions_count: {
       type: "`$STRING`"
     }
     {
-      name: "transaction_date_to"
+      name: "transactionDateTo"
       op: {
         create: {
           req: true
@@ -43,7 +43,7 @@ main: kit: entity: transactions_count: {
       type: "`$STRING`"
     }
     {
-      name: "transactions_count"
+      name: "transactionsCount"
       req: false
       type: "`$ARRAY`"
     }

@@ -35,7 +35,7 @@ object StoreTerminalParameterEntityTest {
       var storeTerminalParameterRef01Data = Helpers.toMapAny(Struct.getprop(
           Struct.getpath(entityData, "new.store_terminal_parameter"), "store_terminal_parameter_ref01"))
       val storeTerminalParameterRef01DataResult = storeTerminalParameterRef01Ent.create(storeTerminalParameterRef01Data, null)
-      storeTerminalParameterRef01Data = Helpers.toMapAny(storeTerminalParameterRef01DataResult)
+      storeTerminalParameterRef01Data = Helpers.toMapAny(storeTerminalParameterRef01DataResult match { case e: SdkEntity => e.data(); case o => o })
       rep.check("store_terminal_parameter.create.map", storeTerminalParameterRef01Data != null, "expected create result to be a map")
     }
   }

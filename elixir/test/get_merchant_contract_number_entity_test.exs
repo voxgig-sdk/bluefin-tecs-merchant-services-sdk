@@ -31,7 +31,8 @@ defmodule BluefinTecsMerchantServices.GetMerchantContractNumberEntityTest do
   test "should create then read back" do
     sdk = BluefinTecsMerchantServices.test(S.jm(["entity", S.jm(["get_merchant_contract_number", S.jm([])])]))
     ent = BluefinTecsMerchantServices.get_merchant_contract_number(sdk)
-    made = BluefinTecsMerchantServices.Entity.GetMerchantContractNumber.create(ent, S.jm(["name", "test-create"]))
+    created = BluefinTecsMerchantServices.Entity.GetMerchantContractNumber.create(ent, S.jm(["name", "test-create"]))
+    made = BluefinTecsMerchantServices.EntityBase.data_get(created)
     assert S.ismap(made)
     assert S.getprop(made, "id") != nil
   end

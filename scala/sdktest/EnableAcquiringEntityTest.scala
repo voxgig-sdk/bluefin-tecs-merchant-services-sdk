@@ -35,7 +35,7 @@ object EnableAcquiringEntityTest {
       var enableAcquiringRef01Data = Helpers.toMapAny(Struct.getprop(
           Struct.getpath(entityData, "new.enable_acquiring"), "enable_acquiring_ref01"))
       val enableAcquiringRef01DataResult = enableAcquiringRef01Ent.create(enableAcquiringRef01Data, null)
-      enableAcquiringRef01Data = Helpers.toMapAny(enableAcquiringRef01DataResult)
+      enableAcquiringRef01Data = Helpers.toMapAny(enableAcquiringRef01DataResult match { case e: SdkEntity => e.data(); case o => o })
       rep.check("enable_acquiring.create.map", enableAcquiringRef01Data != null, "expected create result to be a map")
     }
   }

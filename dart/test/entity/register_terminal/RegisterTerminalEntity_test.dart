@@ -47,7 +47,7 @@ void tests() {
       final register_terminal_ref01_ent = client.RegisterTerminal();
       dynamic register_terminal_ref01_data = setup['data']['new']['register_terminal']['register_terminal_ref01'];
 
-      register_terminal_ref01_data = await register_terminal_ref01_ent.create(register_terminal_ref01_data);
+      register_terminal_ref01_data = (await register_terminal_ref01_ent.create(register_terminal_ref01_data)).data();
       ok(null != register_terminal_ref01_data);
 
 

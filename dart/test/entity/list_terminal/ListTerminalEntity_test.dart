@@ -47,7 +47,7 @@ void tests() {
       final list_terminal_ref01_ent = client.ListTerminal();
       dynamic list_terminal_ref01_data = setup['data']['new']['list_terminal']['list_terminal_ref01'];
 
-      list_terminal_ref01_data = await list_terminal_ref01_ent.create(list_terminal_ref01_data);
+      list_terminal_ref01_data = (await list_terminal_ref01_ent.create(list_terminal_ref01_data)).data();
       ok(null != list_terminal_ref01_data);
 
 

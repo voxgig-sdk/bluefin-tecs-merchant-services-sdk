@@ -34,7 +34,8 @@ defmodule BluefinTecsMerchantServices.DigitalServicesApiEntityTest do
     if id != nil do
       sdk = mk_sdk()
       ent = BluefinTecsMerchantServices.digital_services_api(sdk)
-      rec = BluefinTecsMerchantServices.Entity.DigitalServicesApi.load(ent, S.jm(["id", id]))
+      loaded = BluefinTecsMerchantServices.Entity.DigitalServicesApi.load(ent, S.jm(["id", id]))
+      rec = BluefinTecsMerchantServices.EntityBase.data_get(loaded)
       assert S.ismap(rec)
       assert S.getprop(rec, "id") == id
     end
@@ -43,7 +44,8 @@ defmodule BluefinTecsMerchantServices.DigitalServicesApiEntityTest do
   test "should create then read back" do
     sdk = BluefinTecsMerchantServices.test(S.jm(["entity", S.jm(["digital_services_api", S.jm([])])]))
     ent = BluefinTecsMerchantServices.digital_services_api(sdk)
-    made = BluefinTecsMerchantServices.Entity.DigitalServicesApi.create(ent, S.jm(["name", "test-create"]))
+    created = BluefinTecsMerchantServices.Entity.DigitalServicesApi.create(ent, S.jm(["name", "test-create"]))
+    made = BluefinTecsMerchantServices.EntityBase.data_get(created)
     assert S.ismap(made)
     assert S.getprop(made, "id") != nil
   end

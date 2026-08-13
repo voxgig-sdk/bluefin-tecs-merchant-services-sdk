@@ -6,32 +6,32 @@ main: kit: entity: emv_data: {
 
   fields: [
     {
-      name: "emv_data"
+      name: "emvData"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "response_code"
+      name: "responseCode"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "response_message"
+      name: "responseMessage"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "terminal_id"
+      name: "terminalId"
       req: true
       type: "`$INTEGER`"
     }
     {
-      name: "transaction_id"
+      name: "transactionId"
       req: true
       type: "`$STRING`"
     }
     {
-      name: "transaction_type"
+      name: "transactionType"
       req: true
       type: "`$STRING`"
     }

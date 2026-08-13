@@ -26,8 +26,8 @@ import {
 describe('PreAuthTransactionCompletionEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when BLUEFINTECSMERCHANTSERVICES_TEST_LIVE=TRUE.
-  afterEach(liveDelay('BLUEFINTECSMERCHANTSERVICES_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE=TRUE.
+  afterEach(liveDelay('BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = BluefinTecsMerchantServicesSDK.test()
@@ -62,7 +62,7 @@ describe('PreAuthTransactionCompletionEntity', async () => {
     const pre_auth_transaction_completion_ref01_ent = client.PreAuthTransactionCompletion()
     let pre_auth_transaction_completion_ref01_data = setup.data.new.pre_auth_transaction_completion['pre_auth_transaction_completion_ref01']
 
-    pre_auth_transaction_completion_ref01_data = await pre_auth_transaction_completion_ref01_ent.create(pre_auth_transaction_completion_ref01_data)
+    pre_auth_transaction_completion_ref01_data = (await pre_auth_transaction_completion_ref01_ent.create(pre_auth_transaction_completion_ref01_data)).data()
     assert(null != pre_auth_transaction_completion_ref01_data)
 
 

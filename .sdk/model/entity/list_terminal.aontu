@@ -6,7 +6,7 @@ main: kit: entity: list_terminal: {
 
   fields: [
     {
-      name: "corporate_uuid"
+      name: "corporateUuid"
       req: false
       type: "`$ARRAY`"
     }
@@ -21,17 +21,17 @@ main: kit: entity: list_terminal: {
       type: "`$OBJECT`"
     }
     {
-      name: "response_code"
+      name: "responseCode"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "response_message"
+      name: "responseMessage"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "terminal"
+      name: "terminals"
       req: false
       type: "`$ARRAY`"
     }

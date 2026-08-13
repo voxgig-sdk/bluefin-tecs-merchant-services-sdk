@@ -47,7 +47,7 @@ void tests() {
       final payment_manual_ref01_ent = client.PaymentManual();
       dynamic payment_manual_ref01_data = setup['data']['new']['payment_manual']['payment_manual_ref01'];
 
-      payment_manual_ref01_data = await payment_manual_ref01_ent.create(payment_manual_ref01_data);
+      payment_manual_ref01_data = (await payment_manual_ref01_ent.create(payment_manual_ref01_data)).data();
       ok(null != payment_manual_ref01_data);
 
 

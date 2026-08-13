@@ -47,7 +47,7 @@ void tests() {
       final ecom_parameter_ref01_ent = client.EcomParameter();
       dynamic ecom_parameter_ref01_data = setup['data']['new']['ecom_parameter']['ecom_parameter_ref01'];
 
-      ecom_parameter_ref01_data = await ecom_parameter_ref01_ent.create(ecom_parameter_ref01_data);
+      ecom_parameter_ref01_data = (await ecom_parameter_ref01_ent.create(ecom_parameter_ref01_data)).data();
       ok(null != ecom_parameter_ref01_data);
 
 

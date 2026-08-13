@@ -2,21 +2,21 @@
   "existing": {
     "introduce_package": {
       "INTRODUCE_PACKAGE00": {
-        "response_code": "s1e",
-        "response_message": "s1f",
-        "terminal_template_description": "s20",
+        "responseCode": "s1e",
+        "responseMessage": "s1f",
+        "terminalTemplateDescription": "s20",
         "id": "INTRODUCE_PACKAGE00"
       },
       "INTRODUCE_PACKAGE01": {
-        "response_code": "s3c",
-        "response_message": "s3d",
-        "terminal_template_description": "s3e",
+        "responseCode": "s3c",
+        "responseMessage": "s3d",
+        "terminalTemplateDescription": "s3e",
         "id": "INTRODUCE_PACKAGE01"
       },
       "INTRODUCE_PACKAGE02": {
-        "response_code": "s5a",
-        "response_message": "s5b",
-        "terminal_template_description": "s5c",
+        "responseCode": "s5a",
+        "responseMessage": "s5b",
+        "terminalTemplateDescription": "s5c",
         "id": "INTRODUCE_PACKAGE02"
       }
     }
@@ -24,9 +24,9 @@
   "new": {
     "introduce_package": {
       "introduce_package_ref01": {
-        "response_code": "s78",
-        "response_message": "s79",
-        "terminal_template_description": "s7a"
+        "responseCode": "s78",
+        "responseMessage": "s79",
+        "terminalTemplateDescription": "s7a"
       }
     }
   }

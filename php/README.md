@@ -36,8 +36,8 @@ $client = new BluefinTecsMerchantServicesSDK([
 ### 4. Create, update, and remove
 
 ```php
-// create() returns the bare created CancelTransaction record.
-$created = $client->CancelTransaction()->create(["client_id" => 1, "currency" => "example_currency", "receipt_number" => "example_receipt_number", "terminal_id" => 1]);
+// create() returns the ENTITY — call data_get() for the created CancelTransaction record.
+$created = $client->CancelTransaction()->create(["clientId" => 1, "currency" => "example_currency", "receiptNumber" => "example_receiptNumber", "terminalId" => 1]);
 
 ```
 
@@ -121,7 +121,8 @@ Create a mock client for unit testing — no server required:
 ```php
 $client = BluefinTecsMerchantServicesSDK::test();
 
-// Entity ops return the bare mock record (throws on error).
+// Entity ops return the ENTITY (throws on error);
+// call data_get() for the mock record.
 $digitalservicesapi = $client->DigitalServicesApi()->load();
 print_r($digitalservicesapi);
 ```
@@ -261,7 +262,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (an `array` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (an `array` for single-entity
 ops, a `list` for `list`) and throw on error. Wrap calls in
 `try`/`catch` to handle failures.
 
@@ -283,46 +284,46 @@ On error, `ok` is `false` and `$err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `acquirer_id` |  |
-| `acquirer_name` |  |
-| `actual_bonus_point` |  |
+| `acquirerId` |  |
+| `acquirerName` |  |
+| `actualBonusPoints` |  |
 | `amount` |  |
-| `authorization_code` |  |
-| `balance_amount` |  |
-| `card_brand` |  |
-| `card_number` |  |
-| `client_id` |  |
+| `authorizationCode` |  |
+| `balanceAmount` |  |
+| `cardBrand` |  |
+| `cardNumber` |  |
+| `clientId` |  |
 | `currency` |  |
 | `cvc` |  |
-| `ec_data` |  |
-| `ecr_data` |  |
-| `emv_data` |  |
-| `exchange_fee` |  |
-| `exchange_rate` |  |
-| `language_code` |  |
-| `merchant_address` |  |
-| `merchant_name` |  |
-| `merchant_number` |  |
-| `message_type` |  |
-| `original_trace_number` |  |
-| `original_transaction_id` |  |
+| `ecData` |  |
+| `ecrData` |  |
+| `emvData` |  |
+| `exchangeFee` |  |
+| `exchangeRate` |  |
+| `languageCode` |  |
+| `merchantAddress` |  |
+| `merchantName` |  |
+| `merchantNumber` |  |
+| `messageType` |  |
+| `originalTraceNumber` |  |
+| `originalTransactionId` |  |
 | `password` |  |
-| `payment_reason` |  |
-| `receipt_footer` |  |
-| `receipt_header` |  |
-| `receipt_layout` |  |
-| `receipt_number` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `serial_number` |  |
+| `paymentReason` |  |
+| `receiptFooter` |  |
+| `receiptHeader` |  |
+| `receiptLayout` |  |
+| `receiptNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `serialNumber` |  |
 | `svc` |  |
-| `terminal_id` |  |
-| `terminal_location` |  |
-| `trace_number` |  |
-| `transaction_date` |  |
-| `transaction_id` |  |
-| `tx_type` |  |
-| `user_data` |  |
+| `terminalId` |  |
+| `terminalLocation` |  |
+| `traceNumber` |  |
+| `transactionDate` |  |
+| `transactionId` |  |
+| `txType` |  |
+| `userData` |  |
 
 Operations: Create.
 
@@ -332,9 +333,9 @@ API path: `/public/cancelTransaction`
 
 | Field | Description |
 | --- | --- |
-| `card_no` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `cardNo` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -344,13 +345,13 @@ API path: `/checkCardBlackListed`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_id` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `template_name` |  |
-| `template_type` |  |
-| `template_xml` |  |
-| `terminal_type` |  |
+| `acquirerId` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `templateName` |  |
+| `templateType` |  |
+| `templateXml` |  |
+| `terminalType` |  |
 
 Operations: Create.
 
@@ -360,13 +361,13 @@ API path: `/createProduct`
 
 | Field | Description |
 | --- | --- |
-| `corporate_uuid` |  |
-| `deactivation_reason` |  |
-| `package_order_uuid` |  |
-| `product_order_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
+| `corporateUuid` |  |
+| `deactivationReason` |  |
+| `packageOrderUuid` |  |
+| `productOrderUuid` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
 
 Operations: Create.
 
@@ -376,16 +377,16 @@ API path: `/deactivateTerminal`
 
 | Field | Description |
 | --- | --- |
-| `clearing_date_from` |  |
-| `clearing_date_to` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `tx_count` |  |
-| `tx_id_end` |  |
-| `tx_id_start` |  |
-| `tx_seq_no_end` |  |
-| `tx_seq_no_start` |  |
-| `tx_total` |  |
+| `clearingDateFrom` |  |
+| `clearingDateTo` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `txCount` |  |
+| `txIdEnd` |  |
+| `txIdStart` |  |
+| `txSeqNoEnd` |  |
+| `txSeqNoStart` |  |
+| `txTotal` |  |
 
 Operations: Create, Load.
 
@@ -395,12 +396,12 @@ API path: `/public/digitalservices/mandatorClearingExportDownload/{fileId}`
 
 | Field | Description |
 | --- | --- |
-| `ecom_data` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
-| `transaction_id` |  |
-| `transaction_type` |  |
+| `ecomData` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
+| `transactionId` |  |
+| `transactionType` |  |
 
 Operations: Create.
 
@@ -410,11 +411,11 @@ API path: `/public/getEcData`
 
 | Field | Description |
 | --- | --- |
-| `ecom_pass` |  |
-| `ecom_skey` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
+| `ecomPass` |  |
+| `ecomSkey` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
 
 Operations: Create.
 
@@ -424,12 +425,12 @@ API path: `/public/getEcomParameters`
 
 | Field | Description |
 | --- | --- |
-| `ecr_data` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
-| `transaction_id` |  |
-| `transaction_type` |  |
+| `ecrData` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
+| `transactionId` |  |
+| `transactionType` |  |
 
 Operations: Create.
 
@@ -439,12 +440,12 @@ API path: `/public/getEcrData`
 
 | Field | Description |
 | --- | --- |
-| `emv_data` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
-| `transaction_id` |  |
-| `transaction_type` |  |
+| `emvData` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
+| `transactionId` |  |
+| `transactionType` |  |
 
 Operations: Create.
 
@@ -454,20 +455,20 @@ API path: `/public/getEmvData`
 
 | Field | Description |
 | --- | --- |
-| `account_no` |  |
-| `additional_data` |  |
-| `corporate_uuid` |  |
+| `accountNo` |  |
+| `additionalData` |  |
+| `corporateUuid` |  |
 | `currency` |  |
-| `merchant_category_code` |  |
-| `package_order_uuid` |  |
-| `product_order_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `sorting_code` |  |
-| `template_name` |  |
-| `terminal_id` |  |
-| `terminal_id_acq` |  |
-| `vu_nummer` |  |
+| `merchantCategoryCode` |  |
+| `packageOrderUuid` |  |
+| `productOrderUuid` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `sortingCode` |  |
+| `templateName` |  |
+| `terminalIdAcq` |  |
+| `terminalIds` |  |
+| `vuNummer` |  |
 
 Operations: Create.
 
@@ -477,9 +478,9 @@ API path: `/enableAcquiring`
 
 | Field | Description |
 | --- | --- |
-| `merchant_contract_number` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `merchantContractNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -489,9 +490,9 @@ API path: `/getMerchantContractNumber`
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
-| `template_name` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `templateName` |  |
 
 Operations: Create.
 
@@ -501,9 +502,9 @@ API path: `/public/getTemplateXml`
 
 | Field | Description |
 | --- | --- |
-| `mandator_name` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `mandatorName` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -513,9 +514,9 @@ API path: `/introduceMandator`
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_template_description` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalTemplateDescription` |  |
 
 Operations: Create.
 
@@ -526,15 +527,15 @@ API path: `/introducePackage`
 | Field | Description |
 | --- | --- |
 | `hwserialno` |  |
-| `ka_date_time_from` |  |
-| `ka_date_time_to` |  |
-| `keep_alive_data` |  |
+| `kaDateTimeFrom` |  |
+| `kaDateTimeTo` |  |
+| `keepAliveData` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_date_time_from` |  |
-| `terminal_date_time_to` |  |
-| `terminal_id` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalDateTimeFrom` |  |
+| `terminalDateTimeTo` |  |
+| `terminalId` |  |
 
 Operations: Create.
 
@@ -544,12 +545,12 @@ API path: `/public/keepalive`
 
 | Field | Description |
 | --- | --- |
-| `corporate_uuid` |  |
+| `corporateUuid` |  |
 | `filter` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminals` |  |
 
 Operations: Create.
 
@@ -559,12 +560,12 @@ API path: `/public/listTerminals`
 
 | Field | Description |
 | --- | --- |
-| `clearing_date_from` |  |
-| `clearing_date_to` |  |
+| `clearingDateFrom` |  |
+| `clearingDateTo` |  |
 | `pagination` |  |
-| `record` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `records` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -574,12 +575,12 @@ API path: `/public/digitalservices/mandatorClearingExport`
 
 | Field | Description |
 | --- | --- |
-| `clearing_date_from` |  |
-| `clearing_date_to` |  |
-| `file_id` |  |
-| `filename_template` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `clearingDateFrom` |  |
+| `clearingDateTo` |  |
+| `fileId` |  |
+| `filenameTemplate` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `status` |  |
 
 Operations: Create, Load.
@@ -590,11 +591,11 @@ API path: `/public/digitalservices/mandatorClearingExportDownload`
 
 | Field | Description |
 | --- | --- |
-| `clearing_date_from` |  |
-| `clearing_date_to` |  |
-| `record` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `clearingDateFrom` |  |
+| `clearingDateTo` |  |
+| `records` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -604,30 +605,30 @@ API path: `/public/digitalservices/mandatorClearingExportSummary`
 
 | Field | Description |
 | --- | --- |
-| `3_d_secure` |  |
-| `authorization_code` |  |
-| `card_brand` |  |
-| `clearing_amount_from` |  |
-| `clearing_amount_to` |  |
-| `clearing_currency` |  |
-| `clearing_status` |  |
-| `corporate_uuid` |  |
-| `order_by_transaction_date` |  |
+| `3DSecure` |  |
+| `authorizationCode` |  |
+| `cardBrand` |  |
+| `clearingAmountFrom` |  |
+| `clearingAmountTo` |  |
+| `clearingCurrency` |  |
+| `clearingStatus` |  |
+| `corporateUUID` |  |
+| `orderByTransactionDate` |  |
 | `pagination` |  |
-| `receipt_number` |  |
-| `referenced_transaction_id` |  |
-| `retrieval_reference_number` |  |
-| `source_id` |  |
-| `tecsengine_response_code_from` |  |
-| `tecsengine_response_code_to` |  |
-| `terminal_id` |  |
-| `trace_number` |  |
-| `transaction_amount_from` |  |
-| `transaction_amount_to` |  |
-| `transaction_date_from` |  |
-| `transaction_date_to` |  |
-| `transaction_id` |  |
-| `transaction_type` |  |
+| `receiptNumber` |  |
+| `referencedTransactionId` |  |
+| `retrievalReferenceNumber` |  |
+| `sourceId` |  |
+| `tecsengineResponseCodeFrom` |  |
+| `tecsengineResponseCodeTo` |  |
+| `terminalId` |  |
+| `traceNumber` |  |
+| `transactionAmountFrom` |  |
+| `transactionAmountTo` |  |
+| `transactionDateFrom` |  |
+| `transactionDateTo` |  |
+| `transactionId` |  |
+| `transactionType` |  |
 | `wallet` |  |
 
 Operations: Create.
@@ -638,11 +639,11 @@ API path: `/public/transactionHistoryCsv`
 
 | Field | Description |
 | --- | --- |
-| `productorderuuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `target_packageorderuuid` |  |
-| `target_productorderuuid` |  |
+| `productorderuuids` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `targetPackageorderuuid` |  |
+| `targetProductorderuuid` |  |
 
 Operations: Create.
 
@@ -652,22 +653,22 @@ API path: `/moveTid`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_name` |  |
+| `acquirerName` |  |
 | `amount` |  |
-| `authorization_number` |  |
-| `card_number` |  |
-| `card_type` |  |
+| `authorizationNumber` |  |
+| `cardNumber` |  |
+| `cardType` |  |
 | `currency` |  |
 | `cvc` |  |
-| `date_time_tx` |  |
-| `exp_date` |  |
-| `merchant_id` |  |
-| `original_transaction_id` |  |
+| `dateTimeTx` |  |
+| `expDate` |  |
+| `merchantId` |  |
+| `originalTransactionId` |  |
 | `password` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
-| `transaction_id` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
+| `transactionId` |  |
 | `txtype` |  |
 
 Operations: Create.
@@ -678,21 +679,17 @@ API path: `/public/paymentManual`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_name` |  |
 | `amount` |  |
-| `authorization_number` |  |
-| `card_type` |  |
 | `currency` |  |
-| `date_time_tx` |  |
-| `device_payload` |  |
-| `merchant_id` |  |
-| `original_transaction_id` |  |
+| `device` |  |
+| `devicePayload` |  |
+| `expDate` |  |
+| `mode` |  |
+| `panMasked` |  |
 | `password` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `sred` |  |
-| `terminal_id` |  |
-| `transaction_id` |  |
+| `serial` |  |
+| `serviceCode` |  |
+| `terminalId` |  |
 | `txtype` |  |
 
 Operations: Create.
@@ -703,48 +700,48 @@ API path: `/public/paymentSred`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_id` |  |
-| `acquirer_name` |  |
-| `actual_bonus_point` |  |
+| `acquirerId` |  |
+| `acquirerName` |  |
+| `actualBonusPoints` |  |
 | `amount` |  |
-| `authorization_code` |  |
-| `balance_amount` |  |
-| `card_brand` |  |
-| `card_number` |  |
-| `card_number_reference` |  |
-| `client_id` |  |
+| `authorizationCode` |  |
+| `balanceAmount` |  |
+| `cardBrand` |  |
+| `cardNumber` |  |
+| `cardNumberReference` |  |
+| `clientId` |  |
 | `currency` |  |
 | `cvc` |  |
-| `ec_data` |  |
-| `ecr_data` |  |
-| `emv_data` |  |
-| `exchange_fee` |  |
-| `exchange_rate` |  |
-| `language_code` |  |
-| `merchant_address` |  |
-| `merchant_name` |  |
-| `merchant_number` |  |
-| `message_type` |  |
-| `original_trace_number` |  |
-| `original_transaction_id` |  |
+| `ecData` |  |
+| `ecrData` |  |
+| `emvData` |  |
+| `exchangeFee` |  |
+| `exchangeRate` |  |
+| `languageCode` |  |
+| `merchantAddress` |  |
+| `merchantName` |  |
+| `merchantNumber` |  |
+| `messageType` |  |
+| `originalTraceNumber` |  |
+| `originalTransactionId` |  |
 | `password` |  |
-| `payment_reason` |  |
-| `receipt_footer` |  |
-| `receipt_header` |  |
-| `receipt_layout` |  |
-| `receipt_number` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `serial_number` |  |
+| `paymentReason` |  |
+| `receiptFooter` |  |
+| `receiptHeader` |  |
+| `receiptLayout` |  |
+| `receiptNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `serialNumber` |  |
 | `svc` |  |
-| `terminal_id` |  |
-| `terminal_location` |  |
-| `trace_number` |  |
-| `transaction_date` |  |
-| `transaction_id` |  |
-| `transaction_type` |  |
-| `tx_type` |  |
-| `user_data` |  |
+| `terminalId` |  |
+| `terminalLocation` |  |
+| `traceNumber` |  |
+| `transactionDate` |  |
+| `transactionId` |  |
+| `transactionType` |  |
+| `txType` |  |
+| `userData` |  |
 
 Operations: Create.
 
@@ -754,13 +751,13 @@ API path: `/public/paymentTransaction`
 
 | Field | Description |
 | --- | --- |
-| `corporate_uuid` |  |
-| `package_order_uuid` |  |
-| `product_order_uuid` |  |
-| `reactivation_reason` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
+| `corporateUuid` |  |
+| `packageOrderUuid` |  |
+| `productOrderUuid` |  |
+| `reactivationReason` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
 
 Operations: Create.
 
@@ -770,46 +767,46 @@ API path: `/reactivateTerminal`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_id` |  |
-| `acquirer_name` |  |
-| `actual_bonus_point` |  |
+| `acquirerId` |  |
+| `acquirerName` |  |
+| `actualBonusPoints` |  |
 | `amount` |  |
-| `authorization_code` |  |
-| `balance_amount` |  |
-| `card_brand` |  |
-| `card_number` |  |
-| `client_id` |  |
+| `authorizationCode` |  |
+| `balanceAmount` |  |
+| `cardBrand` |  |
+| `cardNumber` |  |
+| `clientId` |  |
 | `currency` |  |
 | `cvc` |  |
-| `ec_data` |  |
-| `ecr_data` |  |
-| `emv_data` |  |
-| `exchange_fee` |  |
-| `exchange_rate` |  |
-| `language_code` |  |
-| `merchant_address` |  |
-| `merchant_name` |  |
-| `merchant_number` |  |
-| `message_type` |  |
-| `original_trace_number` |  |
-| `original_transaction_id` |  |
+| `ecData` |  |
+| `ecrData` |  |
+| `emvData` |  |
+| `exchangeFee` |  |
+| `exchangeRate` |  |
+| `languageCode` |  |
+| `merchantAddress` |  |
+| `merchantName` |  |
+| `merchantNumber` |  |
+| `messageType` |  |
+| `originalTraceNumber` |  |
+| `originalTransactionId` |  |
 | `password` |  |
-| `payment_reason` |  |
-| `receipt_footer` |  |
-| `receipt_header` |  |
-| `receipt_layout` |  |
-| `receipt_number` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `serial_number` |  |
+| `paymentReason` |  |
+| `receiptFooter` |  |
+| `receiptHeader` |  |
+| `receiptLayout` |  |
+| `receiptNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `serialNumber` |  |
 | `svc` |  |
-| `terminal_id` |  |
-| `terminal_location` |  |
-| `trace_number` |  |
-| `transaction_date` |  |
-| `transaction_id` |  |
-| `tx_type` |  |
-| `user_data` |  |
+| `terminalId` |  |
+| `terminalLocation` |  |
+| `traceNumber` |  |
+| `transactionDate` |  |
+| `transactionId` |  |
+| `txType` |  |
+| `userData` |  |
 
 Operations: Create.
 
@@ -819,14 +816,14 @@ API path: `/public/refundTransaction`
 
 | Field | Description |
 | --- | --- |
-| `corporate_uuid` |  |
-| `package_order_uuid` |  |
-| `partner_id` |  |
-| `partner_name` |  |
-| `product_order_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `template_name` |  |
+| `corporateUuid` |  |
+| `packageOrderUuid` |  |
+| `partnerId` |  |
+| `partnerName` |  |
+| `productOrderUuid` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `templateName` |  |
 
 Operations: Create.
 
@@ -836,24 +833,24 @@ API path: `/registerTecsCompany`
 
 | Field | Description |
 | --- | --- |
-| `additional_data` |  |
-| `corporate_uuid` |  |
-| `package_order_uuid` |  |
-| `product_order_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `tecs_web_secret_key` |  |
-| `template_name` |  |
-| `terminal_country_code` |  |
-| `terminal_id` |  |
-| `terminal_id_acq` |  |
-| `terminal_language_code` |  |
-| `terminal_location` |  |
-| `terminal_serial_number` |  |
-| `token_io_alia` |  |
-| `token_io_iban` |  |
-| `token_io_member_id` |  |
-| `web_shop_url` |  |
+| `additionalData` |  |
+| `corporateUuid` |  |
+| `packageOrderUuid` |  |
+| `productOrderUuid` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `tecsWebSecretKey` |  |
+| `templateName` |  |
+| `terminalCountryCode` |  |
+| `terminalId` |  |
+| `terminalIdAcq` |  |
+| `terminalLanguageCode` |  |
+| `terminalLocation` |  |
+| `terminalSerialNumber` |  |
+| `tokenIOAlias` |  |
+| `tokenIOIban` |  |
+| `tokenIOMemberId` |  |
+| `webShopUrl` |  |
 
 Operations: Create.
 
@@ -863,16 +860,16 @@ API path: `/registerTerminal`
 
 | Field | Description |
 | --- | --- |
-| `card_brand_report_data` |  |
-| `clearing_date_from` |  |
-| `clearing_date_to` |  |
-| `corporate_id` |  |
+| `cardBrandReportData` |  |
+| `clearingDateFrom` |  |
+| `clearingDateTo` |  |
+| `corporateId` |  |
 | `currency` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `sum_over_credit_tx` |  |
-| `sum_over_debit_tx` |  |
-| `terminal_id` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `sumOverCreditTx` |  |
+| `sumOverDebitTx` |  |
+| `terminalId` |  |
 
 Operations: Create.
 
@@ -882,56 +879,56 @@ API path: `/public/digitalservices/reportData`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_name` |  |
-| `acquirer_terminal_id` |  |
+| `acquirerName` |  |
+| `acquirerTerminalId` |  |
 | `amount` |  |
-| `application_cryptogram` |  |
-| `authorization_code` |  |
-| `authorization_date` |  |
-| `card_brand` |  |
-| `card_entry` |  |
-| `card_expiration` |  |
-| `card_number` |  |
-| `clearing_amount` |  |
-| `clearing_batch_id` |  |
-| `clearing_currency` |  |
-| `clearing_date` |  |
-| `clearing_processed_date` |  |
-| `clearing_status` |  |
-| `client_id` |  |
+| `applicationCryptogram` |  |
+| `authorizationCode` |  |
+| `authorizationDate` |  |
+| `cardBrand` |  |
+| `cardEntry` |  |
+| `cardExpiration` |  |
+| `cardNumber` |  |
+| `clearingAmount` |  |
+| `clearingBatchId` |  |
+| `clearingCurrency` |  |
+| `clearingDate` |  |
+| `clearingProcessedDate` |  |
+| `clearingStatus` |  |
+| `clientId` |  |
 | `currency` |  |
 | `cvm` |  |
-| `ecr_data` |  |
-| `emv_application_id` |  |
-| `emv_application_label` |  |
-| `merchant_name` |  |
-| `merchant_number` |  |
-| `original_client_id` |  |
-| `original_terminal_id` |  |
-| `original_transaction_id` |  |
-| `payment_reason` |  |
-| `receipt_number` |  |
-| `response_code` |  |
-| `response_code_from_a` |  |
-| `response_message` |  |
-| `retrieval_reference_number` |  |
-| `service_code` |  |
-| `settlement_status` |  |
-| `source_id` |  |
-| `tecsengine_response_code` |  |
-| `tecsengine_response_text` |  |
-| `terminal_end_of_day_date` |  |
-| `terminal_id` |  |
-| `terminal_location` |  |
-| `tip_amount` |  |
-| `trace_number` |  |
-| `transaction_clearing_date` |  |
-| `transaction_date` |  |
-| `transaction_id` |  |
-| `transaction_seq_number` |  |
-| `transaction_server_date` |  |
-| `transaction_source` |  |
-| `transaction_type` |  |
+| `ecrData` |  |
+| `emvApplicationId` |  |
+| `emvApplicationLabel` |  |
+| `merchantName` |  |
+| `merchantNumber` |  |
+| `originalClientId` |  |
+| `originalTerminalId` |  |
+| `originalTransactionId` |  |
+| `paymentReason` |  |
+| `receiptNumber` |  |
+| `responseCode` |  |
+| `responseCodeFromAS` |  |
+| `responseMessage` |  |
+| `retrievalReferenceNumber` |  |
+| `serviceCode` |  |
+| `settlementStatus` |  |
+| `sourceId` |  |
+| `tecsengineResponseCode` |  |
+| `tecsengineResponseText` |  |
+| `terminalEndOfDayDate` |  |
+| `terminalId` |  |
+| `terminalLocation` |  |
+| `tipAmount` |  |
+| `traceNumber` |  |
+| `transactionClearingDate` |  |
+| `transactionDate` |  |
+| `transactionId` |  |
+| `transactionSeqNumber` |  |
+| `transactionServerDate` |  |
+| `transactionSource` |  |
+| `transactionType` |  |
 
 Operations: Create.
 
@@ -941,12 +938,12 @@ API path: `/public/statusTransaction`
 
 | Field | Description |
 | --- | --- |
-| `acq_tab_nexo` |  |
-| `config_version` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `serial_number` |  |
-| `tid_sent` |  |
+| `acqTabNexo` |  |
+| `configVersion` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `serialNumber` |  |
+| `tidSent` |  |
 
 Operations: Create.
 
@@ -956,11 +953,11 @@ API path: `/storeTerminalParameters`
 
 | Field | Description |
 | --- | --- |
-| `device_serial_number` |  |
-| `duplicate_terminal_id` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal` |  |
+| `deviceSerialNumber` |  |
+| `duplicateTerminalIds` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminals` |  |
 
 Operations: Create.
 
@@ -970,34 +967,34 @@ API path: `/public/getTerminalId`
 
 | Field | Description |
 | --- | --- |
-| `3_d_secure` |  |
-| `authorization_code` |  |
-| `card_brand` |  |
-| `clearing_amount_from` |  |
-| `clearing_amount_to` |  |
-| `clearing_currency` |  |
-| `clearing_status` |  |
-| `corporate_uuid` |  |
-| `order_by_transaction_date` |  |
+| `3DSecure` |  |
+| `authorizationCode` |  |
+| `cardBrand` |  |
+| `clearingAmountFrom` |  |
+| `clearingAmountTo` |  |
+| `clearingCurrency` |  |
+| `clearingStatus` |  |
+| `corporateUUID` |  |
+| `orderByTransactionDate` |  |
 | `pagination` |  |
-| `payment_token_public_id` |  |
-| `receipt_number` |  |
-| `referenced_transaction_id` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `retrieval_reference_number` |  |
-| `source_id` |  |
-| `tecsengine_response_code_from` |  |
-| `tecsengine_response_code_to` |  |
-| `terminal_id` |  |
-| `trace_number` |  |
-| `transaction_amount_from` |  |
-| `transaction_amount_to` |  |
-| `transaction_date_from` |  |
-| `transaction_date_to` |  |
-| `transaction_history` |  |
-| `transaction_id` |  |
-| `transaction_type` |  |
+| `paymentTokenPublicId` |  |
+| `receiptNumber` |  |
+| `referencedTransactionId` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `retrievalReferenceNumber` |  |
+| `sourceId` |  |
+| `tecsengineResponseCodeFrom` |  |
+| `tecsengineResponseCodeTo` |  |
+| `terminalId` |  |
+| `traceNumber` |  |
+| `transactionAmountFrom` |  |
+| `transactionAmountTo` |  |
+| `transactionDateFrom` |  |
+| `transactionDateTo` |  |
+| `transactionHistories` |  |
+| `transactionId` |  |
+| `transactionType` |  |
 | `wallet` |  |
 
 Operations: Create.
@@ -1009,11 +1006,11 @@ API path: `/public/mcom/transactionHistory`
 | Field | Description |
 | --- | --- |
 | `period` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `transaction_date_from` |  |
-| `transaction_date_to` |  |
-| `transactions_count` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `transactionDateFrom` |  |
+| `transactionDateTo` |  |
+| `transactionsCount` |  |
 
 Operations: Create.
 
@@ -1024,11 +1021,11 @@ API path: `/public/countAuthorisedTransactions`
 | Field | Description |
 | --- | --- |
 | `period` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `transaction_date_from` |  |
-| `transaction_date_to` |  |
-| `transactions_count` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `transactionDateFrom` |  |
+| `transactionDateTo` |  |
+| `transactionsCount` |  |
 
 Operations: Create.
 
@@ -1039,11 +1036,11 @@ API path: `/public/countTransactionsByCardBrand`
 | Field | Description |
 | --- | --- |
 | `period` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `transaction_date_from` |  |
-| `transaction_date_to` |  |
-| `turnover` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `transactionDateFrom` |  |
+| `transactionDateTo` |  |
+| `turnovers` |  |
 
 Operations: Create.
 
@@ -1054,15 +1051,15 @@ API path: `/public/transactionTurnover`
 | Field | Description |
 | --- | --- |
 | `city` |  |
-| `corporate_uuid` |  |
+| `corporateUuid` |  |
 | `country` |  |
-| `merchant_category_code` |  |
+| `merchantCategoryCode` |  |
 | `name` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `state` |  |
 | `street` |  |
-| `vu_nummer` |  |
+| `vuNummer` |  |
 | `zipcode` |  |
 
 Operations: Create.
@@ -1073,10 +1070,10 @@ API path: `/public/updateMerchant`
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
-| `template_name` |  |
-| `template_xml` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `templateName` |  |
+| `templateXml` |  |
 
 Operations: Create.
 
@@ -1086,8 +1083,8 @@ API path: `/public/updateTemplateXml`
 
 | Field | Description |
 | --- | --- |
-| `app_name` |  |
-| `build_date` |  |
+| `appName` |  |
+| `buildDate` |  |
 | `version` |  |
 
 Operations: Load.
@@ -1113,55 +1110,55 @@ Create an instance: `$cancel_transaction = $client->CancelTransaction();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_id` | `string` |  |
-| `acquirer_name` | `string` |  |
-| `actual_bonus_point` | `string` |  |
+| `acquirerId` | `string` |  |
+| `acquirerName` | `string` |  |
+| `actualBonusPoints` | `string` |  |
 | `amount` | `int` |  |
-| `authorization_code` | `string` |  |
-| `balance_amount` | `string` |  |
-| `card_brand` | `string` |  |
-| `card_number` | `string` |  |
-| `client_id` | `int` |  |
+| `authorizationCode` | `string` |  |
+| `balanceAmount` | `string` |  |
+| `cardBrand` | `string` |  |
+| `cardNumber` | `string` |  |
+| `clientId` | `int` |  |
 | `currency` | `string` |  |
 | `cvc` | `string` |  |
-| `ec_data` | `string` |  |
-| `ecr_data` | `string` |  |
-| `emv_data` | `string` |  |
-| `exchange_fee` | `int` |  |
-| `exchange_rate` | `string` |  |
-| `language_code` | `string` |  |
-| `merchant_address` | `string` |  |
-| `merchant_name` | `string` |  |
-| `merchant_number` | `string` |  |
-| `message_type` | `string` |  |
-| `original_trace_number` | `int` |  |
-| `original_transaction_id` | `string` |  |
+| `ecData` | `string` |  |
+| `ecrData` | `string` |  |
+| `emvData` | `string` |  |
+| `exchangeFee` | `int` |  |
+| `exchangeRate` | `string` |  |
+| `languageCode` | `string` |  |
+| `merchantAddress` | `string` |  |
+| `merchantName` | `string` |  |
+| `merchantNumber` | `string` |  |
+| `messageType` | `string` |  |
+| `originalTraceNumber` | `int` |  |
+| `originalTransactionId` | `string` |  |
 | `password` | `string` |  |
-| `payment_reason` | `string` |  |
-| `receipt_footer` | `string` |  |
-| `receipt_header` | `string` |  |
-| `receipt_layout` | `int` |  |
-| `receipt_number` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `serial_number` | `string` |  |
+| `paymentReason` | `string` |  |
+| `receiptFooter` | `string` |  |
+| `receiptHeader` | `string` |  |
+| `receiptLayout` | `int` |  |
+| `receiptNumber` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `serialNumber` | `string` |  |
 | `svc` | `string` |  |
-| `terminal_id` | `int` |  |
-| `terminal_location` | `string` |  |
-| `trace_number` | `int` |  |
-| `transaction_date` | `string` |  |
-| `transaction_id` | `string` |  |
-| `tx_type` | `string` |  |
-| `user_data` | `string` |  |
+| `terminalId` | `int` |  |
+| `terminalLocation` | `string` |  |
+| `traceNumber` | `int` |  |
+| `transactionDate` | `string` |  |
+| `transactionId` | `string` |  |
+| `txType` | `string` |  |
+| `userData` | `string` |  |
 
 #### Example: Create
 
 ```php
 $cancel_transaction = $client->CancelTransaction()->create([
-    "client_id" => null, // int
+    "clientId" => null, // int
     "currency" => null, // string
-    "receipt_number" => null, // string
-    "terminal_id" => null, // int
+    "receiptNumber" => null, // string
+    "terminalId" => null, // int
 ]);
 ```
 
@@ -1180,9 +1177,9 @@ Create an instance: `$check_card_black_listed = $client->CheckCardBlackListed();
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `card_no` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `cardNo` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
@@ -1206,22 +1203,22 @@ Create an instance: `$create_product = $client->CreateProduct();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_id` | `int` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `template_name` | `string` |  |
-| `template_type` | `string` |  |
-| `template_xml` | `string` |  |
-| `terminal_type` | `string` |  |
+| `acquirerId` | `int` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `templateName` | `string` |  |
+| `templateType` | `string` |  |
+| `templateXml` | `string` |  |
+| `terminalType` | `string` |  |
 
 #### Example: Create
 
 ```php
 $create_product = $client->CreateProduct()->create([
-    "template_name" => null, // string
-    "template_type" => null, // string
-    "template_xml" => null, // string
-    "terminal_type" => null, // string
+    "templateName" => null, // string
+    "templateType" => null, // string
+    "templateXml" => null, // string
+    "terminalType" => null, // string
 ]);
 ```
 
@@ -1240,20 +1237,20 @@ Create an instance: `$deactivate_terminal = $client->DeactivateTerminal();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `corporate_uuid` | `string` |  |
-| `deactivation_reason` | `string` |  |
-| `package_order_uuid` | `string` |  |
-| `product_order_uuid` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `terminal_id` | `int` |  |
+| `corporateUuid` | `string` |  |
+| `deactivationReason` | `string` |  |
+| `packageOrderUuid` | `string` |  |
+| `productOrderUuid` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `terminalId` | `int` |  |
 
 #### Example: Create
 
 ```php
 $deactivate_terminal = $client->DeactivateTerminal()->create([
-    "deactivation_reason" => null, // string
-    "terminal_id" => null, // int
+    "deactivationReason" => null, // string
+    "terminalId" => null, // int
 ]);
 ```
 
@@ -1273,21 +1270,21 @@ Create an instance: `$digital_services_api = $client->DigitalServicesApi();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `clearing_date_from` | `string` |  |
-| `clearing_date_to` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `tx_count` | `int` |  |
-| `tx_id_end` | `string` |  |
-| `tx_id_start` | `string` |  |
-| `tx_seq_no_end` | `int` |  |
-| `tx_seq_no_start` | `int` |  |
-| `tx_total` | `int` |  |
+| `clearingDateFrom` | `string` |  |
+| `clearingDateTo` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `txCount` | `int` |  |
+| `txIdEnd` | `string` |  |
+| `txIdStart` | `string` |  |
+| `txSeqNoEnd` | `int` |  |
+| `txSeqNoStart` | `int` |  |
+| `txTotal` | `int` |  |
 
 #### Example: Load
 
 ```php
-// load() returns the bare DigitalServicesApi record (throws on error).
+// load() returns the ENTITY — call data_get() for the DigitalServicesApi record (throws on error).
 $digital_services_api = $client->DigitalServicesApi()->load();
 ```
 
@@ -1295,6 +1292,8 @@ $digital_services_api = $client->DigitalServicesApi()->load();
 
 ```php
 $digital_services_api = $client->DigitalServicesApi()->create([
+    "clearingDateFrom" => null, // string
+    "clearingDateTo" => null, // string
 ]);
 ```
 
@@ -1313,20 +1312,20 @@ Create an instance: `$ec_data_ecom = $client->EcDataEcom();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `ecom_data` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `terminal_id` | `int` |  |
-| `transaction_id` | `string` |  |
-| `transaction_type` | `string` |  |
+| `ecomData` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `terminalId` | `int` |  |
+| `transactionId` | `string` |  |
+| `transactionType` | `string` |  |
 
 #### Example: Create
 
 ```php
 $ec_data_ecom = $client->EcDataEcom()->create([
-    "terminal_id" => null, // int
-    "transaction_id" => null, // string
-    "transaction_type" => null, // string
+    "terminalId" => null, // int
+    "transactionId" => null, // string
+    "transactionType" => null, // string
 ]);
 ```
 
@@ -1345,17 +1344,17 @@ Create an instance: `$ecom_parameter = $client->EcomParameter();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `ecom_pass` | `string` |  |
-| `ecom_skey` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `terminal_id` | `int` |  |
+| `ecomPass` | `string` |  |
+| `ecomSkey` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `terminalId` | `int` |  |
 
 #### Example: Create
 
 ```php
 $ecom_parameter = $client->EcomParameter()->create([
-    "terminal_id" => null, // int
+    "terminalId" => null, // int
 ]);
 ```
 
@@ -1374,20 +1373,20 @@ Create an instance: `$ecr_data = $client->EcrData();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `ecr_data` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `terminal_id` | `int` |  |
-| `transaction_id` | `string` |  |
-| `transaction_type` | `string` |  |
+| `ecrData` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `terminalId` | `int` |  |
+| `transactionId` | `string` |  |
+| `transactionType` | `string` |  |
 
 #### Example: Create
 
 ```php
 $ecr_data = $client->EcrData()->create([
-    "terminal_id" => null, // int
-    "transaction_id" => null, // string
-    "transaction_type" => null, // string
+    "terminalId" => null, // int
+    "transactionId" => null, // string
+    "transactionType" => null, // string
 ]);
 ```
 
@@ -1406,20 +1405,20 @@ Create an instance: `$emv_data = $client->EmvData();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `emv_data` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `terminal_id` | `int` |  |
-| `transaction_id` | `string` |  |
-| `transaction_type` | `string` |  |
+| `emvData` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `terminalId` | `int` |  |
+| `transactionId` | `string` |  |
+| `transactionType` | `string` |  |
 
 #### Example: Create
 
 ```php
 $emv_data = $client->EmvData()->create([
-    "terminal_id" => null, // int
-    "transaction_id" => null, // string
-    "transaction_type" => null, // string
+    "terminalId" => null, // int
+    "transactionId" => null, // string
+    "transactionType" => null, // string
 ]);
 ```
 
@@ -1438,31 +1437,31 @@ Create an instance: `$enable_acquiring = $client->EnableAcquiring();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `account_no` | `int` |  |
-| `additional_data` | `array` |  |
-| `corporate_uuid` | `string` |  |
+| `accountNo` | `int` |  |
+| `additionalData` | `array` |  |
+| `corporateUuid` | `string` |  |
 | `currency` | `string` |  |
-| `merchant_category_code` | `int` |  |
-| `package_order_uuid` | `string` |  |
-| `product_order_uuid` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `sorting_code` | `int` |  |
-| `template_name` | `string` |  |
-| `terminal_id` | `array` |  |
-| `terminal_id_acq` | `string` |  |
-| `vu_nummer` | `string` |  |
+| `merchantCategoryCode` | `int` |  |
+| `packageOrderUuid` | `string` |  |
+| `productOrderUuid` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `sortingCode` | `int` |  |
+| `templateName` | `string` |  |
+| `terminalIdAcq` | `string` |  |
+| `terminalIds` | `array` |  |
+| `vuNummer` | `string` |  |
 
 #### Example: Create
 
 ```php
 $enable_acquiring = $client->EnableAcquiring()->create([
-    "corporate_uuid" => null, // string
+    "corporateUuid" => null, // string
     "currency" => null, // string
-    "merchant_category_code" => null, // int
-    "package_order_uuid" => null, // string
-    "product_order_uuid" => null, // string
-    "template_name" => null, // string
+    "merchantCategoryCode" => null, // int
+    "packageOrderUuid" => null, // string
+    "productOrderUuid" => null, // string
+    "templateName" => null, // string
 ]);
 ```
 
@@ -1481,15 +1480,15 @@ Create an instance: `$get_merchant_contract_number = $client->GetMerchantContrac
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `merchant_contract_number` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `merchantContractNumber` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
 ```php
 $get_merchant_contract_number = $client->GetMerchantContractNumber()->create([
-    "merchant_contract_number" => null, // string
+    "merchantContractNumber" => null, // string
 ]);
 ```
 
@@ -1508,15 +1507,15 @@ Create an instance: `$get_template_xml = $client->GetTemplateXml();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `template_name` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `templateName` | `string` |  |
 
 #### Example: Create
 
 ```php
 $get_template_xml = $client->GetTemplateXml()->create([
-    "template_name" => null, // string
+    "templateName" => null, // string
 ]);
 ```
 
@@ -1535,15 +1534,15 @@ Create an instance: `$introduce_mandator = $client->IntroduceMandator();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `mandator_name` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `mandatorName` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
 ```php
 $introduce_mandator = $client->IntroduceMandator()->create([
-    "mandator_name" => null, // string
+    "mandatorName" => null, // string
 ]);
 ```
 
@@ -1562,15 +1561,15 @@ Create an instance: `$introduce_package = $client->IntroducePackage();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `terminal_template_description` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `terminalTemplateDescription` | `string` |  |
 
 #### Example: Create
 
 ```php
 $introduce_package = $client->IntroducePackage()->create([
-    "terminal_template_description" => null, // string
+    "terminalTemplateDescription" => null, // string
 ]);
 ```
 
@@ -1590,15 +1589,15 @@ Create an instance: `$keep_alive = $client->KeepAlive();`
 | Field | Type | Description |
 | --- | --- | --- |
 | `hwserialno` | `string` |  |
-| `ka_date_time_from` | `string` |  |
-| `ka_date_time_to` | `string` |  |
-| `keep_alive_data` | `array` |  |
+| `kaDateTimeFrom` | `string` |  |
+| `kaDateTimeTo` | `string` |  |
+| `keepAliveData` | `array` |  |
 | `pagination` | `array` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `terminal_date_time_from` | `string` |  |
-| `terminal_date_time_to` | `string` |  |
-| `terminal_id` | `int` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `terminalDateTimeFrom` | `string` |  |
+| `terminalDateTimeTo` | `string` |  |
+| `terminalId` | `int` |  |
 
 #### Example: Create
 
@@ -1622,12 +1621,12 @@ Create an instance: `$list_terminal = $client->ListTerminal();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `corporate_uuid` | `array` |  |
+| `corporateUuid` | `array` |  |
 | `filter` | `array` |  |
 | `pagination` | `array` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `terminal` | `array` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `terminals` | `array` |  |
 
 #### Example: Create
 
@@ -1651,19 +1650,19 @@ Create an instance: `$mandator_clearing_export = $client->MandatorClearingExport
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `clearing_date_from` | `string` |  |
-| `clearing_date_to` | `string` |  |
+| `clearingDateFrom` | `string` |  |
+| `clearingDateTo` | `string` |  |
 | `pagination` | `array` |  |
-| `record` | `array` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `records` | `array` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
 ```php
 $mandator_clearing_export = $client->MandatorClearingExport()->create([
-    "clearing_date_from" => null, // string
-    "clearing_date_to" => null, // string
+    "clearingDateFrom" => null, // string
+    "clearingDateTo" => null, // string
 ]);
 ```
 
@@ -1683,18 +1682,18 @@ Create an instance: `$mandator_clearing_export_download = $client->MandatorClear
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `clearing_date_from` | `string` |  |
-| `clearing_date_to` | `string` |  |
-| `file_id` | `string` |  |
-| `filename_template` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `clearingDateFrom` | `string` |  |
+| `clearingDateTo` | `string` |  |
+| `fileId` | `string` |  |
+| `filenameTemplate` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 | `status` | `string` |  |
 
 #### Example: Load
 
 ```php
-// load() returns the bare MandatorClearingExportDownload record (throws on error).
+// load() returns the ENTITY — call data_get() for the MandatorClearingExportDownload record (throws on error).
 $mandator_clearing_export_download = $client->MandatorClearingExportDownload()->load(["id" => "mandator_clearing_export_download_id"]);
 ```
 
@@ -1702,8 +1701,8 @@ $mandator_clearing_export_download = $client->MandatorClearingExportDownload()->
 
 ```php
 $mandator_clearing_export_download = $client->MandatorClearingExportDownload()->create([
-    "clearing_date_from" => null, // string
-    "clearing_date_to" => null, // string
+    "clearingDateFrom" => null, // string
+    "clearingDateTo" => null, // string
 ]);
 ```
 
@@ -1722,18 +1721,18 @@ Create an instance: `$mandator_clearing_export_summary = $client->MandatorCleari
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `clearing_date_from` | `string` |  |
-| `clearing_date_to` | `string` |  |
-| `record` | `array` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `clearingDateFrom` | `string` |  |
+| `clearingDateTo` | `string` |  |
+| `records` | `array` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
 ```php
 $mandator_clearing_export_summary = $client->MandatorClearingExportSummary()->create([
-    "clearing_date_from" => null, // string
-    "clearing_date_to" => null, // string
+    "clearingDateFrom" => null, // string
+    "clearingDateTo" => null, // string
 ]);
 ```
 
@@ -1752,30 +1751,30 @@ Create an instance: `$merchant_portal_services_api = $client->MerchantPortalServ
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `3_d_secure` | `string` |  |
-| `authorization_code` | `string` |  |
-| `card_brand` | `string` |  |
-| `clearing_amount_from` | `string` |  |
-| `clearing_amount_to` | `string` |  |
-| `clearing_currency` | `string` |  |
-| `clearing_status` | `string` |  |
-| `corporate_uuid` | `string` |  |
-| `order_by_transaction_date` | `string` |  |
+| `3DSecure` | `string` |  |
+| `authorizationCode` | `string` |  |
+| `cardBrand` | `string` |  |
+| `clearingAmountFrom` | `string` |  |
+| `clearingAmountTo` | `string` |  |
+| `clearingCurrency` | `string` |  |
+| `clearingStatus` | `string` |  |
+| `corporateUUID` | `string` |  |
+| `orderByTransactionDate` | `string` |  |
 | `pagination` | `array` |  |
-| `receipt_number` | `string` |  |
-| `referenced_transaction_id` | `string` |  |
-| `retrieval_reference_number` | `string` |  |
-| `source_id` | `int` |  |
-| `tecsengine_response_code_from` | `string` |  |
-| `tecsengine_response_code_to` | `string` |  |
-| `terminal_id` | `int` |  |
-| `trace_number` | `string` |  |
-| `transaction_amount_from` | `string` |  |
-| `transaction_amount_to` | `string` |  |
-| `transaction_date_from` | `string` |  |
-| `transaction_date_to` | `string` |  |
-| `transaction_id` | `string` |  |
-| `transaction_type` | `string` |  |
+| `receiptNumber` | `string` |  |
+| `referencedTransactionId` | `string` |  |
+| `retrievalReferenceNumber` | `string` |  |
+| `sourceId` | `int` |  |
+| `tecsengineResponseCodeFrom` | `string` |  |
+| `tecsengineResponseCodeTo` | `string` |  |
+| `terminalId` | `int` |  |
+| `traceNumber` | `string` |  |
+| `transactionAmountFrom` | `string` |  |
+| `transactionAmountTo` | `string` |  |
+| `transactionDateFrom` | `string` |  |
+| `transactionDateTo` | `string` |  |
+| `transactionId` | `string` |  |
+| `transactionType` | `string` |  |
 | `wallet` | `string` |  |
 
 #### Example: Create
@@ -1800,17 +1799,17 @@ Create an instance: `$move_tid = $client->MoveTid();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `productorderuuid` | `array` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `target_packageorderuuid` | `string` |  |
-| `target_productorderuuid` | `string` |  |
+| `productorderuuids` | `array` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `targetPackageorderuuid` | `string` |  |
+| `targetProductorderuuid` | `string` |  |
 
 #### Example: Create
 
 ```php
 $move_tid = $client->MoveTid()->create([
-    "productorderuuid" => null, // array
+    "productorderuuids" => null, // array
 ]);
 ```
 
@@ -1829,22 +1828,22 @@ Create an instance: `$payment_manual = $client->PaymentManual();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_name` | `string` |  |
+| `acquirerName` | `string` |  |
 | `amount` | `int` |  |
-| `authorization_number` | `string` |  |
-| `card_number` | `string` |  |
-| `card_type` | `string` |  |
+| `authorizationNumber` | `string` |  |
+| `cardNumber` | `string` |  |
+| `cardType` | `string` |  |
 | `currency` | `string` |  |
 | `cvc` | `string` |  |
-| `date_time_tx` | `string` |  |
-| `exp_date` | `string` |  |
-| `merchant_id` | `string` |  |
-| `original_transaction_id` | `string` |  |
+| `dateTimeTx` | `string` |  |
+| `expDate` | `string` |  |
+| `merchantId` | `string` |  |
+| `originalTransactionId` | `string` |  |
 | `password` | `string` |  |
-| `response_code` | `string` |  |
-| `response_message` | `string` |  |
-| `terminal_id` | `string` |  |
-| `transaction_id` | `string` |  |
+| `responseCode` | `string` |  |
+| `responseMessage` | `string` |  |
+| `terminalId` | `string` |  |
+| `transactionId` | `string` |  |
 | `txtype` | `string` |  |
 
 #### Example: Create
@@ -1852,9 +1851,9 @@ Create an instance: `$payment_manual = $client->PaymentManual();`
 ```php
 $payment_manual = $client->PaymentManual()->create([
     "amount" => null, // int
-    "card_number" => null, // string
+    "cardNumber" => null, // string
     "currency" => null, // string
-    "exp_date" => null, // string
+    "expDate" => null, // string
     "txtype" => null, // string
 ]);
 ```
@@ -1874,21 +1873,17 @@ Create an instance: `$payment_sred = $client->PaymentSred();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_name` | `string` |  |
 | `amount` | `int` |  |
-| `authorization_number` | `string` |  |
-| `card_type` | `string` |  |
 | `currency` | `string` |  |
-| `date_time_tx` | `string` |  |
-| `device_payload` | `string` |  |
-| `merchant_id` | `string` |  |
-| `original_transaction_id` | `string` |  |
+| `device` | `string` |  |
+| `devicePayload` | `string` |  |
+| `expDate` | `string` |  |
+| `mode` | `string` |  |
+| `panMasked` | `string` |  |
 | `password` | `string` |  |
-| `response_code` | `string` |  |
-| `response_message` | `string` |  |
-| `sred` | `array` |  |
-| `terminal_id` | `string` |  |
-| `transaction_id` | `string` |  |
+| `serial` | `string` |  |
+| `serviceCode` | `string` |  |
+| `terminalId` | `string` |  |
 | `txtype` | `string` |  |
 
 #### Example: Create
@@ -1897,7 +1892,8 @@ Create an instance: `$payment_sred = $client->PaymentSred();`
 $payment_sred = $client->PaymentSred()->create([
     "amount" => null, // int
     "currency" => null, // string
-    "device_payload" => null, // string
+    "devicePayload" => null, // string
+    "terminalId" => null, // string
     "txtype" => null, // string
 ]);
 ```
@@ -1917,59 +1913,59 @@ Create an instance: `$pre_auth_transaction_completion = $client->PreAuthTransact
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_id` | `string` |  |
-| `acquirer_name` | `string` |  |
-| `actual_bonus_point` | `string` |  |
+| `acquirerId` | `string` |  |
+| `acquirerName` | `string` |  |
+| `actualBonusPoints` | `string` |  |
 | `amount` | `int` |  |
-| `authorization_code` | `string` |  |
-| `balance_amount` | `string` |  |
-| `card_brand` | `string` |  |
-| `card_number` | `string` |  |
-| `card_number_reference` | `string` |  |
-| `client_id` | `int` |  |
+| `authorizationCode` | `string` |  |
+| `balanceAmount` | `string` |  |
+| `cardBrand` | `string` |  |
+| `cardNumber` | `string` |  |
+| `cardNumberReference` | `string` |  |
+| `clientId` | `int` |  |
 | `currency` | `string` |  |
 | `cvc` | `string` |  |
-| `ec_data` | `string` |  |
-| `ecr_data` | `string` |  |
-| `emv_data` | `string` |  |
-| `exchange_fee` | `int` |  |
-| `exchange_rate` | `string` |  |
-| `language_code` | `string` |  |
-| `merchant_address` | `string` |  |
-| `merchant_name` | `string` |  |
-| `merchant_number` | `string` |  |
-| `message_type` | `string` |  |
-| `original_trace_number` | `int` |  |
-| `original_transaction_id` | `string` |  |
+| `ecData` | `string` |  |
+| `ecrData` | `string` |  |
+| `emvData` | `string` |  |
+| `exchangeFee` | `int` |  |
+| `exchangeRate` | `string` |  |
+| `languageCode` | `string` |  |
+| `merchantAddress` | `string` |  |
+| `merchantName` | `string` |  |
+| `merchantNumber` | `string` |  |
+| `messageType` | `string` |  |
+| `originalTraceNumber` | `int` |  |
+| `originalTransactionId` | `string` |  |
 | `password` | `string` |  |
-| `payment_reason` | `string` |  |
-| `receipt_footer` | `string` |  |
-| `receipt_header` | `string` |  |
-| `receipt_layout` | `int` |  |
-| `receipt_number` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `serial_number` | `string` |  |
+| `paymentReason` | `string` |  |
+| `receiptFooter` | `string` |  |
+| `receiptHeader` | `string` |  |
+| `receiptLayout` | `int` |  |
+| `receiptNumber` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `serialNumber` | `string` |  |
 | `svc` | `string` |  |
-| `terminal_id` | `int` |  |
-| `terminal_location` | `string` |  |
-| `trace_number` | `int` |  |
-| `transaction_date` | `string` |  |
-| `transaction_id` | `string` |  |
-| `transaction_type` | `string` |  |
-| `tx_type` | `string` |  |
-| `user_data` | `string` |  |
+| `terminalId` | `int` |  |
+| `terminalLocation` | `string` |  |
+| `traceNumber` | `int` |  |
+| `transactionDate` | `string` |  |
+| `transactionId` | `string` |  |
+| `transactionType` | `string` |  |
+| `txType` | `string` |  |
+| `userData` | `string` |  |
 
 #### Example: Create
 
 ```php
 $pre_auth_transaction_completion = $client->PreAuthTransactionCompletion()->create([
-    "card_number_reference" => null, // string
-    "client_id" => null, // int
+    "cardNumberReference" => null, // string
+    "clientId" => null, // int
     "currency" => null, // string
-    "receipt_number" => null, // string
-    "terminal_id" => null, // int
-    "transaction_type" => null, // string
+    "receiptNumber" => null, // string
+    "terminalId" => null, // int
+    "transactionType" => null, // string
 ]);
 ```
 
@@ -1988,20 +1984,20 @@ Create an instance: `$reactivate_terminal = $client->ReactivateTerminal();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `corporate_uuid` | `string` |  |
-| `package_order_uuid` | `string` |  |
-| `product_order_uuid` | `string` |  |
-| `reactivation_reason` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `terminal_id` | `int` |  |
+| `corporateUuid` | `string` |  |
+| `packageOrderUuid` | `string` |  |
+| `productOrderUuid` | `string` |  |
+| `reactivationReason` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `terminalId` | `int` |  |
 
 #### Example: Create
 
 ```php
 $reactivate_terminal = $client->ReactivateTerminal()->create([
-    "reactivation_reason" => null, // string
-    "terminal_id" => null, // int
+    "reactivationReason" => null, // string
+    "terminalId" => null, // int
 ]);
 ```
 
@@ -2020,55 +2016,55 @@ Create an instance: `$refund_transaction = $client->RefundTransaction();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_id` | `string` |  |
-| `acquirer_name` | `string` |  |
-| `actual_bonus_point` | `string` |  |
+| `acquirerId` | `string` |  |
+| `acquirerName` | `string` |  |
+| `actualBonusPoints` | `string` |  |
 | `amount` | `int` |  |
-| `authorization_code` | `string` |  |
-| `balance_amount` | `string` |  |
-| `card_brand` | `string` |  |
-| `card_number` | `string` |  |
-| `client_id` | `int` |  |
+| `authorizationCode` | `string` |  |
+| `balanceAmount` | `string` |  |
+| `cardBrand` | `string` |  |
+| `cardNumber` | `string` |  |
+| `clientId` | `int` |  |
 | `currency` | `string` |  |
 | `cvc` | `string` |  |
-| `ec_data` | `string` |  |
-| `ecr_data` | `string` |  |
-| `emv_data` | `string` |  |
-| `exchange_fee` | `int` |  |
-| `exchange_rate` | `string` |  |
-| `language_code` | `string` |  |
-| `merchant_address` | `string` |  |
-| `merchant_name` | `string` |  |
-| `merchant_number` | `string` |  |
-| `message_type` | `string` |  |
-| `original_trace_number` | `int` |  |
-| `original_transaction_id` | `string` |  |
+| `ecData` | `string` |  |
+| `ecrData` | `string` |  |
+| `emvData` | `string` |  |
+| `exchangeFee` | `int` |  |
+| `exchangeRate` | `string` |  |
+| `languageCode` | `string` |  |
+| `merchantAddress` | `string` |  |
+| `merchantName` | `string` |  |
+| `merchantNumber` | `string` |  |
+| `messageType` | `string` |  |
+| `originalTraceNumber` | `int` |  |
+| `originalTransactionId` | `string` |  |
 | `password` | `string` |  |
-| `payment_reason` | `string` |  |
-| `receipt_footer` | `string` |  |
-| `receipt_header` | `string` |  |
-| `receipt_layout` | `int` |  |
-| `receipt_number` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `serial_number` | `string` |  |
+| `paymentReason` | `string` |  |
+| `receiptFooter` | `string` |  |
+| `receiptHeader` | `string` |  |
+| `receiptLayout` | `int` |  |
+| `receiptNumber` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `serialNumber` | `string` |  |
 | `svc` | `string` |  |
-| `terminal_id` | `int` |  |
-| `terminal_location` | `string` |  |
-| `trace_number` | `int` |  |
-| `transaction_date` | `string` |  |
-| `transaction_id` | `string` |  |
-| `tx_type` | `string` |  |
-| `user_data` | `string` |  |
+| `terminalId` | `int` |  |
+| `terminalLocation` | `string` |  |
+| `traceNumber` | `int` |  |
+| `transactionDate` | `string` |  |
+| `transactionId` | `string` |  |
+| `txType` | `string` |  |
+| `userData` | `string` |  |
 
 #### Example: Create
 
 ```php
 $refund_transaction = $client->RefundTransaction()->create([
-    "client_id" => null, // int
+    "clientId" => null, // int
     "currency" => null, // string
-    "receipt_number" => null, // string
-    "terminal_id" => null, // int
+    "receiptNumber" => null, // string
+    "terminalId" => null, // int
 ]);
 ```
 
@@ -2087,23 +2083,23 @@ Create an instance: `$register_tecs_company = $client->RegisterTecsCompany();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `corporate_uuid` | `string` |  |
-| `package_order_uuid` | `string` |  |
-| `partner_id` | `int` |  |
-| `partner_name` | `string` |  |
-| `product_order_uuid` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `template_name` | `string` |  |
+| `corporateUuid` | `string` |  |
+| `packageOrderUuid` | `string` |  |
+| `partnerId` | `int` |  |
+| `partnerName` | `string` |  |
+| `productOrderUuid` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `templateName` | `string` |  |
 
 #### Example: Create
 
 ```php
 $register_tecs_company = $client->RegisterTecsCompany()->create([
-    "corporate_uuid" => null, // string
-    "package_order_uuid" => null, // string
-    "product_order_uuid" => null, // string
-    "template_name" => null, // string
+    "corporateUuid" => null, // string
+    "packageOrderUuid" => null, // string
+    "productOrderUuid" => null, // string
+    "templateName" => null, // string
 ]);
 ```
 
@@ -2122,36 +2118,36 @@ Create an instance: `$register_terminal = $client->RegisterTerminal();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `additional_data` | `array` |  |
-| `corporate_uuid` | `string` |  |
-| `package_order_uuid` | `string` |  |
-| `product_order_uuid` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `tecs_web_secret_key` | `string` |  |
-| `template_name` | `string` |  |
-| `terminal_country_code` | `string` |  |
-| `terminal_id` | `int` |  |
-| `terminal_id_acq` | `string` |  |
-| `terminal_language_code` | `string` |  |
-| `terminal_location` | `string` |  |
-| `terminal_serial_number` | `string` |  |
-| `token_io_alia` | `string` |  |
-| `token_io_iban` | `string` |  |
-| `token_io_member_id` | `string` |  |
-| `web_shop_url` | `string` |  |
+| `additionalData` | `array` |  |
+| `corporateUuid` | `string` |  |
+| `packageOrderUuid` | `string` |  |
+| `productOrderUuid` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `tecsWebSecretKey` | `string` |  |
+| `templateName` | `string` |  |
+| `terminalCountryCode` | `string` |  |
+| `terminalId` | `int` |  |
+| `terminalIdAcq` | `string` |  |
+| `terminalLanguageCode` | `string` |  |
+| `terminalLocation` | `string` |  |
+| `terminalSerialNumber` | `string` |  |
+| `tokenIOAlias` | `string` |  |
+| `tokenIOIban` | `string` |  |
+| `tokenIOMemberId` | `string` |  |
+| `webShopUrl` | `string` |  |
 
 #### Example: Create
 
 ```php
 $register_terminal = $client->RegisterTerminal()->create([
-    "corporate_uuid" => null, // string
-    "package_order_uuid" => null, // string
-    "product_order_uuid" => null, // string
-    "template_name" => null, // string
-    "terminal_country_code" => null, // string
-    "terminal_language_code" => null, // string
-    "terminal_location" => null, // string
+    "corporateUuid" => null, // string
+    "packageOrderUuid" => null, // string
+    "productOrderUuid" => null, // string
+    "templateName" => null, // string
+    "terminalCountryCode" => null, // string
+    "terminalLanguageCode" => null, // string
+    "terminalLocation" => null, // string
 ]);
 ```
 
@@ -2170,24 +2166,24 @@ Create an instance: `$report_data = $client->ReportData();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `card_brand_report_data` | `array` |  |
-| `clearing_date_from` | `string` |  |
-| `clearing_date_to` | `string` |  |
-| `corporate_id` | `string` |  |
+| `cardBrandReportData` | `array` |  |
+| `clearingDateFrom` | `string` |  |
+| `clearingDateTo` | `string` |  |
+| `corporateId` | `string` |  |
 | `currency` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `sum_over_credit_tx` | `array` |  |
-| `sum_over_debit_tx` | `array` |  |
-| `terminal_id` | `int` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `sumOverCreditTx` | `array` |  |
+| `sumOverDebitTx` | `array` |  |
+| `terminalId` | `int` |  |
 
 #### Example: Create
 
 ```php
 $report_data = $client->ReportData()->create([
-    "clearing_date_from" => null, // string
-    "clearing_date_to" => null, // string
-    "corporate_id" => null, // string
+    "clearingDateFrom" => null, // string
+    "clearingDateTo" => null, // string
+    "corporateId" => null, // string
     "currency" => null, // string
 ]);
 ```
@@ -2207,56 +2203,56 @@ Create an instance: `$status_transaction = $client->StatusTransaction();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_name` | `string` |  |
-| `acquirer_terminal_id` | `string` |  |
+| `acquirerName` | `string` |  |
+| `acquirerTerminalId` | `string` |  |
 | `amount` | `int` |  |
-| `application_cryptogram` | `string` |  |
-| `authorization_code` | `mixed` |  |
-| `authorization_date` | `string` |  |
-| `card_brand` | `string` |  |
-| `card_entry` | `string` |  |
-| `card_expiration` | `string` |  |
-| `card_number` | `string` |  |
-| `clearing_amount` | `int` |  |
-| `clearing_batch_id` | `string` |  |
-| `clearing_currency` | `string` |  |
-| `clearing_date` | `string` |  |
-| `clearing_processed_date` | `string` |  |
-| `clearing_status` | `string` |  |
-| `client_id` | `int` |  |
+| `applicationCryptogram` | `string` |  |
+| `authorizationCode` | `mixed` |  |
+| `authorizationDate` | `string` |  |
+| `cardBrand` | `string` |  |
+| `cardEntry` | `string` |  |
+| `cardExpiration` | `string` |  |
+| `cardNumber` | `string` |  |
+| `clearingAmount` | `int` |  |
+| `clearingBatchId` | `string` |  |
+| `clearingCurrency` | `string` |  |
+| `clearingDate` | `string` |  |
+| `clearingProcessedDate` | `string` |  |
+| `clearingStatus` | `string` |  |
+| `clientId` | `int` |  |
 | `currency` | `string` |  |
 | `cvm` | `string` |  |
-| `ecr_data` | `string` |  |
-| `emv_application_id` | `string` |  |
-| `emv_application_label` | `string` |  |
-| `merchant_name` | `string` |  |
-| `merchant_number` | `string` |  |
-| `original_client_id` | `string` |  |
-| `original_terminal_id` | `int` |  |
-| `original_transaction_id` | `string` |  |
-| `payment_reason` | `string` |  |
-| `receipt_number` | `string` |  |
-| `response_code` | `int` |  |
-| `response_code_from_a` | `string` |  |
-| `response_message` | `string` |  |
-| `retrieval_reference_number` | `string` |  |
-| `service_code` | `string` |  |
-| `settlement_status` | `string` |  |
-| `source_id` | `int` |  |
-| `tecsengine_response_code` | `int` |  |
-| `tecsengine_response_text` | `string` |  |
-| `terminal_end_of_day_date` | `string` |  |
-| `terminal_id` | `int` |  |
-| `terminal_location` | `string` |  |
-| `tip_amount` | `int` |  |
-| `trace_number` | `int` |  |
-| `transaction_clearing_date` | `string` |  |
-| `transaction_date` | `string` |  |
-| `transaction_id` | `string` |  |
-| `transaction_seq_number` | `int` |  |
-| `transaction_server_date` | `string` |  |
-| `transaction_source` | `string` |  |
-| `transaction_type` | `string` |  |
+| `ecrData` | `string` |  |
+| `emvApplicationId` | `string` |  |
+| `emvApplicationLabel` | `string` |  |
+| `merchantName` | `string` |  |
+| `merchantNumber` | `string` |  |
+| `originalClientId` | `string` |  |
+| `originalTerminalId` | `int` |  |
+| `originalTransactionId` | `string` |  |
+| `paymentReason` | `string` |  |
+| `receiptNumber` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseCodeFromAS` | `string` |  |
+| `responseMessage` | `string` |  |
+| `retrievalReferenceNumber` | `string` |  |
+| `serviceCode` | `string` |  |
+| `settlementStatus` | `string` |  |
+| `sourceId` | `int` |  |
+| `tecsengineResponseCode` | `int` |  |
+| `tecsengineResponseText` | `string` |  |
+| `terminalEndOfDayDate` | `string` |  |
+| `terminalId` | `int` |  |
+| `terminalLocation` | `string` |  |
+| `tipAmount` | `int` |  |
+| `traceNumber` | `int` |  |
+| `transactionClearingDate` | `string` |  |
+| `transactionDate` | `string` |  |
+| `transactionId` | `string` |  |
+| `transactionSeqNumber` | `int` |  |
+| `transactionServerDate` | `string` |  |
+| `transactionSource` | `string` |  |
+| `transactionType` | `string` |  |
 
 #### Example: Create
 
@@ -2280,18 +2276,18 @@ Create an instance: `$store_terminal_parameter = $client->StoreTerminalParameter
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acq_tab_nexo` | `array` |  |
-| `config_version` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `serial_number` | `string` |  |
-| `tid_sent` | `string` |  |
+| `acqTabNexo` | `array` |  |
+| `configVersion` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `serialNumber` | `string` |  |
+| `tidSent` | `string` |  |
 
 #### Example: Create
 
 ```php
 $store_terminal_parameter = $client->StoreTerminalParameter()->create([
-    "serial_number" => null, // string
+    "serialNumber" => null, // string
 ]);
 ```
 
@@ -2310,17 +2306,17 @@ Create an instance: `$terminal_id = $client->TerminalId();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `device_serial_number` | `array` |  |
-| `duplicate_terminal_id` | `array` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `terminal` | `array` |  |
+| `deviceSerialNumber` | `array` |  |
+| `duplicateTerminalIds` | `array` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `terminals` | `array` |  |
 
 #### Example: Create
 
 ```php
 $terminal_id = $client->TerminalId()->create([
-    "device_serial_number" => null, // array
+    "deviceSerialNumber" => null, // array
 ]);
 ```
 
@@ -2339,34 +2335,34 @@ Create an instance: `$transaction_history = $client->TransactionHistory();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `3_d_secure` | `string` |  |
-| `authorization_code` | `string` |  |
-| `card_brand` | `string` |  |
-| `clearing_amount_from` | `string` |  |
-| `clearing_amount_to` | `string` |  |
-| `clearing_currency` | `string` |  |
-| `clearing_status` | `string` |  |
-| `corporate_uuid` | `string` |  |
-| `order_by_transaction_date` | `string` |  |
+| `3DSecure` | `string` |  |
+| `authorizationCode` | `string` |  |
+| `cardBrand` | `string` |  |
+| `clearingAmountFrom` | `string` |  |
+| `clearingAmountTo` | `string` |  |
+| `clearingCurrency` | `string` |  |
+| `clearingStatus` | `string` |  |
+| `corporateUUID` | `string` |  |
+| `orderByTransactionDate` | `string` |  |
 | `pagination` | `array` |  |
-| `payment_token_public_id` | `string` |  |
-| `receipt_number` | `string` |  |
-| `referenced_transaction_id` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `retrieval_reference_number` | `string` |  |
-| `source_id` | `int` |  |
-| `tecsengine_response_code_from` | `string` |  |
-| `tecsengine_response_code_to` | `string` |  |
-| `terminal_id` | `int` |  |
-| `trace_number` | `string` |  |
-| `transaction_amount_from` | `string` |  |
-| `transaction_amount_to` | `string` |  |
-| `transaction_date_from` | `string` |  |
-| `transaction_date_to` | `string` |  |
-| `transaction_history` | `array` |  |
-| `transaction_id` | `string` |  |
-| `transaction_type` | `string` |  |
+| `paymentTokenPublicId` | `string` |  |
+| `receiptNumber` | `string` |  |
+| `referencedTransactionId` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `retrievalReferenceNumber` | `string` |  |
+| `sourceId` | `int` |  |
+| `tecsengineResponseCodeFrom` | `string` |  |
+| `tecsengineResponseCodeTo` | `string` |  |
+| `terminalId` | `int` |  |
+| `traceNumber` | `string` |  |
+| `transactionAmountFrom` | `string` |  |
+| `transactionAmountTo` | `string` |  |
+| `transactionDateFrom` | `string` |  |
+| `transactionDateTo` | `string` |  |
+| `transactionHistories` | `array` |  |
+| `transactionId` | `string` |  |
+| `transactionType` | `string` |  |
 | `wallet` | `string` |  |
 
 #### Example: Create
@@ -2392,11 +2388,11 @@ Create an instance: `$transactions_count = $client->TransactionsCount();`
 | Field | Type | Description |
 | --- | --- | --- |
 | `period` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `transaction_date_from` | `string` |  |
-| `transaction_date_to` | `string` |  |
-| `transactions_count` | `array` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `transactionDateFrom` | `string` |  |
+| `transactionDateTo` | `string` |  |
+| `transactionsCount` | `array` |  |
 
 #### Example: Create
 
@@ -2421,11 +2417,11 @@ Create an instance: `$transactions_count_card_brand = $client->TransactionsCount
 | Field | Type | Description |
 | --- | --- | --- |
 | `period` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `transaction_date_from` | `string` |  |
-| `transaction_date_to` | `string` |  |
-| `transactions_count` | `array` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `transactionDateFrom` | `string` |  |
+| `transactionDateTo` | `string` |  |
+| `transactionsCount` | `array` |  |
 
 #### Example: Create
 
@@ -2450,11 +2446,11 @@ Create an instance: `$transactions_turnover = $client->TransactionsTurnover();`
 | Field | Type | Description |
 | --- | --- | --- |
 | `period` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `transaction_date_from` | `string` |  |
-| `transaction_date_to` | `string` |  |
-| `turnover` | `array` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `transactionDateFrom` | `string` |  |
+| `transactionDateTo` | `string` |  |
+| `turnovers` | `array` |  |
 
 #### Example: Create
 
@@ -2479,22 +2475,22 @@ Create an instance: `$update_merchant = $client->UpdateMerchant();`
 | Field | Type | Description |
 | --- | --- | --- |
 | `city` | `string` |  |
-| `corporate_uuid` | `string` |  |
+| `corporateUuid` | `string` |  |
 | `country` | `string` |  |
-| `merchant_category_code` | `string` |  |
+| `merchantCategoryCode` | `string` |  |
 | `name` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 | `state` | `string` |  |
 | `street` | `string` |  |
-| `vu_nummer` | `string` |  |
+| `vuNummer` | `string` |  |
 | `zipcode` | `string` |  |
 
 #### Example: Create
 
 ```php
 $update_merchant = $client->UpdateMerchant()->create([
-    "corporate_uuid" => null, // string
+    "corporateUuid" => null, // string
 ]);
 ```
 
@@ -2513,17 +2509,17 @@ Create an instance: `$update_template_xml = $client->UpdateTemplateXml();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `template_name` | `string` |  |
-| `template_xml` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `templateName` | `string` |  |
+| `templateXml` | `string` |  |
 
 #### Example: Create
 
 ```php
 $update_template_xml = $client->UpdateTemplateXml()->create([
-    "template_name" => null, // string
-    "template_xml" => null, // string
+    "templateName" => null, // string
+    "templateXml" => null, // string
 ]);
 ```
 
@@ -2542,14 +2538,14 @@ Create an instance: `$version = $client->Version();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `app_name` | `string` |  |
-| `build_date` | `string` |  |
+| `appName` | `string` |  |
+| `buildDate` | `string` |  |
 | `version` | `string` |  |
 
 #### Example: Load
 
 ```php
-// load() returns the bare Version record (throws on error).
+// load() returns the ENTITY — call data_get() for the Version record (throws on error).
 $version = $client->Version()->load();
 ```
 

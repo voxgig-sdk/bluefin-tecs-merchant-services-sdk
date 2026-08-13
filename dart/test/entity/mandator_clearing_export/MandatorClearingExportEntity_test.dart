@@ -47,7 +47,7 @@ void tests() {
       final mandator_clearing_export_ref01_ent = client.MandatorClearingExport();
       dynamic mandator_clearing_export_ref01_data = setup['data']['new']['mandator_clearing_export']['mandator_clearing_export_ref01'];
 
-      mandator_clearing_export_ref01_data = await mandator_clearing_export_ref01_ent.create(mandator_clearing_export_ref01_data);
+      mandator_clearing_export_ref01_data = (await mandator_clearing_export_ref01_ent.create(mandator_clearing_export_ref01_data)).data();
       ok(null != mandator_clearing_export_ref01_data);
 
 

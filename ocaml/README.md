@@ -43,9 +43,9 @@ let client = Sdk_client.make (jo [("apikey", Str (Sys.getenv "BLUEFIN_TECS_MERCH
 ### 4. Create, update, and remove
 
 ```ocaml
-(* Create — returns the bare created record (a Map) *)
-let created = (Sdk_client.cancel_transaction client Noval).e_create (jo [("client_id", (Num 1.)); ("currency", (Str "example_currency")); ("receipt_number", (Str "example_receipt_number")); ("terminal_id", (Num 1.))]) Noval in
-ignore created;
+(* Create — resolves to the ENTITY; e_data_get gives the record *)
+let created = (Sdk_client.cancel_transaction client Noval).e_create (jo [("clientId", (Num 1.)); ("currency", (Str "example_currency")); ("receiptNumber", (Str "example_receiptNumber")); ("terminalId", (Num 1.))]) Noval in
+print_endline (stringify (created.e_data_get ()));
 
 ```
 
@@ -123,9 +123,9 @@ Create a mock client for unit testing — no server required:
 ```ocaml
 let () =
   let client = Sdk_client.test () in
-  (* Entity ops return the bare record and raise on error. *)
+  (* Entity ops resolve to the ENTITY and raise on error. *)
   let digital_services_api = (Sdk_client.digital_services_api client Noval).e_load (empty_map ()) Noval in
-  print_endline (stringify digital_services_api)  (* the mock response record *)
+  print_endline (stringify (digital_services_api.e_data_get ()))  (* the mock response record *)
 ```
 
 ### Use a custom fetch function
@@ -246,8 +246,8 @@ All entities are `entity_obj` records sharing the same fields.
 
 | Field | Signature | Description |
 | --- | --- | --- |
-| `e_load` | `value -> value -> value` | Load a single entity by match criteria. Raises on error. |
-| `e_create` | `value -> value -> value` | Create a new entity. Raises on error. |
+| `e_load` | `value -> value -> entity_obj` | Load a single entity by match criteria. Resolves to the entity. Raises on error. |
+| `e_create` | `value -> value -> entity_obj` | Create a new entity. Resolves to the entity. Raises on error. |
 | `e_data_get` | `unit -> value` | Get entity data. |
 | `e_data_set` | `value -> unit` | Set entity data. |
 | `e_match_get` | `unit -> value` | Get entity match criteria. |
@@ -257,9 +257,11 @@ All entities are `entity_obj` records sharing the same fields.
 
 ### Result shape
 
-Entity operations return the bare result value (a `Map` for single-entity
-ops, a `List` for `e_list`) and raise `Sdk_error.E` on error. Wrap calls
-in `try`/`with` to handle failures.
+Entity operations resolve to the ENTITY, not the raw record — `e_list` to
+one entity per record — and raise `Sdk_error.E` on error. The record is
+reached through `e_data_get`, which returns the entity's data container.
+`e_remove` resolves to the entity marked deleted (`e_deleted`); it keeps the
+data it held. Wrap calls in `try`/`with` to handle failures.
 
 The `direct` escape hatch never raises — it returns a result `value` map
 you branch on via `getp result "ok"`:
@@ -279,46 +281,46 @@ On error, `ok` is `Bool false` and `err` carries the error value.
 
 | Field | Description |
 | --- | --- |
-| `acquirer_id` |  |
-| `acquirer_name` |  |
-| `actual_bonus_point` |  |
+| `acquirerId` |  |
+| `acquirerName` |  |
+| `actualBonusPoints` |  |
 | `amount` |  |
-| `authorization_code` |  |
-| `balance_amount` |  |
-| `card_brand` |  |
-| `card_number` |  |
-| `client_id` |  |
+| `authorizationCode` |  |
+| `balanceAmount` |  |
+| `cardBrand` |  |
+| `cardNumber` |  |
+| `clientId` |  |
 | `currency` |  |
 | `cvc` |  |
-| `ec_data` |  |
-| `ecr_data` |  |
-| `emv_data` |  |
-| `exchange_fee` |  |
-| `exchange_rate` |  |
-| `language_code` |  |
-| `merchant_address` |  |
-| `merchant_name` |  |
-| `merchant_number` |  |
-| `message_type` |  |
-| `original_trace_number` |  |
-| `original_transaction_id` |  |
+| `ecData` |  |
+| `ecrData` |  |
+| `emvData` |  |
+| `exchangeFee` |  |
+| `exchangeRate` |  |
+| `languageCode` |  |
+| `merchantAddress` |  |
+| `merchantName` |  |
+| `merchantNumber` |  |
+| `messageType` |  |
+| `originalTraceNumber` |  |
+| `originalTransactionId` |  |
 | `password` |  |
-| `payment_reason` |  |
-| `receipt_footer` |  |
-| `receipt_header` |  |
-| `receipt_layout` |  |
-| `receipt_number` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `serial_number` |  |
+| `paymentReason` |  |
+| `receiptFooter` |  |
+| `receiptHeader` |  |
+| `receiptLayout` |  |
+| `receiptNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `serialNumber` |  |
 | `svc` |  |
-| `terminal_id` |  |
-| `terminal_location` |  |
-| `trace_number` |  |
-| `transaction_date` |  |
-| `transaction_id` |  |
-| `tx_type` |  |
-| `user_data` |  |
+| `terminalId` |  |
+| `terminalLocation` |  |
+| `traceNumber` |  |
+| `transactionDate` |  |
+| `transactionId` |  |
+| `txType` |  |
+| `userData` |  |
 
 Operations: Create.
 
@@ -328,9 +330,9 @@ API path: `/public/cancelTransaction`
 
 | Field | Description |
 | --- | --- |
-| `card_no` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `cardNo` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -340,13 +342,13 @@ API path: `/checkCardBlackListed`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_id` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `template_name` |  |
-| `template_type` |  |
-| `template_xml` |  |
-| `terminal_type` |  |
+| `acquirerId` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `templateName` |  |
+| `templateType` |  |
+| `templateXml` |  |
+| `terminalType` |  |
 
 Operations: Create.
 
@@ -356,13 +358,13 @@ API path: `/createProduct`
 
 | Field | Description |
 | --- | --- |
-| `corporate_uuid` |  |
-| `deactivation_reason` |  |
-| `package_order_uuid` |  |
-| `product_order_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
+| `corporateUuid` |  |
+| `deactivationReason` |  |
+| `packageOrderUuid` |  |
+| `productOrderUuid` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
 
 Operations: Create.
 
@@ -372,16 +374,16 @@ API path: `/deactivateTerminal`
 
 | Field | Description |
 | --- | --- |
-| `clearing_date_from` |  |
-| `clearing_date_to` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `tx_count` |  |
-| `tx_id_end` |  |
-| `tx_id_start` |  |
-| `tx_seq_no_end` |  |
-| `tx_seq_no_start` |  |
-| `tx_total` |  |
+| `clearingDateFrom` |  |
+| `clearingDateTo` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `txCount` |  |
+| `txIdEnd` |  |
+| `txIdStart` |  |
+| `txSeqNoEnd` |  |
+| `txSeqNoStart` |  |
+| `txTotal` |  |
 
 Operations: Create, Load.
 
@@ -391,12 +393,12 @@ API path: `/public/digitalservices/mandatorClearingExportDownload/{fileId}`
 
 | Field | Description |
 | --- | --- |
-| `ecom_data` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
-| `transaction_id` |  |
-| `transaction_type` |  |
+| `ecomData` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
+| `transactionId` |  |
+| `transactionType` |  |
 
 Operations: Create.
 
@@ -406,11 +408,11 @@ API path: `/public/getEcData`
 
 | Field | Description |
 | --- | --- |
-| `ecom_pass` |  |
-| `ecom_skey` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
+| `ecomPass` |  |
+| `ecomSkey` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
 
 Operations: Create.
 
@@ -420,12 +422,12 @@ API path: `/public/getEcomParameters`
 
 | Field | Description |
 | --- | --- |
-| `ecr_data` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
-| `transaction_id` |  |
-| `transaction_type` |  |
+| `ecrData` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
+| `transactionId` |  |
+| `transactionType` |  |
 
 Operations: Create.
 
@@ -435,12 +437,12 @@ API path: `/public/getEcrData`
 
 | Field | Description |
 | --- | --- |
-| `emv_data` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
-| `transaction_id` |  |
-| `transaction_type` |  |
+| `emvData` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
+| `transactionId` |  |
+| `transactionType` |  |
 
 Operations: Create.
 
@@ -450,20 +452,20 @@ API path: `/public/getEmvData`
 
 | Field | Description |
 | --- | --- |
-| `account_no` |  |
-| `additional_data` |  |
-| `corporate_uuid` |  |
+| `accountNo` |  |
+| `additionalData` |  |
+| `corporateUuid` |  |
 | `currency` |  |
-| `merchant_category_code` |  |
-| `package_order_uuid` |  |
-| `product_order_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `sorting_code` |  |
-| `template_name` |  |
-| `terminal_id` |  |
-| `terminal_id_acq` |  |
-| `vu_nummer` |  |
+| `merchantCategoryCode` |  |
+| `packageOrderUuid` |  |
+| `productOrderUuid` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `sortingCode` |  |
+| `templateName` |  |
+| `terminalIdAcq` |  |
+| `terminalIds` |  |
+| `vuNummer` |  |
 
 Operations: Create.
 
@@ -473,9 +475,9 @@ API path: `/enableAcquiring`
 
 | Field | Description |
 | --- | --- |
-| `merchant_contract_number` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `merchantContractNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -485,9 +487,9 @@ API path: `/getMerchantContractNumber`
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
-| `template_name` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `templateName` |  |
 
 Operations: Create.
 
@@ -497,9 +499,9 @@ API path: `/public/getTemplateXml`
 
 | Field | Description |
 | --- | --- |
-| `mandator_name` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `mandatorName` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -509,9 +511,9 @@ API path: `/introduceMandator`
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_template_description` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalTemplateDescription` |  |
 
 Operations: Create.
 
@@ -522,15 +524,15 @@ API path: `/introducePackage`
 | Field | Description |
 | --- | --- |
 | `hwserialno` |  |
-| `ka_date_time_from` |  |
-| `ka_date_time_to` |  |
-| `keep_alive_data` |  |
+| `kaDateTimeFrom` |  |
+| `kaDateTimeTo` |  |
+| `keepAliveData` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_date_time_from` |  |
-| `terminal_date_time_to` |  |
-| `terminal_id` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalDateTimeFrom` |  |
+| `terminalDateTimeTo` |  |
+| `terminalId` |  |
 
 Operations: Create.
 
@@ -540,12 +542,12 @@ API path: `/public/keepalive`
 
 | Field | Description |
 | --- | --- |
-| `corporate_uuid` |  |
+| `corporateUuid` |  |
 | `filter` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminals` |  |
 
 Operations: Create.
 
@@ -555,12 +557,12 @@ API path: `/public/listTerminals`
 
 | Field | Description |
 | --- | --- |
-| `clearing_date_from` |  |
-| `clearing_date_to` |  |
+| `clearingDateFrom` |  |
+| `clearingDateTo` |  |
 | `pagination` |  |
-| `record` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `records` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -570,12 +572,12 @@ API path: `/public/digitalservices/mandatorClearingExport`
 
 | Field | Description |
 | --- | --- |
-| `clearing_date_from` |  |
-| `clearing_date_to` |  |
-| `file_id` |  |
-| `filename_template` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `clearingDateFrom` |  |
+| `clearingDateTo` |  |
+| `fileId` |  |
+| `filenameTemplate` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `status` |  |
 
 Operations: Create, Load.
@@ -586,11 +588,11 @@ API path: `/public/digitalservices/mandatorClearingExportDownload`
 
 | Field | Description |
 | --- | --- |
-| `clearing_date_from` |  |
-| `clearing_date_to` |  |
-| `record` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `clearingDateFrom` |  |
+| `clearingDateTo` |  |
+| `records` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -600,30 +602,30 @@ API path: `/public/digitalservices/mandatorClearingExportSummary`
 
 | Field | Description |
 | --- | --- |
-| `3_d_secure` |  |
-| `authorization_code` |  |
-| `card_brand` |  |
-| `clearing_amount_from` |  |
-| `clearing_amount_to` |  |
-| `clearing_currency` |  |
-| `clearing_status` |  |
-| `corporate_uuid` |  |
-| `order_by_transaction_date` |  |
+| `3DSecure` |  |
+| `authorizationCode` |  |
+| `cardBrand` |  |
+| `clearingAmountFrom` |  |
+| `clearingAmountTo` |  |
+| `clearingCurrency` |  |
+| `clearingStatus` |  |
+| `corporateUUID` |  |
+| `orderByTransactionDate` |  |
 | `pagination` |  |
-| `receipt_number` |  |
-| `referenced_transaction_id` |  |
-| `retrieval_reference_number` |  |
-| `source_id` |  |
-| `tecsengine_response_code_from` |  |
-| `tecsengine_response_code_to` |  |
-| `terminal_id` |  |
-| `trace_number` |  |
-| `transaction_amount_from` |  |
-| `transaction_amount_to` |  |
-| `transaction_date_from` |  |
-| `transaction_date_to` |  |
-| `transaction_id` |  |
-| `transaction_type` |  |
+| `receiptNumber` |  |
+| `referencedTransactionId` |  |
+| `retrievalReferenceNumber` |  |
+| `sourceId` |  |
+| `tecsengineResponseCodeFrom` |  |
+| `tecsengineResponseCodeTo` |  |
+| `terminalId` |  |
+| `traceNumber` |  |
+| `transactionAmountFrom` |  |
+| `transactionAmountTo` |  |
+| `transactionDateFrom` |  |
+| `transactionDateTo` |  |
+| `transactionId` |  |
+| `transactionType` |  |
 | `wallet` |  |
 
 Operations: Create.
@@ -634,11 +636,11 @@ API path: `/public/transactionHistoryCsv`
 
 | Field | Description |
 | --- | --- |
-| `productorderuuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `target_packageorderuuid` |  |
-| `target_productorderuuid` |  |
+| `productorderuuids` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `targetPackageorderuuid` |  |
+| `targetProductorderuuid` |  |
 
 Operations: Create.
 
@@ -648,22 +650,22 @@ API path: `/moveTid`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_name` |  |
+| `acquirerName` |  |
 | `amount` |  |
-| `authorization_number` |  |
-| `card_number` |  |
-| `card_type` |  |
+| `authorizationNumber` |  |
+| `cardNumber` |  |
+| `cardType` |  |
 | `currency` |  |
 | `cvc` |  |
-| `date_time_tx` |  |
-| `exp_date` |  |
-| `merchant_id` |  |
-| `original_transaction_id` |  |
+| `dateTimeTx` |  |
+| `expDate` |  |
+| `merchantId` |  |
+| `originalTransactionId` |  |
 | `password` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
-| `transaction_id` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
+| `transactionId` |  |
 | `txtype` |  |
 
 Operations: Create.
@@ -674,21 +676,17 @@ API path: `/public/paymentManual`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_name` |  |
 | `amount` |  |
-| `authorization_number` |  |
-| `card_type` |  |
 | `currency` |  |
-| `date_time_tx` |  |
-| `device_payload` |  |
-| `merchant_id` |  |
-| `original_transaction_id` |  |
+| `device` |  |
+| `devicePayload` |  |
+| `expDate` |  |
+| `mode` |  |
+| `panMasked` |  |
 | `password` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `sred` |  |
-| `terminal_id` |  |
-| `transaction_id` |  |
+| `serial` |  |
+| `serviceCode` |  |
+| `terminalId` |  |
 | `txtype` |  |
 
 Operations: Create.
@@ -699,48 +697,48 @@ API path: `/public/paymentSred`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_id` |  |
-| `acquirer_name` |  |
-| `actual_bonus_point` |  |
+| `acquirerId` |  |
+| `acquirerName` |  |
+| `actualBonusPoints` |  |
 | `amount` |  |
-| `authorization_code` |  |
-| `balance_amount` |  |
-| `card_brand` |  |
-| `card_number` |  |
-| `card_number_reference` |  |
-| `client_id` |  |
+| `authorizationCode` |  |
+| `balanceAmount` |  |
+| `cardBrand` |  |
+| `cardNumber` |  |
+| `cardNumberReference` |  |
+| `clientId` |  |
 | `currency` |  |
 | `cvc` |  |
-| `ec_data` |  |
-| `ecr_data` |  |
-| `emv_data` |  |
-| `exchange_fee` |  |
-| `exchange_rate` |  |
-| `language_code` |  |
-| `merchant_address` |  |
-| `merchant_name` |  |
-| `merchant_number` |  |
-| `message_type` |  |
-| `original_trace_number` |  |
-| `original_transaction_id` |  |
+| `ecData` |  |
+| `ecrData` |  |
+| `emvData` |  |
+| `exchangeFee` |  |
+| `exchangeRate` |  |
+| `languageCode` |  |
+| `merchantAddress` |  |
+| `merchantName` |  |
+| `merchantNumber` |  |
+| `messageType` |  |
+| `originalTraceNumber` |  |
+| `originalTransactionId` |  |
 | `password` |  |
-| `payment_reason` |  |
-| `receipt_footer` |  |
-| `receipt_header` |  |
-| `receipt_layout` |  |
-| `receipt_number` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `serial_number` |  |
+| `paymentReason` |  |
+| `receiptFooter` |  |
+| `receiptHeader` |  |
+| `receiptLayout` |  |
+| `receiptNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `serialNumber` |  |
 | `svc` |  |
-| `terminal_id` |  |
-| `terminal_location` |  |
-| `trace_number` |  |
-| `transaction_date` |  |
-| `transaction_id` |  |
-| `transaction_type` |  |
-| `tx_type` |  |
-| `user_data` |  |
+| `terminalId` |  |
+| `terminalLocation` |  |
+| `traceNumber` |  |
+| `transactionDate` |  |
+| `transactionId` |  |
+| `transactionType` |  |
+| `txType` |  |
+| `userData` |  |
 
 Operations: Create.
 
@@ -750,13 +748,13 @@ API path: `/public/paymentTransaction`
 
 | Field | Description |
 | --- | --- |
-| `corporate_uuid` |  |
-| `package_order_uuid` |  |
-| `product_order_uuid` |  |
-| `reactivation_reason` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
+| `corporateUuid` |  |
+| `packageOrderUuid` |  |
+| `productOrderUuid` |  |
+| `reactivationReason` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
 
 Operations: Create.
 
@@ -766,46 +764,46 @@ API path: `/reactivateTerminal`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_id` |  |
-| `acquirer_name` |  |
-| `actual_bonus_point` |  |
+| `acquirerId` |  |
+| `acquirerName` |  |
+| `actualBonusPoints` |  |
 | `amount` |  |
-| `authorization_code` |  |
-| `balance_amount` |  |
-| `card_brand` |  |
-| `card_number` |  |
-| `client_id` |  |
+| `authorizationCode` |  |
+| `balanceAmount` |  |
+| `cardBrand` |  |
+| `cardNumber` |  |
+| `clientId` |  |
 | `currency` |  |
 | `cvc` |  |
-| `ec_data` |  |
-| `ecr_data` |  |
-| `emv_data` |  |
-| `exchange_fee` |  |
-| `exchange_rate` |  |
-| `language_code` |  |
-| `merchant_address` |  |
-| `merchant_name` |  |
-| `merchant_number` |  |
-| `message_type` |  |
-| `original_trace_number` |  |
-| `original_transaction_id` |  |
+| `ecData` |  |
+| `ecrData` |  |
+| `emvData` |  |
+| `exchangeFee` |  |
+| `exchangeRate` |  |
+| `languageCode` |  |
+| `merchantAddress` |  |
+| `merchantName` |  |
+| `merchantNumber` |  |
+| `messageType` |  |
+| `originalTraceNumber` |  |
+| `originalTransactionId` |  |
 | `password` |  |
-| `payment_reason` |  |
-| `receipt_footer` |  |
-| `receipt_header` |  |
-| `receipt_layout` |  |
-| `receipt_number` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `serial_number` |  |
+| `paymentReason` |  |
+| `receiptFooter` |  |
+| `receiptHeader` |  |
+| `receiptLayout` |  |
+| `receiptNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `serialNumber` |  |
 | `svc` |  |
-| `terminal_id` |  |
-| `terminal_location` |  |
-| `trace_number` |  |
-| `transaction_date` |  |
-| `transaction_id` |  |
-| `tx_type` |  |
-| `user_data` |  |
+| `terminalId` |  |
+| `terminalLocation` |  |
+| `traceNumber` |  |
+| `transactionDate` |  |
+| `transactionId` |  |
+| `txType` |  |
+| `userData` |  |
 
 Operations: Create.
 
@@ -815,14 +813,14 @@ API path: `/public/refundTransaction`
 
 | Field | Description |
 | --- | --- |
-| `corporate_uuid` |  |
-| `package_order_uuid` |  |
-| `partner_id` |  |
-| `partner_name` |  |
-| `product_order_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `template_name` |  |
+| `corporateUuid` |  |
+| `packageOrderUuid` |  |
+| `partnerId` |  |
+| `partnerName` |  |
+| `productOrderUuid` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `templateName` |  |
 
 Operations: Create.
 
@@ -832,24 +830,24 @@ API path: `/registerTecsCompany`
 
 | Field | Description |
 | --- | --- |
-| `additional_data` |  |
-| `corporate_uuid` |  |
-| `package_order_uuid` |  |
-| `product_order_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `tecs_web_secret_key` |  |
-| `template_name` |  |
-| `terminal_country_code` |  |
-| `terminal_id` |  |
-| `terminal_id_acq` |  |
-| `terminal_language_code` |  |
-| `terminal_location` |  |
-| `terminal_serial_number` |  |
-| `token_io_alia` |  |
-| `token_io_iban` |  |
-| `token_io_member_id` |  |
-| `web_shop_url` |  |
+| `additionalData` |  |
+| `corporateUuid` |  |
+| `packageOrderUuid` |  |
+| `productOrderUuid` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `tecsWebSecretKey` |  |
+| `templateName` |  |
+| `terminalCountryCode` |  |
+| `terminalId` |  |
+| `terminalIdAcq` |  |
+| `terminalLanguageCode` |  |
+| `terminalLocation` |  |
+| `terminalSerialNumber` |  |
+| `tokenIOAlias` |  |
+| `tokenIOIban` |  |
+| `tokenIOMemberId` |  |
+| `webShopUrl` |  |
 
 Operations: Create.
 
@@ -859,16 +857,16 @@ API path: `/registerTerminal`
 
 | Field | Description |
 | --- | --- |
-| `card_brand_report_data` |  |
-| `clearing_date_from` |  |
-| `clearing_date_to` |  |
-| `corporate_id` |  |
+| `cardBrandReportData` |  |
+| `clearingDateFrom` |  |
+| `clearingDateTo` |  |
+| `corporateId` |  |
 | `currency` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `sum_over_credit_tx` |  |
-| `sum_over_debit_tx` |  |
-| `terminal_id` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `sumOverCreditTx` |  |
+| `sumOverDebitTx` |  |
+| `terminalId` |  |
 
 Operations: Create.
 
@@ -878,56 +876,56 @@ API path: `/public/digitalservices/reportData`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_name` |  |
-| `acquirer_terminal_id` |  |
+| `acquirerName` |  |
+| `acquirerTerminalId` |  |
 | `amount` |  |
-| `application_cryptogram` |  |
-| `authorization_code` |  |
-| `authorization_date` |  |
-| `card_brand` |  |
-| `card_entry` |  |
-| `card_expiration` |  |
-| `card_number` |  |
-| `clearing_amount` |  |
-| `clearing_batch_id` |  |
-| `clearing_currency` |  |
-| `clearing_date` |  |
-| `clearing_processed_date` |  |
-| `clearing_status` |  |
-| `client_id` |  |
+| `applicationCryptogram` |  |
+| `authorizationCode` |  |
+| `authorizationDate` |  |
+| `cardBrand` |  |
+| `cardEntry` |  |
+| `cardExpiration` |  |
+| `cardNumber` |  |
+| `clearingAmount` |  |
+| `clearingBatchId` |  |
+| `clearingCurrency` |  |
+| `clearingDate` |  |
+| `clearingProcessedDate` |  |
+| `clearingStatus` |  |
+| `clientId` |  |
 | `currency` |  |
 | `cvm` |  |
-| `ecr_data` |  |
-| `emv_application_id` |  |
-| `emv_application_label` |  |
-| `merchant_name` |  |
-| `merchant_number` |  |
-| `original_client_id` |  |
-| `original_terminal_id` |  |
-| `original_transaction_id` |  |
-| `payment_reason` |  |
-| `receipt_number` |  |
-| `response_code` |  |
-| `response_code_from_a` |  |
-| `response_message` |  |
-| `retrieval_reference_number` |  |
-| `service_code` |  |
-| `settlement_status` |  |
-| `source_id` |  |
-| `tecsengine_response_code` |  |
-| `tecsengine_response_text` |  |
-| `terminal_end_of_day_date` |  |
-| `terminal_id` |  |
-| `terminal_location` |  |
-| `tip_amount` |  |
-| `trace_number` |  |
-| `transaction_clearing_date` |  |
-| `transaction_date` |  |
-| `transaction_id` |  |
-| `transaction_seq_number` |  |
-| `transaction_server_date` |  |
-| `transaction_source` |  |
-| `transaction_type` |  |
+| `ecrData` |  |
+| `emvApplicationId` |  |
+| `emvApplicationLabel` |  |
+| `merchantName` |  |
+| `merchantNumber` |  |
+| `originalClientId` |  |
+| `originalTerminalId` |  |
+| `originalTransactionId` |  |
+| `paymentReason` |  |
+| `receiptNumber` |  |
+| `responseCode` |  |
+| `responseCodeFromAS` |  |
+| `responseMessage` |  |
+| `retrievalReferenceNumber` |  |
+| `serviceCode` |  |
+| `settlementStatus` |  |
+| `sourceId` |  |
+| `tecsengineResponseCode` |  |
+| `tecsengineResponseText` |  |
+| `terminalEndOfDayDate` |  |
+| `terminalId` |  |
+| `terminalLocation` |  |
+| `tipAmount` |  |
+| `traceNumber` |  |
+| `transactionClearingDate` |  |
+| `transactionDate` |  |
+| `transactionId` |  |
+| `transactionSeqNumber` |  |
+| `transactionServerDate` |  |
+| `transactionSource` |  |
+| `transactionType` |  |
 
 Operations: Create.
 
@@ -937,12 +935,12 @@ API path: `/public/statusTransaction`
 
 | Field | Description |
 | --- | --- |
-| `acq_tab_nexo` |  |
-| `config_version` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `serial_number` |  |
-| `tid_sent` |  |
+| `acqTabNexo` |  |
+| `configVersion` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `serialNumber` |  |
+| `tidSent` |  |
 
 Operations: Create.
 
@@ -952,11 +950,11 @@ API path: `/storeTerminalParameters`
 
 | Field | Description |
 | --- | --- |
-| `device_serial_number` |  |
-| `duplicate_terminal_id` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal` |  |
+| `deviceSerialNumber` |  |
+| `duplicateTerminalIds` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminals` |  |
 
 Operations: Create.
 
@@ -966,34 +964,34 @@ API path: `/public/getTerminalId`
 
 | Field | Description |
 | --- | --- |
-| `3_d_secure` |  |
-| `authorization_code` |  |
-| `card_brand` |  |
-| `clearing_amount_from` |  |
-| `clearing_amount_to` |  |
-| `clearing_currency` |  |
-| `clearing_status` |  |
-| `corporate_uuid` |  |
-| `order_by_transaction_date` |  |
+| `3DSecure` |  |
+| `authorizationCode` |  |
+| `cardBrand` |  |
+| `clearingAmountFrom` |  |
+| `clearingAmountTo` |  |
+| `clearingCurrency` |  |
+| `clearingStatus` |  |
+| `corporateUUID` |  |
+| `orderByTransactionDate` |  |
 | `pagination` |  |
-| `payment_token_public_id` |  |
-| `receipt_number` |  |
-| `referenced_transaction_id` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `retrieval_reference_number` |  |
-| `source_id` |  |
-| `tecsengine_response_code_from` |  |
-| `tecsengine_response_code_to` |  |
-| `terminal_id` |  |
-| `trace_number` |  |
-| `transaction_amount_from` |  |
-| `transaction_amount_to` |  |
-| `transaction_date_from` |  |
-| `transaction_date_to` |  |
-| `transaction_history` |  |
-| `transaction_id` |  |
-| `transaction_type` |  |
+| `paymentTokenPublicId` |  |
+| `receiptNumber` |  |
+| `referencedTransactionId` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `retrievalReferenceNumber` |  |
+| `sourceId` |  |
+| `tecsengineResponseCodeFrom` |  |
+| `tecsengineResponseCodeTo` |  |
+| `terminalId` |  |
+| `traceNumber` |  |
+| `transactionAmountFrom` |  |
+| `transactionAmountTo` |  |
+| `transactionDateFrom` |  |
+| `transactionDateTo` |  |
+| `transactionHistories` |  |
+| `transactionId` |  |
+| `transactionType` |  |
 | `wallet` |  |
 
 Operations: Create.
@@ -1005,11 +1003,11 @@ API path: `/public/mcom/transactionHistory`
 | Field | Description |
 | --- | --- |
 | `period` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `transaction_date_from` |  |
-| `transaction_date_to` |  |
-| `transactions_count` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `transactionDateFrom` |  |
+| `transactionDateTo` |  |
+| `transactionsCount` |  |
 
 Operations: Create.
 
@@ -1020,11 +1018,11 @@ API path: `/public/countAuthorisedTransactions`
 | Field | Description |
 | --- | --- |
 | `period` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `transaction_date_from` |  |
-| `transaction_date_to` |  |
-| `transactions_count` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `transactionDateFrom` |  |
+| `transactionDateTo` |  |
+| `transactionsCount` |  |
 
 Operations: Create.
 
@@ -1035,11 +1033,11 @@ API path: `/public/countTransactionsByCardBrand`
 | Field | Description |
 | --- | --- |
 | `period` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `transaction_date_from` |  |
-| `transaction_date_to` |  |
-| `turnover` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `transactionDateFrom` |  |
+| `transactionDateTo` |  |
+| `turnovers` |  |
 
 Operations: Create.
 
@@ -1050,15 +1048,15 @@ API path: `/public/transactionTurnover`
 | Field | Description |
 | --- | --- |
 | `city` |  |
-| `corporate_uuid` |  |
+| `corporateUuid` |  |
 | `country` |  |
-| `merchant_category_code` |  |
+| `merchantCategoryCode` |  |
 | `name` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `state` |  |
 | `street` |  |
-| `vu_nummer` |  |
+| `vuNummer` |  |
 | `zipcode` |  |
 
 Operations: Create.
@@ -1069,10 +1067,10 @@ API path: `/public/updateMerchant`
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
-| `template_name` |  |
-| `template_xml` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `templateName` |  |
+| `templateXml` |  |
 
 Operations: Create.
 
@@ -1082,8 +1080,8 @@ API path: `/public/updateTemplateXml`
 
 | Field | Description |
 | --- | --- |
-| `app_name` |  |
-| `build_date` |  |
+| `appName` |  |
+| `buildDate` |  |
 | `version` |  |
 
 Operations: Load.
@@ -1103,62 +1101,63 @@ Create an instance: `let cancel_transaction = Sdk_client.cancel_transaction clie
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_id` | `string` |  |
-| `acquirer_name` | `string` |  |
-| `actual_bonus_point` | `string` |  |
+| `acquirerId` | `string` |  |
+| `acquirerName` | `string` |  |
+| `actualBonusPoints` | `string` |  |
 | `amount` | `int` |  |
-| `authorization_code` | `string` |  |
-| `balance_amount` | `string` |  |
-| `card_brand` | `string` |  |
-| `card_number` | `string` |  |
-| `client_id` | `int` |  |
+| `authorizationCode` | `string` |  |
+| `balanceAmount` | `string` |  |
+| `cardBrand` | `string` |  |
+| `cardNumber` | `string` |  |
+| `clientId` | `int` |  |
 | `currency` | `string` |  |
 | `cvc` | `string` |  |
-| `ec_data` | `string` |  |
-| `ecr_data` | `string` |  |
-| `emv_data` | `string` |  |
-| `exchange_fee` | `int` |  |
-| `exchange_rate` | `string` |  |
-| `language_code` | `string` |  |
-| `merchant_address` | `string` |  |
-| `merchant_name` | `string` |  |
-| `merchant_number` | `string` |  |
-| `message_type` | `string` |  |
-| `original_trace_number` | `int` |  |
-| `original_transaction_id` | `string` |  |
+| `ecData` | `string` |  |
+| `ecrData` | `string` |  |
+| `emvData` | `string` |  |
+| `exchangeFee` | `int` |  |
+| `exchangeRate` | `string` |  |
+| `languageCode` | `string` |  |
+| `merchantAddress` | `string` |  |
+| `merchantName` | `string` |  |
+| `merchantNumber` | `string` |  |
+| `messageType` | `string` |  |
+| `originalTraceNumber` | `int` |  |
+| `originalTransactionId` | `string` |  |
 | `password` | `string` |  |
-| `payment_reason` | `string` |  |
-| `receipt_footer` | `string` |  |
-| `receipt_header` | `string` |  |
-| `receipt_layout` | `int` |  |
-| `receipt_number` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `serial_number` | `string` |  |
+| `paymentReason` | `string` |  |
+| `receiptFooter` | `string` |  |
+| `receiptHeader` | `string` |  |
+| `receiptLayout` | `int` |  |
+| `receiptNumber` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `serialNumber` | `string` |  |
 | `svc` | `string` |  |
-| `terminal_id` | `int` |  |
-| `terminal_location` | `string` |  |
-| `trace_number` | `int` |  |
-| `transaction_date` | `string` |  |
-| `transaction_id` | `string` |  |
-| `tx_type` | `string` |  |
-| `user_data` | `string` |  |
+| `terminalId` | `int` |  |
+| `terminalLocation` | `string` |  |
+| `traceNumber` | `int` |  |
+| `transactionDate` | `string` |  |
+| `transactionId` | `string` |  |
+| `txType` | `string` |  |
+| `userData` | `string` |  |
 
 #### Example: Create
 
 ```ocaml
 let cancel_transaction = (Sdk_client.cancel_transaction client Noval).e_create (jo [
-    ("client_id", (Num 1.));  (* int *)
+    ("clientId", (Num 1.));  (* int *)
     ("currency", (Str "example_currency"));  (* string *)
-    ("receipt_number", (Str "example_receipt_number"));  (* string *)
-    ("terminal_id", (Num 1.));  (* int *)
+    ("receiptNumber", (Str "example_receiptNumber"));  (* string *)
+    ("terminalId", (Num 1.));  (* int *)
 ]) Noval
+let cancel_transaction_data = cancel_transaction.e_data_get ()
 ```
 
 
@@ -1170,21 +1169,22 @@ Create an instance: `let check_card_black_listed = Sdk_client.check_card_black_l
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `card_no` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `cardNo` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
 ```ocaml
 let check_card_black_listed = (Sdk_client.check_card_black_listed client Noval).e_create (jo [
 ]) Noval
+let check_card_black_listed_data = check_card_black_listed.e_data_get ()
 ```
 
 
@@ -1196,29 +1196,30 @@ Create an instance: `let create_product = Sdk_client.create_product client Noval
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_id` | `int` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `template_name` | `string` |  |
-| `template_type` | `string` |  |
-| `template_xml` | `string` |  |
-| `terminal_type` | `string` |  |
+| `acquirerId` | `int` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `templateName` | `string` |  |
+| `templateType` | `string` |  |
+| `templateXml` | `string` |  |
+| `terminalType` | `string` |  |
 
 #### Example: Create
 
 ```ocaml
 let create_product = (Sdk_client.create_product client Noval).e_create (jo [
-    ("template_name", (Str "example_template_name"));  (* string *)
-    ("template_type", (Str "example_template_type"));  (* string *)
-    ("template_xml", (Str "example_template_xml"));  (* string *)
-    ("terminal_type", (Str "example_terminal_type"));  (* string *)
+    ("templateName", (Str "example_templateName"));  (* string *)
+    ("templateType", (Str "example_templateType"));  (* string *)
+    ("templateXml", (Str "example_templateXml"));  (* string *)
+    ("terminalType", (Str "example_terminalType"));  (* string *)
 ]) Noval
+let create_product_data = create_product.e_data_get ()
 ```
 
 
@@ -1230,27 +1231,28 @@ Create an instance: `let deactivate_terminal = Sdk_client.deactivate_terminal cl
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `corporate_uuid` | `string` |  |
-| `deactivation_reason` | `string` |  |
-| `package_order_uuid` | `string` |  |
-| `product_order_uuid` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `terminal_id` | `int` |  |
+| `corporateUuid` | `string` |  |
+| `deactivationReason` | `string` |  |
+| `packageOrderUuid` | `string` |  |
+| `productOrderUuid` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `terminalId` | `int` |  |
 
 #### Example: Create
 
 ```ocaml
 let deactivate_terminal = (Sdk_client.deactivate_terminal client Noval).e_create (jo [
-    ("deactivation_reason", (Str "example_deactivation_reason"));  (* string *)
-    ("terminal_id", (Num 1.));  (* int *)
+    ("deactivationReason", (Str "example_deactivationReason"));  (* string *)
+    ("terminalId", (Num 1.));  (* int *)
 ]) Noval
+let deactivate_terminal_data = deactivate_terminal.e_data_get ()
 ```
 
 
@@ -1262,35 +1264,40 @@ Create an instance: `let digital_services_api = Sdk_client.digital_services_api 
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
-| `e_load reqmatch ctrl` | Load a single entity by match criteria. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
+| `e_load reqmatch ctrl` | Load a single entity by match criteria. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `clearing_date_from` | `string` |  |
-| `clearing_date_to` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `tx_count` | `int` |  |
-| `tx_id_end` | `string` |  |
-| `tx_id_start` | `string` |  |
-| `tx_seq_no_end` | `int` |  |
-| `tx_seq_no_start` | `int` |  |
-| `tx_total` | `int` |  |
+| `clearingDateFrom` | `string` |  |
+| `clearingDateTo` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `txCount` | `int` |  |
+| `txIdEnd` | `string` |  |
+| `txIdStart` | `string` |  |
+| `txSeqNoEnd` | `int` |  |
+| `txSeqNoStart` | `int` |  |
+| `txTotal` | `int` |  |
 
 #### Example: Load
 
 ```ocaml
+(* The op resolves to the ENTITY; the record is inside it. *)
 let digital_services_api = (Sdk_client.digital_services_api client Noval).e_load (Noval) Noval
+let digital_services_api_data = digital_services_api.e_data_get ()
 ```
 
 #### Example: Create
 
 ```ocaml
 let digital_services_api = (Sdk_client.digital_services_api client Noval).e_create (jo [
+    ("clearingDateFrom", (Str "example_clearingDateFrom"));  (* string *)
+    ("clearingDateTo", (Str "example_clearingDateTo"));  (* string *)
 ]) Noval
+let digital_services_api_data = digital_services_api.e_data_get ()
 ```
 
 
@@ -1302,27 +1309,28 @@ Create an instance: `let ec_data_ecom = Sdk_client.ec_data_ecom client Noval`
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `ecom_data` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `terminal_id` | `int` |  |
-| `transaction_id` | `string` |  |
-| `transaction_type` | `string` |  |
+| `ecomData` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `terminalId` | `int` |  |
+| `transactionId` | `string` |  |
+| `transactionType` | `string` |  |
 
 #### Example: Create
 
 ```ocaml
 let ec_data_ecom = (Sdk_client.ec_data_ecom client Noval).e_create (jo [
-    ("terminal_id", (Num 1.));  (* int *)
-    ("transaction_id", (Str "example_transaction_id"));  (* string *)
-    ("transaction_type", (Str "example_transaction_type"));  (* string *)
+    ("terminalId", (Num 1.));  (* int *)
+    ("transactionId", (Str "example_transactionId"));  (* string *)
+    ("transactionType", (Str "example_transactionType"));  (* string *)
 ]) Noval
+let ec_data_ecom_data = ec_data_ecom.e_data_get ()
 ```
 
 
@@ -1334,24 +1342,25 @@ Create an instance: `let ecom_parameter = Sdk_client.ecom_parameter client Noval
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `ecom_pass` | `string` |  |
-| `ecom_skey` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `terminal_id` | `int` |  |
+| `ecomPass` | `string` |  |
+| `ecomSkey` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `terminalId` | `int` |  |
 
 #### Example: Create
 
 ```ocaml
 let ecom_parameter = (Sdk_client.ecom_parameter client Noval).e_create (jo [
-    ("terminal_id", (Num 1.));  (* int *)
+    ("terminalId", (Num 1.));  (* int *)
 ]) Noval
+let ecom_parameter_data = ecom_parameter.e_data_get ()
 ```
 
 
@@ -1363,27 +1372,28 @@ Create an instance: `let ecr_data = Sdk_client.ecr_data client Noval`
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `ecr_data` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `terminal_id` | `int` |  |
-| `transaction_id` | `string` |  |
-| `transaction_type` | `string` |  |
+| `ecrData` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `terminalId` | `int` |  |
+| `transactionId` | `string` |  |
+| `transactionType` | `string` |  |
 
 #### Example: Create
 
 ```ocaml
 let ecr_data = (Sdk_client.ecr_data client Noval).e_create (jo [
-    ("terminal_id", (Num 1.));  (* int *)
-    ("transaction_id", (Str "example_transaction_id"));  (* string *)
-    ("transaction_type", (Str "example_transaction_type"));  (* string *)
+    ("terminalId", (Num 1.));  (* int *)
+    ("transactionId", (Str "example_transactionId"));  (* string *)
+    ("transactionType", (Str "example_transactionType"));  (* string *)
 ]) Noval
+let ecr_data_data = ecr_data.e_data_get ()
 ```
 
 
@@ -1395,27 +1405,28 @@ Create an instance: `let emv_data = Sdk_client.emv_data client Noval`
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `emv_data` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `terminal_id` | `int` |  |
-| `transaction_id` | `string` |  |
-| `transaction_type` | `string` |  |
+| `emvData` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `terminalId` | `int` |  |
+| `transactionId` | `string` |  |
+| `transactionType` | `string` |  |
 
 #### Example: Create
 
 ```ocaml
 let emv_data = (Sdk_client.emv_data client Noval).e_create (jo [
-    ("terminal_id", (Num 1.));  (* int *)
-    ("transaction_id", (Str "example_transaction_id"));  (* string *)
-    ("transaction_type", (Str "example_transaction_type"));  (* string *)
+    ("terminalId", (Num 1.));  (* int *)
+    ("transactionId", (Str "example_transactionId"));  (* string *)
+    ("transactionType", (Str "example_transactionType"));  (* string *)
 ]) Noval
+let emv_data_data = emv_data.e_data_get ()
 ```
 
 
@@ -1427,38 +1438,39 @@ Create an instance: `let enable_acquiring = Sdk_client.enable_acquiring client N
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `account_no` | `int` |  |
-| `additional_data` | `value map` |  |
-| `corporate_uuid` | `string` |  |
+| `accountNo` | `int` |  |
+| `additionalData` | `value map` |  |
+| `corporateUuid` | `string` |  |
 | `currency` | `string` |  |
-| `merchant_category_code` | `int` |  |
-| `package_order_uuid` | `string` |  |
-| `product_order_uuid` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `sorting_code` | `int` |  |
-| `template_name` | `string` |  |
-| `terminal_id` | `value list` |  |
-| `terminal_id_acq` | `string` |  |
-| `vu_nummer` | `string` |  |
+| `merchantCategoryCode` | `int` |  |
+| `packageOrderUuid` | `string` |  |
+| `productOrderUuid` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `sortingCode` | `int` |  |
+| `templateName` | `string` |  |
+| `terminalIdAcq` | `string` |  |
+| `terminalIds` | `value list` |  |
+| `vuNummer` | `string` |  |
 
 #### Example: Create
 
 ```ocaml
 let enable_acquiring = (Sdk_client.enable_acquiring client Noval).e_create (jo [
-    ("corporate_uuid", (Str "example_corporate_uuid"));  (* string *)
+    ("corporateUuid", (Str "example_corporateUuid"));  (* string *)
     ("currency", (Str "example_currency"));  (* string *)
-    ("merchant_category_code", (Num 1.));  (* int *)
-    ("package_order_uuid", (Str "example_package_order_uuid"));  (* string *)
-    ("product_order_uuid", (Str "example_product_order_uuid"));  (* string *)
-    ("template_name", (Str "example_template_name"));  (* string *)
+    ("merchantCategoryCode", (Num 1.));  (* int *)
+    ("packageOrderUuid", (Str "example_packageOrderUuid"));  (* string *)
+    ("productOrderUuid", (Str "example_productOrderUuid"));  (* string *)
+    ("templateName", (Str "example_templateName"));  (* string *)
 ]) Noval
+let enable_acquiring_data = enable_acquiring.e_data_get ()
 ```
 
 
@@ -1470,22 +1482,23 @@ Create an instance: `let get_merchant_contract_number = Sdk_client.get_merchant_
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `merchant_contract_number` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `merchantContractNumber` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
 ```ocaml
 let get_merchant_contract_number = (Sdk_client.get_merchant_contract_number client Noval).e_create (jo [
-    ("merchant_contract_number", (Str "example_merchant_contract_number"));  (* string *)
+    ("merchantContractNumber", (Str "example_merchantContractNumber"));  (* string *)
 ]) Noval
+let get_merchant_contract_number_data = get_merchant_contract_number.e_data_get ()
 ```
 
 
@@ -1497,22 +1510,23 @@ Create an instance: `let get_template_xml = Sdk_client.get_template_xml client N
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `template_name` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `templateName` | `string` |  |
 
 #### Example: Create
 
 ```ocaml
 let get_template_xml = (Sdk_client.get_template_xml client Noval).e_create (jo [
-    ("template_name", (Str "example_template_name"));  (* string *)
+    ("templateName", (Str "example_templateName"));  (* string *)
 ]) Noval
+let get_template_xml_data = get_template_xml.e_data_get ()
 ```
 
 
@@ -1524,22 +1538,23 @@ Create an instance: `let introduce_mandator = Sdk_client.introduce_mandator clie
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `mandator_name` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `mandatorName` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
 ```ocaml
 let introduce_mandator = (Sdk_client.introduce_mandator client Noval).e_create (jo [
-    ("mandator_name", (Str "example_mandator_name"));  (* string *)
+    ("mandatorName", (Str "example_mandatorName"));  (* string *)
 ]) Noval
+let introduce_mandator_data = introduce_mandator.e_data_get ()
 ```
 
 
@@ -1551,22 +1566,23 @@ Create an instance: `let introduce_package = Sdk_client.introduce_package client
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `terminal_template_description` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `terminalTemplateDescription` | `string` |  |
 
 #### Example: Create
 
 ```ocaml
 let introduce_package = (Sdk_client.introduce_package client Noval).e_create (jo [
-    ("terminal_template_description", (Str "example_terminal_template_description"));  (* string *)
+    ("terminalTemplateDescription", (Str "example_terminalTemplateDescription"));  (* string *)
 ]) Noval
+let introduce_package_data = introduce_package.e_data_get ()
 ```
 
 
@@ -1578,28 +1594,29 @@ Create an instance: `let keep_alive = Sdk_client.keep_alive client Noval`
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
 | `hwserialno` | `string` |  |
-| `ka_date_time_from` | `string` |  |
-| `ka_date_time_to` | `string` |  |
-| `keep_alive_data` | `value list` |  |
+| `kaDateTimeFrom` | `string` |  |
+| `kaDateTimeTo` | `string` |  |
+| `keepAliveData` | `value list` |  |
 | `pagination` | `value map` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `terminal_date_time_from` | `string` |  |
-| `terminal_date_time_to` | `string` |  |
-| `terminal_id` | `int` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `terminalDateTimeFrom` | `string` |  |
+| `terminalDateTimeTo` | `string` |  |
+| `terminalId` | `int` |  |
 
 #### Example: Create
 
 ```ocaml
 let keep_alive = (Sdk_client.keep_alive client Noval).e_create (jo [
 ]) Noval
+let keep_alive_data = keep_alive.e_data_get ()
 ```
 
 
@@ -1611,24 +1628,25 @@ Create an instance: `let list_terminal = Sdk_client.list_terminal client Noval`
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `corporate_uuid` | `value list` |  |
+| `corporateUuid` | `value list` |  |
 | `filter` | `value map` |  |
 | `pagination` | `value map` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `terminal` | `value list` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `terminals` | `value list` |  |
 
 #### Example: Create
 
 ```ocaml
 let list_terminal = (Sdk_client.list_terminal client Noval).e_create (jo [
 ]) Noval
+let list_terminal_data = list_terminal.e_data_get ()
 ```
 
 
@@ -1640,26 +1658,27 @@ Create an instance: `let mandator_clearing_export = Sdk_client.mandator_clearing
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `clearing_date_from` | `string` |  |
-| `clearing_date_to` | `string` |  |
+| `clearingDateFrom` | `string` |  |
+| `clearingDateTo` | `string` |  |
 | `pagination` | `value map` |  |
-| `record` | `value list` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `records` | `value list` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
 ```ocaml
 let mandator_clearing_export = (Sdk_client.mandator_clearing_export client Noval).e_create (jo [
-    ("clearing_date_from", (Str "example_clearing_date_from"));  (* string *)
-    ("clearing_date_to", (Str "example_clearing_date_to"));  (* string *)
+    ("clearingDateFrom", (Str "example_clearingDateFrom"));  (* string *)
+    ("clearingDateTo", (Str "example_clearingDateTo"));  (* string *)
 ]) Noval
+let mandator_clearing_export_data = mandator_clearing_export.e_data_get ()
 ```
 
 
@@ -1671,34 +1690,37 @@ Create an instance: `let mandator_clearing_export_download = Sdk_client.mandator
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
-| `e_load reqmatch ctrl` | Load a single entity by match criteria. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
+| `e_load reqmatch ctrl` | Load a single entity by match criteria. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `clearing_date_from` | `string` |  |
-| `clearing_date_to` | `string` |  |
-| `file_id` | `string` |  |
-| `filename_template` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `clearingDateFrom` | `string` |  |
+| `clearingDateTo` | `string` |  |
+| `fileId` | `string` |  |
+| `filenameTemplate` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 | `status` | `string` |  |
 
 #### Example: Load
 
 ```ocaml
+(* The op resolves to the ENTITY; the record is inside it. *)
 let mandator_clearing_export_download = (Sdk_client.mandator_clearing_export_download client Noval).e_load (jo [("id", (Str "mandator_clearing_export_download_id"))]) Noval
+let mandator_clearing_export_download_data = mandator_clearing_export_download.e_data_get ()
 ```
 
 #### Example: Create
 
 ```ocaml
 let mandator_clearing_export_download = (Sdk_client.mandator_clearing_export_download client Noval).e_create (jo [
-    ("clearing_date_from", (Str "example_clearing_date_from"));  (* string *)
-    ("clearing_date_to", (Str "example_clearing_date_to"));  (* string *)
+    ("clearingDateFrom", (Str "example_clearingDateFrom"));  (* string *)
+    ("clearingDateTo", (Str "example_clearingDateTo"));  (* string *)
 ]) Noval
+let mandator_clearing_export_download_data = mandator_clearing_export_download.e_data_get ()
 ```
 
 
@@ -1710,25 +1732,26 @@ Create an instance: `let mandator_clearing_export_summary = Sdk_client.mandator_
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `clearing_date_from` | `string` |  |
-| `clearing_date_to` | `string` |  |
-| `record` | `value list` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `clearingDateFrom` | `string` |  |
+| `clearingDateTo` | `string` |  |
+| `records` | `value list` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 
 #### Example: Create
 
 ```ocaml
 let mandator_clearing_export_summary = (Sdk_client.mandator_clearing_export_summary client Noval).e_create (jo [
-    ("clearing_date_from", (Str "example_clearing_date_from"));  (* string *)
-    ("clearing_date_to", (Str "example_clearing_date_to"));  (* string *)
+    ("clearingDateFrom", (Str "example_clearingDateFrom"));  (* string *)
+    ("clearingDateTo", (Str "example_clearingDateTo"));  (* string *)
 ]) Noval
+let mandator_clearing_export_summary_data = mandator_clearing_export_summary.e_data_get ()
 ```
 
 
@@ -1740,36 +1763,36 @@ Create an instance: `let merchant_portal_services_api = Sdk_client.merchant_port
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `3_d_secure` | `string` |  |
-| `authorization_code` | `string` |  |
-| `card_brand` | `string` |  |
-| `clearing_amount_from` | `string` |  |
-| `clearing_amount_to` | `string` |  |
-| `clearing_currency` | `string` |  |
-| `clearing_status` | `string` |  |
-| `corporate_uuid` | `string` |  |
-| `order_by_transaction_date` | `string` |  |
+| `3DSecure` | `string` |  |
+| `authorizationCode` | `string` |  |
+| `cardBrand` | `string` |  |
+| `clearingAmountFrom` | `string` |  |
+| `clearingAmountTo` | `string` |  |
+| `clearingCurrency` | `string` |  |
+| `clearingStatus` | `string` |  |
+| `corporateUUID` | `string` |  |
+| `orderByTransactionDate` | `string` |  |
 | `pagination` | `value map` |  |
-| `receipt_number` | `string` |  |
-| `referenced_transaction_id` | `string` |  |
-| `retrieval_reference_number` | `string` |  |
-| `source_id` | `int` |  |
-| `tecsengine_response_code_from` | `string` |  |
-| `tecsengine_response_code_to` | `string` |  |
-| `terminal_id` | `int` |  |
-| `trace_number` | `string` |  |
-| `transaction_amount_from` | `string` |  |
-| `transaction_amount_to` | `string` |  |
-| `transaction_date_from` | `string` |  |
-| `transaction_date_to` | `string` |  |
-| `transaction_id` | `string` |  |
-| `transaction_type` | `string` |  |
+| `receiptNumber` | `string` |  |
+| `referencedTransactionId` | `string` |  |
+| `retrievalReferenceNumber` | `string` |  |
+| `sourceId` | `int` |  |
+| `tecsengineResponseCodeFrom` | `string` |  |
+| `tecsengineResponseCodeTo` | `string` |  |
+| `terminalId` | `int` |  |
+| `traceNumber` | `string` |  |
+| `transactionAmountFrom` | `string` |  |
+| `transactionAmountTo` | `string` |  |
+| `transactionDateFrom` | `string` |  |
+| `transactionDateTo` | `string` |  |
+| `transactionId` | `string` |  |
+| `transactionType` | `string` |  |
 | `wallet` | `string` |  |
 
 #### Example: Create
@@ -1777,6 +1800,7 @@ Create an instance: `let merchant_portal_services_api = Sdk_client.merchant_port
 ```ocaml
 let merchant_portal_services_api = (Sdk_client.merchant_portal_services_api client Noval).e_create (jo [
 ]) Noval
+let merchant_portal_services_api_data = merchant_portal_services_api.e_data_get ()
 ```
 
 
@@ -1788,24 +1812,25 @@ Create an instance: `let move_tid = Sdk_client.move_tid client Noval`
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `productorderuuid` | `value list` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `target_packageorderuuid` | `string` |  |
-| `target_productorderuuid` | `string` |  |
+| `productorderuuids` | `value list` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `targetPackageorderuuid` | `string` |  |
+| `targetProductorderuuid` | `string` |  |
 
 #### Example: Create
 
 ```ocaml
 let move_tid = (Sdk_client.move_tid client Noval).e_create (jo [
-    ("productorderuuid", (empty_list ()));  (* value list *)
+    ("productorderuuids", (empty_list ()));  (* value list *)
 ]) Noval
+let move_tid_data = move_tid.e_data_get ()
 ```
 
 
@@ -1817,28 +1842,28 @@ Create an instance: `let payment_manual = Sdk_client.payment_manual client Noval
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_name` | `string` |  |
+| `acquirerName` | `string` |  |
 | `amount` | `int` |  |
-| `authorization_number` | `string` |  |
-| `card_number` | `string` |  |
-| `card_type` | `string` |  |
+| `authorizationNumber` | `string` |  |
+| `cardNumber` | `string` |  |
+| `cardType` | `string` |  |
 | `currency` | `string` |  |
 | `cvc` | `string` |  |
-| `date_time_tx` | `string` |  |
-| `exp_date` | `string` |  |
-| `merchant_id` | `string` |  |
-| `original_transaction_id` | `string` |  |
+| `dateTimeTx` | `string` |  |
+| `expDate` | `string` |  |
+| `merchantId` | `string` |  |
+| `originalTransactionId` | `string` |  |
 | `password` | `string` |  |
-| `response_code` | `string` |  |
-| `response_message` | `string` |  |
-| `terminal_id` | `string` |  |
-| `transaction_id` | `string` |  |
+| `responseCode` | `string` |  |
+| `responseMessage` | `string` |  |
+| `terminalId` | `string` |  |
+| `transactionId` | `string` |  |
 | `txtype` | `string` |  |
 
 #### Example: Create
@@ -1846,11 +1871,12 @@ Create an instance: `let payment_manual = Sdk_client.payment_manual client Noval
 ```ocaml
 let payment_manual = (Sdk_client.payment_manual client Noval).e_create (jo [
     ("amount", (Num 1.));  (* int *)
-    ("card_number", (Str "example_card_number"));  (* string *)
+    ("cardNumber", (Str "example_cardNumber"));  (* string *)
     ("currency", (Str "example_currency"));  (* string *)
-    ("exp_date", (Str "example_exp_date"));  (* string *)
+    ("expDate", (Str "example_expDate"));  (* string *)
     ("txtype", (Str "example_txtype"));  (* string *)
 ]) Noval
+let payment_manual_data = payment_manual.e_data_get ()
 ```
 
 
@@ -1862,27 +1888,23 @@ Create an instance: `let payment_sred = Sdk_client.payment_sred client Noval`
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_name` | `string` |  |
 | `amount` | `int` |  |
-| `authorization_number` | `string` |  |
-| `card_type` | `string` |  |
 | `currency` | `string` |  |
-| `date_time_tx` | `string` |  |
-| `device_payload` | `string` |  |
-| `merchant_id` | `string` |  |
-| `original_transaction_id` | `string` |  |
+| `device` | `string` |  |
+| `devicePayload` | `string` |  |
+| `expDate` | `string` |  |
+| `mode` | `string` |  |
+| `panMasked` | `string` |  |
 | `password` | `string` |  |
-| `response_code` | `string` |  |
-| `response_message` | `string` |  |
-| `sred` | `value map` |  |
-| `terminal_id` | `string` |  |
-| `transaction_id` | `string` |  |
+| `serial` | `string` |  |
+| `serviceCode` | `string` |  |
+| `terminalId` | `string` |  |
 | `txtype` | `string` |  |
 
 #### Example: Create
@@ -1891,9 +1913,11 @@ Create an instance: `let payment_sred = Sdk_client.payment_sred client Noval`
 let payment_sred = (Sdk_client.payment_sred client Noval).e_create (jo [
     ("amount", (Num 1.));  (* int *)
     ("currency", (Str "example_currency"));  (* string *)
-    ("device_payload", (Str "example_device_payload"));  (* string *)
+    ("devicePayload", (Str "example_devicePayload"));  (* string *)
+    ("terminalId", (Str "example_terminalId"));  (* string *)
     ("txtype", (Str "example_txtype"));  (* string *)
 ]) Noval
+let payment_sred_data = payment_sred.e_data_get ()
 ```
 
 
@@ -1905,66 +1929,67 @@ Create an instance: `let pre_auth_transaction_completion = Sdk_client.pre_auth_t
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_id` | `string` |  |
-| `acquirer_name` | `string` |  |
-| `actual_bonus_point` | `string` |  |
+| `acquirerId` | `string` |  |
+| `acquirerName` | `string` |  |
+| `actualBonusPoints` | `string` |  |
 | `amount` | `int` |  |
-| `authorization_code` | `string` |  |
-| `balance_amount` | `string` |  |
-| `card_brand` | `string` |  |
-| `card_number` | `string` |  |
-| `card_number_reference` | `string` |  |
-| `client_id` | `int` |  |
+| `authorizationCode` | `string` |  |
+| `balanceAmount` | `string` |  |
+| `cardBrand` | `string` |  |
+| `cardNumber` | `string` |  |
+| `cardNumberReference` | `string` |  |
+| `clientId` | `int` |  |
 | `currency` | `string` |  |
 | `cvc` | `string` |  |
-| `ec_data` | `string` |  |
-| `ecr_data` | `string` |  |
-| `emv_data` | `string` |  |
-| `exchange_fee` | `int` |  |
-| `exchange_rate` | `string` |  |
-| `language_code` | `string` |  |
-| `merchant_address` | `string` |  |
-| `merchant_name` | `string` |  |
-| `merchant_number` | `string` |  |
-| `message_type` | `string` |  |
-| `original_trace_number` | `int` |  |
-| `original_transaction_id` | `string` |  |
+| `ecData` | `string` |  |
+| `ecrData` | `string` |  |
+| `emvData` | `string` |  |
+| `exchangeFee` | `int` |  |
+| `exchangeRate` | `string` |  |
+| `languageCode` | `string` |  |
+| `merchantAddress` | `string` |  |
+| `merchantName` | `string` |  |
+| `merchantNumber` | `string` |  |
+| `messageType` | `string` |  |
+| `originalTraceNumber` | `int` |  |
+| `originalTransactionId` | `string` |  |
 | `password` | `string` |  |
-| `payment_reason` | `string` |  |
-| `receipt_footer` | `string` |  |
-| `receipt_header` | `string` |  |
-| `receipt_layout` | `int` |  |
-| `receipt_number` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `serial_number` | `string` |  |
+| `paymentReason` | `string` |  |
+| `receiptFooter` | `string` |  |
+| `receiptHeader` | `string` |  |
+| `receiptLayout` | `int` |  |
+| `receiptNumber` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `serialNumber` | `string` |  |
 | `svc` | `string` |  |
-| `terminal_id` | `int` |  |
-| `terminal_location` | `string` |  |
-| `trace_number` | `int` |  |
-| `transaction_date` | `string` |  |
-| `transaction_id` | `string` |  |
-| `transaction_type` | `string` |  |
-| `tx_type` | `string` |  |
-| `user_data` | `string` |  |
+| `terminalId` | `int` |  |
+| `terminalLocation` | `string` |  |
+| `traceNumber` | `int` |  |
+| `transactionDate` | `string` |  |
+| `transactionId` | `string` |  |
+| `transactionType` | `string` |  |
+| `txType` | `string` |  |
+| `userData` | `string` |  |
 
 #### Example: Create
 
 ```ocaml
 let pre_auth_transaction_completion = (Sdk_client.pre_auth_transaction_completion client Noval).e_create (jo [
-    ("card_number_reference", (Str "example_card_number_reference"));  (* string *)
-    ("client_id", (Num 1.));  (* int *)
+    ("cardNumberReference", (Str "example_cardNumberReference"));  (* string *)
+    ("clientId", (Num 1.));  (* int *)
     ("currency", (Str "example_currency"));  (* string *)
-    ("receipt_number", (Str "example_receipt_number"));  (* string *)
-    ("terminal_id", (Num 1.));  (* int *)
-    ("transaction_type", (Str "example_transaction_type"));  (* string *)
+    ("receiptNumber", (Str "example_receiptNumber"));  (* string *)
+    ("terminalId", (Num 1.));  (* int *)
+    ("transactionType", (Str "example_transactionType"));  (* string *)
 ]) Noval
+let pre_auth_transaction_completion_data = pre_auth_transaction_completion.e_data_get ()
 ```
 
 
@@ -1976,27 +2001,28 @@ Create an instance: `let reactivate_terminal = Sdk_client.reactivate_terminal cl
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `corporate_uuid` | `string` |  |
-| `package_order_uuid` | `string` |  |
-| `product_order_uuid` | `string` |  |
-| `reactivation_reason` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `terminal_id` | `int` |  |
+| `corporateUuid` | `string` |  |
+| `packageOrderUuid` | `string` |  |
+| `productOrderUuid` | `string` |  |
+| `reactivationReason` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `terminalId` | `int` |  |
 
 #### Example: Create
 
 ```ocaml
 let reactivate_terminal = (Sdk_client.reactivate_terminal client Noval).e_create (jo [
-    ("reactivation_reason", (Str "example_reactivation_reason"));  (* string *)
-    ("terminal_id", (Num 1.));  (* int *)
+    ("reactivationReason", (Str "example_reactivationReason"));  (* string *)
+    ("terminalId", (Num 1.));  (* int *)
 ]) Noval
+let reactivate_terminal_data = reactivate_terminal.e_data_get ()
 ```
 
 
@@ -2008,62 +2034,63 @@ Create an instance: `let refund_transaction = Sdk_client.refund_transaction clie
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_id` | `string` |  |
-| `acquirer_name` | `string` |  |
-| `actual_bonus_point` | `string` |  |
+| `acquirerId` | `string` |  |
+| `acquirerName` | `string` |  |
+| `actualBonusPoints` | `string` |  |
 | `amount` | `int` |  |
-| `authorization_code` | `string` |  |
-| `balance_amount` | `string` |  |
-| `card_brand` | `string` |  |
-| `card_number` | `string` |  |
-| `client_id` | `int` |  |
+| `authorizationCode` | `string` |  |
+| `balanceAmount` | `string` |  |
+| `cardBrand` | `string` |  |
+| `cardNumber` | `string` |  |
+| `clientId` | `int` |  |
 | `currency` | `string` |  |
 | `cvc` | `string` |  |
-| `ec_data` | `string` |  |
-| `ecr_data` | `string` |  |
-| `emv_data` | `string` |  |
-| `exchange_fee` | `int` |  |
-| `exchange_rate` | `string` |  |
-| `language_code` | `string` |  |
-| `merchant_address` | `string` |  |
-| `merchant_name` | `string` |  |
-| `merchant_number` | `string` |  |
-| `message_type` | `string` |  |
-| `original_trace_number` | `int` |  |
-| `original_transaction_id` | `string` |  |
+| `ecData` | `string` |  |
+| `ecrData` | `string` |  |
+| `emvData` | `string` |  |
+| `exchangeFee` | `int` |  |
+| `exchangeRate` | `string` |  |
+| `languageCode` | `string` |  |
+| `merchantAddress` | `string` |  |
+| `merchantName` | `string` |  |
+| `merchantNumber` | `string` |  |
+| `messageType` | `string` |  |
+| `originalTraceNumber` | `int` |  |
+| `originalTransactionId` | `string` |  |
 | `password` | `string` |  |
-| `payment_reason` | `string` |  |
-| `receipt_footer` | `string` |  |
-| `receipt_header` | `string` |  |
-| `receipt_layout` | `int` |  |
-| `receipt_number` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `serial_number` | `string` |  |
+| `paymentReason` | `string` |  |
+| `receiptFooter` | `string` |  |
+| `receiptHeader` | `string` |  |
+| `receiptLayout` | `int` |  |
+| `receiptNumber` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `serialNumber` | `string` |  |
 | `svc` | `string` |  |
-| `terminal_id` | `int` |  |
-| `terminal_location` | `string` |  |
-| `trace_number` | `int` |  |
-| `transaction_date` | `string` |  |
-| `transaction_id` | `string` |  |
-| `tx_type` | `string` |  |
-| `user_data` | `string` |  |
+| `terminalId` | `int` |  |
+| `terminalLocation` | `string` |  |
+| `traceNumber` | `int` |  |
+| `transactionDate` | `string` |  |
+| `transactionId` | `string` |  |
+| `txType` | `string` |  |
+| `userData` | `string` |  |
 
 #### Example: Create
 
 ```ocaml
 let refund_transaction = (Sdk_client.refund_transaction client Noval).e_create (jo [
-    ("client_id", (Num 1.));  (* int *)
+    ("clientId", (Num 1.));  (* int *)
     ("currency", (Str "example_currency"));  (* string *)
-    ("receipt_number", (Str "example_receipt_number"));  (* string *)
-    ("terminal_id", (Num 1.));  (* int *)
+    ("receiptNumber", (Str "example_receiptNumber"));  (* string *)
+    ("terminalId", (Num 1.));  (* int *)
 ]) Noval
+let refund_transaction_data = refund_transaction.e_data_get ()
 ```
 
 
@@ -2075,30 +2102,31 @@ Create an instance: `let register_tecs_company = Sdk_client.register_tecs_compan
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `corporate_uuid` | `string` |  |
-| `package_order_uuid` | `string` |  |
-| `partner_id` | `int` |  |
-| `partner_name` | `string` |  |
-| `product_order_uuid` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `template_name` | `string` |  |
+| `corporateUuid` | `string` |  |
+| `packageOrderUuid` | `string` |  |
+| `partnerId` | `int` |  |
+| `partnerName` | `string` |  |
+| `productOrderUuid` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `templateName` | `string` |  |
 
 #### Example: Create
 
 ```ocaml
 let register_tecs_company = (Sdk_client.register_tecs_company client Noval).e_create (jo [
-    ("corporate_uuid", (Str "example_corporate_uuid"));  (* string *)
-    ("package_order_uuid", (Str "example_package_order_uuid"));  (* string *)
-    ("product_order_uuid", (Str "example_product_order_uuid"));  (* string *)
-    ("template_name", (Str "example_template_name"));  (* string *)
+    ("corporateUuid", (Str "example_corporateUuid"));  (* string *)
+    ("packageOrderUuid", (Str "example_packageOrderUuid"));  (* string *)
+    ("productOrderUuid", (Str "example_productOrderUuid"));  (* string *)
+    ("templateName", (Str "example_templateName"));  (* string *)
 ]) Noval
+let register_tecs_company_data = register_tecs_company.e_data_get ()
 ```
 
 
@@ -2110,43 +2138,44 @@ Create an instance: `let register_terminal = Sdk_client.register_terminal client
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `additional_data` | `value map` |  |
-| `corporate_uuid` | `string` |  |
-| `package_order_uuid` | `string` |  |
-| `product_order_uuid` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `tecs_web_secret_key` | `string` |  |
-| `template_name` | `string` |  |
-| `terminal_country_code` | `string` |  |
-| `terminal_id` | `int` |  |
-| `terminal_id_acq` | `string` |  |
-| `terminal_language_code` | `string` |  |
-| `terminal_location` | `string` |  |
-| `terminal_serial_number` | `string` |  |
-| `token_io_alia` | `string` |  |
-| `token_io_iban` | `string` |  |
-| `token_io_member_id` | `string` |  |
-| `web_shop_url` | `string` |  |
+| `additionalData` | `value map` |  |
+| `corporateUuid` | `string` |  |
+| `packageOrderUuid` | `string` |  |
+| `productOrderUuid` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `tecsWebSecretKey` | `string` |  |
+| `templateName` | `string` |  |
+| `terminalCountryCode` | `string` |  |
+| `terminalId` | `int` |  |
+| `terminalIdAcq` | `string` |  |
+| `terminalLanguageCode` | `string` |  |
+| `terminalLocation` | `string` |  |
+| `terminalSerialNumber` | `string` |  |
+| `tokenIOAlias` | `string` |  |
+| `tokenIOIban` | `string` |  |
+| `tokenIOMemberId` | `string` |  |
+| `webShopUrl` | `string` |  |
 
 #### Example: Create
 
 ```ocaml
 let register_terminal = (Sdk_client.register_terminal client Noval).e_create (jo [
-    ("corporate_uuid", (Str "example_corporate_uuid"));  (* string *)
-    ("package_order_uuid", (Str "example_package_order_uuid"));  (* string *)
-    ("product_order_uuid", (Str "example_product_order_uuid"));  (* string *)
-    ("template_name", (Str "example_template_name"));  (* string *)
-    ("terminal_country_code", (Str "example_terminal_country_code"));  (* string *)
-    ("terminal_language_code", (Str "example_terminal_language_code"));  (* string *)
-    ("terminal_location", (Str "example_terminal_location"));  (* string *)
+    ("corporateUuid", (Str "example_corporateUuid"));  (* string *)
+    ("packageOrderUuid", (Str "example_packageOrderUuid"));  (* string *)
+    ("productOrderUuid", (Str "example_productOrderUuid"));  (* string *)
+    ("templateName", (Str "example_templateName"));  (* string *)
+    ("terminalCountryCode", (Str "example_terminalCountryCode"));  (* string *)
+    ("terminalLanguageCode", (Str "example_terminalLanguageCode"));  (* string *)
+    ("terminalLocation", (Str "example_terminalLocation"));  (* string *)
 ]) Noval
+let register_terminal_data = register_terminal.e_data_get ()
 ```
 
 
@@ -2158,32 +2187,33 @@ Create an instance: `let report_data = Sdk_client.report_data client Noval`
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `card_brand_report_data` | `value list` |  |
-| `clearing_date_from` | `string` |  |
-| `clearing_date_to` | `string` |  |
-| `corporate_id` | `string` |  |
+| `cardBrandReportData` | `value list` |  |
+| `clearingDateFrom` | `string` |  |
+| `clearingDateTo` | `string` |  |
+| `corporateId` | `string` |  |
 | `currency` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `sum_over_credit_tx` | `value map` |  |
-| `sum_over_debit_tx` | `value map` |  |
-| `terminal_id` | `int` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `sumOverCreditTx` | `value map` |  |
+| `sumOverDebitTx` | `value map` |  |
+| `terminalId` | `int` |  |
 
 #### Example: Create
 
 ```ocaml
 let report_data = (Sdk_client.report_data client Noval).e_create (jo [
-    ("clearing_date_from", (Str "example_clearing_date_from"));  (* string *)
-    ("clearing_date_to", (Str "example_clearing_date_to"));  (* string *)
-    ("corporate_id", (Str "example_corporate_id"));  (* string *)
+    ("clearingDateFrom", (Str "example_clearingDateFrom"));  (* string *)
+    ("clearingDateTo", (Str "example_clearingDateTo"));  (* string *)
+    ("corporateId", (Str "example_corporateId"));  (* string *)
     ("currency", (Str "example_currency"));  (* string *)
 ]) Noval
+let report_data_data = report_data.e_data_get ()
 ```
 
 
@@ -2195,68 +2225,69 @@ Create an instance: `let status_transaction = Sdk_client.status_transaction clie
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_name` | `string` |  |
-| `acquirer_terminal_id` | `string` |  |
+| `acquirerName` | `string` |  |
+| `acquirerTerminalId` | `string` |  |
 | `amount` | `int` |  |
-| `application_cryptogram` | `string` |  |
-| `authorization_code` | `value` |  |
-| `authorization_date` | `string` |  |
-| `card_brand` | `string` |  |
-| `card_entry` | `string` |  |
-| `card_expiration` | `string` |  |
-| `card_number` | `string` |  |
-| `clearing_amount` | `int` |  |
-| `clearing_batch_id` | `string` |  |
-| `clearing_currency` | `string` |  |
-| `clearing_date` | `string` |  |
-| `clearing_processed_date` | `string` |  |
-| `clearing_status` | `string` |  |
-| `client_id` | `int` |  |
+| `applicationCryptogram` | `string` |  |
+| `authorizationCode` | `value` |  |
+| `authorizationDate` | `string` |  |
+| `cardBrand` | `string` |  |
+| `cardEntry` | `string` |  |
+| `cardExpiration` | `string` |  |
+| `cardNumber` | `string` |  |
+| `clearingAmount` | `int` |  |
+| `clearingBatchId` | `string` |  |
+| `clearingCurrency` | `string` |  |
+| `clearingDate` | `string` |  |
+| `clearingProcessedDate` | `string` |  |
+| `clearingStatus` | `string` |  |
+| `clientId` | `int` |  |
 | `currency` | `string` |  |
 | `cvm` | `string` |  |
-| `ecr_data` | `string` |  |
-| `emv_application_id` | `string` |  |
-| `emv_application_label` | `string` |  |
-| `merchant_name` | `string` |  |
-| `merchant_number` | `string` |  |
-| `original_client_id` | `string` |  |
-| `original_terminal_id` | `int` |  |
-| `original_transaction_id` | `string` |  |
-| `payment_reason` | `string` |  |
-| `receipt_number` | `string` |  |
-| `response_code` | `int` |  |
-| `response_code_from_a` | `string` |  |
-| `response_message` | `string` |  |
-| `retrieval_reference_number` | `string` |  |
-| `service_code` | `string` |  |
-| `settlement_status` | `string` |  |
-| `source_id` | `int` |  |
-| `tecsengine_response_code` | `int` |  |
-| `tecsengine_response_text` | `string` |  |
-| `terminal_end_of_day_date` | `string` |  |
-| `terminal_id` | `int` |  |
-| `terminal_location` | `string` |  |
-| `tip_amount` | `int` |  |
-| `trace_number` | `int` |  |
-| `transaction_clearing_date` | `string` |  |
-| `transaction_date` | `string` |  |
-| `transaction_id` | `string` |  |
-| `transaction_seq_number` | `int` |  |
-| `transaction_server_date` | `string` |  |
-| `transaction_source` | `string` |  |
-| `transaction_type` | `string` |  |
+| `ecrData` | `string` |  |
+| `emvApplicationId` | `string` |  |
+| `emvApplicationLabel` | `string` |  |
+| `merchantName` | `string` |  |
+| `merchantNumber` | `string` |  |
+| `originalClientId` | `string` |  |
+| `originalTerminalId` | `int` |  |
+| `originalTransactionId` | `string` |  |
+| `paymentReason` | `string` |  |
+| `receiptNumber` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseCodeFromAS` | `string` |  |
+| `responseMessage` | `string` |  |
+| `retrievalReferenceNumber` | `string` |  |
+| `serviceCode` | `string` |  |
+| `settlementStatus` | `string` |  |
+| `sourceId` | `int` |  |
+| `tecsengineResponseCode` | `int` |  |
+| `tecsengineResponseText` | `string` |  |
+| `terminalEndOfDayDate` | `string` |  |
+| `terminalId` | `int` |  |
+| `terminalLocation` | `string` |  |
+| `tipAmount` | `int` |  |
+| `traceNumber` | `int` |  |
+| `transactionClearingDate` | `string` |  |
+| `transactionDate` | `string` |  |
+| `transactionId` | `string` |  |
+| `transactionSeqNumber` | `int` |  |
+| `transactionServerDate` | `string` |  |
+| `transactionSource` | `string` |  |
+| `transactionType` | `string` |  |
 
 #### Example: Create
 
 ```ocaml
 let status_transaction = (Sdk_client.status_transaction client Noval).e_create (jo [
 ]) Noval
+let status_transaction_data = status_transaction.e_data_get ()
 ```
 
 
@@ -2268,25 +2299,26 @@ Create an instance: `let store_terminal_parameter = Sdk_client.store_terminal_pa
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acq_tab_nexo` | `value map` |  |
-| `config_version` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `serial_number` | `string` |  |
-| `tid_sent` | `string` |  |
+| `acqTabNexo` | `value map` |  |
+| `configVersion` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `serialNumber` | `string` |  |
+| `tidSent` | `string` |  |
 
 #### Example: Create
 
 ```ocaml
 let store_terminal_parameter = (Sdk_client.store_terminal_parameter client Noval).e_create (jo [
-    ("serial_number", (Str "example_serial_number"));  (* string *)
+    ("serialNumber", (Str "example_serialNumber"));  (* string *)
 ]) Noval
+let store_terminal_parameter_data = store_terminal_parameter.e_data_get ()
 ```
 
 
@@ -2298,24 +2330,25 @@ Create an instance: `let terminal_id = Sdk_client.terminal_id client Noval`
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `device_serial_number` | `value list` |  |
-| `duplicate_terminal_id` | `value list` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `terminal` | `value list` |  |
+| `deviceSerialNumber` | `value list` |  |
+| `duplicateTerminalIds` | `value list` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `terminals` | `value list` |  |
 
 #### Example: Create
 
 ```ocaml
 let terminal_id = (Sdk_client.terminal_id client Noval).e_create (jo [
-    ("device_serial_number", (empty_list ()));  (* value list *)
+    ("deviceSerialNumber", (empty_list ()));  (* value list *)
 ]) Noval
+let terminal_id_data = terminal_id.e_data_get ()
 ```
 
 
@@ -2327,40 +2360,40 @@ Create an instance: `let transaction_history = Sdk_client.transaction_history cl
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `3_d_secure` | `string` |  |
-| `authorization_code` | `string` |  |
-| `card_brand` | `string` |  |
-| `clearing_amount_from` | `string` |  |
-| `clearing_amount_to` | `string` |  |
-| `clearing_currency` | `string` |  |
-| `clearing_status` | `string` |  |
-| `corporate_uuid` | `string` |  |
-| `order_by_transaction_date` | `string` |  |
+| `3DSecure` | `string` |  |
+| `authorizationCode` | `string` |  |
+| `cardBrand` | `string` |  |
+| `clearingAmountFrom` | `string` |  |
+| `clearingAmountTo` | `string` |  |
+| `clearingCurrency` | `string` |  |
+| `clearingStatus` | `string` |  |
+| `corporateUUID` | `string` |  |
+| `orderByTransactionDate` | `string` |  |
 | `pagination` | `value map` |  |
-| `payment_token_public_id` | `string` |  |
-| `receipt_number` | `string` |  |
-| `referenced_transaction_id` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `retrieval_reference_number` | `string` |  |
-| `source_id` | `int` |  |
-| `tecsengine_response_code_from` | `string` |  |
-| `tecsengine_response_code_to` | `string` |  |
-| `terminal_id` | `int` |  |
-| `trace_number` | `string` |  |
-| `transaction_amount_from` | `string` |  |
-| `transaction_amount_to` | `string` |  |
-| `transaction_date_from` | `string` |  |
-| `transaction_date_to` | `string` |  |
-| `transaction_history` | `value list` |  |
-| `transaction_id` | `string` |  |
-| `transaction_type` | `string` |  |
+| `paymentTokenPublicId` | `string` |  |
+| `receiptNumber` | `string` |  |
+| `referencedTransactionId` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `retrievalReferenceNumber` | `string` |  |
+| `sourceId` | `int` |  |
+| `tecsengineResponseCodeFrom` | `string` |  |
+| `tecsengineResponseCodeTo` | `string` |  |
+| `terminalId` | `int` |  |
+| `traceNumber` | `string` |  |
+| `transactionAmountFrom` | `string` |  |
+| `transactionAmountTo` | `string` |  |
+| `transactionDateFrom` | `string` |  |
+| `transactionDateTo` | `string` |  |
+| `transactionHistories` | `value list` |  |
+| `transactionId` | `string` |  |
+| `transactionType` | `string` |  |
 | `wallet` | `string` |  |
 
 #### Example: Create
@@ -2368,6 +2401,7 @@ Create an instance: `let transaction_history = Sdk_client.transaction_history cl
 ```ocaml
 let transaction_history = (Sdk_client.transaction_history client Noval).e_create (jo [
 ]) Noval
+let transaction_history_data = transaction_history.e_data_get ()
 ```
 
 
@@ -2379,24 +2413,25 @@ Create an instance: `let transactions_count = Sdk_client.transactions_count clie
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
 | `period` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `transaction_date_from` | `string` |  |
-| `transaction_date_to` | `string` |  |
-| `transactions_count` | `value list` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `transactionDateFrom` | `string` |  |
+| `transactionDateTo` | `string` |  |
+| `transactionsCount` | `value list` |  |
 
 #### Example: Create
 
 ```ocaml
 let transactions_count = (Sdk_client.transactions_count client Noval).e_create (jo [
 ]) Noval
+let transactions_count_data = transactions_count.e_data_get ()
 ```
 
 
@@ -2408,24 +2443,25 @@ Create an instance: `let transactions_count_card_brand = Sdk_client.transactions
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
 | `period` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `transaction_date_from` | `string` |  |
-| `transaction_date_to` | `string` |  |
-| `transactions_count` | `value list` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `transactionDateFrom` | `string` |  |
+| `transactionDateTo` | `string` |  |
+| `transactionsCount` | `value list` |  |
 
 #### Example: Create
 
 ```ocaml
 let transactions_count_card_brand = (Sdk_client.transactions_count_card_brand client Noval).e_create (jo [
 ]) Noval
+let transactions_count_card_brand_data = transactions_count_card_brand.e_data_get ()
 ```
 
 
@@ -2437,24 +2473,25 @@ Create an instance: `let transactions_turnover = Sdk_client.transactions_turnove
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
 | `period` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `transaction_date_from` | `string` |  |
-| `transaction_date_to` | `string` |  |
-| `turnover` | `value list` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `transactionDateFrom` | `string` |  |
+| `transactionDateTo` | `string` |  |
+| `turnovers` | `value list` |  |
 
 #### Example: Create
 
 ```ocaml
 let transactions_turnover = (Sdk_client.transactions_turnover client Noval).e_create (jo [
 ]) Noval
+let transactions_turnover_data = transactions_turnover.e_data_get ()
 ```
 
 
@@ -2466,30 +2503,31 @@ Create an instance: `let update_merchant = Sdk_client.update_merchant client Nov
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
 | `city` | `string` |  |
-| `corporate_uuid` | `string` |  |
+| `corporateUuid` | `string` |  |
 | `country` | `string` |  |
-| `merchant_category_code` | `string` |  |
+| `merchantCategoryCode` | `string` |  |
 | `name` | `string` |  |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
 | `state` | `string` |  |
 | `street` | `string` |  |
-| `vu_nummer` | `string` |  |
+| `vuNummer` | `string` |  |
 | `zipcode` | `string` |  |
 
 #### Example: Create
 
 ```ocaml
 let update_merchant = (Sdk_client.update_merchant client Noval).e_create (jo [
-    ("corporate_uuid", (Str "example_corporate_uuid"));  (* string *)
+    ("corporateUuid", (Str "example_corporateUuid"));  (* string *)
 ]) Noval
+let update_merchant_data = update_merchant.e_data_get ()
 ```
 
 
@@ -2501,24 +2539,25 @@ Create an instance: `let update_template_xml = Sdk_client.update_template_xml cl
 
 | Method | Description |
 | --- | --- |
-| `e_create reqdata ctrl` | Create a new entity with the given data. |
+| `e_create reqdata ctrl` | Create a new entity with the given data. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `int` |  |
-| `response_message` | `string` |  |
-| `template_name` | `string` |  |
-| `template_xml` | `string` |  |
+| `responseCode` | `int` |  |
+| `responseMessage` | `string` |  |
+| `templateName` | `string` |  |
+| `templateXml` | `string` |  |
 
 #### Example: Create
 
 ```ocaml
 let update_template_xml = (Sdk_client.update_template_xml client Noval).e_create (jo [
-    ("template_name", (Str "example_template_name"));  (* string *)
-    ("template_xml", (Str "example_template_xml"));  (* string *)
+    ("templateName", (Str "example_templateName"));  (* string *)
+    ("templateXml", (Str "example_templateXml"));  (* string *)
 ]) Noval
+let update_template_xml_data = update_template_xml.e_data_get ()
 ```
 
 
@@ -2530,20 +2569,22 @@ Create an instance: `let version = Sdk_client.version client Noval`
 
 | Method | Description |
 | --- | --- |
-| `e_load reqmatch ctrl` | Load a single entity by match criteria. |
+| `e_load reqmatch ctrl` | Load a single entity by match criteria. Resolves to the entity. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `app_name` | `string` |  |
-| `build_date` | `string` |  |
+| `appName` | `string` |  |
+| `buildDate` | `string` |  |
 | `version` | `string` |  |
 
 #### Example: Load
 
 ```ocaml
+(* The op resolves to the ENTITY; the record is inside it. *)
 let version = (Sdk_client.version client Noval).e_load (Noval) Noval
+let version_data = version.e_data_get ()
 ```
 
 

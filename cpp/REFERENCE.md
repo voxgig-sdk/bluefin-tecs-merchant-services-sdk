@@ -243,91 +243,91 @@ auto cancel_transaction = client->cancel_transaction();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `std::string` | No |  |
-| `acquirer_name` | `std::string` | No |  |
-| `actual_bonus_point` | `std::string` | No |  |
+| `acquirerId` | `std::string` | No |  |
+| `acquirerName` | `std::string` | No |  |
+| `actualBonusPoints` | `std::string` | No |  |
 | `amount` | `int64_t` | No |  |
-| `authorization_code` | `std::string` | No |  |
-| `balance_amount` | `std::string` | No |  |
-| `card_brand` | `std::string` | No |  |
-| `card_number` | `std::string` | No |  |
-| `client_id` | `int64_t` | Yes |  |
+| `authorizationCode` | `std::string` | No |  |
+| `balanceAmount` | `std::string` | No |  |
+| `cardBrand` | `std::string` | No |  |
+| `cardNumber` | `std::string` | No |  |
+| `clientId` | `int64_t` | Yes |  |
 | `currency` | `std::string` | Yes |  |
 | `cvc` | `std::string` | No |  |
-| `ec_data` | `std::string` | No |  |
-| `ecr_data` | `std::string` | No |  |
-| `emv_data` | `std::string` | No |  |
-| `exchange_fee` | `int64_t` | No |  |
-| `exchange_rate` | `std::string` | No |  |
-| `language_code` | `std::string` | No |  |
-| `merchant_address` | `std::string` | No |  |
-| `merchant_name` | `std::string` | No |  |
-| `merchant_number` | `std::string` | No |  |
-| `message_type` | `std::string` | No |  |
-| `original_trace_number` | `int64_t` | No |  |
-| `original_transaction_id` | `std::string` | No |  |
+| `ecData` | `std::string` | No |  |
+| `ecrData` | `std::string` | No |  |
+| `emvData` | `std::string` | No |  |
+| `exchangeFee` | `int64_t` | No |  |
+| `exchangeRate` | `std::string` | No |  |
+| `languageCode` | `std::string` | No |  |
+| `merchantAddress` | `std::string` | No |  |
+| `merchantName` | `std::string` | No |  |
+| `merchantNumber` | `std::string` | No |  |
+| `messageType` | `std::string` | No |  |
+| `originalTraceNumber` | `int64_t` | No |  |
+| `originalTransactionId` | `std::string` | No |  |
 | `password` | `std::string` | No |  |
-| `payment_reason` | `std::string` | No |  |
-| `receipt_footer` | `std::string` | No |  |
-| `receipt_header` | `std::string` | No |  |
-| `receipt_layout` | `int64_t` | No |  |
-| `receipt_number` | `std::string` | Yes |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `std::string` | No |  |
-| `serial_number` | `std::string` | No |  |
+| `paymentReason` | `std::string` | No |  |
+| `receiptFooter` | `std::string` | No |  |
+| `receiptHeader` | `std::string` | No |  |
+| `receiptLayout` | `int64_t` | No |  |
+| `receiptNumber` | `std::string` | Yes |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `std::string` | No |  |
+| `serialNumber` | `std::string` | No |  |
 | `svc` | `std::string` | No |  |
-| `terminal_id` | `int64_t` | Yes |  |
-| `terminal_location` | `std::string` | No |  |
-| `trace_number` | `int64_t` | No |  |
-| `transaction_date` | `std::string` | No |  |
-| `transaction_id` | `std::string` | No |  |
-| `tx_type` | `std::string` | No |  |
-| `user_data` | `std::string` | No |  |
+| `terminalId` | `int64_t` | Yes |  |
+| `terminalLocation` | `std::string` | No |  |
+| `traceNumber` | `int64_t` | No |  |
+| `transactionDate` | `std::string` | No |  |
+| `transactionId` | `std::string` | No |  |
+| `txType` | `std::string` | No |  |
+| `userData` | `std::string` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `acquirer_id` | - |
-| `acquirer_name` | - |
-| `actual_bonus_point` | - |
+| `acquirerId` | - |
+| `acquirerName` | - |
+| `actualBonusPoints` | - |
 | `amount` | Yes |
-| `authorization_code` | - |
-| `balance_amount` | - |
-| `card_brand` | - |
-| `card_number` | - |
-| `client_id` | - |
+| `authorizationCode` | - |
+| `balanceAmount` | - |
+| `cardBrand` | - |
+| `cardNumber` | - |
+| `clientId` | - |
 | `currency` | - |
 | `cvc` | - |
-| `ec_data` | - |
-| `ecr_data` | - |
-| `emv_data` | - |
-| `exchange_fee` | - |
-| `exchange_rate` | - |
-| `language_code` | - |
-| `merchant_address` | - |
-| `merchant_name` | - |
-| `merchant_number` | - |
-| `message_type` | Yes |
-| `original_trace_number` | - |
-| `original_transaction_id` | Yes |
+| `ecData` | - |
+| `ecrData` | - |
+| `emvData` | - |
+| `exchangeFee` | - |
+| `exchangeRate` | - |
+| `languageCode` | - |
+| `merchantAddress` | - |
+| `merchantName` | - |
+| `merchantNumber` | - |
+| `messageType` | Yes |
+| `originalTraceNumber` | - |
+| `originalTransactionId` | Yes |
 | `password` | - |
-| `payment_reason` | - |
-| `receipt_footer` | - |
-| `receipt_header` | - |
-| `receipt_layout` | - |
-| `receipt_number` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `serial_number` | - |
+| `paymentReason` | - |
+| `receiptFooter` | - |
+| `receiptHeader` | - |
+| `receiptLayout` | - |
+| `receiptNumber` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `serialNumber` | - |
 | `svc` | - |
-| `terminal_id` | - |
-| `terminal_location` | - |
-| `trace_number` | - |
-| `transaction_date` | Yes |
-| `transaction_id` | Yes |
-| `tx_type` | - |
-| `user_data` | - |
+| `terminalId` | - |
+| `terminalLocation` | - |
+| `traceNumber` | - |
+| `transactionDate` | Yes |
+| `transactionId` | Yes |
+| `txType` | - |
+| `userData` | - |
 
 ### Operations
 
@@ -337,10 +337,10 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```cpp
 Value result = client->cancel_transaction()->create(vmap({
-    {"client_id", Value(1)},  // int64_t
+    {"clientId", Value(1)},  // int64_t
     {"currency", Value("example_currency")},  // std::string
-    {"receipt_number", Value("example_receipt_number")},  // std::string
-    {"terminal_id", Value(1)},  // int64_t
+    {"receiptNumber", Value("example_receiptNumber")},  // std::string
+    {"terminalId", Value(1)},  // int64_t
 }), Value::undef());
 ```
 
@@ -375,9 +375,9 @@ auto check_card_black_listed = client->check_card_black_listed();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `card_no` | `std::string` | No |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `std::string` | No |  |
+| `cardNo` | `std::string` | No |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `std::string` | No |  |
 
 ### Operations
 
@@ -421,13 +421,13 @@ auto create_product = client->create_product();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `int64_t` | No |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `std::string` | No |  |
-| `template_name` | `std::string` | Yes |  |
-| `template_type` | `std::string` | Yes |  |
-| `template_xml` | `std::string` | Yes |  |
-| `terminal_type` | `std::string` | Yes |  |
+| `acquirerId` | `int64_t` | No |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `std::string` | No |  |
+| `templateName` | `std::string` | Yes |  |
+| `templateType` | `std::string` | Yes |  |
+| `templateXml` | `std::string` | Yes |  |
+| `terminalType` | `std::string` | Yes |  |
 
 ### Operations
 
@@ -437,10 +437,10 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```cpp
 Value result = client->create_product()->create(vmap({
-    {"template_name", Value("example_template_name")},  // std::string
-    {"template_type", Value("example_template_type")},  // std::string
-    {"template_xml", Value("example_template_xml")},  // std::string
-    {"terminal_type", Value("example_terminal_type")},  // std::string
+    {"templateName", Value("example_templateName")},  // std::string
+    {"templateType", Value("example_templateType")},  // std::string
+    {"templateXml", Value("example_templateXml")},  // std::string
+    {"terminalType", Value("example_terminalType")},  // std::string
 }), Value::undef());
 ```
 
@@ -475,13 +475,13 @@ auto deactivate_terminal = client->deactivate_terminal();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `corporate_uuid` | `std::string` | No |  |
-| `deactivation_reason` | `std::string` | Yes |  |
-| `package_order_uuid` | `std::string` | No |  |
-| `product_order_uuid` | `std::string` | No |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `std::string` | No |  |
-| `terminal_id` | `int64_t` | Yes |  |
+| `corporateUuid` | `std::string` | No |  |
+| `deactivationReason` | `std::string` | Yes |  |
+| `packageOrderUuid` | `std::string` | No |  |
+| `productOrderUuid` | `std::string` | No |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `std::string` | No |  |
+| `terminalId` | `int64_t` | Yes |  |
 
 ### Operations
 
@@ -491,8 +491,8 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```cpp
 Value result = client->deactivate_terminal()->create(vmap({
-    {"deactivation_reason", Value("example_deactivation_reason")},  // std::string
-    {"terminal_id", Value(1)},  // int64_t
+    {"deactivationReason", Value("example_deactivationReason")},  // std::string
+    {"terminalId", Value(1)},  // int64_t
 }), Value::undef());
 ```
 
@@ -527,16 +527,16 @@ auto digital_services_api = client->digital_services_api();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearing_date_from` | `std::string` | Yes |  |
-| `clearing_date_to` | `std::string` | Yes |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `std::string` | No |  |
-| `tx_count` | `int64_t` | No |  |
-| `tx_id_end` | `std::string` | No |  |
-| `tx_id_start` | `std::string` | No |  |
-| `tx_seq_no_end` | `int64_t` | No |  |
-| `tx_seq_no_start` | `int64_t` | No |  |
-| `tx_total` | `int64_t` | No |  |
+| `clearingDateFrom` | `std::string` | Yes |  |
+| `clearingDateTo` | `std::string` | Yes |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `std::string` | No |  |
+| `txCount` | `int64_t` | No |  |
+| `txIdEnd` | `std::string` | No |  |
+| `txIdStart` | `std::string` | No |  |
+| `txSeqNoEnd` | `int64_t` | No |  |
+| `txSeqNoStart` | `int64_t` | No |  |
+| `txTotal` | `int64_t` | No |  |
 
 ### Operations
 
@@ -546,6 +546,8 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```cpp
 Value result = client->digital_services_api()->create(vmap({
+    {"clearingDateFrom", Value("example_clearingDateFrom")},  // std::string
+    {"clearingDateTo", Value("example_clearingDateTo")},  // std::string
 }), Value::undef());
 ```
 
@@ -588,12 +590,12 @@ auto ec_data_ecom = client->ec_data_ecom();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ecom_data` | `std::string` | No |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `std::string` | No |  |
-| `terminal_id` | `int64_t` | Yes |  |
-| `transaction_id` | `std::string` | Yes |  |
-| `transaction_type` | `std::string` | Yes |  |
+| `ecomData` | `std::string` | No |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `std::string` | No |  |
+| `terminalId` | `int64_t` | Yes |  |
+| `transactionId` | `std::string` | Yes |  |
+| `transactionType` | `std::string` | Yes |  |
 
 ### Operations
 
@@ -603,9 +605,9 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```cpp
 Value result = client->ec_data_ecom()->create(vmap({
-    {"terminal_id", Value(1)},  // int64_t
-    {"transaction_id", Value("example_transaction_id")},  // std::string
-    {"transaction_type", Value("example_transaction_type")},  // std::string
+    {"terminalId", Value(1)},  // int64_t
+    {"transactionId", Value("example_transactionId")},  // std::string
+    {"transactionType", Value("example_transactionType")},  // std::string
 }), Value::undef());
 ```
 
@@ -640,11 +642,11 @@ auto ecom_parameter = client->ecom_parameter();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ecom_pass` | `std::string` | No |  |
-| `ecom_skey` | `std::string` | No |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `std::string` | No |  |
-| `terminal_id` | `int64_t` | Yes |  |
+| `ecomPass` | `std::string` | No |  |
+| `ecomSkey` | `std::string` | No |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `std::string` | No |  |
+| `terminalId` | `int64_t` | Yes |  |
 
 ### Operations
 
@@ -654,7 +656,7 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```cpp
 Value result = client->ecom_parameter()->create(vmap({
-    {"terminal_id", Value(1)},  // int64_t
+    {"terminalId", Value(1)},  // int64_t
 }), Value::undef());
 ```
 
@@ -689,12 +691,12 @@ auto ecr_data = client->ecr_data();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ecr_data` | `std::string` | No |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `std::string` | No |  |
-| `terminal_id` | `int64_t` | Yes |  |
-| `transaction_id` | `std::string` | Yes |  |
-| `transaction_type` | `std::string` | Yes |  |
+| `ecrData` | `std::string` | No |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `std::string` | No |  |
+| `terminalId` | `int64_t` | Yes |  |
+| `transactionId` | `std::string` | Yes |  |
+| `transactionType` | `std::string` | Yes |  |
 
 ### Operations
 
@@ -704,9 +706,9 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```cpp
 Value result = client->ecr_data()->create(vmap({
-    {"terminal_id", Value(1)},  // int64_t
-    {"transaction_id", Value("example_transaction_id")},  // std::string
-    {"transaction_type", Value("example_transaction_type")},  // std::string
+    {"terminalId", Value(1)},  // int64_t
+    {"transactionId", Value("example_transactionId")},  // std::string
+    {"transactionType", Value("example_transactionType")},  // std::string
 }), Value::undef());
 ```
 
@@ -741,12 +743,12 @@ auto emv_data = client->emv_data();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `emv_data` | `std::string` | No |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `std::string` | No |  |
-| `terminal_id` | `int64_t` | Yes |  |
-| `transaction_id` | `std::string` | Yes |  |
-| `transaction_type` | `std::string` | Yes |  |
+| `emvData` | `std::string` | No |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `std::string` | No |  |
+| `terminalId` | `int64_t` | Yes |  |
+| `transactionId` | `std::string` | Yes |  |
+| `transactionType` | `std::string` | Yes |  |
 
 ### Operations
 
@@ -756,9 +758,9 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```cpp
 Value result = client->emv_data()->create(vmap({
-    {"terminal_id", Value(1)},  // int64_t
-    {"transaction_id", Value("example_transaction_id")},  // std::string
-    {"transaction_type", Value("example_transaction_type")},  // std::string
+    {"terminalId", Value(1)},  // int64_t
+    {"transactionId", Value("example_transactionId")},  // std::string
+    {"transactionType", Value("example_transactionType")},  // std::string
 }), Value::undef());
 ```
 
@@ -793,20 +795,20 @@ auto enable_acquiring = client->enable_acquiring();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `account_no` | `int64_t` | No |  |
-| `additional_data` | `std::map<std::string, Value>` | No |  |
-| `corporate_uuid` | `std::string` | Yes |  |
+| `accountNo` | `int64_t` | No |  |
+| `additionalData` | `std::map<std::string, Value>` | No |  |
+| `corporateUuid` | `std::string` | Yes |  |
 | `currency` | `std::string` | Yes |  |
-| `merchant_category_code` | `int64_t` | Yes |  |
-| `package_order_uuid` | `std::string` | Yes |  |
-| `product_order_uuid` | `std::string` | Yes |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `std::string` | No |  |
-| `sorting_code` | `int64_t` | No |  |
-| `template_name` | `std::string` | Yes |  |
-| `terminal_id` | `std::vector<Value>` | No |  |
-| `terminal_id_acq` | `std::string` | No |  |
-| `vu_nummer` | `std::string` | No |  |
+| `merchantCategoryCode` | `int64_t` | Yes |  |
+| `packageOrderUuid` | `std::string` | Yes |  |
+| `productOrderUuid` | `std::string` | Yes |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `std::string` | No |  |
+| `sortingCode` | `int64_t` | No |  |
+| `templateName` | `std::string` | Yes |  |
+| `terminalIdAcq` | `std::string` | No |  |
+| `terminalIds` | `std::vector<Value>` | No |  |
+| `vuNummer` | `std::string` | No |  |
 
 ### Operations
 
@@ -816,12 +818,12 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```cpp
 Value result = client->enable_acquiring()->create(vmap({
-    {"corporate_uuid", Value("example_corporate_uuid")},  // std::string
+    {"corporateUuid", Value("example_corporateUuid")},  // std::string
     {"currency", Value("example_currency")},  // std::string
-    {"merchant_category_code", Value(1)},  // int64_t
-    {"package_order_uuid", Value("example_package_order_uuid")},  // std::string
-    {"product_order_uuid", Value("example_product_order_uuid")},  // std::string
-    {"template_name", Value("example_template_name")},  // std::string
+    {"merchantCategoryCode", Value(1)},  // int64_t
+    {"packageOrderUuid", Value("example_packageOrderUuid")},  // std::string
+    {"productOrderUuid", Value("example_productOrderUuid")},  // std::string
+    {"templateName", Value("example_templateName")},  // std::string
 }), Value::undef());
 ```
 
@@ -856,9 +858,9 @@ auto get_merchant_contract_number = client->get_merchant_contract_number();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `merchant_contract_number` | `std::string` | Yes |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `std::string` | No |  |
+| `merchantContractNumber` | `std::string` | Yes |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `std::string` | No |  |
 
 ### Operations
 
@@ -868,7 +870,7 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```cpp
 Value result = client->get_merchant_contract_number()->create(vmap({
-    {"merchant_contract_number", Value("example_merchant_contract_number")},  // std::string
+    {"merchantContractNumber", Value("example_merchantContractNumber")},  // std::string
 }), Value::undef());
 ```
 
@@ -903,9 +905,9 @@ auto get_template_xml = client->get_template_xml();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `std::string` | No |  |
-| `template_name` | `std::string` | Yes |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `std::string` | No |  |
+| `templateName` | `std::string` | Yes |  |
 
 ### Operations
 
@@ -915,7 +917,7 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```cpp
 Value result = client->get_template_xml()->create(vmap({
-    {"template_name", Value("example_template_name")},  // std::string
+    {"templateName", Value("example_templateName")},  // std::string
 }), Value::undef());
 ```
 
@@ -950,9 +952,9 @@ auto introduce_mandator = client->introduce_mandator();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `mandator_name` | `std::string` | Yes |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `std::string` | No |  |
+| `mandatorName` | `std::string` | Yes |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `std::string` | No |  |
 
 ### Operations
 
@@ -962,7 +964,7 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```cpp
 Value result = client->introduce_mandator()->create(vmap({
-    {"mandator_name", Value("example_mandator_name")},  // std::string
+    {"mandatorName", Value("example_mandatorName")},  // std::string
 }), Value::undef());
 ```
 
@@ -997,9 +999,9 @@ auto introduce_package = client->introduce_package();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `std::string` | No |  |
-| `terminal_template_description` | `std::string` | Yes |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `std::string` | No |  |
+| `terminalTemplateDescription` | `std::string` | Yes |  |
 
 ### Operations
 
@@ -1009,7 +1011,7 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```cpp
 Value result = client->introduce_package()->create(vmap({
-    {"terminal_template_description", Value("example_terminal_template_description")},  // std::string
+    {"terminalTemplateDescription", Value("example_terminalTemplateDescription")},  // std::string
 }), Value::undef());
 ```
 
@@ -1045,15 +1047,15 @@ auto keep_alive = client->keep_alive();
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `hwserialno` | `std::string` | No |  |
-| `ka_date_time_from` | `std::string` | No |  |
-| `ka_date_time_to` | `std::string` | No |  |
-| `keep_alive_data` | `std::vector<Value>` | No |  |
+| `kaDateTimeFrom` | `std::string` | No |  |
+| `kaDateTimeTo` | `std::string` | No |  |
+| `keepAliveData` | `std::vector<Value>` | No |  |
 | `pagination` | `std::map<std::string, Value>` | No |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `std::string` | No |  |
-| `terminal_date_time_from` | `std::string` | No |  |
-| `terminal_date_time_to` | `std::string` | No |  |
-| `terminal_id` | `int64_t` | No |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `std::string` | No |  |
+| `terminalDateTimeFrom` | `std::string` | No |  |
+| `terminalDateTimeTo` | `std::string` | No |  |
+| `terminalId` | `int64_t` | No |  |
 
 ### Operations
 
@@ -1097,12 +1099,12 @@ auto list_terminal = client->list_terminal();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `corporate_uuid` | `std::vector<Value>` | No |  |
+| `corporateUuid` | `std::vector<Value>` | No |  |
 | `filter` | `std::map<std::string, Value>` | No |  |
 | `pagination` | `std::map<std::string, Value>` | No |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `std::string` | No |  |
-| `terminal` | `std::vector<Value>` | No |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `std::string` | No |  |
+| `terminals` | `std::vector<Value>` | No |  |
 
 ### Operations
 
@@ -1146,12 +1148,12 @@ auto mandator_clearing_export = client->mandator_clearing_export();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearing_date_from` | `std::string` | Yes |  |
-| `clearing_date_to` | `std::string` | Yes |  |
+| `clearingDateFrom` | `std::string` | Yes |  |
+| `clearingDateTo` | `std::string` | Yes |  |
 | `pagination` | `std::map<std::string, Value>` | No |  |
-| `record` | `std::vector<Value>` | No |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `std::string` | No |  |
+| `records` | `std::vector<Value>` | No |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `std::string` | No |  |
 
 ### Operations
 
@@ -1161,8 +1163,8 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```cpp
 Value result = client->mandator_clearing_export()->create(vmap({
-    {"clearing_date_from", Value("example_clearing_date_from")},  // std::string
-    {"clearing_date_to", Value("example_clearing_date_to")},  // std::string
+    {"clearingDateFrom", Value("example_clearingDateFrom")},  // std::string
+    {"clearingDateTo", Value("example_clearingDateTo")},  // std::string
 }), Value::undef());
 ```
 
@@ -1197,12 +1199,12 @@ auto mandator_clearing_export_download = client->mandator_clearing_export_downlo
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearing_date_from` | `std::string` | Yes |  |
-| `clearing_date_to` | `std::string` | Yes |  |
-| `file_id` | `std::string` | No |  |
-| `filename_template` | `std::string` | No |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `std::string` | No |  |
+| `clearingDateFrom` | `std::string` | Yes |  |
+| `clearingDateTo` | `std::string` | Yes |  |
+| `fileId` | `std::string` | No |  |
+| `filenameTemplate` | `std::string` | No |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `std::string` | No |  |
 | `status` | `std::string` | No |  |
 
 ### Operations
@@ -1213,8 +1215,8 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```cpp
 Value result = client->mandator_clearing_export_download()->create(vmap({
-    {"clearing_date_from", Value("example_clearing_date_from")},  // std::string
-    {"clearing_date_to", Value("example_clearing_date_to")},  // std::string
+    {"clearingDateFrom", Value("example_clearingDateFrom")},  // std::string
+    {"clearingDateTo", Value("example_clearingDateTo")},  // std::string
 }), Value::undef());
 ```
 
@@ -1257,11 +1259,11 @@ auto mandator_clearing_export_summary = client->mandator_clearing_export_summary
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearing_date_from` | `std::string` | Yes |  |
-| `clearing_date_to` | `std::string` | Yes |  |
-| `record` | `std::vector<Value>` | No |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `std::string` | No |  |
+| `clearingDateFrom` | `std::string` | Yes |  |
+| `clearingDateTo` | `std::string` | Yes |  |
+| `records` | `std::vector<Value>` | No |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `std::string` | No |  |
 
 ### Operations
 
@@ -1271,8 +1273,8 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```cpp
 Value result = client->mandator_clearing_export_summary()->create(vmap({
-    {"clearing_date_from", Value("example_clearing_date_from")},  // std::string
-    {"clearing_date_to", Value("example_clearing_date_to")},  // std::string
+    {"clearingDateFrom", Value("example_clearingDateFrom")},  // std::string
+    {"clearingDateTo", Value("example_clearingDateTo")},  // std::string
 }), Value::undef());
 ```
 
@@ -1307,30 +1309,30 @@ auto merchant_portal_services_api = client->merchant_portal_services_api();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `3_d_secure` | `std::string` | No |  |
-| `authorization_code` | `std::string` | No |  |
-| `card_brand` | `std::string` | No |  |
-| `clearing_amount_from` | `std::string` | No |  |
-| `clearing_amount_to` | `std::string` | No |  |
-| `clearing_currency` | `std::string` | No |  |
-| `clearing_status` | `std::string` | No |  |
-| `corporate_uuid` | `std::string` | No |  |
-| `order_by_transaction_date` | `std::string` | No |  |
+| `3DSecure` | `std::string` | No |  |
+| `authorizationCode` | `std::string` | No |  |
+| `cardBrand` | `std::string` | No |  |
+| `clearingAmountFrom` | `std::string` | No |  |
+| `clearingAmountTo` | `std::string` | No |  |
+| `clearingCurrency` | `std::string` | No |  |
+| `clearingStatus` | `std::string` | No |  |
+| `corporateUUID` | `std::string` | No |  |
+| `orderByTransactionDate` | `std::string` | No |  |
 | `pagination` | `std::map<std::string, Value>` | No |  |
-| `receipt_number` | `std::string` | No |  |
-| `referenced_transaction_id` | `std::string` | No |  |
-| `retrieval_reference_number` | `std::string` | No |  |
-| `source_id` | `int64_t` | No |  |
-| `tecsengine_response_code_from` | `std::string` | No |  |
-| `tecsengine_response_code_to` | `std::string` | No |  |
-| `terminal_id` | `int64_t` | No |  |
-| `trace_number` | `std::string` | No |  |
-| `transaction_amount_from` | `std::string` | No |  |
-| `transaction_amount_to` | `std::string` | No |  |
-| `transaction_date_from` | `std::string` | No |  |
-| `transaction_date_to` | `std::string` | No |  |
-| `transaction_id` | `std::string` | No |  |
-| `transaction_type` | `std::string` | No |  |
+| `receiptNumber` | `std::string` | No |  |
+| `referencedTransactionId` | `std::string` | No |  |
+| `retrievalReferenceNumber` | `std::string` | No |  |
+| `sourceId` | `int64_t` | No |  |
+| `tecsengineResponseCodeFrom` | `std::string` | No |  |
+| `tecsengineResponseCodeTo` | `std::string` | No |  |
+| `terminalId` | `int64_t` | No |  |
+| `traceNumber` | `std::string` | No |  |
+| `transactionAmountFrom` | `std::string` | No |  |
+| `transactionAmountTo` | `std::string` | No |  |
+| `transactionDateFrom` | `std::string` | No |  |
+| `transactionDateTo` | `std::string` | No |  |
+| `transactionId` | `std::string` | No |  |
+| `transactionType` | `std::string` | No |  |
 | `wallet` | `std::string` | No |  |
 
 ### Operations
@@ -1375,11 +1377,11 @@ auto move_tid = client->move_tid();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `productorderuuid` | `std::vector<Value>` | Yes |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `std::string` | No |  |
-| `target_packageorderuuid` | `std::string` | No |  |
-| `target_productorderuuid` | `std::string` | No |  |
+| `productorderuuids` | `std::vector<Value>` | Yes |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `std::string` | No |  |
+| `targetPackageorderuuid` | `std::string` | No |  |
+| `targetProductorderuuid` | `std::string` | No |  |
 
 ### Operations
 
@@ -1389,7 +1391,7 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```cpp
 Value result = client->move_tid()->create(vmap({
-    {"productorderuuid", vlist()},  // std::vector<Value>
+    {"productorderuuids", vlist()},  // std::vector<Value>
 }), Value::undef());
 ```
 
@@ -1424,44 +1426,44 @@ auto payment_manual = client->payment_manual();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_name` | `std::string` | No |  |
+| `acquirerName` | `std::string` | No |  |
 | `amount` | `int64_t` | Yes |  |
-| `authorization_number` | `std::string` | No |  |
-| `card_number` | `std::string` | Yes |  |
-| `card_type` | `std::string` | No |  |
+| `authorizationNumber` | `std::string` | No |  |
+| `cardNumber` | `std::string` | Yes |  |
+| `cardType` | `std::string` | No |  |
 | `currency` | `std::string` | Yes |  |
 | `cvc` | `std::string` | No |  |
-| `date_time_tx` | `std::string` | No |  |
-| `exp_date` | `std::string` | Yes |  |
-| `merchant_id` | `std::string` | No |  |
-| `original_transaction_id` | `std::string` | No |  |
+| `dateTimeTx` | `std::string` | No |  |
+| `expDate` | `std::string` | Yes |  |
+| `merchantId` | `std::string` | No |  |
+| `originalTransactionId` | `std::string` | No |  |
 | `password` | `std::string` | No |  |
-| `response_code` | `std::string` | No |  |
-| `response_message` | `std::string` | No |  |
-| `terminal_id` | `std::string` | No |  |
-| `transaction_id` | `std::string` | No |  |
+| `responseCode` | `std::string` | No |  |
+| `responseMessage` | `std::string` | No |  |
+| `terminalId` | `std::string` | No |  |
+| `transactionId` | `std::string` | No |  |
 | `txtype` | `std::string` | Yes |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `acquirer_name` | - |
+| `acquirerName` | - |
 | `amount` | - |
-| `authorization_number` | - |
-| `card_number` | - |
-| `card_type` | - |
+| `authorizationNumber` | - |
+| `cardNumber` | - |
+| `cardType` | - |
 | `currency` | - |
 | `cvc` | - |
-| `date_time_tx` | - |
-| `exp_date` | - |
-| `merchant_id` | - |
-| `original_transaction_id` | - |
+| `dateTimeTx` | - |
+| `expDate` | - |
+| `merchantId` | - |
+| `originalTransactionId` | - |
 | `password` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `terminal_id` | Yes |
-| `transaction_id` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `terminalId` | Yes |
+| `transactionId` | - |
 | `txtype` | - |
 
 ### Operations
@@ -1473,9 +1475,9 @@ Create a new entity with the given data. Returns the created entity data and thr
 ```cpp
 Value result = client->payment_manual()->create(vmap({
     {"amount", Value(1)},  // int64_t
-    {"card_number", Value("example_card_number")},  // std::string
+    {"cardNumber", Value("example_cardNumber")},  // std::string
     {"currency", Value("example_currency")},  // std::string
-    {"exp_date", Value("example_exp_date")},  // std::string
+    {"expDate", Value("example_expDate")},  // std::string
     {"txtype", Value("example_txtype")},  // std::string
 }), Value::undef());
 ```
@@ -1511,43 +1513,18 @@ auto payment_sred = client->payment_sred();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_name` | `std::string` | No |  |
 | `amount` | `int64_t` | Yes |  |
-| `authorization_number` | `std::string` | No |  |
-| `card_type` | `std::string` | No |  |
 | `currency` | `std::string` | Yes |  |
-| `date_time_tx` | `std::string` | No |  |
-| `device_payload` | `std::string` | Yes |  |
-| `merchant_id` | `std::string` | No |  |
-| `original_transaction_id` | `std::string` | No |  |
+| `device` | `std::string` | No |  |
+| `devicePayload` | `std::string` | Yes |  |
+| `expDate` | `std::string` | No |  |
+| `mode` | `std::string` | No |  |
+| `panMasked` | `std::string` | No |  |
 | `password` | `std::string` | No |  |
-| `response_code` | `std::string` | No |  |
-| `response_message` | `std::string` | No |  |
-| `sred` | `std::map<std::string, Value>` | No |  |
-| `terminal_id` | `std::string` | No |  |
-| `transaction_id` | `std::string` | No |  |
+| `serial` | `std::string` | No |  |
+| `serviceCode` | `std::string` | No |  |
+| `terminalId` | `std::string` | Yes |  |
 | `txtype` | `std::string` | Yes |  |
-
-### Field Usage by Operation
-
-| Field | create |
-| --- | --- |
-| `acquirer_name` | - |
-| `amount` | - |
-| `authorization_number` | - |
-| `card_type` | - |
-| `currency` | - |
-| `date_time_tx` | - |
-| `device_payload` | - |
-| `merchant_id` | - |
-| `original_transaction_id` | - |
-| `password` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `sred` | - |
-| `terminal_id` | Yes |
-| `transaction_id` | - |
-| `txtype` | - |
 
 ### Operations
 
@@ -1559,7 +1536,8 @@ Create a new entity with the given data. Returns the created entity data and thr
 Value result = client->payment_sred()->create(vmap({
     {"amount", Value(1)},  // int64_t
     {"currency", Value("example_currency")},  // std::string
-    {"device_payload", Value("example_device_payload")},  // std::string
+    {"devicePayload", Value("example_devicePayload")},  // std::string
+    {"terminalId", Value("example_terminalId")},  // std::string
     {"txtype", Value("example_txtype")},  // std::string
 }), Value::undef());
 ```
@@ -1595,95 +1573,95 @@ auto pre_auth_transaction_completion = client->pre_auth_transaction_completion()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `std::string` | No |  |
-| `acquirer_name` | `std::string` | No |  |
-| `actual_bonus_point` | `std::string` | No |  |
+| `acquirerId` | `std::string` | No |  |
+| `acquirerName` | `std::string` | No |  |
+| `actualBonusPoints` | `std::string` | No |  |
 | `amount` | `int64_t` | No |  |
-| `authorization_code` | `std::string` | No |  |
-| `balance_amount` | `std::string` | No |  |
-| `card_brand` | `std::string` | No |  |
-| `card_number` | `std::string` | No |  |
-| `card_number_reference` | `std::string` | Yes |  |
-| `client_id` | `int64_t` | Yes |  |
+| `authorizationCode` | `std::string` | No |  |
+| `balanceAmount` | `std::string` | No |  |
+| `cardBrand` | `std::string` | No |  |
+| `cardNumber` | `std::string` | No |  |
+| `cardNumberReference` | `std::string` | Yes |  |
+| `clientId` | `int64_t` | Yes |  |
 | `currency` | `std::string` | Yes |  |
 | `cvc` | `std::string` | No |  |
-| `ec_data` | `std::string` | No |  |
-| `ecr_data` | `std::string` | No |  |
-| `emv_data` | `std::string` | No |  |
-| `exchange_fee` | `int64_t` | No |  |
-| `exchange_rate` | `std::string` | No |  |
-| `language_code` | `std::string` | No |  |
-| `merchant_address` | `std::string` | No |  |
-| `merchant_name` | `std::string` | No |  |
-| `merchant_number` | `std::string` | No |  |
-| `message_type` | `std::string` | No |  |
-| `original_trace_number` | `int64_t` | No |  |
-| `original_transaction_id` | `std::string` | No |  |
+| `ecData` | `std::string` | No |  |
+| `ecrData` | `std::string` | No |  |
+| `emvData` | `std::string` | No |  |
+| `exchangeFee` | `int64_t` | No |  |
+| `exchangeRate` | `std::string` | No |  |
+| `languageCode` | `std::string` | No |  |
+| `merchantAddress` | `std::string` | No |  |
+| `merchantName` | `std::string` | No |  |
+| `merchantNumber` | `std::string` | No |  |
+| `messageType` | `std::string` | No |  |
+| `originalTraceNumber` | `int64_t` | No |  |
+| `originalTransactionId` | `std::string` | No |  |
 | `password` | `std::string` | No |  |
-| `payment_reason` | `std::string` | No |  |
-| `receipt_footer` | `std::string` | No |  |
-| `receipt_header` | `std::string` | No |  |
-| `receipt_layout` | `int64_t` | No |  |
-| `receipt_number` | `std::string` | Yes |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `std::string` | No |  |
-| `serial_number` | `std::string` | No |  |
+| `paymentReason` | `std::string` | No |  |
+| `receiptFooter` | `std::string` | No |  |
+| `receiptHeader` | `std::string` | No |  |
+| `receiptLayout` | `int64_t` | No |  |
+| `receiptNumber` | `std::string` | Yes |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `std::string` | No |  |
+| `serialNumber` | `std::string` | No |  |
 | `svc` | `std::string` | No |  |
-| `terminal_id` | `int64_t` | Yes |  |
-| `terminal_location` | `std::string` | No |  |
-| `trace_number` | `int64_t` | No |  |
-| `transaction_date` | `std::string` | No |  |
-| `transaction_id` | `std::string` | No |  |
-| `transaction_type` | `std::string` | Yes |  |
-| `tx_type` | `std::string` | No |  |
-| `user_data` | `std::string` | No |  |
+| `terminalId` | `int64_t` | Yes |  |
+| `terminalLocation` | `std::string` | No |  |
+| `traceNumber` | `int64_t` | No |  |
+| `transactionDate` | `std::string` | No |  |
+| `transactionId` | `std::string` | No |  |
+| `transactionType` | `std::string` | Yes |  |
+| `txType` | `std::string` | No |  |
+| `userData` | `std::string` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `acquirer_id` | - |
-| `acquirer_name` | - |
-| `actual_bonus_point` | - |
+| `acquirerId` | - |
+| `acquirerName` | - |
+| `actualBonusPoints` | - |
 | `amount` | Yes |
-| `authorization_code` | - |
-| `balance_amount` | - |
-| `card_brand` | - |
-| `card_number` | - |
-| `card_number_reference` | - |
-| `client_id` | - |
+| `authorizationCode` | - |
+| `balanceAmount` | - |
+| `cardBrand` | - |
+| `cardNumber` | - |
+| `cardNumberReference` | - |
+| `clientId` | - |
 | `currency` | - |
 | `cvc` | - |
-| `ec_data` | - |
-| `ecr_data` | - |
-| `emv_data` | - |
-| `exchange_fee` | - |
-| `exchange_rate` | - |
-| `language_code` | - |
-| `merchant_address` | - |
-| `merchant_name` | - |
-| `merchant_number` | - |
-| `message_type` | - |
-| `original_trace_number` | - |
-| `original_transaction_id` | Yes |
+| `ecData` | - |
+| `ecrData` | - |
+| `emvData` | - |
+| `exchangeFee` | - |
+| `exchangeRate` | - |
+| `languageCode` | - |
+| `merchantAddress` | - |
+| `merchantName` | - |
+| `merchantNumber` | - |
+| `messageType` | - |
+| `originalTraceNumber` | - |
+| `originalTransactionId` | Yes |
 | `password` | - |
-| `payment_reason` | - |
-| `receipt_footer` | - |
-| `receipt_header` | - |
-| `receipt_layout` | - |
-| `receipt_number` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `serial_number` | - |
+| `paymentReason` | - |
+| `receiptFooter` | - |
+| `receiptHeader` | - |
+| `receiptLayout` | - |
+| `receiptNumber` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `serialNumber` | - |
 | `svc` | - |
-| `terminal_id` | - |
-| `terminal_location` | - |
-| `trace_number` | - |
-| `transaction_date` | Yes |
-| `transaction_id` | Yes |
-| `transaction_type` | - |
-| `tx_type` | - |
-| `user_data` | - |
+| `terminalId` | - |
+| `terminalLocation` | - |
+| `traceNumber` | - |
+| `transactionDate` | Yes |
+| `transactionId` | Yes |
+| `transactionType` | - |
+| `txType` | - |
+| `userData` | - |
 
 ### Operations
 
@@ -1693,12 +1671,12 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```cpp
 Value result = client->pre_auth_transaction_completion()->create(vmap({
-    {"card_number_reference", Value("example_card_number_reference")},  // std::string
-    {"client_id", Value(1)},  // int64_t
+    {"cardNumberReference", Value("example_cardNumberReference")},  // std::string
+    {"clientId", Value(1)},  // int64_t
     {"currency", Value("example_currency")},  // std::string
-    {"receipt_number", Value("example_receipt_number")},  // std::string
-    {"terminal_id", Value(1)},  // int64_t
-    {"transaction_type", Value("example_transaction_type")},  // std::string
+    {"receiptNumber", Value("example_receiptNumber")},  // std::string
+    {"terminalId", Value(1)},  // int64_t
+    {"transactionType", Value("example_transactionType")},  // std::string
 }), Value::undef());
 ```
 
@@ -1733,13 +1711,13 @@ auto reactivate_terminal = client->reactivate_terminal();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `corporate_uuid` | `std::string` | No |  |
-| `package_order_uuid` | `std::string` | No |  |
-| `product_order_uuid` | `std::string` | No |  |
-| `reactivation_reason` | `std::string` | Yes |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `std::string` | No |  |
-| `terminal_id` | `int64_t` | Yes |  |
+| `corporateUuid` | `std::string` | No |  |
+| `packageOrderUuid` | `std::string` | No |  |
+| `productOrderUuid` | `std::string` | No |  |
+| `reactivationReason` | `std::string` | Yes |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `std::string` | No |  |
+| `terminalId` | `int64_t` | Yes |  |
 
 ### Operations
 
@@ -1749,8 +1727,8 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```cpp
 Value result = client->reactivate_terminal()->create(vmap({
-    {"reactivation_reason", Value("example_reactivation_reason")},  // std::string
-    {"terminal_id", Value(1)},  // int64_t
+    {"reactivationReason", Value("example_reactivationReason")},  // std::string
+    {"terminalId", Value(1)},  // int64_t
 }), Value::undef());
 ```
 
@@ -1785,91 +1763,91 @@ auto refund_transaction = client->refund_transaction();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `std::string` | No |  |
-| `acquirer_name` | `std::string` | No |  |
-| `actual_bonus_point` | `std::string` | No |  |
+| `acquirerId` | `std::string` | No |  |
+| `acquirerName` | `std::string` | No |  |
+| `actualBonusPoints` | `std::string` | No |  |
 | `amount` | `int64_t` | No |  |
-| `authorization_code` | `std::string` | No |  |
-| `balance_amount` | `std::string` | No |  |
-| `card_brand` | `std::string` | No |  |
-| `card_number` | `std::string` | No |  |
-| `client_id` | `int64_t` | Yes |  |
+| `authorizationCode` | `std::string` | No |  |
+| `balanceAmount` | `std::string` | No |  |
+| `cardBrand` | `std::string` | No |  |
+| `cardNumber` | `std::string` | No |  |
+| `clientId` | `int64_t` | Yes |  |
 | `currency` | `std::string` | Yes |  |
 | `cvc` | `std::string` | No |  |
-| `ec_data` | `std::string` | No |  |
-| `ecr_data` | `std::string` | No |  |
-| `emv_data` | `std::string` | No |  |
-| `exchange_fee` | `int64_t` | No |  |
-| `exchange_rate` | `std::string` | No |  |
-| `language_code` | `std::string` | No |  |
-| `merchant_address` | `std::string` | No |  |
-| `merchant_name` | `std::string` | No |  |
-| `merchant_number` | `std::string` | No |  |
-| `message_type` | `std::string` | No |  |
-| `original_trace_number` | `int64_t` | No |  |
-| `original_transaction_id` | `std::string` | No |  |
+| `ecData` | `std::string` | No |  |
+| `ecrData` | `std::string` | No |  |
+| `emvData` | `std::string` | No |  |
+| `exchangeFee` | `int64_t` | No |  |
+| `exchangeRate` | `std::string` | No |  |
+| `languageCode` | `std::string` | No |  |
+| `merchantAddress` | `std::string` | No |  |
+| `merchantName` | `std::string` | No |  |
+| `merchantNumber` | `std::string` | No |  |
+| `messageType` | `std::string` | No |  |
+| `originalTraceNumber` | `int64_t` | No |  |
+| `originalTransactionId` | `std::string` | No |  |
 | `password` | `std::string` | No |  |
-| `payment_reason` | `std::string` | No |  |
-| `receipt_footer` | `std::string` | No |  |
-| `receipt_header` | `std::string` | No |  |
-| `receipt_layout` | `int64_t` | No |  |
-| `receipt_number` | `std::string` | Yes |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `std::string` | No |  |
-| `serial_number` | `std::string` | No |  |
+| `paymentReason` | `std::string` | No |  |
+| `receiptFooter` | `std::string` | No |  |
+| `receiptHeader` | `std::string` | No |  |
+| `receiptLayout` | `int64_t` | No |  |
+| `receiptNumber` | `std::string` | Yes |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `std::string` | No |  |
+| `serialNumber` | `std::string` | No |  |
 | `svc` | `std::string` | No |  |
-| `terminal_id` | `int64_t` | Yes |  |
-| `terminal_location` | `std::string` | No |  |
-| `trace_number` | `int64_t` | No |  |
-| `transaction_date` | `std::string` | No |  |
-| `transaction_id` | `std::string` | No |  |
-| `tx_type` | `std::string` | No |  |
-| `user_data` | `std::string` | No |  |
+| `terminalId` | `int64_t` | Yes |  |
+| `terminalLocation` | `std::string` | No |  |
+| `traceNumber` | `int64_t` | No |  |
+| `transactionDate` | `std::string` | No |  |
+| `transactionId` | `std::string` | No |  |
+| `txType` | `std::string` | No |  |
+| `userData` | `std::string` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `acquirer_id` | - |
-| `acquirer_name` | - |
-| `actual_bonus_point` | - |
+| `acquirerId` | - |
+| `acquirerName` | - |
+| `actualBonusPoints` | - |
 | `amount` | Yes |
-| `authorization_code` | - |
-| `balance_amount` | - |
-| `card_brand` | - |
-| `card_number` | - |
-| `client_id` | - |
+| `authorizationCode` | - |
+| `balanceAmount` | - |
+| `cardBrand` | - |
+| `cardNumber` | - |
+| `clientId` | - |
 | `currency` | - |
 | `cvc` | - |
-| `ec_data` | - |
-| `ecr_data` | - |
-| `emv_data` | - |
-| `exchange_fee` | - |
-| `exchange_rate` | - |
-| `language_code` | - |
-| `merchant_address` | - |
-| `merchant_name` | - |
-| `merchant_number` | - |
-| `message_type` | - |
-| `original_trace_number` | - |
-| `original_transaction_id` | Yes |
+| `ecData` | - |
+| `ecrData` | - |
+| `emvData` | - |
+| `exchangeFee` | - |
+| `exchangeRate` | - |
+| `languageCode` | - |
+| `merchantAddress` | - |
+| `merchantName` | - |
+| `merchantNumber` | - |
+| `messageType` | - |
+| `originalTraceNumber` | - |
+| `originalTransactionId` | Yes |
 | `password` | - |
-| `payment_reason` | - |
-| `receipt_footer` | - |
-| `receipt_header` | - |
-| `receipt_layout` | - |
-| `receipt_number` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `serial_number` | - |
+| `paymentReason` | - |
+| `receiptFooter` | - |
+| `receiptHeader` | - |
+| `receiptLayout` | - |
+| `receiptNumber` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `serialNumber` | - |
 | `svc` | - |
-| `terminal_id` | - |
-| `terminal_location` | - |
-| `trace_number` | - |
-| `transaction_date` | Yes |
-| `transaction_id` | Yes |
-| `tx_type` | - |
-| `user_data` | - |
+| `terminalId` | - |
+| `terminalLocation` | - |
+| `traceNumber` | - |
+| `transactionDate` | Yes |
+| `transactionId` | Yes |
+| `txType` | - |
+| `userData` | - |
 
 ### Operations
 
@@ -1879,10 +1857,10 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```cpp
 Value result = client->refund_transaction()->create(vmap({
-    {"client_id", Value(1)},  // int64_t
+    {"clientId", Value(1)},  // int64_t
     {"currency", Value("example_currency")},  // std::string
-    {"receipt_number", Value("example_receipt_number")},  // std::string
-    {"terminal_id", Value(1)},  // int64_t
+    {"receiptNumber", Value("example_receiptNumber")},  // std::string
+    {"terminalId", Value(1)},  // int64_t
 }), Value::undef());
 ```
 
@@ -1917,14 +1895,14 @@ auto register_tecs_company = client->register_tecs_company();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `corporate_uuid` | `std::string` | Yes |  |
-| `package_order_uuid` | `std::string` | Yes |  |
-| `partner_id` | `int64_t` | No |  |
-| `partner_name` | `std::string` | No |  |
-| `product_order_uuid` | `std::string` | Yes |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `std::string` | No |  |
-| `template_name` | `std::string` | Yes |  |
+| `corporateUuid` | `std::string` | Yes |  |
+| `packageOrderUuid` | `std::string` | Yes |  |
+| `partnerId` | `int64_t` | No |  |
+| `partnerName` | `std::string` | No |  |
+| `productOrderUuid` | `std::string` | Yes |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `std::string` | No |  |
+| `templateName` | `std::string` | Yes |  |
 
 ### Operations
 
@@ -1934,10 +1912,10 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```cpp
 Value result = client->register_tecs_company()->create(vmap({
-    {"corporate_uuid", Value("example_corporate_uuid")},  // std::string
-    {"package_order_uuid", Value("example_package_order_uuid")},  // std::string
-    {"product_order_uuid", Value("example_product_order_uuid")},  // std::string
-    {"template_name", Value("example_template_name")},  // std::string
+    {"corporateUuid", Value("example_corporateUuid")},  // std::string
+    {"packageOrderUuid", Value("example_packageOrderUuid")},  // std::string
+    {"productOrderUuid", Value("example_productOrderUuid")},  // std::string
+    {"templateName", Value("example_templateName")},  // std::string
 }), Value::undef());
 ```
 
@@ -1972,24 +1950,24 @@ auto register_terminal = client->register_terminal();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `additional_data` | `std::map<std::string, Value>` | No |  |
-| `corporate_uuid` | `std::string` | Yes |  |
-| `package_order_uuid` | `std::string` | Yes |  |
-| `product_order_uuid` | `std::string` | Yes |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `std::string` | No |  |
-| `tecs_web_secret_key` | `std::string` | No |  |
-| `template_name` | `std::string` | Yes |  |
-| `terminal_country_code` | `std::string` | Yes |  |
-| `terminal_id` | `int64_t` | No |  |
-| `terminal_id_acq` | `std::string` | No |  |
-| `terminal_language_code` | `std::string` | Yes |  |
-| `terminal_location` | `std::string` | Yes |  |
-| `terminal_serial_number` | `std::string` | No |  |
-| `token_io_alia` | `std::string` | No |  |
-| `token_io_iban` | `std::string` | No |  |
-| `token_io_member_id` | `std::string` | No |  |
-| `web_shop_url` | `std::string` | No |  |
+| `additionalData` | `std::map<std::string, Value>` | No |  |
+| `corporateUuid` | `std::string` | Yes |  |
+| `packageOrderUuid` | `std::string` | Yes |  |
+| `productOrderUuid` | `std::string` | Yes |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `std::string` | No |  |
+| `tecsWebSecretKey` | `std::string` | No |  |
+| `templateName` | `std::string` | Yes |  |
+| `terminalCountryCode` | `std::string` | Yes |  |
+| `terminalId` | `int64_t` | No |  |
+| `terminalIdAcq` | `std::string` | No |  |
+| `terminalLanguageCode` | `std::string` | Yes |  |
+| `terminalLocation` | `std::string` | Yes |  |
+| `terminalSerialNumber` | `std::string` | No |  |
+| `tokenIOAlias` | `std::string` | No |  |
+| `tokenIOIban` | `std::string` | No |  |
+| `tokenIOMemberId` | `std::string` | No |  |
+| `webShopUrl` | `std::string` | No |  |
 
 ### Operations
 
@@ -1999,13 +1977,13 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```cpp
 Value result = client->register_terminal()->create(vmap({
-    {"corporate_uuid", Value("example_corporate_uuid")},  // std::string
-    {"package_order_uuid", Value("example_package_order_uuid")},  // std::string
-    {"product_order_uuid", Value("example_product_order_uuid")},  // std::string
-    {"template_name", Value("example_template_name")},  // std::string
-    {"terminal_country_code", Value("example_terminal_country_code")},  // std::string
-    {"terminal_language_code", Value("example_terminal_language_code")},  // std::string
-    {"terminal_location", Value("example_terminal_location")},  // std::string
+    {"corporateUuid", Value("example_corporateUuid")},  // std::string
+    {"packageOrderUuid", Value("example_packageOrderUuid")},  // std::string
+    {"productOrderUuid", Value("example_productOrderUuid")},  // std::string
+    {"templateName", Value("example_templateName")},  // std::string
+    {"terminalCountryCode", Value("example_terminalCountryCode")},  // std::string
+    {"terminalLanguageCode", Value("example_terminalLanguageCode")},  // std::string
+    {"terminalLocation", Value("example_terminalLocation")},  // std::string
 }), Value::undef());
 ```
 
@@ -2040,16 +2018,16 @@ auto report_data = client->report_data();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `card_brand_report_data` | `std::vector<Value>` | No |  |
-| `clearing_date_from` | `std::string` | Yes |  |
-| `clearing_date_to` | `std::string` | Yes |  |
-| `corporate_id` | `std::string` | Yes |  |
+| `cardBrandReportData` | `std::vector<Value>` | No |  |
+| `clearingDateFrom` | `std::string` | Yes |  |
+| `clearingDateTo` | `std::string` | Yes |  |
+| `corporateId` | `std::string` | Yes |  |
 | `currency` | `std::string` | Yes |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `std::string` | No |  |
-| `sum_over_credit_tx` | `std::map<std::string, Value>` | No |  |
-| `sum_over_debit_tx` | `std::map<std::string, Value>` | No |  |
-| `terminal_id` | `int64_t` | No |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `std::string` | No |  |
+| `sumOverCreditTx` | `std::map<std::string, Value>` | No |  |
+| `sumOverDebitTx` | `std::map<std::string, Value>` | No |  |
+| `terminalId` | `int64_t` | No |  |
 
 ### Operations
 
@@ -2059,9 +2037,9 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```cpp
 Value result = client->report_data()->create(vmap({
-    {"clearing_date_from", Value("example_clearing_date_from")},  // std::string
-    {"clearing_date_to", Value("example_clearing_date_to")},  // std::string
-    {"corporate_id", Value("example_corporate_id")},  // std::string
+    {"clearingDateFrom", Value("example_clearingDateFrom")},  // std::string
+    {"clearingDateTo", Value("example_clearingDateTo")},  // std::string
+    {"corporateId", Value("example_corporateId")},  // std::string
     {"currency", Value("example_currency")},  // std::string
 }), Value::undef());
 ```
@@ -2097,56 +2075,56 @@ auto status_transaction = client->status_transaction();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_name` | `std::string` | No |  |
-| `acquirer_terminal_id` | `std::string` | No |  |
+| `acquirerName` | `std::string` | No |  |
+| `acquirerTerminalId` | `std::string` | No |  |
 | `amount` | `int64_t` | No |  |
-| `application_cryptogram` | `std::string` | No |  |
-| `authorization_code` | `Value` | No |  |
-| `authorization_date` | `std::string` | No |  |
-| `card_brand` | `std::string` | No |  |
-| `card_entry` | `std::string` | No |  |
-| `card_expiration` | `std::string` | No |  |
-| `card_number` | `std::string` | No |  |
-| `clearing_amount` | `int64_t` | No |  |
-| `clearing_batch_id` | `std::string` | No |  |
-| `clearing_currency` | `std::string` | No |  |
-| `clearing_date` | `std::string` | No |  |
-| `clearing_processed_date` | `std::string` | No |  |
-| `clearing_status` | `std::string` | No |  |
-| `client_id` | `int64_t` | No |  |
+| `applicationCryptogram` | `std::string` | No |  |
+| `authorizationCode` | `Value` | No |  |
+| `authorizationDate` | `std::string` | No |  |
+| `cardBrand` | `std::string` | No |  |
+| `cardEntry` | `std::string` | No |  |
+| `cardExpiration` | `std::string` | No |  |
+| `cardNumber` | `std::string` | No |  |
+| `clearingAmount` | `int64_t` | No |  |
+| `clearingBatchId` | `std::string` | No |  |
+| `clearingCurrency` | `std::string` | No |  |
+| `clearingDate` | `std::string` | No |  |
+| `clearingProcessedDate` | `std::string` | No |  |
+| `clearingStatus` | `std::string` | No |  |
+| `clientId` | `int64_t` | No |  |
 | `currency` | `std::string` | No |  |
 | `cvm` | `std::string` | No |  |
-| `ecr_data` | `std::string` | No |  |
-| `emv_application_id` | `std::string` | No |  |
-| `emv_application_label` | `std::string` | No |  |
-| `merchant_name` | `std::string` | No |  |
-| `merchant_number` | `std::string` | No |  |
-| `original_client_id` | `std::string` | No |  |
-| `original_terminal_id` | `int64_t` | No |  |
-| `original_transaction_id` | `std::string` | No |  |
-| `payment_reason` | `std::string` | No |  |
-| `receipt_number` | `std::string` | No |  |
-| `response_code` | `int64_t` | No |  |
-| `response_code_from_a` | `std::string` | No |  |
-| `response_message` | `std::string` | No |  |
-| `retrieval_reference_number` | `std::string` | No |  |
-| `service_code` | `std::string` | No |  |
-| `settlement_status` | `std::string` | No |  |
-| `source_id` | `int64_t` | No |  |
-| `tecsengine_response_code` | `int64_t` | No |  |
-| `tecsengine_response_text` | `std::string` | No |  |
-| `terminal_end_of_day_date` | `std::string` | No |  |
-| `terminal_id` | `int64_t` | No |  |
-| `terminal_location` | `std::string` | No |  |
-| `tip_amount` | `int64_t` | No |  |
-| `trace_number` | `int64_t` | No |  |
-| `transaction_clearing_date` | `std::string` | No |  |
-| `transaction_date` | `std::string` | No |  |
-| `transaction_id` | `std::string` | No |  |
-| `transaction_seq_number` | `int64_t` | No |  |
-| `transaction_server_date` | `std::string` | No |  |
-| `transaction_source` | `std::string` | No |  |
-| `transaction_type` | `std::string` | No |  |
+| `ecrData` | `std::string` | No |  |
+| `emvApplicationId` | `std::string` | No |  |
+| `emvApplicationLabel` | `std::string` | No |  |
+| `merchantName` | `std::string` | No |  |
+| `merchantNumber` | `std::string` | No |  |
+| `originalClientId` | `std::string` | No |  |
+| `originalTerminalId` | `int64_t` | No |  |
+| `originalTransactionId` | `std::string` | No |  |
+| `paymentReason` | `std::string` | No |  |
+| `receiptNumber` | `std::string` | No |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseCodeFromAS` | `std::string` | No |  |
+| `responseMessage` | `std::string` | No |  |
+| `retrievalReferenceNumber` | `std::string` | No |  |
+| `serviceCode` | `std::string` | No |  |
+| `settlementStatus` | `std::string` | No |  |
+| `sourceId` | `int64_t` | No |  |
+| `tecsengineResponseCode` | `int64_t` | No |  |
+| `tecsengineResponseText` | `std::string` | No |  |
+| `terminalEndOfDayDate` | `std::string` | No |  |
+| `terminalId` | `int64_t` | No |  |
+| `terminalLocation` | `std::string` | No |  |
+| `tipAmount` | `int64_t` | No |  |
+| `traceNumber` | `int64_t` | No |  |
+| `transactionClearingDate` | `std::string` | No |  |
+| `transactionDate` | `std::string` | No |  |
+| `transactionId` | `std::string` | No |  |
+| `transactionSeqNumber` | `int64_t` | No |  |
+| `transactionServerDate` | `std::string` | No |  |
+| `transactionSource` | `std::string` | No |  |
+| `transactionType` | `std::string` | No |  |
 
 ### Operations
 
@@ -2190,12 +2168,12 @@ auto store_terminal_parameter = client->store_terminal_parameter();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acq_tab_nexo` | `std::map<std::string, Value>` | No |  |
-| `config_version` | `std::string` | No |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `std::string` | No |  |
-| `serial_number` | `std::string` | Yes |  |
-| `tid_sent` | `std::string` | No |  |
+| `acqTabNexo` | `std::map<std::string, Value>` | No |  |
+| `configVersion` | `std::string` | No |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `std::string` | No |  |
+| `serialNumber` | `std::string` | Yes |  |
+| `tidSent` | `std::string` | No |  |
 
 ### Operations
 
@@ -2205,7 +2183,7 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```cpp
 Value result = client->store_terminal_parameter()->create(vmap({
-    {"serial_number", Value("example_serial_number")},  // std::string
+    {"serialNumber", Value("example_serialNumber")},  // std::string
 }), Value::undef());
 ```
 
@@ -2240,11 +2218,11 @@ auto terminal_id = client->terminal_id();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `device_serial_number` | `std::vector<Value>` | Yes |  |
-| `duplicate_terminal_id` | `std::vector<Value>` | No |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `std::string` | No |  |
-| `terminal` | `std::vector<Value>` | No |  |
+| `deviceSerialNumber` | `std::vector<Value>` | Yes |  |
+| `duplicateTerminalIds` | `std::vector<Value>` | No |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `std::string` | No |  |
+| `terminals` | `std::vector<Value>` | No |  |
 
 ### Operations
 
@@ -2254,7 +2232,7 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```cpp
 Value result = client->terminal_id()->create(vmap({
-    {"device_serial_number", vlist()},  // std::vector<Value>
+    {"deviceSerialNumber", vlist()},  // std::vector<Value>
 }), Value::undef());
 ```
 
@@ -2289,34 +2267,34 @@ auto transaction_history = client->transaction_history();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `3_d_secure` | `std::string` | No |  |
-| `authorization_code` | `std::string` | No |  |
-| `card_brand` | `std::string` | No |  |
-| `clearing_amount_from` | `std::string` | No |  |
-| `clearing_amount_to` | `std::string` | No |  |
-| `clearing_currency` | `std::string` | No |  |
-| `clearing_status` | `std::string` | No |  |
-| `corporate_uuid` | `std::string` | No |  |
-| `order_by_transaction_date` | `std::string` | No |  |
+| `3DSecure` | `std::string` | No |  |
+| `authorizationCode` | `std::string` | No |  |
+| `cardBrand` | `std::string` | No |  |
+| `clearingAmountFrom` | `std::string` | No |  |
+| `clearingAmountTo` | `std::string` | No |  |
+| `clearingCurrency` | `std::string` | No |  |
+| `clearingStatus` | `std::string` | No |  |
+| `corporateUUID` | `std::string` | No |  |
+| `orderByTransactionDate` | `std::string` | No |  |
 | `pagination` | `std::map<std::string, Value>` | No |  |
-| `payment_token_public_id` | `std::string` | No |  |
-| `receipt_number` | `std::string` | No |  |
-| `referenced_transaction_id` | `std::string` | No |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `std::string` | No |  |
-| `retrieval_reference_number` | `std::string` | No |  |
-| `source_id` | `int64_t` | No |  |
-| `tecsengine_response_code_from` | `std::string` | No |  |
-| `tecsengine_response_code_to` | `std::string` | No |  |
-| `terminal_id` | `int64_t` | No |  |
-| `trace_number` | `std::string` | No |  |
-| `transaction_amount_from` | `std::string` | No |  |
-| `transaction_amount_to` | `std::string` | No |  |
-| `transaction_date_from` | `std::string` | No |  |
-| `transaction_date_to` | `std::string` | No |  |
-| `transaction_history` | `std::vector<Value>` | No |  |
-| `transaction_id` | `std::string` | No |  |
-| `transaction_type` | `std::string` | No |  |
+| `paymentTokenPublicId` | `std::string` | No |  |
+| `receiptNumber` | `std::string` | No |  |
+| `referencedTransactionId` | `std::string` | No |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `std::string` | No |  |
+| `retrievalReferenceNumber` | `std::string` | No |  |
+| `sourceId` | `int64_t` | No |  |
+| `tecsengineResponseCodeFrom` | `std::string` | No |  |
+| `tecsengineResponseCodeTo` | `std::string` | No |  |
+| `terminalId` | `int64_t` | No |  |
+| `traceNumber` | `std::string` | No |  |
+| `transactionAmountFrom` | `std::string` | No |  |
+| `transactionAmountTo` | `std::string` | No |  |
+| `transactionDateFrom` | `std::string` | No |  |
+| `transactionDateTo` | `std::string` | No |  |
+| `transactionHistories` | `std::vector<Value>` | No |  |
+| `transactionId` | `std::string` | No |  |
+| `transactionType` | `std::string` | No |  |
 | `wallet` | `std::string` | No |  |
 
 ### Operations
@@ -2362,22 +2340,22 @@ auto transactions_count = client->transactions_count();
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `period` | `std::string` | No |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `std::string` | No |  |
-| `transaction_date_from` | `std::string` | No |  |
-| `transaction_date_to` | `std::string` | No |  |
-| `transactions_count` | `std::vector<Value>` | No |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `std::string` | No |  |
+| `transactionDateFrom` | `std::string` | No |  |
+| `transactionDateTo` | `std::string` | No |  |
+| `transactionsCount` | `std::vector<Value>` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
 | `period` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `transaction_date_from` | Yes |
-| `transaction_date_to` | Yes |
-| `transactions_count` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `transactionDateFrom` | Yes |
+| `transactionDateTo` | Yes |
+| `transactionsCount` | - |
 
 ### Operations
 
@@ -2422,22 +2400,22 @@ auto transactions_count_card_brand = client->transactions_count_card_brand();
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `period` | `std::string` | No |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `std::string` | No |  |
-| `transaction_date_from` | `std::string` | No |  |
-| `transaction_date_to` | `std::string` | No |  |
-| `transactions_count` | `std::vector<Value>` | No |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `std::string` | No |  |
+| `transactionDateFrom` | `std::string` | No |  |
+| `transactionDateTo` | `std::string` | No |  |
+| `transactionsCount` | `std::vector<Value>` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
 | `period` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `transaction_date_from` | Yes |
-| `transaction_date_to` | Yes |
-| `transactions_count` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `transactionDateFrom` | Yes |
+| `transactionDateTo` | Yes |
+| `transactionsCount` | - |
 
 ### Operations
 
@@ -2482,22 +2460,22 @@ auto transactions_turnover = client->transactions_turnover();
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `period` | `std::string` | No |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `std::string` | No |  |
-| `transaction_date_from` | `std::string` | No |  |
-| `transaction_date_to` | `std::string` | No |  |
-| `turnover` | `std::vector<Value>` | No |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `std::string` | No |  |
+| `transactionDateFrom` | `std::string` | No |  |
+| `transactionDateTo` | `std::string` | No |  |
+| `turnovers` | `std::vector<Value>` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
 | `period` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `transaction_date_from` | Yes |
-| `transaction_date_to` | Yes |
-| `turnover` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `transactionDateFrom` | Yes |
+| `transactionDateTo` | Yes |
+| `turnovers` | - |
 
 ### Operations
 
@@ -2542,15 +2520,15 @@ auto update_merchant = client->update_merchant();
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `city` | `std::string` | No |  |
-| `corporate_uuid` | `std::string` | Yes |  |
+| `corporateUuid` | `std::string` | Yes |  |
 | `country` | `std::string` | No |  |
-| `merchant_category_code` | `std::string` | No |  |
+| `merchantCategoryCode` | `std::string` | No |  |
 | `name` | `std::string` | No |  |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `std::string` | No |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `std::string` | No |  |
 | `state` | `std::string` | No |  |
 | `street` | `std::string` | No |  |
-| `vu_nummer` | `std::string` | No |  |
+| `vuNummer` | `std::string` | No |  |
 | `zipcode` | `std::string` | No |  |
 
 ### Operations
@@ -2561,7 +2539,7 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```cpp
 Value result = client->update_merchant()->create(vmap({
-    {"corporate_uuid", Value("example_corporate_uuid")},  // std::string
+    {"corporateUuid", Value("example_corporateUuid")},  // std::string
 }), Value::undef());
 ```
 
@@ -2596,10 +2574,10 @@ auto update_template_xml = client->update_template_xml();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `int64_t` | No |  |
-| `response_message` | `std::string` | No |  |
-| `template_name` | `std::string` | Yes |  |
-| `template_xml` | `std::string` | Yes |  |
+| `responseCode` | `int64_t` | No |  |
+| `responseMessage` | `std::string` | No |  |
+| `templateName` | `std::string` | Yes |  |
+| `templateXml` | `std::string` | Yes |  |
 
 ### Operations
 
@@ -2609,8 +2587,8 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```cpp
 Value result = client->update_template_xml()->create(vmap({
-    {"template_name", Value("example_template_name")},  // std::string
-    {"template_xml", Value("example_template_xml")},  // std::string
+    {"templateName", Value("example_templateName")},  // std::string
+    {"templateXml", Value("example_templateXml")},  // std::string
 }), Value::undef());
 ```
 
@@ -2645,8 +2623,8 @@ auto version = client->version();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `app_name` | `std::string` | No |  |
-| `build_date` | `std::string` | No |  |
+| `appName` | `std::string` | No |  |
+| `buildDate` | `std::string` | No |  |
 | `version` | `std::string` | No |  |
 
 ### Operations

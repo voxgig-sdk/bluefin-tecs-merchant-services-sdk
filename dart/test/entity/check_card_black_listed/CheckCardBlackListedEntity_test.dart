@@ -47,7 +47,7 @@ void tests() {
       final check_card_black_listed_ref01_ent = client.CheckCardBlackListed();
       dynamic check_card_black_listed_ref01_data = setup['data']['new']['check_card_black_listed']['check_card_black_listed_ref01'];
 
-      check_card_black_listed_ref01_data = await check_card_black_listed_ref01_ent.create(check_card_black_listed_ref01_data);
+      check_card_black_listed_ref01_data = (await check_card_black_listed_ref01_ent.create(check_card_black_listed_ref01_data)).data();
       ok(null != check_card_black_listed_ref01_data);
 
 

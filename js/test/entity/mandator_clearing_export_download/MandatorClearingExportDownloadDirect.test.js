@@ -17,6 +17,10 @@ describe('MandatorClearingExportDownloadDirect', async () => {
 
   test('direct-exists', async () => {
     const sdk = new BluefinTecsMerchantServicesSDK({
+      // Concrete base: a live construction must satisfy any server
+      // variables a templated base URL declares; overriding base with a
+      // literal (as the direct flow tests do) sidesteps the requirement.
+      base: 'http://localhost:8080',
       system: { fetch: async () => ({}) }
     })
     assert('function' === typeof sdk.direct)
@@ -59,19 +63,19 @@ function directSetup(mockres) {
   const calls = []
 
   const env = envOverride({
-    'BLUEFINTECSMERCHANTSERVICES_TEST_MANDATOR_CLEARING_EXPORT_DOWNLOAD_ENTID': {},
-    'BLUEFINTECSMERCHANTSERVICES_TEST_LIVE': 'FALSE',
-    'BLUEFINTECSMERCHANTSERVICES_APIKEY': 'NONE',
+    'BLUEFIN_TECS_MERCHANT_SERVICES_TEST_MANDATOR_CLEARING_EXPORT_DOWNLOAD_ENTID': {},
+    'BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE': 'FALSE',
+    'BLUEFIN_TECS_MERCHANT_SERVICES_APIKEY': 'NONE',
   })
 
-  const live = 'TRUE' === env.BLUEFINTECSMERCHANTSERVICES_TEST_LIVE
+  const live = 'TRUE' === env.BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE
 
   if (live) {
     const client = new BluefinTecsMerchantServicesSDK({
-      apikey: env.BLUEFINTECSMERCHANTSERVICES_APIKEY,
+      apikey: env.BLUEFIN_TECS_MERCHANT_SERVICES_APIKEY,
     })
 
-    let idmap = env['BLUEFINTECSMERCHANTSERVICES_TEST_MANDATOR_CLEARING_EXPORT_DOWNLOAD_ENTID']
+    let idmap = env['BLUEFIN_TECS_MERCHANT_SERVICES_TEST_MANDATOR_CLEARING_EXPORT_DOWNLOAD_ENTID']
     if ('string' === typeof idmap && idmap.startsWith('{')) {
       idmap = JSON.parse(idmap)
     }

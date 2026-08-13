@@ -26,8 +26,8 @@ import {
 describe('KeepAliveEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when BLUEFINTECSMERCHANTSERVICES_TEST_LIVE=TRUE.
-  afterEach(liveDelay('BLUEFINTECSMERCHANTSERVICES_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE=TRUE.
+  afterEach(liveDelay('BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = BluefinTecsMerchantServicesSDK.test()
@@ -62,7 +62,7 @@ describe('KeepAliveEntity', async () => {
     const keep_alive_ref01_ent = client.KeepAlive()
     let keep_alive_ref01_data = setup.data.new.keep_alive['keep_alive_ref01']
 
-    keep_alive_ref01_data = await keep_alive_ref01_ent.create(keep_alive_ref01_data)
+    keep_alive_ref01_data = (await keep_alive_ref01_ent.create(keep_alive_ref01_data)).data()
     assert(null != keep_alive_ref01_data)
 
 

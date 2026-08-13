@@ -56,7 +56,7 @@ const client = sdk.BluefinTecsMerchantServicesSDK.new(h.jo(&.{
 
 ```zig
 // Create — .ok carries the created record
-switch (client.cancel_transaction(h.vnull()).create(h.jo(&.{.{ "client_id", h.vnum(1) }, .{ "currency", h.vstr("example_currency") }, .{ "receipt_number", h.vstr("example_receipt_number") }, .{ "terminal_id", h.vnum(1) }}), h.vnull())) {
+switch (client.cancel_transaction(h.vnull()).create(h.jo(&.{.{ "clientId", h.vnum(1) }, .{ "currency", h.vstr("example_currency") }, .{ "receiptNumber", h.vstr("example_receiptNumber") }, .{ "terminalId", h.vnum(1) }}), h.vnull())) {
     .ok => |created| std.debug.print("{s}\n", .{h.stringify(created)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
 }
@@ -289,46 +289,46 @@ On error, `ok` is `false` and `err` carries the error message.
 
 | Field | Description |
 | --- | --- |
-| `acquirer_id` |  |
-| `acquirer_name` |  |
-| `actual_bonus_point` |  |
+| `acquirerId` |  |
+| `acquirerName` |  |
+| `actualBonusPoints` |  |
 | `amount` |  |
-| `authorization_code` |  |
-| `balance_amount` |  |
-| `card_brand` |  |
-| `card_number` |  |
-| `client_id` |  |
+| `authorizationCode` |  |
+| `balanceAmount` |  |
+| `cardBrand` |  |
+| `cardNumber` |  |
+| `clientId` |  |
 | `currency` |  |
 | `cvc` |  |
-| `ec_data` |  |
-| `ecr_data` |  |
-| `emv_data` |  |
-| `exchange_fee` |  |
-| `exchange_rate` |  |
-| `language_code` |  |
-| `merchant_address` |  |
-| `merchant_name` |  |
-| `merchant_number` |  |
-| `message_type` |  |
-| `original_trace_number` |  |
-| `original_transaction_id` |  |
+| `ecData` |  |
+| `ecrData` |  |
+| `emvData` |  |
+| `exchangeFee` |  |
+| `exchangeRate` |  |
+| `languageCode` |  |
+| `merchantAddress` |  |
+| `merchantName` |  |
+| `merchantNumber` |  |
+| `messageType` |  |
+| `originalTraceNumber` |  |
+| `originalTransactionId` |  |
 | `password` |  |
-| `payment_reason` |  |
-| `receipt_footer` |  |
-| `receipt_header` |  |
-| `receipt_layout` |  |
-| `receipt_number` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `serial_number` |  |
+| `paymentReason` |  |
+| `receiptFooter` |  |
+| `receiptHeader` |  |
+| `receiptLayout` |  |
+| `receiptNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `serialNumber` |  |
 | `svc` |  |
-| `terminal_id` |  |
-| `terminal_location` |  |
-| `trace_number` |  |
-| `transaction_date` |  |
-| `transaction_id` |  |
-| `tx_type` |  |
-| `user_data` |  |
+| `terminalId` |  |
+| `terminalLocation` |  |
+| `traceNumber` |  |
+| `transactionDate` |  |
+| `transactionId` |  |
+| `txType` |  |
+| `userData` |  |
 
 Operations: Create.
 
@@ -338,9 +338,9 @@ API path: `/public/cancelTransaction`
 
 | Field | Description |
 | --- | --- |
-| `card_no` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `cardNo` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -350,13 +350,13 @@ API path: `/checkCardBlackListed`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_id` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `template_name` |  |
-| `template_type` |  |
-| `template_xml` |  |
-| `terminal_type` |  |
+| `acquirerId` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `templateName` |  |
+| `templateType` |  |
+| `templateXml` |  |
+| `terminalType` |  |
 
 Operations: Create.
 
@@ -366,13 +366,13 @@ API path: `/createProduct`
 
 | Field | Description |
 | --- | --- |
-| `corporate_uuid` |  |
-| `deactivation_reason` |  |
-| `package_order_uuid` |  |
-| `product_order_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
+| `corporateUuid` |  |
+| `deactivationReason` |  |
+| `packageOrderUuid` |  |
+| `productOrderUuid` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
 
 Operations: Create.
 
@@ -382,16 +382,16 @@ API path: `/deactivateTerminal`
 
 | Field | Description |
 | --- | --- |
-| `clearing_date_from` |  |
-| `clearing_date_to` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `tx_count` |  |
-| `tx_id_end` |  |
-| `tx_id_start` |  |
-| `tx_seq_no_end` |  |
-| `tx_seq_no_start` |  |
-| `tx_total` |  |
+| `clearingDateFrom` |  |
+| `clearingDateTo` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `txCount` |  |
+| `txIdEnd` |  |
+| `txIdStart` |  |
+| `txSeqNoEnd` |  |
+| `txSeqNoStart` |  |
+| `txTotal` |  |
 
 Operations: Create, Load.
 
@@ -401,12 +401,12 @@ API path: `/public/digitalservices/mandatorClearingExportDownload/{fileId}`
 
 | Field | Description |
 | --- | --- |
-| `ecom_data` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
-| `transaction_id` |  |
-| `transaction_type` |  |
+| `ecomData` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
+| `transactionId` |  |
+| `transactionType` |  |
 
 Operations: Create.
 
@@ -416,11 +416,11 @@ API path: `/public/getEcData`
 
 | Field | Description |
 | --- | --- |
-| `ecom_pass` |  |
-| `ecom_skey` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
+| `ecomPass` |  |
+| `ecomSkey` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
 
 Operations: Create.
 
@@ -430,12 +430,12 @@ API path: `/public/getEcomParameters`
 
 | Field | Description |
 | --- | --- |
-| `ecr_data` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
-| `transaction_id` |  |
-| `transaction_type` |  |
+| `ecrData` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
+| `transactionId` |  |
+| `transactionType` |  |
 
 Operations: Create.
 
@@ -445,12 +445,12 @@ API path: `/public/getEcrData`
 
 | Field | Description |
 | --- | --- |
-| `emv_data` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
-| `transaction_id` |  |
-| `transaction_type` |  |
+| `emvData` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
+| `transactionId` |  |
+| `transactionType` |  |
 
 Operations: Create.
 
@@ -460,20 +460,20 @@ API path: `/public/getEmvData`
 
 | Field | Description |
 | --- | --- |
-| `account_no` |  |
-| `additional_data` |  |
-| `corporate_uuid` |  |
+| `accountNo` |  |
+| `additionalData` |  |
+| `corporateUuid` |  |
 | `currency` |  |
-| `merchant_category_code` |  |
-| `package_order_uuid` |  |
-| `product_order_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `sorting_code` |  |
-| `template_name` |  |
-| `terminal_id` |  |
-| `terminal_id_acq` |  |
-| `vu_nummer` |  |
+| `merchantCategoryCode` |  |
+| `packageOrderUuid` |  |
+| `productOrderUuid` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `sortingCode` |  |
+| `templateName` |  |
+| `terminalIdAcq` |  |
+| `terminalIds` |  |
+| `vuNummer` |  |
 
 Operations: Create.
 
@@ -483,9 +483,9 @@ API path: `/enableAcquiring`
 
 | Field | Description |
 | --- | --- |
-| `merchant_contract_number` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `merchantContractNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -495,9 +495,9 @@ API path: `/getMerchantContractNumber`
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
-| `template_name` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `templateName` |  |
 
 Operations: Create.
 
@@ -507,9 +507,9 @@ API path: `/public/getTemplateXml`
 
 | Field | Description |
 | --- | --- |
-| `mandator_name` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `mandatorName` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -519,9 +519,9 @@ API path: `/introduceMandator`
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_template_description` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalTemplateDescription` |  |
 
 Operations: Create.
 
@@ -532,15 +532,15 @@ API path: `/introducePackage`
 | Field | Description |
 | --- | --- |
 | `hwserialno` |  |
-| `ka_date_time_from` |  |
-| `ka_date_time_to` |  |
-| `keep_alive_data` |  |
+| `kaDateTimeFrom` |  |
+| `kaDateTimeTo` |  |
+| `keepAliveData` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_date_time_from` |  |
-| `terminal_date_time_to` |  |
-| `terminal_id` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalDateTimeFrom` |  |
+| `terminalDateTimeTo` |  |
+| `terminalId` |  |
 
 Operations: Create.
 
@@ -550,12 +550,12 @@ API path: `/public/keepalive`
 
 | Field | Description |
 | --- | --- |
-| `corporate_uuid` |  |
+| `corporateUuid` |  |
 | `filter` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminals` |  |
 
 Operations: Create.
 
@@ -565,12 +565,12 @@ API path: `/public/listTerminals`
 
 | Field | Description |
 | --- | --- |
-| `clearing_date_from` |  |
-| `clearing_date_to` |  |
+| `clearingDateFrom` |  |
+| `clearingDateTo` |  |
 | `pagination` |  |
-| `record` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `records` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -580,12 +580,12 @@ API path: `/public/digitalservices/mandatorClearingExport`
 
 | Field | Description |
 | --- | --- |
-| `clearing_date_from` |  |
-| `clearing_date_to` |  |
-| `file_id` |  |
-| `filename_template` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `clearingDateFrom` |  |
+| `clearingDateTo` |  |
+| `fileId` |  |
+| `filenameTemplate` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `status` |  |
 
 Operations: Create, Load.
@@ -596,11 +596,11 @@ API path: `/public/digitalservices/mandatorClearingExportDownload`
 
 | Field | Description |
 | --- | --- |
-| `clearing_date_from` |  |
-| `clearing_date_to` |  |
-| `record` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `clearingDateFrom` |  |
+| `clearingDateTo` |  |
+| `records` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -610,30 +610,30 @@ API path: `/public/digitalservices/mandatorClearingExportSummary`
 
 | Field | Description |
 | --- | --- |
-| `3_d_secure` |  |
-| `authorization_code` |  |
-| `card_brand` |  |
-| `clearing_amount_from` |  |
-| `clearing_amount_to` |  |
-| `clearing_currency` |  |
-| `clearing_status` |  |
-| `corporate_uuid` |  |
-| `order_by_transaction_date` |  |
+| `3DSecure` |  |
+| `authorizationCode` |  |
+| `cardBrand` |  |
+| `clearingAmountFrom` |  |
+| `clearingAmountTo` |  |
+| `clearingCurrency` |  |
+| `clearingStatus` |  |
+| `corporateUUID` |  |
+| `orderByTransactionDate` |  |
 | `pagination` |  |
-| `receipt_number` |  |
-| `referenced_transaction_id` |  |
-| `retrieval_reference_number` |  |
-| `source_id` |  |
-| `tecsengine_response_code_from` |  |
-| `tecsengine_response_code_to` |  |
-| `terminal_id` |  |
-| `trace_number` |  |
-| `transaction_amount_from` |  |
-| `transaction_amount_to` |  |
-| `transaction_date_from` |  |
-| `transaction_date_to` |  |
-| `transaction_id` |  |
-| `transaction_type` |  |
+| `receiptNumber` |  |
+| `referencedTransactionId` |  |
+| `retrievalReferenceNumber` |  |
+| `sourceId` |  |
+| `tecsengineResponseCodeFrom` |  |
+| `tecsengineResponseCodeTo` |  |
+| `terminalId` |  |
+| `traceNumber` |  |
+| `transactionAmountFrom` |  |
+| `transactionAmountTo` |  |
+| `transactionDateFrom` |  |
+| `transactionDateTo` |  |
+| `transactionId` |  |
+| `transactionType` |  |
 | `wallet` |  |
 
 Operations: Create.
@@ -644,11 +644,11 @@ API path: `/public/transactionHistoryCsv`
 
 | Field | Description |
 | --- | --- |
-| `productorderuuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `target_packageorderuuid` |  |
-| `target_productorderuuid` |  |
+| `productorderuuids` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `targetPackageorderuuid` |  |
+| `targetProductorderuuid` |  |
 
 Operations: Create.
 
@@ -658,22 +658,22 @@ API path: `/moveTid`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_name` |  |
+| `acquirerName` |  |
 | `amount` |  |
-| `authorization_number` |  |
-| `card_number` |  |
-| `card_type` |  |
+| `authorizationNumber` |  |
+| `cardNumber` |  |
+| `cardType` |  |
 | `currency` |  |
 | `cvc` |  |
-| `date_time_tx` |  |
-| `exp_date` |  |
-| `merchant_id` |  |
-| `original_transaction_id` |  |
+| `dateTimeTx` |  |
+| `expDate` |  |
+| `merchantId` |  |
+| `originalTransactionId` |  |
 | `password` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
-| `transaction_id` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
+| `transactionId` |  |
 | `txtype` |  |
 
 Operations: Create.
@@ -684,21 +684,17 @@ API path: `/public/paymentManual`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_name` |  |
 | `amount` |  |
-| `authorization_number` |  |
-| `card_type` |  |
 | `currency` |  |
-| `date_time_tx` |  |
-| `device_payload` |  |
-| `merchant_id` |  |
-| `original_transaction_id` |  |
+| `device` |  |
+| `devicePayload` |  |
+| `expDate` |  |
+| `mode` |  |
+| `panMasked` |  |
 | `password` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `sred` |  |
-| `terminal_id` |  |
-| `transaction_id` |  |
+| `serial` |  |
+| `serviceCode` |  |
+| `terminalId` |  |
 | `txtype` |  |
 
 Operations: Create.
@@ -709,48 +705,48 @@ API path: `/public/paymentSred`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_id` |  |
-| `acquirer_name` |  |
-| `actual_bonus_point` |  |
+| `acquirerId` |  |
+| `acquirerName` |  |
+| `actualBonusPoints` |  |
 | `amount` |  |
-| `authorization_code` |  |
-| `balance_amount` |  |
-| `card_brand` |  |
-| `card_number` |  |
-| `card_number_reference` |  |
-| `client_id` |  |
+| `authorizationCode` |  |
+| `balanceAmount` |  |
+| `cardBrand` |  |
+| `cardNumber` |  |
+| `cardNumberReference` |  |
+| `clientId` |  |
 | `currency` |  |
 | `cvc` |  |
-| `ec_data` |  |
-| `ecr_data` |  |
-| `emv_data` |  |
-| `exchange_fee` |  |
-| `exchange_rate` |  |
-| `language_code` |  |
-| `merchant_address` |  |
-| `merchant_name` |  |
-| `merchant_number` |  |
-| `message_type` |  |
-| `original_trace_number` |  |
-| `original_transaction_id` |  |
+| `ecData` |  |
+| `ecrData` |  |
+| `emvData` |  |
+| `exchangeFee` |  |
+| `exchangeRate` |  |
+| `languageCode` |  |
+| `merchantAddress` |  |
+| `merchantName` |  |
+| `merchantNumber` |  |
+| `messageType` |  |
+| `originalTraceNumber` |  |
+| `originalTransactionId` |  |
 | `password` |  |
-| `payment_reason` |  |
-| `receipt_footer` |  |
-| `receipt_header` |  |
-| `receipt_layout` |  |
-| `receipt_number` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `serial_number` |  |
+| `paymentReason` |  |
+| `receiptFooter` |  |
+| `receiptHeader` |  |
+| `receiptLayout` |  |
+| `receiptNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `serialNumber` |  |
 | `svc` |  |
-| `terminal_id` |  |
-| `terminal_location` |  |
-| `trace_number` |  |
-| `transaction_date` |  |
-| `transaction_id` |  |
-| `transaction_type` |  |
-| `tx_type` |  |
-| `user_data` |  |
+| `terminalId` |  |
+| `terminalLocation` |  |
+| `traceNumber` |  |
+| `transactionDate` |  |
+| `transactionId` |  |
+| `transactionType` |  |
+| `txType` |  |
+| `userData` |  |
 
 Operations: Create.
 
@@ -760,13 +756,13 @@ API path: `/public/paymentTransaction`
 
 | Field | Description |
 | --- | --- |
-| `corporate_uuid` |  |
-| `package_order_uuid` |  |
-| `product_order_uuid` |  |
-| `reactivation_reason` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
+| `corporateUuid` |  |
+| `packageOrderUuid` |  |
+| `productOrderUuid` |  |
+| `reactivationReason` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
 
 Operations: Create.
 
@@ -776,46 +772,46 @@ API path: `/reactivateTerminal`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_id` |  |
-| `acquirer_name` |  |
-| `actual_bonus_point` |  |
+| `acquirerId` |  |
+| `acquirerName` |  |
+| `actualBonusPoints` |  |
 | `amount` |  |
-| `authorization_code` |  |
-| `balance_amount` |  |
-| `card_brand` |  |
-| `card_number` |  |
-| `client_id` |  |
+| `authorizationCode` |  |
+| `balanceAmount` |  |
+| `cardBrand` |  |
+| `cardNumber` |  |
+| `clientId` |  |
 | `currency` |  |
 | `cvc` |  |
-| `ec_data` |  |
-| `ecr_data` |  |
-| `emv_data` |  |
-| `exchange_fee` |  |
-| `exchange_rate` |  |
-| `language_code` |  |
-| `merchant_address` |  |
-| `merchant_name` |  |
-| `merchant_number` |  |
-| `message_type` |  |
-| `original_trace_number` |  |
-| `original_transaction_id` |  |
+| `ecData` |  |
+| `ecrData` |  |
+| `emvData` |  |
+| `exchangeFee` |  |
+| `exchangeRate` |  |
+| `languageCode` |  |
+| `merchantAddress` |  |
+| `merchantName` |  |
+| `merchantNumber` |  |
+| `messageType` |  |
+| `originalTraceNumber` |  |
+| `originalTransactionId` |  |
 | `password` |  |
-| `payment_reason` |  |
-| `receipt_footer` |  |
-| `receipt_header` |  |
-| `receipt_layout` |  |
-| `receipt_number` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `serial_number` |  |
+| `paymentReason` |  |
+| `receiptFooter` |  |
+| `receiptHeader` |  |
+| `receiptLayout` |  |
+| `receiptNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `serialNumber` |  |
 | `svc` |  |
-| `terminal_id` |  |
-| `terminal_location` |  |
-| `trace_number` |  |
-| `transaction_date` |  |
-| `transaction_id` |  |
-| `tx_type` |  |
-| `user_data` |  |
+| `terminalId` |  |
+| `terminalLocation` |  |
+| `traceNumber` |  |
+| `transactionDate` |  |
+| `transactionId` |  |
+| `txType` |  |
+| `userData` |  |
 
 Operations: Create.
 
@@ -825,14 +821,14 @@ API path: `/public/refundTransaction`
 
 | Field | Description |
 | --- | --- |
-| `corporate_uuid` |  |
-| `package_order_uuid` |  |
-| `partner_id` |  |
-| `partner_name` |  |
-| `product_order_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `template_name` |  |
+| `corporateUuid` |  |
+| `packageOrderUuid` |  |
+| `partnerId` |  |
+| `partnerName` |  |
+| `productOrderUuid` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `templateName` |  |
 
 Operations: Create.
 
@@ -842,24 +838,24 @@ API path: `/registerTecsCompany`
 
 | Field | Description |
 | --- | --- |
-| `additional_data` |  |
-| `corporate_uuid` |  |
-| `package_order_uuid` |  |
-| `product_order_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `tecs_web_secret_key` |  |
-| `template_name` |  |
-| `terminal_country_code` |  |
-| `terminal_id` |  |
-| `terminal_id_acq` |  |
-| `terminal_language_code` |  |
-| `terminal_location` |  |
-| `terminal_serial_number` |  |
-| `token_io_alia` |  |
-| `token_io_iban` |  |
-| `token_io_member_id` |  |
-| `web_shop_url` |  |
+| `additionalData` |  |
+| `corporateUuid` |  |
+| `packageOrderUuid` |  |
+| `productOrderUuid` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `tecsWebSecretKey` |  |
+| `templateName` |  |
+| `terminalCountryCode` |  |
+| `terminalId` |  |
+| `terminalIdAcq` |  |
+| `terminalLanguageCode` |  |
+| `terminalLocation` |  |
+| `terminalSerialNumber` |  |
+| `tokenIOAlias` |  |
+| `tokenIOIban` |  |
+| `tokenIOMemberId` |  |
+| `webShopUrl` |  |
 
 Operations: Create.
 
@@ -869,16 +865,16 @@ API path: `/registerTerminal`
 
 | Field | Description |
 | --- | --- |
-| `card_brand_report_data` |  |
-| `clearing_date_from` |  |
-| `clearing_date_to` |  |
-| `corporate_id` |  |
+| `cardBrandReportData` |  |
+| `clearingDateFrom` |  |
+| `clearingDateTo` |  |
+| `corporateId` |  |
 | `currency` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `sum_over_credit_tx` |  |
-| `sum_over_debit_tx` |  |
-| `terminal_id` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `sumOverCreditTx` |  |
+| `sumOverDebitTx` |  |
+| `terminalId` |  |
 
 Operations: Create.
 
@@ -888,56 +884,56 @@ API path: `/public/digitalservices/reportData`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_name` |  |
-| `acquirer_terminal_id` |  |
+| `acquirerName` |  |
+| `acquirerTerminalId` |  |
 | `amount` |  |
-| `application_cryptogram` |  |
-| `authorization_code` |  |
-| `authorization_date` |  |
-| `card_brand` |  |
-| `card_entry` |  |
-| `card_expiration` |  |
-| `card_number` |  |
-| `clearing_amount` |  |
-| `clearing_batch_id` |  |
-| `clearing_currency` |  |
-| `clearing_date` |  |
-| `clearing_processed_date` |  |
-| `clearing_status` |  |
-| `client_id` |  |
+| `applicationCryptogram` |  |
+| `authorizationCode` |  |
+| `authorizationDate` |  |
+| `cardBrand` |  |
+| `cardEntry` |  |
+| `cardExpiration` |  |
+| `cardNumber` |  |
+| `clearingAmount` |  |
+| `clearingBatchId` |  |
+| `clearingCurrency` |  |
+| `clearingDate` |  |
+| `clearingProcessedDate` |  |
+| `clearingStatus` |  |
+| `clientId` |  |
 | `currency` |  |
 | `cvm` |  |
-| `ecr_data` |  |
-| `emv_application_id` |  |
-| `emv_application_label` |  |
-| `merchant_name` |  |
-| `merchant_number` |  |
-| `original_client_id` |  |
-| `original_terminal_id` |  |
-| `original_transaction_id` |  |
-| `payment_reason` |  |
-| `receipt_number` |  |
-| `response_code` |  |
-| `response_code_from_a` |  |
-| `response_message` |  |
-| `retrieval_reference_number` |  |
-| `service_code` |  |
-| `settlement_status` |  |
-| `source_id` |  |
-| `tecsengine_response_code` |  |
-| `tecsengine_response_text` |  |
-| `terminal_end_of_day_date` |  |
-| `terminal_id` |  |
-| `terminal_location` |  |
-| `tip_amount` |  |
-| `trace_number` |  |
-| `transaction_clearing_date` |  |
-| `transaction_date` |  |
-| `transaction_id` |  |
-| `transaction_seq_number` |  |
-| `transaction_server_date` |  |
-| `transaction_source` |  |
-| `transaction_type` |  |
+| `ecrData` |  |
+| `emvApplicationId` |  |
+| `emvApplicationLabel` |  |
+| `merchantName` |  |
+| `merchantNumber` |  |
+| `originalClientId` |  |
+| `originalTerminalId` |  |
+| `originalTransactionId` |  |
+| `paymentReason` |  |
+| `receiptNumber` |  |
+| `responseCode` |  |
+| `responseCodeFromAS` |  |
+| `responseMessage` |  |
+| `retrievalReferenceNumber` |  |
+| `serviceCode` |  |
+| `settlementStatus` |  |
+| `sourceId` |  |
+| `tecsengineResponseCode` |  |
+| `tecsengineResponseText` |  |
+| `terminalEndOfDayDate` |  |
+| `terminalId` |  |
+| `terminalLocation` |  |
+| `tipAmount` |  |
+| `traceNumber` |  |
+| `transactionClearingDate` |  |
+| `transactionDate` |  |
+| `transactionId` |  |
+| `transactionSeqNumber` |  |
+| `transactionServerDate` |  |
+| `transactionSource` |  |
+| `transactionType` |  |
 
 Operations: Create.
 
@@ -947,12 +943,12 @@ API path: `/public/statusTransaction`
 
 | Field | Description |
 | --- | --- |
-| `acq_tab_nexo` |  |
-| `config_version` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `serial_number` |  |
-| `tid_sent` |  |
+| `acqTabNexo` |  |
+| `configVersion` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `serialNumber` |  |
+| `tidSent` |  |
 
 Operations: Create.
 
@@ -962,11 +958,11 @@ API path: `/storeTerminalParameters`
 
 | Field | Description |
 | --- | --- |
-| `device_serial_number` |  |
-| `duplicate_terminal_id` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal` |  |
+| `deviceSerialNumber` |  |
+| `duplicateTerminalIds` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminals` |  |
 
 Operations: Create.
 
@@ -976,34 +972,34 @@ API path: `/public/getTerminalId`
 
 | Field | Description |
 | --- | --- |
-| `3_d_secure` |  |
-| `authorization_code` |  |
-| `card_brand` |  |
-| `clearing_amount_from` |  |
-| `clearing_amount_to` |  |
-| `clearing_currency` |  |
-| `clearing_status` |  |
-| `corporate_uuid` |  |
-| `order_by_transaction_date` |  |
+| `3DSecure` |  |
+| `authorizationCode` |  |
+| `cardBrand` |  |
+| `clearingAmountFrom` |  |
+| `clearingAmountTo` |  |
+| `clearingCurrency` |  |
+| `clearingStatus` |  |
+| `corporateUUID` |  |
+| `orderByTransactionDate` |  |
 | `pagination` |  |
-| `payment_token_public_id` |  |
-| `receipt_number` |  |
-| `referenced_transaction_id` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `retrieval_reference_number` |  |
-| `source_id` |  |
-| `tecsengine_response_code_from` |  |
-| `tecsengine_response_code_to` |  |
-| `terminal_id` |  |
-| `trace_number` |  |
-| `transaction_amount_from` |  |
-| `transaction_amount_to` |  |
-| `transaction_date_from` |  |
-| `transaction_date_to` |  |
-| `transaction_history` |  |
-| `transaction_id` |  |
-| `transaction_type` |  |
+| `paymentTokenPublicId` |  |
+| `receiptNumber` |  |
+| `referencedTransactionId` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `retrievalReferenceNumber` |  |
+| `sourceId` |  |
+| `tecsengineResponseCodeFrom` |  |
+| `tecsengineResponseCodeTo` |  |
+| `terminalId` |  |
+| `traceNumber` |  |
+| `transactionAmountFrom` |  |
+| `transactionAmountTo` |  |
+| `transactionDateFrom` |  |
+| `transactionDateTo` |  |
+| `transactionHistories` |  |
+| `transactionId` |  |
+| `transactionType` |  |
 | `wallet` |  |
 
 Operations: Create.
@@ -1015,11 +1011,11 @@ API path: `/public/mcom/transactionHistory`
 | Field | Description |
 | --- | --- |
 | `period` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `transaction_date_from` |  |
-| `transaction_date_to` |  |
-| `transactions_count` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `transactionDateFrom` |  |
+| `transactionDateTo` |  |
+| `transactionsCount` |  |
 
 Operations: Create.
 
@@ -1030,11 +1026,11 @@ API path: `/public/countAuthorisedTransactions`
 | Field | Description |
 | --- | --- |
 | `period` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `transaction_date_from` |  |
-| `transaction_date_to` |  |
-| `transactions_count` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `transactionDateFrom` |  |
+| `transactionDateTo` |  |
+| `transactionsCount` |  |
 
 Operations: Create.
 
@@ -1045,11 +1041,11 @@ API path: `/public/countTransactionsByCardBrand`
 | Field | Description |
 | --- | --- |
 | `period` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `transaction_date_from` |  |
-| `transaction_date_to` |  |
-| `turnover` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `transactionDateFrom` |  |
+| `transactionDateTo` |  |
+| `turnovers` |  |
 
 Operations: Create.
 
@@ -1060,15 +1056,15 @@ API path: `/public/transactionTurnover`
 | Field | Description |
 | --- | --- |
 | `city` |  |
-| `corporate_uuid` |  |
+| `corporateUuid` |  |
 | `country` |  |
-| `merchant_category_code` |  |
+| `merchantCategoryCode` |  |
 | `name` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `state` |  |
 | `street` |  |
-| `vu_nummer` |  |
+| `vuNummer` |  |
 | `zipcode` |  |
 
 Operations: Create.
@@ -1079,10 +1075,10 @@ API path: `/public/updateMerchant`
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
-| `template_name` |  |
-| `template_xml` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `templateName` |  |
+| `templateXml` |  |
 
 Operations: Create.
 
@@ -1092,8 +1088,8 @@ API path: `/public/updateTemplateXml`
 
 | Field | Description |
 | --- | --- |
-| `app_name` |  |
-| `build_date` |  |
+| `appName` |  |
+| `buildDate` |  |
 | `version` |  |
 
 Operations: Load.
@@ -1122,55 +1118,55 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_id` | `[]const u8` |  |
-| `acquirer_name` | `[]const u8` |  |
-| `actual_bonus_point` | `[]const u8` |  |
+| `acquirerId` | `[]const u8` |  |
+| `acquirerName` | `[]const u8` |  |
+| `actualBonusPoints` | `[]const u8` |  |
 | `amount` | `i64` |  |
-| `authorization_code` | `[]const u8` |  |
-| `balance_amount` | `[]const u8` |  |
-| `card_brand` | `[]const u8` |  |
-| `card_number` | `[]const u8` |  |
-| `client_id` | `i64` |  |
+| `authorizationCode` | `[]const u8` |  |
+| `balanceAmount` | `[]const u8` |  |
+| `cardBrand` | `[]const u8` |  |
+| `cardNumber` | `[]const u8` |  |
+| `clientId` | `i64` |  |
 | `currency` | `[]const u8` |  |
 | `cvc` | `[]const u8` |  |
-| `ec_data` | `[]const u8` |  |
-| `ecr_data` | `[]const u8` |  |
-| `emv_data` | `[]const u8` |  |
-| `exchange_fee` | `i64` |  |
-| `exchange_rate` | `[]const u8` |  |
-| `language_code` | `[]const u8` |  |
-| `merchant_address` | `[]const u8` |  |
-| `merchant_name` | `[]const u8` |  |
-| `merchant_number` | `[]const u8` |  |
-| `message_type` | `[]const u8` |  |
-| `original_trace_number` | `i64` |  |
-| `original_transaction_id` | `[]const u8` |  |
+| `ecData` | `[]const u8` |  |
+| `ecrData` | `[]const u8` |  |
+| `emvData` | `[]const u8` |  |
+| `exchangeFee` | `i64` |  |
+| `exchangeRate` | `[]const u8` |  |
+| `languageCode` | `[]const u8` |  |
+| `merchantAddress` | `[]const u8` |  |
+| `merchantName` | `[]const u8` |  |
+| `merchantNumber` | `[]const u8` |  |
+| `messageType` | `[]const u8` |  |
+| `originalTraceNumber` | `i64` |  |
+| `originalTransactionId` | `[]const u8` |  |
 | `password` | `[]const u8` |  |
-| `payment_reason` | `[]const u8` |  |
-| `receipt_footer` | `[]const u8` |  |
-| `receipt_header` | `[]const u8` |  |
-| `receipt_layout` | `i64` |  |
-| `receipt_number` | `[]const u8` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
-| `serial_number` | `[]const u8` |  |
+| `paymentReason` | `[]const u8` |  |
+| `receiptFooter` | `[]const u8` |  |
+| `receiptHeader` | `[]const u8` |  |
+| `receiptLayout` | `i64` |  |
+| `receiptNumber` | `[]const u8` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
+| `serialNumber` | `[]const u8` |  |
 | `svc` | `[]const u8` |  |
-| `terminal_id` | `i64` |  |
-| `terminal_location` | `[]const u8` |  |
-| `trace_number` | `i64` |  |
-| `transaction_date` | `[]const u8` |  |
-| `transaction_id` | `[]const u8` |  |
-| `tx_type` | `[]const u8` |  |
-| `user_data` | `[]const u8` |  |
+| `terminalId` | `i64` |  |
+| `terminalLocation` | `[]const u8` |  |
+| `traceNumber` | `i64` |  |
+| `transactionDate` | `[]const u8` |  |
+| `transactionId` | `[]const u8` |  |
+| `txType` | `[]const u8` |  |
+| `userData` | `[]const u8` |  |
 
 #### Example: Create
 
 ```zig
 switch (client.cancel_transaction(h.vnull()).create(h.jo(&.{
-    .{ "client_id", h.vnum(1) }, // i64
+    .{ "clientId", h.vnum(1) }, // i64
     .{ "currency", h.vstr("example_currency") }, // []const u8
-    .{ "receipt_number", h.vstr("example_receipt_number") }, // []const u8
-    .{ "terminal_id", h.vnum(1) }, // i64
+    .{ "receiptNumber", h.vstr("example_receiptNumber") }, // []const u8
+    .{ "terminalId", h.vnum(1) }, // i64
 }), h.vnull())) {
     .ok => |cancel_transaction| std.debug.print("{s}\n", .{h.stringify(cancel_transaction)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -1195,9 +1191,9 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `card_no` | `[]const u8` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
+| `cardNo` | `[]const u8` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
 
 #### Example: Create
 
@@ -1227,22 +1223,22 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_id` | `i64` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
-| `template_name` | `[]const u8` |  |
-| `template_type` | `[]const u8` |  |
-| `template_xml` | `[]const u8` |  |
-| `terminal_type` | `[]const u8` |  |
+| `acquirerId` | `i64` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
+| `templateName` | `[]const u8` |  |
+| `templateType` | `[]const u8` |  |
+| `templateXml` | `[]const u8` |  |
+| `terminalType` | `[]const u8` |  |
 
 #### Example: Create
 
 ```zig
 switch (client.create_product(h.vnull()).create(h.jo(&.{
-    .{ "template_name", h.vstr("example_template_name") }, // []const u8
-    .{ "template_type", h.vstr("example_template_type") }, // []const u8
-    .{ "template_xml", h.vstr("example_template_xml") }, // []const u8
-    .{ "terminal_type", h.vstr("example_terminal_type") }, // []const u8
+    .{ "templateName", h.vstr("example_templateName") }, // []const u8
+    .{ "templateType", h.vstr("example_templateType") }, // []const u8
+    .{ "templateXml", h.vstr("example_templateXml") }, // []const u8
+    .{ "terminalType", h.vstr("example_terminalType") }, // []const u8
 }), h.vnull())) {
     .ok => |create_product| std.debug.print("{s}\n", .{h.stringify(create_product)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -1267,20 +1263,20 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `corporate_uuid` | `[]const u8` |  |
-| `deactivation_reason` | `[]const u8` |  |
-| `package_order_uuid` | `[]const u8` |  |
-| `product_order_uuid` | `[]const u8` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
-| `terminal_id` | `i64` |  |
+| `corporateUuid` | `[]const u8` |  |
+| `deactivationReason` | `[]const u8` |  |
+| `packageOrderUuid` | `[]const u8` |  |
+| `productOrderUuid` | `[]const u8` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
+| `terminalId` | `i64` |  |
 
 #### Example: Create
 
 ```zig
 switch (client.deactivate_terminal(h.vnull()).create(h.jo(&.{
-    .{ "deactivation_reason", h.vstr("example_deactivation_reason") }, // []const u8
-    .{ "terminal_id", h.vnum(1) }, // i64
+    .{ "deactivationReason", h.vstr("example_deactivationReason") }, // []const u8
+    .{ "terminalId", h.vnum(1) }, // i64
 }), h.vnull())) {
     .ok => |deactivate_terminal| std.debug.print("{s}\n", .{h.stringify(deactivate_terminal)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -1306,16 +1302,16 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `clearing_date_from` | `[]const u8` |  |
-| `clearing_date_to` | `[]const u8` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
-| `tx_count` | `i64` |  |
-| `tx_id_end` | `[]const u8` |  |
-| `tx_id_start` | `[]const u8` |  |
-| `tx_seq_no_end` | `i64` |  |
-| `tx_seq_no_start` | `i64` |  |
-| `tx_total` | `i64` |  |
+| `clearingDateFrom` | `[]const u8` |  |
+| `clearingDateTo` | `[]const u8` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
+| `txCount` | `i64` |  |
+| `txIdEnd` | `[]const u8` |  |
+| `txIdStart` | `[]const u8` |  |
+| `txSeqNoEnd` | `i64` |  |
+| `txSeqNoStart` | `i64` |  |
+| `txTotal` | `i64` |  |
 
 #### Example: Load
 
@@ -1330,6 +1326,8 @@ switch (client.digital_services_api(h.vnull()).load(h.vnull(), h.vnull())) {
 
 ```zig
 switch (client.digital_services_api(h.vnull()).create(h.jo(&.{
+    .{ "clearingDateFrom", h.vstr("example_clearingDateFrom") }, // []const u8
+    .{ "clearingDateTo", h.vstr("example_clearingDateTo") }, // []const u8
 }), h.vnull())) {
     .ok => |digital_services_api| std.debug.print("{s}\n", .{h.stringify(digital_services_api)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -1354,20 +1352,20 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `ecom_data` | `[]const u8` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
-| `terminal_id` | `i64` |  |
-| `transaction_id` | `[]const u8` |  |
-| `transaction_type` | `[]const u8` |  |
+| `ecomData` | `[]const u8` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
+| `terminalId` | `i64` |  |
+| `transactionId` | `[]const u8` |  |
+| `transactionType` | `[]const u8` |  |
 
 #### Example: Create
 
 ```zig
 switch (client.ec_data_ecom(h.vnull()).create(h.jo(&.{
-    .{ "terminal_id", h.vnum(1) }, // i64
-    .{ "transaction_id", h.vstr("example_transaction_id") }, // []const u8
-    .{ "transaction_type", h.vstr("example_transaction_type") }, // []const u8
+    .{ "terminalId", h.vnum(1) }, // i64
+    .{ "transactionId", h.vstr("example_transactionId") }, // []const u8
+    .{ "transactionType", h.vstr("example_transactionType") }, // []const u8
 }), h.vnull())) {
     .ok => |ec_data_ecom| std.debug.print("{s}\n", .{h.stringify(ec_data_ecom)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -1392,17 +1390,17 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `ecom_pass` | `[]const u8` |  |
-| `ecom_skey` | `[]const u8` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
-| `terminal_id` | `i64` |  |
+| `ecomPass` | `[]const u8` |  |
+| `ecomSkey` | `[]const u8` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
+| `terminalId` | `i64` |  |
 
 #### Example: Create
 
 ```zig
 switch (client.ecom_parameter(h.vnull()).create(h.jo(&.{
-    .{ "terminal_id", h.vnum(1) }, // i64
+    .{ "terminalId", h.vnum(1) }, // i64
 }), h.vnull())) {
     .ok => |ecom_parameter| std.debug.print("{s}\n", .{h.stringify(ecom_parameter)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -1427,20 +1425,20 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `ecr_data` | `[]const u8` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
-| `terminal_id` | `i64` |  |
-| `transaction_id` | `[]const u8` |  |
-| `transaction_type` | `[]const u8` |  |
+| `ecrData` | `[]const u8` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
+| `terminalId` | `i64` |  |
+| `transactionId` | `[]const u8` |  |
+| `transactionType` | `[]const u8` |  |
 
 #### Example: Create
 
 ```zig
 switch (client.ecr_data(h.vnull()).create(h.jo(&.{
-    .{ "terminal_id", h.vnum(1) }, // i64
-    .{ "transaction_id", h.vstr("example_transaction_id") }, // []const u8
-    .{ "transaction_type", h.vstr("example_transaction_type") }, // []const u8
+    .{ "terminalId", h.vnum(1) }, // i64
+    .{ "transactionId", h.vstr("example_transactionId") }, // []const u8
+    .{ "transactionType", h.vstr("example_transactionType") }, // []const u8
 }), h.vnull())) {
     .ok => |ecr_data| std.debug.print("{s}\n", .{h.stringify(ecr_data)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -1465,20 +1463,20 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `emv_data` | `[]const u8` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
-| `terminal_id` | `i64` |  |
-| `transaction_id` | `[]const u8` |  |
-| `transaction_type` | `[]const u8` |  |
+| `emvData` | `[]const u8` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
+| `terminalId` | `i64` |  |
+| `transactionId` | `[]const u8` |  |
+| `transactionType` | `[]const u8` |  |
 
 #### Example: Create
 
 ```zig
 switch (client.emv_data(h.vnull()).create(h.jo(&.{
-    .{ "terminal_id", h.vnum(1) }, // i64
-    .{ "transaction_id", h.vstr("example_transaction_id") }, // []const u8
-    .{ "transaction_type", h.vstr("example_transaction_type") }, // []const u8
+    .{ "terminalId", h.vnum(1) }, // i64
+    .{ "transactionId", h.vstr("example_transactionId") }, // []const u8
+    .{ "transactionType", h.vstr("example_transactionType") }, // []const u8
 }), h.vnull())) {
     .ok => |emv_data| std.debug.print("{s}\n", .{h.stringify(emv_data)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -1503,31 +1501,31 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `account_no` | `i64` |  |
-| `additional_data` | `Value (object)` |  |
-| `corporate_uuid` | `[]const u8` |  |
+| `accountNo` | `i64` |  |
+| `additionalData` | `Value (object)` |  |
+| `corporateUuid` | `[]const u8` |  |
 | `currency` | `[]const u8` |  |
-| `merchant_category_code` | `i64` |  |
-| `package_order_uuid` | `[]const u8` |  |
-| `product_order_uuid` | `[]const u8` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
-| `sorting_code` | `i64` |  |
-| `template_name` | `[]const u8` |  |
-| `terminal_id` | `Value (array)` |  |
-| `terminal_id_acq` | `[]const u8` |  |
-| `vu_nummer` | `[]const u8` |  |
+| `merchantCategoryCode` | `i64` |  |
+| `packageOrderUuid` | `[]const u8` |  |
+| `productOrderUuid` | `[]const u8` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
+| `sortingCode` | `i64` |  |
+| `templateName` | `[]const u8` |  |
+| `terminalIdAcq` | `[]const u8` |  |
+| `terminalIds` | `Value (array)` |  |
+| `vuNummer` | `[]const u8` |  |
 
 #### Example: Create
 
 ```zig
 switch (client.enable_acquiring(h.vnull()).create(h.jo(&.{
-    .{ "corporate_uuid", h.vstr("example_corporate_uuid") }, // []const u8
+    .{ "corporateUuid", h.vstr("example_corporateUuid") }, // []const u8
     .{ "currency", h.vstr("example_currency") }, // []const u8
-    .{ "merchant_category_code", h.vnum(1) }, // i64
-    .{ "package_order_uuid", h.vstr("example_package_order_uuid") }, // []const u8
-    .{ "product_order_uuid", h.vstr("example_product_order_uuid") }, // []const u8
-    .{ "template_name", h.vstr("example_template_name") }, // []const u8
+    .{ "merchantCategoryCode", h.vnum(1) }, // i64
+    .{ "packageOrderUuid", h.vstr("example_packageOrderUuid") }, // []const u8
+    .{ "productOrderUuid", h.vstr("example_productOrderUuid") }, // []const u8
+    .{ "templateName", h.vstr("example_templateName") }, // []const u8
 }), h.vnull())) {
     .ok => |enable_acquiring| std.debug.print("{s}\n", .{h.stringify(enable_acquiring)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -1552,15 +1550,15 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `merchant_contract_number` | `[]const u8` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
+| `merchantContractNumber` | `[]const u8` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
 
 #### Example: Create
 
 ```zig
 switch (client.get_merchant_contract_number(h.vnull()).create(h.jo(&.{
-    .{ "merchant_contract_number", h.vstr("example_merchant_contract_number") }, // []const u8
+    .{ "merchantContractNumber", h.vstr("example_merchantContractNumber") }, // []const u8
 }), h.vnull())) {
     .ok => |get_merchant_contract_number| std.debug.print("{s}\n", .{h.stringify(get_merchant_contract_number)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -1585,15 +1583,15 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
-| `template_name` | `[]const u8` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
+| `templateName` | `[]const u8` |  |
 
 #### Example: Create
 
 ```zig
 switch (client.get_template_xml(h.vnull()).create(h.jo(&.{
-    .{ "template_name", h.vstr("example_template_name") }, // []const u8
+    .{ "templateName", h.vstr("example_templateName") }, // []const u8
 }), h.vnull())) {
     .ok => |get_template_xml| std.debug.print("{s}\n", .{h.stringify(get_template_xml)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -1618,15 +1616,15 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `mandator_name` | `[]const u8` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
+| `mandatorName` | `[]const u8` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
 
 #### Example: Create
 
 ```zig
 switch (client.introduce_mandator(h.vnull()).create(h.jo(&.{
-    .{ "mandator_name", h.vstr("example_mandator_name") }, // []const u8
+    .{ "mandatorName", h.vstr("example_mandatorName") }, // []const u8
 }), h.vnull())) {
     .ok => |introduce_mandator| std.debug.print("{s}\n", .{h.stringify(introduce_mandator)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -1651,15 +1649,15 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
-| `terminal_template_description` | `[]const u8` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
+| `terminalTemplateDescription` | `[]const u8` |  |
 
 #### Example: Create
 
 ```zig
 switch (client.introduce_package(h.vnull()).create(h.jo(&.{
-    .{ "terminal_template_description", h.vstr("example_terminal_template_description") }, // []const u8
+    .{ "terminalTemplateDescription", h.vstr("example_terminalTemplateDescription") }, // []const u8
 }), h.vnull())) {
     .ok => |introduce_package| std.debug.print("{s}\n", .{h.stringify(introduce_package)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -1685,15 +1683,15 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 | Field | Type | Description |
 | --- | --- | --- |
 | `hwserialno` | `[]const u8` |  |
-| `ka_date_time_from` | `[]const u8` |  |
-| `ka_date_time_to` | `[]const u8` |  |
-| `keep_alive_data` | `Value (array)` |  |
+| `kaDateTimeFrom` | `[]const u8` |  |
+| `kaDateTimeTo` | `[]const u8` |  |
+| `keepAliveData` | `Value (array)` |  |
 | `pagination` | `Value (object)` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
-| `terminal_date_time_from` | `[]const u8` |  |
-| `terminal_date_time_to` | `[]const u8` |  |
-| `terminal_id` | `i64` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
+| `terminalDateTimeFrom` | `[]const u8` |  |
+| `terminalDateTimeTo` | `[]const u8` |  |
+| `terminalId` | `i64` |  |
 
 #### Example: Create
 
@@ -1723,12 +1721,12 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `corporate_uuid` | `Value (array)` |  |
+| `corporateUuid` | `Value (array)` |  |
 | `filter` | `Value (object)` |  |
 | `pagination` | `Value (object)` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
-| `terminal` | `Value (array)` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
+| `terminals` | `Value (array)` |  |
 
 #### Example: Create
 
@@ -1758,19 +1756,19 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `clearing_date_from` | `[]const u8` |  |
-| `clearing_date_to` | `[]const u8` |  |
+| `clearingDateFrom` | `[]const u8` |  |
+| `clearingDateTo` | `[]const u8` |  |
 | `pagination` | `Value (object)` |  |
-| `record` | `Value (array)` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
+| `records` | `Value (array)` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
 
 #### Example: Create
 
 ```zig
 switch (client.mandator_clearing_export(h.vnull()).create(h.jo(&.{
-    .{ "clearing_date_from", h.vstr("example_clearing_date_from") }, // []const u8
-    .{ "clearing_date_to", h.vstr("example_clearing_date_to") }, // []const u8
+    .{ "clearingDateFrom", h.vstr("example_clearingDateFrom") }, // []const u8
+    .{ "clearingDateTo", h.vstr("example_clearingDateTo") }, // []const u8
 }), h.vnull())) {
     .ok => |mandator_clearing_export| std.debug.print("{s}\n", .{h.stringify(mandator_clearing_export)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -1796,12 +1794,12 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `clearing_date_from` | `[]const u8` |  |
-| `clearing_date_to` | `[]const u8` |  |
-| `file_id` | `[]const u8` |  |
-| `filename_template` | `[]const u8` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
+| `clearingDateFrom` | `[]const u8` |  |
+| `clearingDateTo` | `[]const u8` |  |
+| `fileId` | `[]const u8` |  |
+| `filenameTemplate` | `[]const u8` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
 | `status` | `[]const u8` |  |
 
 #### Example: Load
@@ -1817,8 +1815,8 @@ switch (client.mandator_clearing_export_download(h.vnull()).load(h.jo(&.{.{ "id"
 
 ```zig
 switch (client.mandator_clearing_export_download(h.vnull()).create(h.jo(&.{
-    .{ "clearing_date_from", h.vstr("example_clearing_date_from") }, // []const u8
-    .{ "clearing_date_to", h.vstr("example_clearing_date_to") }, // []const u8
+    .{ "clearingDateFrom", h.vstr("example_clearingDateFrom") }, // []const u8
+    .{ "clearingDateTo", h.vstr("example_clearingDateTo") }, // []const u8
 }), h.vnull())) {
     .ok => |mandator_clearing_export_download| std.debug.print("{s}\n", .{h.stringify(mandator_clearing_export_download)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -1843,18 +1841,18 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `clearing_date_from` | `[]const u8` |  |
-| `clearing_date_to` | `[]const u8` |  |
-| `record` | `Value (array)` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
+| `clearingDateFrom` | `[]const u8` |  |
+| `clearingDateTo` | `[]const u8` |  |
+| `records` | `Value (array)` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
 
 #### Example: Create
 
 ```zig
 switch (client.mandator_clearing_export_summary(h.vnull()).create(h.jo(&.{
-    .{ "clearing_date_from", h.vstr("example_clearing_date_from") }, // []const u8
-    .{ "clearing_date_to", h.vstr("example_clearing_date_to") }, // []const u8
+    .{ "clearingDateFrom", h.vstr("example_clearingDateFrom") }, // []const u8
+    .{ "clearingDateTo", h.vstr("example_clearingDateTo") }, // []const u8
 }), h.vnull())) {
     .ok => |mandator_clearing_export_summary| std.debug.print("{s}\n", .{h.stringify(mandator_clearing_export_summary)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -1879,30 +1877,30 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `3_d_secure` | `[]const u8` |  |
-| `authorization_code` | `[]const u8` |  |
-| `card_brand` | `[]const u8` |  |
-| `clearing_amount_from` | `[]const u8` |  |
-| `clearing_amount_to` | `[]const u8` |  |
-| `clearing_currency` | `[]const u8` |  |
-| `clearing_status` | `[]const u8` |  |
-| `corporate_uuid` | `[]const u8` |  |
-| `order_by_transaction_date` | `[]const u8` |  |
+| `3DSecure` | `[]const u8` |  |
+| `authorizationCode` | `[]const u8` |  |
+| `cardBrand` | `[]const u8` |  |
+| `clearingAmountFrom` | `[]const u8` |  |
+| `clearingAmountTo` | `[]const u8` |  |
+| `clearingCurrency` | `[]const u8` |  |
+| `clearingStatus` | `[]const u8` |  |
+| `corporateUUID` | `[]const u8` |  |
+| `orderByTransactionDate` | `[]const u8` |  |
 | `pagination` | `Value (object)` |  |
-| `receipt_number` | `[]const u8` |  |
-| `referenced_transaction_id` | `[]const u8` |  |
-| `retrieval_reference_number` | `[]const u8` |  |
-| `source_id` | `i64` |  |
-| `tecsengine_response_code_from` | `[]const u8` |  |
-| `tecsengine_response_code_to` | `[]const u8` |  |
-| `terminal_id` | `i64` |  |
-| `trace_number` | `[]const u8` |  |
-| `transaction_amount_from` | `[]const u8` |  |
-| `transaction_amount_to` | `[]const u8` |  |
-| `transaction_date_from` | `[]const u8` |  |
-| `transaction_date_to` | `[]const u8` |  |
-| `transaction_id` | `[]const u8` |  |
-| `transaction_type` | `[]const u8` |  |
+| `receiptNumber` | `[]const u8` |  |
+| `referencedTransactionId` | `[]const u8` |  |
+| `retrievalReferenceNumber` | `[]const u8` |  |
+| `sourceId` | `i64` |  |
+| `tecsengineResponseCodeFrom` | `[]const u8` |  |
+| `tecsengineResponseCodeTo` | `[]const u8` |  |
+| `terminalId` | `i64` |  |
+| `traceNumber` | `[]const u8` |  |
+| `transactionAmountFrom` | `[]const u8` |  |
+| `transactionAmountTo` | `[]const u8` |  |
+| `transactionDateFrom` | `[]const u8` |  |
+| `transactionDateTo` | `[]const u8` |  |
+| `transactionId` | `[]const u8` |  |
+| `transactionType` | `[]const u8` |  |
 | `wallet` | `[]const u8` |  |
 
 #### Example: Create
@@ -1933,17 +1931,17 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `productorderuuid` | `Value (array)` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
-| `target_packageorderuuid` | `[]const u8` |  |
-| `target_productorderuuid` | `[]const u8` |  |
+| `productorderuuids` | `Value (array)` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
+| `targetPackageorderuuid` | `[]const u8` |  |
+| `targetProductorderuuid` | `[]const u8` |  |
 
 #### Example: Create
 
 ```zig
 switch (client.move_tid(h.vnull()).create(h.jo(&.{
-    .{ "productorderuuid", h.olist() }, // Value (array)
+    .{ "productorderuuids", h.olist() }, // Value (array)
 }), h.vnull())) {
     .ok => |move_tid| std.debug.print("{s}\n", .{h.stringify(move_tid)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -1968,22 +1966,22 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_name` | `[]const u8` |  |
+| `acquirerName` | `[]const u8` |  |
 | `amount` | `i64` |  |
-| `authorization_number` | `[]const u8` |  |
-| `card_number` | `[]const u8` |  |
-| `card_type` | `[]const u8` |  |
+| `authorizationNumber` | `[]const u8` |  |
+| `cardNumber` | `[]const u8` |  |
+| `cardType` | `[]const u8` |  |
 | `currency` | `[]const u8` |  |
 | `cvc` | `[]const u8` |  |
-| `date_time_tx` | `[]const u8` |  |
-| `exp_date` | `[]const u8` |  |
-| `merchant_id` | `[]const u8` |  |
-| `original_transaction_id` | `[]const u8` |  |
+| `dateTimeTx` | `[]const u8` |  |
+| `expDate` | `[]const u8` |  |
+| `merchantId` | `[]const u8` |  |
+| `originalTransactionId` | `[]const u8` |  |
 | `password` | `[]const u8` |  |
-| `response_code` | `[]const u8` |  |
-| `response_message` | `[]const u8` |  |
-| `terminal_id` | `[]const u8` |  |
-| `transaction_id` | `[]const u8` |  |
+| `responseCode` | `[]const u8` |  |
+| `responseMessage` | `[]const u8` |  |
+| `terminalId` | `[]const u8` |  |
+| `transactionId` | `[]const u8` |  |
 | `txtype` | `[]const u8` |  |
 
 #### Example: Create
@@ -1991,9 +1989,9 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 ```zig
 switch (client.payment_manual(h.vnull()).create(h.jo(&.{
     .{ "amount", h.vnum(1) }, // i64
-    .{ "card_number", h.vstr("example_card_number") }, // []const u8
+    .{ "cardNumber", h.vstr("example_cardNumber") }, // []const u8
     .{ "currency", h.vstr("example_currency") }, // []const u8
-    .{ "exp_date", h.vstr("example_exp_date") }, // []const u8
+    .{ "expDate", h.vstr("example_expDate") }, // []const u8
     .{ "txtype", h.vstr("example_txtype") }, // []const u8
 }), h.vnull())) {
     .ok => |payment_manual| std.debug.print("{s}\n", .{h.stringify(payment_manual)}),
@@ -2019,21 +2017,17 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_name` | `[]const u8` |  |
 | `amount` | `i64` |  |
-| `authorization_number` | `[]const u8` |  |
-| `card_type` | `[]const u8` |  |
 | `currency` | `[]const u8` |  |
-| `date_time_tx` | `[]const u8` |  |
-| `device_payload` | `[]const u8` |  |
-| `merchant_id` | `[]const u8` |  |
-| `original_transaction_id` | `[]const u8` |  |
+| `device` | `[]const u8` |  |
+| `devicePayload` | `[]const u8` |  |
+| `expDate` | `[]const u8` |  |
+| `mode` | `[]const u8` |  |
+| `panMasked` | `[]const u8` |  |
 | `password` | `[]const u8` |  |
-| `response_code` | `[]const u8` |  |
-| `response_message` | `[]const u8` |  |
-| `sred` | `Value (object)` |  |
-| `terminal_id` | `[]const u8` |  |
-| `transaction_id` | `[]const u8` |  |
+| `serial` | `[]const u8` |  |
+| `serviceCode` | `[]const u8` |  |
+| `terminalId` | `[]const u8` |  |
 | `txtype` | `[]const u8` |  |
 
 #### Example: Create
@@ -2042,7 +2036,8 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 switch (client.payment_sred(h.vnull()).create(h.jo(&.{
     .{ "amount", h.vnum(1) }, // i64
     .{ "currency", h.vstr("example_currency") }, // []const u8
-    .{ "device_payload", h.vstr("example_device_payload") }, // []const u8
+    .{ "devicePayload", h.vstr("example_devicePayload") }, // []const u8
+    .{ "terminalId", h.vstr("example_terminalId") }, // []const u8
     .{ "txtype", h.vstr("example_txtype") }, // []const u8
 }), h.vnull())) {
     .ok => |payment_sred| std.debug.print("{s}\n", .{h.stringify(payment_sred)}),
@@ -2068,59 +2063,59 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_id` | `[]const u8` |  |
-| `acquirer_name` | `[]const u8` |  |
-| `actual_bonus_point` | `[]const u8` |  |
+| `acquirerId` | `[]const u8` |  |
+| `acquirerName` | `[]const u8` |  |
+| `actualBonusPoints` | `[]const u8` |  |
 | `amount` | `i64` |  |
-| `authorization_code` | `[]const u8` |  |
-| `balance_amount` | `[]const u8` |  |
-| `card_brand` | `[]const u8` |  |
-| `card_number` | `[]const u8` |  |
-| `card_number_reference` | `[]const u8` |  |
-| `client_id` | `i64` |  |
+| `authorizationCode` | `[]const u8` |  |
+| `balanceAmount` | `[]const u8` |  |
+| `cardBrand` | `[]const u8` |  |
+| `cardNumber` | `[]const u8` |  |
+| `cardNumberReference` | `[]const u8` |  |
+| `clientId` | `i64` |  |
 | `currency` | `[]const u8` |  |
 | `cvc` | `[]const u8` |  |
-| `ec_data` | `[]const u8` |  |
-| `ecr_data` | `[]const u8` |  |
-| `emv_data` | `[]const u8` |  |
-| `exchange_fee` | `i64` |  |
-| `exchange_rate` | `[]const u8` |  |
-| `language_code` | `[]const u8` |  |
-| `merchant_address` | `[]const u8` |  |
-| `merchant_name` | `[]const u8` |  |
-| `merchant_number` | `[]const u8` |  |
-| `message_type` | `[]const u8` |  |
-| `original_trace_number` | `i64` |  |
-| `original_transaction_id` | `[]const u8` |  |
+| `ecData` | `[]const u8` |  |
+| `ecrData` | `[]const u8` |  |
+| `emvData` | `[]const u8` |  |
+| `exchangeFee` | `i64` |  |
+| `exchangeRate` | `[]const u8` |  |
+| `languageCode` | `[]const u8` |  |
+| `merchantAddress` | `[]const u8` |  |
+| `merchantName` | `[]const u8` |  |
+| `merchantNumber` | `[]const u8` |  |
+| `messageType` | `[]const u8` |  |
+| `originalTraceNumber` | `i64` |  |
+| `originalTransactionId` | `[]const u8` |  |
 | `password` | `[]const u8` |  |
-| `payment_reason` | `[]const u8` |  |
-| `receipt_footer` | `[]const u8` |  |
-| `receipt_header` | `[]const u8` |  |
-| `receipt_layout` | `i64` |  |
-| `receipt_number` | `[]const u8` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
-| `serial_number` | `[]const u8` |  |
+| `paymentReason` | `[]const u8` |  |
+| `receiptFooter` | `[]const u8` |  |
+| `receiptHeader` | `[]const u8` |  |
+| `receiptLayout` | `i64` |  |
+| `receiptNumber` | `[]const u8` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
+| `serialNumber` | `[]const u8` |  |
 | `svc` | `[]const u8` |  |
-| `terminal_id` | `i64` |  |
-| `terminal_location` | `[]const u8` |  |
-| `trace_number` | `i64` |  |
-| `transaction_date` | `[]const u8` |  |
-| `transaction_id` | `[]const u8` |  |
-| `transaction_type` | `[]const u8` |  |
-| `tx_type` | `[]const u8` |  |
-| `user_data` | `[]const u8` |  |
+| `terminalId` | `i64` |  |
+| `terminalLocation` | `[]const u8` |  |
+| `traceNumber` | `i64` |  |
+| `transactionDate` | `[]const u8` |  |
+| `transactionId` | `[]const u8` |  |
+| `transactionType` | `[]const u8` |  |
+| `txType` | `[]const u8` |  |
+| `userData` | `[]const u8` |  |
 
 #### Example: Create
 
 ```zig
 switch (client.pre_auth_transaction_completion(h.vnull()).create(h.jo(&.{
-    .{ "card_number_reference", h.vstr("example_card_number_reference") }, // []const u8
-    .{ "client_id", h.vnum(1) }, // i64
+    .{ "cardNumberReference", h.vstr("example_cardNumberReference") }, // []const u8
+    .{ "clientId", h.vnum(1) }, // i64
     .{ "currency", h.vstr("example_currency") }, // []const u8
-    .{ "receipt_number", h.vstr("example_receipt_number") }, // []const u8
-    .{ "terminal_id", h.vnum(1) }, // i64
-    .{ "transaction_type", h.vstr("example_transaction_type") }, // []const u8
+    .{ "receiptNumber", h.vstr("example_receiptNumber") }, // []const u8
+    .{ "terminalId", h.vnum(1) }, // i64
+    .{ "transactionType", h.vstr("example_transactionType") }, // []const u8
 }), h.vnull())) {
     .ok => |pre_auth_transaction_completion| std.debug.print("{s}\n", .{h.stringify(pre_auth_transaction_completion)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -2145,20 +2140,20 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `corporate_uuid` | `[]const u8` |  |
-| `package_order_uuid` | `[]const u8` |  |
-| `product_order_uuid` | `[]const u8` |  |
-| `reactivation_reason` | `[]const u8` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
-| `terminal_id` | `i64` |  |
+| `corporateUuid` | `[]const u8` |  |
+| `packageOrderUuid` | `[]const u8` |  |
+| `productOrderUuid` | `[]const u8` |  |
+| `reactivationReason` | `[]const u8` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
+| `terminalId` | `i64` |  |
 
 #### Example: Create
 
 ```zig
 switch (client.reactivate_terminal(h.vnull()).create(h.jo(&.{
-    .{ "reactivation_reason", h.vstr("example_reactivation_reason") }, // []const u8
-    .{ "terminal_id", h.vnum(1) }, // i64
+    .{ "reactivationReason", h.vstr("example_reactivationReason") }, // []const u8
+    .{ "terminalId", h.vnum(1) }, // i64
 }), h.vnull())) {
     .ok => |reactivate_terminal| std.debug.print("{s}\n", .{h.stringify(reactivate_terminal)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -2183,55 +2178,55 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_id` | `[]const u8` |  |
-| `acquirer_name` | `[]const u8` |  |
-| `actual_bonus_point` | `[]const u8` |  |
+| `acquirerId` | `[]const u8` |  |
+| `acquirerName` | `[]const u8` |  |
+| `actualBonusPoints` | `[]const u8` |  |
 | `amount` | `i64` |  |
-| `authorization_code` | `[]const u8` |  |
-| `balance_amount` | `[]const u8` |  |
-| `card_brand` | `[]const u8` |  |
-| `card_number` | `[]const u8` |  |
-| `client_id` | `i64` |  |
+| `authorizationCode` | `[]const u8` |  |
+| `balanceAmount` | `[]const u8` |  |
+| `cardBrand` | `[]const u8` |  |
+| `cardNumber` | `[]const u8` |  |
+| `clientId` | `i64` |  |
 | `currency` | `[]const u8` |  |
 | `cvc` | `[]const u8` |  |
-| `ec_data` | `[]const u8` |  |
-| `ecr_data` | `[]const u8` |  |
-| `emv_data` | `[]const u8` |  |
-| `exchange_fee` | `i64` |  |
-| `exchange_rate` | `[]const u8` |  |
-| `language_code` | `[]const u8` |  |
-| `merchant_address` | `[]const u8` |  |
-| `merchant_name` | `[]const u8` |  |
-| `merchant_number` | `[]const u8` |  |
-| `message_type` | `[]const u8` |  |
-| `original_trace_number` | `i64` |  |
-| `original_transaction_id` | `[]const u8` |  |
+| `ecData` | `[]const u8` |  |
+| `ecrData` | `[]const u8` |  |
+| `emvData` | `[]const u8` |  |
+| `exchangeFee` | `i64` |  |
+| `exchangeRate` | `[]const u8` |  |
+| `languageCode` | `[]const u8` |  |
+| `merchantAddress` | `[]const u8` |  |
+| `merchantName` | `[]const u8` |  |
+| `merchantNumber` | `[]const u8` |  |
+| `messageType` | `[]const u8` |  |
+| `originalTraceNumber` | `i64` |  |
+| `originalTransactionId` | `[]const u8` |  |
 | `password` | `[]const u8` |  |
-| `payment_reason` | `[]const u8` |  |
-| `receipt_footer` | `[]const u8` |  |
-| `receipt_header` | `[]const u8` |  |
-| `receipt_layout` | `i64` |  |
-| `receipt_number` | `[]const u8` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
-| `serial_number` | `[]const u8` |  |
+| `paymentReason` | `[]const u8` |  |
+| `receiptFooter` | `[]const u8` |  |
+| `receiptHeader` | `[]const u8` |  |
+| `receiptLayout` | `i64` |  |
+| `receiptNumber` | `[]const u8` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
+| `serialNumber` | `[]const u8` |  |
 | `svc` | `[]const u8` |  |
-| `terminal_id` | `i64` |  |
-| `terminal_location` | `[]const u8` |  |
-| `trace_number` | `i64` |  |
-| `transaction_date` | `[]const u8` |  |
-| `transaction_id` | `[]const u8` |  |
-| `tx_type` | `[]const u8` |  |
-| `user_data` | `[]const u8` |  |
+| `terminalId` | `i64` |  |
+| `terminalLocation` | `[]const u8` |  |
+| `traceNumber` | `i64` |  |
+| `transactionDate` | `[]const u8` |  |
+| `transactionId` | `[]const u8` |  |
+| `txType` | `[]const u8` |  |
+| `userData` | `[]const u8` |  |
 
 #### Example: Create
 
 ```zig
 switch (client.refund_transaction(h.vnull()).create(h.jo(&.{
-    .{ "client_id", h.vnum(1) }, // i64
+    .{ "clientId", h.vnum(1) }, // i64
     .{ "currency", h.vstr("example_currency") }, // []const u8
-    .{ "receipt_number", h.vstr("example_receipt_number") }, // []const u8
-    .{ "terminal_id", h.vnum(1) }, // i64
+    .{ "receiptNumber", h.vstr("example_receiptNumber") }, // []const u8
+    .{ "terminalId", h.vnum(1) }, // i64
 }), h.vnull())) {
     .ok => |refund_transaction| std.debug.print("{s}\n", .{h.stringify(refund_transaction)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -2256,23 +2251,23 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `corporate_uuid` | `[]const u8` |  |
-| `package_order_uuid` | `[]const u8` |  |
-| `partner_id` | `i64` |  |
-| `partner_name` | `[]const u8` |  |
-| `product_order_uuid` | `[]const u8` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
-| `template_name` | `[]const u8` |  |
+| `corporateUuid` | `[]const u8` |  |
+| `packageOrderUuid` | `[]const u8` |  |
+| `partnerId` | `i64` |  |
+| `partnerName` | `[]const u8` |  |
+| `productOrderUuid` | `[]const u8` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
+| `templateName` | `[]const u8` |  |
 
 #### Example: Create
 
 ```zig
 switch (client.register_tecs_company(h.vnull()).create(h.jo(&.{
-    .{ "corporate_uuid", h.vstr("example_corporate_uuid") }, // []const u8
-    .{ "package_order_uuid", h.vstr("example_package_order_uuid") }, // []const u8
-    .{ "product_order_uuid", h.vstr("example_product_order_uuid") }, // []const u8
-    .{ "template_name", h.vstr("example_template_name") }, // []const u8
+    .{ "corporateUuid", h.vstr("example_corporateUuid") }, // []const u8
+    .{ "packageOrderUuid", h.vstr("example_packageOrderUuid") }, // []const u8
+    .{ "productOrderUuid", h.vstr("example_productOrderUuid") }, // []const u8
+    .{ "templateName", h.vstr("example_templateName") }, // []const u8
 }), h.vnull())) {
     .ok => |register_tecs_company| std.debug.print("{s}\n", .{h.stringify(register_tecs_company)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -2297,36 +2292,36 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `additional_data` | `Value (object)` |  |
-| `corporate_uuid` | `[]const u8` |  |
-| `package_order_uuid` | `[]const u8` |  |
-| `product_order_uuid` | `[]const u8` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
-| `tecs_web_secret_key` | `[]const u8` |  |
-| `template_name` | `[]const u8` |  |
-| `terminal_country_code` | `[]const u8` |  |
-| `terminal_id` | `i64` |  |
-| `terminal_id_acq` | `[]const u8` |  |
-| `terminal_language_code` | `[]const u8` |  |
-| `terminal_location` | `[]const u8` |  |
-| `terminal_serial_number` | `[]const u8` |  |
-| `token_io_alia` | `[]const u8` |  |
-| `token_io_iban` | `[]const u8` |  |
-| `token_io_member_id` | `[]const u8` |  |
-| `web_shop_url` | `[]const u8` |  |
+| `additionalData` | `Value (object)` |  |
+| `corporateUuid` | `[]const u8` |  |
+| `packageOrderUuid` | `[]const u8` |  |
+| `productOrderUuid` | `[]const u8` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
+| `tecsWebSecretKey` | `[]const u8` |  |
+| `templateName` | `[]const u8` |  |
+| `terminalCountryCode` | `[]const u8` |  |
+| `terminalId` | `i64` |  |
+| `terminalIdAcq` | `[]const u8` |  |
+| `terminalLanguageCode` | `[]const u8` |  |
+| `terminalLocation` | `[]const u8` |  |
+| `terminalSerialNumber` | `[]const u8` |  |
+| `tokenIOAlias` | `[]const u8` |  |
+| `tokenIOIban` | `[]const u8` |  |
+| `tokenIOMemberId` | `[]const u8` |  |
+| `webShopUrl` | `[]const u8` |  |
 
 #### Example: Create
 
 ```zig
 switch (client.register_terminal(h.vnull()).create(h.jo(&.{
-    .{ "corporate_uuid", h.vstr("example_corporate_uuid") }, // []const u8
-    .{ "package_order_uuid", h.vstr("example_package_order_uuid") }, // []const u8
-    .{ "product_order_uuid", h.vstr("example_product_order_uuid") }, // []const u8
-    .{ "template_name", h.vstr("example_template_name") }, // []const u8
-    .{ "terminal_country_code", h.vstr("example_terminal_country_code") }, // []const u8
-    .{ "terminal_language_code", h.vstr("example_terminal_language_code") }, // []const u8
-    .{ "terminal_location", h.vstr("example_terminal_location") }, // []const u8
+    .{ "corporateUuid", h.vstr("example_corporateUuid") }, // []const u8
+    .{ "packageOrderUuid", h.vstr("example_packageOrderUuid") }, // []const u8
+    .{ "productOrderUuid", h.vstr("example_productOrderUuid") }, // []const u8
+    .{ "templateName", h.vstr("example_templateName") }, // []const u8
+    .{ "terminalCountryCode", h.vstr("example_terminalCountryCode") }, // []const u8
+    .{ "terminalLanguageCode", h.vstr("example_terminalLanguageCode") }, // []const u8
+    .{ "terminalLocation", h.vstr("example_terminalLocation") }, // []const u8
 }), h.vnull())) {
     .ok => |register_terminal| std.debug.print("{s}\n", .{h.stringify(register_terminal)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -2351,24 +2346,24 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `card_brand_report_data` | `Value (array)` |  |
-| `clearing_date_from` | `[]const u8` |  |
-| `clearing_date_to` | `[]const u8` |  |
-| `corporate_id` | `[]const u8` |  |
+| `cardBrandReportData` | `Value (array)` |  |
+| `clearingDateFrom` | `[]const u8` |  |
+| `clearingDateTo` | `[]const u8` |  |
+| `corporateId` | `[]const u8` |  |
 | `currency` | `[]const u8` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
-| `sum_over_credit_tx` | `Value (object)` |  |
-| `sum_over_debit_tx` | `Value (object)` |  |
-| `terminal_id` | `i64` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
+| `sumOverCreditTx` | `Value (object)` |  |
+| `sumOverDebitTx` | `Value (object)` |  |
+| `terminalId` | `i64` |  |
 
 #### Example: Create
 
 ```zig
 switch (client.report_data(h.vnull()).create(h.jo(&.{
-    .{ "clearing_date_from", h.vstr("example_clearing_date_from") }, // []const u8
-    .{ "clearing_date_to", h.vstr("example_clearing_date_to") }, // []const u8
-    .{ "corporate_id", h.vstr("example_corporate_id") }, // []const u8
+    .{ "clearingDateFrom", h.vstr("example_clearingDateFrom") }, // []const u8
+    .{ "clearingDateTo", h.vstr("example_clearingDateTo") }, // []const u8
+    .{ "corporateId", h.vstr("example_corporateId") }, // []const u8
     .{ "currency", h.vstr("example_currency") }, // []const u8
 }), h.vnull())) {
     .ok => |report_data| std.debug.print("{s}\n", .{h.stringify(report_data)}),
@@ -2394,56 +2389,56 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_name` | `[]const u8` |  |
-| `acquirer_terminal_id` | `[]const u8` |  |
+| `acquirerName` | `[]const u8` |  |
+| `acquirerTerminalId` | `[]const u8` |  |
 | `amount` | `i64` |  |
-| `application_cryptogram` | `[]const u8` |  |
-| `authorization_code` | `Value` |  |
-| `authorization_date` | `[]const u8` |  |
-| `card_brand` | `[]const u8` |  |
-| `card_entry` | `[]const u8` |  |
-| `card_expiration` | `[]const u8` |  |
-| `card_number` | `[]const u8` |  |
-| `clearing_amount` | `i64` |  |
-| `clearing_batch_id` | `[]const u8` |  |
-| `clearing_currency` | `[]const u8` |  |
-| `clearing_date` | `[]const u8` |  |
-| `clearing_processed_date` | `[]const u8` |  |
-| `clearing_status` | `[]const u8` |  |
-| `client_id` | `i64` |  |
+| `applicationCryptogram` | `[]const u8` |  |
+| `authorizationCode` | `Value` |  |
+| `authorizationDate` | `[]const u8` |  |
+| `cardBrand` | `[]const u8` |  |
+| `cardEntry` | `[]const u8` |  |
+| `cardExpiration` | `[]const u8` |  |
+| `cardNumber` | `[]const u8` |  |
+| `clearingAmount` | `i64` |  |
+| `clearingBatchId` | `[]const u8` |  |
+| `clearingCurrency` | `[]const u8` |  |
+| `clearingDate` | `[]const u8` |  |
+| `clearingProcessedDate` | `[]const u8` |  |
+| `clearingStatus` | `[]const u8` |  |
+| `clientId` | `i64` |  |
 | `currency` | `[]const u8` |  |
 | `cvm` | `[]const u8` |  |
-| `ecr_data` | `[]const u8` |  |
-| `emv_application_id` | `[]const u8` |  |
-| `emv_application_label` | `[]const u8` |  |
-| `merchant_name` | `[]const u8` |  |
-| `merchant_number` | `[]const u8` |  |
-| `original_client_id` | `[]const u8` |  |
-| `original_terminal_id` | `i64` |  |
-| `original_transaction_id` | `[]const u8` |  |
-| `payment_reason` | `[]const u8` |  |
-| `receipt_number` | `[]const u8` |  |
-| `response_code` | `i64` |  |
-| `response_code_from_a` | `[]const u8` |  |
-| `response_message` | `[]const u8` |  |
-| `retrieval_reference_number` | `[]const u8` |  |
-| `service_code` | `[]const u8` |  |
-| `settlement_status` | `[]const u8` |  |
-| `source_id` | `i64` |  |
-| `tecsengine_response_code` | `i64` |  |
-| `tecsengine_response_text` | `[]const u8` |  |
-| `terminal_end_of_day_date` | `[]const u8` |  |
-| `terminal_id` | `i64` |  |
-| `terminal_location` | `[]const u8` |  |
-| `tip_amount` | `i64` |  |
-| `trace_number` | `i64` |  |
-| `transaction_clearing_date` | `[]const u8` |  |
-| `transaction_date` | `[]const u8` |  |
-| `transaction_id` | `[]const u8` |  |
-| `transaction_seq_number` | `i64` |  |
-| `transaction_server_date` | `[]const u8` |  |
-| `transaction_source` | `[]const u8` |  |
-| `transaction_type` | `[]const u8` |  |
+| `ecrData` | `[]const u8` |  |
+| `emvApplicationId` | `[]const u8` |  |
+| `emvApplicationLabel` | `[]const u8` |  |
+| `merchantName` | `[]const u8` |  |
+| `merchantNumber` | `[]const u8` |  |
+| `originalClientId` | `[]const u8` |  |
+| `originalTerminalId` | `i64` |  |
+| `originalTransactionId` | `[]const u8` |  |
+| `paymentReason` | `[]const u8` |  |
+| `receiptNumber` | `[]const u8` |  |
+| `responseCode` | `i64` |  |
+| `responseCodeFromAS` | `[]const u8` |  |
+| `responseMessage` | `[]const u8` |  |
+| `retrievalReferenceNumber` | `[]const u8` |  |
+| `serviceCode` | `[]const u8` |  |
+| `settlementStatus` | `[]const u8` |  |
+| `sourceId` | `i64` |  |
+| `tecsengineResponseCode` | `i64` |  |
+| `tecsengineResponseText` | `[]const u8` |  |
+| `terminalEndOfDayDate` | `[]const u8` |  |
+| `terminalId` | `i64` |  |
+| `terminalLocation` | `[]const u8` |  |
+| `tipAmount` | `i64` |  |
+| `traceNumber` | `i64` |  |
+| `transactionClearingDate` | `[]const u8` |  |
+| `transactionDate` | `[]const u8` |  |
+| `transactionId` | `[]const u8` |  |
+| `transactionSeqNumber` | `i64` |  |
+| `transactionServerDate` | `[]const u8` |  |
+| `transactionSource` | `[]const u8` |  |
+| `transactionType` | `[]const u8` |  |
 
 #### Example: Create
 
@@ -2473,18 +2468,18 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acq_tab_nexo` | `Value (object)` |  |
-| `config_version` | `[]const u8` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
-| `serial_number` | `[]const u8` |  |
-| `tid_sent` | `[]const u8` |  |
+| `acqTabNexo` | `Value (object)` |  |
+| `configVersion` | `[]const u8` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
+| `serialNumber` | `[]const u8` |  |
+| `tidSent` | `[]const u8` |  |
 
 #### Example: Create
 
 ```zig
 switch (client.store_terminal_parameter(h.vnull()).create(h.jo(&.{
-    .{ "serial_number", h.vstr("example_serial_number") }, // []const u8
+    .{ "serialNumber", h.vstr("example_serialNumber") }, // []const u8
 }), h.vnull())) {
     .ok => |store_terminal_parameter| std.debug.print("{s}\n", .{h.stringify(store_terminal_parameter)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -2509,17 +2504,17 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `device_serial_number` | `Value (array)` |  |
-| `duplicate_terminal_id` | `Value (array)` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
-| `terminal` | `Value (array)` |  |
+| `deviceSerialNumber` | `Value (array)` |  |
+| `duplicateTerminalIds` | `Value (array)` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
+| `terminals` | `Value (array)` |  |
 
 #### Example: Create
 
 ```zig
 switch (client.terminal_id(h.vnull()).create(h.jo(&.{
-    .{ "device_serial_number", h.olist() }, // Value (array)
+    .{ "deviceSerialNumber", h.olist() }, // Value (array)
 }), h.vnull())) {
     .ok => |terminal_id| std.debug.print("{s}\n", .{h.stringify(terminal_id)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -2544,34 +2539,34 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `3_d_secure` | `[]const u8` |  |
-| `authorization_code` | `[]const u8` |  |
-| `card_brand` | `[]const u8` |  |
-| `clearing_amount_from` | `[]const u8` |  |
-| `clearing_amount_to` | `[]const u8` |  |
-| `clearing_currency` | `[]const u8` |  |
-| `clearing_status` | `[]const u8` |  |
-| `corporate_uuid` | `[]const u8` |  |
-| `order_by_transaction_date` | `[]const u8` |  |
+| `3DSecure` | `[]const u8` |  |
+| `authorizationCode` | `[]const u8` |  |
+| `cardBrand` | `[]const u8` |  |
+| `clearingAmountFrom` | `[]const u8` |  |
+| `clearingAmountTo` | `[]const u8` |  |
+| `clearingCurrency` | `[]const u8` |  |
+| `clearingStatus` | `[]const u8` |  |
+| `corporateUUID` | `[]const u8` |  |
+| `orderByTransactionDate` | `[]const u8` |  |
 | `pagination` | `Value (object)` |  |
-| `payment_token_public_id` | `[]const u8` |  |
-| `receipt_number` | `[]const u8` |  |
-| `referenced_transaction_id` | `[]const u8` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
-| `retrieval_reference_number` | `[]const u8` |  |
-| `source_id` | `i64` |  |
-| `tecsengine_response_code_from` | `[]const u8` |  |
-| `tecsengine_response_code_to` | `[]const u8` |  |
-| `terminal_id` | `i64` |  |
-| `trace_number` | `[]const u8` |  |
-| `transaction_amount_from` | `[]const u8` |  |
-| `transaction_amount_to` | `[]const u8` |  |
-| `transaction_date_from` | `[]const u8` |  |
-| `transaction_date_to` | `[]const u8` |  |
-| `transaction_history` | `Value (array)` |  |
-| `transaction_id` | `[]const u8` |  |
-| `transaction_type` | `[]const u8` |  |
+| `paymentTokenPublicId` | `[]const u8` |  |
+| `receiptNumber` | `[]const u8` |  |
+| `referencedTransactionId` | `[]const u8` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
+| `retrievalReferenceNumber` | `[]const u8` |  |
+| `sourceId` | `i64` |  |
+| `tecsengineResponseCodeFrom` | `[]const u8` |  |
+| `tecsengineResponseCodeTo` | `[]const u8` |  |
+| `terminalId` | `i64` |  |
+| `traceNumber` | `[]const u8` |  |
+| `transactionAmountFrom` | `[]const u8` |  |
+| `transactionAmountTo` | `[]const u8` |  |
+| `transactionDateFrom` | `[]const u8` |  |
+| `transactionDateTo` | `[]const u8` |  |
+| `transactionHistories` | `Value (array)` |  |
+| `transactionId` | `[]const u8` |  |
+| `transactionType` | `[]const u8` |  |
 | `wallet` | `[]const u8` |  |
 
 #### Example: Create
@@ -2603,11 +2598,11 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 | Field | Type | Description |
 | --- | --- | --- |
 | `period` | `[]const u8` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
-| `transaction_date_from` | `[]const u8` |  |
-| `transaction_date_to` | `[]const u8` |  |
-| `transactions_count` | `Value (array)` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
+| `transactionDateFrom` | `[]const u8` |  |
+| `transactionDateTo` | `[]const u8` |  |
+| `transactionsCount` | `Value (array)` |  |
 
 #### Example: Create
 
@@ -2638,11 +2633,11 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 | Field | Type | Description |
 | --- | --- | --- |
 | `period` | `[]const u8` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
-| `transaction_date_from` | `[]const u8` |  |
-| `transaction_date_to` | `[]const u8` |  |
-| `transactions_count` | `Value (array)` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
+| `transactionDateFrom` | `[]const u8` |  |
+| `transactionDateTo` | `[]const u8` |  |
+| `transactionsCount` | `Value (array)` |  |
 
 #### Example: Create
 
@@ -2673,11 +2668,11 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 | Field | Type | Description |
 | --- | --- | --- |
 | `period` | `[]const u8` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
-| `transaction_date_from` | `[]const u8` |  |
-| `transaction_date_to` | `[]const u8` |  |
-| `turnover` | `Value (array)` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
+| `transactionDateFrom` | `[]const u8` |  |
+| `transactionDateTo` | `[]const u8` |  |
+| `turnovers` | `Value (array)` |  |
 
 #### Example: Create
 
@@ -2708,22 +2703,22 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 | Field | Type | Description |
 | --- | --- | --- |
 | `city` | `[]const u8` |  |
-| `corporate_uuid` | `[]const u8` |  |
+| `corporateUuid` | `[]const u8` |  |
 | `country` | `[]const u8` |  |
-| `merchant_category_code` | `[]const u8` |  |
+| `merchantCategoryCode` | `[]const u8` |  |
 | `name` | `[]const u8` |  |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
 | `state` | `[]const u8` |  |
 | `street` | `[]const u8` |  |
-| `vu_nummer` | `[]const u8` |  |
+| `vuNummer` | `[]const u8` |  |
 | `zipcode` | `[]const u8` |  |
 
 #### Example: Create
 
 ```zig
 switch (client.update_merchant(h.vnull()).create(h.jo(&.{
-    .{ "corporate_uuid", h.vstr("example_corporate_uuid") }, // []const u8
+    .{ "corporateUuid", h.vstr("example_corporateUuid") }, // []const u8
 }), h.vnull())) {
     .ok => |update_merchant| std.debug.print("{s}\n", .{h.stringify(update_merchant)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -2748,17 +2743,17 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `i64` |  |
-| `response_message` | `[]const u8` |  |
-| `template_name` | `[]const u8` |  |
-| `template_xml` | `[]const u8` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
+| `templateName` | `[]const u8` |  |
+| `templateXml` | `[]const u8` |  |
 
 #### Example: Create
 
 ```zig
 switch (client.update_template_xml(h.vnull()).create(h.jo(&.{
-    .{ "template_name", h.vstr("example_template_name") }, // []const u8
-    .{ "template_xml", h.vstr("example_template_xml") }, // []const u8
+    .{ "templateName", h.vstr("example_templateName") }, // []const u8
+    .{ "templateXml", h.vstr("example_templateXml") }, // []const u8
 }), h.vnull())) {
     .ok => |update_template_xml| std.debug.print("{s}\n", .{h.stringify(update_template_xml)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -2783,8 +2778,8 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `app_name` | `[]const u8` |  |
-| `build_date` | `[]const u8` |  |
+| `appName` | `[]const u8` |  |
+| `buildDate` | `[]const u8` |  |
 | `version` | `[]const u8` |  |
 
 #### Example: Load

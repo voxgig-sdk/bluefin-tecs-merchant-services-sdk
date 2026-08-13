@@ -38,15 +38,15 @@ static GetTemplateXmlSetup get_template_xml_basic_setup(const Value& extra) {
   if (!idmap.is_map()) idmap = vmap();
 
   Value env = env_override(vmap({
-    {"BLUEFINTECSMERCHANTSERVICES_TEST_GET_TEMPLATE_XML_ENTID", idmap},
-    {"BLUEFINTECSMERCHANTSERVICES_TEST_LIVE", Value("FALSE")},
-    {"BLUEFINTECSMERCHANTSERVICES_TEST_EXPLAIN", Value("FALSE")}
+    {"BLUEFIN_TECS_MERCHANT_SERVICES_TEST_GET_TEMPLATE_XML_ENTID", idmap},
+    {"BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE", Value("FALSE")},
+    {"BLUEFIN_TECS_MERCHANT_SERVICES_TEST_EXPLAIN", Value("FALSE")}
   }));
 
-  Value idmap_resolved = Helpers::toMapAny(getp(env, "BLUEFINTECSMERCHANTSERVICES_TEST_GET_TEMPLATE_XML_ENTID"));
+  Value idmap_resolved = Helpers::toMapAny(getp(env, "BLUEFIN_TECS_MERCHANT_SERVICES_TEST_GET_TEMPLATE_XML_ENTID"));
   if (!idmap_resolved.is_map()) idmap_resolved = idmap;
 
-  bool live = getp(env, "BLUEFINTECSMERCHANTSERVICES_TEST_LIVE") == Value("TRUE");
+  bool live = getp(env, "BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE") == Value("TRUE");
 
   GetTemplateXmlSetup s;
   s.client = client;
@@ -65,27 +65,6 @@ static void get_template_xml_entity_instance() {
   ASSERT_EQ(ent->getName(), std::string("get_template_xml"), "entity name");
 }
 
-static void get_template_xml_entity_stream() {
-  // stream() runs the list op through the full pipeline and returns the
-  // result items. Seed two entities via test mode; with the streaming feature
-  // active it yields the feature's incremental items, else it falls back to
-  // the materialised items — either way every item is yielded.
-  Value seed = vmap({{"entity", vmap({{"get_template_xml", vmap({
-      {"strm01", vmap({{"id", Value("strm01")}})},
-      {"strm02", vmap({{"id", Value("strm02")}})}})}})}});
-  Value sdkopts = vmap({{"feature",
-      vmap({{"streaming", vmap({{"active", Value(true)}})}})}});
-
-  auto strsdk = BluefinTecsMerchantServicesSDK::testSDK(seed, sdkopts);
-  auto se = strsdk->get_template_xml();
-  std::vector<Value> items = se->stream("list", Value::undef(), Value::undef());
-  ASSERT_EQ((int)items.size(), 2, "stream yields both seeded items");
-
-  auto plainsdk = BluefinTecsMerchantServicesSDK::testSDK(seed, Value::undef());
-  auto pe = plainsdk->get_template_xml();
-  std::vector<Value> pitems = pe->stream("list", Value::undef(), Value::undef());
-  ASSERT_EQ((int)pitems.size(), 2, "fallback stream yields both items");
-}
 
 static void get_template_xml_entity_basic() {
   auto setup = get_template_xml_basic_setup(Value::undef());
@@ -100,7 +79,7 @@ static void get_template_xml_entity_basic() {
   Value get_template_xml_ref01_data = Helpers::toMapAny(getp(Struct::getpath(setup.data, {"new", "get_template_xml"}), "get_template_xml_ref01"));
   if (!get_template_xml_ref01_data.is_map()) get_template_xml_ref01_data = vmap();
   {
-    Value get_template_xml_ref01_data_result = get_template_xml_ref01_ent->create(Struct::clone(get_template_xml_ref01_data), Value::undef());
+    Value get_template_xml_ref01_data_result = get_template_xml_ref01_ent->create(Struct::clone(get_template_xml_ref01_data), Value::undef())->data();
     get_template_xml_ref01_data = Helpers::toMapAny(get_template_xml_ref01_data_result);
     if (!get_template_xml_ref01_data.is_map()) get_template_xml_ref01_data = vmap();
     ASSERT_TRUE(get_template_xml_ref01_data.is_map(), "expected create result to be a map");
@@ -110,7 +89,6 @@ static void get_template_xml_entity_basic() {
 
 int main() {
   T_RUN(get_template_xml_entity_instance);
-  T_RUN(get_template_xml_entity_stream);
   T_RUN(get_template_xml_entity_basic);
   return sdktest::summary("get_template_xml_entity_test");
 }

@@ -14,6 +14,8 @@ typedef struct refund_transaction_entity {
   voxgig_value* data;     // Map
   voxgig_value* mtch;     // Map
   Context* entctx;
+  // Set once a successful `remove` resolves on this instance.
+  bool deleted;
 } refund_transaction_entity;
 
 typedef void (*refund_transaction_postdone_fn)(refund_transaction_entity* self, Context* ctx);
@@ -24,11 +26,14 @@ static const char* refund_transaction_get_name(Entity* e);
 static Entity* refund_transaction_make(Entity* e);
 static voxgig_value* refund_transaction_data(Entity* e, voxgig_value* args);
 static voxgig_value* refund_transaction_matchv(Entity* e, voxgig_value* args);
-static voxgig_value* refund_transaction_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
-static voxgig_value* refund_transaction_list(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
-static voxgig_value* refund_transaction_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
-static voxgig_value* refund_transaction_update(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
-static voxgig_value* refund_transaction_remove(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+// Ops resolve to the ENTITY (`list` to a NULL-terminated array of them).
+static Entity* refund_transaction_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static Entity** refund_transaction_list(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static Entity* refund_transaction_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
+static Entity* refund_transaction_update(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
+static Entity* refund_transaction_remove(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static void refund_transaction_mark_deleted(Entity* e);
+static bool refund_transaction_deleted(Entity* e);
 
 static Context* refund_transaction_ent_ctx(refund_transaction_entity* self) {
   return self->entctx;
@@ -236,13 +241,13 @@ static voxgig_value* refund_transaction_matchv(Entity* e, voxgig_value* args) {
   return voxgig_clone(self->mtch);
 }
 
-static voxgig_value* refund_transaction_load(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* refund_transaction_load(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("load", "refund_transaction");
   return NULL;
 }
 
-static voxgig_value* refund_transaction_list(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity** refund_transaction_list(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("list", "refund_transaction");
   return NULL;
@@ -260,7 +265,7 @@ static void refund_transaction_create_postdone(refund_transaction_entity* self, 
   }
 }
 
-static voxgig_value* refund_transaction_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err) {
+static Entity* refund_transaction_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err) {
   refund_transaction_entity* self = (refund_transaction_entity*)e;
   CtxSpec cs;
   memset(&cs, 0, sizeof(cs));
@@ -270,20 +275,38 @@ static voxgig_value* refund_transaction_create(Entity* e, voxgig_value* reqdata,
   cs.data = self->data;
   cs.reqdata = reqdata;
   Context* ctx = make_context_util(cs, refund_transaction_ent_ctx(self));
-  return refund_transaction_run_op(self, ctx, refund_transaction_create_postdone, err);
+  refund_transaction_run_op(self, ctx, refund_transaction_create_postdone, err);
+  if (*err) return NULL;
+
+  // The operation resolves to THIS entity: run_op has just absorbed the
+  // result into it, and the caller reaches the record through vt->data.
+  // See AGENTS.md "Entity operations return ENTITIES".
+
+  return e;
 }
 
 
-static voxgig_value* refund_transaction_update(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* refund_transaction_update(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("update", "refund_transaction");
   return NULL;
 }
 
-static voxgig_value* refund_transaction_remove(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* refund_transaction_remove(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("remove", "refund_transaction");
   return NULL;
+}
+
+// `remove` resolves to the entity, marked. The instance KEEPS the data it
+// held - a caller can still read what was deleted - but it is no longer a
+// live record.
+static void refund_transaction_mark_deleted(Entity* e) {
+  ((refund_transaction_entity*)e)->deleted = true;
+}
+
+static bool refund_transaction_deleted(Entity* e) {
+  return ((refund_transaction_entity*)e)->deleted;
 }
 
 static const EntityVT refund_transaction_VT = {
@@ -291,6 +314,8 @@ static const EntityVT refund_transaction_VT = {
   refund_transaction_make,
   refund_transaction_data,
   refund_transaction_matchv,
+  refund_transaction_mark_deleted,
+  refund_transaction_deleted,
   refund_transaction_load,
   refund_transaction_list,
   refund_transaction_create,

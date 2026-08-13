@@ -40,7 +40,7 @@ class GetMerchantContractNumberEntityTest {
     }
     Assumptions.assumeFalse(
       setup.syntheticOnly,
-      "live entity test uses synthetic IDs from fixture — set BLUEFINTECSMERCHANTSERVICES_TEST_GET_MERCHANT_CONTRACT_NUMBER_ENTID JSON to run live",
+      "live entity test uses synthetic IDs from fixture — set BLUEFIN_TECS_MERCHANT_SERVICES_TEST_GET_MERCHANT_CONTRACT_NUMBER_ENTID JSON to run live",
     )
     val client = setup.client
 
@@ -50,7 +50,7 @@ class GetMerchantContractNumberEntityTest {
         Struct.getpath(setup.data, "new.get_merchant_contract_number"), "get_merchant_contract_number_ref01")) ?: linkedMapOf())
 
     val getMerchantContractNumberRef01DataResult = getMerchantContractNumberRef01Ent.create(getMerchantContractNumberRef01Data, null)
-    getMerchantContractNumberRef01Data = Helpers.toMapAny(getMerchantContractNumberRef01DataResult) ?: linkedMapOf()
+    getMerchantContractNumberRef01Data = Helpers.toMapAny(if (getMerchantContractNumberRef01DataResult is SdkEntity) getMerchantContractNumberRef01DataResult.data() else getMerchantContractNumberRef01DataResult) ?: linkedMapOf()
     assertNotNull(getMerchantContractNumberRef01Data, "expected create result to be a map")
 
   }
@@ -85,25 +85,25 @@ class GetMerchantContractNumberEntityTest {
           "}]}"))
 
       // Detect ENTID env override before envOverride consumes it.
-      val entidEnvRaw = RunnerSupport.getenv("BLUEFINTECSMERCHANTSERVICES_TEST_GET_MERCHANT_CONTRACT_NUMBER_ENTID")
+      val entidEnvRaw = RunnerSupport.getenv("BLUEFIN_TECS_MERCHANT_SERVICES_TEST_GET_MERCHANT_CONTRACT_NUMBER_ENTID")
       val idmapOverridden = entidEnvRaw != null && entidEnvRaw.trim().startsWith("{")
 
       val envm = linkedMapOf<String, Any?>()
-      envm["BLUEFINTECSMERCHANTSERVICES_TEST_GET_MERCHANT_CONTRACT_NUMBER_ENTID"] = idmap
-      envm["BLUEFINTECSMERCHANTSERVICES_TEST_LIVE"] = "FALSE"
-      envm["BLUEFINTECSMERCHANTSERVICES_TEST_EXPLAIN"] = "FALSE"
-      envm["BLUEFINTECSMERCHANTSERVICES_APIKEY"] = "NONE"
+      envm["BLUEFIN_TECS_MERCHANT_SERVICES_TEST_GET_MERCHANT_CONTRACT_NUMBER_ENTID"] = idmap
+      envm["BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE"] = "FALSE"
+      envm["BLUEFIN_TECS_MERCHANT_SERVICES_TEST_EXPLAIN"] = "FALSE"
+      envm["BLUEFIN_TECS_MERCHANT_SERVICES_APIKEY"] = "NONE"
       val env = RunnerSupport.envOverride(envm)
 
-      var idmapResolved = Helpers.toMapAny(env["BLUEFINTECSMERCHANTSERVICES_TEST_GET_MERCHANT_CONTRACT_NUMBER_ENTID"])
+      var idmapResolved = Helpers.toMapAny(env["BLUEFIN_TECS_MERCHANT_SERVICES_TEST_GET_MERCHANT_CONTRACT_NUMBER_ENTID"])
       if (idmapResolved == null) {
         idmapResolved = Helpers.toMapAny(idmap) ?: linkedMapOf()
       }
 
-      val live = "TRUE" == env["BLUEFINTECSMERCHANTSERVICES_TEST_LIVE"]
+      val live = "TRUE" == env["BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE"]
       if (live) {
         val liveOpts = linkedMapOf<String, Any?>()
-        liveOpts["apikey"] = env["BLUEFINTECSMERCHANTSERVICES_APIKEY"]
+        liveOpts["apikey"] = env["BLUEFIN_TECS_MERCHANT_SERVICES_APIKEY"]
         val mergedOpts = Struct.merge(Struct.jt(liveOpts, extra))
         client = BluefinTecsMerchantServicesSDK(Helpers.toMapAny(mergedOpts))
       }
@@ -113,7 +113,7 @@ class GetMerchantContractNumberEntityTest {
       setup.data = entityData
       setup.idmap = idmapResolved
       setup.env = env
-      setup.explain = "TRUE" == env["BLUEFINTECSMERCHANTSERVICES_TEST_EXPLAIN"]
+      setup.explain = "TRUE" == env["BLUEFIN_TECS_MERCHANT_SERVICES_TEST_EXPLAIN"]
       setup.live = live
       setup.syntheticOnly = live && !idmapOverridden
       setup.now = System.currentTimeMillis()

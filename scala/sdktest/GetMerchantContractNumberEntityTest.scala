@@ -35,7 +35,7 @@ object GetMerchantContractNumberEntityTest {
       var getMerchantContractNumberRef01Data = Helpers.toMapAny(Struct.getprop(
           Struct.getpath(entityData, "new.get_merchant_contract_number"), "get_merchant_contract_number_ref01"))
       val getMerchantContractNumberRef01DataResult = getMerchantContractNumberRef01Ent.create(getMerchantContractNumberRef01Data, null)
-      getMerchantContractNumberRef01Data = Helpers.toMapAny(getMerchantContractNumberRef01DataResult)
+      getMerchantContractNumberRef01Data = Helpers.toMapAny(getMerchantContractNumberRef01DataResult match { case e: SdkEntity => e.data(); case o => o })
       rep.check("get_merchant_contract_number.create.map", getMerchantContractNumberRef01Data != null, "expected create result to be a map")
     }
   }

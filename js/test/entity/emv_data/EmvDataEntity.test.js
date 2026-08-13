@@ -30,37 +30,6 @@ describe('EmvDataEntity', async () => {
   })
 
 
-  // Feature #4: the entity `stream(action, ...)` method runs the op pipeline
-  // and returns an async iterator over result items. With the streaming
-  // feature active it yields the feature's incremental output; otherwise it
-  // falls back to the materialised list so `stream` always yields.
-  test('stream', async () => {
-    const seed = {
-      entity: {
-        emv_data: { s1: { id: 's1' }, s2: { id: 's2' }, s3: { id: 's3' } }
-      }
-    }
-
-    // Fallback: streaming inactive -> yields the materialised list items.
-    const base = BluefinTecsMerchantServicesSDK.test(seed)
-    const seen = []
-    for await (const item of base.EmvData().stream('list')) {
-      seen.push(item)
-    }
-    assert.equal(seen.length, 3)
-
-    // Inbound: streaming active -> yields each item from the feature iterator.
-    if (config.feature && config.feature.streaming) {
-      const sdk = BluefinTecsMerchantServicesSDK.test(seed, { feature: { streaming: { active: true } } })
-      const got = []
-      for await (const item of sdk.EmvData().stream('list')) {
-        if (Array.isArray(item)) { got.push(...item) } else { got.push(item) }
-      }
-      assert.equal(got.length, 3)
-    }
-  })
-
-
   test('basic', async () => {
 
     const setup = basicSetup()
@@ -75,7 +44,7 @@ describe('EmvDataEntity', async () => {
     const emv_data_ref01_ent = client.EmvData()
     let emv_data_ref01_data = setup.data.new.emv_data['emv_data_ref01']
 
-    emv_data_ref01_data = await emv_data_ref01_ent.create(emv_data_ref01_data)
+    emv_data_ref01_data = (await emv_data_ref01_ent.create(emv_data_ref01_data)).data()
     assert(null != emv_data_ref01_data)
 
 

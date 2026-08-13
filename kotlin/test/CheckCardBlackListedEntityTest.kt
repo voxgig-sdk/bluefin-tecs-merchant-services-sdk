@@ -40,7 +40,7 @@ class CheckCardBlackListedEntityTest {
     }
     Assumptions.assumeFalse(
       setup.syntheticOnly,
-      "live entity test uses synthetic IDs from fixture — set BLUEFINTECSMERCHANTSERVICES_TEST_CHECK_CARD_BLACK_LISTED_ENTID JSON to run live",
+      "live entity test uses synthetic IDs from fixture — set BLUEFIN_TECS_MERCHANT_SERVICES_TEST_CHECK_CARD_BLACK_LISTED_ENTID JSON to run live",
     )
     val client = setup.client
 
@@ -50,7 +50,7 @@ class CheckCardBlackListedEntityTest {
         Struct.getpath(setup.data, "new.check_card_black_listed"), "check_card_black_listed_ref01")) ?: linkedMapOf())
 
     val checkCardBlackListedRef01DataResult = checkCardBlackListedRef01Ent.create(checkCardBlackListedRef01Data, null)
-    checkCardBlackListedRef01Data = Helpers.toMapAny(checkCardBlackListedRef01DataResult) ?: linkedMapOf()
+    checkCardBlackListedRef01Data = Helpers.toMapAny(if (checkCardBlackListedRef01DataResult is SdkEntity) checkCardBlackListedRef01DataResult.data() else checkCardBlackListedRef01DataResult) ?: linkedMapOf()
     assertNotNull(checkCardBlackListedRef01Data, "expected create result to be a map")
 
   }
@@ -85,25 +85,25 @@ class CheckCardBlackListedEntityTest {
           "}]}"))
 
       // Detect ENTID env override before envOverride consumes it.
-      val entidEnvRaw = RunnerSupport.getenv("BLUEFINTECSMERCHANTSERVICES_TEST_CHECK_CARD_BLACK_LISTED_ENTID")
+      val entidEnvRaw = RunnerSupport.getenv("BLUEFIN_TECS_MERCHANT_SERVICES_TEST_CHECK_CARD_BLACK_LISTED_ENTID")
       val idmapOverridden = entidEnvRaw != null && entidEnvRaw.trim().startsWith("{")
 
       val envm = linkedMapOf<String, Any?>()
-      envm["BLUEFINTECSMERCHANTSERVICES_TEST_CHECK_CARD_BLACK_LISTED_ENTID"] = idmap
-      envm["BLUEFINTECSMERCHANTSERVICES_TEST_LIVE"] = "FALSE"
-      envm["BLUEFINTECSMERCHANTSERVICES_TEST_EXPLAIN"] = "FALSE"
-      envm["BLUEFINTECSMERCHANTSERVICES_APIKEY"] = "NONE"
+      envm["BLUEFIN_TECS_MERCHANT_SERVICES_TEST_CHECK_CARD_BLACK_LISTED_ENTID"] = idmap
+      envm["BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE"] = "FALSE"
+      envm["BLUEFIN_TECS_MERCHANT_SERVICES_TEST_EXPLAIN"] = "FALSE"
+      envm["BLUEFIN_TECS_MERCHANT_SERVICES_APIKEY"] = "NONE"
       val env = RunnerSupport.envOverride(envm)
 
-      var idmapResolved = Helpers.toMapAny(env["BLUEFINTECSMERCHANTSERVICES_TEST_CHECK_CARD_BLACK_LISTED_ENTID"])
+      var idmapResolved = Helpers.toMapAny(env["BLUEFIN_TECS_MERCHANT_SERVICES_TEST_CHECK_CARD_BLACK_LISTED_ENTID"])
       if (idmapResolved == null) {
         idmapResolved = Helpers.toMapAny(idmap) ?: linkedMapOf()
       }
 
-      val live = "TRUE" == env["BLUEFINTECSMERCHANTSERVICES_TEST_LIVE"]
+      val live = "TRUE" == env["BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE"]
       if (live) {
         val liveOpts = linkedMapOf<String, Any?>()
-        liveOpts["apikey"] = env["BLUEFINTECSMERCHANTSERVICES_APIKEY"]
+        liveOpts["apikey"] = env["BLUEFIN_TECS_MERCHANT_SERVICES_APIKEY"]
         val mergedOpts = Struct.merge(Struct.jt(liveOpts, extra))
         client = BluefinTecsMerchantServicesSDK(Helpers.toMapAny(mergedOpts))
       }
@@ -113,7 +113,7 @@ class CheckCardBlackListedEntityTest {
       setup.data = entityData
       setup.idmap = idmapResolved
       setup.env = env
-      setup.explain = "TRUE" == env["BLUEFINTECSMERCHANTSERVICES_TEST_EXPLAIN"]
+      setup.explain = "TRUE" == env["BLUEFIN_TECS_MERCHANT_SERVICES_TEST_EXPLAIN"]
       setup.live = live
       setup.syntheticOnly = live && !idmapOverridden
       setup.now = System.currentTimeMillis()

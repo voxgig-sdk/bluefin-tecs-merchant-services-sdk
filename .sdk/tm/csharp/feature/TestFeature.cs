@@ -6,13 +6,13 @@
 
 using Voxgig.Struct;
 
-using static BluefinTecsMerchantServicesSdk.Feature.FeatureOptions;
+using static ProjectNameSdk.Feature.FeatureOptions;
 
-namespace BluefinTecsMerchantServicesSdk.Feature;
+namespace ProjectNameSdk.Feature;
 
 public class TestFeature : BaseFeature
 {
-    private BluefinTecsMerchantServicesSDK? _client;
+    private ProjectNameSDK? _client;
     private Dictionary<string, object?>? _options;
     private int _netcalls;
 

@@ -47,7 +47,7 @@ void tests() {
       final refund_transaction_ref01_ent = client.RefundTransaction();
       dynamic refund_transaction_ref01_data = setup['data']['new']['refund_transaction']['refund_transaction_ref01'];
 
-      refund_transaction_ref01_data = await refund_transaction_ref01_ent.create(refund_transaction_ref01_data);
+      refund_transaction_ref01_data = (await refund_transaction_ref01_ent.create(refund_transaction_ref01_data)).data();
       ok(null != refund_transaction_ref01_data);
 
 

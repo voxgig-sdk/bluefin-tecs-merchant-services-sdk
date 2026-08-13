@@ -14,6 +14,8 @@ typedef struct mandator_clearing_export_download_entity {
   voxgig_value* data;     // Map
   voxgig_value* mtch;     // Map
   Context* entctx;
+  // Set once a successful `remove` resolves on this instance.
+  bool deleted;
 } mandator_clearing_export_download_entity;
 
 typedef void (*mandator_clearing_export_download_postdone_fn)(mandator_clearing_export_download_entity* self, Context* ctx);
@@ -24,11 +26,14 @@ static const char* mandator_clearing_export_download_get_name(Entity* e);
 static Entity* mandator_clearing_export_download_make(Entity* e);
 static voxgig_value* mandator_clearing_export_download_data(Entity* e, voxgig_value* args);
 static voxgig_value* mandator_clearing_export_download_matchv(Entity* e, voxgig_value* args);
-static voxgig_value* mandator_clearing_export_download_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
-static voxgig_value* mandator_clearing_export_download_list(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
-static voxgig_value* mandator_clearing_export_download_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
-static voxgig_value* mandator_clearing_export_download_update(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
-static voxgig_value* mandator_clearing_export_download_remove(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+// Ops resolve to the ENTITY (`list` to a NULL-terminated array of them).
+static Entity* mandator_clearing_export_download_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static Entity** mandator_clearing_export_download_list(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static Entity* mandator_clearing_export_download_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
+static Entity* mandator_clearing_export_download_update(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
+static Entity* mandator_clearing_export_download_remove(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static void mandator_clearing_export_download_mark_deleted(Entity* e);
+static bool mandator_clearing_export_download_deleted(Entity* e);
 
 static Context* mandator_clearing_export_download_ent_ctx(mandator_clearing_export_download_entity* self) {
   return self->entctx;
@@ -250,7 +255,7 @@ static void mandator_clearing_export_download_load_postdone(mandator_clearing_ex
   }
 }
 
-static voxgig_value* mandator_clearing_export_download_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err) {
+static Entity* mandator_clearing_export_download_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err) {
   mandator_clearing_export_download_entity* self = (mandator_clearing_export_download_entity*)e;
   CtxSpec cs;
   memset(&cs, 0, sizeof(cs));
@@ -260,11 +265,18 @@ static voxgig_value* mandator_clearing_export_download_load(Entity* e, voxgig_va
   cs.data = self->data;
   cs.reqmatch = reqmatch;
   Context* ctx = make_context_util(cs, mandator_clearing_export_download_ent_ctx(self));
-  return mandator_clearing_export_download_run_op(self, ctx, mandator_clearing_export_download_load_postdone, err);
+  mandator_clearing_export_download_run_op(self, ctx, mandator_clearing_export_download_load_postdone, err);
+  if (*err) return NULL;
+
+  // The operation resolves to THIS entity: run_op has just absorbed the
+  // result into it, and the caller reaches the record through vt->data.
+  // See AGENTS.md "Entity operations return ENTITIES".
+
+  return e;
 }
 
 
-static voxgig_value* mandator_clearing_export_download_list(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity** mandator_clearing_export_download_list(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("list", "mandator_clearing_export_download");
   return NULL;
@@ -282,7 +294,7 @@ static void mandator_clearing_export_download_create_postdone(mandator_clearing_
   }
 }
 
-static voxgig_value* mandator_clearing_export_download_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err) {
+static Entity* mandator_clearing_export_download_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err) {
   mandator_clearing_export_download_entity* self = (mandator_clearing_export_download_entity*)e;
   CtxSpec cs;
   memset(&cs, 0, sizeof(cs));
@@ -292,20 +304,38 @@ static voxgig_value* mandator_clearing_export_download_create(Entity* e, voxgig_
   cs.data = self->data;
   cs.reqdata = reqdata;
   Context* ctx = make_context_util(cs, mandator_clearing_export_download_ent_ctx(self));
-  return mandator_clearing_export_download_run_op(self, ctx, mandator_clearing_export_download_create_postdone, err);
+  mandator_clearing_export_download_run_op(self, ctx, mandator_clearing_export_download_create_postdone, err);
+  if (*err) return NULL;
+
+  // The operation resolves to THIS entity: run_op has just absorbed the
+  // result into it, and the caller reaches the record through vt->data.
+  // See AGENTS.md "Entity operations return ENTITIES".
+
+  return e;
 }
 
 
-static voxgig_value* mandator_clearing_export_download_update(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* mandator_clearing_export_download_update(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("update", "mandator_clearing_export_download");
   return NULL;
 }
 
-static voxgig_value* mandator_clearing_export_download_remove(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* mandator_clearing_export_download_remove(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("remove", "mandator_clearing_export_download");
   return NULL;
+}
+
+// `remove` resolves to the entity, marked. The instance KEEPS the data it
+// held - a caller can still read what was deleted - but it is no longer a
+// live record.
+static void mandator_clearing_export_download_mark_deleted(Entity* e) {
+  ((mandator_clearing_export_download_entity*)e)->deleted = true;
+}
+
+static bool mandator_clearing_export_download_deleted(Entity* e) {
+  return ((mandator_clearing_export_download_entity*)e)->deleted;
 }
 
 static const EntityVT mandator_clearing_export_download_VT = {
@@ -313,6 +343,8 @@ static const EntityVT mandator_clearing_export_download_VT = {
   mandator_clearing_export_download_make,
   mandator_clearing_export_download_data,
   mandator_clearing_export_download_matchv,
+  mandator_clearing_export_download_mark_deleted,
+  mandator_clearing_export_download_deleted,
   mandator_clearing_export_download_load,
   mandator_clearing_export_download_list,
   mandator_clearing_export_download_create,

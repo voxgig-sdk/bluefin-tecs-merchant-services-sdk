@@ -26,8 +26,8 @@ import {
 describe('PaymentSredEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when BLUEFINTECSMERCHANTSERVICES_TEST_LIVE=TRUE.
-  afterEach(liveDelay('BLUEFINTECSMERCHANTSERVICES_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE=TRUE.
+  afterEach(liveDelay('BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = BluefinTecsMerchantServicesSDK.test()
@@ -62,7 +62,7 @@ describe('PaymentSredEntity', async () => {
     const payment_sred_ref01_ent = client.PaymentSred()
     let payment_sred_ref01_data = setup.data.new.payment_sred['payment_sred_ref01']
 
-    payment_sred_ref01_data = await payment_sred_ref01_ent.create(payment_sred_ref01_data)
+    payment_sred_ref01_data = (await payment_sred_ref01_ent.create(payment_sred_ref01_data)).data()
     assert(null != payment_sred_ref01_data)
 
 

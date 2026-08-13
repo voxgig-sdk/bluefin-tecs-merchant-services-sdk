@@ -283,91 +283,91 @@ let cancel_transaction = client.cancel_transaction(Value::Noval);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `String` | No |  |
-| `acquirer_name` | `String` | No |  |
-| `actual_bonus_point` | `String` | No |  |
+| `acquirerId` | `String` | No |  |
+| `acquirerName` | `String` | No |  |
+| `actualBonusPoints` | `String` | No |  |
 | `amount` | `i64` | No |  |
-| `authorization_code` | `String` | No |  |
-| `balance_amount` | `String` | No |  |
-| `card_brand` | `String` | No |  |
-| `card_number` | `String` | No |  |
-| `client_id` | `i64` | Yes |  |
+| `authorizationCode` | `String` | No |  |
+| `balanceAmount` | `String` | No |  |
+| `cardBrand` | `String` | No |  |
+| `cardNumber` | `String` | No |  |
+| `clientId` | `i64` | Yes |  |
 | `currency` | `String` | Yes |  |
 | `cvc` | `String` | No |  |
-| `ec_data` | `String` | No |  |
-| `ecr_data` | `String` | No |  |
-| `emv_data` | `String` | No |  |
-| `exchange_fee` | `i64` | No |  |
-| `exchange_rate` | `String` | No |  |
-| `language_code` | `String` | No |  |
-| `merchant_address` | `String` | No |  |
-| `merchant_name` | `String` | No |  |
-| `merchant_number` | `String` | No |  |
-| `message_type` | `String` | No |  |
-| `original_trace_number` | `i64` | No |  |
-| `original_transaction_id` | `String` | No |  |
+| `ecData` | `String` | No |  |
+| `ecrData` | `String` | No |  |
+| `emvData` | `String` | No |  |
+| `exchangeFee` | `i64` | No |  |
+| `exchangeRate` | `String` | No |  |
+| `languageCode` | `String` | No |  |
+| `merchantAddress` | `String` | No |  |
+| `merchantName` | `String` | No |  |
+| `merchantNumber` | `String` | No |  |
+| `messageType` | `String` | No |  |
+| `originalTraceNumber` | `i64` | No |  |
+| `originalTransactionId` | `String` | No |  |
 | `password` | `String` | No |  |
-| `payment_reason` | `String` | No |  |
-| `receipt_footer` | `String` | No |  |
-| `receipt_header` | `String` | No |  |
-| `receipt_layout` | `i64` | No |  |
-| `receipt_number` | `String` | Yes |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `String` | No |  |
-| `serial_number` | `String` | No |  |
+| `paymentReason` | `String` | No |  |
+| `receiptFooter` | `String` | No |  |
+| `receiptHeader` | `String` | No |  |
+| `receiptLayout` | `i64` | No |  |
+| `receiptNumber` | `String` | Yes |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `String` | No |  |
+| `serialNumber` | `String` | No |  |
 | `svc` | `String` | No |  |
-| `terminal_id` | `i64` | Yes |  |
-| `terminal_location` | `String` | No |  |
-| `trace_number` | `i64` | No |  |
-| `transaction_date` | `String` | No |  |
-| `transaction_id` | `String` | No |  |
-| `tx_type` | `String` | No |  |
-| `user_data` | `String` | No |  |
+| `terminalId` | `i64` | Yes |  |
+| `terminalLocation` | `String` | No |  |
+| `traceNumber` | `i64` | No |  |
+| `transactionDate` | `String` | No |  |
+| `transactionId` | `String` | No |  |
+| `txType` | `String` | No |  |
+| `userData` | `String` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `acquirer_id` | - |
-| `acquirer_name` | - |
-| `actual_bonus_point` | - |
+| `acquirerId` | - |
+| `acquirerName` | - |
+| `actualBonusPoints` | - |
 | `amount` | Yes |
-| `authorization_code` | - |
-| `balance_amount` | - |
-| `card_brand` | - |
-| `card_number` | - |
-| `client_id` | - |
+| `authorizationCode` | - |
+| `balanceAmount` | - |
+| `cardBrand` | - |
+| `cardNumber` | - |
+| `clientId` | - |
 | `currency` | - |
 | `cvc` | - |
-| `ec_data` | - |
-| `ecr_data` | - |
-| `emv_data` | - |
-| `exchange_fee` | - |
-| `exchange_rate` | - |
-| `language_code` | - |
-| `merchant_address` | - |
-| `merchant_name` | - |
-| `merchant_number` | - |
-| `message_type` | Yes |
-| `original_trace_number` | - |
-| `original_transaction_id` | Yes |
+| `ecData` | - |
+| `ecrData` | - |
+| `emvData` | - |
+| `exchangeFee` | - |
+| `exchangeRate` | - |
+| `languageCode` | - |
+| `merchantAddress` | - |
+| `merchantName` | - |
+| `merchantNumber` | - |
+| `messageType` | Yes |
+| `originalTraceNumber` | - |
+| `originalTransactionId` | Yes |
 | `password` | - |
-| `payment_reason` | - |
-| `receipt_footer` | - |
-| `receipt_header` | - |
-| `receipt_layout` | - |
-| `receipt_number` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `serial_number` | - |
+| `paymentReason` | - |
+| `receiptFooter` | - |
+| `receiptHeader` | - |
+| `receiptLayout` | - |
+| `receiptNumber` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `serialNumber` | - |
 | `svc` | - |
-| `terminal_id` | - |
-| `terminal_location` | - |
-| `trace_number` | - |
-| `transaction_date` | Yes |
-| `transaction_id` | Yes |
-| `tx_type` | - |
-| `user_data` | - |
+| `terminalId` | - |
+| `terminalLocation` | - |
+| `traceNumber` | - |
+| `transactionDate` | Yes |
+| `transactionId` | Yes |
+| `txType` | - |
+| `userData` | - |
 
 ### Operations
 
@@ -377,10 +377,10 @@ Create a new entity with the given data. Returns the created entity data on `Ok`
 
 ```rust
 let result = client.cancel_transaction(Value::Noval).create(jo(vec![
-    ("client_id", Value::Num(1.0)),  // i64
+    ("clientId", Value::Num(1.0)),  // i64
     ("currency", Value::str("example_currency")),  // String
-    ("receipt_number", Value::str("example_receipt_number")),  // String
-    ("terminal_id", Value::Num(1.0)),  // i64
+    ("receiptNumber", Value::str("example_receiptNumber")),  // String
+    ("terminalId", Value::Num(1.0)),  // i64
 ]), Value::Noval).unwrap();
 ```
 
@@ -415,9 +415,9 @@ let check_card_black_listed = client.check_card_black_listed(Value::Noval);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `card_no` | `String` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `String` | No |  |
+| `cardNo` | `String` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -461,13 +461,13 @@ let create_product = client.create_product(Value::Noval);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `i64` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `String` | No |  |
-| `template_name` | `String` | Yes |  |
-| `template_type` | `String` | Yes |  |
-| `template_xml` | `String` | Yes |  |
-| `terminal_type` | `String` | Yes |  |
+| `acquirerId` | `i64` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `String` | No |  |
+| `templateName` | `String` | Yes |  |
+| `templateType` | `String` | Yes |  |
+| `templateXml` | `String` | Yes |  |
+| `terminalType` | `String` | Yes |  |
 
 ### Operations
 
@@ -477,10 +477,10 @@ Create a new entity with the given data. Returns the created entity data on `Ok`
 
 ```rust
 let result = client.create_product(Value::Noval).create(jo(vec![
-    ("template_name", Value::str("example_template_name")),  // String
-    ("template_type", Value::str("example_template_type")),  // String
-    ("template_xml", Value::str("example_template_xml")),  // String
-    ("terminal_type", Value::str("example_terminal_type")),  // String
+    ("templateName", Value::str("example_templateName")),  // String
+    ("templateType", Value::str("example_templateType")),  // String
+    ("templateXml", Value::str("example_templateXml")),  // String
+    ("terminalType", Value::str("example_terminalType")),  // String
 ]), Value::Noval).unwrap();
 ```
 
@@ -515,13 +515,13 @@ let deactivate_terminal = client.deactivate_terminal(Value::Noval);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `corporate_uuid` | `String` | No |  |
-| `deactivation_reason` | `String` | Yes |  |
-| `package_order_uuid` | `String` | No |  |
-| `product_order_uuid` | `String` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `String` | No |  |
-| `terminal_id` | `i64` | Yes |  |
+| `corporateUuid` | `String` | No |  |
+| `deactivationReason` | `String` | Yes |  |
+| `packageOrderUuid` | `String` | No |  |
+| `productOrderUuid` | `String` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `String` | No |  |
+| `terminalId` | `i64` | Yes |  |
 
 ### Operations
 
@@ -531,8 +531,8 @@ Create a new entity with the given data. Returns the created entity data on `Ok`
 
 ```rust
 let result = client.deactivate_terminal(Value::Noval).create(jo(vec![
-    ("deactivation_reason", Value::str("example_deactivation_reason")),  // String
-    ("terminal_id", Value::Num(1.0)),  // i64
+    ("deactivationReason", Value::str("example_deactivationReason")),  // String
+    ("terminalId", Value::Num(1.0)),  // i64
 ]), Value::Noval).unwrap();
 ```
 
@@ -567,16 +567,16 @@ let digital_services_api = client.digital_services_api(Value::Noval);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearing_date_from` | `String` | Yes |  |
-| `clearing_date_to` | `String` | Yes |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `String` | No |  |
-| `tx_count` | `i64` | No |  |
-| `tx_id_end` | `String` | No |  |
-| `tx_id_start` | `String` | No |  |
-| `tx_seq_no_end` | `i64` | No |  |
-| `tx_seq_no_start` | `i64` | No |  |
-| `tx_total` | `i64` | No |  |
+| `clearingDateFrom` | `String` | Yes |  |
+| `clearingDateTo` | `String` | Yes |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `String` | No |  |
+| `txCount` | `i64` | No |  |
+| `txIdEnd` | `String` | No |  |
+| `txIdStart` | `String` | No |  |
+| `txSeqNoEnd` | `i64` | No |  |
+| `txSeqNoStart` | `i64` | No |  |
+| `txTotal` | `i64` | No |  |
 
 ### Operations
 
@@ -586,6 +586,8 @@ Create a new entity with the given data. Returns the created entity data on `Ok`
 
 ```rust
 let result = client.digital_services_api(Value::Noval).create(jo(vec![
+    ("clearingDateFrom", Value::str("example_clearingDateFrom")),  // String
+    ("clearingDateTo", Value::str("example_clearingDateTo")),  // String
 ]), Value::Noval).unwrap();
 ```
 
@@ -628,12 +630,12 @@ let ec_data_ecom = client.ec_data_ecom(Value::Noval);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ecom_data` | `String` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `String` | No |  |
-| `terminal_id` | `i64` | Yes |  |
-| `transaction_id` | `String` | Yes |  |
-| `transaction_type` | `String` | Yes |  |
+| `ecomData` | `String` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `String` | No |  |
+| `terminalId` | `i64` | Yes |  |
+| `transactionId` | `String` | Yes |  |
+| `transactionType` | `String` | Yes |  |
 
 ### Operations
 
@@ -643,9 +645,9 @@ Create a new entity with the given data. Returns the created entity data on `Ok`
 
 ```rust
 let result = client.ec_data_ecom(Value::Noval).create(jo(vec![
-    ("terminal_id", Value::Num(1.0)),  // i64
-    ("transaction_id", Value::str("example_transaction_id")),  // String
-    ("transaction_type", Value::str("example_transaction_type")),  // String
+    ("terminalId", Value::Num(1.0)),  // i64
+    ("transactionId", Value::str("example_transactionId")),  // String
+    ("transactionType", Value::str("example_transactionType")),  // String
 ]), Value::Noval).unwrap();
 ```
 
@@ -680,11 +682,11 @@ let ecom_parameter = client.ecom_parameter(Value::Noval);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ecom_pass` | `String` | No |  |
-| `ecom_skey` | `String` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `String` | No |  |
-| `terminal_id` | `i64` | Yes |  |
+| `ecomPass` | `String` | No |  |
+| `ecomSkey` | `String` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `String` | No |  |
+| `terminalId` | `i64` | Yes |  |
 
 ### Operations
 
@@ -694,7 +696,7 @@ Create a new entity with the given data. Returns the created entity data on `Ok`
 
 ```rust
 let result = client.ecom_parameter(Value::Noval).create(jo(vec![
-    ("terminal_id", Value::Num(1.0)),  // i64
+    ("terminalId", Value::Num(1.0)),  // i64
 ]), Value::Noval).unwrap();
 ```
 
@@ -729,12 +731,12 @@ let ecr_data = client.ecr_data(Value::Noval);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ecr_data` | `String` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `String` | No |  |
-| `terminal_id` | `i64` | Yes |  |
-| `transaction_id` | `String` | Yes |  |
-| `transaction_type` | `String` | Yes |  |
+| `ecrData` | `String` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `String` | No |  |
+| `terminalId` | `i64` | Yes |  |
+| `transactionId` | `String` | Yes |  |
+| `transactionType` | `String` | Yes |  |
 
 ### Operations
 
@@ -744,9 +746,9 @@ Create a new entity with the given data. Returns the created entity data on `Ok`
 
 ```rust
 let result = client.ecr_data(Value::Noval).create(jo(vec![
-    ("terminal_id", Value::Num(1.0)),  // i64
-    ("transaction_id", Value::str("example_transaction_id")),  // String
-    ("transaction_type", Value::str("example_transaction_type")),  // String
+    ("terminalId", Value::Num(1.0)),  // i64
+    ("transactionId", Value::str("example_transactionId")),  // String
+    ("transactionType", Value::str("example_transactionType")),  // String
 ]), Value::Noval).unwrap();
 ```
 
@@ -781,12 +783,12 @@ let emv_data = client.emv_data(Value::Noval);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `emv_data` | `String` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `String` | No |  |
-| `terminal_id` | `i64` | Yes |  |
-| `transaction_id` | `String` | Yes |  |
-| `transaction_type` | `String` | Yes |  |
+| `emvData` | `String` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `String` | No |  |
+| `terminalId` | `i64` | Yes |  |
+| `transactionId` | `String` | Yes |  |
+| `transactionType` | `String` | Yes |  |
 
 ### Operations
 
@@ -796,9 +798,9 @@ Create a new entity with the given data. Returns the created entity data on `Ok`
 
 ```rust
 let result = client.emv_data(Value::Noval).create(jo(vec![
-    ("terminal_id", Value::Num(1.0)),  // i64
-    ("transaction_id", Value::str("example_transaction_id")),  // String
-    ("transaction_type", Value::str("example_transaction_type")),  // String
+    ("terminalId", Value::Num(1.0)),  // i64
+    ("transactionId", Value::str("example_transactionId")),  // String
+    ("transactionType", Value::str("example_transactionType")),  // String
 ]), Value::Noval).unwrap();
 ```
 
@@ -833,20 +835,20 @@ let enable_acquiring = client.enable_acquiring(Value::Noval);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `account_no` | `i64` | No |  |
-| `additional_data` | `std::collections::HashMap<String, Value>` | No |  |
-| `corporate_uuid` | `String` | Yes |  |
+| `accountNo` | `i64` | No |  |
+| `additionalData` | `std::collections::HashMap<String, Value>` | No |  |
+| `corporateUuid` | `String` | Yes |  |
 | `currency` | `String` | Yes |  |
-| `merchant_category_code` | `i64` | Yes |  |
-| `package_order_uuid` | `String` | Yes |  |
-| `product_order_uuid` | `String` | Yes |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `String` | No |  |
-| `sorting_code` | `i64` | No |  |
-| `template_name` | `String` | Yes |  |
-| `terminal_id` | `Vec<Value>` | No |  |
-| `terminal_id_acq` | `String` | No |  |
-| `vu_nummer` | `String` | No |  |
+| `merchantCategoryCode` | `i64` | Yes |  |
+| `packageOrderUuid` | `String` | Yes |  |
+| `productOrderUuid` | `String` | Yes |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `String` | No |  |
+| `sortingCode` | `i64` | No |  |
+| `templateName` | `String` | Yes |  |
+| `terminalIdAcq` | `String` | No |  |
+| `terminalIds` | `Vec<Value>` | No |  |
+| `vuNummer` | `String` | No |  |
 
 ### Operations
 
@@ -856,12 +858,12 @@ Create a new entity with the given data. Returns the created entity data on `Ok`
 
 ```rust
 let result = client.enable_acquiring(Value::Noval).create(jo(vec![
-    ("corporate_uuid", Value::str("example_corporate_uuid")),  // String
+    ("corporateUuid", Value::str("example_corporateUuid")),  // String
     ("currency", Value::str("example_currency")),  // String
-    ("merchant_category_code", Value::Num(1.0)),  // i64
-    ("package_order_uuid", Value::str("example_package_order_uuid")),  // String
-    ("product_order_uuid", Value::str("example_product_order_uuid")),  // String
-    ("template_name", Value::str("example_template_name")),  // String
+    ("merchantCategoryCode", Value::Num(1.0)),  // i64
+    ("packageOrderUuid", Value::str("example_packageOrderUuid")),  // String
+    ("productOrderUuid", Value::str("example_productOrderUuid")),  // String
+    ("templateName", Value::str("example_templateName")),  // String
 ]), Value::Noval).unwrap();
 ```
 
@@ -896,9 +898,9 @@ let get_merchant_contract_number = client.get_merchant_contract_number(Value::No
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `merchant_contract_number` | `String` | Yes |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `String` | No |  |
+| `merchantContractNumber` | `String` | Yes |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -908,7 +910,7 @@ Create a new entity with the given data. Returns the created entity data on `Ok`
 
 ```rust
 let result = client.get_merchant_contract_number(Value::Noval).create(jo(vec![
-    ("merchant_contract_number", Value::str("example_merchant_contract_number")),  // String
+    ("merchantContractNumber", Value::str("example_merchantContractNumber")),  // String
 ]), Value::Noval).unwrap();
 ```
 
@@ -943,9 +945,9 @@ let get_template_xml = client.get_template_xml(Value::Noval);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `i64` | No |  |
-| `response_message` | `String` | No |  |
-| `template_name` | `String` | Yes |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `String` | No |  |
+| `templateName` | `String` | Yes |  |
 
 ### Operations
 
@@ -955,7 +957,7 @@ Create a new entity with the given data. Returns the created entity data on `Ok`
 
 ```rust
 let result = client.get_template_xml(Value::Noval).create(jo(vec![
-    ("template_name", Value::str("example_template_name")),  // String
+    ("templateName", Value::str("example_templateName")),  // String
 ]), Value::Noval).unwrap();
 ```
 
@@ -990,9 +992,9 @@ let introduce_mandator = client.introduce_mandator(Value::Noval);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `mandator_name` | `String` | Yes |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `String` | No |  |
+| `mandatorName` | `String` | Yes |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -1002,7 +1004,7 @@ Create a new entity with the given data. Returns the created entity data on `Ok`
 
 ```rust
 let result = client.introduce_mandator(Value::Noval).create(jo(vec![
-    ("mandator_name", Value::str("example_mandator_name")),  // String
+    ("mandatorName", Value::str("example_mandatorName")),  // String
 ]), Value::Noval).unwrap();
 ```
 
@@ -1037,9 +1039,9 @@ let introduce_package = client.introduce_package(Value::Noval);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `i64` | No |  |
-| `response_message` | `String` | No |  |
-| `terminal_template_description` | `String` | Yes |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `String` | No |  |
+| `terminalTemplateDescription` | `String` | Yes |  |
 
 ### Operations
 
@@ -1049,7 +1051,7 @@ Create a new entity with the given data. Returns the created entity data on `Ok`
 
 ```rust
 let result = client.introduce_package(Value::Noval).create(jo(vec![
-    ("terminal_template_description", Value::str("example_terminal_template_description")),  // String
+    ("terminalTemplateDescription", Value::str("example_terminalTemplateDescription")),  // String
 ]), Value::Noval).unwrap();
 ```
 
@@ -1085,15 +1087,15 @@ let keep_alive = client.keep_alive(Value::Noval);
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `hwserialno` | `String` | No |  |
-| `ka_date_time_from` | `String` | No |  |
-| `ka_date_time_to` | `String` | No |  |
-| `keep_alive_data` | `Vec<Value>` | No |  |
+| `kaDateTimeFrom` | `String` | No |  |
+| `kaDateTimeTo` | `String` | No |  |
+| `keepAliveData` | `Vec<Value>` | No |  |
 | `pagination` | `std::collections::HashMap<String, Value>` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `String` | No |  |
-| `terminal_date_time_from` | `String` | No |  |
-| `terminal_date_time_to` | `String` | No |  |
-| `terminal_id` | `i64` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `String` | No |  |
+| `terminalDateTimeFrom` | `String` | No |  |
+| `terminalDateTimeTo` | `String` | No |  |
+| `terminalId` | `i64` | No |  |
 
 ### Operations
 
@@ -1137,12 +1139,12 @@ let list_terminal = client.list_terminal(Value::Noval);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `corporate_uuid` | `Vec<Value>` | No |  |
+| `corporateUuid` | `Vec<Value>` | No |  |
 | `filter` | `std::collections::HashMap<String, Value>` | No |  |
 | `pagination` | `std::collections::HashMap<String, Value>` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `String` | No |  |
-| `terminal` | `Vec<Value>` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `String` | No |  |
+| `terminals` | `Vec<Value>` | No |  |
 
 ### Operations
 
@@ -1186,12 +1188,12 @@ let mandator_clearing_export = client.mandator_clearing_export(Value::Noval);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearing_date_from` | `String` | Yes |  |
-| `clearing_date_to` | `String` | Yes |  |
+| `clearingDateFrom` | `String` | Yes |  |
+| `clearingDateTo` | `String` | Yes |  |
 | `pagination` | `std::collections::HashMap<String, Value>` | No |  |
-| `record` | `Vec<Value>` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `String` | No |  |
+| `records` | `Vec<Value>` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -1201,8 +1203,8 @@ Create a new entity with the given data. Returns the created entity data on `Ok`
 
 ```rust
 let result = client.mandator_clearing_export(Value::Noval).create(jo(vec![
-    ("clearing_date_from", Value::str("example_clearing_date_from")),  // String
-    ("clearing_date_to", Value::str("example_clearing_date_to")),  // String
+    ("clearingDateFrom", Value::str("example_clearingDateFrom")),  // String
+    ("clearingDateTo", Value::str("example_clearingDateTo")),  // String
 ]), Value::Noval).unwrap();
 ```
 
@@ -1237,12 +1239,12 @@ let mandator_clearing_export_download = client.mandator_clearing_export_download
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearing_date_from` | `String` | Yes |  |
-| `clearing_date_to` | `String` | Yes |  |
-| `file_id` | `String` | No |  |
-| `filename_template` | `String` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `String` | No |  |
+| `clearingDateFrom` | `String` | Yes |  |
+| `clearingDateTo` | `String` | Yes |  |
+| `fileId` | `String` | No |  |
+| `filenameTemplate` | `String` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `String` | No |  |
 | `status` | `String` | No |  |
 
 ### Operations
@@ -1253,8 +1255,8 @@ Create a new entity with the given data. Returns the created entity data on `Ok`
 
 ```rust
 let result = client.mandator_clearing_export_download(Value::Noval).create(jo(vec![
-    ("clearing_date_from", Value::str("example_clearing_date_from")),  // String
-    ("clearing_date_to", Value::str("example_clearing_date_to")),  // String
+    ("clearingDateFrom", Value::str("example_clearingDateFrom")),  // String
+    ("clearingDateTo", Value::str("example_clearingDateTo")),  // String
 ]), Value::Noval).unwrap();
 ```
 
@@ -1297,11 +1299,11 @@ let mandator_clearing_export_summary = client.mandator_clearing_export_summary(V
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearing_date_from` | `String` | Yes |  |
-| `clearing_date_to` | `String` | Yes |  |
-| `record` | `Vec<Value>` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `String` | No |  |
+| `clearingDateFrom` | `String` | Yes |  |
+| `clearingDateTo` | `String` | Yes |  |
+| `records` | `Vec<Value>` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -1311,8 +1313,8 @@ Create a new entity with the given data. Returns the created entity data on `Ok`
 
 ```rust
 let result = client.mandator_clearing_export_summary(Value::Noval).create(jo(vec![
-    ("clearing_date_from", Value::str("example_clearing_date_from")),  // String
-    ("clearing_date_to", Value::str("example_clearing_date_to")),  // String
+    ("clearingDateFrom", Value::str("example_clearingDateFrom")),  // String
+    ("clearingDateTo", Value::str("example_clearingDateTo")),  // String
 ]), Value::Noval).unwrap();
 ```
 
@@ -1347,30 +1349,30 @@ let merchant_portal_services_api = client.merchant_portal_services_api(Value::No
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `3_d_secure` | `String` | No |  |
-| `authorization_code` | `String` | No |  |
-| `card_brand` | `String` | No |  |
-| `clearing_amount_from` | `String` | No |  |
-| `clearing_amount_to` | `String` | No |  |
-| `clearing_currency` | `String` | No |  |
-| `clearing_status` | `String` | No |  |
-| `corporate_uuid` | `String` | No |  |
-| `order_by_transaction_date` | `String` | No |  |
+| `3DSecure` | `String` | No |  |
+| `authorizationCode` | `String` | No |  |
+| `cardBrand` | `String` | No |  |
+| `clearingAmountFrom` | `String` | No |  |
+| `clearingAmountTo` | `String` | No |  |
+| `clearingCurrency` | `String` | No |  |
+| `clearingStatus` | `String` | No |  |
+| `corporateUUID` | `String` | No |  |
+| `orderByTransactionDate` | `String` | No |  |
 | `pagination` | `std::collections::HashMap<String, Value>` | No |  |
-| `receipt_number` | `String` | No |  |
-| `referenced_transaction_id` | `String` | No |  |
-| `retrieval_reference_number` | `String` | No |  |
-| `source_id` | `i64` | No |  |
-| `tecsengine_response_code_from` | `String` | No |  |
-| `tecsengine_response_code_to` | `String` | No |  |
-| `terminal_id` | `i64` | No |  |
-| `trace_number` | `String` | No |  |
-| `transaction_amount_from` | `String` | No |  |
-| `transaction_amount_to` | `String` | No |  |
-| `transaction_date_from` | `String` | No |  |
-| `transaction_date_to` | `String` | No |  |
-| `transaction_id` | `String` | No |  |
-| `transaction_type` | `String` | No |  |
+| `receiptNumber` | `String` | No |  |
+| `referencedTransactionId` | `String` | No |  |
+| `retrievalReferenceNumber` | `String` | No |  |
+| `sourceId` | `i64` | No |  |
+| `tecsengineResponseCodeFrom` | `String` | No |  |
+| `tecsengineResponseCodeTo` | `String` | No |  |
+| `terminalId` | `i64` | No |  |
+| `traceNumber` | `String` | No |  |
+| `transactionAmountFrom` | `String` | No |  |
+| `transactionAmountTo` | `String` | No |  |
+| `transactionDateFrom` | `String` | No |  |
+| `transactionDateTo` | `String` | No |  |
+| `transactionId` | `String` | No |  |
+| `transactionType` | `String` | No |  |
 | `wallet` | `String` | No |  |
 
 ### Operations
@@ -1415,11 +1417,11 @@ let move_tid = client.move_tid(Value::Noval);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `productorderuuid` | `Vec<Value>` | Yes |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `String` | No |  |
-| `target_packageorderuuid` | `String` | No |  |
-| `target_productorderuuid` | `String` | No |  |
+| `productorderuuids` | `Vec<Value>` | Yes |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `String` | No |  |
+| `targetPackageorderuuid` | `String` | No |  |
+| `targetProductorderuuid` | `String` | No |  |
 
 ### Operations
 
@@ -1429,7 +1431,7 @@ Create a new entity with the given data. Returns the created entity data on `Ok`
 
 ```rust
 let result = client.move_tid(Value::Noval).create(jo(vec![
-    ("productorderuuid", Value::empty_list()),  // Vec<Value>
+    ("productorderuuids", Value::empty_list()),  // Vec<Value>
 ]), Value::Noval).unwrap();
 ```
 
@@ -1464,44 +1466,44 @@ let payment_manual = client.payment_manual(Value::Noval);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_name` | `String` | No |  |
+| `acquirerName` | `String` | No |  |
 | `amount` | `i64` | Yes |  |
-| `authorization_number` | `String` | No |  |
-| `card_number` | `String` | Yes |  |
-| `card_type` | `String` | No |  |
+| `authorizationNumber` | `String` | No |  |
+| `cardNumber` | `String` | Yes |  |
+| `cardType` | `String` | No |  |
 | `currency` | `String` | Yes |  |
 | `cvc` | `String` | No |  |
-| `date_time_tx` | `String` | No |  |
-| `exp_date` | `String` | Yes |  |
-| `merchant_id` | `String` | No |  |
-| `original_transaction_id` | `String` | No |  |
+| `dateTimeTx` | `String` | No |  |
+| `expDate` | `String` | Yes |  |
+| `merchantId` | `String` | No |  |
+| `originalTransactionId` | `String` | No |  |
 | `password` | `String` | No |  |
-| `response_code` | `String` | No |  |
-| `response_message` | `String` | No |  |
-| `terminal_id` | `String` | No |  |
-| `transaction_id` | `String` | No |  |
+| `responseCode` | `String` | No |  |
+| `responseMessage` | `String` | No |  |
+| `terminalId` | `String` | No |  |
+| `transactionId` | `String` | No |  |
 | `txtype` | `String` | Yes |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `acquirer_name` | - |
+| `acquirerName` | - |
 | `amount` | - |
-| `authorization_number` | - |
-| `card_number` | - |
-| `card_type` | - |
+| `authorizationNumber` | - |
+| `cardNumber` | - |
+| `cardType` | - |
 | `currency` | - |
 | `cvc` | - |
-| `date_time_tx` | - |
-| `exp_date` | - |
-| `merchant_id` | - |
-| `original_transaction_id` | - |
+| `dateTimeTx` | - |
+| `expDate` | - |
+| `merchantId` | - |
+| `originalTransactionId` | - |
 | `password` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `terminal_id` | Yes |
-| `transaction_id` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `terminalId` | Yes |
+| `transactionId` | - |
 | `txtype` | - |
 
 ### Operations
@@ -1513,9 +1515,9 @@ Create a new entity with the given data. Returns the created entity data on `Ok`
 ```rust
 let result = client.payment_manual(Value::Noval).create(jo(vec![
     ("amount", Value::Num(1.0)),  // i64
-    ("card_number", Value::str("example_card_number")),  // String
+    ("cardNumber", Value::str("example_cardNumber")),  // String
     ("currency", Value::str("example_currency")),  // String
-    ("exp_date", Value::str("example_exp_date")),  // String
+    ("expDate", Value::str("example_expDate")),  // String
     ("txtype", Value::str("example_txtype")),  // String
 ]), Value::Noval).unwrap();
 ```
@@ -1551,43 +1553,18 @@ let payment_sred = client.payment_sred(Value::Noval);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_name` | `String` | No |  |
 | `amount` | `i64` | Yes |  |
-| `authorization_number` | `String` | No |  |
-| `card_type` | `String` | No |  |
 | `currency` | `String` | Yes |  |
-| `date_time_tx` | `String` | No |  |
-| `device_payload` | `String` | Yes |  |
-| `merchant_id` | `String` | No |  |
-| `original_transaction_id` | `String` | No |  |
+| `device` | `String` | No |  |
+| `devicePayload` | `String` | Yes |  |
+| `expDate` | `String` | No |  |
+| `mode` | `String` | No |  |
+| `panMasked` | `String` | No |  |
 | `password` | `String` | No |  |
-| `response_code` | `String` | No |  |
-| `response_message` | `String` | No |  |
-| `sred` | `std::collections::HashMap<String, Value>` | No |  |
-| `terminal_id` | `String` | No |  |
-| `transaction_id` | `String` | No |  |
+| `serial` | `String` | No |  |
+| `serviceCode` | `String` | No |  |
+| `terminalId` | `String` | Yes |  |
 | `txtype` | `String` | Yes |  |
-
-### Field Usage by Operation
-
-| Field | create |
-| --- | --- |
-| `acquirer_name` | - |
-| `amount` | - |
-| `authorization_number` | - |
-| `card_type` | - |
-| `currency` | - |
-| `date_time_tx` | - |
-| `device_payload` | - |
-| `merchant_id` | - |
-| `original_transaction_id` | - |
-| `password` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `sred` | - |
-| `terminal_id` | Yes |
-| `transaction_id` | - |
-| `txtype` | - |
 
 ### Operations
 
@@ -1599,7 +1576,8 @@ Create a new entity with the given data. Returns the created entity data on `Ok`
 let result = client.payment_sred(Value::Noval).create(jo(vec![
     ("amount", Value::Num(1.0)),  // i64
     ("currency", Value::str("example_currency")),  // String
-    ("device_payload", Value::str("example_device_payload")),  // String
+    ("devicePayload", Value::str("example_devicePayload")),  // String
+    ("terminalId", Value::str("example_terminalId")),  // String
     ("txtype", Value::str("example_txtype")),  // String
 ]), Value::Noval).unwrap();
 ```
@@ -1635,95 +1613,95 @@ let pre_auth_transaction_completion = client.pre_auth_transaction_completion(Val
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `String` | No |  |
-| `acquirer_name` | `String` | No |  |
-| `actual_bonus_point` | `String` | No |  |
+| `acquirerId` | `String` | No |  |
+| `acquirerName` | `String` | No |  |
+| `actualBonusPoints` | `String` | No |  |
 | `amount` | `i64` | No |  |
-| `authorization_code` | `String` | No |  |
-| `balance_amount` | `String` | No |  |
-| `card_brand` | `String` | No |  |
-| `card_number` | `String` | No |  |
-| `card_number_reference` | `String` | Yes |  |
-| `client_id` | `i64` | Yes |  |
+| `authorizationCode` | `String` | No |  |
+| `balanceAmount` | `String` | No |  |
+| `cardBrand` | `String` | No |  |
+| `cardNumber` | `String` | No |  |
+| `cardNumberReference` | `String` | Yes |  |
+| `clientId` | `i64` | Yes |  |
 | `currency` | `String` | Yes |  |
 | `cvc` | `String` | No |  |
-| `ec_data` | `String` | No |  |
-| `ecr_data` | `String` | No |  |
-| `emv_data` | `String` | No |  |
-| `exchange_fee` | `i64` | No |  |
-| `exchange_rate` | `String` | No |  |
-| `language_code` | `String` | No |  |
-| `merchant_address` | `String` | No |  |
-| `merchant_name` | `String` | No |  |
-| `merchant_number` | `String` | No |  |
-| `message_type` | `String` | No |  |
-| `original_trace_number` | `i64` | No |  |
-| `original_transaction_id` | `String` | No |  |
+| `ecData` | `String` | No |  |
+| `ecrData` | `String` | No |  |
+| `emvData` | `String` | No |  |
+| `exchangeFee` | `i64` | No |  |
+| `exchangeRate` | `String` | No |  |
+| `languageCode` | `String` | No |  |
+| `merchantAddress` | `String` | No |  |
+| `merchantName` | `String` | No |  |
+| `merchantNumber` | `String` | No |  |
+| `messageType` | `String` | No |  |
+| `originalTraceNumber` | `i64` | No |  |
+| `originalTransactionId` | `String` | No |  |
 | `password` | `String` | No |  |
-| `payment_reason` | `String` | No |  |
-| `receipt_footer` | `String` | No |  |
-| `receipt_header` | `String` | No |  |
-| `receipt_layout` | `i64` | No |  |
-| `receipt_number` | `String` | Yes |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `String` | No |  |
-| `serial_number` | `String` | No |  |
+| `paymentReason` | `String` | No |  |
+| `receiptFooter` | `String` | No |  |
+| `receiptHeader` | `String` | No |  |
+| `receiptLayout` | `i64` | No |  |
+| `receiptNumber` | `String` | Yes |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `String` | No |  |
+| `serialNumber` | `String` | No |  |
 | `svc` | `String` | No |  |
-| `terminal_id` | `i64` | Yes |  |
-| `terminal_location` | `String` | No |  |
-| `trace_number` | `i64` | No |  |
-| `transaction_date` | `String` | No |  |
-| `transaction_id` | `String` | No |  |
-| `transaction_type` | `String` | Yes |  |
-| `tx_type` | `String` | No |  |
-| `user_data` | `String` | No |  |
+| `terminalId` | `i64` | Yes |  |
+| `terminalLocation` | `String` | No |  |
+| `traceNumber` | `i64` | No |  |
+| `transactionDate` | `String` | No |  |
+| `transactionId` | `String` | No |  |
+| `transactionType` | `String` | Yes |  |
+| `txType` | `String` | No |  |
+| `userData` | `String` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `acquirer_id` | - |
-| `acquirer_name` | - |
-| `actual_bonus_point` | - |
+| `acquirerId` | - |
+| `acquirerName` | - |
+| `actualBonusPoints` | - |
 | `amount` | Yes |
-| `authorization_code` | - |
-| `balance_amount` | - |
-| `card_brand` | - |
-| `card_number` | - |
-| `card_number_reference` | - |
-| `client_id` | - |
+| `authorizationCode` | - |
+| `balanceAmount` | - |
+| `cardBrand` | - |
+| `cardNumber` | - |
+| `cardNumberReference` | - |
+| `clientId` | - |
 | `currency` | - |
 | `cvc` | - |
-| `ec_data` | - |
-| `ecr_data` | - |
-| `emv_data` | - |
-| `exchange_fee` | - |
-| `exchange_rate` | - |
-| `language_code` | - |
-| `merchant_address` | - |
-| `merchant_name` | - |
-| `merchant_number` | - |
-| `message_type` | - |
-| `original_trace_number` | - |
-| `original_transaction_id` | Yes |
+| `ecData` | - |
+| `ecrData` | - |
+| `emvData` | - |
+| `exchangeFee` | - |
+| `exchangeRate` | - |
+| `languageCode` | - |
+| `merchantAddress` | - |
+| `merchantName` | - |
+| `merchantNumber` | - |
+| `messageType` | - |
+| `originalTraceNumber` | - |
+| `originalTransactionId` | Yes |
 | `password` | - |
-| `payment_reason` | - |
-| `receipt_footer` | - |
-| `receipt_header` | - |
-| `receipt_layout` | - |
-| `receipt_number` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `serial_number` | - |
+| `paymentReason` | - |
+| `receiptFooter` | - |
+| `receiptHeader` | - |
+| `receiptLayout` | - |
+| `receiptNumber` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `serialNumber` | - |
 | `svc` | - |
-| `terminal_id` | - |
-| `terminal_location` | - |
-| `trace_number` | - |
-| `transaction_date` | Yes |
-| `transaction_id` | Yes |
-| `transaction_type` | - |
-| `tx_type` | - |
-| `user_data` | - |
+| `terminalId` | - |
+| `terminalLocation` | - |
+| `traceNumber` | - |
+| `transactionDate` | Yes |
+| `transactionId` | Yes |
+| `transactionType` | - |
+| `txType` | - |
+| `userData` | - |
 
 ### Operations
 
@@ -1733,12 +1711,12 @@ Create a new entity with the given data. Returns the created entity data on `Ok`
 
 ```rust
 let result = client.pre_auth_transaction_completion(Value::Noval).create(jo(vec![
-    ("card_number_reference", Value::str("example_card_number_reference")),  // String
-    ("client_id", Value::Num(1.0)),  // i64
+    ("cardNumberReference", Value::str("example_cardNumberReference")),  // String
+    ("clientId", Value::Num(1.0)),  // i64
     ("currency", Value::str("example_currency")),  // String
-    ("receipt_number", Value::str("example_receipt_number")),  // String
-    ("terminal_id", Value::Num(1.0)),  // i64
-    ("transaction_type", Value::str("example_transaction_type")),  // String
+    ("receiptNumber", Value::str("example_receiptNumber")),  // String
+    ("terminalId", Value::Num(1.0)),  // i64
+    ("transactionType", Value::str("example_transactionType")),  // String
 ]), Value::Noval).unwrap();
 ```
 
@@ -1773,13 +1751,13 @@ let reactivate_terminal = client.reactivate_terminal(Value::Noval);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `corporate_uuid` | `String` | No |  |
-| `package_order_uuid` | `String` | No |  |
-| `product_order_uuid` | `String` | No |  |
-| `reactivation_reason` | `String` | Yes |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `String` | No |  |
-| `terminal_id` | `i64` | Yes |  |
+| `corporateUuid` | `String` | No |  |
+| `packageOrderUuid` | `String` | No |  |
+| `productOrderUuid` | `String` | No |  |
+| `reactivationReason` | `String` | Yes |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `String` | No |  |
+| `terminalId` | `i64` | Yes |  |
 
 ### Operations
 
@@ -1789,8 +1767,8 @@ Create a new entity with the given data. Returns the created entity data on `Ok`
 
 ```rust
 let result = client.reactivate_terminal(Value::Noval).create(jo(vec![
-    ("reactivation_reason", Value::str("example_reactivation_reason")),  // String
-    ("terminal_id", Value::Num(1.0)),  // i64
+    ("reactivationReason", Value::str("example_reactivationReason")),  // String
+    ("terminalId", Value::Num(1.0)),  // i64
 ]), Value::Noval).unwrap();
 ```
 
@@ -1825,91 +1803,91 @@ let refund_transaction = client.refund_transaction(Value::Noval);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `String` | No |  |
-| `acquirer_name` | `String` | No |  |
-| `actual_bonus_point` | `String` | No |  |
+| `acquirerId` | `String` | No |  |
+| `acquirerName` | `String` | No |  |
+| `actualBonusPoints` | `String` | No |  |
 | `amount` | `i64` | No |  |
-| `authorization_code` | `String` | No |  |
-| `balance_amount` | `String` | No |  |
-| `card_brand` | `String` | No |  |
-| `card_number` | `String` | No |  |
-| `client_id` | `i64` | Yes |  |
+| `authorizationCode` | `String` | No |  |
+| `balanceAmount` | `String` | No |  |
+| `cardBrand` | `String` | No |  |
+| `cardNumber` | `String` | No |  |
+| `clientId` | `i64` | Yes |  |
 | `currency` | `String` | Yes |  |
 | `cvc` | `String` | No |  |
-| `ec_data` | `String` | No |  |
-| `ecr_data` | `String` | No |  |
-| `emv_data` | `String` | No |  |
-| `exchange_fee` | `i64` | No |  |
-| `exchange_rate` | `String` | No |  |
-| `language_code` | `String` | No |  |
-| `merchant_address` | `String` | No |  |
-| `merchant_name` | `String` | No |  |
-| `merchant_number` | `String` | No |  |
-| `message_type` | `String` | No |  |
-| `original_trace_number` | `i64` | No |  |
-| `original_transaction_id` | `String` | No |  |
+| `ecData` | `String` | No |  |
+| `ecrData` | `String` | No |  |
+| `emvData` | `String` | No |  |
+| `exchangeFee` | `i64` | No |  |
+| `exchangeRate` | `String` | No |  |
+| `languageCode` | `String` | No |  |
+| `merchantAddress` | `String` | No |  |
+| `merchantName` | `String` | No |  |
+| `merchantNumber` | `String` | No |  |
+| `messageType` | `String` | No |  |
+| `originalTraceNumber` | `i64` | No |  |
+| `originalTransactionId` | `String` | No |  |
 | `password` | `String` | No |  |
-| `payment_reason` | `String` | No |  |
-| `receipt_footer` | `String` | No |  |
-| `receipt_header` | `String` | No |  |
-| `receipt_layout` | `i64` | No |  |
-| `receipt_number` | `String` | Yes |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `String` | No |  |
-| `serial_number` | `String` | No |  |
+| `paymentReason` | `String` | No |  |
+| `receiptFooter` | `String` | No |  |
+| `receiptHeader` | `String` | No |  |
+| `receiptLayout` | `i64` | No |  |
+| `receiptNumber` | `String` | Yes |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `String` | No |  |
+| `serialNumber` | `String` | No |  |
 | `svc` | `String` | No |  |
-| `terminal_id` | `i64` | Yes |  |
-| `terminal_location` | `String` | No |  |
-| `trace_number` | `i64` | No |  |
-| `transaction_date` | `String` | No |  |
-| `transaction_id` | `String` | No |  |
-| `tx_type` | `String` | No |  |
-| `user_data` | `String` | No |  |
+| `terminalId` | `i64` | Yes |  |
+| `terminalLocation` | `String` | No |  |
+| `traceNumber` | `i64` | No |  |
+| `transactionDate` | `String` | No |  |
+| `transactionId` | `String` | No |  |
+| `txType` | `String` | No |  |
+| `userData` | `String` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `acquirer_id` | - |
-| `acquirer_name` | - |
-| `actual_bonus_point` | - |
+| `acquirerId` | - |
+| `acquirerName` | - |
+| `actualBonusPoints` | - |
 | `amount` | Yes |
-| `authorization_code` | - |
-| `balance_amount` | - |
-| `card_brand` | - |
-| `card_number` | - |
-| `client_id` | - |
+| `authorizationCode` | - |
+| `balanceAmount` | - |
+| `cardBrand` | - |
+| `cardNumber` | - |
+| `clientId` | - |
 | `currency` | - |
 | `cvc` | - |
-| `ec_data` | - |
-| `ecr_data` | - |
-| `emv_data` | - |
-| `exchange_fee` | - |
-| `exchange_rate` | - |
-| `language_code` | - |
-| `merchant_address` | - |
-| `merchant_name` | - |
-| `merchant_number` | - |
-| `message_type` | - |
-| `original_trace_number` | - |
-| `original_transaction_id` | Yes |
+| `ecData` | - |
+| `ecrData` | - |
+| `emvData` | - |
+| `exchangeFee` | - |
+| `exchangeRate` | - |
+| `languageCode` | - |
+| `merchantAddress` | - |
+| `merchantName` | - |
+| `merchantNumber` | - |
+| `messageType` | - |
+| `originalTraceNumber` | - |
+| `originalTransactionId` | Yes |
 | `password` | - |
-| `payment_reason` | - |
-| `receipt_footer` | - |
-| `receipt_header` | - |
-| `receipt_layout` | - |
-| `receipt_number` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `serial_number` | - |
+| `paymentReason` | - |
+| `receiptFooter` | - |
+| `receiptHeader` | - |
+| `receiptLayout` | - |
+| `receiptNumber` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `serialNumber` | - |
 | `svc` | - |
-| `terminal_id` | - |
-| `terminal_location` | - |
-| `trace_number` | - |
-| `transaction_date` | Yes |
-| `transaction_id` | Yes |
-| `tx_type` | - |
-| `user_data` | - |
+| `terminalId` | - |
+| `terminalLocation` | - |
+| `traceNumber` | - |
+| `transactionDate` | Yes |
+| `transactionId` | Yes |
+| `txType` | - |
+| `userData` | - |
 
 ### Operations
 
@@ -1919,10 +1897,10 @@ Create a new entity with the given data. Returns the created entity data on `Ok`
 
 ```rust
 let result = client.refund_transaction(Value::Noval).create(jo(vec![
-    ("client_id", Value::Num(1.0)),  // i64
+    ("clientId", Value::Num(1.0)),  // i64
     ("currency", Value::str("example_currency")),  // String
-    ("receipt_number", Value::str("example_receipt_number")),  // String
-    ("terminal_id", Value::Num(1.0)),  // i64
+    ("receiptNumber", Value::str("example_receiptNumber")),  // String
+    ("terminalId", Value::Num(1.0)),  // i64
 ]), Value::Noval).unwrap();
 ```
 
@@ -1957,14 +1935,14 @@ let register_tecs_company = client.register_tecs_company(Value::Noval);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `corporate_uuid` | `String` | Yes |  |
-| `package_order_uuid` | `String` | Yes |  |
-| `partner_id` | `i64` | No |  |
-| `partner_name` | `String` | No |  |
-| `product_order_uuid` | `String` | Yes |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `String` | No |  |
-| `template_name` | `String` | Yes |  |
+| `corporateUuid` | `String` | Yes |  |
+| `packageOrderUuid` | `String` | Yes |  |
+| `partnerId` | `i64` | No |  |
+| `partnerName` | `String` | No |  |
+| `productOrderUuid` | `String` | Yes |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `String` | No |  |
+| `templateName` | `String` | Yes |  |
 
 ### Operations
 
@@ -1974,10 +1952,10 @@ Create a new entity with the given data. Returns the created entity data on `Ok`
 
 ```rust
 let result = client.register_tecs_company(Value::Noval).create(jo(vec![
-    ("corporate_uuid", Value::str("example_corporate_uuid")),  // String
-    ("package_order_uuid", Value::str("example_package_order_uuid")),  // String
-    ("product_order_uuid", Value::str("example_product_order_uuid")),  // String
-    ("template_name", Value::str("example_template_name")),  // String
+    ("corporateUuid", Value::str("example_corporateUuid")),  // String
+    ("packageOrderUuid", Value::str("example_packageOrderUuid")),  // String
+    ("productOrderUuid", Value::str("example_productOrderUuid")),  // String
+    ("templateName", Value::str("example_templateName")),  // String
 ]), Value::Noval).unwrap();
 ```
 
@@ -2012,24 +1990,24 @@ let register_terminal = client.register_terminal(Value::Noval);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `additional_data` | `std::collections::HashMap<String, Value>` | No |  |
-| `corporate_uuid` | `String` | Yes |  |
-| `package_order_uuid` | `String` | Yes |  |
-| `product_order_uuid` | `String` | Yes |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `String` | No |  |
-| `tecs_web_secret_key` | `String` | No |  |
-| `template_name` | `String` | Yes |  |
-| `terminal_country_code` | `String` | Yes |  |
-| `terminal_id` | `i64` | No |  |
-| `terminal_id_acq` | `String` | No |  |
-| `terminal_language_code` | `String` | Yes |  |
-| `terminal_location` | `String` | Yes |  |
-| `terminal_serial_number` | `String` | No |  |
-| `token_io_alia` | `String` | No |  |
-| `token_io_iban` | `String` | No |  |
-| `token_io_member_id` | `String` | No |  |
-| `web_shop_url` | `String` | No |  |
+| `additionalData` | `std::collections::HashMap<String, Value>` | No |  |
+| `corporateUuid` | `String` | Yes |  |
+| `packageOrderUuid` | `String` | Yes |  |
+| `productOrderUuid` | `String` | Yes |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `String` | No |  |
+| `tecsWebSecretKey` | `String` | No |  |
+| `templateName` | `String` | Yes |  |
+| `terminalCountryCode` | `String` | Yes |  |
+| `terminalId` | `i64` | No |  |
+| `terminalIdAcq` | `String` | No |  |
+| `terminalLanguageCode` | `String` | Yes |  |
+| `terminalLocation` | `String` | Yes |  |
+| `terminalSerialNumber` | `String` | No |  |
+| `tokenIOAlias` | `String` | No |  |
+| `tokenIOIban` | `String` | No |  |
+| `tokenIOMemberId` | `String` | No |  |
+| `webShopUrl` | `String` | No |  |
 
 ### Operations
 
@@ -2039,13 +2017,13 @@ Create a new entity with the given data. Returns the created entity data on `Ok`
 
 ```rust
 let result = client.register_terminal(Value::Noval).create(jo(vec![
-    ("corporate_uuid", Value::str("example_corporate_uuid")),  // String
-    ("package_order_uuid", Value::str("example_package_order_uuid")),  // String
-    ("product_order_uuid", Value::str("example_product_order_uuid")),  // String
-    ("template_name", Value::str("example_template_name")),  // String
-    ("terminal_country_code", Value::str("example_terminal_country_code")),  // String
-    ("terminal_language_code", Value::str("example_terminal_language_code")),  // String
-    ("terminal_location", Value::str("example_terminal_location")),  // String
+    ("corporateUuid", Value::str("example_corporateUuid")),  // String
+    ("packageOrderUuid", Value::str("example_packageOrderUuid")),  // String
+    ("productOrderUuid", Value::str("example_productOrderUuid")),  // String
+    ("templateName", Value::str("example_templateName")),  // String
+    ("terminalCountryCode", Value::str("example_terminalCountryCode")),  // String
+    ("terminalLanguageCode", Value::str("example_terminalLanguageCode")),  // String
+    ("terminalLocation", Value::str("example_terminalLocation")),  // String
 ]), Value::Noval).unwrap();
 ```
 
@@ -2080,16 +2058,16 @@ let report_data = client.report_data(Value::Noval);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `card_brand_report_data` | `Vec<Value>` | No |  |
-| `clearing_date_from` | `String` | Yes |  |
-| `clearing_date_to` | `String` | Yes |  |
-| `corporate_id` | `String` | Yes |  |
+| `cardBrandReportData` | `Vec<Value>` | No |  |
+| `clearingDateFrom` | `String` | Yes |  |
+| `clearingDateTo` | `String` | Yes |  |
+| `corporateId` | `String` | Yes |  |
 | `currency` | `String` | Yes |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `String` | No |  |
-| `sum_over_credit_tx` | `std::collections::HashMap<String, Value>` | No |  |
-| `sum_over_debit_tx` | `std::collections::HashMap<String, Value>` | No |  |
-| `terminal_id` | `i64` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `String` | No |  |
+| `sumOverCreditTx` | `std::collections::HashMap<String, Value>` | No |  |
+| `sumOverDebitTx` | `std::collections::HashMap<String, Value>` | No |  |
+| `terminalId` | `i64` | No |  |
 
 ### Operations
 
@@ -2099,9 +2077,9 @@ Create a new entity with the given data. Returns the created entity data on `Ok`
 
 ```rust
 let result = client.report_data(Value::Noval).create(jo(vec![
-    ("clearing_date_from", Value::str("example_clearing_date_from")),  // String
-    ("clearing_date_to", Value::str("example_clearing_date_to")),  // String
-    ("corporate_id", Value::str("example_corporate_id")),  // String
+    ("clearingDateFrom", Value::str("example_clearingDateFrom")),  // String
+    ("clearingDateTo", Value::str("example_clearingDateTo")),  // String
+    ("corporateId", Value::str("example_corporateId")),  // String
     ("currency", Value::str("example_currency")),  // String
 ]), Value::Noval).unwrap();
 ```
@@ -2137,56 +2115,56 @@ let status_transaction = client.status_transaction(Value::Noval);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_name` | `String` | No |  |
-| `acquirer_terminal_id` | `String` | No |  |
+| `acquirerName` | `String` | No |  |
+| `acquirerTerminalId` | `String` | No |  |
 | `amount` | `i64` | No |  |
-| `application_cryptogram` | `String` | No |  |
-| `authorization_code` | `Value` | No |  |
-| `authorization_date` | `String` | No |  |
-| `card_brand` | `String` | No |  |
-| `card_entry` | `String` | No |  |
-| `card_expiration` | `String` | No |  |
-| `card_number` | `String` | No |  |
-| `clearing_amount` | `i64` | No |  |
-| `clearing_batch_id` | `String` | No |  |
-| `clearing_currency` | `String` | No |  |
-| `clearing_date` | `String` | No |  |
-| `clearing_processed_date` | `String` | No |  |
-| `clearing_status` | `String` | No |  |
-| `client_id` | `i64` | No |  |
+| `applicationCryptogram` | `String` | No |  |
+| `authorizationCode` | `Value` | No |  |
+| `authorizationDate` | `String` | No |  |
+| `cardBrand` | `String` | No |  |
+| `cardEntry` | `String` | No |  |
+| `cardExpiration` | `String` | No |  |
+| `cardNumber` | `String` | No |  |
+| `clearingAmount` | `i64` | No |  |
+| `clearingBatchId` | `String` | No |  |
+| `clearingCurrency` | `String` | No |  |
+| `clearingDate` | `String` | No |  |
+| `clearingProcessedDate` | `String` | No |  |
+| `clearingStatus` | `String` | No |  |
+| `clientId` | `i64` | No |  |
 | `currency` | `String` | No |  |
 | `cvm` | `String` | No |  |
-| `ecr_data` | `String` | No |  |
-| `emv_application_id` | `String` | No |  |
-| `emv_application_label` | `String` | No |  |
-| `merchant_name` | `String` | No |  |
-| `merchant_number` | `String` | No |  |
-| `original_client_id` | `String` | No |  |
-| `original_terminal_id` | `i64` | No |  |
-| `original_transaction_id` | `String` | No |  |
-| `payment_reason` | `String` | No |  |
-| `receipt_number` | `String` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_code_from_a` | `String` | No |  |
-| `response_message` | `String` | No |  |
-| `retrieval_reference_number` | `String` | No |  |
-| `service_code` | `String` | No |  |
-| `settlement_status` | `String` | No |  |
-| `source_id` | `i64` | No |  |
-| `tecsengine_response_code` | `i64` | No |  |
-| `tecsengine_response_text` | `String` | No |  |
-| `terminal_end_of_day_date` | `String` | No |  |
-| `terminal_id` | `i64` | No |  |
-| `terminal_location` | `String` | No |  |
-| `tip_amount` | `i64` | No |  |
-| `trace_number` | `i64` | No |  |
-| `transaction_clearing_date` | `String` | No |  |
-| `transaction_date` | `String` | No |  |
-| `transaction_id` | `String` | No |  |
-| `transaction_seq_number` | `i64` | No |  |
-| `transaction_server_date` | `String` | No |  |
-| `transaction_source` | `String` | No |  |
-| `transaction_type` | `String` | No |  |
+| `ecrData` | `String` | No |  |
+| `emvApplicationId` | `String` | No |  |
+| `emvApplicationLabel` | `String` | No |  |
+| `merchantName` | `String` | No |  |
+| `merchantNumber` | `String` | No |  |
+| `originalClientId` | `String` | No |  |
+| `originalTerminalId` | `i64` | No |  |
+| `originalTransactionId` | `String` | No |  |
+| `paymentReason` | `String` | No |  |
+| `receiptNumber` | `String` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseCodeFromAS` | `String` | No |  |
+| `responseMessage` | `String` | No |  |
+| `retrievalReferenceNumber` | `String` | No |  |
+| `serviceCode` | `String` | No |  |
+| `settlementStatus` | `String` | No |  |
+| `sourceId` | `i64` | No |  |
+| `tecsengineResponseCode` | `i64` | No |  |
+| `tecsengineResponseText` | `String` | No |  |
+| `terminalEndOfDayDate` | `String` | No |  |
+| `terminalId` | `i64` | No |  |
+| `terminalLocation` | `String` | No |  |
+| `tipAmount` | `i64` | No |  |
+| `traceNumber` | `i64` | No |  |
+| `transactionClearingDate` | `String` | No |  |
+| `transactionDate` | `String` | No |  |
+| `transactionId` | `String` | No |  |
+| `transactionSeqNumber` | `i64` | No |  |
+| `transactionServerDate` | `String` | No |  |
+| `transactionSource` | `String` | No |  |
+| `transactionType` | `String` | No |  |
 
 ### Operations
 
@@ -2230,12 +2208,12 @@ let store_terminal_parameter = client.store_terminal_parameter(Value::Noval);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acq_tab_nexo` | `std::collections::HashMap<String, Value>` | No |  |
-| `config_version` | `String` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `String` | No |  |
-| `serial_number` | `String` | Yes |  |
-| `tid_sent` | `String` | No |  |
+| `acqTabNexo` | `std::collections::HashMap<String, Value>` | No |  |
+| `configVersion` | `String` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `String` | No |  |
+| `serialNumber` | `String` | Yes |  |
+| `tidSent` | `String` | No |  |
 
 ### Operations
 
@@ -2245,7 +2223,7 @@ Create a new entity with the given data. Returns the created entity data on `Ok`
 
 ```rust
 let result = client.store_terminal_parameter(Value::Noval).create(jo(vec![
-    ("serial_number", Value::str("example_serial_number")),  // String
+    ("serialNumber", Value::str("example_serialNumber")),  // String
 ]), Value::Noval).unwrap();
 ```
 
@@ -2280,11 +2258,11 @@ let terminal_id = client.terminal_id(Value::Noval);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `device_serial_number` | `Vec<Value>` | Yes |  |
-| `duplicate_terminal_id` | `Vec<Value>` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `String` | No |  |
-| `terminal` | `Vec<Value>` | No |  |
+| `deviceSerialNumber` | `Vec<Value>` | Yes |  |
+| `duplicateTerminalIds` | `Vec<Value>` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `String` | No |  |
+| `terminals` | `Vec<Value>` | No |  |
 
 ### Operations
 
@@ -2294,7 +2272,7 @@ Create a new entity with the given data. Returns the created entity data on `Ok`
 
 ```rust
 let result = client.terminal_id(Value::Noval).create(jo(vec![
-    ("device_serial_number", Value::empty_list()),  // Vec<Value>
+    ("deviceSerialNumber", Value::empty_list()),  // Vec<Value>
 ]), Value::Noval).unwrap();
 ```
 
@@ -2329,34 +2307,34 @@ let transaction_history = client.transaction_history(Value::Noval);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `3_d_secure` | `String` | No |  |
-| `authorization_code` | `String` | No |  |
-| `card_brand` | `String` | No |  |
-| `clearing_amount_from` | `String` | No |  |
-| `clearing_amount_to` | `String` | No |  |
-| `clearing_currency` | `String` | No |  |
-| `clearing_status` | `String` | No |  |
-| `corporate_uuid` | `String` | No |  |
-| `order_by_transaction_date` | `String` | No |  |
+| `3DSecure` | `String` | No |  |
+| `authorizationCode` | `String` | No |  |
+| `cardBrand` | `String` | No |  |
+| `clearingAmountFrom` | `String` | No |  |
+| `clearingAmountTo` | `String` | No |  |
+| `clearingCurrency` | `String` | No |  |
+| `clearingStatus` | `String` | No |  |
+| `corporateUUID` | `String` | No |  |
+| `orderByTransactionDate` | `String` | No |  |
 | `pagination` | `std::collections::HashMap<String, Value>` | No |  |
-| `payment_token_public_id` | `String` | No |  |
-| `receipt_number` | `String` | No |  |
-| `referenced_transaction_id` | `String` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `String` | No |  |
-| `retrieval_reference_number` | `String` | No |  |
-| `source_id` | `i64` | No |  |
-| `tecsengine_response_code_from` | `String` | No |  |
-| `tecsengine_response_code_to` | `String` | No |  |
-| `terminal_id` | `i64` | No |  |
-| `trace_number` | `String` | No |  |
-| `transaction_amount_from` | `String` | No |  |
-| `transaction_amount_to` | `String` | No |  |
-| `transaction_date_from` | `String` | No |  |
-| `transaction_date_to` | `String` | No |  |
-| `transaction_history` | `Vec<Value>` | No |  |
-| `transaction_id` | `String` | No |  |
-| `transaction_type` | `String` | No |  |
+| `paymentTokenPublicId` | `String` | No |  |
+| `receiptNumber` | `String` | No |  |
+| `referencedTransactionId` | `String` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `String` | No |  |
+| `retrievalReferenceNumber` | `String` | No |  |
+| `sourceId` | `i64` | No |  |
+| `tecsengineResponseCodeFrom` | `String` | No |  |
+| `tecsengineResponseCodeTo` | `String` | No |  |
+| `terminalId` | `i64` | No |  |
+| `traceNumber` | `String` | No |  |
+| `transactionAmountFrom` | `String` | No |  |
+| `transactionAmountTo` | `String` | No |  |
+| `transactionDateFrom` | `String` | No |  |
+| `transactionDateTo` | `String` | No |  |
+| `transactionHistories` | `Vec<Value>` | No |  |
+| `transactionId` | `String` | No |  |
+| `transactionType` | `String` | No |  |
 | `wallet` | `String` | No |  |
 
 ### Operations
@@ -2402,22 +2380,22 @@ let transactions_count = client.transactions_count(Value::Noval);
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `period` | `String` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `String` | No |  |
-| `transaction_date_from` | `String` | No |  |
-| `transaction_date_to` | `String` | No |  |
-| `transactions_count` | `Vec<Value>` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `String` | No |  |
+| `transactionDateFrom` | `String` | No |  |
+| `transactionDateTo` | `String` | No |  |
+| `transactionsCount` | `Vec<Value>` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
 | `period` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `transaction_date_from` | Yes |
-| `transaction_date_to` | Yes |
-| `transactions_count` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `transactionDateFrom` | Yes |
+| `transactionDateTo` | Yes |
+| `transactionsCount` | - |
 
 ### Operations
 
@@ -2462,22 +2440,22 @@ let transactions_count_card_brand = client.transactions_count_card_brand(Value::
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `period` | `String` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `String` | No |  |
-| `transaction_date_from` | `String` | No |  |
-| `transaction_date_to` | `String` | No |  |
-| `transactions_count` | `Vec<Value>` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `String` | No |  |
+| `transactionDateFrom` | `String` | No |  |
+| `transactionDateTo` | `String` | No |  |
+| `transactionsCount` | `Vec<Value>` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
 | `period` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `transaction_date_from` | Yes |
-| `transaction_date_to` | Yes |
-| `transactions_count` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `transactionDateFrom` | Yes |
+| `transactionDateTo` | Yes |
+| `transactionsCount` | - |
 
 ### Operations
 
@@ -2522,22 +2500,22 @@ let transactions_turnover = client.transactions_turnover(Value::Noval);
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `period` | `String` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `String` | No |  |
-| `transaction_date_from` | `String` | No |  |
-| `transaction_date_to` | `String` | No |  |
-| `turnover` | `Vec<Value>` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `String` | No |  |
+| `transactionDateFrom` | `String` | No |  |
+| `transactionDateTo` | `String` | No |  |
+| `turnovers` | `Vec<Value>` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
 | `period` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `transaction_date_from` | Yes |
-| `transaction_date_to` | Yes |
-| `turnover` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `transactionDateFrom` | Yes |
+| `transactionDateTo` | Yes |
+| `turnovers` | - |
 
 ### Operations
 
@@ -2582,15 +2560,15 @@ let update_merchant = client.update_merchant(Value::Noval);
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `city` | `String` | No |  |
-| `corporate_uuid` | `String` | Yes |  |
+| `corporateUuid` | `String` | Yes |  |
 | `country` | `String` | No |  |
-| `merchant_category_code` | `String` | No |  |
+| `merchantCategoryCode` | `String` | No |  |
 | `name` | `String` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `String` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `String` | No |  |
 | `state` | `String` | No |  |
 | `street` | `String` | No |  |
-| `vu_nummer` | `String` | No |  |
+| `vuNummer` | `String` | No |  |
 | `zipcode` | `String` | No |  |
 
 ### Operations
@@ -2601,7 +2579,7 @@ Create a new entity with the given data. Returns the created entity data on `Ok`
 
 ```rust
 let result = client.update_merchant(Value::Noval).create(jo(vec![
-    ("corporate_uuid", Value::str("example_corporate_uuid")),  // String
+    ("corporateUuid", Value::str("example_corporateUuid")),  // String
 ]), Value::Noval).unwrap();
 ```
 
@@ -2636,10 +2614,10 @@ let update_template_xml = client.update_template_xml(Value::Noval);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `i64` | No |  |
-| `response_message` | `String` | No |  |
-| `template_name` | `String` | Yes |  |
-| `template_xml` | `String` | Yes |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `String` | No |  |
+| `templateName` | `String` | Yes |  |
+| `templateXml` | `String` | Yes |  |
 
 ### Operations
 
@@ -2649,8 +2627,8 @@ Create a new entity with the given data. Returns the created entity data on `Ok`
 
 ```rust
 let result = client.update_template_xml(Value::Noval).create(jo(vec![
-    ("template_name", Value::str("example_template_name")),  // String
-    ("template_xml", Value::str("example_template_xml")),  // String
+    ("templateName", Value::str("example_templateName")),  // String
+    ("templateXml", Value::str("example_templateXml")),  // String
 ]), Value::Noval).unwrap();
 ```
 
@@ -2685,8 +2663,8 @@ let version = client.version(Value::Noval);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `app_name` | `String` | No |  |
-| `build_date` | `String` | No |  |
+| `appName` | `String` | No |  |
+| `buildDate` | `String` | No |  |
 | `version` | `String` | No |  |
 
 ### Operations

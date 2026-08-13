@@ -41,7 +41,7 @@ fn mandator_clearing_export_download_entity_basic() {
     // The basic flow consumes synthetic IDs from the fixture. In live mode
     // without an *_ENTID env override, those IDs hit the live API and 4xx.
     if setup.synthetic_only {
-        eprintln!("skip: live entity test uses synthetic IDs from fixture — set BLUEFINTECSMERCHANTSERVICES_TEST_MANDATOR_CLEARING_EXPORT_DOWNLOAD_ENTID JSON to run live");
+        eprintln!("skip: live entity test uses synthetic IDs from fixture — set BLUEFIN_TECS_MERCHANT_SERVICES_TEST_MANDATOR_CLEARING_EXPORT_DOWNLOAD_ENTID JSON to run live");
         return;
     }
     let client = setup.client.clone();
@@ -55,7 +55,7 @@ fn mandator_clearing_export_download_entity_basic() {
     let mandator_clearing_export_download_ref01_data_result = mandator_clearing_export_download_ref01_ent
         .create(mandator_clearing_export_download_ref01_data.clone(), Value::Noval)
         .expect("create failed");
-    let mandator_clearing_export_download_ref01_data = to_map(&mandator_clearing_export_download_ref01_data_result);
+    let mandator_clearing_export_download_ref01_data = to_map(&mandator_clearing_export_download_ref01_data_result.data(None));
     assert!(
         matches!(mandator_clearing_export_download_ref01_data, Value::Map(_)),
         "expected create result to be a map"
@@ -66,9 +66,10 @@ fn mandator_clearing_export_download_entity_basic() {
     let mandator_clearing_export_download_ref01_data_dt0_loaded = mandator_clearing_export_download_ref01_ent
         .load(mandator_clearing_export_download_ref01_match_dt0.clone(), Value::Noval)
         .expect("load failed");
+    // load resolves to the ENTITY; the record is reached through data().
     assert!(
-        !mandator_clearing_export_download_ref01_data_dt0_loaded.is_noval(),
-        "expected load result to be non-nil"
+        !mandator_clearing_export_download_ref01_data_dt0_loaded.data(None).is_noval(),
+        "expected load result to carry data"
     );
 
 }
@@ -117,27 +118,27 @@ fn mandator_clearing_export_download_basic_setup(extra: Value) -> EntityTestSetu
     // Detect ENTID env override before env_override consumes it. When live
     // mode is on without a real override, the basic test runs against
     // synthetic IDs from the fixture and 4xx's.
-    let entid_env_raw = std::env::var("BLUEFINTECSMERCHANTSERVICES_TEST_MANDATOR_CLEARING_EXPORT_DOWNLOAD_ENTID").unwrap_or_default();
+    let entid_env_raw = std::env::var("BLUEFIN_TECS_MERCHANT_SERVICES_TEST_MANDATOR_CLEARING_EXPORT_DOWNLOAD_ENTID").unwrap_or_default();
     let idmap_overridden =
         !entid_env_raw.trim().is_empty() && entid_env_raw.trim().starts_with('{');
 
     let env = env_override(jo(vec![
-        ("BLUEFINTECSMERCHANTSERVICES_TEST_MANDATOR_CLEARING_EXPORT_DOWNLOAD_ENTID", idmap.clone()),
-        ("BLUEFINTECSMERCHANTSERVICES_TEST_LIVE", Value::str("FALSE")),
-        ("BLUEFINTECSMERCHANTSERVICES_TEST_EXPLAIN", Value::str("FALSE")),
-        ("BLUEFINTECSMERCHANTSERVICES_APIKEY", Value::str("NONE")),
+        ("BLUEFIN_TECS_MERCHANT_SERVICES_TEST_MANDATOR_CLEARING_EXPORT_DOWNLOAD_ENTID", idmap.clone()),
+        ("BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE", Value::str("FALSE")),
+        ("BLUEFIN_TECS_MERCHANT_SERVICES_TEST_EXPLAIN", Value::str("FALSE")),
+        ("BLUEFIN_TECS_MERCHANT_SERVICES_APIKEY", Value::str("NONE")),
     ]));
 
-    let idmap_resolved = match to_map(&getp(&env, "BLUEFINTECSMERCHANTSERVICES_TEST_MANDATOR_CLEARING_EXPORT_DOWNLOAD_ENTID")) {
+    let idmap_resolved = match to_map(&getp(&env, "BLUEFIN_TECS_MERCHANT_SERVICES_TEST_MANDATOR_CLEARING_EXPORT_DOWNLOAD_ENTID")) {
         Value::Map(m) => Value::Map(m),
         _ => to_map(&idmap),
     };
 
-    let live = getp(&env, "BLUEFINTECSMERCHANTSERVICES_TEST_LIVE") == Value::str("TRUE");
+    let live = getp(&env, "BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE") == Value::str("TRUE");
 
     let client = if live {
         let merged = vs::merge(
-            &ja(vec![jo(vec![("apikey", getp(&env, "BLUEFINTECSMERCHANTSERVICES_APIKEY"))]), extra]),
+            &ja(vec![jo(vec![("apikey", getp(&env, "BLUEFIN_TECS_MERCHANT_SERVICES_APIKEY"))]), extra]),
             None,
         );
         BluefinTecsMerchantServicesSDK::new(to_map(&merged))
@@ -150,7 +151,7 @@ fn mandator_clearing_export_download_basic_setup(extra: Value) -> EntityTestSetu
         data: entity_data,
         idmap: idmap_resolved,
         env: env.clone(),
-        explain: getp(&env, "BLUEFINTECSMERCHANTSERVICES_TEST_EXPLAIN") == Value::str("TRUE"),
+        explain: getp(&env, "BLUEFIN_TECS_MERCHANT_SERVICES_TEST_EXPLAIN") == Value::str("TRUE"),
         live,
         synthetic_only: live && !idmap_overridden,
         now: now_ms(),

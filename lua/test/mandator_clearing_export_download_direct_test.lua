@@ -70,16 +70,16 @@ function mandator_clearing_export_download_direct_setup(mockres)
   local calls = {}
 
   local env = runner.env_override({
-    ["BLUEFINTECSMERCHANTSERVICES_TEST_MANDATOR_CLEARING_EXPORT_DOWNLOAD_ENTID"] = {},
-    ["BLUEFINTECSMERCHANTSERVICES_TEST_LIVE"] = "FALSE",
-    ["BLUEFINTECSMERCHANTSERVICES_APIKEY"] = "NONE",
+    ["BLUEFIN_TECS_MERCHANT_SERVICES_TEST_MANDATOR_CLEARING_EXPORT_DOWNLOAD_ENTID"] = {},
+    ["BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE"] = "FALSE",
+    ["BLUEFIN_TECS_MERCHANT_SERVICES_APIKEY"] = "NONE",
   })
 
-  local live = env["BLUEFINTECSMERCHANTSERVICES_TEST_LIVE"] == "TRUE"
+  local live = env["BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {
-      apikey = env["BLUEFINTECSMERCHANTSERVICES_APIKEY"],
+      apikey = env["BLUEFIN_TECS_MERCHANT_SERVICES_APIKEY"],
     }
     local client = sdk.new(merged_opts)
     return {

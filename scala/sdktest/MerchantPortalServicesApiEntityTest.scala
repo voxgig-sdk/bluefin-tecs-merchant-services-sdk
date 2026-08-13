@@ -35,7 +35,7 @@ object MerchantPortalServicesApiEntityTest {
       var merchantPortalServicesApiRef01Data = Helpers.toMapAny(Struct.getprop(
           Struct.getpath(entityData, "new.merchant_portal_services_api"), "merchant_portal_services_api_ref01"))
       val merchantPortalServicesApiRef01DataResult = merchantPortalServicesApiRef01Ent.create(merchantPortalServicesApiRef01Data, null)
-      merchantPortalServicesApiRef01Data = Helpers.toMapAny(merchantPortalServicesApiRef01DataResult)
+      merchantPortalServicesApiRef01Data = Helpers.toMapAny(merchantPortalServicesApiRef01DataResult match { case e: SdkEntity => e.data(); case o => o })
       rep.check("merchant_portal_services_api.create.map", merchantPortalServicesApiRef01Data != null, "expected create result to be a map")
     }
   }

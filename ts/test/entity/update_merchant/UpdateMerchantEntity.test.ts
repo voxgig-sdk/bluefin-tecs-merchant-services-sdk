@@ -26,8 +26,8 @@ import {
 describe('UpdateMerchantEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when BLUEFINTECSMERCHANTSERVICES_TEST_LIVE=TRUE.
-  afterEach(liveDelay('BLUEFINTECSMERCHANTSERVICES_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE=TRUE.
+  afterEach(liveDelay('BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = BluefinTecsMerchantServicesSDK.test()
@@ -62,7 +62,7 @@ describe('UpdateMerchantEntity', async () => {
     const update_merchant_ref01_ent = client.UpdateMerchant()
     let update_merchant_ref01_data = setup.data.new.update_merchant['update_merchant_ref01']
 
-    update_merchant_ref01_data = await update_merchant_ref01_ent.create(update_merchant_ref01_data)
+    update_merchant_ref01_data = (await update_merchant_ref01_ent.create(update_merchant_ref01_data)).data()
     assert(null != update_merchant_ref01_data)
 
 

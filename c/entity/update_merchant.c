@@ -14,6 +14,8 @@ typedef struct update_merchant_entity {
   voxgig_value* data;     // Map
   voxgig_value* mtch;     // Map
   Context* entctx;
+  // Set once a successful `remove` resolves on this instance.
+  bool deleted;
 } update_merchant_entity;
 
 typedef void (*update_merchant_postdone_fn)(update_merchant_entity* self, Context* ctx);
@@ -24,11 +26,14 @@ static const char* update_merchant_get_name(Entity* e);
 static Entity* update_merchant_make(Entity* e);
 static voxgig_value* update_merchant_data(Entity* e, voxgig_value* args);
 static voxgig_value* update_merchant_matchv(Entity* e, voxgig_value* args);
-static voxgig_value* update_merchant_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
-static voxgig_value* update_merchant_list(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
-static voxgig_value* update_merchant_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
-static voxgig_value* update_merchant_update(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
-static voxgig_value* update_merchant_remove(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+// Ops resolve to the ENTITY (`list` to a NULL-terminated array of them).
+static Entity* update_merchant_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static Entity** update_merchant_list(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static Entity* update_merchant_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
+static Entity* update_merchant_update(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
+static Entity* update_merchant_remove(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static void update_merchant_mark_deleted(Entity* e);
+static bool update_merchant_deleted(Entity* e);
 
 static Context* update_merchant_ent_ctx(update_merchant_entity* self) {
   return self->entctx;
@@ -236,13 +241,13 @@ static voxgig_value* update_merchant_matchv(Entity* e, voxgig_value* args) {
   return voxgig_clone(self->mtch);
 }
 
-static voxgig_value* update_merchant_load(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* update_merchant_load(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("load", "update_merchant");
   return NULL;
 }
 
-static voxgig_value* update_merchant_list(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity** update_merchant_list(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("list", "update_merchant");
   return NULL;
@@ -260,7 +265,7 @@ static void update_merchant_create_postdone(update_merchant_entity* self, Contex
   }
 }
 
-static voxgig_value* update_merchant_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err) {
+static Entity* update_merchant_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err) {
   update_merchant_entity* self = (update_merchant_entity*)e;
   CtxSpec cs;
   memset(&cs, 0, sizeof(cs));
@@ -270,20 +275,38 @@ static voxgig_value* update_merchant_create(Entity* e, voxgig_value* reqdata, vo
   cs.data = self->data;
   cs.reqdata = reqdata;
   Context* ctx = make_context_util(cs, update_merchant_ent_ctx(self));
-  return update_merchant_run_op(self, ctx, update_merchant_create_postdone, err);
+  update_merchant_run_op(self, ctx, update_merchant_create_postdone, err);
+  if (*err) return NULL;
+
+  // The operation resolves to THIS entity: run_op has just absorbed the
+  // result into it, and the caller reaches the record through vt->data.
+  // See AGENTS.md "Entity operations return ENTITIES".
+
+  return e;
 }
 
 
-static voxgig_value* update_merchant_update(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* update_merchant_update(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("update", "update_merchant");
   return NULL;
 }
 
-static voxgig_value* update_merchant_remove(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* update_merchant_remove(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("remove", "update_merchant");
   return NULL;
+}
+
+// `remove` resolves to the entity, marked. The instance KEEPS the data it
+// held - a caller can still read what was deleted - but it is no longer a
+// live record.
+static void update_merchant_mark_deleted(Entity* e) {
+  ((update_merchant_entity*)e)->deleted = true;
+}
+
+static bool update_merchant_deleted(Entity* e) {
+  return ((update_merchant_entity*)e)->deleted;
 }
 
 static const EntityVT update_merchant_VT = {
@@ -291,6 +314,8 @@ static const EntityVT update_merchant_VT = {
   update_merchant_make,
   update_merchant_data,
   update_merchant_matchv,
+  update_merchant_mark_deleted,
+  update_merchant_deleted,
   update_merchant_load,
   update_merchant_list,
   update_merchant_create,

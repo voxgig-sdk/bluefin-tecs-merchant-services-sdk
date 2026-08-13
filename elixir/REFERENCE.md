@@ -239,46 +239,46 @@ cancel_transaction = BluefinTecsMerchantServices.cancel_transaction(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `String.t()` | No |  |
-| `acquirer_name` | `String.t()` | No |  |
-| `actual_bonus_point` | `String.t()` | No |  |
+| `acquirerId` | `String.t()` | No |  |
+| `acquirerName` | `String.t()` | No |  |
+| `actualBonusPoints` | `String.t()` | No |  |
 | `amount` | `integer()` | No |  |
-| `authorization_code` | `String.t()` | No |  |
-| `balance_amount` | `String.t()` | No |  |
-| `card_brand` | `String.t()` | No |  |
-| `card_number` | `String.t()` | No |  |
-| `client_id` | `integer()` | Yes |  |
+| `authorizationCode` | `String.t()` | No |  |
+| `balanceAmount` | `String.t()` | No |  |
+| `cardBrand` | `String.t()` | No |  |
+| `cardNumber` | `String.t()` | No |  |
+| `clientId` | `integer()` | Yes |  |
 | `currency` | `String.t()` | Yes |  |
 | `cvc` | `String.t()` | No |  |
-| `ec_data` | `String.t()` | No |  |
-| `ecr_data` | `String.t()` | No |  |
-| `emv_data` | `String.t()` | No |  |
-| `exchange_fee` | `integer()` | No |  |
-| `exchange_rate` | `String.t()` | No |  |
-| `language_code` | `String.t()` | No |  |
-| `merchant_address` | `String.t()` | No |  |
-| `merchant_name` | `String.t()` | No |  |
-| `merchant_number` | `String.t()` | No |  |
-| `message_type` | `String.t()` | No |  |
-| `original_trace_number` | `integer()` | No |  |
-| `original_transaction_id` | `String.t()` | No |  |
+| `ecData` | `String.t()` | No |  |
+| `ecrData` | `String.t()` | No |  |
+| `emvData` | `String.t()` | No |  |
+| `exchangeFee` | `integer()` | No |  |
+| `exchangeRate` | `String.t()` | No |  |
+| `languageCode` | `String.t()` | No |  |
+| `merchantAddress` | `String.t()` | No |  |
+| `merchantName` | `String.t()` | No |  |
+| `merchantNumber` | `String.t()` | No |  |
+| `messageType` | `String.t()` | No |  |
+| `originalTraceNumber` | `integer()` | No |  |
+| `originalTransactionId` | `String.t()` | No |  |
 | `password` | `String.t()` | No |  |
-| `payment_reason` | `String.t()` | No |  |
-| `receipt_footer` | `String.t()` | No |  |
-| `receipt_header` | `String.t()` | No |  |
-| `receipt_layout` | `integer()` | No |  |
-| `receipt_number` | `String.t()` | Yes |  |
-| `response_code` | `integer()` | No |  |
-| `response_message` | `String.t()` | No |  |
-| `serial_number` | `String.t()` | No |  |
+| `paymentReason` | `String.t()` | No |  |
+| `receiptFooter` | `String.t()` | No |  |
+| `receiptHeader` | `String.t()` | No |  |
+| `receiptLayout` | `integer()` | No |  |
+| `receiptNumber` | `String.t()` | Yes |  |
+| `responseCode` | `integer()` | No |  |
+| `responseMessage` | `String.t()` | No |  |
+| `serialNumber` | `String.t()` | No |  |
 | `svc` | `String.t()` | No |  |
-| `terminal_id` | `integer()` | Yes |  |
-| `terminal_location` | `String.t()` | No |  |
-| `trace_number` | `integer()` | No |  |
-| `transaction_date` | `String.t()` | No |  |
-| `transaction_id` | `String.t()` | No |  |
-| `tx_type` | `String.t()` | No |  |
-| `user_data` | `String.t()` | No |  |
+| `terminalId` | `integer()` | Yes |  |
+| `terminalLocation` | `String.t()` | No |  |
+| `traceNumber` | `integer()` | No |  |
+| `transactionDate` | `String.t()` | No |  |
+| `transactionId` | `String.t()` | No |  |
+| `txType` | `String.t()` | No |  |
+| `userData` | `String.t()` | No |  |
 
 ### Operations
 
@@ -288,10 +288,10 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```elixir
 record = BluefinTecsMerchantServices.Entity.CancelTransaction.create(cancel_transaction, BluefinTecsMerchantServices.Helpers.deep(%{
-  "client_id" => 1,  # integer()
+  "clientId" => 1,  # integer()
   "currency" => "example_currency",  # String.t()
-  "receipt_number" => "example_receipt_number",  # String.t()
-  "terminal_id" => 1,  # integer()
+  "receiptNumber" => "example_receiptNumber",  # String.t()
+  "terminalId" => 1,  # integer()
 }))
 ```
 
@@ -334,9 +334,9 @@ check_card_black_listed = BluefinTecsMerchantServices.check_card_black_listed(sd
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `card_no` | `String.t()` | No |  |
-| `response_code` | `integer()` | No |  |
-| `response_message` | `String.t()` | No |  |
+| `cardNo` | `String.t()` | No |  |
+| `responseCode` | `integer()` | No |  |
+| `responseMessage` | `String.t()` | No |  |
 
 ### Operations
 
@@ -388,13 +388,13 @@ create_product = BluefinTecsMerchantServices.create_product(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `integer()` | No |  |
-| `response_code` | `integer()` | No |  |
-| `response_message` | `String.t()` | No |  |
-| `template_name` | `String.t()` | Yes |  |
-| `template_type` | `String.t()` | Yes |  |
-| `template_xml` | `String.t()` | Yes |  |
-| `terminal_type` | `String.t()` | Yes |  |
+| `acquirerId` | `integer()` | No |  |
+| `responseCode` | `integer()` | No |  |
+| `responseMessage` | `String.t()` | No |  |
+| `templateName` | `String.t()` | Yes |  |
+| `templateType` | `String.t()` | Yes |  |
+| `templateXml` | `String.t()` | Yes |  |
+| `terminalType` | `String.t()` | Yes |  |
 
 ### Operations
 
@@ -404,10 +404,10 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```elixir
 record = BluefinTecsMerchantServices.Entity.CreateProduct.create(create_product, BluefinTecsMerchantServices.Helpers.deep(%{
-  "template_name" => "example_template_name",  # String.t()
-  "template_type" => "example_template_type",  # String.t()
-  "template_xml" => "example_template_xml",  # String.t()
-  "terminal_type" => "example_terminal_type",  # String.t()
+  "templateName" => "example_templateName",  # String.t()
+  "templateType" => "example_templateType",  # String.t()
+  "templateXml" => "example_templateXml",  # String.t()
+  "terminalType" => "example_terminalType",  # String.t()
 }))
 ```
 
@@ -450,13 +450,13 @@ deactivate_terminal = BluefinTecsMerchantServices.deactivate_terminal(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `corporate_uuid` | `String.t()` | No |  |
-| `deactivation_reason` | `String.t()` | Yes |  |
-| `package_order_uuid` | `String.t()` | No |  |
-| `product_order_uuid` | `String.t()` | No |  |
-| `response_code` | `integer()` | No |  |
-| `response_message` | `String.t()` | No |  |
-| `terminal_id` | `integer()` | Yes |  |
+| `corporateUuid` | `String.t()` | No |  |
+| `deactivationReason` | `String.t()` | Yes |  |
+| `packageOrderUuid` | `String.t()` | No |  |
+| `productOrderUuid` | `String.t()` | No |  |
+| `responseCode` | `integer()` | No |  |
+| `responseMessage` | `String.t()` | No |  |
+| `terminalId` | `integer()` | Yes |  |
 
 ### Operations
 
@@ -466,8 +466,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```elixir
 record = BluefinTecsMerchantServices.Entity.DeactivateTerminal.create(deactivate_terminal, BluefinTecsMerchantServices.Helpers.deep(%{
-  "deactivation_reason" => "example_deactivation_reason",  # String.t()
-  "terminal_id" => 1,  # integer()
+  "deactivationReason" => "example_deactivationReason",  # String.t()
+  "terminalId" => 1,  # integer()
 }))
 ```
 
@@ -510,16 +510,16 @@ digital_services_api = BluefinTecsMerchantServices.digital_services_api(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearing_date_from` | `String.t()` | Yes |  |
-| `clearing_date_to` | `String.t()` | Yes |  |
-| `response_code` | `integer()` | No |  |
-| `response_message` | `String.t()` | No |  |
-| `tx_count` | `integer()` | No |  |
-| `tx_id_end` | `String.t()` | No |  |
-| `tx_id_start` | `String.t()` | No |  |
-| `tx_seq_no_end` | `integer()` | No |  |
-| `tx_seq_no_start` | `integer()` | No |  |
-| `tx_total` | `integer()` | No |  |
+| `clearingDateFrom` | `String.t()` | Yes |  |
+| `clearingDateTo` | `String.t()` | Yes |  |
+| `responseCode` | `integer()` | No |  |
+| `responseMessage` | `String.t()` | No |  |
+| `txCount` | `integer()` | No |  |
+| `txIdEnd` | `String.t()` | No |  |
+| `txIdStart` | `String.t()` | No |  |
+| `txSeqNoEnd` | `integer()` | No |  |
+| `txSeqNoStart` | `integer()` | No |  |
+| `txTotal` | `integer()` | No |  |
 
 ### Operations
 
@@ -529,6 +529,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```elixir
 record = BluefinTecsMerchantServices.Entity.DigitalServicesApi.create(digital_services_api, BluefinTecsMerchantServices.Helpers.deep(%{
+  "clearingDateFrom" => "example_clearingDateFrom",  # String.t()
+  "clearingDateTo" => "example_clearingDateTo",  # String.t()
 }))
 ```
 
@@ -579,12 +581,12 @@ ec_data_ecom = BluefinTecsMerchantServices.ec_data_ecom(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ecom_data` | `String.t()` | No |  |
-| `response_code` | `integer()` | No |  |
-| `response_message` | `String.t()` | No |  |
-| `terminal_id` | `integer()` | Yes |  |
-| `transaction_id` | `String.t()` | Yes |  |
-| `transaction_type` | `String.t()` | Yes |  |
+| `ecomData` | `String.t()` | No |  |
+| `responseCode` | `integer()` | No |  |
+| `responseMessage` | `String.t()` | No |  |
+| `terminalId` | `integer()` | Yes |  |
+| `transactionId` | `String.t()` | Yes |  |
+| `transactionType` | `String.t()` | Yes |  |
 
 ### Operations
 
@@ -594,9 +596,9 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```elixir
 record = BluefinTecsMerchantServices.Entity.EcDataEcom.create(ec_data_ecom, BluefinTecsMerchantServices.Helpers.deep(%{
-  "terminal_id" => 1,  # integer()
-  "transaction_id" => "example_transaction_id",  # String.t()
-  "transaction_type" => "example_transaction_type",  # String.t()
+  "terminalId" => 1,  # integer()
+  "transactionId" => "example_transactionId",  # String.t()
+  "transactionType" => "example_transactionType",  # String.t()
 }))
 ```
 
@@ -639,11 +641,11 @@ ecom_parameter = BluefinTecsMerchantServices.ecom_parameter(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ecom_pass` | `String.t()` | No |  |
-| `ecom_skey` | `String.t()` | No |  |
-| `response_code` | `integer()` | No |  |
-| `response_message` | `String.t()` | No |  |
-| `terminal_id` | `integer()` | Yes |  |
+| `ecomPass` | `String.t()` | No |  |
+| `ecomSkey` | `String.t()` | No |  |
+| `responseCode` | `integer()` | No |  |
+| `responseMessage` | `String.t()` | No |  |
+| `terminalId` | `integer()` | Yes |  |
 
 ### Operations
 
@@ -653,7 +655,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```elixir
 record = BluefinTecsMerchantServices.Entity.EcomParameter.create(ecom_parameter, BluefinTecsMerchantServices.Helpers.deep(%{
-  "terminal_id" => 1,  # integer()
+  "terminalId" => 1,  # integer()
 }))
 ```
 
@@ -696,12 +698,12 @@ ecr_data = BluefinTecsMerchantServices.ecr_data(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ecr_data` | `String.t()` | No |  |
-| `response_code` | `integer()` | No |  |
-| `response_message` | `String.t()` | No |  |
-| `terminal_id` | `integer()` | Yes |  |
-| `transaction_id` | `String.t()` | Yes |  |
-| `transaction_type` | `String.t()` | Yes |  |
+| `ecrData` | `String.t()` | No |  |
+| `responseCode` | `integer()` | No |  |
+| `responseMessage` | `String.t()` | No |  |
+| `terminalId` | `integer()` | Yes |  |
+| `transactionId` | `String.t()` | Yes |  |
+| `transactionType` | `String.t()` | Yes |  |
 
 ### Operations
 
@@ -711,9 +713,9 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```elixir
 record = BluefinTecsMerchantServices.Entity.EcrData.create(ecr_data, BluefinTecsMerchantServices.Helpers.deep(%{
-  "terminal_id" => 1,  # integer()
-  "transaction_id" => "example_transaction_id",  # String.t()
-  "transaction_type" => "example_transaction_type",  # String.t()
+  "terminalId" => 1,  # integer()
+  "transactionId" => "example_transactionId",  # String.t()
+  "transactionType" => "example_transactionType",  # String.t()
 }))
 ```
 
@@ -756,12 +758,12 @@ emv_data = BluefinTecsMerchantServices.emv_data(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `emv_data` | `String.t()` | No |  |
-| `response_code` | `integer()` | No |  |
-| `response_message` | `String.t()` | No |  |
-| `terminal_id` | `integer()` | Yes |  |
-| `transaction_id` | `String.t()` | Yes |  |
-| `transaction_type` | `String.t()` | Yes |  |
+| `emvData` | `String.t()` | No |  |
+| `responseCode` | `integer()` | No |  |
+| `responseMessage` | `String.t()` | No |  |
+| `terminalId` | `integer()` | Yes |  |
+| `transactionId` | `String.t()` | Yes |  |
+| `transactionType` | `String.t()` | Yes |  |
 
 ### Operations
 
@@ -771,9 +773,9 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```elixir
 record = BluefinTecsMerchantServices.Entity.EmvData.create(emv_data, BluefinTecsMerchantServices.Helpers.deep(%{
-  "terminal_id" => 1,  # integer()
-  "transaction_id" => "example_transaction_id",  # String.t()
-  "transaction_type" => "example_transaction_type",  # String.t()
+  "terminalId" => 1,  # integer()
+  "transactionId" => "example_transactionId",  # String.t()
+  "transactionType" => "example_transactionType",  # String.t()
 }))
 ```
 
@@ -816,20 +818,20 @@ enable_acquiring = BluefinTecsMerchantServices.enable_acquiring(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `account_no` | `integer()` | No |  |
-| `additional_data` | `map()` | No |  |
-| `corporate_uuid` | `String.t()` | Yes |  |
+| `accountNo` | `integer()` | No |  |
+| `additionalData` | `map()` | No |  |
+| `corporateUuid` | `String.t()` | Yes |  |
 | `currency` | `String.t()` | Yes |  |
-| `merchant_category_code` | `integer()` | Yes |  |
-| `package_order_uuid` | `String.t()` | Yes |  |
-| `product_order_uuid` | `String.t()` | Yes |  |
-| `response_code` | `integer()` | No |  |
-| `response_message` | `String.t()` | No |  |
-| `sorting_code` | `integer()` | No |  |
-| `template_name` | `String.t()` | Yes |  |
-| `terminal_id` | `list()` | No |  |
-| `terminal_id_acq` | `String.t()` | No |  |
-| `vu_nummer` | `String.t()` | No |  |
+| `merchantCategoryCode` | `integer()` | Yes |  |
+| `packageOrderUuid` | `String.t()` | Yes |  |
+| `productOrderUuid` | `String.t()` | Yes |  |
+| `responseCode` | `integer()` | No |  |
+| `responseMessage` | `String.t()` | No |  |
+| `sortingCode` | `integer()` | No |  |
+| `templateName` | `String.t()` | Yes |  |
+| `terminalIdAcq` | `String.t()` | No |  |
+| `terminalIds` | `list()` | No |  |
+| `vuNummer` | `String.t()` | No |  |
 
 ### Operations
 
@@ -839,12 +841,12 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```elixir
 record = BluefinTecsMerchantServices.Entity.EnableAcquiring.create(enable_acquiring, BluefinTecsMerchantServices.Helpers.deep(%{
-  "corporate_uuid" => "example_corporate_uuid",  # String.t()
+  "corporateUuid" => "example_corporateUuid",  # String.t()
   "currency" => "example_currency",  # String.t()
-  "merchant_category_code" => 1,  # integer()
-  "package_order_uuid" => "example_package_order_uuid",  # String.t()
-  "product_order_uuid" => "example_product_order_uuid",  # String.t()
-  "template_name" => "example_template_name",  # String.t()
+  "merchantCategoryCode" => 1,  # integer()
+  "packageOrderUuid" => "example_packageOrderUuid",  # String.t()
+  "productOrderUuid" => "example_productOrderUuid",  # String.t()
+  "templateName" => "example_templateName",  # String.t()
 }))
 ```
 
@@ -887,9 +889,9 @@ get_merchant_contract_number = BluefinTecsMerchantServices.get_merchant_contract
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `merchant_contract_number` | `String.t()` | Yes |  |
-| `response_code` | `integer()` | No |  |
-| `response_message` | `String.t()` | No |  |
+| `merchantContractNumber` | `String.t()` | Yes |  |
+| `responseCode` | `integer()` | No |  |
+| `responseMessage` | `String.t()` | No |  |
 
 ### Operations
 
@@ -899,7 +901,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```elixir
 record = BluefinTecsMerchantServices.Entity.GetMerchantContractNumber.create(get_merchant_contract_number, BluefinTecsMerchantServices.Helpers.deep(%{
-  "merchant_contract_number" => "example_merchant_contract_number",  # String.t()
+  "merchantContractNumber" => "example_merchantContractNumber",  # String.t()
 }))
 ```
 
@@ -942,9 +944,9 @@ get_template_xml = BluefinTecsMerchantServices.get_template_xml(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `integer()` | No |  |
-| `response_message` | `String.t()` | No |  |
-| `template_name` | `String.t()` | Yes |  |
+| `responseCode` | `integer()` | No |  |
+| `responseMessage` | `String.t()` | No |  |
+| `templateName` | `String.t()` | Yes |  |
 
 ### Operations
 
@@ -954,7 +956,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```elixir
 record = BluefinTecsMerchantServices.Entity.GetTemplateXml.create(get_template_xml, BluefinTecsMerchantServices.Helpers.deep(%{
-  "template_name" => "example_template_name",  # String.t()
+  "templateName" => "example_templateName",  # String.t()
 }))
 ```
 
@@ -997,9 +999,9 @@ introduce_mandator = BluefinTecsMerchantServices.introduce_mandator(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `mandator_name` | `String.t()` | Yes |  |
-| `response_code` | `integer()` | No |  |
-| `response_message` | `String.t()` | No |  |
+| `mandatorName` | `String.t()` | Yes |  |
+| `responseCode` | `integer()` | No |  |
+| `responseMessage` | `String.t()` | No |  |
 
 ### Operations
 
@@ -1009,7 +1011,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```elixir
 record = BluefinTecsMerchantServices.Entity.IntroduceMandator.create(introduce_mandator, BluefinTecsMerchantServices.Helpers.deep(%{
-  "mandator_name" => "example_mandator_name",  # String.t()
+  "mandatorName" => "example_mandatorName",  # String.t()
 }))
 ```
 
@@ -1052,9 +1054,9 @@ introduce_package = BluefinTecsMerchantServices.introduce_package(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `integer()` | No |  |
-| `response_message` | `String.t()` | No |  |
-| `terminal_template_description` | `String.t()` | Yes |  |
+| `responseCode` | `integer()` | No |  |
+| `responseMessage` | `String.t()` | No |  |
+| `terminalTemplateDescription` | `String.t()` | Yes |  |
 
 ### Operations
 
@@ -1064,7 +1066,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```elixir
 record = BluefinTecsMerchantServices.Entity.IntroducePackage.create(introduce_package, BluefinTecsMerchantServices.Helpers.deep(%{
-  "terminal_template_description" => "example_terminal_template_description",  # String.t()
+  "terminalTemplateDescription" => "example_terminalTemplateDescription",  # String.t()
 }))
 ```
 
@@ -1108,15 +1110,15 @@ keep_alive = BluefinTecsMerchantServices.keep_alive(sdk)
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `hwserialno` | `String.t()` | No |  |
-| `ka_date_time_from` | `String.t()` | No |  |
-| `ka_date_time_to` | `String.t()` | No |  |
-| `keep_alive_data` | `list()` | No |  |
+| `kaDateTimeFrom` | `String.t()` | No |  |
+| `kaDateTimeTo` | `String.t()` | No |  |
+| `keepAliveData` | `list()` | No |  |
 | `pagination` | `map()` | No |  |
-| `response_code` | `integer()` | No |  |
-| `response_message` | `String.t()` | No |  |
-| `terminal_date_time_from` | `String.t()` | No |  |
-| `terminal_date_time_to` | `String.t()` | No |  |
-| `terminal_id` | `integer()` | No |  |
+| `responseCode` | `integer()` | No |  |
+| `responseMessage` | `String.t()` | No |  |
+| `terminalDateTimeFrom` | `String.t()` | No |  |
+| `terminalDateTimeTo` | `String.t()` | No |  |
+| `terminalId` | `integer()` | No |  |
 
 ### Operations
 
@@ -1168,12 +1170,12 @@ list_terminal = BluefinTecsMerchantServices.list_terminal(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `corporate_uuid` | `list()` | No |  |
+| `corporateUuid` | `list()` | No |  |
 | `filter` | `map()` | No |  |
 | `pagination` | `map()` | No |  |
-| `response_code` | `integer()` | No |  |
-| `response_message` | `String.t()` | No |  |
-| `terminal` | `list()` | No |  |
+| `responseCode` | `integer()` | No |  |
+| `responseMessage` | `String.t()` | No |  |
+| `terminals` | `list()` | No |  |
 
 ### Operations
 
@@ -1225,12 +1227,12 @@ mandator_clearing_export = BluefinTecsMerchantServices.mandator_clearing_export(
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearing_date_from` | `String.t()` | Yes |  |
-| `clearing_date_to` | `String.t()` | Yes |  |
+| `clearingDateFrom` | `String.t()` | Yes |  |
+| `clearingDateTo` | `String.t()` | Yes |  |
 | `pagination` | `map()` | No |  |
-| `record` | `list()` | No |  |
-| `response_code` | `integer()` | No |  |
-| `response_message` | `String.t()` | No |  |
+| `records` | `list()` | No |  |
+| `responseCode` | `integer()` | No |  |
+| `responseMessage` | `String.t()` | No |  |
 
 ### Operations
 
@@ -1240,8 +1242,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```elixir
 record = BluefinTecsMerchantServices.Entity.MandatorClearingExport.create(mandator_clearing_export, BluefinTecsMerchantServices.Helpers.deep(%{
-  "clearing_date_from" => "example_clearing_date_from",  # String.t()
-  "clearing_date_to" => "example_clearing_date_to",  # String.t()
+  "clearingDateFrom" => "example_clearingDateFrom",  # String.t()
+  "clearingDateTo" => "example_clearingDateTo",  # String.t()
 }))
 ```
 
@@ -1284,12 +1286,12 @@ mandator_clearing_export_download = BluefinTecsMerchantServices.mandator_clearin
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearing_date_from` | `String.t()` | Yes |  |
-| `clearing_date_to` | `String.t()` | Yes |  |
-| `file_id` | `String.t()` | No |  |
-| `filename_template` | `String.t()` | No |  |
-| `response_code` | `integer()` | No |  |
-| `response_message` | `String.t()` | No |  |
+| `clearingDateFrom` | `String.t()` | Yes |  |
+| `clearingDateTo` | `String.t()` | Yes |  |
+| `fileId` | `String.t()` | No |  |
+| `filenameTemplate` | `String.t()` | No |  |
+| `responseCode` | `integer()` | No |  |
+| `responseMessage` | `String.t()` | No |  |
 | `status` | `String.t()` | No |  |
 
 ### Operations
@@ -1300,8 +1302,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```elixir
 record = BluefinTecsMerchantServices.Entity.MandatorClearingExportDownload.create(mandator_clearing_export_download, BluefinTecsMerchantServices.Helpers.deep(%{
-  "clearing_date_from" => "example_clearing_date_from",  # String.t()
-  "clearing_date_to" => "example_clearing_date_to",  # String.t()
+  "clearingDateFrom" => "example_clearingDateFrom",  # String.t()
+  "clearingDateTo" => "example_clearingDateTo",  # String.t()
 }))
 ```
 
@@ -1352,11 +1354,11 @@ mandator_clearing_export_summary = BluefinTecsMerchantServices.mandator_clearing
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearing_date_from` | `String.t()` | Yes |  |
-| `clearing_date_to` | `String.t()` | Yes |  |
-| `record` | `list()` | No |  |
-| `response_code` | `integer()` | No |  |
-| `response_message` | `String.t()` | No |  |
+| `clearingDateFrom` | `String.t()` | Yes |  |
+| `clearingDateTo` | `String.t()` | Yes |  |
+| `records` | `list()` | No |  |
+| `responseCode` | `integer()` | No |  |
+| `responseMessage` | `String.t()` | No |  |
 
 ### Operations
 
@@ -1366,8 +1368,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```elixir
 record = BluefinTecsMerchantServices.Entity.MandatorClearingExportSummary.create(mandator_clearing_export_summary, BluefinTecsMerchantServices.Helpers.deep(%{
-  "clearing_date_from" => "example_clearing_date_from",  # String.t()
-  "clearing_date_to" => "example_clearing_date_to",  # String.t()
+  "clearingDateFrom" => "example_clearingDateFrom",  # String.t()
+  "clearingDateTo" => "example_clearingDateTo",  # String.t()
 }))
 ```
 
@@ -1410,30 +1412,30 @@ merchant_portal_services_api = BluefinTecsMerchantServices.merchant_portal_servi
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `3_d_secure` | `String.t()` | No |  |
-| `authorization_code` | `String.t()` | No |  |
-| `card_brand` | `String.t()` | No |  |
-| `clearing_amount_from` | `String.t()` | No |  |
-| `clearing_amount_to` | `String.t()` | No |  |
-| `clearing_currency` | `String.t()` | No |  |
-| `clearing_status` | `String.t()` | No |  |
-| `corporate_uuid` | `String.t()` | No |  |
-| `order_by_transaction_date` | `String.t()` | No |  |
+| `3DSecure` | `String.t()` | No |  |
+| `authorizationCode` | `String.t()` | No |  |
+| `cardBrand` | `String.t()` | No |  |
+| `clearingAmountFrom` | `String.t()` | No |  |
+| `clearingAmountTo` | `String.t()` | No |  |
+| `clearingCurrency` | `String.t()` | No |  |
+| `clearingStatus` | `String.t()` | No |  |
+| `corporateUUID` | `String.t()` | No |  |
+| `orderByTransactionDate` | `String.t()` | No |  |
 | `pagination` | `map()` | No |  |
-| `receipt_number` | `String.t()` | No |  |
-| `referenced_transaction_id` | `String.t()` | No |  |
-| `retrieval_reference_number` | `String.t()` | No |  |
-| `source_id` | `integer()` | No |  |
-| `tecsengine_response_code_from` | `String.t()` | No |  |
-| `tecsengine_response_code_to` | `String.t()` | No |  |
-| `terminal_id` | `integer()` | No |  |
-| `trace_number` | `String.t()` | No |  |
-| `transaction_amount_from` | `String.t()` | No |  |
-| `transaction_amount_to` | `String.t()` | No |  |
-| `transaction_date_from` | `String.t()` | No |  |
-| `transaction_date_to` | `String.t()` | No |  |
-| `transaction_id` | `String.t()` | No |  |
-| `transaction_type` | `String.t()` | No |  |
+| `receiptNumber` | `String.t()` | No |  |
+| `referencedTransactionId` | `String.t()` | No |  |
+| `retrievalReferenceNumber` | `String.t()` | No |  |
+| `sourceId` | `integer()` | No |  |
+| `tecsengineResponseCodeFrom` | `String.t()` | No |  |
+| `tecsengineResponseCodeTo` | `String.t()` | No |  |
+| `terminalId` | `integer()` | No |  |
+| `traceNumber` | `String.t()` | No |  |
+| `transactionAmountFrom` | `String.t()` | No |  |
+| `transactionAmountTo` | `String.t()` | No |  |
+| `transactionDateFrom` | `String.t()` | No |  |
+| `transactionDateTo` | `String.t()` | No |  |
+| `transactionId` | `String.t()` | No |  |
+| `transactionType` | `String.t()` | No |  |
 | `wallet` | `String.t()` | No |  |
 
 ### Operations
@@ -1486,11 +1488,11 @@ move_tid = BluefinTecsMerchantServices.move_tid(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `productorderuuid` | `list()` | Yes |  |
-| `response_code` | `integer()` | No |  |
-| `response_message` | `String.t()` | No |  |
-| `target_packageorderuuid` | `String.t()` | No |  |
-| `target_productorderuuid` | `String.t()` | No |  |
+| `productorderuuids` | `list()` | Yes |  |
+| `responseCode` | `integer()` | No |  |
+| `responseMessage` | `String.t()` | No |  |
+| `targetPackageorderuuid` | `String.t()` | No |  |
+| `targetProductorderuuid` | `String.t()` | No |  |
 
 ### Operations
 
@@ -1500,7 +1502,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```elixir
 record = BluefinTecsMerchantServices.Entity.MoveTid.create(move_tid, BluefinTecsMerchantServices.Helpers.deep(%{
-  "productorderuuid" => [],  # list()
+  "productorderuuids" => [],  # list()
 }))
 ```
 
@@ -1543,22 +1545,22 @@ payment_manual = BluefinTecsMerchantServices.payment_manual(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_name` | `String.t()` | No |  |
+| `acquirerName` | `String.t()` | No |  |
 | `amount` | `integer()` | Yes |  |
-| `authorization_number` | `String.t()` | No |  |
-| `card_number` | `String.t()` | Yes |  |
-| `card_type` | `String.t()` | No |  |
+| `authorizationNumber` | `String.t()` | No |  |
+| `cardNumber` | `String.t()` | Yes |  |
+| `cardType` | `String.t()` | No |  |
 | `currency` | `String.t()` | Yes |  |
 | `cvc` | `String.t()` | No |  |
-| `date_time_tx` | `String.t()` | No |  |
-| `exp_date` | `String.t()` | Yes |  |
-| `merchant_id` | `String.t()` | No |  |
-| `original_transaction_id` | `String.t()` | No |  |
+| `dateTimeTx` | `String.t()` | No |  |
+| `expDate` | `String.t()` | Yes |  |
+| `merchantId` | `String.t()` | No |  |
+| `originalTransactionId` | `String.t()` | No |  |
 | `password` | `String.t()` | No |  |
-| `response_code` | `String.t()` | No |  |
-| `response_message` | `String.t()` | No |  |
-| `terminal_id` | `String.t()` | No |  |
-| `transaction_id` | `String.t()` | No |  |
+| `responseCode` | `String.t()` | No |  |
+| `responseMessage` | `String.t()` | No |  |
+| `terminalId` | `String.t()` | No |  |
+| `transactionId` | `String.t()` | No |  |
 | `txtype` | `String.t()` | Yes |  |
 
 ### Operations
@@ -1570,9 +1572,9 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```elixir
 record = BluefinTecsMerchantServices.Entity.PaymentManual.create(payment_manual, BluefinTecsMerchantServices.Helpers.deep(%{
   "amount" => 1,  # integer()
-  "card_number" => "example_card_number",  # String.t()
+  "cardNumber" => "example_cardNumber",  # String.t()
   "currency" => "example_currency",  # String.t()
-  "exp_date" => "example_exp_date",  # String.t()
+  "expDate" => "example_expDate",  # String.t()
   "txtype" => "example_txtype",  # String.t()
 }))
 ```
@@ -1616,21 +1618,17 @@ payment_sred = BluefinTecsMerchantServices.payment_sred(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_name` | `String.t()` | No |  |
 | `amount` | `integer()` | Yes |  |
-| `authorization_number` | `String.t()` | No |  |
-| `card_type` | `String.t()` | No |  |
 | `currency` | `String.t()` | Yes |  |
-| `date_time_tx` | `String.t()` | No |  |
-| `device_payload` | `String.t()` | Yes |  |
-| `merchant_id` | `String.t()` | No |  |
-| `original_transaction_id` | `String.t()` | No |  |
+| `device` | `String.t()` | No |  |
+| `devicePayload` | `String.t()` | Yes |  |
+| `expDate` | `String.t()` | No |  |
+| `mode` | `String.t()` | No |  |
+| `panMasked` | `String.t()` | No |  |
 | `password` | `String.t()` | No |  |
-| `response_code` | `String.t()` | No |  |
-| `response_message` | `String.t()` | No |  |
-| `sred` | `map()` | No |  |
-| `terminal_id` | `String.t()` | No |  |
-| `transaction_id` | `String.t()` | No |  |
+| `serial` | `String.t()` | No |  |
+| `serviceCode` | `String.t()` | No |  |
+| `terminalId` | `String.t()` | Yes |  |
 | `txtype` | `String.t()` | Yes |  |
 
 ### Operations
@@ -1643,7 +1641,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 record = BluefinTecsMerchantServices.Entity.PaymentSred.create(payment_sred, BluefinTecsMerchantServices.Helpers.deep(%{
   "amount" => 1,  # integer()
   "currency" => "example_currency",  # String.t()
-  "device_payload" => "example_device_payload",  # String.t()
+  "devicePayload" => "example_devicePayload",  # String.t()
+  "terminalId" => "example_terminalId",  # String.t()
   "txtype" => "example_txtype",  # String.t()
 }))
 ```
@@ -1687,48 +1686,48 @@ pre_auth_transaction_completion = BluefinTecsMerchantServices.pre_auth_transacti
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `String.t()` | No |  |
-| `acquirer_name` | `String.t()` | No |  |
-| `actual_bonus_point` | `String.t()` | No |  |
+| `acquirerId` | `String.t()` | No |  |
+| `acquirerName` | `String.t()` | No |  |
+| `actualBonusPoints` | `String.t()` | No |  |
 | `amount` | `integer()` | No |  |
-| `authorization_code` | `String.t()` | No |  |
-| `balance_amount` | `String.t()` | No |  |
-| `card_brand` | `String.t()` | No |  |
-| `card_number` | `String.t()` | No |  |
-| `card_number_reference` | `String.t()` | Yes |  |
-| `client_id` | `integer()` | Yes |  |
+| `authorizationCode` | `String.t()` | No |  |
+| `balanceAmount` | `String.t()` | No |  |
+| `cardBrand` | `String.t()` | No |  |
+| `cardNumber` | `String.t()` | No |  |
+| `cardNumberReference` | `String.t()` | Yes |  |
+| `clientId` | `integer()` | Yes |  |
 | `currency` | `String.t()` | Yes |  |
 | `cvc` | `String.t()` | No |  |
-| `ec_data` | `String.t()` | No |  |
-| `ecr_data` | `String.t()` | No |  |
-| `emv_data` | `String.t()` | No |  |
-| `exchange_fee` | `integer()` | No |  |
-| `exchange_rate` | `String.t()` | No |  |
-| `language_code` | `String.t()` | No |  |
-| `merchant_address` | `String.t()` | No |  |
-| `merchant_name` | `String.t()` | No |  |
-| `merchant_number` | `String.t()` | No |  |
-| `message_type` | `String.t()` | No |  |
-| `original_trace_number` | `integer()` | No |  |
-| `original_transaction_id` | `String.t()` | No |  |
+| `ecData` | `String.t()` | No |  |
+| `ecrData` | `String.t()` | No |  |
+| `emvData` | `String.t()` | No |  |
+| `exchangeFee` | `integer()` | No |  |
+| `exchangeRate` | `String.t()` | No |  |
+| `languageCode` | `String.t()` | No |  |
+| `merchantAddress` | `String.t()` | No |  |
+| `merchantName` | `String.t()` | No |  |
+| `merchantNumber` | `String.t()` | No |  |
+| `messageType` | `String.t()` | No |  |
+| `originalTraceNumber` | `integer()` | No |  |
+| `originalTransactionId` | `String.t()` | No |  |
 | `password` | `String.t()` | No |  |
-| `payment_reason` | `String.t()` | No |  |
-| `receipt_footer` | `String.t()` | No |  |
-| `receipt_header` | `String.t()` | No |  |
-| `receipt_layout` | `integer()` | No |  |
-| `receipt_number` | `String.t()` | Yes |  |
-| `response_code` | `integer()` | No |  |
-| `response_message` | `String.t()` | No |  |
-| `serial_number` | `String.t()` | No |  |
+| `paymentReason` | `String.t()` | No |  |
+| `receiptFooter` | `String.t()` | No |  |
+| `receiptHeader` | `String.t()` | No |  |
+| `receiptLayout` | `integer()` | No |  |
+| `receiptNumber` | `String.t()` | Yes |  |
+| `responseCode` | `integer()` | No |  |
+| `responseMessage` | `String.t()` | No |  |
+| `serialNumber` | `String.t()` | No |  |
 | `svc` | `String.t()` | No |  |
-| `terminal_id` | `integer()` | Yes |  |
-| `terminal_location` | `String.t()` | No |  |
-| `trace_number` | `integer()` | No |  |
-| `transaction_date` | `String.t()` | No |  |
-| `transaction_id` | `String.t()` | No |  |
-| `transaction_type` | `String.t()` | Yes |  |
-| `tx_type` | `String.t()` | No |  |
-| `user_data` | `String.t()` | No |  |
+| `terminalId` | `integer()` | Yes |  |
+| `terminalLocation` | `String.t()` | No |  |
+| `traceNumber` | `integer()` | No |  |
+| `transactionDate` | `String.t()` | No |  |
+| `transactionId` | `String.t()` | No |  |
+| `transactionType` | `String.t()` | Yes |  |
+| `txType` | `String.t()` | No |  |
+| `userData` | `String.t()` | No |  |
 
 ### Operations
 
@@ -1738,12 +1737,12 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```elixir
 record = BluefinTecsMerchantServices.Entity.PreAuthTransactionCompletion.create(pre_auth_transaction_completion, BluefinTecsMerchantServices.Helpers.deep(%{
-  "card_number_reference" => "example_card_number_reference",  # String.t()
-  "client_id" => 1,  # integer()
+  "cardNumberReference" => "example_cardNumberReference",  # String.t()
+  "clientId" => 1,  # integer()
   "currency" => "example_currency",  # String.t()
-  "receipt_number" => "example_receipt_number",  # String.t()
-  "terminal_id" => 1,  # integer()
-  "transaction_type" => "example_transaction_type",  # String.t()
+  "receiptNumber" => "example_receiptNumber",  # String.t()
+  "terminalId" => 1,  # integer()
+  "transactionType" => "example_transactionType",  # String.t()
 }))
 ```
 
@@ -1786,13 +1785,13 @@ reactivate_terminal = BluefinTecsMerchantServices.reactivate_terminal(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `corporate_uuid` | `String.t()` | No |  |
-| `package_order_uuid` | `String.t()` | No |  |
-| `product_order_uuid` | `String.t()` | No |  |
-| `reactivation_reason` | `String.t()` | Yes |  |
-| `response_code` | `integer()` | No |  |
-| `response_message` | `String.t()` | No |  |
-| `terminal_id` | `integer()` | Yes |  |
+| `corporateUuid` | `String.t()` | No |  |
+| `packageOrderUuid` | `String.t()` | No |  |
+| `productOrderUuid` | `String.t()` | No |  |
+| `reactivationReason` | `String.t()` | Yes |  |
+| `responseCode` | `integer()` | No |  |
+| `responseMessage` | `String.t()` | No |  |
+| `terminalId` | `integer()` | Yes |  |
 
 ### Operations
 
@@ -1802,8 +1801,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```elixir
 record = BluefinTecsMerchantServices.Entity.ReactivateTerminal.create(reactivate_terminal, BluefinTecsMerchantServices.Helpers.deep(%{
-  "reactivation_reason" => "example_reactivation_reason",  # String.t()
-  "terminal_id" => 1,  # integer()
+  "reactivationReason" => "example_reactivationReason",  # String.t()
+  "terminalId" => 1,  # integer()
 }))
 ```
 
@@ -1846,46 +1845,46 @@ refund_transaction = BluefinTecsMerchantServices.refund_transaction(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `String.t()` | No |  |
-| `acquirer_name` | `String.t()` | No |  |
-| `actual_bonus_point` | `String.t()` | No |  |
+| `acquirerId` | `String.t()` | No |  |
+| `acquirerName` | `String.t()` | No |  |
+| `actualBonusPoints` | `String.t()` | No |  |
 | `amount` | `integer()` | No |  |
-| `authorization_code` | `String.t()` | No |  |
-| `balance_amount` | `String.t()` | No |  |
-| `card_brand` | `String.t()` | No |  |
-| `card_number` | `String.t()` | No |  |
-| `client_id` | `integer()` | Yes |  |
+| `authorizationCode` | `String.t()` | No |  |
+| `balanceAmount` | `String.t()` | No |  |
+| `cardBrand` | `String.t()` | No |  |
+| `cardNumber` | `String.t()` | No |  |
+| `clientId` | `integer()` | Yes |  |
 | `currency` | `String.t()` | Yes |  |
 | `cvc` | `String.t()` | No |  |
-| `ec_data` | `String.t()` | No |  |
-| `ecr_data` | `String.t()` | No |  |
-| `emv_data` | `String.t()` | No |  |
-| `exchange_fee` | `integer()` | No |  |
-| `exchange_rate` | `String.t()` | No |  |
-| `language_code` | `String.t()` | No |  |
-| `merchant_address` | `String.t()` | No |  |
-| `merchant_name` | `String.t()` | No |  |
-| `merchant_number` | `String.t()` | No |  |
-| `message_type` | `String.t()` | No |  |
-| `original_trace_number` | `integer()` | No |  |
-| `original_transaction_id` | `String.t()` | No |  |
+| `ecData` | `String.t()` | No |  |
+| `ecrData` | `String.t()` | No |  |
+| `emvData` | `String.t()` | No |  |
+| `exchangeFee` | `integer()` | No |  |
+| `exchangeRate` | `String.t()` | No |  |
+| `languageCode` | `String.t()` | No |  |
+| `merchantAddress` | `String.t()` | No |  |
+| `merchantName` | `String.t()` | No |  |
+| `merchantNumber` | `String.t()` | No |  |
+| `messageType` | `String.t()` | No |  |
+| `originalTraceNumber` | `integer()` | No |  |
+| `originalTransactionId` | `String.t()` | No |  |
 | `password` | `String.t()` | No |  |
-| `payment_reason` | `String.t()` | No |  |
-| `receipt_footer` | `String.t()` | No |  |
-| `receipt_header` | `String.t()` | No |  |
-| `receipt_layout` | `integer()` | No |  |
-| `receipt_number` | `String.t()` | Yes |  |
-| `response_code` | `integer()` | No |  |
-| `response_message` | `String.t()` | No |  |
-| `serial_number` | `String.t()` | No |  |
+| `paymentReason` | `String.t()` | No |  |
+| `receiptFooter` | `String.t()` | No |  |
+| `receiptHeader` | `String.t()` | No |  |
+| `receiptLayout` | `integer()` | No |  |
+| `receiptNumber` | `String.t()` | Yes |  |
+| `responseCode` | `integer()` | No |  |
+| `responseMessage` | `String.t()` | No |  |
+| `serialNumber` | `String.t()` | No |  |
 | `svc` | `String.t()` | No |  |
-| `terminal_id` | `integer()` | Yes |  |
-| `terminal_location` | `String.t()` | No |  |
-| `trace_number` | `integer()` | No |  |
-| `transaction_date` | `String.t()` | No |  |
-| `transaction_id` | `String.t()` | No |  |
-| `tx_type` | `String.t()` | No |  |
-| `user_data` | `String.t()` | No |  |
+| `terminalId` | `integer()` | Yes |  |
+| `terminalLocation` | `String.t()` | No |  |
+| `traceNumber` | `integer()` | No |  |
+| `transactionDate` | `String.t()` | No |  |
+| `transactionId` | `String.t()` | No |  |
+| `txType` | `String.t()` | No |  |
+| `userData` | `String.t()` | No |  |
 
 ### Operations
 
@@ -1895,10 +1894,10 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```elixir
 record = BluefinTecsMerchantServices.Entity.RefundTransaction.create(refund_transaction, BluefinTecsMerchantServices.Helpers.deep(%{
-  "client_id" => 1,  # integer()
+  "clientId" => 1,  # integer()
   "currency" => "example_currency",  # String.t()
-  "receipt_number" => "example_receipt_number",  # String.t()
-  "terminal_id" => 1,  # integer()
+  "receiptNumber" => "example_receiptNumber",  # String.t()
+  "terminalId" => 1,  # integer()
 }))
 ```
 
@@ -1941,14 +1940,14 @@ register_tecs_company = BluefinTecsMerchantServices.register_tecs_company(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `corporate_uuid` | `String.t()` | Yes |  |
-| `package_order_uuid` | `String.t()` | Yes |  |
-| `partner_id` | `integer()` | No |  |
-| `partner_name` | `String.t()` | No |  |
-| `product_order_uuid` | `String.t()` | Yes |  |
-| `response_code` | `integer()` | No |  |
-| `response_message` | `String.t()` | No |  |
-| `template_name` | `String.t()` | Yes |  |
+| `corporateUuid` | `String.t()` | Yes |  |
+| `packageOrderUuid` | `String.t()` | Yes |  |
+| `partnerId` | `integer()` | No |  |
+| `partnerName` | `String.t()` | No |  |
+| `productOrderUuid` | `String.t()` | Yes |  |
+| `responseCode` | `integer()` | No |  |
+| `responseMessage` | `String.t()` | No |  |
+| `templateName` | `String.t()` | Yes |  |
 
 ### Operations
 
@@ -1958,10 +1957,10 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```elixir
 record = BluefinTecsMerchantServices.Entity.RegisterTecsCompany.create(register_tecs_company, BluefinTecsMerchantServices.Helpers.deep(%{
-  "corporate_uuid" => "example_corporate_uuid",  # String.t()
-  "package_order_uuid" => "example_package_order_uuid",  # String.t()
-  "product_order_uuid" => "example_product_order_uuid",  # String.t()
-  "template_name" => "example_template_name",  # String.t()
+  "corporateUuid" => "example_corporateUuid",  # String.t()
+  "packageOrderUuid" => "example_packageOrderUuid",  # String.t()
+  "productOrderUuid" => "example_productOrderUuid",  # String.t()
+  "templateName" => "example_templateName",  # String.t()
 }))
 ```
 
@@ -2004,24 +2003,24 @@ register_terminal = BluefinTecsMerchantServices.register_terminal(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `additional_data` | `map()` | No |  |
-| `corporate_uuid` | `String.t()` | Yes |  |
-| `package_order_uuid` | `String.t()` | Yes |  |
-| `product_order_uuid` | `String.t()` | Yes |  |
-| `response_code` | `integer()` | No |  |
-| `response_message` | `String.t()` | No |  |
-| `tecs_web_secret_key` | `String.t()` | No |  |
-| `template_name` | `String.t()` | Yes |  |
-| `terminal_country_code` | `String.t()` | Yes |  |
-| `terminal_id` | `integer()` | No |  |
-| `terminal_id_acq` | `String.t()` | No |  |
-| `terminal_language_code` | `String.t()` | Yes |  |
-| `terminal_location` | `String.t()` | Yes |  |
-| `terminal_serial_number` | `String.t()` | No |  |
-| `token_io_alia` | `String.t()` | No |  |
-| `token_io_iban` | `String.t()` | No |  |
-| `token_io_member_id` | `String.t()` | No |  |
-| `web_shop_url` | `String.t()` | No |  |
+| `additionalData` | `map()` | No |  |
+| `corporateUuid` | `String.t()` | Yes |  |
+| `packageOrderUuid` | `String.t()` | Yes |  |
+| `productOrderUuid` | `String.t()` | Yes |  |
+| `responseCode` | `integer()` | No |  |
+| `responseMessage` | `String.t()` | No |  |
+| `tecsWebSecretKey` | `String.t()` | No |  |
+| `templateName` | `String.t()` | Yes |  |
+| `terminalCountryCode` | `String.t()` | Yes |  |
+| `terminalId` | `integer()` | No |  |
+| `terminalIdAcq` | `String.t()` | No |  |
+| `terminalLanguageCode` | `String.t()` | Yes |  |
+| `terminalLocation` | `String.t()` | Yes |  |
+| `terminalSerialNumber` | `String.t()` | No |  |
+| `tokenIOAlias` | `String.t()` | No |  |
+| `tokenIOIban` | `String.t()` | No |  |
+| `tokenIOMemberId` | `String.t()` | No |  |
+| `webShopUrl` | `String.t()` | No |  |
 
 ### Operations
 
@@ -2031,13 +2030,13 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```elixir
 record = BluefinTecsMerchantServices.Entity.RegisterTerminal.create(register_terminal, BluefinTecsMerchantServices.Helpers.deep(%{
-  "corporate_uuid" => "example_corporate_uuid",  # String.t()
-  "package_order_uuid" => "example_package_order_uuid",  # String.t()
-  "product_order_uuid" => "example_product_order_uuid",  # String.t()
-  "template_name" => "example_template_name",  # String.t()
-  "terminal_country_code" => "example_terminal_country_code",  # String.t()
-  "terminal_language_code" => "example_terminal_language_code",  # String.t()
-  "terminal_location" => "example_terminal_location",  # String.t()
+  "corporateUuid" => "example_corporateUuid",  # String.t()
+  "packageOrderUuid" => "example_packageOrderUuid",  # String.t()
+  "productOrderUuid" => "example_productOrderUuid",  # String.t()
+  "templateName" => "example_templateName",  # String.t()
+  "terminalCountryCode" => "example_terminalCountryCode",  # String.t()
+  "terminalLanguageCode" => "example_terminalLanguageCode",  # String.t()
+  "terminalLocation" => "example_terminalLocation",  # String.t()
 }))
 ```
 
@@ -2080,16 +2079,16 @@ report_data = BluefinTecsMerchantServices.report_data(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `card_brand_report_data` | `list()` | No |  |
-| `clearing_date_from` | `String.t()` | Yes |  |
-| `clearing_date_to` | `String.t()` | Yes |  |
-| `corporate_id` | `String.t()` | Yes |  |
+| `cardBrandReportData` | `list()` | No |  |
+| `clearingDateFrom` | `String.t()` | Yes |  |
+| `clearingDateTo` | `String.t()` | Yes |  |
+| `corporateId` | `String.t()` | Yes |  |
 | `currency` | `String.t()` | Yes |  |
-| `response_code` | `integer()` | No |  |
-| `response_message` | `String.t()` | No |  |
-| `sum_over_credit_tx` | `map()` | No |  |
-| `sum_over_debit_tx` | `map()` | No |  |
-| `terminal_id` | `integer()` | No |  |
+| `responseCode` | `integer()` | No |  |
+| `responseMessage` | `String.t()` | No |  |
+| `sumOverCreditTx` | `map()` | No |  |
+| `sumOverDebitTx` | `map()` | No |  |
+| `terminalId` | `integer()` | No |  |
 
 ### Operations
 
@@ -2099,9 +2098,9 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```elixir
 record = BluefinTecsMerchantServices.Entity.ReportData.create(report_data, BluefinTecsMerchantServices.Helpers.deep(%{
-  "clearing_date_from" => "example_clearing_date_from",  # String.t()
-  "clearing_date_to" => "example_clearing_date_to",  # String.t()
-  "corporate_id" => "example_corporate_id",  # String.t()
+  "clearingDateFrom" => "example_clearingDateFrom",  # String.t()
+  "clearingDateTo" => "example_clearingDateTo",  # String.t()
+  "corporateId" => "example_corporateId",  # String.t()
   "currency" => "example_currency",  # String.t()
 }))
 ```
@@ -2145,56 +2144,56 @@ status_transaction = BluefinTecsMerchantServices.status_transaction(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_name` | `String.t()` | No |  |
-| `acquirer_terminal_id` | `String.t()` | No |  |
+| `acquirerName` | `String.t()` | No |  |
+| `acquirerTerminalId` | `String.t()` | No |  |
 | `amount` | `integer()` | No |  |
-| `application_cryptogram` | `String.t()` | No |  |
-| `authorization_code` | `String.t() | nil` | No |  |
-| `authorization_date` | `String.t()` | No |  |
-| `card_brand` | `String.t()` | No |  |
-| `card_entry` | `String.t()` | No |  |
-| `card_expiration` | `String.t()` | No |  |
-| `card_number` | `String.t()` | No |  |
-| `clearing_amount` | `integer()` | No |  |
-| `clearing_batch_id` | `String.t()` | No |  |
-| `clearing_currency` | `String.t()` | No |  |
-| `clearing_date` | `String.t()` | No |  |
-| `clearing_processed_date` | `String.t()` | No |  |
-| `clearing_status` | `String.t()` | No |  |
-| `client_id` | `integer()` | No |  |
+| `applicationCryptogram` | `String.t()` | No |  |
+| `authorizationCode` | `String.t() | nil` | No |  |
+| `authorizationDate` | `String.t()` | No |  |
+| `cardBrand` | `String.t()` | No |  |
+| `cardEntry` | `String.t()` | No |  |
+| `cardExpiration` | `String.t()` | No |  |
+| `cardNumber` | `String.t()` | No |  |
+| `clearingAmount` | `integer()` | No |  |
+| `clearingBatchId` | `String.t()` | No |  |
+| `clearingCurrency` | `String.t()` | No |  |
+| `clearingDate` | `String.t()` | No |  |
+| `clearingProcessedDate` | `String.t()` | No |  |
+| `clearingStatus` | `String.t()` | No |  |
+| `clientId` | `integer()` | No |  |
 | `currency` | `String.t()` | No |  |
 | `cvm` | `String.t()` | No |  |
-| `ecr_data` | `String.t()` | No |  |
-| `emv_application_id` | `String.t()` | No |  |
-| `emv_application_label` | `String.t()` | No |  |
-| `merchant_name` | `String.t()` | No |  |
-| `merchant_number` | `String.t()` | No |  |
-| `original_client_id` | `String.t()` | No |  |
-| `original_terminal_id` | `integer()` | No |  |
-| `original_transaction_id` | `String.t()` | No |  |
-| `payment_reason` | `String.t()` | No |  |
-| `receipt_number` | `String.t()` | No |  |
-| `response_code` | `integer()` | No |  |
-| `response_code_from_a` | `String.t()` | No |  |
-| `response_message` | `String.t()` | No |  |
-| `retrieval_reference_number` | `String.t()` | No |  |
-| `service_code` | `String.t()` | No |  |
-| `settlement_status` | `String.t()` | No |  |
-| `source_id` | `integer()` | No |  |
-| `tecsengine_response_code` | `integer()` | No |  |
-| `tecsengine_response_text` | `String.t()` | No |  |
-| `terminal_end_of_day_date` | `String.t()` | No |  |
-| `terminal_id` | `integer()` | No |  |
-| `terminal_location` | `String.t()` | No |  |
-| `tip_amount` | `integer()` | No |  |
-| `trace_number` | `integer()` | No |  |
-| `transaction_clearing_date` | `String.t()` | No |  |
-| `transaction_date` | `String.t()` | No |  |
-| `transaction_id` | `String.t()` | No |  |
-| `transaction_seq_number` | `integer()` | No |  |
-| `transaction_server_date` | `String.t()` | No |  |
-| `transaction_source` | `String.t()` | No |  |
-| `transaction_type` | `String.t()` | No |  |
+| `ecrData` | `String.t()` | No |  |
+| `emvApplicationId` | `String.t()` | No |  |
+| `emvApplicationLabel` | `String.t()` | No |  |
+| `merchantName` | `String.t()` | No |  |
+| `merchantNumber` | `String.t()` | No |  |
+| `originalClientId` | `String.t()` | No |  |
+| `originalTerminalId` | `integer()` | No |  |
+| `originalTransactionId` | `String.t()` | No |  |
+| `paymentReason` | `String.t()` | No |  |
+| `receiptNumber` | `String.t()` | No |  |
+| `responseCode` | `integer()` | No |  |
+| `responseCodeFromAS` | `String.t()` | No |  |
+| `responseMessage` | `String.t()` | No |  |
+| `retrievalReferenceNumber` | `String.t()` | No |  |
+| `serviceCode` | `String.t()` | No |  |
+| `settlementStatus` | `String.t()` | No |  |
+| `sourceId` | `integer()` | No |  |
+| `tecsengineResponseCode` | `integer()` | No |  |
+| `tecsengineResponseText` | `String.t()` | No |  |
+| `terminalEndOfDayDate` | `String.t()` | No |  |
+| `terminalId` | `integer()` | No |  |
+| `terminalLocation` | `String.t()` | No |  |
+| `tipAmount` | `integer()` | No |  |
+| `traceNumber` | `integer()` | No |  |
+| `transactionClearingDate` | `String.t()` | No |  |
+| `transactionDate` | `String.t()` | No |  |
+| `transactionId` | `String.t()` | No |  |
+| `transactionSeqNumber` | `integer()` | No |  |
+| `transactionServerDate` | `String.t()` | No |  |
+| `transactionSource` | `String.t()` | No |  |
+| `transactionType` | `String.t()` | No |  |
 
 ### Operations
 
@@ -2246,12 +2245,12 @@ store_terminal_parameter = BluefinTecsMerchantServices.store_terminal_parameter(
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acq_tab_nexo` | `map()` | No |  |
-| `config_version` | `String.t()` | No |  |
-| `response_code` | `integer()` | No |  |
-| `response_message` | `String.t()` | No |  |
-| `serial_number` | `String.t()` | Yes |  |
-| `tid_sent` | `String.t()` | No |  |
+| `acqTabNexo` | `map()` | No |  |
+| `configVersion` | `String.t()` | No |  |
+| `responseCode` | `integer()` | No |  |
+| `responseMessage` | `String.t()` | No |  |
+| `serialNumber` | `String.t()` | Yes |  |
+| `tidSent` | `String.t()` | No |  |
 
 ### Operations
 
@@ -2261,7 +2260,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```elixir
 record = BluefinTecsMerchantServices.Entity.StoreTerminalParameter.create(store_terminal_parameter, BluefinTecsMerchantServices.Helpers.deep(%{
-  "serial_number" => "example_serial_number",  # String.t()
+  "serialNumber" => "example_serialNumber",  # String.t()
 }))
 ```
 
@@ -2304,11 +2303,11 @@ terminal_id = BluefinTecsMerchantServices.terminal_id(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `device_serial_number` | `list()` | Yes |  |
-| `duplicate_terminal_id` | `list()` | No |  |
-| `response_code` | `integer()` | No |  |
-| `response_message` | `String.t()` | No |  |
-| `terminal` | `list()` | No |  |
+| `deviceSerialNumber` | `list()` | Yes |  |
+| `duplicateTerminalIds` | `list()` | No |  |
+| `responseCode` | `integer()` | No |  |
+| `responseMessage` | `String.t()` | No |  |
+| `terminals` | `list()` | No |  |
 
 ### Operations
 
@@ -2318,7 +2317,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```elixir
 record = BluefinTecsMerchantServices.Entity.TerminalId.create(terminal_id, BluefinTecsMerchantServices.Helpers.deep(%{
-  "device_serial_number" => [],  # list()
+  "deviceSerialNumber" => [],  # list()
 }))
 ```
 
@@ -2361,34 +2360,34 @@ transaction_history = BluefinTecsMerchantServices.transaction_history(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `3_d_secure` | `String.t()` | No |  |
-| `authorization_code` | `String.t()` | No |  |
-| `card_brand` | `String.t()` | No |  |
-| `clearing_amount_from` | `String.t()` | No |  |
-| `clearing_amount_to` | `String.t()` | No |  |
-| `clearing_currency` | `String.t()` | No |  |
-| `clearing_status` | `String.t()` | No |  |
-| `corporate_uuid` | `String.t()` | No |  |
-| `order_by_transaction_date` | `String.t()` | No |  |
+| `3DSecure` | `String.t()` | No |  |
+| `authorizationCode` | `String.t()` | No |  |
+| `cardBrand` | `String.t()` | No |  |
+| `clearingAmountFrom` | `String.t()` | No |  |
+| `clearingAmountTo` | `String.t()` | No |  |
+| `clearingCurrency` | `String.t()` | No |  |
+| `clearingStatus` | `String.t()` | No |  |
+| `corporateUUID` | `String.t()` | No |  |
+| `orderByTransactionDate` | `String.t()` | No |  |
 | `pagination` | `map()` | No |  |
-| `payment_token_public_id` | `String.t()` | No |  |
-| `receipt_number` | `String.t()` | No |  |
-| `referenced_transaction_id` | `String.t()` | No |  |
-| `response_code` | `integer()` | No |  |
-| `response_message` | `String.t()` | No |  |
-| `retrieval_reference_number` | `String.t()` | No |  |
-| `source_id` | `integer()` | No |  |
-| `tecsengine_response_code_from` | `String.t()` | No |  |
-| `tecsengine_response_code_to` | `String.t()` | No |  |
-| `terminal_id` | `integer()` | No |  |
-| `trace_number` | `String.t()` | No |  |
-| `transaction_amount_from` | `String.t()` | No |  |
-| `transaction_amount_to` | `String.t()` | No |  |
-| `transaction_date_from` | `String.t()` | No |  |
-| `transaction_date_to` | `String.t()` | No |  |
-| `transaction_history` | `list()` | No |  |
-| `transaction_id` | `String.t()` | No |  |
-| `transaction_type` | `String.t()` | No |  |
+| `paymentTokenPublicId` | `String.t()` | No |  |
+| `receiptNumber` | `String.t()` | No |  |
+| `referencedTransactionId` | `String.t()` | No |  |
+| `responseCode` | `integer()` | No |  |
+| `responseMessage` | `String.t()` | No |  |
+| `retrievalReferenceNumber` | `String.t()` | No |  |
+| `sourceId` | `integer()` | No |  |
+| `tecsengineResponseCodeFrom` | `String.t()` | No |  |
+| `tecsengineResponseCodeTo` | `String.t()` | No |  |
+| `terminalId` | `integer()` | No |  |
+| `traceNumber` | `String.t()` | No |  |
+| `transactionAmountFrom` | `String.t()` | No |  |
+| `transactionAmountTo` | `String.t()` | No |  |
+| `transactionDateFrom` | `String.t()` | No |  |
+| `transactionDateTo` | `String.t()` | No |  |
+| `transactionHistories` | `list()` | No |  |
+| `transactionId` | `String.t()` | No |  |
+| `transactionType` | `String.t()` | No |  |
 | `wallet` | `String.t()` | No |  |
 
 ### Operations
@@ -2442,11 +2441,11 @@ transactions_count = BluefinTecsMerchantServices.transactions_count(sdk)
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `period` | `String.t()` | No |  |
-| `response_code` | `integer()` | No |  |
-| `response_message` | `String.t()` | No |  |
-| `transaction_date_from` | `String.t()` | No |  |
-| `transaction_date_to` | `String.t()` | No |  |
-| `transactions_count` | `list()` | No |  |
+| `responseCode` | `integer()` | No |  |
+| `responseMessage` | `String.t()` | No |  |
+| `transactionDateFrom` | `String.t()` | No |  |
+| `transactionDateTo` | `String.t()` | No |  |
+| `transactionsCount` | `list()` | No |  |
 
 ### Operations
 
@@ -2499,11 +2498,11 @@ transactions_count_card_brand = BluefinTecsMerchantServices.transactions_count_c
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `period` | `String.t()` | No |  |
-| `response_code` | `integer()` | No |  |
-| `response_message` | `String.t()` | No |  |
-| `transaction_date_from` | `String.t()` | No |  |
-| `transaction_date_to` | `String.t()` | No |  |
-| `transactions_count` | `list()` | No |  |
+| `responseCode` | `integer()` | No |  |
+| `responseMessage` | `String.t()` | No |  |
+| `transactionDateFrom` | `String.t()` | No |  |
+| `transactionDateTo` | `String.t()` | No |  |
+| `transactionsCount` | `list()` | No |  |
 
 ### Operations
 
@@ -2556,11 +2555,11 @@ transactions_turnover = BluefinTecsMerchantServices.transactions_turnover(sdk)
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `period` | `String.t()` | No |  |
-| `response_code` | `integer()` | No |  |
-| `response_message` | `String.t()` | No |  |
-| `transaction_date_from` | `String.t()` | No |  |
-| `transaction_date_to` | `String.t()` | No |  |
-| `turnover` | `list()` | No |  |
+| `responseCode` | `integer()` | No |  |
+| `responseMessage` | `String.t()` | No |  |
+| `transactionDateFrom` | `String.t()` | No |  |
+| `transactionDateTo` | `String.t()` | No |  |
+| `turnovers` | `list()` | No |  |
 
 ### Operations
 
@@ -2613,15 +2612,15 @@ update_merchant = BluefinTecsMerchantServices.update_merchant(sdk)
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `city` | `String.t()` | No |  |
-| `corporate_uuid` | `String.t()` | Yes |  |
+| `corporateUuid` | `String.t()` | Yes |  |
 | `country` | `String.t()` | No |  |
-| `merchant_category_code` | `String.t()` | No |  |
+| `merchantCategoryCode` | `String.t()` | No |  |
 | `name` | `String.t()` | No |  |
-| `response_code` | `integer()` | No |  |
-| `response_message` | `String.t()` | No |  |
+| `responseCode` | `integer()` | No |  |
+| `responseMessage` | `String.t()` | No |  |
 | `state` | `String.t()` | No |  |
 | `street` | `String.t()` | No |  |
-| `vu_nummer` | `String.t()` | No |  |
+| `vuNummer` | `String.t()` | No |  |
 | `zipcode` | `String.t()` | No |  |
 
 ### Operations
@@ -2632,7 +2631,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```elixir
 record = BluefinTecsMerchantServices.Entity.UpdateMerchant.create(update_merchant, BluefinTecsMerchantServices.Helpers.deep(%{
-  "corporate_uuid" => "example_corporate_uuid",  # String.t()
+  "corporateUuid" => "example_corporateUuid",  # String.t()
 }))
 ```
 
@@ -2675,10 +2674,10 @@ update_template_xml = BluefinTecsMerchantServices.update_template_xml(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `integer()` | No |  |
-| `response_message` | `String.t()` | No |  |
-| `template_name` | `String.t()` | Yes |  |
-| `template_xml` | `String.t()` | Yes |  |
+| `responseCode` | `integer()` | No |  |
+| `responseMessage` | `String.t()` | No |  |
+| `templateName` | `String.t()` | Yes |  |
+| `templateXml` | `String.t()` | Yes |  |
 
 ### Operations
 
@@ -2688,8 +2687,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```elixir
 record = BluefinTecsMerchantServices.Entity.UpdateTemplateXml.create(update_template_xml, BluefinTecsMerchantServices.Helpers.deep(%{
-  "template_name" => "example_template_name",  # String.t()
-  "template_xml" => "example_template_xml",  # String.t()
+  "templateName" => "example_templateName",  # String.t()
+  "templateXml" => "example_templateXml",  # String.t()
 }))
 ```
 
@@ -2732,8 +2731,8 @@ version = BluefinTecsMerchantServices.version(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `app_name` | `String.t()` | No |  |
-| `build_date` | `String.t()` | No |  |
+| `appName` | `String.t()` | No |  |
+| `buildDate` | `String.t()` | No |  |
 | `version` | `String.t()` | No |  |
 
 ### Operations

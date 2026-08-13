@@ -6,17 +6,17 @@ main: kit: entity: enable_acquiring: {
 
   fields: [
     {
-      name: "account_no"
+      name: "accountNo"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "additional_data"
+      name: "additionalData"
       req: false
       type: "`$OBJECT`"
     }
     {
-      name: "corporate_uuid"
+      name: "corporateUuid"
       req: true
       type: "`$STRING`"
     }
@@ -26,52 +26,52 @@ main: kit: entity: enable_acquiring: {
       type: "`$STRING`"
     }
     {
-      name: "merchant_category_code"
+      name: "merchantCategoryCode"
       req: true
       type: "`$INTEGER`"
     }
     {
-      name: "package_order_uuid"
+      name: "packageOrderUuid"
       req: true
       type: "`$STRING`"
     }
     {
-      name: "product_order_uuid"
+      name: "productOrderUuid"
       req: true
       type: "`$STRING`"
     }
     {
-      name: "response_code"
+      name: "responseCode"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "response_message"
+      name: "responseMessage"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "sorting_code"
+      name: "sortingCode"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "template_name"
+      name: "templateName"
       req: true
       type: "`$STRING`"
     }
     {
-      name: "terminal_id"
+      name: "terminalIdAcq"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "terminalIds"
       req: false
       type: "`$ARRAY`"
     }
     {
-      name: "terminal_id_acq"
-      req: false
-      type: "`$STRING`"
-    }
-    {
-      name: "vu_nummer"
+      name: "vuNummer"
       req: false
       type: "`$STRING`"
     }

@@ -6,17 +6,17 @@ main: kit: entity: cancel_transaction: {
 
   fields: [
     {
-      name: "acquirer_id"
+      name: "acquirerId"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "acquirer_name"
+      name: "acquirerName"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "actual_bonus_point"
+      name: "actualBonusPoints"
       req: false
       type: "`$STRING`"
     }
@@ -32,27 +32,27 @@ main: kit: entity: cancel_transaction: {
       type: "`$INTEGER`"
     }
     {
-      name: "authorization_code"
+      name: "authorizationCode"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "balance_amount"
+      name: "balanceAmount"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "card_brand"
+      name: "cardBrand"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "card_number"
+      name: "cardNumber"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "client_id"
+      name: "clientId"
       req: true
       type: "`$INTEGER`"
     }
@@ -67,52 +67,52 @@ main: kit: entity: cancel_transaction: {
       type: "`$STRING`"
     }
     {
-      name: "ec_data"
+      name: "ecData"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "ecr_data"
+      name: "ecrData"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "emv_data"
+      name: "emvData"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "exchange_fee"
+      name: "exchangeFee"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "exchange_rate"
+      name: "exchangeRate"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "language_code"
+      name: "languageCode"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "merchant_address"
+      name: "merchantAddress"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "merchant_name"
+      name: "merchantName"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "merchant_number"
+      name: "merchantNumber"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "message_type"
+      name: "messageType"
       op: {
         create: {
           req: true
@@ -123,12 +123,12 @@ main: kit: entity: cancel_transaction: {
       type: "`$STRING`"
     }
     {
-      name: "original_trace_number"
+      name: "originalTraceNumber"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "original_transaction_id"
+      name: "originalTransactionId"
       op: {
         create: {
           req: true
@@ -144,42 +144,42 @@ main: kit: entity: cancel_transaction: {
       type: "`$STRING`"
     }
     {
-      name: "payment_reason"
+      name: "paymentReason"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "receipt_footer"
+      name: "receiptFooter"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "receipt_header"
+      name: "receiptHeader"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "receipt_layout"
+      name: "receiptLayout"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "receipt_number"
+      name: "receiptNumber"
       req: true
       type: "`$STRING`"
     }
     {
-      name: "response_code"
+      name: "responseCode"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "response_message"
+      name: "responseMessage"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "serial_number"
+      name: "serialNumber"
       req: false
       type: "`$STRING`"
     }
@@ -189,22 +189,22 @@ main: kit: entity: cancel_transaction: {
       type: "`$STRING`"
     }
     {
-      name: "terminal_id"
+      name: "terminalId"
       req: true
       type: "`$INTEGER`"
     }
     {
-      name: "terminal_location"
+      name: "terminalLocation"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "trace_number"
+      name: "traceNumber"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "transaction_date"
+      name: "transactionDate"
       op: {
         create: {
           req: true
@@ -215,7 +215,7 @@ main: kit: entity: cancel_transaction: {
       type: "`$STRING`"
     }
     {
-      name: "transaction_id"
+      name: "transactionId"
       op: {
         create: {
           req: true
@@ -226,12 +226,12 @@ main: kit: entity: cancel_transaction: {
       type: "`$STRING`"
     }
     {
-      name: "tx_type"
+      name: "txType"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "user_data"
+      name: "userData"
       req: false
       type: "`$STRING`"
     }

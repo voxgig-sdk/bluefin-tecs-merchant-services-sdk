@@ -6,27 +6,27 @@ main: kit: entity: terminal_id: {
 
   fields: [
     {
-      name: "device_serial_number"
+      name: "deviceSerialNumber"
       req: true
       type: "`$ARRAY`"
     }
     {
-      name: "duplicate_terminal_id"
+      name: "duplicateTerminalIds"
       req: false
       type: "`$ARRAY`"
     }
     {
-      name: "response_code"
+      name: "responseCode"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "response_message"
+      name: "responseMessage"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "terminal"
+      name: "terminals"
       req: false
       type: "`$ARRAY`"
     }

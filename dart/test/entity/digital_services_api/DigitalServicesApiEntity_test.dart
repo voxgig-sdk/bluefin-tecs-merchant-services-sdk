@@ -47,13 +47,13 @@ void tests() {
       final digital_services_api_ref01_ent = client.DigitalServicesApi();
       dynamic digital_services_api_ref01_data = setup['data']['new']['digital_services_api']['digital_services_api_ref01'];
 
-      digital_services_api_ref01_data = await digital_services_api_ref01_ent.create(digital_services_api_ref01_data);
+      digital_services_api_ref01_data = (await digital_services_api_ref01_ent.create(digital_services_api_ref01_data)).data();
       ok(null != digital_services_api_ref01_data);
 
 
       // LOAD
       final digital_services_api_ref01_match_dt0 = <String, dynamic>{};
-      final digital_services_api_ref01_data_dt0 = await digital_services_api_ref01_ent.load(digital_services_api_ref01_match_dt0);
+      final digital_services_api_ref01_data_dt0 = (await digital_services_api_ref01_ent.load(digital_services_api_ref01_match_dt0)).data();
       ok(null != digital_services_api_ref01_data_dt0);
 
 

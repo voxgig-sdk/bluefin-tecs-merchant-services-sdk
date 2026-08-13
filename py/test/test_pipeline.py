@@ -16,11 +16,11 @@
 import pytest
 
 from bluefintecsmerchantservices_sdk import BluefinTecsMerchantServicesSDK
-from core.error import BluefinTecsMerchantServicesError
-from core.result import BluefinTecsMerchantServicesResult
-from core.response import BluefinTecsMerchantServicesResponse
-from core.spec import BluefinTecsMerchantServicesSpec
-from feature.base_feature import BluefinTecsMerchantServicesBaseFeature
+from bluefintecsmerchantservices_sdk.core.error import BluefinTecsMerchantServicesError
+from bluefintecsmerchantservices_sdk.core.result import BluefinTecsMerchantServicesResult
+from bluefintecsmerchantservices_sdk.core.response import BluefinTecsMerchantServicesResponse
+from bluefintecsmerchantservices_sdk.core.spec import BluefinTecsMerchantServicesSpec
+from bluefintecsmerchantservices_sdk.feature.base_feature import BluefinTecsMerchantServicesBaseFeature
 
 
 def _client():

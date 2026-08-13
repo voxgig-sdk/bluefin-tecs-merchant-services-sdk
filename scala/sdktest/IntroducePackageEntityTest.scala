@@ -35,7 +35,7 @@ object IntroducePackageEntityTest {
       var introducePackageRef01Data = Helpers.toMapAny(Struct.getprop(
           Struct.getpath(entityData, "new.introduce_package"), "introduce_package_ref01"))
       val introducePackageRef01DataResult = introducePackageRef01Ent.create(introducePackageRef01Data, null)
-      introducePackageRef01Data = Helpers.toMapAny(introducePackageRef01DataResult)
+      introducePackageRef01Data = Helpers.toMapAny(introducePackageRef01DataResult match { case e: SdkEntity => e.data(); case o => o })
       rep.check("introduce_package.create.map", introducePackageRef01Data != null, "expected create result to be a map")
     }
   }

@@ -107,22 +107,22 @@ public class MandatorClearingExportDownloadDirectTest
 
         var env = TestRunner.EnvOverride(new Dictionary<string, object?>
         {
-            ["BLUEFINTECSMERCHANTSERVICES_TEST_MANDATOR_CLEARING_EXPORT_DOWNLOAD_ENTID"] = new Dictionary<string, object?>(),
-            ["BLUEFINTECSMERCHANTSERVICES_TEST_LIVE"] = "FALSE",
-            ["BLUEFINTECSMERCHANTSERVICES_APIKEY"] = "NONE",
+            ["BLUEFIN_TECS_MERCHANT_SERVICES_TEST_MANDATOR_CLEARING_EXPORT_DOWNLOAD_ENTID"] = new Dictionary<string, object?>(),
+            ["BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE"] = "FALSE",
+            ["BLUEFIN_TECS_MERCHANT_SERVICES_APIKEY"] = "NONE",
         });
 
-        var live = Equals(env["BLUEFINTECSMERCHANTSERVICES_TEST_LIVE"], "TRUE");
+        var live = Equals(env["BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE"], "TRUE");
 
         if (live)
         {
             var liveClient = new BluefinTecsMerchantServicesSDK(new Dictionary<string, object?>
             {
-                ["apikey"] = env["BLUEFINTECSMERCHANTSERVICES_APIKEY"],
+                ["apikey"] = env["BLUEFIN_TECS_MERCHANT_SERVICES_APIKEY"],
             });
 
             var idmap = new Dictionary<string, object?>();
-            var entidRaw = env["BLUEFINTECSMERCHANTSERVICES_TEST_MANDATOR_CLEARING_EXPORT_DOWNLOAD_ENTID"];
+            var entidRaw = env["BLUEFIN_TECS_MERCHANT_SERVICES_TEST_MANDATOR_CLEARING_EXPORT_DOWNLOAD_ENTID"];
             if (entidRaw is string entidStr && entidStr.StartsWith("{"))
             {
                 try

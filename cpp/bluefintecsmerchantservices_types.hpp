@@ -22,394 +22,404 @@ namespace sdk {
 namespace types {
 
 struct CancelTransaction {
-  std::string acquirer_id;  // optional
-  std::string acquirer_name;  // optional
-  std::string actual_bonus_point;  // optional
+  std::string acquirerId;  // optional
+  std::string acquirerName;  // optional
+  std::string actualBonusPoints;  // optional
   int64_t amount;  // optional
-  std::string authorization_code;  // optional
-  std::string balance_amount;  // optional
-  std::string card_brand;  // optional
-  std::string card_number;  // optional
-  int64_t client_id;
+  std::string authorizationCode;  // optional
+  std::string balanceAmount;  // optional
+  std::string cardBrand;  // optional
+  std::string cardNumber;  // optional
+  int64_t clientId;
   std::string currency;
   std::string cvc;  // optional
-  std::string ec_data;  // optional
-  std::string ecr_data;  // optional
-  std::string emv_data;  // optional
-  int64_t exchange_fee;  // optional
-  std::string exchange_rate;  // optional
-  std::string language_code;  // optional
-  std::string merchant_address;  // optional
-  std::string merchant_name;  // optional
-  std::string merchant_number;  // optional
-  std::string message_type;  // optional
-  int64_t original_trace_number;  // optional
-  std::string original_transaction_id;  // optional
+  std::string ecData;  // optional
+  std::string ecrData;  // optional
+  std::string emvData;  // optional
+  int64_t exchangeFee;  // optional
+  std::string exchangeRate;  // optional
+  std::string languageCode;  // optional
+  std::string merchantAddress;  // optional
+  std::string merchantName;  // optional
+  std::string merchantNumber;  // optional
+  std::string messageType;  // optional
+  int64_t originalTraceNumber;  // optional
+  std::string originalTransactionId;  // optional
   std::string password;  // optional
-  std::string payment_reason;  // optional
-  std::string receipt_footer;  // optional
-  std::string receipt_header;  // optional
-  int64_t receipt_layout;  // optional
-  std::string receipt_number;
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
-  std::string serial_number;  // optional
+  std::string paymentReason;  // optional
+  std::string receiptFooter;  // optional
+  std::string receiptHeader;  // optional
+  int64_t receiptLayout;  // optional
+  std::string receiptNumber;
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  std::string serialNumber;  // optional
   std::string svc;  // optional
-  int64_t terminal_id;
-  std::string terminal_location;  // optional
-  int64_t trace_number;  // optional
-  std::string transaction_date;  // optional
-  std::string transaction_id;  // optional
-  std::string tx_type;  // optional
-  std::string user_data;  // optional
+  int64_t terminalId;
+  std::string terminalLocation;  // optional
+  int64_t traceNumber;  // optional
+  std::string transactionDate;  // optional
+  std::string transactionId;  // optional
+  std::string txType;  // optional
+  std::string userData;  // optional
 };
 
 struct CancelTransactionCreateData {
-  std::string acquirer_id;  // optional
-  std::string acquirer_name;  // optional
-  std::string actual_bonus_point;  // optional
+  std::string acquirerId;  // optional
+  std::string acquirerName;  // optional
+  std::string actualBonusPoints;  // optional
   int64_t amount;  // optional
-  std::string authorization_code;  // optional
-  std::string balance_amount;  // optional
-  std::string card_brand;  // optional
-  std::string card_number;  // optional
-  int64_t client_id;
+  std::string authorizationCode;  // optional
+  std::string balanceAmount;  // optional
+  std::string cardBrand;  // optional
+  std::string cardNumber;  // optional
+  int64_t clientId;
   std::string currency;
   std::string cvc;  // optional
-  std::string ec_data;  // optional
-  std::string ecr_data;  // optional
-  std::string emv_data;  // optional
-  int64_t exchange_fee;  // optional
-  std::string exchange_rate;  // optional
-  std::string language_code;  // optional
-  std::string merchant_address;  // optional
-  std::string merchant_name;  // optional
-  std::string merchant_number;  // optional
-  std::string message_type;  // optional
-  int64_t original_trace_number;  // optional
-  std::string original_transaction_id;  // optional
+  std::string ecData;  // optional
+  std::string ecrData;  // optional
+  std::string emvData;  // optional
+  int64_t exchangeFee;  // optional
+  std::string exchangeRate;  // optional
+  std::string languageCode;  // optional
+  std::string merchantAddress;  // optional
+  std::string merchantName;  // optional
+  std::string merchantNumber;  // optional
+  std::string messageType;  // optional
+  int64_t originalTraceNumber;  // optional
+  std::string originalTransactionId;  // optional
   std::string password;  // optional
-  std::string payment_reason;  // optional
-  std::string receipt_footer;  // optional
-  std::string receipt_header;  // optional
-  int64_t receipt_layout;  // optional
-  std::string receipt_number;
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
-  std::string serial_number;  // optional
+  std::string paymentReason;  // optional
+  std::string receiptFooter;  // optional
+  std::string receiptHeader;  // optional
+  int64_t receiptLayout;  // optional
+  std::string receiptNumber;
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  std::string serialNumber;  // optional
   std::string svc;  // optional
-  int64_t terminal_id;
-  std::string terminal_location;  // optional
-  int64_t trace_number;  // optional
-  std::string transaction_date;  // optional
-  std::string transaction_id;  // optional
-  std::string tx_type;  // optional
-  std::string user_data;  // optional
+  int64_t terminalId;
+  std::string terminalLocation;  // optional
+  int64_t traceNumber;  // optional
+  std::string transactionDate;  // optional
+  std::string transactionId;  // optional
+  std::string txType;  // optional
+  std::string userData;  // optional
 };
 
 struct CheckCardBlackListed {
-  std::string card_no;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
+  std::string cardNo;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
 };
 
 struct CheckCardBlackListedCreateData {
-  std::string card_no;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
+  std::string cardNo;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
 };
 
 struct CreateProduct {
-  int64_t acquirer_id;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
-  std::string template_name;
-  std::string template_type;
-  std::string template_xml;
-  std::string terminal_type;
+  int64_t acquirerId;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  std::string templateName;
+  std::string templateType;
+  std::string templateXml;
+  std::string terminalType;
 };
 
 struct CreateProductCreateData {
-  int64_t acquirer_id;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
-  std::string template_name;
-  std::string template_type;
-  std::string template_xml;
-  std::string terminal_type;
+  int64_t acquirerId;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  std::string templateName;
+  std::string templateType;
+  std::string templateXml;
+  std::string terminalType;
 };
 
 struct DeactivateTerminal {
-  std::string corporate_uuid;  // optional
-  std::string deactivation_reason;
-  std::string package_order_uuid;  // optional
-  std::string product_order_uuid;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
-  int64_t terminal_id;
+  std::string corporateUuid;  // optional
+  std::string deactivationReason;
+  std::string packageOrderUuid;  // optional
+  std::string productOrderUuid;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  int64_t terminalId;
 };
 
 struct DeactivateTerminalCreateData {
-  std::string corporate_uuid;  // optional
-  std::string deactivation_reason;
-  std::string package_order_uuid;  // optional
-  std::string product_order_uuid;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
-  int64_t terminal_id;
+  std::string corporateUuid;  // optional
+  std::string deactivationReason;
+  std::string packageOrderUuid;  // optional
+  std::string productOrderUuid;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  int64_t terminalId;
 };
 
 struct DigitalServicesApi {
-  std::string clearing_date_from;
-  std::string clearing_date_to;
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
-  int64_t tx_count;  // optional
-  std::string tx_id_end;  // optional
-  std::string tx_id_start;  // optional
-  int64_t tx_seq_no_end;  // optional
-  int64_t tx_seq_no_start;  // optional
-  int64_t tx_total;  // optional
+  std::string clearingDateFrom;
+  std::string clearingDateTo;
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  int64_t txCount;  // optional
+  std::string txIdEnd;  // optional
+  std::string txIdStart;  // optional
+  int64_t txSeqNoEnd;  // optional
+  int64_t txSeqNoStart;  // optional
+  int64_t txTotal;  // optional
 };
 
 struct DigitalServicesApiLoadMatch {
-  std::string clearing_date_from;  // optional
-  std::string clearing_date_to;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
-  int64_t tx_count;  // optional
-  std::string tx_id_end;  // optional
-  std::string tx_id_start;  // optional
-  int64_t tx_seq_no_end;  // optional
-  int64_t tx_seq_no_start;  // optional
-  int64_t tx_total;  // optional
+  std::string clearingDateFrom;  // optional
+  std::string clearingDateTo;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  int64_t txCount;  // optional
+  std::string txIdEnd;  // optional
+  std::string txIdStart;  // optional
+  int64_t txSeqNoEnd;  // optional
+  int64_t txSeqNoStart;  // optional
+  int64_t txTotal;  // optional
 };
 
 struct DigitalServicesApiCreateData {
   std::string file_id;  // optional
+  std::string clearingDateFrom;
+  std::string clearingDateTo;
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  int64_t txCount;  // optional
+  std::string txIdEnd;  // optional
+  std::string txIdStart;  // optional
+  int64_t txSeqNoEnd;  // optional
+  int64_t txSeqNoStart;  // optional
+  int64_t txTotal;  // optional
 };
 
 struct EcDataEcom {
-  std::string ecom_data;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
-  int64_t terminal_id;
-  std::string transaction_id;
-  std::string transaction_type;
+  std::string ecomData;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  int64_t terminalId;
+  std::string transactionId;
+  std::string transactionType;
 };
 
 struct EcDataEcomCreateData {
-  std::string ecom_data;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
-  int64_t terminal_id;
-  std::string transaction_id;
-  std::string transaction_type;
+  std::string ecomData;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  int64_t terminalId;
+  std::string transactionId;
+  std::string transactionType;
 };
 
 struct EcomParameter {
-  std::string ecom_pass;  // optional
-  std::string ecom_skey;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
-  int64_t terminal_id;
+  std::string ecomPass;  // optional
+  std::string ecomSkey;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  int64_t terminalId;
 };
 
 struct EcomParameterCreateData {
-  std::string ecom_pass;  // optional
-  std::string ecom_skey;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
-  int64_t terminal_id;
+  std::string ecomPass;  // optional
+  std::string ecomSkey;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  int64_t terminalId;
 };
 
 struct EcrData {
-  std::string ecr_data;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
-  int64_t terminal_id;
-  std::string transaction_id;
-  std::string transaction_type;
+  std::string ecrData;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  int64_t terminalId;
+  std::string transactionId;
+  std::string transactionType;
 };
 
 struct EcrDataCreateData {
-  std::string ecr_data;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
-  int64_t terminal_id;
-  std::string transaction_id;
-  std::string transaction_type;
+  std::string ecrData;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  int64_t terminalId;
+  std::string transactionId;
+  std::string transactionType;
 };
 
 struct EmvData {
-  std::string emv_data;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
-  int64_t terminal_id;
-  std::string transaction_id;
-  std::string transaction_type;
+  std::string emvData;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  int64_t terminalId;
+  std::string transactionId;
+  std::string transactionType;
 };
 
 struct EmvDataCreateData {
-  std::string emv_data;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
-  int64_t terminal_id;
-  std::string transaction_id;
-  std::string transaction_type;
+  std::string emvData;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  int64_t terminalId;
+  std::string transactionId;
+  std::string transactionType;
 };
 
 struct EnableAcquiring {
-  int64_t account_no;  // optional
-  std::map<std::string, Value> additional_data;  // optional
-  std::string corporate_uuid;
+  int64_t accountNo;  // optional
+  std::map<std::string, Value> additionalData;  // optional
+  std::string corporateUuid;
   std::string currency;
-  int64_t merchant_category_code;
-  std::string package_order_uuid;
-  std::string product_order_uuid;
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
-  int64_t sorting_code;  // optional
-  std::string template_name;
-  std::vector<Value> terminal_id;  // optional
-  std::string terminal_id_acq;  // optional
-  std::string vu_nummer;  // optional
+  int64_t merchantCategoryCode;
+  std::string packageOrderUuid;
+  std::string productOrderUuid;
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  int64_t sortingCode;  // optional
+  std::string templateName;
+  std::string terminalIdAcq;  // optional
+  std::vector<Value> terminalIds;  // optional
+  std::string vuNummer;  // optional
 };
 
 struct EnableAcquiringCreateData {
-  int64_t account_no;  // optional
-  std::map<std::string, Value> additional_data;  // optional
-  std::string corporate_uuid;
+  int64_t accountNo;  // optional
+  std::map<std::string, Value> additionalData;  // optional
+  std::string corporateUuid;
   std::string currency;
-  int64_t merchant_category_code;
-  std::string package_order_uuid;
-  std::string product_order_uuid;
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
-  int64_t sorting_code;  // optional
-  std::string template_name;
-  std::vector<Value> terminal_id;  // optional
-  std::string terminal_id_acq;  // optional
-  std::string vu_nummer;  // optional
+  int64_t merchantCategoryCode;
+  std::string packageOrderUuid;
+  std::string productOrderUuid;
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  int64_t sortingCode;  // optional
+  std::string templateName;
+  std::string terminalIdAcq;  // optional
+  std::vector<Value> terminalIds;  // optional
+  std::string vuNummer;  // optional
 };
 
 struct GetMerchantContractNumber {
-  std::string merchant_contract_number;
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
+  std::string merchantContractNumber;
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
 };
 
 struct GetMerchantContractNumberCreateData {
-  std::string merchant_contract_number;
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
+  std::string merchantContractNumber;
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
 };
 
 struct GetTemplateXml {
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
-  std::string template_name;
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  std::string templateName;
 };
 
 struct GetTemplateXmlCreateData {
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
-  std::string template_name;
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  std::string templateName;
 };
 
 struct IntroduceMandator {
-  std::string mandator_name;
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
+  std::string mandatorName;
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
 };
 
 struct IntroduceMandatorCreateData {
-  std::string mandator_name;
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
+  std::string mandatorName;
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
 };
 
 struct IntroducePackage {
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
-  std::string terminal_template_description;
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  std::string terminalTemplateDescription;
 };
 
 struct IntroducePackageCreateData {
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
-  std::string terminal_template_description;
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  std::string terminalTemplateDescription;
 };
 
 struct KeepAlive {
   std::string hwserialno;  // optional
-  std::string ka_date_time_from;  // optional
-  std::string ka_date_time_to;  // optional
-  std::vector<Value> keep_alive_data;  // optional
+  std::string kaDateTimeFrom;  // optional
+  std::string kaDateTimeTo;  // optional
+  std::vector<Value> keepAliveData;  // optional
   std::map<std::string, Value> pagination;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
-  std::string terminal_date_time_from;  // optional
-  std::string terminal_date_time_to;  // optional
-  int64_t terminal_id;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  std::string terminalDateTimeFrom;  // optional
+  std::string terminalDateTimeTo;  // optional
+  int64_t terminalId;  // optional
 };
 
 struct KeepAliveCreateData {
   std::string hwserialno;  // optional
-  std::string ka_date_time_from;  // optional
-  std::string ka_date_time_to;  // optional
-  std::vector<Value> keep_alive_data;  // optional
+  std::string kaDateTimeFrom;  // optional
+  std::string kaDateTimeTo;  // optional
+  std::vector<Value> keepAliveData;  // optional
   std::map<std::string, Value> pagination;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
-  std::string terminal_date_time_from;  // optional
-  std::string terminal_date_time_to;  // optional
-  int64_t terminal_id;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  std::string terminalDateTimeFrom;  // optional
+  std::string terminalDateTimeTo;  // optional
+  int64_t terminalId;  // optional
 };
 
 struct ListTerminal {
-  std::vector<Value> corporate_uuid;  // optional
+  std::vector<Value> corporateUuid;  // optional
   std::map<std::string, Value> filter;  // optional
   std::map<std::string, Value> pagination;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
-  std::vector<Value> terminal;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  std::vector<Value> terminals;  // optional
 };
 
 struct ListTerminalCreateData {
-  std::vector<Value> corporate_uuid;  // optional
+  std::vector<Value> corporateUuid;  // optional
   std::map<std::string, Value> filter;  // optional
   std::map<std::string, Value> pagination;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
-  std::vector<Value> terminal;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  std::vector<Value> terminals;  // optional
 };
 
 struct MandatorClearingExport {
-  std::string clearing_date_from;
-  std::string clearing_date_to;
+  std::string clearingDateFrom;
+  std::string clearingDateTo;
   std::map<std::string, Value> pagination;  // optional
-  std::vector<Value> record;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
+  std::vector<Value> records;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
 };
 
 struct MandatorClearingExportCreateData {
-  std::string clearing_date_from;
-  std::string clearing_date_to;
+  std::string clearingDateFrom;
+  std::string clearingDateTo;
   std::map<std::string, Value> pagination;  // optional
-  std::vector<Value> record;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
+  std::vector<Value> records;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
 };
 
 struct MandatorClearingExportDownload {
-  std::string clearing_date_from;
-  std::string clearing_date_to;
-  std::string file_id;  // optional
-  std::string filename_template;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
+  std::string clearingDateFrom;
+  std::string clearingDateTo;
+  std::string fileId;  // optional
+  std::string filenameTemplate;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
   std::string status;  // optional
 };
 
@@ -418,772 +428,764 @@ struct MandatorClearingExportDownloadLoadMatch {
 };
 
 struct MandatorClearingExportDownloadCreateData {
-  std::string clearing_date_from;
-  std::string clearing_date_to;
-  std::string file_id;  // optional
-  std::string filename_template;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
+  std::string clearingDateFrom;
+  std::string clearingDateTo;
+  std::string fileId;  // optional
+  std::string filenameTemplate;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
   std::string status;  // optional
 };
 
 struct MandatorClearingExportSummary {
-  std::string clearing_date_from;
-  std::string clearing_date_to;
-  std::vector<Value> record;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
+  std::string clearingDateFrom;
+  std::string clearingDateTo;
+  std::vector<Value> records;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
 };
 
 struct MandatorClearingExportSummaryCreateData {
-  std::string clearing_date_from;
-  std::string clearing_date_to;
-  std::vector<Value> record;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
+  std::string clearingDateFrom;
+  std::string clearingDateTo;
+  std::vector<Value> records;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
 };
 
 struct MerchantPortalServicesApi {
-  std::string authorization_code;  // optional
-  std::string card_brand;  // optional
-  std::string clearing_amount_from;  // optional
-  std::string clearing_amount_to;  // optional
-  std::string clearing_currency;  // optional
-  std::string clearing_status;  // optional
-  std::string corporate_uuid;  // optional
-  std::string order_by_transaction_date;  // optional
+  std::string authorizationCode;  // optional
+  std::string cardBrand;  // optional
+  std::string clearingAmountFrom;  // optional
+  std::string clearingAmountTo;  // optional
+  std::string clearingCurrency;  // optional
+  std::string clearingStatus;  // optional
+  std::string corporateUUID;  // optional
+  std::string orderByTransactionDate;  // optional
   std::map<std::string, Value> pagination;  // optional
-  std::string receipt_number;  // optional
-  std::string referenced_transaction_id;  // optional
-  std::string retrieval_reference_number;  // optional
-  int64_t source_id;  // optional
-  std::string tecsengine_response_code_from;  // optional
-  std::string tecsengine_response_code_to;  // optional
-  int64_t terminal_id;  // optional
-  std::string trace_number;  // optional
-  std::string transaction_amount_from;  // optional
-  std::string transaction_amount_to;  // optional
-  std::string transaction_date_from;  // optional
-  std::string transaction_date_to;  // optional
-  std::string transaction_id;  // optional
-  std::string transaction_type;  // optional
+  std::string receiptNumber;  // optional
+  std::string referencedTransactionId;  // optional
+  std::string retrievalReferenceNumber;  // optional
+  int64_t sourceId;  // optional
+  std::string tecsengineResponseCodeFrom;  // optional
+  std::string tecsengineResponseCodeTo;  // optional
+  int64_t terminalId;  // optional
+  std::string traceNumber;  // optional
+  std::string transactionAmountFrom;  // optional
+  std::string transactionAmountTo;  // optional
+  std::string transactionDateFrom;  // optional
+  std::string transactionDateTo;  // optional
+  std::string transactionId;  // optional
+  std::string transactionType;  // optional
   std::string wallet;  // optional
 };
 
 struct MerchantPortalServicesApiCreateData {
-  std::string authorization_code;  // optional
-  std::string card_brand;  // optional
-  std::string clearing_amount_from;  // optional
-  std::string clearing_amount_to;  // optional
-  std::string clearing_currency;  // optional
-  std::string clearing_status;  // optional
-  std::string corporate_uuid;  // optional
-  std::string order_by_transaction_date;  // optional
+  std::string authorizationCode;  // optional
+  std::string cardBrand;  // optional
+  std::string clearingAmountFrom;  // optional
+  std::string clearingAmountTo;  // optional
+  std::string clearingCurrency;  // optional
+  std::string clearingStatus;  // optional
+  std::string corporateUUID;  // optional
+  std::string orderByTransactionDate;  // optional
   std::map<std::string, Value> pagination;  // optional
-  std::string receipt_number;  // optional
-  std::string referenced_transaction_id;  // optional
-  std::string retrieval_reference_number;  // optional
-  int64_t source_id;  // optional
-  std::string tecsengine_response_code_from;  // optional
-  std::string tecsengine_response_code_to;  // optional
-  int64_t terminal_id;  // optional
-  std::string trace_number;  // optional
-  std::string transaction_amount_from;  // optional
-  std::string transaction_amount_to;  // optional
-  std::string transaction_date_from;  // optional
-  std::string transaction_date_to;  // optional
-  std::string transaction_id;  // optional
-  std::string transaction_type;  // optional
+  std::string receiptNumber;  // optional
+  std::string referencedTransactionId;  // optional
+  std::string retrievalReferenceNumber;  // optional
+  int64_t sourceId;  // optional
+  std::string tecsengineResponseCodeFrom;  // optional
+  std::string tecsengineResponseCodeTo;  // optional
+  int64_t terminalId;  // optional
+  std::string traceNumber;  // optional
+  std::string transactionAmountFrom;  // optional
+  std::string transactionAmountTo;  // optional
+  std::string transactionDateFrom;  // optional
+  std::string transactionDateTo;  // optional
+  std::string transactionId;  // optional
+  std::string transactionType;  // optional
   std::string wallet;  // optional
 };
 
 struct MoveTid {
-  std::vector<Value> productorderuuid;
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
-  std::string target_packageorderuuid;  // optional
-  std::string target_productorderuuid;  // optional
+  std::vector<Value> productorderuuids;
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  std::string targetPackageorderuuid;  // optional
+  std::string targetProductorderuuid;  // optional
 };
 
 struct MoveTidCreateData {
-  std::vector<Value> productorderuuid;
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
-  std::string target_packageorderuuid;  // optional
-  std::string target_productorderuuid;  // optional
+  std::vector<Value> productorderuuids;
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  std::string targetPackageorderuuid;  // optional
+  std::string targetProductorderuuid;  // optional
 };
 
 struct PaymentManual {
-  std::string acquirer_name;  // optional
+  std::string acquirerName;  // optional
   int64_t amount;
-  std::string authorization_number;  // optional
-  std::string card_number;
-  std::string card_type;  // optional
+  std::string authorizationNumber;  // optional
+  std::string cardNumber;
+  std::string cardType;  // optional
   std::string currency;
   std::string cvc;  // optional
-  std::string date_time_tx;  // optional
-  std::string exp_date;
-  std::string merchant_id;  // optional
-  std::string original_transaction_id;  // optional
+  std::string dateTimeTx;  // optional
+  std::string expDate;
+  std::string merchantId;  // optional
+  std::string originalTransactionId;  // optional
   std::string password;  // optional
-  std::string response_code;  // optional
-  std::string response_message;  // optional
-  std::string terminal_id;  // optional
-  std::string transaction_id;  // optional
+  std::string responseCode;  // optional
+  std::string responseMessage;  // optional
+  std::string terminalId;  // optional
+  std::string transactionId;  // optional
   std::string txtype;
 };
 
 struct PaymentManualCreateData {
-  std::string acquirer_name;  // optional
+  std::string acquirerName;  // optional
   int64_t amount;
-  std::string authorization_number;  // optional
-  std::string card_number;
-  std::string card_type;  // optional
+  std::string authorizationNumber;  // optional
+  std::string cardNumber;
+  std::string cardType;  // optional
   std::string currency;
   std::string cvc;  // optional
-  std::string date_time_tx;  // optional
-  std::string exp_date;
-  std::string merchant_id;  // optional
-  std::string original_transaction_id;  // optional
+  std::string dateTimeTx;  // optional
+  std::string expDate;
+  std::string merchantId;  // optional
+  std::string originalTransactionId;  // optional
   std::string password;  // optional
-  std::string response_code;  // optional
-  std::string response_message;  // optional
-  std::string terminal_id;  // optional
-  std::string transaction_id;  // optional
+  std::string responseCode;  // optional
+  std::string responseMessage;  // optional
+  std::string terminalId;  // optional
+  std::string transactionId;  // optional
   std::string txtype;
 };
 
 struct PaymentSred {
-  std::string acquirer_name;  // optional
   int64_t amount;
-  std::string authorization_number;  // optional
-  std::string card_type;  // optional
   std::string currency;
-  std::string date_time_tx;  // optional
-  std::string device_payload;
-  std::string merchant_id;  // optional
-  std::string original_transaction_id;  // optional
+  std::string device;  // optional
+  std::string devicePayload;
+  std::string expDate;  // optional
+  std::string mode;  // optional
+  std::string panMasked;  // optional
   std::string password;  // optional
-  std::string response_code;  // optional
-  std::string response_message;  // optional
-  std::map<std::string, Value> sred;  // optional
-  std::string terminal_id;  // optional
-  std::string transaction_id;  // optional
+  std::string serial;  // optional
+  std::string serviceCode;  // optional
+  std::string terminalId;
   std::string txtype;
 };
 
 struct PaymentSredCreateData {
-  std::string acquirer_name;  // optional
   int64_t amount;
-  std::string authorization_number;  // optional
-  std::string card_type;  // optional
   std::string currency;
-  std::string date_time_tx;  // optional
-  std::string device_payload;
-  std::string merchant_id;  // optional
-  std::string original_transaction_id;  // optional
+  std::string device;  // optional
+  std::string devicePayload;
+  std::string expDate;  // optional
+  std::string mode;  // optional
+  std::string panMasked;  // optional
   std::string password;  // optional
-  std::string response_code;  // optional
-  std::string response_message;  // optional
-  std::map<std::string, Value> sred;  // optional
-  std::string terminal_id;  // optional
-  std::string transaction_id;  // optional
+  std::string serial;  // optional
+  std::string serviceCode;  // optional
+  std::string terminalId;
   std::string txtype;
 };
 
 struct PreAuthTransactionCompletion {
-  std::string acquirer_id;  // optional
-  std::string acquirer_name;  // optional
-  std::string actual_bonus_point;  // optional
+  std::string acquirerId;  // optional
+  std::string acquirerName;  // optional
+  std::string actualBonusPoints;  // optional
   int64_t amount;  // optional
-  std::string authorization_code;  // optional
-  std::string balance_amount;  // optional
-  std::string card_brand;  // optional
-  std::string card_number;  // optional
-  std::string card_number_reference;
-  int64_t client_id;
+  std::string authorizationCode;  // optional
+  std::string balanceAmount;  // optional
+  std::string cardBrand;  // optional
+  std::string cardNumber;  // optional
+  std::string cardNumberReference;
+  int64_t clientId;
   std::string currency;
   std::string cvc;  // optional
-  std::string ec_data;  // optional
-  std::string ecr_data;  // optional
-  std::string emv_data;  // optional
-  int64_t exchange_fee;  // optional
-  std::string exchange_rate;  // optional
-  std::string language_code;  // optional
-  std::string merchant_address;  // optional
-  std::string merchant_name;  // optional
-  std::string merchant_number;  // optional
-  std::string message_type;  // optional
-  int64_t original_trace_number;  // optional
-  std::string original_transaction_id;  // optional
+  std::string ecData;  // optional
+  std::string ecrData;  // optional
+  std::string emvData;  // optional
+  int64_t exchangeFee;  // optional
+  std::string exchangeRate;  // optional
+  std::string languageCode;  // optional
+  std::string merchantAddress;  // optional
+  std::string merchantName;  // optional
+  std::string merchantNumber;  // optional
+  std::string messageType;  // optional
+  int64_t originalTraceNumber;  // optional
+  std::string originalTransactionId;  // optional
   std::string password;  // optional
-  std::string payment_reason;  // optional
-  std::string receipt_footer;  // optional
-  std::string receipt_header;  // optional
-  int64_t receipt_layout;  // optional
-  std::string receipt_number;
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
-  std::string serial_number;  // optional
+  std::string paymentReason;  // optional
+  std::string receiptFooter;  // optional
+  std::string receiptHeader;  // optional
+  int64_t receiptLayout;  // optional
+  std::string receiptNumber;
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  std::string serialNumber;  // optional
   std::string svc;  // optional
-  int64_t terminal_id;
-  std::string terminal_location;  // optional
-  int64_t trace_number;  // optional
-  std::string transaction_date;  // optional
-  std::string transaction_id;  // optional
-  std::string transaction_type;
-  std::string tx_type;  // optional
-  std::string user_data;  // optional
+  int64_t terminalId;
+  std::string terminalLocation;  // optional
+  int64_t traceNumber;  // optional
+  std::string transactionDate;  // optional
+  std::string transactionId;  // optional
+  std::string transactionType;
+  std::string txType;  // optional
+  std::string userData;  // optional
 };
 
 struct PreAuthTransactionCompletionCreateData {
-  std::string acquirer_id;  // optional
-  std::string acquirer_name;  // optional
-  std::string actual_bonus_point;  // optional
+  std::string acquirerId;  // optional
+  std::string acquirerName;  // optional
+  std::string actualBonusPoints;  // optional
   int64_t amount;  // optional
-  std::string authorization_code;  // optional
-  std::string balance_amount;  // optional
-  std::string card_brand;  // optional
-  std::string card_number;  // optional
-  std::string card_number_reference;
-  int64_t client_id;
+  std::string authorizationCode;  // optional
+  std::string balanceAmount;  // optional
+  std::string cardBrand;  // optional
+  std::string cardNumber;  // optional
+  std::string cardNumberReference;
+  int64_t clientId;
   std::string currency;
   std::string cvc;  // optional
-  std::string ec_data;  // optional
-  std::string ecr_data;  // optional
-  std::string emv_data;  // optional
-  int64_t exchange_fee;  // optional
-  std::string exchange_rate;  // optional
-  std::string language_code;  // optional
-  std::string merchant_address;  // optional
-  std::string merchant_name;  // optional
-  std::string merchant_number;  // optional
-  std::string message_type;  // optional
-  int64_t original_trace_number;  // optional
-  std::string original_transaction_id;  // optional
+  std::string ecData;  // optional
+  std::string ecrData;  // optional
+  std::string emvData;  // optional
+  int64_t exchangeFee;  // optional
+  std::string exchangeRate;  // optional
+  std::string languageCode;  // optional
+  std::string merchantAddress;  // optional
+  std::string merchantName;  // optional
+  std::string merchantNumber;  // optional
+  std::string messageType;  // optional
+  int64_t originalTraceNumber;  // optional
+  std::string originalTransactionId;  // optional
   std::string password;  // optional
-  std::string payment_reason;  // optional
-  std::string receipt_footer;  // optional
-  std::string receipt_header;  // optional
-  int64_t receipt_layout;  // optional
-  std::string receipt_number;
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
-  std::string serial_number;  // optional
+  std::string paymentReason;  // optional
+  std::string receiptFooter;  // optional
+  std::string receiptHeader;  // optional
+  int64_t receiptLayout;  // optional
+  std::string receiptNumber;
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  std::string serialNumber;  // optional
   std::string svc;  // optional
-  int64_t terminal_id;
-  std::string terminal_location;  // optional
-  int64_t trace_number;  // optional
-  std::string transaction_date;  // optional
-  std::string transaction_id;  // optional
-  std::string transaction_type;
-  std::string tx_type;  // optional
-  std::string user_data;  // optional
+  int64_t terminalId;
+  std::string terminalLocation;  // optional
+  int64_t traceNumber;  // optional
+  std::string transactionDate;  // optional
+  std::string transactionId;  // optional
+  std::string transactionType;
+  std::string txType;  // optional
+  std::string userData;  // optional
 };
 
 struct ReactivateTerminal {
-  std::string corporate_uuid;  // optional
-  std::string package_order_uuid;  // optional
-  std::string product_order_uuid;  // optional
-  std::string reactivation_reason;
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
-  int64_t terminal_id;
+  std::string corporateUuid;  // optional
+  std::string packageOrderUuid;  // optional
+  std::string productOrderUuid;  // optional
+  std::string reactivationReason;
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  int64_t terminalId;
 };
 
 struct ReactivateTerminalCreateData {
-  std::string corporate_uuid;  // optional
-  std::string package_order_uuid;  // optional
-  std::string product_order_uuid;  // optional
-  std::string reactivation_reason;
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
-  int64_t terminal_id;
+  std::string corporateUuid;  // optional
+  std::string packageOrderUuid;  // optional
+  std::string productOrderUuid;  // optional
+  std::string reactivationReason;
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  int64_t terminalId;
 };
 
 struct RefundTransaction {
-  std::string acquirer_id;  // optional
-  std::string acquirer_name;  // optional
-  std::string actual_bonus_point;  // optional
+  std::string acquirerId;  // optional
+  std::string acquirerName;  // optional
+  std::string actualBonusPoints;  // optional
   int64_t amount;  // optional
-  std::string authorization_code;  // optional
-  std::string balance_amount;  // optional
-  std::string card_brand;  // optional
-  std::string card_number;  // optional
-  int64_t client_id;
+  std::string authorizationCode;  // optional
+  std::string balanceAmount;  // optional
+  std::string cardBrand;  // optional
+  std::string cardNumber;  // optional
+  int64_t clientId;
   std::string currency;
   std::string cvc;  // optional
-  std::string ec_data;  // optional
-  std::string ecr_data;  // optional
-  std::string emv_data;  // optional
-  int64_t exchange_fee;  // optional
-  std::string exchange_rate;  // optional
-  std::string language_code;  // optional
-  std::string merchant_address;  // optional
-  std::string merchant_name;  // optional
-  std::string merchant_number;  // optional
-  std::string message_type;  // optional
-  int64_t original_trace_number;  // optional
-  std::string original_transaction_id;  // optional
+  std::string ecData;  // optional
+  std::string ecrData;  // optional
+  std::string emvData;  // optional
+  int64_t exchangeFee;  // optional
+  std::string exchangeRate;  // optional
+  std::string languageCode;  // optional
+  std::string merchantAddress;  // optional
+  std::string merchantName;  // optional
+  std::string merchantNumber;  // optional
+  std::string messageType;  // optional
+  int64_t originalTraceNumber;  // optional
+  std::string originalTransactionId;  // optional
   std::string password;  // optional
-  std::string payment_reason;  // optional
-  std::string receipt_footer;  // optional
-  std::string receipt_header;  // optional
-  int64_t receipt_layout;  // optional
-  std::string receipt_number;
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
-  std::string serial_number;  // optional
+  std::string paymentReason;  // optional
+  std::string receiptFooter;  // optional
+  std::string receiptHeader;  // optional
+  int64_t receiptLayout;  // optional
+  std::string receiptNumber;
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  std::string serialNumber;  // optional
   std::string svc;  // optional
-  int64_t terminal_id;
-  std::string terminal_location;  // optional
-  int64_t trace_number;  // optional
-  std::string transaction_date;  // optional
-  std::string transaction_id;  // optional
-  std::string tx_type;  // optional
-  std::string user_data;  // optional
+  int64_t terminalId;
+  std::string terminalLocation;  // optional
+  int64_t traceNumber;  // optional
+  std::string transactionDate;  // optional
+  std::string transactionId;  // optional
+  std::string txType;  // optional
+  std::string userData;  // optional
 };
 
 struct RefundTransactionCreateData {
-  std::string acquirer_id;  // optional
-  std::string acquirer_name;  // optional
-  std::string actual_bonus_point;  // optional
+  std::string acquirerId;  // optional
+  std::string acquirerName;  // optional
+  std::string actualBonusPoints;  // optional
   int64_t amount;  // optional
-  std::string authorization_code;  // optional
-  std::string balance_amount;  // optional
-  std::string card_brand;  // optional
-  std::string card_number;  // optional
-  int64_t client_id;
+  std::string authorizationCode;  // optional
+  std::string balanceAmount;  // optional
+  std::string cardBrand;  // optional
+  std::string cardNumber;  // optional
+  int64_t clientId;
   std::string currency;
   std::string cvc;  // optional
-  std::string ec_data;  // optional
-  std::string ecr_data;  // optional
-  std::string emv_data;  // optional
-  int64_t exchange_fee;  // optional
-  std::string exchange_rate;  // optional
-  std::string language_code;  // optional
-  std::string merchant_address;  // optional
-  std::string merchant_name;  // optional
-  std::string merchant_number;  // optional
-  std::string message_type;  // optional
-  int64_t original_trace_number;  // optional
-  std::string original_transaction_id;  // optional
+  std::string ecData;  // optional
+  std::string ecrData;  // optional
+  std::string emvData;  // optional
+  int64_t exchangeFee;  // optional
+  std::string exchangeRate;  // optional
+  std::string languageCode;  // optional
+  std::string merchantAddress;  // optional
+  std::string merchantName;  // optional
+  std::string merchantNumber;  // optional
+  std::string messageType;  // optional
+  int64_t originalTraceNumber;  // optional
+  std::string originalTransactionId;  // optional
   std::string password;  // optional
-  std::string payment_reason;  // optional
-  std::string receipt_footer;  // optional
-  std::string receipt_header;  // optional
-  int64_t receipt_layout;  // optional
-  std::string receipt_number;
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
-  std::string serial_number;  // optional
+  std::string paymentReason;  // optional
+  std::string receiptFooter;  // optional
+  std::string receiptHeader;  // optional
+  int64_t receiptLayout;  // optional
+  std::string receiptNumber;
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  std::string serialNumber;  // optional
   std::string svc;  // optional
-  int64_t terminal_id;
-  std::string terminal_location;  // optional
-  int64_t trace_number;  // optional
-  std::string transaction_date;  // optional
-  std::string transaction_id;  // optional
-  std::string tx_type;  // optional
-  std::string user_data;  // optional
+  int64_t terminalId;
+  std::string terminalLocation;  // optional
+  int64_t traceNumber;  // optional
+  std::string transactionDate;  // optional
+  std::string transactionId;  // optional
+  std::string txType;  // optional
+  std::string userData;  // optional
 };
 
 struct RegisterTecsCompany {
-  std::string corporate_uuid;
-  std::string package_order_uuid;
-  int64_t partner_id;  // optional
-  std::string partner_name;  // optional
-  std::string product_order_uuid;
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
-  std::string template_name;
+  std::string corporateUuid;
+  std::string packageOrderUuid;
+  int64_t partnerId;  // optional
+  std::string partnerName;  // optional
+  std::string productOrderUuid;
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  std::string templateName;
 };
 
 struct RegisterTecsCompanyCreateData {
-  std::string corporate_uuid;
-  std::string package_order_uuid;
-  int64_t partner_id;  // optional
-  std::string partner_name;  // optional
-  std::string product_order_uuid;
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
-  std::string template_name;
+  std::string corporateUuid;
+  std::string packageOrderUuid;
+  int64_t partnerId;  // optional
+  std::string partnerName;  // optional
+  std::string productOrderUuid;
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  std::string templateName;
 };
 
 struct RegisterTerminal {
-  std::map<std::string, Value> additional_data;  // optional
-  std::string corporate_uuid;
-  std::string package_order_uuid;
-  std::string product_order_uuid;
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
-  std::string tecs_web_secret_key;  // optional
-  std::string template_name;
-  std::string terminal_country_code;
-  int64_t terminal_id;  // optional
-  std::string terminal_id_acq;  // optional
-  std::string terminal_language_code;
-  std::string terminal_location;
-  std::string terminal_serial_number;  // optional
-  std::string token_io_alia;  // optional
-  std::string token_io_iban;  // optional
-  std::string token_io_member_id;  // optional
-  std::string web_shop_url;  // optional
+  std::map<std::string, Value> additionalData;  // optional
+  std::string corporateUuid;
+  std::string packageOrderUuid;
+  std::string productOrderUuid;
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  std::string tecsWebSecretKey;  // optional
+  std::string templateName;
+  std::string terminalCountryCode;
+  int64_t terminalId;  // optional
+  std::string terminalIdAcq;  // optional
+  std::string terminalLanguageCode;
+  std::string terminalLocation;
+  std::string terminalSerialNumber;  // optional
+  std::string tokenIOAlias;  // optional
+  std::string tokenIOIban;  // optional
+  std::string tokenIOMemberId;  // optional
+  std::string webShopUrl;  // optional
 };
 
 struct RegisterTerminalCreateData {
-  std::map<std::string, Value> additional_data;  // optional
-  std::string corporate_uuid;
-  std::string package_order_uuid;
-  std::string product_order_uuid;
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
-  std::string tecs_web_secret_key;  // optional
-  std::string template_name;
-  std::string terminal_country_code;
-  int64_t terminal_id;  // optional
-  std::string terminal_id_acq;  // optional
-  std::string terminal_language_code;
-  std::string terminal_location;
-  std::string terminal_serial_number;  // optional
-  std::string token_io_alia;  // optional
-  std::string token_io_iban;  // optional
-  std::string token_io_member_id;  // optional
-  std::string web_shop_url;  // optional
+  std::map<std::string, Value> additionalData;  // optional
+  std::string corporateUuid;
+  std::string packageOrderUuid;
+  std::string productOrderUuid;
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  std::string tecsWebSecretKey;  // optional
+  std::string templateName;
+  std::string terminalCountryCode;
+  int64_t terminalId;  // optional
+  std::string terminalIdAcq;  // optional
+  std::string terminalLanguageCode;
+  std::string terminalLocation;
+  std::string terminalSerialNumber;  // optional
+  std::string tokenIOAlias;  // optional
+  std::string tokenIOIban;  // optional
+  std::string tokenIOMemberId;  // optional
+  std::string webShopUrl;  // optional
 };
 
 struct ReportData {
-  std::vector<Value> card_brand_report_data;  // optional
-  std::string clearing_date_from;
-  std::string clearing_date_to;
-  std::string corporate_id;
+  std::vector<Value> cardBrandReportData;  // optional
+  std::string clearingDateFrom;
+  std::string clearingDateTo;
+  std::string corporateId;
   std::string currency;
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
-  std::map<std::string, Value> sum_over_credit_tx;  // optional
-  std::map<std::string, Value> sum_over_debit_tx;  // optional
-  int64_t terminal_id;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  std::map<std::string, Value> sumOverCreditTx;  // optional
+  std::map<std::string, Value> sumOverDebitTx;  // optional
+  int64_t terminalId;  // optional
 };
 
 struct ReportDataCreateData {
-  std::vector<Value> card_brand_report_data;  // optional
-  std::string clearing_date_from;
-  std::string clearing_date_to;
-  std::string corporate_id;
+  std::vector<Value> cardBrandReportData;  // optional
+  std::string clearingDateFrom;
+  std::string clearingDateTo;
+  std::string corporateId;
   std::string currency;
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
-  std::map<std::string, Value> sum_over_credit_tx;  // optional
-  std::map<std::string, Value> sum_over_debit_tx;  // optional
-  int64_t terminal_id;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  std::map<std::string, Value> sumOverCreditTx;  // optional
+  std::map<std::string, Value> sumOverDebitTx;  // optional
+  int64_t terminalId;  // optional
 };
 
 struct StatusTransaction {
-  std::string acquirer_name;  // optional
-  std::string acquirer_terminal_id;  // optional
+  std::string acquirerName;  // optional
+  std::string acquirerTerminalId;  // optional
   int64_t amount;  // optional
-  std::string application_cryptogram;  // optional
-  Value authorization_code;  // optional
-  std::string authorization_date;  // optional
-  std::string card_brand;  // optional
-  std::string card_entry;  // optional
-  std::string card_expiration;  // optional
-  std::string card_number;  // optional
-  int64_t clearing_amount;  // optional
-  std::string clearing_batch_id;  // optional
-  std::string clearing_currency;  // optional
-  std::string clearing_date;  // optional
-  std::string clearing_processed_date;  // optional
-  std::string clearing_status;  // optional
-  int64_t client_id;  // optional
+  std::string applicationCryptogram;  // optional
+  Value authorizationCode;  // optional
+  std::string authorizationDate;  // optional
+  std::string cardBrand;  // optional
+  std::string cardEntry;  // optional
+  std::string cardExpiration;  // optional
+  std::string cardNumber;  // optional
+  int64_t clearingAmount;  // optional
+  std::string clearingBatchId;  // optional
+  std::string clearingCurrency;  // optional
+  std::string clearingDate;  // optional
+  std::string clearingProcessedDate;  // optional
+  std::string clearingStatus;  // optional
+  int64_t clientId;  // optional
   std::string currency;  // optional
   std::string cvm;  // optional
-  std::string ecr_data;  // optional
-  std::string emv_application_id;  // optional
-  std::string emv_application_label;  // optional
-  std::string merchant_name;  // optional
-  std::string merchant_number;  // optional
-  std::string original_client_id;  // optional
-  int64_t original_terminal_id;  // optional
-  std::string original_transaction_id;  // optional
-  std::string payment_reason;  // optional
-  std::string receipt_number;  // optional
-  int64_t response_code;  // optional
-  std::string response_code_from_a;  // optional
-  std::string response_message;  // optional
-  std::string retrieval_reference_number;  // optional
-  std::string service_code;  // optional
-  std::string settlement_status;  // optional
-  int64_t source_id;  // optional
-  int64_t tecsengine_response_code;  // optional
-  std::string tecsengine_response_text;  // optional
-  std::string terminal_end_of_day_date;  // optional
-  int64_t terminal_id;  // optional
-  std::string terminal_location;  // optional
-  int64_t tip_amount;  // optional
-  int64_t trace_number;  // optional
-  std::string transaction_clearing_date;  // optional
-  std::string transaction_date;  // optional
-  std::string transaction_id;  // optional
-  int64_t transaction_seq_number;  // optional
-  std::string transaction_server_date;  // optional
-  std::string transaction_source;  // optional
-  std::string transaction_type;  // optional
+  std::string ecrData;  // optional
+  std::string emvApplicationId;  // optional
+  std::string emvApplicationLabel;  // optional
+  std::string merchantName;  // optional
+  std::string merchantNumber;  // optional
+  std::string originalClientId;  // optional
+  int64_t originalTerminalId;  // optional
+  std::string originalTransactionId;  // optional
+  std::string paymentReason;  // optional
+  std::string receiptNumber;  // optional
+  int64_t responseCode;  // optional
+  std::string responseCodeFromAS;  // optional
+  std::string responseMessage;  // optional
+  std::string retrievalReferenceNumber;  // optional
+  std::string serviceCode;  // optional
+  std::string settlementStatus;  // optional
+  int64_t sourceId;  // optional
+  int64_t tecsengineResponseCode;  // optional
+  std::string tecsengineResponseText;  // optional
+  std::string terminalEndOfDayDate;  // optional
+  int64_t terminalId;  // optional
+  std::string terminalLocation;  // optional
+  int64_t tipAmount;  // optional
+  int64_t traceNumber;  // optional
+  std::string transactionClearingDate;  // optional
+  std::string transactionDate;  // optional
+  std::string transactionId;  // optional
+  int64_t transactionSeqNumber;  // optional
+  std::string transactionServerDate;  // optional
+  std::string transactionSource;  // optional
+  std::string transactionType;  // optional
 };
 
 struct StatusTransactionCreateData {
-  std::string acquirer_name;  // optional
-  std::string acquirer_terminal_id;  // optional
+  std::string acquirerName;  // optional
+  std::string acquirerTerminalId;  // optional
   int64_t amount;  // optional
-  std::string application_cryptogram;  // optional
-  Value authorization_code;  // optional
-  std::string authorization_date;  // optional
-  std::string card_brand;  // optional
-  std::string card_entry;  // optional
-  std::string card_expiration;  // optional
-  std::string card_number;  // optional
-  int64_t clearing_amount;  // optional
-  std::string clearing_batch_id;  // optional
-  std::string clearing_currency;  // optional
-  std::string clearing_date;  // optional
-  std::string clearing_processed_date;  // optional
-  std::string clearing_status;  // optional
-  int64_t client_id;  // optional
+  std::string applicationCryptogram;  // optional
+  Value authorizationCode;  // optional
+  std::string authorizationDate;  // optional
+  std::string cardBrand;  // optional
+  std::string cardEntry;  // optional
+  std::string cardExpiration;  // optional
+  std::string cardNumber;  // optional
+  int64_t clearingAmount;  // optional
+  std::string clearingBatchId;  // optional
+  std::string clearingCurrency;  // optional
+  std::string clearingDate;  // optional
+  std::string clearingProcessedDate;  // optional
+  std::string clearingStatus;  // optional
+  int64_t clientId;  // optional
   std::string currency;  // optional
   std::string cvm;  // optional
-  std::string ecr_data;  // optional
-  std::string emv_application_id;  // optional
-  std::string emv_application_label;  // optional
-  std::string merchant_name;  // optional
-  std::string merchant_number;  // optional
-  std::string original_client_id;  // optional
-  int64_t original_terminal_id;  // optional
-  std::string original_transaction_id;  // optional
-  std::string payment_reason;  // optional
-  std::string receipt_number;  // optional
-  int64_t response_code;  // optional
-  std::string response_code_from_a;  // optional
-  std::string response_message;  // optional
-  std::string retrieval_reference_number;  // optional
-  std::string service_code;  // optional
-  std::string settlement_status;  // optional
-  int64_t source_id;  // optional
-  int64_t tecsengine_response_code;  // optional
-  std::string tecsengine_response_text;  // optional
-  std::string terminal_end_of_day_date;  // optional
-  int64_t terminal_id;  // optional
-  std::string terminal_location;  // optional
-  int64_t tip_amount;  // optional
-  int64_t trace_number;  // optional
-  std::string transaction_clearing_date;  // optional
-  std::string transaction_date;  // optional
-  std::string transaction_id;  // optional
-  int64_t transaction_seq_number;  // optional
-  std::string transaction_server_date;  // optional
-  std::string transaction_source;  // optional
-  std::string transaction_type;  // optional
+  std::string ecrData;  // optional
+  std::string emvApplicationId;  // optional
+  std::string emvApplicationLabel;  // optional
+  std::string merchantName;  // optional
+  std::string merchantNumber;  // optional
+  std::string originalClientId;  // optional
+  int64_t originalTerminalId;  // optional
+  std::string originalTransactionId;  // optional
+  std::string paymentReason;  // optional
+  std::string receiptNumber;  // optional
+  int64_t responseCode;  // optional
+  std::string responseCodeFromAS;  // optional
+  std::string responseMessage;  // optional
+  std::string retrievalReferenceNumber;  // optional
+  std::string serviceCode;  // optional
+  std::string settlementStatus;  // optional
+  int64_t sourceId;  // optional
+  int64_t tecsengineResponseCode;  // optional
+  std::string tecsengineResponseText;  // optional
+  std::string terminalEndOfDayDate;  // optional
+  int64_t terminalId;  // optional
+  std::string terminalLocation;  // optional
+  int64_t tipAmount;  // optional
+  int64_t traceNumber;  // optional
+  std::string transactionClearingDate;  // optional
+  std::string transactionDate;  // optional
+  std::string transactionId;  // optional
+  int64_t transactionSeqNumber;  // optional
+  std::string transactionServerDate;  // optional
+  std::string transactionSource;  // optional
+  std::string transactionType;  // optional
 };
 
 struct StoreTerminalParameter {
-  std::map<std::string, Value> acq_tab_nexo;  // optional
-  std::string config_version;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
-  std::string serial_number;
-  std::string tid_sent;  // optional
+  std::map<std::string, Value> acqTabNexo;  // optional
+  std::string configVersion;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  std::string serialNumber;
+  std::string tidSent;  // optional
 };
 
 struct StoreTerminalParameterCreateData {
-  std::map<std::string, Value> acq_tab_nexo;  // optional
-  std::string config_version;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
-  std::string serial_number;
-  std::string tid_sent;  // optional
+  std::map<std::string, Value> acqTabNexo;  // optional
+  std::string configVersion;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  std::string serialNumber;
+  std::string tidSent;  // optional
 };
 
 struct TerminalId {
-  std::vector<Value> device_serial_number;
-  std::vector<Value> duplicate_terminal_id;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
-  std::vector<Value> terminal;  // optional
+  std::vector<Value> deviceSerialNumber;
+  std::vector<Value> duplicateTerminalIds;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  std::vector<Value> terminals;  // optional
 };
 
 struct TerminalIdCreateData {
-  std::vector<Value> device_serial_number;
-  std::vector<Value> duplicate_terminal_id;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
-  std::vector<Value> terminal;  // optional
+  std::vector<Value> deviceSerialNumber;
+  std::vector<Value> duplicateTerminalIds;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  std::vector<Value> terminals;  // optional
 };
 
 struct TransactionHistory {
-  std::string authorization_code;  // optional
-  std::string card_brand;  // optional
-  std::string clearing_amount_from;  // optional
-  std::string clearing_amount_to;  // optional
-  std::string clearing_currency;  // optional
-  std::string clearing_status;  // optional
-  std::string corporate_uuid;  // optional
-  std::string order_by_transaction_date;  // optional
+  std::string authorizationCode;  // optional
+  std::string cardBrand;  // optional
+  std::string clearingAmountFrom;  // optional
+  std::string clearingAmountTo;  // optional
+  std::string clearingCurrency;  // optional
+  std::string clearingStatus;  // optional
+  std::string corporateUUID;  // optional
+  std::string orderByTransactionDate;  // optional
   std::map<std::string, Value> pagination;  // optional
-  std::string payment_token_public_id;  // optional
-  std::string receipt_number;  // optional
-  std::string referenced_transaction_id;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
-  std::string retrieval_reference_number;  // optional
-  int64_t source_id;  // optional
-  std::string tecsengine_response_code_from;  // optional
-  std::string tecsengine_response_code_to;  // optional
-  int64_t terminal_id;  // optional
-  std::string trace_number;  // optional
-  std::string transaction_amount_from;  // optional
-  std::string transaction_amount_to;  // optional
-  std::string transaction_date_from;  // optional
-  std::string transaction_date_to;  // optional
-  std::vector<Value> transaction_history;  // optional
-  std::string transaction_id;  // optional
-  std::string transaction_type;  // optional
+  std::string paymentTokenPublicId;  // optional
+  std::string receiptNumber;  // optional
+  std::string referencedTransactionId;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  std::string retrievalReferenceNumber;  // optional
+  int64_t sourceId;  // optional
+  std::string tecsengineResponseCodeFrom;  // optional
+  std::string tecsengineResponseCodeTo;  // optional
+  int64_t terminalId;  // optional
+  std::string traceNumber;  // optional
+  std::string transactionAmountFrom;  // optional
+  std::string transactionAmountTo;  // optional
+  std::string transactionDateFrom;  // optional
+  std::string transactionDateTo;  // optional
+  std::vector<Value> transactionHistories;  // optional
+  std::string transactionId;  // optional
+  std::string transactionType;  // optional
   std::string wallet;  // optional
 };
 
 struct TransactionHistoryCreateData {
-  std::string authorization_code;  // optional
-  std::string card_brand;  // optional
-  std::string clearing_amount_from;  // optional
-  std::string clearing_amount_to;  // optional
-  std::string clearing_currency;  // optional
-  std::string clearing_status;  // optional
-  std::string corporate_uuid;  // optional
-  std::string order_by_transaction_date;  // optional
+  std::string authorizationCode;  // optional
+  std::string cardBrand;  // optional
+  std::string clearingAmountFrom;  // optional
+  std::string clearingAmountTo;  // optional
+  std::string clearingCurrency;  // optional
+  std::string clearingStatus;  // optional
+  std::string corporateUUID;  // optional
+  std::string orderByTransactionDate;  // optional
   std::map<std::string, Value> pagination;  // optional
-  std::string payment_token_public_id;  // optional
-  std::string receipt_number;  // optional
-  std::string referenced_transaction_id;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
-  std::string retrieval_reference_number;  // optional
-  int64_t source_id;  // optional
-  std::string tecsengine_response_code_from;  // optional
-  std::string tecsengine_response_code_to;  // optional
-  int64_t terminal_id;  // optional
-  std::string trace_number;  // optional
-  std::string transaction_amount_from;  // optional
-  std::string transaction_amount_to;  // optional
-  std::string transaction_date_from;  // optional
-  std::string transaction_date_to;  // optional
-  std::vector<Value> transaction_history;  // optional
-  std::string transaction_id;  // optional
-  std::string transaction_type;  // optional
+  std::string paymentTokenPublicId;  // optional
+  std::string receiptNumber;  // optional
+  std::string referencedTransactionId;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  std::string retrievalReferenceNumber;  // optional
+  int64_t sourceId;  // optional
+  std::string tecsengineResponseCodeFrom;  // optional
+  std::string tecsengineResponseCodeTo;  // optional
+  int64_t terminalId;  // optional
+  std::string traceNumber;  // optional
+  std::string transactionAmountFrom;  // optional
+  std::string transactionAmountTo;  // optional
+  std::string transactionDateFrom;  // optional
+  std::string transactionDateTo;  // optional
+  std::vector<Value> transactionHistories;  // optional
+  std::string transactionId;  // optional
+  std::string transactionType;  // optional
   std::string wallet;  // optional
 };
 
 struct TransactionsCount {
   std::string period;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
-  std::string transaction_date_from;  // optional
-  std::string transaction_date_to;  // optional
-  std::vector<Value> transactions_count;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  std::string transactionDateFrom;  // optional
+  std::string transactionDateTo;  // optional
+  std::vector<Value> transactionsCount;  // optional
 };
 
 struct TransactionsCountCreateData {
   std::string period;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
-  std::string transaction_date_from;  // optional
-  std::string transaction_date_to;  // optional
-  std::vector<Value> transactions_count;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  std::string transactionDateFrom;  // optional
+  std::string transactionDateTo;  // optional
+  std::vector<Value> transactionsCount;  // optional
 };
 
 struct TransactionsCountCardBrand {
   std::string period;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
-  std::string transaction_date_from;  // optional
-  std::string transaction_date_to;  // optional
-  std::vector<Value> transactions_count;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  std::string transactionDateFrom;  // optional
+  std::string transactionDateTo;  // optional
+  std::vector<Value> transactionsCount;  // optional
 };
 
 struct TransactionsCountCardBrandCreateData {
   std::string period;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
-  std::string transaction_date_from;  // optional
-  std::string transaction_date_to;  // optional
-  std::vector<Value> transactions_count;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  std::string transactionDateFrom;  // optional
+  std::string transactionDateTo;  // optional
+  std::vector<Value> transactionsCount;  // optional
 };
 
 struct TransactionsTurnover {
   std::string period;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
-  std::string transaction_date_from;  // optional
-  std::string transaction_date_to;  // optional
-  std::vector<Value> turnover;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  std::string transactionDateFrom;  // optional
+  std::string transactionDateTo;  // optional
+  std::vector<Value> turnovers;  // optional
 };
 
 struct TransactionsTurnoverCreateData {
   std::string period;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
-  std::string transaction_date_from;  // optional
-  std::string transaction_date_to;  // optional
-  std::vector<Value> turnover;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  std::string transactionDateFrom;  // optional
+  std::string transactionDateTo;  // optional
+  std::vector<Value> turnovers;  // optional
 };
 
 struct UpdateMerchant {
   std::string city;  // optional
-  std::string corporate_uuid;
+  std::string corporateUuid;
   std::string country;  // optional
-  std::string merchant_category_code;  // optional
+  std::string merchantCategoryCode;  // optional
   std::string name;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
   std::string state;  // optional
   std::string street;  // optional
-  std::string vu_nummer;  // optional
+  std::string vuNummer;  // optional
   std::string zipcode;  // optional
 };
 
 struct UpdateMerchantCreateData {
   std::string city;  // optional
-  std::string corporate_uuid;
+  std::string corporateUuid;
   std::string country;  // optional
-  std::string merchant_category_code;  // optional
+  std::string merchantCategoryCode;  // optional
   std::string name;  // optional
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
   std::string state;  // optional
   std::string street;  // optional
-  std::string vu_nummer;  // optional
+  std::string vuNummer;  // optional
   std::string zipcode;  // optional
 };
 
 struct UpdateTemplateXml {
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
-  std::string template_name;
-  std::string template_xml;
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  std::string templateName;
+  std::string templateXml;
 };
 
 struct UpdateTemplateXmlCreateData {
-  int64_t response_code;  // optional
-  std::string response_message;  // optional
-  std::string template_name;
-  std::string template_xml;
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  std::string templateName;
+  std::string templateXml;
 };
 
 struct Version {
-  std::string app_name;  // optional
-  std::string build_date;  // optional
+  std::string appName;  // optional
+  std::string buildDate;  // optional
   std::string version;  // optional
 };
 
 struct VersionLoadMatch {
-  std::string app_name;  // optional
-  std::string build_date;  // optional
+  std::string appName;  // optional
+  std::string buildDate;  // optional
   std::string version;  // optional
 };
 

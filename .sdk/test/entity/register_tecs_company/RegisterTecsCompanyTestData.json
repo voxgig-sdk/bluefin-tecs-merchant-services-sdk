@@ -2,36 +2,36 @@
   "existing": {
     "register_tecs_company": {
       "REGISTER_TECS_COMPANY00": {
-        "corporate_uuid": "s50",
-        "package_order_uuid": "s51",
-        "partner_id": "PARTNER01",
-        "partner_name": "s53",
-        "product_order_uuid": "s54",
-        "response_code": "s55",
-        "response_message": "s56",
-        "template_name": "s57",
+        "corporateUuid": "s50",
+        "packageOrderUuid": "s51",
+        "partnerId": "s52",
+        "partnerName": "s53",
+        "productOrderUuid": "s54",
+        "responseCode": "s55",
+        "responseMessage": "s56",
+        "templateName": "s57",
         "id": "REGISTER_TECS_COMPANY00"
       },
       "REGISTER_TECS_COMPANY01": {
-        "corporate_uuid": "sa0",
-        "package_order_uuid": "sa1",
-        "partner_id": "PARTNER01",
-        "partner_name": "sa3",
-        "product_order_uuid": "sa4",
-        "response_code": "sa5",
-        "response_message": "sa6",
-        "template_name": "sa7",
+        "corporateUuid": "sa0",
+        "packageOrderUuid": "sa1",
+        "partnerId": "sa2",
+        "partnerName": "sa3",
+        "productOrderUuid": "sa4",
+        "responseCode": "sa5",
+        "responseMessage": "sa6",
+        "templateName": "sa7",
         "id": "REGISTER_TECS_COMPANY01"
       },
       "REGISTER_TECS_COMPANY02": {
-        "corporate_uuid": "sf0",
-        "package_order_uuid": "sf1",
-        "partner_id": "PARTNER01",
-        "partner_name": "sf3",
-        "product_order_uuid": "sf4",
-        "response_code": "sf5",
-        "response_message": "sf6",
-        "template_name": "sf7",
+        "corporateUuid": "sf0",
+        "packageOrderUuid": "sf1",
+        "partnerId": "sf2",
+        "partnerName": "sf3",
+        "productOrderUuid": "sf4",
+        "responseCode": "sf5",
+        "responseMessage": "sf6",
+        "templateName": "sf7",
         "id": "REGISTER_TECS_COMPANY02"
       }
     }
@@ -39,14 +39,14 @@
   "new": {
     "register_tecs_company": {
       "register_tecs_company_ref01": {
-        "corporate_uuid": "s140",
-        "package_order_uuid": "s141",
-        "partner_id": "PARTNER01",
-        "partner_name": "s143",
-        "product_order_uuid": "s144",
-        "response_code": "s145",
-        "response_message": "s146",
-        "template_name": "s147"
+        "corporateUuid": "s140",
+        "packageOrderUuid": "s141",
+        "partnerId": "s142",
+        "partnerName": "s143",
+        "productOrderUuid": "s144",
+        "responseCode": "s145",
+        "responseMessage": "s146",
+        "templateName": "s147"
       }
     }
   }

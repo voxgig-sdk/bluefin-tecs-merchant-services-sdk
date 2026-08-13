@@ -31,7 +31,8 @@ defmodule BluefinTecsMerchantServices.TransactionsCountCardBrandEntityTest do
   test "should create then read back" do
     sdk = BluefinTecsMerchantServices.test(S.jm(["entity", S.jm(["transactions_count_card_brand", S.jm([])])]))
     ent = BluefinTecsMerchantServices.transactions_count_card_brand(sdk)
-    made = BluefinTecsMerchantServices.Entity.TransactionsCountCardBrand.create(ent, S.jm(["name", "test-create"]))
+    created = BluefinTecsMerchantServices.Entity.TransactionsCountCardBrand.create(ent, S.jm(["name", "test-create"]))
+    made = BluefinTecsMerchantServices.EntityBase.data_get(created)
     assert S.ismap(made)
     assert S.getprop(made, "id") != nil
   end

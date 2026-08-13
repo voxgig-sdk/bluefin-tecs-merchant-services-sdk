@@ -62,7 +62,7 @@ auto client = std::make_shared<BluefinTecsMerchantServicesSDK>(vmap({
 
 ```cpp
 // Create — returns the bare created record.
-Value created = client->cancel_transaction()->create(vmap({{"client_id", Value(1)}, {"currency", Value("example_currency")}, {"receipt_number", Value("example_receipt_number")}, {"terminal_id", Value(1)}}), Value::undef());
+Value created = client->cancel_transaction()->create(vmap({{"clientId", Value(1)}, {"currency", Value("example_currency")}, {"receiptNumber", Value("example_receiptNumber")}, {"terminalId", Value(1)}}), Value::undef());
 
 ```
 
@@ -290,46 +290,46 @@ On error, `ok` is `false` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `acquirer_id` |  |
-| `acquirer_name` |  |
-| `actual_bonus_point` |  |
+| `acquirerId` |  |
+| `acquirerName` |  |
+| `actualBonusPoints` |  |
 | `amount` |  |
-| `authorization_code` |  |
-| `balance_amount` |  |
-| `card_brand` |  |
-| `card_number` |  |
-| `client_id` |  |
+| `authorizationCode` |  |
+| `balanceAmount` |  |
+| `cardBrand` |  |
+| `cardNumber` |  |
+| `clientId` |  |
 | `currency` |  |
 | `cvc` |  |
-| `ec_data` |  |
-| `ecr_data` |  |
-| `emv_data` |  |
-| `exchange_fee` |  |
-| `exchange_rate` |  |
-| `language_code` |  |
-| `merchant_address` |  |
-| `merchant_name` |  |
-| `merchant_number` |  |
-| `message_type` |  |
-| `original_trace_number` |  |
-| `original_transaction_id` |  |
+| `ecData` |  |
+| `ecrData` |  |
+| `emvData` |  |
+| `exchangeFee` |  |
+| `exchangeRate` |  |
+| `languageCode` |  |
+| `merchantAddress` |  |
+| `merchantName` |  |
+| `merchantNumber` |  |
+| `messageType` |  |
+| `originalTraceNumber` |  |
+| `originalTransactionId` |  |
 | `password` |  |
-| `payment_reason` |  |
-| `receipt_footer` |  |
-| `receipt_header` |  |
-| `receipt_layout` |  |
-| `receipt_number` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `serial_number` |  |
+| `paymentReason` |  |
+| `receiptFooter` |  |
+| `receiptHeader` |  |
+| `receiptLayout` |  |
+| `receiptNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `serialNumber` |  |
 | `svc` |  |
-| `terminal_id` |  |
-| `terminal_location` |  |
-| `trace_number` |  |
-| `transaction_date` |  |
-| `transaction_id` |  |
-| `tx_type` |  |
-| `user_data` |  |
+| `terminalId` |  |
+| `terminalLocation` |  |
+| `traceNumber` |  |
+| `transactionDate` |  |
+| `transactionId` |  |
+| `txType` |  |
+| `userData` |  |
 
 Operations: Create.
 
@@ -339,9 +339,9 @@ API path: `/public/cancelTransaction`
 
 | Field | Description |
 | --- | --- |
-| `card_no` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `cardNo` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -351,13 +351,13 @@ API path: `/checkCardBlackListed`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_id` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `template_name` |  |
-| `template_type` |  |
-| `template_xml` |  |
-| `terminal_type` |  |
+| `acquirerId` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `templateName` |  |
+| `templateType` |  |
+| `templateXml` |  |
+| `terminalType` |  |
 
 Operations: Create.
 
@@ -367,13 +367,13 @@ API path: `/createProduct`
 
 | Field | Description |
 | --- | --- |
-| `corporate_uuid` |  |
-| `deactivation_reason` |  |
-| `package_order_uuid` |  |
-| `product_order_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
+| `corporateUuid` |  |
+| `deactivationReason` |  |
+| `packageOrderUuid` |  |
+| `productOrderUuid` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
 
 Operations: Create.
 
@@ -383,16 +383,16 @@ API path: `/deactivateTerminal`
 
 | Field | Description |
 | --- | --- |
-| `clearing_date_from` |  |
-| `clearing_date_to` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `tx_count` |  |
-| `tx_id_end` |  |
-| `tx_id_start` |  |
-| `tx_seq_no_end` |  |
-| `tx_seq_no_start` |  |
-| `tx_total` |  |
+| `clearingDateFrom` |  |
+| `clearingDateTo` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `txCount` |  |
+| `txIdEnd` |  |
+| `txIdStart` |  |
+| `txSeqNoEnd` |  |
+| `txSeqNoStart` |  |
+| `txTotal` |  |
 
 Operations: Create, Load.
 
@@ -402,12 +402,12 @@ API path: `/public/digitalservices/mandatorClearingExportDownload/{fileId}`
 
 | Field | Description |
 | --- | --- |
-| `ecom_data` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
-| `transaction_id` |  |
-| `transaction_type` |  |
+| `ecomData` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
+| `transactionId` |  |
+| `transactionType` |  |
 
 Operations: Create.
 
@@ -417,11 +417,11 @@ API path: `/public/getEcData`
 
 | Field | Description |
 | --- | --- |
-| `ecom_pass` |  |
-| `ecom_skey` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
+| `ecomPass` |  |
+| `ecomSkey` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
 
 Operations: Create.
 
@@ -431,12 +431,12 @@ API path: `/public/getEcomParameters`
 
 | Field | Description |
 | --- | --- |
-| `ecr_data` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
-| `transaction_id` |  |
-| `transaction_type` |  |
+| `ecrData` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
+| `transactionId` |  |
+| `transactionType` |  |
 
 Operations: Create.
 
@@ -446,12 +446,12 @@ API path: `/public/getEcrData`
 
 | Field | Description |
 | --- | --- |
-| `emv_data` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
-| `transaction_id` |  |
-| `transaction_type` |  |
+| `emvData` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
+| `transactionId` |  |
+| `transactionType` |  |
 
 Operations: Create.
 
@@ -461,20 +461,20 @@ API path: `/public/getEmvData`
 
 | Field | Description |
 | --- | --- |
-| `account_no` |  |
-| `additional_data` |  |
-| `corporate_uuid` |  |
+| `accountNo` |  |
+| `additionalData` |  |
+| `corporateUuid` |  |
 | `currency` |  |
-| `merchant_category_code` |  |
-| `package_order_uuid` |  |
-| `product_order_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `sorting_code` |  |
-| `template_name` |  |
-| `terminal_id` |  |
-| `terminal_id_acq` |  |
-| `vu_nummer` |  |
+| `merchantCategoryCode` |  |
+| `packageOrderUuid` |  |
+| `productOrderUuid` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `sortingCode` |  |
+| `templateName` |  |
+| `terminalIdAcq` |  |
+| `terminalIds` |  |
+| `vuNummer` |  |
 
 Operations: Create.
 
@@ -484,9 +484,9 @@ API path: `/enableAcquiring`
 
 | Field | Description |
 | --- | --- |
-| `merchant_contract_number` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `merchantContractNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -496,9 +496,9 @@ API path: `/getMerchantContractNumber`
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
-| `template_name` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `templateName` |  |
 
 Operations: Create.
 
@@ -508,9 +508,9 @@ API path: `/public/getTemplateXml`
 
 | Field | Description |
 | --- | --- |
-| `mandator_name` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `mandatorName` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -520,9 +520,9 @@ API path: `/introduceMandator`
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_template_description` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalTemplateDescription` |  |
 
 Operations: Create.
 
@@ -533,15 +533,15 @@ API path: `/introducePackage`
 | Field | Description |
 | --- | --- |
 | `hwserialno` |  |
-| `ka_date_time_from` |  |
-| `ka_date_time_to` |  |
-| `keep_alive_data` |  |
+| `kaDateTimeFrom` |  |
+| `kaDateTimeTo` |  |
+| `keepAliveData` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_date_time_from` |  |
-| `terminal_date_time_to` |  |
-| `terminal_id` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalDateTimeFrom` |  |
+| `terminalDateTimeTo` |  |
+| `terminalId` |  |
 
 Operations: Create.
 
@@ -551,12 +551,12 @@ API path: `/public/keepalive`
 
 | Field | Description |
 | --- | --- |
-| `corporate_uuid` |  |
+| `corporateUuid` |  |
 | `filter` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminals` |  |
 
 Operations: Create.
 
@@ -566,12 +566,12 @@ API path: `/public/listTerminals`
 
 | Field | Description |
 | --- | --- |
-| `clearing_date_from` |  |
-| `clearing_date_to` |  |
+| `clearingDateFrom` |  |
+| `clearingDateTo` |  |
 | `pagination` |  |
-| `record` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `records` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -581,12 +581,12 @@ API path: `/public/digitalservices/mandatorClearingExport`
 
 | Field | Description |
 | --- | --- |
-| `clearing_date_from` |  |
-| `clearing_date_to` |  |
-| `file_id` |  |
-| `filename_template` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `clearingDateFrom` |  |
+| `clearingDateTo` |  |
+| `fileId` |  |
+| `filenameTemplate` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `status` |  |
 
 Operations: Create, Load.
@@ -597,11 +597,11 @@ API path: `/public/digitalservices/mandatorClearingExportDownload`
 
 | Field | Description |
 | --- | --- |
-| `clearing_date_from` |  |
-| `clearing_date_to` |  |
-| `record` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `clearingDateFrom` |  |
+| `clearingDateTo` |  |
+| `records` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -611,30 +611,30 @@ API path: `/public/digitalservices/mandatorClearingExportSummary`
 
 | Field | Description |
 | --- | --- |
-| `3_d_secure` |  |
-| `authorization_code` |  |
-| `card_brand` |  |
-| `clearing_amount_from` |  |
-| `clearing_amount_to` |  |
-| `clearing_currency` |  |
-| `clearing_status` |  |
-| `corporate_uuid` |  |
-| `order_by_transaction_date` |  |
+| `3DSecure` |  |
+| `authorizationCode` |  |
+| `cardBrand` |  |
+| `clearingAmountFrom` |  |
+| `clearingAmountTo` |  |
+| `clearingCurrency` |  |
+| `clearingStatus` |  |
+| `corporateUUID` |  |
+| `orderByTransactionDate` |  |
 | `pagination` |  |
-| `receipt_number` |  |
-| `referenced_transaction_id` |  |
-| `retrieval_reference_number` |  |
-| `source_id` |  |
-| `tecsengine_response_code_from` |  |
-| `tecsengine_response_code_to` |  |
-| `terminal_id` |  |
-| `trace_number` |  |
-| `transaction_amount_from` |  |
-| `transaction_amount_to` |  |
-| `transaction_date_from` |  |
-| `transaction_date_to` |  |
-| `transaction_id` |  |
-| `transaction_type` |  |
+| `receiptNumber` |  |
+| `referencedTransactionId` |  |
+| `retrievalReferenceNumber` |  |
+| `sourceId` |  |
+| `tecsengineResponseCodeFrom` |  |
+| `tecsengineResponseCodeTo` |  |
+| `terminalId` |  |
+| `traceNumber` |  |
+| `transactionAmountFrom` |  |
+| `transactionAmountTo` |  |
+| `transactionDateFrom` |  |
+| `transactionDateTo` |  |
+| `transactionId` |  |
+| `transactionType` |  |
 | `wallet` |  |
 
 Operations: Create.
@@ -645,11 +645,11 @@ API path: `/public/transactionHistoryCsv`
 
 | Field | Description |
 | --- | --- |
-| `productorderuuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `target_packageorderuuid` |  |
-| `target_productorderuuid` |  |
+| `productorderuuids` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `targetPackageorderuuid` |  |
+| `targetProductorderuuid` |  |
 
 Operations: Create.
 
@@ -659,22 +659,22 @@ API path: `/moveTid`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_name` |  |
+| `acquirerName` |  |
 | `amount` |  |
-| `authorization_number` |  |
-| `card_number` |  |
-| `card_type` |  |
+| `authorizationNumber` |  |
+| `cardNumber` |  |
+| `cardType` |  |
 | `currency` |  |
 | `cvc` |  |
-| `date_time_tx` |  |
-| `exp_date` |  |
-| `merchant_id` |  |
-| `original_transaction_id` |  |
+| `dateTimeTx` |  |
+| `expDate` |  |
+| `merchantId` |  |
+| `originalTransactionId` |  |
 | `password` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
-| `transaction_id` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
+| `transactionId` |  |
 | `txtype` |  |
 
 Operations: Create.
@@ -685,21 +685,17 @@ API path: `/public/paymentManual`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_name` |  |
 | `amount` |  |
-| `authorization_number` |  |
-| `card_type` |  |
 | `currency` |  |
-| `date_time_tx` |  |
-| `device_payload` |  |
-| `merchant_id` |  |
-| `original_transaction_id` |  |
+| `device` |  |
+| `devicePayload` |  |
+| `expDate` |  |
+| `mode` |  |
+| `panMasked` |  |
 | `password` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `sred` |  |
-| `terminal_id` |  |
-| `transaction_id` |  |
+| `serial` |  |
+| `serviceCode` |  |
+| `terminalId` |  |
 | `txtype` |  |
 
 Operations: Create.
@@ -710,48 +706,48 @@ API path: `/public/paymentSred`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_id` |  |
-| `acquirer_name` |  |
-| `actual_bonus_point` |  |
+| `acquirerId` |  |
+| `acquirerName` |  |
+| `actualBonusPoints` |  |
 | `amount` |  |
-| `authorization_code` |  |
-| `balance_amount` |  |
-| `card_brand` |  |
-| `card_number` |  |
-| `card_number_reference` |  |
-| `client_id` |  |
+| `authorizationCode` |  |
+| `balanceAmount` |  |
+| `cardBrand` |  |
+| `cardNumber` |  |
+| `cardNumberReference` |  |
+| `clientId` |  |
 | `currency` |  |
 | `cvc` |  |
-| `ec_data` |  |
-| `ecr_data` |  |
-| `emv_data` |  |
-| `exchange_fee` |  |
-| `exchange_rate` |  |
-| `language_code` |  |
-| `merchant_address` |  |
-| `merchant_name` |  |
-| `merchant_number` |  |
-| `message_type` |  |
-| `original_trace_number` |  |
-| `original_transaction_id` |  |
+| `ecData` |  |
+| `ecrData` |  |
+| `emvData` |  |
+| `exchangeFee` |  |
+| `exchangeRate` |  |
+| `languageCode` |  |
+| `merchantAddress` |  |
+| `merchantName` |  |
+| `merchantNumber` |  |
+| `messageType` |  |
+| `originalTraceNumber` |  |
+| `originalTransactionId` |  |
 | `password` |  |
-| `payment_reason` |  |
-| `receipt_footer` |  |
-| `receipt_header` |  |
-| `receipt_layout` |  |
-| `receipt_number` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `serial_number` |  |
+| `paymentReason` |  |
+| `receiptFooter` |  |
+| `receiptHeader` |  |
+| `receiptLayout` |  |
+| `receiptNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `serialNumber` |  |
 | `svc` |  |
-| `terminal_id` |  |
-| `terminal_location` |  |
-| `trace_number` |  |
-| `transaction_date` |  |
-| `transaction_id` |  |
-| `transaction_type` |  |
-| `tx_type` |  |
-| `user_data` |  |
+| `terminalId` |  |
+| `terminalLocation` |  |
+| `traceNumber` |  |
+| `transactionDate` |  |
+| `transactionId` |  |
+| `transactionType` |  |
+| `txType` |  |
+| `userData` |  |
 
 Operations: Create.
 
@@ -761,13 +757,13 @@ API path: `/public/paymentTransaction`
 
 | Field | Description |
 | --- | --- |
-| `corporate_uuid` |  |
-| `package_order_uuid` |  |
-| `product_order_uuid` |  |
-| `reactivation_reason` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
+| `corporateUuid` |  |
+| `packageOrderUuid` |  |
+| `productOrderUuid` |  |
+| `reactivationReason` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
 
 Operations: Create.
 
@@ -777,46 +773,46 @@ API path: `/reactivateTerminal`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_id` |  |
-| `acquirer_name` |  |
-| `actual_bonus_point` |  |
+| `acquirerId` |  |
+| `acquirerName` |  |
+| `actualBonusPoints` |  |
 | `amount` |  |
-| `authorization_code` |  |
-| `balance_amount` |  |
-| `card_brand` |  |
-| `card_number` |  |
-| `client_id` |  |
+| `authorizationCode` |  |
+| `balanceAmount` |  |
+| `cardBrand` |  |
+| `cardNumber` |  |
+| `clientId` |  |
 | `currency` |  |
 | `cvc` |  |
-| `ec_data` |  |
-| `ecr_data` |  |
-| `emv_data` |  |
-| `exchange_fee` |  |
-| `exchange_rate` |  |
-| `language_code` |  |
-| `merchant_address` |  |
-| `merchant_name` |  |
-| `merchant_number` |  |
-| `message_type` |  |
-| `original_trace_number` |  |
-| `original_transaction_id` |  |
+| `ecData` |  |
+| `ecrData` |  |
+| `emvData` |  |
+| `exchangeFee` |  |
+| `exchangeRate` |  |
+| `languageCode` |  |
+| `merchantAddress` |  |
+| `merchantName` |  |
+| `merchantNumber` |  |
+| `messageType` |  |
+| `originalTraceNumber` |  |
+| `originalTransactionId` |  |
 | `password` |  |
-| `payment_reason` |  |
-| `receipt_footer` |  |
-| `receipt_header` |  |
-| `receipt_layout` |  |
-| `receipt_number` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `serial_number` |  |
+| `paymentReason` |  |
+| `receiptFooter` |  |
+| `receiptHeader` |  |
+| `receiptLayout` |  |
+| `receiptNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `serialNumber` |  |
 | `svc` |  |
-| `terminal_id` |  |
-| `terminal_location` |  |
-| `trace_number` |  |
-| `transaction_date` |  |
-| `transaction_id` |  |
-| `tx_type` |  |
-| `user_data` |  |
+| `terminalId` |  |
+| `terminalLocation` |  |
+| `traceNumber` |  |
+| `transactionDate` |  |
+| `transactionId` |  |
+| `txType` |  |
+| `userData` |  |
 
 Operations: Create.
 
@@ -826,14 +822,14 @@ API path: `/public/refundTransaction`
 
 | Field | Description |
 | --- | --- |
-| `corporate_uuid` |  |
-| `package_order_uuid` |  |
-| `partner_id` |  |
-| `partner_name` |  |
-| `product_order_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `template_name` |  |
+| `corporateUuid` |  |
+| `packageOrderUuid` |  |
+| `partnerId` |  |
+| `partnerName` |  |
+| `productOrderUuid` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `templateName` |  |
 
 Operations: Create.
 
@@ -843,24 +839,24 @@ API path: `/registerTecsCompany`
 
 | Field | Description |
 | --- | --- |
-| `additional_data` |  |
-| `corporate_uuid` |  |
-| `package_order_uuid` |  |
-| `product_order_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `tecs_web_secret_key` |  |
-| `template_name` |  |
-| `terminal_country_code` |  |
-| `terminal_id` |  |
-| `terminal_id_acq` |  |
-| `terminal_language_code` |  |
-| `terminal_location` |  |
-| `terminal_serial_number` |  |
-| `token_io_alia` |  |
-| `token_io_iban` |  |
-| `token_io_member_id` |  |
-| `web_shop_url` |  |
+| `additionalData` |  |
+| `corporateUuid` |  |
+| `packageOrderUuid` |  |
+| `productOrderUuid` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `tecsWebSecretKey` |  |
+| `templateName` |  |
+| `terminalCountryCode` |  |
+| `terminalId` |  |
+| `terminalIdAcq` |  |
+| `terminalLanguageCode` |  |
+| `terminalLocation` |  |
+| `terminalSerialNumber` |  |
+| `tokenIOAlias` |  |
+| `tokenIOIban` |  |
+| `tokenIOMemberId` |  |
+| `webShopUrl` |  |
 
 Operations: Create.
 
@@ -870,16 +866,16 @@ API path: `/registerTerminal`
 
 | Field | Description |
 | --- | --- |
-| `card_brand_report_data` |  |
-| `clearing_date_from` |  |
-| `clearing_date_to` |  |
-| `corporate_id` |  |
+| `cardBrandReportData` |  |
+| `clearingDateFrom` |  |
+| `clearingDateTo` |  |
+| `corporateId` |  |
 | `currency` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `sum_over_credit_tx` |  |
-| `sum_over_debit_tx` |  |
-| `terminal_id` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `sumOverCreditTx` |  |
+| `sumOverDebitTx` |  |
+| `terminalId` |  |
 
 Operations: Create.
 
@@ -889,56 +885,56 @@ API path: `/public/digitalservices/reportData`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_name` |  |
-| `acquirer_terminal_id` |  |
+| `acquirerName` |  |
+| `acquirerTerminalId` |  |
 | `amount` |  |
-| `application_cryptogram` |  |
-| `authorization_code` |  |
-| `authorization_date` |  |
-| `card_brand` |  |
-| `card_entry` |  |
-| `card_expiration` |  |
-| `card_number` |  |
-| `clearing_amount` |  |
-| `clearing_batch_id` |  |
-| `clearing_currency` |  |
-| `clearing_date` |  |
-| `clearing_processed_date` |  |
-| `clearing_status` |  |
-| `client_id` |  |
+| `applicationCryptogram` |  |
+| `authorizationCode` |  |
+| `authorizationDate` |  |
+| `cardBrand` |  |
+| `cardEntry` |  |
+| `cardExpiration` |  |
+| `cardNumber` |  |
+| `clearingAmount` |  |
+| `clearingBatchId` |  |
+| `clearingCurrency` |  |
+| `clearingDate` |  |
+| `clearingProcessedDate` |  |
+| `clearingStatus` |  |
+| `clientId` |  |
 | `currency` |  |
 | `cvm` |  |
-| `ecr_data` |  |
-| `emv_application_id` |  |
-| `emv_application_label` |  |
-| `merchant_name` |  |
-| `merchant_number` |  |
-| `original_client_id` |  |
-| `original_terminal_id` |  |
-| `original_transaction_id` |  |
-| `payment_reason` |  |
-| `receipt_number` |  |
-| `response_code` |  |
-| `response_code_from_a` |  |
-| `response_message` |  |
-| `retrieval_reference_number` |  |
-| `service_code` |  |
-| `settlement_status` |  |
-| `source_id` |  |
-| `tecsengine_response_code` |  |
-| `tecsengine_response_text` |  |
-| `terminal_end_of_day_date` |  |
-| `terminal_id` |  |
-| `terminal_location` |  |
-| `tip_amount` |  |
-| `trace_number` |  |
-| `transaction_clearing_date` |  |
-| `transaction_date` |  |
-| `transaction_id` |  |
-| `transaction_seq_number` |  |
-| `transaction_server_date` |  |
-| `transaction_source` |  |
-| `transaction_type` |  |
+| `ecrData` |  |
+| `emvApplicationId` |  |
+| `emvApplicationLabel` |  |
+| `merchantName` |  |
+| `merchantNumber` |  |
+| `originalClientId` |  |
+| `originalTerminalId` |  |
+| `originalTransactionId` |  |
+| `paymentReason` |  |
+| `receiptNumber` |  |
+| `responseCode` |  |
+| `responseCodeFromAS` |  |
+| `responseMessage` |  |
+| `retrievalReferenceNumber` |  |
+| `serviceCode` |  |
+| `settlementStatus` |  |
+| `sourceId` |  |
+| `tecsengineResponseCode` |  |
+| `tecsengineResponseText` |  |
+| `terminalEndOfDayDate` |  |
+| `terminalId` |  |
+| `terminalLocation` |  |
+| `tipAmount` |  |
+| `traceNumber` |  |
+| `transactionClearingDate` |  |
+| `transactionDate` |  |
+| `transactionId` |  |
+| `transactionSeqNumber` |  |
+| `transactionServerDate` |  |
+| `transactionSource` |  |
+| `transactionType` |  |
 
 Operations: Create.
 
@@ -948,12 +944,12 @@ API path: `/public/statusTransaction`
 
 | Field | Description |
 | --- | --- |
-| `acq_tab_nexo` |  |
-| `config_version` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `serial_number` |  |
-| `tid_sent` |  |
+| `acqTabNexo` |  |
+| `configVersion` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `serialNumber` |  |
+| `tidSent` |  |
 
 Operations: Create.
 
@@ -963,11 +959,11 @@ API path: `/storeTerminalParameters`
 
 | Field | Description |
 | --- | --- |
-| `device_serial_number` |  |
-| `duplicate_terminal_id` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal` |  |
+| `deviceSerialNumber` |  |
+| `duplicateTerminalIds` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminals` |  |
 
 Operations: Create.
 
@@ -977,34 +973,34 @@ API path: `/public/getTerminalId`
 
 | Field | Description |
 | --- | --- |
-| `3_d_secure` |  |
-| `authorization_code` |  |
-| `card_brand` |  |
-| `clearing_amount_from` |  |
-| `clearing_amount_to` |  |
-| `clearing_currency` |  |
-| `clearing_status` |  |
-| `corporate_uuid` |  |
-| `order_by_transaction_date` |  |
+| `3DSecure` |  |
+| `authorizationCode` |  |
+| `cardBrand` |  |
+| `clearingAmountFrom` |  |
+| `clearingAmountTo` |  |
+| `clearingCurrency` |  |
+| `clearingStatus` |  |
+| `corporateUUID` |  |
+| `orderByTransactionDate` |  |
 | `pagination` |  |
-| `payment_token_public_id` |  |
-| `receipt_number` |  |
-| `referenced_transaction_id` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `retrieval_reference_number` |  |
-| `source_id` |  |
-| `tecsengine_response_code_from` |  |
-| `tecsengine_response_code_to` |  |
-| `terminal_id` |  |
-| `trace_number` |  |
-| `transaction_amount_from` |  |
-| `transaction_amount_to` |  |
-| `transaction_date_from` |  |
-| `transaction_date_to` |  |
-| `transaction_history` |  |
-| `transaction_id` |  |
-| `transaction_type` |  |
+| `paymentTokenPublicId` |  |
+| `receiptNumber` |  |
+| `referencedTransactionId` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `retrievalReferenceNumber` |  |
+| `sourceId` |  |
+| `tecsengineResponseCodeFrom` |  |
+| `tecsengineResponseCodeTo` |  |
+| `terminalId` |  |
+| `traceNumber` |  |
+| `transactionAmountFrom` |  |
+| `transactionAmountTo` |  |
+| `transactionDateFrom` |  |
+| `transactionDateTo` |  |
+| `transactionHistories` |  |
+| `transactionId` |  |
+| `transactionType` |  |
 | `wallet` |  |
 
 Operations: Create.
@@ -1016,11 +1012,11 @@ API path: `/public/mcom/transactionHistory`
 | Field | Description |
 | --- | --- |
 | `period` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `transaction_date_from` |  |
-| `transaction_date_to` |  |
-| `transactions_count` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `transactionDateFrom` |  |
+| `transactionDateTo` |  |
+| `transactionsCount` |  |
 
 Operations: Create.
 
@@ -1031,11 +1027,11 @@ API path: `/public/countAuthorisedTransactions`
 | Field | Description |
 | --- | --- |
 | `period` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `transaction_date_from` |  |
-| `transaction_date_to` |  |
-| `transactions_count` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `transactionDateFrom` |  |
+| `transactionDateTo` |  |
+| `transactionsCount` |  |
 
 Operations: Create.
 
@@ -1046,11 +1042,11 @@ API path: `/public/countTransactionsByCardBrand`
 | Field | Description |
 | --- | --- |
 | `period` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `transaction_date_from` |  |
-| `transaction_date_to` |  |
-| `turnover` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `transactionDateFrom` |  |
+| `transactionDateTo` |  |
+| `turnovers` |  |
 
 Operations: Create.
 
@@ -1061,15 +1057,15 @@ API path: `/public/transactionTurnover`
 | Field | Description |
 | --- | --- |
 | `city` |  |
-| `corporate_uuid` |  |
+| `corporateUuid` |  |
 | `country` |  |
-| `merchant_category_code` |  |
+| `merchantCategoryCode` |  |
 | `name` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `state` |  |
 | `street` |  |
-| `vu_nummer` |  |
+| `vuNummer` |  |
 | `zipcode` |  |
 
 Operations: Create.
@@ -1080,10 +1076,10 @@ API path: `/public/updateMerchant`
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
-| `template_name` |  |
-| `template_xml` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `templateName` |  |
+| `templateXml` |  |
 
 Operations: Create.
 
@@ -1093,8 +1089,8 @@ API path: `/public/updateTemplateXml`
 
 | Field | Description |
 | --- | --- |
-| `app_name` |  |
-| `build_date` |  |
+| `appName` |  |
+| `buildDate` |  |
 | `version` |  |
 
 Operations: Load.
@@ -1120,55 +1116,55 @@ Create an instance: `auto cancel_transaction = client->cancel_transaction();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_id` | `std::string` |  |
-| `acquirer_name` | `std::string` |  |
-| `actual_bonus_point` | `std::string` |  |
+| `acquirerId` | `std::string` |  |
+| `acquirerName` | `std::string` |  |
+| `actualBonusPoints` | `std::string` |  |
 | `amount` | `int64_t` |  |
-| `authorization_code` | `std::string` |  |
-| `balance_amount` | `std::string` |  |
-| `card_brand` | `std::string` |  |
-| `card_number` | `std::string` |  |
-| `client_id` | `int64_t` |  |
+| `authorizationCode` | `std::string` |  |
+| `balanceAmount` | `std::string` |  |
+| `cardBrand` | `std::string` |  |
+| `cardNumber` | `std::string` |  |
+| `clientId` | `int64_t` |  |
 | `currency` | `std::string` |  |
 | `cvc` | `std::string` |  |
-| `ec_data` | `std::string` |  |
-| `ecr_data` | `std::string` |  |
-| `emv_data` | `std::string` |  |
-| `exchange_fee` | `int64_t` |  |
-| `exchange_rate` | `std::string` |  |
-| `language_code` | `std::string` |  |
-| `merchant_address` | `std::string` |  |
-| `merchant_name` | `std::string` |  |
-| `merchant_number` | `std::string` |  |
-| `message_type` | `std::string` |  |
-| `original_trace_number` | `int64_t` |  |
-| `original_transaction_id` | `std::string` |  |
+| `ecData` | `std::string` |  |
+| `ecrData` | `std::string` |  |
+| `emvData` | `std::string` |  |
+| `exchangeFee` | `int64_t` |  |
+| `exchangeRate` | `std::string` |  |
+| `languageCode` | `std::string` |  |
+| `merchantAddress` | `std::string` |  |
+| `merchantName` | `std::string` |  |
+| `merchantNumber` | `std::string` |  |
+| `messageType` | `std::string` |  |
+| `originalTraceNumber` | `int64_t` |  |
+| `originalTransactionId` | `std::string` |  |
 | `password` | `std::string` |  |
-| `payment_reason` | `std::string` |  |
-| `receipt_footer` | `std::string` |  |
-| `receipt_header` | `std::string` |  |
-| `receipt_layout` | `int64_t` |  |
-| `receipt_number` | `std::string` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
-| `serial_number` | `std::string` |  |
+| `paymentReason` | `std::string` |  |
+| `receiptFooter` | `std::string` |  |
+| `receiptHeader` | `std::string` |  |
+| `receiptLayout` | `int64_t` |  |
+| `receiptNumber` | `std::string` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
+| `serialNumber` | `std::string` |  |
 | `svc` | `std::string` |  |
-| `terminal_id` | `int64_t` |  |
-| `terminal_location` | `std::string` |  |
-| `trace_number` | `int64_t` |  |
-| `transaction_date` | `std::string` |  |
-| `transaction_id` | `std::string` |  |
-| `tx_type` | `std::string` |  |
-| `user_data` | `std::string` |  |
+| `terminalId` | `int64_t` |  |
+| `terminalLocation` | `std::string` |  |
+| `traceNumber` | `int64_t` |  |
+| `transactionDate` | `std::string` |  |
+| `transactionId` | `std::string` |  |
+| `txType` | `std::string` |  |
+| `userData` | `std::string` |  |
 
 #### Example: Create
 
 ```cpp
 Value cancel_transaction = client->cancel_transaction()->create(vmap({
-    {"client_id", Value(1)},  // int64_t
+    {"clientId", Value(1)},  // int64_t
     {"currency", Value("example_currency")},  // std::string
-    {"receipt_number", Value("example_receipt_number")},  // std::string
-    {"terminal_id", Value(1)},  // int64_t
+    {"receiptNumber", Value("example_receiptNumber")},  // std::string
+    {"terminalId", Value(1)},  // int64_t
 }), Value::undef());
 ```
 
@@ -1187,9 +1183,9 @@ Create an instance: `auto check_card_black_listed = client->check_card_black_lis
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `card_no` | `std::string` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
+| `cardNo` | `std::string` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
 
 #### Example: Create
 
@@ -1213,22 +1209,22 @@ Create an instance: `auto create_product = client->create_product();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_id` | `int64_t` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
-| `template_name` | `std::string` |  |
-| `template_type` | `std::string` |  |
-| `template_xml` | `std::string` |  |
-| `terminal_type` | `std::string` |  |
+| `acquirerId` | `int64_t` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
+| `templateName` | `std::string` |  |
+| `templateType` | `std::string` |  |
+| `templateXml` | `std::string` |  |
+| `terminalType` | `std::string` |  |
 
 #### Example: Create
 
 ```cpp
 Value create_product = client->create_product()->create(vmap({
-    {"template_name", Value("example_template_name")},  // std::string
-    {"template_type", Value("example_template_type")},  // std::string
-    {"template_xml", Value("example_template_xml")},  // std::string
-    {"terminal_type", Value("example_terminal_type")},  // std::string
+    {"templateName", Value("example_templateName")},  // std::string
+    {"templateType", Value("example_templateType")},  // std::string
+    {"templateXml", Value("example_templateXml")},  // std::string
+    {"terminalType", Value("example_terminalType")},  // std::string
 }), Value::undef());
 ```
 
@@ -1247,20 +1243,20 @@ Create an instance: `auto deactivate_terminal = client->deactivate_terminal();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `corporate_uuid` | `std::string` |  |
-| `deactivation_reason` | `std::string` |  |
-| `package_order_uuid` | `std::string` |  |
-| `product_order_uuid` | `std::string` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
-| `terminal_id` | `int64_t` |  |
+| `corporateUuid` | `std::string` |  |
+| `deactivationReason` | `std::string` |  |
+| `packageOrderUuid` | `std::string` |  |
+| `productOrderUuid` | `std::string` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
+| `terminalId` | `int64_t` |  |
 
 #### Example: Create
 
 ```cpp
 Value deactivate_terminal = client->deactivate_terminal()->create(vmap({
-    {"deactivation_reason", Value("example_deactivation_reason")},  // std::string
-    {"terminal_id", Value(1)},  // int64_t
+    {"deactivationReason", Value("example_deactivationReason")},  // std::string
+    {"terminalId", Value(1)},  // int64_t
 }), Value::undef());
 ```
 
@@ -1280,16 +1276,16 @@ Create an instance: `auto digital_services_api = client->digital_services_api();
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `clearing_date_from` | `std::string` |  |
-| `clearing_date_to` | `std::string` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
-| `tx_count` | `int64_t` |  |
-| `tx_id_end` | `std::string` |  |
-| `tx_id_start` | `std::string` |  |
-| `tx_seq_no_end` | `int64_t` |  |
-| `tx_seq_no_start` | `int64_t` |  |
-| `tx_total` | `int64_t` |  |
+| `clearingDateFrom` | `std::string` |  |
+| `clearingDateTo` | `std::string` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
+| `txCount` | `int64_t` |  |
+| `txIdEnd` | `std::string` |  |
+| `txIdStart` | `std::string` |  |
+| `txSeqNoEnd` | `int64_t` |  |
+| `txSeqNoStart` | `int64_t` |  |
+| `txTotal` | `int64_t` |  |
 
 #### Example: Load
 
@@ -1301,6 +1297,8 @@ Value digital_services_api = client->digital_services_api()->load(Value::undef()
 
 ```cpp
 Value digital_services_api = client->digital_services_api()->create(vmap({
+    {"clearingDateFrom", Value("example_clearingDateFrom")},  // std::string
+    {"clearingDateTo", Value("example_clearingDateTo")},  // std::string
 }), Value::undef());
 ```
 
@@ -1319,20 +1317,20 @@ Create an instance: `auto ec_data_ecom = client->ec_data_ecom();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `ecom_data` | `std::string` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
-| `terminal_id` | `int64_t` |  |
-| `transaction_id` | `std::string` |  |
-| `transaction_type` | `std::string` |  |
+| `ecomData` | `std::string` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
+| `terminalId` | `int64_t` |  |
+| `transactionId` | `std::string` |  |
+| `transactionType` | `std::string` |  |
 
 #### Example: Create
 
 ```cpp
 Value ec_data_ecom = client->ec_data_ecom()->create(vmap({
-    {"terminal_id", Value(1)},  // int64_t
-    {"transaction_id", Value("example_transaction_id")},  // std::string
-    {"transaction_type", Value("example_transaction_type")},  // std::string
+    {"terminalId", Value(1)},  // int64_t
+    {"transactionId", Value("example_transactionId")},  // std::string
+    {"transactionType", Value("example_transactionType")},  // std::string
 }), Value::undef());
 ```
 
@@ -1351,17 +1349,17 @@ Create an instance: `auto ecom_parameter = client->ecom_parameter();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `ecom_pass` | `std::string` |  |
-| `ecom_skey` | `std::string` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
-| `terminal_id` | `int64_t` |  |
+| `ecomPass` | `std::string` |  |
+| `ecomSkey` | `std::string` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
+| `terminalId` | `int64_t` |  |
 
 #### Example: Create
 
 ```cpp
 Value ecom_parameter = client->ecom_parameter()->create(vmap({
-    {"terminal_id", Value(1)},  // int64_t
+    {"terminalId", Value(1)},  // int64_t
 }), Value::undef());
 ```
 
@@ -1380,20 +1378,20 @@ Create an instance: `auto ecr_data = client->ecr_data();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `ecr_data` | `std::string` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
-| `terminal_id` | `int64_t` |  |
-| `transaction_id` | `std::string` |  |
-| `transaction_type` | `std::string` |  |
+| `ecrData` | `std::string` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
+| `terminalId` | `int64_t` |  |
+| `transactionId` | `std::string` |  |
+| `transactionType` | `std::string` |  |
 
 #### Example: Create
 
 ```cpp
 Value ecr_data = client->ecr_data()->create(vmap({
-    {"terminal_id", Value(1)},  // int64_t
-    {"transaction_id", Value("example_transaction_id")},  // std::string
-    {"transaction_type", Value("example_transaction_type")},  // std::string
+    {"terminalId", Value(1)},  // int64_t
+    {"transactionId", Value("example_transactionId")},  // std::string
+    {"transactionType", Value("example_transactionType")},  // std::string
 }), Value::undef());
 ```
 
@@ -1412,20 +1410,20 @@ Create an instance: `auto emv_data = client->emv_data();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `emv_data` | `std::string` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
-| `terminal_id` | `int64_t` |  |
-| `transaction_id` | `std::string` |  |
-| `transaction_type` | `std::string` |  |
+| `emvData` | `std::string` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
+| `terminalId` | `int64_t` |  |
+| `transactionId` | `std::string` |  |
+| `transactionType` | `std::string` |  |
 
 #### Example: Create
 
 ```cpp
 Value emv_data = client->emv_data()->create(vmap({
-    {"terminal_id", Value(1)},  // int64_t
-    {"transaction_id", Value("example_transaction_id")},  // std::string
-    {"transaction_type", Value("example_transaction_type")},  // std::string
+    {"terminalId", Value(1)},  // int64_t
+    {"transactionId", Value("example_transactionId")},  // std::string
+    {"transactionType", Value("example_transactionType")},  // std::string
 }), Value::undef());
 ```
 
@@ -1444,31 +1442,31 @@ Create an instance: `auto enable_acquiring = client->enable_acquiring();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `account_no` | `int64_t` |  |
-| `additional_data` | `std::map<std::string, Value>` |  |
-| `corporate_uuid` | `std::string` |  |
+| `accountNo` | `int64_t` |  |
+| `additionalData` | `std::map<std::string, Value>` |  |
+| `corporateUuid` | `std::string` |  |
 | `currency` | `std::string` |  |
-| `merchant_category_code` | `int64_t` |  |
-| `package_order_uuid` | `std::string` |  |
-| `product_order_uuid` | `std::string` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
-| `sorting_code` | `int64_t` |  |
-| `template_name` | `std::string` |  |
-| `terminal_id` | `std::vector<Value>` |  |
-| `terminal_id_acq` | `std::string` |  |
-| `vu_nummer` | `std::string` |  |
+| `merchantCategoryCode` | `int64_t` |  |
+| `packageOrderUuid` | `std::string` |  |
+| `productOrderUuid` | `std::string` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
+| `sortingCode` | `int64_t` |  |
+| `templateName` | `std::string` |  |
+| `terminalIdAcq` | `std::string` |  |
+| `terminalIds` | `std::vector<Value>` |  |
+| `vuNummer` | `std::string` |  |
 
 #### Example: Create
 
 ```cpp
 Value enable_acquiring = client->enable_acquiring()->create(vmap({
-    {"corporate_uuid", Value("example_corporate_uuid")},  // std::string
+    {"corporateUuid", Value("example_corporateUuid")},  // std::string
     {"currency", Value("example_currency")},  // std::string
-    {"merchant_category_code", Value(1)},  // int64_t
-    {"package_order_uuid", Value("example_package_order_uuid")},  // std::string
-    {"product_order_uuid", Value("example_product_order_uuid")},  // std::string
-    {"template_name", Value("example_template_name")},  // std::string
+    {"merchantCategoryCode", Value(1)},  // int64_t
+    {"packageOrderUuid", Value("example_packageOrderUuid")},  // std::string
+    {"productOrderUuid", Value("example_productOrderUuid")},  // std::string
+    {"templateName", Value("example_templateName")},  // std::string
 }), Value::undef());
 ```
 
@@ -1487,15 +1485,15 @@ Create an instance: `auto get_merchant_contract_number = client->get_merchant_co
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `merchant_contract_number` | `std::string` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
+| `merchantContractNumber` | `std::string` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
 
 #### Example: Create
 
 ```cpp
 Value get_merchant_contract_number = client->get_merchant_contract_number()->create(vmap({
-    {"merchant_contract_number", Value("example_merchant_contract_number")},  // std::string
+    {"merchantContractNumber", Value("example_merchantContractNumber")},  // std::string
 }), Value::undef());
 ```
 
@@ -1514,15 +1512,15 @@ Create an instance: `auto get_template_xml = client->get_template_xml();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
-| `template_name` | `std::string` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
+| `templateName` | `std::string` |  |
 
 #### Example: Create
 
 ```cpp
 Value get_template_xml = client->get_template_xml()->create(vmap({
-    {"template_name", Value("example_template_name")},  // std::string
+    {"templateName", Value("example_templateName")},  // std::string
 }), Value::undef());
 ```
 
@@ -1541,15 +1539,15 @@ Create an instance: `auto introduce_mandator = client->introduce_mandator();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `mandator_name` | `std::string` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
+| `mandatorName` | `std::string` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
 
 #### Example: Create
 
 ```cpp
 Value introduce_mandator = client->introduce_mandator()->create(vmap({
-    {"mandator_name", Value("example_mandator_name")},  // std::string
+    {"mandatorName", Value("example_mandatorName")},  // std::string
 }), Value::undef());
 ```
 
@@ -1568,15 +1566,15 @@ Create an instance: `auto introduce_package = client->introduce_package();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
-| `terminal_template_description` | `std::string` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
+| `terminalTemplateDescription` | `std::string` |  |
 
 #### Example: Create
 
 ```cpp
 Value introduce_package = client->introduce_package()->create(vmap({
-    {"terminal_template_description", Value("example_terminal_template_description")},  // std::string
+    {"terminalTemplateDescription", Value("example_terminalTemplateDescription")},  // std::string
 }), Value::undef());
 ```
 
@@ -1596,15 +1594,15 @@ Create an instance: `auto keep_alive = client->keep_alive();`
 | Field | Type | Description |
 | --- | --- | --- |
 | `hwserialno` | `std::string` |  |
-| `ka_date_time_from` | `std::string` |  |
-| `ka_date_time_to` | `std::string` |  |
-| `keep_alive_data` | `std::vector<Value>` |  |
+| `kaDateTimeFrom` | `std::string` |  |
+| `kaDateTimeTo` | `std::string` |  |
+| `keepAliveData` | `std::vector<Value>` |  |
 | `pagination` | `std::map<std::string, Value>` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
-| `terminal_date_time_from` | `std::string` |  |
-| `terminal_date_time_to` | `std::string` |  |
-| `terminal_id` | `int64_t` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
+| `terminalDateTimeFrom` | `std::string` |  |
+| `terminalDateTimeTo` | `std::string` |  |
+| `terminalId` | `int64_t` |  |
 
 #### Example: Create
 
@@ -1628,12 +1626,12 @@ Create an instance: `auto list_terminal = client->list_terminal();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `corporate_uuid` | `std::vector<Value>` |  |
+| `corporateUuid` | `std::vector<Value>` |  |
 | `filter` | `std::map<std::string, Value>` |  |
 | `pagination` | `std::map<std::string, Value>` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
-| `terminal` | `std::vector<Value>` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
+| `terminals` | `std::vector<Value>` |  |
 
 #### Example: Create
 
@@ -1657,19 +1655,19 @@ Create an instance: `auto mandator_clearing_export = client->mandator_clearing_e
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `clearing_date_from` | `std::string` |  |
-| `clearing_date_to` | `std::string` |  |
+| `clearingDateFrom` | `std::string` |  |
+| `clearingDateTo` | `std::string` |  |
 | `pagination` | `std::map<std::string, Value>` |  |
-| `record` | `std::vector<Value>` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
+| `records` | `std::vector<Value>` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
 
 #### Example: Create
 
 ```cpp
 Value mandator_clearing_export = client->mandator_clearing_export()->create(vmap({
-    {"clearing_date_from", Value("example_clearing_date_from")},  // std::string
-    {"clearing_date_to", Value("example_clearing_date_to")},  // std::string
+    {"clearingDateFrom", Value("example_clearingDateFrom")},  // std::string
+    {"clearingDateTo", Value("example_clearingDateTo")},  // std::string
 }), Value::undef());
 ```
 
@@ -1689,12 +1687,12 @@ Create an instance: `auto mandator_clearing_export_download = client->mandator_c
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `clearing_date_from` | `std::string` |  |
-| `clearing_date_to` | `std::string` |  |
-| `file_id` | `std::string` |  |
-| `filename_template` | `std::string` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
+| `clearingDateFrom` | `std::string` |  |
+| `clearingDateTo` | `std::string` |  |
+| `fileId` | `std::string` |  |
+| `filenameTemplate` | `std::string` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
 | `status` | `std::string` |  |
 
 #### Example: Load
@@ -1707,8 +1705,8 @@ Value mandator_clearing_export_download = client->mandator_clearing_export_downl
 
 ```cpp
 Value mandator_clearing_export_download = client->mandator_clearing_export_download()->create(vmap({
-    {"clearing_date_from", Value("example_clearing_date_from")},  // std::string
-    {"clearing_date_to", Value("example_clearing_date_to")},  // std::string
+    {"clearingDateFrom", Value("example_clearingDateFrom")},  // std::string
+    {"clearingDateTo", Value("example_clearingDateTo")},  // std::string
 }), Value::undef());
 ```
 
@@ -1727,18 +1725,18 @@ Create an instance: `auto mandator_clearing_export_summary = client->mandator_cl
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `clearing_date_from` | `std::string` |  |
-| `clearing_date_to` | `std::string` |  |
-| `record` | `std::vector<Value>` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
+| `clearingDateFrom` | `std::string` |  |
+| `clearingDateTo` | `std::string` |  |
+| `records` | `std::vector<Value>` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
 
 #### Example: Create
 
 ```cpp
 Value mandator_clearing_export_summary = client->mandator_clearing_export_summary()->create(vmap({
-    {"clearing_date_from", Value("example_clearing_date_from")},  // std::string
-    {"clearing_date_to", Value("example_clearing_date_to")},  // std::string
+    {"clearingDateFrom", Value("example_clearingDateFrom")},  // std::string
+    {"clearingDateTo", Value("example_clearingDateTo")},  // std::string
 }), Value::undef());
 ```
 
@@ -1757,30 +1755,30 @@ Create an instance: `auto merchant_portal_services_api = client->merchant_portal
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `3_d_secure` | `std::string` |  |
-| `authorization_code` | `std::string` |  |
-| `card_brand` | `std::string` |  |
-| `clearing_amount_from` | `std::string` |  |
-| `clearing_amount_to` | `std::string` |  |
-| `clearing_currency` | `std::string` |  |
-| `clearing_status` | `std::string` |  |
-| `corporate_uuid` | `std::string` |  |
-| `order_by_transaction_date` | `std::string` |  |
+| `3DSecure` | `std::string` |  |
+| `authorizationCode` | `std::string` |  |
+| `cardBrand` | `std::string` |  |
+| `clearingAmountFrom` | `std::string` |  |
+| `clearingAmountTo` | `std::string` |  |
+| `clearingCurrency` | `std::string` |  |
+| `clearingStatus` | `std::string` |  |
+| `corporateUUID` | `std::string` |  |
+| `orderByTransactionDate` | `std::string` |  |
 | `pagination` | `std::map<std::string, Value>` |  |
-| `receipt_number` | `std::string` |  |
-| `referenced_transaction_id` | `std::string` |  |
-| `retrieval_reference_number` | `std::string` |  |
-| `source_id` | `int64_t` |  |
-| `tecsengine_response_code_from` | `std::string` |  |
-| `tecsengine_response_code_to` | `std::string` |  |
-| `terminal_id` | `int64_t` |  |
-| `trace_number` | `std::string` |  |
-| `transaction_amount_from` | `std::string` |  |
-| `transaction_amount_to` | `std::string` |  |
-| `transaction_date_from` | `std::string` |  |
-| `transaction_date_to` | `std::string` |  |
-| `transaction_id` | `std::string` |  |
-| `transaction_type` | `std::string` |  |
+| `receiptNumber` | `std::string` |  |
+| `referencedTransactionId` | `std::string` |  |
+| `retrievalReferenceNumber` | `std::string` |  |
+| `sourceId` | `int64_t` |  |
+| `tecsengineResponseCodeFrom` | `std::string` |  |
+| `tecsengineResponseCodeTo` | `std::string` |  |
+| `terminalId` | `int64_t` |  |
+| `traceNumber` | `std::string` |  |
+| `transactionAmountFrom` | `std::string` |  |
+| `transactionAmountTo` | `std::string` |  |
+| `transactionDateFrom` | `std::string` |  |
+| `transactionDateTo` | `std::string` |  |
+| `transactionId` | `std::string` |  |
+| `transactionType` | `std::string` |  |
 | `wallet` | `std::string` |  |
 
 #### Example: Create
@@ -1805,17 +1803,17 @@ Create an instance: `auto move_tid = client->move_tid();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `productorderuuid` | `std::vector<Value>` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
-| `target_packageorderuuid` | `std::string` |  |
-| `target_productorderuuid` | `std::string` |  |
+| `productorderuuids` | `std::vector<Value>` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
+| `targetPackageorderuuid` | `std::string` |  |
+| `targetProductorderuuid` | `std::string` |  |
 
 #### Example: Create
 
 ```cpp
 Value move_tid = client->move_tid()->create(vmap({
-    {"productorderuuid", vlist()},  // std::vector<Value>
+    {"productorderuuids", vlist()},  // std::vector<Value>
 }), Value::undef());
 ```
 
@@ -1834,22 +1832,22 @@ Create an instance: `auto payment_manual = client->payment_manual();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_name` | `std::string` |  |
+| `acquirerName` | `std::string` |  |
 | `amount` | `int64_t` |  |
-| `authorization_number` | `std::string` |  |
-| `card_number` | `std::string` |  |
-| `card_type` | `std::string` |  |
+| `authorizationNumber` | `std::string` |  |
+| `cardNumber` | `std::string` |  |
+| `cardType` | `std::string` |  |
 | `currency` | `std::string` |  |
 | `cvc` | `std::string` |  |
-| `date_time_tx` | `std::string` |  |
-| `exp_date` | `std::string` |  |
-| `merchant_id` | `std::string` |  |
-| `original_transaction_id` | `std::string` |  |
+| `dateTimeTx` | `std::string` |  |
+| `expDate` | `std::string` |  |
+| `merchantId` | `std::string` |  |
+| `originalTransactionId` | `std::string` |  |
 | `password` | `std::string` |  |
-| `response_code` | `std::string` |  |
-| `response_message` | `std::string` |  |
-| `terminal_id` | `std::string` |  |
-| `transaction_id` | `std::string` |  |
+| `responseCode` | `std::string` |  |
+| `responseMessage` | `std::string` |  |
+| `terminalId` | `std::string` |  |
+| `transactionId` | `std::string` |  |
 | `txtype` | `std::string` |  |
 
 #### Example: Create
@@ -1857,9 +1855,9 @@ Create an instance: `auto payment_manual = client->payment_manual();`
 ```cpp
 Value payment_manual = client->payment_manual()->create(vmap({
     {"amount", Value(1)},  // int64_t
-    {"card_number", Value("example_card_number")},  // std::string
+    {"cardNumber", Value("example_cardNumber")},  // std::string
     {"currency", Value("example_currency")},  // std::string
-    {"exp_date", Value("example_exp_date")},  // std::string
+    {"expDate", Value("example_expDate")},  // std::string
     {"txtype", Value("example_txtype")},  // std::string
 }), Value::undef());
 ```
@@ -1879,21 +1877,17 @@ Create an instance: `auto payment_sred = client->payment_sred();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_name` | `std::string` |  |
 | `amount` | `int64_t` |  |
-| `authorization_number` | `std::string` |  |
-| `card_type` | `std::string` |  |
 | `currency` | `std::string` |  |
-| `date_time_tx` | `std::string` |  |
-| `device_payload` | `std::string` |  |
-| `merchant_id` | `std::string` |  |
-| `original_transaction_id` | `std::string` |  |
+| `device` | `std::string` |  |
+| `devicePayload` | `std::string` |  |
+| `expDate` | `std::string` |  |
+| `mode` | `std::string` |  |
+| `panMasked` | `std::string` |  |
 | `password` | `std::string` |  |
-| `response_code` | `std::string` |  |
-| `response_message` | `std::string` |  |
-| `sred` | `std::map<std::string, Value>` |  |
-| `terminal_id` | `std::string` |  |
-| `transaction_id` | `std::string` |  |
+| `serial` | `std::string` |  |
+| `serviceCode` | `std::string` |  |
+| `terminalId` | `std::string` |  |
 | `txtype` | `std::string` |  |
 
 #### Example: Create
@@ -1902,7 +1896,8 @@ Create an instance: `auto payment_sred = client->payment_sred();`
 Value payment_sred = client->payment_sred()->create(vmap({
     {"amount", Value(1)},  // int64_t
     {"currency", Value("example_currency")},  // std::string
-    {"device_payload", Value("example_device_payload")},  // std::string
+    {"devicePayload", Value("example_devicePayload")},  // std::string
+    {"terminalId", Value("example_terminalId")},  // std::string
     {"txtype", Value("example_txtype")},  // std::string
 }), Value::undef());
 ```
@@ -1922,59 +1917,59 @@ Create an instance: `auto pre_auth_transaction_completion = client->pre_auth_tra
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_id` | `std::string` |  |
-| `acquirer_name` | `std::string` |  |
-| `actual_bonus_point` | `std::string` |  |
+| `acquirerId` | `std::string` |  |
+| `acquirerName` | `std::string` |  |
+| `actualBonusPoints` | `std::string` |  |
 | `amount` | `int64_t` |  |
-| `authorization_code` | `std::string` |  |
-| `balance_amount` | `std::string` |  |
-| `card_brand` | `std::string` |  |
-| `card_number` | `std::string` |  |
-| `card_number_reference` | `std::string` |  |
-| `client_id` | `int64_t` |  |
+| `authorizationCode` | `std::string` |  |
+| `balanceAmount` | `std::string` |  |
+| `cardBrand` | `std::string` |  |
+| `cardNumber` | `std::string` |  |
+| `cardNumberReference` | `std::string` |  |
+| `clientId` | `int64_t` |  |
 | `currency` | `std::string` |  |
 | `cvc` | `std::string` |  |
-| `ec_data` | `std::string` |  |
-| `ecr_data` | `std::string` |  |
-| `emv_data` | `std::string` |  |
-| `exchange_fee` | `int64_t` |  |
-| `exchange_rate` | `std::string` |  |
-| `language_code` | `std::string` |  |
-| `merchant_address` | `std::string` |  |
-| `merchant_name` | `std::string` |  |
-| `merchant_number` | `std::string` |  |
-| `message_type` | `std::string` |  |
-| `original_trace_number` | `int64_t` |  |
-| `original_transaction_id` | `std::string` |  |
+| `ecData` | `std::string` |  |
+| `ecrData` | `std::string` |  |
+| `emvData` | `std::string` |  |
+| `exchangeFee` | `int64_t` |  |
+| `exchangeRate` | `std::string` |  |
+| `languageCode` | `std::string` |  |
+| `merchantAddress` | `std::string` |  |
+| `merchantName` | `std::string` |  |
+| `merchantNumber` | `std::string` |  |
+| `messageType` | `std::string` |  |
+| `originalTraceNumber` | `int64_t` |  |
+| `originalTransactionId` | `std::string` |  |
 | `password` | `std::string` |  |
-| `payment_reason` | `std::string` |  |
-| `receipt_footer` | `std::string` |  |
-| `receipt_header` | `std::string` |  |
-| `receipt_layout` | `int64_t` |  |
-| `receipt_number` | `std::string` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
-| `serial_number` | `std::string` |  |
+| `paymentReason` | `std::string` |  |
+| `receiptFooter` | `std::string` |  |
+| `receiptHeader` | `std::string` |  |
+| `receiptLayout` | `int64_t` |  |
+| `receiptNumber` | `std::string` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
+| `serialNumber` | `std::string` |  |
 | `svc` | `std::string` |  |
-| `terminal_id` | `int64_t` |  |
-| `terminal_location` | `std::string` |  |
-| `trace_number` | `int64_t` |  |
-| `transaction_date` | `std::string` |  |
-| `transaction_id` | `std::string` |  |
-| `transaction_type` | `std::string` |  |
-| `tx_type` | `std::string` |  |
-| `user_data` | `std::string` |  |
+| `terminalId` | `int64_t` |  |
+| `terminalLocation` | `std::string` |  |
+| `traceNumber` | `int64_t` |  |
+| `transactionDate` | `std::string` |  |
+| `transactionId` | `std::string` |  |
+| `transactionType` | `std::string` |  |
+| `txType` | `std::string` |  |
+| `userData` | `std::string` |  |
 
 #### Example: Create
 
 ```cpp
 Value pre_auth_transaction_completion = client->pre_auth_transaction_completion()->create(vmap({
-    {"card_number_reference", Value("example_card_number_reference")},  // std::string
-    {"client_id", Value(1)},  // int64_t
+    {"cardNumberReference", Value("example_cardNumberReference")},  // std::string
+    {"clientId", Value(1)},  // int64_t
     {"currency", Value("example_currency")},  // std::string
-    {"receipt_number", Value("example_receipt_number")},  // std::string
-    {"terminal_id", Value(1)},  // int64_t
-    {"transaction_type", Value("example_transaction_type")},  // std::string
+    {"receiptNumber", Value("example_receiptNumber")},  // std::string
+    {"terminalId", Value(1)},  // int64_t
+    {"transactionType", Value("example_transactionType")},  // std::string
 }), Value::undef());
 ```
 
@@ -1993,20 +1988,20 @@ Create an instance: `auto reactivate_terminal = client->reactivate_terminal();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `corporate_uuid` | `std::string` |  |
-| `package_order_uuid` | `std::string` |  |
-| `product_order_uuid` | `std::string` |  |
-| `reactivation_reason` | `std::string` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
-| `terminal_id` | `int64_t` |  |
+| `corporateUuid` | `std::string` |  |
+| `packageOrderUuid` | `std::string` |  |
+| `productOrderUuid` | `std::string` |  |
+| `reactivationReason` | `std::string` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
+| `terminalId` | `int64_t` |  |
 
 #### Example: Create
 
 ```cpp
 Value reactivate_terminal = client->reactivate_terminal()->create(vmap({
-    {"reactivation_reason", Value("example_reactivation_reason")},  // std::string
-    {"terminal_id", Value(1)},  // int64_t
+    {"reactivationReason", Value("example_reactivationReason")},  // std::string
+    {"terminalId", Value(1)},  // int64_t
 }), Value::undef());
 ```
 
@@ -2025,55 +2020,55 @@ Create an instance: `auto refund_transaction = client->refund_transaction();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_id` | `std::string` |  |
-| `acquirer_name` | `std::string` |  |
-| `actual_bonus_point` | `std::string` |  |
+| `acquirerId` | `std::string` |  |
+| `acquirerName` | `std::string` |  |
+| `actualBonusPoints` | `std::string` |  |
 | `amount` | `int64_t` |  |
-| `authorization_code` | `std::string` |  |
-| `balance_amount` | `std::string` |  |
-| `card_brand` | `std::string` |  |
-| `card_number` | `std::string` |  |
-| `client_id` | `int64_t` |  |
+| `authorizationCode` | `std::string` |  |
+| `balanceAmount` | `std::string` |  |
+| `cardBrand` | `std::string` |  |
+| `cardNumber` | `std::string` |  |
+| `clientId` | `int64_t` |  |
 | `currency` | `std::string` |  |
 | `cvc` | `std::string` |  |
-| `ec_data` | `std::string` |  |
-| `ecr_data` | `std::string` |  |
-| `emv_data` | `std::string` |  |
-| `exchange_fee` | `int64_t` |  |
-| `exchange_rate` | `std::string` |  |
-| `language_code` | `std::string` |  |
-| `merchant_address` | `std::string` |  |
-| `merchant_name` | `std::string` |  |
-| `merchant_number` | `std::string` |  |
-| `message_type` | `std::string` |  |
-| `original_trace_number` | `int64_t` |  |
-| `original_transaction_id` | `std::string` |  |
+| `ecData` | `std::string` |  |
+| `ecrData` | `std::string` |  |
+| `emvData` | `std::string` |  |
+| `exchangeFee` | `int64_t` |  |
+| `exchangeRate` | `std::string` |  |
+| `languageCode` | `std::string` |  |
+| `merchantAddress` | `std::string` |  |
+| `merchantName` | `std::string` |  |
+| `merchantNumber` | `std::string` |  |
+| `messageType` | `std::string` |  |
+| `originalTraceNumber` | `int64_t` |  |
+| `originalTransactionId` | `std::string` |  |
 | `password` | `std::string` |  |
-| `payment_reason` | `std::string` |  |
-| `receipt_footer` | `std::string` |  |
-| `receipt_header` | `std::string` |  |
-| `receipt_layout` | `int64_t` |  |
-| `receipt_number` | `std::string` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
-| `serial_number` | `std::string` |  |
+| `paymentReason` | `std::string` |  |
+| `receiptFooter` | `std::string` |  |
+| `receiptHeader` | `std::string` |  |
+| `receiptLayout` | `int64_t` |  |
+| `receiptNumber` | `std::string` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
+| `serialNumber` | `std::string` |  |
 | `svc` | `std::string` |  |
-| `terminal_id` | `int64_t` |  |
-| `terminal_location` | `std::string` |  |
-| `trace_number` | `int64_t` |  |
-| `transaction_date` | `std::string` |  |
-| `transaction_id` | `std::string` |  |
-| `tx_type` | `std::string` |  |
-| `user_data` | `std::string` |  |
+| `terminalId` | `int64_t` |  |
+| `terminalLocation` | `std::string` |  |
+| `traceNumber` | `int64_t` |  |
+| `transactionDate` | `std::string` |  |
+| `transactionId` | `std::string` |  |
+| `txType` | `std::string` |  |
+| `userData` | `std::string` |  |
 
 #### Example: Create
 
 ```cpp
 Value refund_transaction = client->refund_transaction()->create(vmap({
-    {"client_id", Value(1)},  // int64_t
+    {"clientId", Value(1)},  // int64_t
     {"currency", Value("example_currency")},  // std::string
-    {"receipt_number", Value("example_receipt_number")},  // std::string
-    {"terminal_id", Value(1)},  // int64_t
+    {"receiptNumber", Value("example_receiptNumber")},  // std::string
+    {"terminalId", Value(1)},  // int64_t
 }), Value::undef());
 ```
 
@@ -2092,23 +2087,23 @@ Create an instance: `auto register_tecs_company = client->register_tecs_company(
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `corporate_uuid` | `std::string` |  |
-| `package_order_uuid` | `std::string` |  |
-| `partner_id` | `int64_t` |  |
-| `partner_name` | `std::string` |  |
-| `product_order_uuid` | `std::string` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
-| `template_name` | `std::string` |  |
+| `corporateUuid` | `std::string` |  |
+| `packageOrderUuid` | `std::string` |  |
+| `partnerId` | `int64_t` |  |
+| `partnerName` | `std::string` |  |
+| `productOrderUuid` | `std::string` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
+| `templateName` | `std::string` |  |
 
 #### Example: Create
 
 ```cpp
 Value register_tecs_company = client->register_tecs_company()->create(vmap({
-    {"corporate_uuid", Value("example_corporate_uuid")},  // std::string
-    {"package_order_uuid", Value("example_package_order_uuid")},  // std::string
-    {"product_order_uuid", Value("example_product_order_uuid")},  // std::string
-    {"template_name", Value("example_template_name")},  // std::string
+    {"corporateUuid", Value("example_corporateUuid")},  // std::string
+    {"packageOrderUuid", Value("example_packageOrderUuid")},  // std::string
+    {"productOrderUuid", Value("example_productOrderUuid")},  // std::string
+    {"templateName", Value("example_templateName")},  // std::string
 }), Value::undef());
 ```
 
@@ -2127,36 +2122,36 @@ Create an instance: `auto register_terminal = client->register_terminal();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `additional_data` | `std::map<std::string, Value>` |  |
-| `corporate_uuid` | `std::string` |  |
-| `package_order_uuid` | `std::string` |  |
-| `product_order_uuid` | `std::string` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
-| `tecs_web_secret_key` | `std::string` |  |
-| `template_name` | `std::string` |  |
-| `terminal_country_code` | `std::string` |  |
-| `terminal_id` | `int64_t` |  |
-| `terminal_id_acq` | `std::string` |  |
-| `terminal_language_code` | `std::string` |  |
-| `terminal_location` | `std::string` |  |
-| `terminal_serial_number` | `std::string` |  |
-| `token_io_alia` | `std::string` |  |
-| `token_io_iban` | `std::string` |  |
-| `token_io_member_id` | `std::string` |  |
-| `web_shop_url` | `std::string` |  |
+| `additionalData` | `std::map<std::string, Value>` |  |
+| `corporateUuid` | `std::string` |  |
+| `packageOrderUuid` | `std::string` |  |
+| `productOrderUuid` | `std::string` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
+| `tecsWebSecretKey` | `std::string` |  |
+| `templateName` | `std::string` |  |
+| `terminalCountryCode` | `std::string` |  |
+| `terminalId` | `int64_t` |  |
+| `terminalIdAcq` | `std::string` |  |
+| `terminalLanguageCode` | `std::string` |  |
+| `terminalLocation` | `std::string` |  |
+| `terminalSerialNumber` | `std::string` |  |
+| `tokenIOAlias` | `std::string` |  |
+| `tokenIOIban` | `std::string` |  |
+| `tokenIOMemberId` | `std::string` |  |
+| `webShopUrl` | `std::string` |  |
 
 #### Example: Create
 
 ```cpp
 Value register_terminal = client->register_terminal()->create(vmap({
-    {"corporate_uuid", Value("example_corporate_uuid")},  // std::string
-    {"package_order_uuid", Value("example_package_order_uuid")},  // std::string
-    {"product_order_uuid", Value("example_product_order_uuid")},  // std::string
-    {"template_name", Value("example_template_name")},  // std::string
-    {"terminal_country_code", Value("example_terminal_country_code")},  // std::string
-    {"terminal_language_code", Value("example_terminal_language_code")},  // std::string
-    {"terminal_location", Value("example_terminal_location")},  // std::string
+    {"corporateUuid", Value("example_corporateUuid")},  // std::string
+    {"packageOrderUuid", Value("example_packageOrderUuid")},  // std::string
+    {"productOrderUuid", Value("example_productOrderUuid")},  // std::string
+    {"templateName", Value("example_templateName")},  // std::string
+    {"terminalCountryCode", Value("example_terminalCountryCode")},  // std::string
+    {"terminalLanguageCode", Value("example_terminalLanguageCode")},  // std::string
+    {"terminalLocation", Value("example_terminalLocation")},  // std::string
 }), Value::undef());
 ```
 
@@ -2175,24 +2170,24 @@ Create an instance: `auto report_data = client->report_data();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `card_brand_report_data` | `std::vector<Value>` |  |
-| `clearing_date_from` | `std::string` |  |
-| `clearing_date_to` | `std::string` |  |
-| `corporate_id` | `std::string` |  |
+| `cardBrandReportData` | `std::vector<Value>` |  |
+| `clearingDateFrom` | `std::string` |  |
+| `clearingDateTo` | `std::string` |  |
+| `corporateId` | `std::string` |  |
 | `currency` | `std::string` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
-| `sum_over_credit_tx` | `std::map<std::string, Value>` |  |
-| `sum_over_debit_tx` | `std::map<std::string, Value>` |  |
-| `terminal_id` | `int64_t` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
+| `sumOverCreditTx` | `std::map<std::string, Value>` |  |
+| `sumOverDebitTx` | `std::map<std::string, Value>` |  |
+| `terminalId` | `int64_t` |  |
 
 #### Example: Create
 
 ```cpp
 Value report_data = client->report_data()->create(vmap({
-    {"clearing_date_from", Value("example_clearing_date_from")},  // std::string
-    {"clearing_date_to", Value("example_clearing_date_to")},  // std::string
-    {"corporate_id", Value("example_corporate_id")},  // std::string
+    {"clearingDateFrom", Value("example_clearingDateFrom")},  // std::string
+    {"clearingDateTo", Value("example_clearingDateTo")},  // std::string
+    {"corporateId", Value("example_corporateId")},  // std::string
     {"currency", Value("example_currency")},  // std::string
 }), Value::undef());
 ```
@@ -2212,56 +2207,56 @@ Create an instance: `auto status_transaction = client->status_transaction();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_name` | `std::string` |  |
-| `acquirer_terminal_id` | `std::string` |  |
+| `acquirerName` | `std::string` |  |
+| `acquirerTerminalId` | `std::string` |  |
 | `amount` | `int64_t` |  |
-| `application_cryptogram` | `std::string` |  |
-| `authorization_code` | `Value` |  |
-| `authorization_date` | `std::string` |  |
-| `card_brand` | `std::string` |  |
-| `card_entry` | `std::string` |  |
-| `card_expiration` | `std::string` |  |
-| `card_number` | `std::string` |  |
-| `clearing_amount` | `int64_t` |  |
-| `clearing_batch_id` | `std::string` |  |
-| `clearing_currency` | `std::string` |  |
-| `clearing_date` | `std::string` |  |
-| `clearing_processed_date` | `std::string` |  |
-| `clearing_status` | `std::string` |  |
-| `client_id` | `int64_t` |  |
+| `applicationCryptogram` | `std::string` |  |
+| `authorizationCode` | `Value` |  |
+| `authorizationDate` | `std::string` |  |
+| `cardBrand` | `std::string` |  |
+| `cardEntry` | `std::string` |  |
+| `cardExpiration` | `std::string` |  |
+| `cardNumber` | `std::string` |  |
+| `clearingAmount` | `int64_t` |  |
+| `clearingBatchId` | `std::string` |  |
+| `clearingCurrency` | `std::string` |  |
+| `clearingDate` | `std::string` |  |
+| `clearingProcessedDate` | `std::string` |  |
+| `clearingStatus` | `std::string` |  |
+| `clientId` | `int64_t` |  |
 | `currency` | `std::string` |  |
 | `cvm` | `std::string` |  |
-| `ecr_data` | `std::string` |  |
-| `emv_application_id` | `std::string` |  |
-| `emv_application_label` | `std::string` |  |
-| `merchant_name` | `std::string` |  |
-| `merchant_number` | `std::string` |  |
-| `original_client_id` | `std::string` |  |
-| `original_terminal_id` | `int64_t` |  |
-| `original_transaction_id` | `std::string` |  |
-| `payment_reason` | `std::string` |  |
-| `receipt_number` | `std::string` |  |
-| `response_code` | `int64_t` |  |
-| `response_code_from_a` | `std::string` |  |
-| `response_message` | `std::string` |  |
-| `retrieval_reference_number` | `std::string` |  |
-| `service_code` | `std::string` |  |
-| `settlement_status` | `std::string` |  |
-| `source_id` | `int64_t` |  |
-| `tecsengine_response_code` | `int64_t` |  |
-| `tecsengine_response_text` | `std::string` |  |
-| `terminal_end_of_day_date` | `std::string` |  |
-| `terminal_id` | `int64_t` |  |
-| `terminal_location` | `std::string` |  |
-| `tip_amount` | `int64_t` |  |
-| `trace_number` | `int64_t` |  |
-| `transaction_clearing_date` | `std::string` |  |
-| `transaction_date` | `std::string` |  |
-| `transaction_id` | `std::string` |  |
-| `transaction_seq_number` | `int64_t` |  |
-| `transaction_server_date` | `std::string` |  |
-| `transaction_source` | `std::string` |  |
-| `transaction_type` | `std::string` |  |
+| `ecrData` | `std::string` |  |
+| `emvApplicationId` | `std::string` |  |
+| `emvApplicationLabel` | `std::string` |  |
+| `merchantName` | `std::string` |  |
+| `merchantNumber` | `std::string` |  |
+| `originalClientId` | `std::string` |  |
+| `originalTerminalId` | `int64_t` |  |
+| `originalTransactionId` | `std::string` |  |
+| `paymentReason` | `std::string` |  |
+| `receiptNumber` | `std::string` |  |
+| `responseCode` | `int64_t` |  |
+| `responseCodeFromAS` | `std::string` |  |
+| `responseMessage` | `std::string` |  |
+| `retrievalReferenceNumber` | `std::string` |  |
+| `serviceCode` | `std::string` |  |
+| `settlementStatus` | `std::string` |  |
+| `sourceId` | `int64_t` |  |
+| `tecsengineResponseCode` | `int64_t` |  |
+| `tecsengineResponseText` | `std::string` |  |
+| `terminalEndOfDayDate` | `std::string` |  |
+| `terminalId` | `int64_t` |  |
+| `terminalLocation` | `std::string` |  |
+| `tipAmount` | `int64_t` |  |
+| `traceNumber` | `int64_t` |  |
+| `transactionClearingDate` | `std::string` |  |
+| `transactionDate` | `std::string` |  |
+| `transactionId` | `std::string` |  |
+| `transactionSeqNumber` | `int64_t` |  |
+| `transactionServerDate` | `std::string` |  |
+| `transactionSource` | `std::string` |  |
+| `transactionType` | `std::string` |  |
 
 #### Example: Create
 
@@ -2285,18 +2280,18 @@ Create an instance: `auto store_terminal_parameter = client->store_terminal_para
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acq_tab_nexo` | `std::map<std::string, Value>` |  |
-| `config_version` | `std::string` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
-| `serial_number` | `std::string` |  |
-| `tid_sent` | `std::string` |  |
+| `acqTabNexo` | `std::map<std::string, Value>` |  |
+| `configVersion` | `std::string` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
+| `serialNumber` | `std::string` |  |
+| `tidSent` | `std::string` |  |
 
 #### Example: Create
 
 ```cpp
 Value store_terminal_parameter = client->store_terminal_parameter()->create(vmap({
-    {"serial_number", Value("example_serial_number")},  // std::string
+    {"serialNumber", Value("example_serialNumber")},  // std::string
 }), Value::undef());
 ```
 
@@ -2315,17 +2310,17 @@ Create an instance: `auto terminal_id = client->terminal_id();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `device_serial_number` | `std::vector<Value>` |  |
-| `duplicate_terminal_id` | `std::vector<Value>` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
-| `terminal` | `std::vector<Value>` |  |
+| `deviceSerialNumber` | `std::vector<Value>` |  |
+| `duplicateTerminalIds` | `std::vector<Value>` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
+| `terminals` | `std::vector<Value>` |  |
 
 #### Example: Create
 
 ```cpp
 Value terminal_id = client->terminal_id()->create(vmap({
-    {"device_serial_number", vlist()},  // std::vector<Value>
+    {"deviceSerialNumber", vlist()},  // std::vector<Value>
 }), Value::undef());
 ```
 
@@ -2344,34 +2339,34 @@ Create an instance: `auto transaction_history = client->transaction_history();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `3_d_secure` | `std::string` |  |
-| `authorization_code` | `std::string` |  |
-| `card_brand` | `std::string` |  |
-| `clearing_amount_from` | `std::string` |  |
-| `clearing_amount_to` | `std::string` |  |
-| `clearing_currency` | `std::string` |  |
-| `clearing_status` | `std::string` |  |
-| `corporate_uuid` | `std::string` |  |
-| `order_by_transaction_date` | `std::string` |  |
+| `3DSecure` | `std::string` |  |
+| `authorizationCode` | `std::string` |  |
+| `cardBrand` | `std::string` |  |
+| `clearingAmountFrom` | `std::string` |  |
+| `clearingAmountTo` | `std::string` |  |
+| `clearingCurrency` | `std::string` |  |
+| `clearingStatus` | `std::string` |  |
+| `corporateUUID` | `std::string` |  |
+| `orderByTransactionDate` | `std::string` |  |
 | `pagination` | `std::map<std::string, Value>` |  |
-| `payment_token_public_id` | `std::string` |  |
-| `receipt_number` | `std::string` |  |
-| `referenced_transaction_id` | `std::string` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
-| `retrieval_reference_number` | `std::string` |  |
-| `source_id` | `int64_t` |  |
-| `tecsengine_response_code_from` | `std::string` |  |
-| `tecsengine_response_code_to` | `std::string` |  |
-| `terminal_id` | `int64_t` |  |
-| `trace_number` | `std::string` |  |
-| `transaction_amount_from` | `std::string` |  |
-| `transaction_amount_to` | `std::string` |  |
-| `transaction_date_from` | `std::string` |  |
-| `transaction_date_to` | `std::string` |  |
-| `transaction_history` | `std::vector<Value>` |  |
-| `transaction_id` | `std::string` |  |
-| `transaction_type` | `std::string` |  |
+| `paymentTokenPublicId` | `std::string` |  |
+| `receiptNumber` | `std::string` |  |
+| `referencedTransactionId` | `std::string` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
+| `retrievalReferenceNumber` | `std::string` |  |
+| `sourceId` | `int64_t` |  |
+| `tecsengineResponseCodeFrom` | `std::string` |  |
+| `tecsengineResponseCodeTo` | `std::string` |  |
+| `terminalId` | `int64_t` |  |
+| `traceNumber` | `std::string` |  |
+| `transactionAmountFrom` | `std::string` |  |
+| `transactionAmountTo` | `std::string` |  |
+| `transactionDateFrom` | `std::string` |  |
+| `transactionDateTo` | `std::string` |  |
+| `transactionHistories` | `std::vector<Value>` |  |
+| `transactionId` | `std::string` |  |
+| `transactionType` | `std::string` |  |
 | `wallet` | `std::string` |  |
 
 #### Example: Create
@@ -2397,11 +2392,11 @@ Create an instance: `auto transactions_count = client->transactions_count();`
 | Field | Type | Description |
 | --- | --- | --- |
 | `period` | `std::string` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
-| `transaction_date_from` | `std::string` |  |
-| `transaction_date_to` | `std::string` |  |
-| `transactions_count` | `std::vector<Value>` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
+| `transactionDateFrom` | `std::string` |  |
+| `transactionDateTo` | `std::string` |  |
+| `transactionsCount` | `std::vector<Value>` |  |
 
 #### Example: Create
 
@@ -2426,11 +2421,11 @@ Create an instance: `auto transactions_count_card_brand = client->transactions_c
 | Field | Type | Description |
 | --- | --- | --- |
 | `period` | `std::string` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
-| `transaction_date_from` | `std::string` |  |
-| `transaction_date_to` | `std::string` |  |
-| `transactions_count` | `std::vector<Value>` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
+| `transactionDateFrom` | `std::string` |  |
+| `transactionDateTo` | `std::string` |  |
+| `transactionsCount` | `std::vector<Value>` |  |
 
 #### Example: Create
 
@@ -2455,11 +2450,11 @@ Create an instance: `auto transactions_turnover = client->transactions_turnover(
 | Field | Type | Description |
 | --- | --- | --- |
 | `period` | `std::string` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
-| `transaction_date_from` | `std::string` |  |
-| `transaction_date_to` | `std::string` |  |
-| `turnover` | `std::vector<Value>` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
+| `transactionDateFrom` | `std::string` |  |
+| `transactionDateTo` | `std::string` |  |
+| `turnovers` | `std::vector<Value>` |  |
 
 #### Example: Create
 
@@ -2484,22 +2479,22 @@ Create an instance: `auto update_merchant = client->update_merchant();`
 | Field | Type | Description |
 | --- | --- | --- |
 | `city` | `std::string` |  |
-| `corporate_uuid` | `std::string` |  |
+| `corporateUuid` | `std::string` |  |
 | `country` | `std::string` |  |
-| `merchant_category_code` | `std::string` |  |
+| `merchantCategoryCode` | `std::string` |  |
 | `name` | `std::string` |  |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
 | `state` | `std::string` |  |
 | `street` | `std::string` |  |
-| `vu_nummer` | `std::string` |  |
+| `vuNummer` | `std::string` |  |
 | `zipcode` | `std::string` |  |
 
 #### Example: Create
 
 ```cpp
 Value update_merchant = client->update_merchant()->create(vmap({
-    {"corporate_uuid", Value("example_corporate_uuid")},  // std::string
+    {"corporateUuid", Value("example_corporateUuid")},  // std::string
 }), Value::undef());
 ```
 
@@ -2518,17 +2513,17 @@ Create an instance: `auto update_template_xml = client->update_template_xml();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `int64_t` |  |
-| `response_message` | `std::string` |  |
-| `template_name` | `std::string` |  |
-| `template_xml` | `std::string` |  |
+| `responseCode` | `int64_t` |  |
+| `responseMessage` | `std::string` |  |
+| `templateName` | `std::string` |  |
+| `templateXml` | `std::string` |  |
 
 #### Example: Create
 
 ```cpp
 Value update_template_xml = client->update_template_xml()->create(vmap({
-    {"template_name", Value("example_template_name")},  // std::string
-    {"template_xml", Value("example_template_xml")},  // std::string
+    {"templateName", Value("example_templateName")},  // std::string
+    {"templateXml", Value("example_templateXml")},  // std::string
 }), Value::undef());
 ```
 
@@ -2547,8 +2542,8 @@ Create an instance: `auto version = client->version();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `app_name` | `std::string` |  |
-| `build_date` | `std::string` |  |
+| `appName` | `std::string` |  |
+| `buildDate` | `std::string` |  |
 | `version` | `std::string` |  |
 
 #### Example: Load

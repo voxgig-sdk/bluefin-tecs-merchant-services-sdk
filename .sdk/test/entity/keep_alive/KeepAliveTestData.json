@@ -3,41 +3,41 @@
     "keep_alive": {
       "KEEP_ALIVE00": {
         "hwserialno": "s64",
-        "ka_date_time_from": "s65",
-        "ka_date_time_to": "s66",
-        "keep_alive_data": [],
+        "kaDateTimeFrom": "s65",
+        "kaDateTimeTo": "s66",
+        "keepAliveData": [],
         "pagination": {},
-        "response_code": "s69",
-        "response_message": "s6a",
-        "terminal_date_time_from": "s6b",
-        "terminal_date_time_to": "s6c",
-        "terminal_id": "TERMINAL01",
+        "responseCode": "s69",
+        "responseMessage": "s6a",
+        "terminalDateTimeFrom": "s6b",
+        "terminalDateTimeTo": "s6c",
+        "terminalId": "s6d",
         "id": "KEEP_ALIVE00"
       },
       "KEEP_ALIVE01": {
         "hwserialno": "sc8",
-        "ka_date_time_from": "sc9",
-        "ka_date_time_to": "sca",
-        "keep_alive_data": [],
+        "kaDateTimeFrom": "sc9",
+        "kaDateTimeTo": "sca",
+        "keepAliveData": [],
         "pagination": {},
-        "response_code": "scd",
-        "response_message": "sce",
-        "terminal_date_time_from": "scf",
-        "terminal_date_time_to": "sd0",
-        "terminal_id": "TERMINAL01",
+        "responseCode": "scd",
+        "responseMessage": "sce",
+        "terminalDateTimeFrom": "scf",
+        "terminalDateTimeTo": "sd0",
+        "terminalId": "sd1",
         "id": "KEEP_ALIVE01"
       },
       "KEEP_ALIVE02": {
         "hwserialno": "s12c",
-        "ka_date_time_from": "s12d",
-        "ka_date_time_to": "s12e",
-        "keep_alive_data": [],
+        "kaDateTimeFrom": "s12d",
+        "kaDateTimeTo": "s12e",
+        "keepAliveData": [],
         "pagination": {},
-        "response_code": "s131",
-        "response_message": "s132",
-        "terminal_date_time_from": "s133",
-        "terminal_date_time_to": "s134",
-        "terminal_id": "TERMINAL01",
+        "responseCode": "s131",
+        "responseMessage": "s132",
+        "terminalDateTimeFrom": "s133",
+        "terminalDateTimeTo": "s134",
+        "terminalId": "s135",
         "id": "KEEP_ALIVE02"
       }
     }
@@ -46,15 +46,15 @@
     "keep_alive": {
       "keep_alive_ref01": {
         "hwserialno": "s190",
-        "ka_date_time_from": "s191",
-        "ka_date_time_to": "s192",
-        "keep_alive_data": [],
+        "kaDateTimeFrom": "s191",
+        "kaDateTimeTo": "s192",
+        "keepAliveData": [],
         "pagination": {},
-        "response_code": "s195",
-        "response_message": "s196",
-        "terminal_date_time_from": "s197",
-        "terminal_date_time_to": "s198",
-        "terminal_id": "TERMINAL01"
+        "responseCode": "s195",
+        "responseMessage": "s196",
+        "terminalDateTimeFrom": "s197",
+        "terminalDateTimeTo": "s198",
+        "terminalId": "s199"
       }
     }
   }

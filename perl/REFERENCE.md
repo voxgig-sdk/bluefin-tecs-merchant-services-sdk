@@ -241,91 +241,91 @@ my $cancel_transaction = $client->CancelTransaction;
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `string` | No |  |
-| `acquirer_name` | `string` | No |  |
-| `actual_bonus_point` | `string` | No |  |
+| `acquirerId` | `string` | No |  |
+| `acquirerName` | `string` | No |  |
+| `actualBonusPoints` | `string` | No |  |
 | `amount` | `integer` | No |  |
-| `authorization_code` | `string` | No |  |
-| `balance_amount` | `string` | No |  |
-| `card_brand` | `string` | No |  |
-| `card_number` | `string` | No |  |
-| `client_id` | `integer` | Yes |  |
+| `authorizationCode` | `string` | No |  |
+| `balanceAmount` | `string` | No |  |
+| `cardBrand` | `string` | No |  |
+| `cardNumber` | `string` | No |  |
+| `clientId` | `integer` | Yes |  |
 | `currency` | `string` | Yes |  |
 | `cvc` | `string` | No |  |
-| `ec_data` | `string` | No |  |
-| `ecr_data` | `string` | No |  |
-| `emv_data` | `string` | No |  |
-| `exchange_fee` | `integer` | No |  |
-| `exchange_rate` | `string` | No |  |
-| `language_code` | `string` | No |  |
-| `merchant_address` | `string` | No |  |
-| `merchant_name` | `string` | No |  |
-| `merchant_number` | `string` | No |  |
-| `message_type` | `string` | No |  |
-| `original_trace_number` | `integer` | No |  |
-| `original_transaction_id` | `string` | No |  |
+| `ecData` | `string` | No |  |
+| `ecrData` | `string` | No |  |
+| `emvData` | `string` | No |  |
+| `exchangeFee` | `integer` | No |  |
+| `exchangeRate` | `string` | No |  |
+| `languageCode` | `string` | No |  |
+| `merchantAddress` | `string` | No |  |
+| `merchantName` | `string` | No |  |
+| `merchantNumber` | `string` | No |  |
+| `messageType` | `string` | No |  |
+| `originalTraceNumber` | `integer` | No |  |
+| `originalTransactionId` | `string` | No |  |
 | `password` | `string` | No |  |
-| `payment_reason` | `string` | No |  |
-| `receipt_footer` | `string` | No |  |
-| `receipt_header` | `string` | No |  |
-| `receipt_layout` | `integer` | No |  |
-| `receipt_number` | `string` | Yes |  |
-| `response_code` | `integer` | No |  |
-| `response_message` | `string` | No |  |
-| `serial_number` | `string` | No |  |
+| `paymentReason` | `string` | No |  |
+| `receiptFooter` | `string` | No |  |
+| `receiptHeader` | `string` | No |  |
+| `receiptLayout` | `integer` | No |  |
+| `receiptNumber` | `string` | Yes |  |
+| `responseCode` | `integer` | No |  |
+| `responseMessage` | `string` | No |  |
+| `serialNumber` | `string` | No |  |
 | `svc` | `string` | No |  |
-| `terminal_id` | `integer` | Yes |  |
-| `terminal_location` | `string` | No |  |
-| `trace_number` | `integer` | No |  |
-| `transaction_date` | `string` | No |  |
-| `transaction_id` | `string` | No |  |
-| `tx_type` | `string` | No |  |
-| `user_data` | `string` | No |  |
+| `terminalId` | `integer` | Yes |  |
+| `terminalLocation` | `string` | No |  |
+| `traceNumber` | `integer` | No |  |
+| `transactionDate` | `string` | No |  |
+| `transactionId` | `string` | No |  |
+| `txType` | `string` | No |  |
+| `userData` | `string` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `acquirer_id` | - |
-| `acquirer_name` | - |
-| `actual_bonus_point` | - |
+| `acquirerId` | - |
+| `acquirerName` | - |
+| `actualBonusPoints` | - |
 | `amount` | Yes |
-| `authorization_code` | - |
-| `balance_amount` | - |
-| `card_brand` | - |
-| `card_number` | - |
-| `client_id` | - |
+| `authorizationCode` | - |
+| `balanceAmount` | - |
+| `cardBrand` | - |
+| `cardNumber` | - |
+| `clientId` | - |
 | `currency` | - |
 | `cvc` | - |
-| `ec_data` | - |
-| `ecr_data` | - |
-| `emv_data` | - |
-| `exchange_fee` | - |
-| `exchange_rate` | - |
-| `language_code` | - |
-| `merchant_address` | - |
-| `merchant_name` | - |
-| `merchant_number` | - |
-| `message_type` | Yes |
-| `original_trace_number` | - |
-| `original_transaction_id` | Yes |
+| `ecData` | - |
+| `ecrData` | - |
+| `emvData` | - |
+| `exchangeFee` | - |
+| `exchangeRate` | - |
+| `languageCode` | - |
+| `merchantAddress` | - |
+| `merchantName` | - |
+| `merchantNumber` | - |
+| `messageType` | Yes |
+| `originalTraceNumber` | - |
+| `originalTransactionId` | Yes |
 | `password` | - |
-| `payment_reason` | - |
-| `receipt_footer` | - |
-| `receipt_header` | - |
-| `receipt_layout` | - |
-| `receipt_number` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `serial_number` | - |
+| `paymentReason` | - |
+| `receiptFooter` | - |
+| `receiptHeader` | - |
+| `receiptLayout` | - |
+| `receiptNumber` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `serialNumber` | - |
 | `svc` | - |
-| `terminal_id` | - |
-| `terminal_location` | - |
-| `trace_number` | - |
-| `transaction_date` | Yes |
-| `transaction_id` | Yes |
-| `tx_type` | - |
-| `user_data` | - |
+| `terminalId` | - |
+| `terminalLocation` | - |
+| `traceNumber` | - |
+| `transactionDate` | Yes |
+| `transactionId` | Yes |
+| `txType` | - |
+| `userData` | - |
 
 ### Operations
 
@@ -335,10 +335,10 @@ Create a new entity with the given data. Returns the created entity data and die
 
 ```perl
 my $result = $client->CancelTransaction->create({
-    'client_id' => 1,  # integer
+    'clientId' => 1,  # integer
     'currency' => 'example_currency',  # string
-    'receipt_number' => 'example_receipt_number',  # string
-    'terminal_id' => 1,  # integer
+    'receiptNumber' => 'example_receiptNumber',  # string
+    'terminalId' => 1,  # integer
 });
 ```
 
@@ -381,9 +381,9 @@ my $check_card_black_listed = $client->CheckCardBlackListed;
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `card_no` | `string` | No |  |
-| `response_code` | `integer` | No |  |
-| `response_message` | `string` | No |  |
+| `cardNo` | `string` | No |  |
+| `responseCode` | `integer` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -435,13 +435,13 @@ my $create_product = $client->CreateProduct;
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `integer` | No |  |
-| `response_code` | `integer` | No |  |
-| `response_message` | `string` | No |  |
-| `template_name` | `string` | Yes |  |
-| `template_type` | `string` | Yes |  |
-| `template_xml` | `string` | Yes |  |
-| `terminal_type` | `string` | Yes |  |
+| `acquirerId` | `integer` | No |  |
+| `responseCode` | `integer` | No |  |
+| `responseMessage` | `string` | No |  |
+| `templateName` | `string` | Yes |  |
+| `templateType` | `string` | Yes |  |
+| `templateXml` | `string` | Yes |  |
+| `terminalType` | `string` | Yes |  |
 
 ### Operations
 
@@ -451,10 +451,10 @@ Create a new entity with the given data. Returns the created entity data and die
 
 ```perl
 my $result = $client->CreateProduct->create({
-    'template_name' => 'example_template_name',  # string
-    'template_type' => 'example_template_type',  # string
-    'template_xml' => 'example_template_xml',  # string
-    'terminal_type' => 'example_terminal_type',  # string
+    'templateName' => 'example_templateName',  # string
+    'templateType' => 'example_templateType',  # string
+    'templateXml' => 'example_templateXml',  # string
+    'terminalType' => 'example_terminalType',  # string
 });
 ```
 
@@ -497,13 +497,13 @@ my $deactivate_terminal = $client->DeactivateTerminal;
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `corporate_uuid` | `string` | No |  |
-| `deactivation_reason` | `string` | Yes |  |
-| `package_order_uuid` | `string` | No |  |
-| `product_order_uuid` | `string` | No |  |
-| `response_code` | `integer` | No |  |
-| `response_message` | `string` | No |  |
-| `terminal_id` | `integer` | Yes |  |
+| `corporateUuid` | `string` | No |  |
+| `deactivationReason` | `string` | Yes |  |
+| `packageOrderUuid` | `string` | No |  |
+| `productOrderUuid` | `string` | No |  |
+| `responseCode` | `integer` | No |  |
+| `responseMessage` | `string` | No |  |
+| `terminalId` | `integer` | Yes |  |
 
 ### Operations
 
@@ -513,8 +513,8 @@ Create a new entity with the given data. Returns the created entity data and die
 
 ```perl
 my $result = $client->DeactivateTerminal->create({
-    'deactivation_reason' => 'example_deactivation_reason',  # string
-    'terminal_id' => 1,  # integer
+    'deactivationReason' => 'example_deactivationReason',  # string
+    'terminalId' => 1,  # integer
 });
 ```
 
@@ -557,16 +557,16 @@ my $digital_services_api = $client->DigitalServicesApi;
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearing_date_from` | `string` | Yes |  |
-| `clearing_date_to` | `string` | Yes |  |
-| `response_code` | `integer` | No |  |
-| `response_message` | `string` | No |  |
-| `tx_count` | `integer` | No |  |
-| `tx_id_end` | `string` | No |  |
-| `tx_id_start` | `string` | No |  |
-| `tx_seq_no_end` | `integer` | No |  |
-| `tx_seq_no_start` | `integer` | No |  |
-| `tx_total` | `integer` | No |  |
+| `clearingDateFrom` | `string` | Yes |  |
+| `clearingDateTo` | `string` | Yes |  |
+| `responseCode` | `integer` | No |  |
+| `responseMessage` | `string` | No |  |
+| `txCount` | `integer` | No |  |
+| `txIdEnd` | `string` | No |  |
+| `txIdStart` | `string` | No |  |
+| `txSeqNoEnd` | `integer` | No |  |
+| `txSeqNoStart` | `integer` | No |  |
+| `txTotal` | `integer` | No |  |
 
 ### Operations
 
@@ -576,6 +576,8 @@ Create a new entity with the given data. Returns the created entity data and die
 
 ```perl
 my $result = $client->DigitalServicesApi->create({
+    'clearingDateFrom' => 'example_clearingDateFrom',  # string
+    'clearingDateTo' => 'example_clearingDateTo',  # string
 });
 ```
 
@@ -626,12 +628,12 @@ my $ec_data_ecom = $client->EcDataEcom;
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ecom_data` | `string` | No |  |
-| `response_code` | `integer` | No |  |
-| `response_message` | `string` | No |  |
-| `terminal_id` | `integer` | Yes |  |
-| `transaction_id` | `string` | Yes |  |
-| `transaction_type` | `string` | Yes |  |
+| `ecomData` | `string` | No |  |
+| `responseCode` | `integer` | No |  |
+| `responseMessage` | `string` | No |  |
+| `terminalId` | `integer` | Yes |  |
+| `transactionId` | `string` | Yes |  |
+| `transactionType` | `string` | Yes |  |
 
 ### Operations
 
@@ -641,9 +643,9 @@ Create a new entity with the given data. Returns the created entity data and die
 
 ```perl
 my $result = $client->EcDataEcom->create({
-    'terminal_id' => 1,  # integer
-    'transaction_id' => 'example_transaction_id',  # string
-    'transaction_type' => 'example_transaction_type',  # string
+    'terminalId' => 1,  # integer
+    'transactionId' => 'example_transactionId',  # string
+    'transactionType' => 'example_transactionType',  # string
 });
 ```
 
@@ -686,11 +688,11 @@ my $ecom_parameter = $client->EcomParameter;
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ecom_pass` | `string` | No |  |
-| `ecom_skey` | `string` | No |  |
-| `response_code` | `integer` | No |  |
-| `response_message` | `string` | No |  |
-| `terminal_id` | `integer` | Yes |  |
+| `ecomPass` | `string` | No |  |
+| `ecomSkey` | `string` | No |  |
+| `responseCode` | `integer` | No |  |
+| `responseMessage` | `string` | No |  |
+| `terminalId` | `integer` | Yes |  |
 
 ### Operations
 
@@ -700,7 +702,7 @@ Create a new entity with the given data. Returns the created entity data and die
 
 ```perl
 my $result = $client->EcomParameter->create({
-    'terminal_id' => 1,  # integer
+    'terminalId' => 1,  # integer
 });
 ```
 
@@ -743,12 +745,12 @@ my $ecr_data = $client->EcrData;
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ecr_data` | `string` | No |  |
-| `response_code` | `integer` | No |  |
-| `response_message` | `string` | No |  |
-| `terminal_id` | `integer` | Yes |  |
-| `transaction_id` | `string` | Yes |  |
-| `transaction_type` | `string` | Yes |  |
+| `ecrData` | `string` | No |  |
+| `responseCode` | `integer` | No |  |
+| `responseMessage` | `string` | No |  |
+| `terminalId` | `integer` | Yes |  |
+| `transactionId` | `string` | Yes |  |
+| `transactionType` | `string` | Yes |  |
 
 ### Operations
 
@@ -758,9 +760,9 @@ Create a new entity with the given data. Returns the created entity data and die
 
 ```perl
 my $result = $client->EcrData->create({
-    'terminal_id' => 1,  # integer
-    'transaction_id' => 'example_transaction_id',  # string
-    'transaction_type' => 'example_transaction_type',  # string
+    'terminalId' => 1,  # integer
+    'transactionId' => 'example_transactionId',  # string
+    'transactionType' => 'example_transactionType',  # string
 });
 ```
 
@@ -803,12 +805,12 @@ my $emv_data = $client->EmvData;
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `emv_data` | `string` | No |  |
-| `response_code` | `integer` | No |  |
-| `response_message` | `string` | No |  |
-| `terminal_id` | `integer` | Yes |  |
-| `transaction_id` | `string` | Yes |  |
-| `transaction_type` | `string` | Yes |  |
+| `emvData` | `string` | No |  |
+| `responseCode` | `integer` | No |  |
+| `responseMessage` | `string` | No |  |
+| `terminalId` | `integer` | Yes |  |
+| `transactionId` | `string` | Yes |  |
+| `transactionType` | `string` | Yes |  |
 
 ### Operations
 
@@ -818,9 +820,9 @@ Create a new entity with the given data. Returns the created entity data and die
 
 ```perl
 my $result = $client->EmvData->create({
-    'terminal_id' => 1,  # integer
-    'transaction_id' => 'example_transaction_id',  # string
-    'transaction_type' => 'example_transaction_type',  # string
+    'terminalId' => 1,  # integer
+    'transactionId' => 'example_transactionId',  # string
+    'transactionType' => 'example_transactionType',  # string
 });
 ```
 
@@ -863,20 +865,20 @@ my $enable_acquiring = $client->EnableAcquiring;
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `account_no` | `integer` | No |  |
-| `additional_data` | `hashref` | No |  |
-| `corporate_uuid` | `string` | Yes |  |
+| `accountNo` | `integer` | No |  |
+| `additionalData` | `hashref` | No |  |
+| `corporateUuid` | `string` | Yes |  |
 | `currency` | `string` | Yes |  |
-| `merchant_category_code` | `integer` | Yes |  |
-| `package_order_uuid` | `string` | Yes |  |
-| `product_order_uuid` | `string` | Yes |  |
-| `response_code` | `integer` | No |  |
-| `response_message` | `string` | No |  |
-| `sorting_code` | `integer` | No |  |
-| `template_name` | `string` | Yes |  |
-| `terminal_id` | `arrayref` | No |  |
-| `terminal_id_acq` | `string` | No |  |
-| `vu_nummer` | `string` | No |  |
+| `merchantCategoryCode` | `integer` | Yes |  |
+| `packageOrderUuid` | `string` | Yes |  |
+| `productOrderUuid` | `string` | Yes |  |
+| `responseCode` | `integer` | No |  |
+| `responseMessage` | `string` | No |  |
+| `sortingCode` | `integer` | No |  |
+| `templateName` | `string` | Yes |  |
+| `terminalIdAcq` | `string` | No |  |
+| `terminalIds` | `arrayref` | No |  |
+| `vuNummer` | `string` | No |  |
 
 ### Operations
 
@@ -886,12 +888,12 @@ Create a new entity with the given data. Returns the created entity data and die
 
 ```perl
 my $result = $client->EnableAcquiring->create({
-    'corporate_uuid' => 'example_corporate_uuid',  # string
+    'corporateUuid' => 'example_corporateUuid',  # string
     'currency' => 'example_currency',  # string
-    'merchant_category_code' => 1,  # integer
-    'package_order_uuid' => 'example_package_order_uuid',  # string
-    'product_order_uuid' => 'example_product_order_uuid',  # string
-    'template_name' => 'example_template_name',  # string
+    'merchantCategoryCode' => 1,  # integer
+    'packageOrderUuid' => 'example_packageOrderUuid',  # string
+    'productOrderUuid' => 'example_productOrderUuid',  # string
+    'templateName' => 'example_templateName',  # string
 });
 ```
 
@@ -934,9 +936,9 @@ my $get_merchant_contract_number = $client->GetMerchantContractNumber;
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `merchant_contract_number` | `string` | Yes |  |
-| `response_code` | `integer` | No |  |
-| `response_message` | `string` | No |  |
+| `merchantContractNumber` | `string` | Yes |  |
+| `responseCode` | `integer` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -946,7 +948,7 @@ Create a new entity with the given data. Returns the created entity data and die
 
 ```perl
 my $result = $client->GetMerchantContractNumber->create({
-    'merchant_contract_number' => 'example_merchant_contract_number',  # string
+    'merchantContractNumber' => 'example_merchantContractNumber',  # string
 });
 ```
 
@@ -989,9 +991,9 @@ my $get_template_xml = $client->GetTemplateXml;
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `integer` | No |  |
-| `response_message` | `string` | No |  |
-| `template_name` | `string` | Yes |  |
+| `responseCode` | `integer` | No |  |
+| `responseMessage` | `string` | No |  |
+| `templateName` | `string` | Yes |  |
 
 ### Operations
 
@@ -1001,7 +1003,7 @@ Create a new entity with the given data. Returns the created entity data and die
 
 ```perl
 my $result = $client->GetTemplateXml->create({
-    'template_name' => 'example_template_name',  # string
+    'templateName' => 'example_templateName',  # string
 });
 ```
 
@@ -1044,9 +1046,9 @@ my $introduce_mandator = $client->IntroduceMandator;
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `mandator_name` | `string` | Yes |  |
-| `response_code` | `integer` | No |  |
-| `response_message` | `string` | No |  |
+| `mandatorName` | `string` | Yes |  |
+| `responseCode` | `integer` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -1056,7 +1058,7 @@ Create a new entity with the given data. Returns the created entity data and die
 
 ```perl
 my $result = $client->IntroduceMandator->create({
-    'mandator_name' => 'example_mandator_name',  # string
+    'mandatorName' => 'example_mandatorName',  # string
 });
 ```
 
@@ -1099,9 +1101,9 @@ my $introduce_package = $client->IntroducePackage;
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `integer` | No |  |
-| `response_message` | `string` | No |  |
-| `terminal_template_description` | `string` | Yes |  |
+| `responseCode` | `integer` | No |  |
+| `responseMessage` | `string` | No |  |
+| `terminalTemplateDescription` | `string` | Yes |  |
 
 ### Operations
 
@@ -1111,7 +1113,7 @@ Create a new entity with the given data. Returns the created entity data and die
 
 ```perl
 my $result = $client->IntroducePackage->create({
-    'terminal_template_description' => 'example_terminal_template_description',  # string
+    'terminalTemplateDescription' => 'example_terminalTemplateDescription',  # string
 });
 ```
 
@@ -1155,15 +1157,15 @@ my $keep_alive = $client->KeepAlive;
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `hwserialno` | `string` | No |  |
-| `ka_date_time_from` | `string` | No |  |
-| `ka_date_time_to` | `string` | No |  |
-| `keep_alive_data` | `arrayref` | No |  |
+| `kaDateTimeFrom` | `string` | No |  |
+| `kaDateTimeTo` | `string` | No |  |
+| `keepAliveData` | `arrayref` | No |  |
 | `pagination` | `hashref` | No |  |
-| `response_code` | `integer` | No |  |
-| `response_message` | `string` | No |  |
-| `terminal_date_time_from` | `string` | No |  |
-| `terminal_date_time_to` | `string` | No |  |
-| `terminal_id` | `integer` | No |  |
+| `responseCode` | `integer` | No |  |
+| `responseMessage` | `string` | No |  |
+| `terminalDateTimeFrom` | `string` | No |  |
+| `terminalDateTimeTo` | `string` | No |  |
+| `terminalId` | `integer` | No |  |
 
 ### Operations
 
@@ -1215,12 +1217,12 @@ my $list_terminal = $client->ListTerminal;
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `corporate_uuid` | `arrayref` | No |  |
+| `corporateUuid` | `arrayref` | No |  |
 | `filter` | `hashref` | No |  |
 | `pagination` | `hashref` | No |  |
-| `response_code` | `integer` | No |  |
-| `response_message` | `string` | No |  |
-| `terminal` | `arrayref` | No |  |
+| `responseCode` | `integer` | No |  |
+| `responseMessage` | `string` | No |  |
+| `terminals` | `arrayref` | No |  |
 
 ### Operations
 
@@ -1272,12 +1274,12 @@ my $mandator_clearing_export = $client->MandatorClearingExport;
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearing_date_from` | `string` | Yes |  |
-| `clearing_date_to` | `string` | Yes |  |
+| `clearingDateFrom` | `string` | Yes |  |
+| `clearingDateTo` | `string` | Yes |  |
 | `pagination` | `hashref` | No |  |
-| `record` | `arrayref` | No |  |
-| `response_code` | `integer` | No |  |
-| `response_message` | `string` | No |  |
+| `records` | `arrayref` | No |  |
+| `responseCode` | `integer` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -1287,8 +1289,8 @@ Create a new entity with the given data. Returns the created entity data and die
 
 ```perl
 my $result = $client->MandatorClearingExport->create({
-    'clearing_date_from' => 'example_clearing_date_from',  # string
-    'clearing_date_to' => 'example_clearing_date_to',  # string
+    'clearingDateFrom' => 'example_clearingDateFrom',  # string
+    'clearingDateTo' => 'example_clearingDateTo',  # string
 });
 ```
 
@@ -1331,12 +1333,12 @@ my $mandator_clearing_export_download = $client->MandatorClearingExportDownload;
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearing_date_from` | `string` | Yes |  |
-| `clearing_date_to` | `string` | Yes |  |
-| `file_id` | `string` | No |  |
-| `filename_template` | `string` | No |  |
-| `response_code` | `integer` | No |  |
-| `response_message` | `string` | No |  |
+| `clearingDateFrom` | `string` | Yes |  |
+| `clearingDateTo` | `string` | Yes |  |
+| `fileId` | `string` | No |  |
+| `filenameTemplate` | `string` | No |  |
+| `responseCode` | `integer` | No |  |
+| `responseMessage` | `string` | No |  |
 | `status` | `string` | No |  |
 
 ### Operations
@@ -1347,8 +1349,8 @@ Create a new entity with the given data. Returns the created entity data and die
 
 ```perl
 my $result = $client->MandatorClearingExportDownload->create({
-    'clearing_date_from' => 'example_clearing_date_from',  # string
-    'clearing_date_to' => 'example_clearing_date_to',  # string
+    'clearingDateFrom' => 'example_clearingDateFrom',  # string
+    'clearingDateTo' => 'example_clearingDateTo',  # string
 });
 ```
 
@@ -1399,11 +1401,11 @@ my $mandator_clearing_export_summary = $client->MandatorClearingExportSummary;
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearing_date_from` | `string` | Yes |  |
-| `clearing_date_to` | `string` | Yes |  |
-| `record` | `arrayref` | No |  |
-| `response_code` | `integer` | No |  |
-| `response_message` | `string` | No |  |
+| `clearingDateFrom` | `string` | Yes |  |
+| `clearingDateTo` | `string` | Yes |  |
+| `records` | `arrayref` | No |  |
+| `responseCode` | `integer` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -1413,8 +1415,8 @@ Create a new entity with the given data. Returns the created entity data and die
 
 ```perl
 my $result = $client->MandatorClearingExportSummary->create({
-    'clearing_date_from' => 'example_clearing_date_from',  # string
-    'clearing_date_to' => 'example_clearing_date_to',  # string
+    'clearingDateFrom' => 'example_clearingDateFrom',  # string
+    'clearingDateTo' => 'example_clearingDateTo',  # string
 });
 ```
 
@@ -1457,30 +1459,30 @@ my $merchant_portal_services_api = $client->MerchantPortalServicesApi;
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `3_d_secure` | `string` | No |  |
-| `authorization_code` | `string` | No |  |
-| `card_brand` | `string` | No |  |
-| `clearing_amount_from` | `string` | No |  |
-| `clearing_amount_to` | `string` | No |  |
-| `clearing_currency` | `string` | No |  |
-| `clearing_status` | `string` | No |  |
-| `corporate_uuid` | `string` | No |  |
-| `order_by_transaction_date` | `string` | No |  |
+| `3DSecure` | `string` | No |  |
+| `authorizationCode` | `string` | No |  |
+| `cardBrand` | `string` | No |  |
+| `clearingAmountFrom` | `string` | No |  |
+| `clearingAmountTo` | `string` | No |  |
+| `clearingCurrency` | `string` | No |  |
+| `clearingStatus` | `string` | No |  |
+| `corporateUUID` | `string` | No |  |
+| `orderByTransactionDate` | `string` | No |  |
 | `pagination` | `hashref` | No |  |
-| `receipt_number` | `string` | No |  |
-| `referenced_transaction_id` | `string` | No |  |
-| `retrieval_reference_number` | `string` | No |  |
-| `source_id` | `integer` | No |  |
-| `tecsengine_response_code_from` | `string` | No |  |
-| `tecsengine_response_code_to` | `string` | No |  |
-| `terminal_id` | `integer` | No |  |
-| `trace_number` | `string` | No |  |
-| `transaction_amount_from` | `string` | No |  |
-| `transaction_amount_to` | `string` | No |  |
-| `transaction_date_from` | `string` | No |  |
-| `transaction_date_to` | `string` | No |  |
-| `transaction_id` | `string` | No |  |
-| `transaction_type` | `string` | No |  |
+| `receiptNumber` | `string` | No |  |
+| `referencedTransactionId` | `string` | No |  |
+| `retrievalReferenceNumber` | `string` | No |  |
+| `sourceId` | `integer` | No |  |
+| `tecsengineResponseCodeFrom` | `string` | No |  |
+| `tecsengineResponseCodeTo` | `string` | No |  |
+| `terminalId` | `integer` | No |  |
+| `traceNumber` | `string` | No |  |
+| `transactionAmountFrom` | `string` | No |  |
+| `transactionAmountTo` | `string` | No |  |
+| `transactionDateFrom` | `string` | No |  |
+| `transactionDateTo` | `string` | No |  |
+| `transactionId` | `string` | No |  |
+| `transactionType` | `string` | No |  |
 | `wallet` | `string` | No |  |
 
 ### Operations
@@ -1533,11 +1535,11 @@ my $move_tid = $client->MoveTid;
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `productorderuuid` | `arrayref` | Yes |  |
-| `response_code` | `integer` | No |  |
-| `response_message` | `string` | No |  |
-| `target_packageorderuuid` | `string` | No |  |
-| `target_productorderuuid` | `string` | No |  |
+| `productorderuuids` | `arrayref` | Yes |  |
+| `responseCode` | `integer` | No |  |
+| `responseMessage` | `string` | No |  |
+| `targetPackageorderuuid` | `string` | No |  |
+| `targetProductorderuuid` | `string` | No |  |
 
 ### Operations
 
@@ -1547,7 +1549,7 @@ Create a new entity with the given data. Returns the created entity data and die
 
 ```perl
 my $result = $client->MoveTid->create({
-    'productorderuuid' => [],  # arrayref
+    'productorderuuids' => [],  # arrayref
 });
 ```
 
@@ -1590,44 +1592,44 @@ my $payment_manual = $client->PaymentManual;
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_name` | `string` | No |  |
+| `acquirerName` | `string` | No |  |
 | `amount` | `integer` | Yes |  |
-| `authorization_number` | `string` | No |  |
-| `card_number` | `string` | Yes |  |
-| `card_type` | `string` | No |  |
+| `authorizationNumber` | `string` | No |  |
+| `cardNumber` | `string` | Yes |  |
+| `cardType` | `string` | No |  |
 | `currency` | `string` | Yes |  |
 | `cvc` | `string` | No |  |
-| `date_time_tx` | `string` | No |  |
-| `exp_date` | `string` | Yes |  |
-| `merchant_id` | `string` | No |  |
-| `original_transaction_id` | `string` | No |  |
+| `dateTimeTx` | `string` | No |  |
+| `expDate` | `string` | Yes |  |
+| `merchantId` | `string` | No |  |
+| `originalTransactionId` | `string` | No |  |
 | `password` | `string` | No |  |
-| `response_code` | `string` | No |  |
-| `response_message` | `string` | No |  |
-| `terminal_id` | `string` | No |  |
-| `transaction_id` | `string` | No |  |
+| `responseCode` | `string` | No |  |
+| `responseMessage` | `string` | No |  |
+| `terminalId` | `string` | No |  |
+| `transactionId` | `string` | No |  |
 | `txtype` | `string` | Yes |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `acquirer_name` | - |
+| `acquirerName` | - |
 | `amount` | - |
-| `authorization_number` | - |
-| `card_number` | - |
-| `card_type` | - |
+| `authorizationNumber` | - |
+| `cardNumber` | - |
+| `cardType` | - |
 | `currency` | - |
 | `cvc` | - |
-| `date_time_tx` | - |
-| `exp_date` | - |
-| `merchant_id` | - |
-| `original_transaction_id` | - |
+| `dateTimeTx` | - |
+| `expDate` | - |
+| `merchantId` | - |
+| `originalTransactionId` | - |
 | `password` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `terminal_id` | Yes |
-| `transaction_id` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `terminalId` | Yes |
+| `transactionId` | - |
 | `txtype` | - |
 
 ### Operations
@@ -1639,9 +1641,9 @@ Create a new entity with the given data. Returns the created entity data and die
 ```perl
 my $result = $client->PaymentManual->create({
     'amount' => 1,  # integer
-    'card_number' => 'example_card_number',  # string
+    'cardNumber' => 'example_cardNumber',  # string
     'currency' => 'example_currency',  # string
-    'exp_date' => 'example_exp_date',  # string
+    'expDate' => 'example_expDate',  # string
     'txtype' => 'example_txtype',  # string
 });
 ```
@@ -1685,43 +1687,18 @@ my $payment_sred = $client->PaymentSred;
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_name` | `string` | No |  |
 | `amount` | `integer` | Yes |  |
-| `authorization_number` | `string` | No |  |
-| `card_type` | `string` | No |  |
 | `currency` | `string` | Yes |  |
-| `date_time_tx` | `string` | No |  |
-| `device_payload` | `string` | Yes |  |
-| `merchant_id` | `string` | No |  |
-| `original_transaction_id` | `string` | No |  |
+| `device` | `string` | No |  |
+| `devicePayload` | `string` | Yes |  |
+| `expDate` | `string` | No |  |
+| `mode` | `string` | No |  |
+| `panMasked` | `string` | No |  |
 | `password` | `string` | No |  |
-| `response_code` | `string` | No |  |
-| `response_message` | `string` | No |  |
-| `sred` | `hashref` | No |  |
-| `terminal_id` | `string` | No |  |
-| `transaction_id` | `string` | No |  |
+| `serial` | `string` | No |  |
+| `serviceCode` | `string` | No |  |
+| `terminalId` | `string` | Yes |  |
 | `txtype` | `string` | Yes |  |
-
-### Field Usage by Operation
-
-| Field | create |
-| --- | --- |
-| `acquirer_name` | - |
-| `amount` | - |
-| `authorization_number` | - |
-| `card_type` | - |
-| `currency` | - |
-| `date_time_tx` | - |
-| `device_payload` | - |
-| `merchant_id` | - |
-| `original_transaction_id` | - |
-| `password` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `sred` | - |
-| `terminal_id` | Yes |
-| `transaction_id` | - |
-| `txtype` | - |
 
 ### Operations
 
@@ -1733,7 +1710,8 @@ Create a new entity with the given data. Returns the created entity data and die
 my $result = $client->PaymentSred->create({
     'amount' => 1,  # integer
     'currency' => 'example_currency',  # string
-    'device_payload' => 'example_device_payload',  # string
+    'devicePayload' => 'example_devicePayload',  # string
+    'terminalId' => 'example_terminalId',  # string
     'txtype' => 'example_txtype',  # string
 });
 ```
@@ -1777,95 +1755,95 @@ my $pre_auth_transaction_completion = $client->PreAuthTransactionCompletion;
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `string` | No |  |
-| `acquirer_name` | `string` | No |  |
-| `actual_bonus_point` | `string` | No |  |
+| `acquirerId` | `string` | No |  |
+| `acquirerName` | `string` | No |  |
+| `actualBonusPoints` | `string` | No |  |
 | `amount` | `integer` | No |  |
-| `authorization_code` | `string` | No |  |
-| `balance_amount` | `string` | No |  |
-| `card_brand` | `string` | No |  |
-| `card_number` | `string` | No |  |
-| `card_number_reference` | `string` | Yes |  |
-| `client_id` | `integer` | Yes |  |
+| `authorizationCode` | `string` | No |  |
+| `balanceAmount` | `string` | No |  |
+| `cardBrand` | `string` | No |  |
+| `cardNumber` | `string` | No |  |
+| `cardNumberReference` | `string` | Yes |  |
+| `clientId` | `integer` | Yes |  |
 | `currency` | `string` | Yes |  |
 | `cvc` | `string` | No |  |
-| `ec_data` | `string` | No |  |
-| `ecr_data` | `string` | No |  |
-| `emv_data` | `string` | No |  |
-| `exchange_fee` | `integer` | No |  |
-| `exchange_rate` | `string` | No |  |
-| `language_code` | `string` | No |  |
-| `merchant_address` | `string` | No |  |
-| `merchant_name` | `string` | No |  |
-| `merchant_number` | `string` | No |  |
-| `message_type` | `string` | No |  |
-| `original_trace_number` | `integer` | No |  |
-| `original_transaction_id` | `string` | No |  |
+| `ecData` | `string` | No |  |
+| `ecrData` | `string` | No |  |
+| `emvData` | `string` | No |  |
+| `exchangeFee` | `integer` | No |  |
+| `exchangeRate` | `string` | No |  |
+| `languageCode` | `string` | No |  |
+| `merchantAddress` | `string` | No |  |
+| `merchantName` | `string` | No |  |
+| `merchantNumber` | `string` | No |  |
+| `messageType` | `string` | No |  |
+| `originalTraceNumber` | `integer` | No |  |
+| `originalTransactionId` | `string` | No |  |
 | `password` | `string` | No |  |
-| `payment_reason` | `string` | No |  |
-| `receipt_footer` | `string` | No |  |
-| `receipt_header` | `string` | No |  |
-| `receipt_layout` | `integer` | No |  |
-| `receipt_number` | `string` | Yes |  |
-| `response_code` | `integer` | No |  |
-| `response_message` | `string` | No |  |
-| `serial_number` | `string` | No |  |
+| `paymentReason` | `string` | No |  |
+| `receiptFooter` | `string` | No |  |
+| `receiptHeader` | `string` | No |  |
+| `receiptLayout` | `integer` | No |  |
+| `receiptNumber` | `string` | Yes |  |
+| `responseCode` | `integer` | No |  |
+| `responseMessage` | `string` | No |  |
+| `serialNumber` | `string` | No |  |
 | `svc` | `string` | No |  |
-| `terminal_id` | `integer` | Yes |  |
-| `terminal_location` | `string` | No |  |
-| `trace_number` | `integer` | No |  |
-| `transaction_date` | `string` | No |  |
-| `transaction_id` | `string` | No |  |
-| `transaction_type` | `string` | Yes |  |
-| `tx_type` | `string` | No |  |
-| `user_data` | `string` | No |  |
+| `terminalId` | `integer` | Yes |  |
+| `terminalLocation` | `string` | No |  |
+| `traceNumber` | `integer` | No |  |
+| `transactionDate` | `string` | No |  |
+| `transactionId` | `string` | No |  |
+| `transactionType` | `string` | Yes |  |
+| `txType` | `string` | No |  |
+| `userData` | `string` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `acquirer_id` | - |
-| `acquirer_name` | - |
-| `actual_bonus_point` | - |
+| `acquirerId` | - |
+| `acquirerName` | - |
+| `actualBonusPoints` | - |
 | `amount` | Yes |
-| `authorization_code` | - |
-| `balance_amount` | - |
-| `card_brand` | - |
-| `card_number` | - |
-| `card_number_reference` | - |
-| `client_id` | - |
+| `authorizationCode` | - |
+| `balanceAmount` | - |
+| `cardBrand` | - |
+| `cardNumber` | - |
+| `cardNumberReference` | - |
+| `clientId` | - |
 | `currency` | - |
 | `cvc` | - |
-| `ec_data` | - |
-| `ecr_data` | - |
-| `emv_data` | - |
-| `exchange_fee` | - |
-| `exchange_rate` | - |
-| `language_code` | - |
-| `merchant_address` | - |
-| `merchant_name` | - |
-| `merchant_number` | - |
-| `message_type` | - |
-| `original_trace_number` | - |
-| `original_transaction_id` | Yes |
+| `ecData` | - |
+| `ecrData` | - |
+| `emvData` | - |
+| `exchangeFee` | - |
+| `exchangeRate` | - |
+| `languageCode` | - |
+| `merchantAddress` | - |
+| `merchantName` | - |
+| `merchantNumber` | - |
+| `messageType` | - |
+| `originalTraceNumber` | - |
+| `originalTransactionId` | Yes |
 | `password` | - |
-| `payment_reason` | - |
-| `receipt_footer` | - |
-| `receipt_header` | - |
-| `receipt_layout` | - |
-| `receipt_number` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `serial_number` | - |
+| `paymentReason` | - |
+| `receiptFooter` | - |
+| `receiptHeader` | - |
+| `receiptLayout` | - |
+| `receiptNumber` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `serialNumber` | - |
 | `svc` | - |
-| `terminal_id` | - |
-| `terminal_location` | - |
-| `trace_number` | - |
-| `transaction_date` | Yes |
-| `transaction_id` | Yes |
-| `transaction_type` | - |
-| `tx_type` | - |
-| `user_data` | - |
+| `terminalId` | - |
+| `terminalLocation` | - |
+| `traceNumber` | - |
+| `transactionDate` | Yes |
+| `transactionId` | Yes |
+| `transactionType` | - |
+| `txType` | - |
+| `userData` | - |
 
 ### Operations
 
@@ -1875,12 +1853,12 @@ Create a new entity with the given data. Returns the created entity data and die
 
 ```perl
 my $result = $client->PreAuthTransactionCompletion->create({
-    'card_number_reference' => 'example_card_number_reference',  # string
-    'client_id' => 1,  # integer
+    'cardNumberReference' => 'example_cardNumberReference',  # string
+    'clientId' => 1,  # integer
     'currency' => 'example_currency',  # string
-    'receipt_number' => 'example_receipt_number',  # string
-    'terminal_id' => 1,  # integer
-    'transaction_type' => 'example_transaction_type',  # string
+    'receiptNumber' => 'example_receiptNumber',  # string
+    'terminalId' => 1,  # integer
+    'transactionType' => 'example_transactionType',  # string
 });
 ```
 
@@ -1923,13 +1901,13 @@ my $reactivate_terminal = $client->ReactivateTerminal;
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `corporate_uuid` | `string` | No |  |
-| `package_order_uuid` | `string` | No |  |
-| `product_order_uuid` | `string` | No |  |
-| `reactivation_reason` | `string` | Yes |  |
-| `response_code` | `integer` | No |  |
-| `response_message` | `string` | No |  |
-| `terminal_id` | `integer` | Yes |  |
+| `corporateUuid` | `string` | No |  |
+| `packageOrderUuid` | `string` | No |  |
+| `productOrderUuid` | `string` | No |  |
+| `reactivationReason` | `string` | Yes |  |
+| `responseCode` | `integer` | No |  |
+| `responseMessage` | `string` | No |  |
+| `terminalId` | `integer` | Yes |  |
 
 ### Operations
 
@@ -1939,8 +1917,8 @@ Create a new entity with the given data. Returns the created entity data and die
 
 ```perl
 my $result = $client->ReactivateTerminal->create({
-    'reactivation_reason' => 'example_reactivation_reason',  # string
-    'terminal_id' => 1,  # integer
+    'reactivationReason' => 'example_reactivationReason',  # string
+    'terminalId' => 1,  # integer
 });
 ```
 
@@ -1983,91 +1961,91 @@ my $refund_transaction = $client->RefundTransaction;
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `string` | No |  |
-| `acquirer_name` | `string` | No |  |
-| `actual_bonus_point` | `string` | No |  |
+| `acquirerId` | `string` | No |  |
+| `acquirerName` | `string` | No |  |
+| `actualBonusPoints` | `string` | No |  |
 | `amount` | `integer` | No |  |
-| `authorization_code` | `string` | No |  |
-| `balance_amount` | `string` | No |  |
-| `card_brand` | `string` | No |  |
-| `card_number` | `string` | No |  |
-| `client_id` | `integer` | Yes |  |
+| `authorizationCode` | `string` | No |  |
+| `balanceAmount` | `string` | No |  |
+| `cardBrand` | `string` | No |  |
+| `cardNumber` | `string` | No |  |
+| `clientId` | `integer` | Yes |  |
 | `currency` | `string` | Yes |  |
 | `cvc` | `string` | No |  |
-| `ec_data` | `string` | No |  |
-| `ecr_data` | `string` | No |  |
-| `emv_data` | `string` | No |  |
-| `exchange_fee` | `integer` | No |  |
-| `exchange_rate` | `string` | No |  |
-| `language_code` | `string` | No |  |
-| `merchant_address` | `string` | No |  |
-| `merchant_name` | `string` | No |  |
-| `merchant_number` | `string` | No |  |
-| `message_type` | `string` | No |  |
-| `original_trace_number` | `integer` | No |  |
-| `original_transaction_id` | `string` | No |  |
+| `ecData` | `string` | No |  |
+| `ecrData` | `string` | No |  |
+| `emvData` | `string` | No |  |
+| `exchangeFee` | `integer` | No |  |
+| `exchangeRate` | `string` | No |  |
+| `languageCode` | `string` | No |  |
+| `merchantAddress` | `string` | No |  |
+| `merchantName` | `string` | No |  |
+| `merchantNumber` | `string` | No |  |
+| `messageType` | `string` | No |  |
+| `originalTraceNumber` | `integer` | No |  |
+| `originalTransactionId` | `string` | No |  |
 | `password` | `string` | No |  |
-| `payment_reason` | `string` | No |  |
-| `receipt_footer` | `string` | No |  |
-| `receipt_header` | `string` | No |  |
-| `receipt_layout` | `integer` | No |  |
-| `receipt_number` | `string` | Yes |  |
-| `response_code` | `integer` | No |  |
-| `response_message` | `string` | No |  |
-| `serial_number` | `string` | No |  |
+| `paymentReason` | `string` | No |  |
+| `receiptFooter` | `string` | No |  |
+| `receiptHeader` | `string` | No |  |
+| `receiptLayout` | `integer` | No |  |
+| `receiptNumber` | `string` | Yes |  |
+| `responseCode` | `integer` | No |  |
+| `responseMessage` | `string` | No |  |
+| `serialNumber` | `string` | No |  |
 | `svc` | `string` | No |  |
-| `terminal_id` | `integer` | Yes |  |
-| `terminal_location` | `string` | No |  |
-| `trace_number` | `integer` | No |  |
-| `transaction_date` | `string` | No |  |
-| `transaction_id` | `string` | No |  |
-| `tx_type` | `string` | No |  |
-| `user_data` | `string` | No |  |
+| `terminalId` | `integer` | Yes |  |
+| `terminalLocation` | `string` | No |  |
+| `traceNumber` | `integer` | No |  |
+| `transactionDate` | `string` | No |  |
+| `transactionId` | `string` | No |  |
+| `txType` | `string` | No |  |
+| `userData` | `string` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `acquirer_id` | - |
-| `acquirer_name` | - |
-| `actual_bonus_point` | - |
+| `acquirerId` | - |
+| `acquirerName` | - |
+| `actualBonusPoints` | - |
 | `amount` | Yes |
-| `authorization_code` | - |
-| `balance_amount` | - |
-| `card_brand` | - |
-| `card_number` | - |
-| `client_id` | - |
+| `authorizationCode` | - |
+| `balanceAmount` | - |
+| `cardBrand` | - |
+| `cardNumber` | - |
+| `clientId` | - |
 | `currency` | - |
 | `cvc` | - |
-| `ec_data` | - |
-| `ecr_data` | - |
-| `emv_data` | - |
-| `exchange_fee` | - |
-| `exchange_rate` | - |
-| `language_code` | - |
-| `merchant_address` | - |
-| `merchant_name` | - |
-| `merchant_number` | - |
-| `message_type` | - |
-| `original_trace_number` | - |
-| `original_transaction_id` | Yes |
+| `ecData` | - |
+| `ecrData` | - |
+| `emvData` | - |
+| `exchangeFee` | - |
+| `exchangeRate` | - |
+| `languageCode` | - |
+| `merchantAddress` | - |
+| `merchantName` | - |
+| `merchantNumber` | - |
+| `messageType` | - |
+| `originalTraceNumber` | - |
+| `originalTransactionId` | Yes |
 | `password` | - |
-| `payment_reason` | - |
-| `receipt_footer` | - |
-| `receipt_header` | - |
-| `receipt_layout` | - |
-| `receipt_number` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `serial_number` | - |
+| `paymentReason` | - |
+| `receiptFooter` | - |
+| `receiptHeader` | - |
+| `receiptLayout` | - |
+| `receiptNumber` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `serialNumber` | - |
 | `svc` | - |
-| `terminal_id` | - |
-| `terminal_location` | - |
-| `trace_number` | - |
-| `transaction_date` | Yes |
-| `transaction_id` | Yes |
-| `tx_type` | - |
-| `user_data` | - |
+| `terminalId` | - |
+| `terminalLocation` | - |
+| `traceNumber` | - |
+| `transactionDate` | Yes |
+| `transactionId` | Yes |
+| `txType` | - |
+| `userData` | - |
 
 ### Operations
 
@@ -2077,10 +2055,10 @@ Create a new entity with the given data. Returns the created entity data and die
 
 ```perl
 my $result = $client->RefundTransaction->create({
-    'client_id' => 1,  # integer
+    'clientId' => 1,  # integer
     'currency' => 'example_currency',  # string
-    'receipt_number' => 'example_receipt_number',  # string
-    'terminal_id' => 1,  # integer
+    'receiptNumber' => 'example_receiptNumber',  # string
+    'terminalId' => 1,  # integer
 });
 ```
 
@@ -2123,14 +2101,14 @@ my $register_tecs_company = $client->RegisterTecsCompany;
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `corporate_uuid` | `string` | Yes |  |
-| `package_order_uuid` | `string` | Yes |  |
-| `partner_id` | `integer` | No |  |
-| `partner_name` | `string` | No |  |
-| `product_order_uuid` | `string` | Yes |  |
-| `response_code` | `integer` | No |  |
-| `response_message` | `string` | No |  |
-| `template_name` | `string` | Yes |  |
+| `corporateUuid` | `string` | Yes |  |
+| `packageOrderUuid` | `string` | Yes |  |
+| `partnerId` | `integer` | No |  |
+| `partnerName` | `string` | No |  |
+| `productOrderUuid` | `string` | Yes |  |
+| `responseCode` | `integer` | No |  |
+| `responseMessage` | `string` | No |  |
+| `templateName` | `string` | Yes |  |
 
 ### Operations
 
@@ -2140,10 +2118,10 @@ Create a new entity with the given data. Returns the created entity data and die
 
 ```perl
 my $result = $client->RegisterTecsCompany->create({
-    'corporate_uuid' => 'example_corporate_uuid',  # string
-    'package_order_uuid' => 'example_package_order_uuid',  # string
-    'product_order_uuid' => 'example_product_order_uuid',  # string
-    'template_name' => 'example_template_name',  # string
+    'corporateUuid' => 'example_corporateUuid',  # string
+    'packageOrderUuid' => 'example_packageOrderUuid',  # string
+    'productOrderUuid' => 'example_productOrderUuid',  # string
+    'templateName' => 'example_templateName',  # string
 });
 ```
 
@@ -2186,24 +2164,24 @@ my $register_terminal = $client->RegisterTerminal;
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `additional_data` | `hashref` | No |  |
-| `corporate_uuid` | `string` | Yes |  |
-| `package_order_uuid` | `string` | Yes |  |
-| `product_order_uuid` | `string` | Yes |  |
-| `response_code` | `integer` | No |  |
-| `response_message` | `string` | No |  |
-| `tecs_web_secret_key` | `string` | No |  |
-| `template_name` | `string` | Yes |  |
-| `terminal_country_code` | `string` | Yes |  |
-| `terminal_id` | `integer` | No |  |
-| `terminal_id_acq` | `string` | No |  |
-| `terminal_language_code` | `string` | Yes |  |
-| `terminal_location` | `string` | Yes |  |
-| `terminal_serial_number` | `string` | No |  |
-| `token_io_alia` | `string` | No |  |
-| `token_io_iban` | `string` | No |  |
-| `token_io_member_id` | `string` | No |  |
-| `web_shop_url` | `string` | No |  |
+| `additionalData` | `hashref` | No |  |
+| `corporateUuid` | `string` | Yes |  |
+| `packageOrderUuid` | `string` | Yes |  |
+| `productOrderUuid` | `string` | Yes |  |
+| `responseCode` | `integer` | No |  |
+| `responseMessage` | `string` | No |  |
+| `tecsWebSecretKey` | `string` | No |  |
+| `templateName` | `string` | Yes |  |
+| `terminalCountryCode` | `string` | Yes |  |
+| `terminalId` | `integer` | No |  |
+| `terminalIdAcq` | `string` | No |  |
+| `terminalLanguageCode` | `string` | Yes |  |
+| `terminalLocation` | `string` | Yes |  |
+| `terminalSerialNumber` | `string` | No |  |
+| `tokenIOAlias` | `string` | No |  |
+| `tokenIOIban` | `string` | No |  |
+| `tokenIOMemberId` | `string` | No |  |
+| `webShopUrl` | `string` | No |  |
 
 ### Operations
 
@@ -2213,13 +2191,13 @@ Create a new entity with the given data. Returns the created entity data and die
 
 ```perl
 my $result = $client->RegisterTerminal->create({
-    'corporate_uuid' => 'example_corporate_uuid',  # string
-    'package_order_uuid' => 'example_package_order_uuid',  # string
-    'product_order_uuid' => 'example_product_order_uuid',  # string
-    'template_name' => 'example_template_name',  # string
-    'terminal_country_code' => 'example_terminal_country_code',  # string
-    'terminal_language_code' => 'example_terminal_language_code',  # string
-    'terminal_location' => 'example_terminal_location',  # string
+    'corporateUuid' => 'example_corporateUuid',  # string
+    'packageOrderUuid' => 'example_packageOrderUuid',  # string
+    'productOrderUuid' => 'example_productOrderUuid',  # string
+    'templateName' => 'example_templateName',  # string
+    'terminalCountryCode' => 'example_terminalCountryCode',  # string
+    'terminalLanguageCode' => 'example_terminalLanguageCode',  # string
+    'terminalLocation' => 'example_terminalLocation',  # string
 });
 ```
 
@@ -2262,16 +2240,16 @@ my $report_data = $client->ReportData;
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `card_brand_report_data` | `arrayref` | No |  |
-| `clearing_date_from` | `string` | Yes |  |
-| `clearing_date_to` | `string` | Yes |  |
-| `corporate_id` | `string` | Yes |  |
+| `cardBrandReportData` | `arrayref` | No |  |
+| `clearingDateFrom` | `string` | Yes |  |
+| `clearingDateTo` | `string` | Yes |  |
+| `corporateId` | `string` | Yes |  |
 | `currency` | `string` | Yes |  |
-| `response_code` | `integer` | No |  |
-| `response_message` | `string` | No |  |
-| `sum_over_credit_tx` | `hashref` | No |  |
-| `sum_over_debit_tx` | `hashref` | No |  |
-| `terminal_id` | `integer` | No |  |
+| `responseCode` | `integer` | No |  |
+| `responseMessage` | `string` | No |  |
+| `sumOverCreditTx` | `hashref` | No |  |
+| `sumOverDebitTx` | `hashref` | No |  |
+| `terminalId` | `integer` | No |  |
 
 ### Operations
 
@@ -2281,9 +2259,9 @@ Create a new entity with the given data. Returns the created entity data and die
 
 ```perl
 my $result = $client->ReportData->create({
-    'clearing_date_from' => 'example_clearing_date_from',  # string
-    'clearing_date_to' => 'example_clearing_date_to',  # string
-    'corporate_id' => 'example_corporate_id',  # string
+    'clearingDateFrom' => 'example_clearingDateFrom',  # string
+    'clearingDateTo' => 'example_clearingDateTo',  # string
+    'corporateId' => 'example_corporateId',  # string
     'currency' => 'example_currency',  # string
 });
 ```
@@ -2327,56 +2305,56 @@ my $status_transaction = $client->StatusTransaction;
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_name` | `string` | No |  |
-| `acquirer_terminal_id` | `string` | No |  |
+| `acquirerName` | `string` | No |  |
+| `acquirerTerminalId` | `string` | No |  |
 | `amount` | `integer` | No |  |
-| `application_cryptogram` | `string` | No |  |
-| `authorization_code` | `scalar` | No |  |
-| `authorization_date` | `string` | No |  |
-| `card_brand` | `string` | No |  |
-| `card_entry` | `string` | No |  |
-| `card_expiration` | `string` | No |  |
-| `card_number` | `string` | No |  |
-| `clearing_amount` | `integer` | No |  |
-| `clearing_batch_id` | `string` | No |  |
-| `clearing_currency` | `string` | No |  |
-| `clearing_date` | `string` | No |  |
-| `clearing_processed_date` | `string` | No |  |
-| `clearing_status` | `string` | No |  |
-| `client_id` | `integer` | No |  |
+| `applicationCryptogram` | `string` | No |  |
+| `authorizationCode` | `scalar` | No |  |
+| `authorizationDate` | `string` | No |  |
+| `cardBrand` | `string` | No |  |
+| `cardEntry` | `string` | No |  |
+| `cardExpiration` | `string` | No |  |
+| `cardNumber` | `string` | No |  |
+| `clearingAmount` | `integer` | No |  |
+| `clearingBatchId` | `string` | No |  |
+| `clearingCurrency` | `string` | No |  |
+| `clearingDate` | `string` | No |  |
+| `clearingProcessedDate` | `string` | No |  |
+| `clearingStatus` | `string` | No |  |
+| `clientId` | `integer` | No |  |
 | `currency` | `string` | No |  |
 | `cvm` | `string` | No |  |
-| `ecr_data` | `string` | No |  |
-| `emv_application_id` | `string` | No |  |
-| `emv_application_label` | `string` | No |  |
-| `merchant_name` | `string` | No |  |
-| `merchant_number` | `string` | No |  |
-| `original_client_id` | `string` | No |  |
-| `original_terminal_id` | `integer` | No |  |
-| `original_transaction_id` | `string` | No |  |
-| `payment_reason` | `string` | No |  |
-| `receipt_number` | `string` | No |  |
-| `response_code` | `integer` | No |  |
-| `response_code_from_a` | `string` | No |  |
-| `response_message` | `string` | No |  |
-| `retrieval_reference_number` | `string` | No |  |
-| `service_code` | `string` | No |  |
-| `settlement_status` | `string` | No |  |
-| `source_id` | `integer` | No |  |
-| `tecsengine_response_code` | `integer` | No |  |
-| `tecsengine_response_text` | `string` | No |  |
-| `terminal_end_of_day_date` | `string` | No |  |
-| `terminal_id` | `integer` | No |  |
-| `terminal_location` | `string` | No |  |
-| `tip_amount` | `integer` | No |  |
-| `trace_number` | `integer` | No |  |
-| `transaction_clearing_date` | `string` | No |  |
-| `transaction_date` | `string` | No |  |
-| `transaction_id` | `string` | No |  |
-| `transaction_seq_number` | `integer` | No |  |
-| `transaction_server_date` | `string` | No |  |
-| `transaction_source` | `string` | No |  |
-| `transaction_type` | `string` | No |  |
+| `ecrData` | `string` | No |  |
+| `emvApplicationId` | `string` | No |  |
+| `emvApplicationLabel` | `string` | No |  |
+| `merchantName` | `string` | No |  |
+| `merchantNumber` | `string` | No |  |
+| `originalClientId` | `string` | No |  |
+| `originalTerminalId` | `integer` | No |  |
+| `originalTransactionId` | `string` | No |  |
+| `paymentReason` | `string` | No |  |
+| `receiptNumber` | `string` | No |  |
+| `responseCode` | `integer` | No |  |
+| `responseCodeFromAS` | `string` | No |  |
+| `responseMessage` | `string` | No |  |
+| `retrievalReferenceNumber` | `string` | No |  |
+| `serviceCode` | `string` | No |  |
+| `settlementStatus` | `string` | No |  |
+| `sourceId` | `integer` | No |  |
+| `tecsengineResponseCode` | `integer` | No |  |
+| `tecsengineResponseText` | `string` | No |  |
+| `terminalEndOfDayDate` | `string` | No |  |
+| `terminalId` | `integer` | No |  |
+| `terminalLocation` | `string` | No |  |
+| `tipAmount` | `integer` | No |  |
+| `traceNumber` | `integer` | No |  |
+| `transactionClearingDate` | `string` | No |  |
+| `transactionDate` | `string` | No |  |
+| `transactionId` | `string` | No |  |
+| `transactionSeqNumber` | `integer` | No |  |
+| `transactionServerDate` | `string` | No |  |
+| `transactionSource` | `string` | No |  |
+| `transactionType` | `string` | No |  |
 
 ### Operations
 
@@ -2428,12 +2406,12 @@ my $store_terminal_parameter = $client->StoreTerminalParameter;
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acq_tab_nexo` | `hashref` | No |  |
-| `config_version` | `string` | No |  |
-| `response_code` | `integer` | No |  |
-| `response_message` | `string` | No |  |
-| `serial_number` | `string` | Yes |  |
-| `tid_sent` | `string` | No |  |
+| `acqTabNexo` | `hashref` | No |  |
+| `configVersion` | `string` | No |  |
+| `responseCode` | `integer` | No |  |
+| `responseMessage` | `string` | No |  |
+| `serialNumber` | `string` | Yes |  |
+| `tidSent` | `string` | No |  |
 
 ### Operations
 
@@ -2443,7 +2421,7 @@ Create a new entity with the given data. Returns the created entity data and die
 
 ```perl
 my $result = $client->StoreTerminalParameter->create({
-    'serial_number' => 'example_serial_number',  # string
+    'serialNumber' => 'example_serialNumber',  # string
 });
 ```
 
@@ -2486,11 +2464,11 @@ my $terminal_id = $client->TerminalId;
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `device_serial_number` | `arrayref` | Yes |  |
-| `duplicate_terminal_id` | `arrayref` | No |  |
-| `response_code` | `integer` | No |  |
-| `response_message` | `string` | No |  |
-| `terminal` | `arrayref` | No |  |
+| `deviceSerialNumber` | `arrayref` | Yes |  |
+| `duplicateTerminalIds` | `arrayref` | No |  |
+| `responseCode` | `integer` | No |  |
+| `responseMessage` | `string` | No |  |
+| `terminals` | `arrayref` | No |  |
 
 ### Operations
 
@@ -2500,7 +2478,7 @@ Create a new entity with the given data. Returns the created entity data and die
 
 ```perl
 my $result = $client->TerminalId->create({
-    'device_serial_number' => [],  # arrayref
+    'deviceSerialNumber' => [],  # arrayref
 });
 ```
 
@@ -2543,34 +2521,34 @@ my $transaction_history = $client->TransactionHistory;
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `3_d_secure` | `string` | No |  |
-| `authorization_code` | `string` | No |  |
-| `card_brand` | `string` | No |  |
-| `clearing_amount_from` | `string` | No |  |
-| `clearing_amount_to` | `string` | No |  |
-| `clearing_currency` | `string` | No |  |
-| `clearing_status` | `string` | No |  |
-| `corporate_uuid` | `string` | No |  |
-| `order_by_transaction_date` | `string` | No |  |
+| `3DSecure` | `string` | No |  |
+| `authorizationCode` | `string` | No |  |
+| `cardBrand` | `string` | No |  |
+| `clearingAmountFrom` | `string` | No |  |
+| `clearingAmountTo` | `string` | No |  |
+| `clearingCurrency` | `string` | No |  |
+| `clearingStatus` | `string` | No |  |
+| `corporateUUID` | `string` | No |  |
+| `orderByTransactionDate` | `string` | No |  |
 | `pagination` | `hashref` | No |  |
-| `payment_token_public_id` | `string` | No |  |
-| `receipt_number` | `string` | No |  |
-| `referenced_transaction_id` | `string` | No |  |
-| `response_code` | `integer` | No |  |
-| `response_message` | `string` | No |  |
-| `retrieval_reference_number` | `string` | No |  |
-| `source_id` | `integer` | No |  |
-| `tecsengine_response_code_from` | `string` | No |  |
-| `tecsengine_response_code_to` | `string` | No |  |
-| `terminal_id` | `integer` | No |  |
-| `trace_number` | `string` | No |  |
-| `transaction_amount_from` | `string` | No |  |
-| `transaction_amount_to` | `string` | No |  |
-| `transaction_date_from` | `string` | No |  |
-| `transaction_date_to` | `string` | No |  |
-| `transaction_history` | `arrayref` | No |  |
-| `transaction_id` | `string` | No |  |
-| `transaction_type` | `string` | No |  |
+| `paymentTokenPublicId` | `string` | No |  |
+| `receiptNumber` | `string` | No |  |
+| `referencedTransactionId` | `string` | No |  |
+| `responseCode` | `integer` | No |  |
+| `responseMessage` | `string` | No |  |
+| `retrievalReferenceNumber` | `string` | No |  |
+| `sourceId` | `integer` | No |  |
+| `tecsengineResponseCodeFrom` | `string` | No |  |
+| `tecsengineResponseCodeTo` | `string` | No |  |
+| `terminalId` | `integer` | No |  |
+| `traceNumber` | `string` | No |  |
+| `transactionAmountFrom` | `string` | No |  |
+| `transactionAmountTo` | `string` | No |  |
+| `transactionDateFrom` | `string` | No |  |
+| `transactionDateTo` | `string` | No |  |
+| `transactionHistories` | `arrayref` | No |  |
+| `transactionId` | `string` | No |  |
+| `transactionType` | `string` | No |  |
 | `wallet` | `string` | No |  |
 
 ### Operations
@@ -2624,22 +2602,22 @@ my $transactions_count = $client->TransactionsCount;
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `period` | `string` | No |  |
-| `response_code` | `integer` | No |  |
-| `response_message` | `string` | No |  |
-| `transaction_date_from` | `string` | No |  |
-| `transaction_date_to` | `string` | No |  |
-| `transactions_count` | `arrayref` | No |  |
+| `responseCode` | `integer` | No |  |
+| `responseMessage` | `string` | No |  |
+| `transactionDateFrom` | `string` | No |  |
+| `transactionDateTo` | `string` | No |  |
+| `transactionsCount` | `arrayref` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
 | `period` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `transaction_date_from` | Yes |
-| `transaction_date_to` | Yes |
-| `transactions_count` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `transactionDateFrom` | Yes |
+| `transactionDateTo` | Yes |
+| `transactionsCount` | - |
 
 ### Operations
 
@@ -2692,22 +2670,22 @@ my $transactions_count_card_brand = $client->TransactionsCountCardBrand;
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `period` | `string` | No |  |
-| `response_code` | `integer` | No |  |
-| `response_message` | `string` | No |  |
-| `transaction_date_from` | `string` | No |  |
-| `transaction_date_to` | `string` | No |  |
-| `transactions_count` | `arrayref` | No |  |
+| `responseCode` | `integer` | No |  |
+| `responseMessage` | `string` | No |  |
+| `transactionDateFrom` | `string` | No |  |
+| `transactionDateTo` | `string` | No |  |
+| `transactionsCount` | `arrayref` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
 | `period` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `transaction_date_from` | Yes |
-| `transaction_date_to` | Yes |
-| `transactions_count` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `transactionDateFrom` | Yes |
+| `transactionDateTo` | Yes |
+| `transactionsCount` | - |
 
 ### Operations
 
@@ -2760,22 +2738,22 @@ my $transactions_turnover = $client->TransactionsTurnover;
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `period` | `string` | No |  |
-| `response_code` | `integer` | No |  |
-| `response_message` | `string` | No |  |
-| `transaction_date_from` | `string` | No |  |
-| `transaction_date_to` | `string` | No |  |
-| `turnover` | `arrayref` | No |  |
+| `responseCode` | `integer` | No |  |
+| `responseMessage` | `string` | No |  |
+| `transactionDateFrom` | `string` | No |  |
+| `transactionDateTo` | `string` | No |  |
+| `turnovers` | `arrayref` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
 | `period` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `transaction_date_from` | Yes |
-| `transaction_date_to` | Yes |
-| `turnover` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `transactionDateFrom` | Yes |
+| `transactionDateTo` | Yes |
+| `turnovers` | - |
 
 ### Operations
 
@@ -2828,15 +2806,15 @@ my $update_merchant = $client->UpdateMerchant;
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `city` | `string` | No |  |
-| `corporate_uuid` | `string` | Yes |  |
+| `corporateUuid` | `string` | Yes |  |
 | `country` | `string` | No |  |
-| `merchant_category_code` | `string` | No |  |
+| `merchantCategoryCode` | `string` | No |  |
 | `name` | `string` | No |  |
-| `response_code` | `integer` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `integer` | No |  |
+| `responseMessage` | `string` | No |  |
 | `state` | `string` | No |  |
 | `street` | `string` | No |  |
-| `vu_nummer` | `string` | No |  |
+| `vuNummer` | `string` | No |  |
 | `zipcode` | `string` | No |  |
 
 ### Operations
@@ -2847,7 +2825,7 @@ Create a new entity with the given data. Returns the created entity data and die
 
 ```perl
 my $result = $client->UpdateMerchant->create({
-    'corporate_uuid' => 'example_corporate_uuid',  # string
+    'corporateUuid' => 'example_corporateUuid',  # string
 });
 ```
 
@@ -2890,10 +2868,10 @@ my $update_template_xml = $client->UpdateTemplateXml;
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `integer` | No |  |
-| `response_message` | `string` | No |  |
-| `template_name` | `string` | Yes |  |
-| `template_xml` | `string` | Yes |  |
+| `responseCode` | `integer` | No |  |
+| `responseMessage` | `string` | No |  |
+| `templateName` | `string` | Yes |  |
+| `templateXml` | `string` | Yes |  |
 
 ### Operations
 
@@ -2903,8 +2881,8 @@ Create a new entity with the given data. Returns the created entity data and die
 
 ```perl
 my $result = $client->UpdateTemplateXml->create({
-    'template_name' => 'example_template_name',  # string
-    'template_xml' => 'example_template_xml',  # string
+    'templateName' => 'example_templateName',  # string
+    'templateXml' => 'example_templateXml',  # string
 });
 ```
 
@@ -2947,8 +2925,8 @@ my $version = $client->Version;
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `app_name` | `string` | No |  |
-| `build_date` | `string` | No |  |
+| `appName` | `string` | No |  |
+| `buildDate` | `string` | No |  |
 | `version` | `string` | No |  |
 
 ### Operations

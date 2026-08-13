@@ -19,46 +19,46 @@ defmodule BluefinTecsMerchantServices.Types do
   CancelTransaction entity data model.
 
   Members:
-    * `"acquirer_id"` — String.t() (optional)
-    * `"acquirer_name"` — String.t() (optional)
-    * `"actual_bonus_point"` — String.t() (optional)
+    * `"acquirerId"` — String.t() (optional)
+    * `"acquirerName"` — String.t() (optional)
+    * `"actualBonusPoints"` — String.t() (optional)
     * `"amount"` — integer() (optional)
-    * `"authorization_code"` — String.t() (optional)
-    * `"balance_amount"` — String.t() (optional)
-    * `"card_brand"` — String.t() (optional)
-    * `"card_number"` — String.t() (optional)
-    * `"client_id"` — integer() (required)
+    * `"authorizationCode"` — String.t() (optional)
+    * `"balanceAmount"` — String.t() (optional)
+    * `"cardBrand"` — String.t() (optional)
+    * `"cardNumber"` — String.t() (optional)
+    * `"clientId"` — integer() (required)
     * `"currency"` — String.t() (required)
     * `"cvc"` — String.t() (optional)
-    * `"ec_data"` — String.t() (optional)
-    * `"ecr_data"` — String.t() (optional)
-    * `"emv_data"` — String.t() (optional)
-    * `"exchange_fee"` — integer() (optional)
-    * `"exchange_rate"` — String.t() (optional)
-    * `"language_code"` — String.t() (optional)
-    * `"merchant_address"` — String.t() (optional)
-    * `"merchant_name"` — String.t() (optional)
-    * `"merchant_number"` — String.t() (optional)
-    * `"message_type"` — String.t() (optional)
-    * `"original_trace_number"` — integer() (optional)
-    * `"original_transaction_id"` — String.t() (optional)
+    * `"ecData"` — String.t() (optional)
+    * `"ecrData"` — String.t() (optional)
+    * `"emvData"` — String.t() (optional)
+    * `"exchangeFee"` — integer() (optional)
+    * `"exchangeRate"` — String.t() (optional)
+    * `"languageCode"` — String.t() (optional)
+    * `"merchantAddress"` — String.t() (optional)
+    * `"merchantName"` — String.t() (optional)
+    * `"merchantNumber"` — String.t() (optional)
+    * `"messageType"` — String.t() (optional)
+    * `"originalTraceNumber"` — integer() (optional)
+    * `"originalTransactionId"` — String.t() (optional)
     * `"password"` — String.t() (optional)
-    * `"payment_reason"` — String.t() (optional)
-    * `"receipt_footer"` — String.t() (optional)
-    * `"receipt_header"` — String.t() (optional)
-    * `"receipt_layout"` — integer() (optional)
-    * `"receipt_number"` — String.t() (required)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"serial_number"` — String.t() (optional)
+    * `"paymentReason"` — String.t() (optional)
+    * `"receiptFooter"` — String.t() (optional)
+    * `"receiptHeader"` — String.t() (optional)
+    * `"receiptLayout"` — integer() (optional)
+    * `"receiptNumber"` — String.t() (required)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"serialNumber"` — String.t() (optional)
     * `"svc"` — String.t() (optional)
-    * `"terminal_id"` — integer() (required)
-    * `"terminal_location"` — String.t() (optional)
-    * `"trace_number"` — integer() (optional)
-    * `"transaction_date"` — String.t() (optional)
-    * `"transaction_id"` — String.t() (optional)
-    * `"tx_type"` — String.t() (optional)
-    * `"user_data"` — String.t() (optional)
+    * `"terminalId"` — integer() (required)
+    * `"terminalLocation"` — String.t() (optional)
+    * `"traceNumber"` — integer() (optional)
+    * `"transactionDate"` — String.t() (optional)
+    * `"transactionId"` — String.t() (optional)
+    * `"txType"` — String.t() (optional)
+    * `"userData"` — String.t() (optional)
   """
   @type cancel_transaction :: %{optional(String.t()) => any()}
 
@@ -66,46 +66,46 @@ defmodule BluefinTecsMerchantServices.Types do
   Request payload for CancelTransaction create.
 
   Members:
-    * `"acquirer_id"` — String.t() (optional)
-    * `"acquirer_name"` — String.t() (optional)
-    * `"actual_bonus_point"` — String.t() (optional)
+    * `"acquirerId"` — String.t() (optional)
+    * `"acquirerName"` — String.t() (optional)
+    * `"actualBonusPoints"` — String.t() (optional)
     * `"amount"` — integer() (optional)
-    * `"authorization_code"` — String.t() (optional)
-    * `"balance_amount"` — String.t() (optional)
-    * `"card_brand"` — String.t() (optional)
-    * `"card_number"` — String.t() (optional)
-    * `"client_id"` — integer() (required)
+    * `"authorizationCode"` — String.t() (optional)
+    * `"balanceAmount"` — String.t() (optional)
+    * `"cardBrand"` — String.t() (optional)
+    * `"cardNumber"` — String.t() (optional)
+    * `"clientId"` — integer() (required)
     * `"currency"` — String.t() (required)
     * `"cvc"` — String.t() (optional)
-    * `"ec_data"` — String.t() (optional)
-    * `"ecr_data"` — String.t() (optional)
-    * `"emv_data"` — String.t() (optional)
-    * `"exchange_fee"` — integer() (optional)
-    * `"exchange_rate"` — String.t() (optional)
-    * `"language_code"` — String.t() (optional)
-    * `"merchant_address"` — String.t() (optional)
-    * `"merchant_name"` — String.t() (optional)
-    * `"merchant_number"` — String.t() (optional)
-    * `"message_type"` — String.t() (optional)
-    * `"original_trace_number"` — integer() (optional)
-    * `"original_transaction_id"` — String.t() (optional)
+    * `"ecData"` — String.t() (optional)
+    * `"ecrData"` — String.t() (optional)
+    * `"emvData"` — String.t() (optional)
+    * `"exchangeFee"` — integer() (optional)
+    * `"exchangeRate"` — String.t() (optional)
+    * `"languageCode"` — String.t() (optional)
+    * `"merchantAddress"` — String.t() (optional)
+    * `"merchantName"` — String.t() (optional)
+    * `"merchantNumber"` — String.t() (optional)
+    * `"messageType"` — String.t() (optional)
+    * `"originalTraceNumber"` — integer() (optional)
+    * `"originalTransactionId"` — String.t() (optional)
     * `"password"` — String.t() (optional)
-    * `"payment_reason"` — String.t() (optional)
-    * `"receipt_footer"` — String.t() (optional)
-    * `"receipt_header"` — String.t() (optional)
-    * `"receipt_layout"` — integer() (optional)
-    * `"receipt_number"` — String.t() (required)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"serial_number"` — String.t() (optional)
+    * `"paymentReason"` — String.t() (optional)
+    * `"receiptFooter"` — String.t() (optional)
+    * `"receiptHeader"` — String.t() (optional)
+    * `"receiptLayout"` — integer() (optional)
+    * `"receiptNumber"` — String.t() (required)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"serialNumber"` — String.t() (optional)
     * `"svc"` — String.t() (optional)
-    * `"terminal_id"` — integer() (required)
-    * `"terminal_location"` — String.t() (optional)
-    * `"trace_number"` — integer() (optional)
-    * `"transaction_date"` — String.t() (optional)
-    * `"transaction_id"` — String.t() (optional)
-    * `"tx_type"` — String.t() (optional)
-    * `"user_data"` — String.t() (optional)
+    * `"terminalId"` — integer() (required)
+    * `"terminalLocation"` — String.t() (optional)
+    * `"traceNumber"` — integer() (optional)
+    * `"transactionDate"` — String.t() (optional)
+    * `"transactionId"` — String.t() (optional)
+    * `"txType"` — String.t() (optional)
+    * `"userData"` — String.t() (optional)
   """
   @type cancel_transaction_create_data :: %{optional(String.t()) => any()}
 
@@ -113,9 +113,9 @@ defmodule BluefinTecsMerchantServices.Types do
   CheckCardBlackListed entity data model.
 
   Members:
-    * `"card_no"` — String.t() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
+    * `"cardNo"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
   """
   @type check_card_black_listed :: %{optional(String.t()) => any()}
 
@@ -123,9 +123,9 @@ defmodule BluefinTecsMerchantServices.Types do
   Request payload for CheckCardBlackListed create.
 
   Members:
-    * `"card_no"` — String.t() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
+    * `"cardNo"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
   """
   @type check_card_black_listed_create_data :: %{optional(String.t()) => any()}
 
@@ -133,13 +133,13 @@ defmodule BluefinTecsMerchantServices.Types do
   CreateProduct entity data model.
 
   Members:
-    * `"acquirer_id"` — integer() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"template_name"` — String.t() (required)
-    * `"template_type"` — String.t() (required)
-    * `"template_xml"` — String.t() (required)
-    * `"terminal_type"` — String.t() (required)
+    * `"acquirerId"` — integer() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"templateName"` — String.t() (required)
+    * `"templateType"` — String.t() (required)
+    * `"templateXml"` — String.t() (required)
+    * `"terminalType"` — String.t() (required)
   """
   @type create_product :: %{optional(String.t()) => any()}
 
@@ -147,13 +147,13 @@ defmodule BluefinTecsMerchantServices.Types do
   Request payload for CreateProduct create.
 
   Members:
-    * `"acquirer_id"` — integer() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"template_name"` — String.t() (required)
-    * `"template_type"` — String.t() (required)
-    * `"template_xml"` — String.t() (required)
-    * `"terminal_type"` — String.t() (required)
+    * `"acquirerId"` — integer() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"templateName"` — String.t() (required)
+    * `"templateType"` — String.t() (required)
+    * `"templateXml"` — String.t() (required)
+    * `"terminalType"` — String.t() (required)
   """
   @type create_product_create_data :: %{optional(String.t()) => any()}
 
@@ -161,13 +161,13 @@ defmodule BluefinTecsMerchantServices.Types do
   DeactivateTerminal entity data model.
 
   Members:
-    * `"corporate_uuid"` — String.t() (optional)
-    * `"deactivation_reason"` — String.t() (required)
-    * `"package_order_uuid"` — String.t() (optional)
-    * `"product_order_uuid"` — String.t() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"terminal_id"` — integer() (required)
+    * `"corporateUuid"` — String.t() (optional)
+    * `"deactivationReason"` — String.t() (required)
+    * `"packageOrderUuid"` — String.t() (optional)
+    * `"productOrderUuid"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"terminalId"` — integer() (required)
   """
   @type deactivate_terminal :: %{optional(String.t()) => any()}
 
@@ -175,13 +175,13 @@ defmodule BluefinTecsMerchantServices.Types do
   Request payload for DeactivateTerminal create.
 
   Members:
-    * `"corporate_uuid"` — String.t() (optional)
-    * `"deactivation_reason"` — String.t() (required)
-    * `"package_order_uuid"` — String.t() (optional)
-    * `"product_order_uuid"` — String.t() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"terminal_id"` — integer() (required)
+    * `"corporateUuid"` — String.t() (optional)
+    * `"deactivationReason"` — String.t() (required)
+    * `"packageOrderUuid"` — String.t() (optional)
+    * `"productOrderUuid"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"terminalId"` — integer() (required)
   """
   @type deactivate_terminal_create_data :: %{optional(String.t()) => any()}
 
@@ -189,16 +189,16 @@ defmodule BluefinTecsMerchantServices.Types do
   DigitalServicesApi entity data model.
 
   Members:
-    * `"clearing_date_from"` — String.t() (required)
-    * `"clearing_date_to"` — String.t() (required)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"tx_count"` — integer() (optional)
-    * `"tx_id_end"` — String.t() (optional)
-    * `"tx_id_start"` — String.t() (optional)
-    * `"tx_seq_no_end"` — integer() (optional)
-    * `"tx_seq_no_start"` — integer() (optional)
-    * `"tx_total"` — integer() (optional)
+    * `"clearingDateFrom"` — String.t() (required)
+    * `"clearingDateTo"` — String.t() (required)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"txCount"` — integer() (optional)
+    * `"txIdEnd"` — String.t() (optional)
+    * `"txIdStart"` — String.t() (optional)
+    * `"txSeqNoEnd"` — integer() (optional)
+    * `"txSeqNoStart"` — integer() (optional)
+    * `"txTotal"` — integer() (optional)
   """
   @type digital_services_api :: %{optional(String.t()) => any()}
 
@@ -206,16 +206,16 @@ defmodule BluefinTecsMerchantServices.Types do
   Request payload for DigitalServicesApi load.
 
   Members:
-    * `"clearing_date_from"` — String.t() (optional)
-    * `"clearing_date_to"` — String.t() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"tx_count"` — integer() (optional)
-    * `"tx_id_end"` — String.t() (optional)
-    * `"tx_id_start"` — String.t() (optional)
-    * `"tx_seq_no_end"` — integer() (optional)
-    * `"tx_seq_no_start"` — integer() (optional)
-    * `"tx_total"` — integer() (optional)
+    * `"clearingDateFrom"` — String.t() (optional)
+    * `"clearingDateTo"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"txCount"` — integer() (optional)
+    * `"txIdEnd"` — String.t() (optional)
+    * `"txIdStart"` — String.t() (optional)
+    * `"txSeqNoEnd"` — integer() (optional)
+    * `"txSeqNoStart"` — integer() (optional)
+    * `"txTotal"` — integer() (optional)
   """
   @type digital_services_api_load_match :: %{optional(String.t()) => any()}
 
@@ -224,6 +224,16 @@ defmodule BluefinTecsMerchantServices.Types do
 
   Members:
     * `"file_id"` — String.t() (optional)
+    * `"clearingDateFrom"` — String.t() (required)
+    * `"clearingDateTo"` — String.t() (required)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"txCount"` — integer() (optional)
+    * `"txIdEnd"` — String.t() (optional)
+    * `"txIdStart"` — String.t() (optional)
+    * `"txSeqNoEnd"` — integer() (optional)
+    * `"txSeqNoStart"` — integer() (optional)
+    * `"txTotal"` — integer() (optional)
   """
   @type digital_services_api_create_data :: %{optional(String.t()) => any()}
 
@@ -231,12 +241,12 @@ defmodule BluefinTecsMerchantServices.Types do
   EcDataEcom entity data model.
 
   Members:
-    * `"ecom_data"` — String.t() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"terminal_id"` — integer() (required)
-    * `"transaction_id"` — String.t() (required)
-    * `"transaction_type"` — String.t() (required)
+    * `"ecomData"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"terminalId"` — integer() (required)
+    * `"transactionId"` — String.t() (required)
+    * `"transactionType"` — String.t() (required)
   """
   @type ec_data_ecom :: %{optional(String.t()) => any()}
 
@@ -244,12 +254,12 @@ defmodule BluefinTecsMerchantServices.Types do
   Request payload for EcDataEcom create.
 
   Members:
-    * `"ecom_data"` — String.t() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"terminal_id"` — integer() (required)
-    * `"transaction_id"` — String.t() (required)
-    * `"transaction_type"` — String.t() (required)
+    * `"ecomData"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"terminalId"` — integer() (required)
+    * `"transactionId"` — String.t() (required)
+    * `"transactionType"` — String.t() (required)
   """
   @type ec_data_ecom_create_data :: %{optional(String.t()) => any()}
 
@@ -257,11 +267,11 @@ defmodule BluefinTecsMerchantServices.Types do
   EcomParameter entity data model.
 
   Members:
-    * `"ecom_pass"` — String.t() (optional)
-    * `"ecom_skey"` — String.t() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"terminal_id"` — integer() (required)
+    * `"ecomPass"` — String.t() (optional)
+    * `"ecomSkey"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"terminalId"` — integer() (required)
   """
   @type ecom_parameter :: %{optional(String.t()) => any()}
 
@@ -269,11 +279,11 @@ defmodule BluefinTecsMerchantServices.Types do
   Request payload for EcomParameter create.
 
   Members:
-    * `"ecom_pass"` — String.t() (optional)
-    * `"ecom_skey"` — String.t() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"terminal_id"` — integer() (required)
+    * `"ecomPass"` — String.t() (optional)
+    * `"ecomSkey"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"terminalId"` — integer() (required)
   """
   @type ecom_parameter_create_data :: %{optional(String.t()) => any()}
 
@@ -281,12 +291,12 @@ defmodule BluefinTecsMerchantServices.Types do
   EcrData entity data model.
 
   Members:
-    * `"ecr_data"` — String.t() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"terminal_id"` — integer() (required)
-    * `"transaction_id"` — String.t() (required)
-    * `"transaction_type"` — String.t() (required)
+    * `"ecrData"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"terminalId"` — integer() (required)
+    * `"transactionId"` — String.t() (required)
+    * `"transactionType"` — String.t() (required)
   """
   @type ecr_data :: %{optional(String.t()) => any()}
 
@@ -294,12 +304,12 @@ defmodule BluefinTecsMerchantServices.Types do
   Request payload for EcrData create.
 
   Members:
-    * `"ecr_data"` — String.t() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"terminal_id"` — integer() (required)
-    * `"transaction_id"` — String.t() (required)
-    * `"transaction_type"` — String.t() (required)
+    * `"ecrData"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"terminalId"` — integer() (required)
+    * `"transactionId"` — String.t() (required)
+    * `"transactionType"` — String.t() (required)
   """
   @type ecr_data_create_data :: %{optional(String.t()) => any()}
 
@@ -307,12 +317,12 @@ defmodule BluefinTecsMerchantServices.Types do
   EmvData entity data model.
 
   Members:
-    * `"emv_data"` — String.t() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"terminal_id"` — integer() (required)
-    * `"transaction_id"` — String.t() (required)
-    * `"transaction_type"` — String.t() (required)
+    * `"emvData"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"terminalId"` — integer() (required)
+    * `"transactionId"` — String.t() (required)
+    * `"transactionType"` — String.t() (required)
   """
   @type emv_data :: %{optional(String.t()) => any()}
 
@@ -320,12 +330,12 @@ defmodule BluefinTecsMerchantServices.Types do
   Request payload for EmvData create.
 
   Members:
-    * `"emv_data"` — String.t() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"terminal_id"` — integer() (required)
-    * `"transaction_id"` — String.t() (required)
-    * `"transaction_type"` — String.t() (required)
+    * `"emvData"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"terminalId"` — integer() (required)
+    * `"transactionId"` — String.t() (required)
+    * `"transactionType"` — String.t() (required)
   """
   @type emv_data_create_data :: %{optional(String.t()) => any()}
 
@@ -333,20 +343,20 @@ defmodule BluefinTecsMerchantServices.Types do
   EnableAcquiring entity data model.
 
   Members:
-    * `"account_no"` — integer() (optional)
-    * `"additional_data"` — map() (optional)
-    * `"corporate_uuid"` — String.t() (required)
+    * `"accountNo"` — integer() (optional)
+    * `"additionalData"` — map() (optional)
+    * `"corporateUuid"` — String.t() (required)
     * `"currency"` — String.t() (required)
-    * `"merchant_category_code"` — integer() (required)
-    * `"package_order_uuid"` — String.t() (required)
-    * `"product_order_uuid"` — String.t() (required)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"sorting_code"` — integer() (optional)
-    * `"template_name"` — String.t() (required)
-    * `"terminal_id"` — list() (optional)
-    * `"terminal_id_acq"` — String.t() (optional)
-    * `"vu_nummer"` — String.t() (optional)
+    * `"merchantCategoryCode"` — integer() (required)
+    * `"packageOrderUuid"` — String.t() (required)
+    * `"productOrderUuid"` — String.t() (required)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"sortingCode"` — integer() (optional)
+    * `"templateName"` — String.t() (required)
+    * `"terminalIdAcq"` — String.t() (optional)
+    * `"terminalIds"` — list() (optional)
+    * `"vuNummer"` — String.t() (optional)
   """
   @type enable_acquiring :: %{optional(String.t()) => any()}
 
@@ -354,20 +364,20 @@ defmodule BluefinTecsMerchantServices.Types do
   Request payload for EnableAcquiring create.
 
   Members:
-    * `"account_no"` — integer() (optional)
-    * `"additional_data"` — map() (optional)
-    * `"corporate_uuid"` — String.t() (required)
+    * `"accountNo"` — integer() (optional)
+    * `"additionalData"` — map() (optional)
+    * `"corporateUuid"` — String.t() (required)
     * `"currency"` — String.t() (required)
-    * `"merchant_category_code"` — integer() (required)
-    * `"package_order_uuid"` — String.t() (required)
-    * `"product_order_uuid"` — String.t() (required)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"sorting_code"` — integer() (optional)
-    * `"template_name"` — String.t() (required)
-    * `"terminal_id"` — list() (optional)
-    * `"terminal_id_acq"` — String.t() (optional)
-    * `"vu_nummer"` — String.t() (optional)
+    * `"merchantCategoryCode"` — integer() (required)
+    * `"packageOrderUuid"` — String.t() (required)
+    * `"productOrderUuid"` — String.t() (required)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"sortingCode"` — integer() (optional)
+    * `"templateName"` — String.t() (required)
+    * `"terminalIdAcq"` — String.t() (optional)
+    * `"terminalIds"` — list() (optional)
+    * `"vuNummer"` — String.t() (optional)
   """
   @type enable_acquiring_create_data :: %{optional(String.t()) => any()}
 
@@ -375,9 +385,9 @@ defmodule BluefinTecsMerchantServices.Types do
   GetMerchantContractNumber entity data model.
 
   Members:
-    * `"merchant_contract_number"` — String.t() (required)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
+    * `"merchantContractNumber"` — String.t() (required)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
   """
   @type get_merchant_contract_number :: %{optional(String.t()) => any()}
 
@@ -385,9 +395,9 @@ defmodule BluefinTecsMerchantServices.Types do
   Request payload for GetMerchantContractNumber create.
 
   Members:
-    * `"merchant_contract_number"` — String.t() (required)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
+    * `"merchantContractNumber"` — String.t() (required)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
   """
   @type get_merchant_contract_number_create_data :: %{optional(String.t()) => any()}
 
@@ -395,9 +405,9 @@ defmodule BluefinTecsMerchantServices.Types do
   GetTemplateXml entity data model.
 
   Members:
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"template_name"` — String.t() (required)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"templateName"` — String.t() (required)
   """
   @type get_template_xml :: %{optional(String.t()) => any()}
 
@@ -405,9 +415,9 @@ defmodule BluefinTecsMerchantServices.Types do
   Request payload for GetTemplateXml create.
 
   Members:
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"template_name"` — String.t() (required)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"templateName"` — String.t() (required)
   """
   @type get_template_xml_create_data :: %{optional(String.t()) => any()}
 
@@ -415,9 +425,9 @@ defmodule BluefinTecsMerchantServices.Types do
   IntroduceMandator entity data model.
 
   Members:
-    * `"mandator_name"` — String.t() (required)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
+    * `"mandatorName"` — String.t() (required)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
   """
   @type introduce_mandator :: %{optional(String.t()) => any()}
 
@@ -425,9 +435,9 @@ defmodule BluefinTecsMerchantServices.Types do
   Request payload for IntroduceMandator create.
 
   Members:
-    * `"mandator_name"` — String.t() (required)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
+    * `"mandatorName"` — String.t() (required)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
   """
   @type introduce_mandator_create_data :: %{optional(String.t()) => any()}
 
@@ -435,9 +445,9 @@ defmodule BluefinTecsMerchantServices.Types do
   IntroducePackage entity data model.
 
   Members:
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"terminal_template_description"` — String.t() (required)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"terminalTemplateDescription"` — String.t() (required)
   """
   @type introduce_package :: %{optional(String.t()) => any()}
 
@@ -445,9 +455,9 @@ defmodule BluefinTecsMerchantServices.Types do
   Request payload for IntroducePackage create.
 
   Members:
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"terminal_template_description"` — String.t() (required)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"terminalTemplateDescription"` — String.t() (required)
   """
   @type introduce_package_create_data :: %{optional(String.t()) => any()}
 
@@ -456,15 +466,15 @@ defmodule BluefinTecsMerchantServices.Types do
 
   Members:
     * `"hwserialno"` — String.t() (optional)
-    * `"ka_date_time_from"` — String.t() (optional)
-    * `"ka_date_time_to"` — String.t() (optional)
-    * `"keep_alive_data"` — list() (optional)
+    * `"kaDateTimeFrom"` — String.t() (optional)
+    * `"kaDateTimeTo"` — String.t() (optional)
+    * `"keepAliveData"` — list() (optional)
     * `"pagination"` — map() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"terminal_date_time_from"` — String.t() (optional)
-    * `"terminal_date_time_to"` — String.t() (optional)
-    * `"terminal_id"` — integer() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"terminalDateTimeFrom"` — String.t() (optional)
+    * `"terminalDateTimeTo"` — String.t() (optional)
+    * `"terminalId"` — integer() (optional)
   """
   @type keep_alive :: %{optional(String.t()) => any()}
 
@@ -473,15 +483,15 @@ defmodule BluefinTecsMerchantServices.Types do
 
   Members:
     * `"hwserialno"` — String.t() (optional)
-    * `"ka_date_time_from"` — String.t() (optional)
-    * `"ka_date_time_to"` — String.t() (optional)
-    * `"keep_alive_data"` — list() (optional)
+    * `"kaDateTimeFrom"` — String.t() (optional)
+    * `"kaDateTimeTo"` — String.t() (optional)
+    * `"keepAliveData"` — list() (optional)
     * `"pagination"` — map() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"terminal_date_time_from"` — String.t() (optional)
-    * `"terminal_date_time_to"` — String.t() (optional)
-    * `"terminal_id"` — integer() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"terminalDateTimeFrom"` — String.t() (optional)
+    * `"terminalDateTimeTo"` — String.t() (optional)
+    * `"terminalId"` — integer() (optional)
   """
   @type keep_alive_create_data :: %{optional(String.t()) => any()}
 
@@ -489,12 +499,12 @@ defmodule BluefinTecsMerchantServices.Types do
   ListTerminal entity data model.
 
   Members:
-    * `"corporate_uuid"` — list() (optional)
+    * `"corporateUuid"` — list() (optional)
     * `"filter"` — map() (optional)
     * `"pagination"` — map() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"terminal"` — list() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"terminals"` — list() (optional)
   """
   @type list_terminal :: %{optional(String.t()) => any()}
 
@@ -502,12 +512,12 @@ defmodule BluefinTecsMerchantServices.Types do
   Request payload for ListTerminal create.
 
   Members:
-    * `"corporate_uuid"` — list() (optional)
+    * `"corporateUuid"` — list() (optional)
     * `"filter"` — map() (optional)
     * `"pagination"` — map() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"terminal"` — list() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"terminals"` — list() (optional)
   """
   @type list_terminal_create_data :: %{optional(String.t()) => any()}
 
@@ -515,12 +525,12 @@ defmodule BluefinTecsMerchantServices.Types do
   MandatorClearingExport entity data model.
 
   Members:
-    * `"clearing_date_from"` — String.t() (required)
-    * `"clearing_date_to"` — String.t() (required)
+    * `"clearingDateFrom"` — String.t() (required)
+    * `"clearingDateTo"` — String.t() (required)
     * `"pagination"` — map() (optional)
-    * `"record"` — list() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
+    * `"records"` — list() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
   """
   @type mandator_clearing_export :: %{optional(String.t()) => any()}
 
@@ -528,12 +538,12 @@ defmodule BluefinTecsMerchantServices.Types do
   Request payload for MandatorClearingExport create.
 
   Members:
-    * `"clearing_date_from"` — String.t() (required)
-    * `"clearing_date_to"` — String.t() (required)
+    * `"clearingDateFrom"` — String.t() (required)
+    * `"clearingDateTo"` — String.t() (required)
     * `"pagination"` — map() (optional)
-    * `"record"` — list() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
+    * `"records"` — list() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
   """
   @type mandator_clearing_export_create_data :: %{optional(String.t()) => any()}
 
@@ -541,12 +551,12 @@ defmodule BluefinTecsMerchantServices.Types do
   MandatorClearingExportDownload entity data model.
 
   Members:
-    * `"clearing_date_from"` — String.t() (required)
-    * `"clearing_date_to"` — String.t() (required)
-    * `"file_id"` — String.t() (optional)
-    * `"filename_template"` — String.t() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
+    * `"clearingDateFrom"` — String.t() (required)
+    * `"clearingDateTo"` — String.t() (required)
+    * `"fileId"` — String.t() (optional)
+    * `"filenameTemplate"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
     * `"status"` — String.t() (optional)
   """
   @type mandator_clearing_export_download :: %{optional(String.t()) => any()}
@@ -563,12 +573,12 @@ defmodule BluefinTecsMerchantServices.Types do
   Request payload for MandatorClearingExportDownload create.
 
   Members:
-    * `"clearing_date_from"` — String.t() (required)
-    * `"clearing_date_to"` — String.t() (required)
-    * `"file_id"` — String.t() (optional)
-    * `"filename_template"` — String.t() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
+    * `"clearingDateFrom"` — String.t() (required)
+    * `"clearingDateTo"` — String.t() (required)
+    * `"fileId"` — String.t() (optional)
+    * `"filenameTemplate"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
     * `"status"` — String.t() (optional)
   """
   @type mandator_clearing_export_download_create_data :: %{optional(String.t()) => any()}
@@ -577,11 +587,11 @@ defmodule BluefinTecsMerchantServices.Types do
   MandatorClearingExportSummary entity data model.
 
   Members:
-    * `"clearing_date_from"` — String.t() (required)
-    * `"clearing_date_to"` — String.t() (required)
-    * `"record"` — list() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
+    * `"clearingDateFrom"` — String.t() (required)
+    * `"clearingDateTo"` — String.t() (required)
+    * `"records"` — list() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
   """
   @type mandator_clearing_export_summary :: %{optional(String.t()) => any()}
 
@@ -589,11 +599,11 @@ defmodule BluefinTecsMerchantServices.Types do
   Request payload for MandatorClearingExportSummary create.
 
   Members:
-    * `"clearing_date_from"` — String.t() (required)
-    * `"clearing_date_to"` — String.t() (required)
-    * `"record"` — list() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
+    * `"clearingDateFrom"` — String.t() (required)
+    * `"clearingDateTo"` — String.t() (required)
+    * `"records"` — list() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
   """
   @type mandator_clearing_export_summary_create_data :: %{optional(String.t()) => any()}
 
@@ -601,30 +611,30 @@ defmodule BluefinTecsMerchantServices.Types do
   MerchantPortalServicesApi entity data model.
 
   Members:
-    * `"3_d_secure"` — String.t() (optional)
-    * `"authorization_code"` — String.t() (optional)
-    * `"card_brand"` — String.t() (optional)
-    * `"clearing_amount_from"` — String.t() (optional)
-    * `"clearing_amount_to"` — String.t() (optional)
-    * `"clearing_currency"` — String.t() (optional)
-    * `"clearing_status"` — String.t() (optional)
-    * `"corporate_uuid"` — String.t() (optional)
-    * `"order_by_transaction_date"` — String.t() (optional)
+    * `"3DSecure"` — String.t() (optional)
+    * `"authorizationCode"` — String.t() (optional)
+    * `"cardBrand"` — String.t() (optional)
+    * `"clearingAmountFrom"` — String.t() (optional)
+    * `"clearingAmountTo"` — String.t() (optional)
+    * `"clearingCurrency"` — String.t() (optional)
+    * `"clearingStatus"` — String.t() (optional)
+    * `"corporateUUID"` — String.t() (optional)
+    * `"orderByTransactionDate"` — String.t() (optional)
     * `"pagination"` — map() (optional)
-    * `"receipt_number"` — String.t() (optional)
-    * `"referenced_transaction_id"` — String.t() (optional)
-    * `"retrieval_reference_number"` — String.t() (optional)
-    * `"source_id"` — integer() (optional)
-    * `"tecsengine_response_code_from"` — String.t() (optional)
-    * `"tecsengine_response_code_to"` — String.t() (optional)
-    * `"terminal_id"` — integer() (optional)
-    * `"trace_number"` — String.t() (optional)
-    * `"transaction_amount_from"` — String.t() (optional)
-    * `"transaction_amount_to"` — String.t() (optional)
-    * `"transaction_date_from"` — String.t() (optional)
-    * `"transaction_date_to"` — String.t() (optional)
-    * `"transaction_id"` — String.t() (optional)
-    * `"transaction_type"` — String.t() (optional)
+    * `"receiptNumber"` — String.t() (optional)
+    * `"referencedTransactionId"` — String.t() (optional)
+    * `"retrievalReferenceNumber"` — String.t() (optional)
+    * `"sourceId"` — integer() (optional)
+    * `"tecsengineResponseCodeFrom"` — String.t() (optional)
+    * `"tecsengineResponseCodeTo"` — String.t() (optional)
+    * `"terminalId"` — integer() (optional)
+    * `"traceNumber"` — String.t() (optional)
+    * `"transactionAmountFrom"` — String.t() (optional)
+    * `"transactionAmountTo"` — String.t() (optional)
+    * `"transactionDateFrom"` — String.t() (optional)
+    * `"transactionDateTo"` — String.t() (optional)
+    * `"transactionId"` — String.t() (optional)
+    * `"transactionType"` — String.t() (optional)
     * `"wallet"` — String.t() (optional)
   """
   @type merchant_portal_services_api :: %{optional(String.t()) => any()}
@@ -633,30 +643,30 @@ defmodule BluefinTecsMerchantServices.Types do
   Request payload for MerchantPortalServicesApi create.
 
   Members:
-    * `"3_d_secure"` — String.t() (optional)
-    * `"authorization_code"` — String.t() (optional)
-    * `"card_brand"` — String.t() (optional)
-    * `"clearing_amount_from"` — String.t() (optional)
-    * `"clearing_amount_to"` — String.t() (optional)
-    * `"clearing_currency"` — String.t() (optional)
-    * `"clearing_status"` — String.t() (optional)
-    * `"corporate_uuid"` — String.t() (optional)
-    * `"order_by_transaction_date"` — String.t() (optional)
+    * `"3DSecure"` — String.t() (optional)
+    * `"authorizationCode"` — String.t() (optional)
+    * `"cardBrand"` — String.t() (optional)
+    * `"clearingAmountFrom"` — String.t() (optional)
+    * `"clearingAmountTo"` — String.t() (optional)
+    * `"clearingCurrency"` — String.t() (optional)
+    * `"clearingStatus"` — String.t() (optional)
+    * `"corporateUUID"` — String.t() (optional)
+    * `"orderByTransactionDate"` — String.t() (optional)
     * `"pagination"` — map() (optional)
-    * `"receipt_number"` — String.t() (optional)
-    * `"referenced_transaction_id"` — String.t() (optional)
-    * `"retrieval_reference_number"` — String.t() (optional)
-    * `"source_id"` — integer() (optional)
-    * `"tecsengine_response_code_from"` — String.t() (optional)
-    * `"tecsengine_response_code_to"` — String.t() (optional)
-    * `"terminal_id"` — integer() (optional)
-    * `"trace_number"` — String.t() (optional)
-    * `"transaction_amount_from"` — String.t() (optional)
-    * `"transaction_amount_to"` — String.t() (optional)
-    * `"transaction_date_from"` — String.t() (optional)
-    * `"transaction_date_to"` — String.t() (optional)
-    * `"transaction_id"` — String.t() (optional)
-    * `"transaction_type"` — String.t() (optional)
+    * `"receiptNumber"` — String.t() (optional)
+    * `"referencedTransactionId"` — String.t() (optional)
+    * `"retrievalReferenceNumber"` — String.t() (optional)
+    * `"sourceId"` — integer() (optional)
+    * `"tecsengineResponseCodeFrom"` — String.t() (optional)
+    * `"tecsengineResponseCodeTo"` — String.t() (optional)
+    * `"terminalId"` — integer() (optional)
+    * `"traceNumber"` — String.t() (optional)
+    * `"transactionAmountFrom"` — String.t() (optional)
+    * `"transactionAmountTo"` — String.t() (optional)
+    * `"transactionDateFrom"` — String.t() (optional)
+    * `"transactionDateTo"` — String.t() (optional)
+    * `"transactionId"` — String.t() (optional)
+    * `"transactionType"` — String.t() (optional)
     * `"wallet"` — String.t() (optional)
   """
   @type merchant_portal_services_api_create_data :: %{optional(String.t()) => any()}
@@ -665,11 +675,11 @@ defmodule BluefinTecsMerchantServices.Types do
   MoveTid entity data model.
 
   Members:
-    * `"productorderuuid"` — list() (required)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"target_packageorderuuid"` — String.t() (optional)
-    * `"target_productorderuuid"` — String.t() (optional)
+    * `"productorderuuids"` — list() (required)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"targetPackageorderuuid"` — String.t() (optional)
+    * `"targetProductorderuuid"` — String.t() (optional)
   """
   @type move_tid :: %{optional(String.t()) => any()}
 
@@ -677,11 +687,11 @@ defmodule BluefinTecsMerchantServices.Types do
   Request payload for MoveTid create.
 
   Members:
-    * `"productorderuuid"` — list() (required)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"target_packageorderuuid"` — String.t() (optional)
-    * `"target_productorderuuid"` — String.t() (optional)
+    * `"productorderuuids"` — list() (required)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"targetPackageorderuuid"` — String.t() (optional)
+    * `"targetProductorderuuid"` — String.t() (optional)
   """
   @type move_tid_create_data :: %{optional(String.t()) => any()}
 
@@ -689,22 +699,22 @@ defmodule BluefinTecsMerchantServices.Types do
   PaymentManual entity data model.
 
   Members:
-    * `"acquirer_name"` — String.t() (optional)
+    * `"acquirerName"` — String.t() (optional)
     * `"amount"` — integer() (required)
-    * `"authorization_number"` — String.t() (optional)
-    * `"card_number"` — String.t() (required)
-    * `"card_type"` — String.t() (optional)
+    * `"authorizationNumber"` — String.t() (optional)
+    * `"cardNumber"` — String.t() (required)
+    * `"cardType"` — String.t() (optional)
     * `"currency"` — String.t() (required)
     * `"cvc"` — String.t() (optional)
-    * `"date_time_tx"` — String.t() (optional)
-    * `"exp_date"` — String.t() (required)
-    * `"merchant_id"` — String.t() (optional)
-    * `"original_transaction_id"` — String.t() (optional)
+    * `"dateTimeTx"` — String.t() (optional)
+    * `"expDate"` — String.t() (required)
+    * `"merchantId"` — String.t() (optional)
+    * `"originalTransactionId"` — String.t() (optional)
     * `"password"` — String.t() (optional)
-    * `"response_code"` — String.t() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"terminal_id"` — String.t() (optional)
-    * `"transaction_id"` — String.t() (optional)
+    * `"responseCode"` — String.t() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"terminalId"` — String.t() (optional)
+    * `"transactionId"` — String.t() (optional)
     * `"txtype"` — String.t() (required)
   """
   @type payment_manual :: %{optional(String.t()) => any()}
@@ -713,22 +723,22 @@ defmodule BluefinTecsMerchantServices.Types do
   Request payload for PaymentManual create.
 
   Members:
-    * `"acquirer_name"` — String.t() (optional)
+    * `"acquirerName"` — String.t() (optional)
     * `"amount"` — integer() (required)
-    * `"authorization_number"` — String.t() (optional)
-    * `"card_number"` — String.t() (required)
-    * `"card_type"` — String.t() (optional)
+    * `"authorizationNumber"` — String.t() (optional)
+    * `"cardNumber"` — String.t() (required)
+    * `"cardType"` — String.t() (optional)
     * `"currency"` — String.t() (required)
     * `"cvc"` — String.t() (optional)
-    * `"date_time_tx"` — String.t() (optional)
-    * `"exp_date"` — String.t() (required)
-    * `"merchant_id"` — String.t() (optional)
-    * `"original_transaction_id"` — String.t() (optional)
+    * `"dateTimeTx"` — String.t() (optional)
+    * `"expDate"` — String.t() (required)
+    * `"merchantId"` — String.t() (optional)
+    * `"originalTransactionId"` — String.t() (optional)
     * `"password"` — String.t() (optional)
-    * `"response_code"` — String.t() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"terminal_id"` — String.t() (optional)
-    * `"transaction_id"` — String.t() (optional)
+    * `"responseCode"` — String.t() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"terminalId"` — String.t() (optional)
+    * `"transactionId"` — String.t() (optional)
     * `"txtype"` — String.t() (required)
   """
   @type payment_manual_create_data :: %{optional(String.t()) => any()}
@@ -737,21 +747,17 @@ defmodule BluefinTecsMerchantServices.Types do
   PaymentSred entity data model.
 
   Members:
-    * `"acquirer_name"` — String.t() (optional)
     * `"amount"` — integer() (required)
-    * `"authorization_number"` — String.t() (optional)
-    * `"card_type"` — String.t() (optional)
     * `"currency"` — String.t() (required)
-    * `"date_time_tx"` — String.t() (optional)
-    * `"device_payload"` — String.t() (required)
-    * `"merchant_id"` — String.t() (optional)
-    * `"original_transaction_id"` — String.t() (optional)
+    * `"device"` — String.t() (optional)
+    * `"devicePayload"` — String.t() (required)
+    * `"expDate"` — String.t() (optional)
+    * `"mode"` — String.t() (optional)
+    * `"panMasked"` — String.t() (optional)
     * `"password"` — String.t() (optional)
-    * `"response_code"` — String.t() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"sred"` — map() (optional)
-    * `"terminal_id"` — String.t() (optional)
-    * `"transaction_id"` — String.t() (optional)
+    * `"serial"` — String.t() (optional)
+    * `"serviceCode"` — String.t() (optional)
+    * `"terminalId"` — String.t() (required)
     * `"txtype"` — String.t() (required)
   """
   @type payment_sred :: %{optional(String.t()) => any()}
@@ -760,21 +766,17 @@ defmodule BluefinTecsMerchantServices.Types do
   Request payload for PaymentSred create.
 
   Members:
-    * `"acquirer_name"` — String.t() (optional)
     * `"amount"` — integer() (required)
-    * `"authorization_number"` — String.t() (optional)
-    * `"card_type"` — String.t() (optional)
     * `"currency"` — String.t() (required)
-    * `"date_time_tx"` — String.t() (optional)
-    * `"device_payload"` — String.t() (required)
-    * `"merchant_id"` — String.t() (optional)
-    * `"original_transaction_id"` — String.t() (optional)
+    * `"device"` — String.t() (optional)
+    * `"devicePayload"` — String.t() (required)
+    * `"expDate"` — String.t() (optional)
+    * `"mode"` — String.t() (optional)
+    * `"panMasked"` — String.t() (optional)
     * `"password"` — String.t() (optional)
-    * `"response_code"` — String.t() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"sred"` — map() (optional)
-    * `"terminal_id"` — String.t() (optional)
-    * `"transaction_id"` — String.t() (optional)
+    * `"serial"` — String.t() (optional)
+    * `"serviceCode"` — String.t() (optional)
+    * `"terminalId"` — String.t() (required)
     * `"txtype"` — String.t() (required)
   """
   @type payment_sred_create_data :: %{optional(String.t()) => any()}
@@ -783,48 +785,48 @@ defmodule BluefinTecsMerchantServices.Types do
   PreAuthTransactionCompletion entity data model.
 
   Members:
-    * `"acquirer_id"` — String.t() (optional)
-    * `"acquirer_name"` — String.t() (optional)
-    * `"actual_bonus_point"` — String.t() (optional)
+    * `"acquirerId"` — String.t() (optional)
+    * `"acquirerName"` — String.t() (optional)
+    * `"actualBonusPoints"` — String.t() (optional)
     * `"amount"` — integer() (optional)
-    * `"authorization_code"` — String.t() (optional)
-    * `"balance_amount"` — String.t() (optional)
-    * `"card_brand"` — String.t() (optional)
-    * `"card_number"` — String.t() (optional)
-    * `"card_number_reference"` — String.t() (required)
-    * `"client_id"` — integer() (required)
+    * `"authorizationCode"` — String.t() (optional)
+    * `"balanceAmount"` — String.t() (optional)
+    * `"cardBrand"` — String.t() (optional)
+    * `"cardNumber"` — String.t() (optional)
+    * `"cardNumberReference"` — String.t() (required)
+    * `"clientId"` — integer() (required)
     * `"currency"` — String.t() (required)
     * `"cvc"` — String.t() (optional)
-    * `"ec_data"` — String.t() (optional)
-    * `"ecr_data"` — String.t() (optional)
-    * `"emv_data"` — String.t() (optional)
-    * `"exchange_fee"` — integer() (optional)
-    * `"exchange_rate"` — String.t() (optional)
-    * `"language_code"` — String.t() (optional)
-    * `"merchant_address"` — String.t() (optional)
-    * `"merchant_name"` — String.t() (optional)
-    * `"merchant_number"` — String.t() (optional)
-    * `"message_type"` — String.t() (optional)
-    * `"original_trace_number"` — integer() (optional)
-    * `"original_transaction_id"` — String.t() (optional)
+    * `"ecData"` — String.t() (optional)
+    * `"ecrData"` — String.t() (optional)
+    * `"emvData"` — String.t() (optional)
+    * `"exchangeFee"` — integer() (optional)
+    * `"exchangeRate"` — String.t() (optional)
+    * `"languageCode"` — String.t() (optional)
+    * `"merchantAddress"` — String.t() (optional)
+    * `"merchantName"` — String.t() (optional)
+    * `"merchantNumber"` — String.t() (optional)
+    * `"messageType"` — String.t() (optional)
+    * `"originalTraceNumber"` — integer() (optional)
+    * `"originalTransactionId"` — String.t() (optional)
     * `"password"` — String.t() (optional)
-    * `"payment_reason"` — String.t() (optional)
-    * `"receipt_footer"` — String.t() (optional)
-    * `"receipt_header"` — String.t() (optional)
-    * `"receipt_layout"` — integer() (optional)
-    * `"receipt_number"` — String.t() (required)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"serial_number"` — String.t() (optional)
+    * `"paymentReason"` — String.t() (optional)
+    * `"receiptFooter"` — String.t() (optional)
+    * `"receiptHeader"` — String.t() (optional)
+    * `"receiptLayout"` — integer() (optional)
+    * `"receiptNumber"` — String.t() (required)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"serialNumber"` — String.t() (optional)
     * `"svc"` — String.t() (optional)
-    * `"terminal_id"` — integer() (required)
-    * `"terminal_location"` — String.t() (optional)
-    * `"trace_number"` — integer() (optional)
-    * `"transaction_date"` — String.t() (optional)
-    * `"transaction_id"` — String.t() (optional)
-    * `"transaction_type"` — String.t() (required)
-    * `"tx_type"` — String.t() (optional)
-    * `"user_data"` — String.t() (optional)
+    * `"terminalId"` — integer() (required)
+    * `"terminalLocation"` — String.t() (optional)
+    * `"traceNumber"` — integer() (optional)
+    * `"transactionDate"` — String.t() (optional)
+    * `"transactionId"` — String.t() (optional)
+    * `"transactionType"` — String.t() (required)
+    * `"txType"` — String.t() (optional)
+    * `"userData"` — String.t() (optional)
   """
   @type pre_auth_transaction_completion :: %{optional(String.t()) => any()}
 
@@ -832,48 +834,48 @@ defmodule BluefinTecsMerchantServices.Types do
   Request payload for PreAuthTransactionCompletion create.
 
   Members:
-    * `"acquirer_id"` — String.t() (optional)
-    * `"acquirer_name"` — String.t() (optional)
-    * `"actual_bonus_point"` — String.t() (optional)
+    * `"acquirerId"` — String.t() (optional)
+    * `"acquirerName"` — String.t() (optional)
+    * `"actualBonusPoints"` — String.t() (optional)
     * `"amount"` — integer() (optional)
-    * `"authorization_code"` — String.t() (optional)
-    * `"balance_amount"` — String.t() (optional)
-    * `"card_brand"` — String.t() (optional)
-    * `"card_number"` — String.t() (optional)
-    * `"card_number_reference"` — String.t() (required)
-    * `"client_id"` — integer() (required)
+    * `"authorizationCode"` — String.t() (optional)
+    * `"balanceAmount"` — String.t() (optional)
+    * `"cardBrand"` — String.t() (optional)
+    * `"cardNumber"` — String.t() (optional)
+    * `"cardNumberReference"` — String.t() (required)
+    * `"clientId"` — integer() (required)
     * `"currency"` — String.t() (required)
     * `"cvc"` — String.t() (optional)
-    * `"ec_data"` — String.t() (optional)
-    * `"ecr_data"` — String.t() (optional)
-    * `"emv_data"` — String.t() (optional)
-    * `"exchange_fee"` — integer() (optional)
-    * `"exchange_rate"` — String.t() (optional)
-    * `"language_code"` — String.t() (optional)
-    * `"merchant_address"` — String.t() (optional)
-    * `"merchant_name"` — String.t() (optional)
-    * `"merchant_number"` — String.t() (optional)
-    * `"message_type"` — String.t() (optional)
-    * `"original_trace_number"` — integer() (optional)
-    * `"original_transaction_id"` — String.t() (optional)
+    * `"ecData"` — String.t() (optional)
+    * `"ecrData"` — String.t() (optional)
+    * `"emvData"` — String.t() (optional)
+    * `"exchangeFee"` — integer() (optional)
+    * `"exchangeRate"` — String.t() (optional)
+    * `"languageCode"` — String.t() (optional)
+    * `"merchantAddress"` — String.t() (optional)
+    * `"merchantName"` — String.t() (optional)
+    * `"merchantNumber"` — String.t() (optional)
+    * `"messageType"` — String.t() (optional)
+    * `"originalTraceNumber"` — integer() (optional)
+    * `"originalTransactionId"` — String.t() (optional)
     * `"password"` — String.t() (optional)
-    * `"payment_reason"` — String.t() (optional)
-    * `"receipt_footer"` — String.t() (optional)
-    * `"receipt_header"` — String.t() (optional)
-    * `"receipt_layout"` — integer() (optional)
-    * `"receipt_number"` — String.t() (required)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"serial_number"` — String.t() (optional)
+    * `"paymentReason"` — String.t() (optional)
+    * `"receiptFooter"` — String.t() (optional)
+    * `"receiptHeader"` — String.t() (optional)
+    * `"receiptLayout"` — integer() (optional)
+    * `"receiptNumber"` — String.t() (required)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"serialNumber"` — String.t() (optional)
     * `"svc"` — String.t() (optional)
-    * `"terminal_id"` — integer() (required)
-    * `"terminal_location"` — String.t() (optional)
-    * `"trace_number"` — integer() (optional)
-    * `"transaction_date"` — String.t() (optional)
-    * `"transaction_id"` — String.t() (optional)
-    * `"transaction_type"` — String.t() (required)
-    * `"tx_type"` — String.t() (optional)
-    * `"user_data"` — String.t() (optional)
+    * `"terminalId"` — integer() (required)
+    * `"terminalLocation"` — String.t() (optional)
+    * `"traceNumber"` — integer() (optional)
+    * `"transactionDate"` — String.t() (optional)
+    * `"transactionId"` — String.t() (optional)
+    * `"transactionType"` — String.t() (required)
+    * `"txType"` — String.t() (optional)
+    * `"userData"` — String.t() (optional)
   """
   @type pre_auth_transaction_completion_create_data :: %{optional(String.t()) => any()}
 
@@ -881,13 +883,13 @@ defmodule BluefinTecsMerchantServices.Types do
   ReactivateTerminal entity data model.
 
   Members:
-    * `"corporate_uuid"` — String.t() (optional)
-    * `"package_order_uuid"` — String.t() (optional)
-    * `"product_order_uuid"` — String.t() (optional)
-    * `"reactivation_reason"` — String.t() (required)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"terminal_id"` — integer() (required)
+    * `"corporateUuid"` — String.t() (optional)
+    * `"packageOrderUuid"` — String.t() (optional)
+    * `"productOrderUuid"` — String.t() (optional)
+    * `"reactivationReason"` — String.t() (required)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"terminalId"` — integer() (required)
   """
   @type reactivate_terminal :: %{optional(String.t()) => any()}
 
@@ -895,13 +897,13 @@ defmodule BluefinTecsMerchantServices.Types do
   Request payload for ReactivateTerminal create.
 
   Members:
-    * `"corporate_uuid"` — String.t() (optional)
-    * `"package_order_uuid"` — String.t() (optional)
-    * `"product_order_uuid"` — String.t() (optional)
-    * `"reactivation_reason"` — String.t() (required)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"terminal_id"` — integer() (required)
+    * `"corporateUuid"` — String.t() (optional)
+    * `"packageOrderUuid"` — String.t() (optional)
+    * `"productOrderUuid"` — String.t() (optional)
+    * `"reactivationReason"` — String.t() (required)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"terminalId"` — integer() (required)
   """
   @type reactivate_terminal_create_data :: %{optional(String.t()) => any()}
 
@@ -909,46 +911,46 @@ defmodule BluefinTecsMerchantServices.Types do
   RefundTransaction entity data model.
 
   Members:
-    * `"acquirer_id"` — String.t() (optional)
-    * `"acquirer_name"` — String.t() (optional)
-    * `"actual_bonus_point"` — String.t() (optional)
+    * `"acquirerId"` — String.t() (optional)
+    * `"acquirerName"` — String.t() (optional)
+    * `"actualBonusPoints"` — String.t() (optional)
     * `"amount"` — integer() (optional)
-    * `"authorization_code"` — String.t() (optional)
-    * `"balance_amount"` — String.t() (optional)
-    * `"card_brand"` — String.t() (optional)
-    * `"card_number"` — String.t() (optional)
-    * `"client_id"` — integer() (required)
+    * `"authorizationCode"` — String.t() (optional)
+    * `"balanceAmount"` — String.t() (optional)
+    * `"cardBrand"` — String.t() (optional)
+    * `"cardNumber"` — String.t() (optional)
+    * `"clientId"` — integer() (required)
     * `"currency"` — String.t() (required)
     * `"cvc"` — String.t() (optional)
-    * `"ec_data"` — String.t() (optional)
-    * `"ecr_data"` — String.t() (optional)
-    * `"emv_data"` — String.t() (optional)
-    * `"exchange_fee"` — integer() (optional)
-    * `"exchange_rate"` — String.t() (optional)
-    * `"language_code"` — String.t() (optional)
-    * `"merchant_address"` — String.t() (optional)
-    * `"merchant_name"` — String.t() (optional)
-    * `"merchant_number"` — String.t() (optional)
-    * `"message_type"` — String.t() (optional)
-    * `"original_trace_number"` — integer() (optional)
-    * `"original_transaction_id"` — String.t() (optional)
+    * `"ecData"` — String.t() (optional)
+    * `"ecrData"` — String.t() (optional)
+    * `"emvData"` — String.t() (optional)
+    * `"exchangeFee"` — integer() (optional)
+    * `"exchangeRate"` — String.t() (optional)
+    * `"languageCode"` — String.t() (optional)
+    * `"merchantAddress"` — String.t() (optional)
+    * `"merchantName"` — String.t() (optional)
+    * `"merchantNumber"` — String.t() (optional)
+    * `"messageType"` — String.t() (optional)
+    * `"originalTraceNumber"` — integer() (optional)
+    * `"originalTransactionId"` — String.t() (optional)
     * `"password"` — String.t() (optional)
-    * `"payment_reason"` — String.t() (optional)
-    * `"receipt_footer"` — String.t() (optional)
-    * `"receipt_header"` — String.t() (optional)
-    * `"receipt_layout"` — integer() (optional)
-    * `"receipt_number"` — String.t() (required)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"serial_number"` — String.t() (optional)
+    * `"paymentReason"` — String.t() (optional)
+    * `"receiptFooter"` — String.t() (optional)
+    * `"receiptHeader"` — String.t() (optional)
+    * `"receiptLayout"` — integer() (optional)
+    * `"receiptNumber"` — String.t() (required)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"serialNumber"` — String.t() (optional)
     * `"svc"` — String.t() (optional)
-    * `"terminal_id"` — integer() (required)
-    * `"terminal_location"` — String.t() (optional)
-    * `"trace_number"` — integer() (optional)
-    * `"transaction_date"` — String.t() (optional)
-    * `"transaction_id"` — String.t() (optional)
-    * `"tx_type"` — String.t() (optional)
-    * `"user_data"` — String.t() (optional)
+    * `"terminalId"` — integer() (required)
+    * `"terminalLocation"` — String.t() (optional)
+    * `"traceNumber"` — integer() (optional)
+    * `"transactionDate"` — String.t() (optional)
+    * `"transactionId"` — String.t() (optional)
+    * `"txType"` — String.t() (optional)
+    * `"userData"` — String.t() (optional)
   """
   @type refund_transaction :: %{optional(String.t()) => any()}
 
@@ -956,46 +958,46 @@ defmodule BluefinTecsMerchantServices.Types do
   Request payload for RefundTransaction create.
 
   Members:
-    * `"acquirer_id"` — String.t() (optional)
-    * `"acquirer_name"` — String.t() (optional)
-    * `"actual_bonus_point"` — String.t() (optional)
+    * `"acquirerId"` — String.t() (optional)
+    * `"acquirerName"` — String.t() (optional)
+    * `"actualBonusPoints"` — String.t() (optional)
     * `"amount"` — integer() (optional)
-    * `"authorization_code"` — String.t() (optional)
-    * `"balance_amount"` — String.t() (optional)
-    * `"card_brand"` — String.t() (optional)
-    * `"card_number"` — String.t() (optional)
-    * `"client_id"` — integer() (required)
+    * `"authorizationCode"` — String.t() (optional)
+    * `"balanceAmount"` — String.t() (optional)
+    * `"cardBrand"` — String.t() (optional)
+    * `"cardNumber"` — String.t() (optional)
+    * `"clientId"` — integer() (required)
     * `"currency"` — String.t() (required)
     * `"cvc"` — String.t() (optional)
-    * `"ec_data"` — String.t() (optional)
-    * `"ecr_data"` — String.t() (optional)
-    * `"emv_data"` — String.t() (optional)
-    * `"exchange_fee"` — integer() (optional)
-    * `"exchange_rate"` — String.t() (optional)
-    * `"language_code"` — String.t() (optional)
-    * `"merchant_address"` — String.t() (optional)
-    * `"merchant_name"` — String.t() (optional)
-    * `"merchant_number"` — String.t() (optional)
-    * `"message_type"` — String.t() (optional)
-    * `"original_trace_number"` — integer() (optional)
-    * `"original_transaction_id"` — String.t() (optional)
+    * `"ecData"` — String.t() (optional)
+    * `"ecrData"` — String.t() (optional)
+    * `"emvData"` — String.t() (optional)
+    * `"exchangeFee"` — integer() (optional)
+    * `"exchangeRate"` — String.t() (optional)
+    * `"languageCode"` — String.t() (optional)
+    * `"merchantAddress"` — String.t() (optional)
+    * `"merchantName"` — String.t() (optional)
+    * `"merchantNumber"` — String.t() (optional)
+    * `"messageType"` — String.t() (optional)
+    * `"originalTraceNumber"` — integer() (optional)
+    * `"originalTransactionId"` — String.t() (optional)
     * `"password"` — String.t() (optional)
-    * `"payment_reason"` — String.t() (optional)
-    * `"receipt_footer"` — String.t() (optional)
-    * `"receipt_header"` — String.t() (optional)
-    * `"receipt_layout"` — integer() (optional)
-    * `"receipt_number"` — String.t() (required)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"serial_number"` — String.t() (optional)
+    * `"paymentReason"` — String.t() (optional)
+    * `"receiptFooter"` — String.t() (optional)
+    * `"receiptHeader"` — String.t() (optional)
+    * `"receiptLayout"` — integer() (optional)
+    * `"receiptNumber"` — String.t() (required)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"serialNumber"` — String.t() (optional)
     * `"svc"` — String.t() (optional)
-    * `"terminal_id"` — integer() (required)
-    * `"terminal_location"` — String.t() (optional)
-    * `"trace_number"` — integer() (optional)
-    * `"transaction_date"` — String.t() (optional)
-    * `"transaction_id"` — String.t() (optional)
-    * `"tx_type"` — String.t() (optional)
-    * `"user_data"` — String.t() (optional)
+    * `"terminalId"` — integer() (required)
+    * `"terminalLocation"` — String.t() (optional)
+    * `"traceNumber"` — integer() (optional)
+    * `"transactionDate"` — String.t() (optional)
+    * `"transactionId"` — String.t() (optional)
+    * `"txType"` — String.t() (optional)
+    * `"userData"` — String.t() (optional)
   """
   @type refund_transaction_create_data :: %{optional(String.t()) => any()}
 
@@ -1003,14 +1005,14 @@ defmodule BluefinTecsMerchantServices.Types do
   RegisterTecsCompany entity data model.
 
   Members:
-    * `"corporate_uuid"` — String.t() (required)
-    * `"package_order_uuid"` — String.t() (required)
-    * `"partner_id"` — integer() (optional)
-    * `"partner_name"` — String.t() (optional)
-    * `"product_order_uuid"` — String.t() (required)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"template_name"` — String.t() (required)
+    * `"corporateUuid"` — String.t() (required)
+    * `"packageOrderUuid"` — String.t() (required)
+    * `"partnerId"` — integer() (optional)
+    * `"partnerName"` — String.t() (optional)
+    * `"productOrderUuid"` — String.t() (required)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"templateName"` — String.t() (required)
   """
   @type register_tecs_company :: %{optional(String.t()) => any()}
 
@@ -1018,14 +1020,14 @@ defmodule BluefinTecsMerchantServices.Types do
   Request payload for RegisterTecsCompany create.
 
   Members:
-    * `"corporate_uuid"` — String.t() (required)
-    * `"package_order_uuid"` — String.t() (required)
-    * `"partner_id"` — integer() (optional)
-    * `"partner_name"` — String.t() (optional)
-    * `"product_order_uuid"` — String.t() (required)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"template_name"` — String.t() (required)
+    * `"corporateUuid"` — String.t() (required)
+    * `"packageOrderUuid"` — String.t() (required)
+    * `"partnerId"` — integer() (optional)
+    * `"partnerName"` — String.t() (optional)
+    * `"productOrderUuid"` — String.t() (required)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"templateName"` — String.t() (required)
   """
   @type register_tecs_company_create_data :: %{optional(String.t()) => any()}
 
@@ -1033,24 +1035,24 @@ defmodule BluefinTecsMerchantServices.Types do
   RegisterTerminal entity data model.
 
   Members:
-    * `"additional_data"` — map() (optional)
-    * `"corporate_uuid"` — String.t() (required)
-    * `"package_order_uuid"` — String.t() (required)
-    * `"product_order_uuid"` — String.t() (required)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"tecs_web_secret_key"` — String.t() (optional)
-    * `"template_name"` — String.t() (required)
-    * `"terminal_country_code"` — String.t() (required)
-    * `"terminal_id"` — integer() (optional)
-    * `"terminal_id_acq"` — String.t() (optional)
-    * `"terminal_language_code"` — String.t() (required)
-    * `"terminal_location"` — String.t() (required)
-    * `"terminal_serial_number"` — String.t() (optional)
-    * `"token_io_alia"` — String.t() (optional)
-    * `"token_io_iban"` — String.t() (optional)
-    * `"token_io_member_id"` — String.t() (optional)
-    * `"web_shop_url"` — String.t() (optional)
+    * `"additionalData"` — map() (optional)
+    * `"corporateUuid"` — String.t() (required)
+    * `"packageOrderUuid"` — String.t() (required)
+    * `"productOrderUuid"` — String.t() (required)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"tecsWebSecretKey"` — String.t() (optional)
+    * `"templateName"` — String.t() (required)
+    * `"terminalCountryCode"` — String.t() (required)
+    * `"terminalId"` — integer() (optional)
+    * `"terminalIdAcq"` — String.t() (optional)
+    * `"terminalLanguageCode"` — String.t() (required)
+    * `"terminalLocation"` — String.t() (required)
+    * `"terminalSerialNumber"` — String.t() (optional)
+    * `"tokenIOAlias"` — String.t() (optional)
+    * `"tokenIOIban"` — String.t() (optional)
+    * `"tokenIOMemberId"` — String.t() (optional)
+    * `"webShopUrl"` — String.t() (optional)
   """
   @type register_terminal :: %{optional(String.t()) => any()}
 
@@ -1058,24 +1060,24 @@ defmodule BluefinTecsMerchantServices.Types do
   Request payload for RegisterTerminal create.
 
   Members:
-    * `"additional_data"` — map() (optional)
-    * `"corporate_uuid"` — String.t() (required)
-    * `"package_order_uuid"` — String.t() (required)
-    * `"product_order_uuid"` — String.t() (required)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"tecs_web_secret_key"` — String.t() (optional)
-    * `"template_name"` — String.t() (required)
-    * `"terminal_country_code"` — String.t() (required)
-    * `"terminal_id"` — integer() (optional)
-    * `"terminal_id_acq"` — String.t() (optional)
-    * `"terminal_language_code"` — String.t() (required)
-    * `"terminal_location"` — String.t() (required)
-    * `"terminal_serial_number"` — String.t() (optional)
-    * `"token_io_alia"` — String.t() (optional)
-    * `"token_io_iban"` — String.t() (optional)
-    * `"token_io_member_id"` — String.t() (optional)
-    * `"web_shop_url"` — String.t() (optional)
+    * `"additionalData"` — map() (optional)
+    * `"corporateUuid"` — String.t() (required)
+    * `"packageOrderUuid"` — String.t() (required)
+    * `"productOrderUuid"` — String.t() (required)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"tecsWebSecretKey"` — String.t() (optional)
+    * `"templateName"` — String.t() (required)
+    * `"terminalCountryCode"` — String.t() (required)
+    * `"terminalId"` — integer() (optional)
+    * `"terminalIdAcq"` — String.t() (optional)
+    * `"terminalLanguageCode"` — String.t() (required)
+    * `"terminalLocation"` — String.t() (required)
+    * `"terminalSerialNumber"` — String.t() (optional)
+    * `"tokenIOAlias"` — String.t() (optional)
+    * `"tokenIOIban"` — String.t() (optional)
+    * `"tokenIOMemberId"` — String.t() (optional)
+    * `"webShopUrl"` — String.t() (optional)
   """
   @type register_terminal_create_data :: %{optional(String.t()) => any()}
 
@@ -1083,16 +1085,16 @@ defmodule BluefinTecsMerchantServices.Types do
   ReportData entity data model.
 
   Members:
-    * `"card_brand_report_data"` — list() (optional)
-    * `"clearing_date_from"` — String.t() (required)
-    * `"clearing_date_to"` — String.t() (required)
-    * `"corporate_id"` — String.t() (required)
+    * `"cardBrandReportData"` — list() (optional)
+    * `"clearingDateFrom"` — String.t() (required)
+    * `"clearingDateTo"` — String.t() (required)
+    * `"corporateId"` — String.t() (required)
     * `"currency"` — String.t() (required)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"sum_over_credit_tx"` — map() (optional)
-    * `"sum_over_debit_tx"` — map() (optional)
-    * `"terminal_id"` — integer() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"sumOverCreditTx"` — map() (optional)
+    * `"sumOverDebitTx"` — map() (optional)
+    * `"terminalId"` — integer() (optional)
   """
   @type report_data :: %{optional(String.t()) => any()}
 
@@ -1100,16 +1102,16 @@ defmodule BluefinTecsMerchantServices.Types do
   Request payload for ReportData create.
 
   Members:
-    * `"card_brand_report_data"` — list() (optional)
-    * `"clearing_date_from"` — String.t() (required)
-    * `"clearing_date_to"` — String.t() (required)
-    * `"corporate_id"` — String.t() (required)
+    * `"cardBrandReportData"` — list() (optional)
+    * `"clearingDateFrom"` — String.t() (required)
+    * `"clearingDateTo"` — String.t() (required)
+    * `"corporateId"` — String.t() (required)
     * `"currency"` — String.t() (required)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"sum_over_credit_tx"` — map() (optional)
-    * `"sum_over_debit_tx"` — map() (optional)
-    * `"terminal_id"` — integer() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"sumOverCreditTx"` — map() (optional)
+    * `"sumOverDebitTx"` — map() (optional)
+    * `"terminalId"` — integer() (optional)
   """
   @type report_data_create_data :: %{optional(String.t()) => any()}
 
@@ -1117,56 +1119,56 @@ defmodule BluefinTecsMerchantServices.Types do
   StatusTransaction entity data model.
 
   Members:
-    * `"acquirer_name"` — String.t() (optional)
-    * `"acquirer_terminal_id"` — String.t() (optional)
+    * `"acquirerName"` — String.t() (optional)
+    * `"acquirerTerminalId"` — String.t() (optional)
     * `"amount"` — integer() (optional)
-    * `"application_cryptogram"` — String.t() (optional)
-    * `"authorization_code"` — String.t() | nil (optional)
-    * `"authorization_date"` — String.t() (optional)
-    * `"card_brand"` — String.t() (optional)
-    * `"card_entry"` — String.t() (optional)
-    * `"card_expiration"` — String.t() (optional)
-    * `"card_number"` — String.t() (optional)
-    * `"clearing_amount"` — integer() (optional)
-    * `"clearing_batch_id"` — String.t() (optional)
-    * `"clearing_currency"` — String.t() (optional)
-    * `"clearing_date"` — String.t() (optional)
-    * `"clearing_processed_date"` — String.t() (optional)
-    * `"clearing_status"` — String.t() (optional)
-    * `"client_id"` — integer() (optional)
+    * `"applicationCryptogram"` — String.t() (optional)
+    * `"authorizationCode"` — String.t() | nil (optional)
+    * `"authorizationDate"` — String.t() (optional)
+    * `"cardBrand"` — String.t() (optional)
+    * `"cardEntry"` — String.t() (optional)
+    * `"cardExpiration"` — String.t() (optional)
+    * `"cardNumber"` — String.t() (optional)
+    * `"clearingAmount"` — integer() (optional)
+    * `"clearingBatchId"` — String.t() (optional)
+    * `"clearingCurrency"` — String.t() (optional)
+    * `"clearingDate"` — String.t() (optional)
+    * `"clearingProcessedDate"` — String.t() (optional)
+    * `"clearingStatus"` — String.t() (optional)
+    * `"clientId"` — integer() (optional)
     * `"currency"` — String.t() (optional)
     * `"cvm"` — String.t() (optional)
-    * `"ecr_data"` — String.t() (optional)
-    * `"emv_application_id"` — String.t() (optional)
-    * `"emv_application_label"` — String.t() (optional)
-    * `"merchant_name"` — String.t() (optional)
-    * `"merchant_number"` — String.t() (optional)
-    * `"original_client_id"` — String.t() (optional)
-    * `"original_terminal_id"` — integer() (optional)
-    * `"original_transaction_id"` — String.t() (optional)
-    * `"payment_reason"` — String.t() (optional)
-    * `"receipt_number"` — String.t() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_code_from_a"` — String.t() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"retrieval_reference_number"` — String.t() (optional)
-    * `"service_code"` — String.t() (optional)
-    * `"settlement_status"` — String.t() (optional)
-    * `"source_id"` — integer() (optional)
-    * `"tecsengine_response_code"` — integer() (optional)
-    * `"tecsengine_response_text"` — String.t() (optional)
-    * `"terminal_end_of_day_date"` — String.t() (optional)
-    * `"terminal_id"` — integer() (optional)
-    * `"terminal_location"` — String.t() (optional)
-    * `"tip_amount"` — integer() (optional)
-    * `"trace_number"` — integer() (optional)
-    * `"transaction_clearing_date"` — String.t() (optional)
-    * `"transaction_date"` — String.t() (optional)
-    * `"transaction_id"` — String.t() (optional)
-    * `"transaction_seq_number"` — integer() (optional)
-    * `"transaction_server_date"` — String.t() (optional)
-    * `"transaction_source"` — String.t() (optional)
-    * `"transaction_type"` — String.t() (optional)
+    * `"ecrData"` — String.t() (optional)
+    * `"emvApplicationId"` — String.t() (optional)
+    * `"emvApplicationLabel"` — String.t() (optional)
+    * `"merchantName"` — String.t() (optional)
+    * `"merchantNumber"` — String.t() (optional)
+    * `"originalClientId"` — String.t() (optional)
+    * `"originalTerminalId"` — integer() (optional)
+    * `"originalTransactionId"` — String.t() (optional)
+    * `"paymentReason"` — String.t() (optional)
+    * `"receiptNumber"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseCodeFromAS"` — String.t() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"retrievalReferenceNumber"` — String.t() (optional)
+    * `"serviceCode"` — String.t() (optional)
+    * `"settlementStatus"` — String.t() (optional)
+    * `"sourceId"` — integer() (optional)
+    * `"tecsengineResponseCode"` — integer() (optional)
+    * `"tecsengineResponseText"` — String.t() (optional)
+    * `"terminalEndOfDayDate"` — String.t() (optional)
+    * `"terminalId"` — integer() (optional)
+    * `"terminalLocation"` — String.t() (optional)
+    * `"tipAmount"` — integer() (optional)
+    * `"traceNumber"` — integer() (optional)
+    * `"transactionClearingDate"` — String.t() (optional)
+    * `"transactionDate"` — String.t() (optional)
+    * `"transactionId"` — String.t() (optional)
+    * `"transactionSeqNumber"` — integer() (optional)
+    * `"transactionServerDate"` — String.t() (optional)
+    * `"transactionSource"` — String.t() (optional)
+    * `"transactionType"` — String.t() (optional)
   """
   @type status_transaction :: %{optional(String.t()) => any()}
 
@@ -1174,56 +1176,56 @@ defmodule BluefinTecsMerchantServices.Types do
   Request payload for StatusTransaction create.
 
   Members:
-    * `"acquirer_name"` — String.t() (optional)
-    * `"acquirer_terminal_id"` — String.t() (optional)
+    * `"acquirerName"` — String.t() (optional)
+    * `"acquirerTerminalId"` — String.t() (optional)
     * `"amount"` — integer() (optional)
-    * `"application_cryptogram"` — String.t() (optional)
-    * `"authorization_code"` — String.t() | nil (optional)
-    * `"authorization_date"` — String.t() (optional)
-    * `"card_brand"` — String.t() (optional)
-    * `"card_entry"` — String.t() (optional)
-    * `"card_expiration"` — String.t() (optional)
-    * `"card_number"` — String.t() (optional)
-    * `"clearing_amount"` — integer() (optional)
-    * `"clearing_batch_id"` — String.t() (optional)
-    * `"clearing_currency"` — String.t() (optional)
-    * `"clearing_date"` — String.t() (optional)
-    * `"clearing_processed_date"` — String.t() (optional)
-    * `"clearing_status"` — String.t() (optional)
-    * `"client_id"` — integer() (optional)
+    * `"applicationCryptogram"` — String.t() (optional)
+    * `"authorizationCode"` — String.t() | nil (optional)
+    * `"authorizationDate"` — String.t() (optional)
+    * `"cardBrand"` — String.t() (optional)
+    * `"cardEntry"` — String.t() (optional)
+    * `"cardExpiration"` — String.t() (optional)
+    * `"cardNumber"` — String.t() (optional)
+    * `"clearingAmount"` — integer() (optional)
+    * `"clearingBatchId"` — String.t() (optional)
+    * `"clearingCurrency"` — String.t() (optional)
+    * `"clearingDate"` — String.t() (optional)
+    * `"clearingProcessedDate"` — String.t() (optional)
+    * `"clearingStatus"` — String.t() (optional)
+    * `"clientId"` — integer() (optional)
     * `"currency"` — String.t() (optional)
     * `"cvm"` — String.t() (optional)
-    * `"ecr_data"` — String.t() (optional)
-    * `"emv_application_id"` — String.t() (optional)
-    * `"emv_application_label"` — String.t() (optional)
-    * `"merchant_name"` — String.t() (optional)
-    * `"merchant_number"` — String.t() (optional)
-    * `"original_client_id"` — String.t() (optional)
-    * `"original_terminal_id"` — integer() (optional)
-    * `"original_transaction_id"` — String.t() (optional)
-    * `"payment_reason"` — String.t() (optional)
-    * `"receipt_number"` — String.t() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_code_from_a"` — String.t() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"retrieval_reference_number"` — String.t() (optional)
-    * `"service_code"` — String.t() (optional)
-    * `"settlement_status"` — String.t() (optional)
-    * `"source_id"` — integer() (optional)
-    * `"tecsengine_response_code"` — integer() (optional)
-    * `"tecsengine_response_text"` — String.t() (optional)
-    * `"terminal_end_of_day_date"` — String.t() (optional)
-    * `"terminal_id"` — integer() (optional)
-    * `"terminal_location"` — String.t() (optional)
-    * `"tip_amount"` — integer() (optional)
-    * `"trace_number"` — integer() (optional)
-    * `"transaction_clearing_date"` — String.t() (optional)
-    * `"transaction_date"` — String.t() (optional)
-    * `"transaction_id"` — String.t() (optional)
-    * `"transaction_seq_number"` — integer() (optional)
-    * `"transaction_server_date"` — String.t() (optional)
-    * `"transaction_source"` — String.t() (optional)
-    * `"transaction_type"` — String.t() (optional)
+    * `"ecrData"` — String.t() (optional)
+    * `"emvApplicationId"` — String.t() (optional)
+    * `"emvApplicationLabel"` — String.t() (optional)
+    * `"merchantName"` — String.t() (optional)
+    * `"merchantNumber"` — String.t() (optional)
+    * `"originalClientId"` — String.t() (optional)
+    * `"originalTerminalId"` — integer() (optional)
+    * `"originalTransactionId"` — String.t() (optional)
+    * `"paymentReason"` — String.t() (optional)
+    * `"receiptNumber"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseCodeFromAS"` — String.t() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"retrievalReferenceNumber"` — String.t() (optional)
+    * `"serviceCode"` — String.t() (optional)
+    * `"settlementStatus"` — String.t() (optional)
+    * `"sourceId"` — integer() (optional)
+    * `"tecsengineResponseCode"` — integer() (optional)
+    * `"tecsengineResponseText"` — String.t() (optional)
+    * `"terminalEndOfDayDate"` — String.t() (optional)
+    * `"terminalId"` — integer() (optional)
+    * `"terminalLocation"` — String.t() (optional)
+    * `"tipAmount"` — integer() (optional)
+    * `"traceNumber"` — integer() (optional)
+    * `"transactionClearingDate"` — String.t() (optional)
+    * `"transactionDate"` — String.t() (optional)
+    * `"transactionId"` — String.t() (optional)
+    * `"transactionSeqNumber"` — integer() (optional)
+    * `"transactionServerDate"` — String.t() (optional)
+    * `"transactionSource"` — String.t() (optional)
+    * `"transactionType"` — String.t() (optional)
   """
   @type status_transaction_create_data :: %{optional(String.t()) => any()}
 
@@ -1231,12 +1233,12 @@ defmodule BluefinTecsMerchantServices.Types do
   StoreTerminalParameter entity data model.
 
   Members:
-    * `"acq_tab_nexo"` — map() (optional)
-    * `"config_version"` — String.t() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"serial_number"` — String.t() (required)
-    * `"tid_sent"` — String.t() (optional)
+    * `"acqTabNexo"` — map() (optional)
+    * `"configVersion"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"serialNumber"` — String.t() (required)
+    * `"tidSent"` — String.t() (optional)
   """
   @type store_terminal_parameter :: %{optional(String.t()) => any()}
 
@@ -1244,12 +1246,12 @@ defmodule BluefinTecsMerchantServices.Types do
   Request payload for StoreTerminalParameter create.
 
   Members:
-    * `"acq_tab_nexo"` — map() (optional)
-    * `"config_version"` — String.t() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"serial_number"` — String.t() (required)
-    * `"tid_sent"` — String.t() (optional)
+    * `"acqTabNexo"` — map() (optional)
+    * `"configVersion"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"serialNumber"` — String.t() (required)
+    * `"tidSent"` — String.t() (optional)
   """
   @type store_terminal_parameter_create_data :: %{optional(String.t()) => any()}
 
@@ -1257,11 +1259,11 @@ defmodule BluefinTecsMerchantServices.Types do
   TerminalId entity data model.
 
   Members:
-    * `"device_serial_number"` — list() (required)
-    * `"duplicate_terminal_id"` — list() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"terminal"` — list() (optional)
+    * `"deviceSerialNumber"` — list() (required)
+    * `"duplicateTerminalIds"` — list() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"terminals"` — list() (optional)
   """
   @type terminal_id :: %{optional(String.t()) => any()}
 
@@ -1269,11 +1271,11 @@ defmodule BluefinTecsMerchantServices.Types do
   Request payload for TerminalId create.
 
   Members:
-    * `"device_serial_number"` — list() (required)
-    * `"duplicate_terminal_id"` — list() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"terminal"` — list() (optional)
+    * `"deviceSerialNumber"` — list() (required)
+    * `"duplicateTerminalIds"` — list() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"terminals"` — list() (optional)
   """
   @type terminal_id_create_data :: %{optional(String.t()) => any()}
 
@@ -1281,34 +1283,34 @@ defmodule BluefinTecsMerchantServices.Types do
   TransactionHistory entity data model.
 
   Members:
-    * `"3_d_secure"` — String.t() (optional)
-    * `"authorization_code"` — String.t() (optional)
-    * `"card_brand"` — String.t() (optional)
-    * `"clearing_amount_from"` — String.t() (optional)
-    * `"clearing_amount_to"` — String.t() (optional)
-    * `"clearing_currency"` — String.t() (optional)
-    * `"clearing_status"` — String.t() (optional)
-    * `"corporate_uuid"` — String.t() (optional)
-    * `"order_by_transaction_date"` — String.t() (optional)
+    * `"3DSecure"` — String.t() (optional)
+    * `"authorizationCode"` — String.t() (optional)
+    * `"cardBrand"` — String.t() (optional)
+    * `"clearingAmountFrom"` — String.t() (optional)
+    * `"clearingAmountTo"` — String.t() (optional)
+    * `"clearingCurrency"` — String.t() (optional)
+    * `"clearingStatus"` — String.t() (optional)
+    * `"corporateUUID"` — String.t() (optional)
+    * `"orderByTransactionDate"` — String.t() (optional)
     * `"pagination"` — map() (optional)
-    * `"payment_token_public_id"` — String.t() (optional)
-    * `"receipt_number"` — String.t() (optional)
-    * `"referenced_transaction_id"` — String.t() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"retrieval_reference_number"` — String.t() (optional)
-    * `"source_id"` — integer() (optional)
-    * `"tecsengine_response_code_from"` — String.t() (optional)
-    * `"tecsengine_response_code_to"` — String.t() (optional)
-    * `"terminal_id"` — integer() (optional)
-    * `"trace_number"` — String.t() (optional)
-    * `"transaction_amount_from"` — String.t() (optional)
-    * `"transaction_amount_to"` — String.t() (optional)
-    * `"transaction_date_from"` — String.t() (optional)
-    * `"transaction_date_to"` — String.t() (optional)
-    * `"transaction_history"` — list() (optional)
-    * `"transaction_id"` — String.t() (optional)
-    * `"transaction_type"` — String.t() (optional)
+    * `"paymentTokenPublicId"` — String.t() (optional)
+    * `"receiptNumber"` — String.t() (optional)
+    * `"referencedTransactionId"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"retrievalReferenceNumber"` — String.t() (optional)
+    * `"sourceId"` — integer() (optional)
+    * `"tecsengineResponseCodeFrom"` — String.t() (optional)
+    * `"tecsengineResponseCodeTo"` — String.t() (optional)
+    * `"terminalId"` — integer() (optional)
+    * `"traceNumber"` — String.t() (optional)
+    * `"transactionAmountFrom"` — String.t() (optional)
+    * `"transactionAmountTo"` — String.t() (optional)
+    * `"transactionDateFrom"` — String.t() (optional)
+    * `"transactionDateTo"` — String.t() (optional)
+    * `"transactionHistories"` — list() (optional)
+    * `"transactionId"` — String.t() (optional)
+    * `"transactionType"` — String.t() (optional)
     * `"wallet"` — String.t() (optional)
   """
   @type transaction_history :: %{optional(String.t()) => any()}
@@ -1317,34 +1319,34 @@ defmodule BluefinTecsMerchantServices.Types do
   Request payload for TransactionHistory create.
 
   Members:
-    * `"3_d_secure"` — String.t() (optional)
-    * `"authorization_code"` — String.t() (optional)
-    * `"card_brand"` — String.t() (optional)
-    * `"clearing_amount_from"` — String.t() (optional)
-    * `"clearing_amount_to"` — String.t() (optional)
-    * `"clearing_currency"` — String.t() (optional)
-    * `"clearing_status"` — String.t() (optional)
-    * `"corporate_uuid"` — String.t() (optional)
-    * `"order_by_transaction_date"` — String.t() (optional)
+    * `"3DSecure"` — String.t() (optional)
+    * `"authorizationCode"` — String.t() (optional)
+    * `"cardBrand"` — String.t() (optional)
+    * `"clearingAmountFrom"` — String.t() (optional)
+    * `"clearingAmountTo"` — String.t() (optional)
+    * `"clearingCurrency"` — String.t() (optional)
+    * `"clearingStatus"` — String.t() (optional)
+    * `"corporateUUID"` — String.t() (optional)
+    * `"orderByTransactionDate"` — String.t() (optional)
     * `"pagination"` — map() (optional)
-    * `"payment_token_public_id"` — String.t() (optional)
-    * `"receipt_number"` — String.t() (optional)
-    * `"referenced_transaction_id"` — String.t() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"retrieval_reference_number"` — String.t() (optional)
-    * `"source_id"` — integer() (optional)
-    * `"tecsengine_response_code_from"` — String.t() (optional)
-    * `"tecsengine_response_code_to"` — String.t() (optional)
-    * `"terminal_id"` — integer() (optional)
-    * `"trace_number"` — String.t() (optional)
-    * `"transaction_amount_from"` — String.t() (optional)
-    * `"transaction_amount_to"` — String.t() (optional)
-    * `"transaction_date_from"` — String.t() (optional)
-    * `"transaction_date_to"` — String.t() (optional)
-    * `"transaction_history"` — list() (optional)
-    * `"transaction_id"` — String.t() (optional)
-    * `"transaction_type"` — String.t() (optional)
+    * `"paymentTokenPublicId"` — String.t() (optional)
+    * `"receiptNumber"` — String.t() (optional)
+    * `"referencedTransactionId"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"retrievalReferenceNumber"` — String.t() (optional)
+    * `"sourceId"` — integer() (optional)
+    * `"tecsengineResponseCodeFrom"` — String.t() (optional)
+    * `"tecsengineResponseCodeTo"` — String.t() (optional)
+    * `"terminalId"` — integer() (optional)
+    * `"traceNumber"` — String.t() (optional)
+    * `"transactionAmountFrom"` — String.t() (optional)
+    * `"transactionAmountTo"` — String.t() (optional)
+    * `"transactionDateFrom"` — String.t() (optional)
+    * `"transactionDateTo"` — String.t() (optional)
+    * `"transactionHistories"` — list() (optional)
+    * `"transactionId"` — String.t() (optional)
+    * `"transactionType"` — String.t() (optional)
     * `"wallet"` — String.t() (optional)
   """
   @type transaction_history_create_data :: %{optional(String.t()) => any()}
@@ -1354,11 +1356,11 @@ defmodule BluefinTecsMerchantServices.Types do
 
   Members:
     * `"period"` — String.t() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"transaction_date_from"` — String.t() (optional)
-    * `"transaction_date_to"` — String.t() (optional)
-    * `"transactions_count"` — list() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"transactionDateFrom"` — String.t() (optional)
+    * `"transactionDateTo"` — String.t() (optional)
+    * `"transactionsCount"` — list() (optional)
   """
   @type transactions_count :: %{optional(String.t()) => any()}
 
@@ -1367,11 +1369,11 @@ defmodule BluefinTecsMerchantServices.Types do
 
   Members:
     * `"period"` — String.t() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"transaction_date_from"` — String.t() (optional)
-    * `"transaction_date_to"` — String.t() (optional)
-    * `"transactions_count"` — list() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"transactionDateFrom"` — String.t() (optional)
+    * `"transactionDateTo"` — String.t() (optional)
+    * `"transactionsCount"` — list() (optional)
   """
   @type transactions_count_create_data :: %{optional(String.t()) => any()}
 
@@ -1380,11 +1382,11 @@ defmodule BluefinTecsMerchantServices.Types do
 
   Members:
     * `"period"` — String.t() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"transaction_date_from"` — String.t() (optional)
-    * `"transaction_date_to"` — String.t() (optional)
-    * `"transactions_count"` — list() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"transactionDateFrom"` — String.t() (optional)
+    * `"transactionDateTo"` — String.t() (optional)
+    * `"transactionsCount"` — list() (optional)
   """
   @type transactions_count_card_brand :: %{optional(String.t()) => any()}
 
@@ -1393,11 +1395,11 @@ defmodule BluefinTecsMerchantServices.Types do
 
   Members:
     * `"period"` — String.t() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"transaction_date_from"` — String.t() (optional)
-    * `"transaction_date_to"` — String.t() (optional)
-    * `"transactions_count"` — list() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"transactionDateFrom"` — String.t() (optional)
+    * `"transactionDateTo"` — String.t() (optional)
+    * `"transactionsCount"` — list() (optional)
   """
   @type transactions_count_card_brand_create_data :: %{optional(String.t()) => any()}
 
@@ -1406,11 +1408,11 @@ defmodule BluefinTecsMerchantServices.Types do
 
   Members:
     * `"period"` — String.t() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"transaction_date_from"` — String.t() (optional)
-    * `"transaction_date_to"` — String.t() (optional)
-    * `"turnover"` — list() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"transactionDateFrom"` — String.t() (optional)
+    * `"transactionDateTo"` — String.t() (optional)
+    * `"turnovers"` — list() (optional)
   """
   @type transactions_turnover :: %{optional(String.t()) => any()}
 
@@ -1419,11 +1421,11 @@ defmodule BluefinTecsMerchantServices.Types do
 
   Members:
     * `"period"` — String.t() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"transaction_date_from"` — String.t() (optional)
-    * `"transaction_date_to"` — String.t() (optional)
-    * `"turnover"` — list() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"transactionDateFrom"` — String.t() (optional)
+    * `"transactionDateTo"` — String.t() (optional)
+    * `"turnovers"` — list() (optional)
   """
   @type transactions_turnover_create_data :: %{optional(String.t()) => any()}
 
@@ -1432,15 +1434,15 @@ defmodule BluefinTecsMerchantServices.Types do
 
   Members:
     * `"city"` — String.t() (optional)
-    * `"corporate_uuid"` — String.t() (required)
+    * `"corporateUuid"` — String.t() (required)
     * `"country"` — String.t() (optional)
-    * `"merchant_category_code"` — String.t() (optional)
+    * `"merchantCategoryCode"` — String.t() (optional)
     * `"name"` — String.t() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
     * `"state"` — String.t() (optional)
     * `"street"` — String.t() (optional)
-    * `"vu_nummer"` — String.t() (optional)
+    * `"vuNummer"` — String.t() (optional)
     * `"zipcode"` — String.t() (optional)
   """
   @type update_merchant :: %{optional(String.t()) => any()}
@@ -1450,15 +1452,15 @@ defmodule BluefinTecsMerchantServices.Types do
 
   Members:
     * `"city"` — String.t() (optional)
-    * `"corporate_uuid"` — String.t() (required)
+    * `"corporateUuid"` — String.t() (required)
     * `"country"` — String.t() (optional)
-    * `"merchant_category_code"` — String.t() (optional)
+    * `"merchantCategoryCode"` — String.t() (optional)
     * `"name"` — String.t() (optional)
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
     * `"state"` — String.t() (optional)
     * `"street"` — String.t() (optional)
-    * `"vu_nummer"` — String.t() (optional)
+    * `"vuNummer"` — String.t() (optional)
     * `"zipcode"` — String.t() (optional)
   """
   @type update_merchant_create_data :: %{optional(String.t()) => any()}
@@ -1467,10 +1469,10 @@ defmodule BluefinTecsMerchantServices.Types do
   UpdateTemplateXml entity data model.
 
   Members:
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"template_name"` — String.t() (required)
-    * `"template_xml"` — String.t() (required)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"templateName"` — String.t() (required)
+    * `"templateXml"` — String.t() (required)
   """
   @type update_template_xml :: %{optional(String.t()) => any()}
 
@@ -1478,10 +1480,10 @@ defmodule BluefinTecsMerchantServices.Types do
   Request payload for UpdateTemplateXml create.
 
   Members:
-    * `"response_code"` — integer() (optional)
-    * `"response_message"` — String.t() (optional)
-    * `"template_name"` — String.t() (required)
-    * `"template_xml"` — String.t() (required)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"templateName"` — String.t() (required)
+    * `"templateXml"` — String.t() (required)
   """
   @type update_template_xml_create_data :: %{optional(String.t()) => any()}
 
@@ -1489,8 +1491,8 @@ defmodule BluefinTecsMerchantServices.Types do
   Version entity data model.
 
   Members:
-    * `"app_name"` — String.t() (optional)
-    * `"build_date"` — String.t() (optional)
+    * `"appName"` — String.t() (optional)
+    * `"buildDate"` — String.t() (optional)
     * `"version"` — String.t() (optional)
   """
   @type version :: %{optional(String.t()) => any()}
@@ -1499,8 +1501,8 @@ defmodule BluefinTecsMerchantServices.Types do
   Request payload for Version load.
 
   Members:
-    * `"app_name"` — String.t() (optional)
-    * `"build_date"` — String.t() (optional)
+    * `"appName"` — String.t() (optional)
+    * `"buildDate"` — String.t() (optional)
     * `"version"` — String.t() (optional)
   """
   @type version_load_match :: %{optional(String.t()) => any()}

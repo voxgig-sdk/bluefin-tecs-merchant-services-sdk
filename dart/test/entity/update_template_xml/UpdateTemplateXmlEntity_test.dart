@@ -47,7 +47,7 @@ void tests() {
       final update_template_xml_ref01_ent = client.UpdateTemplateXml();
       dynamic update_template_xml_ref01_data = setup['data']['new']['update_template_xml']['update_template_xml_ref01'];
 
-      update_template_xml_ref01_data = await update_template_xml_ref01_ent.create(update_template_xml_ref01_data);
+      update_template_xml_ref01_data = (await update_template_xml_ref01_ent.create(update_template_xml_ref01_data)).data();
       ok(null != update_template_xml_ref01_data);
 
 

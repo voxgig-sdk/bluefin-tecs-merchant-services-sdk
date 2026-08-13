@@ -70,16 +70,16 @@ sub digital_services_api_direct_setup {
   my $calls = [];
 
   my $env = BluefinTecsMerchantServicesTestRunner::env_override({
-    'BLUEFINTECSMERCHANTSERVICES_TEST_DIGITAL_SERVICES_API_ENTID' => {},
-    'BLUEFINTECSMERCHANTSERVICES_TEST_LIVE' => 'FALSE',
-    'BLUEFINTECSMERCHANTSERVICES_APIKEY' => 'NONE',
+    'BLUEFIN_TECS_MERCHANT_SERVICES_TEST_DIGITAL_SERVICES_API_ENTID' => {},
+    'BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE' => 'FALSE',
+    'BLUEFIN_TECS_MERCHANT_SERVICES_APIKEY' => 'NONE',
   });
 
-  my $live = ((($env->{'BLUEFINTECSMERCHANTSERVICES_TEST_LIVE'}) || '') eq 'TRUE') ? 1 : 0;
+  my $live = ((($env->{'BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE'}) || '') eq 'TRUE') ? 1 : 0;
 
   if ($live) {
     my $client = BluefinTecsMerchantServicesSDK->new({
-      'apikey' => $env->{'BLUEFINTECSMERCHANTSERVICES_APIKEY'},
+      'apikey' => $env->{'BLUEFIN_TECS_MERCHANT_SERVICES_APIKEY'},
     });
     return {
       'client' => $client,

@@ -31,7 +31,8 @@ defmodule BluefinTecsMerchantServices.CheckCardBlackListedEntityTest do
   test "should create then read back" do
     sdk = BluefinTecsMerchantServices.test(S.jm(["entity", S.jm(["check_card_black_listed", S.jm([])])]))
     ent = BluefinTecsMerchantServices.check_card_black_listed(sdk)
-    made = BluefinTecsMerchantServices.Entity.CheckCardBlackListed.create(ent, S.jm(["name", "test-create"]))
+    created = BluefinTecsMerchantServices.Entity.CheckCardBlackListed.create(ent, S.jm(["name", "test-create"]))
+    made = BluefinTecsMerchantServices.EntityBase.data_get(created)
     assert S.ismap(made)
     assert S.getprop(made, "id") != nil
   end

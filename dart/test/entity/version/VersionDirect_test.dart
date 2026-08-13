@@ -65,19 +65,19 @@ Map<String, dynamic> directSetup([dynamic mockres]) {
   final calls = <Map<String, dynamic>>[];
 
   final env = envOverride({
-    'BLUEFINTECSMERCHANTSERVICES_TEST_VERSION_ENTID': <String, dynamic>{},
-    'BLUEFINTECSMERCHANTSERVICES_TEST_LIVE': 'FALSE',
-    'BLUEFINTECSMERCHANTSERVICES_APIKEY': 'NONE',
+    'BLUEFIN_TECS_MERCHANT_SERVICES_TEST_VERSION_ENTID': <String, dynamic>{},
+    'BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE': 'FALSE',
+    'BLUEFIN_TECS_MERCHANT_SERVICES_APIKEY': 'NONE',
   });
 
-  final live = 'TRUE' == env['BLUEFINTECSMERCHANTSERVICES_TEST_LIVE'];
+  final live = 'TRUE' == env['BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE'];
 
   if (live) {
     final client = BluefinTecsMerchantServicesSDK({
-      'apikey': env['BLUEFINTECSMERCHANTSERVICES_APIKEY'],
+      'apikey': env['BLUEFIN_TECS_MERCHANT_SERVICES_APIKEY'],
     });
 
-    dynamic idmap = env['BLUEFINTECSMERCHANTSERVICES_TEST_VERSION_ENTID'];
+    dynamic idmap = env['BLUEFIN_TECS_MERCHANT_SERVICES_TEST_VERSION_ENTID'];
     if (idmap is String && idmap.startsWith('{')) {
       idmap = jsonDecode(idmap);
     }

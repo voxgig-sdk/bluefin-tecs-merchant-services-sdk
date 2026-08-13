@@ -47,7 +47,7 @@ void tests() {
       final keep_alive_ref01_ent = client.KeepAlive();
       dynamic keep_alive_ref01_data = setup['data']['new']['keep_alive']['keep_alive_ref01'];
 
-      keep_alive_ref01_data = await keep_alive_ref01_ent.create(keep_alive_ref01_data);
+      keep_alive_ref01_data = (await keep_alive_ref01_ent.create(keep_alive_ref01_data)).data();
       ok(null != keep_alive_ref01_data);
 
 

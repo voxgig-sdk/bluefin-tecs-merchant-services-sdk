@@ -35,7 +35,7 @@ object IntroduceMandatorEntityTest {
       var introduceMandatorRef01Data = Helpers.toMapAny(Struct.getprop(
           Struct.getpath(entityData, "new.introduce_mandator"), "introduce_mandator_ref01"))
       val introduceMandatorRef01DataResult = introduceMandatorRef01Ent.create(introduceMandatorRef01Data, null)
-      introduceMandatorRef01Data = Helpers.toMapAny(introduceMandatorRef01DataResult)
+      introduceMandatorRef01Data = Helpers.toMapAny(introduceMandatorRef01DataResult match { case e: SdkEntity => e.data(); case o => o })
       rep.check("introduce_mandator.create.map", introduceMandatorRef01Data != null, "expected create result to be a map")
     }
   }

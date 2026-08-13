@@ -280,91 +280,91 @@ val cancelTransaction = client.cancelTransaction(null)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `String?` | No |  |
-| `acquirer_name` | `String?` | No |  |
-| `actual_bonus_point` | `String?` | No |  |
+| `acquirerId` | `String?` | No |  |
+| `acquirerName` | `String?` | No |  |
+| `actualBonusPoints` | `String?` | No |  |
 | `amount` | `Long?` | No |  |
-| `authorization_code` | `String?` | No |  |
-| `balance_amount` | `String?` | No |  |
-| `card_brand` | `String?` | No |  |
-| `card_number` | `String?` | No |  |
-| `client_id` | `Long?` | Yes |  |
+| `authorizationCode` | `String?` | No |  |
+| `balanceAmount` | `String?` | No |  |
+| `cardBrand` | `String?` | No |  |
+| `cardNumber` | `String?` | No |  |
+| `clientId` | `Long?` | Yes |  |
 | `currency` | `String?` | Yes |  |
 | `cvc` | `String?` | No |  |
-| `ec_data` | `String?` | No |  |
-| `ecr_data` | `String?` | No |  |
-| `emv_data` | `String?` | No |  |
-| `exchange_fee` | `Long?` | No |  |
-| `exchange_rate` | `String?` | No |  |
-| `language_code` | `String?` | No |  |
-| `merchant_address` | `String?` | No |  |
-| `merchant_name` | `String?` | No |  |
-| `merchant_number` | `String?` | No |  |
-| `message_type` | `String?` | No |  |
-| `original_trace_number` | `Long?` | No |  |
-| `original_transaction_id` | `String?` | No |  |
+| `ecData` | `String?` | No |  |
+| `ecrData` | `String?` | No |  |
+| `emvData` | `String?` | No |  |
+| `exchangeFee` | `Long?` | No |  |
+| `exchangeRate` | `String?` | No |  |
+| `languageCode` | `String?` | No |  |
+| `merchantAddress` | `String?` | No |  |
+| `merchantName` | `String?` | No |  |
+| `merchantNumber` | `String?` | No |  |
+| `messageType` | `String?` | No |  |
+| `originalTraceNumber` | `Long?` | No |  |
+| `originalTransactionId` | `String?` | No |  |
 | `password` | `String?` | No |  |
-| `payment_reason` | `String?` | No |  |
-| `receipt_footer` | `String?` | No |  |
-| `receipt_header` | `String?` | No |  |
-| `receipt_layout` | `Long?` | No |  |
-| `receipt_number` | `String?` | Yes |  |
-| `response_code` | `Long?` | No |  |
-| `response_message` | `String?` | No |  |
-| `serial_number` | `String?` | No |  |
+| `paymentReason` | `String?` | No |  |
+| `receiptFooter` | `String?` | No |  |
+| `receiptHeader` | `String?` | No |  |
+| `receiptLayout` | `Long?` | No |  |
+| `receiptNumber` | `String?` | Yes |  |
+| `responseCode` | `Long?` | No |  |
+| `responseMessage` | `String?` | No |  |
+| `serialNumber` | `String?` | No |  |
 | `svc` | `String?` | No |  |
-| `terminal_id` | `Long?` | Yes |  |
-| `terminal_location` | `String?` | No |  |
-| `trace_number` | `Long?` | No |  |
-| `transaction_date` | `String?` | No |  |
-| `transaction_id` | `String?` | No |  |
-| `tx_type` | `String?` | No |  |
-| `user_data` | `String?` | No |  |
+| `terminalId` | `Long?` | Yes |  |
+| `terminalLocation` | `String?` | No |  |
+| `traceNumber` | `Long?` | No |  |
+| `transactionDate` | `String?` | No |  |
+| `transactionId` | `String?` | No |  |
+| `txType` | `String?` | No |  |
+| `userData` | `String?` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `acquirer_id` | - |
-| `acquirer_name` | - |
-| `actual_bonus_point` | - |
+| `acquirerId` | - |
+| `acquirerName` | - |
+| `actualBonusPoints` | - |
 | `amount` | Yes |
-| `authorization_code` | - |
-| `balance_amount` | - |
-| `card_brand` | - |
-| `card_number` | - |
-| `client_id` | - |
+| `authorizationCode` | - |
+| `balanceAmount` | - |
+| `cardBrand` | - |
+| `cardNumber` | - |
+| `clientId` | - |
 | `currency` | - |
 | `cvc` | - |
-| `ec_data` | - |
-| `ecr_data` | - |
-| `emv_data` | - |
-| `exchange_fee` | - |
-| `exchange_rate` | - |
-| `language_code` | - |
-| `merchant_address` | - |
-| `merchant_name` | - |
-| `merchant_number` | - |
-| `message_type` | Yes |
-| `original_trace_number` | - |
-| `original_transaction_id` | Yes |
+| `ecData` | - |
+| `ecrData` | - |
+| `emvData` | - |
+| `exchangeFee` | - |
+| `exchangeRate` | - |
+| `languageCode` | - |
+| `merchantAddress` | - |
+| `merchantName` | - |
+| `merchantNumber` | - |
+| `messageType` | Yes |
+| `originalTraceNumber` | - |
+| `originalTransactionId` | Yes |
 | `password` | - |
-| `payment_reason` | - |
-| `receipt_footer` | - |
-| `receipt_header` | - |
-| `receipt_layout` | - |
-| `receipt_number` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `serial_number` | - |
+| `paymentReason` | - |
+| `receiptFooter` | - |
+| `receiptHeader` | - |
+| `receiptLayout` | - |
+| `receiptNumber` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `serialNumber` | - |
 | `svc` | - |
-| `terminal_id` | - |
-| `terminal_location` | - |
-| `trace_number` | - |
-| `transaction_date` | Yes |
-| `transaction_id` | Yes |
-| `tx_type` | - |
-| `user_data` | - |
+| `terminalId` | - |
+| `terminalLocation` | - |
+| `traceNumber` | - |
+| `transactionDate` | Yes |
+| `transactionId` | Yes |
+| `txType` | - |
+| `userData` | - |
 
 ### Operations
 
@@ -374,10 +374,10 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```kotlin
 val result = client.cancelTransaction(null).create(mutableMapOf<String, Any?>(
-    "client_id" to 1L,  // Long?
+    "clientId" to 1L,  // Long?
     "currency" to "example_currency",  // String?
-    "receipt_number" to "example_receipt_number",  // String?
-    "terminal_id" to 1L  // Long?
+    "receiptNumber" to "example_receiptNumber",  // String?
+    "terminalId" to 1L  // Long?
 ), null)
 ```
 
@@ -412,9 +412,9 @@ val checkCardBlackListed = client.checkCardBlackListed(null)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `card_no` | `String?` | No |  |
-| `response_code` | `Long?` | No |  |
-| `response_message` | `String?` | No |  |
+| `cardNo` | `String?` | No |  |
+| `responseCode` | `Long?` | No |  |
+| `responseMessage` | `String?` | No |  |
 
 ### Operations
 
@@ -458,13 +458,13 @@ val createProduct = client.createProduct(null)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `Long?` | No |  |
-| `response_code` | `Long?` | No |  |
-| `response_message` | `String?` | No |  |
-| `template_name` | `String?` | Yes |  |
-| `template_type` | `String?` | Yes |  |
-| `template_xml` | `String?` | Yes |  |
-| `terminal_type` | `String?` | Yes |  |
+| `acquirerId` | `Long?` | No |  |
+| `responseCode` | `Long?` | No |  |
+| `responseMessage` | `String?` | No |  |
+| `templateName` | `String?` | Yes |  |
+| `templateType` | `String?` | Yes |  |
+| `templateXml` | `String?` | Yes |  |
+| `terminalType` | `String?` | Yes |  |
 
 ### Operations
 
@@ -474,10 +474,10 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```kotlin
 val result = client.createProduct(null).create(mutableMapOf<String, Any?>(
-    "template_name" to "example_template_name",  // String?
-    "template_type" to "example_template_type",  // String?
-    "template_xml" to "example_template_xml",  // String?
-    "terminal_type" to "example_terminal_type"  // String?
+    "templateName" to "example_templateName",  // String?
+    "templateType" to "example_templateType",  // String?
+    "templateXml" to "example_templateXml",  // String?
+    "terminalType" to "example_terminalType"  // String?
 ), null)
 ```
 
@@ -512,13 +512,13 @@ val deactivateTerminal = client.deactivateTerminal(null)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `corporate_uuid` | `String?` | No |  |
-| `deactivation_reason` | `String?` | Yes |  |
-| `package_order_uuid` | `String?` | No |  |
-| `product_order_uuid` | `String?` | No |  |
-| `response_code` | `Long?` | No |  |
-| `response_message` | `String?` | No |  |
-| `terminal_id` | `Long?` | Yes |  |
+| `corporateUuid` | `String?` | No |  |
+| `deactivationReason` | `String?` | Yes |  |
+| `packageOrderUuid` | `String?` | No |  |
+| `productOrderUuid` | `String?` | No |  |
+| `responseCode` | `Long?` | No |  |
+| `responseMessage` | `String?` | No |  |
+| `terminalId` | `Long?` | Yes |  |
 
 ### Operations
 
@@ -528,8 +528,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```kotlin
 val result = client.deactivateTerminal(null).create(mutableMapOf<String, Any?>(
-    "deactivation_reason" to "example_deactivation_reason",  // String?
-    "terminal_id" to 1L  // Long?
+    "deactivationReason" to "example_deactivationReason",  // String?
+    "terminalId" to 1L  // Long?
 ), null)
 ```
 
@@ -564,16 +564,16 @@ val digitalServicesApi = client.digitalServicesApi(null)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearing_date_from` | `String?` | Yes |  |
-| `clearing_date_to` | `String?` | Yes |  |
-| `response_code` | `Long?` | No |  |
-| `response_message` | `String?` | No |  |
-| `tx_count` | `Long?` | No |  |
-| `tx_id_end` | `String?` | No |  |
-| `tx_id_start` | `String?` | No |  |
-| `tx_seq_no_end` | `Long?` | No |  |
-| `tx_seq_no_start` | `Long?` | No |  |
-| `tx_total` | `Long?` | No |  |
+| `clearingDateFrom` | `String?` | Yes |  |
+| `clearingDateTo` | `String?` | Yes |  |
+| `responseCode` | `Long?` | No |  |
+| `responseMessage` | `String?` | No |  |
+| `txCount` | `Long?` | No |  |
+| `txIdEnd` | `String?` | No |  |
+| `txIdStart` | `String?` | No |  |
+| `txSeqNoEnd` | `Long?` | No |  |
+| `txSeqNoStart` | `Long?` | No |  |
+| `txTotal` | `Long?` | No |  |
 
 ### Operations
 
@@ -583,6 +583,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```kotlin
 val result = client.digitalServicesApi(null).create(mutableMapOf<String, Any?>(
+    "clearingDateFrom" to "example_clearingDateFrom",  // String?
+    "clearingDateTo" to "example_clearingDateTo"  // String?
 ), null)
 ```
 
@@ -625,12 +627,12 @@ val ecDataEcom = client.ecDataEcom(null)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ecom_data` | `String?` | No |  |
-| `response_code` | `Long?` | No |  |
-| `response_message` | `String?` | No |  |
-| `terminal_id` | `Long?` | Yes |  |
-| `transaction_id` | `String?` | Yes |  |
-| `transaction_type` | `String?` | Yes |  |
+| `ecomData` | `String?` | No |  |
+| `responseCode` | `Long?` | No |  |
+| `responseMessage` | `String?` | No |  |
+| `terminalId` | `Long?` | Yes |  |
+| `transactionId` | `String?` | Yes |  |
+| `transactionType` | `String?` | Yes |  |
 
 ### Operations
 
@@ -640,9 +642,9 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```kotlin
 val result = client.ecDataEcom(null).create(mutableMapOf<String, Any?>(
-    "terminal_id" to 1L,  // Long?
-    "transaction_id" to "example_transaction_id",  // String?
-    "transaction_type" to "example_transaction_type"  // String?
+    "terminalId" to 1L,  // Long?
+    "transactionId" to "example_transactionId",  // String?
+    "transactionType" to "example_transactionType"  // String?
 ), null)
 ```
 
@@ -677,11 +679,11 @@ val ecomParameter = client.ecomParameter(null)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ecom_pass` | `String?` | No |  |
-| `ecom_skey` | `String?` | No |  |
-| `response_code` | `Long?` | No |  |
-| `response_message` | `String?` | No |  |
-| `terminal_id` | `Long?` | Yes |  |
+| `ecomPass` | `String?` | No |  |
+| `ecomSkey` | `String?` | No |  |
+| `responseCode` | `Long?` | No |  |
+| `responseMessage` | `String?` | No |  |
+| `terminalId` | `Long?` | Yes |  |
 
 ### Operations
 
@@ -691,7 +693,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```kotlin
 val result = client.ecomParameter(null).create(mutableMapOf<String, Any?>(
-    "terminal_id" to 1L  // Long?
+    "terminalId" to 1L  // Long?
 ), null)
 ```
 
@@ -726,12 +728,12 @@ val ecrData = client.ecrData(null)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ecr_data` | `String?` | No |  |
-| `response_code` | `Long?` | No |  |
-| `response_message` | `String?` | No |  |
-| `terminal_id` | `Long?` | Yes |  |
-| `transaction_id` | `String?` | Yes |  |
-| `transaction_type` | `String?` | Yes |  |
+| `ecrData` | `String?` | No |  |
+| `responseCode` | `Long?` | No |  |
+| `responseMessage` | `String?` | No |  |
+| `terminalId` | `Long?` | Yes |  |
+| `transactionId` | `String?` | Yes |  |
+| `transactionType` | `String?` | Yes |  |
 
 ### Operations
 
@@ -741,9 +743,9 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```kotlin
 val result = client.ecrData(null).create(mutableMapOf<String, Any?>(
-    "terminal_id" to 1L,  // Long?
-    "transaction_id" to "example_transaction_id",  // String?
-    "transaction_type" to "example_transaction_type"  // String?
+    "terminalId" to 1L,  // Long?
+    "transactionId" to "example_transactionId",  // String?
+    "transactionType" to "example_transactionType"  // String?
 ), null)
 ```
 
@@ -778,12 +780,12 @@ val emvData = client.emvData(null)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `emv_data` | `String?` | No |  |
-| `response_code` | `Long?` | No |  |
-| `response_message` | `String?` | No |  |
-| `terminal_id` | `Long?` | Yes |  |
-| `transaction_id` | `String?` | Yes |  |
-| `transaction_type` | `String?` | Yes |  |
+| `emvData` | `String?` | No |  |
+| `responseCode` | `Long?` | No |  |
+| `responseMessage` | `String?` | No |  |
+| `terminalId` | `Long?` | Yes |  |
+| `transactionId` | `String?` | Yes |  |
+| `transactionType` | `String?` | Yes |  |
 
 ### Operations
 
@@ -793,9 +795,9 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```kotlin
 val result = client.emvData(null).create(mutableMapOf<String, Any?>(
-    "terminal_id" to 1L,  // Long?
-    "transaction_id" to "example_transaction_id",  // String?
-    "transaction_type" to "example_transaction_type"  // String?
+    "terminalId" to 1L,  // Long?
+    "transactionId" to "example_transactionId",  // String?
+    "transactionType" to "example_transactionType"  // String?
 ), null)
 ```
 
@@ -830,20 +832,20 @@ val enableAcquiring = client.enableAcquiring(null)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `account_no` | `Long?` | No |  |
-| `additional_data` | `Map<String, Any?>?` | No |  |
-| `corporate_uuid` | `String?` | Yes |  |
+| `accountNo` | `Long?` | No |  |
+| `additionalData` | `Map<String, Any?>?` | No |  |
+| `corporateUuid` | `String?` | Yes |  |
 | `currency` | `String?` | Yes |  |
-| `merchant_category_code` | `Long?` | Yes |  |
-| `package_order_uuid` | `String?` | Yes |  |
-| `product_order_uuid` | `String?` | Yes |  |
-| `response_code` | `Long?` | No |  |
-| `response_message` | `String?` | No |  |
-| `sorting_code` | `Long?` | No |  |
-| `template_name` | `String?` | Yes |  |
-| `terminal_id` | `List<Any?>?` | No |  |
-| `terminal_id_acq` | `String?` | No |  |
-| `vu_nummer` | `String?` | No |  |
+| `merchantCategoryCode` | `Long?` | Yes |  |
+| `packageOrderUuid` | `String?` | Yes |  |
+| `productOrderUuid` | `String?` | Yes |  |
+| `responseCode` | `Long?` | No |  |
+| `responseMessage` | `String?` | No |  |
+| `sortingCode` | `Long?` | No |  |
+| `templateName` | `String?` | Yes |  |
+| `terminalIdAcq` | `String?` | No |  |
+| `terminalIds` | `List<Any?>?` | No |  |
+| `vuNummer` | `String?` | No |  |
 
 ### Operations
 
@@ -853,12 +855,12 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```kotlin
 val result = client.enableAcquiring(null).create(mutableMapOf<String, Any?>(
-    "corporate_uuid" to "example_corporate_uuid",  // String?
+    "corporateUuid" to "example_corporateUuid",  // String?
     "currency" to "example_currency",  // String?
-    "merchant_category_code" to 1L,  // Long?
-    "package_order_uuid" to "example_package_order_uuid",  // String?
-    "product_order_uuid" to "example_product_order_uuid",  // String?
-    "template_name" to "example_template_name"  // String?
+    "merchantCategoryCode" to 1L,  // Long?
+    "packageOrderUuid" to "example_packageOrderUuid",  // String?
+    "productOrderUuid" to "example_productOrderUuid",  // String?
+    "templateName" to "example_templateName"  // String?
 ), null)
 ```
 
@@ -893,9 +895,9 @@ val getMerchantContractNumber = client.getMerchantContractNumber(null)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `merchant_contract_number` | `String?` | Yes |  |
-| `response_code` | `Long?` | No |  |
-| `response_message` | `String?` | No |  |
+| `merchantContractNumber` | `String?` | Yes |  |
+| `responseCode` | `Long?` | No |  |
+| `responseMessage` | `String?` | No |  |
 
 ### Operations
 
@@ -905,7 +907,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```kotlin
 val result = client.getMerchantContractNumber(null).create(mutableMapOf<String, Any?>(
-    "merchant_contract_number" to "example_merchant_contract_number"  // String?
+    "merchantContractNumber" to "example_merchantContractNumber"  // String?
 ), null)
 ```
 
@@ -940,9 +942,9 @@ val getTemplateXml = client.getTemplateXml(null)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `Long?` | No |  |
-| `response_message` | `String?` | No |  |
-| `template_name` | `String?` | Yes |  |
+| `responseCode` | `Long?` | No |  |
+| `responseMessage` | `String?` | No |  |
+| `templateName` | `String?` | Yes |  |
 
 ### Operations
 
@@ -952,7 +954,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```kotlin
 val result = client.getTemplateXml(null).create(mutableMapOf<String, Any?>(
-    "template_name" to "example_template_name"  // String?
+    "templateName" to "example_templateName"  // String?
 ), null)
 ```
 
@@ -987,9 +989,9 @@ val introduceMandator = client.introduceMandator(null)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `mandator_name` | `String?` | Yes |  |
-| `response_code` | `Long?` | No |  |
-| `response_message` | `String?` | No |  |
+| `mandatorName` | `String?` | Yes |  |
+| `responseCode` | `Long?` | No |  |
+| `responseMessage` | `String?` | No |  |
 
 ### Operations
 
@@ -999,7 +1001,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```kotlin
 val result = client.introduceMandator(null).create(mutableMapOf<String, Any?>(
-    "mandator_name" to "example_mandator_name"  // String?
+    "mandatorName" to "example_mandatorName"  // String?
 ), null)
 ```
 
@@ -1034,9 +1036,9 @@ val introducePackage = client.introducePackage(null)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `Long?` | No |  |
-| `response_message` | `String?` | No |  |
-| `terminal_template_description` | `String?` | Yes |  |
+| `responseCode` | `Long?` | No |  |
+| `responseMessage` | `String?` | No |  |
+| `terminalTemplateDescription` | `String?` | Yes |  |
 
 ### Operations
 
@@ -1046,7 +1048,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```kotlin
 val result = client.introducePackage(null).create(mutableMapOf<String, Any?>(
-    "terminal_template_description" to "example_terminal_template_description"  // String?
+    "terminalTemplateDescription" to "example_terminalTemplateDescription"  // String?
 ), null)
 ```
 
@@ -1082,15 +1084,15 @@ val keepAlive = client.keepAlive(null)
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `hwserialno` | `String?` | No |  |
-| `ka_date_time_from` | `String?` | No |  |
-| `ka_date_time_to` | `String?` | No |  |
-| `keep_alive_data` | `List<Any?>?` | No |  |
+| `kaDateTimeFrom` | `String?` | No |  |
+| `kaDateTimeTo` | `String?` | No |  |
+| `keepAliveData` | `List<Any?>?` | No |  |
 | `pagination` | `Map<String, Any?>?` | No |  |
-| `response_code` | `Long?` | No |  |
-| `response_message` | `String?` | No |  |
-| `terminal_date_time_from` | `String?` | No |  |
-| `terminal_date_time_to` | `String?` | No |  |
-| `terminal_id` | `Long?` | No |  |
+| `responseCode` | `Long?` | No |  |
+| `responseMessage` | `String?` | No |  |
+| `terminalDateTimeFrom` | `String?` | No |  |
+| `terminalDateTimeTo` | `String?` | No |  |
+| `terminalId` | `Long?` | No |  |
 
 ### Operations
 
@@ -1134,12 +1136,12 @@ val listTerminal = client.listTerminal(null)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `corporate_uuid` | `List<Any?>?` | No |  |
+| `corporateUuid` | `List<Any?>?` | No |  |
 | `filter` | `Map<String, Any?>?` | No |  |
 | `pagination` | `Map<String, Any?>?` | No |  |
-| `response_code` | `Long?` | No |  |
-| `response_message` | `String?` | No |  |
-| `terminal` | `List<Any?>?` | No |  |
+| `responseCode` | `Long?` | No |  |
+| `responseMessage` | `String?` | No |  |
+| `terminals` | `List<Any?>?` | No |  |
 
 ### Operations
 
@@ -1183,12 +1185,12 @@ val mandatorClearingExport = client.mandatorClearingExport(null)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearing_date_from` | `String?` | Yes |  |
-| `clearing_date_to` | `String?` | Yes |  |
+| `clearingDateFrom` | `String?` | Yes |  |
+| `clearingDateTo` | `String?` | Yes |  |
 | `pagination` | `Map<String, Any?>?` | No |  |
-| `record` | `List<Any?>?` | No |  |
-| `response_code` | `Long?` | No |  |
-| `response_message` | `String?` | No |  |
+| `records` | `List<Any?>?` | No |  |
+| `responseCode` | `Long?` | No |  |
+| `responseMessage` | `String?` | No |  |
 
 ### Operations
 
@@ -1198,8 +1200,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```kotlin
 val result = client.mandatorClearingExport(null).create(mutableMapOf<String, Any?>(
-    "clearing_date_from" to "example_clearing_date_from",  // String?
-    "clearing_date_to" to "example_clearing_date_to"  // String?
+    "clearingDateFrom" to "example_clearingDateFrom",  // String?
+    "clearingDateTo" to "example_clearingDateTo"  // String?
 ), null)
 ```
 
@@ -1234,12 +1236,12 @@ val mandatorClearingExportDownload = client.mandatorClearingExportDownload(null)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearing_date_from` | `String?` | Yes |  |
-| `clearing_date_to` | `String?` | Yes |  |
-| `file_id` | `String?` | No |  |
-| `filename_template` | `String?` | No |  |
-| `response_code` | `Long?` | No |  |
-| `response_message` | `String?` | No |  |
+| `clearingDateFrom` | `String?` | Yes |  |
+| `clearingDateTo` | `String?` | Yes |  |
+| `fileId` | `String?` | No |  |
+| `filenameTemplate` | `String?` | No |  |
+| `responseCode` | `Long?` | No |  |
+| `responseMessage` | `String?` | No |  |
 | `status` | `String?` | No |  |
 
 ### Operations
@@ -1250,8 +1252,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```kotlin
 val result = client.mandatorClearingExportDownload(null).create(mutableMapOf<String, Any?>(
-    "clearing_date_from" to "example_clearing_date_from",  // String?
-    "clearing_date_to" to "example_clearing_date_to"  // String?
+    "clearingDateFrom" to "example_clearingDateFrom",  // String?
+    "clearingDateTo" to "example_clearingDateTo"  // String?
 ), null)
 ```
 
@@ -1294,11 +1296,11 @@ val mandatorClearingExportSummary = client.mandatorClearingExportSummary(null)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearing_date_from` | `String?` | Yes |  |
-| `clearing_date_to` | `String?` | Yes |  |
-| `record` | `List<Any?>?` | No |  |
-| `response_code` | `Long?` | No |  |
-| `response_message` | `String?` | No |  |
+| `clearingDateFrom` | `String?` | Yes |  |
+| `clearingDateTo` | `String?` | Yes |  |
+| `records` | `List<Any?>?` | No |  |
+| `responseCode` | `Long?` | No |  |
+| `responseMessage` | `String?` | No |  |
 
 ### Operations
 
@@ -1308,8 +1310,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```kotlin
 val result = client.mandatorClearingExportSummary(null).create(mutableMapOf<String, Any?>(
-    "clearing_date_from" to "example_clearing_date_from",  // String?
-    "clearing_date_to" to "example_clearing_date_to"  // String?
+    "clearingDateFrom" to "example_clearingDateFrom",  // String?
+    "clearingDateTo" to "example_clearingDateTo"  // String?
 ), null)
 ```
 
@@ -1344,30 +1346,30 @@ val merchantPortalServicesApi = client.merchantPortalServicesApi(null)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `3_d_secure` | `String?` | No |  |
-| `authorization_code` | `String?` | No |  |
-| `card_brand` | `String?` | No |  |
-| `clearing_amount_from` | `String?` | No |  |
-| `clearing_amount_to` | `String?` | No |  |
-| `clearing_currency` | `String?` | No |  |
-| `clearing_status` | `String?` | No |  |
-| `corporate_uuid` | `String?` | No |  |
-| `order_by_transaction_date` | `String?` | No |  |
+| `3DSecure` | `String?` | No |  |
+| `authorizationCode` | `String?` | No |  |
+| `cardBrand` | `String?` | No |  |
+| `clearingAmountFrom` | `String?` | No |  |
+| `clearingAmountTo` | `String?` | No |  |
+| `clearingCurrency` | `String?` | No |  |
+| `clearingStatus` | `String?` | No |  |
+| `corporateUUID` | `String?` | No |  |
+| `orderByTransactionDate` | `String?` | No |  |
 | `pagination` | `Map<String, Any?>?` | No |  |
-| `receipt_number` | `String?` | No |  |
-| `referenced_transaction_id` | `String?` | No |  |
-| `retrieval_reference_number` | `String?` | No |  |
-| `source_id` | `Long?` | No |  |
-| `tecsengine_response_code_from` | `String?` | No |  |
-| `tecsengine_response_code_to` | `String?` | No |  |
-| `terminal_id` | `Long?` | No |  |
-| `trace_number` | `String?` | No |  |
-| `transaction_amount_from` | `String?` | No |  |
-| `transaction_amount_to` | `String?` | No |  |
-| `transaction_date_from` | `String?` | No |  |
-| `transaction_date_to` | `String?` | No |  |
-| `transaction_id` | `String?` | No |  |
-| `transaction_type` | `String?` | No |  |
+| `receiptNumber` | `String?` | No |  |
+| `referencedTransactionId` | `String?` | No |  |
+| `retrievalReferenceNumber` | `String?` | No |  |
+| `sourceId` | `Long?` | No |  |
+| `tecsengineResponseCodeFrom` | `String?` | No |  |
+| `tecsengineResponseCodeTo` | `String?` | No |  |
+| `terminalId` | `Long?` | No |  |
+| `traceNumber` | `String?` | No |  |
+| `transactionAmountFrom` | `String?` | No |  |
+| `transactionAmountTo` | `String?` | No |  |
+| `transactionDateFrom` | `String?` | No |  |
+| `transactionDateTo` | `String?` | No |  |
+| `transactionId` | `String?` | No |  |
+| `transactionType` | `String?` | No |  |
 | `wallet` | `String?` | No |  |
 
 ### Operations
@@ -1412,11 +1414,11 @@ val moveTid = client.moveTid(null)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `productorderuuid` | `List<Any?>?` | Yes |  |
-| `response_code` | `Long?` | No |  |
-| `response_message` | `String?` | No |  |
-| `target_packageorderuuid` | `String?` | No |  |
-| `target_productorderuuid` | `String?` | No |  |
+| `productorderuuids` | `List<Any?>?` | Yes |  |
+| `responseCode` | `Long?` | No |  |
+| `responseMessage` | `String?` | No |  |
+| `targetPackageorderuuid` | `String?` | No |  |
+| `targetProductorderuuid` | `String?` | No |  |
 
 ### Operations
 
@@ -1426,7 +1428,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```kotlin
 val result = client.moveTid(null).create(mutableMapOf<String, Any?>(
-    "productorderuuid" to listOf<Any?>()  // List<Any?>?
+    "productorderuuids" to listOf<Any?>()  // List<Any?>?
 ), null)
 ```
 
@@ -1461,44 +1463,44 @@ val paymentManual = client.paymentManual(null)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_name` | `String?` | No |  |
+| `acquirerName` | `String?` | No |  |
 | `amount` | `Long?` | Yes |  |
-| `authorization_number` | `String?` | No |  |
-| `card_number` | `String?` | Yes |  |
-| `card_type` | `String?` | No |  |
+| `authorizationNumber` | `String?` | No |  |
+| `cardNumber` | `String?` | Yes |  |
+| `cardType` | `String?` | No |  |
 | `currency` | `String?` | Yes |  |
 | `cvc` | `String?` | No |  |
-| `date_time_tx` | `String?` | No |  |
-| `exp_date` | `String?` | Yes |  |
-| `merchant_id` | `String?` | No |  |
-| `original_transaction_id` | `String?` | No |  |
+| `dateTimeTx` | `String?` | No |  |
+| `expDate` | `String?` | Yes |  |
+| `merchantId` | `String?` | No |  |
+| `originalTransactionId` | `String?` | No |  |
 | `password` | `String?` | No |  |
-| `response_code` | `String?` | No |  |
-| `response_message` | `String?` | No |  |
-| `terminal_id` | `String?` | No |  |
-| `transaction_id` | `String?` | No |  |
+| `responseCode` | `String?` | No |  |
+| `responseMessage` | `String?` | No |  |
+| `terminalId` | `String?` | No |  |
+| `transactionId` | `String?` | No |  |
 | `txtype` | `String?` | Yes |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `acquirer_name` | - |
+| `acquirerName` | - |
 | `amount` | - |
-| `authorization_number` | - |
-| `card_number` | - |
-| `card_type` | - |
+| `authorizationNumber` | - |
+| `cardNumber` | - |
+| `cardType` | - |
 | `currency` | - |
 | `cvc` | - |
-| `date_time_tx` | - |
-| `exp_date` | - |
-| `merchant_id` | - |
-| `original_transaction_id` | - |
+| `dateTimeTx` | - |
+| `expDate` | - |
+| `merchantId` | - |
+| `originalTransactionId` | - |
 | `password` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `terminal_id` | Yes |
-| `transaction_id` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `terminalId` | Yes |
+| `transactionId` | - |
 | `txtype` | - |
 
 ### Operations
@@ -1510,9 +1512,9 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```kotlin
 val result = client.paymentManual(null).create(mutableMapOf<String, Any?>(
     "amount" to 1L,  // Long?
-    "card_number" to "example_card_number",  // String?
+    "cardNumber" to "example_cardNumber",  // String?
     "currency" to "example_currency",  // String?
-    "exp_date" to "example_exp_date",  // String?
+    "expDate" to "example_expDate",  // String?
     "txtype" to "example_txtype"  // String?
 ), null)
 ```
@@ -1548,43 +1550,18 @@ val paymentSred = client.paymentSred(null)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_name` | `String?` | No |  |
 | `amount` | `Long?` | Yes |  |
-| `authorization_number` | `String?` | No |  |
-| `card_type` | `String?` | No |  |
 | `currency` | `String?` | Yes |  |
-| `date_time_tx` | `String?` | No |  |
-| `device_payload` | `String?` | Yes |  |
-| `merchant_id` | `String?` | No |  |
-| `original_transaction_id` | `String?` | No |  |
+| `device` | `String?` | No |  |
+| `devicePayload` | `String?` | Yes |  |
+| `expDate` | `String?` | No |  |
+| `mode` | `String?` | No |  |
+| `panMasked` | `String?` | No |  |
 | `password` | `String?` | No |  |
-| `response_code` | `String?` | No |  |
-| `response_message` | `String?` | No |  |
-| `sred` | `Map<String, Any?>?` | No |  |
-| `terminal_id` | `String?` | No |  |
-| `transaction_id` | `String?` | No |  |
+| `serial` | `String?` | No |  |
+| `serviceCode` | `String?` | No |  |
+| `terminalId` | `String?` | Yes |  |
 | `txtype` | `String?` | Yes |  |
-
-### Field Usage by Operation
-
-| Field | create |
-| --- | --- |
-| `acquirer_name` | - |
-| `amount` | - |
-| `authorization_number` | - |
-| `card_type` | - |
-| `currency` | - |
-| `date_time_tx` | - |
-| `device_payload` | - |
-| `merchant_id` | - |
-| `original_transaction_id` | - |
-| `password` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `sred` | - |
-| `terminal_id` | Yes |
-| `transaction_id` | - |
-| `txtype` | - |
 
 ### Operations
 
@@ -1596,7 +1573,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 val result = client.paymentSred(null).create(mutableMapOf<String, Any?>(
     "amount" to 1L,  // Long?
     "currency" to "example_currency",  // String?
-    "device_payload" to "example_device_payload",  // String?
+    "devicePayload" to "example_devicePayload",  // String?
+    "terminalId" to "example_terminalId",  // String?
     "txtype" to "example_txtype"  // String?
 ), null)
 ```
@@ -1632,95 +1610,95 @@ val preAuthTransactionCompletion = client.preAuthTransactionCompletion(null)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `String?` | No |  |
-| `acquirer_name` | `String?` | No |  |
-| `actual_bonus_point` | `String?` | No |  |
+| `acquirerId` | `String?` | No |  |
+| `acquirerName` | `String?` | No |  |
+| `actualBonusPoints` | `String?` | No |  |
 | `amount` | `Long?` | No |  |
-| `authorization_code` | `String?` | No |  |
-| `balance_amount` | `String?` | No |  |
-| `card_brand` | `String?` | No |  |
-| `card_number` | `String?` | No |  |
-| `card_number_reference` | `String?` | Yes |  |
-| `client_id` | `Long?` | Yes |  |
+| `authorizationCode` | `String?` | No |  |
+| `balanceAmount` | `String?` | No |  |
+| `cardBrand` | `String?` | No |  |
+| `cardNumber` | `String?` | No |  |
+| `cardNumberReference` | `String?` | Yes |  |
+| `clientId` | `Long?` | Yes |  |
 | `currency` | `String?` | Yes |  |
 | `cvc` | `String?` | No |  |
-| `ec_data` | `String?` | No |  |
-| `ecr_data` | `String?` | No |  |
-| `emv_data` | `String?` | No |  |
-| `exchange_fee` | `Long?` | No |  |
-| `exchange_rate` | `String?` | No |  |
-| `language_code` | `String?` | No |  |
-| `merchant_address` | `String?` | No |  |
-| `merchant_name` | `String?` | No |  |
-| `merchant_number` | `String?` | No |  |
-| `message_type` | `String?` | No |  |
-| `original_trace_number` | `Long?` | No |  |
-| `original_transaction_id` | `String?` | No |  |
+| `ecData` | `String?` | No |  |
+| `ecrData` | `String?` | No |  |
+| `emvData` | `String?` | No |  |
+| `exchangeFee` | `Long?` | No |  |
+| `exchangeRate` | `String?` | No |  |
+| `languageCode` | `String?` | No |  |
+| `merchantAddress` | `String?` | No |  |
+| `merchantName` | `String?` | No |  |
+| `merchantNumber` | `String?` | No |  |
+| `messageType` | `String?` | No |  |
+| `originalTraceNumber` | `Long?` | No |  |
+| `originalTransactionId` | `String?` | No |  |
 | `password` | `String?` | No |  |
-| `payment_reason` | `String?` | No |  |
-| `receipt_footer` | `String?` | No |  |
-| `receipt_header` | `String?` | No |  |
-| `receipt_layout` | `Long?` | No |  |
-| `receipt_number` | `String?` | Yes |  |
-| `response_code` | `Long?` | No |  |
-| `response_message` | `String?` | No |  |
-| `serial_number` | `String?` | No |  |
+| `paymentReason` | `String?` | No |  |
+| `receiptFooter` | `String?` | No |  |
+| `receiptHeader` | `String?` | No |  |
+| `receiptLayout` | `Long?` | No |  |
+| `receiptNumber` | `String?` | Yes |  |
+| `responseCode` | `Long?` | No |  |
+| `responseMessage` | `String?` | No |  |
+| `serialNumber` | `String?` | No |  |
 | `svc` | `String?` | No |  |
-| `terminal_id` | `Long?` | Yes |  |
-| `terminal_location` | `String?` | No |  |
-| `trace_number` | `Long?` | No |  |
-| `transaction_date` | `String?` | No |  |
-| `transaction_id` | `String?` | No |  |
-| `transaction_type` | `String?` | Yes |  |
-| `tx_type` | `String?` | No |  |
-| `user_data` | `String?` | No |  |
+| `terminalId` | `Long?` | Yes |  |
+| `terminalLocation` | `String?` | No |  |
+| `traceNumber` | `Long?` | No |  |
+| `transactionDate` | `String?` | No |  |
+| `transactionId` | `String?` | No |  |
+| `transactionType` | `String?` | Yes |  |
+| `txType` | `String?` | No |  |
+| `userData` | `String?` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `acquirer_id` | - |
-| `acquirer_name` | - |
-| `actual_bonus_point` | - |
+| `acquirerId` | - |
+| `acquirerName` | - |
+| `actualBonusPoints` | - |
 | `amount` | Yes |
-| `authorization_code` | - |
-| `balance_amount` | - |
-| `card_brand` | - |
-| `card_number` | - |
-| `card_number_reference` | - |
-| `client_id` | - |
+| `authorizationCode` | - |
+| `balanceAmount` | - |
+| `cardBrand` | - |
+| `cardNumber` | - |
+| `cardNumberReference` | - |
+| `clientId` | - |
 | `currency` | - |
 | `cvc` | - |
-| `ec_data` | - |
-| `ecr_data` | - |
-| `emv_data` | - |
-| `exchange_fee` | - |
-| `exchange_rate` | - |
-| `language_code` | - |
-| `merchant_address` | - |
-| `merchant_name` | - |
-| `merchant_number` | - |
-| `message_type` | - |
-| `original_trace_number` | - |
-| `original_transaction_id` | Yes |
+| `ecData` | - |
+| `ecrData` | - |
+| `emvData` | - |
+| `exchangeFee` | - |
+| `exchangeRate` | - |
+| `languageCode` | - |
+| `merchantAddress` | - |
+| `merchantName` | - |
+| `merchantNumber` | - |
+| `messageType` | - |
+| `originalTraceNumber` | - |
+| `originalTransactionId` | Yes |
 | `password` | - |
-| `payment_reason` | - |
-| `receipt_footer` | - |
-| `receipt_header` | - |
-| `receipt_layout` | - |
-| `receipt_number` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `serial_number` | - |
+| `paymentReason` | - |
+| `receiptFooter` | - |
+| `receiptHeader` | - |
+| `receiptLayout` | - |
+| `receiptNumber` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `serialNumber` | - |
 | `svc` | - |
-| `terminal_id` | - |
-| `terminal_location` | - |
-| `trace_number` | - |
-| `transaction_date` | Yes |
-| `transaction_id` | Yes |
-| `transaction_type` | - |
-| `tx_type` | - |
-| `user_data` | - |
+| `terminalId` | - |
+| `terminalLocation` | - |
+| `traceNumber` | - |
+| `transactionDate` | Yes |
+| `transactionId` | Yes |
+| `transactionType` | - |
+| `txType` | - |
+| `userData` | - |
 
 ### Operations
 
@@ -1730,12 +1708,12 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```kotlin
 val result = client.preAuthTransactionCompletion(null).create(mutableMapOf<String, Any?>(
-    "card_number_reference" to "example_card_number_reference",  // String?
-    "client_id" to 1L,  // Long?
+    "cardNumberReference" to "example_cardNumberReference",  // String?
+    "clientId" to 1L,  // Long?
     "currency" to "example_currency",  // String?
-    "receipt_number" to "example_receipt_number",  // String?
-    "terminal_id" to 1L,  // Long?
-    "transaction_type" to "example_transaction_type"  // String?
+    "receiptNumber" to "example_receiptNumber",  // String?
+    "terminalId" to 1L,  // Long?
+    "transactionType" to "example_transactionType"  // String?
 ), null)
 ```
 
@@ -1770,13 +1748,13 @@ val reactivateTerminal = client.reactivateTerminal(null)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `corporate_uuid` | `String?` | No |  |
-| `package_order_uuid` | `String?` | No |  |
-| `product_order_uuid` | `String?` | No |  |
-| `reactivation_reason` | `String?` | Yes |  |
-| `response_code` | `Long?` | No |  |
-| `response_message` | `String?` | No |  |
-| `terminal_id` | `Long?` | Yes |  |
+| `corporateUuid` | `String?` | No |  |
+| `packageOrderUuid` | `String?` | No |  |
+| `productOrderUuid` | `String?` | No |  |
+| `reactivationReason` | `String?` | Yes |  |
+| `responseCode` | `Long?` | No |  |
+| `responseMessage` | `String?` | No |  |
+| `terminalId` | `Long?` | Yes |  |
 
 ### Operations
 
@@ -1786,8 +1764,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```kotlin
 val result = client.reactivateTerminal(null).create(mutableMapOf<String, Any?>(
-    "reactivation_reason" to "example_reactivation_reason",  // String?
-    "terminal_id" to 1L  // Long?
+    "reactivationReason" to "example_reactivationReason",  // String?
+    "terminalId" to 1L  // Long?
 ), null)
 ```
 
@@ -1822,91 +1800,91 @@ val refundTransaction = client.refundTransaction(null)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `String?` | No |  |
-| `acquirer_name` | `String?` | No |  |
-| `actual_bonus_point` | `String?` | No |  |
+| `acquirerId` | `String?` | No |  |
+| `acquirerName` | `String?` | No |  |
+| `actualBonusPoints` | `String?` | No |  |
 | `amount` | `Long?` | No |  |
-| `authorization_code` | `String?` | No |  |
-| `balance_amount` | `String?` | No |  |
-| `card_brand` | `String?` | No |  |
-| `card_number` | `String?` | No |  |
-| `client_id` | `Long?` | Yes |  |
+| `authorizationCode` | `String?` | No |  |
+| `balanceAmount` | `String?` | No |  |
+| `cardBrand` | `String?` | No |  |
+| `cardNumber` | `String?` | No |  |
+| `clientId` | `Long?` | Yes |  |
 | `currency` | `String?` | Yes |  |
 | `cvc` | `String?` | No |  |
-| `ec_data` | `String?` | No |  |
-| `ecr_data` | `String?` | No |  |
-| `emv_data` | `String?` | No |  |
-| `exchange_fee` | `Long?` | No |  |
-| `exchange_rate` | `String?` | No |  |
-| `language_code` | `String?` | No |  |
-| `merchant_address` | `String?` | No |  |
-| `merchant_name` | `String?` | No |  |
-| `merchant_number` | `String?` | No |  |
-| `message_type` | `String?` | No |  |
-| `original_trace_number` | `Long?` | No |  |
-| `original_transaction_id` | `String?` | No |  |
+| `ecData` | `String?` | No |  |
+| `ecrData` | `String?` | No |  |
+| `emvData` | `String?` | No |  |
+| `exchangeFee` | `Long?` | No |  |
+| `exchangeRate` | `String?` | No |  |
+| `languageCode` | `String?` | No |  |
+| `merchantAddress` | `String?` | No |  |
+| `merchantName` | `String?` | No |  |
+| `merchantNumber` | `String?` | No |  |
+| `messageType` | `String?` | No |  |
+| `originalTraceNumber` | `Long?` | No |  |
+| `originalTransactionId` | `String?` | No |  |
 | `password` | `String?` | No |  |
-| `payment_reason` | `String?` | No |  |
-| `receipt_footer` | `String?` | No |  |
-| `receipt_header` | `String?` | No |  |
-| `receipt_layout` | `Long?` | No |  |
-| `receipt_number` | `String?` | Yes |  |
-| `response_code` | `Long?` | No |  |
-| `response_message` | `String?` | No |  |
-| `serial_number` | `String?` | No |  |
+| `paymentReason` | `String?` | No |  |
+| `receiptFooter` | `String?` | No |  |
+| `receiptHeader` | `String?` | No |  |
+| `receiptLayout` | `Long?` | No |  |
+| `receiptNumber` | `String?` | Yes |  |
+| `responseCode` | `Long?` | No |  |
+| `responseMessage` | `String?` | No |  |
+| `serialNumber` | `String?` | No |  |
 | `svc` | `String?` | No |  |
-| `terminal_id` | `Long?` | Yes |  |
-| `terminal_location` | `String?` | No |  |
-| `trace_number` | `Long?` | No |  |
-| `transaction_date` | `String?` | No |  |
-| `transaction_id` | `String?` | No |  |
-| `tx_type` | `String?` | No |  |
-| `user_data` | `String?` | No |  |
+| `terminalId` | `Long?` | Yes |  |
+| `terminalLocation` | `String?` | No |  |
+| `traceNumber` | `Long?` | No |  |
+| `transactionDate` | `String?` | No |  |
+| `transactionId` | `String?` | No |  |
+| `txType` | `String?` | No |  |
+| `userData` | `String?` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `acquirer_id` | - |
-| `acquirer_name` | - |
-| `actual_bonus_point` | - |
+| `acquirerId` | - |
+| `acquirerName` | - |
+| `actualBonusPoints` | - |
 | `amount` | Yes |
-| `authorization_code` | - |
-| `balance_amount` | - |
-| `card_brand` | - |
-| `card_number` | - |
-| `client_id` | - |
+| `authorizationCode` | - |
+| `balanceAmount` | - |
+| `cardBrand` | - |
+| `cardNumber` | - |
+| `clientId` | - |
 | `currency` | - |
 | `cvc` | - |
-| `ec_data` | - |
-| `ecr_data` | - |
-| `emv_data` | - |
-| `exchange_fee` | - |
-| `exchange_rate` | - |
-| `language_code` | - |
-| `merchant_address` | - |
-| `merchant_name` | - |
-| `merchant_number` | - |
-| `message_type` | - |
-| `original_trace_number` | - |
-| `original_transaction_id` | Yes |
+| `ecData` | - |
+| `ecrData` | - |
+| `emvData` | - |
+| `exchangeFee` | - |
+| `exchangeRate` | - |
+| `languageCode` | - |
+| `merchantAddress` | - |
+| `merchantName` | - |
+| `merchantNumber` | - |
+| `messageType` | - |
+| `originalTraceNumber` | - |
+| `originalTransactionId` | Yes |
 | `password` | - |
-| `payment_reason` | - |
-| `receipt_footer` | - |
-| `receipt_header` | - |
-| `receipt_layout` | - |
-| `receipt_number` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `serial_number` | - |
+| `paymentReason` | - |
+| `receiptFooter` | - |
+| `receiptHeader` | - |
+| `receiptLayout` | - |
+| `receiptNumber` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `serialNumber` | - |
 | `svc` | - |
-| `terminal_id` | - |
-| `terminal_location` | - |
-| `trace_number` | - |
-| `transaction_date` | Yes |
-| `transaction_id` | Yes |
-| `tx_type` | - |
-| `user_data` | - |
+| `terminalId` | - |
+| `terminalLocation` | - |
+| `traceNumber` | - |
+| `transactionDate` | Yes |
+| `transactionId` | Yes |
+| `txType` | - |
+| `userData` | - |
 
 ### Operations
 
@@ -1916,10 +1894,10 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```kotlin
 val result = client.refundTransaction(null).create(mutableMapOf<String, Any?>(
-    "client_id" to 1L,  // Long?
+    "clientId" to 1L,  // Long?
     "currency" to "example_currency",  // String?
-    "receipt_number" to "example_receipt_number",  // String?
-    "terminal_id" to 1L  // Long?
+    "receiptNumber" to "example_receiptNumber",  // String?
+    "terminalId" to 1L  // Long?
 ), null)
 ```
 
@@ -1954,14 +1932,14 @@ val registerTecsCompany = client.registerTecsCompany(null)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `corporate_uuid` | `String?` | Yes |  |
-| `package_order_uuid` | `String?` | Yes |  |
-| `partner_id` | `Long?` | No |  |
-| `partner_name` | `String?` | No |  |
-| `product_order_uuid` | `String?` | Yes |  |
-| `response_code` | `Long?` | No |  |
-| `response_message` | `String?` | No |  |
-| `template_name` | `String?` | Yes |  |
+| `corporateUuid` | `String?` | Yes |  |
+| `packageOrderUuid` | `String?` | Yes |  |
+| `partnerId` | `Long?` | No |  |
+| `partnerName` | `String?` | No |  |
+| `productOrderUuid` | `String?` | Yes |  |
+| `responseCode` | `Long?` | No |  |
+| `responseMessage` | `String?` | No |  |
+| `templateName` | `String?` | Yes |  |
 
 ### Operations
 
@@ -1971,10 +1949,10 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```kotlin
 val result = client.registerTecsCompany(null).create(mutableMapOf<String, Any?>(
-    "corporate_uuid" to "example_corporate_uuid",  // String?
-    "package_order_uuid" to "example_package_order_uuid",  // String?
-    "product_order_uuid" to "example_product_order_uuid",  // String?
-    "template_name" to "example_template_name"  // String?
+    "corporateUuid" to "example_corporateUuid",  // String?
+    "packageOrderUuid" to "example_packageOrderUuid",  // String?
+    "productOrderUuid" to "example_productOrderUuid",  // String?
+    "templateName" to "example_templateName"  // String?
 ), null)
 ```
 
@@ -2009,24 +1987,24 @@ val registerTerminal = client.registerTerminal(null)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `additional_data` | `Map<String, Any?>?` | No |  |
-| `corporate_uuid` | `String?` | Yes |  |
-| `package_order_uuid` | `String?` | Yes |  |
-| `product_order_uuid` | `String?` | Yes |  |
-| `response_code` | `Long?` | No |  |
-| `response_message` | `String?` | No |  |
-| `tecs_web_secret_key` | `String?` | No |  |
-| `template_name` | `String?` | Yes |  |
-| `terminal_country_code` | `String?` | Yes |  |
-| `terminal_id` | `Long?` | No |  |
-| `terminal_id_acq` | `String?` | No |  |
-| `terminal_language_code` | `String?` | Yes |  |
-| `terminal_location` | `String?` | Yes |  |
-| `terminal_serial_number` | `String?` | No |  |
-| `token_io_alia` | `String?` | No |  |
-| `token_io_iban` | `String?` | No |  |
-| `token_io_member_id` | `String?` | No |  |
-| `web_shop_url` | `String?` | No |  |
+| `additionalData` | `Map<String, Any?>?` | No |  |
+| `corporateUuid` | `String?` | Yes |  |
+| `packageOrderUuid` | `String?` | Yes |  |
+| `productOrderUuid` | `String?` | Yes |  |
+| `responseCode` | `Long?` | No |  |
+| `responseMessage` | `String?` | No |  |
+| `tecsWebSecretKey` | `String?` | No |  |
+| `templateName` | `String?` | Yes |  |
+| `terminalCountryCode` | `String?` | Yes |  |
+| `terminalId` | `Long?` | No |  |
+| `terminalIdAcq` | `String?` | No |  |
+| `terminalLanguageCode` | `String?` | Yes |  |
+| `terminalLocation` | `String?` | Yes |  |
+| `terminalSerialNumber` | `String?` | No |  |
+| `tokenIOAlias` | `String?` | No |  |
+| `tokenIOIban` | `String?` | No |  |
+| `tokenIOMemberId` | `String?` | No |  |
+| `webShopUrl` | `String?` | No |  |
 
 ### Operations
 
@@ -2036,13 +2014,13 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```kotlin
 val result = client.registerTerminal(null).create(mutableMapOf<String, Any?>(
-    "corporate_uuid" to "example_corporate_uuid",  // String?
-    "package_order_uuid" to "example_package_order_uuid",  // String?
-    "product_order_uuid" to "example_product_order_uuid",  // String?
-    "template_name" to "example_template_name",  // String?
-    "terminal_country_code" to "example_terminal_country_code",  // String?
-    "terminal_language_code" to "example_terminal_language_code",  // String?
-    "terminal_location" to "example_terminal_location"  // String?
+    "corporateUuid" to "example_corporateUuid",  // String?
+    "packageOrderUuid" to "example_packageOrderUuid",  // String?
+    "productOrderUuid" to "example_productOrderUuid",  // String?
+    "templateName" to "example_templateName",  // String?
+    "terminalCountryCode" to "example_terminalCountryCode",  // String?
+    "terminalLanguageCode" to "example_terminalLanguageCode",  // String?
+    "terminalLocation" to "example_terminalLocation"  // String?
 ), null)
 ```
 
@@ -2077,16 +2055,16 @@ val reportData = client.reportData(null)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `card_brand_report_data` | `List<Any?>?` | No |  |
-| `clearing_date_from` | `String?` | Yes |  |
-| `clearing_date_to` | `String?` | Yes |  |
-| `corporate_id` | `String?` | Yes |  |
+| `cardBrandReportData` | `List<Any?>?` | No |  |
+| `clearingDateFrom` | `String?` | Yes |  |
+| `clearingDateTo` | `String?` | Yes |  |
+| `corporateId` | `String?` | Yes |  |
 | `currency` | `String?` | Yes |  |
-| `response_code` | `Long?` | No |  |
-| `response_message` | `String?` | No |  |
-| `sum_over_credit_tx` | `Map<String, Any?>?` | No |  |
-| `sum_over_debit_tx` | `Map<String, Any?>?` | No |  |
-| `terminal_id` | `Long?` | No |  |
+| `responseCode` | `Long?` | No |  |
+| `responseMessage` | `String?` | No |  |
+| `sumOverCreditTx` | `Map<String, Any?>?` | No |  |
+| `sumOverDebitTx` | `Map<String, Any?>?` | No |  |
+| `terminalId` | `Long?` | No |  |
 
 ### Operations
 
@@ -2096,9 +2074,9 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```kotlin
 val result = client.reportData(null).create(mutableMapOf<String, Any?>(
-    "clearing_date_from" to "example_clearing_date_from",  // String?
-    "clearing_date_to" to "example_clearing_date_to",  // String?
-    "corporate_id" to "example_corporate_id",  // String?
+    "clearingDateFrom" to "example_clearingDateFrom",  // String?
+    "clearingDateTo" to "example_clearingDateTo",  // String?
+    "corporateId" to "example_corporateId",  // String?
     "currency" to "example_currency"  // String?
 ), null)
 ```
@@ -2134,56 +2112,56 @@ val statusTransaction = client.statusTransaction(null)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_name` | `String?` | No |  |
-| `acquirer_terminal_id` | `String?` | No |  |
+| `acquirerName` | `String?` | No |  |
+| `acquirerTerminalId` | `String?` | No |  |
 | `amount` | `Long?` | No |  |
-| `application_cryptogram` | `String?` | No |  |
-| `authorization_code` | `Any?` | No |  |
-| `authorization_date` | `String?` | No |  |
-| `card_brand` | `String?` | No |  |
-| `card_entry` | `String?` | No |  |
-| `card_expiration` | `String?` | No |  |
-| `card_number` | `String?` | No |  |
-| `clearing_amount` | `Long?` | No |  |
-| `clearing_batch_id` | `String?` | No |  |
-| `clearing_currency` | `String?` | No |  |
-| `clearing_date` | `String?` | No |  |
-| `clearing_processed_date` | `String?` | No |  |
-| `clearing_status` | `String?` | No |  |
-| `client_id` | `Long?` | No |  |
+| `applicationCryptogram` | `String?` | No |  |
+| `authorizationCode` | `Any?` | No |  |
+| `authorizationDate` | `String?` | No |  |
+| `cardBrand` | `String?` | No |  |
+| `cardEntry` | `String?` | No |  |
+| `cardExpiration` | `String?` | No |  |
+| `cardNumber` | `String?` | No |  |
+| `clearingAmount` | `Long?` | No |  |
+| `clearingBatchId` | `String?` | No |  |
+| `clearingCurrency` | `String?` | No |  |
+| `clearingDate` | `String?` | No |  |
+| `clearingProcessedDate` | `String?` | No |  |
+| `clearingStatus` | `String?` | No |  |
+| `clientId` | `Long?` | No |  |
 | `currency` | `String?` | No |  |
 | `cvm` | `String?` | No |  |
-| `ecr_data` | `String?` | No |  |
-| `emv_application_id` | `String?` | No |  |
-| `emv_application_label` | `String?` | No |  |
-| `merchant_name` | `String?` | No |  |
-| `merchant_number` | `String?` | No |  |
-| `original_client_id` | `String?` | No |  |
-| `original_terminal_id` | `Long?` | No |  |
-| `original_transaction_id` | `String?` | No |  |
-| `payment_reason` | `String?` | No |  |
-| `receipt_number` | `String?` | No |  |
-| `response_code` | `Long?` | No |  |
-| `response_code_from_a` | `String?` | No |  |
-| `response_message` | `String?` | No |  |
-| `retrieval_reference_number` | `String?` | No |  |
-| `service_code` | `String?` | No |  |
-| `settlement_status` | `String?` | No |  |
-| `source_id` | `Long?` | No |  |
-| `tecsengine_response_code` | `Long?` | No |  |
-| `tecsengine_response_text` | `String?` | No |  |
-| `terminal_end_of_day_date` | `String?` | No |  |
-| `terminal_id` | `Long?` | No |  |
-| `terminal_location` | `String?` | No |  |
-| `tip_amount` | `Long?` | No |  |
-| `trace_number` | `Long?` | No |  |
-| `transaction_clearing_date` | `String?` | No |  |
-| `transaction_date` | `String?` | No |  |
-| `transaction_id` | `String?` | No |  |
-| `transaction_seq_number` | `Long?` | No |  |
-| `transaction_server_date` | `String?` | No |  |
-| `transaction_source` | `String?` | No |  |
-| `transaction_type` | `String?` | No |  |
+| `ecrData` | `String?` | No |  |
+| `emvApplicationId` | `String?` | No |  |
+| `emvApplicationLabel` | `String?` | No |  |
+| `merchantName` | `String?` | No |  |
+| `merchantNumber` | `String?` | No |  |
+| `originalClientId` | `String?` | No |  |
+| `originalTerminalId` | `Long?` | No |  |
+| `originalTransactionId` | `String?` | No |  |
+| `paymentReason` | `String?` | No |  |
+| `receiptNumber` | `String?` | No |  |
+| `responseCode` | `Long?` | No |  |
+| `responseCodeFromAS` | `String?` | No |  |
+| `responseMessage` | `String?` | No |  |
+| `retrievalReferenceNumber` | `String?` | No |  |
+| `serviceCode` | `String?` | No |  |
+| `settlementStatus` | `String?` | No |  |
+| `sourceId` | `Long?` | No |  |
+| `tecsengineResponseCode` | `Long?` | No |  |
+| `tecsengineResponseText` | `String?` | No |  |
+| `terminalEndOfDayDate` | `String?` | No |  |
+| `terminalId` | `Long?` | No |  |
+| `terminalLocation` | `String?` | No |  |
+| `tipAmount` | `Long?` | No |  |
+| `traceNumber` | `Long?` | No |  |
+| `transactionClearingDate` | `String?` | No |  |
+| `transactionDate` | `String?` | No |  |
+| `transactionId` | `String?` | No |  |
+| `transactionSeqNumber` | `Long?` | No |  |
+| `transactionServerDate` | `String?` | No |  |
+| `transactionSource` | `String?` | No |  |
+| `transactionType` | `String?` | No |  |
 
 ### Operations
 
@@ -2227,12 +2205,12 @@ val storeTerminalParameter = client.storeTerminalParameter(null)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acq_tab_nexo` | `Map<String, Any?>?` | No |  |
-| `config_version` | `String?` | No |  |
-| `response_code` | `Long?` | No |  |
-| `response_message` | `String?` | No |  |
-| `serial_number` | `String?` | Yes |  |
-| `tid_sent` | `String?` | No |  |
+| `acqTabNexo` | `Map<String, Any?>?` | No |  |
+| `configVersion` | `String?` | No |  |
+| `responseCode` | `Long?` | No |  |
+| `responseMessage` | `String?` | No |  |
+| `serialNumber` | `String?` | Yes |  |
+| `tidSent` | `String?` | No |  |
 
 ### Operations
 
@@ -2242,7 +2220,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```kotlin
 val result = client.storeTerminalParameter(null).create(mutableMapOf<String, Any?>(
-    "serial_number" to "example_serial_number"  // String?
+    "serialNumber" to "example_serialNumber"  // String?
 ), null)
 ```
 
@@ -2277,11 +2255,11 @@ val terminalId = client.terminalId(null)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `device_serial_number` | `List<Any?>?` | Yes |  |
-| `duplicate_terminal_id` | `List<Any?>?` | No |  |
-| `response_code` | `Long?` | No |  |
-| `response_message` | `String?` | No |  |
-| `terminal` | `List<Any?>?` | No |  |
+| `deviceSerialNumber` | `List<Any?>?` | Yes |  |
+| `duplicateTerminalIds` | `List<Any?>?` | No |  |
+| `responseCode` | `Long?` | No |  |
+| `responseMessage` | `String?` | No |  |
+| `terminals` | `List<Any?>?` | No |  |
 
 ### Operations
 
@@ -2291,7 +2269,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```kotlin
 val result = client.terminalId(null).create(mutableMapOf<String, Any?>(
-    "device_serial_number" to listOf<Any?>()  // List<Any?>?
+    "deviceSerialNumber" to listOf<Any?>()  // List<Any?>?
 ), null)
 ```
 
@@ -2326,34 +2304,34 @@ val transactionHistory = client.transactionHistory(null)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `3_d_secure` | `String?` | No |  |
-| `authorization_code` | `String?` | No |  |
-| `card_brand` | `String?` | No |  |
-| `clearing_amount_from` | `String?` | No |  |
-| `clearing_amount_to` | `String?` | No |  |
-| `clearing_currency` | `String?` | No |  |
-| `clearing_status` | `String?` | No |  |
-| `corporate_uuid` | `String?` | No |  |
-| `order_by_transaction_date` | `String?` | No |  |
+| `3DSecure` | `String?` | No |  |
+| `authorizationCode` | `String?` | No |  |
+| `cardBrand` | `String?` | No |  |
+| `clearingAmountFrom` | `String?` | No |  |
+| `clearingAmountTo` | `String?` | No |  |
+| `clearingCurrency` | `String?` | No |  |
+| `clearingStatus` | `String?` | No |  |
+| `corporateUUID` | `String?` | No |  |
+| `orderByTransactionDate` | `String?` | No |  |
 | `pagination` | `Map<String, Any?>?` | No |  |
-| `payment_token_public_id` | `String?` | No |  |
-| `receipt_number` | `String?` | No |  |
-| `referenced_transaction_id` | `String?` | No |  |
-| `response_code` | `Long?` | No |  |
-| `response_message` | `String?` | No |  |
-| `retrieval_reference_number` | `String?` | No |  |
-| `source_id` | `Long?` | No |  |
-| `tecsengine_response_code_from` | `String?` | No |  |
-| `tecsengine_response_code_to` | `String?` | No |  |
-| `terminal_id` | `Long?` | No |  |
-| `trace_number` | `String?` | No |  |
-| `transaction_amount_from` | `String?` | No |  |
-| `transaction_amount_to` | `String?` | No |  |
-| `transaction_date_from` | `String?` | No |  |
-| `transaction_date_to` | `String?` | No |  |
-| `transaction_history` | `List<Any?>?` | No |  |
-| `transaction_id` | `String?` | No |  |
-| `transaction_type` | `String?` | No |  |
+| `paymentTokenPublicId` | `String?` | No |  |
+| `receiptNumber` | `String?` | No |  |
+| `referencedTransactionId` | `String?` | No |  |
+| `responseCode` | `Long?` | No |  |
+| `responseMessage` | `String?` | No |  |
+| `retrievalReferenceNumber` | `String?` | No |  |
+| `sourceId` | `Long?` | No |  |
+| `tecsengineResponseCodeFrom` | `String?` | No |  |
+| `tecsengineResponseCodeTo` | `String?` | No |  |
+| `terminalId` | `Long?` | No |  |
+| `traceNumber` | `String?` | No |  |
+| `transactionAmountFrom` | `String?` | No |  |
+| `transactionAmountTo` | `String?` | No |  |
+| `transactionDateFrom` | `String?` | No |  |
+| `transactionDateTo` | `String?` | No |  |
+| `transactionHistories` | `List<Any?>?` | No |  |
+| `transactionId` | `String?` | No |  |
+| `transactionType` | `String?` | No |  |
 | `wallet` | `String?` | No |  |
 
 ### Operations
@@ -2399,22 +2377,22 @@ val transactionsCount = client.transactionsCount(null)
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `period` | `String?` | No |  |
-| `response_code` | `Long?` | No |  |
-| `response_message` | `String?` | No |  |
-| `transaction_date_from` | `String?` | No |  |
-| `transaction_date_to` | `String?` | No |  |
-| `transactions_count` | `List<Any?>?` | No |  |
+| `responseCode` | `Long?` | No |  |
+| `responseMessage` | `String?` | No |  |
+| `transactionDateFrom` | `String?` | No |  |
+| `transactionDateTo` | `String?` | No |  |
+| `transactionsCount` | `List<Any?>?` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
 | `period` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `transaction_date_from` | Yes |
-| `transaction_date_to` | Yes |
-| `transactions_count` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `transactionDateFrom` | Yes |
+| `transactionDateTo` | Yes |
+| `transactionsCount` | - |
 
 ### Operations
 
@@ -2459,22 +2437,22 @@ val transactionsCountCardBrand = client.transactionsCountCardBrand(null)
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `period` | `String?` | No |  |
-| `response_code` | `Long?` | No |  |
-| `response_message` | `String?` | No |  |
-| `transaction_date_from` | `String?` | No |  |
-| `transaction_date_to` | `String?` | No |  |
-| `transactions_count` | `List<Any?>?` | No |  |
+| `responseCode` | `Long?` | No |  |
+| `responseMessage` | `String?` | No |  |
+| `transactionDateFrom` | `String?` | No |  |
+| `transactionDateTo` | `String?` | No |  |
+| `transactionsCount` | `List<Any?>?` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
 | `period` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `transaction_date_from` | Yes |
-| `transaction_date_to` | Yes |
-| `transactions_count` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `transactionDateFrom` | Yes |
+| `transactionDateTo` | Yes |
+| `transactionsCount` | - |
 
 ### Operations
 
@@ -2519,22 +2497,22 @@ val transactionsTurnover = client.transactionsTurnover(null)
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `period` | `String?` | No |  |
-| `response_code` | `Long?` | No |  |
-| `response_message` | `String?` | No |  |
-| `transaction_date_from` | `String?` | No |  |
-| `transaction_date_to` | `String?` | No |  |
-| `turnover` | `List<Any?>?` | No |  |
+| `responseCode` | `Long?` | No |  |
+| `responseMessage` | `String?` | No |  |
+| `transactionDateFrom` | `String?` | No |  |
+| `transactionDateTo` | `String?` | No |  |
+| `turnovers` | `List<Any?>?` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
 | `period` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `transaction_date_from` | Yes |
-| `transaction_date_to` | Yes |
-| `turnover` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `transactionDateFrom` | Yes |
+| `transactionDateTo` | Yes |
+| `turnovers` | - |
 
 ### Operations
 
@@ -2579,15 +2557,15 @@ val updateMerchant = client.updateMerchant(null)
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `city` | `String?` | No |  |
-| `corporate_uuid` | `String?` | Yes |  |
+| `corporateUuid` | `String?` | Yes |  |
 | `country` | `String?` | No |  |
-| `merchant_category_code` | `String?` | No |  |
+| `merchantCategoryCode` | `String?` | No |  |
 | `name` | `String?` | No |  |
-| `response_code` | `Long?` | No |  |
-| `response_message` | `String?` | No |  |
+| `responseCode` | `Long?` | No |  |
+| `responseMessage` | `String?` | No |  |
 | `state` | `String?` | No |  |
 | `street` | `String?` | No |  |
-| `vu_nummer` | `String?` | No |  |
+| `vuNummer` | `String?` | No |  |
 | `zipcode` | `String?` | No |  |
 
 ### Operations
@@ -2598,7 +2576,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```kotlin
 val result = client.updateMerchant(null).create(mutableMapOf<String, Any?>(
-    "corporate_uuid" to "example_corporate_uuid"  // String?
+    "corporateUuid" to "example_corporateUuid"  // String?
 ), null)
 ```
 
@@ -2633,10 +2611,10 @@ val updateTemplateXml = client.updateTemplateXml(null)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `Long?` | No |  |
-| `response_message` | `String?` | No |  |
-| `template_name` | `String?` | Yes |  |
-| `template_xml` | `String?` | Yes |  |
+| `responseCode` | `Long?` | No |  |
+| `responseMessage` | `String?` | No |  |
+| `templateName` | `String?` | Yes |  |
+| `templateXml` | `String?` | Yes |  |
 
 ### Operations
 
@@ -2646,8 +2624,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```kotlin
 val result = client.updateTemplateXml(null).create(mutableMapOf<String, Any?>(
-    "template_name" to "example_template_name",  // String?
-    "template_xml" to "example_template_xml"  // String?
+    "templateName" to "example_templateName",  // String?
+    "templateXml" to "example_templateXml"  // String?
 ), null)
 ```
 
@@ -2682,8 +2660,8 @@ val version = client.version(null)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `app_name` | `String?` | No |  |
-| `build_date` | `String?` | No |  |
+| `appName` | `String?` | No |  |
+| `buildDate` | `String?` | No |  |
 | `version` | `String?` | No |  |
 
 ### Operations

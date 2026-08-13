@@ -16,429 +16,439 @@
 
 // CancelTransaction is the typed data model for the cancel_transaction entity.
 typedef struct {
-  char*acquirer_id;  // optional
-  char*acquirer_name;  // optional
-  char*actual_bonus_point;  // optional
+  char*acquirerid;  // optional
+  char*acquirername;  // optional
+  char*actualbonuspoints;  // optional
   int64_t amount;  // optional
-  char*authorization_code;  // optional
-  char*balance_amount;  // optional
-  char*card_brand;  // optional
-  char*card_number;  // optional
-  int64_t client_id;
+  char*authorizationcode;  // optional
+  char*balanceamount;  // optional
+  char*cardbrand;  // optional
+  char*cardnumber;  // optional
+  int64_t clientid;
   char*currency;
   char*cvc;  // optional
-  char*ec_data;  // optional
-  char*ecr_data;  // optional
-  char*emv_data;  // optional
-  int64_t exchange_fee;  // optional
-  char*exchange_rate;  // optional
-  char*language_code;  // optional
-  char*merchant_address;  // optional
-  char*merchant_name;  // optional
-  char*merchant_number;  // optional
-  char*message_type;  // optional
-  int64_t original_trace_number;  // optional
-  char*original_transaction_id;  // optional
+  char*ecdata;  // optional
+  char*ecrdata;  // optional
+  char*emvdata;  // optional
+  int64_t exchangefee;  // optional
+  char*exchangerate;  // optional
+  char*languagecode;  // optional
+  char*merchantaddress;  // optional
+  char*merchantname;  // optional
+  char*merchantnumber;  // optional
+  char*messagetype;  // optional
+  int64_t originaltracenumber;  // optional
+  char*originaltransactionid;  // optional
   char*password;  // optional
-  char*payment_reason;  // optional
-  char*receipt_footer;  // optional
-  char*receipt_header;  // optional
-  int64_t receipt_layout;  // optional
-  char*receipt_number;
-  int64_t response_code;  // optional
-  char*response_message;  // optional
-  char*serial_number;  // optional
+  char*paymentreason;  // optional
+  char*receiptfooter;  // optional
+  char*receiptheader;  // optional
+  int64_t receiptlayout;  // optional
+  char*receiptnumber;
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
+  char*serialnumber;  // optional
   char*svc;  // optional
-  int64_t terminal_id;
-  char*terminal_location;  // optional
-  int64_t trace_number;  // optional
-  char*transaction_date;  // optional
-  char*transaction_id;  // optional
-  char*tx_type;  // optional
-  char*user_data;  // optional
+  int64_t terminalid;
+  char*terminallocation;  // optional
+  int64_t tracenumber;  // optional
+  char*transactiondate;  // optional
+  char*transactionid;  // optional
+  char*txtype;  // optional
+  char*userdata;  // optional
 } CancelTransaction;
 
 // CancelTransactionCreateData is the typed request payload for CancelTransaction.create.
 typedef struct {
-  char*acquirer_id;  // optional
-  char*acquirer_name;  // optional
-  char*actual_bonus_point;  // optional
+  char*acquirerid;  // optional
+  char*acquirername;  // optional
+  char*actualbonuspoints;  // optional
   int64_t amount;  // optional
-  char*authorization_code;  // optional
-  char*balance_amount;  // optional
-  char*card_brand;  // optional
-  char*card_number;  // optional
-  int64_t client_id;
+  char*authorizationcode;  // optional
+  char*balanceamount;  // optional
+  char*cardbrand;  // optional
+  char*cardnumber;  // optional
+  int64_t clientid;
   char*currency;
   char*cvc;  // optional
-  char*ec_data;  // optional
-  char*ecr_data;  // optional
-  char*emv_data;  // optional
-  int64_t exchange_fee;  // optional
-  char*exchange_rate;  // optional
-  char*language_code;  // optional
-  char*merchant_address;  // optional
-  char*merchant_name;  // optional
-  char*merchant_number;  // optional
-  char*message_type;  // optional
-  int64_t original_trace_number;  // optional
-  char*original_transaction_id;  // optional
+  char*ecdata;  // optional
+  char*ecrdata;  // optional
+  char*emvdata;  // optional
+  int64_t exchangefee;  // optional
+  char*exchangerate;  // optional
+  char*languagecode;  // optional
+  char*merchantaddress;  // optional
+  char*merchantname;  // optional
+  char*merchantnumber;  // optional
+  char*messagetype;  // optional
+  int64_t originaltracenumber;  // optional
+  char*originaltransactionid;  // optional
   char*password;  // optional
-  char*payment_reason;  // optional
-  char*receipt_footer;  // optional
-  char*receipt_header;  // optional
-  int64_t receipt_layout;  // optional
-  char*receipt_number;
-  int64_t response_code;  // optional
-  char*response_message;  // optional
-  char*serial_number;  // optional
+  char*paymentreason;  // optional
+  char*receiptfooter;  // optional
+  char*receiptheader;  // optional
+  int64_t receiptlayout;  // optional
+  char*receiptnumber;
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
+  char*serialnumber;  // optional
   char*svc;  // optional
-  int64_t terminal_id;
-  char*terminal_location;  // optional
-  int64_t trace_number;  // optional
-  char*transaction_date;  // optional
-  char*transaction_id;  // optional
-  char*tx_type;  // optional
-  char*user_data;  // optional
+  int64_t terminalid;
+  char*terminallocation;  // optional
+  int64_t tracenumber;  // optional
+  char*transactiondate;  // optional
+  char*transactionid;  // optional
+  char*txtype;  // optional
+  char*userdata;  // optional
 } CancelTransactionCreateData;
 
 // CheckCardBlackListed is the typed data model for the check_card_black_listed entity.
 typedef struct {
-  char*card_no;  // optional
-  int64_t response_code;  // optional
-  char*response_message;  // optional
+  char*cardno;  // optional
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
 } CheckCardBlackListed;
 
 // CheckCardBlackListedCreateData is the typed request payload for CheckCardBlackListed.create.
 typedef struct {
-  char*card_no;  // optional
-  int64_t response_code;  // optional
-  char*response_message;  // optional
+  char*cardno;  // optional
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
 } CheckCardBlackListedCreateData;
 
 // CreateProduct is the typed data model for the create_product entity.
 typedef struct {
-  int64_t acquirer_id;  // optional
-  int64_t response_code;  // optional
-  char*response_message;  // optional
-  char*template_name;
-  char*template_type;
-  char*template_xml;
-  char*terminal_type;
+  int64_t acquirerid;  // optional
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
+  char*templatename;
+  char*templatetype;
+  char*templatexml;
+  char*terminaltype;
 } CreateProduct;
 
 // CreateProductCreateData is the typed request payload for CreateProduct.create.
 typedef struct {
-  int64_t acquirer_id;  // optional
-  int64_t response_code;  // optional
-  char*response_message;  // optional
-  char*template_name;
-  char*template_type;
-  char*template_xml;
-  char*terminal_type;
+  int64_t acquirerid;  // optional
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
+  char*templatename;
+  char*templatetype;
+  char*templatexml;
+  char*terminaltype;
 } CreateProductCreateData;
 
 // DeactivateTerminal is the typed data model for the deactivate_terminal entity.
 typedef struct {
-  char*corporate_uuid;  // optional
-  char*deactivation_reason;
-  char*package_order_uuid;  // optional
-  char*product_order_uuid;  // optional
-  int64_t response_code;  // optional
-  char*response_message;  // optional
-  int64_t terminal_id;
+  char*corporateuuid;  // optional
+  char*deactivationreason;
+  char*packageorderuuid;  // optional
+  char*productorderuuid;  // optional
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
+  int64_t terminalid;
 } DeactivateTerminal;
 
 // DeactivateTerminalCreateData is the typed request payload for DeactivateTerminal.create.
 typedef struct {
-  char*corporate_uuid;  // optional
-  char*deactivation_reason;
-  char*package_order_uuid;  // optional
-  char*product_order_uuid;  // optional
-  int64_t response_code;  // optional
-  char*response_message;  // optional
-  int64_t terminal_id;
+  char*corporateuuid;  // optional
+  char*deactivationreason;
+  char*packageorderuuid;  // optional
+  char*productorderuuid;  // optional
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
+  int64_t terminalid;
 } DeactivateTerminalCreateData;
 
 // DigitalServicesApi is the typed data model for the digital_services_api entity.
 typedef struct {
-  char*clearing_date_from;
-  char*clearing_date_to;
-  int64_t response_code;  // optional
-  char*response_message;  // optional
-  int64_t tx_count;  // optional
-  char*tx_id_end;  // optional
-  char*tx_id_start;  // optional
-  int64_t tx_seq_no_end;  // optional
-  int64_t tx_seq_no_start;  // optional
-  int64_t tx_total;  // optional
+  char*clearingdatefrom;
+  char*clearingdateto;
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
+  int64_t txcount;  // optional
+  char*txidend;  // optional
+  char*txidstart;  // optional
+  int64_t txseqnoend;  // optional
+  int64_t txseqnostart;  // optional
+  int64_t txtotal;  // optional
 } DigitalServicesApi;
 
 // DigitalServicesApiLoadMatch is the typed request payload for DigitalServicesApi.load.
 typedef struct {
-  char*clearing_date_from;  // optional
-  char*clearing_date_to;  // optional
-  int64_t response_code;  // optional
-  char*response_message;  // optional
-  int64_t tx_count;  // optional
-  char*tx_id_end;  // optional
-  char*tx_id_start;  // optional
-  int64_t tx_seq_no_end;  // optional
-  int64_t tx_seq_no_start;  // optional
-  int64_t tx_total;  // optional
+  char*clearingdatefrom;  // optional
+  char*clearingdateto;  // optional
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
+  int64_t txcount;  // optional
+  char*txidend;  // optional
+  char*txidstart;  // optional
+  int64_t txseqnoend;  // optional
+  int64_t txseqnostart;  // optional
+  int64_t txtotal;  // optional
 } DigitalServicesApiLoadMatch;
 
 // DigitalServicesApiCreateData is the typed request payload for DigitalServicesApi.create.
 typedef struct {
   char*file_id;  // optional
+  char*clearingdatefrom;
+  char*clearingdateto;
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
+  int64_t txcount;  // optional
+  char*txidend;  // optional
+  char*txidstart;  // optional
+  int64_t txseqnoend;  // optional
+  int64_t txseqnostart;  // optional
+  int64_t txtotal;  // optional
 } DigitalServicesApiCreateData;
 
 // EcDataEcom is the typed data model for the ec_data_ecom entity.
 typedef struct {
-  char*ecom_data;  // optional
-  int64_t response_code;  // optional
-  char*response_message;  // optional
-  int64_t terminal_id;
-  char*transaction_id;
-  char*transaction_type;
+  char*ecomdata;  // optional
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
+  int64_t terminalid;
+  char*transactionid;
+  char*transactiontype;
 } EcDataEcom;
 
 // EcDataEcomCreateData is the typed request payload for EcDataEcom.create.
 typedef struct {
-  char*ecom_data;  // optional
-  int64_t response_code;  // optional
-  char*response_message;  // optional
-  int64_t terminal_id;
-  char*transaction_id;
-  char*transaction_type;
+  char*ecomdata;  // optional
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
+  int64_t terminalid;
+  char*transactionid;
+  char*transactiontype;
 } EcDataEcomCreateData;
 
 // EcomParameter is the typed data model for the ecom_parameter entity.
 typedef struct {
-  char*ecom_pass;  // optional
-  char*ecom_skey;  // optional
-  int64_t response_code;  // optional
-  char*response_message;  // optional
-  int64_t terminal_id;
+  char*ecompass;  // optional
+  char*ecomskey;  // optional
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
+  int64_t terminalid;
 } EcomParameter;
 
 // EcomParameterCreateData is the typed request payload for EcomParameter.create.
 typedef struct {
-  char*ecom_pass;  // optional
-  char*ecom_skey;  // optional
-  int64_t response_code;  // optional
-  char*response_message;  // optional
-  int64_t terminal_id;
+  char*ecompass;  // optional
+  char*ecomskey;  // optional
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
+  int64_t terminalid;
 } EcomParameterCreateData;
 
 // EcrData is the typed data model for the ecr_data entity.
 typedef struct {
-  char*ecr_data;  // optional
-  int64_t response_code;  // optional
-  char*response_message;  // optional
-  int64_t terminal_id;
-  char*transaction_id;
-  char*transaction_type;
+  char*ecrdata;  // optional
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
+  int64_t terminalid;
+  char*transactionid;
+  char*transactiontype;
 } EcrData;
 
 // EcrDataCreateData is the typed request payload for EcrData.create.
 typedef struct {
-  char*ecr_data;  // optional
-  int64_t response_code;  // optional
-  char*response_message;  // optional
-  int64_t terminal_id;
-  char*transaction_id;
-  char*transaction_type;
+  char*ecrdata;  // optional
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
+  int64_t terminalid;
+  char*transactionid;
+  char*transactiontype;
 } EcrDataCreateData;
 
 // EmvData is the typed data model for the emv_data entity.
 typedef struct {
-  char*emv_data;  // optional
-  int64_t response_code;  // optional
-  char*response_message;  // optional
-  int64_t terminal_id;
-  char*transaction_id;
-  char*transaction_type;
+  char*emvdata;  // optional
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
+  int64_t terminalid;
+  char*transactionid;
+  char*transactiontype;
 } EmvData;
 
 // EmvDataCreateData is the typed request payload for EmvData.create.
 typedef struct {
-  char*emv_data;  // optional
-  int64_t response_code;  // optional
-  char*response_message;  // optional
-  int64_t terminal_id;
-  char*transaction_id;
-  char*transaction_type;
+  char*emvdata;  // optional
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
+  int64_t terminalid;
+  char*transactionid;
+  char*transactiontype;
 } EmvDataCreateData;
 
 // EnableAcquiring is the typed data model for the enable_acquiring entity.
 typedef struct {
-  int64_t account_no;  // optional
-  voxgig_value*additional_data;  // optional
-  char*corporate_uuid;
+  int64_t accountno;  // optional
+  voxgig_value*additionaldata;  // optional
+  char*corporateuuid;
   char*currency;
-  int64_t merchant_category_code;
-  char*package_order_uuid;
-  char*product_order_uuid;
-  int64_t response_code;  // optional
-  char*response_message;  // optional
-  int64_t sorting_code;  // optional
-  char*template_name;
-  voxgig_value*terminal_id;  // optional
-  char*terminal_id_acq;  // optional
-  char*vu_nummer;  // optional
+  int64_t merchantcategorycode;
+  char*packageorderuuid;
+  char*productorderuuid;
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
+  int64_t sortingcode;  // optional
+  char*templatename;
+  char*terminalidacq;  // optional
+  voxgig_value*terminalids;  // optional
+  char*vunummer;  // optional
 } EnableAcquiring;
 
 // EnableAcquiringCreateData is the typed request payload for EnableAcquiring.create.
 typedef struct {
-  int64_t account_no;  // optional
-  voxgig_value*additional_data;  // optional
-  char*corporate_uuid;
+  int64_t accountno;  // optional
+  voxgig_value*additionaldata;  // optional
+  char*corporateuuid;
   char*currency;
-  int64_t merchant_category_code;
-  char*package_order_uuid;
-  char*product_order_uuid;
-  int64_t response_code;  // optional
-  char*response_message;  // optional
-  int64_t sorting_code;  // optional
-  char*template_name;
-  voxgig_value*terminal_id;  // optional
-  char*terminal_id_acq;  // optional
-  char*vu_nummer;  // optional
+  int64_t merchantcategorycode;
+  char*packageorderuuid;
+  char*productorderuuid;
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
+  int64_t sortingcode;  // optional
+  char*templatename;
+  char*terminalidacq;  // optional
+  voxgig_value*terminalids;  // optional
+  char*vunummer;  // optional
 } EnableAcquiringCreateData;
 
 // GetMerchantContractNumber is the typed data model for the get_merchant_contract_number entity.
 typedef struct {
-  char*merchant_contract_number;
-  int64_t response_code;  // optional
-  char*response_message;  // optional
+  char*merchantcontractnumber;
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
 } GetMerchantContractNumber;
 
 // GetMerchantContractNumberCreateData is the typed request payload for GetMerchantContractNumber.create.
 typedef struct {
-  char*merchant_contract_number;
-  int64_t response_code;  // optional
-  char*response_message;  // optional
+  char*merchantcontractnumber;
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
 } GetMerchantContractNumberCreateData;
 
 // GetTemplateXml is the typed data model for the get_template_xml entity.
 typedef struct {
-  int64_t response_code;  // optional
-  char*response_message;  // optional
-  char*template_name;
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
+  char*templatename;
 } GetTemplateXml;
 
 // GetTemplateXmlCreateData is the typed request payload for GetTemplateXml.create.
 typedef struct {
-  int64_t response_code;  // optional
-  char*response_message;  // optional
-  char*template_name;
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
+  char*templatename;
 } GetTemplateXmlCreateData;
 
 // IntroduceMandator is the typed data model for the introduce_mandator entity.
 typedef struct {
-  char*mandator_name;
-  int64_t response_code;  // optional
-  char*response_message;  // optional
+  char*mandatorname;
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
 } IntroduceMandator;
 
 // IntroduceMandatorCreateData is the typed request payload for IntroduceMandator.create.
 typedef struct {
-  char*mandator_name;
-  int64_t response_code;  // optional
-  char*response_message;  // optional
+  char*mandatorname;
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
 } IntroduceMandatorCreateData;
 
 // IntroducePackage is the typed data model for the introduce_package entity.
 typedef struct {
-  int64_t response_code;  // optional
-  char*response_message;  // optional
-  char*terminal_template_description;
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
+  char*terminaltemplatedescription;
 } IntroducePackage;
 
 // IntroducePackageCreateData is the typed request payload for IntroducePackage.create.
 typedef struct {
-  int64_t response_code;  // optional
-  char*response_message;  // optional
-  char*terminal_template_description;
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
+  char*terminaltemplatedescription;
 } IntroducePackageCreateData;
 
 // KeepAlive is the typed data model for the keep_alive entity.
 typedef struct {
   char*hwserialno;  // optional
-  char*ka_date_time_from;  // optional
-  char*ka_date_time_to;  // optional
-  voxgig_value*keep_alive_data;  // optional
+  char*kadatetimefrom;  // optional
+  char*kadatetimeto;  // optional
+  voxgig_value*keepalivedata;  // optional
   voxgig_value*pagination;  // optional
-  int64_t response_code;  // optional
-  char*response_message;  // optional
-  char*terminal_date_time_from;  // optional
-  char*terminal_date_time_to;  // optional
-  int64_t terminal_id;  // optional
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
+  char*terminaldatetimefrom;  // optional
+  char*terminaldatetimeto;  // optional
+  int64_t terminalid;  // optional
 } KeepAlive;
 
 // KeepAliveCreateData is the typed request payload for KeepAlive.create.
 typedef struct {
   char*hwserialno;  // optional
-  char*ka_date_time_from;  // optional
-  char*ka_date_time_to;  // optional
-  voxgig_value*keep_alive_data;  // optional
+  char*kadatetimefrom;  // optional
+  char*kadatetimeto;  // optional
+  voxgig_value*keepalivedata;  // optional
   voxgig_value*pagination;  // optional
-  int64_t response_code;  // optional
-  char*response_message;  // optional
-  char*terminal_date_time_from;  // optional
-  char*terminal_date_time_to;  // optional
-  int64_t terminal_id;  // optional
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
+  char*terminaldatetimefrom;  // optional
+  char*terminaldatetimeto;  // optional
+  int64_t terminalid;  // optional
 } KeepAliveCreateData;
 
 // ListTerminal is the typed data model for the list_terminal entity.
 typedef struct {
-  voxgig_value*corporate_uuid;  // optional
+  voxgig_value*corporateuuid;  // optional
   voxgig_value*filter;  // optional
   voxgig_value*pagination;  // optional
-  int64_t response_code;  // optional
-  char*response_message;  // optional
-  voxgig_value*terminal;  // optional
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
+  voxgig_value*terminals;  // optional
 } ListTerminal;
 
 // ListTerminalCreateData is the typed request payload for ListTerminal.create.
 typedef struct {
-  voxgig_value*corporate_uuid;  // optional
+  voxgig_value*corporateuuid;  // optional
   voxgig_value*filter;  // optional
   voxgig_value*pagination;  // optional
-  int64_t response_code;  // optional
-  char*response_message;  // optional
-  voxgig_value*terminal;  // optional
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
+  voxgig_value*terminals;  // optional
 } ListTerminalCreateData;
 
 // MandatorClearingExport is the typed data model for the mandator_clearing_export entity.
 typedef struct {
-  char*clearing_date_from;
-  char*clearing_date_to;
+  char*clearingdatefrom;
+  char*clearingdateto;
   voxgig_value*pagination;  // optional
-  voxgig_value*record;  // optional
-  int64_t response_code;  // optional
-  char*response_message;  // optional
+  voxgig_value*records;  // optional
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
 } MandatorClearingExport;
 
 // MandatorClearingExportCreateData is the typed request payload for MandatorClearingExport.create.
 typedef struct {
-  char*clearing_date_from;
-  char*clearing_date_to;
+  char*clearingdatefrom;
+  char*clearingdateto;
   voxgig_value*pagination;  // optional
-  voxgig_value*record;  // optional
-  int64_t response_code;  // optional
-  char*response_message;  // optional
+  voxgig_value*records;  // optional
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
 } MandatorClearingExportCreateData;
 
 // MandatorClearingExportDownload is the typed data model for the mandator_clearing_export_download entity.
 typedef struct {
-  char*clearing_date_from;
-  char*clearing_date_to;
-  char*file_id;  // optional
-  char*filename_template;  // optional
-  int64_t response_code;  // optional
-  char*response_message;  // optional
+  char*clearingdatefrom;
+  char*clearingdateto;
+  char*fileid;  // optional
+  char*filenametemplate;  // optional
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
   char*status;  // optional
 } MandatorClearingExportDownload;
 
@@ -449,818 +459,810 @@ typedef struct {
 
 // MandatorClearingExportDownloadCreateData is the typed request payload for MandatorClearingExportDownload.create.
 typedef struct {
-  char*clearing_date_from;
-  char*clearing_date_to;
-  char*file_id;  // optional
-  char*filename_template;  // optional
-  int64_t response_code;  // optional
-  char*response_message;  // optional
+  char*clearingdatefrom;
+  char*clearingdateto;
+  char*fileid;  // optional
+  char*filenametemplate;  // optional
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
   char*status;  // optional
 } MandatorClearingExportDownloadCreateData;
 
 // MandatorClearingExportSummary is the typed data model for the mandator_clearing_export_summary entity.
 typedef struct {
-  char*clearing_date_from;
-  char*clearing_date_to;
-  voxgig_value*record;  // optional
-  int64_t response_code;  // optional
-  char*response_message;  // optional
+  char*clearingdatefrom;
+  char*clearingdateto;
+  voxgig_value*records;  // optional
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
 } MandatorClearingExportSummary;
 
 // MandatorClearingExportSummaryCreateData is the typed request payload for MandatorClearingExportSummary.create.
 typedef struct {
-  char*clearing_date_from;
-  char*clearing_date_to;
-  voxgig_value*record;  // optional
-  int64_t response_code;  // optional
-  char*response_message;  // optional
+  char*clearingdatefrom;
+  char*clearingdateto;
+  voxgig_value*records;  // optional
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
 } MandatorClearingExportSummaryCreateData;
 
 // MerchantPortalServicesApi is the typed data model for the merchant_portal_services_api entity.
 typedef struct {
-  char*_3_d_secure;  // optional
-  char*authorization_code;  // optional
-  char*card_brand;  // optional
-  char*clearing_amount_from;  // optional
-  char*clearing_amount_to;  // optional
-  char*clearing_currency;  // optional
-  char*clearing_status;  // optional
-  char*corporate_uuid;  // optional
-  char*order_by_transaction_date;  // optional
+  char*_3dsecure;  // optional
+  char*authorizationcode;  // optional
+  char*cardbrand;  // optional
+  char*clearingamountfrom;  // optional
+  char*clearingamountto;  // optional
+  char*clearingcurrency;  // optional
+  char*clearingstatus;  // optional
+  char*corporateuuid;  // optional
+  char*orderbytransactiondate;  // optional
   voxgig_value*pagination;  // optional
-  char*receipt_number;  // optional
-  char*referenced_transaction_id;  // optional
-  char*retrieval_reference_number;  // optional
-  int64_t source_id;  // optional
-  char*tecsengine_response_code_from;  // optional
-  char*tecsengine_response_code_to;  // optional
-  int64_t terminal_id;  // optional
-  char*trace_number;  // optional
-  char*transaction_amount_from;  // optional
-  char*transaction_amount_to;  // optional
-  char*transaction_date_from;  // optional
-  char*transaction_date_to;  // optional
-  char*transaction_id;  // optional
-  char*transaction_type;  // optional
+  char*receiptnumber;  // optional
+  char*referencedtransactionid;  // optional
+  char*retrievalreferencenumber;  // optional
+  int64_t sourceid;  // optional
+  char*tecsengineresponsecodefrom;  // optional
+  char*tecsengineresponsecodeto;  // optional
+  int64_t terminalid;  // optional
+  char*tracenumber;  // optional
+  char*transactionamountfrom;  // optional
+  char*transactionamountto;  // optional
+  char*transactiondatefrom;  // optional
+  char*transactiondateto;  // optional
+  char*transactionid;  // optional
+  char*transactiontype;  // optional
   char*wallet;  // optional
 } MerchantPortalServicesApi;
 
 // MerchantPortalServicesApiCreateData is the typed request payload for MerchantPortalServicesApi.create.
 typedef struct {
-  char*_3_d_secure;  // optional
-  char*authorization_code;  // optional
-  char*card_brand;  // optional
-  char*clearing_amount_from;  // optional
-  char*clearing_amount_to;  // optional
-  char*clearing_currency;  // optional
-  char*clearing_status;  // optional
-  char*corporate_uuid;  // optional
-  char*order_by_transaction_date;  // optional
+  char*_3dsecure;  // optional
+  char*authorizationcode;  // optional
+  char*cardbrand;  // optional
+  char*clearingamountfrom;  // optional
+  char*clearingamountto;  // optional
+  char*clearingcurrency;  // optional
+  char*clearingstatus;  // optional
+  char*corporateuuid;  // optional
+  char*orderbytransactiondate;  // optional
   voxgig_value*pagination;  // optional
-  char*receipt_number;  // optional
-  char*referenced_transaction_id;  // optional
-  char*retrieval_reference_number;  // optional
-  int64_t source_id;  // optional
-  char*tecsengine_response_code_from;  // optional
-  char*tecsengine_response_code_to;  // optional
-  int64_t terminal_id;  // optional
-  char*trace_number;  // optional
-  char*transaction_amount_from;  // optional
-  char*transaction_amount_to;  // optional
-  char*transaction_date_from;  // optional
-  char*transaction_date_to;  // optional
-  char*transaction_id;  // optional
-  char*transaction_type;  // optional
+  char*receiptnumber;  // optional
+  char*referencedtransactionid;  // optional
+  char*retrievalreferencenumber;  // optional
+  int64_t sourceid;  // optional
+  char*tecsengineresponsecodefrom;  // optional
+  char*tecsengineresponsecodeto;  // optional
+  int64_t terminalid;  // optional
+  char*tracenumber;  // optional
+  char*transactionamountfrom;  // optional
+  char*transactionamountto;  // optional
+  char*transactiondatefrom;  // optional
+  char*transactiondateto;  // optional
+  char*transactionid;  // optional
+  char*transactiontype;  // optional
   char*wallet;  // optional
 } MerchantPortalServicesApiCreateData;
 
 // MoveTid is the typed data model for the move_tid entity.
 typedef struct {
-  voxgig_value*productorderuuid;
-  int64_t response_code;  // optional
-  char*response_message;  // optional
-  char*target_packageorderuuid;  // optional
-  char*target_productorderuuid;  // optional
+  voxgig_value*productorderuuids;
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
+  char*targetpackageorderuuid;  // optional
+  char*targetproductorderuuid;  // optional
 } MoveTid;
 
 // MoveTidCreateData is the typed request payload for MoveTid.create.
 typedef struct {
-  voxgig_value*productorderuuid;
-  int64_t response_code;  // optional
-  char*response_message;  // optional
-  char*target_packageorderuuid;  // optional
-  char*target_productorderuuid;  // optional
+  voxgig_value*productorderuuids;
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
+  char*targetpackageorderuuid;  // optional
+  char*targetproductorderuuid;  // optional
 } MoveTidCreateData;
 
 // PaymentManual is the typed data model for the payment_manual entity.
 typedef struct {
-  char*acquirer_name;  // optional
+  char*acquirername;  // optional
   int64_t amount;
-  char*authorization_number;  // optional
-  char*card_number;
-  char*card_type;  // optional
+  char*authorizationnumber;  // optional
+  char*cardnumber;
+  char*cardtype;  // optional
   char*currency;
   char*cvc;  // optional
-  char*date_time_tx;  // optional
-  char*exp_date;
-  char*merchant_id;  // optional
-  char*original_transaction_id;  // optional
+  char*datetimetx;  // optional
+  char*expdate;
+  char*merchantid;  // optional
+  char*originaltransactionid;  // optional
   char*password;  // optional
-  char*response_code;  // optional
-  char*response_message;  // optional
-  char*terminal_id;  // optional
-  char*transaction_id;  // optional
+  char*responsecode;  // optional
+  char*responsemessage;  // optional
+  char*terminalid;  // optional
+  char*transactionid;  // optional
   char*txtype;
 } PaymentManual;
 
 // PaymentManualCreateData is the typed request payload for PaymentManual.create.
 typedef struct {
-  char*acquirer_name;  // optional
+  char*acquirername;  // optional
   int64_t amount;
-  char*authorization_number;  // optional
-  char*card_number;
-  char*card_type;  // optional
+  char*authorizationnumber;  // optional
+  char*cardnumber;
+  char*cardtype;  // optional
   char*currency;
   char*cvc;  // optional
-  char*date_time_tx;  // optional
-  char*exp_date;
-  char*merchant_id;  // optional
-  char*original_transaction_id;  // optional
+  char*datetimetx;  // optional
+  char*expdate;
+  char*merchantid;  // optional
+  char*originaltransactionid;  // optional
   char*password;  // optional
-  char*response_code;  // optional
-  char*response_message;  // optional
-  char*terminal_id;  // optional
-  char*transaction_id;  // optional
+  char*responsecode;  // optional
+  char*responsemessage;  // optional
+  char*terminalid;  // optional
+  char*transactionid;  // optional
   char*txtype;
 } PaymentManualCreateData;
 
 // PaymentSred is the typed data model for the payment_sred entity.
 typedef struct {
-  char*acquirer_name;  // optional
   int64_t amount;
-  char*authorization_number;  // optional
-  char*card_type;  // optional
   char*currency;
-  char*date_time_tx;  // optional
-  char*device_payload;
-  char*merchant_id;  // optional
-  char*original_transaction_id;  // optional
+  char*device;  // optional
+  char*devicepayload;
+  char*expdate;  // optional
+  char*mode;  // optional
+  char*panmasked;  // optional
   char*password;  // optional
-  char*response_code;  // optional
-  char*response_message;  // optional
-  voxgig_value*sred;  // optional
-  char*terminal_id;  // optional
-  char*transaction_id;  // optional
+  char*serial;  // optional
+  char*servicecode;  // optional
+  char*terminalid;
   char*txtype;
 } PaymentSred;
 
 // PaymentSredCreateData is the typed request payload for PaymentSred.create.
 typedef struct {
-  char*acquirer_name;  // optional
   int64_t amount;
-  char*authorization_number;  // optional
-  char*card_type;  // optional
   char*currency;
-  char*date_time_tx;  // optional
-  char*device_payload;
-  char*merchant_id;  // optional
-  char*original_transaction_id;  // optional
+  char*device;  // optional
+  char*devicepayload;
+  char*expdate;  // optional
+  char*mode;  // optional
+  char*panmasked;  // optional
   char*password;  // optional
-  char*response_code;  // optional
-  char*response_message;  // optional
-  voxgig_value*sred;  // optional
-  char*terminal_id;  // optional
-  char*transaction_id;  // optional
+  char*serial;  // optional
+  char*servicecode;  // optional
+  char*terminalid;
   char*txtype;
 } PaymentSredCreateData;
 
 // PreAuthTransactionCompletion is the typed data model for the pre_auth_transaction_completion entity.
 typedef struct {
-  char*acquirer_id;  // optional
-  char*acquirer_name;  // optional
-  char*actual_bonus_point;  // optional
+  char*acquirerid;  // optional
+  char*acquirername;  // optional
+  char*actualbonuspoints;  // optional
   int64_t amount;  // optional
-  char*authorization_code;  // optional
-  char*balance_amount;  // optional
-  char*card_brand;  // optional
-  char*card_number;  // optional
-  char*card_number_reference;
-  int64_t client_id;
+  char*authorizationcode;  // optional
+  char*balanceamount;  // optional
+  char*cardbrand;  // optional
+  char*cardnumber;  // optional
+  char*cardnumberreference;
+  int64_t clientid;
   char*currency;
   char*cvc;  // optional
-  char*ec_data;  // optional
-  char*ecr_data;  // optional
-  char*emv_data;  // optional
-  int64_t exchange_fee;  // optional
-  char*exchange_rate;  // optional
-  char*language_code;  // optional
-  char*merchant_address;  // optional
-  char*merchant_name;  // optional
-  char*merchant_number;  // optional
-  char*message_type;  // optional
-  int64_t original_trace_number;  // optional
-  char*original_transaction_id;  // optional
+  char*ecdata;  // optional
+  char*ecrdata;  // optional
+  char*emvdata;  // optional
+  int64_t exchangefee;  // optional
+  char*exchangerate;  // optional
+  char*languagecode;  // optional
+  char*merchantaddress;  // optional
+  char*merchantname;  // optional
+  char*merchantnumber;  // optional
+  char*messagetype;  // optional
+  int64_t originaltracenumber;  // optional
+  char*originaltransactionid;  // optional
   char*password;  // optional
-  char*payment_reason;  // optional
-  char*receipt_footer;  // optional
-  char*receipt_header;  // optional
-  int64_t receipt_layout;  // optional
-  char*receipt_number;
-  int64_t response_code;  // optional
-  char*response_message;  // optional
-  char*serial_number;  // optional
+  char*paymentreason;  // optional
+  char*receiptfooter;  // optional
+  char*receiptheader;  // optional
+  int64_t receiptlayout;  // optional
+  char*receiptnumber;
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
+  char*serialnumber;  // optional
   char*svc;  // optional
-  int64_t terminal_id;
-  char*terminal_location;  // optional
-  int64_t trace_number;  // optional
-  char*transaction_date;  // optional
-  char*transaction_id;  // optional
-  char*transaction_type;
-  char*tx_type;  // optional
-  char*user_data;  // optional
+  int64_t terminalid;
+  char*terminallocation;  // optional
+  int64_t tracenumber;  // optional
+  char*transactiondate;  // optional
+  char*transactionid;  // optional
+  char*transactiontype;
+  char*txtype;  // optional
+  char*userdata;  // optional
 } PreAuthTransactionCompletion;
 
 // PreAuthTransactionCompletionCreateData is the typed request payload for PreAuthTransactionCompletion.create.
 typedef struct {
-  char*acquirer_id;  // optional
-  char*acquirer_name;  // optional
-  char*actual_bonus_point;  // optional
+  char*acquirerid;  // optional
+  char*acquirername;  // optional
+  char*actualbonuspoints;  // optional
   int64_t amount;  // optional
-  char*authorization_code;  // optional
-  char*balance_amount;  // optional
-  char*card_brand;  // optional
-  char*card_number;  // optional
-  char*card_number_reference;
-  int64_t client_id;
+  char*authorizationcode;  // optional
+  char*balanceamount;  // optional
+  char*cardbrand;  // optional
+  char*cardnumber;  // optional
+  char*cardnumberreference;
+  int64_t clientid;
   char*currency;
   char*cvc;  // optional
-  char*ec_data;  // optional
-  char*ecr_data;  // optional
-  char*emv_data;  // optional
-  int64_t exchange_fee;  // optional
-  char*exchange_rate;  // optional
-  char*language_code;  // optional
-  char*merchant_address;  // optional
-  char*merchant_name;  // optional
-  char*merchant_number;  // optional
-  char*message_type;  // optional
-  int64_t original_trace_number;  // optional
-  char*original_transaction_id;  // optional
+  char*ecdata;  // optional
+  char*ecrdata;  // optional
+  char*emvdata;  // optional
+  int64_t exchangefee;  // optional
+  char*exchangerate;  // optional
+  char*languagecode;  // optional
+  char*merchantaddress;  // optional
+  char*merchantname;  // optional
+  char*merchantnumber;  // optional
+  char*messagetype;  // optional
+  int64_t originaltracenumber;  // optional
+  char*originaltransactionid;  // optional
   char*password;  // optional
-  char*payment_reason;  // optional
-  char*receipt_footer;  // optional
-  char*receipt_header;  // optional
-  int64_t receipt_layout;  // optional
-  char*receipt_number;
-  int64_t response_code;  // optional
-  char*response_message;  // optional
-  char*serial_number;  // optional
+  char*paymentreason;  // optional
+  char*receiptfooter;  // optional
+  char*receiptheader;  // optional
+  int64_t receiptlayout;  // optional
+  char*receiptnumber;
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
+  char*serialnumber;  // optional
   char*svc;  // optional
-  int64_t terminal_id;
-  char*terminal_location;  // optional
-  int64_t trace_number;  // optional
-  char*transaction_date;  // optional
-  char*transaction_id;  // optional
-  char*transaction_type;
-  char*tx_type;  // optional
-  char*user_data;  // optional
+  int64_t terminalid;
+  char*terminallocation;  // optional
+  int64_t tracenumber;  // optional
+  char*transactiondate;  // optional
+  char*transactionid;  // optional
+  char*transactiontype;
+  char*txtype;  // optional
+  char*userdata;  // optional
 } PreAuthTransactionCompletionCreateData;
 
 // ReactivateTerminal is the typed data model for the reactivate_terminal entity.
 typedef struct {
-  char*corporate_uuid;  // optional
-  char*package_order_uuid;  // optional
-  char*product_order_uuid;  // optional
-  char*reactivation_reason;
-  int64_t response_code;  // optional
-  char*response_message;  // optional
-  int64_t terminal_id;
+  char*corporateuuid;  // optional
+  char*packageorderuuid;  // optional
+  char*productorderuuid;  // optional
+  char*reactivationreason;
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
+  int64_t terminalid;
 } ReactivateTerminal;
 
 // ReactivateTerminalCreateData is the typed request payload for ReactivateTerminal.create.
 typedef struct {
-  char*corporate_uuid;  // optional
-  char*package_order_uuid;  // optional
-  char*product_order_uuid;  // optional
-  char*reactivation_reason;
-  int64_t response_code;  // optional
-  char*response_message;  // optional
-  int64_t terminal_id;
+  char*corporateuuid;  // optional
+  char*packageorderuuid;  // optional
+  char*productorderuuid;  // optional
+  char*reactivationreason;
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
+  int64_t terminalid;
 } ReactivateTerminalCreateData;
 
 // RefundTransaction is the typed data model for the refund_transaction entity.
 typedef struct {
-  char*acquirer_id;  // optional
-  char*acquirer_name;  // optional
-  char*actual_bonus_point;  // optional
+  char*acquirerid;  // optional
+  char*acquirername;  // optional
+  char*actualbonuspoints;  // optional
   int64_t amount;  // optional
-  char*authorization_code;  // optional
-  char*balance_amount;  // optional
-  char*card_brand;  // optional
-  char*card_number;  // optional
-  int64_t client_id;
+  char*authorizationcode;  // optional
+  char*balanceamount;  // optional
+  char*cardbrand;  // optional
+  char*cardnumber;  // optional
+  int64_t clientid;
   char*currency;
   char*cvc;  // optional
-  char*ec_data;  // optional
-  char*ecr_data;  // optional
-  char*emv_data;  // optional
-  int64_t exchange_fee;  // optional
-  char*exchange_rate;  // optional
-  char*language_code;  // optional
-  char*merchant_address;  // optional
-  char*merchant_name;  // optional
-  char*merchant_number;  // optional
-  char*message_type;  // optional
-  int64_t original_trace_number;  // optional
-  char*original_transaction_id;  // optional
+  char*ecdata;  // optional
+  char*ecrdata;  // optional
+  char*emvdata;  // optional
+  int64_t exchangefee;  // optional
+  char*exchangerate;  // optional
+  char*languagecode;  // optional
+  char*merchantaddress;  // optional
+  char*merchantname;  // optional
+  char*merchantnumber;  // optional
+  char*messagetype;  // optional
+  int64_t originaltracenumber;  // optional
+  char*originaltransactionid;  // optional
   char*password;  // optional
-  char*payment_reason;  // optional
-  char*receipt_footer;  // optional
-  char*receipt_header;  // optional
-  int64_t receipt_layout;  // optional
-  char*receipt_number;
-  int64_t response_code;  // optional
-  char*response_message;  // optional
-  char*serial_number;  // optional
+  char*paymentreason;  // optional
+  char*receiptfooter;  // optional
+  char*receiptheader;  // optional
+  int64_t receiptlayout;  // optional
+  char*receiptnumber;
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
+  char*serialnumber;  // optional
   char*svc;  // optional
-  int64_t terminal_id;
-  char*terminal_location;  // optional
-  int64_t trace_number;  // optional
-  char*transaction_date;  // optional
-  char*transaction_id;  // optional
-  char*tx_type;  // optional
-  char*user_data;  // optional
+  int64_t terminalid;
+  char*terminallocation;  // optional
+  int64_t tracenumber;  // optional
+  char*transactiondate;  // optional
+  char*transactionid;  // optional
+  char*txtype;  // optional
+  char*userdata;  // optional
 } RefundTransaction;
 
 // RefundTransactionCreateData is the typed request payload for RefundTransaction.create.
 typedef struct {
-  char*acquirer_id;  // optional
-  char*acquirer_name;  // optional
-  char*actual_bonus_point;  // optional
+  char*acquirerid;  // optional
+  char*acquirername;  // optional
+  char*actualbonuspoints;  // optional
   int64_t amount;  // optional
-  char*authorization_code;  // optional
-  char*balance_amount;  // optional
-  char*card_brand;  // optional
-  char*card_number;  // optional
-  int64_t client_id;
+  char*authorizationcode;  // optional
+  char*balanceamount;  // optional
+  char*cardbrand;  // optional
+  char*cardnumber;  // optional
+  int64_t clientid;
   char*currency;
   char*cvc;  // optional
-  char*ec_data;  // optional
-  char*ecr_data;  // optional
-  char*emv_data;  // optional
-  int64_t exchange_fee;  // optional
-  char*exchange_rate;  // optional
-  char*language_code;  // optional
-  char*merchant_address;  // optional
-  char*merchant_name;  // optional
-  char*merchant_number;  // optional
-  char*message_type;  // optional
-  int64_t original_trace_number;  // optional
-  char*original_transaction_id;  // optional
+  char*ecdata;  // optional
+  char*ecrdata;  // optional
+  char*emvdata;  // optional
+  int64_t exchangefee;  // optional
+  char*exchangerate;  // optional
+  char*languagecode;  // optional
+  char*merchantaddress;  // optional
+  char*merchantname;  // optional
+  char*merchantnumber;  // optional
+  char*messagetype;  // optional
+  int64_t originaltracenumber;  // optional
+  char*originaltransactionid;  // optional
   char*password;  // optional
-  char*payment_reason;  // optional
-  char*receipt_footer;  // optional
-  char*receipt_header;  // optional
-  int64_t receipt_layout;  // optional
-  char*receipt_number;
-  int64_t response_code;  // optional
-  char*response_message;  // optional
-  char*serial_number;  // optional
+  char*paymentreason;  // optional
+  char*receiptfooter;  // optional
+  char*receiptheader;  // optional
+  int64_t receiptlayout;  // optional
+  char*receiptnumber;
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
+  char*serialnumber;  // optional
   char*svc;  // optional
-  int64_t terminal_id;
-  char*terminal_location;  // optional
-  int64_t trace_number;  // optional
-  char*transaction_date;  // optional
-  char*transaction_id;  // optional
-  char*tx_type;  // optional
-  char*user_data;  // optional
+  int64_t terminalid;
+  char*terminallocation;  // optional
+  int64_t tracenumber;  // optional
+  char*transactiondate;  // optional
+  char*transactionid;  // optional
+  char*txtype;  // optional
+  char*userdata;  // optional
 } RefundTransactionCreateData;
 
 // RegisterTecsCompany is the typed data model for the register_tecs_company entity.
 typedef struct {
-  char*corporate_uuid;
-  char*package_order_uuid;
-  int64_t partner_id;  // optional
-  char*partner_name;  // optional
-  char*product_order_uuid;
-  int64_t response_code;  // optional
-  char*response_message;  // optional
-  char*template_name;
+  char*corporateuuid;
+  char*packageorderuuid;
+  int64_t partnerid;  // optional
+  char*partnername;  // optional
+  char*productorderuuid;
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
+  char*templatename;
 } RegisterTecsCompany;
 
 // RegisterTecsCompanyCreateData is the typed request payload for RegisterTecsCompany.create.
 typedef struct {
-  char*corporate_uuid;
-  char*package_order_uuid;
-  int64_t partner_id;  // optional
-  char*partner_name;  // optional
-  char*product_order_uuid;
-  int64_t response_code;  // optional
-  char*response_message;  // optional
-  char*template_name;
+  char*corporateuuid;
+  char*packageorderuuid;
+  int64_t partnerid;  // optional
+  char*partnername;  // optional
+  char*productorderuuid;
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
+  char*templatename;
 } RegisterTecsCompanyCreateData;
 
 // RegisterTerminal is the typed data model for the register_terminal entity.
 typedef struct {
-  voxgig_value*additional_data;  // optional
-  char*corporate_uuid;
-  char*package_order_uuid;
-  char*product_order_uuid;
-  int64_t response_code;  // optional
-  char*response_message;  // optional
-  char*tecs_web_secret_key;  // optional
-  char*template_name;
-  char*terminal_country_code;
-  int64_t terminal_id;  // optional
-  char*terminal_id_acq;  // optional
-  char*terminal_language_code;
-  char*terminal_location;
-  char*terminal_serial_number;  // optional
-  char*token_io_alia;  // optional
-  char*token_io_iban;  // optional
-  char*token_io_member_id;  // optional
-  char*web_shop_url;  // optional
+  voxgig_value*additionaldata;  // optional
+  char*corporateuuid;
+  char*packageorderuuid;
+  char*productorderuuid;
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
+  char*tecswebsecretkey;  // optional
+  char*templatename;
+  char*terminalcountrycode;
+  int64_t terminalid;  // optional
+  char*terminalidacq;  // optional
+  char*terminallanguagecode;
+  char*terminallocation;
+  char*terminalserialnumber;  // optional
+  char*tokenioalias;  // optional
+  char*tokenioiban;  // optional
+  char*tokeniomemberid;  // optional
+  char*webshopurl;  // optional
 } RegisterTerminal;
 
 // RegisterTerminalCreateData is the typed request payload for RegisterTerminal.create.
 typedef struct {
-  voxgig_value*additional_data;  // optional
-  char*corporate_uuid;
-  char*package_order_uuid;
-  char*product_order_uuid;
-  int64_t response_code;  // optional
-  char*response_message;  // optional
-  char*tecs_web_secret_key;  // optional
-  char*template_name;
-  char*terminal_country_code;
-  int64_t terminal_id;  // optional
-  char*terminal_id_acq;  // optional
-  char*terminal_language_code;
-  char*terminal_location;
-  char*terminal_serial_number;  // optional
-  char*token_io_alia;  // optional
-  char*token_io_iban;  // optional
-  char*token_io_member_id;  // optional
-  char*web_shop_url;  // optional
+  voxgig_value*additionaldata;  // optional
+  char*corporateuuid;
+  char*packageorderuuid;
+  char*productorderuuid;
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
+  char*tecswebsecretkey;  // optional
+  char*templatename;
+  char*terminalcountrycode;
+  int64_t terminalid;  // optional
+  char*terminalidacq;  // optional
+  char*terminallanguagecode;
+  char*terminallocation;
+  char*terminalserialnumber;  // optional
+  char*tokenioalias;  // optional
+  char*tokenioiban;  // optional
+  char*tokeniomemberid;  // optional
+  char*webshopurl;  // optional
 } RegisterTerminalCreateData;
 
 // ReportData is the typed data model for the report_data entity.
 typedef struct {
-  voxgig_value*card_brand_report_data;  // optional
-  char*clearing_date_from;
-  char*clearing_date_to;
-  char*corporate_id;
+  voxgig_value*cardbrandreportdata;  // optional
+  char*clearingdatefrom;
+  char*clearingdateto;
+  char*corporateid;
   char*currency;
-  int64_t response_code;  // optional
-  char*response_message;  // optional
-  voxgig_value*sum_over_credit_tx;  // optional
-  voxgig_value*sum_over_debit_tx;  // optional
-  int64_t terminal_id;  // optional
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
+  voxgig_value*sumovercredittx;  // optional
+  voxgig_value*sumoverdebittx;  // optional
+  int64_t terminalid;  // optional
 } ReportData;
 
 // ReportDataCreateData is the typed request payload for ReportData.create.
 typedef struct {
-  voxgig_value*card_brand_report_data;  // optional
-  char*clearing_date_from;
-  char*clearing_date_to;
-  char*corporate_id;
+  voxgig_value*cardbrandreportdata;  // optional
+  char*clearingdatefrom;
+  char*clearingdateto;
+  char*corporateid;
   char*currency;
-  int64_t response_code;  // optional
-  char*response_message;  // optional
-  voxgig_value*sum_over_credit_tx;  // optional
-  voxgig_value*sum_over_debit_tx;  // optional
-  int64_t terminal_id;  // optional
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
+  voxgig_value*sumovercredittx;  // optional
+  voxgig_value*sumoverdebittx;  // optional
+  int64_t terminalid;  // optional
 } ReportDataCreateData;
 
 // StatusTransaction is the typed data model for the status_transaction entity.
 typedef struct {
-  char*acquirer_name;  // optional
-  char*acquirer_terminal_id;  // optional
+  char*acquirername;  // optional
+  char*acquirerterminalid;  // optional
   int64_t amount;  // optional
-  char*application_cryptogram;  // optional
-  voxgig_value*authorization_code;  // optional
-  char*authorization_date;  // optional
-  char*card_brand;  // optional
-  char*card_entry;  // optional
-  char*card_expiration;  // optional
-  char*card_number;  // optional
-  int64_t clearing_amount;  // optional
-  char*clearing_batch_id;  // optional
-  char*clearing_currency;  // optional
-  char*clearing_date;  // optional
-  char*clearing_processed_date;  // optional
-  char*clearing_status;  // optional
-  int64_t client_id;  // optional
+  char*applicationcryptogram;  // optional
+  voxgig_value*authorizationcode;  // optional
+  char*authorizationdate;  // optional
+  char*cardbrand;  // optional
+  char*cardentry;  // optional
+  char*cardexpiration;  // optional
+  char*cardnumber;  // optional
+  int64_t clearingamount;  // optional
+  char*clearingbatchid;  // optional
+  char*clearingcurrency;  // optional
+  char*clearingdate;  // optional
+  char*clearingprocesseddate;  // optional
+  char*clearingstatus;  // optional
+  int64_t clientid;  // optional
   char*currency;  // optional
   char*cvm;  // optional
-  char*ecr_data;  // optional
-  char*emv_application_id;  // optional
-  char*emv_application_label;  // optional
-  char*merchant_name;  // optional
-  char*merchant_number;  // optional
-  char*original_client_id;  // optional
-  int64_t original_terminal_id;  // optional
-  char*original_transaction_id;  // optional
-  char*payment_reason;  // optional
-  char*receipt_number;  // optional
-  int64_t response_code;  // optional
-  char*response_code_from_a;  // optional
-  char*response_message;  // optional
-  char*retrieval_reference_number;  // optional
-  char*service_code;  // optional
-  char*settlement_status;  // optional
-  int64_t source_id;  // optional
-  int64_t tecsengine_response_code;  // optional
-  char*tecsengine_response_text;  // optional
-  char*terminal_end_of_day_date;  // optional
-  int64_t terminal_id;  // optional
-  char*terminal_location;  // optional
-  int64_t tip_amount;  // optional
-  int64_t trace_number;  // optional
-  char*transaction_clearing_date;  // optional
-  char*transaction_date;  // optional
-  char*transaction_id;  // optional
-  int64_t transaction_seq_number;  // optional
-  char*transaction_server_date;  // optional
-  char*transaction_source;  // optional
-  char*transaction_type;  // optional
+  char*ecrdata;  // optional
+  char*emvapplicationid;  // optional
+  char*emvapplicationlabel;  // optional
+  char*merchantname;  // optional
+  char*merchantnumber;  // optional
+  char*originalclientid;  // optional
+  int64_t originalterminalid;  // optional
+  char*originaltransactionid;  // optional
+  char*paymentreason;  // optional
+  char*receiptnumber;  // optional
+  int64_t responsecode;  // optional
+  char*responsecodefromas;  // optional
+  char*responsemessage;  // optional
+  char*retrievalreferencenumber;  // optional
+  char*servicecode;  // optional
+  char*settlementstatus;  // optional
+  int64_t sourceid;  // optional
+  int64_t tecsengineresponsecode;  // optional
+  char*tecsengineresponsetext;  // optional
+  char*terminalendofdaydate;  // optional
+  int64_t terminalid;  // optional
+  char*terminallocation;  // optional
+  int64_t tipamount;  // optional
+  int64_t tracenumber;  // optional
+  char*transactionclearingdate;  // optional
+  char*transactiondate;  // optional
+  char*transactionid;  // optional
+  int64_t transactionseqnumber;  // optional
+  char*transactionserverdate;  // optional
+  char*transactionsource;  // optional
+  char*transactiontype;  // optional
 } StatusTransaction;
 
 // StatusTransactionCreateData is the typed request payload for StatusTransaction.create.
 typedef struct {
-  char*acquirer_name;  // optional
-  char*acquirer_terminal_id;  // optional
+  char*acquirername;  // optional
+  char*acquirerterminalid;  // optional
   int64_t amount;  // optional
-  char*application_cryptogram;  // optional
-  voxgig_value*authorization_code;  // optional
-  char*authorization_date;  // optional
-  char*card_brand;  // optional
-  char*card_entry;  // optional
-  char*card_expiration;  // optional
-  char*card_number;  // optional
-  int64_t clearing_amount;  // optional
-  char*clearing_batch_id;  // optional
-  char*clearing_currency;  // optional
-  char*clearing_date;  // optional
-  char*clearing_processed_date;  // optional
-  char*clearing_status;  // optional
-  int64_t client_id;  // optional
+  char*applicationcryptogram;  // optional
+  voxgig_value*authorizationcode;  // optional
+  char*authorizationdate;  // optional
+  char*cardbrand;  // optional
+  char*cardentry;  // optional
+  char*cardexpiration;  // optional
+  char*cardnumber;  // optional
+  int64_t clearingamount;  // optional
+  char*clearingbatchid;  // optional
+  char*clearingcurrency;  // optional
+  char*clearingdate;  // optional
+  char*clearingprocesseddate;  // optional
+  char*clearingstatus;  // optional
+  int64_t clientid;  // optional
   char*currency;  // optional
   char*cvm;  // optional
-  char*ecr_data;  // optional
-  char*emv_application_id;  // optional
-  char*emv_application_label;  // optional
-  char*merchant_name;  // optional
-  char*merchant_number;  // optional
-  char*original_client_id;  // optional
-  int64_t original_terminal_id;  // optional
-  char*original_transaction_id;  // optional
-  char*payment_reason;  // optional
-  char*receipt_number;  // optional
-  int64_t response_code;  // optional
-  char*response_code_from_a;  // optional
-  char*response_message;  // optional
-  char*retrieval_reference_number;  // optional
-  char*service_code;  // optional
-  char*settlement_status;  // optional
-  int64_t source_id;  // optional
-  int64_t tecsengine_response_code;  // optional
-  char*tecsengine_response_text;  // optional
-  char*terminal_end_of_day_date;  // optional
-  int64_t terminal_id;  // optional
-  char*terminal_location;  // optional
-  int64_t tip_amount;  // optional
-  int64_t trace_number;  // optional
-  char*transaction_clearing_date;  // optional
-  char*transaction_date;  // optional
-  char*transaction_id;  // optional
-  int64_t transaction_seq_number;  // optional
-  char*transaction_server_date;  // optional
-  char*transaction_source;  // optional
-  char*transaction_type;  // optional
+  char*ecrdata;  // optional
+  char*emvapplicationid;  // optional
+  char*emvapplicationlabel;  // optional
+  char*merchantname;  // optional
+  char*merchantnumber;  // optional
+  char*originalclientid;  // optional
+  int64_t originalterminalid;  // optional
+  char*originaltransactionid;  // optional
+  char*paymentreason;  // optional
+  char*receiptnumber;  // optional
+  int64_t responsecode;  // optional
+  char*responsecodefromas;  // optional
+  char*responsemessage;  // optional
+  char*retrievalreferencenumber;  // optional
+  char*servicecode;  // optional
+  char*settlementstatus;  // optional
+  int64_t sourceid;  // optional
+  int64_t tecsengineresponsecode;  // optional
+  char*tecsengineresponsetext;  // optional
+  char*terminalendofdaydate;  // optional
+  int64_t terminalid;  // optional
+  char*terminallocation;  // optional
+  int64_t tipamount;  // optional
+  int64_t tracenumber;  // optional
+  char*transactionclearingdate;  // optional
+  char*transactiondate;  // optional
+  char*transactionid;  // optional
+  int64_t transactionseqnumber;  // optional
+  char*transactionserverdate;  // optional
+  char*transactionsource;  // optional
+  char*transactiontype;  // optional
 } StatusTransactionCreateData;
 
 // StoreTerminalParameter is the typed data model for the store_terminal_parameter entity.
 typedef struct {
-  voxgig_value*acq_tab_nexo;  // optional
-  char*config_version;  // optional
-  int64_t response_code;  // optional
-  char*response_message;  // optional
-  char*serial_number;
-  char*tid_sent;  // optional
+  voxgig_value*acqtabnexo;  // optional
+  char*configversion;  // optional
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
+  char*serialnumber;
+  char*tidsent;  // optional
 } StoreTerminalParameter;
 
 // StoreTerminalParameterCreateData is the typed request payload for StoreTerminalParameter.create.
 typedef struct {
-  voxgig_value*acq_tab_nexo;  // optional
-  char*config_version;  // optional
-  int64_t response_code;  // optional
-  char*response_message;  // optional
-  char*serial_number;
-  char*tid_sent;  // optional
+  voxgig_value*acqtabnexo;  // optional
+  char*configversion;  // optional
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
+  char*serialnumber;
+  char*tidsent;  // optional
 } StoreTerminalParameterCreateData;
 
 // TerminalId is the typed data model for the terminal_id entity.
 typedef struct {
-  voxgig_value*device_serial_number;
-  voxgig_value*duplicate_terminal_id;  // optional
-  int64_t response_code;  // optional
-  char*response_message;  // optional
-  voxgig_value*terminal;  // optional
+  voxgig_value*deviceserialnumber;
+  voxgig_value*duplicateterminalids;  // optional
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
+  voxgig_value*terminals;  // optional
 } TerminalId;
 
 // TerminalIdCreateData is the typed request payload for TerminalId.create.
 typedef struct {
-  voxgig_value*device_serial_number;
-  voxgig_value*duplicate_terminal_id;  // optional
-  int64_t response_code;  // optional
-  char*response_message;  // optional
-  voxgig_value*terminal;  // optional
+  voxgig_value*deviceserialnumber;
+  voxgig_value*duplicateterminalids;  // optional
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
+  voxgig_value*terminals;  // optional
 } TerminalIdCreateData;
 
 // TransactionHistory is the typed data model for the transaction_history entity.
 typedef struct {
-  char*_3_d_secure;  // optional
-  char*authorization_code;  // optional
-  char*card_brand;  // optional
-  char*clearing_amount_from;  // optional
-  char*clearing_amount_to;  // optional
-  char*clearing_currency;  // optional
-  char*clearing_status;  // optional
-  char*corporate_uuid;  // optional
-  char*order_by_transaction_date;  // optional
+  char*_3dsecure;  // optional
+  char*authorizationcode;  // optional
+  char*cardbrand;  // optional
+  char*clearingamountfrom;  // optional
+  char*clearingamountto;  // optional
+  char*clearingcurrency;  // optional
+  char*clearingstatus;  // optional
+  char*corporateuuid;  // optional
+  char*orderbytransactiondate;  // optional
   voxgig_value*pagination;  // optional
-  char*payment_token_public_id;  // optional
-  char*receipt_number;  // optional
-  char*referenced_transaction_id;  // optional
-  int64_t response_code;  // optional
-  char*response_message;  // optional
-  char*retrieval_reference_number;  // optional
-  int64_t source_id;  // optional
-  char*tecsengine_response_code_from;  // optional
-  char*tecsengine_response_code_to;  // optional
-  int64_t terminal_id;  // optional
-  char*trace_number;  // optional
-  char*transaction_amount_from;  // optional
-  char*transaction_amount_to;  // optional
-  char*transaction_date_from;  // optional
-  char*transaction_date_to;  // optional
-  voxgig_value*transaction_history;  // optional
-  char*transaction_id;  // optional
-  char*transaction_type;  // optional
+  char*paymenttokenpublicid;  // optional
+  char*receiptnumber;  // optional
+  char*referencedtransactionid;  // optional
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
+  char*retrievalreferencenumber;  // optional
+  int64_t sourceid;  // optional
+  char*tecsengineresponsecodefrom;  // optional
+  char*tecsengineresponsecodeto;  // optional
+  int64_t terminalid;  // optional
+  char*tracenumber;  // optional
+  char*transactionamountfrom;  // optional
+  char*transactionamountto;  // optional
+  char*transactiondatefrom;  // optional
+  char*transactiondateto;  // optional
+  voxgig_value*transactionhistories;  // optional
+  char*transactionid;  // optional
+  char*transactiontype;  // optional
   char*wallet;  // optional
 } TransactionHistory;
 
 // TransactionHistoryCreateData is the typed request payload for TransactionHistory.create.
 typedef struct {
-  char*_3_d_secure;  // optional
-  char*authorization_code;  // optional
-  char*card_brand;  // optional
-  char*clearing_amount_from;  // optional
-  char*clearing_amount_to;  // optional
-  char*clearing_currency;  // optional
-  char*clearing_status;  // optional
-  char*corporate_uuid;  // optional
-  char*order_by_transaction_date;  // optional
+  char*_3dsecure;  // optional
+  char*authorizationcode;  // optional
+  char*cardbrand;  // optional
+  char*clearingamountfrom;  // optional
+  char*clearingamountto;  // optional
+  char*clearingcurrency;  // optional
+  char*clearingstatus;  // optional
+  char*corporateuuid;  // optional
+  char*orderbytransactiondate;  // optional
   voxgig_value*pagination;  // optional
-  char*payment_token_public_id;  // optional
-  char*receipt_number;  // optional
-  char*referenced_transaction_id;  // optional
-  int64_t response_code;  // optional
-  char*response_message;  // optional
-  char*retrieval_reference_number;  // optional
-  int64_t source_id;  // optional
-  char*tecsengine_response_code_from;  // optional
-  char*tecsengine_response_code_to;  // optional
-  int64_t terminal_id;  // optional
-  char*trace_number;  // optional
-  char*transaction_amount_from;  // optional
-  char*transaction_amount_to;  // optional
-  char*transaction_date_from;  // optional
-  char*transaction_date_to;  // optional
-  voxgig_value*transaction_history;  // optional
-  char*transaction_id;  // optional
-  char*transaction_type;  // optional
+  char*paymenttokenpublicid;  // optional
+  char*receiptnumber;  // optional
+  char*referencedtransactionid;  // optional
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
+  char*retrievalreferencenumber;  // optional
+  int64_t sourceid;  // optional
+  char*tecsengineresponsecodefrom;  // optional
+  char*tecsengineresponsecodeto;  // optional
+  int64_t terminalid;  // optional
+  char*tracenumber;  // optional
+  char*transactionamountfrom;  // optional
+  char*transactionamountto;  // optional
+  char*transactiondatefrom;  // optional
+  char*transactiondateto;  // optional
+  voxgig_value*transactionhistories;  // optional
+  char*transactionid;  // optional
+  char*transactiontype;  // optional
   char*wallet;  // optional
 } TransactionHistoryCreateData;
 
 // TransactionsCount is the typed data model for the transactions_count entity.
 typedef struct {
   char*period;  // optional
-  int64_t response_code;  // optional
-  char*response_message;  // optional
-  char*transaction_date_from;  // optional
-  char*transaction_date_to;  // optional
-  voxgig_value*transactions_count;  // optional
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
+  char*transactiondatefrom;  // optional
+  char*transactiondateto;  // optional
+  voxgig_value*transactionscount;  // optional
 } TransactionsCount;
 
 // TransactionsCountCreateData is the typed request payload for TransactionsCount.create.
 typedef struct {
   char*period;  // optional
-  int64_t response_code;  // optional
-  char*response_message;  // optional
-  char*transaction_date_from;  // optional
-  char*transaction_date_to;  // optional
-  voxgig_value*transactions_count;  // optional
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
+  char*transactiondatefrom;  // optional
+  char*transactiondateto;  // optional
+  voxgig_value*transactionscount;  // optional
 } TransactionsCountCreateData;
 
 // TransactionsCountCardBrand is the typed data model for the transactions_count_card_brand entity.
 typedef struct {
   char*period;  // optional
-  int64_t response_code;  // optional
-  char*response_message;  // optional
-  char*transaction_date_from;  // optional
-  char*transaction_date_to;  // optional
-  voxgig_value*transactions_count;  // optional
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
+  char*transactiondatefrom;  // optional
+  char*transactiondateto;  // optional
+  voxgig_value*transactionscount;  // optional
 } TransactionsCountCardBrand;
 
 // TransactionsCountCardBrandCreateData is the typed request payload for TransactionsCountCardBrand.create.
 typedef struct {
   char*period;  // optional
-  int64_t response_code;  // optional
-  char*response_message;  // optional
-  char*transaction_date_from;  // optional
-  char*transaction_date_to;  // optional
-  voxgig_value*transactions_count;  // optional
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
+  char*transactiondatefrom;  // optional
+  char*transactiondateto;  // optional
+  voxgig_value*transactionscount;  // optional
 } TransactionsCountCardBrandCreateData;
 
 // TransactionsTurnover is the typed data model for the transactions_turnover entity.
 typedef struct {
   char*period;  // optional
-  int64_t response_code;  // optional
-  char*response_message;  // optional
-  char*transaction_date_from;  // optional
-  char*transaction_date_to;  // optional
-  voxgig_value*turnover;  // optional
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
+  char*transactiondatefrom;  // optional
+  char*transactiondateto;  // optional
+  voxgig_value*turnovers;  // optional
 } TransactionsTurnover;
 
 // TransactionsTurnoverCreateData is the typed request payload for TransactionsTurnover.create.
 typedef struct {
   char*period;  // optional
-  int64_t response_code;  // optional
-  char*response_message;  // optional
-  char*transaction_date_from;  // optional
-  char*transaction_date_to;  // optional
-  voxgig_value*turnover;  // optional
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
+  char*transactiondatefrom;  // optional
+  char*transactiondateto;  // optional
+  voxgig_value*turnovers;  // optional
 } TransactionsTurnoverCreateData;
 
 // UpdateMerchant is the typed data model for the update_merchant entity.
 typedef struct {
   char*city;  // optional
-  char*corporate_uuid;
+  char*corporateuuid;
   char*country;  // optional
-  char*merchant_category_code;  // optional
+  char*merchantcategorycode;  // optional
   char*name;  // optional
-  int64_t response_code;  // optional
-  char*response_message;  // optional
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
   char*state;  // optional
   char*street;  // optional
-  char*vu_nummer;  // optional
+  char*vunummer;  // optional
   char*zipcode;  // optional
 } UpdateMerchant;
 
 // UpdateMerchantCreateData is the typed request payload for UpdateMerchant.create.
 typedef struct {
   char*city;  // optional
-  char*corporate_uuid;
+  char*corporateuuid;
   char*country;  // optional
-  char*merchant_category_code;  // optional
+  char*merchantcategorycode;  // optional
   char*name;  // optional
-  int64_t response_code;  // optional
-  char*response_message;  // optional
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
   char*state;  // optional
   char*street;  // optional
-  char*vu_nummer;  // optional
+  char*vunummer;  // optional
   char*zipcode;  // optional
 } UpdateMerchantCreateData;
 
 // UpdateTemplateXml is the typed data model for the update_template_xml entity.
 typedef struct {
-  int64_t response_code;  // optional
-  char*response_message;  // optional
-  char*template_name;
-  char*template_xml;
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
+  char*templatename;
+  char*templatexml;
 } UpdateTemplateXml;
 
 // UpdateTemplateXmlCreateData is the typed request payload for UpdateTemplateXml.create.
 typedef struct {
-  int64_t response_code;  // optional
-  char*response_message;  // optional
-  char*template_name;
-  char*template_xml;
+  int64_t responsecode;  // optional
+  char*responsemessage;  // optional
+  char*templatename;
+  char*templatexml;
 } UpdateTemplateXmlCreateData;
 
 // Version is the typed data model for the version entity.
 typedef struct {
-  char*app_name;  // optional
-  char*build_date;  // optional
+  char*appname;  // optional
+  char*builddate;  // optional
   char*version;  // optional
 } Version;
 
 // VersionLoadMatch is the typed request payload for Version.load.
 typedef struct {
-  char*app_name;  // optional
-  char*build_date;  // optional
+  char*appname;  // optional
+  char*builddate;  // optional
   char*version;  // optional
 } VersionLoadMatch;
 

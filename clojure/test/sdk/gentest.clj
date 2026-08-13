@@ -52,9 +52,11 @@
   (t/run-check rec "gen-smoke-cancel_transaction"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/cancel_transaction sdk nil)]
-             (let [res (e-cancel_transaction/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-cancel_transaction/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-check_card_black_listed"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -62,9 +64,11 @@
   (t/run-check rec "gen-smoke-check_card_black_listed"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/check_card_black_listed sdk nil)]
-             (let [res (e-check_card_black_listed/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-check_card_black_listed/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-create_product"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -72,9 +76,11 @@
   (t/run-check rec "gen-smoke-create_product"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/create_product sdk nil)]
-             (let [res (e-create_product/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-create_product/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-deactivate_terminal"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -82,9 +88,11 @@
   (t/run-check rec "gen-smoke-deactivate_terminal"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/deactivate_terminal sdk nil)]
-             (let [res (e-deactivate_terminal/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-deactivate_terminal/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-digital_services_api"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -92,9 +100,11 @@
   (t/run-check rec "gen-smoke-digital_services_api"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/digital_services_api sdk nil)]
-             (let [res (e-digital_services_api/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-digital_services_api/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-ec_data_ecom"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -102,9 +112,11 @@
   (t/run-check rec "gen-smoke-ec_data_ecom"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/ec_data_ecom sdk nil)]
-             (let [res (e-ec_data_ecom/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-ec_data_ecom/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-ecom_parameter"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -112,9 +124,11 @@
   (t/run-check rec "gen-smoke-ecom_parameter"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/ecom_parameter sdk nil)]
-             (let [res (e-ecom_parameter/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-ecom_parameter/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-ecr_data"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -122,9 +136,11 @@
   (t/run-check rec "gen-smoke-ecr_data"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/ecr_data sdk nil)]
-             (let [res (e-ecr_data/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-ecr_data/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-emv_data"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -132,9 +148,11 @@
   (t/run-check rec "gen-smoke-emv_data"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/emv_data sdk nil)]
-             (let [res (e-emv_data/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-emv_data/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-enable_acquiring"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -142,9 +160,11 @@
   (t/run-check rec "gen-smoke-enable_acquiring"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/enable_acquiring sdk nil)]
-             (let [res (e-enable_acquiring/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-enable_acquiring/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-get_merchant_contract_number"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -152,9 +172,11 @@
   (t/run-check rec "gen-smoke-get_merchant_contract_number"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/get_merchant_contract_number sdk nil)]
-             (let [res (e-get_merchant_contract_number/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-get_merchant_contract_number/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-get_template_xml"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -162,9 +184,11 @@
   (t/run-check rec "gen-smoke-get_template_xml"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/get_template_xml sdk nil)]
-             (let [res (e-get_template_xml/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-get_template_xml/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-introduce_mandator"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -172,9 +196,11 @@
   (t/run-check rec "gen-smoke-introduce_mandator"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/introduce_mandator sdk nil)]
-             (let [res (e-introduce_mandator/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-introduce_mandator/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-introduce_package"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -182,9 +208,11 @@
   (t/run-check rec "gen-smoke-introduce_package"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/introduce_package sdk nil)]
-             (let [res (e-introduce_package/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-introduce_package/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-keep_alive"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -192,9 +220,11 @@
   (t/run-check rec "gen-smoke-keep_alive"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/keep_alive sdk nil)]
-             (let [res (e-keep_alive/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-keep_alive/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-list_terminal"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -202,9 +232,11 @@
   (t/run-check rec "gen-smoke-list_terminal"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/list_terminal sdk nil)]
-             (let [res (e-list_terminal/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-list_terminal/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-mandator_clearing_export"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -212,9 +244,11 @@
   (t/run-check rec "gen-smoke-mandator_clearing_export"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/mandator_clearing_export sdk nil)]
-             (let [res (e-mandator_clearing_export/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-mandator_clearing_export/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-mandator_clearing_export_download"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -222,9 +256,11 @@
   (t/run-check rec "gen-smoke-mandator_clearing_export_download"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/mandator_clearing_export_download sdk nil)]
-             (let [res (e-mandator_clearing_export_download/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-mandator_clearing_export_download/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-mandator_clearing_export_summary"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -232,9 +268,11 @@
   (t/run-check rec "gen-smoke-mandator_clearing_export_summary"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/mandator_clearing_export_summary sdk nil)]
-             (let [res (e-mandator_clearing_export_summary/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-mandator_clearing_export_summary/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-merchant_portal_services_api"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -242,9 +280,11 @@
   (t/run-check rec "gen-smoke-merchant_portal_services_api"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/merchant_portal_services_api sdk nil)]
-             (let [res (e-merchant_portal_services_api/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-merchant_portal_services_api/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-move_tid"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -252,9 +292,11 @@
   (t/run-check rec "gen-smoke-move_tid"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/move_tid sdk nil)]
-             (let [res (e-move_tid/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-move_tid/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-payment_manual"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -262,9 +304,11 @@
   (t/run-check rec "gen-smoke-payment_manual"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/payment_manual sdk nil)]
-             (let [res (e-payment_manual/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-payment_manual/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-payment_sred"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -272,9 +316,11 @@
   (t/run-check rec "gen-smoke-payment_sred"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/payment_sred sdk nil)]
-             (let [res (e-payment_sred/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-payment_sred/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-pre_auth_transaction_completion"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -282,9 +328,11 @@
   (t/run-check rec "gen-smoke-pre_auth_transaction_completion"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/pre_auth_transaction_completion sdk nil)]
-             (let [res (e-pre_auth_transaction_completion/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-pre_auth_transaction_completion/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-reactivate_terminal"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -292,9 +340,11 @@
   (t/run-check rec "gen-smoke-reactivate_terminal"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/reactivate_terminal sdk nil)]
-             (let [res (e-reactivate_terminal/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-reactivate_terminal/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-refund_transaction"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -302,9 +352,11 @@
   (t/run-check rec "gen-smoke-refund_transaction"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/refund_transaction sdk nil)]
-             (let [res (e-refund_transaction/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-refund_transaction/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-register_tecs_company"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -312,9 +364,11 @@
   (t/run-check rec "gen-smoke-register_tecs_company"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/register_tecs_company sdk nil)]
-             (let [res (e-register_tecs_company/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-register_tecs_company/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-register_terminal"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -322,9 +376,11 @@
   (t/run-check rec "gen-smoke-register_terminal"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/register_terminal sdk nil)]
-             (let [res (e-register_terminal/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-register_terminal/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-report_data"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -332,9 +388,11 @@
   (t/run-check rec "gen-smoke-report_data"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/report_data sdk nil)]
-             (let [res (e-report_data/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-report_data/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-status_transaction"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -342,9 +400,11 @@
   (t/run-check rec "gen-smoke-status_transaction"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/status_transaction sdk nil)]
-             (let [res (e-status_transaction/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-status_transaction/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-store_terminal_parameter"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -352,9 +412,11 @@
   (t/run-check rec "gen-smoke-store_terminal_parameter"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/store_terminal_parameter sdk nil)]
-             (let [res (e-store_terminal_parameter/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-store_terminal_parameter/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-terminal_id"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -362,9 +424,11 @@
   (t/run-check rec "gen-smoke-terminal_id"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/terminal_id sdk nil)]
-             (let [res (e-terminal_id/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-terminal_id/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-transaction_history"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -372,9 +436,11 @@
   (t/run-check rec "gen-smoke-transaction_history"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/transaction_history sdk nil)]
-             (let [res (e-transaction_history/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-transaction_history/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-transactions_count"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -382,9 +448,11 @@
   (t/run-check rec "gen-smoke-transactions_count"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/transactions_count sdk nil)]
-             (let [res (e-transactions_count/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-transactions_count/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-transactions_count_card_brand"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -392,9 +460,11 @@
   (t/run-check rec "gen-smoke-transactions_count_card_brand"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/transactions_count_card_brand sdk nil)]
-             (let [res (e-transactions_count_card_brand/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-transactions_count_card_brand/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-transactions_turnover"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -402,9 +472,11 @@
   (t/run-check rec "gen-smoke-transactions_turnover"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/transactions_turnover sdk nil)]
-             (let [res (e-transactions_turnover/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-transactions_turnover/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-update_merchant"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -412,9 +484,11 @@
   (t/run-check rec "gen-smoke-update_merchant"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/update_merchant sdk nil)]
-             (let [res (e-update_merchant/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-update_merchant/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-update_template_xml"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -422,9 +496,11 @@
   (t/run-check rec "gen-smoke-update_template_xml"
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/update_template_xml sdk nil)]
-             (let [res (e-update_template_xml/create ent (vs/jm "name" "smoke") nil)]
-               (t/is-true (vs/ismap res) "create returns a record map")
-               (t/is-true (some? (vs/getprop res "id")) "created record has an id"))
+             (let [res (e-update_template_xml/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
              )))
   (t/run-check rec "gen-exists-version"
     (fn [] (let [sdk (api/test-sdk nil nil)]
@@ -477,9 +553,10 @@
              (t/is-true (vs/ismap result) "direct returns a result map")
              (t/is-true (vs/getprop result "ok") "direct 200 => ok true")
              (t/is-eq (vs/getprop result "status") 200 "direct surfaces the status"))))
-  (letfn [(clj-blocks [text]
-            (let [fence (apply str (repeat 3 (char 96)))
-                  parts (clojure.string/split text (re-pattern fence))]
+  (letfn [(fence-pat [] (re-pattern (apply str (repeat 3 (char 96)))))
+          (fence-count [text] (count (re-seq (fence-pat) text)))
+          (clj-blocks [text]
+            (let [parts (clojure.string/split text (fence-pat))]
               (->> parts
                    (map-indexed vector)
                    (filter (fn [[i _]] (odd? i)))
@@ -497,9 +574,19 @@
         (fn []
           (if-not (.exists (java.io.File. ^String path))
             (t/is-true true (str label " absent (skipped)"))
-            (let [blocks (clj-blocks (slurp path))]
-              (doseq [b blocks]
-                (binding [*read-eval* false]
-                  (read-string (str "[\n" b "\n]"))))
-              (t/is-true true (str label " clojure blocks parse cleanly"))))))))
+            (let [text (slurp path)]
+              ;; A code fence opened but never closed leaves an ODD number of
+              ;; fence markers; the split-on-fence then captures the trailing
+              ;; prose (everything after the last opener) as if it were a
+              ;; clojure block, which can parse cleanly and pass silently. Fail
+              ;; on the malformed doc instead. (Count markers directly rather
+              ;; than split parts: split drops trailing empty segments, so a
+              ;; closing fence at EOF would be miscounted.)
+              (t/is-true (even? (fence-count text))
+                         (str label " code fences balanced (no unclosed fence)"))
+              (let [blocks (clj-blocks text)]
+                (doseq [b blocks]
+                  (binding [*read-eval* false]
+                    (read-string (str "[\n" b "\n]"))))
+                (t/is-true true (str label " clojure blocks parse cleanly")))))))))
   nil)

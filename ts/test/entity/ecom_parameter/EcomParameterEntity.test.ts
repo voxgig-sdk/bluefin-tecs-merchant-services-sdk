@@ -26,8 +26,8 @@ import {
 describe('EcomParameterEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when BLUEFINTECSMERCHANTSERVICES_TEST_LIVE=TRUE.
-  afterEach(liveDelay('BLUEFINTECSMERCHANTSERVICES_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE=TRUE.
+  afterEach(liveDelay('BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = BluefinTecsMerchantServicesSDK.test()
@@ -62,7 +62,7 @@ describe('EcomParameterEntity', async () => {
     const ecom_parameter_ref01_ent = client.EcomParameter()
     let ecom_parameter_ref01_data = setup.data.new.ecom_parameter['ecom_parameter_ref01']
 
-    ecom_parameter_ref01_data = await ecom_parameter_ref01_ent.create(ecom_parameter_ref01_data)
+    ecom_parameter_ref01_data = (await ecom_parameter_ref01_ent.create(ecom_parameter_ref01_data)).data()
     assert(null != ecom_parameter_ref01_data)
 
 

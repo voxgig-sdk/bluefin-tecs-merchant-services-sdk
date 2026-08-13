@@ -251,91 +251,91 @@ fmt.Println(cancelTransaction.GetName()) // "cancel_transaction"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `string` | No |  |
-| `acquirer_name` | `string` | No |  |
-| `actual_bonus_point` | `string` | No |  |
+| `acquirerId` | `string` | No |  |
+| `acquirerName` | `string` | No |  |
+| `actualBonusPoints` | `string` | No |  |
 | `amount` | `int` | No |  |
-| `authorization_code` | `string` | No |  |
-| `balance_amount` | `string` | No |  |
-| `card_brand` | `string` | No |  |
-| `card_number` | `string` | No |  |
-| `client_id` | `int` | Yes |  |
+| `authorizationCode` | `string` | No |  |
+| `balanceAmount` | `string` | No |  |
+| `cardBrand` | `string` | No |  |
+| `cardNumber` | `string` | No |  |
+| `clientId` | `int` | Yes |  |
 | `currency` | `string` | Yes |  |
 | `cvc` | `string` | No |  |
-| `ec_data` | `string` | No |  |
-| `ecr_data` | `string` | No |  |
-| `emv_data` | `string` | No |  |
-| `exchange_fee` | `int` | No |  |
-| `exchange_rate` | `string` | No |  |
-| `language_code` | `string` | No |  |
-| `merchant_address` | `string` | No |  |
-| `merchant_name` | `string` | No |  |
-| `merchant_number` | `string` | No |  |
-| `message_type` | `string` | No |  |
-| `original_trace_number` | `int` | No |  |
-| `original_transaction_id` | `string` | No |  |
+| `ecData` | `string` | No |  |
+| `ecrData` | `string` | No |  |
+| `emvData` | `string` | No |  |
+| `exchangeFee` | `int` | No |  |
+| `exchangeRate` | `string` | No |  |
+| `languageCode` | `string` | No |  |
+| `merchantAddress` | `string` | No |  |
+| `merchantName` | `string` | No |  |
+| `merchantNumber` | `string` | No |  |
+| `messageType` | `string` | No |  |
+| `originalTraceNumber` | `int` | No |  |
+| `originalTransactionId` | `string` | No |  |
 | `password` | `string` | No |  |
-| `payment_reason` | `string` | No |  |
-| `receipt_footer` | `string` | No |  |
-| `receipt_header` | `string` | No |  |
-| `receipt_layout` | `int` | No |  |
-| `receipt_number` | `string` | Yes |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
-| `serial_number` | `string` | No |  |
+| `paymentReason` | `string` | No |  |
+| `receiptFooter` | `string` | No |  |
+| `receiptHeader` | `string` | No |  |
+| `receiptLayout` | `int` | No |  |
+| `receiptNumber` | `string` | Yes |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
+| `serialNumber` | `string` | No |  |
 | `svc` | `string` | No |  |
-| `terminal_id` | `int` | Yes |  |
-| `terminal_location` | `string` | No |  |
-| `trace_number` | `int` | No |  |
-| `transaction_date` | `string` | No |  |
-| `transaction_id` | `string` | No |  |
-| `tx_type` | `string` | No |  |
-| `user_data` | `string` | No |  |
+| `terminalId` | `int` | Yes |  |
+| `terminalLocation` | `string` | No |  |
+| `traceNumber` | `int` | No |  |
+| `transactionDate` | `string` | No |  |
+| `transactionId` | `string` | No |  |
+| `txType` | `string` | No |  |
+| `userData` | `string` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `acquirer_id` | - |
-| `acquirer_name` | - |
-| `actual_bonus_point` | - |
+| `acquirerId` | - |
+| `acquirerName` | - |
+| `actualBonusPoints` | - |
 | `amount` | Yes |
-| `authorization_code` | - |
-| `balance_amount` | - |
-| `card_brand` | - |
-| `card_number` | - |
-| `client_id` | - |
+| `authorizationCode` | - |
+| `balanceAmount` | - |
+| `cardBrand` | - |
+| `cardNumber` | - |
+| `clientId` | - |
 | `currency` | - |
 | `cvc` | - |
-| `ec_data` | - |
-| `ecr_data` | - |
-| `emv_data` | - |
-| `exchange_fee` | - |
-| `exchange_rate` | - |
-| `language_code` | - |
-| `merchant_address` | - |
-| `merchant_name` | - |
-| `merchant_number` | - |
-| `message_type` | Yes |
-| `original_trace_number` | - |
-| `original_transaction_id` | Yes |
+| `ecData` | - |
+| `ecrData` | - |
+| `emvData` | - |
+| `exchangeFee` | - |
+| `exchangeRate` | - |
+| `languageCode` | - |
+| `merchantAddress` | - |
+| `merchantName` | - |
+| `merchantNumber` | - |
+| `messageType` | Yes |
+| `originalTraceNumber` | - |
+| `originalTransactionId` | Yes |
 | `password` | - |
-| `payment_reason` | - |
-| `receipt_footer` | - |
-| `receipt_header` | - |
-| `receipt_layout` | - |
-| `receipt_number` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `serial_number` | - |
+| `paymentReason` | - |
+| `receiptFooter` | - |
+| `receiptHeader` | - |
+| `receiptLayout` | - |
+| `receiptNumber` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `serialNumber` | - |
 | `svc` | - |
-| `terminal_id` | - |
-| `terminal_location` | - |
-| `trace_number` | - |
-| `transaction_date` | Yes |
-| `transaction_id` | Yes |
-| `tx_type` | - |
-| `user_data` | - |
+| `terminalId` | - |
+| `terminalLocation` | - |
+| `traceNumber` | - |
+| `transactionDate` | Yes |
+| `transactionId` | Yes |
+| `txType` | - |
+| `userData` | - |
 
 ### Operations
 
@@ -345,10 +345,10 @@ Create a new entity with the given data.
 
 ```go
 result, err := client.CancelTransaction(nil).Create(map[string]any{
-    "client_id": 1,
+    "clientId": 1,
     "currency": "example_currency",
-    "receipt_number": "example_receipt_number",
-    "terminal_id": 1,
+    "receiptNumber": "example_receiptNumber",
+    "terminalId": 1,
 }, nil)
 if err != nil {
     panic(err)
@@ -391,9 +391,9 @@ fmt.Println(checkCardBlackListed.GetName()) // "check_card_black_listed"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `card_no` | `string` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `cardNo` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -445,13 +445,13 @@ fmt.Println(createProduct.GetName()) // "create_product"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `int` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
-| `template_name` | `string` | Yes |  |
-| `template_type` | `string` | Yes |  |
-| `template_xml` | `string` | Yes |  |
-| `terminal_type` | `string` | Yes |  |
+| `acquirerId` | `int` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
+| `templateName` | `string` | Yes |  |
+| `templateType` | `string` | Yes |  |
+| `templateXml` | `string` | Yes |  |
+| `terminalType` | `string` | Yes |  |
 
 ### Operations
 
@@ -461,10 +461,10 @@ Create a new entity with the given data.
 
 ```go
 result, err := client.CreateProduct(nil).Create(map[string]any{
-    "template_name": "example_template_name",
-    "template_type": "example_template_type",
-    "template_xml": "example_template_xml",
-    "terminal_type": "example_terminal_type",
+    "templateName": "example_templateName",
+    "templateType": "example_templateType",
+    "templateXml": "example_templateXml",
+    "terminalType": "example_terminalType",
 }, nil)
 if err != nil {
     panic(err)
@@ -507,13 +507,13 @@ fmt.Println(deactivateTerminal.GetName()) // "deactivate_terminal"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `corporate_uuid` | `string` | No |  |
-| `deactivation_reason` | `string` | Yes |  |
-| `package_order_uuid` | `string` | No |  |
-| `product_order_uuid` | `string` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
-| `terminal_id` | `int` | Yes |  |
+| `corporateUuid` | `string` | No |  |
+| `deactivationReason` | `string` | Yes |  |
+| `packageOrderUuid` | `string` | No |  |
+| `productOrderUuid` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
+| `terminalId` | `int` | Yes |  |
 
 ### Operations
 
@@ -523,8 +523,8 @@ Create a new entity with the given data.
 
 ```go
 result, err := client.DeactivateTerminal(nil).Create(map[string]any{
-    "deactivation_reason": "example_deactivation_reason",
-    "terminal_id": 1,
+    "deactivationReason": "example_deactivationReason",
+    "terminalId": 1,
 }, nil)
 if err != nil {
     panic(err)
@@ -567,16 +567,16 @@ fmt.Println(digitalServicesApi.GetName()) // "digital_services_api"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearing_date_from` | `string` | Yes |  |
-| `clearing_date_to` | `string` | Yes |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
-| `tx_count` | `int` | No |  |
-| `tx_id_end` | `string` | No |  |
-| `tx_id_start` | `string` | No |  |
-| `tx_seq_no_end` | `int` | No |  |
-| `tx_seq_no_start` | `int` | No |  |
-| `tx_total` | `int` | No |  |
+| `clearingDateFrom` | `string` | Yes |  |
+| `clearingDateTo` | `string` | Yes |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
+| `txCount` | `int` | No |  |
+| `txIdEnd` | `string` | No |  |
+| `txIdStart` | `string` | No |  |
+| `txSeqNoEnd` | `int` | No |  |
+| `txSeqNoStart` | `int` | No |  |
+| `txTotal` | `int` | No |  |
 
 ### Operations
 
@@ -598,6 +598,8 @@ Create a new entity with the given data.
 
 ```go
 result, err := client.DigitalServicesApi(nil).Create(map[string]any{
+    "clearingDateFrom": "example_clearingDateFrom",
+    "clearingDateTo": "example_clearingDateTo",
 }, nil)
 if err != nil {
     panic(err)
@@ -640,12 +642,12 @@ fmt.Println(ecDataEcom.GetName()) // "ec_data_ecom"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ecom_data` | `string` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
-| `terminal_id` | `int` | Yes |  |
-| `transaction_id` | `string` | Yes |  |
-| `transaction_type` | `string` | Yes |  |
+| `ecomData` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
+| `terminalId` | `int` | Yes |  |
+| `transactionId` | `string` | Yes |  |
+| `transactionType` | `string` | Yes |  |
 
 ### Operations
 
@@ -655,9 +657,9 @@ Create a new entity with the given data.
 
 ```go
 result, err := client.EcDataEcom(nil).Create(map[string]any{
-    "terminal_id": 1,
-    "transaction_id": "example_transaction_id",
-    "transaction_type": "example_transaction_type",
+    "terminalId": 1,
+    "transactionId": "example_transactionId",
+    "transactionType": "example_transactionType",
 }, nil)
 if err != nil {
     panic(err)
@@ -700,11 +702,11 @@ fmt.Println(ecomParameter.GetName()) // "ecom_parameter"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ecom_pass` | `string` | No |  |
-| `ecom_skey` | `string` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
-| `terminal_id` | `int` | Yes |  |
+| `ecomPass` | `string` | No |  |
+| `ecomSkey` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
+| `terminalId` | `int` | Yes |  |
 
 ### Operations
 
@@ -714,7 +716,7 @@ Create a new entity with the given data.
 
 ```go
 result, err := client.EcomParameter(nil).Create(map[string]any{
-    "terminal_id": 1,
+    "terminalId": 1,
 }, nil)
 if err != nil {
     panic(err)
@@ -757,12 +759,12 @@ fmt.Println(ecrData.GetName()) // "ecr_data"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ecr_data` | `string` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
-| `terminal_id` | `int` | Yes |  |
-| `transaction_id` | `string` | Yes |  |
-| `transaction_type` | `string` | Yes |  |
+| `ecrData` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
+| `terminalId` | `int` | Yes |  |
+| `transactionId` | `string` | Yes |  |
+| `transactionType` | `string` | Yes |  |
 
 ### Operations
 
@@ -772,9 +774,9 @@ Create a new entity with the given data.
 
 ```go
 result, err := client.EcrData(nil).Create(map[string]any{
-    "terminal_id": 1,
-    "transaction_id": "example_transaction_id",
-    "transaction_type": "example_transaction_type",
+    "terminalId": 1,
+    "transactionId": "example_transactionId",
+    "transactionType": "example_transactionType",
 }, nil)
 if err != nil {
     panic(err)
@@ -817,12 +819,12 @@ fmt.Println(emvData.GetName()) // "emv_data"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `emv_data` | `string` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
-| `terminal_id` | `int` | Yes |  |
-| `transaction_id` | `string` | Yes |  |
-| `transaction_type` | `string` | Yes |  |
+| `emvData` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
+| `terminalId` | `int` | Yes |  |
+| `transactionId` | `string` | Yes |  |
+| `transactionType` | `string` | Yes |  |
 
 ### Operations
 
@@ -832,9 +834,9 @@ Create a new entity with the given data.
 
 ```go
 result, err := client.EmvData(nil).Create(map[string]any{
-    "terminal_id": 1,
-    "transaction_id": "example_transaction_id",
-    "transaction_type": "example_transaction_type",
+    "terminalId": 1,
+    "transactionId": "example_transactionId",
+    "transactionType": "example_transactionType",
 }, nil)
 if err != nil {
     panic(err)
@@ -877,20 +879,20 @@ fmt.Println(enableAcquiring.GetName()) // "enable_acquiring"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `account_no` | `int` | No |  |
-| `additional_data` | `map[string]any` | No |  |
-| `corporate_uuid` | `string` | Yes |  |
+| `accountNo` | `int` | No |  |
+| `additionalData` | `map[string]any` | No |  |
+| `corporateUuid` | `string` | Yes |  |
 | `currency` | `string` | Yes |  |
-| `merchant_category_code` | `int` | Yes |  |
-| `package_order_uuid` | `string` | Yes |  |
-| `product_order_uuid` | `string` | Yes |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
-| `sorting_code` | `int` | No |  |
-| `template_name` | `string` | Yes |  |
-| `terminal_id` | `[]any` | No |  |
-| `terminal_id_acq` | `string` | No |  |
-| `vu_nummer` | `string` | No |  |
+| `merchantCategoryCode` | `int` | Yes |  |
+| `packageOrderUuid` | `string` | Yes |  |
+| `productOrderUuid` | `string` | Yes |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
+| `sortingCode` | `int` | No |  |
+| `templateName` | `string` | Yes |  |
+| `terminalIdAcq` | `string` | No |  |
+| `terminalIds` | `[]any` | No |  |
+| `vuNummer` | `string` | No |  |
 
 ### Operations
 
@@ -900,12 +902,12 @@ Create a new entity with the given data.
 
 ```go
 result, err := client.EnableAcquiring(nil).Create(map[string]any{
-    "corporate_uuid": "example_corporate_uuid",
+    "corporateUuid": "example_corporateUuid",
     "currency": "example_currency",
-    "merchant_category_code": 1,
-    "package_order_uuid": "example_package_order_uuid",
-    "product_order_uuid": "example_product_order_uuid",
-    "template_name": "example_template_name",
+    "merchantCategoryCode": 1,
+    "packageOrderUuid": "example_packageOrderUuid",
+    "productOrderUuid": "example_productOrderUuid",
+    "templateName": "example_templateName",
 }, nil)
 if err != nil {
     panic(err)
@@ -948,9 +950,9 @@ fmt.Println(getMerchantContractNumber.GetName()) // "get_merchant_contract_numbe
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `merchant_contract_number` | `string` | Yes |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `merchantContractNumber` | `string` | Yes |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -960,7 +962,7 @@ Create a new entity with the given data.
 
 ```go
 result, err := client.GetMerchantContractNumber(nil).Create(map[string]any{
-    "merchant_contract_number": "example_merchant_contract_number",
+    "merchantContractNumber": "example_merchantContractNumber",
 }, nil)
 if err != nil {
     panic(err)
@@ -1003,9 +1005,9 @@ fmt.Println(getTemplateXml.GetName()) // "get_template_xml"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
-| `template_name` | `string` | Yes |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
+| `templateName` | `string` | Yes |  |
 
 ### Operations
 
@@ -1015,7 +1017,7 @@ Create a new entity with the given data.
 
 ```go
 result, err := client.GetTemplateXml(nil).Create(map[string]any{
-    "template_name": "example_template_name",
+    "templateName": "example_templateName",
 }, nil)
 if err != nil {
     panic(err)
@@ -1058,9 +1060,9 @@ fmt.Println(introduceMandator.GetName()) // "introduce_mandator"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `mandator_name` | `string` | Yes |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `mandatorName` | `string` | Yes |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -1070,7 +1072,7 @@ Create a new entity with the given data.
 
 ```go
 result, err := client.IntroduceMandator(nil).Create(map[string]any{
-    "mandator_name": "example_mandator_name",
+    "mandatorName": "example_mandatorName",
 }, nil)
 if err != nil {
     panic(err)
@@ -1113,9 +1115,9 @@ fmt.Println(introducePackage.GetName()) // "introduce_package"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
-| `terminal_template_description` | `string` | Yes |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
+| `terminalTemplateDescription` | `string` | Yes |  |
 
 ### Operations
 
@@ -1125,7 +1127,7 @@ Create a new entity with the given data.
 
 ```go
 result, err := client.IntroducePackage(nil).Create(map[string]any{
-    "terminal_template_description": "example_terminal_template_description",
+    "terminalTemplateDescription": "example_terminalTemplateDescription",
 }, nil)
 if err != nil {
     panic(err)
@@ -1169,15 +1171,15 @@ fmt.Println(keepAlive.GetName()) // "keep_alive"
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `hwserialno` | `string` | No |  |
-| `ka_date_time_from` | `string` | No |  |
-| `ka_date_time_to` | `string` | No |  |
-| `keep_alive_data` | `[]any` | No |  |
+| `kaDateTimeFrom` | `string` | No |  |
+| `kaDateTimeTo` | `string` | No |  |
+| `keepAliveData` | `[]any` | No |  |
 | `pagination` | `map[string]any` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
-| `terminal_date_time_from` | `string` | No |  |
-| `terminal_date_time_to` | `string` | No |  |
-| `terminal_id` | `int` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
+| `terminalDateTimeFrom` | `string` | No |  |
+| `terminalDateTimeTo` | `string` | No |  |
+| `terminalId` | `int` | No |  |
 
 ### Operations
 
@@ -1229,12 +1231,12 @@ fmt.Println(listTerminal.GetName()) // "list_terminal"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `corporate_uuid` | `[]any` | No |  |
+| `corporateUuid` | `[]any` | No |  |
 | `filter` | `map[string]any` | No |  |
 | `pagination` | `map[string]any` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
-| `terminal` | `[]any` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
+| `terminals` | `[]any` | No |  |
 
 ### Operations
 
@@ -1286,12 +1288,12 @@ fmt.Println(mandatorClearingExport.GetName()) // "mandator_clearing_export"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearing_date_from` | `string` | Yes |  |
-| `clearing_date_to` | `string` | Yes |  |
+| `clearingDateFrom` | `string` | Yes |  |
+| `clearingDateTo` | `string` | Yes |  |
 | `pagination` | `map[string]any` | No |  |
-| `record` | `[]any` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `records` | `[]any` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -1301,8 +1303,8 @@ Create a new entity with the given data.
 
 ```go
 result, err := client.MandatorClearingExport(nil).Create(map[string]any{
-    "clearing_date_from": "example_clearing_date_from",
-    "clearing_date_to": "example_clearing_date_to",
+    "clearingDateFrom": "example_clearingDateFrom",
+    "clearingDateTo": "example_clearingDateTo",
 }, nil)
 if err != nil {
     panic(err)
@@ -1345,12 +1347,12 @@ fmt.Println(mandatorClearingExportDownload.GetName()) // "mandator_clearing_expo
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearing_date_from` | `string` | Yes |  |
-| `clearing_date_to` | `string` | Yes |  |
-| `file_id` | `string` | No |  |
-| `filename_template` | `string` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `clearingDateFrom` | `string` | Yes |  |
+| `clearingDateTo` | `string` | Yes |  |
+| `fileId` | `string` | No |  |
+| `filenameTemplate` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 | `status` | `string` | No |  |
 
 ### Operations
@@ -1373,8 +1375,8 @@ Create a new entity with the given data.
 
 ```go
 result, err := client.MandatorClearingExportDownload(nil).Create(map[string]any{
-    "clearing_date_from": "example_clearing_date_from",
-    "clearing_date_to": "example_clearing_date_to",
+    "clearingDateFrom": "example_clearingDateFrom",
+    "clearingDateTo": "example_clearingDateTo",
 }, nil)
 if err != nil {
     panic(err)
@@ -1417,11 +1419,11 @@ fmt.Println(mandatorClearingExportSummary.GetName()) // "mandator_clearing_expor
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearing_date_from` | `string` | Yes |  |
-| `clearing_date_to` | `string` | Yes |  |
-| `record` | `[]any` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `clearingDateFrom` | `string` | Yes |  |
+| `clearingDateTo` | `string` | Yes |  |
+| `records` | `[]any` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -1431,8 +1433,8 @@ Create a new entity with the given data.
 
 ```go
 result, err := client.MandatorClearingExportSummary(nil).Create(map[string]any{
-    "clearing_date_from": "example_clearing_date_from",
-    "clearing_date_to": "example_clearing_date_to",
+    "clearingDateFrom": "example_clearingDateFrom",
+    "clearingDateTo": "example_clearingDateTo",
 }, nil)
 if err != nil {
     panic(err)
@@ -1475,30 +1477,30 @@ fmt.Println(merchantPortalServicesApi.GetName()) // "merchant_portal_services_ap
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `3_d_secure` | `string` | No |  |
-| `authorization_code` | `string` | No |  |
-| `card_brand` | `string` | No |  |
-| `clearing_amount_from` | `string` | No |  |
-| `clearing_amount_to` | `string` | No |  |
-| `clearing_currency` | `string` | No |  |
-| `clearing_status` | `string` | No |  |
-| `corporate_uuid` | `string` | No |  |
-| `order_by_transaction_date` | `string` | No |  |
+| `3DSecure` | `string` | No |  |
+| `authorizationCode` | `string` | No |  |
+| `cardBrand` | `string` | No |  |
+| `clearingAmountFrom` | `string` | No |  |
+| `clearingAmountTo` | `string` | No |  |
+| `clearingCurrency` | `string` | No |  |
+| `clearingStatus` | `string` | No |  |
+| `corporateUUID` | `string` | No |  |
+| `orderByTransactionDate` | `string` | No |  |
 | `pagination` | `map[string]any` | No |  |
-| `receipt_number` | `string` | No |  |
-| `referenced_transaction_id` | `string` | No |  |
-| `retrieval_reference_number` | `string` | No |  |
-| `source_id` | `int` | No |  |
-| `tecsengine_response_code_from` | `string` | No |  |
-| `tecsengine_response_code_to` | `string` | No |  |
-| `terminal_id` | `int` | No |  |
-| `trace_number` | `string` | No |  |
-| `transaction_amount_from` | `string` | No |  |
-| `transaction_amount_to` | `string` | No |  |
-| `transaction_date_from` | `string` | No |  |
-| `transaction_date_to` | `string` | No |  |
-| `transaction_id` | `string` | No |  |
-| `transaction_type` | `string` | No |  |
+| `receiptNumber` | `string` | No |  |
+| `referencedTransactionId` | `string` | No |  |
+| `retrievalReferenceNumber` | `string` | No |  |
+| `sourceId` | `int` | No |  |
+| `tecsengineResponseCodeFrom` | `string` | No |  |
+| `tecsengineResponseCodeTo` | `string` | No |  |
+| `terminalId` | `int` | No |  |
+| `traceNumber` | `string` | No |  |
+| `transactionAmountFrom` | `string` | No |  |
+| `transactionAmountTo` | `string` | No |  |
+| `transactionDateFrom` | `string` | No |  |
+| `transactionDateTo` | `string` | No |  |
+| `transactionId` | `string` | No |  |
+| `transactionType` | `string` | No |  |
 | `wallet` | `string` | No |  |
 
 ### Operations
@@ -1551,11 +1553,11 @@ fmt.Println(moveTid.GetName()) // "move_tid"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `productorderuuid` | `[]any` | Yes |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
-| `target_packageorderuuid` | `string` | No |  |
-| `target_productorderuuid` | `string` | No |  |
+| `productorderuuids` | `[]any` | Yes |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
+| `targetPackageorderuuid` | `string` | No |  |
+| `targetProductorderuuid` | `string` | No |  |
 
 ### Operations
 
@@ -1565,7 +1567,7 @@ Create a new entity with the given data.
 
 ```go
 result, err := client.MoveTid(nil).Create(map[string]any{
-    "productorderuuid": []any{},
+    "productorderuuids": []any{},
 }, nil)
 if err != nil {
     panic(err)
@@ -1608,44 +1610,44 @@ fmt.Println(paymentManual.GetName()) // "payment_manual"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_name` | `string` | No |  |
+| `acquirerName` | `string` | No |  |
 | `amount` | `int` | Yes |  |
-| `authorization_number` | `string` | No |  |
-| `card_number` | `string` | Yes |  |
-| `card_type` | `string` | No |  |
+| `authorizationNumber` | `string` | No |  |
+| `cardNumber` | `string` | Yes |  |
+| `cardType` | `string` | No |  |
 | `currency` | `string` | Yes |  |
 | `cvc` | `string` | No |  |
-| `date_time_tx` | `string` | No |  |
-| `exp_date` | `string` | Yes |  |
-| `merchant_id` | `string` | No |  |
-| `original_transaction_id` | `string` | No |  |
+| `dateTimeTx` | `string` | No |  |
+| `expDate` | `string` | Yes |  |
+| `merchantId` | `string` | No |  |
+| `originalTransactionId` | `string` | No |  |
 | `password` | `string` | No |  |
-| `response_code` | `string` | No |  |
-| `response_message` | `string` | No |  |
-| `terminal_id` | `string` | No |  |
-| `transaction_id` | `string` | No |  |
+| `responseCode` | `string` | No |  |
+| `responseMessage` | `string` | No |  |
+| `terminalId` | `string` | No |  |
+| `transactionId` | `string` | No |  |
 | `txtype` | `string` | Yes |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `acquirer_name` | - |
+| `acquirerName` | - |
 | `amount` | - |
-| `authorization_number` | - |
-| `card_number` | - |
-| `card_type` | - |
+| `authorizationNumber` | - |
+| `cardNumber` | - |
+| `cardType` | - |
 | `currency` | - |
 | `cvc` | - |
-| `date_time_tx` | - |
-| `exp_date` | - |
-| `merchant_id` | - |
-| `original_transaction_id` | - |
+| `dateTimeTx` | - |
+| `expDate` | - |
+| `merchantId` | - |
+| `originalTransactionId` | - |
 | `password` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `terminal_id` | Yes |
-| `transaction_id` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `terminalId` | Yes |
+| `transactionId` | - |
 | `txtype` | - |
 
 ### Operations
@@ -1657,9 +1659,9 @@ Create a new entity with the given data.
 ```go
 result, err := client.PaymentManual(nil).Create(map[string]any{
     "amount": 1,
-    "card_number": "example_card_number",
+    "cardNumber": "example_cardNumber",
     "currency": "example_currency",
-    "exp_date": "example_exp_date",
+    "expDate": "example_expDate",
     "txtype": "example_txtype",
 }, nil)
 if err != nil {
@@ -1703,43 +1705,18 @@ fmt.Println(paymentSred.GetName()) // "payment_sred"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_name` | `string` | No |  |
 | `amount` | `int` | Yes |  |
-| `authorization_number` | `string` | No |  |
-| `card_type` | `string` | No |  |
 | `currency` | `string` | Yes |  |
-| `date_time_tx` | `string` | No |  |
-| `device_payload` | `string` | Yes |  |
-| `merchant_id` | `string` | No |  |
-| `original_transaction_id` | `string` | No |  |
+| `device` | `string` | No |  |
+| `devicePayload` | `string` | Yes |  |
+| `expDate` | `string` | No |  |
+| `mode` | `string` | No |  |
+| `panMasked` | `string` | No |  |
 | `password` | `string` | No |  |
-| `response_code` | `string` | No |  |
-| `response_message` | `string` | No |  |
-| `sred` | `map[string]any` | No |  |
-| `terminal_id` | `string` | No |  |
-| `transaction_id` | `string` | No |  |
+| `serial` | `string` | No |  |
+| `serviceCode` | `string` | No |  |
+| `terminalId` | `string` | Yes |  |
 | `txtype` | `string` | Yes |  |
-
-### Field Usage by Operation
-
-| Field | create |
-| --- | --- |
-| `acquirer_name` | - |
-| `amount` | - |
-| `authorization_number` | - |
-| `card_type` | - |
-| `currency` | - |
-| `date_time_tx` | - |
-| `device_payload` | - |
-| `merchant_id` | - |
-| `original_transaction_id` | - |
-| `password` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `sred` | - |
-| `terminal_id` | Yes |
-| `transaction_id` | - |
-| `txtype` | - |
 
 ### Operations
 
@@ -1751,7 +1728,8 @@ Create a new entity with the given data.
 result, err := client.PaymentSred(nil).Create(map[string]any{
     "amount": 1,
     "currency": "example_currency",
-    "device_payload": "example_device_payload",
+    "devicePayload": "example_devicePayload",
+    "terminalId": "example_terminalId",
     "txtype": "example_txtype",
 }, nil)
 if err != nil {
@@ -1795,95 +1773,95 @@ fmt.Println(preAuthTransactionCompletion.GetName()) // "pre_auth_transaction_com
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `string` | No |  |
-| `acquirer_name` | `string` | No |  |
-| `actual_bonus_point` | `string` | No |  |
+| `acquirerId` | `string` | No |  |
+| `acquirerName` | `string` | No |  |
+| `actualBonusPoints` | `string` | No |  |
 | `amount` | `int` | No |  |
-| `authorization_code` | `string` | No |  |
-| `balance_amount` | `string` | No |  |
-| `card_brand` | `string` | No |  |
-| `card_number` | `string` | No |  |
-| `card_number_reference` | `string` | Yes |  |
-| `client_id` | `int` | Yes |  |
+| `authorizationCode` | `string` | No |  |
+| `balanceAmount` | `string` | No |  |
+| `cardBrand` | `string` | No |  |
+| `cardNumber` | `string` | No |  |
+| `cardNumberReference` | `string` | Yes |  |
+| `clientId` | `int` | Yes |  |
 | `currency` | `string` | Yes |  |
 | `cvc` | `string` | No |  |
-| `ec_data` | `string` | No |  |
-| `ecr_data` | `string` | No |  |
-| `emv_data` | `string` | No |  |
-| `exchange_fee` | `int` | No |  |
-| `exchange_rate` | `string` | No |  |
-| `language_code` | `string` | No |  |
-| `merchant_address` | `string` | No |  |
-| `merchant_name` | `string` | No |  |
-| `merchant_number` | `string` | No |  |
-| `message_type` | `string` | No |  |
-| `original_trace_number` | `int` | No |  |
-| `original_transaction_id` | `string` | No |  |
+| `ecData` | `string` | No |  |
+| `ecrData` | `string` | No |  |
+| `emvData` | `string` | No |  |
+| `exchangeFee` | `int` | No |  |
+| `exchangeRate` | `string` | No |  |
+| `languageCode` | `string` | No |  |
+| `merchantAddress` | `string` | No |  |
+| `merchantName` | `string` | No |  |
+| `merchantNumber` | `string` | No |  |
+| `messageType` | `string` | No |  |
+| `originalTraceNumber` | `int` | No |  |
+| `originalTransactionId` | `string` | No |  |
 | `password` | `string` | No |  |
-| `payment_reason` | `string` | No |  |
-| `receipt_footer` | `string` | No |  |
-| `receipt_header` | `string` | No |  |
-| `receipt_layout` | `int` | No |  |
-| `receipt_number` | `string` | Yes |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
-| `serial_number` | `string` | No |  |
+| `paymentReason` | `string` | No |  |
+| `receiptFooter` | `string` | No |  |
+| `receiptHeader` | `string` | No |  |
+| `receiptLayout` | `int` | No |  |
+| `receiptNumber` | `string` | Yes |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
+| `serialNumber` | `string` | No |  |
 | `svc` | `string` | No |  |
-| `terminal_id` | `int` | Yes |  |
-| `terminal_location` | `string` | No |  |
-| `trace_number` | `int` | No |  |
-| `transaction_date` | `string` | No |  |
-| `transaction_id` | `string` | No |  |
-| `transaction_type` | `string` | Yes |  |
-| `tx_type` | `string` | No |  |
-| `user_data` | `string` | No |  |
+| `terminalId` | `int` | Yes |  |
+| `terminalLocation` | `string` | No |  |
+| `traceNumber` | `int` | No |  |
+| `transactionDate` | `string` | No |  |
+| `transactionId` | `string` | No |  |
+| `transactionType` | `string` | Yes |  |
+| `txType` | `string` | No |  |
+| `userData` | `string` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `acquirer_id` | - |
-| `acquirer_name` | - |
-| `actual_bonus_point` | - |
+| `acquirerId` | - |
+| `acquirerName` | - |
+| `actualBonusPoints` | - |
 | `amount` | Yes |
-| `authorization_code` | - |
-| `balance_amount` | - |
-| `card_brand` | - |
-| `card_number` | - |
-| `card_number_reference` | - |
-| `client_id` | - |
+| `authorizationCode` | - |
+| `balanceAmount` | - |
+| `cardBrand` | - |
+| `cardNumber` | - |
+| `cardNumberReference` | - |
+| `clientId` | - |
 | `currency` | - |
 | `cvc` | - |
-| `ec_data` | - |
-| `ecr_data` | - |
-| `emv_data` | - |
-| `exchange_fee` | - |
-| `exchange_rate` | - |
-| `language_code` | - |
-| `merchant_address` | - |
-| `merchant_name` | - |
-| `merchant_number` | - |
-| `message_type` | - |
-| `original_trace_number` | - |
-| `original_transaction_id` | Yes |
+| `ecData` | - |
+| `ecrData` | - |
+| `emvData` | - |
+| `exchangeFee` | - |
+| `exchangeRate` | - |
+| `languageCode` | - |
+| `merchantAddress` | - |
+| `merchantName` | - |
+| `merchantNumber` | - |
+| `messageType` | - |
+| `originalTraceNumber` | - |
+| `originalTransactionId` | Yes |
 | `password` | - |
-| `payment_reason` | - |
-| `receipt_footer` | - |
-| `receipt_header` | - |
-| `receipt_layout` | - |
-| `receipt_number` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `serial_number` | - |
+| `paymentReason` | - |
+| `receiptFooter` | - |
+| `receiptHeader` | - |
+| `receiptLayout` | - |
+| `receiptNumber` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `serialNumber` | - |
 | `svc` | - |
-| `terminal_id` | - |
-| `terminal_location` | - |
-| `trace_number` | - |
-| `transaction_date` | Yes |
-| `transaction_id` | Yes |
-| `transaction_type` | - |
-| `tx_type` | - |
-| `user_data` | - |
+| `terminalId` | - |
+| `terminalLocation` | - |
+| `traceNumber` | - |
+| `transactionDate` | Yes |
+| `transactionId` | Yes |
+| `transactionType` | - |
+| `txType` | - |
+| `userData` | - |
 
 ### Operations
 
@@ -1893,12 +1871,12 @@ Create a new entity with the given data.
 
 ```go
 result, err := client.PreAuthTransactionCompletion(nil).Create(map[string]any{
-    "card_number_reference": "example_card_number_reference",
-    "client_id": 1,
+    "cardNumberReference": "example_cardNumberReference",
+    "clientId": 1,
     "currency": "example_currency",
-    "receipt_number": "example_receipt_number",
-    "terminal_id": 1,
-    "transaction_type": "example_transaction_type",
+    "receiptNumber": "example_receiptNumber",
+    "terminalId": 1,
+    "transactionType": "example_transactionType",
 }, nil)
 if err != nil {
     panic(err)
@@ -1941,13 +1919,13 @@ fmt.Println(reactivateTerminal.GetName()) // "reactivate_terminal"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `corporate_uuid` | `string` | No |  |
-| `package_order_uuid` | `string` | No |  |
-| `product_order_uuid` | `string` | No |  |
-| `reactivation_reason` | `string` | Yes |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
-| `terminal_id` | `int` | Yes |  |
+| `corporateUuid` | `string` | No |  |
+| `packageOrderUuid` | `string` | No |  |
+| `productOrderUuid` | `string` | No |  |
+| `reactivationReason` | `string` | Yes |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
+| `terminalId` | `int` | Yes |  |
 
 ### Operations
 
@@ -1957,8 +1935,8 @@ Create a new entity with the given data.
 
 ```go
 result, err := client.ReactivateTerminal(nil).Create(map[string]any{
-    "reactivation_reason": "example_reactivation_reason",
-    "terminal_id": 1,
+    "reactivationReason": "example_reactivationReason",
+    "terminalId": 1,
 }, nil)
 if err != nil {
     panic(err)
@@ -2001,91 +1979,91 @@ fmt.Println(refundTransaction.GetName()) // "refund_transaction"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `string` | No |  |
-| `acquirer_name` | `string` | No |  |
-| `actual_bonus_point` | `string` | No |  |
+| `acquirerId` | `string` | No |  |
+| `acquirerName` | `string` | No |  |
+| `actualBonusPoints` | `string` | No |  |
 | `amount` | `int` | No |  |
-| `authorization_code` | `string` | No |  |
-| `balance_amount` | `string` | No |  |
-| `card_brand` | `string` | No |  |
-| `card_number` | `string` | No |  |
-| `client_id` | `int` | Yes |  |
+| `authorizationCode` | `string` | No |  |
+| `balanceAmount` | `string` | No |  |
+| `cardBrand` | `string` | No |  |
+| `cardNumber` | `string` | No |  |
+| `clientId` | `int` | Yes |  |
 | `currency` | `string` | Yes |  |
 | `cvc` | `string` | No |  |
-| `ec_data` | `string` | No |  |
-| `ecr_data` | `string` | No |  |
-| `emv_data` | `string` | No |  |
-| `exchange_fee` | `int` | No |  |
-| `exchange_rate` | `string` | No |  |
-| `language_code` | `string` | No |  |
-| `merchant_address` | `string` | No |  |
-| `merchant_name` | `string` | No |  |
-| `merchant_number` | `string` | No |  |
-| `message_type` | `string` | No |  |
-| `original_trace_number` | `int` | No |  |
-| `original_transaction_id` | `string` | No |  |
+| `ecData` | `string` | No |  |
+| `ecrData` | `string` | No |  |
+| `emvData` | `string` | No |  |
+| `exchangeFee` | `int` | No |  |
+| `exchangeRate` | `string` | No |  |
+| `languageCode` | `string` | No |  |
+| `merchantAddress` | `string` | No |  |
+| `merchantName` | `string` | No |  |
+| `merchantNumber` | `string` | No |  |
+| `messageType` | `string` | No |  |
+| `originalTraceNumber` | `int` | No |  |
+| `originalTransactionId` | `string` | No |  |
 | `password` | `string` | No |  |
-| `payment_reason` | `string` | No |  |
-| `receipt_footer` | `string` | No |  |
-| `receipt_header` | `string` | No |  |
-| `receipt_layout` | `int` | No |  |
-| `receipt_number` | `string` | Yes |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
-| `serial_number` | `string` | No |  |
+| `paymentReason` | `string` | No |  |
+| `receiptFooter` | `string` | No |  |
+| `receiptHeader` | `string` | No |  |
+| `receiptLayout` | `int` | No |  |
+| `receiptNumber` | `string` | Yes |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
+| `serialNumber` | `string` | No |  |
 | `svc` | `string` | No |  |
-| `terminal_id` | `int` | Yes |  |
-| `terminal_location` | `string` | No |  |
-| `trace_number` | `int` | No |  |
-| `transaction_date` | `string` | No |  |
-| `transaction_id` | `string` | No |  |
-| `tx_type` | `string` | No |  |
-| `user_data` | `string` | No |  |
+| `terminalId` | `int` | Yes |  |
+| `terminalLocation` | `string` | No |  |
+| `traceNumber` | `int` | No |  |
+| `transactionDate` | `string` | No |  |
+| `transactionId` | `string` | No |  |
+| `txType` | `string` | No |  |
+| `userData` | `string` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `acquirer_id` | - |
-| `acquirer_name` | - |
-| `actual_bonus_point` | - |
+| `acquirerId` | - |
+| `acquirerName` | - |
+| `actualBonusPoints` | - |
 | `amount` | Yes |
-| `authorization_code` | - |
-| `balance_amount` | - |
-| `card_brand` | - |
-| `card_number` | - |
-| `client_id` | - |
+| `authorizationCode` | - |
+| `balanceAmount` | - |
+| `cardBrand` | - |
+| `cardNumber` | - |
+| `clientId` | - |
 | `currency` | - |
 | `cvc` | - |
-| `ec_data` | - |
-| `ecr_data` | - |
-| `emv_data` | - |
-| `exchange_fee` | - |
-| `exchange_rate` | - |
-| `language_code` | - |
-| `merchant_address` | - |
-| `merchant_name` | - |
-| `merchant_number` | - |
-| `message_type` | - |
-| `original_trace_number` | - |
-| `original_transaction_id` | Yes |
+| `ecData` | - |
+| `ecrData` | - |
+| `emvData` | - |
+| `exchangeFee` | - |
+| `exchangeRate` | - |
+| `languageCode` | - |
+| `merchantAddress` | - |
+| `merchantName` | - |
+| `merchantNumber` | - |
+| `messageType` | - |
+| `originalTraceNumber` | - |
+| `originalTransactionId` | Yes |
 | `password` | - |
-| `payment_reason` | - |
-| `receipt_footer` | - |
-| `receipt_header` | - |
-| `receipt_layout` | - |
-| `receipt_number` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `serial_number` | - |
+| `paymentReason` | - |
+| `receiptFooter` | - |
+| `receiptHeader` | - |
+| `receiptLayout` | - |
+| `receiptNumber` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `serialNumber` | - |
 | `svc` | - |
-| `terminal_id` | - |
-| `terminal_location` | - |
-| `trace_number` | - |
-| `transaction_date` | Yes |
-| `transaction_id` | Yes |
-| `tx_type` | - |
-| `user_data` | - |
+| `terminalId` | - |
+| `terminalLocation` | - |
+| `traceNumber` | - |
+| `transactionDate` | Yes |
+| `transactionId` | Yes |
+| `txType` | - |
+| `userData` | - |
 
 ### Operations
 
@@ -2095,10 +2073,10 @@ Create a new entity with the given data.
 
 ```go
 result, err := client.RefundTransaction(nil).Create(map[string]any{
-    "client_id": 1,
+    "clientId": 1,
     "currency": "example_currency",
-    "receipt_number": "example_receipt_number",
-    "terminal_id": 1,
+    "receiptNumber": "example_receiptNumber",
+    "terminalId": 1,
 }, nil)
 if err != nil {
     panic(err)
@@ -2141,14 +2119,14 @@ fmt.Println(registerTecsCompany.GetName()) // "register_tecs_company"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `corporate_uuid` | `string` | Yes |  |
-| `package_order_uuid` | `string` | Yes |  |
-| `partner_id` | `int` | No |  |
-| `partner_name` | `string` | No |  |
-| `product_order_uuid` | `string` | Yes |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
-| `template_name` | `string` | Yes |  |
+| `corporateUuid` | `string` | Yes |  |
+| `packageOrderUuid` | `string` | Yes |  |
+| `partnerId` | `int` | No |  |
+| `partnerName` | `string` | No |  |
+| `productOrderUuid` | `string` | Yes |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
+| `templateName` | `string` | Yes |  |
 
 ### Operations
 
@@ -2158,10 +2136,10 @@ Create a new entity with the given data.
 
 ```go
 result, err := client.RegisterTecsCompany(nil).Create(map[string]any{
-    "corporate_uuid": "example_corporate_uuid",
-    "package_order_uuid": "example_package_order_uuid",
-    "product_order_uuid": "example_product_order_uuid",
-    "template_name": "example_template_name",
+    "corporateUuid": "example_corporateUuid",
+    "packageOrderUuid": "example_packageOrderUuid",
+    "productOrderUuid": "example_productOrderUuid",
+    "templateName": "example_templateName",
 }, nil)
 if err != nil {
     panic(err)
@@ -2204,24 +2182,24 @@ fmt.Println(registerTerminal.GetName()) // "register_terminal"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `additional_data` | `map[string]any` | No |  |
-| `corporate_uuid` | `string` | Yes |  |
-| `package_order_uuid` | `string` | Yes |  |
-| `product_order_uuid` | `string` | Yes |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
-| `tecs_web_secret_key` | `string` | No |  |
-| `template_name` | `string` | Yes |  |
-| `terminal_country_code` | `string` | Yes |  |
-| `terminal_id` | `int` | No |  |
-| `terminal_id_acq` | `string` | No |  |
-| `terminal_language_code` | `string` | Yes |  |
-| `terminal_location` | `string` | Yes |  |
-| `terminal_serial_number` | `string` | No |  |
-| `token_io_alia` | `string` | No |  |
-| `token_io_iban` | `string` | No |  |
-| `token_io_member_id` | `string` | No |  |
-| `web_shop_url` | `string` | No |  |
+| `additionalData` | `map[string]any` | No |  |
+| `corporateUuid` | `string` | Yes |  |
+| `packageOrderUuid` | `string` | Yes |  |
+| `productOrderUuid` | `string` | Yes |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
+| `tecsWebSecretKey` | `string` | No |  |
+| `templateName` | `string` | Yes |  |
+| `terminalCountryCode` | `string` | Yes |  |
+| `terminalId` | `int` | No |  |
+| `terminalIdAcq` | `string` | No |  |
+| `terminalLanguageCode` | `string` | Yes |  |
+| `terminalLocation` | `string` | Yes |  |
+| `terminalSerialNumber` | `string` | No |  |
+| `tokenIOAlias` | `string` | No |  |
+| `tokenIOIban` | `string` | No |  |
+| `tokenIOMemberId` | `string` | No |  |
+| `webShopUrl` | `string` | No |  |
 
 ### Operations
 
@@ -2231,13 +2209,13 @@ Create a new entity with the given data.
 
 ```go
 result, err := client.RegisterTerminal(nil).Create(map[string]any{
-    "corporate_uuid": "example_corporate_uuid",
-    "package_order_uuid": "example_package_order_uuid",
-    "product_order_uuid": "example_product_order_uuid",
-    "template_name": "example_template_name",
-    "terminal_country_code": "example_terminal_country_code",
-    "terminal_language_code": "example_terminal_language_code",
-    "terminal_location": "example_terminal_location",
+    "corporateUuid": "example_corporateUuid",
+    "packageOrderUuid": "example_packageOrderUuid",
+    "productOrderUuid": "example_productOrderUuid",
+    "templateName": "example_templateName",
+    "terminalCountryCode": "example_terminalCountryCode",
+    "terminalLanguageCode": "example_terminalLanguageCode",
+    "terminalLocation": "example_terminalLocation",
 }, nil)
 if err != nil {
     panic(err)
@@ -2280,16 +2258,16 @@ fmt.Println(reportData.GetName()) // "report_data"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `card_brand_report_data` | `[]any` | No |  |
-| `clearing_date_from` | `string` | Yes |  |
-| `clearing_date_to` | `string` | Yes |  |
-| `corporate_id` | `string` | Yes |  |
+| `cardBrandReportData` | `[]any` | No |  |
+| `clearingDateFrom` | `string` | Yes |  |
+| `clearingDateTo` | `string` | Yes |  |
+| `corporateId` | `string` | Yes |  |
 | `currency` | `string` | Yes |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
-| `sum_over_credit_tx` | `map[string]any` | No |  |
-| `sum_over_debit_tx` | `map[string]any` | No |  |
-| `terminal_id` | `int` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
+| `sumOverCreditTx` | `map[string]any` | No |  |
+| `sumOverDebitTx` | `map[string]any` | No |  |
+| `terminalId` | `int` | No |  |
 
 ### Operations
 
@@ -2299,9 +2277,9 @@ Create a new entity with the given data.
 
 ```go
 result, err := client.ReportData(nil).Create(map[string]any{
-    "clearing_date_from": "example_clearing_date_from",
-    "clearing_date_to": "example_clearing_date_to",
-    "corporate_id": "example_corporate_id",
+    "clearingDateFrom": "example_clearingDateFrom",
+    "clearingDateTo": "example_clearingDateTo",
+    "corporateId": "example_corporateId",
     "currency": "example_currency",
 }, nil)
 if err != nil {
@@ -2345,56 +2323,56 @@ fmt.Println(statusTransaction.GetName()) // "status_transaction"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_name` | `string` | No |  |
-| `acquirer_terminal_id` | `string` | No |  |
+| `acquirerName` | `string` | No |  |
+| `acquirerTerminalId` | `string` | No |  |
 | `amount` | `int` | No |  |
-| `application_cryptogram` | `string` | No |  |
-| `authorization_code` | `any` | No |  |
-| `authorization_date` | `string` | No |  |
-| `card_brand` | `string` | No |  |
-| `card_entry` | `string` | No |  |
-| `card_expiration` | `string` | No |  |
-| `card_number` | `string` | No |  |
-| `clearing_amount` | `int` | No |  |
-| `clearing_batch_id` | `string` | No |  |
-| `clearing_currency` | `string` | No |  |
-| `clearing_date` | `string` | No |  |
-| `clearing_processed_date` | `string` | No |  |
-| `clearing_status` | `string` | No |  |
-| `client_id` | `int` | No |  |
+| `applicationCryptogram` | `string` | No |  |
+| `authorizationCode` | `any` | No |  |
+| `authorizationDate` | `string` | No |  |
+| `cardBrand` | `string` | No |  |
+| `cardEntry` | `string` | No |  |
+| `cardExpiration` | `string` | No |  |
+| `cardNumber` | `string` | No |  |
+| `clearingAmount` | `int` | No |  |
+| `clearingBatchId` | `string` | No |  |
+| `clearingCurrency` | `string` | No |  |
+| `clearingDate` | `string` | No |  |
+| `clearingProcessedDate` | `string` | No |  |
+| `clearingStatus` | `string` | No |  |
+| `clientId` | `int` | No |  |
 | `currency` | `string` | No |  |
 | `cvm` | `string` | No |  |
-| `ecr_data` | `string` | No |  |
-| `emv_application_id` | `string` | No |  |
-| `emv_application_label` | `string` | No |  |
-| `merchant_name` | `string` | No |  |
-| `merchant_number` | `string` | No |  |
-| `original_client_id` | `string` | No |  |
-| `original_terminal_id` | `int` | No |  |
-| `original_transaction_id` | `string` | No |  |
-| `payment_reason` | `string` | No |  |
-| `receipt_number` | `string` | No |  |
-| `response_code` | `int` | No |  |
-| `response_code_from_a` | `string` | No |  |
-| `response_message` | `string` | No |  |
-| `retrieval_reference_number` | `string` | No |  |
-| `service_code` | `string` | No |  |
-| `settlement_status` | `string` | No |  |
-| `source_id` | `int` | No |  |
-| `tecsengine_response_code` | `int` | No |  |
-| `tecsengine_response_text` | `string` | No |  |
-| `terminal_end_of_day_date` | `string` | No |  |
-| `terminal_id` | `int` | No |  |
-| `terminal_location` | `string` | No |  |
-| `tip_amount` | `int` | No |  |
-| `trace_number` | `int` | No |  |
-| `transaction_clearing_date` | `string` | No |  |
-| `transaction_date` | `string` | No |  |
-| `transaction_id` | `string` | No |  |
-| `transaction_seq_number` | `int` | No |  |
-| `transaction_server_date` | `string` | No |  |
-| `transaction_source` | `string` | No |  |
-| `transaction_type` | `string` | No |  |
+| `ecrData` | `string` | No |  |
+| `emvApplicationId` | `string` | No |  |
+| `emvApplicationLabel` | `string` | No |  |
+| `merchantName` | `string` | No |  |
+| `merchantNumber` | `string` | No |  |
+| `originalClientId` | `string` | No |  |
+| `originalTerminalId` | `int` | No |  |
+| `originalTransactionId` | `string` | No |  |
+| `paymentReason` | `string` | No |  |
+| `receiptNumber` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseCodeFromAS` | `string` | No |  |
+| `responseMessage` | `string` | No |  |
+| `retrievalReferenceNumber` | `string` | No |  |
+| `serviceCode` | `string` | No |  |
+| `settlementStatus` | `string` | No |  |
+| `sourceId` | `int` | No |  |
+| `tecsengineResponseCode` | `int` | No |  |
+| `tecsengineResponseText` | `string` | No |  |
+| `terminalEndOfDayDate` | `string` | No |  |
+| `terminalId` | `int` | No |  |
+| `terminalLocation` | `string` | No |  |
+| `tipAmount` | `int` | No |  |
+| `traceNumber` | `int` | No |  |
+| `transactionClearingDate` | `string` | No |  |
+| `transactionDate` | `string` | No |  |
+| `transactionId` | `string` | No |  |
+| `transactionSeqNumber` | `int` | No |  |
+| `transactionServerDate` | `string` | No |  |
+| `transactionSource` | `string` | No |  |
+| `transactionType` | `string` | No |  |
 
 ### Operations
 
@@ -2446,12 +2424,12 @@ fmt.Println(storeTerminalParameter.GetName()) // "store_terminal_parameter"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acq_tab_nexo` | `map[string]any` | No |  |
-| `config_version` | `string` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
-| `serial_number` | `string` | Yes |  |
-| `tid_sent` | `string` | No |  |
+| `acqTabNexo` | `map[string]any` | No |  |
+| `configVersion` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
+| `serialNumber` | `string` | Yes |  |
+| `tidSent` | `string` | No |  |
 
 ### Operations
 
@@ -2461,7 +2439,7 @@ Create a new entity with the given data.
 
 ```go
 result, err := client.StoreTerminalParameter(nil).Create(map[string]any{
-    "serial_number": "example_serial_number",
+    "serialNumber": "example_serialNumber",
 }, nil)
 if err != nil {
     panic(err)
@@ -2504,11 +2482,11 @@ fmt.Println(terminalId.GetName()) // "terminal_id"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `device_serial_number` | `[]any` | Yes |  |
-| `duplicate_terminal_id` | `[]any` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
-| `terminal` | `[]any` | No |  |
+| `deviceSerialNumber` | `[]any` | Yes |  |
+| `duplicateTerminalIds` | `[]any` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
+| `terminals` | `[]any` | No |  |
 
 ### Operations
 
@@ -2518,7 +2496,7 @@ Create a new entity with the given data.
 
 ```go
 result, err := client.TerminalId(nil).Create(map[string]any{
-    "device_serial_number": []any{},
+    "deviceSerialNumber": []any{},
 }, nil)
 if err != nil {
     panic(err)
@@ -2561,34 +2539,34 @@ fmt.Println(transactionHistory.GetName()) // "transaction_history"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `3_d_secure` | `string` | No |  |
-| `authorization_code` | `string` | No |  |
-| `card_brand` | `string` | No |  |
-| `clearing_amount_from` | `string` | No |  |
-| `clearing_amount_to` | `string` | No |  |
-| `clearing_currency` | `string` | No |  |
-| `clearing_status` | `string` | No |  |
-| `corporate_uuid` | `string` | No |  |
-| `order_by_transaction_date` | `string` | No |  |
+| `3DSecure` | `string` | No |  |
+| `authorizationCode` | `string` | No |  |
+| `cardBrand` | `string` | No |  |
+| `clearingAmountFrom` | `string` | No |  |
+| `clearingAmountTo` | `string` | No |  |
+| `clearingCurrency` | `string` | No |  |
+| `clearingStatus` | `string` | No |  |
+| `corporateUUID` | `string` | No |  |
+| `orderByTransactionDate` | `string` | No |  |
 | `pagination` | `map[string]any` | No |  |
-| `payment_token_public_id` | `string` | No |  |
-| `receipt_number` | `string` | No |  |
-| `referenced_transaction_id` | `string` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
-| `retrieval_reference_number` | `string` | No |  |
-| `source_id` | `int` | No |  |
-| `tecsengine_response_code_from` | `string` | No |  |
-| `tecsengine_response_code_to` | `string` | No |  |
-| `terminal_id` | `int` | No |  |
-| `trace_number` | `string` | No |  |
-| `transaction_amount_from` | `string` | No |  |
-| `transaction_amount_to` | `string` | No |  |
-| `transaction_date_from` | `string` | No |  |
-| `transaction_date_to` | `string` | No |  |
-| `transaction_history` | `[]any` | No |  |
-| `transaction_id` | `string` | No |  |
-| `transaction_type` | `string` | No |  |
+| `paymentTokenPublicId` | `string` | No |  |
+| `receiptNumber` | `string` | No |  |
+| `referencedTransactionId` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
+| `retrievalReferenceNumber` | `string` | No |  |
+| `sourceId` | `int` | No |  |
+| `tecsengineResponseCodeFrom` | `string` | No |  |
+| `tecsengineResponseCodeTo` | `string` | No |  |
+| `terminalId` | `int` | No |  |
+| `traceNumber` | `string` | No |  |
+| `transactionAmountFrom` | `string` | No |  |
+| `transactionAmountTo` | `string` | No |  |
+| `transactionDateFrom` | `string` | No |  |
+| `transactionDateTo` | `string` | No |  |
+| `transactionHistories` | `[]any` | No |  |
+| `transactionId` | `string` | No |  |
+| `transactionType` | `string` | No |  |
 | `wallet` | `string` | No |  |
 
 ### Operations
@@ -2642,22 +2620,22 @@ fmt.Println(transactionsCount.GetName()) // "transactions_count"
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `period` | `string` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
-| `transaction_date_from` | `string` | No |  |
-| `transaction_date_to` | `string` | No |  |
-| `transactions_count` | `[]any` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
+| `transactionDateFrom` | `string` | No |  |
+| `transactionDateTo` | `string` | No |  |
+| `transactionsCount` | `[]any` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
 | `period` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `transaction_date_from` | Yes |
-| `transaction_date_to` | Yes |
-| `transactions_count` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `transactionDateFrom` | Yes |
+| `transactionDateTo` | Yes |
+| `transactionsCount` | - |
 
 ### Operations
 
@@ -2710,22 +2688,22 @@ fmt.Println(transactionsCountCardBrand.GetName()) // "transactions_count_card_br
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `period` | `string` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
-| `transaction_date_from` | `string` | No |  |
-| `transaction_date_to` | `string` | No |  |
-| `transactions_count` | `[]any` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
+| `transactionDateFrom` | `string` | No |  |
+| `transactionDateTo` | `string` | No |  |
+| `transactionsCount` | `[]any` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
 | `period` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `transaction_date_from` | Yes |
-| `transaction_date_to` | Yes |
-| `transactions_count` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `transactionDateFrom` | Yes |
+| `transactionDateTo` | Yes |
+| `transactionsCount` | - |
 
 ### Operations
 
@@ -2778,22 +2756,22 @@ fmt.Println(transactionsTurnover.GetName()) // "transactions_turnover"
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `period` | `string` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
-| `transaction_date_from` | `string` | No |  |
-| `transaction_date_to` | `string` | No |  |
-| `turnover` | `[]any` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
+| `transactionDateFrom` | `string` | No |  |
+| `transactionDateTo` | `string` | No |  |
+| `turnovers` | `[]any` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
 | `period` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `transaction_date_from` | Yes |
-| `transaction_date_to` | Yes |
-| `turnover` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `transactionDateFrom` | Yes |
+| `transactionDateTo` | Yes |
+| `turnovers` | - |
 
 ### Operations
 
@@ -2846,15 +2824,15 @@ fmt.Println(updateMerchant.GetName()) // "update_merchant"
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `city` | `string` | No |  |
-| `corporate_uuid` | `string` | Yes |  |
+| `corporateUuid` | `string` | Yes |  |
 | `country` | `string` | No |  |
-| `merchant_category_code` | `string` | No |  |
+| `merchantCategoryCode` | `string` | No |  |
 | `name` | `string` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
 | `state` | `string` | No |  |
 | `street` | `string` | No |  |
-| `vu_nummer` | `string` | No |  |
+| `vuNummer` | `string` | No |  |
 | `zipcode` | `string` | No |  |
 
 ### Operations
@@ -2865,7 +2843,7 @@ Create a new entity with the given data.
 
 ```go
 result, err := client.UpdateMerchant(nil).Create(map[string]any{
-    "corporate_uuid": "example_corporate_uuid",
+    "corporateUuid": "example_corporateUuid",
 }, nil)
 if err != nil {
     panic(err)
@@ -2908,10 +2886,10 @@ fmt.Println(updateTemplateXml.GetName()) // "update_template_xml"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `int` | No |  |
-| `response_message` | `string` | No |  |
-| `template_name` | `string` | Yes |  |
-| `template_xml` | `string` | Yes |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
+| `templateName` | `string` | Yes |  |
+| `templateXml` | `string` | Yes |  |
 
 ### Operations
 
@@ -2921,8 +2899,8 @@ Create a new entity with the given data.
 
 ```go
 result, err := client.UpdateTemplateXml(nil).Create(map[string]any{
-    "template_name": "example_template_name",
-    "template_xml": "example_template_xml",
+    "templateName": "example_templateName",
+    "templateXml": "example_templateXml",
 }, nil)
 if err != nil {
     panic(err)
@@ -2965,8 +2943,8 @@ fmt.Println(version.GetName()) // "version"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `app_name` | `string` | No |  |
-| `build_date` | `string` | No |  |
+| `appName` | `string` | No |  |
+| `buildDate` | `string` | No |  |
 | `version` | `string` | No |  |
 
 ### Operations

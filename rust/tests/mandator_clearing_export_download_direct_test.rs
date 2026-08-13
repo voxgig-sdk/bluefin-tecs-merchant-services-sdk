@@ -27,16 +27,16 @@ fn mandator_clearing_export_download_direct_setup(mockres: Value) -> MandatorCle
     let calls: Rc<RefCell<Vec<Value>>> = Rc::new(RefCell::new(Vec::new()));
 
     let env = env_override(jo(vec![
-        ("BLUEFINTECSMERCHANTSERVICES_TEST_MANDATOR_CLEARING_EXPORT_DOWNLOAD_ENTID", Value::empty_map()),
-        ("BLUEFINTECSMERCHANTSERVICES_TEST_LIVE", Value::str("FALSE")),
-        ("BLUEFINTECSMERCHANTSERVICES_APIKEY", Value::str("NONE")),
+        ("BLUEFIN_TECS_MERCHANT_SERVICES_TEST_MANDATOR_CLEARING_EXPORT_DOWNLOAD_ENTID", Value::empty_map()),
+        ("BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE", Value::str("FALSE")),
+        ("BLUEFIN_TECS_MERCHANT_SERVICES_APIKEY", Value::str("NONE")),
     ]));
 
-    let live = getp(&env, "BLUEFINTECSMERCHANTSERVICES_TEST_LIVE") == Value::str("TRUE");
+    let live = getp(&env, "BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE") == Value::str("TRUE");
 
     if live {
-        let client = BluefinTecsMerchantServicesSDK::new(jo(vec![("apikey", getp(&env, "BLUEFINTECSMERCHANTSERVICES_APIKEY"))]));
-        let idmap = match to_map(&getp(&env, "BLUEFINTECSMERCHANTSERVICES_TEST_MANDATOR_CLEARING_EXPORT_DOWNLOAD_ENTID")) {
+        let client = BluefinTecsMerchantServicesSDK::new(jo(vec![("apikey", getp(&env, "BLUEFIN_TECS_MERCHANT_SERVICES_APIKEY"))]));
+        let idmap = match to_map(&getp(&env, "BLUEFIN_TECS_MERCHANT_SERVICES_TEST_MANDATOR_CLEARING_EXPORT_DOWNLOAD_ENTID")) {
             Value::Map(m) => Value::Map(m),
             _ => Value::empty_map(),
         };

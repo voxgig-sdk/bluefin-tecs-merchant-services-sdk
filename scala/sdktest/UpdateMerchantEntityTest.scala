@@ -35,7 +35,7 @@ object UpdateMerchantEntityTest {
       var updateMerchantRef01Data = Helpers.toMapAny(Struct.getprop(
           Struct.getpath(entityData, "new.update_merchant"), "update_merchant_ref01"))
       val updateMerchantRef01DataResult = updateMerchantRef01Ent.create(updateMerchantRef01Data, null)
-      updateMerchantRef01Data = Helpers.toMapAny(updateMerchantRef01DataResult)
+      updateMerchantRef01Data = Helpers.toMapAny(updateMerchantRef01DataResult match { case e: SdkEntity => e.data(); case o => o })
       rep.check("update_merchant.create.map", updateMerchantRef01Data != null, "expected create result to be a map")
     }
   }

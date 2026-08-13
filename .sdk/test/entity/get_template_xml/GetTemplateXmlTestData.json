@@ -2,21 +2,21 @@
   "existing": {
     "get_template_xml": {
       "GET_TEMPLATE_XML00": {
-        "response_code": "s1e",
-        "response_message": "s1f",
-        "template_name": "s20",
+        "responseCode": "s1e",
+        "responseMessage": "s1f",
+        "templateName": "s20",
         "id": "GET_TEMPLATE_XML00"
       },
       "GET_TEMPLATE_XML01": {
-        "response_code": "s3c",
-        "response_message": "s3d",
-        "template_name": "s3e",
+        "responseCode": "s3c",
+        "responseMessage": "s3d",
+        "templateName": "s3e",
         "id": "GET_TEMPLATE_XML01"
       },
       "GET_TEMPLATE_XML02": {
-        "response_code": "s5a",
-        "response_message": "s5b",
-        "template_name": "s5c",
+        "responseCode": "s5a",
+        "responseMessage": "s5b",
+        "templateName": "s5c",
         "id": "GET_TEMPLATE_XML02"
       }
     }
@@ -24,9 +24,9 @@
   "new": {
     "get_template_xml": {
       "get_template_xml_ref01": {
-        "response_code": "s78",
-        "response_message": "s79",
-        "template_name": "s7a"
+        "responseCode": "s78",
+        "responseMessage": "s79",
+        "templateName": "s7a"
       }
     }
   }

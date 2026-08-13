@@ -22,10 +22,10 @@ support (`load`, `create`):
 ```ts
 const client = new BluefinTecsMerchantServicesSDK()
 const canceltransaction = await client.CancelTransaction().create({
-  client_id: 1,
+  clientId: 1,
   currency: 'example',
-  receipt_number: 'example',
-  terminal_id: 1,
+  receiptNumber: 'example',
+  terminalId: 1,
 })
 ```
 
@@ -41,9 +41,18 @@ network, and no credentials:
 ### TypeScript
 
 ```ts
-const client = BluefinTecsMerchantServicesSDK.test()
+// The offline mock starts EMPTY — seed it with the records the test needs.
+// Shape: { entity: { <entity-name>: { <id>: <record> } } }
+const client = BluefinTecsMerchantServicesSDK.test({
+  entity: {
+    digital_services_api: {
+      test01: { id: 'test01', clearingDateFrom: 'example_clearingDateFrom', clearingDateTo: 'example_clearingDateTo' },
+    },
+  },
+})
 const digitalservicesapi = await client.DigitalServicesApi().load()
-// digitalservicesapi is a bare DigitalServicesApi populated with mock data
+// digitalservicesapi is the DigitalServicesApi entity, populated with mock data
+// — call digitalservicesapi.data() for the record itself
 console.log(digitalservicesapi)
 ```
 
@@ -184,7 +193,8 @@ System.out.println(digitalServicesApi);
 ```js
 const client = BluefinTecsMerchantServicesSDK.test()
 const digitalservicesapi = await client.DigitalServicesApi().load()
-// digitalservicesapi is a bare entity populated with mock data
+// digitalservicesapi is the entity, populated with mock data
+// — call digitalservicesapi.data() for the record itself
 console.log(digitalservicesapi)
 ```
 
@@ -202,7 +212,7 @@ println(digitalServicesApi)
 let () =
   let client = Sdk_client.test () in
   let result = (Sdk_client.digital_services_api client Noval).e_load (empty_map ()) Noval in
-  print_endline (stringify result)
+  print_endline (stringify (result.e_data_get ()))
 ```
 
 ### Perl
@@ -340,7 +350,7 @@ The API exposes 39 entities:
 | **CheckCardBlackListed** | The CheckCardBlackListed entity (create). | `/checkCardBlackListed` |
 | **CreateProduct** | The CreateProduct entity (create). | `/createProduct` |
 | **DeactivateTerminal** | The DeactivateTerminal entity (create). | `/deactivateTerminal` |
-| **DigitalServicesApi** | The DigitalServicesApi entity (create, load). | `/public/digitalservices/mandatorClearingExportDownload/{fileId}` |
+| **DigitalServicesApi** | The DigitalServicesApi entity (create, load). | `/public/digitalservices/mandatorClearingExportDownload/status` |
 | **EcDataEcom** | The EcDataEcom entity (create). | `/public/getEcData` |
 | **EcomParameter** | The EcomParameter entity (create). | `/public/getEcomParameters` |
 | **EcrData** | The EcrData entity (create). | `/public/getEcrData` |
@@ -353,7 +363,7 @@ The API exposes 39 entities:
 | **KeepAlive** | The KeepAlive entity (create). | `/public/keepalive` |
 | **ListTerminal** | The ListTerminal entity (create). | `/public/listTerminals` |
 | **MandatorClearingExport** | The MandatorClearingExport entity (create). | `/public/digitalservices/mandatorClearingExport` |
-| **MandatorClearingExportDownload** | The MandatorClearingExportDownload entity (create, load). | `/public/digitalservices/mandatorClearingExportDownload` |
+| **MandatorClearingExportDownload** | The MandatorClearingExportDownload entity (create, load). | `/public/digitalservices/mandatorClearingExportDownload/{fileId}` |
 | **MandatorClearingExportSummary** | The MandatorClearingExportSummary entity (create). | `/public/digitalservices/mandatorClearingExportSummary` |
 | **MerchantPortalServicesApi** | The MerchantPortalServicesApi entity (create). | `/public/transactionHistoryCsv` |
 | **MoveTid** | The MoveTid entity (create). | `/moveTid` |
@@ -914,6 +924,9 @@ Pass custom features via the `extend` option at construction time.
 
 This SDK is generated from the upstream OpenAPI specification. It is an
 unofficial client and is not affiliated with the API provider.
+
+The OpenAPI spec(s) this SDK was generated from are kept in the
+[`.sdk/def/`](.sdk/def/) folder.
 
 - Upstream API: [https://test.tecs.at/merchantservices](https://test.tecs.at/merchantservices)
 

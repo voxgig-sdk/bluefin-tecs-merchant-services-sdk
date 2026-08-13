@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# BluefinTecsMerchantServices SDK exists test
 
 import pytest
 from bluefintecsmerchantservices_sdk import BluefinTecsMerchantServicesSDK

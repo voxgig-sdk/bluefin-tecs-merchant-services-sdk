@@ -14,6 +14,8 @@ typedef struct introduce_package_entity {
   voxgig_value* data;     // Map
   voxgig_value* mtch;     // Map
   Context* entctx;
+  // Set once a successful `remove` resolves on this instance.
+  bool deleted;
 } introduce_package_entity;
 
 typedef void (*introduce_package_postdone_fn)(introduce_package_entity* self, Context* ctx);
@@ -24,11 +26,14 @@ static const char* introduce_package_get_name(Entity* e);
 static Entity* introduce_package_make(Entity* e);
 static voxgig_value* introduce_package_data(Entity* e, voxgig_value* args);
 static voxgig_value* introduce_package_matchv(Entity* e, voxgig_value* args);
-static voxgig_value* introduce_package_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
-static voxgig_value* introduce_package_list(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
-static voxgig_value* introduce_package_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
-static voxgig_value* introduce_package_update(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
-static voxgig_value* introduce_package_remove(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+// Ops resolve to the ENTITY (`list` to a NULL-terminated array of them).
+static Entity* introduce_package_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static Entity** introduce_package_list(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static Entity* introduce_package_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
+static Entity* introduce_package_update(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
+static Entity* introduce_package_remove(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static void introduce_package_mark_deleted(Entity* e);
+static bool introduce_package_deleted(Entity* e);
 
 static Context* introduce_package_ent_ctx(introduce_package_entity* self) {
   return self->entctx;
@@ -236,13 +241,13 @@ static voxgig_value* introduce_package_matchv(Entity* e, voxgig_value* args) {
   return voxgig_clone(self->mtch);
 }
 
-static voxgig_value* introduce_package_load(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* introduce_package_load(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("load", "introduce_package");
   return NULL;
 }
 
-static voxgig_value* introduce_package_list(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity** introduce_package_list(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("list", "introduce_package");
   return NULL;
@@ -260,7 +265,7 @@ static void introduce_package_create_postdone(introduce_package_entity* self, Co
   }
 }
 
-static voxgig_value* introduce_package_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err) {
+static Entity* introduce_package_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err) {
   introduce_package_entity* self = (introduce_package_entity*)e;
   CtxSpec cs;
   memset(&cs, 0, sizeof(cs));
@@ -270,20 +275,38 @@ static voxgig_value* introduce_package_create(Entity* e, voxgig_value* reqdata, 
   cs.data = self->data;
   cs.reqdata = reqdata;
   Context* ctx = make_context_util(cs, introduce_package_ent_ctx(self));
-  return introduce_package_run_op(self, ctx, introduce_package_create_postdone, err);
+  introduce_package_run_op(self, ctx, introduce_package_create_postdone, err);
+  if (*err) return NULL;
+
+  // The operation resolves to THIS entity: run_op has just absorbed the
+  // result into it, and the caller reaches the record through vt->data.
+  // See AGENTS.md "Entity operations return ENTITIES".
+
+  return e;
 }
 
 
-static voxgig_value* introduce_package_update(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* introduce_package_update(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("update", "introduce_package");
   return NULL;
 }
 
-static voxgig_value* introduce_package_remove(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* introduce_package_remove(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("remove", "introduce_package");
   return NULL;
+}
+
+// `remove` resolves to the entity, marked. The instance KEEPS the data it
+// held - a caller can still read what was deleted - but it is no longer a
+// live record.
+static void introduce_package_mark_deleted(Entity* e) {
+  ((introduce_package_entity*)e)->deleted = true;
+}
+
+static bool introduce_package_deleted(Entity* e) {
+  return ((introduce_package_entity*)e)->deleted;
 }
 
 static const EntityVT introduce_package_VT = {
@@ -291,6 +314,8 @@ static const EntityVT introduce_package_VT = {
   introduce_package_make,
   introduce_package_data,
   introduce_package_matchv,
+  introduce_package_mark_deleted,
+  introduce_package_deleted,
   introduce_package_load,
   introduce_package_list,
   introduce_package_create,

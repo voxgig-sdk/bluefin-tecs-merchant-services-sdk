@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from bluefintecsmerchantservices_sdk.utility.voxgig_struct import voxgig_struct as vs
 from bluefintecsmerchantservices_sdk import BluefinTecsMerchantServicesSDK
-from core import helpers
+from bluefintecsmerchantservices_sdk.core import helpers
 from test import runner
 
 
@@ -66,16 +66,16 @@ def _mandator_clearing_export_download_direct_setup(mockres):
     calls = []
 
     env = runner.env_override({
-        "BLUEFINTECSMERCHANTSERVICES_TEST_MANDATOR_CLEARING_EXPORT_DOWNLOAD_ENTID": {},
-        "BLUEFINTECSMERCHANTSERVICES_TEST_LIVE": "FALSE",
-        "BLUEFINTECSMERCHANTSERVICES_APIKEY": "NONE",
+        "BLUEFIN_TECS_MERCHANT_SERVICES_TEST_MANDATOR_CLEARING_EXPORT_DOWNLOAD_ENTID": {},
+        "BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE": "FALSE",
+        "BLUEFIN_TECS_MERCHANT_SERVICES_APIKEY": "NONE",
     })
 
-    live = env.get("BLUEFINTECSMERCHANTSERVICES_TEST_LIVE") == "TRUE"
+    live = env.get("BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {
-            "apikey": env.get("BLUEFINTECSMERCHANTSERVICES_APIKEY"),
+            "apikey": env.get("BLUEFIN_TECS_MERCHANT_SERVICES_APIKEY"),
         }
         client = BluefinTecsMerchantServicesSDK(merged_opts)
         return {

@@ -14,6 +14,8 @@ typedef struct mandator_clearing_export_summary_entity {
   voxgig_value* data;     // Map
   voxgig_value* mtch;     // Map
   Context* entctx;
+  // Set once a successful `remove` resolves on this instance.
+  bool deleted;
 } mandator_clearing_export_summary_entity;
 
 typedef void (*mandator_clearing_export_summary_postdone_fn)(mandator_clearing_export_summary_entity* self, Context* ctx);
@@ -24,11 +26,14 @@ static const char* mandator_clearing_export_summary_get_name(Entity* e);
 static Entity* mandator_clearing_export_summary_make(Entity* e);
 static voxgig_value* mandator_clearing_export_summary_data(Entity* e, voxgig_value* args);
 static voxgig_value* mandator_clearing_export_summary_matchv(Entity* e, voxgig_value* args);
-static voxgig_value* mandator_clearing_export_summary_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
-static voxgig_value* mandator_clearing_export_summary_list(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
-static voxgig_value* mandator_clearing_export_summary_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
-static voxgig_value* mandator_clearing_export_summary_update(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
-static voxgig_value* mandator_clearing_export_summary_remove(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+// Ops resolve to the ENTITY (`list` to a NULL-terminated array of them).
+static Entity* mandator_clearing_export_summary_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static Entity** mandator_clearing_export_summary_list(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static Entity* mandator_clearing_export_summary_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
+static Entity* mandator_clearing_export_summary_update(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
+static Entity* mandator_clearing_export_summary_remove(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static void mandator_clearing_export_summary_mark_deleted(Entity* e);
+static bool mandator_clearing_export_summary_deleted(Entity* e);
 
 static Context* mandator_clearing_export_summary_ent_ctx(mandator_clearing_export_summary_entity* self) {
   return self->entctx;
@@ -236,13 +241,13 @@ static voxgig_value* mandator_clearing_export_summary_matchv(Entity* e, voxgig_v
   return voxgig_clone(self->mtch);
 }
 
-static voxgig_value* mandator_clearing_export_summary_load(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* mandator_clearing_export_summary_load(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("load", "mandator_clearing_export_summary");
   return NULL;
 }
 
-static voxgig_value* mandator_clearing_export_summary_list(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity** mandator_clearing_export_summary_list(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("list", "mandator_clearing_export_summary");
   return NULL;
@@ -260,7 +265,7 @@ static void mandator_clearing_export_summary_create_postdone(mandator_clearing_e
   }
 }
 
-static voxgig_value* mandator_clearing_export_summary_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err) {
+static Entity* mandator_clearing_export_summary_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err) {
   mandator_clearing_export_summary_entity* self = (mandator_clearing_export_summary_entity*)e;
   CtxSpec cs;
   memset(&cs, 0, sizeof(cs));
@@ -270,20 +275,38 @@ static voxgig_value* mandator_clearing_export_summary_create(Entity* e, voxgig_v
   cs.data = self->data;
   cs.reqdata = reqdata;
   Context* ctx = make_context_util(cs, mandator_clearing_export_summary_ent_ctx(self));
-  return mandator_clearing_export_summary_run_op(self, ctx, mandator_clearing_export_summary_create_postdone, err);
+  mandator_clearing_export_summary_run_op(self, ctx, mandator_clearing_export_summary_create_postdone, err);
+  if (*err) return NULL;
+
+  // The operation resolves to THIS entity: run_op has just absorbed the
+  // result into it, and the caller reaches the record through vt->data.
+  // See AGENTS.md "Entity operations return ENTITIES".
+
+  return e;
 }
 
 
-static voxgig_value* mandator_clearing_export_summary_update(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* mandator_clearing_export_summary_update(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("update", "mandator_clearing_export_summary");
   return NULL;
 }
 
-static voxgig_value* mandator_clearing_export_summary_remove(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* mandator_clearing_export_summary_remove(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("remove", "mandator_clearing_export_summary");
   return NULL;
+}
+
+// `remove` resolves to the entity, marked. The instance KEEPS the data it
+// held - a caller can still read what was deleted - but it is no longer a
+// live record.
+static void mandator_clearing_export_summary_mark_deleted(Entity* e) {
+  ((mandator_clearing_export_summary_entity*)e)->deleted = true;
+}
+
+static bool mandator_clearing_export_summary_deleted(Entity* e) {
+  return ((mandator_clearing_export_summary_entity*)e)->deleted;
 }
 
 static const EntityVT mandator_clearing_export_summary_VT = {
@@ -291,6 +314,8 @@ static const EntityVT mandator_clearing_export_summary_VT = {
   mandator_clearing_export_summary_make,
   mandator_clearing_export_summary_data,
   mandator_clearing_export_summary_matchv,
+  mandator_clearing_export_summary_mark_deleted,
+  mandator_clearing_export_summary_deleted,
   mandator_clearing_export_summary_load,
   mandator_clearing_export_summary_list,
   mandator_clearing_export_summary_create,

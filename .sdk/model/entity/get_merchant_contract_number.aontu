@@ -6,17 +6,17 @@ main: kit: entity: get_merchant_contract_number: {
 
   fields: [
     {
-      name: "merchant_contract_number"
+      name: "merchantContractNumber"
       req: true
       type: "`$STRING`"
     }
     {
-      name: "response_code"
+      name: "responseCode"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "response_message"
+      name: "responseMessage"
       req: false
       type: "`$STRING`"
     }

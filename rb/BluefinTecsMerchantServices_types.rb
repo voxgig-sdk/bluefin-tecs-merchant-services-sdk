@@ -10,31 +10,31 @@
 
 # CancelTransaction entity data model.
 #
-# @!attribute [rw] acquirer_id
+# @!attribute [rw] acquirerId
 #   @return [String, nil]
 #
-# @!attribute [rw] acquirer_name
+# @!attribute [rw] acquirerName
 #   @return [String, nil]
 #
-# @!attribute [rw] actual_bonus_point
+# @!attribute [rw] actualBonusPoints
 #   @return [String, nil]
 #
 # @!attribute [rw] amount
 #   @return [Integer, nil]
 #
-# @!attribute [rw] authorization_code
+# @!attribute [rw] authorizationCode
 #   @return [String, nil]
 #
-# @!attribute [rw] balance_amount
+# @!attribute [rw] balanceAmount
 #   @return [String, nil]
 #
-# @!attribute [rw] card_brand
+# @!attribute [rw] cardBrand
 #   @return [String, nil]
 #
-# @!attribute [rw] card_number
+# @!attribute [rw] cardNumber
 #   @return [String, nil]
 #
-# @!attribute [rw] client_id
+# @!attribute [rw] clientId
 #   @return [Integer]
 #
 # @!attribute [rw] currency
@@ -43,163 +43,163 @@
 # @!attribute [rw] cvc
 #   @return [String, nil]
 #
-# @!attribute [rw] ec_data
+# @!attribute [rw] ecData
 #   @return [String, nil]
 #
-# @!attribute [rw] ecr_data
+# @!attribute [rw] ecrData
 #   @return [String, nil]
 #
-# @!attribute [rw] emv_data
+# @!attribute [rw] emvData
 #   @return [String, nil]
 #
-# @!attribute [rw] exchange_fee
+# @!attribute [rw] exchangeFee
 #   @return [Integer, nil]
 #
-# @!attribute [rw] exchange_rate
+# @!attribute [rw] exchangeRate
 #   @return [String, nil]
 #
-# @!attribute [rw] language_code
+# @!attribute [rw] languageCode
 #   @return [String, nil]
 #
-# @!attribute [rw] merchant_address
+# @!attribute [rw] merchantAddress
 #   @return [String, nil]
 #
-# @!attribute [rw] merchant_name
+# @!attribute [rw] merchantName
 #   @return [String, nil]
 #
-# @!attribute [rw] merchant_number
+# @!attribute [rw] merchantNumber
 #   @return [String, nil]
 #
-# @!attribute [rw] message_type
+# @!attribute [rw] messageType
 #   @return [String, nil]
 #
-# @!attribute [rw] original_trace_number
+# @!attribute [rw] originalTraceNumber
 #   @return [Integer, nil]
 #
-# @!attribute [rw] original_transaction_id
+# @!attribute [rw] originalTransactionId
 #   @return [String, nil]
 #
 # @!attribute [rw] password
 #   @return [String, nil]
 #
-# @!attribute [rw] payment_reason
+# @!attribute [rw] paymentReason
 #   @return [String, nil]
 #
-# @!attribute [rw] receipt_footer
+# @!attribute [rw] receiptFooter
 #   @return [String, nil]
 #
-# @!attribute [rw] receipt_header
+# @!attribute [rw] receiptHeader
 #   @return [String, nil]
 #
-# @!attribute [rw] receipt_layout
+# @!attribute [rw] receiptLayout
 #   @return [Integer, nil]
 #
-# @!attribute [rw] receipt_number
+# @!attribute [rw] receiptNumber
 #   @return [String]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] serial_number
+# @!attribute [rw] serialNumber
 #   @return [String, nil]
 #
 # @!attribute [rw] svc
 #   @return [String, nil]
 #
-# @!attribute [rw] terminal_id
+# @!attribute [rw] terminalId
 #   @return [Integer]
 #
-# @!attribute [rw] terminal_location
+# @!attribute [rw] terminalLocation
 #   @return [String, nil]
 #
-# @!attribute [rw] trace_number
+# @!attribute [rw] traceNumber
 #   @return [Integer, nil]
 #
-# @!attribute [rw] transaction_date
+# @!attribute [rw] transactionDate
 #   @return [String, nil]
 #
-# @!attribute [rw] transaction_id
+# @!attribute [rw] transactionId
 #   @return [String, nil]
 #
-# @!attribute [rw] tx_type
+# @!attribute [rw] txType
 #   @return [String, nil]
 #
-# @!attribute [rw] user_data
+# @!attribute [rw] userData
 #   @return [String, nil]
 CancelTransaction = Struct.new(
-  :acquirer_id,
-  :acquirer_name,
-  :actual_bonus_point,
+  :acquirerId,
+  :acquirerName,
+  :actualBonusPoints,
   :amount,
-  :authorization_code,
-  :balance_amount,
-  :card_brand,
-  :card_number,
-  :client_id,
+  :authorizationCode,
+  :balanceAmount,
+  :cardBrand,
+  :cardNumber,
+  :clientId,
   :currency,
   :cvc,
-  :ec_data,
-  :ecr_data,
-  :emv_data,
-  :exchange_fee,
-  :exchange_rate,
-  :language_code,
-  :merchant_address,
-  :merchant_name,
-  :merchant_number,
-  :message_type,
-  :original_trace_number,
-  :original_transaction_id,
+  :ecData,
+  :ecrData,
+  :emvData,
+  :exchangeFee,
+  :exchangeRate,
+  :languageCode,
+  :merchantAddress,
+  :merchantName,
+  :merchantNumber,
+  :messageType,
+  :originalTraceNumber,
+  :originalTransactionId,
   :password,
-  :payment_reason,
-  :receipt_footer,
-  :receipt_header,
-  :receipt_layout,
-  :receipt_number,
-  :response_code,
-  :response_message,
-  :serial_number,
+  :paymentReason,
+  :receiptFooter,
+  :receiptHeader,
+  :receiptLayout,
+  :receiptNumber,
+  :responseCode,
+  :responseMessage,
+  :serialNumber,
   :svc,
-  :terminal_id,
-  :terminal_location,
-  :trace_number,
-  :transaction_date,
-  :transaction_id,
-  :tx_type,
-  :user_data,
+  :terminalId,
+  :terminalLocation,
+  :traceNumber,
+  :transactionDate,
+  :transactionId,
+  :txType,
+  :userData,
   keyword_init: true
 )
 
 # Request payload for CancelTransaction#create.
 #
-# @!attribute [rw] acquirer_id
+# @!attribute [rw] acquirerId
 #   @return [String, nil]
 #
-# @!attribute [rw] acquirer_name
+# @!attribute [rw] acquirerName
 #   @return [String, nil]
 #
-# @!attribute [rw] actual_bonus_point
+# @!attribute [rw] actualBonusPoints
 #   @return [String, nil]
 #
 # @!attribute [rw] amount
 #   @return [Integer, nil]
 #
-# @!attribute [rw] authorization_code
+# @!attribute [rw] authorizationCode
 #   @return [String, nil]
 #
-# @!attribute [rw] balance_amount
+# @!attribute [rw] balanceAmount
 #   @return [String, nil]
 #
-# @!attribute [rw] card_brand
+# @!attribute [rw] cardBrand
 #   @return [String, nil]
 #
-# @!attribute [rw] card_number
+# @!attribute [rw] cardNumber
 #   @return [String, nil]
 #
-# @!attribute [rw] client_id
+# @!attribute [rw] clientId
 #   @return [Integer]
 #
 # @!attribute [rw] currency
@@ -208,389 +208,389 @@ CancelTransaction = Struct.new(
 # @!attribute [rw] cvc
 #   @return [String, nil]
 #
-# @!attribute [rw] ec_data
+# @!attribute [rw] ecData
 #   @return [String, nil]
 #
-# @!attribute [rw] ecr_data
+# @!attribute [rw] ecrData
 #   @return [String, nil]
 #
-# @!attribute [rw] emv_data
+# @!attribute [rw] emvData
 #   @return [String, nil]
 #
-# @!attribute [rw] exchange_fee
+# @!attribute [rw] exchangeFee
 #   @return [Integer, nil]
 #
-# @!attribute [rw] exchange_rate
+# @!attribute [rw] exchangeRate
 #   @return [String, nil]
 #
-# @!attribute [rw] language_code
+# @!attribute [rw] languageCode
 #   @return [String, nil]
 #
-# @!attribute [rw] merchant_address
+# @!attribute [rw] merchantAddress
 #   @return [String, nil]
 #
-# @!attribute [rw] merchant_name
+# @!attribute [rw] merchantName
 #   @return [String, nil]
 #
-# @!attribute [rw] merchant_number
+# @!attribute [rw] merchantNumber
 #   @return [String, nil]
 #
-# @!attribute [rw] message_type
+# @!attribute [rw] messageType
 #   @return [String, nil]
 #
-# @!attribute [rw] original_trace_number
+# @!attribute [rw] originalTraceNumber
 #   @return [Integer, nil]
 #
-# @!attribute [rw] original_transaction_id
+# @!attribute [rw] originalTransactionId
 #   @return [String, nil]
 #
 # @!attribute [rw] password
 #   @return [String, nil]
 #
-# @!attribute [rw] payment_reason
+# @!attribute [rw] paymentReason
 #   @return [String, nil]
 #
-# @!attribute [rw] receipt_footer
+# @!attribute [rw] receiptFooter
 #   @return [String, nil]
 #
-# @!attribute [rw] receipt_header
+# @!attribute [rw] receiptHeader
 #   @return [String, nil]
 #
-# @!attribute [rw] receipt_layout
+# @!attribute [rw] receiptLayout
 #   @return [Integer, nil]
 #
-# @!attribute [rw] receipt_number
+# @!attribute [rw] receiptNumber
 #   @return [String]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] serial_number
+# @!attribute [rw] serialNumber
 #   @return [String, nil]
 #
 # @!attribute [rw] svc
 #   @return [String, nil]
 #
-# @!attribute [rw] terminal_id
+# @!attribute [rw] terminalId
 #   @return [Integer]
 #
-# @!attribute [rw] terminal_location
+# @!attribute [rw] terminalLocation
 #   @return [String, nil]
 #
-# @!attribute [rw] trace_number
+# @!attribute [rw] traceNumber
 #   @return [Integer, nil]
 #
-# @!attribute [rw] transaction_date
+# @!attribute [rw] transactionDate
 #   @return [String, nil]
 #
-# @!attribute [rw] transaction_id
+# @!attribute [rw] transactionId
 #   @return [String, nil]
 #
-# @!attribute [rw] tx_type
+# @!attribute [rw] txType
 #   @return [String, nil]
 #
-# @!attribute [rw] user_data
+# @!attribute [rw] userData
 #   @return [String, nil]
 CancelTransactionCreateData = Struct.new(
-  :acquirer_id,
-  :acquirer_name,
-  :actual_bonus_point,
+  :acquirerId,
+  :acquirerName,
+  :actualBonusPoints,
   :amount,
-  :authorization_code,
-  :balance_amount,
-  :card_brand,
-  :card_number,
-  :client_id,
+  :authorizationCode,
+  :balanceAmount,
+  :cardBrand,
+  :cardNumber,
+  :clientId,
   :currency,
   :cvc,
-  :ec_data,
-  :ecr_data,
-  :emv_data,
-  :exchange_fee,
-  :exchange_rate,
-  :language_code,
-  :merchant_address,
-  :merchant_name,
-  :merchant_number,
-  :message_type,
-  :original_trace_number,
-  :original_transaction_id,
+  :ecData,
+  :ecrData,
+  :emvData,
+  :exchangeFee,
+  :exchangeRate,
+  :languageCode,
+  :merchantAddress,
+  :merchantName,
+  :merchantNumber,
+  :messageType,
+  :originalTraceNumber,
+  :originalTransactionId,
   :password,
-  :payment_reason,
-  :receipt_footer,
-  :receipt_header,
-  :receipt_layout,
-  :receipt_number,
-  :response_code,
-  :response_message,
-  :serial_number,
+  :paymentReason,
+  :receiptFooter,
+  :receiptHeader,
+  :receiptLayout,
+  :receiptNumber,
+  :responseCode,
+  :responseMessage,
+  :serialNumber,
   :svc,
-  :terminal_id,
-  :terminal_location,
-  :trace_number,
-  :transaction_date,
-  :transaction_id,
-  :tx_type,
-  :user_data,
+  :terminalId,
+  :terminalLocation,
+  :traceNumber,
+  :transactionDate,
+  :transactionId,
+  :txType,
+  :userData,
   keyword_init: true
 )
 
 # CheckCardBlackListed entity data model.
 #
-# @!attribute [rw] card_no
+# @!attribute [rw] cardNo
 #   @return [String, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 CheckCardBlackListed = Struct.new(
-  :card_no,
-  :response_code,
-  :response_message,
+  :cardNo,
+  :responseCode,
+  :responseMessage,
   keyword_init: true
 )
 
 # Request payload for CheckCardBlackListed#create.
 #
-# @!attribute [rw] card_no
+# @!attribute [rw] cardNo
 #   @return [String, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 CheckCardBlackListedCreateData = Struct.new(
-  :card_no,
-  :response_code,
-  :response_message,
+  :cardNo,
+  :responseCode,
+  :responseMessage,
   keyword_init: true
 )
 
 # CreateProduct entity data model.
 #
-# @!attribute [rw] acquirer_id
+# @!attribute [rw] acquirerId
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] template_name
+# @!attribute [rw] templateName
 #   @return [String]
 #
-# @!attribute [rw] template_type
+# @!attribute [rw] templateType
 #   @return [String]
 #
-# @!attribute [rw] template_xml
+# @!attribute [rw] templateXml
 #   @return [String]
 #
-# @!attribute [rw] terminal_type
+# @!attribute [rw] terminalType
 #   @return [String]
 CreateProduct = Struct.new(
-  :acquirer_id,
-  :response_code,
-  :response_message,
-  :template_name,
-  :template_type,
-  :template_xml,
-  :terminal_type,
+  :acquirerId,
+  :responseCode,
+  :responseMessage,
+  :templateName,
+  :templateType,
+  :templateXml,
+  :terminalType,
   keyword_init: true
 )
 
 # Request payload for CreateProduct#create.
 #
-# @!attribute [rw] acquirer_id
+# @!attribute [rw] acquirerId
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] template_name
+# @!attribute [rw] templateName
 #   @return [String]
 #
-# @!attribute [rw] template_type
+# @!attribute [rw] templateType
 #   @return [String]
 #
-# @!attribute [rw] template_xml
+# @!attribute [rw] templateXml
 #   @return [String]
 #
-# @!attribute [rw] terminal_type
+# @!attribute [rw] terminalType
 #   @return [String]
 CreateProductCreateData = Struct.new(
-  :acquirer_id,
-  :response_code,
-  :response_message,
-  :template_name,
-  :template_type,
-  :template_xml,
-  :terminal_type,
+  :acquirerId,
+  :responseCode,
+  :responseMessage,
+  :templateName,
+  :templateType,
+  :templateXml,
+  :terminalType,
   keyword_init: true
 )
 
 # DeactivateTerminal entity data model.
 #
-# @!attribute [rw] corporate_uuid
+# @!attribute [rw] corporateUuid
 #   @return [String, nil]
 #
-# @!attribute [rw] deactivation_reason
+# @!attribute [rw] deactivationReason
 #   @return [String]
 #
-# @!attribute [rw] package_order_uuid
+# @!attribute [rw] packageOrderUuid
 #   @return [String, nil]
 #
-# @!attribute [rw] product_order_uuid
+# @!attribute [rw] productOrderUuid
 #   @return [String, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] terminal_id
+# @!attribute [rw] terminalId
 #   @return [Integer]
 DeactivateTerminal = Struct.new(
-  :corporate_uuid,
-  :deactivation_reason,
-  :package_order_uuid,
-  :product_order_uuid,
-  :response_code,
-  :response_message,
-  :terminal_id,
+  :corporateUuid,
+  :deactivationReason,
+  :packageOrderUuid,
+  :productOrderUuid,
+  :responseCode,
+  :responseMessage,
+  :terminalId,
   keyword_init: true
 )
 
 # Request payload for DeactivateTerminal#create.
 #
-# @!attribute [rw] corporate_uuid
+# @!attribute [rw] corporateUuid
 #   @return [String, nil]
 #
-# @!attribute [rw] deactivation_reason
+# @!attribute [rw] deactivationReason
 #   @return [String]
 #
-# @!attribute [rw] package_order_uuid
+# @!attribute [rw] packageOrderUuid
 #   @return [String, nil]
 #
-# @!attribute [rw] product_order_uuid
+# @!attribute [rw] productOrderUuid
 #   @return [String, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] terminal_id
+# @!attribute [rw] terminalId
 #   @return [Integer]
 DeactivateTerminalCreateData = Struct.new(
-  :corporate_uuid,
-  :deactivation_reason,
-  :package_order_uuid,
-  :product_order_uuid,
-  :response_code,
-  :response_message,
-  :terminal_id,
+  :corporateUuid,
+  :deactivationReason,
+  :packageOrderUuid,
+  :productOrderUuid,
+  :responseCode,
+  :responseMessage,
+  :terminalId,
   keyword_init: true
 )
 
 # DigitalServicesApi entity data model.
 #
-# @!attribute [rw] clearing_date_from
+# @!attribute [rw] clearingDateFrom
 #   @return [String]
 #
-# @!attribute [rw] clearing_date_to
+# @!attribute [rw] clearingDateTo
 #   @return [String]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] tx_count
+# @!attribute [rw] txCount
 #   @return [Integer, nil]
 #
-# @!attribute [rw] tx_id_end
+# @!attribute [rw] txIdEnd
 #   @return [String, nil]
 #
-# @!attribute [rw] tx_id_start
+# @!attribute [rw] txIdStart
 #   @return [String, nil]
 #
-# @!attribute [rw] tx_seq_no_end
+# @!attribute [rw] txSeqNoEnd
 #   @return [Integer, nil]
 #
-# @!attribute [rw] tx_seq_no_start
+# @!attribute [rw] txSeqNoStart
 #   @return [Integer, nil]
 #
-# @!attribute [rw] tx_total
+# @!attribute [rw] txTotal
 #   @return [Integer, nil]
 DigitalServicesApi = Struct.new(
-  :clearing_date_from,
-  :clearing_date_to,
-  :response_code,
-  :response_message,
-  :tx_count,
-  :tx_id_end,
-  :tx_id_start,
-  :tx_seq_no_end,
-  :tx_seq_no_start,
-  :tx_total,
+  :clearingDateFrom,
+  :clearingDateTo,
+  :responseCode,
+  :responseMessage,
+  :txCount,
+  :txIdEnd,
+  :txIdStart,
+  :txSeqNoEnd,
+  :txSeqNoStart,
+  :txTotal,
   keyword_init: true
 )
 
 # Request payload for DigitalServicesApi#load.
 #
-# @!attribute [rw] clearing_date_from
+# @!attribute [rw] clearingDateFrom
 #   @return [String, nil]
 #
-# @!attribute [rw] clearing_date_to
+# @!attribute [rw] clearingDateTo
 #   @return [String, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] tx_count
+# @!attribute [rw] txCount
 #   @return [Integer, nil]
 #
-# @!attribute [rw] tx_id_end
+# @!attribute [rw] txIdEnd
 #   @return [String, nil]
 #
-# @!attribute [rw] tx_id_start
+# @!attribute [rw] txIdStart
 #   @return [String, nil]
 #
-# @!attribute [rw] tx_seq_no_end
+# @!attribute [rw] txSeqNoEnd
 #   @return [Integer, nil]
 #
-# @!attribute [rw] tx_seq_no_start
+# @!attribute [rw] txSeqNoStart
 #   @return [Integer, nil]
 #
-# @!attribute [rw] tx_total
+# @!attribute [rw] txTotal
 #   @return [Integer, nil]
 DigitalServicesApiLoadMatch = Struct.new(
-  :clearing_date_from,
-  :clearing_date_to,
-  :response_code,
-  :response_message,
-  :tx_count,
-  :tx_id_end,
-  :tx_id_start,
-  :tx_seq_no_end,
-  :tx_seq_no_start,
-  :tx_total,
+  :clearingDateFrom,
+  :clearingDateTo,
+  :responseCode,
+  :responseMessage,
+  :txCount,
+  :txIdEnd,
+  :txIdStart,
+  :txSeqNoEnd,
+  :txSeqNoStart,
+  :txTotal,
   keyword_init: true
 )
 
@@ -598,490 +598,530 @@ DigitalServicesApiLoadMatch = Struct.new(
 #
 # @!attribute [rw] file_id
 #   @return [String, nil]
+#
+# @!attribute [rw] clearingDateFrom
+#   @return [String]
+#
+# @!attribute [rw] clearingDateTo
+#   @return [String]
+#
+# @!attribute [rw] responseCode
+#   @return [Integer, nil]
+#
+# @!attribute [rw] responseMessage
+#   @return [String, nil]
+#
+# @!attribute [rw] txCount
+#   @return [Integer, nil]
+#
+# @!attribute [rw] txIdEnd
+#   @return [String, nil]
+#
+# @!attribute [rw] txIdStart
+#   @return [String, nil]
+#
+# @!attribute [rw] txSeqNoEnd
+#   @return [Integer, nil]
+#
+# @!attribute [rw] txSeqNoStart
+#   @return [Integer, nil]
+#
+# @!attribute [rw] txTotal
+#   @return [Integer, nil]
 DigitalServicesApiCreateData = Struct.new(
   :file_id,
+  :clearingDateFrom,
+  :clearingDateTo,
+  :responseCode,
+  :responseMessage,
+  :txCount,
+  :txIdEnd,
+  :txIdStart,
+  :txSeqNoEnd,
+  :txSeqNoStart,
+  :txTotal,
   keyword_init: true
 )
 
 # EcDataEcom entity data model.
 #
-# @!attribute [rw] ecom_data
+# @!attribute [rw] ecomData
 #   @return [String, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] terminal_id
+# @!attribute [rw] terminalId
 #   @return [Integer]
 #
-# @!attribute [rw] transaction_id
+# @!attribute [rw] transactionId
 #   @return [String]
 #
-# @!attribute [rw] transaction_type
+# @!attribute [rw] transactionType
 #   @return [String]
 EcDataEcom = Struct.new(
-  :ecom_data,
-  :response_code,
-  :response_message,
-  :terminal_id,
-  :transaction_id,
-  :transaction_type,
+  :ecomData,
+  :responseCode,
+  :responseMessage,
+  :terminalId,
+  :transactionId,
+  :transactionType,
   keyword_init: true
 )
 
 # Request payload for EcDataEcom#create.
 #
-# @!attribute [rw] ecom_data
+# @!attribute [rw] ecomData
 #   @return [String, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] terminal_id
+# @!attribute [rw] terminalId
 #   @return [Integer]
 #
-# @!attribute [rw] transaction_id
+# @!attribute [rw] transactionId
 #   @return [String]
 #
-# @!attribute [rw] transaction_type
+# @!attribute [rw] transactionType
 #   @return [String]
 EcDataEcomCreateData = Struct.new(
-  :ecom_data,
-  :response_code,
-  :response_message,
-  :terminal_id,
-  :transaction_id,
-  :transaction_type,
+  :ecomData,
+  :responseCode,
+  :responseMessage,
+  :terminalId,
+  :transactionId,
+  :transactionType,
   keyword_init: true
 )
 
 # EcomParameter entity data model.
 #
-# @!attribute [rw] ecom_pass
+# @!attribute [rw] ecomPass
 #   @return [String, nil]
 #
-# @!attribute [rw] ecom_skey
+# @!attribute [rw] ecomSkey
 #   @return [String, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] terminal_id
+# @!attribute [rw] terminalId
 #   @return [Integer]
 EcomParameter = Struct.new(
-  :ecom_pass,
-  :ecom_skey,
-  :response_code,
-  :response_message,
-  :terminal_id,
+  :ecomPass,
+  :ecomSkey,
+  :responseCode,
+  :responseMessage,
+  :terminalId,
   keyword_init: true
 )
 
 # Request payload for EcomParameter#create.
 #
-# @!attribute [rw] ecom_pass
+# @!attribute [rw] ecomPass
 #   @return [String, nil]
 #
-# @!attribute [rw] ecom_skey
+# @!attribute [rw] ecomSkey
 #   @return [String, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] terminal_id
+# @!attribute [rw] terminalId
 #   @return [Integer]
 EcomParameterCreateData = Struct.new(
-  :ecom_pass,
-  :ecom_skey,
-  :response_code,
-  :response_message,
-  :terminal_id,
+  :ecomPass,
+  :ecomSkey,
+  :responseCode,
+  :responseMessage,
+  :terminalId,
   keyword_init: true
 )
 
 # EcrData entity data model.
 #
-# @!attribute [rw] ecr_data
+# @!attribute [rw] ecrData
 #   @return [String, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] terminal_id
+# @!attribute [rw] terminalId
 #   @return [Integer]
 #
-# @!attribute [rw] transaction_id
+# @!attribute [rw] transactionId
 #   @return [String]
 #
-# @!attribute [rw] transaction_type
+# @!attribute [rw] transactionType
 #   @return [String]
 EcrData = Struct.new(
-  :ecr_data,
-  :response_code,
-  :response_message,
-  :terminal_id,
-  :transaction_id,
-  :transaction_type,
+  :ecrData,
+  :responseCode,
+  :responseMessage,
+  :terminalId,
+  :transactionId,
+  :transactionType,
   keyword_init: true
 )
 
 # Request payload for EcrData#create.
 #
-# @!attribute [rw] ecr_data
+# @!attribute [rw] ecrData
 #   @return [String, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] terminal_id
+# @!attribute [rw] terminalId
 #   @return [Integer]
 #
-# @!attribute [rw] transaction_id
+# @!attribute [rw] transactionId
 #   @return [String]
 #
-# @!attribute [rw] transaction_type
+# @!attribute [rw] transactionType
 #   @return [String]
 EcrDataCreateData = Struct.new(
-  :ecr_data,
-  :response_code,
-  :response_message,
-  :terminal_id,
-  :transaction_id,
-  :transaction_type,
+  :ecrData,
+  :responseCode,
+  :responseMessage,
+  :terminalId,
+  :transactionId,
+  :transactionType,
   keyword_init: true
 )
 
 # EmvData entity data model.
 #
-# @!attribute [rw] emv_data
+# @!attribute [rw] emvData
 #   @return [String, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] terminal_id
+# @!attribute [rw] terminalId
 #   @return [Integer]
 #
-# @!attribute [rw] transaction_id
+# @!attribute [rw] transactionId
 #   @return [String]
 #
-# @!attribute [rw] transaction_type
+# @!attribute [rw] transactionType
 #   @return [String]
 EmvData = Struct.new(
-  :emv_data,
-  :response_code,
-  :response_message,
-  :terminal_id,
-  :transaction_id,
-  :transaction_type,
+  :emvData,
+  :responseCode,
+  :responseMessage,
+  :terminalId,
+  :transactionId,
+  :transactionType,
   keyword_init: true
 )
 
 # Request payload for EmvData#create.
 #
-# @!attribute [rw] emv_data
+# @!attribute [rw] emvData
 #   @return [String, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] terminal_id
+# @!attribute [rw] terminalId
 #   @return [Integer]
 #
-# @!attribute [rw] transaction_id
+# @!attribute [rw] transactionId
 #   @return [String]
 #
-# @!attribute [rw] transaction_type
+# @!attribute [rw] transactionType
 #   @return [String]
 EmvDataCreateData = Struct.new(
-  :emv_data,
-  :response_code,
-  :response_message,
-  :terminal_id,
-  :transaction_id,
-  :transaction_type,
+  :emvData,
+  :responseCode,
+  :responseMessage,
+  :terminalId,
+  :transactionId,
+  :transactionType,
   keyword_init: true
 )
 
 # EnableAcquiring entity data model.
 #
-# @!attribute [rw] account_no
+# @!attribute [rw] accountNo
 #   @return [Integer, nil]
 #
-# @!attribute [rw] additional_data
+# @!attribute [rw] additionalData
 #   @return [Hash, nil]
 #
-# @!attribute [rw] corporate_uuid
+# @!attribute [rw] corporateUuid
 #   @return [String]
 #
 # @!attribute [rw] currency
 #   @return [String]
 #
-# @!attribute [rw] merchant_category_code
+# @!attribute [rw] merchantCategoryCode
 #   @return [Integer]
 #
-# @!attribute [rw] package_order_uuid
+# @!attribute [rw] packageOrderUuid
 #   @return [String]
 #
-# @!attribute [rw] product_order_uuid
+# @!attribute [rw] productOrderUuid
 #   @return [String]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] sorting_code
+# @!attribute [rw] sortingCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] template_name
+# @!attribute [rw] templateName
 #   @return [String]
 #
-# @!attribute [rw] terminal_id
+# @!attribute [rw] terminalIdAcq
+#   @return [String, nil]
+#
+# @!attribute [rw] terminalIds
 #   @return [Array, nil]
 #
-# @!attribute [rw] terminal_id_acq
-#   @return [String, nil]
-#
-# @!attribute [rw] vu_nummer
+# @!attribute [rw] vuNummer
 #   @return [String, nil]
 EnableAcquiring = Struct.new(
-  :account_no,
-  :additional_data,
-  :corporate_uuid,
+  :accountNo,
+  :additionalData,
+  :corporateUuid,
   :currency,
-  :merchant_category_code,
-  :package_order_uuid,
-  :product_order_uuid,
-  :response_code,
-  :response_message,
-  :sorting_code,
-  :template_name,
-  :terminal_id,
-  :terminal_id_acq,
-  :vu_nummer,
+  :merchantCategoryCode,
+  :packageOrderUuid,
+  :productOrderUuid,
+  :responseCode,
+  :responseMessage,
+  :sortingCode,
+  :templateName,
+  :terminalIdAcq,
+  :terminalIds,
+  :vuNummer,
   keyword_init: true
 )
 
 # Request payload for EnableAcquiring#create.
 #
-# @!attribute [rw] account_no
+# @!attribute [rw] accountNo
 #   @return [Integer, nil]
 #
-# @!attribute [rw] additional_data
+# @!attribute [rw] additionalData
 #   @return [Hash, nil]
 #
-# @!attribute [rw] corporate_uuid
+# @!attribute [rw] corporateUuid
 #   @return [String]
 #
 # @!attribute [rw] currency
 #   @return [String]
 #
-# @!attribute [rw] merchant_category_code
+# @!attribute [rw] merchantCategoryCode
 #   @return [Integer]
 #
-# @!attribute [rw] package_order_uuid
+# @!attribute [rw] packageOrderUuid
 #   @return [String]
 #
-# @!attribute [rw] product_order_uuid
+# @!attribute [rw] productOrderUuid
 #   @return [String]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] sorting_code
+# @!attribute [rw] sortingCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] template_name
+# @!attribute [rw] templateName
 #   @return [String]
 #
-# @!attribute [rw] terminal_id
+# @!attribute [rw] terminalIdAcq
+#   @return [String, nil]
+#
+# @!attribute [rw] terminalIds
 #   @return [Array, nil]
 #
-# @!attribute [rw] terminal_id_acq
-#   @return [String, nil]
-#
-# @!attribute [rw] vu_nummer
+# @!attribute [rw] vuNummer
 #   @return [String, nil]
 EnableAcquiringCreateData = Struct.new(
-  :account_no,
-  :additional_data,
-  :corporate_uuid,
+  :accountNo,
+  :additionalData,
+  :corporateUuid,
   :currency,
-  :merchant_category_code,
-  :package_order_uuid,
-  :product_order_uuid,
-  :response_code,
-  :response_message,
-  :sorting_code,
-  :template_name,
-  :terminal_id,
-  :terminal_id_acq,
-  :vu_nummer,
+  :merchantCategoryCode,
+  :packageOrderUuid,
+  :productOrderUuid,
+  :responseCode,
+  :responseMessage,
+  :sortingCode,
+  :templateName,
+  :terminalIdAcq,
+  :terminalIds,
+  :vuNummer,
   keyword_init: true
 )
 
 # GetMerchantContractNumber entity data model.
 #
-# @!attribute [rw] merchant_contract_number
+# @!attribute [rw] merchantContractNumber
 #   @return [String]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 GetMerchantContractNumber = Struct.new(
-  :merchant_contract_number,
-  :response_code,
-  :response_message,
+  :merchantContractNumber,
+  :responseCode,
+  :responseMessage,
   keyword_init: true
 )
 
 # Request payload for GetMerchantContractNumber#create.
 #
-# @!attribute [rw] merchant_contract_number
+# @!attribute [rw] merchantContractNumber
 #   @return [String]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 GetMerchantContractNumberCreateData = Struct.new(
-  :merchant_contract_number,
-  :response_code,
-  :response_message,
+  :merchantContractNumber,
+  :responseCode,
+  :responseMessage,
   keyword_init: true
 )
 
 # GetTemplateXml entity data model.
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] template_name
+# @!attribute [rw] templateName
 #   @return [String]
 GetTemplateXml = Struct.new(
-  :response_code,
-  :response_message,
-  :template_name,
+  :responseCode,
+  :responseMessage,
+  :templateName,
   keyword_init: true
 )
 
 # Request payload for GetTemplateXml#create.
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] template_name
+# @!attribute [rw] templateName
 #   @return [String]
 GetTemplateXmlCreateData = Struct.new(
-  :response_code,
-  :response_message,
-  :template_name,
+  :responseCode,
+  :responseMessage,
+  :templateName,
   keyword_init: true
 )
 
 # IntroduceMandator entity data model.
 #
-# @!attribute [rw] mandator_name
+# @!attribute [rw] mandatorName
 #   @return [String]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 IntroduceMandator = Struct.new(
-  :mandator_name,
-  :response_code,
-  :response_message,
+  :mandatorName,
+  :responseCode,
+  :responseMessage,
   keyword_init: true
 )
 
 # Request payload for IntroduceMandator#create.
 #
-# @!attribute [rw] mandator_name
+# @!attribute [rw] mandatorName
 #   @return [String]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 IntroduceMandatorCreateData = Struct.new(
-  :mandator_name,
-  :response_code,
-  :response_message,
+  :mandatorName,
+  :responseCode,
+  :responseMessage,
   keyword_init: true
 )
 
 # IntroducePackage entity data model.
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] terminal_template_description
+# @!attribute [rw] terminalTemplateDescription
 #   @return [String]
 IntroducePackage = Struct.new(
-  :response_code,
-  :response_message,
-  :terminal_template_description,
+  :responseCode,
+  :responseMessage,
+  :terminalTemplateDescription,
   keyword_init: true
 )
 
 # Request payload for IntroducePackage#create.
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] terminal_template_description
+# @!attribute [rw] terminalTemplateDescription
 #   @return [String]
 IntroducePackageCreateData = Struct.new(
-  :response_code,
-  :response_message,
-  :terminal_template_description,
+  :responseCode,
+  :responseMessage,
+  :terminalTemplateDescription,
   keyword_init: true
 )
 
@@ -1090,43 +1130,43 @@ IntroducePackageCreateData = Struct.new(
 # @!attribute [rw] hwserialno
 #   @return [String, nil]
 #
-# @!attribute [rw] ka_date_time_from
+# @!attribute [rw] kaDateTimeFrom
 #   @return [String, nil]
 #
-# @!attribute [rw] ka_date_time_to
+# @!attribute [rw] kaDateTimeTo
 #   @return [String, nil]
 #
-# @!attribute [rw] keep_alive_data
+# @!attribute [rw] keepAliveData
 #   @return [Array, nil]
 #
 # @!attribute [rw] pagination
 #   @return [Hash, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] terminal_date_time_from
+# @!attribute [rw] terminalDateTimeFrom
 #   @return [String, nil]
 #
-# @!attribute [rw] terminal_date_time_to
+# @!attribute [rw] terminalDateTimeTo
 #   @return [String, nil]
 #
-# @!attribute [rw] terminal_id
+# @!attribute [rw] terminalId
 #   @return [Integer, nil]
 KeepAlive = Struct.new(
   :hwserialno,
-  :ka_date_time_from,
-  :ka_date_time_to,
-  :keep_alive_data,
+  :kaDateTimeFrom,
+  :kaDateTimeTo,
+  :keepAliveData,
   :pagination,
-  :response_code,
-  :response_message,
-  :terminal_date_time_from,
-  :terminal_date_time_to,
-  :terminal_id,
+  :responseCode,
+  :responseMessage,
+  :terminalDateTimeFrom,
+  :terminalDateTimeTo,
+  :terminalId,
   keyword_init: true
 )
 
@@ -1135,49 +1175,49 @@ KeepAlive = Struct.new(
 # @!attribute [rw] hwserialno
 #   @return [String, nil]
 #
-# @!attribute [rw] ka_date_time_from
+# @!attribute [rw] kaDateTimeFrom
 #   @return [String, nil]
 #
-# @!attribute [rw] ka_date_time_to
+# @!attribute [rw] kaDateTimeTo
 #   @return [String, nil]
 #
-# @!attribute [rw] keep_alive_data
+# @!attribute [rw] keepAliveData
 #   @return [Array, nil]
 #
 # @!attribute [rw] pagination
 #   @return [Hash, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] terminal_date_time_from
+# @!attribute [rw] terminalDateTimeFrom
 #   @return [String, nil]
 #
-# @!attribute [rw] terminal_date_time_to
+# @!attribute [rw] terminalDateTimeTo
 #   @return [String, nil]
 #
-# @!attribute [rw] terminal_id
+# @!attribute [rw] terminalId
 #   @return [Integer, nil]
 KeepAliveCreateData = Struct.new(
   :hwserialno,
-  :ka_date_time_from,
-  :ka_date_time_to,
-  :keep_alive_data,
+  :kaDateTimeFrom,
+  :kaDateTimeTo,
+  :keepAliveData,
   :pagination,
-  :response_code,
-  :response_message,
-  :terminal_date_time_from,
-  :terminal_date_time_to,
-  :terminal_id,
+  :responseCode,
+  :responseMessage,
+  :terminalDateTimeFrom,
+  :terminalDateTimeTo,
+  :terminalId,
   keyword_init: true
 )
 
 # ListTerminal entity data model.
 #
-# @!attribute [rw] corporate_uuid
+# @!attribute [rw] corporateUuid
 #   @return [Array, nil]
 #
 # @!attribute [rw] filter
@@ -1186,27 +1226,27 @@ KeepAliveCreateData = Struct.new(
 # @!attribute [rw] pagination
 #   @return [Hash, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] terminal
+# @!attribute [rw] terminals
 #   @return [Array, nil]
 ListTerminal = Struct.new(
-  :corporate_uuid,
+  :corporateUuid,
   :filter,
   :pagination,
-  :response_code,
-  :response_message,
-  :terminal,
+  :responseCode,
+  :responseMessage,
+  :terminals,
   keyword_init: true
 )
 
 # Request payload for ListTerminal#create.
 #
-# @!attribute [rw] corporate_uuid
+# @!attribute [rw] corporateUuid
 #   @return [Array, nil]
 #
 # @!attribute [rw] filter
@@ -1215,111 +1255,111 @@ ListTerminal = Struct.new(
 # @!attribute [rw] pagination
 #   @return [Hash, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] terminal
+# @!attribute [rw] terminals
 #   @return [Array, nil]
 ListTerminalCreateData = Struct.new(
-  :corporate_uuid,
+  :corporateUuid,
   :filter,
   :pagination,
-  :response_code,
-  :response_message,
-  :terminal,
+  :responseCode,
+  :responseMessage,
+  :terminals,
   keyword_init: true
 )
 
 # MandatorClearingExport entity data model.
 #
-# @!attribute [rw] clearing_date_from
+# @!attribute [rw] clearingDateFrom
 #   @return [String]
 #
-# @!attribute [rw] clearing_date_to
+# @!attribute [rw] clearingDateTo
 #   @return [String]
 #
 # @!attribute [rw] pagination
 #   @return [Hash, nil]
 #
-# @!attribute [rw] record
+# @!attribute [rw] records
 #   @return [Array, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 MandatorClearingExport = Struct.new(
-  :clearing_date_from,
-  :clearing_date_to,
+  :clearingDateFrom,
+  :clearingDateTo,
   :pagination,
-  :record,
-  :response_code,
-  :response_message,
+  :records,
+  :responseCode,
+  :responseMessage,
   keyword_init: true
 )
 
 # Request payload for MandatorClearingExport#create.
 #
-# @!attribute [rw] clearing_date_from
+# @!attribute [rw] clearingDateFrom
 #   @return [String]
 #
-# @!attribute [rw] clearing_date_to
+# @!attribute [rw] clearingDateTo
 #   @return [String]
 #
 # @!attribute [rw] pagination
 #   @return [Hash, nil]
 #
-# @!attribute [rw] record
+# @!attribute [rw] records
 #   @return [Array, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 MandatorClearingExportCreateData = Struct.new(
-  :clearing_date_from,
-  :clearing_date_to,
+  :clearingDateFrom,
+  :clearingDateTo,
   :pagination,
-  :record,
-  :response_code,
-  :response_message,
+  :records,
+  :responseCode,
+  :responseMessage,
   keyword_init: true
 )
 
 # MandatorClearingExportDownload entity data model.
 #
-# @!attribute [rw] clearing_date_from
+# @!attribute [rw] clearingDateFrom
 #   @return [String]
 #
-# @!attribute [rw] clearing_date_to
+# @!attribute [rw] clearingDateTo
 #   @return [String]
 #
-# @!attribute [rw] file_id
+# @!attribute [rw] fileId
 #   @return [String, nil]
 #
-# @!attribute [rw] filename_template
+# @!attribute [rw] filenameTemplate
 #   @return [String, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
 # @!attribute [rw] status
 #   @return [String, nil]
 MandatorClearingExportDownload = Struct.new(
-  :clearing_date_from,
-  :clearing_date_to,
-  :file_id,
-  :filename_template,
-  :response_code,
-  :response_message,
+  :clearingDateFrom,
+  :clearingDateTo,
+  :fileId,
+  :filenameTemplate,
+  :responseCode,
+  :responseMessage,
   :status,
   keyword_init: true
 )
@@ -1335,362 +1375,362 @@ MandatorClearingExportDownloadLoadMatch = Struct.new(
 
 # Request payload for MandatorClearingExportDownload#create.
 #
-# @!attribute [rw] clearing_date_from
+# @!attribute [rw] clearingDateFrom
 #   @return [String]
 #
-# @!attribute [rw] clearing_date_to
+# @!attribute [rw] clearingDateTo
 #   @return [String]
 #
-# @!attribute [rw] file_id
+# @!attribute [rw] fileId
 #   @return [String, nil]
 #
-# @!attribute [rw] filename_template
+# @!attribute [rw] filenameTemplate
 #   @return [String, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
 # @!attribute [rw] status
 #   @return [String, nil]
 MandatorClearingExportDownloadCreateData = Struct.new(
-  :clearing_date_from,
-  :clearing_date_to,
-  :file_id,
-  :filename_template,
-  :response_code,
-  :response_message,
+  :clearingDateFrom,
+  :clearingDateTo,
+  :fileId,
+  :filenameTemplate,
+  :responseCode,
+  :responseMessage,
   :status,
   keyword_init: true
 )
 
 # MandatorClearingExportSummary entity data model.
 #
-# @!attribute [rw] clearing_date_from
+# @!attribute [rw] clearingDateFrom
 #   @return [String]
 #
-# @!attribute [rw] clearing_date_to
+# @!attribute [rw] clearingDateTo
 #   @return [String]
 #
-# @!attribute [rw] record
+# @!attribute [rw] records
 #   @return [Array, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 MandatorClearingExportSummary = Struct.new(
-  :clearing_date_from,
-  :clearing_date_to,
-  :record,
-  :response_code,
-  :response_message,
+  :clearingDateFrom,
+  :clearingDateTo,
+  :records,
+  :responseCode,
+  :responseMessage,
   keyword_init: true
 )
 
 # Request payload for MandatorClearingExportSummary#create.
 #
-# @!attribute [rw] clearing_date_from
+# @!attribute [rw] clearingDateFrom
 #   @return [String]
 #
-# @!attribute [rw] clearing_date_to
+# @!attribute [rw] clearingDateTo
 #   @return [String]
 #
-# @!attribute [rw] record
+# @!attribute [rw] records
 #   @return [Array, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 MandatorClearingExportSummaryCreateData = Struct.new(
-  :clearing_date_from,
-  :clearing_date_to,
-  :record,
-  :response_code,
-  :response_message,
+  :clearingDateFrom,
+  :clearingDateTo,
+  :records,
+  :responseCode,
+  :responseMessage,
   keyword_init: true
 )
 
 # MerchantPortalServicesApi entity data model.
 #
-# @!attribute [rw] 3_d_secure
+# @!attribute [rw] 3DSecure
 #   @return [String, nil]
 #
-# @!attribute [rw] authorization_code
+# @!attribute [rw] authorizationCode
 #   @return [String, nil]
 #
-# @!attribute [rw] card_brand
+# @!attribute [rw] cardBrand
 #   @return [String, nil]
 #
-# @!attribute [rw] clearing_amount_from
+# @!attribute [rw] clearingAmountFrom
 #   @return [String, nil]
 #
-# @!attribute [rw] clearing_amount_to
+# @!attribute [rw] clearingAmountTo
 #   @return [String, nil]
 #
-# @!attribute [rw] clearing_currency
+# @!attribute [rw] clearingCurrency
 #   @return [String, nil]
 #
-# @!attribute [rw] clearing_status
+# @!attribute [rw] clearingStatus
 #   @return [String, nil]
 #
-# @!attribute [rw] corporate_uuid
+# @!attribute [rw] corporateUUID
 #   @return [String, nil]
 #
-# @!attribute [rw] order_by_transaction_date
+# @!attribute [rw] orderByTransactionDate
 #   @return [String, nil]
 #
 # @!attribute [rw] pagination
 #   @return [Hash, nil]
 #
-# @!attribute [rw] receipt_number
+# @!attribute [rw] receiptNumber
 #   @return [String, nil]
 #
-# @!attribute [rw] referenced_transaction_id
+# @!attribute [rw] referencedTransactionId
 #   @return [String, nil]
 #
-# @!attribute [rw] retrieval_reference_number
+# @!attribute [rw] retrievalReferenceNumber
 #   @return [String, nil]
 #
-# @!attribute [rw] source_id
+# @!attribute [rw] sourceId
 #   @return [Integer, nil]
 #
-# @!attribute [rw] tecsengine_response_code_from
+# @!attribute [rw] tecsengineResponseCodeFrom
 #   @return [String, nil]
 #
-# @!attribute [rw] tecsengine_response_code_to
+# @!attribute [rw] tecsengineResponseCodeTo
 #   @return [String, nil]
 #
-# @!attribute [rw] terminal_id
+# @!attribute [rw] terminalId
 #   @return [Integer, nil]
 #
-# @!attribute [rw] trace_number
+# @!attribute [rw] traceNumber
 #   @return [String, nil]
 #
-# @!attribute [rw] transaction_amount_from
+# @!attribute [rw] transactionAmountFrom
 #   @return [String, nil]
 #
-# @!attribute [rw] transaction_amount_to
+# @!attribute [rw] transactionAmountTo
 #   @return [String, nil]
 #
-# @!attribute [rw] transaction_date_from
+# @!attribute [rw] transactionDateFrom
 #   @return [String, nil]
 #
-# @!attribute [rw] transaction_date_to
+# @!attribute [rw] transactionDateTo
 #   @return [String, nil]
 #
-# @!attribute [rw] transaction_id
+# @!attribute [rw] transactionId
 #   @return [String, nil]
 #
-# @!attribute [rw] transaction_type
+# @!attribute [rw] transactionType
 #   @return [String, nil]
 #
 # @!attribute [rw] wallet
 #   @return [String, nil]
 MerchantPortalServicesApi = Struct.new(
-  :"3_d_secure",
-  :authorization_code,
-  :card_brand,
-  :clearing_amount_from,
-  :clearing_amount_to,
-  :clearing_currency,
-  :clearing_status,
-  :corporate_uuid,
-  :order_by_transaction_date,
+  :"3DSecure",
+  :authorizationCode,
+  :cardBrand,
+  :clearingAmountFrom,
+  :clearingAmountTo,
+  :clearingCurrency,
+  :clearingStatus,
+  :corporateUUID,
+  :orderByTransactionDate,
   :pagination,
-  :receipt_number,
-  :referenced_transaction_id,
-  :retrieval_reference_number,
-  :source_id,
-  :tecsengine_response_code_from,
-  :tecsengine_response_code_to,
-  :terminal_id,
-  :trace_number,
-  :transaction_amount_from,
-  :transaction_amount_to,
-  :transaction_date_from,
-  :transaction_date_to,
-  :transaction_id,
-  :transaction_type,
+  :receiptNumber,
+  :referencedTransactionId,
+  :retrievalReferenceNumber,
+  :sourceId,
+  :tecsengineResponseCodeFrom,
+  :tecsengineResponseCodeTo,
+  :terminalId,
+  :traceNumber,
+  :transactionAmountFrom,
+  :transactionAmountTo,
+  :transactionDateFrom,
+  :transactionDateTo,
+  :transactionId,
+  :transactionType,
   :wallet,
   keyword_init: true
 )
 
 # Request payload for MerchantPortalServicesApi#create.
 #
-# @!attribute [rw] 3_d_secure
+# @!attribute [rw] 3DSecure
 #   @return [String, nil]
 #
-# @!attribute [rw] authorization_code
+# @!attribute [rw] authorizationCode
 #   @return [String, nil]
 #
-# @!attribute [rw] card_brand
+# @!attribute [rw] cardBrand
 #   @return [String, nil]
 #
-# @!attribute [rw] clearing_amount_from
+# @!attribute [rw] clearingAmountFrom
 #   @return [String, nil]
 #
-# @!attribute [rw] clearing_amount_to
+# @!attribute [rw] clearingAmountTo
 #   @return [String, nil]
 #
-# @!attribute [rw] clearing_currency
+# @!attribute [rw] clearingCurrency
 #   @return [String, nil]
 #
-# @!attribute [rw] clearing_status
+# @!attribute [rw] clearingStatus
 #   @return [String, nil]
 #
-# @!attribute [rw] corporate_uuid
+# @!attribute [rw] corporateUUID
 #   @return [String, nil]
 #
-# @!attribute [rw] order_by_transaction_date
+# @!attribute [rw] orderByTransactionDate
 #   @return [String, nil]
 #
 # @!attribute [rw] pagination
 #   @return [Hash, nil]
 #
-# @!attribute [rw] receipt_number
+# @!attribute [rw] receiptNumber
 #   @return [String, nil]
 #
-# @!attribute [rw] referenced_transaction_id
+# @!attribute [rw] referencedTransactionId
 #   @return [String, nil]
 #
-# @!attribute [rw] retrieval_reference_number
+# @!attribute [rw] retrievalReferenceNumber
 #   @return [String, nil]
 #
-# @!attribute [rw] source_id
+# @!attribute [rw] sourceId
 #   @return [Integer, nil]
 #
-# @!attribute [rw] tecsengine_response_code_from
+# @!attribute [rw] tecsengineResponseCodeFrom
 #   @return [String, nil]
 #
-# @!attribute [rw] tecsengine_response_code_to
+# @!attribute [rw] tecsengineResponseCodeTo
 #   @return [String, nil]
 #
-# @!attribute [rw] terminal_id
+# @!attribute [rw] terminalId
 #   @return [Integer, nil]
 #
-# @!attribute [rw] trace_number
+# @!attribute [rw] traceNumber
 #   @return [String, nil]
 #
-# @!attribute [rw] transaction_amount_from
+# @!attribute [rw] transactionAmountFrom
 #   @return [String, nil]
 #
-# @!attribute [rw] transaction_amount_to
+# @!attribute [rw] transactionAmountTo
 #   @return [String, nil]
 #
-# @!attribute [rw] transaction_date_from
+# @!attribute [rw] transactionDateFrom
 #   @return [String, nil]
 #
-# @!attribute [rw] transaction_date_to
+# @!attribute [rw] transactionDateTo
 #   @return [String, nil]
 #
-# @!attribute [rw] transaction_id
+# @!attribute [rw] transactionId
 #   @return [String, nil]
 #
-# @!attribute [rw] transaction_type
+# @!attribute [rw] transactionType
 #   @return [String, nil]
 #
 # @!attribute [rw] wallet
 #   @return [String, nil]
 MerchantPortalServicesApiCreateData = Struct.new(
-  :"3_d_secure",
-  :authorization_code,
-  :card_brand,
-  :clearing_amount_from,
-  :clearing_amount_to,
-  :clearing_currency,
-  :clearing_status,
-  :corporate_uuid,
-  :order_by_transaction_date,
+  :"3DSecure",
+  :authorizationCode,
+  :cardBrand,
+  :clearingAmountFrom,
+  :clearingAmountTo,
+  :clearingCurrency,
+  :clearingStatus,
+  :corporateUUID,
+  :orderByTransactionDate,
   :pagination,
-  :receipt_number,
-  :referenced_transaction_id,
-  :retrieval_reference_number,
-  :source_id,
-  :tecsengine_response_code_from,
-  :tecsengine_response_code_to,
-  :terminal_id,
-  :trace_number,
-  :transaction_amount_from,
-  :transaction_amount_to,
-  :transaction_date_from,
-  :transaction_date_to,
-  :transaction_id,
-  :transaction_type,
+  :receiptNumber,
+  :referencedTransactionId,
+  :retrievalReferenceNumber,
+  :sourceId,
+  :tecsengineResponseCodeFrom,
+  :tecsengineResponseCodeTo,
+  :terminalId,
+  :traceNumber,
+  :transactionAmountFrom,
+  :transactionAmountTo,
+  :transactionDateFrom,
+  :transactionDateTo,
+  :transactionId,
+  :transactionType,
   :wallet,
   keyword_init: true
 )
 
 # MoveTid entity data model.
 #
-# @!attribute [rw] productorderuuid
+# @!attribute [rw] productorderuuids
 #   @return [Array]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] target_packageorderuuid
+# @!attribute [rw] targetPackageorderuuid
 #   @return [String, nil]
 #
-# @!attribute [rw] target_productorderuuid
+# @!attribute [rw] targetProductorderuuid
 #   @return [String, nil]
 MoveTid = Struct.new(
-  :productorderuuid,
-  :response_code,
-  :response_message,
-  :target_packageorderuuid,
-  :target_productorderuuid,
+  :productorderuuids,
+  :responseCode,
+  :responseMessage,
+  :targetPackageorderuuid,
+  :targetProductorderuuid,
   keyword_init: true
 )
 
 # Request payload for MoveTid#create.
 #
-# @!attribute [rw] productorderuuid
+# @!attribute [rw] productorderuuids
 #   @return [Array]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] target_packageorderuuid
+# @!attribute [rw] targetPackageorderuuid
 #   @return [String, nil]
 #
-# @!attribute [rw] target_productorderuuid
+# @!attribute [rw] targetProductorderuuid
 #   @return [String, nil]
 MoveTidCreateData = Struct.new(
-  :productorderuuid,
-  :response_code,
-  :response_message,
-  :target_packageorderuuid,
-  :target_productorderuuid,
+  :productorderuuids,
+  :responseCode,
+  :responseMessage,
+  :targetPackageorderuuid,
+  :targetProductorderuuid,
   keyword_init: true
 )
 
 # PaymentManual entity data model.
 #
-# @!attribute [rw] acquirer_name
+# @!attribute [rw] acquirerName
 #   @return [String, nil]
 #
 # @!attribute [rw] amount
 #   @return [Integer]
 #
-# @!attribute [rw] authorization_number
+# @!attribute [rw] authorizationNumber
 #   @return [String, nil]
 #
-# @!attribute [rw] card_number
+# @!attribute [rw] cardNumber
 #   @return [String]
 #
-# @!attribute [rw] card_type
+# @!attribute [rw] cardType
 #   @return [String, nil]
 #
 # @!attribute [rw] currency
@@ -1699,71 +1739,71 @@ MoveTidCreateData = Struct.new(
 # @!attribute [rw] cvc
 #   @return [String, nil]
 #
-# @!attribute [rw] date_time_tx
+# @!attribute [rw] dateTimeTx
 #   @return [String, nil]
 #
-# @!attribute [rw] exp_date
+# @!attribute [rw] expDate
 #   @return [String]
 #
-# @!attribute [rw] merchant_id
+# @!attribute [rw] merchantId
 #   @return [String, nil]
 #
-# @!attribute [rw] original_transaction_id
+# @!attribute [rw] originalTransactionId
 #   @return [String, nil]
 #
 # @!attribute [rw] password
 #   @return [String, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [String, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] terminal_id
+# @!attribute [rw] terminalId
 #   @return [String, nil]
 #
-# @!attribute [rw] transaction_id
+# @!attribute [rw] transactionId
 #   @return [String, nil]
 #
 # @!attribute [rw] txtype
 #   @return [String]
 PaymentManual = Struct.new(
-  :acquirer_name,
+  :acquirerName,
   :amount,
-  :authorization_number,
-  :card_number,
-  :card_type,
+  :authorizationNumber,
+  :cardNumber,
+  :cardType,
   :currency,
   :cvc,
-  :date_time_tx,
-  :exp_date,
-  :merchant_id,
-  :original_transaction_id,
+  :dateTimeTx,
+  :expDate,
+  :merchantId,
+  :originalTransactionId,
   :password,
-  :response_code,
-  :response_message,
-  :terminal_id,
-  :transaction_id,
+  :responseCode,
+  :responseMessage,
+  :terminalId,
+  :transactionId,
   :txtype,
   keyword_init: true
 )
 
 # Request payload for PaymentManual#create.
 #
-# @!attribute [rw] acquirer_name
+# @!attribute [rw] acquirerName
 #   @return [String, nil]
 #
 # @!attribute [rw] amount
 #   @return [Integer]
 #
-# @!attribute [rw] authorization_number
+# @!attribute [rw] authorizationNumber
 #   @return [String, nil]
 #
-# @!attribute [rw] card_number
+# @!attribute [rw] cardNumber
 #   @return [String]
 #
-# @!attribute [rw] card_type
+# @!attribute [rw] cardType
 #   @return [String, nil]
 #
 # @!attribute [rw] currency
@@ -1772,224 +1812,192 @@ PaymentManual = Struct.new(
 # @!attribute [rw] cvc
 #   @return [String, nil]
 #
-# @!attribute [rw] date_time_tx
+# @!attribute [rw] dateTimeTx
 #   @return [String, nil]
 #
-# @!attribute [rw] exp_date
+# @!attribute [rw] expDate
 #   @return [String]
 #
-# @!attribute [rw] merchant_id
+# @!attribute [rw] merchantId
 #   @return [String, nil]
 #
-# @!attribute [rw] original_transaction_id
+# @!attribute [rw] originalTransactionId
 #   @return [String, nil]
 #
 # @!attribute [rw] password
 #   @return [String, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [String, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] terminal_id
+# @!attribute [rw] terminalId
 #   @return [String, nil]
 #
-# @!attribute [rw] transaction_id
+# @!attribute [rw] transactionId
 #   @return [String, nil]
 #
 # @!attribute [rw] txtype
 #   @return [String]
 PaymentManualCreateData = Struct.new(
-  :acquirer_name,
+  :acquirerName,
   :amount,
-  :authorization_number,
-  :card_number,
-  :card_type,
+  :authorizationNumber,
+  :cardNumber,
+  :cardType,
   :currency,
   :cvc,
-  :date_time_tx,
-  :exp_date,
-  :merchant_id,
-  :original_transaction_id,
+  :dateTimeTx,
+  :expDate,
+  :merchantId,
+  :originalTransactionId,
   :password,
-  :response_code,
-  :response_message,
-  :terminal_id,
-  :transaction_id,
+  :responseCode,
+  :responseMessage,
+  :terminalId,
+  :transactionId,
   :txtype,
   keyword_init: true
 )
 
 # PaymentSred entity data model.
 #
-# @!attribute [rw] acquirer_name
-#   @return [String, nil]
-#
 # @!attribute [rw] amount
 #   @return [Integer]
-#
-# @!attribute [rw] authorization_number
-#   @return [String, nil]
-#
-# @!attribute [rw] card_type
-#   @return [String, nil]
 #
 # @!attribute [rw] currency
 #   @return [String]
 #
-# @!attribute [rw] date_time_tx
+# @!attribute [rw] device
 #   @return [String, nil]
 #
-# @!attribute [rw] device_payload
+# @!attribute [rw] devicePayload
 #   @return [String]
 #
-# @!attribute [rw] merchant_id
+# @!attribute [rw] expDate
 #   @return [String, nil]
 #
-# @!attribute [rw] original_transaction_id
+# @!attribute [rw] mode
+#   @return [String, nil]
+#
+# @!attribute [rw] panMasked
 #   @return [String, nil]
 #
 # @!attribute [rw] password
 #   @return [String, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] serial
 #   @return [String, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] serviceCode
 #   @return [String, nil]
 #
-# @!attribute [rw] sred
-#   @return [Hash, nil]
-#
-# @!attribute [rw] terminal_id
-#   @return [String, nil]
-#
-# @!attribute [rw] transaction_id
-#   @return [String, nil]
+# @!attribute [rw] terminalId
+#   @return [String]
 #
 # @!attribute [rw] txtype
 #   @return [String]
 PaymentSred = Struct.new(
-  :acquirer_name,
   :amount,
-  :authorization_number,
-  :card_type,
   :currency,
-  :date_time_tx,
-  :device_payload,
-  :merchant_id,
-  :original_transaction_id,
+  :device,
+  :devicePayload,
+  :expDate,
+  :mode,
+  :panMasked,
   :password,
-  :response_code,
-  :response_message,
-  :sred,
-  :terminal_id,
-  :transaction_id,
+  :serial,
+  :serviceCode,
+  :terminalId,
   :txtype,
   keyword_init: true
 )
 
 # Request payload for PaymentSred#create.
 #
-# @!attribute [rw] acquirer_name
-#   @return [String, nil]
-#
 # @!attribute [rw] amount
 #   @return [Integer]
-#
-# @!attribute [rw] authorization_number
-#   @return [String, nil]
-#
-# @!attribute [rw] card_type
-#   @return [String, nil]
 #
 # @!attribute [rw] currency
 #   @return [String]
 #
-# @!attribute [rw] date_time_tx
+# @!attribute [rw] device
 #   @return [String, nil]
 #
-# @!attribute [rw] device_payload
+# @!attribute [rw] devicePayload
 #   @return [String]
 #
-# @!attribute [rw] merchant_id
+# @!attribute [rw] expDate
 #   @return [String, nil]
 #
-# @!attribute [rw] original_transaction_id
+# @!attribute [rw] mode
+#   @return [String, nil]
+#
+# @!attribute [rw] panMasked
 #   @return [String, nil]
 #
 # @!attribute [rw] password
 #   @return [String, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] serial
 #   @return [String, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] serviceCode
 #   @return [String, nil]
 #
-# @!attribute [rw] sred
-#   @return [Hash, nil]
-#
-# @!attribute [rw] terminal_id
-#   @return [String, nil]
-#
-# @!attribute [rw] transaction_id
-#   @return [String, nil]
+# @!attribute [rw] terminalId
+#   @return [String]
 #
 # @!attribute [rw] txtype
 #   @return [String]
 PaymentSredCreateData = Struct.new(
-  :acquirer_name,
   :amount,
-  :authorization_number,
-  :card_type,
   :currency,
-  :date_time_tx,
-  :device_payload,
-  :merchant_id,
-  :original_transaction_id,
+  :device,
+  :devicePayload,
+  :expDate,
+  :mode,
+  :panMasked,
   :password,
-  :response_code,
-  :response_message,
-  :sred,
-  :terminal_id,
-  :transaction_id,
+  :serial,
+  :serviceCode,
+  :terminalId,
   :txtype,
   keyword_init: true
 )
 
 # PreAuthTransactionCompletion entity data model.
 #
-# @!attribute [rw] acquirer_id
+# @!attribute [rw] acquirerId
 #   @return [String, nil]
 #
-# @!attribute [rw] acquirer_name
+# @!attribute [rw] acquirerName
 #   @return [String, nil]
 #
-# @!attribute [rw] actual_bonus_point
+# @!attribute [rw] actualBonusPoints
 #   @return [String, nil]
 #
 # @!attribute [rw] amount
 #   @return [Integer, nil]
 #
-# @!attribute [rw] authorization_code
+# @!attribute [rw] authorizationCode
 #   @return [String, nil]
 #
-# @!attribute [rw] balance_amount
+# @!attribute [rw] balanceAmount
 #   @return [String, nil]
 #
-# @!attribute [rw] card_brand
+# @!attribute [rw] cardBrand
 #   @return [String, nil]
 #
-# @!attribute [rw] card_number
+# @!attribute [rw] cardNumber
 #   @return [String, nil]
 #
-# @!attribute [rw] card_number_reference
+# @!attribute [rw] cardNumberReference
 #   @return [String]
 #
-# @!attribute [rw] client_id
+# @!attribute [rw] clientId
 #   @return [Integer]
 #
 # @!attribute [rw] currency
@@ -1998,171 +2006,171 @@ PaymentSredCreateData = Struct.new(
 # @!attribute [rw] cvc
 #   @return [String, nil]
 #
-# @!attribute [rw] ec_data
+# @!attribute [rw] ecData
 #   @return [String, nil]
 #
-# @!attribute [rw] ecr_data
+# @!attribute [rw] ecrData
 #   @return [String, nil]
 #
-# @!attribute [rw] emv_data
+# @!attribute [rw] emvData
 #   @return [String, nil]
 #
-# @!attribute [rw] exchange_fee
+# @!attribute [rw] exchangeFee
 #   @return [Integer, nil]
 #
-# @!attribute [rw] exchange_rate
+# @!attribute [rw] exchangeRate
 #   @return [String, nil]
 #
-# @!attribute [rw] language_code
+# @!attribute [rw] languageCode
 #   @return [String, nil]
 #
-# @!attribute [rw] merchant_address
+# @!attribute [rw] merchantAddress
 #   @return [String, nil]
 #
-# @!attribute [rw] merchant_name
+# @!attribute [rw] merchantName
 #   @return [String, nil]
 #
-# @!attribute [rw] merchant_number
+# @!attribute [rw] merchantNumber
 #   @return [String, nil]
 #
-# @!attribute [rw] message_type
+# @!attribute [rw] messageType
 #   @return [String, nil]
 #
-# @!attribute [rw] original_trace_number
+# @!attribute [rw] originalTraceNumber
 #   @return [Integer, nil]
 #
-# @!attribute [rw] original_transaction_id
+# @!attribute [rw] originalTransactionId
 #   @return [String, nil]
 #
 # @!attribute [rw] password
 #   @return [String, nil]
 #
-# @!attribute [rw] payment_reason
+# @!attribute [rw] paymentReason
 #   @return [String, nil]
 #
-# @!attribute [rw] receipt_footer
+# @!attribute [rw] receiptFooter
 #   @return [String, nil]
 #
-# @!attribute [rw] receipt_header
+# @!attribute [rw] receiptHeader
 #   @return [String, nil]
 #
-# @!attribute [rw] receipt_layout
+# @!attribute [rw] receiptLayout
 #   @return [Integer, nil]
 #
-# @!attribute [rw] receipt_number
+# @!attribute [rw] receiptNumber
 #   @return [String]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] serial_number
+# @!attribute [rw] serialNumber
 #   @return [String, nil]
 #
 # @!attribute [rw] svc
 #   @return [String, nil]
 #
-# @!attribute [rw] terminal_id
+# @!attribute [rw] terminalId
 #   @return [Integer]
 #
-# @!attribute [rw] terminal_location
+# @!attribute [rw] terminalLocation
 #   @return [String, nil]
 #
-# @!attribute [rw] trace_number
+# @!attribute [rw] traceNumber
 #   @return [Integer, nil]
 #
-# @!attribute [rw] transaction_date
+# @!attribute [rw] transactionDate
 #   @return [String, nil]
 #
-# @!attribute [rw] transaction_id
+# @!attribute [rw] transactionId
 #   @return [String, nil]
 #
-# @!attribute [rw] transaction_type
+# @!attribute [rw] transactionType
 #   @return [String]
 #
-# @!attribute [rw] tx_type
+# @!attribute [rw] txType
 #   @return [String, nil]
 #
-# @!attribute [rw] user_data
+# @!attribute [rw] userData
 #   @return [String, nil]
 PreAuthTransactionCompletion = Struct.new(
-  :acquirer_id,
-  :acquirer_name,
-  :actual_bonus_point,
+  :acquirerId,
+  :acquirerName,
+  :actualBonusPoints,
   :amount,
-  :authorization_code,
-  :balance_amount,
-  :card_brand,
-  :card_number,
-  :card_number_reference,
-  :client_id,
+  :authorizationCode,
+  :balanceAmount,
+  :cardBrand,
+  :cardNumber,
+  :cardNumberReference,
+  :clientId,
   :currency,
   :cvc,
-  :ec_data,
-  :ecr_data,
-  :emv_data,
-  :exchange_fee,
-  :exchange_rate,
-  :language_code,
-  :merchant_address,
-  :merchant_name,
-  :merchant_number,
-  :message_type,
-  :original_trace_number,
-  :original_transaction_id,
+  :ecData,
+  :ecrData,
+  :emvData,
+  :exchangeFee,
+  :exchangeRate,
+  :languageCode,
+  :merchantAddress,
+  :merchantName,
+  :merchantNumber,
+  :messageType,
+  :originalTraceNumber,
+  :originalTransactionId,
   :password,
-  :payment_reason,
-  :receipt_footer,
-  :receipt_header,
-  :receipt_layout,
-  :receipt_number,
-  :response_code,
-  :response_message,
-  :serial_number,
+  :paymentReason,
+  :receiptFooter,
+  :receiptHeader,
+  :receiptLayout,
+  :receiptNumber,
+  :responseCode,
+  :responseMessage,
+  :serialNumber,
   :svc,
-  :terminal_id,
-  :terminal_location,
-  :trace_number,
-  :transaction_date,
-  :transaction_id,
-  :transaction_type,
-  :tx_type,
-  :user_data,
+  :terminalId,
+  :terminalLocation,
+  :traceNumber,
+  :transactionDate,
+  :transactionId,
+  :transactionType,
+  :txType,
+  :userData,
   keyword_init: true
 )
 
 # Request payload for PreAuthTransactionCompletion#create.
 #
-# @!attribute [rw] acquirer_id
+# @!attribute [rw] acquirerId
 #   @return [String, nil]
 #
-# @!attribute [rw] acquirer_name
+# @!attribute [rw] acquirerName
 #   @return [String, nil]
 #
-# @!attribute [rw] actual_bonus_point
+# @!attribute [rw] actualBonusPoints
 #   @return [String, nil]
 #
 # @!attribute [rw] amount
 #   @return [Integer, nil]
 #
-# @!attribute [rw] authorization_code
+# @!attribute [rw] authorizationCode
 #   @return [String, nil]
 #
-# @!attribute [rw] balance_amount
+# @!attribute [rw] balanceAmount
 #   @return [String, nil]
 #
-# @!attribute [rw] card_brand
+# @!attribute [rw] cardBrand
 #   @return [String, nil]
 #
-# @!attribute [rw] card_number
+# @!attribute [rw] cardNumber
 #   @return [String, nil]
 #
-# @!attribute [rw] card_number_reference
+# @!attribute [rw] cardNumberReference
 #   @return [String]
 #
-# @!attribute [rw] client_id
+# @!attribute [rw] clientId
 #   @return [Integer]
 #
 # @!attribute [rw] currency
@@ -2171,234 +2179,234 @@ PreAuthTransactionCompletion = Struct.new(
 # @!attribute [rw] cvc
 #   @return [String, nil]
 #
-# @!attribute [rw] ec_data
+# @!attribute [rw] ecData
 #   @return [String, nil]
 #
-# @!attribute [rw] ecr_data
+# @!attribute [rw] ecrData
 #   @return [String, nil]
 #
-# @!attribute [rw] emv_data
+# @!attribute [rw] emvData
 #   @return [String, nil]
 #
-# @!attribute [rw] exchange_fee
+# @!attribute [rw] exchangeFee
 #   @return [Integer, nil]
 #
-# @!attribute [rw] exchange_rate
+# @!attribute [rw] exchangeRate
 #   @return [String, nil]
 #
-# @!attribute [rw] language_code
+# @!attribute [rw] languageCode
 #   @return [String, nil]
 #
-# @!attribute [rw] merchant_address
+# @!attribute [rw] merchantAddress
 #   @return [String, nil]
 #
-# @!attribute [rw] merchant_name
+# @!attribute [rw] merchantName
 #   @return [String, nil]
 #
-# @!attribute [rw] merchant_number
+# @!attribute [rw] merchantNumber
 #   @return [String, nil]
 #
-# @!attribute [rw] message_type
+# @!attribute [rw] messageType
 #   @return [String, nil]
 #
-# @!attribute [rw] original_trace_number
+# @!attribute [rw] originalTraceNumber
 #   @return [Integer, nil]
 #
-# @!attribute [rw] original_transaction_id
+# @!attribute [rw] originalTransactionId
 #   @return [String, nil]
 #
 # @!attribute [rw] password
 #   @return [String, nil]
 #
-# @!attribute [rw] payment_reason
+# @!attribute [rw] paymentReason
 #   @return [String, nil]
 #
-# @!attribute [rw] receipt_footer
+# @!attribute [rw] receiptFooter
 #   @return [String, nil]
 #
-# @!attribute [rw] receipt_header
+# @!attribute [rw] receiptHeader
 #   @return [String, nil]
 #
-# @!attribute [rw] receipt_layout
+# @!attribute [rw] receiptLayout
 #   @return [Integer, nil]
 #
-# @!attribute [rw] receipt_number
+# @!attribute [rw] receiptNumber
 #   @return [String]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] serial_number
+# @!attribute [rw] serialNumber
 #   @return [String, nil]
 #
 # @!attribute [rw] svc
 #   @return [String, nil]
 #
-# @!attribute [rw] terminal_id
+# @!attribute [rw] terminalId
 #   @return [Integer]
 #
-# @!attribute [rw] terminal_location
+# @!attribute [rw] terminalLocation
 #   @return [String, nil]
 #
-# @!attribute [rw] trace_number
+# @!attribute [rw] traceNumber
 #   @return [Integer, nil]
 #
-# @!attribute [rw] transaction_date
+# @!attribute [rw] transactionDate
 #   @return [String, nil]
 #
-# @!attribute [rw] transaction_id
+# @!attribute [rw] transactionId
 #   @return [String, nil]
 #
-# @!attribute [rw] transaction_type
+# @!attribute [rw] transactionType
 #   @return [String]
 #
-# @!attribute [rw] tx_type
+# @!attribute [rw] txType
 #   @return [String, nil]
 #
-# @!attribute [rw] user_data
+# @!attribute [rw] userData
 #   @return [String, nil]
 PreAuthTransactionCompletionCreateData = Struct.new(
-  :acquirer_id,
-  :acquirer_name,
-  :actual_bonus_point,
+  :acquirerId,
+  :acquirerName,
+  :actualBonusPoints,
   :amount,
-  :authorization_code,
-  :balance_amount,
-  :card_brand,
-  :card_number,
-  :card_number_reference,
-  :client_id,
+  :authorizationCode,
+  :balanceAmount,
+  :cardBrand,
+  :cardNumber,
+  :cardNumberReference,
+  :clientId,
   :currency,
   :cvc,
-  :ec_data,
-  :ecr_data,
-  :emv_data,
-  :exchange_fee,
-  :exchange_rate,
-  :language_code,
-  :merchant_address,
-  :merchant_name,
-  :merchant_number,
-  :message_type,
-  :original_trace_number,
-  :original_transaction_id,
+  :ecData,
+  :ecrData,
+  :emvData,
+  :exchangeFee,
+  :exchangeRate,
+  :languageCode,
+  :merchantAddress,
+  :merchantName,
+  :merchantNumber,
+  :messageType,
+  :originalTraceNumber,
+  :originalTransactionId,
   :password,
-  :payment_reason,
-  :receipt_footer,
-  :receipt_header,
-  :receipt_layout,
-  :receipt_number,
-  :response_code,
-  :response_message,
-  :serial_number,
+  :paymentReason,
+  :receiptFooter,
+  :receiptHeader,
+  :receiptLayout,
+  :receiptNumber,
+  :responseCode,
+  :responseMessage,
+  :serialNumber,
   :svc,
-  :terminal_id,
-  :terminal_location,
-  :trace_number,
-  :transaction_date,
-  :transaction_id,
-  :transaction_type,
-  :tx_type,
-  :user_data,
+  :terminalId,
+  :terminalLocation,
+  :traceNumber,
+  :transactionDate,
+  :transactionId,
+  :transactionType,
+  :txType,
+  :userData,
   keyword_init: true
 )
 
 # ReactivateTerminal entity data model.
 #
-# @!attribute [rw] corporate_uuid
+# @!attribute [rw] corporateUuid
 #   @return [String, nil]
 #
-# @!attribute [rw] package_order_uuid
+# @!attribute [rw] packageOrderUuid
 #   @return [String, nil]
 #
-# @!attribute [rw] product_order_uuid
+# @!attribute [rw] productOrderUuid
 #   @return [String, nil]
 #
-# @!attribute [rw] reactivation_reason
+# @!attribute [rw] reactivationReason
 #   @return [String]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] terminal_id
+# @!attribute [rw] terminalId
 #   @return [Integer]
 ReactivateTerminal = Struct.new(
-  :corporate_uuid,
-  :package_order_uuid,
-  :product_order_uuid,
-  :reactivation_reason,
-  :response_code,
-  :response_message,
-  :terminal_id,
+  :corporateUuid,
+  :packageOrderUuid,
+  :productOrderUuid,
+  :reactivationReason,
+  :responseCode,
+  :responseMessage,
+  :terminalId,
   keyword_init: true
 )
 
 # Request payload for ReactivateTerminal#create.
 #
-# @!attribute [rw] corporate_uuid
+# @!attribute [rw] corporateUuid
 #   @return [String, nil]
 #
-# @!attribute [rw] package_order_uuid
+# @!attribute [rw] packageOrderUuid
 #   @return [String, nil]
 #
-# @!attribute [rw] product_order_uuid
+# @!attribute [rw] productOrderUuid
 #   @return [String, nil]
 #
-# @!attribute [rw] reactivation_reason
+# @!attribute [rw] reactivationReason
 #   @return [String]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] terminal_id
+# @!attribute [rw] terminalId
 #   @return [Integer]
 ReactivateTerminalCreateData = Struct.new(
-  :corporate_uuid,
-  :package_order_uuid,
-  :product_order_uuid,
-  :reactivation_reason,
-  :response_code,
-  :response_message,
-  :terminal_id,
+  :corporateUuid,
+  :packageOrderUuid,
+  :productOrderUuid,
+  :reactivationReason,
+  :responseCode,
+  :responseMessage,
+  :terminalId,
   keyword_init: true
 )
 
 # RefundTransaction entity data model.
 #
-# @!attribute [rw] acquirer_id
+# @!attribute [rw] acquirerId
 #   @return [String, nil]
 #
-# @!attribute [rw] acquirer_name
+# @!attribute [rw] acquirerName
 #   @return [String, nil]
 #
-# @!attribute [rw] actual_bonus_point
+# @!attribute [rw] actualBonusPoints
 #   @return [String, nil]
 #
 # @!attribute [rw] amount
 #   @return [Integer, nil]
 #
-# @!attribute [rw] authorization_code
+# @!attribute [rw] authorizationCode
 #   @return [String, nil]
 #
-# @!attribute [rw] balance_amount
+# @!attribute [rw] balanceAmount
 #   @return [String, nil]
 #
-# @!attribute [rw] card_brand
+# @!attribute [rw] cardBrand
 #   @return [String, nil]
 #
-# @!attribute [rw] card_number
+# @!attribute [rw] cardNumber
 #   @return [String, nil]
 #
-# @!attribute [rw] client_id
+# @!attribute [rw] clientId
 #   @return [Integer]
 #
 # @!attribute [rw] currency
@@ -2407,163 +2415,163 @@ ReactivateTerminalCreateData = Struct.new(
 # @!attribute [rw] cvc
 #   @return [String, nil]
 #
-# @!attribute [rw] ec_data
+# @!attribute [rw] ecData
 #   @return [String, nil]
 #
-# @!attribute [rw] ecr_data
+# @!attribute [rw] ecrData
 #   @return [String, nil]
 #
-# @!attribute [rw] emv_data
+# @!attribute [rw] emvData
 #   @return [String, nil]
 #
-# @!attribute [rw] exchange_fee
+# @!attribute [rw] exchangeFee
 #   @return [Integer, nil]
 #
-# @!attribute [rw] exchange_rate
+# @!attribute [rw] exchangeRate
 #   @return [String, nil]
 #
-# @!attribute [rw] language_code
+# @!attribute [rw] languageCode
 #   @return [String, nil]
 #
-# @!attribute [rw] merchant_address
+# @!attribute [rw] merchantAddress
 #   @return [String, nil]
 #
-# @!attribute [rw] merchant_name
+# @!attribute [rw] merchantName
 #   @return [String, nil]
 #
-# @!attribute [rw] merchant_number
+# @!attribute [rw] merchantNumber
 #   @return [String, nil]
 #
-# @!attribute [rw] message_type
+# @!attribute [rw] messageType
 #   @return [String, nil]
 #
-# @!attribute [rw] original_trace_number
+# @!attribute [rw] originalTraceNumber
 #   @return [Integer, nil]
 #
-# @!attribute [rw] original_transaction_id
+# @!attribute [rw] originalTransactionId
 #   @return [String, nil]
 #
 # @!attribute [rw] password
 #   @return [String, nil]
 #
-# @!attribute [rw] payment_reason
+# @!attribute [rw] paymentReason
 #   @return [String, nil]
 #
-# @!attribute [rw] receipt_footer
+# @!attribute [rw] receiptFooter
 #   @return [String, nil]
 #
-# @!attribute [rw] receipt_header
+# @!attribute [rw] receiptHeader
 #   @return [String, nil]
 #
-# @!attribute [rw] receipt_layout
+# @!attribute [rw] receiptLayout
 #   @return [Integer, nil]
 #
-# @!attribute [rw] receipt_number
+# @!attribute [rw] receiptNumber
 #   @return [String]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] serial_number
+# @!attribute [rw] serialNumber
 #   @return [String, nil]
 #
 # @!attribute [rw] svc
 #   @return [String, nil]
 #
-# @!attribute [rw] terminal_id
+# @!attribute [rw] terminalId
 #   @return [Integer]
 #
-# @!attribute [rw] terminal_location
+# @!attribute [rw] terminalLocation
 #   @return [String, nil]
 #
-# @!attribute [rw] trace_number
+# @!attribute [rw] traceNumber
 #   @return [Integer, nil]
 #
-# @!attribute [rw] transaction_date
+# @!attribute [rw] transactionDate
 #   @return [String, nil]
 #
-# @!attribute [rw] transaction_id
+# @!attribute [rw] transactionId
 #   @return [String, nil]
 #
-# @!attribute [rw] tx_type
+# @!attribute [rw] txType
 #   @return [String, nil]
 #
-# @!attribute [rw] user_data
+# @!attribute [rw] userData
 #   @return [String, nil]
 RefundTransaction = Struct.new(
-  :acquirer_id,
-  :acquirer_name,
-  :actual_bonus_point,
+  :acquirerId,
+  :acquirerName,
+  :actualBonusPoints,
   :amount,
-  :authorization_code,
-  :balance_amount,
-  :card_brand,
-  :card_number,
-  :client_id,
+  :authorizationCode,
+  :balanceAmount,
+  :cardBrand,
+  :cardNumber,
+  :clientId,
   :currency,
   :cvc,
-  :ec_data,
-  :ecr_data,
-  :emv_data,
-  :exchange_fee,
-  :exchange_rate,
-  :language_code,
-  :merchant_address,
-  :merchant_name,
-  :merchant_number,
-  :message_type,
-  :original_trace_number,
-  :original_transaction_id,
+  :ecData,
+  :ecrData,
+  :emvData,
+  :exchangeFee,
+  :exchangeRate,
+  :languageCode,
+  :merchantAddress,
+  :merchantName,
+  :merchantNumber,
+  :messageType,
+  :originalTraceNumber,
+  :originalTransactionId,
   :password,
-  :payment_reason,
-  :receipt_footer,
-  :receipt_header,
-  :receipt_layout,
-  :receipt_number,
-  :response_code,
-  :response_message,
-  :serial_number,
+  :paymentReason,
+  :receiptFooter,
+  :receiptHeader,
+  :receiptLayout,
+  :receiptNumber,
+  :responseCode,
+  :responseMessage,
+  :serialNumber,
   :svc,
-  :terminal_id,
-  :terminal_location,
-  :trace_number,
-  :transaction_date,
-  :transaction_id,
-  :tx_type,
-  :user_data,
+  :terminalId,
+  :terminalLocation,
+  :traceNumber,
+  :transactionDate,
+  :transactionId,
+  :txType,
+  :userData,
   keyword_init: true
 )
 
 # Request payload for RefundTransaction#create.
 #
-# @!attribute [rw] acquirer_id
+# @!attribute [rw] acquirerId
 #   @return [String, nil]
 #
-# @!attribute [rw] acquirer_name
+# @!attribute [rw] acquirerName
 #   @return [String, nil]
 #
-# @!attribute [rw] actual_bonus_point
+# @!attribute [rw] actualBonusPoints
 #   @return [String, nil]
 #
 # @!attribute [rw] amount
 #   @return [Integer, nil]
 #
-# @!attribute [rw] authorization_code
+# @!attribute [rw] authorizationCode
 #   @return [String, nil]
 #
-# @!attribute [rw] balance_amount
+# @!attribute [rw] balanceAmount
 #   @return [String, nil]
 #
-# @!attribute [rw] card_brand
+# @!attribute [rw] cardBrand
 #   @return [String, nil]
 #
-# @!attribute [rw] card_number
+# @!attribute [rw] cardNumber
 #   @return [String, nil]
 #
-# @!attribute [rw] client_id
+# @!attribute [rw] clientId
 #   @return [Integer]
 #
 # @!attribute [rw] currency
@@ -2572,505 +2580,505 @@ RefundTransaction = Struct.new(
 # @!attribute [rw] cvc
 #   @return [String, nil]
 #
-# @!attribute [rw] ec_data
+# @!attribute [rw] ecData
 #   @return [String, nil]
 #
-# @!attribute [rw] ecr_data
+# @!attribute [rw] ecrData
 #   @return [String, nil]
 #
-# @!attribute [rw] emv_data
+# @!attribute [rw] emvData
 #   @return [String, nil]
 #
-# @!attribute [rw] exchange_fee
+# @!attribute [rw] exchangeFee
 #   @return [Integer, nil]
 #
-# @!attribute [rw] exchange_rate
+# @!attribute [rw] exchangeRate
 #   @return [String, nil]
 #
-# @!attribute [rw] language_code
+# @!attribute [rw] languageCode
 #   @return [String, nil]
 #
-# @!attribute [rw] merchant_address
+# @!attribute [rw] merchantAddress
 #   @return [String, nil]
 #
-# @!attribute [rw] merchant_name
+# @!attribute [rw] merchantName
 #   @return [String, nil]
 #
-# @!attribute [rw] merchant_number
+# @!attribute [rw] merchantNumber
 #   @return [String, nil]
 #
-# @!attribute [rw] message_type
+# @!attribute [rw] messageType
 #   @return [String, nil]
 #
-# @!attribute [rw] original_trace_number
+# @!attribute [rw] originalTraceNumber
 #   @return [Integer, nil]
 #
-# @!attribute [rw] original_transaction_id
+# @!attribute [rw] originalTransactionId
 #   @return [String, nil]
 #
 # @!attribute [rw] password
 #   @return [String, nil]
 #
-# @!attribute [rw] payment_reason
+# @!attribute [rw] paymentReason
 #   @return [String, nil]
 #
-# @!attribute [rw] receipt_footer
+# @!attribute [rw] receiptFooter
 #   @return [String, nil]
 #
-# @!attribute [rw] receipt_header
+# @!attribute [rw] receiptHeader
 #   @return [String, nil]
 #
-# @!attribute [rw] receipt_layout
+# @!attribute [rw] receiptLayout
 #   @return [Integer, nil]
 #
-# @!attribute [rw] receipt_number
+# @!attribute [rw] receiptNumber
 #   @return [String]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] serial_number
+# @!attribute [rw] serialNumber
 #   @return [String, nil]
 #
 # @!attribute [rw] svc
 #   @return [String, nil]
 #
-# @!attribute [rw] terminal_id
+# @!attribute [rw] terminalId
 #   @return [Integer]
 #
-# @!attribute [rw] terminal_location
+# @!attribute [rw] terminalLocation
 #   @return [String, nil]
 #
-# @!attribute [rw] trace_number
+# @!attribute [rw] traceNumber
 #   @return [Integer, nil]
 #
-# @!attribute [rw] transaction_date
+# @!attribute [rw] transactionDate
 #   @return [String, nil]
 #
-# @!attribute [rw] transaction_id
+# @!attribute [rw] transactionId
 #   @return [String, nil]
 #
-# @!attribute [rw] tx_type
+# @!attribute [rw] txType
 #   @return [String, nil]
 #
-# @!attribute [rw] user_data
+# @!attribute [rw] userData
 #   @return [String, nil]
 RefundTransactionCreateData = Struct.new(
-  :acquirer_id,
-  :acquirer_name,
-  :actual_bonus_point,
+  :acquirerId,
+  :acquirerName,
+  :actualBonusPoints,
   :amount,
-  :authorization_code,
-  :balance_amount,
-  :card_brand,
-  :card_number,
-  :client_id,
+  :authorizationCode,
+  :balanceAmount,
+  :cardBrand,
+  :cardNumber,
+  :clientId,
   :currency,
   :cvc,
-  :ec_data,
-  :ecr_data,
-  :emv_data,
-  :exchange_fee,
-  :exchange_rate,
-  :language_code,
-  :merchant_address,
-  :merchant_name,
-  :merchant_number,
-  :message_type,
-  :original_trace_number,
-  :original_transaction_id,
+  :ecData,
+  :ecrData,
+  :emvData,
+  :exchangeFee,
+  :exchangeRate,
+  :languageCode,
+  :merchantAddress,
+  :merchantName,
+  :merchantNumber,
+  :messageType,
+  :originalTraceNumber,
+  :originalTransactionId,
   :password,
-  :payment_reason,
-  :receipt_footer,
-  :receipt_header,
-  :receipt_layout,
-  :receipt_number,
-  :response_code,
-  :response_message,
-  :serial_number,
+  :paymentReason,
+  :receiptFooter,
+  :receiptHeader,
+  :receiptLayout,
+  :receiptNumber,
+  :responseCode,
+  :responseMessage,
+  :serialNumber,
   :svc,
-  :terminal_id,
-  :terminal_location,
-  :trace_number,
-  :transaction_date,
-  :transaction_id,
-  :tx_type,
-  :user_data,
+  :terminalId,
+  :terminalLocation,
+  :traceNumber,
+  :transactionDate,
+  :transactionId,
+  :txType,
+  :userData,
   keyword_init: true
 )
 
 # RegisterTecsCompany entity data model.
 #
-# @!attribute [rw] corporate_uuid
+# @!attribute [rw] corporateUuid
 #   @return [String]
 #
-# @!attribute [rw] package_order_uuid
+# @!attribute [rw] packageOrderUuid
 #   @return [String]
 #
-# @!attribute [rw] partner_id
+# @!attribute [rw] partnerId
 #   @return [Integer, nil]
 #
-# @!attribute [rw] partner_name
+# @!attribute [rw] partnerName
 #   @return [String, nil]
 #
-# @!attribute [rw] product_order_uuid
+# @!attribute [rw] productOrderUuid
 #   @return [String]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] template_name
+# @!attribute [rw] templateName
 #   @return [String]
 RegisterTecsCompany = Struct.new(
-  :corporate_uuid,
-  :package_order_uuid,
-  :partner_id,
-  :partner_name,
-  :product_order_uuid,
-  :response_code,
-  :response_message,
-  :template_name,
+  :corporateUuid,
+  :packageOrderUuid,
+  :partnerId,
+  :partnerName,
+  :productOrderUuid,
+  :responseCode,
+  :responseMessage,
+  :templateName,
   keyword_init: true
 )
 
 # Request payload for RegisterTecsCompany#create.
 #
-# @!attribute [rw] corporate_uuid
+# @!attribute [rw] corporateUuid
 #   @return [String]
 #
-# @!attribute [rw] package_order_uuid
+# @!attribute [rw] packageOrderUuid
 #   @return [String]
 #
-# @!attribute [rw] partner_id
+# @!attribute [rw] partnerId
 #   @return [Integer, nil]
 #
-# @!attribute [rw] partner_name
+# @!attribute [rw] partnerName
 #   @return [String, nil]
 #
-# @!attribute [rw] product_order_uuid
+# @!attribute [rw] productOrderUuid
 #   @return [String]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] template_name
+# @!attribute [rw] templateName
 #   @return [String]
 RegisterTecsCompanyCreateData = Struct.new(
-  :corporate_uuid,
-  :package_order_uuid,
-  :partner_id,
-  :partner_name,
-  :product_order_uuid,
-  :response_code,
-  :response_message,
-  :template_name,
+  :corporateUuid,
+  :packageOrderUuid,
+  :partnerId,
+  :partnerName,
+  :productOrderUuid,
+  :responseCode,
+  :responseMessage,
+  :templateName,
   keyword_init: true
 )
 
 # RegisterTerminal entity data model.
 #
-# @!attribute [rw] additional_data
+# @!attribute [rw] additionalData
 #   @return [Hash, nil]
 #
-# @!attribute [rw] corporate_uuid
+# @!attribute [rw] corporateUuid
 #   @return [String]
 #
-# @!attribute [rw] package_order_uuid
+# @!attribute [rw] packageOrderUuid
 #   @return [String]
 #
-# @!attribute [rw] product_order_uuid
+# @!attribute [rw] productOrderUuid
 #   @return [String]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] tecs_web_secret_key
+# @!attribute [rw] tecsWebSecretKey
 #   @return [String, nil]
 #
-# @!attribute [rw] template_name
+# @!attribute [rw] templateName
 #   @return [String]
 #
-# @!attribute [rw] terminal_country_code
+# @!attribute [rw] terminalCountryCode
 #   @return [String]
 #
-# @!attribute [rw] terminal_id
+# @!attribute [rw] terminalId
 #   @return [Integer, nil]
 #
-# @!attribute [rw] terminal_id_acq
+# @!attribute [rw] terminalIdAcq
 #   @return [String, nil]
 #
-# @!attribute [rw] terminal_language_code
+# @!attribute [rw] terminalLanguageCode
 #   @return [String]
 #
-# @!attribute [rw] terminal_location
+# @!attribute [rw] terminalLocation
 #   @return [String]
 #
-# @!attribute [rw] terminal_serial_number
+# @!attribute [rw] terminalSerialNumber
 #   @return [String, nil]
 #
-# @!attribute [rw] token_io_alia
+# @!attribute [rw] tokenIOAlias
 #   @return [String, nil]
 #
-# @!attribute [rw] token_io_iban
+# @!attribute [rw] tokenIOIban
 #   @return [String, nil]
 #
-# @!attribute [rw] token_io_member_id
+# @!attribute [rw] tokenIOMemberId
 #   @return [String, nil]
 #
-# @!attribute [rw] web_shop_url
+# @!attribute [rw] webShopUrl
 #   @return [String, nil]
 RegisterTerminal = Struct.new(
-  :additional_data,
-  :corporate_uuid,
-  :package_order_uuid,
-  :product_order_uuid,
-  :response_code,
-  :response_message,
-  :tecs_web_secret_key,
-  :template_name,
-  :terminal_country_code,
-  :terminal_id,
-  :terminal_id_acq,
-  :terminal_language_code,
-  :terminal_location,
-  :terminal_serial_number,
-  :token_io_alia,
-  :token_io_iban,
-  :token_io_member_id,
-  :web_shop_url,
+  :additionalData,
+  :corporateUuid,
+  :packageOrderUuid,
+  :productOrderUuid,
+  :responseCode,
+  :responseMessage,
+  :tecsWebSecretKey,
+  :templateName,
+  :terminalCountryCode,
+  :terminalId,
+  :terminalIdAcq,
+  :terminalLanguageCode,
+  :terminalLocation,
+  :terminalSerialNumber,
+  :tokenIOAlias,
+  :tokenIOIban,
+  :tokenIOMemberId,
+  :webShopUrl,
   keyword_init: true
 )
 
 # Request payload for RegisterTerminal#create.
 #
-# @!attribute [rw] additional_data
+# @!attribute [rw] additionalData
 #   @return [Hash, nil]
 #
-# @!attribute [rw] corporate_uuid
+# @!attribute [rw] corporateUuid
 #   @return [String]
 #
-# @!attribute [rw] package_order_uuid
+# @!attribute [rw] packageOrderUuid
 #   @return [String]
 #
-# @!attribute [rw] product_order_uuid
+# @!attribute [rw] productOrderUuid
 #   @return [String]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] tecs_web_secret_key
+# @!attribute [rw] tecsWebSecretKey
 #   @return [String, nil]
 #
-# @!attribute [rw] template_name
+# @!attribute [rw] templateName
 #   @return [String]
 #
-# @!attribute [rw] terminal_country_code
+# @!attribute [rw] terminalCountryCode
 #   @return [String]
 #
-# @!attribute [rw] terminal_id
+# @!attribute [rw] terminalId
 #   @return [Integer, nil]
 #
-# @!attribute [rw] terminal_id_acq
+# @!attribute [rw] terminalIdAcq
 #   @return [String, nil]
 #
-# @!attribute [rw] terminal_language_code
+# @!attribute [rw] terminalLanguageCode
 #   @return [String]
 #
-# @!attribute [rw] terminal_location
+# @!attribute [rw] terminalLocation
 #   @return [String]
 #
-# @!attribute [rw] terminal_serial_number
+# @!attribute [rw] terminalSerialNumber
 #   @return [String, nil]
 #
-# @!attribute [rw] token_io_alia
+# @!attribute [rw] tokenIOAlias
 #   @return [String, nil]
 #
-# @!attribute [rw] token_io_iban
+# @!attribute [rw] tokenIOIban
 #   @return [String, nil]
 #
-# @!attribute [rw] token_io_member_id
+# @!attribute [rw] tokenIOMemberId
 #   @return [String, nil]
 #
-# @!attribute [rw] web_shop_url
+# @!attribute [rw] webShopUrl
 #   @return [String, nil]
 RegisterTerminalCreateData = Struct.new(
-  :additional_data,
-  :corporate_uuid,
-  :package_order_uuid,
-  :product_order_uuid,
-  :response_code,
-  :response_message,
-  :tecs_web_secret_key,
-  :template_name,
-  :terminal_country_code,
-  :terminal_id,
-  :terminal_id_acq,
-  :terminal_language_code,
-  :terminal_location,
-  :terminal_serial_number,
-  :token_io_alia,
-  :token_io_iban,
-  :token_io_member_id,
-  :web_shop_url,
+  :additionalData,
+  :corporateUuid,
+  :packageOrderUuid,
+  :productOrderUuid,
+  :responseCode,
+  :responseMessage,
+  :tecsWebSecretKey,
+  :templateName,
+  :terminalCountryCode,
+  :terminalId,
+  :terminalIdAcq,
+  :terminalLanguageCode,
+  :terminalLocation,
+  :terminalSerialNumber,
+  :tokenIOAlias,
+  :tokenIOIban,
+  :tokenIOMemberId,
+  :webShopUrl,
   keyword_init: true
 )
 
 # ReportData entity data model.
 #
-# @!attribute [rw] card_brand_report_data
+# @!attribute [rw] cardBrandReportData
 #   @return [Array, nil]
 #
-# @!attribute [rw] clearing_date_from
+# @!attribute [rw] clearingDateFrom
 #   @return [String]
 #
-# @!attribute [rw] clearing_date_to
+# @!attribute [rw] clearingDateTo
 #   @return [String]
 #
-# @!attribute [rw] corporate_id
+# @!attribute [rw] corporateId
 #   @return [String]
 #
 # @!attribute [rw] currency
 #   @return [String]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] sum_over_credit_tx
+# @!attribute [rw] sumOverCreditTx
 #   @return [Hash, nil]
 #
-# @!attribute [rw] sum_over_debit_tx
+# @!attribute [rw] sumOverDebitTx
 #   @return [Hash, nil]
 #
-# @!attribute [rw] terminal_id
+# @!attribute [rw] terminalId
 #   @return [Integer, nil]
 ReportData = Struct.new(
-  :card_brand_report_data,
-  :clearing_date_from,
-  :clearing_date_to,
-  :corporate_id,
+  :cardBrandReportData,
+  :clearingDateFrom,
+  :clearingDateTo,
+  :corporateId,
   :currency,
-  :response_code,
-  :response_message,
-  :sum_over_credit_tx,
-  :sum_over_debit_tx,
-  :terminal_id,
+  :responseCode,
+  :responseMessage,
+  :sumOverCreditTx,
+  :sumOverDebitTx,
+  :terminalId,
   keyword_init: true
 )
 
 # Request payload for ReportData#create.
 #
-# @!attribute [rw] card_brand_report_data
+# @!attribute [rw] cardBrandReportData
 #   @return [Array, nil]
 #
-# @!attribute [rw] clearing_date_from
+# @!attribute [rw] clearingDateFrom
 #   @return [String]
 #
-# @!attribute [rw] clearing_date_to
+# @!attribute [rw] clearingDateTo
 #   @return [String]
 #
-# @!attribute [rw] corporate_id
+# @!attribute [rw] corporateId
 #   @return [String]
 #
 # @!attribute [rw] currency
 #   @return [String]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] sum_over_credit_tx
+# @!attribute [rw] sumOverCreditTx
 #   @return [Hash, nil]
 #
-# @!attribute [rw] sum_over_debit_tx
+# @!attribute [rw] sumOverDebitTx
 #   @return [Hash, nil]
 #
-# @!attribute [rw] terminal_id
+# @!attribute [rw] terminalId
 #   @return [Integer, nil]
 ReportDataCreateData = Struct.new(
-  :card_brand_report_data,
-  :clearing_date_from,
-  :clearing_date_to,
-  :corporate_id,
+  :cardBrandReportData,
+  :clearingDateFrom,
+  :clearingDateTo,
+  :corporateId,
   :currency,
-  :response_code,
-  :response_message,
-  :sum_over_credit_tx,
-  :sum_over_debit_tx,
-  :terminal_id,
+  :responseCode,
+  :responseMessage,
+  :sumOverCreditTx,
+  :sumOverDebitTx,
+  :terminalId,
   keyword_init: true
 )
 
 # StatusTransaction entity data model.
 #
-# @!attribute [rw] acquirer_name
+# @!attribute [rw] acquirerName
 #   @return [String, nil]
 #
-# @!attribute [rw] acquirer_terminal_id
+# @!attribute [rw] acquirerTerminalId
 #   @return [String, nil]
 #
 # @!attribute [rw] amount
 #   @return [Integer, nil]
 #
-# @!attribute [rw] application_cryptogram
+# @!attribute [rw] applicationCryptogram
 #   @return [String, nil]
 #
-# @!attribute [rw] authorization_code
+# @!attribute [rw] authorizationCode
 #   @return [Object, nil]
 #
-# @!attribute [rw] authorization_date
+# @!attribute [rw] authorizationDate
 #   @return [String, nil]
 #
-# @!attribute [rw] card_brand
+# @!attribute [rw] cardBrand
 #   @return [String, nil]
 #
-# @!attribute [rw] card_entry
+# @!attribute [rw] cardEntry
 #   @return [String, nil]
 #
-# @!attribute [rw] card_expiration
+# @!attribute [rw] cardExpiration
 #   @return [String, nil]
 #
-# @!attribute [rw] card_number
+# @!attribute [rw] cardNumber
 #   @return [String, nil]
 #
-# @!attribute [rw] clearing_amount
+# @!attribute [rw] clearingAmount
 #   @return [Integer, nil]
 #
-# @!attribute [rw] clearing_batch_id
+# @!attribute [rw] clearingBatchId
 #   @return [String, nil]
 #
-# @!attribute [rw] clearing_currency
+# @!attribute [rw] clearingCurrency
 #   @return [String, nil]
 #
-# @!attribute [rw] clearing_date
+# @!attribute [rw] clearingDate
 #   @return [String, nil]
 #
-# @!attribute [rw] clearing_processed_date
+# @!attribute [rw] clearingProcessedDate
 #   @return [String, nil]
 #
-# @!attribute [rw] clearing_status
+# @!attribute [rw] clearingStatus
 #   @return [String, nil]
 #
-# @!attribute [rw] client_id
+# @!attribute [rw] clientId
 #   @return [Integer, nil]
 #
 # @!attribute [rw] currency
@@ -3079,203 +3087,203 @@ ReportDataCreateData = Struct.new(
 # @!attribute [rw] cvm
 #   @return [String, nil]
 #
-# @!attribute [rw] ecr_data
+# @!attribute [rw] ecrData
 #   @return [String, nil]
 #
-# @!attribute [rw] emv_application_id
+# @!attribute [rw] emvApplicationId
 #   @return [String, nil]
 #
-# @!attribute [rw] emv_application_label
+# @!attribute [rw] emvApplicationLabel
 #   @return [String, nil]
 #
-# @!attribute [rw] merchant_name
+# @!attribute [rw] merchantName
 #   @return [String, nil]
 #
-# @!attribute [rw] merchant_number
+# @!attribute [rw] merchantNumber
 #   @return [String, nil]
 #
-# @!attribute [rw] original_client_id
+# @!attribute [rw] originalClientId
 #   @return [String, nil]
 #
-# @!attribute [rw] original_terminal_id
+# @!attribute [rw] originalTerminalId
 #   @return [Integer, nil]
 #
-# @!attribute [rw] original_transaction_id
+# @!attribute [rw] originalTransactionId
 #   @return [String, nil]
 #
-# @!attribute [rw] payment_reason
+# @!attribute [rw] paymentReason
 #   @return [String, nil]
 #
-# @!attribute [rw] receipt_number
+# @!attribute [rw] receiptNumber
 #   @return [String, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_code_from_a
+# @!attribute [rw] responseCodeFromAS
 #   @return [String, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] retrieval_reference_number
+# @!attribute [rw] retrievalReferenceNumber
 #   @return [String, nil]
 #
-# @!attribute [rw] service_code
+# @!attribute [rw] serviceCode
 #   @return [String, nil]
 #
-# @!attribute [rw] settlement_status
+# @!attribute [rw] settlementStatus
 #   @return [String, nil]
 #
-# @!attribute [rw] source_id
+# @!attribute [rw] sourceId
 #   @return [Integer, nil]
 #
-# @!attribute [rw] tecsengine_response_code
+# @!attribute [rw] tecsengineResponseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] tecsengine_response_text
+# @!attribute [rw] tecsengineResponseText
 #   @return [String, nil]
 #
-# @!attribute [rw] terminal_end_of_day_date
+# @!attribute [rw] terminalEndOfDayDate
 #   @return [String, nil]
 #
-# @!attribute [rw] terminal_id
+# @!attribute [rw] terminalId
 #   @return [Integer, nil]
 #
-# @!attribute [rw] terminal_location
+# @!attribute [rw] terminalLocation
 #   @return [String, nil]
 #
-# @!attribute [rw] tip_amount
+# @!attribute [rw] tipAmount
 #   @return [Integer, nil]
 #
-# @!attribute [rw] trace_number
+# @!attribute [rw] traceNumber
 #   @return [Integer, nil]
 #
-# @!attribute [rw] transaction_clearing_date
+# @!attribute [rw] transactionClearingDate
 #   @return [String, nil]
 #
-# @!attribute [rw] transaction_date
+# @!attribute [rw] transactionDate
 #   @return [String, nil]
 #
-# @!attribute [rw] transaction_id
+# @!attribute [rw] transactionId
 #   @return [String, nil]
 #
-# @!attribute [rw] transaction_seq_number
+# @!attribute [rw] transactionSeqNumber
 #   @return [Integer, nil]
 #
-# @!attribute [rw] transaction_server_date
+# @!attribute [rw] transactionServerDate
 #   @return [String, nil]
 #
-# @!attribute [rw] transaction_source
+# @!attribute [rw] transactionSource
 #   @return [String, nil]
 #
-# @!attribute [rw] transaction_type
+# @!attribute [rw] transactionType
 #   @return [String, nil]
 StatusTransaction = Struct.new(
-  :acquirer_name,
-  :acquirer_terminal_id,
+  :acquirerName,
+  :acquirerTerminalId,
   :amount,
-  :application_cryptogram,
-  :authorization_code,
-  :authorization_date,
-  :card_brand,
-  :card_entry,
-  :card_expiration,
-  :card_number,
-  :clearing_amount,
-  :clearing_batch_id,
-  :clearing_currency,
-  :clearing_date,
-  :clearing_processed_date,
-  :clearing_status,
-  :client_id,
+  :applicationCryptogram,
+  :authorizationCode,
+  :authorizationDate,
+  :cardBrand,
+  :cardEntry,
+  :cardExpiration,
+  :cardNumber,
+  :clearingAmount,
+  :clearingBatchId,
+  :clearingCurrency,
+  :clearingDate,
+  :clearingProcessedDate,
+  :clearingStatus,
+  :clientId,
   :currency,
   :cvm,
-  :ecr_data,
-  :emv_application_id,
-  :emv_application_label,
-  :merchant_name,
-  :merchant_number,
-  :original_client_id,
-  :original_terminal_id,
-  :original_transaction_id,
-  :payment_reason,
-  :receipt_number,
-  :response_code,
-  :response_code_from_a,
-  :response_message,
-  :retrieval_reference_number,
-  :service_code,
-  :settlement_status,
-  :source_id,
-  :tecsengine_response_code,
-  :tecsengine_response_text,
-  :terminal_end_of_day_date,
-  :terminal_id,
-  :terminal_location,
-  :tip_amount,
-  :trace_number,
-  :transaction_clearing_date,
-  :transaction_date,
-  :transaction_id,
-  :transaction_seq_number,
-  :transaction_server_date,
-  :transaction_source,
-  :transaction_type,
+  :ecrData,
+  :emvApplicationId,
+  :emvApplicationLabel,
+  :merchantName,
+  :merchantNumber,
+  :originalClientId,
+  :originalTerminalId,
+  :originalTransactionId,
+  :paymentReason,
+  :receiptNumber,
+  :responseCode,
+  :responseCodeFromAS,
+  :responseMessage,
+  :retrievalReferenceNumber,
+  :serviceCode,
+  :settlementStatus,
+  :sourceId,
+  :tecsengineResponseCode,
+  :tecsengineResponseText,
+  :terminalEndOfDayDate,
+  :terminalId,
+  :terminalLocation,
+  :tipAmount,
+  :traceNumber,
+  :transactionClearingDate,
+  :transactionDate,
+  :transactionId,
+  :transactionSeqNumber,
+  :transactionServerDate,
+  :transactionSource,
+  :transactionType,
   keyword_init: true
 )
 
 # Request payload for StatusTransaction#create.
 #
-# @!attribute [rw] acquirer_name
+# @!attribute [rw] acquirerName
 #   @return [String, nil]
 #
-# @!attribute [rw] acquirer_terminal_id
+# @!attribute [rw] acquirerTerminalId
 #   @return [String, nil]
 #
 # @!attribute [rw] amount
 #   @return [Integer, nil]
 #
-# @!attribute [rw] application_cryptogram
+# @!attribute [rw] applicationCryptogram
 #   @return [String, nil]
 #
-# @!attribute [rw] authorization_code
+# @!attribute [rw] authorizationCode
 #   @return [Object, nil]
 #
-# @!attribute [rw] authorization_date
+# @!attribute [rw] authorizationDate
 #   @return [String, nil]
 #
-# @!attribute [rw] card_brand
+# @!attribute [rw] cardBrand
 #   @return [String, nil]
 #
-# @!attribute [rw] card_entry
+# @!attribute [rw] cardEntry
 #   @return [String, nil]
 #
-# @!attribute [rw] card_expiration
+# @!attribute [rw] cardExpiration
 #   @return [String, nil]
 #
-# @!attribute [rw] card_number
+# @!attribute [rw] cardNumber
 #   @return [String, nil]
 #
-# @!attribute [rw] clearing_amount
+# @!attribute [rw] clearingAmount
 #   @return [Integer, nil]
 #
-# @!attribute [rw] clearing_batch_id
+# @!attribute [rw] clearingBatchId
 #   @return [String, nil]
 #
-# @!attribute [rw] clearing_currency
+# @!attribute [rw] clearingCurrency
 #   @return [String, nil]
 #
-# @!attribute [rw] clearing_date
+# @!attribute [rw] clearingDate
 #   @return [String, nil]
 #
-# @!attribute [rw] clearing_processed_date
+# @!attribute [rw] clearingProcessedDate
 #   @return [String, nil]
 #
-# @!attribute [rw] clearing_status
+# @!attribute [rw] clearingStatus
 #   @return [String, nil]
 #
-# @!attribute [rw] client_id
+# @!attribute [rw] clientId
 #   @return [Integer, nil]
 #
 # @!attribute [rw] currency
@@ -3284,498 +3292,498 @@ StatusTransaction = Struct.new(
 # @!attribute [rw] cvm
 #   @return [String, nil]
 #
-# @!attribute [rw] ecr_data
+# @!attribute [rw] ecrData
 #   @return [String, nil]
 #
-# @!attribute [rw] emv_application_id
+# @!attribute [rw] emvApplicationId
 #   @return [String, nil]
 #
-# @!attribute [rw] emv_application_label
+# @!attribute [rw] emvApplicationLabel
 #   @return [String, nil]
 #
-# @!attribute [rw] merchant_name
+# @!attribute [rw] merchantName
 #   @return [String, nil]
 #
-# @!attribute [rw] merchant_number
+# @!attribute [rw] merchantNumber
 #   @return [String, nil]
 #
-# @!attribute [rw] original_client_id
+# @!attribute [rw] originalClientId
 #   @return [String, nil]
 #
-# @!attribute [rw] original_terminal_id
+# @!attribute [rw] originalTerminalId
 #   @return [Integer, nil]
 #
-# @!attribute [rw] original_transaction_id
+# @!attribute [rw] originalTransactionId
 #   @return [String, nil]
 #
-# @!attribute [rw] payment_reason
+# @!attribute [rw] paymentReason
 #   @return [String, nil]
 #
-# @!attribute [rw] receipt_number
+# @!attribute [rw] receiptNumber
 #   @return [String, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_code_from_a
+# @!attribute [rw] responseCodeFromAS
 #   @return [String, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] retrieval_reference_number
+# @!attribute [rw] retrievalReferenceNumber
 #   @return [String, nil]
 #
-# @!attribute [rw] service_code
+# @!attribute [rw] serviceCode
 #   @return [String, nil]
 #
-# @!attribute [rw] settlement_status
+# @!attribute [rw] settlementStatus
 #   @return [String, nil]
 #
-# @!attribute [rw] source_id
+# @!attribute [rw] sourceId
 #   @return [Integer, nil]
 #
-# @!attribute [rw] tecsengine_response_code
+# @!attribute [rw] tecsengineResponseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] tecsengine_response_text
+# @!attribute [rw] tecsengineResponseText
 #   @return [String, nil]
 #
-# @!attribute [rw] terminal_end_of_day_date
+# @!attribute [rw] terminalEndOfDayDate
 #   @return [String, nil]
 #
-# @!attribute [rw] terminal_id
+# @!attribute [rw] terminalId
 #   @return [Integer, nil]
 #
-# @!attribute [rw] terminal_location
+# @!attribute [rw] terminalLocation
 #   @return [String, nil]
 #
-# @!attribute [rw] tip_amount
+# @!attribute [rw] tipAmount
 #   @return [Integer, nil]
 #
-# @!attribute [rw] trace_number
+# @!attribute [rw] traceNumber
 #   @return [Integer, nil]
 #
-# @!attribute [rw] transaction_clearing_date
+# @!attribute [rw] transactionClearingDate
 #   @return [String, nil]
 #
-# @!attribute [rw] transaction_date
+# @!attribute [rw] transactionDate
 #   @return [String, nil]
 #
-# @!attribute [rw] transaction_id
+# @!attribute [rw] transactionId
 #   @return [String, nil]
 #
-# @!attribute [rw] transaction_seq_number
+# @!attribute [rw] transactionSeqNumber
 #   @return [Integer, nil]
 #
-# @!attribute [rw] transaction_server_date
+# @!attribute [rw] transactionServerDate
 #   @return [String, nil]
 #
-# @!attribute [rw] transaction_source
+# @!attribute [rw] transactionSource
 #   @return [String, nil]
 #
-# @!attribute [rw] transaction_type
+# @!attribute [rw] transactionType
 #   @return [String, nil]
 StatusTransactionCreateData = Struct.new(
-  :acquirer_name,
-  :acquirer_terminal_id,
+  :acquirerName,
+  :acquirerTerminalId,
   :amount,
-  :application_cryptogram,
-  :authorization_code,
-  :authorization_date,
-  :card_brand,
-  :card_entry,
-  :card_expiration,
-  :card_number,
-  :clearing_amount,
-  :clearing_batch_id,
-  :clearing_currency,
-  :clearing_date,
-  :clearing_processed_date,
-  :clearing_status,
-  :client_id,
+  :applicationCryptogram,
+  :authorizationCode,
+  :authorizationDate,
+  :cardBrand,
+  :cardEntry,
+  :cardExpiration,
+  :cardNumber,
+  :clearingAmount,
+  :clearingBatchId,
+  :clearingCurrency,
+  :clearingDate,
+  :clearingProcessedDate,
+  :clearingStatus,
+  :clientId,
   :currency,
   :cvm,
-  :ecr_data,
-  :emv_application_id,
-  :emv_application_label,
-  :merchant_name,
-  :merchant_number,
-  :original_client_id,
-  :original_terminal_id,
-  :original_transaction_id,
-  :payment_reason,
-  :receipt_number,
-  :response_code,
-  :response_code_from_a,
-  :response_message,
-  :retrieval_reference_number,
-  :service_code,
-  :settlement_status,
-  :source_id,
-  :tecsengine_response_code,
-  :tecsengine_response_text,
-  :terminal_end_of_day_date,
-  :terminal_id,
-  :terminal_location,
-  :tip_amount,
-  :trace_number,
-  :transaction_clearing_date,
-  :transaction_date,
-  :transaction_id,
-  :transaction_seq_number,
-  :transaction_server_date,
-  :transaction_source,
-  :transaction_type,
+  :ecrData,
+  :emvApplicationId,
+  :emvApplicationLabel,
+  :merchantName,
+  :merchantNumber,
+  :originalClientId,
+  :originalTerminalId,
+  :originalTransactionId,
+  :paymentReason,
+  :receiptNumber,
+  :responseCode,
+  :responseCodeFromAS,
+  :responseMessage,
+  :retrievalReferenceNumber,
+  :serviceCode,
+  :settlementStatus,
+  :sourceId,
+  :tecsengineResponseCode,
+  :tecsengineResponseText,
+  :terminalEndOfDayDate,
+  :terminalId,
+  :terminalLocation,
+  :tipAmount,
+  :traceNumber,
+  :transactionClearingDate,
+  :transactionDate,
+  :transactionId,
+  :transactionSeqNumber,
+  :transactionServerDate,
+  :transactionSource,
+  :transactionType,
   keyword_init: true
 )
 
 # StoreTerminalParameter entity data model.
 #
-# @!attribute [rw] acq_tab_nexo
+# @!attribute [rw] acqTabNexo
 #   @return [Hash, nil]
 #
-# @!attribute [rw] config_version
+# @!attribute [rw] configVersion
 #   @return [String, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] serial_number
+# @!attribute [rw] serialNumber
 #   @return [String]
 #
-# @!attribute [rw] tid_sent
+# @!attribute [rw] tidSent
 #   @return [String, nil]
 StoreTerminalParameter = Struct.new(
-  :acq_tab_nexo,
-  :config_version,
-  :response_code,
-  :response_message,
-  :serial_number,
-  :tid_sent,
+  :acqTabNexo,
+  :configVersion,
+  :responseCode,
+  :responseMessage,
+  :serialNumber,
+  :tidSent,
   keyword_init: true
 )
 
 # Request payload for StoreTerminalParameter#create.
 #
-# @!attribute [rw] acq_tab_nexo
+# @!attribute [rw] acqTabNexo
 #   @return [Hash, nil]
 #
-# @!attribute [rw] config_version
+# @!attribute [rw] configVersion
 #   @return [String, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] serial_number
+# @!attribute [rw] serialNumber
 #   @return [String]
 #
-# @!attribute [rw] tid_sent
+# @!attribute [rw] tidSent
 #   @return [String, nil]
 StoreTerminalParameterCreateData = Struct.new(
-  :acq_tab_nexo,
-  :config_version,
-  :response_code,
-  :response_message,
-  :serial_number,
-  :tid_sent,
+  :acqTabNexo,
+  :configVersion,
+  :responseCode,
+  :responseMessage,
+  :serialNumber,
+  :tidSent,
   keyword_init: true
 )
 
 # TerminalId entity data model.
 #
-# @!attribute [rw] device_serial_number
+# @!attribute [rw] deviceSerialNumber
 #   @return [Array]
 #
-# @!attribute [rw] duplicate_terminal_id
+# @!attribute [rw] duplicateTerminalIds
 #   @return [Array, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] terminal
+# @!attribute [rw] terminals
 #   @return [Array, nil]
 TerminalId = Struct.new(
-  :device_serial_number,
-  :duplicate_terminal_id,
-  :response_code,
-  :response_message,
-  :terminal,
+  :deviceSerialNumber,
+  :duplicateTerminalIds,
+  :responseCode,
+  :responseMessage,
+  :terminals,
   keyword_init: true
 )
 
 # Request payload for TerminalId#create.
 #
-# @!attribute [rw] device_serial_number
+# @!attribute [rw] deviceSerialNumber
 #   @return [Array]
 #
-# @!attribute [rw] duplicate_terminal_id
+# @!attribute [rw] duplicateTerminalIds
 #   @return [Array, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] terminal
+# @!attribute [rw] terminals
 #   @return [Array, nil]
 TerminalIdCreateData = Struct.new(
-  :device_serial_number,
-  :duplicate_terminal_id,
-  :response_code,
-  :response_message,
-  :terminal,
+  :deviceSerialNumber,
+  :duplicateTerminalIds,
+  :responseCode,
+  :responseMessage,
+  :terminals,
   keyword_init: true
 )
 
 # TransactionHistory entity data model.
 #
-# @!attribute [rw] 3_d_secure
+# @!attribute [rw] 3DSecure
 #   @return [String, nil]
 #
-# @!attribute [rw] authorization_code
+# @!attribute [rw] authorizationCode
 #   @return [String, nil]
 #
-# @!attribute [rw] card_brand
+# @!attribute [rw] cardBrand
 #   @return [String, nil]
 #
-# @!attribute [rw] clearing_amount_from
+# @!attribute [rw] clearingAmountFrom
 #   @return [String, nil]
 #
-# @!attribute [rw] clearing_amount_to
+# @!attribute [rw] clearingAmountTo
 #   @return [String, nil]
 #
-# @!attribute [rw] clearing_currency
+# @!attribute [rw] clearingCurrency
 #   @return [String, nil]
 #
-# @!attribute [rw] clearing_status
+# @!attribute [rw] clearingStatus
 #   @return [String, nil]
 #
-# @!attribute [rw] corporate_uuid
+# @!attribute [rw] corporateUUID
 #   @return [String, nil]
 #
-# @!attribute [rw] order_by_transaction_date
+# @!attribute [rw] orderByTransactionDate
 #   @return [String, nil]
 #
 # @!attribute [rw] pagination
 #   @return [Hash, nil]
 #
-# @!attribute [rw] payment_token_public_id
+# @!attribute [rw] paymentTokenPublicId
 #   @return [String, nil]
 #
-# @!attribute [rw] receipt_number
+# @!attribute [rw] receiptNumber
 #   @return [String, nil]
 #
-# @!attribute [rw] referenced_transaction_id
+# @!attribute [rw] referencedTransactionId
 #   @return [String, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] retrieval_reference_number
+# @!attribute [rw] retrievalReferenceNumber
 #   @return [String, nil]
 #
-# @!attribute [rw] source_id
+# @!attribute [rw] sourceId
 #   @return [Integer, nil]
 #
-# @!attribute [rw] tecsengine_response_code_from
+# @!attribute [rw] tecsengineResponseCodeFrom
 #   @return [String, nil]
 #
-# @!attribute [rw] tecsengine_response_code_to
+# @!attribute [rw] tecsengineResponseCodeTo
 #   @return [String, nil]
 #
-# @!attribute [rw] terminal_id
+# @!attribute [rw] terminalId
 #   @return [Integer, nil]
 #
-# @!attribute [rw] trace_number
+# @!attribute [rw] traceNumber
 #   @return [String, nil]
 #
-# @!attribute [rw] transaction_amount_from
+# @!attribute [rw] transactionAmountFrom
 #   @return [String, nil]
 #
-# @!attribute [rw] transaction_amount_to
+# @!attribute [rw] transactionAmountTo
 #   @return [String, nil]
 #
-# @!attribute [rw] transaction_date_from
+# @!attribute [rw] transactionDateFrom
 #   @return [String, nil]
 #
-# @!attribute [rw] transaction_date_to
+# @!attribute [rw] transactionDateTo
 #   @return [String, nil]
 #
-# @!attribute [rw] transaction_history
+# @!attribute [rw] transactionHistories
 #   @return [Array, nil]
 #
-# @!attribute [rw] transaction_id
+# @!attribute [rw] transactionId
 #   @return [String, nil]
 #
-# @!attribute [rw] transaction_type
+# @!attribute [rw] transactionType
 #   @return [String, nil]
 #
 # @!attribute [rw] wallet
 #   @return [String, nil]
 TransactionHistory = Struct.new(
-  :"3_d_secure",
-  :authorization_code,
-  :card_brand,
-  :clearing_amount_from,
-  :clearing_amount_to,
-  :clearing_currency,
-  :clearing_status,
-  :corporate_uuid,
-  :order_by_transaction_date,
+  :"3DSecure",
+  :authorizationCode,
+  :cardBrand,
+  :clearingAmountFrom,
+  :clearingAmountTo,
+  :clearingCurrency,
+  :clearingStatus,
+  :corporateUUID,
+  :orderByTransactionDate,
   :pagination,
-  :payment_token_public_id,
-  :receipt_number,
-  :referenced_transaction_id,
-  :response_code,
-  :response_message,
-  :retrieval_reference_number,
-  :source_id,
-  :tecsengine_response_code_from,
-  :tecsengine_response_code_to,
-  :terminal_id,
-  :trace_number,
-  :transaction_amount_from,
-  :transaction_amount_to,
-  :transaction_date_from,
-  :transaction_date_to,
-  :transaction_history,
-  :transaction_id,
-  :transaction_type,
+  :paymentTokenPublicId,
+  :receiptNumber,
+  :referencedTransactionId,
+  :responseCode,
+  :responseMessage,
+  :retrievalReferenceNumber,
+  :sourceId,
+  :tecsengineResponseCodeFrom,
+  :tecsengineResponseCodeTo,
+  :terminalId,
+  :traceNumber,
+  :transactionAmountFrom,
+  :transactionAmountTo,
+  :transactionDateFrom,
+  :transactionDateTo,
+  :transactionHistories,
+  :transactionId,
+  :transactionType,
   :wallet,
   keyword_init: true
 )
 
 # Request payload for TransactionHistory#create.
 #
-# @!attribute [rw] 3_d_secure
+# @!attribute [rw] 3DSecure
 #   @return [String, nil]
 #
-# @!attribute [rw] authorization_code
+# @!attribute [rw] authorizationCode
 #   @return [String, nil]
 #
-# @!attribute [rw] card_brand
+# @!attribute [rw] cardBrand
 #   @return [String, nil]
 #
-# @!attribute [rw] clearing_amount_from
+# @!attribute [rw] clearingAmountFrom
 #   @return [String, nil]
 #
-# @!attribute [rw] clearing_amount_to
+# @!attribute [rw] clearingAmountTo
 #   @return [String, nil]
 #
-# @!attribute [rw] clearing_currency
+# @!attribute [rw] clearingCurrency
 #   @return [String, nil]
 #
-# @!attribute [rw] clearing_status
+# @!attribute [rw] clearingStatus
 #   @return [String, nil]
 #
-# @!attribute [rw] corporate_uuid
+# @!attribute [rw] corporateUUID
 #   @return [String, nil]
 #
-# @!attribute [rw] order_by_transaction_date
+# @!attribute [rw] orderByTransactionDate
 #   @return [String, nil]
 #
 # @!attribute [rw] pagination
 #   @return [Hash, nil]
 #
-# @!attribute [rw] payment_token_public_id
+# @!attribute [rw] paymentTokenPublicId
 #   @return [String, nil]
 #
-# @!attribute [rw] receipt_number
+# @!attribute [rw] receiptNumber
 #   @return [String, nil]
 #
-# @!attribute [rw] referenced_transaction_id
+# @!attribute [rw] referencedTransactionId
 #   @return [String, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] retrieval_reference_number
+# @!attribute [rw] retrievalReferenceNumber
 #   @return [String, nil]
 #
-# @!attribute [rw] source_id
+# @!attribute [rw] sourceId
 #   @return [Integer, nil]
 #
-# @!attribute [rw] tecsengine_response_code_from
+# @!attribute [rw] tecsengineResponseCodeFrom
 #   @return [String, nil]
 #
-# @!attribute [rw] tecsengine_response_code_to
+# @!attribute [rw] tecsengineResponseCodeTo
 #   @return [String, nil]
 #
-# @!attribute [rw] terminal_id
+# @!attribute [rw] terminalId
 #   @return [Integer, nil]
 #
-# @!attribute [rw] trace_number
+# @!attribute [rw] traceNumber
 #   @return [String, nil]
 #
-# @!attribute [rw] transaction_amount_from
+# @!attribute [rw] transactionAmountFrom
 #   @return [String, nil]
 #
-# @!attribute [rw] transaction_amount_to
+# @!attribute [rw] transactionAmountTo
 #   @return [String, nil]
 #
-# @!attribute [rw] transaction_date_from
+# @!attribute [rw] transactionDateFrom
 #   @return [String, nil]
 #
-# @!attribute [rw] transaction_date_to
+# @!attribute [rw] transactionDateTo
 #   @return [String, nil]
 #
-# @!attribute [rw] transaction_history
+# @!attribute [rw] transactionHistories
 #   @return [Array, nil]
 #
-# @!attribute [rw] transaction_id
+# @!attribute [rw] transactionId
 #   @return [String, nil]
 #
-# @!attribute [rw] transaction_type
+# @!attribute [rw] transactionType
 #   @return [String, nil]
 #
 # @!attribute [rw] wallet
 #   @return [String, nil]
 TransactionHistoryCreateData = Struct.new(
-  :"3_d_secure",
-  :authorization_code,
-  :card_brand,
-  :clearing_amount_from,
-  :clearing_amount_to,
-  :clearing_currency,
-  :clearing_status,
-  :corporate_uuid,
-  :order_by_transaction_date,
+  :"3DSecure",
+  :authorizationCode,
+  :cardBrand,
+  :clearingAmountFrom,
+  :clearingAmountTo,
+  :clearingCurrency,
+  :clearingStatus,
+  :corporateUUID,
+  :orderByTransactionDate,
   :pagination,
-  :payment_token_public_id,
-  :receipt_number,
-  :referenced_transaction_id,
-  :response_code,
-  :response_message,
-  :retrieval_reference_number,
-  :source_id,
-  :tecsengine_response_code_from,
-  :tecsengine_response_code_to,
-  :terminal_id,
-  :trace_number,
-  :transaction_amount_from,
-  :transaction_amount_to,
-  :transaction_date_from,
-  :transaction_date_to,
-  :transaction_history,
-  :transaction_id,
-  :transaction_type,
+  :paymentTokenPublicId,
+  :receiptNumber,
+  :referencedTransactionId,
+  :responseCode,
+  :responseMessage,
+  :retrievalReferenceNumber,
+  :sourceId,
+  :tecsengineResponseCodeFrom,
+  :tecsengineResponseCodeTo,
+  :terminalId,
+  :traceNumber,
+  :transactionAmountFrom,
+  :transactionAmountTo,
+  :transactionDateFrom,
+  :transactionDateTo,
+  :transactionHistories,
+  :transactionId,
+  :transactionType,
   :wallet,
   keyword_init: true
 )
@@ -3785,27 +3793,27 @@ TransactionHistoryCreateData = Struct.new(
 # @!attribute [rw] period
 #   @return [String, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] transaction_date_from
+# @!attribute [rw] transactionDateFrom
 #   @return [String, nil]
 #
-# @!attribute [rw] transaction_date_to
+# @!attribute [rw] transactionDateTo
 #   @return [String, nil]
 #
-# @!attribute [rw] transactions_count
+# @!attribute [rw] transactionsCount
 #   @return [Array, nil]
 TransactionsCount = Struct.new(
   :period,
-  :response_code,
-  :response_message,
-  :transaction_date_from,
-  :transaction_date_to,
-  :transactions_count,
+  :responseCode,
+  :responseMessage,
+  :transactionDateFrom,
+  :transactionDateTo,
+  :transactionsCount,
   keyword_init: true
 )
 
@@ -3814,27 +3822,27 @@ TransactionsCount = Struct.new(
 # @!attribute [rw] period
 #   @return [String, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] transaction_date_from
+# @!attribute [rw] transactionDateFrom
 #   @return [String, nil]
 #
-# @!attribute [rw] transaction_date_to
+# @!attribute [rw] transactionDateTo
 #   @return [String, nil]
 #
-# @!attribute [rw] transactions_count
+# @!attribute [rw] transactionsCount
 #   @return [Array, nil]
 TransactionsCountCreateData = Struct.new(
   :period,
-  :response_code,
-  :response_message,
-  :transaction_date_from,
-  :transaction_date_to,
-  :transactions_count,
+  :responseCode,
+  :responseMessage,
+  :transactionDateFrom,
+  :transactionDateTo,
+  :transactionsCount,
   keyword_init: true
 )
 
@@ -3843,27 +3851,27 @@ TransactionsCountCreateData = Struct.new(
 # @!attribute [rw] period
 #   @return [String, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] transaction_date_from
+# @!attribute [rw] transactionDateFrom
 #   @return [String, nil]
 #
-# @!attribute [rw] transaction_date_to
+# @!attribute [rw] transactionDateTo
 #   @return [String, nil]
 #
-# @!attribute [rw] transactions_count
+# @!attribute [rw] transactionsCount
 #   @return [Array, nil]
 TransactionsCountCardBrand = Struct.new(
   :period,
-  :response_code,
-  :response_message,
-  :transaction_date_from,
-  :transaction_date_to,
-  :transactions_count,
+  :responseCode,
+  :responseMessage,
+  :transactionDateFrom,
+  :transactionDateTo,
+  :transactionsCount,
   keyword_init: true
 )
 
@@ -3872,27 +3880,27 @@ TransactionsCountCardBrand = Struct.new(
 # @!attribute [rw] period
 #   @return [String, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] transaction_date_from
+# @!attribute [rw] transactionDateFrom
 #   @return [String, nil]
 #
-# @!attribute [rw] transaction_date_to
+# @!attribute [rw] transactionDateTo
 #   @return [String, nil]
 #
-# @!attribute [rw] transactions_count
+# @!attribute [rw] transactionsCount
 #   @return [Array, nil]
 TransactionsCountCardBrandCreateData = Struct.new(
   :period,
-  :response_code,
-  :response_message,
-  :transaction_date_from,
-  :transaction_date_to,
-  :transactions_count,
+  :responseCode,
+  :responseMessage,
+  :transactionDateFrom,
+  :transactionDateTo,
+  :transactionsCount,
   keyword_init: true
 )
 
@@ -3901,27 +3909,27 @@ TransactionsCountCardBrandCreateData = Struct.new(
 # @!attribute [rw] period
 #   @return [String, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] transaction_date_from
+# @!attribute [rw] transactionDateFrom
 #   @return [String, nil]
 #
-# @!attribute [rw] transaction_date_to
+# @!attribute [rw] transactionDateTo
 #   @return [String, nil]
 #
-# @!attribute [rw] turnover
+# @!attribute [rw] turnovers
 #   @return [Array, nil]
 TransactionsTurnover = Struct.new(
   :period,
-  :response_code,
-  :response_message,
-  :transaction_date_from,
-  :transaction_date_to,
-  :turnover,
+  :responseCode,
+  :responseMessage,
+  :transactionDateFrom,
+  :transactionDateTo,
+  :turnovers,
   keyword_init: true
 )
 
@@ -3930,27 +3938,27 @@ TransactionsTurnover = Struct.new(
 # @!attribute [rw] period
 #   @return [String, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] transaction_date_from
+# @!attribute [rw] transactionDateFrom
 #   @return [String, nil]
 #
-# @!attribute [rw] transaction_date_to
+# @!attribute [rw] transactionDateTo
 #   @return [String, nil]
 #
-# @!attribute [rw] turnover
+# @!attribute [rw] turnovers
 #   @return [Array, nil]
 TransactionsTurnoverCreateData = Struct.new(
   :period,
-  :response_code,
-  :response_message,
-  :transaction_date_from,
-  :transaction_date_to,
-  :turnover,
+  :responseCode,
+  :responseMessage,
+  :transactionDateFrom,
+  :transactionDateTo,
+  :turnovers,
   keyword_init: true
 )
 
@@ -3959,22 +3967,22 @@ TransactionsTurnoverCreateData = Struct.new(
 # @!attribute [rw] city
 #   @return [String, nil]
 #
-# @!attribute [rw] corporate_uuid
+# @!attribute [rw] corporateUuid
 #   @return [String]
 #
 # @!attribute [rw] country
 #   @return [String, nil]
 #
-# @!attribute [rw] merchant_category_code
+# @!attribute [rw] merchantCategoryCode
 #   @return [String, nil]
 #
 # @!attribute [rw] name
 #   @return [String, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
 # @!attribute [rw] state
@@ -3983,22 +3991,22 @@ TransactionsTurnoverCreateData = Struct.new(
 # @!attribute [rw] street
 #   @return [String, nil]
 #
-# @!attribute [rw] vu_nummer
+# @!attribute [rw] vuNummer
 #   @return [String, nil]
 #
 # @!attribute [rw] zipcode
 #   @return [String, nil]
 UpdateMerchant = Struct.new(
   :city,
-  :corporate_uuid,
+  :corporateUuid,
   :country,
-  :merchant_category_code,
+  :merchantCategoryCode,
   :name,
-  :response_code,
-  :response_message,
+  :responseCode,
+  :responseMessage,
   :state,
   :street,
-  :vu_nummer,
+  :vuNummer,
   :zipcode,
   keyword_init: true
 )
@@ -4008,22 +4016,22 @@ UpdateMerchant = Struct.new(
 # @!attribute [rw] city
 #   @return [String, nil]
 #
-# @!attribute [rw] corporate_uuid
+# @!attribute [rw] corporateUuid
 #   @return [String]
 #
 # @!attribute [rw] country
 #   @return [String, nil]
 #
-# @!attribute [rw] merchant_category_code
+# @!attribute [rw] merchantCategoryCode
 #   @return [String, nil]
 #
 # @!attribute [rw] name
 #   @return [String, nil]
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
 # @!attribute [rw] state
@@ -4032,98 +4040,98 @@ UpdateMerchant = Struct.new(
 # @!attribute [rw] street
 #   @return [String, nil]
 #
-# @!attribute [rw] vu_nummer
+# @!attribute [rw] vuNummer
 #   @return [String, nil]
 #
 # @!attribute [rw] zipcode
 #   @return [String, nil]
 UpdateMerchantCreateData = Struct.new(
   :city,
-  :corporate_uuid,
+  :corporateUuid,
   :country,
-  :merchant_category_code,
+  :merchantCategoryCode,
   :name,
-  :response_code,
-  :response_message,
+  :responseCode,
+  :responseMessage,
   :state,
   :street,
-  :vu_nummer,
+  :vuNummer,
   :zipcode,
   keyword_init: true
 )
 
 # UpdateTemplateXml entity data model.
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] template_name
+# @!attribute [rw] templateName
 #   @return [String]
 #
-# @!attribute [rw] template_xml
+# @!attribute [rw] templateXml
 #   @return [String]
 UpdateTemplateXml = Struct.new(
-  :response_code,
-  :response_message,
-  :template_name,
-  :template_xml,
+  :responseCode,
+  :responseMessage,
+  :templateName,
+  :templateXml,
   keyword_init: true
 )
 
 # Request payload for UpdateTemplateXml#create.
 #
-# @!attribute [rw] response_code
+# @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
-# @!attribute [rw] response_message
+# @!attribute [rw] responseMessage
 #   @return [String, nil]
 #
-# @!attribute [rw] template_name
+# @!attribute [rw] templateName
 #   @return [String]
 #
-# @!attribute [rw] template_xml
+# @!attribute [rw] templateXml
 #   @return [String]
 UpdateTemplateXmlCreateData = Struct.new(
-  :response_code,
-  :response_message,
-  :template_name,
-  :template_xml,
+  :responseCode,
+  :responseMessage,
+  :templateName,
+  :templateXml,
   keyword_init: true
 )
 
 # Version entity data model.
 #
-# @!attribute [rw] app_name
+# @!attribute [rw] appName
 #   @return [String, nil]
 #
-# @!attribute [rw] build_date
+# @!attribute [rw] buildDate
 #   @return [String, nil]
 #
 # @!attribute [rw] version
 #   @return [String, nil]
 Version = Struct.new(
-  :app_name,
-  :build_date,
+  :appName,
+  :buildDate,
   :version,
   keyword_init: true
 )
 
 # Request payload for Version#load.
 #
-# @!attribute [rw] app_name
+# @!attribute [rw] appName
 #   @return [String, nil]
 #
-# @!attribute [rw] build_date
+# @!attribute [rw] buildDate
 #   @return [String, nil]
 #
 # @!attribute [rw] version
 #   @return [String, nil]
 VersionLoadMatch = Struct.new(
-  :app_name,
-  :build_date,
+  :appName,
+  :buildDate,
   :version,
   keyword_init: true
 )

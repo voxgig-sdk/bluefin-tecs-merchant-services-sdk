@@ -26,8 +26,8 @@ import {
 describe('RefundTransactionEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when BLUEFINTECSMERCHANTSERVICES_TEST_LIVE=TRUE.
-  afterEach(liveDelay('BLUEFINTECSMERCHANTSERVICES_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE=TRUE.
+  afterEach(liveDelay('BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = BluefinTecsMerchantServicesSDK.test()
@@ -62,7 +62,7 @@ describe('RefundTransactionEntity', async () => {
     const refund_transaction_ref01_ent = client.RefundTransaction()
     let refund_transaction_ref01_data = setup.data.new.refund_transaction['refund_transaction_ref01']
 
-    refund_transaction_ref01_data = await refund_transaction_ref01_ent.create(refund_transaction_ref01_data)
+    refund_transaction_ref01_data = (await refund_transaction_ref01_ent.create(refund_transaction_ref01_data)).data()
     assert(null != refund_transaction_ref01_data)
 
 

@@ -2,30 +2,30 @@
   "existing": {
     "emv_data": {
       "EMV_DATA00": {
-        "emv_data": "s3c",
-        "response_code": "s3d",
-        "response_message": "s3e",
-        "terminal_id": "TERMINAL01",
-        "transaction_id": "TRANSACTION01",
-        "transaction_type": "s41",
+        "emvData": "s3c",
+        "responseCode": "s3d",
+        "responseMessage": "s3e",
+        "terminalId": "s3f",
+        "transactionId": "s40",
+        "transactionType": "s41",
         "id": "EMV_DATA00"
       },
       "EMV_DATA01": {
-        "emv_data": "s78",
-        "response_code": "s79",
-        "response_message": "s7a",
-        "terminal_id": "TERMINAL01",
-        "transaction_id": "TRANSACTION01",
-        "transaction_type": "s7d",
+        "emvData": "s78",
+        "responseCode": "s79",
+        "responseMessage": "s7a",
+        "terminalId": "s7b",
+        "transactionId": "s7c",
+        "transactionType": "s7d",
         "id": "EMV_DATA01"
       },
       "EMV_DATA02": {
-        "emv_data": "sb4",
-        "response_code": "sb5",
-        "response_message": "sb6",
-        "terminal_id": "TERMINAL01",
-        "transaction_id": "TRANSACTION01",
-        "transaction_type": "sb9",
+        "emvData": "sb4",
+        "responseCode": "sb5",
+        "responseMessage": "sb6",
+        "terminalId": "sb7",
+        "transactionId": "sb8",
+        "transactionType": "sb9",
         "id": "EMV_DATA02"
       }
     }
@@ -33,12 +33,12 @@
   "new": {
     "emv_data": {
       "emv_data_ref01": {
-        "emv_data": "sf0",
-        "response_code": "sf1",
-        "response_message": "sf2",
-        "terminal_id": "TERMINAL01",
-        "transaction_id": "TRANSACTION01",
-        "transaction_type": "sf5"
+        "emvData": "sf0",
+        "responseCode": "sf1",
+        "responseMessage": "sf2",
+        "terminalId": "sf3",
+        "transactionId": "sf4",
+        "transactionType": "sf5"
       }
     }
   }

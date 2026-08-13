@@ -26,8 +26,8 @@ import {
 describe('GetTemplateXmlEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when BLUEFINTECSMERCHANTSERVICES_TEST_LIVE=TRUE.
-  afterEach(liveDelay('BLUEFINTECSMERCHANTSERVICES_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE=TRUE.
+  afterEach(liveDelay('BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = BluefinTecsMerchantServicesSDK.test()
@@ -62,7 +62,7 @@ describe('GetTemplateXmlEntity', async () => {
     const get_template_xml_ref01_ent = client.GetTemplateXml()
     let get_template_xml_ref01_data = setup.data.new.get_template_xml['get_template_xml_ref01']
 
-    get_template_xml_ref01_data = await get_template_xml_ref01_ent.create(get_template_xml_ref01_data)
+    get_template_xml_ref01_data = (await get_template_xml_ref01_ent.create(get_template_xml_ref01_data)).data()
     assert(null != get_template_xml_ref01_data)
 
 

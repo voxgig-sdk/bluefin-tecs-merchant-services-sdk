@@ -35,7 +35,7 @@ object ReactivateTerminalEntityTest {
       var reactivateTerminalRef01Data = Helpers.toMapAny(Struct.getprop(
           Struct.getpath(entityData, "new.reactivate_terminal"), "reactivate_terminal_ref01"))
       val reactivateTerminalRef01DataResult = reactivateTerminalRef01Ent.create(reactivateTerminalRef01Data, null)
-      reactivateTerminalRef01Data = Helpers.toMapAny(reactivateTerminalRef01DataResult)
+      reactivateTerminalRef01Data = Helpers.toMapAny(reactivateTerminalRef01DataResult match { case e: SdkEntity => e.data(); case o => o })
       rep.check("reactivate_terminal.create.map", reactivateTerminalRef01Data != null, "expected create result to be a map")
     }
   }

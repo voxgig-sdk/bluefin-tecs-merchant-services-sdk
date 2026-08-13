@@ -47,7 +47,7 @@ void tests() {
       final enable_acquiring_ref01_ent = client.EnableAcquiring();
       dynamic enable_acquiring_ref01_data = setup['data']['new']['enable_acquiring']['enable_acquiring_ref01'];
 
-      enable_acquiring_ref01_data = await enable_acquiring_ref01_ent.create(enable_acquiring_ref01_data);
+      enable_acquiring_ref01_data = (await enable_acquiring_ref01_ent.create(enable_acquiring_ref01_data)).data();
       ok(null != enable_acquiring_ref01_data);
 
 

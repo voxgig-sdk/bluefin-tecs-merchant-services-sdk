@@ -47,7 +47,7 @@ void tests() {
       final cancel_transaction_ref01_ent = client.CancelTransaction();
       dynamic cancel_transaction_ref01_data = setup['data']['new']['cancel_transaction']['cancel_transaction_ref01'];
 
-      cancel_transaction_ref01_data = await cancel_transaction_ref01_ent.create(cancel_transaction_ref01_data);
+      cancel_transaction_ref01_data = (await cancel_transaction_ref01_ent.create(cancel_transaction_ref01_data)).data();
       ok(null != cancel_transaction_ref01_data);
 
 

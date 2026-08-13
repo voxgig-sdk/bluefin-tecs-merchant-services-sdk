@@ -31,7 +31,8 @@ defmodule BluefinTecsMerchantServices.UpdateTemplateXmlEntityTest do
   test "should create then read back" do
     sdk = BluefinTecsMerchantServices.test(S.jm(["entity", S.jm(["update_template_xml", S.jm([])])]))
     ent = BluefinTecsMerchantServices.update_template_xml(sdk)
-    made = BluefinTecsMerchantServices.Entity.UpdateTemplateXml.create(ent, S.jm(["name", "test-create"]))
+    created = BluefinTecsMerchantServices.Entity.UpdateTemplateXml.create(ent, S.jm(["name", "test-create"]))
+    made = BluefinTecsMerchantServices.EntityBase.data_get(created)
     assert S.ismap(made)
     assert S.getprop(made, "id") != nil
   end

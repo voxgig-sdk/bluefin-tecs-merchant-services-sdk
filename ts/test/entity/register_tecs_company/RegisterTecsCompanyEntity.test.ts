@@ -26,8 +26,8 @@ import {
 describe('RegisterTecsCompanyEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when BLUEFINTECSMERCHANTSERVICES_TEST_LIVE=TRUE.
-  afterEach(liveDelay('BLUEFINTECSMERCHANTSERVICES_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE=TRUE.
+  afterEach(liveDelay('BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = BluefinTecsMerchantServicesSDK.test()
@@ -62,7 +62,7 @@ describe('RegisterTecsCompanyEntity', async () => {
     const register_tecs_company_ref01_ent = client.RegisterTecsCompany()
     let register_tecs_company_ref01_data = setup.data.new.register_tecs_company['register_tecs_company_ref01']
 
-    register_tecs_company_ref01_data = await register_tecs_company_ref01_ent.create(register_tecs_company_ref01_data)
+    register_tecs_company_ref01_data = (await register_tecs_company_ref01_ent.create(register_tecs_company_ref01_data)).data()
     assert(null != register_tecs_company_ref01_data)
 
 

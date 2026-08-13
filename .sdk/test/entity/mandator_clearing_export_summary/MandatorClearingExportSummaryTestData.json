@@ -2,27 +2,27 @@
   "existing": {
     "mandator_clearing_export_summary": {
       "MANDATOR_CLEARING_EXPORT_SUMMARY00": {
-        "clearing_date_from": "s32",
-        "clearing_date_to": "s33",
-        "record": [],
-        "response_code": "s35",
-        "response_message": "s36",
+        "clearingDateFrom": "s32",
+        "clearingDateTo": "s33",
+        "records": [],
+        "responseCode": "s35",
+        "responseMessage": "s36",
         "id": "MANDATOR_CLEARING_EXPORT_SUMMARY00"
       },
       "MANDATOR_CLEARING_EXPORT_SUMMARY01": {
-        "clearing_date_from": "s64",
-        "clearing_date_to": "s65",
-        "record": [],
-        "response_code": "s67",
-        "response_message": "s68",
+        "clearingDateFrom": "s64",
+        "clearingDateTo": "s65",
+        "records": [],
+        "responseCode": "s67",
+        "responseMessage": "s68",
         "id": "MANDATOR_CLEARING_EXPORT_SUMMARY01"
       },
       "MANDATOR_CLEARING_EXPORT_SUMMARY02": {
-        "clearing_date_from": "s96",
-        "clearing_date_to": "s97",
-        "record": [],
-        "response_code": "s99",
-        "response_message": "s9a",
+        "clearingDateFrom": "s96",
+        "clearingDateTo": "s97",
+        "records": [],
+        "responseCode": "s99",
+        "responseMessage": "s9a",
         "id": "MANDATOR_CLEARING_EXPORT_SUMMARY02"
       }
     }
@@ -30,11 +30,11 @@
   "new": {
     "mandator_clearing_export_summary": {
       "mandator_clearing_export_summary_ref01": {
-        "clearing_date_from": "sc8",
-        "clearing_date_to": "sc9",
-        "record": [],
-        "response_code": "scb",
-        "response_message": "scc"
+        "clearingDateFrom": "sc8",
+        "clearingDateTo": "sc9",
+        "records": [],
+        "responseCode": "scb",
+        "responseMessage": "scc"
       }
     }
   }

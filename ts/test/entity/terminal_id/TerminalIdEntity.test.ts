@@ -26,8 +26,8 @@ import {
 describe('TerminalIdEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when BLUEFINTECSMERCHANTSERVICES_TEST_LIVE=TRUE.
-  afterEach(liveDelay('BLUEFINTECSMERCHANTSERVICES_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE=TRUE.
+  afterEach(liveDelay('BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = BluefinTecsMerchantServicesSDK.test()
@@ -62,7 +62,7 @@ describe('TerminalIdEntity', async () => {
     const terminal_id_ref01_ent = client.TerminalId()
     let terminal_id_ref01_data = setup.data.new.terminal_id['terminal_id_ref01']
 
-    terminal_id_ref01_data = await terminal_id_ref01_ent.create(terminal_id_ref01_data)
+    terminal_id_ref01_data = (await terminal_id_ref01_ent.create(terminal_id_ref01_data)).data()
     assert(null != terminal_id_ref01_data)
 
 

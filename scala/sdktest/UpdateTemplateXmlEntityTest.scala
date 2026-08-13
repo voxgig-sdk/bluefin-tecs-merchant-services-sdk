@@ -35,7 +35,7 @@ object UpdateTemplateXmlEntityTest {
       var updateTemplateXmlRef01Data = Helpers.toMapAny(Struct.getprop(
           Struct.getpath(entityData, "new.update_template_xml"), "update_template_xml_ref01"))
       val updateTemplateXmlRef01DataResult = updateTemplateXmlRef01Ent.create(updateTemplateXmlRef01Data, null)
-      updateTemplateXmlRef01Data = Helpers.toMapAny(updateTemplateXmlRef01DataResult)
+      updateTemplateXmlRef01Data = Helpers.toMapAny(updateTemplateXmlRef01DataResult match { case e: SdkEntity => e.data(); case o => o })
       rep.check("update_template_xml.create.map", updateTemplateXmlRef01Data != null, "expected create result to be a map")
     }
   }

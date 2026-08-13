@@ -26,8 +26,8 @@ import {
 describe('EnableAcquiringEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when BLUEFINTECSMERCHANTSERVICES_TEST_LIVE=TRUE.
-  afterEach(liveDelay('BLUEFINTECSMERCHANTSERVICES_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE=TRUE.
+  afterEach(liveDelay('BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = BluefinTecsMerchantServicesSDK.test()
@@ -62,7 +62,7 @@ describe('EnableAcquiringEntity', async () => {
     const enable_acquiring_ref01_ent = client.EnableAcquiring()
     let enable_acquiring_ref01_data = setup.data.new.enable_acquiring['enable_acquiring_ref01']
 
-    enable_acquiring_ref01_data = await enable_acquiring_ref01_ent.create(enable_acquiring_ref01_data)
+    enable_acquiring_ref01_data = (await enable_acquiring_ref01_ent.create(enable_acquiring_ref01_data)).data()
     assert(null != enable_acquiring_ref01_data)
 
 

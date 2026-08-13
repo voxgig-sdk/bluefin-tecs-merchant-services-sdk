@@ -573,91 +573,91 @@ const cancel_transaction = client.CancelTransaction()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `string` | No |  |
-| `acquirer_name` | `string` | No |  |
-| `actual_bonus_point` | `string` | No |  |
+| `acquirerId` | `string` | No |  |
+| `acquirerName` | `string` | No |  |
+| `actualBonusPoints` | `string` | No |  |
 | `amount` | `number` | No |  |
-| `authorization_code` | `string` | No |  |
-| `balance_amount` | `string` | No |  |
-| `card_brand` | `string` | No |  |
-| `card_number` | `string` | No |  |
-| `client_id` | `number` | Yes |  |
+| `authorizationCode` | `string` | No |  |
+| `balanceAmount` | `string` | No |  |
+| `cardBrand` | `string` | No |  |
+| `cardNumber` | `string` | No |  |
+| `clientId` | `number` | Yes |  |
 | `currency` | `string` | Yes |  |
 | `cvc` | `string` | No |  |
-| `ec_data` | `string` | No |  |
-| `ecr_data` | `string` | No |  |
-| `emv_data` | `string` | No |  |
-| `exchange_fee` | `number` | No |  |
-| `exchange_rate` | `string` | No |  |
-| `language_code` | `string` | No |  |
-| `merchant_address` | `string` | No |  |
-| `merchant_name` | `string` | No |  |
-| `merchant_number` | `string` | No |  |
-| `message_type` | `string` | No |  |
-| `original_trace_number` | `number` | No |  |
-| `original_transaction_id` | `string` | No |  |
+| `ecData` | `string` | No |  |
+| `ecrData` | `string` | No |  |
+| `emvData` | `string` | No |  |
+| `exchangeFee` | `number` | No |  |
+| `exchangeRate` | `string` | No |  |
+| `languageCode` | `string` | No |  |
+| `merchantAddress` | `string` | No |  |
+| `merchantName` | `string` | No |  |
+| `merchantNumber` | `string` | No |  |
+| `messageType` | `string` | No |  |
+| `originalTraceNumber` | `number` | No |  |
+| `originalTransactionId` | `string` | No |  |
 | `password` | `string` | No |  |
-| `payment_reason` | `string` | No |  |
-| `receipt_footer` | `string` | No |  |
-| `receipt_header` | `string` | No |  |
-| `receipt_layout` | `number` | No |  |
-| `receipt_number` | `string` | Yes |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
-| `serial_number` | `string` | No |  |
+| `paymentReason` | `string` | No |  |
+| `receiptFooter` | `string` | No |  |
+| `receiptHeader` | `string` | No |  |
+| `receiptLayout` | `number` | No |  |
+| `receiptNumber` | `string` | Yes |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
+| `serialNumber` | `string` | No |  |
 | `svc` | `string` | No |  |
-| `terminal_id` | `number` | Yes |  |
-| `terminal_location` | `string` | No |  |
-| `trace_number` | `number` | No |  |
-| `transaction_date` | `string` | No |  |
-| `transaction_id` | `string` | No |  |
-| `tx_type` | `string` | No |  |
-| `user_data` | `string` | No |  |
+| `terminalId` | `number` | Yes |  |
+| `terminalLocation` | `string` | No |  |
+| `traceNumber` | `number` | No |  |
+| `transactionDate` | `string` | No |  |
+| `transactionId` | `string` | No |  |
+| `txType` | `string` | No |  |
+| `userData` | `string` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `acquirer_id` | - |
-| `acquirer_name` | - |
-| `actual_bonus_point` | - |
+| `acquirerId` | - |
+| `acquirerName` | - |
+| `actualBonusPoints` | - |
 | `amount` | Yes |
-| `authorization_code` | - |
-| `balance_amount` | - |
-| `card_brand` | - |
-| `card_number` | - |
-| `client_id` | - |
+| `authorizationCode` | - |
+| `balanceAmount` | - |
+| `cardBrand` | - |
+| `cardNumber` | - |
+| `clientId` | - |
 | `currency` | - |
 | `cvc` | - |
-| `ec_data` | - |
-| `ecr_data` | - |
-| `emv_data` | - |
-| `exchange_fee` | - |
-| `exchange_rate` | - |
-| `language_code` | - |
-| `merchant_address` | - |
-| `merchant_name` | - |
-| `merchant_number` | - |
-| `message_type` | Yes |
-| `original_trace_number` | - |
-| `original_transaction_id` | Yes |
+| `ecData` | - |
+| `ecrData` | - |
+| `emvData` | - |
+| `exchangeFee` | - |
+| `exchangeRate` | - |
+| `languageCode` | - |
+| `merchantAddress` | - |
+| `merchantName` | - |
+| `merchantNumber` | - |
+| `messageType` | Yes |
+| `originalTraceNumber` | - |
+| `originalTransactionId` | Yes |
 | `password` | - |
-| `payment_reason` | - |
-| `receipt_footer` | - |
-| `receipt_header` | - |
-| `receipt_layout` | - |
-| `receipt_number` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `serial_number` | - |
+| `paymentReason` | - |
+| `receiptFooter` | - |
+| `receiptHeader` | - |
+| `receiptLayout` | - |
+| `receiptNumber` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `serialNumber` | - |
 | `svc` | - |
-| `terminal_id` | - |
-| `terminal_location` | - |
-| `trace_number` | - |
-| `transaction_date` | Yes |
-| `transaction_id` | Yes |
-| `tx_type` | - |
-| `user_data` | - |
+| `terminalId` | - |
+| `terminalLocation` | - |
+| `traceNumber` | - |
+| `transactionDate` | Yes |
+| `transactionId` | Yes |
+| `txType` | - |
+| `userData` | - |
 
 ### Operations
 
@@ -667,10 +667,10 @@ Create a new entity with the given data.
 
 ```ts
 const result = await client.CancelTransaction().create({
-  client_id: 1,
+  clientId: 1,
   currency: 'example_currency',
-  receipt_number: 'example_receipt_number',
-  terminal_id: 1,
+  receiptNumber: 'example_receiptNumber',
+  terminalId: 1,
 })
 ```
 
@@ -712,9 +712,9 @@ const check_card_black_listed = client.CheckCardBlackListed()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `card_no` | `string` | No |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
+| `cardNo` | `string` | No |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -765,13 +765,13 @@ const create_product = client.CreateProduct()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `number` | No |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
-| `template_name` | `string` | Yes |  |
-| `template_type` | `string` | Yes |  |
-| `template_xml` | `string` | Yes |  |
-| `terminal_type` | `string` | Yes |  |
+| `acquirerId` | `number` | No |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
+| `templateName` | `string` | Yes |  |
+| `templateType` | `string` | Yes |  |
+| `templateXml` | `string` | Yes |  |
+| `terminalType` | `string` | Yes |  |
 
 ### Operations
 
@@ -781,10 +781,10 @@ Create a new entity with the given data.
 
 ```ts
 const result = await client.CreateProduct().create({
-  template_name: 'example_template_name',
-  template_type: 'example_template_type',
-  template_xml: 'example_template_xml',
-  terminal_type: 'example_terminal_type',
+  templateName: 'example_templateName',
+  templateType: 'example_templateType',
+  templateXml: 'example_templateXml',
+  terminalType: 'example_terminalType',
 })
 ```
 
@@ -826,13 +826,13 @@ const deactivate_terminal = client.DeactivateTerminal()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `corporate_uuid` | `string` | No |  |
-| `deactivation_reason` | `string` | Yes |  |
-| `package_order_uuid` | `string` | No |  |
-| `product_order_uuid` | `string` | No |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
-| `terminal_id` | `number` | Yes |  |
+| `corporateUuid` | `string` | No |  |
+| `deactivationReason` | `string` | Yes |  |
+| `packageOrderUuid` | `string` | No |  |
+| `productOrderUuid` | `string` | No |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
+| `terminalId` | `number` | Yes |  |
 
 ### Operations
 
@@ -842,8 +842,8 @@ Create a new entity with the given data.
 
 ```ts
 const result = await client.DeactivateTerminal().create({
-  deactivation_reason: 'example_deactivation_reason',
-  terminal_id: 1,
+  deactivationReason: 'example_deactivationReason',
+  terminalId: 1,
 })
 ```
 
@@ -885,16 +885,16 @@ const digital_services_api = client.DigitalServicesApi()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearing_date_from` | `string` | Yes |  |
-| `clearing_date_to` | `string` | Yes |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
-| `tx_count` | `number` | No |  |
-| `tx_id_end` | `string` | No |  |
-| `tx_id_start` | `string` | No |  |
-| `tx_seq_no_end` | `number` | No |  |
-| `tx_seq_no_start` | `number` | No |  |
-| `tx_total` | `number` | No |  |
+| `clearingDateFrom` | `string` | Yes |  |
+| `clearingDateTo` | `string` | Yes |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
+| `txCount` | `number` | No |  |
+| `txIdEnd` | `string` | No |  |
+| `txIdStart` | `string` | No |  |
+| `txSeqNoEnd` | `number` | No |  |
+| `txSeqNoStart` | `number` | No |  |
+| `txTotal` | `number` | No |  |
 
 ### Operations
 
@@ -904,6 +904,8 @@ Create a new entity with the given data.
 
 ```ts
 const result = await client.DigitalServicesApi().create({
+  clearingDateFrom: 'example_clearingDateFrom',
+  clearingDateTo: 'example_clearingDateTo',
 })
 ```
 
@@ -953,12 +955,12 @@ const ec_data_ecom = client.EcDataEcom()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ecom_data` | `string` | No |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
-| `terminal_id` | `number` | Yes |  |
-| `transaction_id` | `string` | Yes |  |
-| `transaction_type` | `string` | Yes |  |
+| `ecomData` | `string` | No |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
+| `terminalId` | `number` | Yes |  |
+| `transactionId` | `string` | Yes |  |
+| `transactionType` | `string` | Yes |  |
 
 ### Operations
 
@@ -968,9 +970,9 @@ Create a new entity with the given data.
 
 ```ts
 const result = await client.EcDataEcom().create({
-  terminal_id: 1,
-  transaction_id: 'example_transaction_id',
-  transaction_type: 'example_transaction_type',
+  terminalId: 1,
+  transactionId: 'example_transactionId',
+  transactionType: 'example_transactionType',
 })
 ```
 
@@ -1012,11 +1014,11 @@ const ecom_parameter = client.EcomParameter()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ecom_pass` | `string` | No |  |
-| `ecom_skey` | `string` | No |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
-| `terminal_id` | `number` | Yes |  |
+| `ecomPass` | `string` | No |  |
+| `ecomSkey` | `string` | No |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
+| `terminalId` | `number` | Yes |  |
 
 ### Operations
 
@@ -1026,7 +1028,7 @@ Create a new entity with the given data.
 
 ```ts
 const result = await client.EcomParameter().create({
-  terminal_id: 1,
+  terminalId: 1,
 })
 ```
 
@@ -1068,12 +1070,12 @@ const ecr_data = client.EcrData()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ecr_data` | `string` | No |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
-| `terminal_id` | `number` | Yes |  |
-| `transaction_id` | `string` | Yes |  |
-| `transaction_type` | `string` | Yes |  |
+| `ecrData` | `string` | No |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
+| `terminalId` | `number` | Yes |  |
+| `transactionId` | `string` | Yes |  |
+| `transactionType` | `string` | Yes |  |
 
 ### Operations
 
@@ -1083,9 +1085,9 @@ Create a new entity with the given data.
 
 ```ts
 const result = await client.EcrData().create({
-  terminal_id: 1,
-  transaction_id: 'example_transaction_id',
-  transaction_type: 'example_transaction_type',
+  terminalId: 1,
+  transactionId: 'example_transactionId',
+  transactionType: 'example_transactionType',
 })
 ```
 
@@ -1127,12 +1129,12 @@ const emv_data = client.EmvData()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `emv_data` | `string` | No |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
-| `terminal_id` | `number` | Yes |  |
-| `transaction_id` | `string` | Yes |  |
-| `transaction_type` | `string` | Yes |  |
+| `emvData` | `string` | No |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
+| `terminalId` | `number` | Yes |  |
+| `transactionId` | `string` | Yes |  |
+| `transactionType` | `string` | Yes |  |
 
 ### Operations
 
@@ -1142,9 +1144,9 @@ Create a new entity with the given data.
 
 ```ts
 const result = await client.EmvData().create({
-  terminal_id: 1,
-  transaction_id: 'example_transaction_id',
-  transaction_type: 'example_transaction_type',
+  terminalId: 1,
+  transactionId: 'example_transactionId',
+  transactionType: 'example_transactionType',
 })
 ```
 
@@ -1186,20 +1188,20 @@ const enable_acquiring = client.EnableAcquiring()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `account_no` | `number` | No |  |
-| `additional_data` | `Record<string, any>` | No |  |
-| `corporate_uuid` | `string` | Yes |  |
+| `accountNo` | `number` | No |  |
+| `additionalData` | `Record<string, any>` | No |  |
+| `corporateUuid` | `string` | Yes |  |
 | `currency` | `string` | Yes |  |
-| `merchant_category_code` | `number` | Yes |  |
-| `package_order_uuid` | `string` | Yes |  |
-| `product_order_uuid` | `string` | Yes |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
-| `sorting_code` | `number` | No |  |
-| `template_name` | `string` | Yes |  |
-| `terminal_id` | `any[]` | No |  |
-| `terminal_id_acq` | `string` | No |  |
-| `vu_nummer` | `string` | No |  |
+| `merchantCategoryCode` | `number` | Yes |  |
+| `packageOrderUuid` | `string` | Yes |  |
+| `productOrderUuid` | `string` | Yes |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
+| `sortingCode` | `number` | No |  |
+| `templateName` | `string` | Yes |  |
+| `terminalIdAcq` | `string` | No |  |
+| `terminalIds` | `any[]` | No |  |
+| `vuNummer` | `string` | No |  |
 
 ### Operations
 
@@ -1209,12 +1211,12 @@ Create a new entity with the given data.
 
 ```ts
 const result = await client.EnableAcquiring().create({
-  corporate_uuid: 'example_corporate_uuid',
+  corporateUuid: 'example_corporateUuid',
   currency: 'example_currency',
-  merchant_category_code: 1,
-  package_order_uuid: 'example_package_order_uuid',
-  product_order_uuid: 'example_product_order_uuid',
-  template_name: 'example_template_name',
+  merchantCategoryCode: 1,
+  packageOrderUuid: 'example_packageOrderUuid',
+  productOrderUuid: 'example_productOrderUuid',
+  templateName: 'example_templateName',
 })
 ```
 
@@ -1256,9 +1258,9 @@ const get_merchant_contract_number = client.GetMerchantContractNumber()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `merchant_contract_number` | `string` | Yes |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
+| `merchantContractNumber` | `string` | Yes |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -1268,7 +1270,7 @@ Create a new entity with the given data.
 
 ```ts
 const result = await client.GetMerchantContractNumber().create({
-  merchant_contract_number: 'example_merchant_contract_number',
+  merchantContractNumber: 'example_merchantContractNumber',
 })
 ```
 
@@ -1310,9 +1312,9 @@ const get_template_xml = client.GetTemplateXml()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
-| `template_name` | `string` | Yes |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
+| `templateName` | `string` | Yes |  |
 
 ### Operations
 
@@ -1322,7 +1324,7 @@ Create a new entity with the given data.
 
 ```ts
 const result = await client.GetTemplateXml().create({
-  template_name: 'example_template_name',
+  templateName: 'example_templateName',
 })
 ```
 
@@ -1364,9 +1366,9 @@ const introduce_mandator = client.IntroduceMandator()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `mandator_name` | `string` | Yes |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
+| `mandatorName` | `string` | Yes |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -1376,7 +1378,7 @@ Create a new entity with the given data.
 
 ```ts
 const result = await client.IntroduceMandator().create({
-  mandator_name: 'example_mandator_name',
+  mandatorName: 'example_mandatorName',
 })
 ```
 
@@ -1418,9 +1420,9 @@ const introduce_package = client.IntroducePackage()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
-| `terminal_template_description` | `string` | Yes |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
+| `terminalTemplateDescription` | `string` | Yes |  |
 
 ### Operations
 
@@ -1430,7 +1432,7 @@ Create a new entity with the given data.
 
 ```ts
 const result = await client.IntroducePackage().create({
-  terminal_template_description: 'example_terminal_template_description',
+  terminalTemplateDescription: 'example_terminalTemplateDescription',
 })
 ```
 
@@ -1473,15 +1475,15 @@ const keep_alive = client.KeepAlive()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `hwserialno` | `string` | No |  |
-| `ka_date_time_from` | `string` | No |  |
-| `ka_date_time_to` | `string` | No |  |
-| `keep_alive_data` | `any[]` | No |  |
+| `kaDateTimeFrom` | `string` | No |  |
+| `kaDateTimeTo` | `string` | No |  |
+| `keepAliveData` | `any[]` | No |  |
 | `pagination` | `Record<string, any>` | No |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
-| `terminal_date_time_from` | `string` | No |  |
-| `terminal_date_time_to` | `string` | No |  |
-| `terminal_id` | `number` | No |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
+| `terminalDateTimeFrom` | `string` | No |  |
+| `terminalDateTimeTo` | `string` | No |  |
+| `terminalId` | `number` | No |  |
 
 ### Operations
 
@@ -1532,12 +1534,12 @@ const list_terminal = client.ListTerminal()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `corporate_uuid` | `any[]` | No |  |
+| `corporateUuid` | `any[]` | No |  |
 | `filter` | `Record<string, any>` | No |  |
 | `pagination` | `Record<string, any>` | No |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
-| `terminal` | `any[]` | No |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
+| `terminals` | `any[]` | No |  |
 
 ### Operations
 
@@ -1588,12 +1590,12 @@ const mandator_clearing_export = client.MandatorClearingExport()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearing_date_from` | `string` | Yes |  |
-| `clearing_date_to` | `string` | Yes |  |
+| `clearingDateFrom` | `string` | Yes |  |
+| `clearingDateTo` | `string` | Yes |  |
 | `pagination` | `Record<string, any>` | No |  |
-| `record` | `any[]` | No |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
+| `records` | `any[]` | No |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -1603,8 +1605,8 @@ Create a new entity with the given data.
 
 ```ts
 const result = await client.MandatorClearingExport().create({
-  clearing_date_from: 'example_clearing_date_from',
-  clearing_date_to: 'example_clearing_date_to',
+  clearingDateFrom: 'example_clearingDateFrom',
+  clearingDateTo: 'example_clearingDateTo',
 })
 ```
 
@@ -1646,12 +1648,12 @@ const mandator_clearing_export_download = client.MandatorClearingExportDownload(
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearing_date_from` | `string` | Yes |  |
-| `clearing_date_to` | `string` | Yes |  |
-| `file_id` | `string` | No |  |
-| `filename_template` | `string` | No |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
+| `clearingDateFrom` | `string` | Yes |  |
+| `clearingDateTo` | `string` | Yes |  |
+| `fileId` | `string` | No |  |
+| `filenameTemplate` | `string` | No |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
 | `status` | `string` | No |  |
 
 ### Operations
@@ -1662,8 +1664,8 @@ Create a new entity with the given data.
 
 ```ts
 const result = await client.MandatorClearingExportDownload().create({
-  clearing_date_from: 'example_clearing_date_from',
-  clearing_date_to: 'example_clearing_date_to',
+  clearingDateFrom: 'example_clearingDateFrom',
+  clearingDateTo: 'example_clearingDateTo',
 })
 ```
 
@@ -1713,11 +1715,11 @@ const mandator_clearing_export_summary = client.MandatorClearingExportSummary()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearing_date_from` | `string` | Yes |  |
-| `clearing_date_to` | `string` | Yes |  |
-| `record` | `any[]` | No |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
+| `clearingDateFrom` | `string` | Yes |  |
+| `clearingDateTo` | `string` | Yes |  |
+| `records` | `any[]` | No |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -1727,8 +1729,8 @@ Create a new entity with the given data.
 
 ```ts
 const result = await client.MandatorClearingExportSummary().create({
-  clearing_date_from: 'example_clearing_date_from',
-  clearing_date_to: 'example_clearing_date_to',
+  clearingDateFrom: 'example_clearingDateFrom',
+  clearingDateTo: 'example_clearingDateTo',
 })
 ```
 
@@ -1770,30 +1772,30 @@ const merchant_portal_services_api = client.MerchantPortalServicesApi()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `3_d_secure` | `string` | No |  |
-| `authorization_code` | `string` | No |  |
-| `card_brand` | `string` | No |  |
-| `clearing_amount_from` | `string` | No |  |
-| `clearing_amount_to` | `string` | No |  |
-| `clearing_currency` | `string` | No |  |
-| `clearing_status` | `string` | No |  |
-| `corporate_uuid` | `string` | No |  |
-| `order_by_transaction_date` | `string` | No |  |
+| `3DSecure` | `string` | No |  |
+| `authorizationCode` | `string` | No |  |
+| `cardBrand` | `string` | No |  |
+| `clearingAmountFrom` | `string` | No |  |
+| `clearingAmountTo` | `string` | No |  |
+| `clearingCurrency` | `string` | No |  |
+| `clearingStatus` | `string` | No |  |
+| `corporateUUID` | `string` | No |  |
+| `orderByTransactionDate` | `string` | No |  |
 | `pagination` | `Record<string, any>` | No |  |
-| `receipt_number` | `string` | No |  |
-| `referenced_transaction_id` | `string` | No |  |
-| `retrieval_reference_number` | `string` | No |  |
-| `source_id` | `number` | No |  |
-| `tecsengine_response_code_from` | `string` | No |  |
-| `tecsengine_response_code_to` | `string` | No |  |
-| `terminal_id` | `number` | No |  |
-| `trace_number` | `string` | No |  |
-| `transaction_amount_from` | `string` | No |  |
-| `transaction_amount_to` | `string` | No |  |
-| `transaction_date_from` | `string` | No |  |
-| `transaction_date_to` | `string` | No |  |
-| `transaction_id` | `string` | No |  |
-| `transaction_type` | `string` | No |  |
+| `receiptNumber` | `string` | No |  |
+| `referencedTransactionId` | `string` | No |  |
+| `retrievalReferenceNumber` | `string` | No |  |
+| `sourceId` | `number` | No |  |
+| `tecsengineResponseCodeFrom` | `string` | No |  |
+| `tecsengineResponseCodeTo` | `string` | No |  |
+| `terminalId` | `number` | No |  |
+| `traceNumber` | `string` | No |  |
+| `transactionAmountFrom` | `string` | No |  |
+| `transactionAmountTo` | `string` | No |  |
+| `transactionDateFrom` | `string` | No |  |
+| `transactionDateTo` | `string` | No |  |
+| `transactionId` | `string` | No |  |
+| `transactionType` | `string` | No |  |
 | `wallet` | `string` | No |  |
 
 ### Operations
@@ -1845,11 +1847,11 @@ const move_tid = client.MoveTid()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `productorderuuid` | `any[]` | Yes |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
-| `target_packageorderuuid` | `string` | No |  |
-| `target_productorderuuid` | `string` | No |  |
+| `productorderuuids` | `any[]` | Yes |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
+| `targetPackageorderuuid` | `string` | No |  |
+| `targetProductorderuuid` | `string` | No |  |
 
 ### Operations
 
@@ -1859,7 +1861,7 @@ Create a new entity with the given data.
 
 ```ts
 const result = await client.MoveTid().create({
-  productorderuuid: [],
+  productorderuuids: [],
 })
 ```
 
@@ -1901,44 +1903,44 @@ const payment_manual = client.PaymentManual()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_name` | `string` | No |  |
+| `acquirerName` | `string` | No |  |
 | `amount` | `number` | Yes |  |
-| `authorization_number` | `string` | No |  |
-| `card_number` | `string` | Yes |  |
-| `card_type` | `string` | No |  |
+| `authorizationNumber` | `string` | No |  |
+| `cardNumber` | `string` | Yes |  |
+| `cardType` | `string` | No |  |
 | `currency` | `string` | Yes |  |
 | `cvc` | `string` | No |  |
-| `date_time_tx` | `string` | No |  |
-| `exp_date` | `string` | Yes |  |
-| `merchant_id` | `string` | No |  |
-| `original_transaction_id` | `string` | No |  |
+| `dateTimeTx` | `string` | No |  |
+| `expDate` | `string` | Yes |  |
+| `merchantId` | `string` | No |  |
+| `originalTransactionId` | `string` | No |  |
 | `password` | `string` | No |  |
-| `response_code` | `string` | No |  |
-| `response_message` | `string` | No |  |
-| `terminal_id` | `string` | No |  |
-| `transaction_id` | `string` | No |  |
+| `responseCode` | `string` | No |  |
+| `responseMessage` | `string` | No |  |
+| `terminalId` | `string` | No |  |
+| `transactionId` | `string` | No |  |
 | `txtype` | `string` | Yes |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `acquirer_name` | - |
+| `acquirerName` | - |
 | `amount` | - |
-| `authorization_number` | - |
-| `card_number` | - |
-| `card_type` | - |
+| `authorizationNumber` | - |
+| `cardNumber` | - |
+| `cardType` | - |
 | `currency` | - |
 | `cvc` | - |
-| `date_time_tx` | - |
-| `exp_date` | - |
-| `merchant_id` | - |
-| `original_transaction_id` | - |
+| `dateTimeTx` | - |
+| `expDate` | - |
+| `merchantId` | - |
+| `originalTransactionId` | - |
 | `password` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `terminal_id` | Yes |
-| `transaction_id` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `terminalId` | Yes |
+| `transactionId` | - |
 | `txtype` | - |
 
 ### Operations
@@ -1950,9 +1952,9 @@ Create a new entity with the given data.
 ```ts
 const result = await client.PaymentManual().create({
   amount: 1,
-  card_number: 'example_card_number',
+  cardNumber: 'example_cardNumber',
   currency: 'example_currency',
-  exp_date: 'example_exp_date',
+  expDate: 'example_expDate',
   txtype: 'example_txtype',
 })
 ```
@@ -1995,43 +1997,18 @@ const payment_sred = client.PaymentSred()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_name` | `string` | No |  |
 | `amount` | `number` | Yes |  |
-| `authorization_number` | `string` | No |  |
-| `card_type` | `string` | No |  |
 | `currency` | `string` | Yes |  |
-| `date_time_tx` | `string` | No |  |
-| `device_payload` | `string` | Yes |  |
-| `merchant_id` | `string` | No |  |
-| `original_transaction_id` | `string` | No |  |
+| `device` | `string` | No |  |
+| `devicePayload` | `string` | Yes |  |
+| `expDate` | `string` | No |  |
+| `mode` | `string` | No |  |
+| `panMasked` | `string` | No |  |
 | `password` | `string` | No |  |
-| `response_code` | `string` | No |  |
-| `response_message` | `string` | No |  |
-| `sred` | `Record<string, any>` | No |  |
-| `terminal_id` | `string` | No |  |
-| `transaction_id` | `string` | No |  |
+| `serial` | `string` | No |  |
+| `serviceCode` | `string` | No |  |
+| `terminalId` | `string` | Yes |  |
 | `txtype` | `string` | Yes |  |
-
-### Field Usage by Operation
-
-| Field | create |
-| --- | --- |
-| `acquirer_name` | - |
-| `amount` | - |
-| `authorization_number` | - |
-| `card_type` | - |
-| `currency` | - |
-| `date_time_tx` | - |
-| `device_payload` | - |
-| `merchant_id` | - |
-| `original_transaction_id` | - |
-| `password` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `sred` | - |
-| `terminal_id` | Yes |
-| `transaction_id` | - |
-| `txtype` | - |
 
 ### Operations
 
@@ -2043,7 +2020,8 @@ Create a new entity with the given data.
 const result = await client.PaymentSred().create({
   amount: 1,
   currency: 'example_currency',
-  device_payload: 'example_device_payload',
+  devicePayload: 'example_devicePayload',
+  terminalId: 'example_terminalId',
   txtype: 'example_txtype',
 })
 ```
@@ -2086,95 +2064,95 @@ const pre_auth_transaction_completion = client.PreAuthTransactionCompletion()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `string` | No |  |
-| `acquirer_name` | `string` | No |  |
-| `actual_bonus_point` | `string` | No |  |
+| `acquirerId` | `string` | No |  |
+| `acquirerName` | `string` | No |  |
+| `actualBonusPoints` | `string` | No |  |
 | `amount` | `number` | No |  |
-| `authorization_code` | `string` | No |  |
-| `balance_amount` | `string` | No |  |
-| `card_brand` | `string` | No |  |
-| `card_number` | `string` | No |  |
-| `card_number_reference` | `string` | Yes |  |
-| `client_id` | `number` | Yes |  |
+| `authorizationCode` | `string` | No |  |
+| `balanceAmount` | `string` | No |  |
+| `cardBrand` | `string` | No |  |
+| `cardNumber` | `string` | No |  |
+| `cardNumberReference` | `string` | Yes |  |
+| `clientId` | `number` | Yes |  |
 | `currency` | `string` | Yes |  |
 | `cvc` | `string` | No |  |
-| `ec_data` | `string` | No |  |
-| `ecr_data` | `string` | No |  |
-| `emv_data` | `string` | No |  |
-| `exchange_fee` | `number` | No |  |
-| `exchange_rate` | `string` | No |  |
-| `language_code` | `string` | No |  |
-| `merchant_address` | `string` | No |  |
-| `merchant_name` | `string` | No |  |
-| `merchant_number` | `string` | No |  |
-| `message_type` | `string` | No |  |
-| `original_trace_number` | `number` | No |  |
-| `original_transaction_id` | `string` | No |  |
+| `ecData` | `string` | No |  |
+| `ecrData` | `string` | No |  |
+| `emvData` | `string` | No |  |
+| `exchangeFee` | `number` | No |  |
+| `exchangeRate` | `string` | No |  |
+| `languageCode` | `string` | No |  |
+| `merchantAddress` | `string` | No |  |
+| `merchantName` | `string` | No |  |
+| `merchantNumber` | `string` | No |  |
+| `messageType` | `string` | No |  |
+| `originalTraceNumber` | `number` | No |  |
+| `originalTransactionId` | `string` | No |  |
 | `password` | `string` | No |  |
-| `payment_reason` | `string` | No |  |
-| `receipt_footer` | `string` | No |  |
-| `receipt_header` | `string` | No |  |
-| `receipt_layout` | `number` | No |  |
-| `receipt_number` | `string` | Yes |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
-| `serial_number` | `string` | No |  |
+| `paymentReason` | `string` | No |  |
+| `receiptFooter` | `string` | No |  |
+| `receiptHeader` | `string` | No |  |
+| `receiptLayout` | `number` | No |  |
+| `receiptNumber` | `string` | Yes |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
+| `serialNumber` | `string` | No |  |
 | `svc` | `string` | No |  |
-| `terminal_id` | `number` | Yes |  |
-| `terminal_location` | `string` | No |  |
-| `trace_number` | `number` | No |  |
-| `transaction_date` | `string` | No |  |
-| `transaction_id` | `string` | No |  |
-| `transaction_type` | `string` | Yes |  |
-| `tx_type` | `string` | No |  |
-| `user_data` | `string` | No |  |
+| `terminalId` | `number` | Yes |  |
+| `terminalLocation` | `string` | No |  |
+| `traceNumber` | `number` | No |  |
+| `transactionDate` | `string` | No |  |
+| `transactionId` | `string` | No |  |
+| `transactionType` | `string` | Yes |  |
+| `txType` | `string` | No |  |
+| `userData` | `string` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `acquirer_id` | - |
-| `acquirer_name` | - |
-| `actual_bonus_point` | - |
+| `acquirerId` | - |
+| `acquirerName` | - |
+| `actualBonusPoints` | - |
 | `amount` | Yes |
-| `authorization_code` | - |
-| `balance_amount` | - |
-| `card_brand` | - |
-| `card_number` | - |
-| `card_number_reference` | - |
-| `client_id` | - |
+| `authorizationCode` | - |
+| `balanceAmount` | - |
+| `cardBrand` | - |
+| `cardNumber` | - |
+| `cardNumberReference` | - |
+| `clientId` | - |
 | `currency` | - |
 | `cvc` | - |
-| `ec_data` | - |
-| `ecr_data` | - |
-| `emv_data` | - |
-| `exchange_fee` | - |
-| `exchange_rate` | - |
-| `language_code` | - |
-| `merchant_address` | - |
-| `merchant_name` | - |
-| `merchant_number` | - |
-| `message_type` | - |
-| `original_trace_number` | - |
-| `original_transaction_id` | Yes |
+| `ecData` | - |
+| `ecrData` | - |
+| `emvData` | - |
+| `exchangeFee` | - |
+| `exchangeRate` | - |
+| `languageCode` | - |
+| `merchantAddress` | - |
+| `merchantName` | - |
+| `merchantNumber` | - |
+| `messageType` | - |
+| `originalTraceNumber` | - |
+| `originalTransactionId` | Yes |
 | `password` | - |
-| `payment_reason` | - |
-| `receipt_footer` | - |
-| `receipt_header` | - |
-| `receipt_layout` | - |
-| `receipt_number` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `serial_number` | - |
+| `paymentReason` | - |
+| `receiptFooter` | - |
+| `receiptHeader` | - |
+| `receiptLayout` | - |
+| `receiptNumber` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `serialNumber` | - |
 | `svc` | - |
-| `terminal_id` | - |
-| `terminal_location` | - |
-| `trace_number` | - |
-| `transaction_date` | Yes |
-| `transaction_id` | Yes |
-| `transaction_type` | - |
-| `tx_type` | - |
-| `user_data` | - |
+| `terminalId` | - |
+| `terminalLocation` | - |
+| `traceNumber` | - |
+| `transactionDate` | Yes |
+| `transactionId` | Yes |
+| `transactionType` | - |
+| `txType` | - |
+| `userData` | - |
 
 ### Operations
 
@@ -2184,12 +2162,12 @@ Create a new entity with the given data.
 
 ```ts
 const result = await client.PreAuthTransactionCompletion().create({
-  card_number_reference: 'example_card_number_reference',
-  client_id: 1,
+  cardNumberReference: 'example_cardNumberReference',
+  clientId: 1,
   currency: 'example_currency',
-  receipt_number: 'example_receipt_number',
-  terminal_id: 1,
-  transaction_type: 'example_transaction_type',
+  receiptNumber: 'example_receiptNumber',
+  terminalId: 1,
+  transactionType: 'example_transactionType',
 })
 ```
 
@@ -2231,13 +2209,13 @@ const reactivate_terminal = client.ReactivateTerminal()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `corporate_uuid` | `string` | No |  |
-| `package_order_uuid` | `string` | No |  |
-| `product_order_uuid` | `string` | No |  |
-| `reactivation_reason` | `string` | Yes |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
-| `terminal_id` | `number` | Yes |  |
+| `corporateUuid` | `string` | No |  |
+| `packageOrderUuid` | `string` | No |  |
+| `productOrderUuid` | `string` | No |  |
+| `reactivationReason` | `string` | Yes |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
+| `terminalId` | `number` | Yes |  |
 
 ### Operations
 
@@ -2247,8 +2225,8 @@ Create a new entity with the given data.
 
 ```ts
 const result = await client.ReactivateTerminal().create({
-  reactivation_reason: 'example_reactivation_reason',
-  terminal_id: 1,
+  reactivationReason: 'example_reactivationReason',
+  terminalId: 1,
 })
 ```
 
@@ -2290,91 +2268,91 @@ const refund_transaction = client.RefundTransaction()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `string` | No |  |
-| `acquirer_name` | `string` | No |  |
-| `actual_bonus_point` | `string` | No |  |
+| `acquirerId` | `string` | No |  |
+| `acquirerName` | `string` | No |  |
+| `actualBonusPoints` | `string` | No |  |
 | `amount` | `number` | No |  |
-| `authorization_code` | `string` | No |  |
-| `balance_amount` | `string` | No |  |
-| `card_brand` | `string` | No |  |
-| `card_number` | `string` | No |  |
-| `client_id` | `number` | Yes |  |
+| `authorizationCode` | `string` | No |  |
+| `balanceAmount` | `string` | No |  |
+| `cardBrand` | `string` | No |  |
+| `cardNumber` | `string` | No |  |
+| `clientId` | `number` | Yes |  |
 | `currency` | `string` | Yes |  |
 | `cvc` | `string` | No |  |
-| `ec_data` | `string` | No |  |
-| `ecr_data` | `string` | No |  |
-| `emv_data` | `string` | No |  |
-| `exchange_fee` | `number` | No |  |
-| `exchange_rate` | `string` | No |  |
-| `language_code` | `string` | No |  |
-| `merchant_address` | `string` | No |  |
-| `merchant_name` | `string` | No |  |
-| `merchant_number` | `string` | No |  |
-| `message_type` | `string` | No |  |
-| `original_trace_number` | `number` | No |  |
-| `original_transaction_id` | `string` | No |  |
+| `ecData` | `string` | No |  |
+| `ecrData` | `string` | No |  |
+| `emvData` | `string` | No |  |
+| `exchangeFee` | `number` | No |  |
+| `exchangeRate` | `string` | No |  |
+| `languageCode` | `string` | No |  |
+| `merchantAddress` | `string` | No |  |
+| `merchantName` | `string` | No |  |
+| `merchantNumber` | `string` | No |  |
+| `messageType` | `string` | No |  |
+| `originalTraceNumber` | `number` | No |  |
+| `originalTransactionId` | `string` | No |  |
 | `password` | `string` | No |  |
-| `payment_reason` | `string` | No |  |
-| `receipt_footer` | `string` | No |  |
-| `receipt_header` | `string` | No |  |
-| `receipt_layout` | `number` | No |  |
-| `receipt_number` | `string` | Yes |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
-| `serial_number` | `string` | No |  |
+| `paymentReason` | `string` | No |  |
+| `receiptFooter` | `string` | No |  |
+| `receiptHeader` | `string` | No |  |
+| `receiptLayout` | `number` | No |  |
+| `receiptNumber` | `string` | Yes |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
+| `serialNumber` | `string` | No |  |
 | `svc` | `string` | No |  |
-| `terminal_id` | `number` | Yes |  |
-| `terminal_location` | `string` | No |  |
-| `trace_number` | `number` | No |  |
-| `transaction_date` | `string` | No |  |
-| `transaction_id` | `string` | No |  |
-| `tx_type` | `string` | No |  |
-| `user_data` | `string` | No |  |
+| `terminalId` | `number` | Yes |  |
+| `terminalLocation` | `string` | No |  |
+| `traceNumber` | `number` | No |  |
+| `transactionDate` | `string` | No |  |
+| `transactionId` | `string` | No |  |
+| `txType` | `string` | No |  |
+| `userData` | `string` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `acquirer_id` | - |
-| `acquirer_name` | - |
-| `actual_bonus_point` | - |
+| `acquirerId` | - |
+| `acquirerName` | - |
+| `actualBonusPoints` | - |
 | `amount` | Yes |
-| `authorization_code` | - |
-| `balance_amount` | - |
-| `card_brand` | - |
-| `card_number` | - |
-| `client_id` | - |
+| `authorizationCode` | - |
+| `balanceAmount` | - |
+| `cardBrand` | - |
+| `cardNumber` | - |
+| `clientId` | - |
 | `currency` | - |
 | `cvc` | - |
-| `ec_data` | - |
-| `ecr_data` | - |
-| `emv_data` | - |
-| `exchange_fee` | - |
-| `exchange_rate` | - |
-| `language_code` | - |
-| `merchant_address` | - |
-| `merchant_name` | - |
-| `merchant_number` | - |
-| `message_type` | - |
-| `original_trace_number` | - |
-| `original_transaction_id` | Yes |
+| `ecData` | - |
+| `ecrData` | - |
+| `emvData` | - |
+| `exchangeFee` | - |
+| `exchangeRate` | - |
+| `languageCode` | - |
+| `merchantAddress` | - |
+| `merchantName` | - |
+| `merchantNumber` | - |
+| `messageType` | - |
+| `originalTraceNumber` | - |
+| `originalTransactionId` | Yes |
 | `password` | - |
-| `payment_reason` | - |
-| `receipt_footer` | - |
-| `receipt_header` | - |
-| `receipt_layout` | - |
-| `receipt_number` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `serial_number` | - |
+| `paymentReason` | - |
+| `receiptFooter` | - |
+| `receiptHeader` | - |
+| `receiptLayout` | - |
+| `receiptNumber` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `serialNumber` | - |
 | `svc` | - |
-| `terminal_id` | - |
-| `terminal_location` | - |
-| `trace_number` | - |
-| `transaction_date` | Yes |
-| `transaction_id` | Yes |
-| `tx_type` | - |
-| `user_data` | - |
+| `terminalId` | - |
+| `terminalLocation` | - |
+| `traceNumber` | - |
+| `transactionDate` | Yes |
+| `transactionId` | Yes |
+| `txType` | - |
+| `userData` | - |
 
 ### Operations
 
@@ -2384,10 +2362,10 @@ Create a new entity with the given data.
 
 ```ts
 const result = await client.RefundTransaction().create({
-  client_id: 1,
+  clientId: 1,
   currency: 'example_currency',
-  receipt_number: 'example_receipt_number',
-  terminal_id: 1,
+  receiptNumber: 'example_receiptNumber',
+  terminalId: 1,
 })
 ```
 
@@ -2429,14 +2407,14 @@ const register_tecs_company = client.RegisterTecsCompany()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `corporate_uuid` | `string` | Yes |  |
-| `package_order_uuid` | `string` | Yes |  |
-| `partner_id` | `number` | No |  |
-| `partner_name` | `string` | No |  |
-| `product_order_uuid` | `string` | Yes |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
-| `template_name` | `string` | Yes |  |
+| `corporateUuid` | `string` | Yes |  |
+| `packageOrderUuid` | `string` | Yes |  |
+| `partnerId` | `number` | No |  |
+| `partnerName` | `string` | No |  |
+| `productOrderUuid` | `string` | Yes |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
+| `templateName` | `string` | Yes |  |
 
 ### Operations
 
@@ -2446,10 +2424,10 @@ Create a new entity with the given data.
 
 ```ts
 const result = await client.RegisterTecsCompany().create({
-  corporate_uuid: 'example_corporate_uuid',
-  package_order_uuid: 'example_package_order_uuid',
-  product_order_uuid: 'example_product_order_uuid',
-  template_name: 'example_template_name',
+  corporateUuid: 'example_corporateUuid',
+  packageOrderUuid: 'example_packageOrderUuid',
+  productOrderUuid: 'example_productOrderUuid',
+  templateName: 'example_templateName',
 })
 ```
 
@@ -2491,24 +2469,24 @@ const register_terminal = client.RegisterTerminal()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `additional_data` | `Record<string, any>` | No |  |
-| `corporate_uuid` | `string` | Yes |  |
-| `package_order_uuid` | `string` | Yes |  |
-| `product_order_uuid` | `string` | Yes |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
-| `tecs_web_secret_key` | `string` | No |  |
-| `template_name` | `string` | Yes |  |
-| `terminal_country_code` | `string` | Yes |  |
-| `terminal_id` | `number` | No |  |
-| `terminal_id_acq` | `string` | No |  |
-| `terminal_language_code` | `string` | Yes |  |
-| `terminal_location` | `string` | Yes |  |
-| `terminal_serial_number` | `string` | No |  |
-| `token_io_alia` | `string` | No |  |
-| `token_io_iban` | `string` | No |  |
-| `token_io_member_id` | `string` | No |  |
-| `web_shop_url` | `string` | No |  |
+| `additionalData` | `Record<string, any>` | No |  |
+| `corporateUuid` | `string` | Yes |  |
+| `packageOrderUuid` | `string` | Yes |  |
+| `productOrderUuid` | `string` | Yes |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
+| `tecsWebSecretKey` | `string` | No |  |
+| `templateName` | `string` | Yes |  |
+| `terminalCountryCode` | `string` | Yes |  |
+| `terminalId` | `number` | No |  |
+| `terminalIdAcq` | `string` | No |  |
+| `terminalLanguageCode` | `string` | Yes |  |
+| `terminalLocation` | `string` | Yes |  |
+| `terminalSerialNumber` | `string` | No |  |
+| `tokenIOAlias` | `string` | No |  |
+| `tokenIOIban` | `string` | No |  |
+| `tokenIOMemberId` | `string` | No |  |
+| `webShopUrl` | `string` | No |  |
 
 ### Operations
 
@@ -2518,13 +2496,13 @@ Create a new entity with the given data.
 
 ```ts
 const result = await client.RegisterTerminal().create({
-  corporate_uuid: 'example_corporate_uuid',
-  package_order_uuid: 'example_package_order_uuid',
-  product_order_uuid: 'example_product_order_uuid',
-  template_name: 'example_template_name',
-  terminal_country_code: 'example_terminal_country_code',
-  terminal_language_code: 'example_terminal_language_code',
-  terminal_location: 'example_terminal_location',
+  corporateUuid: 'example_corporateUuid',
+  packageOrderUuid: 'example_packageOrderUuid',
+  productOrderUuid: 'example_productOrderUuid',
+  templateName: 'example_templateName',
+  terminalCountryCode: 'example_terminalCountryCode',
+  terminalLanguageCode: 'example_terminalLanguageCode',
+  terminalLocation: 'example_terminalLocation',
 })
 ```
 
@@ -2566,16 +2544,16 @@ const report_data = client.ReportData()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `card_brand_report_data` | `any[]` | No |  |
-| `clearing_date_from` | `string` | Yes |  |
-| `clearing_date_to` | `string` | Yes |  |
-| `corporate_id` | `string` | Yes |  |
+| `cardBrandReportData` | `any[]` | No |  |
+| `clearingDateFrom` | `string` | Yes |  |
+| `clearingDateTo` | `string` | Yes |  |
+| `corporateId` | `string` | Yes |  |
 | `currency` | `string` | Yes |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
-| `sum_over_credit_tx` | `Record<string, any>` | No |  |
-| `sum_over_debit_tx` | `Record<string, any>` | No |  |
-| `terminal_id` | `number` | No |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
+| `sumOverCreditTx` | `Record<string, any>` | No |  |
+| `sumOverDebitTx` | `Record<string, any>` | No |  |
+| `terminalId` | `number` | No |  |
 
 ### Operations
 
@@ -2585,9 +2563,9 @@ Create a new entity with the given data.
 
 ```ts
 const result = await client.ReportData().create({
-  clearing_date_from: 'example_clearing_date_from',
-  clearing_date_to: 'example_clearing_date_to',
-  corporate_id: 'example_corporate_id',
+  clearingDateFrom: 'example_clearingDateFrom',
+  clearingDateTo: 'example_clearingDateTo',
+  corporateId: 'example_corporateId',
   currency: 'example_currency',
 })
 ```
@@ -2630,56 +2608,56 @@ const status_transaction = client.StatusTransaction()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_name` | `string` | No |  |
-| `acquirer_terminal_id` | `string` | No |  |
+| `acquirerName` | `string` | No |  |
+| `acquirerTerminalId` | `string` | No |  |
 | `amount` | `number` | No |  |
-| `application_cryptogram` | `string` | No |  |
-| `authorization_code` | `string | null` | No |  |
-| `authorization_date` | `string` | No |  |
-| `card_brand` | `string` | No |  |
-| `card_entry` | `string` | No |  |
-| `card_expiration` | `string` | No |  |
-| `card_number` | `string` | No |  |
-| `clearing_amount` | `number` | No |  |
-| `clearing_batch_id` | `string` | No |  |
-| `clearing_currency` | `string` | No |  |
-| `clearing_date` | `string` | No |  |
-| `clearing_processed_date` | `string` | No |  |
-| `clearing_status` | `string` | No |  |
-| `client_id` | `number` | No |  |
+| `applicationCryptogram` | `string` | No |  |
+| `authorizationCode` | `string | null` | No |  |
+| `authorizationDate` | `string` | No |  |
+| `cardBrand` | `string` | No |  |
+| `cardEntry` | `string` | No |  |
+| `cardExpiration` | `string` | No |  |
+| `cardNumber` | `string` | No |  |
+| `clearingAmount` | `number` | No |  |
+| `clearingBatchId` | `string` | No |  |
+| `clearingCurrency` | `string` | No |  |
+| `clearingDate` | `string` | No |  |
+| `clearingProcessedDate` | `string` | No |  |
+| `clearingStatus` | `string` | No |  |
+| `clientId` | `number` | No |  |
 | `currency` | `string` | No |  |
 | `cvm` | `string` | No |  |
-| `ecr_data` | `string` | No |  |
-| `emv_application_id` | `string` | No |  |
-| `emv_application_label` | `string` | No |  |
-| `merchant_name` | `string` | No |  |
-| `merchant_number` | `string` | No |  |
-| `original_client_id` | `string` | No |  |
-| `original_terminal_id` | `number` | No |  |
-| `original_transaction_id` | `string` | No |  |
-| `payment_reason` | `string` | No |  |
-| `receipt_number` | `string` | No |  |
-| `response_code` | `number` | No |  |
-| `response_code_from_a` | `string` | No |  |
-| `response_message` | `string` | No |  |
-| `retrieval_reference_number` | `string` | No |  |
-| `service_code` | `string` | No |  |
-| `settlement_status` | `string` | No |  |
-| `source_id` | `number` | No |  |
-| `tecsengine_response_code` | `number` | No |  |
-| `tecsengine_response_text` | `string` | No |  |
-| `terminal_end_of_day_date` | `string` | No |  |
-| `terminal_id` | `number` | No |  |
-| `terminal_location` | `string` | No |  |
-| `tip_amount` | `number` | No |  |
-| `trace_number` | `number` | No |  |
-| `transaction_clearing_date` | `string` | No |  |
-| `transaction_date` | `string` | No |  |
-| `transaction_id` | `string` | No |  |
-| `transaction_seq_number` | `number` | No |  |
-| `transaction_server_date` | `string` | No |  |
-| `transaction_source` | `string` | No |  |
-| `transaction_type` | `string` | No |  |
+| `ecrData` | `string` | No |  |
+| `emvApplicationId` | `string` | No |  |
+| `emvApplicationLabel` | `string` | No |  |
+| `merchantName` | `string` | No |  |
+| `merchantNumber` | `string` | No |  |
+| `originalClientId` | `string` | No |  |
+| `originalTerminalId` | `number` | No |  |
+| `originalTransactionId` | `string` | No |  |
+| `paymentReason` | `string` | No |  |
+| `receiptNumber` | `string` | No |  |
+| `responseCode` | `number` | No |  |
+| `responseCodeFromAS` | `string` | No |  |
+| `responseMessage` | `string` | No |  |
+| `retrievalReferenceNumber` | `string` | No |  |
+| `serviceCode` | `string` | No |  |
+| `settlementStatus` | `string` | No |  |
+| `sourceId` | `number` | No |  |
+| `tecsengineResponseCode` | `number` | No |  |
+| `tecsengineResponseText` | `string` | No |  |
+| `terminalEndOfDayDate` | `string` | No |  |
+| `terminalId` | `number` | No |  |
+| `terminalLocation` | `string` | No |  |
+| `tipAmount` | `number` | No |  |
+| `traceNumber` | `number` | No |  |
+| `transactionClearingDate` | `string` | No |  |
+| `transactionDate` | `string` | No |  |
+| `transactionId` | `string` | No |  |
+| `transactionSeqNumber` | `number` | No |  |
+| `transactionServerDate` | `string` | No |  |
+| `transactionSource` | `string` | No |  |
+| `transactionType` | `string` | No |  |
 
 ### Operations
 
@@ -2730,12 +2708,12 @@ const store_terminal_parameter = client.StoreTerminalParameter()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acq_tab_nexo` | `Record<string, any>` | No |  |
-| `config_version` | `string` | No |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
-| `serial_number` | `string` | Yes |  |
-| `tid_sent` | `string` | No |  |
+| `acqTabNexo` | `Record<string, any>` | No |  |
+| `configVersion` | `string` | No |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
+| `serialNumber` | `string` | Yes |  |
+| `tidSent` | `string` | No |  |
 
 ### Operations
 
@@ -2745,7 +2723,7 @@ Create a new entity with the given data.
 
 ```ts
 const result = await client.StoreTerminalParameter().create({
-  serial_number: 'example_serial_number',
+  serialNumber: 'example_serialNumber',
 })
 ```
 
@@ -2787,11 +2765,11 @@ const terminal_id = client.TerminalId()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `device_serial_number` | `any[]` | Yes |  |
-| `duplicate_terminal_id` | `any[]` | No |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
-| `terminal` | `any[]` | No |  |
+| `deviceSerialNumber` | `any[]` | Yes |  |
+| `duplicateTerminalIds` | `any[]` | No |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
+| `terminals` | `any[]` | No |  |
 
 ### Operations
 
@@ -2801,7 +2779,7 @@ Create a new entity with the given data.
 
 ```ts
 const result = await client.TerminalId().create({
-  device_serial_number: [],
+  deviceSerialNumber: [],
 })
 ```
 
@@ -2843,34 +2821,34 @@ const transaction_history = client.TransactionHistory()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `3_d_secure` | `string` | No |  |
-| `authorization_code` | `string` | No |  |
-| `card_brand` | `string` | No |  |
-| `clearing_amount_from` | `string` | No |  |
-| `clearing_amount_to` | `string` | No |  |
-| `clearing_currency` | `string` | No |  |
-| `clearing_status` | `string` | No |  |
-| `corporate_uuid` | `string` | No |  |
-| `order_by_transaction_date` | `string` | No |  |
+| `3DSecure` | `string` | No |  |
+| `authorizationCode` | `string` | No |  |
+| `cardBrand` | `string` | No |  |
+| `clearingAmountFrom` | `string` | No |  |
+| `clearingAmountTo` | `string` | No |  |
+| `clearingCurrency` | `string` | No |  |
+| `clearingStatus` | `string` | No |  |
+| `corporateUUID` | `string` | No |  |
+| `orderByTransactionDate` | `string` | No |  |
 | `pagination` | `Record<string, any>` | No |  |
-| `payment_token_public_id` | `string` | No |  |
-| `receipt_number` | `string` | No |  |
-| `referenced_transaction_id` | `string` | No |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
-| `retrieval_reference_number` | `string` | No |  |
-| `source_id` | `number` | No |  |
-| `tecsengine_response_code_from` | `string` | No |  |
-| `tecsengine_response_code_to` | `string` | No |  |
-| `terminal_id` | `number` | No |  |
-| `trace_number` | `string` | No |  |
-| `transaction_amount_from` | `string` | No |  |
-| `transaction_amount_to` | `string` | No |  |
-| `transaction_date_from` | `string` | No |  |
-| `transaction_date_to` | `string` | No |  |
-| `transaction_history` | `any[]` | No |  |
-| `transaction_id` | `string` | No |  |
-| `transaction_type` | `string` | No |  |
+| `paymentTokenPublicId` | `string` | No |  |
+| `receiptNumber` | `string` | No |  |
+| `referencedTransactionId` | `string` | No |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
+| `retrievalReferenceNumber` | `string` | No |  |
+| `sourceId` | `number` | No |  |
+| `tecsengineResponseCodeFrom` | `string` | No |  |
+| `tecsengineResponseCodeTo` | `string` | No |  |
+| `terminalId` | `number` | No |  |
+| `traceNumber` | `string` | No |  |
+| `transactionAmountFrom` | `string` | No |  |
+| `transactionAmountTo` | `string` | No |  |
+| `transactionDateFrom` | `string` | No |  |
+| `transactionDateTo` | `string` | No |  |
+| `transactionHistories` | `any[]` | No |  |
+| `transactionId` | `string` | No |  |
+| `transactionType` | `string` | No |  |
 | `wallet` | `string` | No |  |
 
 ### Operations
@@ -2923,22 +2901,22 @@ const transactions_count = client.TransactionsCount()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `period` | `string` | No |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
-| `transaction_date_from` | `string` | No |  |
-| `transaction_date_to` | `string` | No |  |
-| `transactions_count` | `any[]` | No |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
+| `transactionDateFrom` | `string` | No |  |
+| `transactionDateTo` | `string` | No |  |
+| `transactionsCount` | `any[]` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
 | `period` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `transaction_date_from` | Yes |
-| `transaction_date_to` | Yes |
-| `transactions_count` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `transactionDateFrom` | Yes |
+| `transactionDateTo` | Yes |
+| `transactionsCount` | - |
 
 ### Operations
 
@@ -2990,22 +2968,22 @@ const transactions_count_card_brand = client.TransactionsCountCardBrand()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `period` | `string` | No |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
-| `transaction_date_from` | `string` | No |  |
-| `transaction_date_to` | `string` | No |  |
-| `transactions_count` | `any[]` | No |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
+| `transactionDateFrom` | `string` | No |  |
+| `transactionDateTo` | `string` | No |  |
+| `transactionsCount` | `any[]` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
 | `period` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `transaction_date_from` | Yes |
-| `transaction_date_to` | Yes |
-| `transactions_count` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `transactionDateFrom` | Yes |
+| `transactionDateTo` | Yes |
+| `transactionsCount` | - |
 
 ### Operations
 
@@ -3057,22 +3035,22 @@ const transactions_turnover = client.TransactionsTurnover()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `period` | `string` | No |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
-| `transaction_date_from` | `string` | No |  |
-| `transaction_date_to` | `string` | No |  |
-| `turnover` | `any[]` | No |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
+| `transactionDateFrom` | `string` | No |  |
+| `transactionDateTo` | `string` | No |  |
+| `turnovers` | `any[]` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
 | `period` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `transaction_date_from` | Yes |
-| `transaction_date_to` | Yes |
-| `turnover` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `transactionDateFrom` | Yes |
+| `transactionDateTo` | Yes |
+| `turnovers` | - |
 
 ### Operations
 
@@ -3124,15 +3102,15 @@ const update_merchant = client.UpdateMerchant()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `city` | `string` | No |  |
-| `corporate_uuid` | `string` | Yes |  |
+| `corporateUuid` | `string` | Yes |  |
 | `country` | `string` | No |  |
-| `merchant_category_code` | `string` | No |  |
+| `merchantCategoryCode` | `string` | No |  |
 | `name` | `string` | No |  |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
 | `state` | `string` | No |  |
 | `street` | `string` | No |  |
-| `vu_nummer` | `string` | No |  |
+| `vuNummer` | `string` | No |  |
 | `zipcode` | `string` | No |  |
 
 ### Operations
@@ -3143,7 +3121,7 @@ Create a new entity with the given data.
 
 ```ts
 const result = await client.UpdateMerchant().create({
-  corporate_uuid: 'example_corporate_uuid',
+  corporateUuid: 'example_corporateUuid',
 })
 ```
 
@@ -3185,10 +3163,10 @@ const update_template_xml = client.UpdateTemplateXml()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `number` | No |  |
-| `response_message` | `string` | No |  |
-| `template_name` | `string` | Yes |  |
-| `template_xml` | `string` | Yes |  |
+| `responseCode` | `number` | No |  |
+| `responseMessage` | `string` | No |  |
+| `templateName` | `string` | Yes |  |
+| `templateXml` | `string` | Yes |  |
 
 ### Operations
 
@@ -3198,8 +3176,8 @@ Create a new entity with the given data.
 
 ```ts
 const result = await client.UpdateTemplateXml().create({
-  template_name: 'example_template_name',
-  template_xml: 'example_template_xml',
+  templateName: 'example_templateName',
+  templateXml: 'example_templateXml',
 })
 ```
 
@@ -3241,8 +3219,8 @@ const version = client.Version()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `app_name` | `string` | No |  |
-| `build_date` | `string` | No |  |
+| `appName` | `string` | No |  |
+| `buildDate` | `string` | No |  |
 | `version` | `string` | No |  |
 
 ### Operations

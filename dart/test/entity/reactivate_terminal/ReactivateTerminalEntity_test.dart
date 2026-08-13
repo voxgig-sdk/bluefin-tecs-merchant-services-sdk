@@ -47,7 +47,7 @@ void tests() {
       final reactivate_terminal_ref01_ent = client.ReactivateTerminal();
       dynamic reactivate_terminal_ref01_data = setup['data']['new']['reactivate_terminal']['reactivate_terminal_ref01'];
 
-      reactivate_terminal_ref01_data = await reactivate_terminal_ref01_ent.create(reactivate_terminal_ref01_data);
+      reactivate_terminal_ref01_data = (await reactivate_terminal_ref01_ent.create(reactivate_terminal_ref01_data)).data();
       ok(null != reactivate_terminal_ref01_data);
 
 

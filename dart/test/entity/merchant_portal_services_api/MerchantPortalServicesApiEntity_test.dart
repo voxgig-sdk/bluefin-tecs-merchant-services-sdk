@@ -47,7 +47,7 @@ void tests() {
       final merchant_portal_services_api_ref01_ent = client.MerchantPortalServicesApi();
       dynamic merchant_portal_services_api_ref01_data = setup['data']['new']['merchant_portal_services_api']['merchant_portal_services_api_ref01'];
 
-      merchant_portal_services_api_ref01_data = await merchant_portal_services_api_ref01_ent.create(merchant_portal_services_api_ref01_data);
+      merchant_portal_services_api_ref01_data = (await merchant_portal_services_api_ref01_ent.create(merchant_portal_services_api_ref01_data)).data();
       ok(null != merchant_portal_services_api_ref01_data);
 
 

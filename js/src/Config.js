@@ -21,7 +21,7 @@ class Config {
 
 
   main = {
-    name: 'ProjectName',
+    name: 'BluefinTecsMerchantServices',
   }
 
 
@@ -174,21 +174,21 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "acquirer_id",
+          "name": "acquirerId",
           "req": false,
           "type": "`$STRING`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "acquirer_name",
+          "name": "acquirerName",
           "req": false,
           "type": "`$STRING`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "actual_bonus_point",
+          "name": "actualBonusPoints",
           "req": false,
           "type": "`$STRING`",
           "index$": 2
@@ -208,35 +208,35 @@ class Config {
         },
         {
           "active": true,
-          "name": "authorization_code",
+          "name": "authorizationCode",
           "req": false,
           "type": "`$STRING`",
           "index$": 4
         },
         {
           "active": true,
-          "name": "balance_amount",
+          "name": "balanceAmount",
           "req": false,
           "type": "`$STRING`",
           "index$": 5
         },
         {
           "active": true,
-          "name": "card_brand",
+          "name": "cardBrand",
           "req": false,
           "type": "`$STRING`",
           "index$": 6
         },
         {
           "active": true,
-          "name": "card_number",
+          "name": "cardNumber",
           "req": false,
           "type": "`$STRING`",
           "index$": 7
         },
         {
           "active": true,
-          "name": "client_id",
+          "name": "clientId",
           "req": true,
           "type": "`$INTEGER`",
           "index$": 8
@@ -257,70 +257,70 @@ class Config {
         },
         {
           "active": true,
-          "name": "ec_data",
+          "name": "ecData",
           "req": false,
           "type": "`$STRING`",
           "index$": 11
         },
         {
           "active": true,
-          "name": "ecr_data",
+          "name": "ecrData",
           "req": false,
           "type": "`$STRING`",
           "index$": 12
         },
         {
           "active": true,
-          "name": "emv_data",
+          "name": "emvData",
           "req": false,
           "type": "`$STRING`",
           "index$": 13
         },
         {
           "active": true,
-          "name": "exchange_fee",
+          "name": "exchangeFee",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 14
         },
         {
           "active": true,
-          "name": "exchange_rate",
+          "name": "exchangeRate",
           "req": false,
           "type": "`$STRING`",
           "index$": 15
         },
         {
           "active": true,
-          "name": "language_code",
+          "name": "languageCode",
           "req": false,
           "type": "`$STRING`",
           "index$": 16
         },
         {
           "active": true,
-          "name": "merchant_address",
+          "name": "merchantAddress",
           "req": false,
           "type": "`$STRING`",
           "index$": 17
         },
         {
           "active": true,
-          "name": "merchant_name",
+          "name": "merchantName",
           "req": false,
           "type": "`$STRING`",
           "index$": 18
         },
         {
           "active": true,
-          "name": "merchant_number",
+          "name": "merchantNumber",
           "req": false,
           "type": "`$STRING`",
           "index$": 19
         },
         {
           "active": true,
-          "name": "message_type",
+          "name": "messageType",
           "op": {
             "create": {
               "req": true,
@@ -333,14 +333,14 @@ class Config {
         },
         {
           "active": true,
-          "name": "original_trace_number",
+          "name": "originalTraceNumber",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 21
         },
         {
           "active": true,
-          "name": "original_transaction_id",
+          "name": "originalTransactionId",
           "op": {
             "create": {
               "req": true,
@@ -360,56 +360,56 @@ class Config {
         },
         {
           "active": true,
-          "name": "payment_reason",
+          "name": "paymentReason",
           "req": false,
           "type": "`$STRING`",
           "index$": 24
         },
         {
           "active": true,
-          "name": "receipt_footer",
+          "name": "receiptFooter",
           "req": false,
           "type": "`$STRING`",
           "index$": 25
         },
         {
           "active": true,
-          "name": "receipt_header",
+          "name": "receiptHeader",
           "req": false,
           "type": "`$STRING`",
           "index$": 26
         },
         {
           "active": true,
-          "name": "receipt_layout",
+          "name": "receiptLayout",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 27
         },
         {
           "active": true,
-          "name": "receipt_number",
+          "name": "receiptNumber",
           "req": true,
           "type": "`$STRING`",
           "index$": 28
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 29
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 30
         },
         {
           "active": true,
-          "name": "serial_number",
+          "name": "serialNumber",
           "req": false,
           "type": "`$STRING`",
           "index$": 31
@@ -423,28 +423,28 @@ class Config {
         },
         {
           "active": true,
-          "name": "terminal_id",
+          "name": "terminalId",
           "req": true,
           "type": "`$INTEGER`",
           "index$": 33
         },
         {
           "active": true,
-          "name": "terminal_location",
+          "name": "terminalLocation",
           "req": false,
           "type": "`$STRING`",
           "index$": 34
         },
         {
           "active": true,
-          "name": "trace_number",
+          "name": "traceNumber",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 35
         },
         {
           "active": true,
-          "name": "transaction_date",
+          "name": "transactionDate",
           "op": {
             "create": {
               "req": true,
@@ -457,7 +457,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "transaction_id",
+          "name": "transactionId",
           "op": {
             "create": {
               "req": true,
@@ -470,14 +470,14 @@ class Config {
         },
         {
           "active": true,
-          "name": "tx_type",
+          "name": "txType",
           "req": false,
           "type": "`$STRING`",
           "index$": 38
         },
         {
           "active": true,
-          "name": "user_data",
+          "name": "userData",
           "req": false,
           "type": "`$STRING`",
           "index$": 39
@@ -492,6 +492,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "POST",
               "orig": "/public/cancelTransaction",
               "parts": [
@@ -517,21 +518,21 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "card_no",
+          "name": "cardNo",
           "req": false,
           "type": "`$STRING`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 2
@@ -557,6 +558,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/checkCardBlackListed",
               "parts": [
@@ -585,49 +587,49 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "acquirer_id",
+          "name": "acquirerId",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 2
         },
         {
           "active": true,
-          "name": "template_name",
+          "name": "templateName",
           "req": true,
           "type": "`$STRING`",
           "index$": 3
         },
         {
           "active": true,
-          "name": "template_type",
+          "name": "templateType",
           "req": true,
           "type": "`$STRING`",
           "index$": 4
         },
         {
           "active": true,
-          "name": "template_xml",
+          "name": "templateXml",
           "req": true,
           "type": "`$STRING`",
           "index$": 5
         },
         {
           "active": true,
-          "name": "terminal_type",
+          "name": "terminalType",
           "req": true,
           "type": "`$STRING`",
           "index$": 6
@@ -642,6 +644,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "POST",
               "orig": "/createProduct",
               "parts": [
@@ -666,49 +669,49 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "corporate_uuid",
+          "name": "corporateUuid",
           "req": false,
           "type": "`$STRING`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "deactivation_reason",
+          "name": "deactivationReason",
           "req": true,
           "type": "`$STRING`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "package_order_uuid",
+          "name": "packageOrderUuid",
           "req": false,
           "type": "`$STRING`",
           "index$": 2
         },
         {
           "active": true,
-          "name": "product_order_uuid",
+          "name": "productOrderUuid",
           "req": false,
           "type": "`$STRING`",
           "index$": 3
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 4
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 5
         },
         {
           "active": true,
-          "name": "terminal_id",
+          "name": "terminalId",
           "req": true,
           "type": "`$INTEGER`",
           "index$": 6
@@ -723,6 +726,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "POST",
               "orig": "/deactivateTerminal",
               "parts": [
@@ -747,70 +751,70 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "clearing_date_from",
+          "name": "clearingDateFrom",
           "req": true,
           "type": "`$STRING`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "clearing_date_to",
+          "name": "clearingDateTo",
           "req": true,
           "type": "`$STRING`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 2
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 3
         },
         {
           "active": true,
-          "name": "tx_count",
+          "name": "txCount",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 4
         },
         {
           "active": true,
-          "name": "tx_id_end",
+          "name": "txIdEnd",
           "req": false,
           "type": "`$STRING`",
           "index$": 5
         },
         {
           "active": true,
-          "name": "tx_id_start",
+          "name": "txIdStart",
           "req": false,
           "type": "`$STRING`",
           "index$": 6
         },
         {
           "active": true,
-          "name": "tx_seq_no_end",
+          "name": "txSeqNoEnd",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 7
         },
         {
           "active": true,
-          "name": "tx_seq_no_start",
+          "name": "txSeqNoStart",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 8
         },
         {
           "active": true,
-          "name": "tx_total",
+          "name": "txTotal",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 9
@@ -837,6 +841,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "POST",
               "orig": "/public/digitalservices/mandatorClearingExportDownload/{fileId}",
               "parts": [
@@ -864,6 +869,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "POST",
               "orig": "/public/digitalservices/mandatorClearingExportMetadata",
               "parts": [
@@ -888,6 +894,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/public/digitalservices/mandatorClearingExportDownload/status",
               "parts": [
@@ -919,42 +926,42 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "ecom_data",
+          "name": "ecomData",
           "req": false,
           "type": "`$STRING`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 2
         },
         {
           "active": true,
-          "name": "terminal_id",
+          "name": "terminalId",
           "req": true,
           "type": "`$INTEGER`",
           "index$": 3
         },
         {
           "active": true,
-          "name": "transaction_id",
+          "name": "transactionId",
           "req": true,
           "type": "`$STRING`",
           "index$": 4
         },
         {
           "active": true,
-          "name": "transaction_type",
+          "name": "transactionType",
           "req": true,
           "type": "`$STRING`",
           "index$": 5
@@ -969,6 +976,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "POST",
               "orig": "/public/getEcData",
               "parts": [
@@ -994,35 +1002,35 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "ecom_pass",
+          "name": "ecomPass",
           "req": false,
           "type": "`$STRING`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "ecom_skey",
+          "name": "ecomSkey",
           "req": false,
           "type": "`$STRING`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 2
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 3
         },
         {
           "active": true,
-          "name": "terminal_id",
+          "name": "terminalId",
           "req": true,
           "type": "`$INTEGER`",
           "index$": 4
@@ -1037,6 +1045,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "POST",
               "orig": "/public/getEcomParameters",
               "parts": [
@@ -1062,42 +1071,42 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "ecr_data",
+          "name": "ecrData",
           "req": false,
           "type": "`$STRING`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 2
         },
         {
           "active": true,
-          "name": "terminal_id",
+          "name": "terminalId",
           "req": true,
           "type": "`$INTEGER`",
           "index$": 3
         },
         {
           "active": true,
-          "name": "transaction_id",
+          "name": "transactionId",
           "req": true,
           "type": "`$STRING`",
           "index$": 4
         },
         {
           "active": true,
-          "name": "transaction_type",
+          "name": "transactionType",
           "req": true,
           "type": "`$STRING`",
           "index$": 5
@@ -1112,6 +1121,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "POST",
               "orig": "/public/getEcrData",
               "parts": [
@@ -1137,42 +1147,42 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "emv_data",
+          "name": "emvData",
           "req": false,
           "type": "`$STRING`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 2
         },
         {
           "active": true,
-          "name": "terminal_id",
+          "name": "terminalId",
           "req": true,
           "type": "`$INTEGER`",
           "index$": 3
         },
         {
           "active": true,
-          "name": "transaction_id",
+          "name": "transactionId",
           "req": true,
           "type": "`$STRING`",
           "index$": 4
         },
         {
           "active": true,
-          "name": "transaction_type",
+          "name": "transactionType",
           "req": true,
           "type": "`$STRING`",
           "index$": 5
@@ -1187,6 +1197,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "POST",
               "orig": "/public/getEmvData",
               "parts": [
@@ -1212,21 +1223,21 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "account_no",
+          "name": "accountNo",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "additional_data",
+          "name": "additionalData",
           "req": false,
           "type": "`$OBJECT`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "corporate_uuid",
+          "name": "corporateUuid",
           "req": true,
           "type": "`$STRING`",
           "index$": 2
@@ -1240,70 +1251,70 @@ class Config {
         },
         {
           "active": true,
-          "name": "merchant_category_code",
+          "name": "merchantCategoryCode",
           "req": true,
           "type": "`$INTEGER`",
           "index$": 4
         },
         {
           "active": true,
-          "name": "package_order_uuid",
+          "name": "packageOrderUuid",
           "req": true,
           "type": "`$STRING`",
           "index$": 5
         },
         {
           "active": true,
-          "name": "product_order_uuid",
+          "name": "productOrderUuid",
           "req": true,
           "type": "`$STRING`",
           "index$": 6
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 7
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 8
         },
         {
           "active": true,
-          "name": "sorting_code",
+          "name": "sortingCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 9
         },
         {
           "active": true,
-          "name": "template_name",
+          "name": "templateName",
           "req": true,
           "type": "`$STRING`",
           "index$": 10
         },
         {
           "active": true,
-          "name": "terminal_id",
+          "name": "terminalIdAcq",
           "req": false,
-          "type": "`$ARRAY`",
+          "type": "`$STRING`",
           "index$": 11
         },
         {
           "active": true,
-          "name": "terminal_id_acq",
+          "name": "terminalIds",
           "req": false,
-          "type": "`$STRING`",
+          "type": "`$ARRAY`",
           "index$": 12
         },
         {
           "active": true,
-          "name": "vu_nummer",
+          "name": "vuNummer",
           "req": false,
           "type": "`$STRING`",
           "index$": 13
@@ -1318,6 +1329,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "POST",
               "orig": "/enableAcquiring",
               "parts": [
@@ -1342,21 +1354,21 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "merchant_contract_number",
+          "name": "merchantContractNumber",
           "req": true,
           "type": "`$STRING`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 2
@@ -1371,6 +1383,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "POST",
               "orig": "/getMerchantContractNumber",
               "parts": [
@@ -1395,21 +1408,21 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "template_name",
+          "name": "templateName",
           "req": true,
           "type": "`$STRING`",
           "index$": 2
@@ -1424,6 +1437,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "POST",
               "orig": "/public/getTemplateXml",
               "parts": [
@@ -1449,21 +1463,21 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "mandator_name",
+          "name": "mandatorName",
           "req": true,
           "type": "`$STRING`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 2
@@ -1478,6 +1492,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "POST",
               "orig": "/introduceMandator",
               "parts": [
@@ -1502,21 +1517,21 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "terminal_template_description",
+          "name": "terminalTemplateDescription",
           "req": true,
           "type": "`$STRING`",
           "index$": 2
@@ -1531,6 +1546,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "POST",
               "orig": "/introducePackage",
               "parts": [
@@ -1562,21 +1578,21 @@ class Config {
         },
         {
           "active": true,
-          "name": "ka_date_time_from",
+          "name": "kaDateTimeFrom",
           "req": false,
           "type": "`$STRING`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "ka_date_time_to",
+          "name": "kaDateTimeTo",
           "req": false,
           "type": "`$STRING`",
           "index$": 2
         },
         {
           "active": true,
-          "name": "keep_alive_data",
+          "name": "keepAliveData",
           "req": false,
           "type": "`$ARRAY`",
           "index$": 3
@@ -1590,35 +1606,35 @@ class Config {
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 5
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 6
         },
         {
           "active": true,
-          "name": "terminal_date_time_from",
+          "name": "terminalDateTimeFrom",
           "req": false,
           "type": "`$STRING`",
           "index$": 7
         },
         {
           "active": true,
-          "name": "terminal_date_time_to",
+          "name": "terminalDateTimeTo",
           "req": false,
           "type": "`$STRING`",
           "index$": 8
         },
         {
           "active": true,
-          "name": "terminal_id",
+          "name": "terminalId",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 9
@@ -1633,6 +1649,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "POST",
               "orig": "/public/keepalive",
               "parts": [
@@ -1658,7 +1675,7 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "corporate_uuid",
+          "name": "corporateUuid",
           "req": false,
           "type": "`$ARRAY`",
           "index$": 0
@@ -1679,21 +1696,21 @@ class Config {
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 3
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 4
         },
         {
           "active": true,
-          "name": "terminal",
+          "name": "terminals",
           "req": false,
           "type": "`$ARRAY`",
           "index$": 5
@@ -1708,6 +1725,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "POST",
               "orig": "/public/listTerminals",
               "parts": [
@@ -1733,14 +1751,14 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "clearing_date_from",
+          "name": "clearingDateFrom",
           "req": true,
           "type": "`$STRING`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "clearing_date_to",
+          "name": "clearingDateTo",
           "req": true,
           "type": "`$STRING`",
           "index$": 1
@@ -1754,21 +1772,21 @@ class Config {
         },
         {
           "active": true,
-          "name": "record",
+          "name": "records",
           "req": false,
           "type": "`$ARRAY`",
           "index$": 3
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 4
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 5
@@ -1783,6 +1801,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "POST",
               "orig": "/public/digitalservices/mandatorClearingExport",
               "parts": [
@@ -1809,42 +1828,42 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "clearing_date_from",
+          "name": "clearingDateFrom",
           "req": true,
           "type": "`$STRING`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "clearing_date_to",
+          "name": "clearingDateTo",
           "req": true,
           "type": "`$STRING`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "file_id",
+          "name": "fileId",
           "req": false,
           "type": "`$STRING`",
           "index$": 2
         },
         {
           "active": true,
-          "name": "filename_template",
+          "name": "filenameTemplate",
           "req": false,
           "type": "`$STRING`",
           "index$": 3
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 4
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 5
@@ -1866,6 +1885,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "POST",
               "orig": "/public/digitalservices/mandatorClearingExportDownload",
               "parts": [
@@ -1902,6 +1922,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/public/digitalservices/mandatorClearingExportDownload/{fileId}",
               "parts": [
@@ -1938,35 +1959,35 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "clearing_date_from",
+          "name": "clearingDateFrom",
           "req": true,
           "type": "`$STRING`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "clearing_date_to",
+          "name": "clearingDateTo",
           "req": true,
           "type": "`$STRING`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "record",
+          "name": "records",
           "req": false,
           "type": "`$ARRAY`",
           "index$": 2
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 3
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 4
@@ -1981,6 +2002,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "POST",
               "orig": "/public/digitalservices/mandatorClearingExportSummary",
               "parts": [
@@ -2007,63 +2029,63 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "3_d_secure",
+          "name": "3DSecure",
           "req": false,
           "type": "`$STRING`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "authorization_code",
+          "name": "authorizationCode",
           "req": false,
           "type": "`$STRING`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "card_brand",
+          "name": "cardBrand",
           "req": false,
           "type": "`$STRING`",
           "index$": 2
         },
         {
           "active": true,
-          "name": "clearing_amount_from",
+          "name": "clearingAmountFrom",
           "req": false,
           "type": "`$STRING`",
           "index$": 3
         },
         {
           "active": true,
-          "name": "clearing_amount_to",
+          "name": "clearingAmountTo",
           "req": false,
           "type": "`$STRING`",
           "index$": 4
         },
         {
           "active": true,
-          "name": "clearing_currency",
+          "name": "clearingCurrency",
           "req": false,
           "type": "`$STRING`",
           "index$": 5
         },
         {
           "active": true,
-          "name": "clearing_status",
+          "name": "clearingStatus",
           "req": false,
           "type": "`$STRING`",
           "index$": 6
         },
         {
           "active": true,
-          "name": "corporate_uuid",
+          "name": "corporateUUID",
           "req": false,
           "type": "`$STRING`",
           "index$": 7
         },
         {
           "active": true,
-          "name": "order_by_transaction_date",
+          "name": "orderByTransactionDate",
           "req": false,
           "type": "`$STRING`",
           "index$": 8
@@ -2077,98 +2099,98 @@ class Config {
         },
         {
           "active": true,
-          "name": "receipt_number",
+          "name": "receiptNumber",
           "req": false,
           "type": "`$STRING`",
           "index$": 10
         },
         {
           "active": true,
-          "name": "referenced_transaction_id",
+          "name": "referencedTransactionId",
           "req": false,
           "type": "`$STRING`",
           "index$": 11
         },
         {
           "active": true,
-          "name": "retrieval_reference_number",
+          "name": "retrievalReferenceNumber",
           "req": false,
           "type": "`$STRING`",
           "index$": 12
         },
         {
           "active": true,
-          "name": "source_id",
+          "name": "sourceId",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 13
         },
         {
           "active": true,
-          "name": "tecsengine_response_code_from",
+          "name": "tecsengineResponseCodeFrom",
           "req": false,
           "type": "`$STRING`",
           "index$": 14
         },
         {
           "active": true,
-          "name": "tecsengine_response_code_to",
+          "name": "tecsengineResponseCodeTo",
           "req": false,
           "type": "`$STRING`",
           "index$": 15
         },
         {
           "active": true,
-          "name": "terminal_id",
+          "name": "terminalId",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 16
         },
         {
           "active": true,
-          "name": "trace_number",
+          "name": "traceNumber",
           "req": false,
           "type": "`$STRING`",
           "index$": 17
         },
         {
           "active": true,
-          "name": "transaction_amount_from",
+          "name": "transactionAmountFrom",
           "req": false,
           "type": "`$STRING`",
           "index$": 18
         },
         {
           "active": true,
-          "name": "transaction_amount_to",
+          "name": "transactionAmountTo",
           "req": false,
           "type": "`$STRING`",
           "index$": 19
         },
         {
           "active": true,
-          "name": "transaction_date_from",
+          "name": "transactionDateFrom",
           "req": false,
           "type": "`$STRING`",
           "index$": 20
         },
         {
           "active": true,
-          "name": "transaction_date_to",
+          "name": "transactionDateTo",
           "req": false,
           "type": "`$STRING`",
           "index$": 21
         },
         {
           "active": true,
-          "name": "transaction_id",
+          "name": "transactionId",
           "req": false,
           "type": "`$STRING`",
           "index$": 22
         },
         {
           "active": true,
-          "name": "transaction_type",
+          "name": "transactionType",
           "req": false,
           "type": "`$STRING`",
           "index$": 23
@@ -2190,6 +2212,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "POST",
               "orig": "/public/transactionHistoryCsv",
               "parts": [
@@ -2215,35 +2238,35 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "productorderuuid",
+          "name": "productorderuuids",
           "req": true,
           "type": "`$ARRAY`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 2
         },
         {
           "active": true,
-          "name": "target_packageorderuuid",
+          "name": "targetPackageorderuuid",
           "req": false,
           "type": "`$STRING`",
           "index$": 3
         },
         {
           "active": true,
-          "name": "target_productorderuuid",
+          "name": "targetProductorderuuid",
           "req": false,
           "type": "`$STRING`",
           "index$": 4
@@ -2258,6 +2281,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "POST",
               "orig": "/moveTid",
               "parts": [
@@ -2282,7 +2306,7 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "acquirer_name",
+          "name": "acquirerName",
           "req": false,
           "type": "`$STRING`",
           "index$": 0
@@ -2296,21 +2320,21 @@ class Config {
         },
         {
           "active": true,
-          "name": "authorization_number",
+          "name": "authorizationNumber",
           "req": false,
           "type": "`$STRING`",
           "index$": 2
         },
         {
           "active": true,
-          "name": "card_number",
+          "name": "cardNumber",
           "req": true,
           "type": "`$STRING`",
           "index$": 3
         },
         {
           "active": true,
-          "name": "card_type",
+          "name": "cardType",
           "req": false,
           "type": "`$STRING`",
           "index$": 4
@@ -2331,28 +2355,28 @@ class Config {
         },
         {
           "active": true,
-          "name": "date_time_tx",
+          "name": "dateTimeTx",
           "req": false,
           "type": "`$STRING`",
           "index$": 7
         },
         {
           "active": true,
-          "name": "exp_date",
+          "name": "expDate",
           "req": true,
           "type": "`$STRING`",
           "index$": 8
         },
         {
           "active": true,
-          "name": "merchant_id",
+          "name": "merchantId",
           "req": false,
           "type": "`$STRING`",
           "index$": 9
         },
         {
           "active": true,
-          "name": "original_transaction_id",
+          "name": "originalTransactionId",
           "req": false,
           "type": "`$STRING`",
           "index$": 10
@@ -2366,21 +2390,21 @@ class Config {
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": false,
           "type": "`$STRING`",
           "index$": 12
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 13
         },
         {
           "active": true,
-          "name": "terminal_id",
+          "name": "terminalId",
           "op": {
             "create": {
               "req": true,
@@ -2393,7 +2417,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "transaction_id",
+          "name": "transactionId",
           "req": false,
           "type": "`$STRING`",
           "index$": 15
@@ -2415,6 +2439,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "POST",
               "orig": "/public/paymentManual",
               "parts": [
@@ -2440,121 +2465,87 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "acquirer_name",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 0
-        },
-        {
-          "active": true,
           "name": "amount",
           "req": true,
           "type": "`$INTEGER`",
-          "index$": 1
-        },
-        {
-          "active": true,
-          "name": "authorization_number",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 2
-        },
-        {
-          "active": true,
-          "name": "card_type",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 3
+          "index$": 0
         },
         {
           "active": true,
           "name": "currency",
           "req": true,
           "type": "`$STRING`",
+          "index$": 1
+        },
+        {
+          "active": true,
+          "name": "device",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 2
+        },
+        {
+          "active": true,
+          "name": "devicePayload",
+          "req": true,
+          "type": "`$STRING`",
+          "index$": 3
+        },
+        {
+          "active": true,
+          "name": "expDate",
+          "req": false,
+          "type": "`$STRING`",
           "index$": 4
         },
         {
           "active": true,
-          "name": "date_time_tx",
+          "name": "mode",
           "req": false,
           "type": "`$STRING`",
           "index$": 5
         },
         {
           "active": true,
-          "name": "device_payload",
-          "req": true,
+          "name": "panMasked",
+          "req": false,
           "type": "`$STRING`",
           "index$": 6
-        },
-        {
-          "active": true,
-          "name": "merchant_id",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 7
-        },
-        {
-          "active": true,
-          "name": "original_transaction_id",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 8
         },
         {
           "active": true,
           "name": "password",
           "req": false,
           "type": "`$STRING`",
+          "index$": 7
+        },
+        {
+          "active": true,
+          "name": "serial",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 8
+        },
+        {
+          "active": true,
+          "name": "serviceCode",
+          "req": false,
+          "type": "`$STRING`",
           "index$": 9
         },
         {
           "active": true,
-          "name": "response_code",
-          "req": false,
+          "name": "terminalId",
+          "req": true,
           "type": "`$STRING`",
           "index$": 10
-        },
-        {
-          "active": true,
-          "name": "response_message",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 11
-        },
-        {
-          "active": true,
-          "name": "sred",
-          "req": false,
-          "type": "`$OBJECT`",
-          "index$": 12
-        },
-        {
-          "active": true,
-          "name": "terminal_id",
-          "op": {
-            "create": {
-              "req": true,
-              "type": "`$STRING`"
-            }
-          },
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 13
-        },
-        {
-          "active": true,
-          "name": "transaction_id",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 14
         },
         {
           "active": true,
           "name": "txtype",
           "req": true,
           "type": "`$STRING`",
-          "index$": 15
+          "index$": 11
         }
       ],
       "name": "payment_sred",
@@ -2566,6 +2557,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "POST",
               "orig": "/public/paymentSred",
               "parts": [
@@ -2591,21 +2583,21 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "acquirer_id",
+          "name": "acquirerId",
           "req": false,
           "type": "`$STRING`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "acquirer_name",
+          "name": "acquirerName",
           "req": false,
           "type": "`$STRING`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "actual_bonus_point",
+          "name": "actualBonusPoints",
           "req": false,
           "type": "`$STRING`",
           "index$": 2
@@ -2625,42 +2617,42 @@ class Config {
         },
         {
           "active": true,
-          "name": "authorization_code",
+          "name": "authorizationCode",
           "req": false,
           "type": "`$STRING`",
           "index$": 4
         },
         {
           "active": true,
-          "name": "balance_amount",
+          "name": "balanceAmount",
           "req": false,
           "type": "`$STRING`",
           "index$": 5
         },
         {
           "active": true,
-          "name": "card_brand",
+          "name": "cardBrand",
           "req": false,
           "type": "`$STRING`",
           "index$": 6
         },
         {
           "active": true,
-          "name": "card_number",
+          "name": "cardNumber",
           "req": false,
           "type": "`$STRING`",
           "index$": 7
         },
         {
           "active": true,
-          "name": "card_number_reference",
+          "name": "cardNumberReference",
           "req": true,
           "type": "`$STRING`",
           "index$": 8
         },
         {
           "active": true,
-          "name": "client_id",
+          "name": "clientId",
           "req": true,
           "type": "`$INTEGER`",
           "index$": 9
@@ -2681,84 +2673,84 @@ class Config {
         },
         {
           "active": true,
-          "name": "ec_data",
+          "name": "ecData",
           "req": false,
           "type": "`$STRING`",
           "index$": 12
         },
         {
           "active": true,
-          "name": "ecr_data",
+          "name": "ecrData",
           "req": false,
           "type": "`$STRING`",
           "index$": 13
         },
         {
           "active": true,
-          "name": "emv_data",
+          "name": "emvData",
           "req": false,
           "type": "`$STRING`",
           "index$": 14
         },
         {
           "active": true,
-          "name": "exchange_fee",
+          "name": "exchangeFee",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 15
         },
         {
           "active": true,
-          "name": "exchange_rate",
+          "name": "exchangeRate",
           "req": false,
           "type": "`$STRING`",
           "index$": 16
         },
         {
           "active": true,
-          "name": "language_code",
+          "name": "languageCode",
           "req": false,
           "type": "`$STRING`",
           "index$": 17
         },
         {
           "active": true,
-          "name": "merchant_address",
+          "name": "merchantAddress",
           "req": false,
           "type": "`$STRING`",
           "index$": 18
         },
         {
           "active": true,
-          "name": "merchant_name",
+          "name": "merchantName",
           "req": false,
           "type": "`$STRING`",
           "index$": 19
         },
         {
           "active": true,
-          "name": "merchant_number",
+          "name": "merchantNumber",
           "req": false,
           "type": "`$STRING`",
           "index$": 20
         },
         {
           "active": true,
-          "name": "message_type",
+          "name": "messageType",
           "req": false,
           "type": "`$STRING`",
           "index$": 21
         },
         {
           "active": true,
-          "name": "original_trace_number",
+          "name": "originalTraceNumber",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 22
         },
         {
           "active": true,
-          "name": "original_transaction_id",
+          "name": "originalTransactionId",
           "op": {
             "create": {
               "req": true,
@@ -2778,56 +2770,56 @@ class Config {
         },
         {
           "active": true,
-          "name": "payment_reason",
+          "name": "paymentReason",
           "req": false,
           "type": "`$STRING`",
           "index$": 25
         },
         {
           "active": true,
-          "name": "receipt_footer",
+          "name": "receiptFooter",
           "req": false,
           "type": "`$STRING`",
           "index$": 26
         },
         {
           "active": true,
-          "name": "receipt_header",
+          "name": "receiptHeader",
           "req": false,
           "type": "`$STRING`",
           "index$": 27
         },
         {
           "active": true,
-          "name": "receipt_layout",
+          "name": "receiptLayout",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 28
         },
         {
           "active": true,
-          "name": "receipt_number",
+          "name": "receiptNumber",
           "req": true,
           "type": "`$STRING`",
           "index$": 29
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 30
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 31
         },
         {
           "active": true,
-          "name": "serial_number",
+          "name": "serialNumber",
           "req": false,
           "type": "`$STRING`",
           "index$": 32
@@ -2841,28 +2833,28 @@ class Config {
         },
         {
           "active": true,
-          "name": "terminal_id",
+          "name": "terminalId",
           "req": true,
           "type": "`$INTEGER`",
           "index$": 34
         },
         {
           "active": true,
-          "name": "terminal_location",
+          "name": "terminalLocation",
           "req": false,
           "type": "`$STRING`",
           "index$": 35
         },
         {
           "active": true,
-          "name": "trace_number",
+          "name": "traceNumber",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 36
         },
         {
           "active": true,
-          "name": "transaction_date",
+          "name": "transactionDate",
           "op": {
             "create": {
               "req": true,
@@ -2875,7 +2867,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "transaction_id",
+          "name": "transactionId",
           "op": {
             "create": {
               "req": true,
@@ -2888,21 +2880,21 @@ class Config {
         },
         {
           "active": true,
-          "name": "transaction_type",
+          "name": "transactionType",
           "req": true,
           "type": "`$STRING`",
           "index$": 39
         },
         {
           "active": true,
-          "name": "tx_type",
+          "name": "txType",
           "req": false,
           "type": "`$STRING`",
           "index$": 40
         },
         {
           "active": true,
-          "name": "user_data",
+          "name": "userData",
           "req": false,
           "type": "`$STRING`",
           "index$": 41
@@ -2917,6 +2909,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "POST",
               "orig": "/public/paymentTransaction",
               "parts": [
@@ -2933,6 +2926,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "POST",
               "orig": "/public/preAuthCompletionTransaction",
               "parts": [
@@ -2958,49 +2952,49 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "corporate_uuid",
+          "name": "corporateUuid",
           "req": false,
           "type": "`$STRING`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "package_order_uuid",
+          "name": "packageOrderUuid",
           "req": false,
           "type": "`$STRING`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "product_order_uuid",
+          "name": "productOrderUuid",
           "req": false,
           "type": "`$STRING`",
           "index$": 2
         },
         {
           "active": true,
-          "name": "reactivation_reason",
+          "name": "reactivationReason",
           "req": true,
           "type": "`$STRING`",
           "index$": 3
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 4
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 5
         },
         {
           "active": true,
-          "name": "terminal_id",
+          "name": "terminalId",
           "req": true,
           "type": "`$INTEGER`",
           "index$": 6
@@ -3015,6 +3009,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "POST",
               "orig": "/reactivateTerminal",
               "parts": [
@@ -3039,21 +3034,21 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "acquirer_id",
+          "name": "acquirerId",
           "req": false,
           "type": "`$STRING`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "acquirer_name",
+          "name": "acquirerName",
           "req": false,
           "type": "`$STRING`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "actual_bonus_point",
+          "name": "actualBonusPoints",
           "req": false,
           "type": "`$STRING`",
           "index$": 2
@@ -3073,35 +3068,35 @@ class Config {
         },
         {
           "active": true,
-          "name": "authorization_code",
+          "name": "authorizationCode",
           "req": false,
           "type": "`$STRING`",
           "index$": 4
         },
         {
           "active": true,
-          "name": "balance_amount",
+          "name": "balanceAmount",
           "req": false,
           "type": "`$STRING`",
           "index$": 5
         },
         {
           "active": true,
-          "name": "card_brand",
+          "name": "cardBrand",
           "req": false,
           "type": "`$STRING`",
           "index$": 6
         },
         {
           "active": true,
-          "name": "card_number",
+          "name": "cardNumber",
           "req": false,
           "type": "`$STRING`",
           "index$": 7
         },
         {
           "active": true,
-          "name": "client_id",
+          "name": "clientId",
           "req": true,
           "type": "`$INTEGER`",
           "index$": 8
@@ -3122,84 +3117,84 @@ class Config {
         },
         {
           "active": true,
-          "name": "ec_data",
+          "name": "ecData",
           "req": false,
           "type": "`$STRING`",
           "index$": 11
         },
         {
           "active": true,
-          "name": "ecr_data",
+          "name": "ecrData",
           "req": false,
           "type": "`$STRING`",
           "index$": 12
         },
         {
           "active": true,
-          "name": "emv_data",
+          "name": "emvData",
           "req": false,
           "type": "`$STRING`",
           "index$": 13
         },
         {
           "active": true,
-          "name": "exchange_fee",
+          "name": "exchangeFee",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 14
         },
         {
           "active": true,
-          "name": "exchange_rate",
+          "name": "exchangeRate",
           "req": false,
           "type": "`$STRING`",
           "index$": 15
         },
         {
           "active": true,
-          "name": "language_code",
+          "name": "languageCode",
           "req": false,
           "type": "`$STRING`",
           "index$": 16
         },
         {
           "active": true,
-          "name": "merchant_address",
+          "name": "merchantAddress",
           "req": false,
           "type": "`$STRING`",
           "index$": 17
         },
         {
           "active": true,
-          "name": "merchant_name",
+          "name": "merchantName",
           "req": false,
           "type": "`$STRING`",
           "index$": 18
         },
         {
           "active": true,
-          "name": "merchant_number",
+          "name": "merchantNumber",
           "req": false,
           "type": "`$STRING`",
           "index$": 19
         },
         {
           "active": true,
-          "name": "message_type",
+          "name": "messageType",
           "req": false,
           "type": "`$STRING`",
           "index$": 20
         },
         {
           "active": true,
-          "name": "original_trace_number",
+          "name": "originalTraceNumber",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 21
         },
         {
           "active": true,
-          "name": "original_transaction_id",
+          "name": "originalTransactionId",
           "op": {
             "create": {
               "req": true,
@@ -3219,56 +3214,56 @@ class Config {
         },
         {
           "active": true,
-          "name": "payment_reason",
+          "name": "paymentReason",
           "req": false,
           "type": "`$STRING`",
           "index$": 24
         },
         {
           "active": true,
-          "name": "receipt_footer",
+          "name": "receiptFooter",
           "req": false,
           "type": "`$STRING`",
           "index$": 25
         },
         {
           "active": true,
-          "name": "receipt_header",
+          "name": "receiptHeader",
           "req": false,
           "type": "`$STRING`",
           "index$": 26
         },
         {
           "active": true,
-          "name": "receipt_layout",
+          "name": "receiptLayout",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 27
         },
         {
           "active": true,
-          "name": "receipt_number",
+          "name": "receiptNumber",
           "req": true,
           "type": "`$STRING`",
           "index$": 28
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 29
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 30
         },
         {
           "active": true,
-          "name": "serial_number",
+          "name": "serialNumber",
           "req": false,
           "type": "`$STRING`",
           "index$": 31
@@ -3282,28 +3277,28 @@ class Config {
         },
         {
           "active": true,
-          "name": "terminal_id",
+          "name": "terminalId",
           "req": true,
           "type": "`$INTEGER`",
           "index$": 33
         },
         {
           "active": true,
-          "name": "terminal_location",
+          "name": "terminalLocation",
           "req": false,
           "type": "`$STRING`",
           "index$": 34
         },
         {
           "active": true,
-          "name": "trace_number",
+          "name": "traceNumber",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 35
         },
         {
           "active": true,
-          "name": "transaction_date",
+          "name": "transactionDate",
           "op": {
             "create": {
               "req": true,
@@ -3316,7 +3311,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "transaction_id",
+          "name": "transactionId",
           "op": {
             "create": {
               "req": true,
@@ -3329,14 +3324,14 @@ class Config {
         },
         {
           "active": true,
-          "name": "tx_type",
+          "name": "txType",
           "req": false,
           "type": "`$STRING`",
           "index$": 38
         },
         {
           "active": true,
-          "name": "user_data",
+          "name": "userData",
           "req": false,
           "type": "`$STRING`",
           "index$": 39
@@ -3351,6 +3346,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "POST",
               "orig": "/public/refundTransaction",
               "parts": [
@@ -3376,56 +3372,56 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "corporate_uuid",
+          "name": "corporateUuid",
           "req": true,
           "type": "`$STRING`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "package_order_uuid",
+          "name": "packageOrderUuid",
           "req": true,
           "type": "`$STRING`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "partner_id",
+          "name": "partnerId",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 2
         },
         {
           "active": true,
-          "name": "partner_name",
+          "name": "partnerName",
           "req": false,
           "type": "`$STRING`",
           "index$": 3
         },
         {
           "active": true,
-          "name": "product_order_uuid",
+          "name": "productOrderUuid",
           "req": true,
           "type": "`$STRING`",
           "index$": 4
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 5
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 6
         },
         {
           "active": true,
-          "name": "template_name",
+          "name": "templateName",
           "req": true,
           "type": "`$STRING`",
           "index$": 7
@@ -3440,6 +3436,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "POST",
               "orig": "/registerTecsCompany",
               "parts": [
@@ -3464,126 +3461,126 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "additional_data",
+          "name": "additionalData",
           "req": false,
           "type": "`$OBJECT`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "corporate_uuid",
+          "name": "corporateUuid",
           "req": true,
           "type": "`$STRING`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "package_order_uuid",
+          "name": "packageOrderUuid",
           "req": true,
           "type": "`$STRING`",
           "index$": 2
         },
         {
           "active": true,
-          "name": "product_order_uuid",
+          "name": "productOrderUuid",
           "req": true,
           "type": "`$STRING`",
           "index$": 3
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 4
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 5
         },
         {
           "active": true,
-          "name": "tecs_web_secret_key",
+          "name": "tecsWebSecretKey",
           "req": false,
           "type": "`$STRING`",
           "index$": 6
         },
         {
           "active": true,
-          "name": "template_name",
+          "name": "templateName",
           "req": true,
           "type": "`$STRING`",
           "index$": 7
         },
         {
           "active": true,
-          "name": "terminal_country_code",
+          "name": "terminalCountryCode",
           "req": true,
           "type": "`$STRING`",
           "index$": 8
         },
         {
           "active": true,
-          "name": "terminal_id",
+          "name": "terminalId",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 9
         },
         {
           "active": true,
-          "name": "terminal_id_acq",
+          "name": "terminalIdAcq",
           "req": false,
           "type": "`$STRING`",
           "index$": 10
         },
         {
           "active": true,
-          "name": "terminal_language_code",
+          "name": "terminalLanguageCode",
           "req": true,
           "type": "`$STRING`",
           "index$": 11
         },
         {
           "active": true,
-          "name": "terminal_location",
+          "name": "terminalLocation",
           "req": true,
           "type": "`$STRING`",
           "index$": 12
         },
         {
           "active": true,
-          "name": "terminal_serial_number",
+          "name": "terminalSerialNumber",
           "req": false,
           "type": "`$STRING`",
           "index$": 13
         },
         {
           "active": true,
-          "name": "token_io_alia",
+          "name": "tokenIOAlias",
           "req": false,
           "type": "`$STRING`",
           "index$": 14
         },
         {
           "active": true,
-          "name": "token_io_iban",
+          "name": "tokenIOIban",
           "req": false,
           "type": "`$STRING`",
           "index$": 15
         },
         {
           "active": true,
-          "name": "token_io_member_id",
+          "name": "tokenIOMemberId",
           "req": false,
           "type": "`$STRING`",
           "index$": 16
         },
         {
           "active": true,
-          "name": "web_shop_url",
+          "name": "webShopUrl",
           "req": false,
           "type": "`$STRING`",
           "index$": 17
@@ -3598,6 +3595,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "POST",
               "orig": "/registerTerminal",
               "parts": [
@@ -3622,28 +3620,28 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "card_brand_report_data",
+          "name": "cardBrandReportData",
           "req": false,
           "type": "`$ARRAY`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "clearing_date_from",
+          "name": "clearingDateFrom",
           "req": true,
           "type": "`$STRING`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "clearing_date_to",
+          "name": "clearingDateTo",
           "req": true,
           "type": "`$STRING`",
           "index$": 2
         },
         {
           "active": true,
-          "name": "corporate_id",
+          "name": "corporateId",
           "req": true,
           "type": "`$STRING`",
           "index$": 3
@@ -3657,35 +3655,35 @@ class Config {
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 5
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 6
         },
         {
           "active": true,
-          "name": "sum_over_credit_tx",
+          "name": "sumOverCreditTx",
           "req": false,
           "type": "`$OBJECT`",
           "index$": 7
         },
         {
           "active": true,
-          "name": "sum_over_debit_tx",
+          "name": "sumOverDebitTx",
           "req": false,
           "type": "`$OBJECT`",
           "index$": 8
         },
         {
           "active": true,
-          "name": "terminal_id",
+          "name": "terminalId",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 9
@@ -3700,6 +3698,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "POST",
               "orig": "/public/digitalservices/reportData",
               "parts": [
@@ -3726,14 +3725,14 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "acquirer_name",
+          "name": "acquirerName",
           "req": false,
           "type": "`$STRING`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "acquirer_terminal_id",
+          "name": "acquirerTerminalId",
           "req": false,
           "type": "`$STRING`",
           "index$": 1
@@ -3747,14 +3746,14 @@ class Config {
         },
         {
           "active": true,
-          "name": "application_cryptogram",
+          "name": "applicationCryptogram",
           "req": false,
           "type": "`$STRING`",
           "index$": 3
         },
         {
           "active": true,
-          "name": "authorization_code",
+          "name": "authorizationCode",
           "req": false,
           "type": [
             "`$ONE`",
@@ -3767,84 +3766,84 @@ class Config {
         },
         {
           "active": true,
-          "name": "authorization_date",
+          "name": "authorizationDate",
           "req": false,
           "type": "`$STRING`",
           "index$": 5
         },
         {
           "active": true,
-          "name": "card_brand",
+          "name": "cardBrand",
           "req": false,
           "type": "`$STRING`",
           "index$": 6
         },
         {
           "active": true,
-          "name": "card_entry",
+          "name": "cardEntry",
           "req": false,
           "type": "`$STRING`",
           "index$": 7
         },
         {
           "active": true,
-          "name": "card_expiration",
+          "name": "cardExpiration",
           "req": false,
           "type": "`$STRING`",
           "index$": 8
         },
         {
           "active": true,
-          "name": "card_number",
+          "name": "cardNumber",
           "req": false,
           "type": "`$STRING`",
           "index$": 9
         },
         {
           "active": true,
-          "name": "clearing_amount",
+          "name": "clearingAmount",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 10
         },
         {
           "active": true,
-          "name": "clearing_batch_id",
+          "name": "clearingBatchId",
           "req": false,
           "type": "`$STRING`",
           "index$": 11
         },
         {
           "active": true,
-          "name": "clearing_currency",
+          "name": "clearingCurrency",
           "req": false,
           "type": "`$STRING`",
           "index$": 12
         },
         {
           "active": true,
-          "name": "clearing_date",
+          "name": "clearingDate",
           "req": false,
           "type": "`$STRING`",
           "index$": 13
         },
         {
           "active": true,
-          "name": "clearing_processed_date",
+          "name": "clearingProcessedDate",
           "req": false,
           "type": "`$STRING`",
           "index$": 14
         },
         {
           "active": true,
-          "name": "clearing_status",
+          "name": "clearingStatus",
           "req": false,
           "type": "`$STRING`",
           "index$": 15
         },
         {
           "active": true,
-          "name": "client_id",
+          "name": "clientId",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 16
@@ -3865,217 +3864,217 @@ class Config {
         },
         {
           "active": true,
-          "name": "ecr_data",
+          "name": "ecrData",
           "req": false,
           "type": "`$STRING`",
           "index$": 19
         },
         {
           "active": true,
-          "name": "emv_application_id",
+          "name": "emvApplicationId",
           "req": false,
           "type": "`$STRING`",
           "index$": 20
         },
         {
           "active": true,
-          "name": "emv_application_label",
+          "name": "emvApplicationLabel",
           "req": false,
           "type": "`$STRING`",
           "index$": 21
         },
         {
           "active": true,
-          "name": "merchant_name",
+          "name": "merchantName",
           "req": false,
           "type": "`$STRING`",
           "index$": 22
         },
         {
           "active": true,
-          "name": "merchant_number",
+          "name": "merchantNumber",
           "req": false,
           "type": "`$STRING`",
           "index$": 23
         },
         {
           "active": true,
-          "name": "original_client_id",
+          "name": "originalClientId",
           "req": false,
           "type": "`$STRING`",
           "index$": 24
         },
         {
           "active": true,
-          "name": "original_terminal_id",
+          "name": "originalTerminalId",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 25
         },
         {
           "active": true,
-          "name": "original_transaction_id",
+          "name": "originalTransactionId",
           "req": false,
           "type": "`$STRING`",
           "index$": 26
         },
         {
           "active": true,
-          "name": "payment_reason",
+          "name": "paymentReason",
           "req": false,
           "type": "`$STRING`",
           "index$": 27
         },
         {
           "active": true,
-          "name": "receipt_number",
+          "name": "receiptNumber",
           "req": false,
           "type": "`$STRING`",
           "index$": 28
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 29
         },
         {
           "active": true,
-          "name": "response_code_from_a",
+          "name": "responseCodeFromAS",
           "req": false,
           "type": "`$STRING`",
           "index$": 30
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 31
         },
         {
           "active": true,
-          "name": "retrieval_reference_number",
+          "name": "retrievalReferenceNumber",
           "req": false,
           "type": "`$STRING`",
           "index$": 32
         },
         {
           "active": true,
-          "name": "service_code",
+          "name": "serviceCode",
           "req": false,
           "type": "`$STRING`",
           "index$": 33
         },
         {
           "active": true,
-          "name": "settlement_status",
+          "name": "settlementStatus",
           "req": false,
           "type": "`$STRING`",
           "index$": 34
         },
         {
           "active": true,
-          "name": "source_id",
+          "name": "sourceId",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 35
         },
         {
           "active": true,
-          "name": "tecsengine_response_code",
+          "name": "tecsengineResponseCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 36
         },
         {
           "active": true,
-          "name": "tecsengine_response_text",
+          "name": "tecsengineResponseText",
           "req": false,
           "type": "`$STRING`",
           "index$": 37
         },
         {
           "active": true,
-          "name": "terminal_end_of_day_date",
+          "name": "terminalEndOfDayDate",
           "req": false,
           "type": "`$STRING`",
           "index$": 38
         },
         {
           "active": true,
-          "name": "terminal_id",
+          "name": "terminalId",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 39
         },
         {
           "active": true,
-          "name": "terminal_location",
+          "name": "terminalLocation",
           "req": false,
           "type": "`$STRING`",
           "index$": 40
         },
         {
           "active": true,
-          "name": "tip_amount",
+          "name": "tipAmount",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 41
         },
         {
           "active": true,
-          "name": "trace_number",
+          "name": "traceNumber",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 42
         },
         {
           "active": true,
-          "name": "transaction_clearing_date",
+          "name": "transactionClearingDate",
           "req": false,
           "type": "`$STRING`",
           "index$": 43
         },
         {
           "active": true,
-          "name": "transaction_date",
+          "name": "transactionDate",
           "req": false,
           "type": "`$STRING`",
           "index$": 44
         },
         {
           "active": true,
-          "name": "transaction_id",
+          "name": "transactionId",
           "req": false,
           "type": "`$STRING`",
           "index$": 45
         },
         {
           "active": true,
-          "name": "transaction_seq_number",
+          "name": "transactionSeqNumber",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 46
         },
         {
           "active": true,
-          "name": "transaction_server_date",
+          "name": "transactionServerDate",
           "req": false,
           "type": "`$STRING`",
           "index$": 47
         },
         {
           "active": true,
-          "name": "transaction_source",
+          "name": "transactionSource",
           "req": false,
           "type": "`$STRING`",
           "index$": 48
         },
         {
           "active": true,
-          "name": "transaction_type",
+          "name": "transactionType",
           "req": false,
           "type": "`$STRING`",
           "index$": 49
@@ -4090,6 +4089,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "POST",
               "orig": "/public/statusTransaction",
               "parts": [
@@ -4115,42 +4115,42 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "acq_tab_nexo",
+          "name": "acqTabNexo",
           "req": false,
           "type": "`$OBJECT`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "config_version",
+          "name": "configVersion",
           "req": false,
           "type": "`$STRING`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 2
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 3
         },
         {
           "active": true,
-          "name": "serial_number",
+          "name": "serialNumber",
           "req": true,
           "type": "`$STRING`",
           "index$": 4
         },
         {
           "active": true,
-          "name": "tid_sent",
+          "name": "tidSent",
           "req": false,
           "type": "`$STRING`",
           "index$": 5
@@ -4165,6 +4165,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "POST",
               "orig": "/storeTerminalParameters",
               "parts": [
@@ -4189,35 +4190,35 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "device_serial_number",
+          "name": "deviceSerialNumber",
           "req": true,
           "type": "`$ARRAY`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "duplicate_terminal_id",
+          "name": "duplicateTerminalIds",
           "req": false,
           "type": "`$ARRAY`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 2
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 3
         },
         {
           "active": true,
-          "name": "terminal",
+          "name": "terminals",
           "req": false,
           "type": "`$ARRAY`",
           "index$": 4
@@ -4232,6 +4233,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "POST",
               "orig": "/public/getTerminalId",
               "parts": [
@@ -4257,63 +4259,63 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "3_d_secure",
+          "name": "3DSecure",
           "req": false,
           "type": "`$STRING`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "authorization_code",
+          "name": "authorizationCode",
           "req": false,
           "type": "`$STRING`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "card_brand",
+          "name": "cardBrand",
           "req": false,
           "type": "`$STRING`",
           "index$": 2
         },
         {
           "active": true,
-          "name": "clearing_amount_from",
+          "name": "clearingAmountFrom",
           "req": false,
           "type": "`$STRING`",
           "index$": 3
         },
         {
           "active": true,
-          "name": "clearing_amount_to",
+          "name": "clearingAmountTo",
           "req": false,
           "type": "`$STRING`",
           "index$": 4
         },
         {
           "active": true,
-          "name": "clearing_currency",
+          "name": "clearingCurrency",
           "req": false,
           "type": "`$STRING`",
           "index$": 5
         },
         {
           "active": true,
-          "name": "clearing_status",
+          "name": "clearingStatus",
           "req": false,
           "type": "`$STRING`",
           "index$": 6
         },
         {
           "active": true,
-          "name": "corporate_uuid",
+          "name": "corporateUUID",
           "req": false,
           "type": "`$STRING`",
           "index$": 7
         },
         {
           "active": true,
-          "name": "order_by_transaction_date",
+          "name": "orderByTransactionDate",
           "req": false,
           "type": "`$STRING`",
           "index$": 8
@@ -4327,126 +4329,126 @@ class Config {
         },
         {
           "active": true,
-          "name": "payment_token_public_id",
+          "name": "paymentTokenPublicId",
           "req": false,
           "type": "`$STRING`",
           "index$": 10
         },
         {
           "active": true,
-          "name": "receipt_number",
+          "name": "receiptNumber",
           "req": false,
           "type": "`$STRING`",
           "index$": 11
         },
         {
           "active": true,
-          "name": "referenced_transaction_id",
+          "name": "referencedTransactionId",
           "req": false,
           "type": "`$STRING`",
           "index$": 12
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 13
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 14
         },
         {
           "active": true,
-          "name": "retrieval_reference_number",
+          "name": "retrievalReferenceNumber",
           "req": false,
           "type": "`$STRING`",
           "index$": 15
         },
         {
           "active": true,
-          "name": "source_id",
+          "name": "sourceId",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 16
         },
         {
           "active": true,
-          "name": "tecsengine_response_code_from",
+          "name": "tecsengineResponseCodeFrom",
           "req": false,
           "type": "`$STRING`",
           "index$": 17
         },
         {
           "active": true,
-          "name": "tecsengine_response_code_to",
+          "name": "tecsengineResponseCodeTo",
           "req": false,
           "type": "`$STRING`",
           "index$": 18
         },
         {
           "active": true,
-          "name": "terminal_id",
+          "name": "terminalId",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 19
         },
         {
           "active": true,
-          "name": "trace_number",
+          "name": "traceNumber",
           "req": false,
           "type": "`$STRING`",
           "index$": 20
         },
         {
           "active": true,
-          "name": "transaction_amount_from",
+          "name": "transactionAmountFrom",
           "req": false,
           "type": "`$STRING`",
           "index$": 21
         },
         {
           "active": true,
-          "name": "transaction_amount_to",
+          "name": "transactionAmountTo",
           "req": false,
           "type": "`$STRING`",
           "index$": 22
         },
         {
           "active": true,
-          "name": "transaction_date_from",
+          "name": "transactionDateFrom",
           "req": false,
           "type": "`$STRING`",
           "index$": 23
         },
         {
           "active": true,
-          "name": "transaction_date_to",
+          "name": "transactionDateTo",
           "req": false,
           "type": "`$STRING`",
           "index$": 24
         },
         {
           "active": true,
-          "name": "transaction_history",
+          "name": "transactionHistories",
           "req": false,
           "type": "`$ARRAY`",
           "index$": 25
         },
         {
           "active": true,
-          "name": "transaction_id",
+          "name": "transactionId",
           "req": false,
           "type": "`$STRING`",
           "index$": 26
         },
         {
           "active": true,
-          "name": "transaction_type",
+          "name": "transactionType",
           "req": false,
           "type": "`$STRING`",
           "index$": 27
@@ -4468,6 +4470,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "POST",
               "orig": "/public/mcom/transactionHistory",
               "parts": [
@@ -4485,6 +4488,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "POST",
               "orig": "/public/transactionHistory",
               "parts": [
@@ -4517,21 +4521,21 @@ class Config {
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 2
         },
         {
           "active": true,
-          "name": "transaction_date_from",
+          "name": "transactionDateFrom",
           "op": {
             "create": {
               "req": true,
@@ -4544,7 +4548,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "transaction_date_to",
+          "name": "transactionDateTo",
           "op": {
             "create": {
               "req": true,
@@ -4557,7 +4561,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "transactions_count",
+          "name": "transactionsCount",
           "req": false,
           "type": "`$ARRAY`",
           "index$": 5
@@ -4572,6 +4576,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "POST",
               "orig": "/public/countAuthorisedTransactions",
               "parts": [
@@ -4588,6 +4593,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "POST",
               "orig": "/public/countNotAuthorisedTransactions",
               "parts": [
@@ -4620,21 +4626,21 @@ class Config {
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 2
         },
         {
           "active": true,
-          "name": "transaction_date_from",
+          "name": "transactionDateFrom",
           "op": {
             "create": {
               "req": true,
@@ -4647,7 +4653,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "transaction_date_to",
+          "name": "transactionDateTo",
           "op": {
             "create": {
               "req": true,
@@ -4660,7 +4666,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "transactions_count",
+          "name": "transactionsCount",
           "req": false,
           "type": "`$ARRAY`",
           "index$": 5
@@ -4675,6 +4681,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "POST",
               "orig": "/public/countTransactionsByCardBrand",
               "parts": [
@@ -4707,21 +4714,21 @@ class Config {
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 2
         },
         {
           "active": true,
-          "name": "transaction_date_from",
+          "name": "transactionDateFrom",
           "op": {
             "create": {
               "req": true,
@@ -4734,7 +4741,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "transaction_date_to",
+          "name": "transactionDateTo",
           "op": {
             "create": {
               "req": true,
@@ -4747,7 +4754,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "turnover",
+          "name": "turnovers",
           "req": false,
           "type": "`$ARRAY`",
           "index$": 5
@@ -4762,6 +4769,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "POST",
               "orig": "/public/transactionTurnover",
               "parts": [
@@ -4794,7 +4802,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "corporate_uuid",
+          "name": "corporateUuid",
           "req": true,
           "type": "`$STRING`",
           "index$": 1
@@ -4808,7 +4816,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "merchant_category_code",
+          "name": "merchantCategoryCode",
           "req": false,
           "type": "`$STRING`",
           "index$": 3
@@ -4822,14 +4830,14 @@ class Config {
         },
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 5
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 6
@@ -4850,7 +4858,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "vu_nummer",
+          "name": "vuNummer",
           "req": false,
           "type": "`$STRING`",
           "index$": 9
@@ -4872,6 +4880,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "POST",
               "orig": "/public/updateMerchant",
               "parts": [
@@ -4897,28 +4906,28 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "response_code",
+          "name": "responseCode",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "response_message",
+          "name": "responseMessage",
           "req": false,
           "type": "`$STRING`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "template_name",
+          "name": "templateName",
           "req": true,
           "type": "`$STRING`",
           "index$": 2
         },
         {
           "active": true,
-          "name": "template_xml",
+          "name": "templateXml",
           "req": true,
           "type": "`$STRING`",
           "index$": 3
@@ -4933,6 +4942,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "POST",
               "orig": "/public/updateTemplateXml",
               "parts": [
@@ -4958,14 +4968,14 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "app_name",
+          "name": "appName",
           "req": false,
           "type": "`$STRING`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "build_date",
+          "name": "buildDate",
           "req": false,
           "type": "`$STRING`",
           "index$": 1
@@ -4987,6 +4997,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/public/version",
               "parts": [

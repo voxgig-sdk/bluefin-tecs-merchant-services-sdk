@@ -14,6 +14,8 @@ typedef struct payment_manual_entity {
   voxgig_value* data;     // Map
   voxgig_value* mtch;     // Map
   Context* entctx;
+  // Set once a successful `remove` resolves on this instance.
+  bool deleted;
 } payment_manual_entity;
 
 typedef void (*payment_manual_postdone_fn)(payment_manual_entity* self, Context* ctx);
@@ -24,11 +26,14 @@ static const char* payment_manual_get_name(Entity* e);
 static Entity* payment_manual_make(Entity* e);
 static voxgig_value* payment_manual_data(Entity* e, voxgig_value* args);
 static voxgig_value* payment_manual_matchv(Entity* e, voxgig_value* args);
-static voxgig_value* payment_manual_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
-static voxgig_value* payment_manual_list(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
-static voxgig_value* payment_manual_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
-static voxgig_value* payment_manual_update(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
-static voxgig_value* payment_manual_remove(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+// Ops resolve to the ENTITY (`list` to a NULL-terminated array of them).
+static Entity* payment_manual_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static Entity** payment_manual_list(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static Entity* payment_manual_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
+static Entity* payment_manual_update(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
+static Entity* payment_manual_remove(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static void payment_manual_mark_deleted(Entity* e);
+static bool payment_manual_deleted(Entity* e);
 
 static Context* payment_manual_ent_ctx(payment_manual_entity* self) {
   return self->entctx;
@@ -236,13 +241,13 @@ static voxgig_value* payment_manual_matchv(Entity* e, voxgig_value* args) {
   return voxgig_clone(self->mtch);
 }
 
-static voxgig_value* payment_manual_load(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* payment_manual_load(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("load", "payment_manual");
   return NULL;
 }
 
-static voxgig_value* payment_manual_list(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity** payment_manual_list(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("list", "payment_manual");
   return NULL;
@@ -260,7 +265,7 @@ static void payment_manual_create_postdone(payment_manual_entity* self, Context*
   }
 }
 
-static voxgig_value* payment_manual_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err) {
+static Entity* payment_manual_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err) {
   payment_manual_entity* self = (payment_manual_entity*)e;
   CtxSpec cs;
   memset(&cs, 0, sizeof(cs));
@@ -270,20 +275,38 @@ static voxgig_value* payment_manual_create(Entity* e, voxgig_value* reqdata, vox
   cs.data = self->data;
   cs.reqdata = reqdata;
   Context* ctx = make_context_util(cs, payment_manual_ent_ctx(self));
-  return payment_manual_run_op(self, ctx, payment_manual_create_postdone, err);
+  payment_manual_run_op(self, ctx, payment_manual_create_postdone, err);
+  if (*err) return NULL;
+
+  // The operation resolves to THIS entity: run_op has just absorbed the
+  // result into it, and the caller reaches the record through vt->data.
+  // See AGENTS.md "Entity operations return ENTITIES".
+
+  return e;
 }
 
 
-static voxgig_value* payment_manual_update(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* payment_manual_update(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("update", "payment_manual");
   return NULL;
 }
 
-static voxgig_value* payment_manual_remove(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* payment_manual_remove(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("remove", "payment_manual");
   return NULL;
+}
+
+// `remove` resolves to the entity, marked. The instance KEEPS the data it
+// held - a caller can still read what was deleted - but it is no longer a
+// live record.
+static void payment_manual_mark_deleted(Entity* e) {
+  ((payment_manual_entity*)e)->deleted = true;
+}
+
+static bool payment_manual_deleted(Entity* e) {
+  return ((payment_manual_entity*)e)->deleted;
 }
 
 static const EntityVT payment_manual_VT = {
@@ -291,6 +314,8 @@ static const EntityVT payment_manual_VT = {
   payment_manual_make,
   payment_manual_data,
   payment_manual_matchv,
+  payment_manual_mark_deleted,
+  payment_manual_deleted,
   payment_manual_load,
   payment_manual_list,
   payment_manual_create,

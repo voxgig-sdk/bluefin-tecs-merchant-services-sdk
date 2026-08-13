@@ -2,30 +2,30 @@
   "existing": {
     "list_terminal": {
       "LIST_TERMINAL00": {
-        "corporate_uuid": [],
+        "corporateUuid": [],
         "filter": {},
         "pagination": {},
-        "response_code": "s3f",
-        "response_message": "s40",
-        "terminal": [],
+        "responseCode": "s3f",
+        "responseMessage": "s40",
+        "terminals": [],
         "id": "LIST_TERMINAL00"
       },
       "LIST_TERMINAL01": {
-        "corporate_uuid": [],
+        "corporateUuid": [],
         "filter": {},
         "pagination": {},
-        "response_code": "s7b",
-        "response_message": "s7c",
-        "terminal": [],
+        "responseCode": "s7b",
+        "responseMessage": "s7c",
+        "terminals": [],
         "id": "LIST_TERMINAL01"
       },
       "LIST_TERMINAL02": {
-        "corporate_uuid": [],
+        "corporateUuid": [],
         "filter": {},
         "pagination": {},
-        "response_code": "sb7",
-        "response_message": "sb8",
-        "terminal": [],
+        "responseCode": "sb7",
+        "responseMessage": "sb8",
+        "terminals": [],
         "id": "LIST_TERMINAL02"
       }
     }
@@ -33,12 +33,12 @@
   "new": {
     "list_terminal": {
       "list_terminal_ref01": {
-        "corporate_uuid": [],
+        "corporateUuid": [],
         "filter": {},
         "pagination": {},
-        "response_code": "sf3",
-        "response_message": "sf4",
-        "terminal": []
+        "responseCode": "sf3",
+        "responseMessage": "sf4",
+        "terminals": []
       }
     }
   }

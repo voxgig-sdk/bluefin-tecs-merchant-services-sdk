@@ -35,7 +35,7 @@ object EcomParameterEntityTest {
       var ecomParameterRef01Data = Helpers.toMapAny(Struct.getprop(
           Struct.getpath(entityData, "new.ecom_parameter"), "ecom_parameter_ref01"))
       val ecomParameterRef01DataResult = ecomParameterRef01Ent.create(ecomParameterRef01Data, null)
-      ecomParameterRef01Data = Helpers.toMapAny(ecomParameterRef01DataResult)
+      ecomParameterRef01Data = Helpers.toMapAny(ecomParameterRef01DataResult match { case e: SdkEntity => e.data(); case o => o })
       rep.check("ecom_parameter.create.map", ecomParameterRef01Data != null, "expected create result to be a map")
     }
   }

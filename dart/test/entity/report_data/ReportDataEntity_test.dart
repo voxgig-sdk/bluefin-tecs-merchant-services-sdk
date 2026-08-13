@@ -47,7 +47,7 @@ void tests() {
       final report_data_ref01_ent = client.ReportData();
       dynamic report_data_ref01_data = setup['data']['new']['report_data']['report_data_ref01'];
 
-      report_data_ref01_data = await report_data_ref01_ent.create(report_data_ref01_data);
+      report_data_ref01_data = (await report_data_ref01_ent.create(report_data_ref01_data)).data();
       ok(null != report_data_ref01_data);
 
 

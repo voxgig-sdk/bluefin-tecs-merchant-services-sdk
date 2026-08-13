@@ -6,22 +6,22 @@ main: kit: entity: report_data: {
 
   fields: [
     {
-      name: "card_brand_report_data"
+      name: "cardBrandReportData"
       req: false
       type: "`$ARRAY`"
     }
     {
-      name: "clearing_date_from"
+      name: "clearingDateFrom"
       req: true
       type: "`$STRING`"
     }
     {
-      name: "clearing_date_to"
+      name: "clearingDateTo"
       req: true
       type: "`$STRING`"
     }
     {
-      name: "corporate_id"
+      name: "corporateId"
       req: true
       type: "`$STRING`"
     }
@@ -31,27 +31,27 @@ main: kit: entity: report_data: {
       type: "`$STRING`"
     }
     {
-      name: "response_code"
+      name: "responseCode"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "response_message"
+      name: "responseMessage"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "sum_over_credit_tx"
+      name: "sumOverCreditTx"
       req: false
       type: "`$OBJECT`"
     }
     {
-      name: "sum_over_debit_tx"
+      name: "sumOverDebitTx"
       req: false
       type: "`$OBJECT`"
     }
     {
-      name: "terminal_id"
+      name: "terminalId"
       req: false
       type: "`$INTEGER`"
     }

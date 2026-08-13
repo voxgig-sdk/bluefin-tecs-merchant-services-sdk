@@ -14,6 +14,8 @@ typedef struct reactivate_terminal_entity {
   voxgig_value* data;     // Map
   voxgig_value* mtch;     // Map
   Context* entctx;
+  // Set once a successful `remove` resolves on this instance.
+  bool deleted;
 } reactivate_terminal_entity;
 
 typedef void (*reactivate_terminal_postdone_fn)(reactivate_terminal_entity* self, Context* ctx);
@@ -24,11 +26,14 @@ static const char* reactivate_terminal_get_name(Entity* e);
 static Entity* reactivate_terminal_make(Entity* e);
 static voxgig_value* reactivate_terminal_data(Entity* e, voxgig_value* args);
 static voxgig_value* reactivate_terminal_matchv(Entity* e, voxgig_value* args);
-static voxgig_value* reactivate_terminal_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
-static voxgig_value* reactivate_terminal_list(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
-static voxgig_value* reactivate_terminal_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
-static voxgig_value* reactivate_terminal_update(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
-static voxgig_value* reactivate_terminal_remove(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+// Ops resolve to the ENTITY (`list` to a NULL-terminated array of them).
+static Entity* reactivate_terminal_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static Entity** reactivate_terminal_list(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static Entity* reactivate_terminal_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
+static Entity* reactivate_terminal_update(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
+static Entity* reactivate_terminal_remove(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static void reactivate_terminal_mark_deleted(Entity* e);
+static bool reactivate_terminal_deleted(Entity* e);
 
 static Context* reactivate_terminal_ent_ctx(reactivate_terminal_entity* self) {
   return self->entctx;
@@ -236,13 +241,13 @@ static voxgig_value* reactivate_terminal_matchv(Entity* e, voxgig_value* args) {
   return voxgig_clone(self->mtch);
 }
 
-static voxgig_value* reactivate_terminal_load(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* reactivate_terminal_load(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("load", "reactivate_terminal");
   return NULL;
 }
 
-static voxgig_value* reactivate_terminal_list(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity** reactivate_terminal_list(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("list", "reactivate_terminal");
   return NULL;
@@ -260,7 +265,7 @@ static void reactivate_terminal_create_postdone(reactivate_terminal_entity* self
   }
 }
 
-static voxgig_value* reactivate_terminal_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err) {
+static Entity* reactivate_terminal_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err) {
   reactivate_terminal_entity* self = (reactivate_terminal_entity*)e;
   CtxSpec cs;
   memset(&cs, 0, sizeof(cs));
@@ -270,20 +275,38 @@ static voxgig_value* reactivate_terminal_create(Entity* e, voxgig_value* reqdata
   cs.data = self->data;
   cs.reqdata = reqdata;
   Context* ctx = make_context_util(cs, reactivate_terminal_ent_ctx(self));
-  return reactivate_terminal_run_op(self, ctx, reactivate_terminal_create_postdone, err);
+  reactivate_terminal_run_op(self, ctx, reactivate_terminal_create_postdone, err);
+  if (*err) return NULL;
+
+  // The operation resolves to THIS entity: run_op has just absorbed the
+  // result into it, and the caller reaches the record through vt->data.
+  // See AGENTS.md "Entity operations return ENTITIES".
+
+  return e;
 }
 
 
-static voxgig_value* reactivate_terminal_update(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* reactivate_terminal_update(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("update", "reactivate_terminal");
   return NULL;
 }
 
-static voxgig_value* reactivate_terminal_remove(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* reactivate_terminal_remove(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("remove", "reactivate_terminal");
   return NULL;
+}
+
+// `remove` resolves to the entity, marked. The instance KEEPS the data it
+// held - a caller can still read what was deleted - but it is no longer a
+// live record.
+static void reactivate_terminal_mark_deleted(Entity* e) {
+  ((reactivate_terminal_entity*)e)->deleted = true;
+}
+
+static bool reactivate_terminal_deleted(Entity* e) {
+  return ((reactivate_terminal_entity*)e)->deleted;
 }
 
 static const EntityVT reactivate_terminal_VT = {
@@ -291,6 +314,8 @@ static const EntityVT reactivate_terminal_VT = {
   reactivate_terminal_make,
   reactivate_terminal_data,
   reactivate_terminal_matchv,
+  reactivate_terminal_mark_deleted,
+  reactivate_terminal_deleted,
   reactivate_terminal_load,
   reactivate_terminal_list,
   reactivate_terminal_create,

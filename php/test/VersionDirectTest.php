@@ -65,16 +65,16 @@ function version_direct_setup($mockres)
     $calls = new \ArrayObject();
 
     $env = Runner::env_override([
-        "BLUEFINTECSMERCHANTSERVICES_TEST_VERSION_ENTID" => [],
-        "BLUEFINTECSMERCHANTSERVICES_TEST_LIVE" => "FALSE",
-        "BLUEFINTECSMERCHANTSERVICES_APIKEY" => "NONE",
+        "BLUEFIN_TECS_MERCHANT_SERVICES_TEST_VERSION_ENTID" => [],
+        "BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE" => "FALSE",
+        "BLUEFIN_TECS_MERCHANT_SERVICES_APIKEY" => "NONE",
     ]);
 
-    $live = $env["BLUEFINTECSMERCHANTSERVICES_TEST_LIVE"] === "TRUE";
+    $live = $env["BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [
-            "apikey" => $env["BLUEFINTECSMERCHANTSERVICES_APIKEY"],
+            "apikey" => $env["BLUEFIN_TECS_MERCHANT_SERVICES_APIKEY"],
         ];
         $client = new BluefinTecsMerchantServicesSDK($merged_opts);
         return [

@@ -2,32 +2,32 @@
   "existing": {
     "mandator_clearing_export_download": {
       "MANDATOR_CLEARING_EXPORT_DOWNLOAD00": {
-        "clearing_date_from": "s46",
-        "clearing_date_to": "s47",
-        "file_id": "FILE01",
-        "filename_template": "s49",
-        "response_code": "s4a",
-        "response_message": "s4b",
+        "clearingDateFrom": "s46",
+        "clearingDateTo": "s47",
+        "fileId": "s48",
+        "filenameTemplate": "s49",
+        "responseCode": "s4a",
+        "responseMessage": "s4b",
         "status": "s4c",
         "id": "MANDATOR_CLEARING_EXPORT_DOWNLOAD00"
       },
       "MANDATOR_CLEARING_EXPORT_DOWNLOAD01": {
-        "clearing_date_from": "s8c",
-        "clearing_date_to": "s8d",
-        "file_id": "FILE01",
-        "filename_template": "s8f",
-        "response_code": "s90",
-        "response_message": "s91",
+        "clearingDateFrom": "s8c",
+        "clearingDateTo": "s8d",
+        "fileId": "s8e",
+        "filenameTemplate": "s8f",
+        "responseCode": "s90",
+        "responseMessage": "s91",
         "status": "s92",
         "id": "MANDATOR_CLEARING_EXPORT_DOWNLOAD01"
       },
       "MANDATOR_CLEARING_EXPORT_DOWNLOAD02": {
-        "clearing_date_from": "sd2",
-        "clearing_date_to": "sd3",
-        "file_id": "FILE01",
-        "filename_template": "sd5",
-        "response_code": "sd6",
-        "response_message": "sd7",
+        "clearingDateFrom": "sd2",
+        "clearingDateTo": "sd3",
+        "fileId": "sd4",
+        "filenameTemplate": "sd5",
+        "responseCode": "sd6",
+        "responseMessage": "sd7",
         "status": "sd8",
         "id": "MANDATOR_CLEARING_EXPORT_DOWNLOAD02"
       }
@@ -36,12 +36,12 @@
   "new": {
     "mandator_clearing_export_download": {
       "mandator_clearing_export_download_ref01": {
-        "clearing_date_from": "s118",
-        "clearing_date_to": "s119",
-        "file_id": "FILE01",
-        "filename_template": "s11b",
-        "response_code": "s11c",
-        "response_message": "s11d",
+        "clearingDateFrom": "s118",
+        "clearingDateTo": "s119",
+        "fileId": "s11a",
+        "filenameTemplate": "s11b",
+        "responseCode": "s11c",
+        "responseMessage": "s11d",
         "status": "s11e"
       }
     }

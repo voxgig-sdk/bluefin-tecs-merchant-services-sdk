@@ -35,8 +35,8 @@ client = BluefinTecsMerchantServicesSDK.new({
 ### 4. Create, update, and remove
 
 ```ruby
-# create returns the bare created CancelTransaction record.
-created = client.CancelTransaction.create({ "client_id" => 1, "currency" => "example_currency", "receipt_number" => "example_receipt_number", "terminal_id" => 1 })
+# create returns the ENTITY — call data_get for the created CancelTransaction record.
+created = client.CancelTransaction.create({ "clientId" => 1, "currency" => "example_currency", "receiptNumber" => "example_receiptNumber", "terminalId" => 1 })
 
 ```
 
@@ -115,7 +115,8 @@ Create a mock client for unit testing — no server required:
 ```ruby
 client = BluefinTecsMerchantServicesSDK.test
 
-# Entity ops return the bare mock record (raises on error).
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
 digitalservicesapi = client.DigitalServicesApi.load()
 puts digitalservicesapi
 ```
@@ -273,46 +274,46 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `acquirer_id` |  |
-| `acquirer_name` |  |
-| `actual_bonus_point` |  |
+| `acquirerId` |  |
+| `acquirerName` |  |
+| `actualBonusPoints` |  |
 | `amount` |  |
-| `authorization_code` |  |
-| `balance_amount` |  |
-| `card_brand` |  |
-| `card_number` |  |
-| `client_id` |  |
+| `authorizationCode` |  |
+| `balanceAmount` |  |
+| `cardBrand` |  |
+| `cardNumber` |  |
+| `clientId` |  |
 | `currency` |  |
 | `cvc` |  |
-| `ec_data` |  |
-| `ecr_data` |  |
-| `emv_data` |  |
-| `exchange_fee` |  |
-| `exchange_rate` |  |
-| `language_code` |  |
-| `merchant_address` |  |
-| `merchant_name` |  |
-| `merchant_number` |  |
-| `message_type` |  |
-| `original_trace_number` |  |
-| `original_transaction_id` |  |
+| `ecData` |  |
+| `ecrData` |  |
+| `emvData` |  |
+| `exchangeFee` |  |
+| `exchangeRate` |  |
+| `languageCode` |  |
+| `merchantAddress` |  |
+| `merchantName` |  |
+| `merchantNumber` |  |
+| `messageType` |  |
+| `originalTraceNumber` |  |
+| `originalTransactionId` |  |
 | `password` |  |
-| `payment_reason` |  |
-| `receipt_footer` |  |
-| `receipt_header` |  |
-| `receipt_layout` |  |
-| `receipt_number` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `serial_number` |  |
+| `paymentReason` |  |
+| `receiptFooter` |  |
+| `receiptHeader` |  |
+| `receiptLayout` |  |
+| `receiptNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `serialNumber` |  |
 | `svc` |  |
-| `terminal_id` |  |
-| `terminal_location` |  |
-| `trace_number` |  |
-| `transaction_date` |  |
-| `transaction_id` |  |
-| `tx_type` |  |
-| `user_data` |  |
+| `terminalId` |  |
+| `terminalLocation` |  |
+| `traceNumber` |  |
+| `transactionDate` |  |
+| `transactionId` |  |
+| `txType` |  |
+| `userData` |  |
 
 Operations: Create.
 
@@ -322,9 +323,9 @@ API path: `/public/cancelTransaction`
 
 | Field | Description |
 | --- | --- |
-| `card_no` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `cardNo` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -334,13 +335,13 @@ API path: `/checkCardBlackListed`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_id` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `template_name` |  |
-| `template_type` |  |
-| `template_xml` |  |
-| `terminal_type` |  |
+| `acquirerId` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `templateName` |  |
+| `templateType` |  |
+| `templateXml` |  |
+| `terminalType` |  |
 
 Operations: Create.
 
@@ -350,13 +351,13 @@ API path: `/createProduct`
 
 | Field | Description |
 | --- | --- |
-| `corporate_uuid` |  |
-| `deactivation_reason` |  |
-| `package_order_uuid` |  |
-| `product_order_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
+| `corporateUuid` |  |
+| `deactivationReason` |  |
+| `packageOrderUuid` |  |
+| `productOrderUuid` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
 
 Operations: Create.
 
@@ -366,16 +367,16 @@ API path: `/deactivateTerminal`
 
 | Field | Description |
 | --- | --- |
-| `clearing_date_from` |  |
-| `clearing_date_to` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `tx_count` |  |
-| `tx_id_end` |  |
-| `tx_id_start` |  |
-| `tx_seq_no_end` |  |
-| `tx_seq_no_start` |  |
-| `tx_total` |  |
+| `clearingDateFrom` |  |
+| `clearingDateTo` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `txCount` |  |
+| `txIdEnd` |  |
+| `txIdStart` |  |
+| `txSeqNoEnd` |  |
+| `txSeqNoStart` |  |
+| `txTotal` |  |
 
 Operations: Create, Load.
 
@@ -385,12 +386,12 @@ API path: `/public/digitalservices/mandatorClearingExportDownload/{fileId}`
 
 | Field | Description |
 | --- | --- |
-| `ecom_data` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
-| `transaction_id` |  |
-| `transaction_type` |  |
+| `ecomData` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
+| `transactionId` |  |
+| `transactionType` |  |
 
 Operations: Create.
 
@@ -400,11 +401,11 @@ API path: `/public/getEcData`
 
 | Field | Description |
 | --- | --- |
-| `ecom_pass` |  |
-| `ecom_skey` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
+| `ecomPass` |  |
+| `ecomSkey` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
 
 Operations: Create.
 
@@ -414,12 +415,12 @@ API path: `/public/getEcomParameters`
 
 | Field | Description |
 | --- | --- |
-| `ecr_data` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
-| `transaction_id` |  |
-| `transaction_type` |  |
+| `ecrData` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
+| `transactionId` |  |
+| `transactionType` |  |
 
 Operations: Create.
 
@@ -429,12 +430,12 @@ API path: `/public/getEcrData`
 
 | Field | Description |
 | --- | --- |
-| `emv_data` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
-| `transaction_id` |  |
-| `transaction_type` |  |
+| `emvData` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
+| `transactionId` |  |
+| `transactionType` |  |
 
 Operations: Create.
 
@@ -444,20 +445,20 @@ API path: `/public/getEmvData`
 
 | Field | Description |
 | --- | --- |
-| `account_no` |  |
-| `additional_data` |  |
-| `corporate_uuid` |  |
+| `accountNo` |  |
+| `additionalData` |  |
+| `corporateUuid` |  |
 | `currency` |  |
-| `merchant_category_code` |  |
-| `package_order_uuid` |  |
-| `product_order_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `sorting_code` |  |
-| `template_name` |  |
-| `terminal_id` |  |
-| `terminal_id_acq` |  |
-| `vu_nummer` |  |
+| `merchantCategoryCode` |  |
+| `packageOrderUuid` |  |
+| `productOrderUuid` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `sortingCode` |  |
+| `templateName` |  |
+| `terminalIdAcq` |  |
+| `terminalIds` |  |
+| `vuNummer` |  |
 
 Operations: Create.
 
@@ -467,9 +468,9 @@ API path: `/enableAcquiring`
 
 | Field | Description |
 | --- | --- |
-| `merchant_contract_number` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `merchantContractNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -479,9 +480,9 @@ API path: `/getMerchantContractNumber`
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
-| `template_name` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `templateName` |  |
 
 Operations: Create.
 
@@ -491,9 +492,9 @@ API path: `/public/getTemplateXml`
 
 | Field | Description |
 | --- | --- |
-| `mandator_name` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `mandatorName` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -503,9 +504,9 @@ API path: `/introduceMandator`
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_template_description` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalTemplateDescription` |  |
 
 Operations: Create.
 
@@ -516,15 +517,15 @@ API path: `/introducePackage`
 | Field | Description |
 | --- | --- |
 | `hwserialno` |  |
-| `ka_date_time_from` |  |
-| `ka_date_time_to` |  |
-| `keep_alive_data` |  |
+| `kaDateTimeFrom` |  |
+| `kaDateTimeTo` |  |
+| `keepAliveData` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_date_time_from` |  |
-| `terminal_date_time_to` |  |
-| `terminal_id` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalDateTimeFrom` |  |
+| `terminalDateTimeTo` |  |
+| `terminalId` |  |
 
 Operations: Create.
 
@@ -534,12 +535,12 @@ API path: `/public/keepalive`
 
 | Field | Description |
 | --- | --- |
-| `corporate_uuid` |  |
+| `corporateUuid` |  |
 | `filter` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminals` |  |
 
 Operations: Create.
 
@@ -549,12 +550,12 @@ API path: `/public/listTerminals`
 
 | Field | Description |
 | --- | --- |
-| `clearing_date_from` |  |
-| `clearing_date_to` |  |
+| `clearingDateFrom` |  |
+| `clearingDateTo` |  |
 | `pagination` |  |
-| `record` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `records` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -564,12 +565,12 @@ API path: `/public/digitalservices/mandatorClearingExport`
 
 | Field | Description |
 | --- | --- |
-| `clearing_date_from` |  |
-| `clearing_date_to` |  |
-| `file_id` |  |
-| `filename_template` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `clearingDateFrom` |  |
+| `clearingDateTo` |  |
+| `fileId` |  |
+| `filenameTemplate` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `status` |  |
 
 Operations: Create, Load.
@@ -580,11 +581,11 @@ API path: `/public/digitalservices/mandatorClearingExportDownload`
 
 | Field | Description |
 | --- | --- |
-| `clearing_date_from` |  |
-| `clearing_date_to` |  |
-| `record` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `clearingDateFrom` |  |
+| `clearingDateTo` |  |
+| `records` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -594,30 +595,30 @@ API path: `/public/digitalservices/mandatorClearingExportSummary`
 
 | Field | Description |
 | --- | --- |
-| `3_d_secure` |  |
-| `authorization_code` |  |
-| `card_brand` |  |
-| `clearing_amount_from` |  |
-| `clearing_amount_to` |  |
-| `clearing_currency` |  |
-| `clearing_status` |  |
-| `corporate_uuid` |  |
-| `order_by_transaction_date` |  |
+| `3DSecure` |  |
+| `authorizationCode` |  |
+| `cardBrand` |  |
+| `clearingAmountFrom` |  |
+| `clearingAmountTo` |  |
+| `clearingCurrency` |  |
+| `clearingStatus` |  |
+| `corporateUUID` |  |
+| `orderByTransactionDate` |  |
 | `pagination` |  |
-| `receipt_number` |  |
-| `referenced_transaction_id` |  |
-| `retrieval_reference_number` |  |
-| `source_id` |  |
-| `tecsengine_response_code_from` |  |
-| `tecsengine_response_code_to` |  |
-| `terminal_id` |  |
-| `trace_number` |  |
-| `transaction_amount_from` |  |
-| `transaction_amount_to` |  |
-| `transaction_date_from` |  |
-| `transaction_date_to` |  |
-| `transaction_id` |  |
-| `transaction_type` |  |
+| `receiptNumber` |  |
+| `referencedTransactionId` |  |
+| `retrievalReferenceNumber` |  |
+| `sourceId` |  |
+| `tecsengineResponseCodeFrom` |  |
+| `tecsengineResponseCodeTo` |  |
+| `terminalId` |  |
+| `traceNumber` |  |
+| `transactionAmountFrom` |  |
+| `transactionAmountTo` |  |
+| `transactionDateFrom` |  |
+| `transactionDateTo` |  |
+| `transactionId` |  |
+| `transactionType` |  |
 | `wallet` |  |
 
 Operations: Create.
@@ -628,11 +629,11 @@ API path: `/public/transactionHistoryCsv`
 
 | Field | Description |
 | --- | --- |
-| `productorderuuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `target_packageorderuuid` |  |
-| `target_productorderuuid` |  |
+| `productorderuuids` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `targetPackageorderuuid` |  |
+| `targetProductorderuuid` |  |
 
 Operations: Create.
 
@@ -642,22 +643,22 @@ API path: `/moveTid`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_name` |  |
+| `acquirerName` |  |
 | `amount` |  |
-| `authorization_number` |  |
-| `card_number` |  |
-| `card_type` |  |
+| `authorizationNumber` |  |
+| `cardNumber` |  |
+| `cardType` |  |
 | `currency` |  |
 | `cvc` |  |
-| `date_time_tx` |  |
-| `exp_date` |  |
-| `merchant_id` |  |
-| `original_transaction_id` |  |
+| `dateTimeTx` |  |
+| `expDate` |  |
+| `merchantId` |  |
+| `originalTransactionId` |  |
 | `password` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
-| `transaction_id` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
+| `transactionId` |  |
 | `txtype` |  |
 
 Operations: Create.
@@ -668,21 +669,17 @@ API path: `/public/paymentManual`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_name` |  |
 | `amount` |  |
-| `authorization_number` |  |
-| `card_type` |  |
 | `currency` |  |
-| `date_time_tx` |  |
-| `device_payload` |  |
-| `merchant_id` |  |
-| `original_transaction_id` |  |
+| `device` |  |
+| `devicePayload` |  |
+| `expDate` |  |
+| `mode` |  |
+| `panMasked` |  |
 | `password` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `sred` |  |
-| `terminal_id` |  |
-| `transaction_id` |  |
+| `serial` |  |
+| `serviceCode` |  |
+| `terminalId` |  |
 | `txtype` |  |
 
 Operations: Create.
@@ -693,48 +690,48 @@ API path: `/public/paymentSred`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_id` |  |
-| `acquirer_name` |  |
-| `actual_bonus_point` |  |
+| `acquirerId` |  |
+| `acquirerName` |  |
+| `actualBonusPoints` |  |
 | `amount` |  |
-| `authorization_code` |  |
-| `balance_amount` |  |
-| `card_brand` |  |
-| `card_number` |  |
-| `card_number_reference` |  |
-| `client_id` |  |
+| `authorizationCode` |  |
+| `balanceAmount` |  |
+| `cardBrand` |  |
+| `cardNumber` |  |
+| `cardNumberReference` |  |
+| `clientId` |  |
 | `currency` |  |
 | `cvc` |  |
-| `ec_data` |  |
-| `ecr_data` |  |
-| `emv_data` |  |
-| `exchange_fee` |  |
-| `exchange_rate` |  |
-| `language_code` |  |
-| `merchant_address` |  |
-| `merchant_name` |  |
-| `merchant_number` |  |
-| `message_type` |  |
-| `original_trace_number` |  |
-| `original_transaction_id` |  |
+| `ecData` |  |
+| `ecrData` |  |
+| `emvData` |  |
+| `exchangeFee` |  |
+| `exchangeRate` |  |
+| `languageCode` |  |
+| `merchantAddress` |  |
+| `merchantName` |  |
+| `merchantNumber` |  |
+| `messageType` |  |
+| `originalTraceNumber` |  |
+| `originalTransactionId` |  |
 | `password` |  |
-| `payment_reason` |  |
-| `receipt_footer` |  |
-| `receipt_header` |  |
-| `receipt_layout` |  |
-| `receipt_number` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `serial_number` |  |
+| `paymentReason` |  |
+| `receiptFooter` |  |
+| `receiptHeader` |  |
+| `receiptLayout` |  |
+| `receiptNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `serialNumber` |  |
 | `svc` |  |
-| `terminal_id` |  |
-| `terminal_location` |  |
-| `trace_number` |  |
-| `transaction_date` |  |
-| `transaction_id` |  |
-| `transaction_type` |  |
-| `tx_type` |  |
-| `user_data` |  |
+| `terminalId` |  |
+| `terminalLocation` |  |
+| `traceNumber` |  |
+| `transactionDate` |  |
+| `transactionId` |  |
+| `transactionType` |  |
+| `txType` |  |
+| `userData` |  |
 
 Operations: Create.
 
@@ -744,13 +741,13 @@ API path: `/public/paymentTransaction`
 
 | Field | Description |
 | --- | --- |
-| `corporate_uuid` |  |
-| `package_order_uuid` |  |
-| `product_order_uuid` |  |
-| `reactivation_reason` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
+| `corporateUuid` |  |
+| `packageOrderUuid` |  |
+| `productOrderUuid` |  |
+| `reactivationReason` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
 
 Operations: Create.
 
@@ -760,46 +757,46 @@ API path: `/reactivateTerminal`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_id` |  |
-| `acquirer_name` |  |
-| `actual_bonus_point` |  |
+| `acquirerId` |  |
+| `acquirerName` |  |
+| `actualBonusPoints` |  |
 | `amount` |  |
-| `authorization_code` |  |
-| `balance_amount` |  |
-| `card_brand` |  |
-| `card_number` |  |
-| `client_id` |  |
+| `authorizationCode` |  |
+| `balanceAmount` |  |
+| `cardBrand` |  |
+| `cardNumber` |  |
+| `clientId` |  |
 | `currency` |  |
 | `cvc` |  |
-| `ec_data` |  |
-| `ecr_data` |  |
-| `emv_data` |  |
-| `exchange_fee` |  |
-| `exchange_rate` |  |
-| `language_code` |  |
-| `merchant_address` |  |
-| `merchant_name` |  |
-| `merchant_number` |  |
-| `message_type` |  |
-| `original_trace_number` |  |
-| `original_transaction_id` |  |
+| `ecData` |  |
+| `ecrData` |  |
+| `emvData` |  |
+| `exchangeFee` |  |
+| `exchangeRate` |  |
+| `languageCode` |  |
+| `merchantAddress` |  |
+| `merchantName` |  |
+| `merchantNumber` |  |
+| `messageType` |  |
+| `originalTraceNumber` |  |
+| `originalTransactionId` |  |
 | `password` |  |
-| `payment_reason` |  |
-| `receipt_footer` |  |
-| `receipt_header` |  |
-| `receipt_layout` |  |
-| `receipt_number` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `serial_number` |  |
+| `paymentReason` |  |
+| `receiptFooter` |  |
+| `receiptHeader` |  |
+| `receiptLayout` |  |
+| `receiptNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `serialNumber` |  |
 | `svc` |  |
-| `terminal_id` |  |
-| `terminal_location` |  |
-| `trace_number` |  |
-| `transaction_date` |  |
-| `transaction_id` |  |
-| `tx_type` |  |
-| `user_data` |  |
+| `terminalId` |  |
+| `terminalLocation` |  |
+| `traceNumber` |  |
+| `transactionDate` |  |
+| `transactionId` |  |
+| `txType` |  |
+| `userData` |  |
 
 Operations: Create.
 
@@ -809,14 +806,14 @@ API path: `/public/refundTransaction`
 
 | Field | Description |
 | --- | --- |
-| `corporate_uuid` |  |
-| `package_order_uuid` |  |
-| `partner_id` |  |
-| `partner_name` |  |
-| `product_order_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `template_name` |  |
+| `corporateUuid` |  |
+| `packageOrderUuid` |  |
+| `partnerId` |  |
+| `partnerName` |  |
+| `productOrderUuid` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `templateName` |  |
 
 Operations: Create.
 
@@ -826,24 +823,24 @@ API path: `/registerTecsCompany`
 
 | Field | Description |
 | --- | --- |
-| `additional_data` |  |
-| `corporate_uuid` |  |
-| `package_order_uuid` |  |
-| `product_order_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `tecs_web_secret_key` |  |
-| `template_name` |  |
-| `terminal_country_code` |  |
-| `terminal_id` |  |
-| `terminal_id_acq` |  |
-| `terminal_language_code` |  |
-| `terminal_location` |  |
-| `terminal_serial_number` |  |
-| `token_io_alia` |  |
-| `token_io_iban` |  |
-| `token_io_member_id` |  |
-| `web_shop_url` |  |
+| `additionalData` |  |
+| `corporateUuid` |  |
+| `packageOrderUuid` |  |
+| `productOrderUuid` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `tecsWebSecretKey` |  |
+| `templateName` |  |
+| `terminalCountryCode` |  |
+| `terminalId` |  |
+| `terminalIdAcq` |  |
+| `terminalLanguageCode` |  |
+| `terminalLocation` |  |
+| `terminalSerialNumber` |  |
+| `tokenIOAlias` |  |
+| `tokenIOIban` |  |
+| `tokenIOMemberId` |  |
+| `webShopUrl` |  |
 
 Operations: Create.
 
@@ -853,16 +850,16 @@ API path: `/registerTerminal`
 
 | Field | Description |
 | --- | --- |
-| `card_brand_report_data` |  |
-| `clearing_date_from` |  |
-| `clearing_date_to` |  |
-| `corporate_id` |  |
+| `cardBrandReportData` |  |
+| `clearingDateFrom` |  |
+| `clearingDateTo` |  |
+| `corporateId` |  |
 | `currency` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `sum_over_credit_tx` |  |
-| `sum_over_debit_tx` |  |
-| `terminal_id` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `sumOverCreditTx` |  |
+| `sumOverDebitTx` |  |
+| `terminalId` |  |
 
 Operations: Create.
 
@@ -872,56 +869,56 @@ API path: `/public/digitalservices/reportData`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_name` |  |
-| `acquirer_terminal_id` |  |
+| `acquirerName` |  |
+| `acquirerTerminalId` |  |
 | `amount` |  |
-| `application_cryptogram` |  |
-| `authorization_code` |  |
-| `authorization_date` |  |
-| `card_brand` |  |
-| `card_entry` |  |
-| `card_expiration` |  |
-| `card_number` |  |
-| `clearing_amount` |  |
-| `clearing_batch_id` |  |
-| `clearing_currency` |  |
-| `clearing_date` |  |
-| `clearing_processed_date` |  |
-| `clearing_status` |  |
-| `client_id` |  |
+| `applicationCryptogram` |  |
+| `authorizationCode` |  |
+| `authorizationDate` |  |
+| `cardBrand` |  |
+| `cardEntry` |  |
+| `cardExpiration` |  |
+| `cardNumber` |  |
+| `clearingAmount` |  |
+| `clearingBatchId` |  |
+| `clearingCurrency` |  |
+| `clearingDate` |  |
+| `clearingProcessedDate` |  |
+| `clearingStatus` |  |
+| `clientId` |  |
 | `currency` |  |
 | `cvm` |  |
-| `ecr_data` |  |
-| `emv_application_id` |  |
-| `emv_application_label` |  |
-| `merchant_name` |  |
-| `merchant_number` |  |
-| `original_client_id` |  |
-| `original_terminal_id` |  |
-| `original_transaction_id` |  |
-| `payment_reason` |  |
-| `receipt_number` |  |
-| `response_code` |  |
-| `response_code_from_a` |  |
-| `response_message` |  |
-| `retrieval_reference_number` |  |
-| `service_code` |  |
-| `settlement_status` |  |
-| `source_id` |  |
-| `tecsengine_response_code` |  |
-| `tecsengine_response_text` |  |
-| `terminal_end_of_day_date` |  |
-| `terminal_id` |  |
-| `terminal_location` |  |
-| `tip_amount` |  |
-| `trace_number` |  |
-| `transaction_clearing_date` |  |
-| `transaction_date` |  |
-| `transaction_id` |  |
-| `transaction_seq_number` |  |
-| `transaction_server_date` |  |
-| `transaction_source` |  |
-| `transaction_type` |  |
+| `ecrData` |  |
+| `emvApplicationId` |  |
+| `emvApplicationLabel` |  |
+| `merchantName` |  |
+| `merchantNumber` |  |
+| `originalClientId` |  |
+| `originalTerminalId` |  |
+| `originalTransactionId` |  |
+| `paymentReason` |  |
+| `receiptNumber` |  |
+| `responseCode` |  |
+| `responseCodeFromAS` |  |
+| `responseMessage` |  |
+| `retrievalReferenceNumber` |  |
+| `serviceCode` |  |
+| `settlementStatus` |  |
+| `sourceId` |  |
+| `tecsengineResponseCode` |  |
+| `tecsengineResponseText` |  |
+| `terminalEndOfDayDate` |  |
+| `terminalId` |  |
+| `terminalLocation` |  |
+| `tipAmount` |  |
+| `traceNumber` |  |
+| `transactionClearingDate` |  |
+| `transactionDate` |  |
+| `transactionId` |  |
+| `transactionSeqNumber` |  |
+| `transactionServerDate` |  |
+| `transactionSource` |  |
+| `transactionType` |  |
 
 Operations: Create.
 
@@ -931,12 +928,12 @@ API path: `/public/statusTransaction`
 
 | Field | Description |
 | --- | --- |
-| `acq_tab_nexo` |  |
-| `config_version` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `serial_number` |  |
-| `tid_sent` |  |
+| `acqTabNexo` |  |
+| `configVersion` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `serialNumber` |  |
+| `tidSent` |  |
 
 Operations: Create.
 
@@ -946,11 +943,11 @@ API path: `/storeTerminalParameters`
 
 | Field | Description |
 | --- | --- |
-| `device_serial_number` |  |
-| `duplicate_terminal_id` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal` |  |
+| `deviceSerialNumber` |  |
+| `duplicateTerminalIds` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminals` |  |
 
 Operations: Create.
 
@@ -960,34 +957,34 @@ API path: `/public/getTerminalId`
 
 | Field | Description |
 | --- | --- |
-| `3_d_secure` |  |
-| `authorization_code` |  |
-| `card_brand` |  |
-| `clearing_amount_from` |  |
-| `clearing_amount_to` |  |
-| `clearing_currency` |  |
-| `clearing_status` |  |
-| `corporate_uuid` |  |
-| `order_by_transaction_date` |  |
+| `3DSecure` |  |
+| `authorizationCode` |  |
+| `cardBrand` |  |
+| `clearingAmountFrom` |  |
+| `clearingAmountTo` |  |
+| `clearingCurrency` |  |
+| `clearingStatus` |  |
+| `corporateUUID` |  |
+| `orderByTransactionDate` |  |
 | `pagination` |  |
-| `payment_token_public_id` |  |
-| `receipt_number` |  |
-| `referenced_transaction_id` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `retrieval_reference_number` |  |
-| `source_id` |  |
-| `tecsengine_response_code_from` |  |
-| `tecsengine_response_code_to` |  |
-| `terminal_id` |  |
-| `trace_number` |  |
-| `transaction_amount_from` |  |
-| `transaction_amount_to` |  |
-| `transaction_date_from` |  |
-| `transaction_date_to` |  |
-| `transaction_history` |  |
-| `transaction_id` |  |
-| `transaction_type` |  |
+| `paymentTokenPublicId` |  |
+| `receiptNumber` |  |
+| `referencedTransactionId` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `retrievalReferenceNumber` |  |
+| `sourceId` |  |
+| `tecsengineResponseCodeFrom` |  |
+| `tecsengineResponseCodeTo` |  |
+| `terminalId` |  |
+| `traceNumber` |  |
+| `transactionAmountFrom` |  |
+| `transactionAmountTo` |  |
+| `transactionDateFrom` |  |
+| `transactionDateTo` |  |
+| `transactionHistories` |  |
+| `transactionId` |  |
+| `transactionType` |  |
 | `wallet` |  |
 
 Operations: Create.
@@ -999,11 +996,11 @@ API path: `/public/mcom/transactionHistory`
 | Field | Description |
 | --- | --- |
 | `period` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `transaction_date_from` |  |
-| `transaction_date_to` |  |
-| `transactions_count` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `transactionDateFrom` |  |
+| `transactionDateTo` |  |
+| `transactionsCount` |  |
 
 Operations: Create.
 
@@ -1014,11 +1011,11 @@ API path: `/public/countAuthorisedTransactions`
 | Field | Description |
 | --- | --- |
 | `period` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `transaction_date_from` |  |
-| `transaction_date_to` |  |
-| `transactions_count` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `transactionDateFrom` |  |
+| `transactionDateTo` |  |
+| `transactionsCount` |  |
 
 Operations: Create.
 
@@ -1029,11 +1026,11 @@ API path: `/public/countTransactionsByCardBrand`
 | Field | Description |
 | --- | --- |
 | `period` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `transaction_date_from` |  |
-| `transaction_date_to` |  |
-| `turnover` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `transactionDateFrom` |  |
+| `transactionDateTo` |  |
+| `turnovers` |  |
 
 Operations: Create.
 
@@ -1044,15 +1041,15 @@ API path: `/public/transactionTurnover`
 | Field | Description |
 | --- | --- |
 | `city` |  |
-| `corporate_uuid` |  |
+| `corporateUuid` |  |
 | `country` |  |
-| `merchant_category_code` |  |
+| `merchantCategoryCode` |  |
 | `name` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `state` |  |
 | `street` |  |
-| `vu_nummer` |  |
+| `vuNummer` |  |
 | `zipcode` |  |
 
 Operations: Create.
@@ -1063,10 +1060,10 @@ API path: `/public/updateMerchant`
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
-| `template_name` |  |
-| `template_xml` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `templateName` |  |
+| `templateXml` |  |
 
 Operations: Create.
 
@@ -1076,8 +1073,8 @@ API path: `/public/updateTemplateXml`
 
 | Field | Description |
 | --- | --- |
-| `app_name` |  |
-| `build_date` |  |
+| `appName` |  |
+| `buildDate` |  |
 | `version` |  |
 
 Operations: Load.
@@ -1103,55 +1100,55 @@ Create an instance: `cancel_transaction = client.CancelTransaction`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_id` | `String` |  |
-| `acquirer_name` | `String` |  |
-| `actual_bonus_point` | `String` |  |
+| `acquirerId` | `String` |  |
+| `acquirerName` | `String` |  |
+| `actualBonusPoints` | `String` |  |
 | `amount` | `Integer` |  |
-| `authorization_code` | `String` |  |
-| `balance_amount` | `String` |  |
-| `card_brand` | `String` |  |
-| `card_number` | `String` |  |
-| `client_id` | `Integer` |  |
+| `authorizationCode` | `String` |  |
+| `balanceAmount` | `String` |  |
+| `cardBrand` | `String` |  |
+| `cardNumber` | `String` |  |
+| `clientId` | `Integer` |  |
 | `currency` | `String` |  |
 | `cvc` | `String` |  |
-| `ec_data` | `String` |  |
-| `ecr_data` | `String` |  |
-| `emv_data` | `String` |  |
-| `exchange_fee` | `Integer` |  |
-| `exchange_rate` | `String` |  |
-| `language_code` | `String` |  |
-| `merchant_address` | `String` |  |
-| `merchant_name` | `String` |  |
-| `merchant_number` | `String` |  |
-| `message_type` | `String` |  |
-| `original_trace_number` | `Integer` |  |
-| `original_transaction_id` | `String` |  |
+| `ecData` | `String` |  |
+| `ecrData` | `String` |  |
+| `emvData` | `String` |  |
+| `exchangeFee` | `Integer` |  |
+| `exchangeRate` | `String` |  |
+| `languageCode` | `String` |  |
+| `merchantAddress` | `String` |  |
+| `merchantName` | `String` |  |
+| `merchantNumber` | `String` |  |
+| `messageType` | `String` |  |
+| `originalTraceNumber` | `Integer` |  |
+| `originalTransactionId` | `String` |  |
 | `password` | `String` |  |
-| `payment_reason` | `String` |  |
-| `receipt_footer` | `String` |  |
-| `receipt_header` | `String` |  |
-| `receipt_layout` | `Integer` |  |
-| `receipt_number` | `String` |  |
-| `response_code` | `Integer` |  |
-| `response_message` | `String` |  |
-| `serial_number` | `String` |  |
+| `paymentReason` | `String` |  |
+| `receiptFooter` | `String` |  |
+| `receiptHeader` | `String` |  |
+| `receiptLayout` | `Integer` |  |
+| `receiptNumber` | `String` |  |
+| `responseCode` | `Integer` |  |
+| `responseMessage` | `String` |  |
+| `serialNumber` | `String` |  |
 | `svc` | `String` |  |
-| `terminal_id` | `Integer` |  |
-| `terminal_location` | `String` |  |
-| `trace_number` | `Integer` |  |
-| `transaction_date` | `String` |  |
-| `transaction_id` | `String` |  |
-| `tx_type` | `String` |  |
-| `user_data` | `String` |  |
+| `terminalId` | `Integer` |  |
+| `terminalLocation` | `String` |  |
+| `traceNumber` | `Integer` |  |
+| `transactionDate` | `String` |  |
+| `transactionId` | `String` |  |
+| `txType` | `String` |  |
+| `userData` | `String` |  |
 
 #### Example: Create
 
 ```ruby
 cancel_transaction = client.CancelTransaction.create({
-  "client_id" => 1, # Integer
+  "clientId" => 1, # Integer
   "currency" => "example_currency", # String
-  "receipt_number" => "example_receipt_number", # String
-  "terminal_id" => 1, # Integer
+  "receiptNumber" => "example_receiptNumber", # String
+  "terminalId" => 1, # Integer
 })
 ```
 
@@ -1170,9 +1167,9 @@ Create an instance: `check_card_black_listed = client.CheckCardBlackListed`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `card_no` | `String` |  |
-| `response_code` | `Integer` |  |
-| `response_message` | `String` |  |
+| `cardNo` | `String` |  |
+| `responseCode` | `Integer` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
@@ -1196,22 +1193,22 @@ Create an instance: `create_product = client.CreateProduct`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_id` | `Integer` |  |
-| `response_code` | `Integer` |  |
-| `response_message` | `String` |  |
-| `template_name` | `String` |  |
-| `template_type` | `String` |  |
-| `template_xml` | `String` |  |
-| `terminal_type` | `String` |  |
+| `acquirerId` | `Integer` |  |
+| `responseCode` | `Integer` |  |
+| `responseMessage` | `String` |  |
+| `templateName` | `String` |  |
+| `templateType` | `String` |  |
+| `templateXml` | `String` |  |
+| `terminalType` | `String` |  |
 
 #### Example: Create
 
 ```ruby
 create_product = client.CreateProduct.create({
-  "template_name" => "example_template_name", # String
-  "template_type" => "example_template_type", # String
-  "template_xml" => "example_template_xml", # String
-  "terminal_type" => "example_terminal_type", # String
+  "templateName" => "example_templateName", # String
+  "templateType" => "example_templateType", # String
+  "templateXml" => "example_templateXml", # String
+  "terminalType" => "example_terminalType", # String
 })
 ```
 
@@ -1230,20 +1227,20 @@ Create an instance: `deactivate_terminal = client.DeactivateTerminal`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `corporate_uuid` | `String` |  |
-| `deactivation_reason` | `String` |  |
-| `package_order_uuid` | `String` |  |
-| `product_order_uuid` | `String` |  |
-| `response_code` | `Integer` |  |
-| `response_message` | `String` |  |
-| `terminal_id` | `Integer` |  |
+| `corporateUuid` | `String` |  |
+| `deactivationReason` | `String` |  |
+| `packageOrderUuid` | `String` |  |
+| `productOrderUuid` | `String` |  |
+| `responseCode` | `Integer` |  |
+| `responseMessage` | `String` |  |
+| `terminalId` | `Integer` |  |
 
 #### Example: Create
 
 ```ruby
 deactivate_terminal = client.DeactivateTerminal.create({
-  "deactivation_reason" => "example_deactivation_reason", # String
-  "terminal_id" => 1, # Integer
+  "deactivationReason" => "example_deactivationReason", # String
+  "terminalId" => 1, # Integer
 })
 ```
 
@@ -1263,21 +1260,21 @@ Create an instance: `digital_services_api = client.DigitalServicesApi`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `clearing_date_from` | `String` |  |
-| `clearing_date_to` | `String` |  |
-| `response_code` | `Integer` |  |
-| `response_message` | `String` |  |
-| `tx_count` | `Integer` |  |
-| `tx_id_end` | `String` |  |
-| `tx_id_start` | `String` |  |
-| `tx_seq_no_end` | `Integer` |  |
-| `tx_seq_no_start` | `Integer` |  |
-| `tx_total` | `Integer` |  |
+| `clearingDateFrom` | `String` |  |
+| `clearingDateTo` | `String` |  |
+| `responseCode` | `Integer` |  |
+| `responseMessage` | `String` |  |
+| `txCount` | `Integer` |  |
+| `txIdEnd` | `String` |  |
+| `txIdStart` | `String` |  |
+| `txSeqNoEnd` | `Integer` |  |
+| `txSeqNoStart` | `Integer` |  |
+| `txTotal` | `Integer` |  |
 
 #### Example: Load
 
 ```ruby
-# load returns the bare DigitalServicesApi record (raises on error).
+# load returns the ENTITY — call data_get for the DigitalServicesApi record (raises on error).
 digital_services_api = client.DigitalServicesApi.load()
 ```
 
@@ -1285,6 +1282,8 @@ digital_services_api = client.DigitalServicesApi.load()
 
 ```ruby
 digital_services_api = client.DigitalServicesApi.create({
+  "clearingDateFrom" => "example_clearingDateFrom", # String
+  "clearingDateTo" => "example_clearingDateTo", # String
 })
 ```
 
@@ -1303,20 +1302,20 @@ Create an instance: `ec_data_ecom = client.EcDataEcom`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `ecom_data` | `String` |  |
-| `response_code` | `Integer` |  |
-| `response_message` | `String` |  |
-| `terminal_id` | `Integer` |  |
-| `transaction_id` | `String` |  |
-| `transaction_type` | `String` |  |
+| `ecomData` | `String` |  |
+| `responseCode` | `Integer` |  |
+| `responseMessage` | `String` |  |
+| `terminalId` | `Integer` |  |
+| `transactionId` | `String` |  |
+| `transactionType` | `String` |  |
 
 #### Example: Create
 
 ```ruby
 ec_data_ecom = client.EcDataEcom.create({
-  "terminal_id" => 1, # Integer
-  "transaction_id" => "example_transaction_id", # String
-  "transaction_type" => "example_transaction_type", # String
+  "terminalId" => 1, # Integer
+  "transactionId" => "example_transactionId", # String
+  "transactionType" => "example_transactionType", # String
 })
 ```
 
@@ -1335,17 +1334,17 @@ Create an instance: `ecom_parameter = client.EcomParameter`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `ecom_pass` | `String` |  |
-| `ecom_skey` | `String` |  |
-| `response_code` | `Integer` |  |
-| `response_message` | `String` |  |
-| `terminal_id` | `Integer` |  |
+| `ecomPass` | `String` |  |
+| `ecomSkey` | `String` |  |
+| `responseCode` | `Integer` |  |
+| `responseMessage` | `String` |  |
+| `terminalId` | `Integer` |  |
 
 #### Example: Create
 
 ```ruby
 ecom_parameter = client.EcomParameter.create({
-  "terminal_id" => 1, # Integer
+  "terminalId" => 1, # Integer
 })
 ```
 
@@ -1364,20 +1363,20 @@ Create an instance: `ecr_data = client.EcrData`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `ecr_data` | `String` |  |
-| `response_code` | `Integer` |  |
-| `response_message` | `String` |  |
-| `terminal_id` | `Integer` |  |
-| `transaction_id` | `String` |  |
-| `transaction_type` | `String` |  |
+| `ecrData` | `String` |  |
+| `responseCode` | `Integer` |  |
+| `responseMessage` | `String` |  |
+| `terminalId` | `Integer` |  |
+| `transactionId` | `String` |  |
+| `transactionType` | `String` |  |
 
 #### Example: Create
 
 ```ruby
 ecr_data = client.EcrData.create({
-  "terminal_id" => 1, # Integer
-  "transaction_id" => "example_transaction_id", # String
-  "transaction_type" => "example_transaction_type", # String
+  "terminalId" => 1, # Integer
+  "transactionId" => "example_transactionId", # String
+  "transactionType" => "example_transactionType", # String
 })
 ```
 
@@ -1396,20 +1395,20 @@ Create an instance: `emv_data = client.EmvData`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `emv_data` | `String` |  |
-| `response_code` | `Integer` |  |
-| `response_message` | `String` |  |
-| `terminal_id` | `Integer` |  |
-| `transaction_id` | `String` |  |
-| `transaction_type` | `String` |  |
+| `emvData` | `String` |  |
+| `responseCode` | `Integer` |  |
+| `responseMessage` | `String` |  |
+| `terminalId` | `Integer` |  |
+| `transactionId` | `String` |  |
+| `transactionType` | `String` |  |
 
 #### Example: Create
 
 ```ruby
 emv_data = client.EmvData.create({
-  "terminal_id" => 1, # Integer
-  "transaction_id" => "example_transaction_id", # String
-  "transaction_type" => "example_transaction_type", # String
+  "terminalId" => 1, # Integer
+  "transactionId" => "example_transactionId", # String
+  "transactionType" => "example_transactionType", # String
 })
 ```
 
@@ -1428,31 +1427,31 @@ Create an instance: `enable_acquiring = client.EnableAcquiring`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `account_no` | `Integer` |  |
-| `additional_data` | `Hash` |  |
-| `corporate_uuid` | `String` |  |
+| `accountNo` | `Integer` |  |
+| `additionalData` | `Hash` |  |
+| `corporateUuid` | `String` |  |
 | `currency` | `String` |  |
-| `merchant_category_code` | `Integer` |  |
-| `package_order_uuid` | `String` |  |
-| `product_order_uuid` | `String` |  |
-| `response_code` | `Integer` |  |
-| `response_message` | `String` |  |
-| `sorting_code` | `Integer` |  |
-| `template_name` | `String` |  |
-| `terminal_id` | `Array` |  |
-| `terminal_id_acq` | `String` |  |
-| `vu_nummer` | `String` |  |
+| `merchantCategoryCode` | `Integer` |  |
+| `packageOrderUuid` | `String` |  |
+| `productOrderUuid` | `String` |  |
+| `responseCode` | `Integer` |  |
+| `responseMessage` | `String` |  |
+| `sortingCode` | `Integer` |  |
+| `templateName` | `String` |  |
+| `terminalIdAcq` | `String` |  |
+| `terminalIds` | `Array` |  |
+| `vuNummer` | `String` |  |
 
 #### Example: Create
 
 ```ruby
 enable_acquiring = client.EnableAcquiring.create({
-  "corporate_uuid" => "example_corporate_uuid", # String
+  "corporateUuid" => "example_corporateUuid", # String
   "currency" => "example_currency", # String
-  "merchant_category_code" => 1, # Integer
-  "package_order_uuid" => "example_package_order_uuid", # String
-  "product_order_uuid" => "example_product_order_uuid", # String
-  "template_name" => "example_template_name", # String
+  "merchantCategoryCode" => 1, # Integer
+  "packageOrderUuid" => "example_packageOrderUuid", # String
+  "productOrderUuid" => "example_productOrderUuid", # String
+  "templateName" => "example_templateName", # String
 })
 ```
 
@@ -1471,15 +1470,15 @@ Create an instance: `get_merchant_contract_number = client.GetMerchantContractNu
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `merchant_contract_number` | `String` |  |
-| `response_code` | `Integer` |  |
-| `response_message` | `String` |  |
+| `merchantContractNumber` | `String` |  |
+| `responseCode` | `Integer` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
 ```ruby
 get_merchant_contract_number = client.GetMerchantContractNumber.create({
-  "merchant_contract_number" => "example_merchant_contract_number", # String
+  "merchantContractNumber" => "example_merchantContractNumber", # String
 })
 ```
 
@@ -1498,15 +1497,15 @@ Create an instance: `get_template_xml = client.GetTemplateXml`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `Integer` |  |
-| `response_message` | `String` |  |
-| `template_name` | `String` |  |
+| `responseCode` | `Integer` |  |
+| `responseMessage` | `String` |  |
+| `templateName` | `String` |  |
 
 #### Example: Create
 
 ```ruby
 get_template_xml = client.GetTemplateXml.create({
-  "template_name" => "example_template_name", # String
+  "templateName" => "example_templateName", # String
 })
 ```
 
@@ -1525,15 +1524,15 @@ Create an instance: `introduce_mandator = client.IntroduceMandator`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `mandator_name` | `String` |  |
-| `response_code` | `Integer` |  |
-| `response_message` | `String` |  |
+| `mandatorName` | `String` |  |
+| `responseCode` | `Integer` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
 ```ruby
 introduce_mandator = client.IntroduceMandator.create({
-  "mandator_name" => "example_mandator_name", # String
+  "mandatorName" => "example_mandatorName", # String
 })
 ```
 
@@ -1552,15 +1551,15 @@ Create an instance: `introduce_package = client.IntroducePackage`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `Integer` |  |
-| `response_message` | `String` |  |
-| `terminal_template_description` | `String` |  |
+| `responseCode` | `Integer` |  |
+| `responseMessage` | `String` |  |
+| `terminalTemplateDescription` | `String` |  |
 
 #### Example: Create
 
 ```ruby
 introduce_package = client.IntroducePackage.create({
-  "terminal_template_description" => "example_terminal_template_description", # String
+  "terminalTemplateDescription" => "example_terminalTemplateDescription", # String
 })
 ```
 
@@ -1580,15 +1579,15 @@ Create an instance: `keep_alive = client.KeepAlive`
 | Field | Type | Description |
 | --- | --- | --- |
 | `hwserialno` | `String` |  |
-| `ka_date_time_from` | `String` |  |
-| `ka_date_time_to` | `String` |  |
-| `keep_alive_data` | `Array` |  |
+| `kaDateTimeFrom` | `String` |  |
+| `kaDateTimeTo` | `String` |  |
+| `keepAliveData` | `Array` |  |
 | `pagination` | `Hash` |  |
-| `response_code` | `Integer` |  |
-| `response_message` | `String` |  |
-| `terminal_date_time_from` | `String` |  |
-| `terminal_date_time_to` | `String` |  |
-| `terminal_id` | `Integer` |  |
+| `responseCode` | `Integer` |  |
+| `responseMessage` | `String` |  |
+| `terminalDateTimeFrom` | `String` |  |
+| `terminalDateTimeTo` | `String` |  |
+| `terminalId` | `Integer` |  |
 
 #### Example: Create
 
@@ -1612,12 +1611,12 @@ Create an instance: `list_terminal = client.ListTerminal`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `corporate_uuid` | `Array` |  |
+| `corporateUuid` | `Array` |  |
 | `filter` | `Hash` |  |
 | `pagination` | `Hash` |  |
-| `response_code` | `Integer` |  |
-| `response_message` | `String` |  |
-| `terminal` | `Array` |  |
+| `responseCode` | `Integer` |  |
+| `responseMessage` | `String` |  |
+| `terminals` | `Array` |  |
 
 #### Example: Create
 
@@ -1641,19 +1640,19 @@ Create an instance: `mandator_clearing_export = client.MandatorClearingExport`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `clearing_date_from` | `String` |  |
-| `clearing_date_to` | `String` |  |
+| `clearingDateFrom` | `String` |  |
+| `clearingDateTo` | `String` |  |
 | `pagination` | `Hash` |  |
-| `record` | `Array` |  |
-| `response_code` | `Integer` |  |
-| `response_message` | `String` |  |
+| `records` | `Array` |  |
+| `responseCode` | `Integer` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
 ```ruby
 mandator_clearing_export = client.MandatorClearingExport.create({
-  "clearing_date_from" => "example_clearing_date_from", # String
-  "clearing_date_to" => "example_clearing_date_to", # String
+  "clearingDateFrom" => "example_clearingDateFrom", # String
+  "clearingDateTo" => "example_clearingDateTo", # String
 })
 ```
 
@@ -1673,18 +1672,18 @@ Create an instance: `mandator_clearing_export_download = client.MandatorClearing
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `clearing_date_from` | `String` |  |
-| `clearing_date_to` | `String` |  |
-| `file_id` | `String` |  |
-| `filename_template` | `String` |  |
-| `response_code` | `Integer` |  |
-| `response_message` | `String` |  |
+| `clearingDateFrom` | `String` |  |
+| `clearingDateTo` | `String` |  |
+| `fileId` | `String` |  |
+| `filenameTemplate` | `String` |  |
+| `responseCode` | `Integer` |  |
+| `responseMessage` | `String` |  |
 | `status` | `String` |  |
 
 #### Example: Load
 
 ```ruby
-# load returns the bare MandatorClearingExportDownload record (raises on error).
+# load returns the ENTITY — call data_get for the MandatorClearingExportDownload record (raises on error).
 mandator_clearing_export_download = client.MandatorClearingExportDownload.load({ "id" => "mandator_clearing_export_download_id" })
 ```
 
@@ -1692,8 +1691,8 @@ mandator_clearing_export_download = client.MandatorClearingExportDownload.load({
 
 ```ruby
 mandator_clearing_export_download = client.MandatorClearingExportDownload.create({
-  "clearing_date_from" => "example_clearing_date_from", # String
-  "clearing_date_to" => "example_clearing_date_to", # String
+  "clearingDateFrom" => "example_clearingDateFrom", # String
+  "clearingDateTo" => "example_clearingDateTo", # String
 })
 ```
 
@@ -1712,18 +1711,18 @@ Create an instance: `mandator_clearing_export_summary = client.MandatorClearingE
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `clearing_date_from` | `String` |  |
-| `clearing_date_to` | `String` |  |
-| `record` | `Array` |  |
-| `response_code` | `Integer` |  |
-| `response_message` | `String` |  |
+| `clearingDateFrom` | `String` |  |
+| `clearingDateTo` | `String` |  |
+| `records` | `Array` |  |
+| `responseCode` | `Integer` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
 ```ruby
 mandator_clearing_export_summary = client.MandatorClearingExportSummary.create({
-  "clearing_date_from" => "example_clearing_date_from", # String
-  "clearing_date_to" => "example_clearing_date_to", # String
+  "clearingDateFrom" => "example_clearingDateFrom", # String
+  "clearingDateTo" => "example_clearingDateTo", # String
 })
 ```
 
@@ -1742,30 +1741,30 @@ Create an instance: `merchant_portal_services_api = client.MerchantPortalService
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `3_d_secure` | `String` |  |
-| `authorization_code` | `String` |  |
-| `card_brand` | `String` |  |
-| `clearing_amount_from` | `String` |  |
-| `clearing_amount_to` | `String` |  |
-| `clearing_currency` | `String` |  |
-| `clearing_status` | `String` |  |
-| `corporate_uuid` | `String` |  |
-| `order_by_transaction_date` | `String` |  |
+| `3DSecure` | `String` |  |
+| `authorizationCode` | `String` |  |
+| `cardBrand` | `String` |  |
+| `clearingAmountFrom` | `String` |  |
+| `clearingAmountTo` | `String` |  |
+| `clearingCurrency` | `String` |  |
+| `clearingStatus` | `String` |  |
+| `corporateUUID` | `String` |  |
+| `orderByTransactionDate` | `String` |  |
 | `pagination` | `Hash` |  |
-| `receipt_number` | `String` |  |
-| `referenced_transaction_id` | `String` |  |
-| `retrieval_reference_number` | `String` |  |
-| `source_id` | `Integer` |  |
-| `tecsengine_response_code_from` | `String` |  |
-| `tecsengine_response_code_to` | `String` |  |
-| `terminal_id` | `Integer` |  |
-| `trace_number` | `String` |  |
-| `transaction_amount_from` | `String` |  |
-| `transaction_amount_to` | `String` |  |
-| `transaction_date_from` | `String` |  |
-| `transaction_date_to` | `String` |  |
-| `transaction_id` | `String` |  |
-| `transaction_type` | `String` |  |
+| `receiptNumber` | `String` |  |
+| `referencedTransactionId` | `String` |  |
+| `retrievalReferenceNumber` | `String` |  |
+| `sourceId` | `Integer` |  |
+| `tecsengineResponseCodeFrom` | `String` |  |
+| `tecsengineResponseCodeTo` | `String` |  |
+| `terminalId` | `Integer` |  |
+| `traceNumber` | `String` |  |
+| `transactionAmountFrom` | `String` |  |
+| `transactionAmountTo` | `String` |  |
+| `transactionDateFrom` | `String` |  |
+| `transactionDateTo` | `String` |  |
+| `transactionId` | `String` |  |
+| `transactionType` | `String` |  |
 | `wallet` | `String` |  |
 
 #### Example: Create
@@ -1790,17 +1789,17 @@ Create an instance: `move_tid = client.MoveTid`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `productorderuuid` | `Array` |  |
-| `response_code` | `Integer` |  |
-| `response_message` | `String` |  |
-| `target_packageorderuuid` | `String` |  |
-| `target_productorderuuid` | `String` |  |
+| `productorderuuids` | `Array` |  |
+| `responseCode` | `Integer` |  |
+| `responseMessage` | `String` |  |
+| `targetPackageorderuuid` | `String` |  |
+| `targetProductorderuuid` | `String` |  |
 
 #### Example: Create
 
 ```ruby
 move_tid = client.MoveTid.create({
-  "productorderuuid" => [], # Array
+  "productorderuuids" => [], # Array
 })
 ```
 
@@ -1819,22 +1818,22 @@ Create an instance: `payment_manual = client.PaymentManual`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_name` | `String` |  |
+| `acquirerName` | `String` |  |
 | `amount` | `Integer` |  |
-| `authorization_number` | `String` |  |
-| `card_number` | `String` |  |
-| `card_type` | `String` |  |
+| `authorizationNumber` | `String` |  |
+| `cardNumber` | `String` |  |
+| `cardType` | `String` |  |
 | `currency` | `String` |  |
 | `cvc` | `String` |  |
-| `date_time_tx` | `String` |  |
-| `exp_date` | `String` |  |
-| `merchant_id` | `String` |  |
-| `original_transaction_id` | `String` |  |
+| `dateTimeTx` | `String` |  |
+| `expDate` | `String` |  |
+| `merchantId` | `String` |  |
+| `originalTransactionId` | `String` |  |
 | `password` | `String` |  |
-| `response_code` | `String` |  |
-| `response_message` | `String` |  |
-| `terminal_id` | `String` |  |
-| `transaction_id` | `String` |  |
+| `responseCode` | `String` |  |
+| `responseMessage` | `String` |  |
+| `terminalId` | `String` |  |
+| `transactionId` | `String` |  |
 | `txtype` | `String` |  |
 
 #### Example: Create
@@ -1842,9 +1841,9 @@ Create an instance: `payment_manual = client.PaymentManual`
 ```ruby
 payment_manual = client.PaymentManual.create({
   "amount" => 1, # Integer
-  "card_number" => "example_card_number", # String
+  "cardNumber" => "example_cardNumber", # String
   "currency" => "example_currency", # String
-  "exp_date" => "example_exp_date", # String
+  "expDate" => "example_expDate", # String
   "txtype" => "example_txtype", # String
 })
 ```
@@ -1864,21 +1863,17 @@ Create an instance: `payment_sred = client.PaymentSred`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_name` | `String` |  |
 | `amount` | `Integer` |  |
-| `authorization_number` | `String` |  |
-| `card_type` | `String` |  |
 | `currency` | `String` |  |
-| `date_time_tx` | `String` |  |
-| `device_payload` | `String` |  |
-| `merchant_id` | `String` |  |
-| `original_transaction_id` | `String` |  |
+| `device` | `String` |  |
+| `devicePayload` | `String` |  |
+| `expDate` | `String` |  |
+| `mode` | `String` |  |
+| `panMasked` | `String` |  |
 | `password` | `String` |  |
-| `response_code` | `String` |  |
-| `response_message` | `String` |  |
-| `sred` | `Hash` |  |
-| `terminal_id` | `String` |  |
-| `transaction_id` | `String` |  |
+| `serial` | `String` |  |
+| `serviceCode` | `String` |  |
+| `terminalId` | `String` |  |
 | `txtype` | `String` |  |
 
 #### Example: Create
@@ -1887,7 +1882,8 @@ Create an instance: `payment_sred = client.PaymentSred`
 payment_sred = client.PaymentSred.create({
   "amount" => 1, # Integer
   "currency" => "example_currency", # String
-  "device_payload" => "example_device_payload", # String
+  "devicePayload" => "example_devicePayload", # String
+  "terminalId" => "example_terminalId", # String
   "txtype" => "example_txtype", # String
 })
 ```
@@ -1907,59 +1903,59 @@ Create an instance: `pre_auth_transaction_completion = client.PreAuthTransaction
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_id` | `String` |  |
-| `acquirer_name` | `String` |  |
-| `actual_bonus_point` | `String` |  |
+| `acquirerId` | `String` |  |
+| `acquirerName` | `String` |  |
+| `actualBonusPoints` | `String` |  |
 | `amount` | `Integer` |  |
-| `authorization_code` | `String` |  |
-| `balance_amount` | `String` |  |
-| `card_brand` | `String` |  |
-| `card_number` | `String` |  |
-| `card_number_reference` | `String` |  |
-| `client_id` | `Integer` |  |
+| `authorizationCode` | `String` |  |
+| `balanceAmount` | `String` |  |
+| `cardBrand` | `String` |  |
+| `cardNumber` | `String` |  |
+| `cardNumberReference` | `String` |  |
+| `clientId` | `Integer` |  |
 | `currency` | `String` |  |
 | `cvc` | `String` |  |
-| `ec_data` | `String` |  |
-| `ecr_data` | `String` |  |
-| `emv_data` | `String` |  |
-| `exchange_fee` | `Integer` |  |
-| `exchange_rate` | `String` |  |
-| `language_code` | `String` |  |
-| `merchant_address` | `String` |  |
-| `merchant_name` | `String` |  |
-| `merchant_number` | `String` |  |
-| `message_type` | `String` |  |
-| `original_trace_number` | `Integer` |  |
-| `original_transaction_id` | `String` |  |
+| `ecData` | `String` |  |
+| `ecrData` | `String` |  |
+| `emvData` | `String` |  |
+| `exchangeFee` | `Integer` |  |
+| `exchangeRate` | `String` |  |
+| `languageCode` | `String` |  |
+| `merchantAddress` | `String` |  |
+| `merchantName` | `String` |  |
+| `merchantNumber` | `String` |  |
+| `messageType` | `String` |  |
+| `originalTraceNumber` | `Integer` |  |
+| `originalTransactionId` | `String` |  |
 | `password` | `String` |  |
-| `payment_reason` | `String` |  |
-| `receipt_footer` | `String` |  |
-| `receipt_header` | `String` |  |
-| `receipt_layout` | `Integer` |  |
-| `receipt_number` | `String` |  |
-| `response_code` | `Integer` |  |
-| `response_message` | `String` |  |
-| `serial_number` | `String` |  |
+| `paymentReason` | `String` |  |
+| `receiptFooter` | `String` |  |
+| `receiptHeader` | `String` |  |
+| `receiptLayout` | `Integer` |  |
+| `receiptNumber` | `String` |  |
+| `responseCode` | `Integer` |  |
+| `responseMessage` | `String` |  |
+| `serialNumber` | `String` |  |
 | `svc` | `String` |  |
-| `terminal_id` | `Integer` |  |
-| `terminal_location` | `String` |  |
-| `trace_number` | `Integer` |  |
-| `transaction_date` | `String` |  |
-| `transaction_id` | `String` |  |
-| `transaction_type` | `String` |  |
-| `tx_type` | `String` |  |
-| `user_data` | `String` |  |
+| `terminalId` | `Integer` |  |
+| `terminalLocation` | `String` |  |
+| `traceNumber` | `Integer` |  |
+| `transactionDate` | `String` |  |
+| `transactionId` | `String` |  |
+| `transactionType` | `String` |  |
+| `txType` | `String` |  |
+| `userData` | `String` |  |
 
 #### Example: Create
 
 ```ruby
 pre_auth_transaction_completion = client.PreAuthTransactionCompletion.create({
-  "card_number_reference" => "example_card_number_reference", # String
-  "client_id" => 1, # Integer
+  "cardNumberReference" => "example_cardNumberReference", # String
+  "clientId" => 1, # Integer
   "currency" => "example_currency", # String
-  "receipt_number" => "example_receipt_number", # String
-  "terminal_id" => 1, # Integer
-  "transaction_type" => "example_transaction_type", # String
+  "receiptNumber" => "example_receiptNumber", # String
+  "terminalId" => 1, # Integer
+  "transactionType" => "example_transactionType", # String
 })
 ```
 
@@ -1978,20 +1974,20 @@ Create an instance: `reactivate_terminal = client.ReactivateTerminal`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `corporate_uuid` | `String` |  |
-| `package_order_uuid` | `String` |  |
-| `product_order_uuid` | `String` |  |
-| `reactivation_reason` | `String` |  |
-| `response_code` | `Integer` |  |
-| `response_message` | `String` |  |
-| `terminal_id` | `Integer` |  |
+| `corporateUuid` | `String` |  |
+| `packageOrderUuid` | `String` |  |
+| `productOrderUuid` | `String` |  |
+| `reactivationReason` | `String` |  |
+| `responseCode` | `Integer` |  |
+| `responseMessage` | `String` |  |
+| `terminalId` | `Integer` |  |
 
 #### Example: Create
 
 ```ruby
 reactivate_terminal = client.ReactivateTerminal.create({
-  "reactivation_reason" => "example_reactivation_reason", # String
-  "terminal_id" => 1, # Integer
+  "reactivationReason" => "example_reactivationReason", # String
+  "terminalId" => 1, # Integer
 })
 ```
 
@@ -2010,55 +2006,55 @@ Create an instance: `refund_transaction = client.RefundTransaction`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_id` | `String` |  |
-| `acquirer_name` | `String` |  |
-| `actual_bonus_point` | `String` |  |
+| `acquirerId` | `String` |  |
+| `acquirerName` | `String` |  |
+| `actualBonusPoints` | `String` |  |
 | `amount` | `Integer` |  |
-| `authorization_code` | `String` |  |
-| `balance_amount` | `String` |  |
-| `card_brand` | `String` |  |
-| `card_number` | `String` |  |
-| `client_id` | `Integer` |  |
+| `authorizationCode` | `String` |  |
+| `balanceAmount` | `String` |  |
+| `cardBrand` | `String` |  |
+| `cardNumber` | `String` |  |
+| `clientId` | `Integer` |  |
 | `currency` | `String` |  |
 | `cvc` | `String` |  |
-| `ec_data` | `String` |  |
-| `ecr_data` | `String` |  |
-| `emv_data` | `String` |  |
-| `exchange_fee` | `Integer` |  |
-| `exchange_rate` | `String` |  |
-| `language_code` | `String` |  |
-| `merchant_address` | `String` |  |
-| `merchant_name` | `String` |  |
-| `merchant_number` | `String` |  |
-| `message_type` | `String` |  |
-| `original_trace_number` | `Integer` |  |
-| `original_transaction_id` | `String` |  |
+| `ecData` | `String` |  |
+| `ecrData` | `String` |  |
+| `emvData` | `String` |  |
+| `exchangeFee` | `Integer` |  |
+| `exchangeRate` | `String` |  |
+| `languageCode` | `String` |  |
+| `merchantAddress` | `String` |  |
+| `merchantName` | `String` |  |
+| `merchantNumber` | `String` |  |
+| `messageType` | `String` |  |
+| `originalTraceNumber` | `Integer` |  |
+| `originalTransactionId` | `String` |  |
 | `password` | `String` |  |
-| `payment_reason` | `String` |  |
-| `receipt_footer` | `String` |  |
-| `receipt_header` | `String` |  |
-| `receipt_layout` | `Integer` |  |
-| `receipt_number` | `String` |  |
-| `response_code` | `Integer` |  |
-| `response_message` | `String` |  |
-| `serial_number` | `String` |  |
+| `paymentReason` | `String` |  |
+| `receiptFooter` | `String` |  |
+| `receiptHeader` | `String` |  |
+| `receiptLayout` | `Integer` |  |
+| `receiptNumber` | `String` |  |
+| `responseCode` | `Integer` |  |
+| `responseMessage` | `String` |  |
+| `serialNumber` | `String` |  |
 | `svc` | `String` |  |
-| `terminal_id` | `Integer` |  |
-| `terminal_location` | `String` |  |
-| `trace_number` | `Integer` |  |
-| `transaction_date` | `String` |  |
-| `transaction_id` | `String` |  |
-| `tx_type` | `String` |  |
-| `user_data` | `String` |  |
+| `terminalId` | `Integer` |  |
+| `terminalLocation` | `String` |  |
+| `traceNumber` | `Integer` |  |
+| `transactionDate` | `String` |  |
+| `transactionId` | `String` |  |
+| `txType` | `String` |  |
+| `userData` | `String` |  |
 
 #### Example: Create
 
 ```ruby
 refund_transaction = client.RefundTransaction.create({
-  "client_id" => 1, # Integer
+  "clientId" => 1, # Integer
   "currency" => "example_currency", # String
-  "receipt_number" => "example_receipt_number", # String
-  "terminal_id" => 1, # Integer
+  "receiptNumber" => "example_receiptNumber", # String
+  "terminalId" => 1, # Integer
 })
 ```
 
@@ -2077,23 +2073,23 @@ Create an instance: `register_tecs_company = client.RegisterTecsCompany`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `corporate_uuid` | `String` |  |
-| `package_order_uuid` | `String` |  |
-| `partner_id` | `Integer` |  |
-| `partner_name` | `String` |  |
-| `product_order_uuid` | `String` |  |
-| `response_code` | `Integer` |  |
-| `response_message` | `String` |  |
-| `template_name` | `String` |  |
+| `corporateUuid` | `String` |  |
+| `packageOrderUuid` | `String` |  |
+| `partnerId` | `Integer` |  |
+| `partnerName` | `String` |  |
+| `productOrderUuid` | `String` |  |
+| `responseCode` | `Integer` |  |
+| `responseMessage` | `String` |  |
+| `templateName` | `String` |  |
 
 #### Example: Create
 
 ```ruby
 register_tecs_company = client.RegisterTecsCompany.create({
-  "corporate_uuid" => "example_corporate_uuid", # String
-  "package_order_uuid" => "example_package_order_uuid", # String
-  "product_order_uuid" => "example_product_order_uuid", # String
-  "template_name" => "example_template_name", # String
+  "corporateUuid" => "example_corporateUuid", # String
+  "packageOrderUuid" => "example_packageOrderUuid", # String
+  "productOrderUuid" => "example_productOrderUuid", # String
+  "templateName" => "example_templateName", # String
 })
 ```
 
@@ -2112,36 +2108,36 @@ Create an instance: `register_terminal = client.RegisterTerminal`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `additional_data` | `Hash` |  |
-| `corporate_uuid` | `String` |  |
-| `package_order_uuid` | `String` |  |
-| `product_order_uuid` | `String` |  |
-| `response_code` | `Integer` |  |
-| `response_message` | `String` |  |
-| `tecs_web_secret_key` | `String` |  |
-| `template_name` | `String` |  |
-| `terminal_country_code` | `String` |  |
-| `terminal_id` | `Integer` |  |
-| `terminal_id_acq` | `String` |  |
-| `terminal_language_code` | `String` |  |
-| `terminal_location` | `String` |  |
-| `terminal_serial_number` | `String` |  |
-| `token_io_alia` | `String` |  |
-| `token_io_iban` | `String` |  |
-| `token_io_member_id` | `String` |  |
-| `web_shop_url` | `String` |  |
+| `additionalData` | `Hash` |  |
+| `corporateUuid` | `String` |  |
+| `packageOrderUuid` | `String` |  |
+| `productOrderUuid` | `String` |  |
+| `responseCode` | `Integer` |  |
+| `responseMessage` | `String` |  |
+| `tecsWebSecretKey` | `String` |  |
+| `templateName` | `String` |  |
+| `terminalCountryCode` | `String` |  |
+| `terminalId` | `Integer` |  |
+| `terminalIdAcq` | `String` |  |
+| `terminalLanguageCode` | `String` |  |
+| `terminalLocation` | `String` |  |
+| `terminalSerialNumber` | `String` |  |
+| `tokenIOAlias` | `String` |  |
+| `tokenIOIban` | `String` |  |
+| `tokenIOMemberId` | `String` |  |
+| `webShopUrl` | `String` |  |
 
 #### Example: Create
 
 ```ruby
 register_terminal = client.RegisterTerminal.create({
-  "corporate_uuid" => "example_corporate_uuid", # String
-  "package_order_uuid" => "example_package_order_uuid", # String
-  "product_order_uuid" => "example_product_order_uuid", # String
-  "template_name" => "example_template_name", # String
-  "terminal_country_code" => "example_terminal_country_code", # String
-  "terminal_language_code" => "example_terminal_language_code", # String
-  "terminal_location" => "example_terminal_location", # String
+  "corporateUuid" => "example_corporateUuid", # String
+  "packageOrderUuid" => "example_packageOrderUuid", # String
+  "productOrderUuid" => "example_productOrderUuid", # String
+  "templateName" => "example_templateName", # String
+  "terminalCountryCode" => "example_terminalCountryCode", # String
+  "terminalLanguageCode" => "example_terminalLanguageCode", # String
+  "terminalLocation" => "example_terminalLocation", # String
 })
 ```
 
@@ -2160,24 +2156,24 @@ Create an instance: `report_data = client.ReportData`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `card_brand_report_data` | `Array` |  |
-| `clearing_date_from` | `String` |  |
-| `clearing_date_to` | `String` |  |
-| `corporate_id` | `String` |  |
+| `cardBrandReportData` | `Array` |  |
+| `clearingDateFrom` | `String` |  |
+| `clearingDateTo` | `String` |  |
+| `corporateId` | `String` |  |
 | `currency` | `String` |  |
-| `response_code` | `Integer` |  |
-| `response_message` | `String` |  |
-| `sum_over_credit_tx` | `Hash` |  |
-| `sum_over_debit_tx` | `Hash` |  |
-| `terminal_id` | `Integer` |  |
+| `responseCode` | `Integer` |  |
+| `responseMessage` | `String` |  |
+| `sumOverCreditTx` | `Hash` |  |
+| `sumOverDebitTx` | `Hash` |  |
+| `terminalId` | `Integer` |  |
 
 #### Example: Create
 
 ```ruby
 report_data = client.ReportData.create({
-  "clearing_date_from" => "example_clearing_date_from", # String
-  "clearing_date_to" => "example_clearing_date_to", # String
-  "corporate_id" => "example_corporate_id", # String
+  "clearingDateFrom" => "example_clearingDateFrom", # String
+  "clearingDateTo" => "example_clearingDateTo", # String
+  "corporateId" => "example_corporateId", # String
   "currency" => "example_currency", # String
 })
 ```
@@ -2197,56 +2193,56 @@ Create an instance: `status_transaction = client.StatusTransaction`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_name` | `String` |  |
-| `acquirer_terminal_id` | `String` |  |
+| `acquirerName` | `String` |  |
+| `acquirerTerminalId` | `String` |  |
 | `amount` | `Integer` |  |
-| `application_cryptogram` | `String` |  |
-| `authorization_code` | `Object` |  |
-| `authorization_date` | `String` |  |
-| `card_brand` | `String` |  |
-| `card_entry` | `String` |  |
-| `card_expiration` | `String` |  |
-| `card_number` | `String` |  |
-| `clearing_amount` | `Integer` |  |
-| `clearing_batch_id` | `String` |  |
-| `clearing_currency` | `String` |  |
-| `clearing_date` | `String` |  |
-| `clearing_processed_date` | `String` |  |
-| `clearing_status` | `String` |  |
-| `client_id` | `Integer` |  |
+| `applicationCryptogram` | `String` |  |
+| `authorizationCode` | `Object` |  |
+| `authorizationDate` | `String` |  |
+| `cardBrand` | `String` |  |
+| `cardEntry` | `String` |  |
+| `cardExpiration` | `String` |  |
+| `cardNumber` | `String` |  |
+| `clearingAmount` | `Integer` |  |
+| `clearingBatchId` | `String` |  |
+| `clearingCurrency` | `String` |  |
+| `clearingDate` | `String` |  |
+| `clearingProcessedDate` | `String` |  |
+| `clearingStatus` | `String` |  |
+| `clientId` | `Integer` |  |
 | `currency` | `String` |  |
 | `cvm` | `String` |  |
-| `ecr_data` | `String` |  |
-| `emv_application_id` | `String` |  |
-| `emv_application_label` | `String` |  |
-| `merchant_name` | `String` |  |
-| `merchant_number` | `String` |  |
-| `original_client_id` | `String` |  |
-| `original_terminal_id` | `Integer` |  |
-| `original_transaction_id` | `String` |  |
-| `payment_reason` | `String` |  |
-| `receipt_number` | `String` |  |
-| `response_code` | `Integer` |  |
-| `response_code_from_a` | `String` |  |
-| `response_message` | `String` |  |
-| `retrieval_reference_number` | `String` |  |
-| `service_code` | `String` |  |
-| `settlement_status` | `String` |  |
-| `source_id` | `Integer` |  |
-| `tecsengine_response_code` | `Integer` |  |
-| `tecsengine_response_text` | `String` |  |
-| `terminal_end_of_day_date` | `String` |  |
-| `terminal_id` | `Integer` |  |
-| `terminal_location` | `String` |  |
-| `tip_amount` | `Integer` |  |
-| `trace_number` | `Integer` |  |
-| `transaction_clearing_date` | `String` |  |
-| `transaction_date` | `String` |  |
-| `transaction_id` | `String` |  |
-| `transaction_seq_number` | `Integer` |  |
-| `transaction_server_date` | `String` |  |
-| `transaction_source` | `String` |  |
-| `transaction_type` | `String` |  |
+| `ecrData` | `String` |  |
+| `emvApplicationId` | `String` |  |
+| `emvApplicationLabel` | `String` |  |
+| `merchantName` | `String` |  |
+| `merchantNumber` | `String` |  |
+| `originalClientId` | `String` |  |
+| `originalTerminalId` | `Integer` |  |
+| `originalTransactionId` | `String` |  |
+| `paymentReason` | `String` |  |
+| `receiptNumber` | `String` |  |
+| `responseCode` | `Integer` |  |
+| `responseCodeFromAS` | `String` |  |
+| `responseMessage` | `String` |  |
+| `retrievalReferenceNumber` | `String` |  |
+| `serviceCode` | `String` |  |
+| `settlementStatus` | `String` |  |
+| `sourceId` | `Integer` |  |
+| `tecsengineResponseCode` | `Integer` |  |
+| `tecsengineResponseText` | `String` |  |
+| `terminalEndOfDayDate` | `String` |  |
+| `terminalId` | `Integer` |  |
+| `terminalLocation` | `String` |  |
+| `tipAmount` | `Integer` |  |
+| `traceNumber` | `Integer` |  |
+| `transactionClearingDate` | `String` |  |
+| `transactionDate` | `String` |  |
+| `transactionId` | `String` |  |
+| `transactionSeqNumber` | `Integer` |  |
+| `transactionServerDate` | `String` |  |
+| `transactionSource` | `String` |  |
+| `transactionType` | `String` |  |
 
 #### Example: Create
 
@@ -2270,18 +2266,18 @@ Create an instance: `store_terminal_parameter = client.StoreTerminalParameter`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acq_tab_nexo` | `Hash` |  |
-| `config_version` | `String` |  |
-| `response_code` | `Integer` |  |
-| `response_message` | `String` |  |
-| `serial_number` | `String` |  |
-| `tid_sent` | `String` |  |
+| `acqTabNexo` | `Hash` |  |
+| `configVersion` | `String` |  |
+| `responseCode` | `Integer` |  |
+| `responseMessage` | `String` |  |
+| `serialNumber` | `String` |  |
+| `tidSent` | `String` |  |
 
 #### Example: Create
 
 ```ruby
 store_terminal_parameter = client.StoreTerminalParameter.create({
-  "serial_number" => "example_serial_number", # String
+  "serialNumber" => "example_serialNumber", # String
 })
 ```
 
@@ -2300,17 +2296,17 @@ Create an instance: `terminal_id = client.TerminalId`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `device_serial_number` | `Array` |  |
-| `duplicate_terminal_id` | `Array` |  |
-| `response_code` | `Integer` |  |
-| `response_message` | `String` |  |
-| `terminal` | `Array` |  |
+| `deviceSerialNumber` | `Array` |  |
+| `duplicateTerminalIds` | `Array` |  |
+| `responseCode` | `Integer` |  |
+| `responseMessage` | `String` |  |
+| `terminals` | `Array` |  |
 
 #### Example: Create
 
 ```ruby
 terminal_id = client.TerminalId.create({
-  "device_serial_number" => [], # Array
+  "deviceSerialNumber" => [], # Array
 })
 ```
 
@@ -2329,34 +2325,34 @@ Create an instance: `transaction_history = client.TransactionHistory`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `3_d_secure` | `String` |  |
-| `authorization_code` | `String` |  |
-| `card_brand` | `String` |  |
-| `clearing_amount_from` | `String` |  |
-| `clearing_amount_to` | `String` |  |
-| `clearing_currency` | `String` |  |
-| `clearing_status` | `String` |  |
-| `corporate_uuid` | `String` |  |
-| `order_by_transaction_date` | `String` |  |
+| `3DSecure` | `String` |  |
+| `authorizationCode` | `String` |  |
+| `cardBrand` | `String` |  |
+| `clearingAmountFrom` | `String` |  |
+| `clearingAmountTo` | `String` |  |
+| `clearingCurrency` | `String` |  |
+| `clearingStatus` | `String` |  |
+| `corporateUUID` | `String` |  |
+| `orderByTransactionDate` | `String` |  |
 | `pagination` | `Hash` |  |
-| `payment_token_public_id` | `String` |  |
-| `receipt_number` | `String` |  |
-| `referenced_transaction_id` | `String` |  |
-| `response_code` | `Integer` |  |
-| `response_message` | `String` |  |
-| `retrieval_reference_number` | `String` |  |
-| `source_id` | `Integer` |  |
-| `tecsengine_response_code_from` | `String` |  |
-| `tecsengine_response_code_to` | `String` |  |
-| `terminal_id` | `Integer` |  |
-| `trace_number` | `String` |  |
-| `transaction_amount_from` | `String` |  |
-| `transaction_amount_to` | `String` |  |
-| `transaction_date_from` | `String` |  |
-| `transaction_date_to` | `String` |  |
-| `transaction_history` | `Array` |  |
-| `transaction_id` | `String` |  |
-| `transaction_type` | `String` |  |
+| `paymentTokenPublicId` | `String` |  |
+| `receiptNumber` | `String` |  |
+| `referencedTransactionId` | `String` |  |
+| `responseCode` | `Integer` |  |
+| `responseMessage` | `String` |  |
+| `retrievalReferenceNumber` | `String` |  |
+| `sourceId` | `Integer` |  |
+| `tecsengineResponseCodeFrom` | `String` |  |
+| `tecsengineResponseCodeTo` | `String` |  |
+| `terminalId` | `Integer` |  |
+| `traceNumber` | `String` |  |
+| `transactionAmountFrom` | `String` |  |
+| `transactionAmountTo` | `String` |  |
+| `transactionDateFrom` | `String` |  |
+| `transactionDateTo` | `String` |  |
+| `transactionHistories` | `Array` |  |
+| `transactionId` | `String` |  |
+| `transactionType` | `String` |  |
 | `wallet` | `String` |  |
 
 #### Example: Create
@@ -2382,11 +2378,11 @@ Create an instance: `transactions_count = client.TransactionsCount`
 | Field | Type | Description |
 | --- | --- | --- |
 | `period` | `String` |  |
-| `response_code` | `Integer` |  |
-| `response_message` | `String` |  |
-| `transaction_date_from` | `String` |  |
-| `transaction_date_to` | `String` |  |
-| `transactions_count` | `Array` |  |
+| `responseCode` | `Integer` |  |
+| `responseMessage` | `String` |  |
+| `transactionDateFrom` | `String` |  |
+| `transactionDateTo` | `String` |  |
+| `transactionsCount` | `Array` |  |
 
 #### Example: Create
 
@@ -2411,11 +2407,11 @@ Create an instance: `transactions_count_card_brand = client.TransactionsCountCar
 | Field | Type | Description |
 | --- | --- | --- |
 | `period` | `String` |  |
-| `response_code` | `Integer` |  |
-| `response_message` | `String` |  |
-| `transaction_date_from` | `String` |  |
-| `transaction_date_to` | `String` |  |
-| `transactions_count` | `Array` |  |
+| `responseCode` | `Integer` |  |
+| `responseMessage` | `String` |  |
+| `transactionDateFrom` | `String` |  |
+| `transactionDateTo` | `String` |  |
+| `transactionsCount` | `Array` |  |
 
 #### Example: Create
 
@@ -2440,11 +2436,11 @@ Create an instance: `transactions_turnover = client.TransactionsTurnover`
 | Field | Type | Description |
 | --- | --- | --- |
 | `period` | `String` |  |
-| `response_code` | `Integer` |  |
-| `response_message` | `String` |  |
-| `transaction_date_from` | `String` |  |
-| `transaction_date_to` | `String` |  |
-| `turnover` | `Array` |  |
+| `responseCode` | `Integer` |  |
+| `responseMessage` | `String` |  |
+| `transactionDateFrom` | `String` |  |
+| `transactionDateTo` | `String` |  |
+| `turnovers` | `Array` |  |
 
 #### Example: Create
 
@@ -2469,22 +2465,22 @@ Create an instance: `update_merchant = client.UpdateMerchant`
 | Field | Type | Description |
 | --- | --- | --- |
 | `city` | `String` |  |
-| `corporate_uuid` | `String` |  |
+| `corporateUuid` | `String` |  |
 | `country` | `String` |  |
-| `merchant_category_code` | `String` |  |
+| `merchantCategoryCode` | `String` |  |
 | `name` | `String` |  |
-| `response_code` | `Integer` |  |
-| `response_message` | `String` |  |
+| `responseCode` | `Integer` |  |
+| `responseMessage` | `String` |  |
 | `state` | `String` |  |
 | `street` | `String` |  |
-| `vu_nummer` | `String` |  |
+| `vuNummer` | `String` |  |
 | `zipcode` | `String` |  |
 
 #### Example: Create
 
 ```ruby
 update_merchant = client.UpdateMerchant.create({
-  "corporate_uuid" => "example_corporate_uuid", # String
+  "corporateUuid" => "example_corporateUuid", # String
 })
 ```
 
@@ -2503,17 +2499,17 @@ Create an instance: `update_template_xml = client.UpdateTemplateXml`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `Integer` |  |
-| `response_message` | `String` |  |
-| `template_name` | `String` |  |
-| `template_xml` | `String` |  |
+| `responseCode` | `Integer` |  |
+| `responseMessage` | `String` |  |
+| `templateName` | `String` |  |
+| `templateXml` | `String` |  |
 
 #### Example: Create
 
 ```ruby
 update_template_xml = client.UpdateTemplateXml.create({
-  "template_name" => "example_template_name", # String
-  "template_xml" => "example_template_xml", # String
+  "templateName" => "example_templateName", # String
+  "templateXml" => "example_templateXml", # String
 })
 ```
 
@@ -2532,14 +2528,14 @@ Create an instance: `version = client.Version`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `app_name` | `String` |  |
-| `build_date` | `String` |  |
+| `appName` | `String` |  |
+| `buildDate` | `String` |  |
 | `version` | `String` |  |
 
 #### Example: Load
 
 ```ruby
-# load returns the bare Version record (raises on error).
+# load returns the ENTITY — call data_get for the Version record (raises on error).
 version = client.Version.load()
 ```
 

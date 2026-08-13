@@ -17,6 +17,23 @@ const OpResult = types.OpResult;
 const OutVal = types.OutVal;
 const Entity = types.Entity;
 
+// Every operation resolves to the ENTITY, not the raw data — `list` to a
+// slice of them, one per record; the record is reached through `data()`.
+// See AGENTS.md "Entity operations return ENTITIES".
+//
+// `Value` cannot carry an entity (it is a closed data union) and the shared
+// `OpResult` cannot name a per-entity type, so each entity declares its own
+// result unions and the CONTRACT lives in those signatures.
+pub const EntResult = union(enum) {
+    ok: *TransactionsCountCardBrandEntity,
+    err: *errmod.BluefinTecsMerchantServicesError,
+};
+
+pub const EntListResult = union(enum) {
+    ok: []*TransactionsCountCardBrandEntity,
+    err: *errmod.BluefinTecsMerchantServicesError,
+};
+
 pub const TransactionsCountCardBrandEntity = struct {
     name: []const u8 = "transactions_count_card_brand",
     client: *sdk.BluefinTecsMerchantServicesSDK,
@@ -25,6 +42,8 @@ pub const TransactionsCountCardBrandEntity = struct {
     data: Value,
     mtch: Value,
     entctx: ?*Context = null,
+    // Set once a successful `remove` resolves on this instance.
+    deleted: bool = false,
 
     pub fn new(client: *sdk.BluefinTecsMerchantServicesSDK, entopts_in: Value) *TransactionsCountCardBrandEntity {
         const entopts: Value = switch (entopts_in) {
@@ -71,6 +90,26 @@ pub const TransactionsCountCardBrandEntity = struct {
     fn doneResult(self: *TransactionsCountCardBrandEntity, ctx: *Context) OpResult {
         const v = self.utility.done(ctx) catch return .{ .err = ctx.pending_err.? };
         return .{ .ok = v };
+    }
+
+    // Runs the pipeline and hands back THIS entity: run_op has just absorbed
+    // the result into it. See AGENTS.md "Entity operations return ENTITIES".
+    fn run_op_ent(self: *TransactionsCountCardBrandEntity, ctx: *Context, post_done: *const fn (*TransactionsCountCardBrandEntity, *Context) void) EntResult {
+        return switch (self.run_op(ctx, post_done)) {
+            .err => |e| EntResult{ .err = e },
+            .ok => EntResult{ .ok = self },
+        };
+    }
+
+    // `remove` resolves to the entity, marked. The instance KEEPS the data it
+    // held — a caller can still read what was deleted — but it is no longer a
+    // live record.
+    pub fn mark_deleted(self: *TransactionsCountCardBrandEntity) void {
+        self.deleted = true;
+    }
+
+    pub fn is_deleted(self: *TransactionsCountCardBrandEntity) bool {
+        return self.deleted;
     }
 
     fn run_op(self: *TransactionsCountCardBrandEntity, ctx: *Context, post_done: *const fn (*TransactionsCountCardBrandEntity, *Context) void) OpResult {
@@ -260,20 +299,20 @@ pub const TransactionsCountCardBrandEntity = struct {
 
     // ---- CRUD operations ----
 
-    pub fn load(self: *TransactionsCountCardBrandEntity, _reqmatch: Value, _ctrl: Value) OpResult {
+    pub fn load(self: *TransactionsCountCardBrandEntity, _reqmatch: Value, _ctrl: Value) EntResult {
         _ = _reqmatch;
         _ = _ctrl;
         return .{ .err = h.unsupported_op("load", self.name) };
     }
 
-    pub fn list(self: *TransactionsCountCardBrandEntity, _reqmatch: Value, _ctrl: Value) OpResult {
+    pub fn list(self: *TransactionsCountCardBrandEntity, _reqmatch: Value, _ctrl: Value) EntListResult {
         _ = _reqmatch;
         _ = _ctrl;
         return .{ .err = h.unsupported_op("list", self.name) };
     }
 
 
-    pub fn create(self: *TransactionsCountCardBrandEntity, reqdata: Value, ctrl: Value) OpResult {
+    pub fn create(self: *TransactionsCountCardBrandEntity, reqdata: Value, ctrl: Value) EntResult {
         const ctx = self.utility.make_context(CtxSpec{
             .opname = "create",
             .ctrl = ctrl,
@@ -281,7 +320,7 @@ pub const TransactionsCountCardBrandEntity = struct {
             .data = self.data,
             .reqdata = reqdata,
         }, self.ent_ctx());
-        return self.run_op(ctx, create_post_done);
+        return self.run_op_ent(ctx, create_post_done);
     }
     
     fn create_post_done(self: *TransactionsCountCardBrandEntity, ctx: *Context) void {
@@ -295,13 +334,13 @@ pub const TransactionsCountCardBrandEntity = struct {
     }
     
 
-    pub fn update(self: *TransactionsCountCardBrandEntity, _reqdata: Value, _ctrl: Value) OpResult {
+    pub fn update(self: *TransactionsCountCardBrandEntity, _reqdata: Value, _ctrl: Value) EntResult {
         _ = _reqdata;
         _ = _ctrl;
         return .{ .err = h.unsupported_op("update", self.name) };
     }
 
-    pub fn remove(self: *TransactionsCountCardBrandEntity, _reqmatch: Value, _ctrl: Value) OpResult {
+    pub fn remove(self: *TransactionsCountCardBrandEntity, _reqmatch: Value, _ctrl: Value) EntResult {
         _ = _reqmatch;
         _ = _ctrl;
         return .{ .err = h.unsupported_op("remove", self.name) };

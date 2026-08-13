@@ -279,91 +279,91 @@ let cancelTransaction = client.CancelTransaction()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `String` | No |  |
-| `acquirer_name` | `String` | No |  |
-| `actual_bonus_point` | `String` | No |  |
+| `acquirerId` | `String` | No |  |
+| `acquirerName` | `String` | No |  |
+| `actualBonusPoints` | `String` | No |  |
 | `amount` | `Int` | No |  |
-| `authorization_code` | `String` | No |  |
-| `balance_amount` | `String` | No |  |
-| `card_brand` | `String` | No |  |
-| `card_number` | `String` | No |  |
-| `client_id` | `Int` | Yes |  |
+| `authorizationCode` | `String` | No |  |
+| `balanceAmount` | `String` | No |  |
+| `cardBrand` | `String` | No |  |
+| `cardNumber` | `String` | No |  |
+| `clientId` | `Int` | Yes |  |
 | `currency` | `String` | Yes |  |
 | `cvc` | `String` | No |  |
-| `ec_data` | `String` | No |  |
-| `ecr_data` | `String` | No |  |
-| `emv_data` | `String` | No |  |
-| `exchange_fee` | `Int` | No |  |
-| `exchange_rate` | `String` | No |  |
-| `language_code` | `String` | No |  |
-| `merchant_address` | `String` | No |  |
-| `merchant_name` | `String` | No |  |
-| `merchant_number` | `String` | No |  |
-| `message_type` | `String` | No |  |
-| `original_trace_number` | `Int` | No |  |
-| `original_transaction_id` | `String` | No |  |
+| `ecData` | `String` | No |  |
+| `ecrData` | `String` | No |  |
+| `emvData` | `String` | No |  |
+| `exchangeFee` | `Int` | No |  |
+| `exchangeRate` | `String` | No |  |
+| `languageCode` | `String` | No |  |
+| `merchantAddress` | `String` | No |  |
+| `merchantName` | `String` | No |  |
+| `merchantNumber` | `String` | No |  |
+| `messageType` | `String` | No |  |
+| `originalTraceNumber` | `Int` | No |  |
+| `originalTransactionId` | `String` | No |  |
 | `password` | `String` | No |  |
-| `payment_reason` | `String` | No |  |
-| `receipt_footer` | `String` | No |  |
-| `receipt_header` | `String` | No |  |
-| `receipt_layout` | `Int` | No |  |
-| `receipt_number` | `String` | Yes |  |
-| `response_code` | `Int` | No |  |
-| `response_message` | `String` | No |  |
-| `serial_number` | `String` | No |  |
+| `paymentReason` | `String` | No |  |
+| `receiptFooter` | `String` | No |  |
+| `receiptHeader` | `String` | No |  |
+| `receiptLayout` | `Int` | No |  |
+| `receiptNumber` | `String` | Yes |  |
+| `responseCode` | `Int` | No |  |
+| `responseMessage` | `String` | No |  |
+| `serialNumber` | `String` | No |  |
 | `svc` | `String` | No |  |
-| `terminal_id` | `Int` | Yes |  |
-| `terminal_location` | `String` | No |  |
-| `trace_number` | `Int` | No |  |
-| `transaction_date` | `String` | No |  |
-| `transaction_id` | `String` | No |  |
-| `tx_type` | `String` | No |  |
-| `user_data` | `String` | No |  |
+| `terminalId` | `Int` | Yes |  |
+| `terminalLocation` | `String` | No |  |
+| `traceNumber` | `Int` | No |  |
+| `transactionDate` | `String` | No |  |
+| `transactionId` | `String` | No |  |
+| `txType` | `String` | No |  |
+| `userData` | `String` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `acquirer_id` | - |
-| `acquirer_name` | - |
-| `actual_bonus_point` | - |
+| `acquirerId` | - |
+| `acquirerName` | - |
+| `actualBonusPoints` | - |
 | `amount` | Yes |
-| `authorization_code` | - |
-| `balance_amount` | - |
-| `card_brand` | - |
-| `card_number` | - |
-| `client_id` | - |
+| `authorizationCode` | - |
+| `balanceAmount` | - |
+| `cardBrand` | - |
+| `cardNumber` | - |
+| `clientId` | - |
 | `currency` | - |
 | `cvc` | - |
-| `ec_data` | - |
-| `ecr_data` | - |
-| `emv_data` | - |
-| `exchange_fee` | - |
-| `exchange_rate` | - |
-| `language_code` | - |
-| `merchant_address` | - |
-| `merchant_name` | - |
-| `merchant_number` | - |
-| `message_type` | Yes |
-| `original_trace_number` | - |
-| `original_transaction_id` | Yes |
+| `ecData` | - |
+| `ecrData` | - |
+| `emvData` | - |
+| `exchangeFee` | - |
+| `exchangeRate` | - |
+| `languageCode` | - |
+| `merchantAddress` | - |
+| `merchantName` | - |
+| `merchantNumber` | - |
+| `messageType` | Yes |
+| `originalTraceNumber` | - |
+| `originalTransactionId` | Yes |
 | `password` | - |
-| `payment_reason` | - |
-| `receipt_footer` | - |
-| `receipt_header` | - |
-| `receipt_layout` | - |
-| `receipt_number` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `serial_number` | - |
+| `paymentReason` | - |
+| `receiptFooter` | - |
+| `receiptHeader` | - |
+| `receiptLayout` | - |
+| `receiptNumber` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `serialNumber` | - |
 | `svc` | - |
-| `terminal_id` | - |
-| `terminal_location` | - |
-| `trace_number` | - |
-| `transaction_date` | Yes |
-| `transaction_id` | Yes |
-| `tx_type` | - |
-| `user_data` | - |
+| `terminalId` | - |
+| `terminalLocation` | - |
+| `traceNumber` | - |
+| `transactionDate` | Yes |
+| `transactionId` | Yes |
+| `txType` | - |
+| `userData` | - |
 
 ### Operations
 
@@ -373,10 +373,10 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```swift
 let result = try client.CancelTransaction().create(VMap([
-    ("client_id", .int(1)),  // Int
+    ("clientId", .int(1)),  // Int
     ("currency", .string("example_currency")),  // String
-    ("receipt_number", .string("example_receipt_number")),  // String
-    ("terminal_id", .int(1))  // Int
+    ("receiptNumber", .string("example_receiptNumber")),  // String
+    ("terminalId", .int(1))  // Int
 ]), nil)
 ```
 
@@ -411,9 +411,9 @@ let checkCardBlackListed = client.CheckCardBlackListed()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `card_no` | `String` | No |  |
-| `response_code` | `Int` | No |  |
-| `response_message` | `String` | No |  |
+| `cardNo` | `String` | No |  |
+| `responseCode` | `Int` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -457,13 +457,13 @@ let createProduct = client.CreateProduct()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `Int` | No |  |
-| `response_code` | `Int` | No |  |
-| `response_message` | `String` | No |  |
-| `template_name` | `String` | Yes |  |
-| `template_type` | `String` | Yes |  |
-| `template_xml` | `String` | Yes |  |
-| `terminal_type` | `String` | Yes |  |
+| `acquirerId` | `Int` | No |  |
+| `responseCode` | `Int` | No |  |
+| `responseMessage` | `String` | No |  |
+| `templateName` | `String` | Yes |  |
+| `templateType` | `String` | Yes |  |
+| `templateXml` | `String` | Yes |  |
+| `terminalType` | `String` | Yes |  |
 
 ### Operations
 
@@ -473,10 +473,10 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```swift
 let result = try client.CreateProduct().create(VMap([
-    ("template_name", .string("example_template_name")),  // String
-    ("template_type", .string("example_template_type")),  // String
-    ("template_xml", .string("example_template_xml")),  // String
-    ("terminal_type", .string("example_terminal_type"))  // String
+    ("templateName", .string("example_templateName")),  // String
+    ("templateType", .string("example_templateType")),  // String
+    ("templateXml", .string("example_templateXml")),  // String
+    ("terminalType", .string("example_terminalType"))  // String
 ]), nil)
 ```
 
@@ -511,13 +511,13 @@ let deactivateTerminal = client.DeactivateTerminal()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `corporate_uuid` | `String` | No |  |
-| `deactivation_reason` | `String` | Yes |  |
-| `package_order_uuid` | `String` | No |  |
-| `product_order_uuid` | `String` | No |  |
-| `response_code` | `Int` | No |  |
-| `response_message` | `String` | No |  |
-| `terminal_id` | `Int` | Yes |  |
+| `corporateUuid` | `String` | No |  |
+| `deactivationReason` | `String` | Yes |  |
+| `packageOrderUuid` | `String` | No |  |
+| `productOrderUuid` | `String` | No |  |
+| `responseCode` | `Int` | No |  |
+| `responseMessage` | `String` | No |  |
+| `terminalId` | `Int` | Yes |  |
 
 ### Operations
 
@@ -527,8 +527,8 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```swift
 let result = try client.DeactivateTerminal().create(VMap([
-    ("deactivation_reason", .string("example_deactivation_reason")),  // String
-    ("terminal_id", .int(1))  // Int
+    ("deactivationReason", .string("example_deactivationReason")),  // String
+    ("terminalId", .int(1))  // Int
 ]), nil)
 ```
 
@@ -563,16 +563,16 @@ let digitalServicesApi = client.DigitalServicesApi()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearing_date_from` | `String` | Yes |  |
-| `clearing_date_to` | `String` | Yes |  |
-| `response_code` | `Int` | No |  |
-| `response_message` | `String` | No |  |
-| `tx_count` | `Int` | No |  |
-| `tx_id_end` | `String` | No |  |
-| `tx_id_start` | `String` | No |  |
-| `tx_seq_no_end` | `Int` | No |  |
-| `tx_seq_no_start` | `Int` | No |  |
-| `tx_total` | `Int` | No |  |
+| `clearingDateFrom` | `String` | Yes |  |
+| `clearingDateTo` | `String` | Yes |  |
+| `responseCode` | `Int` | No |  |
+| `responseMessage` | `String` | No |  |
+| `txCount` | `Int` | No |  |
+| `txIdEnd` | `String` | No |  |
+| `txIdStart` | `String` | No |  |
+| `txSeqNoEnd` | `Int` | No |  |
+| `txSeqNoStart` | `Int` | No |  |
+| `txTotal` | `Int` | No |  |
 
 ### Operations
 
@@ -582,6 +582,8 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```swift
 let result = try client.DigitalServicesApi().create(VMap([
+    ("clearingDateFrom", .string("example_clearingDateFrom")),  // String
+    ("clearingDateTo", .string("example_clearingDateTo"))  // String
 ]), nil)
 ```
 
@@ -624,12 +626,12 @@ let ecDataEcom = client.EcDataEcom()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ecom_data` | `String` | No |  |
-| `response_code` | `Int` | No |  |
-| `response_message` | `String` | No |  |
-| `terminal_id` | `Int` | Yes |  |
-| `transaction_id` | `String` | Yes |  |
-| `transaction_type` | `String` | Yes |  |
+| `ecomData` | `String` | No |  |
+| `responseCode` | `Int` | No |  |
+| `responseMessage` | `String` | No |  |
+| `terminalId` | `Int` | Yes |  |
+| `transactionId` | `String` | Yes |  |
+| `transactionType` | `String` | Yes |  |
 
 ### Operations
 
@@ -639,9 +641,9 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```swift
 let result = try client.EcDataEcom().create(VMap([
-    ("terminal_id", .int(1)),  // Int
-    ("transaction_id", .string("example_transaction_id")),  // String
-    ("transaction_type", .string("example_transaction_type"))  // String
+    ("terminalId", .int(1)),  // Int
+    ("transactionId", .string("example_transactionId")),  // String
+    ("transactionType", .string("example_transactionType"))  // String
 ]), nil)
 ```
 
@@ -676,11 +678,11 @@ let ecomParameter = client.EcomParameter()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ecom_pass` | `String` | No |  |
-| `ecom_skey` | `String` | No |  |
-| `response_code` | `Int` | No |  |
-| `response_message` | `String` | No |  |
-| `terminal_id` | `Int` | Yes |  |
+| `ecomPass` | `String` | No |  |
+| `ecomSkey` | `String` | No |  |
+| `responseCode` | `Int` | No |  |
+| `responseMessage` | `String` | No |  |
+| `terminalId` | `Int` | Yes |  |
 
 ### Operations
 
@@ -690,7 +692,7 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```swift
 let result = try client.EcomParameter().create(VMap([
-    ("terminal_id", .int(1))  // Int
+    ("terminalId", .int(1))  // Int
 ]), nil)
 ```
 
@@ -725,12 +727,12 @@ let ecrData = client.EcrData()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ecr_data` | `String` | No |  |
-| `response_code` | `Int` | No |  |
-| `response_message` | `String` | No |  |
-| `terminal_id` | `Int` | Yes |  |
-| `transaction_id` | `String` | Yes |  |
-| `transaction_type` | `String` | Yes |  |
+| `ecrData` | `String` | No |  |
+| `responseCode` | `Int` | No |  |
+| `responseMessage` | `String` | No |  |
+| `terminalId` | `Int` | Yes |  |
+| `transactionId` | `String` | Yes |  |
+| `transactionType` | `String` | Yes |  |
 
 ### Operations
 
@@ -740,9 +742,9 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```swift
 let result = try client.EcrData().create(VMap([
-    ("terminal_id", .int(1)),  // Int
-    ("transaction_id", .string("example_transaction_id")),  // String
-    ("transaction_type", .string("example_transaction_type"))  // String
+    ("terminalId", .int(1)),  // Int
+    ("transactionId", .string("example_transactionId")),  // String
+    ("transactionType", .string("example_transactionType"))  // String
 ]), nil)
 ```
 
@@ -777,12 +779,12 @@ let emvData = client.EmvData()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `emv_data` | `String` | No |  |
-| `response_code` | `Int` | No |  |
-| `response_message` | `String` | No |  |
-| `terminal_id` | `Int` | Yes |  |
-| `transaction_id` | `String` | Yes |  |
-| `transaction_type` | `String` | Yes |  |
+| `emvData` | `String` | No |  |
+| `responseCode` | `Int` | No |  |
+| `responseMessage` | `String` | No |  |
+| `terminalId` | `Int` | Yes |  |
+| `transactionId` | `String` | Yes |  |
+| `transactionType` | `String` | Yes |  |
 
 ### Operations
 
@@ -792,9 +794,9 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```swift
 let result = try client.EmvData().create(VMap([
-    ("terminal_id", .int(1)),  // Int
-    ("transaction_id", .string("example_transaction_id")),  // String
-    ("transaction_type", .string("example_transaction_type"))  // String
+    ("terminalId", .int(1)),  // Int
+    ("transactionId", .string("example_transactionId")),  // String
+    ("transactionType", .string("example_transactionType"))  // String
 ]), nil)
 ```
 
@@ -829,20 +831,20 @@ let enableAcquiring = client.EnableAcquiring()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `account_no` | `Int` | No |  |
-| `additional_data` | `VMap` | No |  |
-| `corporate_uuid` | `String` | Yes |  |
+| `accountNo` | `Int` | No |  |
+| `additionalData` | `VMap` | No |  |
+| `corporateUuid` | `String` | Yes |  |
 | `currency` | `String` | Yes |  |
-| `merchant_category_code` | `Int` | Yes |  |
-| `package_order_uuid` | `String` | Yes |  |
-| `product_order_uuid` | `String` | Yes |  |
-| `response_code` | `Int` | No |  |
-| `response_message` | `String` | No |  |
-| `sorting_code` | `Int` | No |  |
-| `template_name` | `String` | Yes |  |
-| `terminal_id` | `[Value]` | No |  |
-| `terminal_id_acq` | `String` | No |  |
-| `vu_nummer` | `String` | No |  |
+| `merchantCategoryCode` | `Int` | Yes |  |
+| `packageOrderUuid` | `String` | Yes |  |
+| `productOrderUuid` | `String` | Yes |  |
+| `responseCode` | `Int` | No |  |
+| `responseMessage` | `String` | No |  |
+| `sortingCode` | `Int` | No |  |
+| `templateName` | `String` | Yes |  |
+| `terminalIdAcq` | `String` | No |  |
+| `terminalIds` | `[Value]` | No |  |
+| `vuNummer` | `String` | No |  |
 
 ### Operations
 
@@ -852,12 +854,12 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```swift
 let result = try client.EnableAcquiring().create(VMap([
-    ("corporate_uuid", .string("example_corporate_uuid")),  // String
+    ("corporateUuid", .string("example_corporateUuid")),  // String
     ("currency", .string("example_currency")),  // String
-    ("merchant_category_code", .int(1)),  // Int
-    ("package_order_uuid", .string("example_package_order_uuid")),  // String
-    ("product_order_uuid", .string("example_product_order_uuid")),  // String
-    ("template_name", .string("example_template_name"))  // String
+    ("merchantCategoryCode", .int(1)),  // Int
+    ("packageOrderUuid", .string("example_packageOrderUuid")),  // String
+    ("productOrderUuid", .string("example_productOrderUuid")),  // String
+    ("templateName", .string("example_templateName"))  // String
 ]), nil)
 ```
 
@@ -892,9 +894,9 @@ let getMerchantContractNumber = client.GetMerchantContractNumber()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `merchant_contract_number` | `String` | Yes |  |
-| `response_code` | `Int` | No |  |
-| `response_message` | `String` | No |  |
+| `merchantContractNumber` | `String` | Yes |  |
+| `responseCode` | `Int` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -904,7 +906,7 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```swift
 let result = try client.GetMerchantContractNumber().create(VMap([
-    ("merchant_contract_number", .string("example_merchant_contract_number"))  // String
+    ("merchantContractNumber", .string("example_merchantContractNumber"))  // String
 ]), nil)
 ```
 
@@ -939,9 +941,9 @@ let getTemplateXml = client.GetTemplateXml()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `Int` | No |  |
-| `response_message` | `String` | No |  |
-| `template_name` | `String` | Yes |  |
+| `responseCode` | `Int` | No |  |
+| `responseMessage` | `String` | No |  |
+| `templateName` | `String` | Yes |  |
 
 ### Operations
 
@@ -951,7 +953,7 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```swift
 let result = try client.GetTemplateXml().create(VMap([
-    ("template_name", .string("example_template_name"))  // String
+    ("templateName", .string("example_templateName"))  // String
 ]), nil)
 ```
 
@@ -986,9 +988,9 @@ let introduceMandator = client.IntroduceMandator()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `mandator_name` | `String` | Yes |  |
-| `response_code` | `Int` | No |  |
-| `response_message` | `String` | No |  |
+| `mandatorName` | `String` | Yes |  |
+| `responseCode` | `Int` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -998,7 +1000,7 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```swift
 let result = try client.IntroduceMandator().create(VMap([
-    ("mandator_name", .string("example_mandator_name"))  // String
+    ("mandatorName", .string("example_mandatorName"))  // String
 ]), nil)
 ```
 
@@ -1033,9 +1035,9 @@ let introducePackage = client.IntroducePackage()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `Int` | No |  |
-| `response_message` | `String` | No |  |
-| `terminal_template_description` | `String` | Yes |  |
+| `responseCode` | `Int` | No |  |
+| `responseMessage` | `String` | No |  |
+| `terminalTemplateDescription` | `String` | Yes |  |
 
 ### Operations
 
@@ -1045,7 +1047,7 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```swift
 let result = try client.IntroducePackage().create(VMap([
-    ("terminal_template_description", .string("example_terminal_template_description"))  // String
+    ("terminalTemplateDescription", .string("example_terminalTemplateDescription"))  // String
 ]), nil)
 ```
 
@@ -1081,15 +1083,15 @@ let keepAlive = client.KeepAlive()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `hwserialno` | `String` | No |  |
-| `ka_date_time_from` | `String` | No |  |
-| `ka_date_time_to` | `String` | No |  |
-| `keep_alive_data` | `[Value]` | No |  |
+| `kaDateTimeFrom` | `String` | No |  |
+| `kaDateTimeTo` | `String` | No |  |
+| `keepAliveData` | `[Value]` | No |  |
 | `pagination` | `VMap` | No |  |
-| `response_code` | `Int` | No |  |
-| `response_message` | `String` | No |  |
-| `terminal_date_time_from` | `String` | No |  |
-| `terminal_date_time_to` | `String` | No |  |
-| `terminal_id` | `Int` | No |  |
+| `responseCode` | `Int` | No |  |
+| `responseMessage` | `String` | No |  |
+| `terminalDateTimeFrom` | `String` | No |  |
+| `terminalDateTimeTo` | `String` | No |  |
+| `terminalId` | `Int` | No |  |
 
 ### Operations
 
@@ -1133,12 +1135,12 @@ let listTerminal = client.ListTerminal()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `corporate_uuid` | `[Value]` | No |  |
+| `corporateUuid` | `[Value]` | No |  |
 | `filter` | `VMap` | No |  |
 | `pagination` | `VMap` | No |  |
-| `response_code` | `Int` | No |  |
-| `response_message` | `String` | No |  |
-| `terminal` | `[Value]` | No |  |
+| `responseCode` | `Int` | No |  |
+| `responseMessage` | `String` | No |  |
+| `terminals` | `[Value]` | No |  |
 
 ### Operations
 
@@ -1182,12 +1184,12 @@ let mandatorClearingExport = client.MandatorClearingExport()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearing_date_from` | `String` | Yes |  |
-| `clearing_date_to` | `String` | Yes |  |
+| `clearingDateFrom` | `String` | Yes |  |
+| `clearingDateTo` | `String` | Yes |  |
 | `pagination` | `VMap` | No |  |
-| `record` | `[Value]` | No |  |
-| `response_code` | `Int` | No |  |
-| `response_message` | `String` | No |  |
+| `records` | `[Value]` | No |  |
+| `responseCode` | `Int` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -1197,8 +1199,8 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```swift
 let result = try client.MandatorClearingExport().create(VMap([
-    ("clearing_date_from", .string("example_clearing_date_from")),  // String
-    ("clearing_date_to", .string("example_clearing_date_to"))  // String
+    ("clearingDateFrom", .string("example_clearingDateFrom")),  // String
+    ("clearingDateTo", .string("example_clearingDateTo"))  // String
 ]), nil)
 ```
 
@@ -1233,12 +1235,12 @@ let mandatorClearingExportDownload = client.MandatorClearingExportDownload()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearing_date_from` | `String` | Yes |  |
-| `clearing_date_to` | `String` | Yes |  |
-| `file_id` | `String` | No |  |
-| `filename_template` | `String` | No |  |
-| `response_code` | `Int` | No |  |
-| `response_message` | `String` | No |  |
+| `clearingDateFrom` | `String` | Yes |  |
+| `clearingDateTo` | `String` | Yes |  |
+| `fileId` | `String` | No |  |
+| `filenameTemplate` | `String` | No |  |
+| `responseCode` | `Int` | No |  |
+| `responseMessage` | `String` | No |  |
 | `status` | `String` | No |  |
 
 ### Operations
@@ -1249,8 +1251,8 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```swift
 let result = try client.MandatorClearingExportDownload().create(VMap([
-    ("clearing_date_from", .string("example_clearing_date_from")),  // String
-    ("clearing_date_to", .string("example_clearing_date_to"))  // String
+    ("clearingDateFrom", .string("example_clearingDateFrom")),  // String
+    ("clearingDateTo", .string("example_clearingDateTo"))  // String
 ]), nil)
 ```
 
@@ -1293,11 +1295,11 @@ let mandatorClearingExportSummary = client.MandatorClearingExportSummary()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearing_date_from` | `String` | Yes |  |
-| `clearing_date_to` | `String` | Yes |  |
-| `record` | `[Value]` | No |  |
-| `response_code` | `Int` | No |  |
-| `response_message` | `String` | No |  |
+| `clearingDateFrom` | `String` | Yes |  |
+| `clearingDateTo` | `String` | Yes |  |
+| `records` | `[Value]` | No |  |
+| `responseCode` | `Int` | No |  |
+| `responseMessage` | `String` | No |  |
 
 ### Operations
 
@@ -1307,8 +1309,8 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```swift
 let result = try client.MandatorClearingExportSummary().create(VMap([
-    ("clearing_date_from", .string("example_clearing_date_from")),  // String
-    ("clearing_date_to", .string("example_clearing_date_to"))  // String
+    ("clearingDateFrom", .string("example_clearingDateFrom")),  // String
+    ("clearingDateTo", .string("example_clearingDateTo"))  // String
 ]), nil)
 ```
 
@@ -1343,30 +1345,30 @@ let merchantPortalServicesApi = client.MerchantPortalServicesApi()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `3_d_secure` | `String` | No |  |
-| `authorization_code` | `String` | No |  |
-| `card_brand` | `String` | No |  |
-| `clearing_amount_from` | `String` | No |  |
-| `clearing_amount_to` | `String` | No |  |
-| `clearing_currency` | `String` | No |  |
-| `clearing_status` | `String` | No |  |
-| `corporate_uuid` | `String` | No |  |
-| `order_by_transaction_date` | `String` | No |  |
+| `3DSecure` | `String` | No |  |
+| `authorizationCode` | `String` | No |  |
+| `cardBrand` | `String` | No |  |
+| `clearingAmountFrom` | `String` | No |  |
+| `clearingAmountTo` | `String` | No |  |
+| `clearingCurrency` | `String` | No |  |
+| `clearingStatus` | `String` | No |  |
+| `corporateUUID` | `String` | No |  |
+| `orderByTransactionDate` | `String` | No |  |
 | `pagination` | `VMap` | No |  |
-| `receipt_number` | `String` | No |  |
-| `referenced_transaction_id` | `String` | No |  |
-| `retrieval_reference_number` | `String` | No |  |
-| `source_id` | `Int` | No |  |
-| `tecsengine_response_code_from` | `String` | No |  |
-| `tecsengine_response_code_to` | `String` | No |  |
-| `terminal_id` | `Int` | No |  |
-| `trace_number` | `String` | No |  |
-| `transaction_amount_from` | `String` | No |  |
-| `transaction_amount_to` | `String` | No |  |
-| `transaction_date_from` | `String` | No |  |
-| `transaction_date_to` | `String` | No |  |
-| `transaction_id` | `String` | No |  |
-| `transaction_type` | `String` | No |  |
+| `receiptNumber` | `String` | No |  |
+| `referencedTransactionId` | `String` | No |  |
+| `retrievalReferenceNumber` | `String` | No |  |
+| `sourceId` | `Int` | No |  |
+| `tecsengineResponseCodeFrom` | `String` | No |  |
+| `tecsengineResponseCodeTo` | `String` | No |  |
+| `terminalId` | `Int` | No |  |
+| `traceNumber` | `String` | No |  |
+| `transactionAmountFrom` | `String` | No |  |
+| `transactionAmountTo` | `String` | No |  |
+| `transactionDateFrom` | `String` | No |  |
+| `transactionDateTo` | `String` | No |  |
+| `transactionId` | `String` | No |  |
+| `transactionType` | `String` | No |  |
 | `wallet` | `String` | No |  |
 
 ### Operations
@@ -1411,11 +1413,11 @@ let moveTid = client.MoveTid()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `productorderuuid` | `[Value]` | Yes |  |
-| `response_code` | `Int` | No |  |
-| `response_message` | `String` | No |  |
-| `target_packageorderuuid` | `String` | No |  |
-| `target_productorderuuid` | `String` | No |  |
+| `productorderuuids` | `[Value]` | Yes |  |
+| `responseCode` | `Int` | No |  |
+| `responseMessage` | `String` | No |  |
+| `targetPackageorderuuid` | `String` | No |  |
+| `targetProductorderuuid` | `String` | No |  |
 
 ### Operations
 
@@ -1425,7 +1427,7 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```swift
 let result = try client.MoveTid().create(VMap([
-    ("productorderuuid", .list([]))  // [Value]
+    ("productorderuuids", .list([]))  // [Value]
 ]), nil)
 ```
 
@@ -1460,44 +1462,44 @@ let paymentManual = client.PaymentManual()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_name` | `String` | No |  |
+| `acquirerName` | `String` | No |  |
 | `amount` | `Int` | Yes |  |
-| `authorization_number` | `String` | No |  |
-| `card_number` | `String` | Yes |  |
-| `card_type` | `String` | No |  |
+| `authorizationNumber` | `String` | No |  |
+| `cardNumber` | `String` | Yes |  |
+| `cardType` | `String` | No |  |
 | `currency` | `String` | Yes |  |
 | `cvc` | `String` | No |  |
-| `date_time_tx` | `String` | No |  |
-| `exp_date` | `String` | Yes |  |
-| `merchant_id` | `String` | No |  |
-| `original_transaction_id` | `String` | No |  |
+| `dateTimeTx` | `String` | No |  |
+| `expDate` | `String` | Yes |  |
+| `merchantId` | `String` | No |  |
+| `originalTransactionId` | `String` | No |  |
 | `password` | `String` | No |  |
-| `response_code` | `String` | No |  |
-| `response_message` | `String` | No |  |
-| `terminal_id` | `String` | No |  |
-| `transaction_id` | `String` | No |  |
+| `responseCode` | `String` | No |  |
+| `responseMessage` | `String` | No |  |
+| `terminalId` | `String` | No |  |
+| `transactionId` | `String` | No |  |
 | `txtype` | `String` | Yes |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `acquirer_name` | - |
+| `acquirerName` | - |
 | `amount` | - |
-| `authorization_number` | - |
-| `card_number` | - |
-| `card_type` | - |
+| `authorizationNumber` | - |
+| `cardNumber` | - |
+| `cardType` | - |
 | `currency` | - |
 | `cvc` | - |
-| `date_time_tx` | - |
-| `exp_date` | - |
-| `merchant_id` | - |
-| `original_transaction_id` | - |
+| `dateTimeTx` | - |
+| `expDate` | - |
+| `merchantId` | - |
+| `originalTransactionId` | - |
 | `password` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `terminal_id` | Yes |
-| `transaction_id` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `terminalId` | Yes |
+| `transactionId` | - |
 | `txtype` | - |
 
 ### Operations
@@ -1509,9 +1511,9 @@ Create a new entity with the given data. Returns the created entity data and thr
 ```swift
 let result = try client.PaymentManual().create(VMap([
     ("amount", .int(1)),  // Int
-    ("card_number", .string("example_card_number")),  // String
+    ("cardNumber", .string("example_cardNumber")),  // String
     ("currency", .string("example_currency")),  // String
-    ("exp_date", .string("example_exp_date")),  // String
+    ("expDate", .string("example_expDate")),  // String
     ("txtype", .string("example_txtype"))  // String
 ]), nil)
 ```
@@ -1547,43 +1549,18 @@ let paymentSred = client.PaymentSred()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_name` | `String` | No |  |
 | `amount` | `Int` | Yes |  |
-| `authorization_number` | `String` | No |  |
-| `card_type` | `String` | No |  |
 | `currency` | `String` | Yes |  |
-| `date_time_tx` | `String` | No |  |
-| `device_payload` | `String` | Yes |  |
-| `merchant_id` | `String` | No |  |
-| `original_transaction_id` | `String` | No |  |
+| `device` | `String` | No |  |
+| `devicePayload` | `String` | Yes |  |
+| `expDate` | `String` | No |  |
+| `mode` | `String` | No |  |
+| `panMasked` | `String` | No |  |
 | `password` | `String` | No |  |
-| `response_code` | `String` | No |  |
-| `response_message` | `String` | No |  |
-| `sred` | `VMap` | No |  |
-| `terminal_id` | `String` | No |  |
-| `transaction_id` | `String` | No |  |
+| `serial` | `String` | No |  |
+| `serviceCode` | `String` | No |  |
+| `terminalId` | `String` | Yes |  |
 | `txtype` | `String` | Yes |  |
-
-### Field Usage by Operation
-
-| Field | create |
-| --- | --- |
-| `acquirer_name` | - |
-| `amount` | - |
-| `authorization_number` | - |
-| `card_type` | - |
-| `currency` | - |
-| `date_time_tx` | - |
-| `device_payload` | - |
-| `merchant_id` | - |
-| `original_transaction_id` | - |
-| `password` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `sred` | - |
-| `terminal_id` | Yes |
-| `transaction_id` | - |
-| `txtype` | - |
 
 ### Operations
 
@@ -1595,7 +1572,8 @@ Create a new entity with the given data. Returns the created entity data and thr
 let result = try client.PaymentSred().create(VMap([
     ("amount", .int(1)),  // Int
     ("currency", .string("example_currency")),  // String
-    ("device_payload", .string("example_device_payload")),  // String
+    ("devicePayload", .string("example_devicePayload")),  // String
+    ("terminalId", .string("example_terminalId")),  // String
     ("txtype", .string("example_txtype"))  // String
 ]), nil)
 ```
@@ -1631,95 +1609,95 @@ let preAuthTransactionCompletion = client.PreAuthTransactionCompletion()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `String` | No |  |
-| `acquirer_name` | `String` | No |  |
-| `actual_bonus_point` | `String` | No |  |
+| `acquirerId` | `String` | No |  |
+| `acquirerName` | `String` | No |  |
+| `actualBonusPoints` | `String` | No |  |
 | `amount` | `Int` | No |  |
-| `authorization_code` | `String` | No |  |
-| `balance_amount` | `String` | No |  |
-| `card_brand` | `String` | No |  |
-| `card_number` | `String` | No |  |
-| `card_number_reference` | `String` | Yes |  |
-| `client_id` | `Int` | Yes |  |
+| `authorizationCode` | `String` | No |  |
+| `balanceAmount` | `String` | No |  |
+| `cardBrand` | `String` | No |  |
+| `cardNumber` | `String` | No |  |
+| `cardNumberReference` | `String` | Yes |  |
+| `clientId` | `Int` | Yes |  |
 | `currency` | `String` | Yes |  |
 | `cvc` | `String` | No |  |
-| `ec_data` | `String` | No |  |
-| `ecr_data` | `String` | No |  |
-| `emv_data` | `String` | No |  |
-| `exchange_fee` | `Int` | No |  |
-| `exchange_rate` | `String` | No |  |
-| `language_code` | `String` | No |  |
-| `merchant_address` | `String` | No |  |
-| `merchant_name` | `String` | No |  |
-| `merchant_number` | `String` | No |  |
-| `message_type` | `String` | No |  |
-| `original_trace_number` | `Int` | No |  |
-| `original_transaction_id` | `String` | No |  |
+| `ecData` | `String` | No |  |
+| `ecrData` | `String` | No |  |
+| `emvData` | `String` | No |  |
+| `exchangeFee` | `Int` | No |  |
+| `exchangeRate` | `String` | No |  |
+| `languageCode` | `String` | No |  |
+| `merchantAddress` | `String` | No |  |
+| `merchantName` | `String` | No |  |
+| `merchantNumber` | `String` | No |  |
+| `messageType` | `String` | No |  |
+| `originalTraceNumber` | `Int` | No |  |
+| `originalTransactionId` | `String` | No |  |
 | `password` | `String` | No |  |
-| `payment_reason` | `String` | No |  |
-| `receipt_footer` | `String` | No |  |
-| `receipt_header` | `String` | No |  |
-| `receipt_layout` | `Int` | No |  |
-| `receipt_number` | `String` | Yes |  |
-| `response_code` | `Int` | No |  |
-| `response_message` | `String` | No |  |
-| `serial_number` | `String` | No |  |
+| `paymentReason` | `String` | No |  |
+| `receiptFooter` | `String` | No |  |
+| `receiptHeader` | `String` | No |  |
+| `receiptLayout` | `Int` | No |  |
+| `receiptNumber` | `String` | Yes |  |
+| `responseCode` | `Int` | No |  |
+| `responseMessage` | `String` | No |  |
+| `serialNumber` | `String` | No |  |
 | `svc` | `String` | No |  |
-| `terminal_id` | `Int` | Yes |  |
-| `terminal_location` | `String` | No |  |
-| `trace_number` | `Int` | No |  |
-| `transaction_date` | `String` | No |  |
-| `transaction_id` | `String` | No |  |
-| `transaction_type` | `String` | Yes |  |
-| `tx_type` | `String` | No |  |
-| `user_data` | `String` | No |  |
+| `terminalId` | `Int` | Yes |  |
+| `terminalLocation` | `String` | No |  |
+| `traceNumber` | `Int` | No |  |
+| `transactionDate` | `String` | No |  |
+| `transactionId` | `String` | No |  |
+| `transactionType` | `String` | Yes |  |
+| `txType` | `String` | No |  |
+| `userData` | `String` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `acquirer_id` | - |
-| `acquirer_name` | - |
-| `actual_bonus_point` | - |
+| `acquirerId` | - |
+| `acquirerName` | - |
+| `actualBonusPoints` | - |
 | `amount` | Yes |
-| `authorization_code` | - |
-| `balance_amount` | - |
-| `card_brand` | - |
-| `card_number` | - |
-| `card_number_reference` | - |
-| `client_id` | - |
+| `authorizationCode` | - |
+| `balanceAmount` | - |
+| `cardBrand` | - |
+| `cardNumber` | - |
+| `cardNumberReference` | - |
+| `clientId` | - |
 | `currency` | - |
 | `cvc` | - |
-| `ec_data` | - |
-| `ecr_data` | - |
-| `emv_data` | - |
-| `exchange_fee` | - |
-| `exchange_rate` | - |
-| `language_code` | - |
-| `merchant_address` | - |
-| `merchant_name` | - |
-| `merchant_number` | - |
-| `message_type` | - |
-| `original_trace_number` | - |
-| `original_transaction_id` | Yes |
+| `ecData` | - |
+| `ecrData` | - |
+| `emvData` | - |
+| `exchangeFee` | - |
+| `exchangeRate` | - |
+| `languageCode` | - |
+| `merchantAddress` | - |
+| `merchantName` | - |
+| `merchantNumber` | - |
+| `messageType` | - |
+| `originalTraceNumber` | - |
+| `originalTransactionId` | Yes |
 | `password` | - |
-| `payment_reason` | - |
-| `receipt_footer` | - |
-| `receipt_header` | - |
-| `receipt_layout` | - |
-| `receipt_number` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `serial_number` | - |
+| `paymentReason` | - |
+| `receiptFooter` | - |
+| `receiptHeader` | - |
+| `receiptLayout` | - |
+| `receiptNumber` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `serialNumber` | - |
 | `svc` | - |
-| `terminal_id` | - |
-| `terminal_location` | - |
-| `trace_number` | - |
-| `transaction_date` | Yes |
-| `transaction_id` | Yes |
-| `transaction_type` | - |
-| `tx_type` | - |
-| `user_data` | - |
+| `terminalId` | - |
+| `terminalLocation` | - |
+| `traceNumber` | - |
+| `transactionDate` | Yes |
+| `transactionId` | Yes |
+| `transactionType` | - |
+| `txType` | - |
+| `userData` | - |
 
 ### Operations
 
@@ -1729,12 +1707,12 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```swift
 let result = try client.PreAuthTransactionCompletion().create(VMap([
-    ("card_number_reference", .string("example_card_number_reference")),  // String
-    ("client_id", .int(1)),  // Int
+    ("cardNumberReference", .string("example_cardNumberReference")),  // String
+    ("clientId", .int(1)),  // Int
     ("currency", .string("example_currency")),  // String
-    ("receipt_number", .string("example_receipt_number")),  // String
-    ("terminal_id", .int(1)),  // Int
-    ("transaction_type", .string("example_transaction_type"))  // String
+    ("receiptNumber", .string("example_receiptNumber")),  // String
+    ("terminalId", .int(1)),  // Int
+    ("transactionType", .string("example_transactionType"))  // String
 ]), nil)
 ```
 
@@ -1769,13 +1747,13 @@ let reactivateTerminal = client.ReactivateTerminal()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `corporate_uuid` | `String` | No |  |
-| `package_order_uuid` | `String` | No |  |
-| `product_order_uuid` | `String` | No |  |
-| `reactivation_reason` | `String` | Yes |  |
-| `response_code` | `Int` | No |  |
-| `response_message` | `String` | No |  |
-| `terminal_id` | `Int` | Yes |  |
+| `corporateUuid` | `String` | No |  |
+| `packageOrderUuid` | `String` | No |  |
+| `productOrderUuid` | `String` | No |  |
+| `reactivationReason` | `String` | Yes |  |
+| `responseCode` | `Int` | No |  |
+| `responseMessage` | `String` | No |  |
+| `terminalId` | `Int` | Yes |  |
 
 ### Operations
 
@@ -1785,8 +1763,8 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```swift
 let result = try client.ReactivateTerminal().create(VMap([
-    ("reactivation_reason", .string("example_reactivation_reason")),  // String
-    ("terminal_id", .int(1))  // Int
+    ("reactivationReason", .string("example_reactivationReason")),  // String
+    ("terminalId", .int(1))  // Int
 ]), nil)
 ```
 
@@ -1821,91 +1799,91 @@ let refundTransaction = client.RefundTransaction()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `String` | No |  |
-| `acquirer_name` | `String` | No |  |
-| `actual_bonus_point` | `String` | No |  |
+| `acquirerId` | `String` | No |  |
+| `acquirerName` | `String` | No |  |
+| `actualBonusPoints` | `String` | No |  |
 | `amount` | `Int` | No |  |
-| `authorization_code` | `String` | No |  |
-| `balance_amount` | `String` | No |  |
-| `card_brand` | `String` | No |  |
-| `card_number` | `String` | No |  |
-| `client_id` | `Int` | Yes |  |
+| `authorizationCode` | `String` | No |  |
+| `balanceAmount` | `String` | No |  |
+| `cardBrand` | `String` | No |  |
+| `cardNumber` | `String` | No |  |
+| `clientId` | `Int` | Yes |  |
 | `currency` | `String` | Yes |  |
 | `cvc` | `String` | No |  |
-| `ec_data` | `String` | No |  |
-| `ecr_data` | `String` | No |  |
-| `emv_data` | `String` | No |  |
-| `exchange_fee` | `Int` | No |  |
-| `exchange_rate` | `String` | No |  |
-| `language_code` | `String` | No |  |
-| `merchant_address` | `String` | No |  |
-| `merchant_name` | `String` | No |  |
-| `merchant_number` | `String` | No |  |
-| `message_type` | `String` | No |  |
-| `original_trace_number` | `Int` | No |  |
-| `original_transaction_id` | `String` | No |  |
+| `ecData` | `String` | No |  |
+| `ecrData` | `String` | No |  |
+| `emvData` | `String` | No |  |
+| `exchangeFee` | `Int` | No |  |
+| `exchangeRate` | `String` | No |  |
+| `languageCode` | `String` | No |  |
+| `merchantAddress` | `String` | No |  |
+| `merchantName` | `String` | No |  |
+| `merchantNumber` | `String` | No |  |
+| `messageType` | `String` | No |  |
+| `originalTraceNumber` | `Int` | No |  |
+| `originalTransactionId` | `String` | No |  |
 | `password` | `String` | No |  |
-| `payment_reason` | `String` | No |  |
-| `receipt_footer` | `String` | No |  |
-| `receipt_header` | `String` | No |  |
-| `receipt_layout` | `Int` | No |  |
-| `receipt_number` | `String` | Yes |  |
-| `response_code` | `Int` | No |  |
-| `response_message` | `String` | No |  |
-| `serial_number` | `String` | No |  |
+| `paymentReason` | `String` | No |  |
+| `receiptFooter` | `String` | No |  |
+| `receiptHeader` | `String` | No |  |
+| `receiptLayout` | `Int` | No |  |
+| `receiptNumber` | `String` | Yes |  |
+| `responseCode` | `Int` | No |  |
+| `responseMessage` | `String` | No |  |
+| `serialNumber` | `String` | No |  |
 | `svc` | `String` | No |  |
-| `terminal_id` | `Int` | Yes |  |
-| `terminal_location` | `String` | No |  |
-| `trace_number` | `Int` | No |  |
-| `transaction_date` | `String` | No |  |
-| `transaction_id` | `String` | No |  |
-| `tx_type` | `String` | No |  |
-| `user_data` | `String` | No |  |
+| `terminalId` | `Int` | Yes |  |
+| `terminalLocation` | `String` | No |  |
+| `traceNumber` | `Int` | No |  |
+| `transactionDate` | `String` | No |  |
+| `transactionId` | `String` | No |  |
+| `txType` | `String` | No |  |
+| `userData` | `String` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `acquirer_id` | - |
-| `acquirer_name` | - |
-| `actual_bonus_point` | - |
+| `acquirerId` | - |
+| `acquirerName` | - |
+| `actualBonusPoints` | - |
 | `amount` | Yes |
-| `authorization_code` | - |
-| `balance_amount` | - |
-| `card_brand` | - |
-| `card_number` | - |
-| `client_id` | - |
+| `authorizationCode` | - |
+| `balanceAmount` | - |
+| `cardBrand` | - |
+| `cardNumber` | - |
+| `clientId` | - |
 | `currency` | - |
 | `cvc` | - |
-| `ec_data` | - |
-| `ecr_data` | - |
-| `emv_data` | - |
-| `exchange_fee` | - |
-| `exchange_rate` | - |
-| `language_code` | - |
-| `merchant_address` | - |
-| `merchant_name` | - |
-| `merchant_number` | - |
-| `message_type` | - |
-| `original_trace_number` | - |
-| `original_transaction_id` | Yes |
+| `ecData` | - |
+| `ecrData` | - |
+| `emvData` | - |
+| `exchangeFee` | - |
+| `exchangeRate` | - |
+| `languageCode` | - |
+| `merchantAddress` | - |
+| `merchantName` | - |
+| `merchantNumber` | - |
+| `messageType` | - |
+| `originalTraceNumber` | - |
+| `originalTransactionId` | Yes |
 | `password` | - |
-| `payment_reason` | - |
-| `receipt_footer` | - |
-| `receipt_header` | - |
-| `receipt_layout` | - |
-| `receipt_number` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `serial_number` | - |
+| `paymentReason` | - |
+| `receiptFooter` | - |
+| `receiptHeader` | - |
+| `receiptLayout` | - |
+| `receiptNumber` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `serialNumber` | - |
 | `svc` | - |
-| `terminal_id` | - |
-| `terminal_location` | - |
-| `trace_number` | - |
-| `transaction_date` | Yes |
-| `transaction_id` | Yes |
-| `tx_type` | - |
-| `user_data` | - |
+| `terminalId` | - |
+| `terminalLocation` | - |
+| `traceNumber` | - |
+| `transactionDate` | Yes |
+| `transactionId` | Yes |
+| `txType` | - |
+| `userData` | - |
 
 ### Operations
 
@@ -1915,10 +1893,10 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```swift
 let result = try client.RefundTransaction().create(VMap([
-    ("client_id", .int(1)),  // Int
+    ("clientId", .int(1)),  // Int
     ("currency", .string("example_currency")),  // String
-    ("receipt_number", .string("example_receipt_number")),  // String
-    ("terminal_id", .int(1))  // Int
+    ("receiptNumber", .string("example_receiptNumber")),  // String
+    ("terminalId", .int(1))  // Int
 ]), nil)
 ```
 
@@ -1953,14 +1931,14 @@ let registerTecsCompany = client.RegisterTecsCompany()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `corporate_uuid` | `String` | Yes |  |
-| `package_order_uuid` | `String` | Yes |  |
-| `partner_id` | `Int` | No |  |
-| `partner_name` | `String` | No |  |
-| `product_order_uuid` | `String` | Yes |  |
-| `response_code` | `Int` | No |  |
-| `response_message` | `String` | No |  |
-| `template_name` | `String` | Yes |  |
+| `corporateUuid` | `String` | Yes |  |
+| `packageOrderUuid` | `String` | Yes |  |
+| `partnerId` | `Int` | No |  |
+| `partnerName` | `String` | No |  |
+| `productOrderUuid` | `String` | Yes |  |
+| `responseCode` | `Int` | No |  |
+| `responseMessage` | `String` | No |  |
+| `templateName` | `String` | Yes |  |
 
 ### Operations
 
@@ -1970,10 +1948,10 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```swift
 let result = try client.RegisterTecsCompany().create(VMap([
-    ("corporate_uuid", .string("example_corporate_uuid")),  // String
-    ("package_order_uuid", .string("example_package_order_uuid")),  // String
-    ("product_order_uuid", .string("example_product_order_uuid")),  // String
-    ("template_name", .string("example_template_name"))  // String
+    ("corporateUuid", .string("example_corporateUuid")),  // String
+    ("packageOrderUuid", .string("example_packageOrderUuid")),  // String
+    ("productOrderUuid", .string("example_productOrderUuid")),  // String
+    ("templateName", .string("example_templateName"))  // String
 ]), nil)
 ```
 
@@ -2008,24 +1986,24 @@ let registerTerminal = client.RegisterTerminal()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `additional_data` | `VMap` | No |  |
-| `corporate_uuid` | `String` | Yes |  |
-| `package_order_uuid` | `String` | Yes |  |
-| `product_order_uuid` | `String` | Yes |  |
-| `response_code` | `Int` | No |  |
-| `response_message` | `String` | No |  |
-| `tecs_web_secret_key` | `String` | No |  |
-| `template_name` | `String` | Yes |  |
-| `terminal_country_code` | `String` | Yes |  |
-| `terminal_id` | `Int` | No |  |
-| `terminal_id_acq` | `String` | No |  |
-| `terminal_language_code` | `String` | Yes |  |
-| `terminal_location` | `String` | Yes |  |
-| `terminal_serial_number` | `String` | No |  |
-| `token_io_alia` | `String` | No |  |
-| `token_io_iban` | `String` | No |  |
-| `token_io_member_id` | `String` | No |  |
-| `web_shop_url` | `String` | No |  |
+| `additionalData` | `VMap` | No |  |
+| `corporateUuid` | `String` | Yes |  |
+| `packageOrderUuid` | `String` | Yes |  |
+| `productOrderUuid` | `String` | Yes |  |
+| `responseCode` | `Int` | No |  |
+| `responseMessage` | `String` | No |  |
+| `tecsWebSecretKey` | `String` | No |  |
+| `templateName` | `String` | Yes |  |
+| `terminalCountryCode` | `String` | Yes |  |
+| `terminalId` | `Int` | No |  |
+| `terminalIdAcq` | `String` | No |  |
+| `terminalLanguageCode` | `String` | Yes |  |
+| `terminalLocation` | `String` | Yes |  |
+| `terminalSerialNumber` | `String` | No |  |
+| `tokenIOAlias` | `String` | No |  |
+| `tokenIOIban` | `String` | No |  |
+| `tokenIOMemberId` | `String` | No |  |
+| `webShopUrl` | `String` | No |  |
 
 ### Operations
 
@@ -2035,13 +2013,13 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```swift
 let result = try client.RegisterTerminal().create(VMap([
-    ("corporate_uuid", .string("example_corporate_uuid")),  // String
-    ("package_order_uuid", .string("example_package_order_uuid")),  // String
-    ("product_order_uuid", .string("example_product_order_uuid")),  // String
-    ("template_name", .string("example_template_name")),  // String
-    ("terminal_country_code", .string("example_terminal_country_code")),  // String
-    ("terminal_language_code", .string("example_terminal_language_code")),  // String
-    ("terminal_location", .string("example_terminal_location"))  // String
+    ("corporateUuid", .string("example_corporateUuid")),  // String
+    ("packageOrderUuid", .string("example_packageOrderUuid")),  // String
+    ("productOrderUuid", .string("example_productOrderUuid")),  // String
+    ("templateName", .string("example_templateName")),  // String
+    ("terminalCountryCode", .string("example_terminalCountryCode")),  // String
+    ("terminalLanguageCode", .string("example_terminalLanguageCode")),  // String
+    ("terminalLocation", .string("example_terminalLocation"))  // String
 ]), nil)
 ```
 
@@ -2076,16 +2054,16 @@ let reportData = client.ReportData()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `card_brand_report_data` | `[Value]` | No |  |
-| `clearing_date_from` | `String` | Yes |  |
-| `clearing_date_to` | `String` | Yes |  |
-| `corporate_id` | `String` | Yes |  |
+| `cardBrandReportData` | `[Value]` | No |  |
+| `clearingDateFrom` | `String` | Yes |  |
+| `clearingDateTo` | `String` | Yes |  |
+| `corporateId` | `String` | Yes |  |
 | `currency` | `String` | Yes |  |
-| `response_code` | `Int` | No |  |
-| `response_message` | `String` | No |  |
-| `sum_over_credit_tx` | `VMap` | No |  |
-| `sum_over_debit_tx` | `VMap` | No |  |
-| `terminal_id` | `Int` | No |  |
+| `responseCode` | `Int` | No |  |
+| `responseMessage` | `String` | No |  |
+| `sumOverCreditTx` | `VMap` | No |  |
+| `sumOverDebitTx` | `VMap` | No |  |
+| `terminalId` | `Int` | No |  |
 
 ### Operations
 
@@ -2095,9 +2073,9 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```swift
 let result = try client.ReportData().create(VMap([
-    ("clearing_date_from", .string("example_clearing_date_from")),  // String
-    ("clearing_date_to", .string("example_clearing_date_to")),  // String
-    ("corporate_id", .string("example_corporate_id")),  // String
+    ("clearingDateFrom", .string("example_clearingDateFrom")),  // String
+    ("clearingDateTo", .string("example_clearingDateTo")),  // String
+    ("corporateId", .string("example_corporateId")),  // String
     ("currency", .string("example_currency"))  // String
 ]), nil)
 ```
@@ -2133,56 +2111,56 @@ let statusTransaction = client.StatusTransaction()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_name` | `String` | No |  |
-| `acquirer_terminal_id` | `String` | No |  |
+| `acquirerName` | `String` | No |  |
+| `acquirerTerminalId` | `String` | No |  |
 | `amount` | `Int` | No |  |
-| `application_cryptogram` | `String` | No |  |
-| `authorization_code` | `Value` | No |  |
-| `authorization_date` | `String` | No |  |
-| `card_brand` | `String` | No |  |
-| `card_entry` | `String` | No |  |
-| `card_expiration` | `String` | No |  |
-| `card_number` | `String` | No |  |
-| `clearing_amount` | `Int` | No |  |
-| `clearing_batch_id` | `String` | No |  |
-| `clearing_currency` | `String` | No |  |
-| `clearing_date` | `String` | No |  |
-| `clearing_processed_date` | `String` | No |  |
-| `clearing_status` | `String` | No |  |
-| `client_id` | `Int` | No |  |
+| `applicationCryptogram` | `String` | No |  |
+| `authorizationCode` | `Value` | No |  |
+| `authorizationDate` | `String` | No |  |
+| `cardBrand` | `String` | No |  |
+| `cardEntry` | `String` | No |  |
+| `cardExpiration` | `String` | No |  |
+| `cardNumber` | `String` | No |  |
+| `clearingAmount` | `Int` | No |  |
+| `clearingBatchId` | `String` | No |  |
+| `clearingCurrency` | `String` | No |  |
+| `clearingDate` | `String` | No |  |
+| `clearingProcessedDate` | `String` | No |  |
+| `clearingStatus` | `String` | No |  |
+| `clientId` | `Int` | No |  |
 | `currency` | `String` | No |  |
 | `cvm` | `String` | No |  |
-| `ecr_data` | `String` | No |  |
-| `emv_application_id` | `String` | No |  |
-| `emv_application_label` | `String` | No |  |
-| `merchant_name` | `String` | No |  |
-| `merchant_number` | `String` | No |  |
-| `original_client_id` | `String` | No |  |
-| `original_terminal_id` | `Int` | No |  |
-| `original_transaction_id` | `String` | No |  |
-| `payment_reason` | `String` | No |  |
-| `receipt_number` | `String` | No |  |
-| `response_code` | `Int` | No |  |
-| `response_code_from_a` | `String` | No |  |
-| `response_message` | `String` | No |  |
-| `retrieval_reference_number` | `String` | No |  |
-| `service_code` | `String` | No |  |
-| `settlement_status` | `String` | No |  |
-| `source_id` | `Int` | No |  |
-| `tecsengine_response_code` | `Int` | No |  |
-| `tecsengine_response_text` | `String` | No |  |
-| `terminal_end_of_day_date` | `String` | No |  |
-| `terminal_id` | `Int` | No |  |
-| `terminal_location` | `String` | No |  |
-| `tip_amount` | `Int` | No |  |
-| `trace_number` | `Int` | No |  |
-| `transaction_clearing_date` | `String` | No |  |
-| `transaction_date` | `String` | No |  |
-| `transaction_id` | `String` | No |  |
-| `transaction_seq_number` | `Int` | No |  |
-| `transaction_server_date` | `String` | No |  |
-| `transaction_source` | `String` | No |  |
-| `transaction_type` | `String` | No |  |
+| `ecrData` | `String` | No |  |
+| `emvApplicationId` | `String` | No |  |
+| `emvApplicationLabel` | `String` | No |  |
+| `merchantName` | `String` | No |  |
+| `merchantNumber` | `String` | No |  |
+| `originalClientId` | `String` | No |  |
+| `originalTerminalId` | `Int` | No |  |
+| `originalTransactionId` | `String` | No |  |
+| `paymentReason` | `String` | No |  |
+| `receiptNumber` | `String` | No |  |
+| `responseCode` | `Int` | No |  |
+| `responseCodeFromAS` | `String` | No |  |
+| `responseMessage` | `String` | No |  |
+| `retrievalReferenceNumber` | `String` | No |  |
+| `serviceCode` | `String` | No |  |
+| `settlementStatus` | `String` | No |  |
+| `sourceId` | `Int` | No |  |
+| `tecsengineResponseCode` | `Int` | No |  |
+| `tecsengineResponseText` | `String` | No |  |
+| `terminalEndOfDayDate` | `String` | No |  |
+| `terminalId` | `Int` | No |  |
+| `terminalLocation` | `String` | No |  |
+| `tipAmount` | `Int` | No |  |
+| `traceNumber` | `Int` | No |  |
+| `transactionClearingDate` | `String` | No |  |
+| `transactionDate` | `String` | No |  |
+| `transactionId` | `String` | No |  |
+| `transactionSeqNumber` | `Int` | No |  |
+| `transactionServerDate` | `String` | No |  |
+| `transactionSource` | `String` | No |  |
+| `transactionType` | `String` | No |  |
 
 ### Operations
 
@@ -2226,12 +2204,12 @@ let storeTerminalParameter = client.StoreTerminalParameter()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acq_tab_nexo` | `VMap` | No |  |
-| `config_version` | `String` | No |  |
-| `response_code` | `Int` | No |  |
-| `response_message` | `String` | No |  |
-| `serial_number` | `String` | Yes |  |
-| `tid_sent` | `String` | No |  |
+| `acqTabNexo` | `VMap` | No |  |
+| `configVersion` | `String` | No |  |
+| `responseCode` | `Int` | No |  |
+| `responseMessage` | `String` | No |  |
+| `serialNumber` | `String` | Yes |  |
+| `tidSent` | `String` | No |  |
 
 ### Operations
 
@@ -2241,7 +2219,7 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```swift
 let result = try client.StoreTerminalParameter().create(VMap([
-    ("serial_number", .string("example_serial_number"))  // String
+    ("serialNumber", .string("example_serialNumber"))  // String
 ]), nil)
 ```
 
@@ -2276,11 +2254,11 @@ let terminalId = client.TerminalId()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `device_serial_number` | `[Value]` | Yes |  |
-| `duplicate_terminal_id` | `[Value]` | No |  |
-| `response_code` | `Int` | No |  |
-| `response_message` | `String` | No |  |
-| `terminal` | `[Value]` | No |  |
+| `deviceSerialNumber` | `[Value]` | Yes |  |
+| `duplicateTerminalIds` | `[Value]` | No |  |
+| `responseCode` | `Int` | No |  |
+| `responseMessage` | `String` | No |  |
+| `terminals` | `[Value]` | No |  |
 
 ### Operations
 
@@ -2290,7 +2268,7 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```swift
 let result = try client.TerminalId().create(VMap([
-    ("device_serial_number", .list([]))  // [Value]
+    ("deviceSerialNumber", .list([]))  // [Value]
 ]), nil)
 ```
 
@@ -2325,34 +2303,34 @@ let transactionHistory = client.TransactionHistory()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `3_d_secure` | `String` | No |  |
-| `authorization_code` | `String` | No |  |
-| `card_brand` | `String` | No |  |
-| `clearing_amount_from` | `String` | No |  |
-| `clearing_amount_to` | `String` | No |  |
-| `clearing_currency` | `String` | No |  |
-| `clearing_status` | `String` | No |  |
-| `corporate_uuid` | `String` | No |  |
-| `order_by_transaction_date` | `String` | No |  |
+| `3DSecure` | `String` | No |  |
+| `authorizationCode` | `String` | No |  |
+| `cardBrand` | `String` | No |  |
+| `clearingAmountFrom` | `String` | No |  |
+| `clearingAmountTo` | `String` | No |  |
+| `clearingCurrency` | `String` | No |  |
+| `clearingStatus` | `String` | No |  |
+| `corporateUUID` | `String` | No |  |
+| `orderByTransactionDate` | `String` | No |  |
 | `pagination` | `VMap` | No |  |
-| `payment_token_public_id` | `String` | No |  |
-| `receipt_number` | `String` | No |  |
-| `referenced_transaction_id` | `String` | No |  |
-| `response_code` | `Int` | No |  |
-| `response_message` | `String` | No |  |
-| `retrieval_reference_number` | `String` | No |  |
-| `source_id` | `Int` | No |  |
-| `tecsengine_response_code_from` | `String` | No |  |
-| `tecsengine_response_code_to` | `String` | No |  |
-| `terminal_id` | `Int` | No |  |
-| `trace_number` | `String` | No |  |
-| `transaction_amount_from` | `String` | No |  |
-| `transaction_amount_to` | `String` | No |  |
-| `transaction_date_from` | `String` | No |  |
-| `transaction_date_to` | `String` | No |  |
-| `transaction_history` | `[Value]` | No |  |
-| `transaction_id` | `String` | No |  |
-| `transaction_type` | `String` | No |  |
+| `paymentTokenPublicId` | `String` | No |  |
+| `receiptNumber` | `String` | No |  |
+| `referencedTransactionId` | `String` | No |  |
+| `responseCode` | `Int` | No |  |
+| `responseMessage` | `String` | No |  |
+| `retrievalReferenceNumber` | `String` | No |  |
+| `sourceId` | `Int` | No |  |
+| `tecsengineResponseCodeFrom` | `String` | No |  |
+| `tecsengineResponseCodeTo` | `String` | No |  |
+| `terminalId` | `Int` | No |  |
+| `traceNumber` | `String` | No |  |
+| `transactionAmountFrom` | `String` | No |  |
+| `transactionAmountTo` | `String` | No |  |
+| `transactionDateFrom` | `String` | No |  |
+| `transactionDateTo` | `String` | No |  |
+| `transactionHistories` | `[Value]` | No |  |
+| `transactionId` | `String` | No |  |
+| `transactionType` | `String` | No |  |
 | `wallet` | `String` | No |  |
 
 ### Operations
@@ -2398,22 +2376,22 @@ let transactionsCount = client.TransactionsCount()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `period` | `String` | No |  |
-| `response_code` | `Int` | No |  |
-| `response_message` | `String` | No |  |
-| `transaction_date_from` | `String` | No |  |
-| `transaction_date_to` | `String` | No |  |
-| `transactions_count` | `[Value]` | No |  |
+| `responseCode` | `Int` | No |  |
+| `responseMessage` | `String` | No |  |
+| `transactionDateFrom` | `String` | No |  |
+| `transactionDateTo` | `String` | No |  |
+| `transactionsCount` | `[Value]` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
 | `period` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `transaction_date_from` | Yes |
-| `transaction_date_to` | Yes |
-| `transactions_count` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `transactionDateFrom` | Yes |
+| `transactionDateTo` | Yes |
+| `transactionsCount` | - |
 
 ### Operations
 
@@ -2458,22 +2436,22 @@ let transactionsCountCardBrand = client.TransactionsCountCardBrand()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `period` | `String` | No |  |
-| `response_code` | `Int` | No |  |
-| `response_message` | `String` | No |  |
-| `transaction_date_from` | `String` | No |  |
-| `transaction_date_to` | `String` | No |  |
-| `transactions_count` | `[Value]` | No |  |
+| `responseCode` | `Int` | No |  |
+| `responseMessage` | `String` | No |  |
+| `transactionDateFrom` | `String` | No |  |
+| `transactionDateTo` | `String` | No |  |
+| `transactionsCount` | `[Value]` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
 | `period` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `transaction_date_from` | Yes |
-| `transaction_date_to` | Yes |
-| `transactions_count` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `transactionDateFrom` | Yes |
+| `transactionDateTo` | Yes |
+| `transactionsCount` | - |
 
 ### Operations
 
@@ -2518,22 +2496,22 @@ let transactionsTurnover = client.TransactionsTurnover()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `period` | `String` | No |  |
-| `response_code` | `Int` | No |  |
-| `response_message` | `String` | No |  |
-| `transaction_date_from` | `String` | No |  |
-| `transaction_date_to` | `String` | No |  |
-| `turnover` | `[Value]` | No |  |
+| `responseCode` | `Int` | No |  |
+| `responseMessage` | `String` | No |  |
+| `transactionDateFrom` | `String` | No |  |
+| `transactionDateTo` | `String` | No |  |
+| `turnovers` | `[Value]` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
 | `period` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `transaction_date_from` | Yes |
-| `transaction_date_to` | Yes |
-| `turnover` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `transactionDateFrom` | Yes |
+| `transactionDateTo` | Yes |
+| `turnovers` | - |
 
 ### Operations
 
@@ -2578,15 +2556,15 @@ let updateMerchant = client.UpdateMerchant()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `city` | `String` | No |  |
-| `corporate_uuid` | `String` | Yes |  |
+| `corporateUuid` | `String` | Yes |  |
 | `country` | `String` | No |  |
-| `merchant_category_code` | `String` | No |  |
+| `merchantCategoryCode` | `String` | No |  |
 | `name` | `String` | No |  |
-| `response_code` | `Int` | No |  |
-| `response_message` | `String` | No |  |
+| `responseCode` | `Int` | No |  |
+| `responseMessage` | `String` | No |  |
 | `state` | `String` | No |  |
 | `street` | `String` | No |  |
-| `vu_nummer` | `String` | No |  |
+| `vuNummer` | `String` | No |  |
 | `zipcode` | `String` | No |  |
 
 ### Operations
@@ -2597,7 +2575,7 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```swift
 let result = try client.UpdateMerchant().create(VMap([
-    ("corporate_uuid", .string("example_corporate_uuid"))  // String
+    ("corporateUuid", .string("example_corporateUuid"))  // String
 ]), nil)
 ```
 
@@ -2632,10 +2610,10 @@ let updateTemplateXml = client.UpdateTemplateXml()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `Int` | No |  |
-| `response_message` | `String` | No |  |
-| `template_name` | `String` | Yes |  |
-| `template_xml` | `String` | Yes |  |
+| `responseCode` | `Int` | No |  |
+| `responseMessage` | `String` | No |  |
+| `templateName` | `String` | Yes |  |
+| `templateXml` | `String` | Yes |  |
 
 ### Operations
 
@@ -2645,8 +2623,8 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```swift
 let result = try client.UpdateTemplateXml().create(VMap([
-    ("template_name", .string("example_template_name")),  // String
-    ("template_xml", .string("example_template_xml"))  // String
+    ("templateName", .string("example_templateName")),  // String
+    ("templateXml", .string("example_templateXml"))  // String
 ]), nil)
 ```
 
@@ -2681,8 +2659,8 @@ let version = client.Version()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `app_name` | `String` | No |  |
-| `build_date` | `String` | No |  |
+| `appName` | `String` | No |  |
+| `buildDate` | `String` | No |  |
 | `version` | `String` | No |  |
 
 ### Operations

@@ -47,7 +47,7 @@ void tests() {
       final ecr_data_ref01_ent = client.EcrData();
       dynamic ecr_data_ref01_data = setup['data']['new']['ecr_data']['ecr_data_ref01'];
 
-      ecr_data_ref01_data = await ecr_data_ref01_ent.create(ecr_data_ref01_data);
+      ecr_data_ref01_data = (await ecr_data_ref01_ent.create(ecr_data_ref01_data)).data();
       ok(null != ecr_data_ref01_data);
 
 

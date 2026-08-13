@@ -6,37 +6,37 @@ main: kit: entity: reactivate_terminal: {
 
   fields: [
     {
-      name: "corporate_uuid"
+      name: "corporateUuid"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "package_order_uuid"
+      name: "packageOrderUuid"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "product_order_uuid"
+      name: "productOrderUuid"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "reactivation_reason"
+      name: "reactivationReason"
       req: true
       type: "`$STRING`"
     }
     {
-      name: "response_code"
+      name: "responseCode"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "response_message"
+      name: "responseMessage"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "terminal_id"
+      name: "terminalId"
       req: true
       type: "`$INTEGER`"
     }

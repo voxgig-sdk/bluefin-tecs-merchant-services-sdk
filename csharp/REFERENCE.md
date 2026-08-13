@@ -283,91 +283,91 @@ var cancelTransaction = client.CancelTransaction();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `string` | No |  |
-| `acquirer_name` | `string` | No |  |
-| `actual_bonus_point` | `string` | No |  |
+| `acquirerId` | `string` | No |  |
+| `acquirerName` | `string` | No |  |
+| `actualBonusPoints` | `string` | No |  |
 | `amount` | `long` | No |  |
-| `authorization_code` | `string` | No |  |
-| `balance_amount` | `string` | No |  |
-| `card_brand` | `string` | No |  |
-| `card_number` | `string` | No |  |
-| `client_id` | `long` | Yes |  |
+| `authorizationCode` | `string` | No |  |
+| `balanceAmount` | `string` | No |  |
+| `cardBrand` | `string` | No |  |
+| `cardNumber` | `string` | No |  |
+| `clientId` | `long` | Yes |  |
 | `currency` | `string` | Yes |  |
 | `cvc` | `string` | No |  |
-| `ec_data` | `string` | No |  |
-| `ecr_data` | `string` | No |  |
-| `emv_data` | `string` | No |  |
-| `exchange_fee` | `long` | No |  |
-| `exchange_rate` | `string` | No |  |
-| `language_code` | `string` | No |  |
-| `merchant_address` | `string` | No |  |
-| `merchant_name` | `string` | No |  |
-| `merchant_number` | `string` | No |  |
-| `message_type` | `string` | No |  |
-| `original_trace_number` | `long` | No |  |
-| `original_transaction_id` | `string` | No |  |
+| `ecData` | `string` | No |  |
+| `ecrData` | `string` | No |  |
+| `emvData` | `string` | No |  |
+| `exchangeFee` | `long` | No |  |
+| `exchangeRate` | `string` | No |  |
+| `languageCode` | `string` | No |  |
+| `merchantAddress` | `string` | No |  |
+| `merchantName` | `string` | No |  |
+| `merchantNumber` | `string` | No |  |
+| `messageType` | `string` | No |  |
+| `originalTraceNumber` | `long` | No |  |
+| `originalTransactionId` | `string` | No |  |
 | `password` | `string` | No |  |
-| `payment_reason` | `string` | No |  |
-| `receipt_footer` | `string` | No |  |
-| `receipt_header` | `string` | No |  |
-| `receipt_layout` | `long` | No |  |
-| `receipt_number` | `string` | Yes |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
-| `serial_number` | `string` | No |  |
+| `paymentReason` | `string` | No |  |
+| `receiptFooter` | `string` | No |  |
+| `receiptHeader` | `string` | No |  |
+| `receiptLayout` | `long` | No |  |
+| `receiptNumber` | `string` | Yes |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `serialNumber` | `string` | No |  |
 | `svc` | `string` | No |  |
-| `terminal_id` | `long` | Yes |  |
-| `terminal_location` | `string` | No |  |
-| `trace_number` | `long` | No |  |
-| `transaction_date` | `string` | No |  |
-| `transaction_id` | `string` | No |  |
-| `tx_type` | `string` | No |  |
-| `user_data` | `string` | No |  |
+| `terminalId` | `long` | Yes |  |
+| `terminalLocation` | `string` | No |  |
+| `traceNumber` | `long` | No |  |
+| `transactionDate` | `string` | No |  |
+| `transactionId` | `string` | No |  |
+| `txType` | `string` | No |  |
+| `userData` | `string` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `acquirer_id` | - |
-| `acquirer_name` | - |
-| `actual_bonus_point` | - |
+| `acquirerId` | - |
+| `acquirerName` | - |
+| `actualBonusPoints` | - |
 | `amount` | Yes |
-| `authorization_code` | - |
-| `balance_amount` | - |
-| `card_brand` | - |
-| `card_number` | - |
-| `client_id` | - |
+| `authorizationCode` | - |
+| `balanceAmount` | - |
+| `cardBrand` | - |
+| `cardNumber` | - |
+| `clientId` | - |
 | `currency` | - |
 | `cvc` | - |
-| `ec_data` | - |
-| `ecr_data` | - |
-| `emv_data` | - |
-| `exchange_fee` | - |
-| `exchange_rate` | - |
-| `language_code` | - |
-| `merchant_address` | - |
-| `merchant_name` | - |
-| `merchant_number` | - |
-| `message_type` | Yes |
-| `original_trace_number` | - |
-| `original_transaction_id` | Yes |
+| `ecData` | - |
+| `ecrData` | - |
+| `emvData` | - |
+| `exchangeFee` | - |
+| `exchangeRate` | - |
+| `languageCode` | - |
+| `merchantAddress` | - |
+| `merchantName` | - |
+| `merchantNumber` | - |
+| `messageType` | Yes |
+| `originalTraceNumber` | - |
+| `originalTransactionId` | Yes |
 | `password` | - |
-| `payment_reason` | - |
-| `receipt_footer` | - |
-| `receipt_header` | - |
-| `receipt_layout` | - |
-| `receipt_number` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `serial_number` | - |
+| `paymentReason` | - |
+| `receiptFooter` | - |
+| `receiptHeader` | - |
+| `receiptLayout` | - |
+| `receiptNumber` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `serialNumber` | - |
 | `svc` | - |
-| `terminal_id` | - |
-| `terminal_location` | - |
-| `trace_number` | - |
-| `transaction_date` | Yes |
-| `transaction_id` | Yes |
-| `tx_type` | - |
-| `user_data` | - |
+| `terminalId` | - |
+| `terminalLocation` | - |
+| `traceNumber` | - |
+| `transactionDate` | Yes |
+| `transactionId` | Yes |
+| `txType` | - |
+| `userData` | - |
 
 ### Operations
 
@@ -378,10 +378,10 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```csharp
 var result = client.CancelTransaction().Create(new Dictionary<string, object?>
 {
-    ["client_id"] = 1L,  // long
+    ["clientId"] = 1L,  // long
     ["currency"] = "example_currency",  // string
-    ["receipt_number"] = "example_receipt_number",  // string
-    ["terminal_id"] = 1L,  // long
+    ["receiptNumber"] = "example_receiptNumber",  // string
+    ["terminalId"] = 1L,  // long
 });
 ```
 
@@ -416,9 +416,9 @@ var checkCardBlackListed = client.CheckCardBlackListed();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `card_no` | `string` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
+| `cardNo` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -463,13 +463,13 @@ var createProduct = client.CreateProduct();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `long` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
-| `template_name` | `string` | Yes |  |
-| `template_type` | `string` | Yes |  |
-| `template_xml` | `string` | Yes |  |
-| `terminal_type` | `string` | Yes |  |
+| `acquirerId` | `long` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `templateName` | `string` | Yes |  |
+| `templateType` | `string` | Yes |  |
+| `templateXml` | `string` | Yes |  |
+| `terminalType` | `string` | Yes |  |
 
 ### Operations
 
@@ -480,10 +480,10 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```csharp
 var result = client.CreateProduct().Create(new Dictionary<string, object?>
 {
-    ["template_name"] = "example_template_name",  // string
-    ["template_type"] = "example_template_type",  // string
-    ["template_xml"] = "example_template_xml",  // string
-    ["terminal_type"] = "example_terminal_type",  // string
+    ["templateName"] = "example_templateName",  // string
+    ["templateType"] = "example_templateType",  // string
+    ["templateXml"] = "example_templateXml",  // string
+    ["terminalType"] = "example_terminalType",  // string
 });
 ```
 
@@ -518,13 +518,13 @@ var deactivateTerminal = client.DeactivateTerminal();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `corporate_uuid` | `string` | No |  |
-| `deactivation_reason` | `string` | Yes |  |
-| `package_order_uuid` | `string` | No |  |
-| `product_order_uuid` | `string` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
-| `terminal_id` | `long` | Yes |  |
+| `corporateUuid` | `string` | No |  |
+| `deactivationReason` | `string` | Yes |  |
+| `packageOrderUuid` | `string` | No |  |
+| `productOrderUuid` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `terminalId` | `long` | Yes |  |
 
 ### Operations
 
@@ -535,8 +535,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```csharp
 var result = client.DeactivateTerminal().Create(new Dictionary<string, object?>
 {
-    ["deactivation_reason"] = "example_deactivation_reason",  // string
-    ["terminal_id"] = 1L,  // long
+    ["deactivationReason"] = "example_deactivationReason",  // string
+    ["terminalId"] = 1L,  // long
 });
 ```
 
@@ -571,16 +571,16 @@ var digitalServicesApi = client.DigitalServicesApi();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearing_date_from` | `string` | Yes |  |
-| `clearing_date_to` | `string` | Yes |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
-| `tx_count` | `long` | No |  |
-| `tx_id_end` | `string` | No |  |
-| `tx_id_start` | `string` | No |  |
-| `tx_seq_no_end` | `long` | No |  |
-| `tx_seq_no_start` | `long` | No |  |
-| `tx_total` | `long` | No |  |
+| `clearingDateFrom` | `string` | Yes |  |
+| `clearingDateTo` | `string` | Yes |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `txCount` | `long` | No |  |
+| `txIdEnd` | `string` | No |  |
+| `txIdStart` | `string` | No |  |
+| `txSeqNoEnd` | `long` | No |  |
+| `txSeqNoStart` | `long` | No |  |
+| `txTotal` | `long` | No |  |
 
 ### Operations
 
@@ -591,6 +591,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```csharp
 var result = client.DigitalServicesApi().Create(new Dictionary<string, object?>
 {
+    ["clearingDateFrom"] = "example_clearingDateFrom",  // string
+    ["clearingDateTo"] = "example_clearingDateTo",  // string
 });
 ```
 
@@ -633,12 +635,12 @@ var ecDataEcom = client.EcDataEcom();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ecom_data` | `string` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
-| `terminal_id` | `long` | Yes |  |
-| `transaction_id` | `string` | Yes |  |
-| `transaction_type` | `string` | Yes |  |
+| `ecomData` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `terminalId` | `long` | Yes |  |
+| `transactionId` | `string` | Yes |  |
+| `transactionType` | `string` | Yes |  |
 
 ### Operations
 
@@ -649,9 +651,9 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```csharp
 var result = client.EcDataEcom().Create(new Dictionary<string, object?>
 {
-    ["terminal_id"] = 1L,  // long
-    ["transaction_id"] = "example_transaction_id",  // string
-    ["transaction_type"] = "example_transaction_type",  // string
+    ["terminalId"] = 1L,  // long
+    ["transactionId"] = "example_transactionId",  // string
+    ["transactionType"] = "example_transactionType",  // string
 });
 ```
 
@@ -686,11 +688,11 @@ var ecomParameter = client.EcomParameter();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ecom_pass` | `string` | No |  |
-| `ecom_skey` | `string` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
-| `terminal_id` | `long` | Yes |  |
+| `ecomPass` | `string` | No |  |
+| `ecomSkey` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `terminalId` | `long` | Yes |  |
 
 ### Operations
 
@@ -701,7 +703,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```csharp
 var result = client.EcomParameter().Create(new Dictionary<string, object?>
 {
-    ["terminal_id"] = 1L,  // long
+    ["terminalId"] = 1L,  // long
 });
 ```
 
@@ -736,12 +738,12 @@ var ecrData = client.EcrData();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ecr_data` | `string` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
-| `terminal_id` | `long` | Yes |  |
-| `transaction_id` | `string` | Yes |  |
-| `transaction_type` | `string` | Yes |  |
+| `ecrData` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `terminalId` | `long` | Yes |  |
+| `transactionId` | `string` | Yes |  |
+| `transactionType` | `string` | Yes |  |
 
 ### Operations
 
@@ -752,9 +754,9 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```csharp
 var result = client.EcrData().Create(new Dictionary<string, object?>
 {
-    ["terminal_id"] = 1L,  // long
-    ["transaction_id"] = "example_transaction_id",  // string
-    ["transaction_type"] = "example_transaction_type",  // string
+    ["terminalId"] = 1L,  // long
+    ["transactionId"] = "example_transactionId",  // string
+    ["transactionType"] = "example_transactionType",  // string
 });
 ```
 
@@ -789,12 +791,12 @@ var emvData = client.EmvData();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `emv_data` | `string` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
-| `terminal_id` | `long` | Yes |  |
-| `transaction_id` | `string` | Yes |  |
-| `transaction_type` | `string` | Yes |  |
+| `emvData` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `terminalId` | `long` | Yes |  |
+| `transactionId` | `string` | Yes |  |
+| `transactionType` | `string` | Yes |  |
 
 ### Operations
 
@@ -805,9 +807,9 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```csharp
 var result = client.EmvData().Create(new Dictionary<string, object?>
 {
-    ["terminal_id"] = 1L,  // long
-    ["transaction_id"] = "example_transaction_id",  // string
-    ["transaction_type"] = "example_transaction_type",  // string
+    ["terminalId"] = 1L,  // long
+    ["transactionId"] = "example_transactionId",  // string
+    ["transactionType"] = "example_transactionType",  // string
 });
 ```
 
@@ -842,20 +844,20 @@ var enableAcquiring = client.EnableAcquiring();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `account_no` | `long` | No |  |
-| `additional_data` | `Dictionary<string, object?>` | No |  |
-| `corporate_uuid` | `string` | Yes |  |
+| `accountNo` | `long` | No |  |
+| `additionalData` | `Dictionary<string, object?>` | No |  |
+| `corporateUuid` | `string` | Yes |  |
 | `currency` | `string` | Yes |  |
-| `merchant_category_code` | `long` | Yes |  |
-| `package_order_uuid` | `string` | Yes |  |
-| `product_order_uuid` | `string` | Yes |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
-| `sorting_code` | `long` | No |  |
-| `template_name` | `string` | Yes |  |
-| `terminal_id` | `List<object?>` | No |  |
-| `terminal_id_acq` | `string` | No |  |
-| `vu_nummer` | `string` | No |  |
+| `merchantCategoryCode` | `long` | Yes |  |
+| `packageOrderUuid` | `string` | Yes |  |
+| `productOrderUuid` | `string` | Yes |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `sortingCode` | `long` | No |  |
+| `templateName` | `string` | Yes |  |
+| `terminalIdAcq` | `string` | No |  |
+| `terminalIds` | `List<object?>` | No |  |
+| `vuNummer` | `string` | No |  |
 
 ### Operations
 
@@ -866,12 +868,12 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```csharp
 var result = client.EnableAcquiring().Create(new Dictionary<string, object?>
 {
-    ["corporate_uuid"] = "example_corporate_uuid",  // string
+    ["corporateUuid"] = "example_corporateUuid",  // string
     ["currency"] = "example_currency",  // string
-    ["merchant_category_code"] = 1L,  // long
-    ["package_order_uuid"] = "example_package_order_uuid",  // string
-    ["product_order_uuid"] = "example_product_order_uuid",  // string
-    ["template_name"] = "example_template_name",  // string
+    ["merchantCategoryCode"] = 1L,  // long
+    ["packageOrderUuid"] = "example_packageOrderUuid",  // string
+    ["productOrderUuid"] = "example_productOrderUuid",  // string
+    ["templateName"] = "example_templateName",  // string
 });
 ```
 
@@ -906,9 +908,9 @@ var getMerchantContractNumber = client.GetMerchantContractNumber();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `merchant_contract_number` | `string` | Yes |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
+| `merchantContractNumber` | `string` | Yes |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -919,7 +921,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```csharp
 var result = client.GetMerchantContractNumber().Create(new Dictionary<string, object?>
 {
-    ["merchant_contract_number"] = "example_merchant_contract_number",  // string
+    ["merchantContractNumber"] = "example_merchantContractNumber",  // string
 });
 ```
 
@@ -954,9 +956,9 @@ var getTemplateXml = client.GetTemplateXml();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
-| `template_name` | `string` | Yes |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `templateName` | `string` | Yes |  |
 
 ### Operations
 
@@ -967,7 +969,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```csharp
 var result = client.GetTemplateXml().Create(new Dictionary<string, object?>
 {
-    ["template_name"] = "example_template_name",  // string
+    ["templateName"] = "example_templateName",  // string
 });
 ```
 
@@ -1002,9 +1004,9 @@ var introduceMandator = client.IntroduceMandator();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `mandator_name` | `string` | Yes |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
+| `mandatorName` | `string` | Yes |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -1015,7 +1017,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```csharp
 var result = client.IntroduceMandator().Create(new Dictionary<string, object?>
 {
-    ["mandator_name"] = "example_mandator_name",  // string
+    ["mandatorName"] = "example_mandatorName",  // string
 });
 ```
 
@@ -1050,9 +1052,9 @@ var introducePackage = client.IntroducePackage();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
-| `terminal_template_description` | `string` | Yes |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `terminalTemplateDescription` | `string` | Yes |  |
 
 ### Operations
 
@@ -1063,7 +1065,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```csharp
 var result = client.IntroducePackage().Create(new Dictionary<string, object?>
 {
-    ["terminal_template_description"] = "example_terminal_template_description",  // string
+    ["terminalTemplateDescription"] = "example_terminalTemplateDescription",  // string
 });
 ```
 
@@ -1099,15 +1101,15 @@ var keepAlive = client.KeepAlive();
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `hwserialno` | `string` | No |  |
-| `ka_date_time_from` | `string` | No |  |
-| `ka_date_time_to` | `string` | No |  |
-| `keep_alive_data` | `List<object?>` | No |  |
+| `kaDateTimeFrom` | `string` | No |  |
+| `kaDateTimeTo` | `string` | No |  |
+| `keepAliveData` | `List<object?>` | No |  |
 | `pagination` | `Dictionary<string, object?>` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
-| `terminal_date_time_from` | `string` | No |  |
-| `terminal_date_time_to` | `string` | No |  |
-| `terminal_id` | `long` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `terminalDateTimeFrom` | `string` | No |  |
+| `terminalDateTimeTo` | `string` | No |  |
+| `terminalId` | `long` | No |  |
 
 ### Operations
 
@@ -1152,12 +1154,12 @@ var listTerminal = client.ListTerminal();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `corporate_uuid` | `List<object?>` | No |  |
+| `corporateUuid` | `List<object?>` | No |  |
 | `filter` | `Dictionary<string, object?>` | No |  |
 | `pagination` | `Dictionary<string, object?>` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
-| `terminal` | `List<object?>` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `terminals` | `List<object?>` | No |  |
 
 ### Operations
 
@@ -1202,12 +1204,12 @@ var mandatorClearingExport = client.MandatorClearingExport();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearing_date_from` | `string` | Yes |  |
-| `clearing_date_to` | `string` | Yes |  |
+| `clearingDateFrom` | `string` | Yes |  |
+| `clearingDateTo` | `string` | Yes |  |
 | `pagination` | `Dictionary<string, object?>` | No |  |
-| `record` | `List<object?>` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
+| `records` | `List<object?>` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -1218,8 +1220,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```csharp
 var result = client.MandatorClearingExport().Create(new Dictionary<string, object?>
 {
-    ["clearing_date_from"] = "example_clearing_date_from",  // string
-    ["clearing_date_to"] = "example_clearing_date_to",  // string
+    ["clearingDateFrom"] = "example_clearingDateFrom",  // string
+    ["clearingDateTo"] = "example_clearingDateTo",  // string
 });
 ```
 
@@ -1254,12 +1256,12 @@ var mandatorClearingExportDownload = client.MandatorClearingExportDownload();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearing_date_from` | `string` | Yes |  |
-| `clearing_date_to` | `string` | Yes |  |
-| `file_id` | `string` | No |  |
-| `filename_template` | `string` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
+| `clearingDateFrom` | `string` | Yes |  |
+| `clearingDateTo` | `string` | Yes |  |
+| `fileId` | `string` | No |  |
+| `filenameTemplate` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
 | `status` | `string` | No |  |
 
 ### Operations
@@ -1271,8 +1273,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```csharp
 var result = client.MandatorClearingExportDownload().Create(new Dictionary<string, object?>
 {
-    ["clearing_date_from"] = "example_clearing_date_from",  // string
-    ["clearing_date_to"] = "example_clearing_date_to",  // string
+    ["clearingDateFrom"] = "example_clearingDateFrom",  // string
+    ["clearingDateTo"] = "example_clearingDateTo",  // string
 });
 ```
 
@@ -1315,11 +1317,11 @@ var mandatorClearingExportSummary = client.MandatorClearingExportSummary();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearing_date_from` | `string` | Yes |  |
-| `clearing_date_to` | `string` | Yes |  |
-| `record` | `List<object?>` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
+| `clearingDateFrom` | `string` | Yes |  |
+| `clearingDateTo` | `string` | Yes |  |
+| `records` | `List<object?>` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
 
 ### Operations
 
@@ -1330,8 +1332,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```csharp
 var result = client.MandatorClearingExportSummary().Create(new Dictionary<string, object?>
 {
-    ["clearing_date_from"] = "example_clearing_date_from",  // string
-    ["clearing_date_to"] = "example_clearing_date_to",  // string
+    ["clearingDateFrom"] = "example_clearingDateFrom",  // string
+    ["clearingDateTo"] = "example_clearingDateTo",  // string
 });
 ```
 
@@ -1366,30 +1368,30 @@ var merchantPortalServicesApi = client.MerchantPortalServicesApi();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `3_d_secure` | `string` | No |  |
-| `authorization_code` | `string` | No |  |
-| `card_brand` | `string` | No |  |
-| `clearing_amount_from` | `string` | No |  |
-| `clearing_amount_to` | `string` | No |  |
-| `clearing_currency` | `string` | No |  |
-| `clearing_status` | `string` | No |  |
-| `corporate_uuid` | `string` | No |  |
-| `order_by_transaction_date` | `string` | No |  |
+| `3DSecure` | `string` | No |  |
+| `authorizationCode` | `string` | No |  |
+| `cardBrand` | `string` | No |  |
+| `clearingAmountFrom` | `string` | No |  |
+| `clearingAmountTo` | `string` | No |  |
+| `clearingCurrency` | `string` | No |  |
+| `clearingStatus` | `string` | No |  |
+| `corporateUUID` | `string` | No |  |
+| `orderByTransactionDate` | `string` | No |  |
 | `pagination` | `Dictionary<string, object?>` | No |  |
-| `receipt_number` | `string` | No |  |
-| `referenced_transaction_id` | `string` | No |  |
-| `retrieval_reference_number` | `string` | No |  |
-| `source_id` | `long` | No |  |
-| `tecsengine_response_code_from` | `string` | No |  |
-| `tecsengine_response_code_to` | `string` | No |  |
-| `terminal_id` | `long` | No |  |
-| `trace_number` | `string` | No |  |
-| `transaction_amount_from` | `string` | No |  |
-| `transaction_amount_to` | `string` | No |  |
-| `transaction_date_from` | `string` | No |  |
-| `transaction_date_to` | `string` | No |  |
-| `transaction_id` | `string` | No |  |
-| `transaction_type` | `string` | No |  |
+| `receiptNumber` | `string` | No |  |
+| `referencedTransactionId` | `string` | No |  |
+| `retrievalReferenceNumber` | `string` | No |  |
+| `sourceId` | `long` | No |  |
+| `tecsengineResponseCodeFrom` | `string` | No |  |
+| `tecsengineResponseCodeTo` | `string` | No |  |
+| `terminalId` | `long` | No |  |
+| `traceNumber` | `string` | No |  |
+| `transactionAmountFrom` | `string` | No |  |
+| `transactionAmountTo` | `string` | No |  |
+| `transactionDateFrom` | `string` | No |  |
+| `transactionDateTo` | `string` | No |  |
+| `transactionId` | `string` | No |  |
+| `transactionType` | `string` | No |  |
 | `wallet` | `string` | No |  |
 
 ### Operations
@@ -1435,11 +1437,11 @@ var moveTid = client.MoveTid();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `productorderuuid` | `List<object?>` | Yes |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
-| `target_packageorderuuid` | `string` | No |  |
-| `target_productorderuuid` | `string` | No |  |
+| `productorderuuids` | `List<object?>` | Yes |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `targetPackageorderuuid` | `string` | No |  |
+| `targetProductorderuuid` | `string` | No |  |
 
 ### Operations
 
@@ -1450,7 +1452,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```csharp
 var result = client.MoveTid().Create(new Dictionary<string, object?>
 {
-    ["productorderuuid"] = new List<object?>(),  // List<object?>
+    ["productorderuuids"] = new List<object?>(),  // List<object?>
 });
 ```
 
@@ -1485,44 +1487,44 @@ var paymentManual = client.PaymentManual();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_name` | `string` | No |  |
+| `acquirerName` | `string` | No |  |
 | `amount` | `long` | Yes |  |
-| `authorization_number` | `string` | No |  |
-| `card_number` | `string` | Yes |  |
-| `card_type` | `string` | No |  |
+| `authorizationNumber` | `string` | No |  |
+| `cardNumber` | `string` | Yes |  |
+| `cardType` | `string` | No |  |
 | `currency` | `string` | Yes |  |
 | `cvc` | `string` | No |  |
-| `date_time_tx` | `string` | No |  |
-| `exp_date` | `string` | Yes |  |
-| `merchant_id` | `string` | No |  |
-| `original_transaction_id` | `string` | No |  |
+| `dateTimeTx` | `string` | No |  |
+| `expDate` | `string` | Yes |  |
+| `merchantId` | `string` | No |  |
+| `originalTransactionId` | `string` | No |  |
 | `password` | `string` | No |  |
-| `response_code` | `string` | No |  |
-| `response_message` | `string` | No |  |
-| `terminal_id` | `string` | No |  |
-| `transaction_id` | `string` | No |  |
+| `responseCode` | `string` | No |  |
+| `responseMessage` | `string` | No |  |
+| `terminalId` | `string` | No |  |
+| `transactionId` | `string` | No |  |
 | `txtype` | `string` | Yes |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `acquirer_name` | - |
+| `acquirerName` | - |
 | `amount` | - |
-| `authorization_number` | - |
-| `card_number` | - |
-| `card_type` | - |
+| `authorizationNumber` | - |
+| `cardNumber` | - |
+| `cardType` | - |
 | `currency` | - |
 | `cvc` | - |
-| `date_time_tx` | - |
-| `exp_date` | - |
-| `merchant_id` | - |
-| `original_transaction_id` | - |
+| `dateTimeTx` | - |
+| `expDate` | - |
+| `merchantId` | - |
+| `originalTransactionId` | - |
 | `password` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `terminal_id` | Yes |
-| `transaction_id` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `terminalId` | Yes |
+| `transactionId` | - |
 | `txtype` | - |
 
 ### Operations
@@ -1535,9 +1537,9 @@ Create a new entity with the given data. Returns the created entity data and rai
 var result = client.PaymentManual().Create(new Dictionary<string, object?>
 {
     ["amount"] = 1L,  // long
-    ["card_number"] = "example_card_number",  // string
+    ["cardNumber"] = "example_cardNumber",  // string
     ["currency"] = "example_currency",  // string
-    ["exp_date"] = "example_exp_date",  // string
+    ["expDate"] = "example_expDate",  // string
     ["txtype"] = "example_txtype",  // string
 });
 ```
@@ -1573,43 +1575,18 @@ var paymentSred = client.PaymentSred();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_name` | `string` | No |  |
 | `amount` | `long` | Yes |  |
-| `authorization_number` | `string` | No |  |
-| `card_type` | `string` | No |  |
 | `currency` | `string` | Yes |  |
-| `date_time_tx` | `string` | No |  |
-| `device_payload` | `string` | Yes |  |
-| `merchant_id` | `string` | No |  |
-| `original_transaction_id` | `string` | No |  |
+| `device` | `string` | No |  |
+| `devicePayload` | `string` | Yes |  |
+| `expDate` | `string` | No |  |
+| `mode` | `string` | No |  |
+| `panMasked` | `string` | No |  |
 | `password` | `string` | No |  |
-| `response_code` | `string` | No |  |
-| `response_message` | `string` | No |  |
-| `sred` | `Dictionary<string, object?>` | No |  |
-| `terminal_id` | `string` | No |  |
-| `transaction_id` | `string` | No |  |
+| `serial` | `string` | No |  |
+| `serviceCode` | `string` | No |  |
+| `terminalId` | `string` | Yes |  |
 | `txtype` | `string` | Yes |  |
-
-### Field Usage by Operation
-
-| Field | create |
-| --- | --- |
-| `acquirer_name` | - |
-| `amount` | - |
-| `authorization_number` | - |
-| `card_type` | - |
-| `currency` | - |
-| `date_time_tx` | - |
-| `device_payload` | - |
-| `merchant_id` | - |
-| `original_transaction_id` | - |
-| `password` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `sred` | - |
-| `terminal_id` | Yes |
-| `transaction_id` | - |
-| `txtype` | - |
 
 ### Operations
 
@@ -1622,7 +1599,8 @@ var result = client.PaymentSred().Create(new Dictionary<string, object?>
 {
     ["amount"] = 1L,  // long
     ["currency"] = "example_currency",  // string
-    ["device_payload"] = "example_device_payload",  // string
+    ["devicePayload"] = "example_devicePayload",  // string
+    ["terminalId"] = "example_terminalId",  // string
     ["txtype"] = "example_txtype",  // string
 });
 ```
@@ -1658,95 +1636,95 @@ var preAuthTransactionCompletion = client.PreAuthTransactionCompletion();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `string` | No |  |
-| `acquirer_name` | `string` | No |  |
-| `actual_bonus_point` | `string` | No |  |
+| `acquirerId` | `string` | No |  |
+| `acquirerName` | `string` | No |  |
+| `actualBonusPoints` | `string` | No |  |
 | `amount` | `long` | No |  |
-| `authorization_code` | `string` | No |  |
-| `balance_amount` | `string` | No |  |
-| `card_brand` | `string` | No |  |
-| `card_number` | `string` | No |  |
-| `card_number_reference` | `string` | Yes |  |
-| `client_id` | `long` | Yes |  |
+| `authorizationCode` | `string` | No |  |
+| `balanceAmount` | `string` | No |  |
+| `cardBrand` | `string` | No |  |
+| `cardNumber` | `string` | No |  |
+| `cardNumberReference` | `string` | Yes |  |
+| `clientId` | `long` | Yes |  |
 | `currency` | `string` | Yes |  |
 | `cvc` | `string` | No |  |
-| `ec_data` | `string` | No |  |
-| `ecr_data` | `string` | No |  |
-| `emv_data` | `string` | No |  |
-| `exchange_fee` | `long` | No |  |
-| `exchange_rate` | `string` | No |  |
-| `language_code` | `string` | No |  |
-| `merchant_address` | `string` | No |  |
-| `merchant_name` | `string` | No |  |
-| `merchant_number` | `string` | No |  |
-| `message_type` | `string` | No |  |
-| `original_trace_number` | `long` | No |  |
-| `original_transaction_id` | `string` | No |  |
+| `ecData` | `string` | No |  |
+| `ecrData` | `string` | No |  |
+| `emvData` | `string` | No |  |
+| `exchangeFee` | `long` | No |  |
+| `exchangeRate` | `string` | No |  |
+| `languageCode` | `string` | No |  |
+| `merchantAddress` | `string` | No |  |
+| `merchantName` | `string` | No |  |
+| `merchantNumber` | `string` | No |  |
+| `messageType` | `string` | No |  |
+| `originalTraceNumber` | `long` | No |  |
+| `originalTransactionId` | `string` | No |  |
 | `password` | `string` | No |  |
-| `payment_reason` | `string` | No |  |
-| `receipt_footer` | `string` | No |  |
-| `receipt_header` | `string` | No |  |
-| `receipt_layout` | `long` | No |  |
-| `receipt_number` | `string` | Yes |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
-| `serial_number` | `string` | No |  |
+| `paymentReason` | `string` | No |  |
+| `receiptFooter` | `string` | No |  |
+| `receiptHeader` | `string` | No |  |
+| `receiptLayout` | `long` | No |  |
+| `receiptNumber` | `string` | Yes |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `serialNumber` | `string` | No |  |
 | `svc` | `string` | No |  |
-| `terminal_id` | `long` | Yes |  |
-| `terminal_location` | `string` | No |  |
-| `trace_number` | `long` | No |  |
-| `transaction_date` | `string` | No |  |
-| `transaction_id` | `string` | No |  |
-| `transaction_type` | `string` | Yes |  |
-| `tx_type` | `string` | No |  |
-| `user_data` | `string` | No |  |
+| `terminalId` | `long` | Yes |  |
+| `terminalLocation` | `string` | No |  |
+| `traceNumber` | `long` | No |  |
+| `transactionDate` | `string` | No |  |
+| `transactionId` | `string` | No |  |
+| `transactionType` | `string` | Yes |  |
+| `txType` | `string` | No |  |
+| `userData` | `string` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `acquirer_id` | - |
-| `acquirer_name` | - |
-| `actual_bonus_point` | - |
+| `acquirerId` | - |
+| `acquirerName` | - |
+| `actualBonusPoints` | - |
 | `amount` | Yes |
-| `authorization_code` | - |
-| `balance_amount` | - |
-| `card_brand` | - |
-| `card_number` | - |
-| `card_number_reference` | - |
-| `client_id` | - |
+| `authorizationCode` | - |
+| `balanceAmount` | - |
+| `cardBrand` | - |
+| `cardNumber` | - |
+| `cardNumberReference` | - |
+| `clientId` | - |
 | `currency` | - |
 | `cvc` | - |
-| `ec_data` | - |
-| `ecr_data` | - |
-| `emv_data` | - |
-| `exchange_fee` | - |
-| `exchange_rate` | - |
-| `language_code` | - |
-| `merchant_address` | - |
-| `merchant_name` | - |
-| `merchant_number` | - |
-| `message_type` | - |
-| `original_trace_number` | - |
-| `original_transaction_id` | Yes |
+| `ecData` | - |
+| `ecrData` | - |
+| `emvData` | - |
+| `exchangeFee` | - |
+| `exchangeRate` | - |
+| `languageCode` | - |
+| `merchantAddress` | - |
+| `merchantName` | - |
+| `merchantNumber` | - |
+| `messageType` | - |
+| `originalTraceNumber` | - |
+| `originalTransactionId` | Yes |
 | `password` | - |
-| `payment_reason` | - |
-| `receipt_footer` | - |
-| `receipt_header` | - |
-| `receipt_layout` | - |
-| `receipt_number` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `serial_number` | - |
+| `paymentReason` | - |
+| `receiptFooter` | - |
+| `receiptHeader` | - |
+| `receiptLayout` | - |
+| `receiptNumber` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `serialNumber` | - |
 | `svc` | - |
-| `terminal_id` | - |
-| `terminal_location` | - |
-| `trace_number` | - |
-| `transaction_date` | Yes |
-| `transaction_id` | Yes |
-| `transaction_type` | - |
-| `tx_type` | - |
-| `user_data` | - |
+| `terminalId` | - |
+| `terminalLocation` | - |
+| `traceNumber` | - |
+| `transactionDate` | Yes |
+| `transactionId` | Yes |
+| `transactionType` | - |
+| `txType` | - |
+| `userData` | - |
 
 ### Operations
 
@@ -1757,12 +1735,12 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```csharp
 var result = client.PreAuthTransactionCompletion().Create(new Dictionary<string, object?>
 {
-    ["card_number_reference"] = "example_card_number_reference",  // string
-    ["client_id"] = 1L,  // long
+    ["cardNumberReference"] = "example_cardNumberReference",  // string
+    ["clientId"] = 1L,  // long
     ["currency"] = "example_currency",  // string
-    ["receipt_number"] = "example_receipt_number",  // string
-    ["terminal_id"] = 1L,  // long
-    ["transaction_type"] = "example_transaction_type",  // string
+    ["receiptNumber"] = "example_receiptNumber",  // string
+    ["terminalId"] = 1L,  // long
+    ["transactionType"] = "example_transactionType",  // string
 });
 ```
 
@@ -1797,13 +1775,13 @@ var reactivateTerminal = client.ReactivateTerminal();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `corporate_uuid` | `string` | No |  |
-| `package_order_uuid` | `string` | No |  |
-| `product_order_uuid` | `string` | No |  |
-| `reactivation_reason` | `string` | Yes |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
-| `terminal_id` | `long` | Yes |  |
+| `corporateUuid` | `string` | No |  |
+| `packageOrderUuid` | `string` | No |  |
+| `productOrderUuid` | `string` | No |  |
+| `reactivationReason` | `string` | Yes |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `terminalId` | `long` | Yes |  |
 
 ### Operations
 
@@ -1814,8 +1792,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```csharp
 var result = client.ReactivateTerminal().Create(new Dictionary<string, object?>
 {
-    ["reactivation_reason"] = "example_reactivation_reason",  // string
-    ["terminal_id"] = 1L,  // long
+    ["reactivationReason"] = "example_reactivationReason",  // string
+    ["terminalId"] = 1L,  // long
 });
 ```
 
@@ -1850,91 +1828,91 @@ var refundTransaction = client.RefundTransaction();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `string` | No |  |
-| `acquirer_name` | `string` | No |  |
-| `actual_bonus_point` | `string` | No |  |
+| `acquirerId` | `string` | No |  |
+| `acquirerName` | `string` | No |  |
+| `actualBonusPoints` | `string` | No |  |
 | `amount` | `long` | No |  |
-| `authorization_code` | `string` | No |  |
-| `balance_amount` | `string` | No |  |
-| `card_brand` | `string` | No |  |
-| `card_number` | `string` | No |  |
-| `client_id` | `long` | Yes |  |
+| `authorizationCode` | `string` | No |  |
+| `balanceAmount` | `string` | No |  |
+| `cardBrand` | `string` | No |  |
+| `cardNumber` | `string` | No |  |
+| `clientId` | `long` | Yes |  |
 | `currency` | `string` | Yes |  |
 | `cvc` | `string` | No |  |
-| `ec_data` | `string` | No |  |
-| `ecr_data` | `string` | No |  |
-| `emv_data` | `string` | No |  |
-| `exchange_fee` | `long` | No |  |
-| `exchange_rate` | `string` | No |  |
-| `language_code` | `string` | No |  |
-| `merchant_address` | `string` | No |  |
-| `merchant_name` | `string` | No |  |
-| `merchant_number` | `string` | No |  |
-| `message_type` | `string` | No |  |
-| `original_trace_number` | `long` | No |  |
-| `original_transaction_id` | `string` | No |  |
+| `ecData` | `string` | No |  |
+| `ecrData` | `string` | No |  |
+| `emvData` | `string` | No |  |
+| `exchangeFee` | `long` | No |  |
+| `exchangeRate` | `string` | No |  |
+| `languageCode` | `string` | No |  |
+| `merchantAddress` | `string` | No |  |
+| `merchantName` | `string` | No |  |
+| `merchantNumber` | `string` | No |  |
+| `messageType` | `string` | No |  |
+| `originalTraceNumber` | `long` | No |  |
+| `originalTransactionId` | `string` | No |  |
 | `password` | `string` | No |  |
-| `payment_reason` | `string` | No |  |
-| `receipt_footer` | `string` | No |  |
-| `receipt_header` | `string` | No |  |
-| `receipt_layout` | `long` | No |  |
-| `receipt_number` | `string` | Yes |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
-| `serial_number` | `string` | No |  |
+| `paymentReason` | `string` | No |  |
+| `receiptFooter` | `string` | No |  |
+| `receiptHeader` | `string` | No |  |
+| `receiptLayout` | `long` | No |  |
+| `receiptNumber` | `string` | Yes |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `serialNumber` | `string` | No |  |
 | `svc` | `string` | No |  |
-| `terminal_id` | `long` | Yes |  |
-| `terminal_location` | `string` | No |  |
-| `trace_number` | `long` | No |  |
-| `transaction_date` | `string` | No |  |
-| `transaction_id` | `string` | No |  |
-| `tx_type` | `string` | No |  |
-| `user_data` | `string` | No |  |
+| `terminalId` | `long` | Yes |  |
+| `terminalLocation` | `string` | No |  |
+| `traceNumber` | `long` | No |  |
+| `transactionDate` | `string` | No |  |
+| `transactionId` | `string` | No |  |
+| `txType` | `string` | No |  |
+| `userData` | `string` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `acquirer_id` | - |
-| `acquirer_name` | - |
-| `actual_bonus_point` | - |
+| `acquirerId` | - |
+| `acquirerName` | - |
+| `actualBonusPoints` | - |
 | `amount` | Yes |
-| `authorization_code` | - |
-| `balance_amount` | - |
-| `card_brand` | - |
-| `card_number` | - |
-| `client_id` | - |
+| `authorizationCode` | - |
+| `balanceAmount` | - |
+| `cardBrand` | - |
+| `cardNumber` | - |
+| `clientId` | - |
 | `currency` | - |
 | `cvc` | - |
-| `ec_data` | - |
-| `ecr_data` | - |
-| `emv_data` | - |
-| `exchange_fee` | - |
-| `exchange_rate` | - |
-| `language_code` | - |
-| `merchant_address` | - |
-| `merchant_name` | - |
-| `merchant_number` | - |
-| `message_type` | - |
-| `original_trace_number` | - |
-| `original_transaction_id` | Yes |
+| `ecData` | - |
+| `ecrData` | - |
+| `emvData` | - |
+| `exchangeFee` | - |
+| `exchangeRate` | - |
+| `languageCode` | - |
+| `merchantAddress` | - |
+| `merchantName` | - |
+| `merchantNumber` | - |
+| `messageType` | - |
+| `originalTraceNumber` | - |
+| `originalTransactionId` | Yes |
 | `password` | - |
-| `payment_reason` | - |
-| `receipt_footer` | - |
-| `receipt_header` | - |
-| `receipt_layout` | - |
-| `receipt_number` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `serial_number` | - |
+| `paymentReason` | - |
+| `receiptFooter` | - |
+| `receiptHeader` | - |
+| `receiptLayout` | - |
+| `receiptNumber` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `serialNumber` | - |
 | `svc` | - |
-| `terminal_id` | - |
-| `terminal_location` | - |
-| `trace_number` | - |
-| `transaction_date` | Yes |
-| `transaction_id` | Yes |
-| `tx_type` | - |
-| `user_data` | - |
+| `terminalId` | - |
+| `terminalLocation` | - |
+| `traceNumber` | - |
+| `transactionDate` | Yes |
+| `transactionId` | Yes |
+| `txType` | - |
+| `userData` | - |
 
 ### Operations
 
@@ -1945,10 +1923,10 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```csharp
 var result = client.RefundTransaction().Create(new Dictionary<string, object?>
 {
-    ["client_id"] = 1L,  // long
+    ["clientId"] = 1L,  // long
     ["currency"] = "example_currency",  // string
-    ["receipt_number"] = "example_receipt_number",  // string
-    ["terminal_id"] = 1L,  // long
+    ["receiptNumber"] = "example_receiptNumber",  // string
+    ["terminalId"] = 1L,  // long
 });
 ```
 
@@ -1983,14 +1961,14 @@ var registerTecsCompany = client.RegisterTecsCompany();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `corporate_uuid` | `string` | Yes |  |
-| `package_order_uuid` | `string` | Yes |  |
-| `partner_id` | `long` | No |  |
-| `partner_name` | `string` | No |  |
-| `product_order_uuid` | `string` | Yes |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
-| `template_name` | `string` | Yes |  |
+| `corporateUuid` | `string` | Yes |  |
+| `packageOrderUuid` | `string` | Yes |  |
+| `partnerId` | `long` | No |  |
+| `partnerName` | `string` | No |  |
+| `productOrderUuid` | `string` | Yes |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `templateName` | `string` | Yes |  |
 
 ### Operations
 
@@ -2001,10 +1979,10 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```csharp
 var result = client.RegisterTecsCompany().Create(new Dictionary<string, object?>
 {
-    ["corporate_uuid"] = "example_corporate_uuid",  // string
-    ["package_order_uuid"] = "example_package_order_uuid",  // string
-    ["product_order_uuid"] = "example_product_order_uuid",  // string
-    ["template_name"] = "example_template_name",  // string
+    ["corporateUuid"] = "example_corporateUuid",  // string
+    ["packageOrderUuid"] = "example_packageOrderUuid",  // string
+    ["productOrderUuid"] = "example_productOrderUuid",  // string
+    ["templateName"] = "example_templateName",  // string
 });
 ```
 
@@ -2039,24 +2017,24 @@ var registerTerminal = client.RegisterTerminal();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `additional_data` | `Dictionary<string, object?>` | No |  |
-| `corporate_uuid` | `string` | Yes |  |
-| `package_order_uuid` | `string` | Yes |  |
-| `product_order_uuid` | `string` | Yes |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
-| `tecs_web_secret_key` | `string` | No |  |
-| `template_name` | `string` | Yes |  |
-| `terminal_country_code` | `string` | Yes |  |
-| `terminal_id` | `long` | No |  |
-| `terminal_id_acq` | `string` | No |  |
-| `terminal_language_code` | `string` | Yes |  |
-| `terminal_location` | `string` | Yes |  |
-| `terminal_serial_number` | `string` | No |  |
-| `token_io_alia` | `string` | No |  |
-| `token_io_iban` | `string` | No |  |
-| `token_io_member_id` | `string` | No |  |
-| `web_shop_url` | `string` | No |  |
+| `additionalData` | `Dictionary<string, object?>` | No |  |
+| `corporateUuid` | `string` | Yes |  |
+| `packageOrderUuid` | `string` | Yes |  |
+| `productOrderUuid` | `string` | Yes |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `tecsWebSecretKey` | `string` | No |  |
+| `templateName` | `string` | Yes |  |
+| `terminalCountryCode` | `string` | Yes |  |
+| `terminalId` | `long` | No |  |
+| `terminalIdAcq` | `string` | No |  |
+| `terminalLanguageCode` | `string` | Yes |  |
+| `terminalLocation` | `string` | Yes |  |
+| `terminalSerialNumber` | `string` | No |  |
+| `tokenIOAlias` | `string` | No |  |
+| `tokenIOIban` | `string` | No |  |
+| `tokenIOMemberId` | `string` | No |  |
+| `webShopUrl` | `string` | No |  |
 
 ### Operations
 
@@ -2067,13 +2045,13 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```csharp
 var result = client.RegisterTerminal().Create(new Dictionary<string, object?>
 {
-    ["corporate_uuid"] = "example_corporate_uuid",  // string
-    ["package_order_uuid"] = "example_package_order_uuid",  // string
-    ["product_order_uuid"] = "example_product_order_uuid",  // string
-    ["template_name"] = "example_template_name",  // string
-    ["terminal_country_code"] = "example_terminal_country_code",  // string
-    ["terminal_language_code"] = "example_terminal_language_code",  // string
-    ["terminal_location"] = "example_terminal_location",  // string
+    ["corporateUuid"] = "example_corporateUuid",  // string
+    ["packageOrderUuid"] = "example_packageOrderUuid",  // string
+    ["productOrderUuid"] = "example_productOrderUuid",  // string
+    ["templateName"] = "example_templateName",  // string
+    ["terminalCountryCode"] = "example_terminalCountryCode",  // string
+    ["terminalLanguageCode"] = "example_terminalLanguageCode",  // string
+    ["terminalLocation"] = "example_terminalLocation",  // string
 });
 ```
 
@@ -2108,16 +2086,16 @@ var reportData = client.ReportData();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `card_brand_report_data` | `List<object?>` | No |  |
-| `clearing_date_from` | `string` | Yes |  |
-| `clearing_date_to` | `string` | Yes |  |
-| `corporate_id` | `string` | Yes |  |
+| `cardBrandReportData` | `List<object?>` | No |  |
+| `clearingDateFrom` | `string` | Yes |  |
+| `clearingDateTo` | `string` | Yes |  |
+| `corporateId` | `string` | Yes |  |
 | `currency` | `string` | Yes |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
-| `sum_over_credit_tx` | `Dictionary<string, object?>` | No |  |
-| `sum_over_debit_tx` | `Dictionary<string, object?>` | No |  |
-| `terminal_id` | `long` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `sumOverCreditTx` | `Dictionary<string, object?>` | No |  |
+| `sumOverDebitTx` | `Dictionary<string, object?>` | No |  |
+| `terminalId` | `long` | No |  |
 
 ### Operations
 
@@ -2128,9 +2106,9 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```csharp
 var result = client.ReportData().Create(new Dictionary<string, object?>
 {
-    ["clearing_date_from"] = "example_clearing_date_from",  // string
-    ["clearing_date_to"] = "example_clearing_date_to",  // string
-    ["corporate_id"] = "example_corporate_id",  // string
+    ["clearingDateFrom"] = "example_clearingDateFrom",  // string
+    ["clearingDateTo"] = "example_clearingDateTo",  // string
+    ["corporateId"] = "example_corporateId",  // string
     ["currency"] = "example_currency",  // string
 });
 ```
@@ -2166,56 +2144,56 @@ var statusTransaction = client.StatusTransaction();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_name` | `string` | No |  |
-| `acquirer_terminal_id` | `string` | No |  |
+| `acquirerName` | `string` | No |  |
+| `acquirerTerminalId` | `string` | No |  |
 | `amount` | `long` | No |  |
-| `application_cryptogram` | `string` | No |  |
-| `authorization_code` | `object?` | No |  |
-| `authorization_date` | `string` | No |  |
-| `card_brand` | `string` | No |  |
-| `card_entry` | `string` | No |  |
-| `card_expiration` | `string` | No |  |
-| `card_number` | `string` | No |  |
-| `clearing_amount` | `long` | No |  |
-| `clearing_batch_id` | `string` | No |  |
-| `clearing_currency` | `string` | No |  |
-| `clearing_date` | `string` | No |  |
-| `clearing_processed_date` | `string` | No |  |
-| `clearing_status` | `string` | No |  |
-| `client_id` | `long` | No |  |
+| `applicationCryptogram` | `string` | No |  |
+| `authorizationCode` | `object?` | No |  |
+| `authorizationDate` | `string` | No |  |
+| `cardBrand` | `string` | No |  |
+| `cardEntry` | `string` | No |  |
+| `cardExpiration` | `string` | No |  |
+| `cardNumber` | `string` | No |  |
+| `clearingAmount` | `long` | No |  |
+| `clearingBatchId` | `string` | No |  |
+| `clearingCurrency` | `string` | No |  |
+| `clearingDate` | `string` | No |  |
+| `clearingProcessedDate` | `string` | No |  |
+| `clearingStatus` | `string` | No |  |
+| `clientId` | `long` | No |  |
 | `currency` | `string` | No |  |
 | `cvm` | `string` | No |  |
-| `ecr_data` | `string` | No |  |
-| `emv_application_id` | `string` | No |  |
-| `emv_application_label` | `string` | No |  |
-| `merchant_name` | `string` | No |  |
-| `merchant_number` | `string` | No |  |
-| `original_client_id` | `string` | No |  |
-| `original_terminal_id` | `long` | No |  |
-| `original_transaction_id` | `string` | No |  |
-| `payment_reason` | `string` | No |  |
-| `receipt_number` | `string` | No |  |
-| `response_code` | `long` | No |  |
-| `response_code_from_a` | `string` | No |  |
-| `response_message` | `string` | No |  |
-| `retrieval_reference_number` | `string` | No |  |
-| `service_code` | `string` | No |  |
-| `settlement_status` | `string` | No |  |
-| `source_id` | `long` | No |  |
-| `tecsengine_response_code` | `long` | No |  |
-| `tecsengine_response_text` | `string` | No |  |
-| `terminal_end_of_day_date` | `string` | No |  |
-| `terminal_id` | `long` | No |  |
-| `terminal_location` | `string` | No |  |
-| `tip_amount` | `long` | No |  |
-| `trace_number` | `long` | No |  |
-| `transaction_clearing_date` | `string` | No |  |
-| `transaction_date` | `string` | No |  |
-| `transaction_id` | `string` | No |  |
-| `transaction_seq_number` | `long` | No |  |
-| `transaction_server_date` | `string` | No |  |
-| `transaction_source` | `string` | No |  |
-| `transaction_type` | `string` | No |  |
+| `ecrData` | `string` | No |  |
+| `emvApplicationId` | `string` | No |  |
+| `emvApplicationLabel` | `string` | No |  |
+| `merchantName` | `string` | No |  |
+| `merchantNumber` | `string` | No |  |
+| `originalClientId` | `string` | No |  |
+| `originalTerminalId` | `long` | No |  |
+| `originalTransactionId` | `string` | No |  |
+| `paymentReason` | `string` | No |  |
+| `receiptNumber` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseCodeFromAS` | `string` | No |  |
+| `responseMessage` | `string` | No |  |
+| `retrievalReferenceNumber` | `string` | No |  |
+| `serviceCode` | `string` | No |  |
+| `settlementStatus` | `string` | No |  |
+| `sourceId` | `long` | No |  |
+| `tecsengineResponseCode` | `long` | No |  |
+| `tecsengineResponseText` | `string` | No |  |
+| `terminalEndOfDayDate` | `string` | No |  |
+| `terminalId` | `long` | No |  |
+| `terminalLocation` | `string` | No |  |
+| `tipAmount` | `long` | No |  |
+| `traceNumber` | `long` | No |  |
+| `transactionClearingDate` | `string` | No |  |
+| `transactionDate` | `string` | No |  |
+| `transactionId` | `string` | No |  |
+| `transactionSeqNumber` | `long` | No |  |
+| `transactionServerDate` | `string` | No |  |
+| `transactionSource` | `string` | No |  |
+| `transactionType` | `string` | No |  |
 
 ### Operations
 
@@ -2260,12 +2238,12 @@ var storeTerminalParameter = client.StoreTerminalParameter();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acq_tab_nexo` | `Dictionary<string, object?>` | No |  |
-| `config_version` | `string` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
-| `serial_number` | `string` | Yes |  |
-| `tid_sent` | `string` | No |  |
+| `acqTabNexo` | `Dictionary<string, object?>` | No |  |
+| `configVersion` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `serialNumber` | `string` | Yes |  |
+| `tidSent` | `string` | No |  |
 
 ### Operations
 
@@ -2276,7 +2254,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```csharp
 var result = client.StoreTerminalParameter().Create(new Dictionary<string, object?>
 {
-    ["serial_number"] = "example_serial_number",  // string
+    ["serialNumber"] = "example_serialNumber",  // string
 });
 ```
 
@@ -2311,11 +2289,11 @@ var terminalId = client.TerminalId();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `device_serial_number` | `List<object?>` | Yes |  |
-| `duplicate_terminal_id` | `List<object?>` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
-| `terminal` | `List<object?>` | No |  |
+| `deviceSerialNumber` | `List<object?>` | Yes |  |
+| `duplicateTerminalIds` | `List<object?>` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `terminals` | `List<object?>` | No |  |
 
 ### Operations
 
@@ -2326,7 +2304,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```csharp
 var result = client.TerminalId().Create(new Dictionary<string, object?>
 {
-    ["device_serial_number"] = new List<object?>(),  // List<object?>
+    ["deviceSerialNumber"] = new List<object?>(),  // List<object?>
 });
 ```
 
@@ -2361,34 +2339,34 @@ var transactionHistory = client.TransactionHistory();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `3_d_secure` | `string` | No |  |
-| `authorization_code` | `string` | No |  |
-| `card_brand` | `string` | No |  |
-| `clearing_amount_from` | `string` | No |  |
-| `clearing_amount_to` | `string` | No |  |
-| `clearing_currency` | `string` | No |  |
-| `clearing_status` | `string` | No |  |
-| `corporate_uuid` | `string` | No |  |
-| `order_by_transaction_date` | `string` | No |  |
+| `3DSecure` | `string` | No |  |
+| `authorizationCode` | `string` | No |  |
+| `cardBrand` | `string` | No |  |
+| `clearingAmountFrom` | `string` | No |  |
+| `clearingAmountTo` | `string` | No |  |
+| `clearingCurrency` | `string` | No |  |
+| `clearingStatus` | `string` | No |  |
+| `corporateUUID` | `string` | No |  |
+| `orderByTransactionDate` | `string` | No |  |
 | `pagination` | `Dictionary<string, object?>` | No |  |
-| `payment_token_public_id` | `string` | No |  |
-| `receipt_number` | `string` | No |  |
-| `referenced_transaction_id` | `string` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
-| `retrieval_reference_number` | `string` | No |  |
-| `source_id` | `long` | No |  |
-| `tecsengine_response_code_from` | `string` | No |  |
-| `tecsengine_response_code_to` | `string` | No |  |
-| `terminal_id` | `long` | No |  |
-| `trace_number` | `string` | No |  |
-| `transaction_amount_from` | `string` | No |  |
-| `transaction_amount_to` | `string` | No |  |
-| `transaction_date_from` | `string` | No |  |
-| `transaction_date_to` | `string` | No |  |
-| `transaction_history` | `List<object?>` | No |  |
-| `transaction_id` | `string` | No |  |
-| `transaction_type` | `string` | No |  |
+| `paymentTokenPublicId` | `string` | No |  |
+| `receiptNumber` | `string` | No |  |
+| `referencedTransactionId` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `retrievalReferenceNumber` | `string` | No |  |
+| `sourceId` | `long` | No |  |
+| `tecsengineResponseCodeFrom` | `string` | No |  |
+| `tecsengineResponseCodeTo` | `string` | No |  |
+| `terminalId` | `long` | No |  |
+| `traceNumber` | `string` | No |  |
+| `transactionAmountFrom` | `string` | No |  |
+| `transactionAmountTo` | `string` | No |  |
+| `transactionDateFrom` | `string` | No |  |
+| `transactionDateTo` | `string` | No |  |
+| `transactionHistories` | `List<object?>` | No |  |
+| `transactionId` | `string` | No |  |
+| `transactionType` | `string` | No |  |
 | `wallet` | `string` | No |  |
 
 ### Operations
@@ -2435,22 +2413,22 @@ var transactionsCount = client.TransactionsCount();
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `period` | `string` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
-| `transaction_date_from` | `string` | No |  |
-| `transaction_date_to` | `string` | No |  |
-| `transactions_count` | `List<object?>` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `transactionDateFrom` | `string` | No |  |
+| `transactionDateTo` | `string` | No |  |
+| `transactionsCount` | `List<object?>` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
 | `period` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `transaction_date_from` | Yes |
-| `transaction_date_to` | Yes |
-| `transactions_count` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `transactionDateFrom` | Yes |
+| `transactionDateTo` | Yes |
+| `transactionsCount` | - |
 
 ### Operations
 
@@ -2496,22 +2474,22 @@ var transactionsCountCardBrand = client.TransactionsCountCardBrand();
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `period` | `string` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
-| `transaction_date_from` | `string` | No |  |
-| `transaction_date_to` | `string` | No |  |
-| `transactions_count` | `List<object?>` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `transactionDateFrom` | `string` | No |  |
+| `transactionDateTo` | `string` | No |  |
+| `transactionsCount` | `List<object?>` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
 | `period` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `transaction_date_from` | Yes |
-| `transaction_date_to` | Yes |
-| `transactions_count` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `transactionDateFrom` | Yes |
+| `transactionDateTo` | Yes |
+| `transactionsCount` | - |
 
 ### Operations
 
@@ -2557,22 +2535,22 @@ var transactionsTurnover = client.TransactionsTurnover();
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `period` | `string` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
-| `transaction_date_from` | `string` | No |  |
-| `transaction_date_to` | `string` | No |  |
-| `turnover` | `List<object?>` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `transactionDateFrom` | `string` | No |  |
+| `transactionDateTo` | `string` | No |  |
+| `turnovers` | `List<object?>` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
 | `period` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `transaction_date_from` | Yes |
-| `transaction_date_to` | Yes |
-| `turnover` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `transactionDateFrom` | Yes |
+| `transactionDateTo` | Yes |
+| `turnovers` | - |
 
 ### Operations
 
@@ -2618,15 +2596,15 @@ var updateMerchant = client.UpdateMerchant();
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `city` | `string` | No |  |
-| `corporate_uuid` | `string` | Yes |  |
+| `corporateUuid` | `string` | Yes |  |
 | `country` | `string` | No |  |
-| `merchant_category_code` | `string` | No |  |
+| `merchantCategoryCode` | `string` | No |  |
 | `name` | `string` | No |  |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
 | `state` | `string` | No |  |
 | `street` | `string` | No |  |
-| `vu_nummer` | `string` | No |  |
+| `vuNummer` | `string` | No |  |
 | `zipcode` | `string` | No |  |
 
 ### Operations
@@ -2638,7 +2616,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```csharp
 var result = client.UpdateMerchant().Create(new Dictionary<string, object?>
 {
-    ["corporate_uuid"] = "example_corporate_uuid",  // string
+    ["corporateUuid"] = "example_corporateUuid",  // string
 });
 ```
 
@@ -2673,10 +2651,10 @@ var updateTemplateXml = client.UpdateTemplateXml();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `long` | No |  |
-| `response_message` | `string` | No |  |
-| `template_name` | `string` | Yes |  |
-| `template_xml` | `string` | Yes |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `templateName` | `string` | Yes |  |
+| `templateXml` | `string` | Yes |  |
 
 ### Operations
 
@@ -2687,8 +2665,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```csharp
 var result = client.UpdateTemplateXml().Create(new Dictionary<string, object?>
 {
-    ["template_name"] = "example_template_name",  // string
-    ["template_xml"] = "example_template_xml",  // string
+    ["templateName"] = "example_templateName",  // string
+    ["templateXml"] = "example_templateXml",  // string
 });
 ```
 
@@ -2723,8 +2701,8 @@ var version = client.Version();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `app_name` | `string` | No |  |
-| `build_date` | `string` | No |  |
+| `appName` | `string` | No |  |
+| `buildDate` | `string` | No |  |
 | `version` | `string` | No |  |
 
 ### Operations

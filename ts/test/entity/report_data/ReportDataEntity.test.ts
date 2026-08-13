@@ -26,8 +26,8 @@ import {
 describe('ReportDataEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when BLUEFINTECSMERCHANTSERVICES_TEST_LIVE=TRUE.
-  afterEach(liveDelay('BLUEFINTECSMERCHANTSERVICES_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE=TRUE.
+  afterEach(liveDelay('BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = BluefinTecsMerchantServicesSDK.test()
@@ -62,7 +62,7 @@ describe('ReportDataEntity', async () => {
     const report_data_ref01_ent = client.ReportData()
     let report_data_ref01_data = setup.data.new.report_data['report_data_ref01']
 
-    report_data_ref01_data = await report_data_ref01_ent.create(report_data_ref01_data)
+    report_data_ref01_data = (await report_data_ref01_ent.create(report_data_ref01_data)).data()
     assert(null != report_data_ref01_data)
 
 

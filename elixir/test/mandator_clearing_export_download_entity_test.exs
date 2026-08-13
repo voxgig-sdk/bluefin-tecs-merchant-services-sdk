@@ -34,7 +34,8 @@ defmodule BluefinTecsMerchantServices.MandatorClearingExportDownloadEntityTest d
     if id != nil do
       sdk = mk_sdk()
       ent = BluefinTecsMerchantServices.mandator_clearing_export_download(sdk)
-      rec = BluefinTecsMerchantServices.Entity.MandatorClearingExportDownload.load(ent, S.jm(["id", id]))
+      loaded = BluefinTecsMerchantServices.Entity.MandatorClearingExportDownload.load(ent, S.jm(["id", id]))
+      rec = BluefinTecsMerchantServices.EntityBase.data_get(loaded)
       assert S.ismap(rec)
       assert S.getprop(rec, "id") == id
     end
@@ -43,7 +44,8 @@ defmodule BluefinTecsMerchantServices.MandatorClearingExportDownloadEntityTest d
   test "should create then read back" do
     sdk = BluefinTecsMerchantServices.test(S.jm(["entity", S.jm(["mandator_clearing_export_download", S.jm([])])]))
     ent = BluefinTecsMerchantServices.mandator_clearing_export_download(sdk)
-    made = BluefinTecsMerchantServices.Entity.MandatorClearingExportDownload.create(ent, S.jm(["name", "test-create"]))
+    created = BluefinTecsMerchantServices.Entity.MandatorClearingExportDownload.create(ent, S.jm(["name", "test-create"]))
+    made = BluefinTecsMerchantServices.EntityBase.data_get(created)
     assert S.ismap(made)
     assert S.getprop(made, "id") != nil
   end

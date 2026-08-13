@@ -240,91 +240,91 @@ cancel_transaction = client.CancelTransaction()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `str` | No |  |
-| `acquirer_name` | `str` | No |  |
-| `actual_bonus_point` | `str` | No |  |
+| `acquirerId` | `str` | No |  |
+| `acquirerName` | `str` | No |  |
+| `actualBonusPoints` | `str` | No |  |
 | `amount` | `int` | No |  |
-| `authorization_code` | `str` | No |  |
-| `balance_amount` | `str` | No |  |
-| `card_brand` | `str` | No |  |
-| `card_number` | `str` | No |  |
-| `client_id` | `int` | Yes |  |
+| `authorizationCode` | `str` | No |  |
+| `balanceAmount` | `str` | No |  |
+| `cardBrand` | `str` | No |  |
+| `cardNumber` | `str` | No |  |
+| `clientId` | `int` | Yes |  |
 | `currency` | `str` | Yes |  |
 | `cvc` | `str` | No |  |
-| `ec_data` | `str` | No |  |
-| `ecr_data` | `str` | No |  |
-| `emv_data` | `str` | No |  |
-| `exchange_fee` | `int` | No |  |
-| `exchange_rate` | `str` | No |  |
-| `language_code` | `str` | No |  |
-| `merchant_address` | `str` | No |  |
-| `merchant_name` | `str` | No |  |
-| `merchant_number` | `str` | No |  |
-| `message_type` | `str` | No |  |
-| `original_trace_number` | `int` | No |  |
-| `original_transaction_id` | `str` | No |  |
+| `ecData` | `str` | No |  |
+| `ecrData` | `str` | No |  |
+| `emvData` | `str` | No |  |
+| `exchangeFee` | `int` | No |  |
+| `exchangeRate` | `str` | No |  |
+| `languageCode` | `str` | No |  |
+| `merchantAddress` | `str` | No |  |
+| `merchantName` | `str` | No |  |
+| `merchantNumber` | `str` | No |  |
+| `messageType` | `str` | No |  |
+| `originalTraceNumber` | `int` | No |  |
+| `originalTransactionId` | `str` | No |  |
 | `password` | `str` | No |  |
-| `payment_reason` | `str` | No |  |
-| `receipt_footer` | `str` | No |  |
-| `receipt_header` | `str` | No |  |
-| `receipt_layout` | `int` | No |  |
-| `receipt_number` | `str` | Yes |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `str` | No |  |
-| `serial_number` | `str` | No |  |
+| `paymentReason` | `str` | No |  |
+| `receiptFooter` | `str` | No |  |
+| `receiptHeader` | `str` | No |  |
+| `receiptLayout` | `int` | No |  |
+| `receiptNumber` | `str` | Yes |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `str` | No |  |
+| `serialNumber` | `str` | No |  |
 | `svc` | `str` | No |  |
-| `terminal_id` | `int` | Yes |  |
-| `terminal_location` | `str` | No |  |
-| `trace_number` | `int` | No |  |
-| `transaction_date` | `str` | No |  |
-| `transaction_id` | `str` | No |  |
-| `tx_type` | `str` | No |  |
-| `user_data` | `str` | No |  |
+| `terminalId` | `int` | Yes |  |
+| `terminalLocation` | `str` | No |  |
+| `traceNumber` | `int` | No |  |
+| `transactionDate` | `str` | No |  |
+| `transactionId` | `str` | No |  |
+| `txType` | `str` | No |  |
+| `userData` | `str` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `acquirer_id` | - |
-| `acquirer_name` | - |
-| `actual_bonus_point` | - |
+| `acquirerId` | - |
+| `acquirerName` | - |
+| `actualBonusPoints` | - |
 | `amount` | Yes |
-| `authorization_code` | - |
-| `balance_amount` | - |
-| `card_brand` | - |
-| `card_number` | - |
-| `client_id` | - |
+| `authorizationCode` | - |
+| `balanceAmount` | - |
+| `cardBrand` | - |
+| `cardNumber` | - |
+| `clientId` | - |
 | `currency` | - |
 | `cvc` | - |
-| `ec_data` | - |
-| `ecr_data` | - |
-| `emv_data` | - |
-| `exchange_fee` | - |
-| `exchange_rate` | - |
-| `language_code` | - |
-| `merchant_address` | - |
-| `merchant_name` | - |
-| `merchant_number` | - |
-| `message_type` | Yes |
-| `original_trace_number` | - |
-| `original_transaction_id` | Yes |
+| `ecData` | - |
+| `ecrData` | - |
+| `emvData` | - |
+| `exchangeFee` | - |
+| `exchangeRate` | - |
+| `languageCode` | - |
+| `merchantAddress` | - |
+| `merchantName` | - |
+| `merchantNumber` | - |
+| `messageType` | Yes |
+| `originalTraceNumber` | - |
+| `originalTransactionId` | Yes |
 | `password` | - |
-| `payment_reason` | - |
-| `receipt_footer` | - |
-| `receipt_header` | - |
-| `receipt_layout` | - |
-| `receipt_number` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `serial_number` | - |
+| `paymentReason` | - |
+| `receiptFooter` | - |
+| `receiptHeader` | - |
+| `receiptLayout` | - |
+| `receiptNumber` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `serialNumber` | - |
 | `svc` | - |
-| `terminal_id` | - |
-| `terminal_location` | - |
-| `trace_number` | - |
-| `transaction_date` | Yes |
-| `transaction_id` | Yes |
-| `tx_type` | - |
-| `user_data` | - |
+| `terminalId` | - |
+| `terminalLocation` | - |
+| `traceNumber` | - |
+| `transactionDate` | Yes |
+| `transactionId` | Yes |
+| `txType` | - |
+| `userData` | - |
 
 ### Operations
 
@@ -334,10 +334,10 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```python
 result = client.CancelTransaction().create({
-    "client_id": 1,  # int
+    "clientId": 1,  # int
     "currency": "example_currency",  # str
-    "receipt_number": "example_receipt_number",  # str
-    "terminal_id": 1,  # int
+    "receiptNumber": "example_receiptNumber",  # str
+    "terminalId": 1,  # int
 })
 ```
 
@@ -380,9 +380,9 @@ check_card_black_listed = client.CheckCardBlackListed()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `card_no` | `str` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `str` | No |  |
+| `cardNo` | `str` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `str` | No |  |
 
 ### Operations
 
@@ -434,13 +434,13 @@ create_product = client.CreateProduct()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `int` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `str` | No |  |
-| `template_name` | `str` | Yes |  |
-| `template_type` | `str` | Yes |  |
-| `template_xml` | `str` | Yes |  |
-| `terminal_type` | `str` | Yes |  |
+| `acquirerId` | `int` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `str` | No |  |
+| `templateName` | `str` | Yes |  |
+| `templateType` | `str` | Yes |  |
+| `templateXml` | `str` | Yes |  |
+| `terminalType` | `str` | Yes |  |
 
 ### Operations
 
@@ -450,10 +450,10 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```python
 result = client.CreateProduct().create({
-    "template_name": "example_template_name",  # str
-    "template_type": "example_template_type",  # str
-    "template_xml": "example_template_xml",  # str
-    "terminal_type": "example_terminal_type",  # str
+    "templateName": "example_templateName",  # str
+    "templateType": "example_templateType",  # str
+    "templateXml": "example_templateXml",  # str
+    "terminalType": "example_terminalType",  # str
 })
 ```
 
@@ -496,13 +496,13 @@ deactivate_terminal = client.DeactivateTerminal()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `corporate_uuid` | `str` | No |  |
-| `deactivation_reason` | `str` | Yes |  |
-| `package_order_uuid` | `str` | No |  |
-| `product_order_uuid` | `str` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `str` | No |  |
-| `terminal_id` | `int` | Yes |  |
+| `corporateUuid` | `str` | No |  |
+| `deactivationReason` | `str` | Yes |  |
+| `packageOrderUuid` | `str` | No |  |
+| `productOrderUuid` | `str` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `str` | No |  |
+| `terminalId` | `int` | Yes |  |
 
 ### Operations
 
@@ -512,8 +512,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```python
 result = client.DeactivateTerminal().create({
-    "deactivation_reason": "example_deactivation_reason",  # str
-    "terminal_id": 1,  # int
+    "deactivationReason": "example_deactivationReason",  # str
+    "terminalId": 1,  # int
 })
 ```
 
@@ -556,16 +556,16 @@ digital_services_api = client.DigitalServicesApi()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearing_date_from` | `str` | Yes |  |
-| `clearing_date_to` | `str` | Yes |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `str` | No |  |
-| `tx_count` | `int` | No |  |
-| `tx_id_end` | `str` | No |  |
-| `tx_id_start` | `str` | No |  |
-| `tx_seq_no_end` | `int` | No |  |
-| `tx_seq_no_start` | `int` | No |  |
-| `tx_total` | `int` | No |  |
+| `clearingDateFrom` | `str` | Yes |  |
+| `clearingDateTo` | `str` | Yes |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `str` | No |  |
+| `txCount` | `int` | No |  |
+| `txIdEnd` | `str` | No |  |
+| `txIdStart` | `str` | No |  |
+| `txSeqNoEnd` | `int` | No |  |
+| `txSeqNoStart` | `int` | No |  |
+| `txTotal` | `int` | No |  |
 
 ### Operations
 
@@ -575,6 +575,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```python
 result = client.DigitalServicesApi().create({
+    "clearingDateFrom": "example_clearingDateFrom",  # str
+    "clearingDateTo": "example_clearingDateTo",  # str
 })
 ```
 
@@ -625,12 +627,12 @@ ec_data_ecom = client.EcDataEcom()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ecom_data` | `str` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `str` | No |  |
-| `terminal_id` | `int` | Yes |  |
-| `transaction_id` | `str` | Yes |  |
-| `transaction_type` | `str` | Yes |  |
+| `ecomData` | `str` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `str` | No |  |
+| `terminalId` | `int` | Yes |  |
+| `transactionId` | `str` | Yes |  |
+| `transactionType` | `str` | Yes |  |
 
 ### Operations
 
@@ -640,9 +642,9 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```python
 result = client.EcDataEcom().create({
-    "terminal_id": 1,  # int
-    "transaction_id": "example_transaction_id",  # str
-    "transaction_type": "example_transaction_type",  # str
+    "terminalId": 1,  # int
+    "transactionId": "example_transactionId",  # str
+    "transactionType": "example_transactionType",  # str
 })
 ```
 
@@ -685,11 +687,11 @@ ecom_parameter = client.EcomParameter()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ecom_pass` | `str` | No |  |
-| `ecom_skey` | `str` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `str` | No |  |
-| `terminal_id` | `int` | Yes |  |
+| `ecomPass` | `str` | No |  |
+| `ecomSkey` | `str` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `str` | No |  |
+| `terminalId` | `int` | Yes |  |
 
 ### Operations
 
@@ -699,7 +701,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```python
 result = client.EcomParameter().create({
-    "terminal_id": 1,  # int
+    "terminalId": 1,  # int
 })
 ```
 
@@ -742,12 +744,12 @@ ecr_data = client.EcrData()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ecr_data` | `str` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `str` | No |  |
-| `terminal_id` | `int` | Yes |  |
-| `transaction_id` | `str` | Yes |  |
-| `transaction_type` | `str` | Yes |  |
+| `ecrData` | `str` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `str` | No |  |
+| `terminalId` | `int` | Yes |  |
+| `transactionId` | `str` | Yes |  |
+| `transactionType` | `str` | Yes |  |
 
 ### Operations
 
@@ -757,9 +759,9 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```python
 result = client.EcrData().create({
-    "terminal_id": 1,  # int
-    "transaction_id": "example_transaction_id",  # str
-    "transaction_type": "example_transaction_type",  # str
+    "terminalId": 1,  # int
+    "transactionId": "example_transactionId",  # str
+    "transactionType": "example_transactionType",  # str
 })
 ```
 
@@ -802,12 +804,12 @@ emv_data = client.EmvData()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `emv_data` | `str` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `str` | No |  |
-| `terminal_id` | `int` | Yes |  |
-| `transaction_id` | `str` | Yes |  |
-| `transaction_type` | `str` | Yes |  |
+| `emvData` | `str` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `str` | No |  |
+| `terminalId` | `int` | Yes |  |
+| `transactionId` | `str` | Yes |  |
+| `transactionType` | `str` | Yes |  |
 
 ### Operations
 
@@ -817,9 +819,9 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```python
 result = client.EmvData().create({
-    "terminal_id": 1,  # int
-    "transaction_id": "example_transaction_id",  # str
-    "transaction_type": "example_transaction_type",  # str
+    "terminalId": 1,  # int
+    "transactionId": "example_transactionId",  # str
+    "transactionType": "example_transactionType",  # str
 })
 ```
 
@@ -862,20 +864,20 @@ enable_acquiring = client.EnableAcquiring()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `account_no` | `int` | No |  |
-| `additional_data` | `dict` | No |  |
-| `corporate_uuid` | `str` | Yes |  |
+| `accountNo` | `int` | No |  |
+| `additionalData` | `dict` | No |  |
+| `corporateUuid` | `str` | Yes |  |
 | `currency` | `str` | Yes |  |
-| `merchant_category_code` | `int` | Yes |  |
-| `package_order_uuid` | `str` | Yes |  |
-| `product_order_uuid` | `str` | Yes |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `str` | No |  |
-| `sorting_code` | `int` | No |  |
-| `template_name` | `str` | Yes |  |
-| `terminal_id` | `list` | No |  |
-| `terminal_id_acq` | `str` | No |  |
-| `vu_nummer` | `str` | No |  |
+| `merchantCategoryCode` | `int` | Yes |  |
+| `packageOrderUuid` | `str` | Yes |  |
+| `productOrderUuid` | `str` | Yes |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `str` | No |  |
+| `sortingCode` | `int` | No |  |
+| `templateName` | `str` | Yes |  |
+| `terminalIdAcq` | `str` | No |  |
+| `terminalIds` | `list` | No |  |
+| `vuNummer` | `str` | No |  |
 
 ### Operations
 
@@ -885,12 +887,12 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```python
 result = client.EnableAcquiring().create({
-    "corporate_uuid": "example_corporate_uuid",  # str
+    "corporateUuid": "example_corporateUuid",  # str
     "currency": "example_currency",  # str
-    "merchant_category_code": 1,  # int
-    "package_order_uuid": "example_package_order_uuid",  # str
-    "product_order_uuid": "example_product_order_uuid",  # str
-    "template_name": "example_template_name",  # str
+    "merchantCategoryCode": 1,  # int
+    "packageOrderUuid": "example_packageOrderUuid",  # str
+    "productOrderUuid": "example_productOrderUuid",  # str
+    "templateName": "example_templateName",  # str
 })
 ```
 
@@ -933,9 +935,9 @@ get_merchant_contract_number = client.GetMerchantContractNumber()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `merchant_contract_number` | `str` | Yes |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `str` | No |  |
+| `merchantContractNumber` | `str` | Yes |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `str` | No |  |
 
 ### Operations
 
@@ -945,7 +947,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```python
 result = client.GetMerchantContractNumber().create({
-    "merchant_contract_number": "example_merchant_contract_number",  # str
+    "merchantContractNumber": "example_merchantContractNumber",  # str
 })
 ```
 
@@ -988,9 +990,9 @@ get_template_xml = client.GetTemplateXml()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `int` | No |  |
-| `response_message` | `str` | No |  |
-| `template_name` | `str` | Yes |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `str` | No |  |
+| `templateName` | `str` | Yes |  |
 
 ### Operations
 
@@ -1000,7 +1002,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```python
 result = client.GetTemplateXml().create({
-    "template_name": "example_template_name",  # str
+    "templateName": "example_templateName",  # str
 })
 ```
 
@@ -1043,9 +1045,9 @@ introduce_mandator = client.IntroduceMandator()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `mandator_name` | `str` | Yes |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `str` | No |  |
+| `mandatorName` | `str` | Yes |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `str` | No |  |
 
 ### Operations
 
@@ -1055,7 +1057,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```python
 result = client.IntroduceMandator().create({
-    "mandator_name": "example_mandator_name",  # str
+    "mandatorName": "example_mandatorName",  # str
 })
 ```
 
@@ -1098,9 +1100,9 @@ introduce_package = client.IntroducePackage()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `int` | No |  |
-| `response_message` | `str` | No |  |
-| `terminal_template_description` | `str` | Yes |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `str` | No |  |
+| `terminalTemplateDescription` | `str` | Yes |  |
 
 ### Operations
 
@@ -1110,7 +1112,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```python
 result = client.IntroducePackage().create({
-    "terminal_template_description": "example_terminal_template_description",  # str
+    "terminalTemplateDescription": "example_terminalTemplateDescription",  # str
 })
 ```
 
@@ -1154,15 +1156,15 @@ keep_alive = client.KeepAlive()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `hwserialno` | `str` | No |  |
-| `ka_date_time_from` | `str` | No |  |
-| `ka_date_time_to` | `str` | No |  |
-| `keep_alive_data` | `list` | No |  |
+| `kaDateTimeFrom` | `str` | No |  |
+| `kaDateTimeTo` | `str` | No |  |
+| `keepAliveData` | `list` | No |  |
 | `pagination` | `dict` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `str` | No |  |
-| `terminal_date_time_from` | `str` | No |  |
-| `terminal_date_time_to` | `str` | No |  |
-| `terminal_id` | `int` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `str` | No |  |
+| `terminalDateTimeFrom` | `str` | No |  |
+| `terminalDateTimeTo` | `str` | No |  |
+| `terminalId` | `int` | No |  |
 
 ### Operations
 
@@ -1214,12 +1216,12 @@ list_terminal = client.ListTerminal()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `corporate_uuid` | `list` | No |  |
+| `corporateUuid` | `list` | No |  |
 | `filter` | `dict` | No |  |
 | `pagination` | `dict` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `str` | No |  |
-| `terminal` | `list` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `str` | No |  |
+| `terminals` | `list` | No |  |
 
 ### Operations
 
@@ -1271,12 +1273,12 @@ mandator_clearing_export = client.MandatorClearingExport()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearing_date_from` | `str` | Yes |  |
-| `clearing_date_to` | `str` | Yes |  |
+| `clearingDateFrom` | `str` | Yes |  |
+| `clearingDateTo` | `str` | Yes |  |
 | `pagination` | `dict` | No |  |
-| `record` | `list` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `str` | No |  |
+| `records` | `list` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `str` | No |  |
 
 ### Operations
 
@@ -1286,8 +1288,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```python
 result = client.MandatorClearingExport().create({
-    "clearing_date_from": "example_clearing_date_from",  # str
-    "clearing_date_to": "example_clearing_date_to",  # str
+    "clearingDateFrom": "example_clearingDateFrom",  # str
+    "clearingDateTo": "example_clearingDateTo",  # str
 })
 ```
 
@@ -1330,12 +1332,12 @@ mandator_clearing_export_download = client.MandatorClearingExportDownload()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearing_date_from` | `str` | Yes |  |
-| `clearing_date_to` | `str` | Yes |  |
-| `file_id` | `str` | No |  |
-| `filename_template` | `str` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `str` | No |  |
+| `clearingDateFrom` | `str` | Yes |  |
+| `clearingDateTo` | `str` | Yes |  |
+| `fileId` | `str` | No |  |
+| `filenameTemplate` | `str` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `str` | No |  |
 | `status` | `str` | No |  |
 
 ### Operations
@@ -1346,8 +1348,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```python
 result = client.MandatorClearingExportDownload().create({
-    "clearing_date_from": "example_clearing_date_from",  # str
-    "clearing_date_to": "example_clearing_date_to",  # str
+    "clearingDateFrom": "example_clearingDateFrom",  # str
+    "clearingDateTo": "example_clearingDateTo",  # str
 })
 ```
 
@@ -1398,11 +1400,11 @@ mandator_clearing_export_summary = client.MandatorClearingExportSummary()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearing_date_from` | `str` | Yes |  |
-| `clearing_date_to` | `str` | Yes |  |
-| `record` | `list` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `str` | No |  |
+| `clearingDateFrom` | `str` | Yes |  |
+| `clearingDateTo` | `str` | Yes |  |
+| `records` | `list` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `str` | No |  |
 
 ### Operations
 
@@ -1412,8 +1414,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```python
 result = client.MandatorClearingExportSummary().create({
-    "clearing_date_from": "example_clearing_date_from",  # str
-    "clearing_date_to": "example_clearing_date_to",  # str
+    "clearingDateFrom": "example_clearingDateFrom",  # str
+    "clearingDateTo": "example_clearingDateTo",  # str
 })
 ```
 
@@ -1456,30 +1458,30 @@ merchant_portal_services_api = client.MerchantPortalServicesApi()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `3_d_secure` | `str` | No |  |
-| `authorization_code` | `str` | No |  |
-| `card_brand` | `str` | No |  |
-| `clearing_amount_from` | `str` | No |  |
-| `clearing_amount_to` | `str` | No |  |
-| `clearing_currency` | `str` | No |  |
-| `clearing_status` | `str` | No |  |
-| `corporate_uuid` | `str` | No |  |
-| `order_by_transaction_date` | `str` | No |  |
+| `3DSecure` | `str` | No |  |
+| `authorizationCode` | `str` | No |  |
+| `cardBrand` | `str` | No |  |
+| `clearingAmountFrom` | `str` | No |  |
+| `clearingAmountTo` | `str` | No |  |
+| `clearingCurrency` | `str` | No |  |
+| `clearingStatus` | `str` | No |  |
+| `corporateUUID` | `str` | No |  |
+| `orderByTransactionDate` | `str` | No |  |
 | `pagination` | `dict` | No |  |
-| `receipt_number` | `str` | No |  |
-| `referenced_transaction_id` | `str` | No |  |
-| `retrieval_reference_number` | `str` | No |  |
-| `source_id` | `int` | No |  |
-| `tecsengine_response_code_from` | `str` | No |  |
-| `tecsengine_response_code_to` | `str` | No |  |
-| `terminal_id` | `int` | No |  |
-| `trace_number` | `str` | No |  |
-| `transaction_amount_from` | `str` | No |  |
-| `transaction_amount_to` | `str` | No |  |
-| `transaction_date_from` | `str` | No |  |
-| `transaction_date_to` | `str` | No |  |
-| `transaction_id` | `str` | No |  |
-| `transaction_type` | `str` | No |  |
+| `receiptNumber` | `str` | No |  |
+| `referencedTransactionId` | `str` | No |  |
+| `retrievalReferenceNumber` | `str` | No |  |
+| `sourceId` | `int` | No |  |
+| `tecsengineResponseCodeFrom` | `str` | No |  |
+| `tecsengineResponseCodeTo` | `str` | No |  |
+| `terminalId` | `int` | No |  |
+| `traceNumber` | `str` | No |  |
+| `transactionAmountFrom` | `str` | No |  |
+| `transactionAmountTo` | `str` | No |  |
+| `transactionDateFrom` | `str` | No |  |
+| `transactionDateTo` | `str` | No |  |
+| `transactionId` | `str` | No |  |
+| `transactionType` | `str` | No |  |
 | `wallet` | `str` | No |  |
 
 ### Operations
@@ -1532,11 +1534,11 @@ move_tid = client.MoveTid()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `productorderuuid` | `list` | Yes |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `str` | No |  |
-| `target_packageorderuuid` | `str` | No |  |
-| `target_productorderuuid` | `str` | No |  |
+| `productorderuuids` | `list` | Yes |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `str` | No |  |
+| `targetPackageorderuuid` | `str` | No |  |
+| `targetProductorderuuid` | `str` | No |  |
 
 ### Operations
 
@@ -1546,7 +1548,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```python
 result = client.MoveTid().create({
-    "productorderuuid": [],  # list
+    "productorderuuids": [],  # list
 })
 ```
 
@@ -1589,44 +1591,44 @@ payment_manual = client.PaymentManual()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_name` | `str` | No |  |
+| `acquirerName` | `str` | No |  |
 | `amount` | `int` | Yes |  |
-| `authorization_number` | `str` | No |  |
-| `card_number` | `str` | Yes |  |
-| `card_type` | `str` | No |  |
+| `authorizationNumber` | `str` | No |  |
+| `cardNumber` | `str` | Yes |  |
+| `cardType` | `str` | No |  |
 | `currency` | `str` | Yes |  |
 | `cvc` | `str` | No |  |
-| `date_time_tx` | `str` | No |  |
-| `exp_date` | `str` | Yes |  |
-| `merchant_id` | `str` | No |  |
-| `original_transaction_id` | `str` | No |  |
+| `dateTimeTx` | `str` | No |  |
+| `expDate` | `str` | Yes |  |
+| `merchantId` | `str` | No |  |
+| `originalTransactionId` | `str` | No |  |
 | `password` | `str` | No |  |
-| `response_code` | `str` | No |  |
-| `response_message` | `str` | No |  |
-| `terminal_id` | `str` | No |  |
-| `transaction_id` | `str` | No |  |
+| `responseCode` | `str` | No |  |
+| `responseMessage` | `str` | No |  |
+| `terminalId` | `str` | No |  |
+| `transactionId` | `str` | No |  |
 | `txtype` | `str` | Yes |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `acquirer_name` | - |
+| `acquirerName` | - |
 | `amount` | - |
-| `authorization_number` | - |
-| `card_number` | - |
-| `card_type` | - |
+| `authorizationNumber` | - |
+| `cardNumber` | - |
+| `cardType` | - |
 | `currency` | - |
 | `cvc` | - |
-| `date_time_tx` | - |
-| `exp_date` | - |
-| `merchant_id` | - |
-| `original_transaction_id` | - |
+| `dateTimeTx` | - |
+| `expDate` | - |
+| `merchantId` | - |
+| `originalTransactionId` | - |
 | `password` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `terminal_id` | Yes |
-| `transaction_id` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `terminalId` | Yes |
+| `transactionId` | - |
 | `txtype` | - |
 
 ### Operations
@@ -1638,9 +1640,9 @@ Create a new entity with the given data. Returns the created entity data and rai
 ```python
 result = client.PaymentManual().create({
     "amount": 1,  # int
-    "card_number": "example_card_number",  # str
+    "cardNumber": "example_cardNumber",  # str
     "currency": "example_currency",  # str
-    "exp_date": "example_exp_date",  # str
+    "expDate": "example_expDate",  # str
     "txtype": "example_txtype",  # str
 })
 ```
@@ -1684,43 +1686,18 @@ payment_sred = client.PaymentSred()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_name` | `str` | No |  |
 | `amount` | `int` | Yes |  |
-| `authorization_number` | `str` | No |  |
-| `card_type` | `str` | No |  |
 | `currency` | `str` | Yes |  |
-| `date_time_tx` | `str` | No |  |
-| `device_payload` | `str` | Yes |  |
-| `merchant_id` | `str` | No |  |
-| `original_transaction_id` | `str` | No |  |
+| `device` | `str` | No |  |
+| `devicePayload` | `str` | Yes |  |
+| `expDate` | `str` | No |  |
+| `mode` | `str` | No |  |
+| `panMasked` | `str` | No |  |
 | `password` | `str` | No |  |
-| `response_code` | `str` | No |  |
-| `response_message` | `str` | No |  |
-| `sred` | `dict` | No |  |
-| `terminal_id` | `str` | No |  |
-| `transaction_id` | `str` | No |  |
+| `serial` | `str` | No |  |
+| `serviceCode` | `str` | No |  |
+| `terminalId` | `str` | Yes |  |
 | `txtype` | `str` | Yes |  |
-
-### Field Usage by Operation
-
-| Field | create |
-| --- | --- |
-| `acquirer_name` | - |
-| `amount` | - |
-| `authorization_number` | - |
-| `card_type` | - |
-| `currency` | - |
-| `date_time_tx` | - |
-| `device_payload` | - |
-| `merchant_id` | - |
-| `original_transaction_id` | - |
-| `password` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `sred` | - |
-| `terminal_id` | Yes |
-| `transaction_id` | - |
-| `txtype` | - |
 
 ### Operations
 
@@ -1732,7 +1709,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 result = client.PaymentSred().create({
     "amount": 1,  # int
     "currency": "example_currency",  # str
-    "device_payload": "example_device_payload",  # str
+    "devicePayload": "example_devicePayload",  # str
+    "terminalId": "example_terminalId",  # str
     "txtype": "example_txtype",  # str
 })
 ```
@@ -1776,95 +1754,95 @@ pre_auth_transaction_completion = client.PreAuthTransactionCompletion()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `str` | No |  |
-| `acquirer_name` | `str` | No |  |
-| `actual_bonus_point` | `str` | No |  |
+| `acquirerId` | `str` | No |  |
+| `acquirerName` | `str` | No |  |
+| `actualBonusPoints` | `str` | No |  |
 | `amount` | `int` | No |  |
-| `authorization_code` | `str` | No |  |
-| `balance_amount` | `str` | No |  |
-| `card_brand` | `str` | No |  |
-| `card_number` | `str` | No |  |
-| `card_number_reference` | `str` | Yes |  |
-| `client_id` | `int` | Yes |  |
+| `authorizationCode` | `str` | No |  |
+| `balanceAmount` | `str` | No |  |
+| `cardBrand` | `str` | No |  |
+| `cardNumber` | `str` | No |  |
+| `cardNumberReference` | `str` | Yes |  |
+| `clientId` | `int` | Yes |  |
 | `currency` | `str` | Yes |  |
 | `cvc` | `str` | No |  |
-| `ec_data` | `str` | No |  |
-| `ecr_data` | `str` | No |  |
-| `emv_data` | `str` | No |  |
-| `exchange_fee` | `int` | No |  |
-| `exchange_rate` | `str` | No |  |
-| `language_code` | `str` | No |  |
-| `merchant_address` | `str` | No |  |
-| `merchant_name` | `str` | No |  |
-| `merchant_number` | `str` | No |  |
-| `message_type` | `str` | No |  |
-| `original_trace_number` | `int` | No |  |
-| `original_transaction_id` | `str` | No |  |
+| `ecData` | `str` | No |  |
+| `ecrData` | `str` | No |  |
+| `emvData` | `str` | No |  |
+| `exchangeFee` | `int` | No |  |
+| `exchangeRate` | `str` | No |  |
+| `languageCode` | `str` | No |  |
+| `merchantAddress` | `str` | No |  |
+| `merchantName` | `str` | No |  |
+| `merchantNumber` | `str` | No |  |
+| `messageType` | `str` | No |  |
+| `originalTraceNumber` | `int` | No |  |
+| `originalTransactionId` | `str` | No |  |
 | `password` | `str` | No |  |
-| `payment_reason` | `str` | No |  |
-| `receipt_footer` | `str` | No |  |
-| `receipt_header` | `str` | No |  |
-| `receipt_layout` | `int` | No |  |
-| `receipt_number` | `str` | Yes |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `str` | No |  |
-| `serial_number` | `str` | No |  |
+| `paymentReason` | `str` | No |  |
+| `receiptFooter` | `str` | No |  |
+| `receiptHeader` | `str` | No |  |
+| `receiptLayout` | `int` | No |  |
+| `receiptNumber` | `str` | Yes |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `str` | No |  |
+| `serialNumber` | `str` | No |  |
 | `svc` | `str` | No |  |
-| `terminal_id` | `int` | Yes |  |
-| `terminal_location` | `str` | No |  |
-| `trace_number` | `int` | No |  |
-| `transaction_date` | `str` | No |  |
-| `transaction_id` | `str` | No |  |
-| `transaction_type` | `str` | Yes |  |
-| `tx_type` | `str` | No |  |
-| `user_data` | `str` | No |  |
+| `terminalId` | `int` | Yes |  |
+| `terminalLocation` | `str` | No |  |
+| `traceNumber` | `int` | No |  |
+| `transactionDate` | `str` | No |  |
+| `transactionId` | `str` | No |  |
+| `transactionType` | `str` | Yes |  |
+| `txType` | `str` | No |  |
+| `userData` | `str` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `acquirer_id` | - |
-| `acquirer_name` | - |
-| `actual_bonus_point` | - |
+| `acquirerId` | - |
+| `acquirerName` | - |
+| `actualBonusPoints` | - |
 | `amount` | Yes |
-| `authorization_code` | - |
-| `balance_amount` | - |
-| `card_brand` | - |
-| `card_number` | - |
-| `card_number_reference` | - |
-| `client_id` | - |
+| `authorizationCode` | - |
+| `balanceAmount` | - |
+| `cardBrand` | - |
+| `cardNumber` | - |
+| `cardNumberReference` | - |
+| `clientId` | - |
 | `currency` | - |
 | `cvc` | - |
-| `ec_data` | - |
-| `ecr_data` | - |
-| `emv_data` | - |
-| `exchange_fee` | - |
-| `exchange_rate` | - |
-| `language_code` | - |
-| `merchant_address` | - |
-| `merchant_name` | - |
-| `merchant_number` | - |
-| `message_type` | - |
-| `original_trace_number` | - |
-| `original_transaction_id` | Yes |
+| `ecData` | - |
+| `ecrData` | - |
+| `emvData` | - |
+| `exchangeFee` | - |
+| `exchangeRate` | - |
+| `languageCode` | - |
+| `merchantAddress` | - |
+| `merchantName` | - |
+| `merchantNumber` | - |
+| `messageType` | - |
+| `originalTraceNumber` | - |
+| `originalTransactionId` | Yes |
 | `password` | - |
-| `payment_reason` | - |
-| `receipt_footer` | - |
-| `receipt_header` | - |
-| `receipt_layout` | - |
-| `receipt_number` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `serial_number` | - |
+| `paymentReason` | - |
+| `receiptFooter` | - |
+| `receiptHeader` | - |
+| `receiptLayout` | - |
+| `receiptNumber` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `serialNumber` | - |
 | `svc` | - |
-| `terminal_id` | - |
-| `terminal_location` | - |
-| `trace_number` | - |
-| `transaction_date` | Yes |
-| `transaction_id` | Yes |
-| `transaction_type` | - |
-| `tx_type` | - |
-| `user_data` | - |
+| `terminalId` | - |
+| `terminalLocation` | - |
+| `traceNumber` | - |
+| `transactionDate` | Yes |
+| `transactionId` | Yes |
+| `transactionType` | - |
+| `txType` | - |
+| `userData` | - |
 
 ### Operations
 
@@ -1874,12 +1852,12 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```python
 result = client.PreAuthTransactionCompletion().create({
-    "card_number_reference": "example_card_number_reference",  # str
-    "client_id": 1,  # int
+    "cardNumberReference": "example_cardNumberReference",  # str
+    "clientId": 1,  # int
     "currency": "example_currency",  # str
-    "receipt_number": "example_receipt_number",  # str
-    "terminal_id": 1,  # int
-    "transaction_type": "example_transaction_type",  # str
+    "receiptNumber": "example_receiptNumber",  # str
+    "terminalId": 1,  # int
+    "transactionType": "example_transactionType",  # str
 })
 ```
 
@@ -1922,13 +1900,13 @@ reactivate_terminal = client.ReactivateTerminal()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `corporate_uuid` | `str` | No |  |
-| `package_order_uuid` | `str` | No |  |
-| `product_order_uuid` | `str` | No |  |
-| `reactivation_reason` | `str` | Yes |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `str` | No |  |
-| `terminal_id` | `int` | Yes |  |
+| `corporateUuid` | `str` | No |  |
+| `packageOrderUuid` | `str` | No |  |
+| `productOrderUuid` | `str` | No |  |
+| `reactivationReason` | `str` | Yes |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `str` | No |  |
+| `terminalId` | `int` | Yes |  |
 
 ### Operations
 
@@ -1938,8 +1916,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```python
 result = client.ReactivateTerminal().create({
-    "reactivation_reason": "example_reactivation_reason",  # str
-    "terminal_id": 1,  # int
+    "reactivationReason": "example_reactivationReason",  # str
+    "terminalId": 1,  # int
 })
 ```
 
@@ -1982,91 +1960,91 @@ refund_transaction = client.RefundTransaction()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `str` | No |  |
-| `acquirer_name` | `str` | No |  |
-| `actual_bonus_point` | `str` | No |  |
+| `acquirerId` | `str` | No |  |
+| `acquirerName` | `str` | No |  |
+| `actualBonusPoints` | `str` | No |  |
 | `amount` | `int` | No |  |
-| `authorization_code` | `str` | No |  |
-| `balance_amount` | `str` | No |  |
-| `card_brand` | `str` | No |  |
-| `card_number` | `str` | No |  |
-| `client_id` | `int` | Yes |  |
+| `authorizationCode` | `str` | No |  |
+| `balanceAmount` | `str` | No |  |
+| `cardBrand` | `str` | No |  |
+| `cardNumber` | `str` | No |  |
+| `clientId` | `int` | Yes |  |
 | `currency` | `str` | Yes |  |
 | `cvc` | `str` | No |  |
-| `ec_data` | `str` | No |  |
-| `ecr_data` | `str` | No |  |
-| `emv_data` | `str` | No |  |
-| `exchange_fee` | `int` | No |  |
-| `exchange_rate` | `str` | No |  |
-| `language_code` | `str` | No |  |
-| `merchant_address` | `str` | No |  |
-| `merchant_name` | `str` | No |  |
-| `merchant_number` | `str` | No |  |
-| `message_type` | `str` | No |  |
-| `original_trace_number` | `int` | No |  |
-| `original_transaction_id` | `str` | No |  |
+| `ecData` | `str` | No |  |
+| `ecrData` | `str` | No |  |
+| `emvData` | `str` | No |  |
+| `exchangeFee` | `int` | No |  |
+| `exchangeRate` | `str` | No |  |
+| `languageCode` | `str` | No |  |
+| `merchantAddress` | `str` | No |  |
+| `merchantName` | `str` | No |  |
+| `merchantNumber` | `str` | No |  |
+| `messageType` | `str` | No |  |
+| `originalTraceNumber` | `int` | No |  |
+| `originalTransactionId` | `str` | No |  |
 | `password` | `str` | No |  |
-| `payment_reason` | `str` | No |  |
-| `receipt_footer` | `str` | No |  |
-| `receipt_header` | `str` | No |  |
-| `receipt_layout` | `int` | No |  |
-| `receipt_number` | `str` | Yes |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `str` | No |  |
-| `serial_number` | `str` | No |  |
+| `paymentReason` | `str` | No |  |
+| `receiptFooter` | `str` | No |  |
+| `receiptHeader` | `str` | No |  |
+| `receiptLayout` | `int` | No |  |
+| `receiptNumber` | `str` | Yes |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `str` | No |  |
+| `serialNumber` | `str` | No |  |
 | `svc` | `str` | No |  |
-| `terminal_id` | `int` | Yes |  |
-| `terminal_location` | `str` | No |  |
-| `trace_number` | `int` | No |  |
-| `transaction_date` | `str` | No |  |
-| `transaction_id` | `str` | No |  |
-| `tx_type` | `str` | No |  |
-| `user_data` | `str` | No |  |
+| `terminalId` | `int` | Yes |  |
+| `terminalLocation` | `str` | No |  |
+| `traceNumber` | `int` | No |  |
+| `transactionDate` | `str` | No |  |
+| `transactionId` | `str` | No |  |
+| `txType` | `str` | No |  |
+| `userData` | `str` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `acquirer_id` | - |
-| `acquirer_name` | - |
-| `actual_bonus_point` | - |
+| `acquirerId` | - |
+| `acquirerName` | - |
+| `actualBonusPoints` | - |
 | `amount` | Yes |
-| `authorization_code` | - |
-| `balance_amount` | - |
-| `card_brand` | - |
-| `card_number` | - |
-| `client_id` | - |
+| `authorizationCode` | - |
+| `balanceAmount` | - |
+| `cardBrand` | - |
+| `cardNumber` | - |
+| `clientId` | - |
 | `currency` | - |
 | `cvc` | - |
-| `ec_data` | - |
-| `ecr_data` | - |
-| `emv_data` | - |
-| `exchange_fee` | - |
-| `exchange_rate` | - |
-| `language_code` | - |
-| `merchant_address` | - |
-| `merchant_name` | - |
-| `merchant_number` | - |
-| `message_type` | - |
-| `original_trace_number` | - |
-| `original_transaction_id` | Yes |
+| `ecData` | - |
+| `ecrData` | - |
+| `emvData` | - |
+| `exchangeFee` | - |
+| `exchangeRate` | - |
+| `languageCode` | - |
+| `merchantAddress` | - |
+| `merchantName` | - |
+| `merchantNumber` | - |
+| `messageType` | - |
+| `originalTraceNumber` | - |
+| `originalTransactionId` | Yes |
 | `password` | - |
-| `payment_reason` | - |
-| `receipt_footer` | - |
-| `receipt_header` | - |
-| `receipt_layout` | - |
-| `receipt_number` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `serial_number` | - |
+| `paymentReason` | - |
+| `receiptFooter` | - |
+| `receiptHeader` | - |
+| `receiptLayout` | - |
+| `receiptNumber` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `serialNumber` | - |
 | `svc` | - |
-| `terminal_id` | - |
-| `terminal_location` | - |
-| `trace_number` | - |
-| `transaction_date` | Yes |
-| `transaction_id` | Yes |
-| `tx_type` | - |
-| `user_data` | - |
+| `terminalId` | - |
+| `terminalLocation` | - |
+| `traceNumber` | - |
+| `transactionDate` | Yes |
+| `transactionId` | Yes |
+| `txType` | - |
+| `userData` | - |
 
 ### Operations
 
@@ -2076,10 +2054,10 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```python
 result = client.RefundTransaction().create({
-    "client_id": 1,  # int
+    "clientId": 1,  # int
     "currency": "example_currency",  # str
-    "receipt_number": "example_receipt_number",  # str
-    "terminal_id": 1,  # int
+    "receiptNumber": "example_receiptNumber",  # str
+    "terminalId": 1,  # int
 })
 ```
 
@@ -2122,14 +2100,14 @@ register_tecs_company = client.RegisterTecsCompany()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `corporate_uuid` | `str` | Yes |  |
-| `package_order_uuid` | `str` | Yes |  |
-| `partner_id` | `int` | No |  |
-| `partner_name` | `str` | No |  |
-| `product_order_uuid` | `str` | Yes |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `str` | No |  |
-| `template_name` | `str` | Yes |  |
+| `corporateUuid` | `str` | Yes |  |
+| `packageOrderUuid` | `str` | Yes |  |
+| `partnerId` | `int` | No |  |
+| `partnerName` | `str` | No |  |
+| `productOrderUuid` | `str` | Yes |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `str` | No |  |
+| `templateName` | `str` | Yes |  |
 
 ### Operations
 
@@ -2139,10 +2117,10 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```python
 result = client.RegisterTecsCompany().create({
-    "corporate_uuid": "example_corporate_uuid",  # str
-    "package_order_uuid": "example_package_order_uuid",  # str
-    "product_order_uuid": "example_product_order_uuid",  # str
-    "template_name": "example_template_name",  # str
+    "corporateUuid": "example_corporateUuid",  # str
+    "packageOrderUuid": "example_packageOrderUuid",  # str
+    "productOrderUuid": "example_productOrderUuid",  # str
+    "templateName": "example_templateName",  # str
 })
 ```
 
@@ -2185,24 +2163,24 @@ register_terminal = client.RegisterTerminal()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `additional_data` | `dict` | No |  |
-| `corporate_uuid` | `str` | Yes |  |
-| `package_order_uuid` | `str` | Yes |  |
-| `product_order_uuid` | `str` | Yes |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `str` | No |  |
-| `tecs_web_secret_key` | `str` | No |  |
-| `template_name` | `str` | Yes |  |
-| `terminal_country_code` | `str` | Yes |  |
-| `terminal_id` | `int` | No |  |
-| `terminal_id_acq` | `str` | No |  |
-| `terminal_language_code` | `str` | Yes |  |
-| `terminal_location` | `str` | Yes |  |
-| `terminal_serial_number` | `str` | No |  |
-| `token_io_alia` | `str` | No |  |
-| `token_io_iban` | `str` | No |  |
-| `token_io_member_id` | `str` | No |  |
-| `web_shop_url` | `str` | No |  |
+| `additionalData` | `dict` | No |  |
+| `corporateUuid` | `str` | Yes |  |
+| `packageOrderUuid` | `str` | Yes |  |
+| `productOrderUuid` | `str` | Yes |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `str` | No |  |
+| `tecsWebSecretKey` | `str` | No |  |
+| `templateName` | `str` | Yes |  |
+| `terminalCountryCode` | `str` | Yes |  |
+| `terminalId` | `int` | No |  |
+| `terminalIdAcq` | `str` | No |  |
+| `terminalLanguageCode` | `str` | Yes |  |
+| `terminalLocation` | `str` | Yes |  |
+| `terminalSerialNumber` | `str` | No |  |
+| `tokenIOAlias` | `str` | No |  |
+| `tokenIOIban` | `str` | No |  |
+| `tokenIOMemberId` | `str` | No |  |
+| `webShopUrl` | `str` | No |  |
 
 ### Operations
 
@@ -2212,13 +2190,13 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```python
 result = client.RegisterTerminal().create({
-    "corporate_uuid": "example_corporate_uuid",  # str
-    "package_order_uuid": "example_package_order_uuid",  # str
-    "product_order_uuid": "example_product_order_uuid",  # str
-    "template_name": "example_template_name",  # str
-    "terminal_country_code": "example_terminal_country_code",  # str
-    "terminal_language_code": "example_terminal_language_code",  # str
-    "terminal_location": "example_terminal_location",  # str
+    "corporateUuid": "example_corporateUuid",  # str
+    "packageOrderUuid": "example_packageOrderUuid",  # str
+    "productOrderUuid": "example_productOrderUuid",  # str
+    "templateName": "example_templateName",  # str
+    "terminalCountryCode": "example_terminalCountryCode",  # str
+    "terminalLanguageCode": "example_terminalLanguageCode",  # str
+    "terminalLocation": "example_terminalLocation",  # str
 })
 ```
 
@@ -2261,16 +2239,16 @@ report_data = client.ReportData()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `card_brand_report_data` | `list` | No |  |
-| `clearing_date_from` | `str` | Yes |  |
-| `clearing_date_to` | `str` | Yes |  |
-| `corporate_id` | `str` | Yes |  |
+| `cardBrandReportData` | `list` | No |  |
+| `clearingDateFrom` | `str` | Yes |  |
+| `clearingDateTo` | `str` | Yes |  |
+| `corporateId` | `str` | Yes |  |
 | `currency` | `str` | Yes |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `str` | No |  |
-| `sum_over_credit_tx` | `dict` | No |  |
-| `sum_over_debit_tx` | `dict` | No |  |
-| `terminal_id` | `int` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `str` | No |  |
+| `sumOverCreditTx` | `dict` | No |  |
+| `sumOverDebitTx` | `dict` | No |  |
+| `terminalId` | `int` | No |  |
 
 ### Operations
 
@@ -2280,9 +2258,9 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```python
 result = client.ReportData().create({
-    "clearing_date_from": "example_clearing_date_from",  # str
-    "clearing_date_to": "example_clearing_date_to",  # str
-    "corporate_id": "example_corporate_id",  # str
+    "clearingDateFrom": "example_clearingDateFrom",  # str
+    "clearingDateTo": "example_clearingDateTo",  # str
+    "corporateId": "example_corporateId",  # str
     "currency": "example_currency",  # str
 })
 ```
@@ -2326,56 +2304,56 @@ status_transaction = client.StatusTransaction()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_name` | `str` | No |  |
-| `acquirer_terminal_id` | `str` | No |  |
+| `acquirerName` | `str` | No |  |
+| `acquirerTerminalId` | `str` | No |  |
 | `amount` | `int` | No |  |
-| `application_cryptogram` | `str` | No |  |
-| `authorization_code` | `str | None` | No |  |
-| `authorization_date` | `str` | No |  |
-| `card_brand` | `str` | No |  |
-| `card_entry` | `str` | No |  |
-| `card_expiration` | `str` | No |  |
-| `card_number` | `str` | No |  |
-| `clearing_amount` | `int` | No |  |
-| `clearing_batch_id` | `str` | No |  |
-| `clearing_currency` | `str` | No |  |
-| `clearing_date` | `str` | No |  |
-| `clearing_processed_date` | `str` | No |  |
-| `clearing_status` | `str` | No |  |
-| `client_id` | `int` | No |  |
+| `applicationCryptogram` | `str` | No |  |
+| `authorizationCode` | `str | None` | No |  |
+| `authorizationDate` | `str` | No |  |
+| `cardBrand` | `str` | No |  |
+| `cardEntry` | `str` | No |  |
+| `cardExpiration` | `str` | No |  |
+| `cardNumber` | `str` | No |  |
+| `clearingAmount` | `int` | No |  |
+| `clearingBatchId` | `str` | No |  |
+| `clearingCurrency` | `str` | No |  |
+| `clearingDate` | `str` | No |  |
+| `clearingProcessedDate` | `str` | No |  |
+| `clearingStatus` | `str` | No |  |
+| `clientId` | `int` | No |  |
 | `currency` | `str` | No |  |
 | `cvm` | `str` | No |  |
-| `ecr_data` | `str` | No |  |
-| `emv_application_id` | `str` | No |  |
-| `emv_application_label` | `str` | No |  |
-| `merchant_name` | `str` | No |  |
-| `merchant_number` | `str` | No |  |
-| `original_client_id` | `str` | No |  |
-| `original_terminal_id` | `int` | No |  |
-| `original_transaction_id` | `str` | No |  |
-| `payment_reason` | `str` | No |  |
-| `receipt_number` | `str` | No |  |
-| `response_code` | `int` | No |  |
-| `response_code_from_a` | `str` | No |  |
-| `response_message` | `str` | No |  |
-| `retrieval_reference_number` | `str` | No |  |
-| `service_code` | `str` | No |  |
-| `settlement_status` | `str` | No |  |
-| `source_id` | `int` | No |  |
-| `tecsengine_response_code` | `int` | No |  |
-| `tecsengine_response_text` | `str` | No |  |
-| `terminal_end_of_day_date` | `str` | No |  |
-| `terminal_id` | `int` | No |  |
-| `terminal_location` | `str` | No |  |
-| `tip_amount` | `int` | No |  |
-| `trace_number` | `int` | No |  |
-| `transaction_clearing_date` | `str` | No |  |
-| `transaction_date` | `str` | No |  |
-| `transaction_id` | `str` | No |  |
-| `transaction_seq_number` | `int` | No |  |
-| `transaction_server_date` | `str` | No |  |
-| `transaction_source` | `str` | No |  |
-| `transaction_type` | `str` | No |  |
+| `ecrData` | `str` | No |  |
+| `emvApplicationId` | `str` | No |  |
+| `emvApplicationLabel` | `str` | No |  |
+| `merchantName` | `str` | No |  |
+| `merchantNumber` | `str` | No |  |
+| `originalClientId` | `str` | No |  |
+| `originalTerminalId` | `int` | No |  |
+| `originalTransactionId` | `str` | No |  |
+| `paymentReason` | `str` | No |  |
+| `receiptNumber` | `str` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseCodeFromAS` | `str` | No |  |
+| `responseMessage` | `str` | No |  |
+| `retrievalReferenceNumber` | `str` | No |  |
+| `serviceCode` | `str` | No |  |
+| `settlementStatus` | `str` | No |  |
+| `sourceId` | `int` | No |  |
+| `tecsengineResponseCode` | `int` | No |  |
+| `tecsengineResponseText` | `str` | No |  |
+| `terminalEndOfDayDate` | `str` | No |  |
+| `terminalId` | `int` | No |  |
+| `terminalLocation` | `str` | No |  |
+| `tipAmount` | `int` | No |  |
+| `traceNumber` | `int` | No |  |
+| `transactionClearingDate` | `str` | No |  |
+| `transactionDate` | `str` | No |  |
+| `transactionId` | `str` | No |  |
+| `transactionSeqNumber` | `int` | No |  |
+| `transactionServerDate` | `str` | No |  |
+| `transactionSource` | `str` | No |  |
+| `transactionType` | `str` | No |  |
 
 ### Operations
 
@@ -2427,12 +2405,12 @@ store_terminal_parameter = client.StoreTerminalParameter()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acq_tab_nexo` | `dict` | No |  |
-| `config_version` | `str` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `str` | No |  |
-| `serial_number` | `str` | Yes |  |
-| `tid_sent` | `str` | No |  |
+| `acqTabNexo` | `dict` | No |  |
+| `configVersion` | `str` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `str` | No |  |
+| `serialNumber` | `str` | Yes |  |
+| `tidSent` | `str` | No |  |
 
 ### Operations
 
@@ -2442,7 +2420,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```python
 result = client.StoreTerminalParameter().create({
-    "serial_number": "example_serial_number",  # str
+    "serialNumber": "example_serialNumber",  # str
 })
 ```
 
@@ -2485,11 +2463,11 @@ terminal_id = client.TerminalId()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `device_serial_number` | `list` | Yes |  |
-| `duplicate_terminal_id` | `list` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `str` | No |  |
-| `terminal` | `list` | No |  |
+| `deviceSerialNumber` | `list` | Yes |  |
+| `duplicateTerminalIds` | `list` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `str` | No |  |
+| `terminals` | `list` | No |  |
 
 ### Operations
 
@@ -2499,7 +2477,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```python
 result = client.TerminalId().create({
-    "device_serial_number": [],  # list
+    "deviceSerialNumber": [],  # list
 })
 ```
 
@@ -2542,34 +2520,34 @@ transaction_history = client.TransactionHistory()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `3_d_secure` | `str` | No |  |
-| `authorization_code` | `str` | No |  |
-| `card_brand` | `str` | No |  |
-| `clearing_amount_from` | `str` | No |  |
-| `clearing_amount_to` | `str` | No |  |
-| `clearing_currency` | `str` | No |  |
-| `clearing_status` | `str` | No |  |
-| `corporate_uuid` | `str` | No |  |
-| `order_by_transaction_date` | `str` | No |  |
+| `3DSecure` | `str` | No |  |
+| `authorizationCode` | `str` | No |  |
+| `cardBrand` | `str` | No |  |
+| `clearingAmountFrom` | `str` | No |  |
+| `clearingAmountTo` | `str` | No |  |
+| `clearingCurrency` | `str` | No |  |
+| `clearingStatus` | `str` | No |  |
+| `corporateUUID` | `str` | No |  |
+| `orderByTransactionDate` | `str` | No |  |
 | `pagination` | `dict` | No |  |
-| `payment_token_public_id` | `str` | No |  |
-| `receipt_number` | `str` | No |  |
-| `referenced_transaction_id` | `str` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `str` | No |  |
-| `retrieval_reference_number` | `str` | No |  |
-| `source_id` | `int` | No |  |
-| `tecsengine_response_code_from` | `str` | No |  |
-| `tecsengine_response_code_to` | `str` | No |  |
-| `terminal_id` | `int` | No |  |
-| `trace_number` | `str` | No |  |
-| `transaction_amount_from` | `str` | No |  |
-| `transaction_amount_to` | `str` | No |  |
-| `transaction_date_from` | `str` | No |  |
-| `transaction_date_to` | `str` | No |  |
-| `transaction_history` | `list` | No |  |
-| `transaction_id` | `str` | No |  |
-| `transaction_type` | `str` | No |  |
+| `paymentTokenPublicId` | `str` | No |  |
+| `receiptNumber` | `str` | No |  |
+| `referencedTransactionId` | `str` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `str` | No |  |
+| `retrievalReferenceNumber` | `str` | No |  |
+| `sourceId` | `int` | No |  |
+| `tecsengineResponseCodeFrom` | `str` | No |  |
+| `tecsengineResponseCodeTo` | `str` | No |  |
+| `terminalId` | `int` | No |  |
+| `traceNumber` | `str` | No |  |
+| `transactionAmountFrom` | `str` | No |  |
+| `transactionAmountTo` | `str` | No |  |
+| `transactionDateFrom` | `str` | No |  |
+| `transactionDateTo` | `str` | No |  |
+| `transactionHistories` | `list` | No |  |
+| `transactionId` | `str` | No |  |
+| `transactionType` | `str` | No |  |
 | `wallet` | `str` | No |  |
 
 ### Operations
@@ -2623,22 +2601,22 @@ transactions_count = client.TransactionsCount()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `period` | `str` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `str` | No |  |
-| `transaction_date_from` | `str` | No |  |
-| `transaction_date_to` | `str` | No |  |
-| `transactions_count` | `list` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `str` | No |  |
+| `transactionDateFrom` | `str` | No |  |
+| `transactionDateTo` | `str` | No |  |
+| `transactionsCount` | `list` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
 | `period` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `transaction_date_from` | Yes |
-| `transaction_date_to` | Yes |
-| `transactions_count` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `transactionDateFrom` | Yes |
+| `transactionDateTo` | Yes |
+| `transactionsCount` | - |
 
 ### Operations
 
@@ -2691,22 +2669,22 @@ transactions_count_card_brand = client.TransactionsCountCardBrand()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `period` | `str` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `str` | No |  |
-| `transaction_date_from` | `str` | No |  |
-| `transaction_date_to` | `str` | No |  |
-| `transactions_count` | `list` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `str` | No |  |
+| `transactionDateFrom` | `str` | No |  |
+| `transactionDateTo` | `str` | No |  |
+| `transactionsCount` | `list` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
 | `period` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `transaction_date_from` | Yes |
-| `transaction_date_to` | Yes |
-| `transactions_count` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `transactionDateFrom` | Yes |
+| `transactionDateTo` | Yes |
+| `transactionsCount` | - |
 
 ### Operations
 
@@ -2759,22 +2737,22 @@ transactions_turnover = client.TransactionsTurnover()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `period` | `str` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `str` | No |  |
-| `transaction_date_from` | `str` | No |  |
-| `transaction_date_to` | `str` | No |  |
-| `turnover` | `list` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `str` | No |  |
+| `transactionDateFrom` | `str` | No |  |
+| `transactionDateTo` | `str` | No |  |
+| `turnovers` | `list` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
 | `period` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `transaction_date_from` | Yes |
-| `transaction_date_to` | Yes |
-| `turnover` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `transactionDateFrom` | Yes |
+| `transactionDateTo` | Yes |
+| `turnovers` | - |
 
 ### Operations
 
@@ -2827,15 +2805,15 @@ update_merchant = client.UpdateMerchant()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `city` | `str` | No |  |
-| `corporate_uuid` | `str` | Yes |  |
+| `corporateUuid` | `str` | Yes |  |
 | `country` | `str` | No |  |
-| `merchant_category_code` | `str` | No |  |
+| `merchantCategoryCode` | `str` | No |  |
 | `name` | `str` | No |  |
-| `response_code` | `int` | No |  |
-| `response_message` | `str` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `str` | No |  |
 | `state` | `str` | No |  |
 | `street` | `str` | No |  |
-| `vu_nummer` | `str` | No |  |
+| `vuNummer` | `str` | No |  |
 | `zipcode` | `str` | No |  |
 
 ### Operations
@@ -2846,7 +2824,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```python
 result = client.UpdateMerchant().create({
-    "corporate_uuid": "example_corporate_uuid",  # str
+    "corporateUuid": "example_corporateUuid",  # str
 })
 ```
 
@@ -2889,10 +2867,10 @@ update_template_xml = client.UpdateTemplateXml()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `int` | No |  |
-| `response_message` | `str` | No |  |
-| `template_name` | `str` | Yes |  |
-| `template_xml` | `str` | Yes |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `str` | No |  |
+| `templateName` | `str` | Yes |  |
+| `templateXml` | `str` | Yes |  |
 
 ### Operations
 
@@ -2902,8 +2880,8 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```python
 result = client.UpdateTemplateXml().create({
-    "template_name": "example_template_name",  # str
-    "template_xml": "example_template_xml",  # str
+    "templateName": "example_templateName",  # str
+    "templateXml": "example_templateXml",  # str
 })
 ```
 
@@ -2946,8 +2924,8 @@ version = client.Version()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `app_name` | `str` | No |  |
-| `build_date` | `str` | No |  |
+| `appName` | `str` | No |  |
+| `buildDate` | `str` | No |  |
 | `version` | `str` | No |  |
 
 ### Operations

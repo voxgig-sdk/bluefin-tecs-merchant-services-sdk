@@ -26,8 +26,8 @@ import {
 describe('StatusTransactionEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when BLUEFINTECSMERCHANTSERVICES_TEST_LIVE=TRUE.
-  afterEach(liveDelay('BLUEFINTECSMERCHANTSERVICES_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE=TRUE.
+  afterEach(liveDelay('BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = BluefinTecsMerchantServicesSDK.test()
@@ -62,7 +62,7 @@ describe('StatusTransactionEntity', async () => {
     const status_transaction_ref01_ent = client.StatusTransaction()
     let status_transaction_ref01_data = setup.data.new.status_transaction['status_transaction_ref01']
 
-    status_transaction_ref01_data = await status_transaction_ref01_ent.create(status_transaction_ref01_data)
+    status_transaction_ref01_data = (await status_transaction_ref01_ent.create(status_transaction_ref01_data)).data()
     assert(null != status_transaction_ref01_data)
 
 

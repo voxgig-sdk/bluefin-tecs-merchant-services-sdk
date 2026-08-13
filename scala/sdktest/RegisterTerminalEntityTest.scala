@@ -35,7 +35,7 @@ object RegisterTerminalEntityTest {
       var registerTerminalRef01Data = Helpers.toMapAny(Struct.getprop(
           Struct.getpath(entityData, "new.register_terminal"), "register_terminal_ref01"))
       val registerTerminalRef01DataResult = registerTerminalRef01Ent.create(registerTerminalRef01Data, null)
-      registerTerminalRef01Data = Helpers.toMapAny(registerTerminalRef01DataResult)
+      registerTerminalRef01Data = Helpers.toMapAny(registerTerminalRef01DataResult match { case e: SdkEntity => e.data(); case o => o })
       rep.check("register_terminal.create.map", registerTerminalRef01Data != null, "expected create result to be a map")
     }
   }

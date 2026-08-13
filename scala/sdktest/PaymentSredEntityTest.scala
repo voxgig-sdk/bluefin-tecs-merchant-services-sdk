@@ -35,7 +35,7 @@ object PaymentSredEntityTest {
       var paymentSredRef01Data = Helpers.toMapAny(Struct.getprop(
           Struct.getpath(entityData, "new.payment_sred"), "payment_sred_ref01"))
       val paymentSredRef01DataResult = paymentSredRef01Ent.create(paymentSredRef01Data, null)
-      paymentSredRef01Data = Helpers.toMapAny(paymentSredRef01DataResult)
+      paymentSredRef01Data = Helpers.toMapAny(paymentSredRef01DataResult match { case e: SdkEntity => e.data(); case o => o })
       rep.check("payment_sred.create.map", paymentSredRef01Data != null, "expected create result to be a map")
     }
   }

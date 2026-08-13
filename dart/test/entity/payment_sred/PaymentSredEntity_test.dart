@@ -47,7 +47,7 @@ void tests() {
       final payment_sred_ref01_ent = client.PaymentSred();
       dynamic payment_sred_ref01_data = setup['data']['new']['payment_sred']['payment_sred_ref01'];
 
-      payment_sred_ref01_data = await payment_sred_ref01_ent.create(payment_sred_ref01_data);
+      payment_sred_ref01_data = (await payment_sred_ref01_ent.create(payment_sred_ref01_data)).data();
       ok(null != payment_sred_ref01_data);
 
 

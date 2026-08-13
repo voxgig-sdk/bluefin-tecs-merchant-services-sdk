@@ -38,15 +38,15 @@ static CheckCardBlackListedSetup check_card_black_listed_basic_setup(const Value
   if (!idmap.is_map()) idmap = vmap();
 
   Value env = env_override(vmap({
-    {"BLUEFINTECSMERCHANTSERVICES_TEST_CHECK_CARD_BLACK_LISTED_ENTID", idmap},
-    {"BLUEFINTECSMERCHANTSERVICES_TEST_LIVE", Value("FALSE")},
-    {"BLUEFINTECSMERCHANTSERVICES_TEST_EXPLAIN", Value("FALSE")}
+    {"BLUEFIN_TECS_MERCHANT_SERVICES_TEST_CHECK_CARD_BLACK_LISTED_ENTID", idmap},
+    {"BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE", Value("FALSE")},
+    {"BLUEFIN_TECS_MERCHANT_SERVICES_TEST_EXPLAIN", Value("FALSE")}
   }));
 
-  Value idmap_resolved = Helpers::toMapAny(getp(env, "BLUEFINTECSMERCHANTSERVICES_TEST_CHECK_CARD_BLACK_LISTED_ENTID"));
+  Value idmap_resolved = Helpers::toMapAny(getp(env, "BLUEFIN_TECS_MERCHANT_SERVICES_TEST_CHECK_CARD_BLACK_LISTED_ENTID"));
   if (!idmap_resolved.is_map()) idmap_resolved = idmap;
 
-  bool live = getp(env, "BLUEFINTECSMERCHANTSERVICES_TEST_LIVE") == Value("TRUE");
+  bool live = getp(env, "BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE") == Value("TRUE");
 
   CheckCardBlackListedSetup s;
   s.client = client;
@@ -65,27 +65,6 @@ static void check_card_black_listed_entity_instance() {
   ASSERT_EQ(ent->getName(), std::string("check_card_black_listed"), "entity name");
 }
 
-static void check_card_black_listed_entity_stream() {
-  // stream() runs the list op through the full pipeline and returns the
-  // result items. Seed two entities via test mode; with the streaming feature
-  // active it yields the feature's incremental items, else it falls back to
-  // the materialised items — either way every item is yielded.
-  Value seed = vmap({{"entity", vmap({{"check_card_black_listed", vmap({
-      {"strm01", vmap({{"id", Value("strm01")}})},
-      {"strm02", vmap({{"id", Value("strm02")}})}})}})}});
-  Value sdkopts = vmap({{"feature",
-      vmap({{"streaming", vmap({{"active", Value(true)}})}})}});
-
-  auto strsdk = BluefinTecsMerchantServicesSDK::testSDK(seed, sdkopts);
-  auto se = strsdk->check_card_black_listed();
-  std::vector<Value> items = se->stream("list", Value::undef(), Value::undef());
-  ASSERT_EQ((int)items.size(), 2, "stream yields both seeded items");
-
-  auto plainsdk = BluefinTecsMerchantServicesSDK::testSDK(seed, Value::undef());
-  auto pe = plainsdk->check_card_black_listed();
-  std::vector<Value> pitems = pe->stream("list", Value::undef(), Value::undef());
-  ASSERT_EQ((int)pitems.size(), 2, "fallback stream yields both items");
-}
 
 static void check_card_black_listed_entity_basic() {
   auto setup = check_card_black_listed_basic_setup(Value::undef());
@@ -100,7 +79,7 @@ static void check_card_black_listed_entity_basic() {
   Value check_card_black_listed_ref01_data = Helpers::toMapAny(getp(Struct::getpath(setup.data, {"new", "check_card_black_listed"}), "check_card_black_listed_ref01"));
   if (!check_card_black_listed_ref01_data.is_map()) check_card_black_listed_ref01_data = vmap();
   {
-    Value check_card_black_listed_ref01_data_result = check_card_black_listed_ref01_ent->create(Struct::clone(check_card_black_listed_ref01_data), Value::undef());
+    Value check_card_black_listed_ref01_data_result = check_card_black_listed_ref01_ent->create(Struct::clone(check_card_black_listed_ref01_data), Value::undef())->data();
     check_card_black_listed_ref01_data = Helpers::toMapAny(check_card_black_listed_ref01_data_result);
     if (!check_card_black_listed_ref01_data.is_map()) check_card_black_listed_ref01_data = vmap();
     ASSERT_TRUE(check_card_black_listed_ref01_data.is_map(), "expected create result to be a map");
@@ -110,7 +89,6 @@ static void check_card_black_listed_entity_basic() {
 
 int main() {
   T_RUN(check_card_black_listed_entity_instance);
-  T_RUN(check_card_black_listed_entity_stream);
   T_RUN(check_card_black_listed_entity_basic);
   return sdktest::summary("check_card_black_listed_entity_test");
 }

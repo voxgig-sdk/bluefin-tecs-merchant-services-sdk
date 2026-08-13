@@ -2,42 +2,42 @@
   "existing": {
     "report_data": {
       "REPORT_DATA00": {
-        "card_brand_report_data": [],
-        "clearing_date_from": "s65",
-        "clearing_date_to": "s66",
-        "corporate_id": "CORPORATE01",
+        "cardBrandReportData": [],
+        "clearingDateFrom": "s65",
+        "clearingDateTo": "s66",
+        "corporateId": "s67",
         "currency": "s68",
-        "response_code": "s69",
-        "response_message": "s6a",
-        "sum_over_credit_tx": {},
-        "sum_over_debit_tx": {},
-        "terminal_id": "TERMINAL01",
+        "responseCode": "s69",
+        "responseMessage": "s6a",
+        "sumOverCreditTx": {},
+        "sumOverDebitTx": {},
+        "terminalId": "s6d",
         "id": "REPORT_DATA00"
       },
       "REPORT_DATA01": {
-        "card_brand_report_data": [],
-        "clearing_date_from": "sc9",
-        "clearing_date_to": "sca",
-        "corporate_id": "CORPORATE01",
+        "cardBrandReportData": [],
+        "clearingDateFrom": "sc9",
+        "clearingDateTo": "sca",
+        "corporateId": "scb",
         "currency": "scc",
-        "response_code": "scd",
-        "response_message": "sce",
-        "sum_over_credit_tx": {},
-        "sum_over_debit_tx": {},
-        "terminal_id": "TERMINAL01",
+        "responseCode": "scd",
+        "responseMessage": "sce",
+        "sumOverCreditTx": {},
+        "sumOverDebitTx": {},
+        "terminalId": "sd1",
         "id": "REPORT_DATA01"
       },
       "REPORT_DATA02": {
-        "card_brand_report_data": [],
-        "clearing_date_from": "s12d",
-        "clearing_date_to": "s12e",
-        "corporate_id": "CORPORATE01",
+        "cardBrandReportData": [],
+        "clearingDateFrom": "s12d",
+        "clearingDateTo": "s12e",
+        "corporateId": "s12f",
         "currency": "s130",
-        "response_code": "s131",
-        "response_message": "s132",
-        "sum_over_credit_tx": {},
-        "sum_over_debit_tx": {},
-        "terminal_id": "TERMINAL01",
+        "responseCode": "s131",
+        "responseMessage": "s132",
+        "sumOverCreditTx": {},
+        "sumOverDebitTx": {},
+        "terminalId": "s135",
         "id": "REPORT_DATA02"
       }
     }
@@ -45,16 +45,16 @@
   "new": {
     "report_data": {
       "report_data_ref01": {
-        "card_brand_report_data": [],
-        "clearing_date_from": "s191",
-        "clearing_date_to": "s192",
-        "corporate_id": "CORPORATE01",
+        "cardBrandReportData": [],
+        "clearingDateFrom": "s191",
+        "clearingDateTo": "s192",
+        "corporateId": "s193",
         "currency": "s194",
-        "response_code": "s195",
-        "response_message": "s196",
-        "sum_over_credit_tx": {},
-        "sum_over_debit_tx": {},
-        "terminal_id": "TERMINAL01"
+        "responseCode": "s195",
+        "responseMessage": "s196",
+        "sumOverCreditTx": {},
+        "sumOverDebitTx": {},
+        "terminalId": "s199"
       }
     }
   }

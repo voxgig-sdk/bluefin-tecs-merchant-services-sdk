@@ -11,7 +11,7 @@ main: kit: entity: update_merchant: {
       type: "`$STRING`"
     }
     {
-      name: "corporate_uuid"
+      name: "corporateUuid"
       req: true
       type: "`$STRING`"
     }
@@ -21,7 +21,7 @@ main: kit: entity: update_merchant: {
       type: "`$STRING`"
     }
     {
-      name: "merchant_category_code"
+      name: "merchantCategoryCode"
       req: false
       type: "`$STRING`"
     }
@@ -31,12 +31,12 @@ main: kit: entity: update_merchant: {
       type: "`$STRING`"
     }
     {
-      name: "response_code"
+      name: "responseCode"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "response_message"
+      name: "responseMessage"
       req: false
       type: "`$STRING`"
     }
@@ -51,7 +51,7 @@ main: kit: entity: update_merchant: {
       type: "`$STRING`"
     }
     {
-      name: "vu_nummer"
+      name: "vuNummer"
       req: false
       type: "`$STRING`"
     }

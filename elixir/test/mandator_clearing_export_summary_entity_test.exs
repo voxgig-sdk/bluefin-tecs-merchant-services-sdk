@@ -31,7 +31,8 @@ defmodule BluefinTecsMerchantServices.MandatorClearingExportSummaryEntityTest do
   test "should create then read back" do
     sdk = BluefinTecsMerchantServices.test(S.jm(["entity", S.jm(["mandator_clearing_export_summary", S.jm([])])]))
     ent = BluefinTecsMerchantServices.mandator_clearing_export_summary(sdk)
-    made = BluefinTecsMerchantServices.Entity.MandatorClearingExportSummary.create(ent, S.jm(["name", "test-create"]))
+    created = BluefinTecsMerchantServices.Entity.MandatorClearingExportSummary.create(ent, S.jm(["name", "test-create"]))
+    made = BluefinTecsMerchantServices.EntityBase.data_get(created)
     assert S.ismap(made)
     assert S.getprop(made, "id") != nil
   end

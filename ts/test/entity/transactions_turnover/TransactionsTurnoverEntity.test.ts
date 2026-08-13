@@ -26,8 +26,8 @@ import {
 describe('TransactionsTurnoverEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when BLUEFINTECSMERCHANTSERVICES_TEST_LIVE=TRUE.
-  afterEach(liveDelay('BLUEFINTECSMERCHANTSERVICES_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE=TRUE.
+  afterEach(liveDelay('BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = BluefinTecsMerchantServicesSDK.test()
@@ -62,7 +62,7 @@ describe('TransactionsTurnoverEntity', async () => {
     const transactions_turnover_ref01_ent = client.TransactionsTurnover()
     let transactions_turnover_ref01_data = setup.data.new.transactions_turnover['transactions_turnover_ref01']
 
-    transactions_turnover_ref01_data = await transactions_turnover_ref01_ent.create(transactions_turnover_ref01_data)
+    transactions_turnover_ref01_data = (await transactions_turnover_ref01_ent.create(transactions_turnover_ref01_data)).data()
     assert(null != transactions_turnover_ref01_data)
 
 

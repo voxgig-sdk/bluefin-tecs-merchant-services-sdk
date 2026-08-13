@@ -14,6 +14,8 @@ typedef struct introduce_mandator_entity {
   voxgig_value* data;     // Map
   voxgig_value* mtch;     // Map
   Context* entctx;
+  // Set once a successful `remove` resolves on this instance.
+  bool deleted;
 } introduce_mandator_entity;
 
 typedef void (*introduce_mandator_postdone_fn)(introduce_mandator_entity* self, Context* ctx);
@@ -24,11 +26,14 @@ static const char* introduce_mandator_get_name(Entity* e);
 static Entity* introduce_mandator_make(Entity* e);
 static voxgig_value* introduce_mandator_data(Entity* e, voxgig_value* args);
 static voxgig_value* introduce_mandator_matchv(Entity* e, voxgig_value* args);
-static voxgig_value* introduce_mandator_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
-static voxgig_value* introduce_mandator_list(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
-static voxgig_value* introduce_mandator_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
-static voxgig_value* introduce_mandator_update(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
-static voxgig_value* introduce_mandator_remove(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+// Ops resolve to the ENTITY (`list` to a NULL-terminated array of them).
+static Entity* introduce_mandator_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static Entity** introduce_mandator_list(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static Entity* introduce_mandator_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
+static Entity* introduce_mandator_update(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
+static Entity* introduce_mandator_remove(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static void introduce_mandator_mark_deleted(Entity* e);
+static bool introduce_mandator_deleted(Entity* e);
 
 static Context* introduce_mandator_ent_ctx(introduce_mandator_entity* self) {
   return self->entctx;
@@ -236,13 +241,13 @@ static voxgig_value* introduce_mandator_matchv(Entity* e, voxgig_value* args) {
   return voxgig_clone(self->mtch);
 }
 
-static voxgig_value* introduce_mandator_load(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* introduce_mandator_load(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("load", "introduce_mandator");
   return NULL;
 }
 
-static voxgig_value* introduce_mandator_list(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity** introduce_mandator_list(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("list", "introduce_mandator");
   return NULL;
@@ -260,7 +265,7 @@ static void introduce_mandator_create_postdone(introduce_mandator_entity* self, 
   }
 }
 
-static voxgig_value* introduce_mandator_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err) {
+static Entity* introduce_mandator_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err) {
   introduce_mandator_entity* self = (introduce_mandator_entity*)e;
   CtxSpec cs;
   memset(&cs, 0, sizeof(cs));
@@ -270,20 +275,38 @@ static voxgig_value* introduce_mandator_create(Entity* e, voxgig_value* reqdata,
   cs.data = self->data;
   cs.reqdata = reqdata;
   Context* ctx = make_context_util(cs, introduce_mandator_ent_ctx(self));
-  return introduce_mandator_run_op(self, ctx, introduce_mandator_create_postdone, err);
+  introduce_mandator_run_op(self, ctx, introduce_mandator_create_postdone, err);
+  if (*err) return NULL;
+
+  // The operation resolves to THIS entity: run_op has just absorbed the
+  // result into it, and the caller reaches the record through vt->data.
+  // See AGENTS.md "Entity operations return ENTITIES".
+
+  return e;
 }
 
 
-static voxgig_value* introduce_mandator_update(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* introduce_mandator_update(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("update", "introduce_mandator");
   return NULL;
 }
 
-static voxgig_value* introduce_mandator_remove(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* introduce_mandator_remove(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("remove", "introduce_mandator");
   return NULL;
+}
+
+// `remove` resolves to the entity, marked. The instance KEEPS the data it
+// held - a caller can still read what was deleted - but it is no longer a
+// live record.
+static void introduce_mandator_mark_deleted(Entity* e) {
+  ((introduce_mandator_entity*)e)->deleted = true;
+}
+
+static bool introduce_mandator_deleted(Entity* e) {
+  return ((introduce_mandator_entity*)e)->deleted;
 }
 
 static const EntityVT introduce_mandator_VT = {
@@ -291,6 +314,8 @@ static const EntityVT introduce_mandator_VT = {
   introduce_mandator_make,
   introduce_mandator_data,
   introduce_mandator_matchv,
+  introduce_mandator_mark_deleted,
+  introduce_mandator_deleted,
   introduce_mandator_load,
   introduce_mandator_list,
   introduce_mandator_create,

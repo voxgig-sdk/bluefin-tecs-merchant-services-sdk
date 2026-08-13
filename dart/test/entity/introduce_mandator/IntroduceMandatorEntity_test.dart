@@ -47,7 +47,7 @@ void tests() {
       final introduce_mandator_ref01_ent = client.IntroduceMandator();
       dynamic introduce_mandator_ref01_data = setup['data']['new']['introduce_mandator']['introduce_mandator_ref01'];
 
-      introduce_mandator_ref01_data = await introduce_mandator_ref01_ent.create(introduce_mandator_ref01_data);
+      introduce_mandator_ref01_data = (await introduce_mandator_ref01_ent.create(introduce_mandator_ref01_data)).data();
       ok(null != introduce_mandator_ref01_data);
 
 

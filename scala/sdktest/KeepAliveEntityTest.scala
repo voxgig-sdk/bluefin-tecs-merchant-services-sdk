@@ -35,7 +35,7 @@ object KeepAliveEntityTest {
       var keepAliveRef01Data = Helpers.toMapAny(Struct.getprop(
           Struct.getpath(entityData, "new.keep_alive"), "keep_alive_ref01"))
       val keepAliveRef01DataResult = keepAliveRef01Ent.create(keepAliveRef01Data, null)
-      keepAliveRef01Data = Helpers.toMapAny(keepAliveRef01DataResult)
+      keepAliveRef01Data = Helpers.toMapAny(keepAliveRef01DataResult match { case e: SdkEntity => e.data(); case o => o })
       rep.check("keep_alive.create.map", keepAliveRef01Data != null, "expected create result to be a map")
     }
   }

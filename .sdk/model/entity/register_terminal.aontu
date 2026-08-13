@@ -6,92 +6,92 @@ main: kit: entity: register_terminal: {
 
   fields: [
     {
-      name: "additional_data"
+      name: "additionalData"
       req: false
       type: "`$OBJECT`"
     }
     {
-      name: "corporate_uuid"
+      name: "corporateUuid"
       req: true
       type: "`$STRING`"
     }
     {
-      name: "package_order_uuid"
+      name: "packageOrderUuid"
       req: true
       type: "`$STRING`"
     }
     {
-      name: "product_order_uuid"
+      name: "productOrderUuid"
       req: true
       type: "`$STRING`"
     }
     {
-      name: "response_code"
+      name: "responseCode"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "response_message"
+      name: "responseMessage"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "tecs_web_secret_key"
+      name: "tecsWebSecretKey"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "template_name"
+      name: "templateName"
       req: true
       type: "`$STRING`"
     }
     {
-      name: "terminal_country_code"
+      name: "terminalCountryCode"
       req: true
       type: "`$STRING`"
     }
     {
-      name: "terminal_id"
+      name: "terminalId"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "terminal_id_acq"
+      name: "terminalIdAcq"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "terminal_language_code"
+      name: "terminalLanguageCode"
       req: true
       type: "`$STRING`"
     }
     {
-      name: "terminal_location"
+      name: "terminalLocation"
       req: true
       type: "`$STRING`"
     }
     {
-      name: "terminal_serial_number"
+      name: "terminalSerialNumber"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "token_io_alia"
+      name: "tokenIOAlias"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "token_io_iban"
+      name: "tokenIOIban"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "token_io_member_id"
+      name: "tokenIOMemberId"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "web_shop_url"
+      name: "webShopUrl"
       req: false
       type: "`$STRING`"
     }

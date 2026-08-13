@@ -47,7 +47,7 @@ void tests() {
       final transactions_turnover_ref01_ent = client.TransactionsTurnover();
       dynamic transactions_turnover_ref01_data = setup['data']['new']['transactions_turnover']['transactions_turnover_ref01'];
 
-      transactions_turnover_ref01_data = await transactions_turnover_ref01_ent.create(transactions_turnover_ref01_data);
+      transactions_turnover_ref01_data = (await transactions_turnover_ref01_ent.create(transactions_turnover_ref01_data)).data();
       ok(null != transactions_turnover_ref01_data);
 
 

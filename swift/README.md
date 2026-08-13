@@ -53,8 +53,8 @@ let client = BluefinTecsMerchantServicesSDK(options)
 ### 4. Create, update, and remove
 
 ```swift
-// Create — returns the bare created record (a Value)
-let created = try client.CancelTransaction().create(VMap([("client_id", .int(1)), ("currency", .string("example_currency")), ("receipt_number", .string("example_receipt_number")), ("terminal_id", .int(1))]), nil)
+// Create — returns the ENTITY (call data() for the record)
+let created = try client.CancelTransaction().create(VMap([("clientId", .int(1)), ("currency", .string("example_currency")), ("receiptNumber", .string("example_receiptNumber")), ("terminalId", .int(1))]), nil)
 
 ```
 
@@ -135,7 +135,8 @@ Create a mock client for unit testing — no server required:
 ```swift
 let client = BluefinTecsMerchantServicesSDK.testSDK(nil, nil)
 
-// Entity ops return the bare record and throw on error.
+// Entity ops return the ENTITY and throws on error;
+// call data() for the record.
 let digitalServicesApi = try client.DigitalServicesApi().load(nil, nil)
 // digitalServicesApi holds the mock response record
 print(digitalServicesApi)
@@ -270,7 +271,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (a `Value` map for
+Entity operations return the ENTITY (call data() for the record) (a `Value` map for
 single-entity ops, a `Value` list for `list`) and throw on error. Wrap
 calls in `do`/`catch` to handle failures.
 
@@ -292,46 +293,46 @@ On error, `ok` is `false` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `acquirer_id` |  |
-| `acquirer_name` |  |
-| `actual_bonus_point` |  |
+| `acquirerId` |  |
+| `acquirerName` |  |
+| `actualBonusPoints` |  |
 | `amount` |  |
-| `authorization_code` |  |
-| `balance_amount` |  |
-| `card_brand` |  |
-| `card_number` |  |
-| `client_id` |  |
+| `authorizationCode` |  |
+| `balanceAmount` |  |
+| `cardBrand` |  |
+| `cardNumber` |  |
+| `clientId` |  |
 | `currency` |  |
 | `cvc` |  |
-| `ec_data` |  |
-| `ecr_data` |  |
-| `emv_data` |  |
-| `exchange_fee` |  |
-| `exchange_rate` |  |
-| `language_code` |  |
-| `merchant_address` |  |
-| `merchant_name` |  |
-| `merchant_number` |  |
-| `message_type` |  |
-| `original_trace_number` |  |
-| `original_transaction_id` |  |
+| `ecData` |  |
+| `ecrData` |  |
+| `emvData` |  |
+| `exchangeFee` |  |
+| `exchangeRate` |  |
+| `languageCode` |  |
+| `merchantAddress` |  |
+| `merchantName` |  |
+| `merchantNumber` |  |
+| `messageType` |  |
+| `originalTraceNumber` |  |
+| `originalTransactionId` |  |
 | `password` |  |
-| `payment_reason` |  |
-| `receipt_footer` |  |
-| `receipt_header` |  |
-| `receipt_layout` |  |
-| `receipt_number` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `serial_number` |  |
+| `paymentReason` |  |
+| `receiptFooter` |  |
+| `receiptHeader` |  |
+| `receiptLayout` |  |
+| `receiptNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `serialNumber` |  |
 | `svc` |  |
-| `terminal_id` |  |
-| `terminal_location` |  |
-| `trace_number` |  |
-| `transaction_date` |  |
-| `transaction_id` |  |
-| `tx_type` |  |
-| `user_data` |  |
+| `terminalId` |  |
+| `terminalLocation` |  |
+| `traceNumber` |  |
+| `transactionDate` |  |
+| `transactionId` |  |
+| `txType` |  |
+| `userData` |  |
 
 Operations: Create.
 
@@ -341,9 +342,9 @@ API path: `/public/cancelTransaction`
 
 | Field | Description |
 | --- | --- |
-| `card_no` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `cardNo` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -353,13 +354,13 @@ API path: `/checkCardBlackListed`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_id` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `template_name` |  |
-| `template_type` |  |
-| `template_xml` |  |
-| `terminal_type` |  |
+| `acquirerId` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `templateName` |  |
+| `templateType` |  |
+| `templateXml` |  |
+| `terminalType` |  |
 
 Operations: Create.
 
@@ -369,13 +370,13 @@ API path: `/createProduct`
 
 | Field | Description |
 | --- | --- |
-| `corporate_uuid` |  |
-| `deactivation_reason` |  |
-| `package_order_uuid` |  |
-| `product_order_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
+| `corporateUuid` |  |
+| `deactivationReason` |  |
+| `packageOrderUuid` |  |
+| `productOrderUuid` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
 
 Operations: Create.
 
@@ -385,16 +386,16 @@ API path: `/deactivateTerminal`
 
 | Field | Description |
 | --- | --- |
-| `clearing_date_from` |  |
-| `clearing_date_to` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `tx_count` |  |
-| `tx_id_end` |  |
-| `tx_id_start` |  |
-| `tx_seq_no_end` |  |
-| `tx_seq_no_start` |  |
-| `tx_total` |  |
+| `clearingDateFrom` |  |
+| `clearingDateTo` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `txCount` |  |
+| `txIdEnd` |  |
+| `txIdStart` |  |
+| `txSeqNoEnd` |  |
+| `txSeqNoStart` |  |
+| `txTotal` |  |
 
 Operations: Create, Load.
 
@@ -404,12 +405,12 @@ API path: `/public/digitalservices/mandatorClearingExportDownload/{fileId}`
 
 | Field | Description |
 | --- | --- |
-| `ecom_data` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
-| `transaction_id` |  |
-| `transaction_type` |  |
+| `ecomData` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
+| `transactionId` |  |
+| `transactionType` |  |
 
 Operations: Create.
 
@@ -419,11 +420,11 @@ API path: `/public/getEcData`
 
 | Field | Description |
 | --- | --- |
-| `ecom_pass` |  |
-| `ecom_skey` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
+| `ecomPass` |  |
+| `ecomSkey` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
 
 Operations: Create.
 
@@ -433,12 +434,12 @@ API path: `/public/getEcomParameters`
 
 | Field | Description |
 | --- | --- |
-| `ecr_data` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
-| `transaction_id` |  |
-| `transaction_type` |  |
+| `ecrData` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
+| `transactionId` |  |
+| `transactionType` |  |
 
 Operations: Create.
 
@@ -448,12 +449,12 @@ API path: `/public/getEcrData`
 
 | Field | Description |
 | --- | --- |
-| `emv_data` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
-| `transaction_id` |  |
-| `transaction_type` |  |
+| `emvData` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
+| `transactionId` |  |
+| `transactionType` |  |
 
 Operations: Create.
 
@@ -463,20 +464,20 @@ API path: `/public/getEmvData`
 
 | Field | Description |
 | --- | --- |
-| `account_no` |  |
-| `additional_data` |  |
-| `corporate_uuid` |  |
+| `accountNo` |  |
+| `additionalData` |  |
+| `corporateUuid` |  |
 | `currency` |  |
-| `merchant_category_code` |  |
-| `package_order_uuid` |  |
-| `product_order_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `sorting_code` |  |
-| `template_name` |  |
-| `terminal_id` |  |
-| `terminal_id_acq` |  |
-| `vu_nummer` |  |
+| `merchantCategoryCode` |  |
+| `packageOrderUuid` |  |
+| `productOrderUuid` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `sortingCode` |  |
+| `templateName` |  |
+| `terminalIdAcq` |  |
+| `terminalIds` |  |
+| `vuNummer` |  |
 
 Operations: Create.
 
@@ -486,9 +487,9 @@ API path: `/enableAcquiring`
 
 | Field | Description |
 | --- | --- |
-| `merchant_contract_number` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `merchantContractNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -498,9 +499,9 @@ API path: `/getMerchantContractNumber`
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
-| `template_name` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `templateName` |  |
 
 Operations: Create.
 
@@ -510,9 +511,9 @@ API path: `/public/getTemplateXml`
 
 | Field | Description |
 | --- | --- |
-| `mandator_name` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `mandatorName` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -522,9 +523,9 @@ API path: `/introduceMandator`
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_template_description` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalTemplateDescription` |  |
 
 Operations: Create.
 
@@ -535,15 +536,15 @@ API path: `/introducePackage`
 | Field | Description |
 | --- | --- |
 | `hwserialno` |  |
-| `ka_date_time_from` |  |
-| `ka_date_time_to` |  |
-| `keep_alive_data` |  |
+| `kaDateTimeFrom` |  |
+| `kaDateTimeTo` |  |
+| `keepAliveData` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_date_time_from` |  |
-| `terminal_date_time_to` |  |
-| `terminal_id` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalDateTimeFrom` |  |
+| `terminalDateTimeTo` |  |
+| `terminalId` |  |
 
 Operations: Create.
 
@@ -553,12 +554,12 @@ API path: `/public/keepalive`
 
 | Field | Description |
 | --- | --- |
-| `corporate_uuid` |  |
+| `corporateUuid` |  |
 | `filter` |  |
 | `pagination` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminals` |  |
 
 Operations: Create.
 
@@ -568,12 +569,12 @@ API path: `/public/listTerminals`
 
 | Field | Description |
 | --- | --- |
-| `clearing_date_from` |  |
-| `clearing_date_to` |  |
+| `clearingDateFrom` |  |
+| `clearingDateTo` |  |
 | `pagination` |  |
-| `record` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `records` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -583,12 +584,12 @@ API path: `/public/digitalservices/mandatorClearingExport`
 
 | Field | Description |
 | --- | --- |
-| `clearing_date_from` |  |
-| `clearing_date_to` |  |
-| `file_id` |  |
-| `filename_template` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `clearingDateFrom` |  |
+| `clearingDateTo` |  |
+| `fileId` |  |
+| `filenameTemplate` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `status` |  |
 
 Operations: Create, Load.
@@ -599,11 +600,11 @@ API path: `/public/digitalservices/mandatorClearingExportDownload`
 
 | Field | Description |
 | --- | --- |
-| `clearing_date_from` |  |
-| `clearing_date_to` |  |
-| `record` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `clearingDateFrom` |  |
+| `clearingDateTo` |  |
+| `records` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 
 Operations: Create.
 
@@ -613,30 +614,30 @@ API path: `/public/digitalservices/mandatorClearingExportSummary`
 
 | Field | Description |
 | --- | --- |
-| `3_d_secure` |  |
-| `authorization_code` |  |
-| `card_brand` |  |
-| `clearing_amount_from` |  |
-| `clearing_amount_to` |  |
-| `clearing_currency` |  |
-| `clearing_status` |  |
-| `corporate_uuid` |  |
-| `order_by_transaction_date` |  |
+| `3DSecure` |  |
+| `authorizationCode` |  |
+| `cardBrand` |  |
+| `clearingAmountFrom` |  |
+| `clearingAmountTo` |  |
+| `clearingCurrency` |  |
+| `clearingStatus` |  |
+| `corporateUUID` |  |
+| `orderByTransactionDate` |  |
 | `pagination` |  |
-| `receipt_number` |  |
-| `referenced_transaction_id` |  |
-| `retrieval_reference_number` |  |
-| `source_id` |  |
-| `tecsengine_response_code_from` |  |
-| `tecsengine_response_code_to` |  |
-| `terminal_id` |  |
-| `trace_number` |  |
-| `transaction_amount_from` |  |
-| `transaction_amount_to` |  |
-| `transaction_date_from` |  |
-| `transaction_date_to` |  |
-| `transaction_id` |  |
-| `transaction_type` |  |
+| `receiptNumber` |  |
+| `referencedTransactionId` |  |
+| `retrievalReferenceNumber` |  |
+| `sourceId` |  |
+| `tecsengineResponseCodeFrom` |  |
+| `tecsengineResponseCodeTo` |  |
+| `terminalId` |  |
+| `traceNumber` |  |
+| `transactionAmountFrom` |  |
+| `transactionAmountTo` |  |
+| `transactionDateFrom` |  |
+| `transactionDateTo` |  |
+| `transactionId` |  |
+| `transactionType` |  |
 | `wallet` |  |
 
 Operations: Create.
@@ -647,11 +648,11 @@ API path: `/public/transactionHistoryCsv`
 
 | Field | Description |
 | --- | --- |
-| `productorderuuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `target_packageorderuuid` |  |
-| `target_productorderuuid` |  |
+| `productorderuuids` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `targetPackageorderuuid` |  |
+| `targetProductorderuuid` |  |
 
 Operations: Create.
 
@@ -661,22 +662,22 @@ API path: `/moveTid`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_name` |  |
+| `acquirerName` |  |
 | `amount` |  |
-| `authorization_number` |  |
-| `card_number` |  |
-| `card_type` |  |
+| `authorizationNumber` |  |
+| `cardNumber` |  |
+| `cardType` |  |
 | `currency` |  |
 | `cvc` |  |
-| `date_time_tx` |  |
-| `exp_date` |  |
-| `merchant_id` |  |
-| `original_transaction_id` |  |
+| `dateTimeTx` |  |
+| `expDate` |  |
+| `merchantId` |  |
+| `originalTransactionId` |  |
 | `password` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
-| `transaction_id` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
+| `transactionId` |  |
 | `txtype` |  |
 
 Operations: Create.
@@ -687,21 +688,17 @@ API path: `/public/paymentManual`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_name` |  |
 | `amount` |  |
-| `authorization_number` |  |
-| `card_type` |  |
 | `currency` |  |
-| `date_time_tx` |  |
-| `device_payload` |  |
-| `merchant_id` |  |
-| `original_transaction_id` |  |
+| `device` |  |
+| `devicePayload` |  |
+| `expDate` |  |
+| `mode` |  |
+| `panMasked` |  |
 | `password` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `sred` |  |
-| `terminal_id` |  |
-| `transaction_id` |  |
+| `serial` |  |
+| `serviceCode` |  |
+| `terminalId` |  |
 | `txtype` |  |
 
 Operations: Create.
@@ -712,48 +709,48 @@ API path: `/public/paymentSred`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_id` |  |
-| `acquirer_name` |  |
-| `actual_bonus_point` |  |
+| `acquirerId` |  |
+| `acquirerName` |  |
+| `actualBonusPoints` |  |
 | `amount` |  |
-| `authorization_code` |  |
-| `balance_amount` |  |
-| `card_brand` |  |
-| `card_number` |  |
-| `card_number_reference` |  |
-| `client_id` |  |
+| `authorizationCode` |  |
+| `balanceAmount` |  |
+| `cardBrand` |  |
+| `cardNumber` |  |
+| `cardNumberReference` |  |
+| `clientId` |  |
 | `currency` |  |
 | `cvc` |  |
-| `ec_data` |  |
-| `ecr_data` |  |
-| `emv_data` |  |
-| `exchange_fee` |  |
-| `exchange_rate` |  |
-| `language_code` |  |
-| `merchant_address` |  |
-| `merchant_name` |  |
-| `merchant_number` |  |
-| `message_type` |  |
-| `original_trace_number` |  |
-| `original_transaction_id` |  |
+| `ecData` |  |
+| `ecrData` |  |
+| `emvData` |  |
+| `exchangeFee` |  |
+| `exchangeRate` |  |
+| `languageCode` |  |
+| `merchantAddress` |  |
+| `merchantName` |  |
+| `merchantNumber` |  |
+| `messageType` |  |
+| `originalTraceNumber` |  |
+| `originalTransactionId` |  |
 | `password` |  |
-| `payment_reason` |  |
-| `receipt_footer` |  |
-| `receipt_header` |  |
-| `receipt_layout` |  |
-| `receipt_number` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `serial_number` |  |
+| `paymentReason` |  |
+| `receiptFooter` |  |
+| `receiptHeader` |  |
+| `receiptLayout` |  |
+| `receiptNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `serialNumber` |  |
 | `svc` |  |
-| `terminal_id` |  |
-| `terminal_location` |  |
-| `trace_number` |  |
-| `transaction_date` |  |
-| `transaction_id` |  |
-| `transaction_type` |  |
-| `tx_type` |  |
-| `user_data` |  |
+| `terminalId` |  |
+| `terminalLocation` |  |
+| `traceNumber` |  |
+| `transactionDate` |  |
+| `transactionId` |  |
+| `transactionType` |  |
+| `txType` |  |
+| `userData` |  |
 
 Operations: Create.
 
@@ -763,13 +760,13 @@ API path: `/public/paymentTransaction`
 
 | Field | Description |
 | --- | --- |
-| `corporate_uuid` |  |
-| `package_order_uuid` |  |
-| `product_order_uuid` |  |
-| `reactivation_reason` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal_id` |  |
+| `corporateUuid` |  |
+| `packageOrderUuid` |  |
+| `productOrderUuid` |  |
+| `reactivationReason` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminalId` |  |
 
 Operations: Create.
 
@@ -779,46 +776,46 @@ API path: `/reactivateTerminal`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_id` |  |
-| `acquirer_name` |  |
-| `actual_bonus_point` |  |
+| `acquirerId` |  |
+| `acquirerName` |  |
+| `actualBonusPoints` |  |
 | `amount` |  |
-| `authorization_code` |  |
-| `balance_amount` |  |
-| `card_brand` |  |
-| `card_number` |  |
-| `client_id` |  |
+| `authorizationCode` |  |
+| `balanceAmount` |  |
+| `cardBrand` |  |
+| `cardNumber` |  |
+| `clientId` |  |
 | `currency` |  |
 | `cvc` |  |
-| `ec_data` |  |
-| `ecr_data` |  |
-| `emv_data` |  |
-| `exchange_fee` |  |
-| `exchange_rate` |  |
-| `language_code` |  |
-| `merchant_address` |  |
-| `merchant_name` |  |
-| `merchant_number` |  |
-| `message_type` |  |
-| `original_trace_number` |  |
-| `original_transaction_id` |  |
+| `ecData` |  |
+| `ecrData` |  |
+| `emvData` |  |
+| `exchangeFee` |  |
+| `exchangeRate` |  |
+| `languageCode` |  |
+| `merchantAddress` |  |
+| `merchantName` |  |
+| `merchantNumber` |  |
+| `messageType` |  |
+| `originalTraceNumber` |  |
+| `originalTransactionId` |  |
 | `password` |  |
-| `payment_reason` |  |
-| `receipt_footer` |  |
-| `receipt_header` |  |
-| `receipt_layout` |  |
-| `receipt_number` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `serial_number` |  |
+| `paymentReason` |  |
+| `receiptFooter` |  |
+| `receiptHeader` |  |
+| `receiptLayout` |  |
+| `receiptNumber` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `serialNumber` |  |
 | `svc` |  |
-| `terminal_id` |  |
-| `terminal_location` |  |
-| `trace_number` |  |
-| `transaction_date` |  |
-| `transaction_id` |  |
-| `tx_type` |  |
-| `user_data` |  |
+| `terminalId` |  |
+| `terminalLocation` |  |
+| `traceNumber` |  |
+| `transactionDate` |  |
+| `transactionId` |  |
+| `txType` |  |
+| `userData` |  |
 
 Operations: Create.
 
@@ -828,14 +825,14 @@ API path: `/public/refundTransaction`
 
 | Field | Description |
 | --- | --- |
-| `corporate_uuid` |  |
-| `package_order_uuid` |  |
-| `partner_id` |  |
-| `partner_name` |  |
-| `product_order_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `template_name` |  |
+| `corporateUuid` |  |
+| `packageOrderUuid` |  |
+| `partnerId` |  |
+| `partnerName` |  |
+| `productOrderUuid` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `templateName` |  |
 
 Operations: Create.
 
@@ -845,24 +842,24 @@ API path: `/registerTecsCompany`
 
 | Field | Description |
 | --- | --- |
-| `additional_data` |  |
-| `corporate_uuid` |  |
-| `package_order_uuid` |  |
-| `product_order_uuid` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `tecs_web_secret_key` |  |
-| `template_name` |  |
-| `terminal_country_code` |  |
-| `terminal_id` |  |
-| `terminal_id_acq` |  |
-| `terminal_language_code` |  |
-| `terminal_location` |  |
-| `terminal_serial_number` |  |
-| `token_io_alia` |  |
-| `token_io_iban` |  |
-| `token_io_member_id` |  |
-| `web_shop_url` |  |
+| `additionalData` |  |
+| `corporateUuid` |  |
+| `packageOrderUuid` |  |
+| `productOrderUuid` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `tecsWebSecretKey` |  |
+| `templateName` |  |
+| `terminalCountryCode` |  |
+| `terminalId` |  |
+| `terminalIdAcq` |  |
+| `terminalLanguageCode` |  |
+| `terminalLocation` |  |
+| `terminalSerialNumber` |  |
+| `tokenIOAlias` |  |
+| `tokenIOIban` |  |
+| `tokenIOMemberId` |  |
+| `webShopUrl` |  |
 
 Operations: Create.
 
@@ -872,16 +869,16 @@ API path: `/registerTerminal`
 
 | Field | Description |
 | --- | --- |
-| `card_brand_report_data` |  |
-| `clearing_date_from` |  |
-| `clearing_date_to` |  |
-| `corporate_id` |  |
+| `cardBrandReportData` |  |
+| `clearingDateFrom` |  |
+| `clearingDateTo` |  |
+| `corporateId` |  |
 | `currency` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `sum_over_credit_tx` |  |
-| `sum_over_debit_tx` |  |
-| `terminal_id` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `sumOverCreditTx` |  |
+| `sumOverDebitTx` |  |
+| `terminalId` |  |
 
 Operations: Create.
 
@@ -891,56 +888,56 @@ API path: `/public/digitalservices/reportData`
 
 | Field | Description |
 | --- | --- |
-| `acquirer_name` |  |
-| `acquirer_terminal_id` |  |
+| `acquirerName` |  |
+| `acquirerTerminalId` |  |
 | `amount` |  |
-| `application_cryptogram` |  |
-| `authorization_code` |  |
-| `authorization_date` |  |
-| `card_brand` |  |
-| `card_entry` |  |
-| `card_expiration` |  |
-| `card_number` |  |
-| `clearing_amount` |  |
-| `clearing_batch_id` |  |
-| `clearing_currency` |  |
-| `clearing_date` |  |
-| `clearing_processed_date` |  |
-| `clearing_status` |  |
-| `client_id` |  |
+| `applicationCryptogram` |  |
+| `authorizationCode` |  |
+| `authorizationDate` |  |
+| `cardBrand` |  |
+| `cardEntry` |  |
+| `cardExpiration` |  |
+| `cardNumber` |  |
+| `clearingAmount` |  |
+| `clearingBatchId` |  |
+| `clearingCurrency` |  |
+| `clearingDate` |  |
+| `clearingProcessedDate` |  |
+| `clearingStatus` |  |
+| `clientId` |  |
 | `currency` |  |
 | `cvm` |  |
-| `ecr_data` |  |
-| `emv_application_id` |  |
-| `emv_application_label` |  |
-| `merchant_name` |  |
-| `merchant_number` |  |
-| `original_client_id` |  |
-| `original_terminal_id` |  |
-| `original_transaction_id` |  |
-| `payment_reason` |  |
-| `receipt_number` |  |
-| `response_code` |  |
-| `response_code_from_a` |  |
-| `response_message` |  |
-| `retrieval_reference_number` |  |
-| `service_code` |  |
-| `settlement_status` |  |
-| `source_id` |  |
-| `tecsengine_response_code` |  |
-| `tecsengine_response_text` |  |
-| `terminal_end_of_day_date` |  |
-| `terminal_id` |  |
-| `terminal_location` |  |
-| `tip_amount` |  |
-| `trace_number` |  |
-| `transaction_clearing_date` |  |
-| `transaction_date` |  |
-| `transaction_id` |  |
-| `transaction_seq_number` |  |
-| `transaction_server_date` |  |
-| `transaction_source` |  |
-| `transaction_type` |  |
+| `ecrData` |  |
+| `emvApplicationId` |  |
+| `emvApplicationLabel` |  |
+| `merchantName` |  |
+| `merchantNumber` |  |
+| `originalClientId` |  |
+| `originalTerminalId` |  |
+| `originalTransactionId` |  |
+| `paymentReason` |  |
+| `receiptNumber` |  |
+| `responseCode` |  |
+| `responseCodeFromAS` |  |
+| `responseMessage` |  |
+| `retrievalReferenceNumber` |  |
+| `serviceCode` |  |
+| `settlementStatus` |  |
+| `sourceId` |  |
+| `tecsengineResponseCode` |  |
+| `tecsengineResponseText` |  |
+| `terminalEndOfDayDate` |  |
+| `terminalId` |  |
+| `terminalLocation` |  |
+| `tipAmount` |  |
+| `traceNumber` |  |
+| `transactionClearingDate` |  |
+| `transactionDate` |  |
+| `transactionId` |  |
+| `transactionSeqNumber` |  |
+| `transactionServerDate` |  |
+| `transactionSource` |  |
+| `transactionType` |  |
 
 Operations: Create.
 
@@ -950,12 +947,12 @@ API path: `/public/statusTransaction`
 
 | Field | Description |
 | --- | --- |
-| `acq_tab_nexo` |  |
-| `config_version` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `serial_number` |  |
-| `tid_sent` |  |
+| `acqTabNexo` |  |
+| `configVersion` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `serialNumber` |  |
+| `tidSent` |  |
 
 Operations: Create.
 
@@ -965,11 +962,11 @@ API path: `/storeTerminalParameters`
 
 | Field | Description |
 | --- | --- |
-| `device_serial_number` |  |
-| `duplicate_terminal_id` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `terminal` |  |
+| `deviceSerialNumber` |  |
+| `duplicateTerminalIds` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `terminals` |  |
 
 Operations: Create.
 
@@ -979,34 +976,34 @@ API path: `/public/getTerminalId`
 
 | Field | Description |
 | --- | --- |
-| `3_d_secure` |  |
-| `authorization_code` |  |
-| `card_brand` |  |
-| `clearing_amount_from` |  |
-| `clearing_amount_to` |  |
-| `clearing_currency` |  |
-| `clearing_status` |  |
-| `corporate_uuid` |  |
-| `order_by_transaction_date` |  |
+| `3DSecure` |  |
+| `authorizationCode` |  |
+| `cardBrand` |  |
+| `clearingAmountFrom` |  |
+| `clearingAmountTo` |  |
+| `clearingCurrency` |  |
+| `clearingStatus` |  |
+| `corporateUUID` |  |
+| `orderByTransactionDate` |  |
 | `pagination` |  |
-| `payment_token_public_id` |  |
-| `receipt_number` |  |
-| `referenced_transaction_id` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `retrieval_reference_number` |  |
-| `source_id` |  |
-| `tecsengine_response_code_from` |  |
-| `tecsengine_response_code_to` |  |
-| `terminal_id` |  |
-| `trace_number` |  |
-| `transaction_amount_from` |  |
-| `transaction_amount_to` |  |
-| `transaction_date_from` |  |
-| `transaction_date_to` |  |
-| `transaction_history` |  |
-| `transaction_id` |  |
-| `transaction_type` |  |
+| `paymentTokenPublicId` |  |
+| `receiptNumber` |  |
+| `referencedTransactionId` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `retrievalReferenceNumber` |  |
+| `sourceId` |  |
+| `tecsengineResponseCodeFrom` |  |
+| `tecsengineResponseCodeTo` |  |
+| `terminalId` |  |
+| `traceNumber` |  |
+| `transactionAmountFrom` |  |
+| `transactionAmountTo` |  |
+| `transactionDateFrom` |  |
+| `transactionDateTo` |  |
+| `transactionHistories` |  |
+| `transactionId` |  |
+| `transactionType` |  |
 | `wallet` |  |
 
 Operations: Create.
@@ -1018,11 +1015,11 @@ API path: `/public/mcom/transactionHistory`
 | Field | Description |
 | --- | --- |
 | `period` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `transaction_date_from` |  |
-| `transaction_date_to` |  |
-| `transactions_count` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `transactionDateFrom` |  |
+| `transactionDateTo` |  |
+| `transactionsCount` |  |
 
 Operations: Create.
 
@@ -1033,11 +1030,11 @@ API path: `/public/countAuthorisedTransactions`
 | Field | Description |
 | --- | --- |
 | `period` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `transaction_date_from` |  |
-| `transaction_date_to` |  |
-| `transactions_count` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `transactionDateFrom` |  |
+| `transactionDateTo` |  |
+| `transactionsCount` |  |
 
 Operations: Create.
 
@@ -1048,11 +1045,11 @@ API path: `/public/countTransactionsByCardBrand`
 | Field | Description |
 | --- | --- |
 | `period` |  |
-| `response_code` |  |
-| `response_message` |  |
-| `transaction_date_from` |  |
-| `transaction_date_to` |  |
-| `turnover` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `transactionDateFrom` |  |
+| `transactionDateTo` |  |
+| `turnovers` |  |
 
 Operations: Create.
 
@@ -1063,15 +1060,15 @@ API path: `/public/transactionTurnover`
 | Field | Description |
 | --- | --- |
 | `city` |  |
-| `corporate_uuid` |  |
+| `corporateUuid` |  |
 | `country` |  |
-| `merchant_category_code` |  |
+| `merchantCategoryCode` |  |
 | `name` |  |
-| `response_code` |  |
-| `response_message` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
 | `state` |  |
 | `street` |  |
-| `vu_nummer` |  |
+| `vuNummer` |  |
 | `zipcode` |  |
 
 Operations: Create.
@@ -1082,10 +1079,10 @@ API path: `/public/updateMerchant`
 
 | Field | Description |
 | --- | --- |
-| `response_code` |  |
-| `response_message` |  |
-| `template_name` |  |
-| `template_xml` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `templateName` |  |
+| `templateXml` |  |
 
 Operations: Create.
 
@@ -1095,8 +1092,8 @@ API path: `/public/updateTemplateXml`
 
 | Field | Description |
 | --- | --- |
-| `app_name` |  |
-| `build_date` |  |
+| `appName` |  |
+| `buildDate` |  |
 | `version` |  |
 
 Operations: Load.
@@ -1122,55 +1119,55 @@ Create an instance: `let cancelTransaction = client.CancelTransaction()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_id` | `String` |  |
-| `acquirer_name` | `String` |  |
-| `actual_bonus_point` | `String` |  |
+| `acquirerId` | `String` |  |
+| `acquirerName` | `String` |  |
+| `actualBonusPoints` | `String` |  |
 | `amount` | `Int` |  |
-| `authorization_code` | `String` |  |
-| `balance_amount` | `String` |  |
-| `card_brand` | `String` |  |
-| `card_number` | `String` |  |
-| `client_id` | `Int` |  |
+| `authorizationCode` | `String` |  |
+| `balanceAmount` | `String` |  |
+| `cardBrand` | `String` |  |
+| `cardNumber` | `String` |  |
+| `clientId` | `Int` |  |
 | `currency` | `String` |  |
 | `cvc` | `String` |  |
-| `ec_data` | `String` |  |
-| `ecr_data` | `String` |  |
-| `emv_data` | `String` |  |
-| `exchange_fee` | `Int` |  |
-| `exchange_rate` | `String` |  |
-| `language_code` | `String` |  |
-| `merchant_address` | `String` |  |
-| `merchant_name` | `String` |  |
-| `merchant_number` | `String` |  |
-| `message_type` | `String` |  |
-| `original_trace_number` | `Int` |  |
-| `original_transaction_id` | `String` |  |
+| `ecData` | `String` |  |
+| `ecrData` | `String` |  |
+| `emvData` | `String` |  |
+| `exchangeFee` | `Int` |  |
+| `exchangeRate` | `String` |  |
+| `languageCode` | `String` |  |
+| `merchantAddress` | `String` |  |
+| `merchantName` | `String` |  |
+| `merchantNumber` | `String` |  |
+| `messageType` | `String` |  |
+| `originalTraceNumber` | `Int` |  |
+| `originalTransactionId` | `String` |  |
 | `password` | `String` |  |
-| `payment_reason` | `String` |  |
-| `receipt_footer` | `String` |  |
-| `receipt_header` | `String` |  |
-| `receipt_layout` | `Int` |  |
-| `receipt_number` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `serial_number` | `String` |  |
+| `paymentReason` | `String` |  |
+| `receiptFooter` | `String` |  |
+| `receiptHeader` | `String` |  |
+| `receiptLayout` | `Int` |  |
+| `receiptNumber` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `serialNumber` | `String` |  |
 | `svc` | `String` |  |
-| `terminal_id` | `Int` |  |
-| `terminal_location` | `String` |  |
-| `trace_number` | `Int` |  |
-| `transaction_date` | `String` |  |
-| `transaction_id` | `String` |  |
-| `tx_type` | `String` |  |
-| `user_data` | `String` |  |
+| `terminalId` | `Int` |  |
+| `terminalLocation` | `String` |  |
+| `traceNumber` | `Int` |  |
+| `transactionDate` | `String` |  |
+| `transactionId` | `String` |  |
+| `txType` | `String` |  |
+| `userData` | `String` |  |
 
 #### Example: Create
 
 ```swift
 let cancelTransaction = try client.CancelTransaction().create(VMap([
-    ("client_id", .int(1)),  // Int
+    ("clientId", .int(1)),  // Int
     ("currency", .string("example_currency")),  // String
-    ("receipt_number", .string("example_receipt_number")),  // String
-    ("terminal_id", .int(1))  // Int
+    ("receiptNumber", .string("example_receiptNumber")),  // String
+    ("terminalId", .int(1))  // Int
 ]), nil)
 ```
 
@@ -1189,9 +1186,9 @@ Create an instance: `let checkCardBlackListed = client.CheckCardBlackListed()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `card_no` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `cardNo` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
@@ -1215,22 +1212,22 @@ Create an instance: `let createProduct = client.CreateProduct()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_id` | `Int` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `template_name` | `String` |  |
-| `template_type` | `String` |  |
-| `template_xml` | `String` |  |
-| `terminal_type` | `String` |  |
+| `acquirerId` | `Int` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `templateName` | `String` |  |
+| `templateType` | `String` |  |
+| `templateXml` | `String` |  |
+| `terminalType` | `String` |  |
 
 #### Example: Create
 
 ```swift
 let createProduct = try client.CreateProduct().create(VMap([
-    ("template_name", .string("example_template_name")),  // String
-    ("template_type", .string("example_template_type")),  // String
-    ("template_xml", .string("example_template_xml")),  // String
-    ("terminal_type", .string("example_terminal_type"))  // String
+    ("templateName", .string("example_templateName")),  // String
+    ("templateType", .string("example_templateType")),  // String
+    ("templateXml", .string("example_templateXml")),  // String
+    ("terminalType", .string("example_terminalType"))  // String
 ]), nil)
 ```
 
@@ -1249,20 +1246,20 @@ Create an instance: `let deactivateTerminal = client.DeactivateTerminal()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `corporate_uuid` | `String` |  |
-| `deactivation_reason` | `String` |  |
-| `package_order_uuid` | `String` |  |
-| `product_order_uuid` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `terminal_id` | `Int` |  |
+| `corporateUuid` | `String` |  |
+| `deactivationReason` | `String` |  |
+| `packageOrderUuid` | `String` |  |
+| `productOrderUuid` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `terminalId` | `Int` |  |
 
 #### Example: Create
 
 ```swift
 let deactivateTerminal = try client.DeactivateTerminal().create(VMap([
-    ("deactivation_reason", .string("example_deactivation_reason")),  // String
-    ("terminal_id", .int(1))  // Int
+    ("deactivationReason", .string("example_deactivationReason")),  // String
+    ("terminalId", .int(1))  // Int
 ]), nil)
 ```
 
@@ -1282,16 +1279,16 @@ Create an instance: `let digitalServicesApi = client.DigitalServicesApi()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `clearing_date_from` | `String` |  |
-| `clearing_date_to` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `tx_count` | `Int` |  |
-| `tx_id_end` | `String` |  |
-| `tx_id_start` | `String` |  |
-| `tx_seq_no_end` | `Int` |  |
-| `tx_seq_no_start` | `Int` |  |
-| `tx_total` | `Int` |  |
+| `clearingDateFrom` | `String` |  |
+| `clearingDateTo` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `txCount` | `Int` |  |
+| `txIdEnd` | `String` |  |
+| `txIdStart` | `String` |  |
+| `txSeqNoEnd` | `Int` |  |
+| `txSeqNoStart` | `Int` |  |
+| `txTotal` | `Int` |  |
 
 #### Example: Load
 
@@ -1303,6 +1300,8 @@ let digitalServicesApi = try client.DigitalServicesApi().load(nil, nil)
 
 ```swift
 let digitalServicesApi = try client.DigitalServicesApi().create(VMap([
+    ("clearingDateFrom", .string("example_clearingDateFrom")),  // String
+    ("clearingDateTo", .string("example_clearingDateTo"))  // String
 ]), nil)
 ```
 
@@ -1321,20 +1320,20 @@ Create an instance: `let ecDataEcom = client.EcDataEcom()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `ecom_data` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `terminal_id` | `Int` |  |
-| `transaction_id` | `String` |  |
-| `transaction_type` | `String` |  |
+| `ecomData` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `terminalId` | `Int` |  |
+| `transactionId` | `String` |  |
+| `transactionType` | `String` |  |
 
 #### Example: Create
 
 ```swift
 let ecDataEcom = try client.EcDataEcom().create(VMap([
-    ("terminal_id", .int(1)),  // Int
-    ("transaction_id", .string("example_transaction_id")),  // String
-    ("transaction_type", .string("example_transaction_type"))  // String
+    ("terminalId", .int(1)),  // Int
+    ("transactionId", .string("example_transactionId")),  // String
+    ("transactionType", .string("example_transactionType"))  // String
 ]), nil)
 ```
 
@@ -1353,17 +1352,17 @@ Create an instance: `let ecomParameter = client.EcomParameter()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `ecom_pass` | `String` |  |
-| `ecom_skey` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `terminal_id` | `Int` |  |
+| `ecomPass` | `String` |  |
+| `ecomSkey` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `terminalId` | `Int` |  |
 
 #### Example: Create
 
 ```swift
 let ecomParameter = try client.EcomParameter().create(VMap([
-    ("terminal_id", .int(1))  // Int
+    ("terminalId", .int(1))  // Int
 ]), nil)
 ```
 
@@ -1382,20 +1381,20 @@ Create an instance: `let ecrData = client.EcrData()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `ecr_data` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `terminal_id` | `Int` |  |
-| `transaction_id` | `String` |  |
-| `transaction_type` | `String` |  |
+| `ecrData` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `terminalId` | `Int` |  |
+| `transactionId` | `String` |  |
+| `transactionType` | `String` |  |
 
 #### Example: Create
 
 ```swift
 let ecrData = try client.EcrData().create(VMap([
-    ("terminal_id", .int(1)),  // Int
-    ("transaction_id", .string("example_transaction_id")),  // String
-    ("transaction_type", .string("example_transaction_type"))  // String
+    ("terminalId", .int(1)),  // Int
+    ("transactionId", .string("example_transactionId")),  // String
+    ("transactionType", .string("example_transactionType"))  // String
 ]), nil)
 ```
 
@@ -1414,20 +1413,20 @@ Create an instance: `let emvData = client.EmvData()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `emv_data` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `terminal_id` | `Int` |  |
-| `transaction_id` | `String` |  |
-| `transaction_type` | `String` |  |
+| `emvData` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `terminalId` | `Int` |  |
+| `transactionId` | `String` |  |
+| `transactionType` | `String` |  |
 
 #### Example: Create
 
 ```swift
 let emvData = try client.EmvData().create(VMap([
-    ("terminal_id", .int(1)),  // Int
-    ("transaction_id", .string("example_transaction_id")),  // String
-    ("transaction_type", .string("example_transaction_type"))  // String
+    ("terminalId", .int(1)),  // Int
+    ("transactionId", .string("example_transactionId")),  // String
+    ("transactionType", .string("example_transactionType"))  // String
 ]), nil)
 ```
 
@@ -1446,31 +1445,31 @@ Create an instance: `let enableAcquiring = client.EnableAcquiring()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `account_no` | `Int` |  |
-| `additional_data` | `VMap` |  |
-| `corporate_uuid` | `String` |  |
+| `accountNo` | `Int` |  |
+| `additionalData` | `VMap` |  |
+| `corporateUuid` | `String` |  |
 | `currency` | `String` |  |
-| `merchant_category_code` | `Int` |  |
-| `package_order_uuid` | `String` |  |
-| `product_order_uuid` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `sorting_code` | `Int` |  |
-| `template_name` | `String` |  |
-| `terminal_id` | `[Value]` |  |
-| `terminal_id_acq` | `String` |  |
-| `vu_nummer` | `String` |  |
+| `merchantCategoryCode` | `Int` |  |
+| `packageOrderUuid` | `String` |  |
+| `productOrderUuid` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `sortingCode` | `Int` |  |
+| `templateName` | `String` |  |
+| `terminalIdAcq` | `String` |  |
+| `terminalIds` | `[Value]` |  |
+| `vuNummer` | `String` |  |
 
 #### Example: Create
 
 ```swift
 let enableAcquiring = try client.EnableAcquiring().create(VMap([
-    ("corporate_uuid", .string("example_corporate_uuid")),  // String
+    ("corporateUuid", .string("example_corporateUuid")),  // String
     ("currency", .string("example_currency")),  // String
-    ("merchant_category_code", .int(1)),  // Int
-    ("package_order_uuid", .string("example_package_order_uuid")),  // String
-    ("product_order_uuid", .string("example_product_order_uuid")),  // String
-    ("template_name", .string("example_template_name"))  // String
+    ("merchantCategoryCode", .int(1)),  // Int
+    ("packageOrderUuid", .string("example_packageOrderUuid")),  // String
+    ("productOrderUuid", .string("example_productOrderUuid")),  // String
+    ("templateName", .string("example_templateName"))  // String
 ]), nil)
 ```
 
@@ -1489,15 +1488,15 @@ Create an instance: `let getMerchantContractNumber = client.GetMerchantContractN
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `merchant_contract_number` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `merchantContractNumber` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
 ```swift
 let getMerchantContractNumber = try client.GetMerchantContractNumber().create(VMap([
-    ("merchant_contract_number", .string("example_merchant_contract_number"))  // String
+    ("merchantContractNumber", .string("example_merchantContractNumber"))  // String
 ]), nil)
 ```
 
@@ -1516,15 +1515,15 @@ Create an instance: `let getTemplateXml = client.GetTemplateXml()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `template_name` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `templateName` | `String` |  |
 
 #### Example: Create
 
 ```swift
 let getTemplateXml = try client.GetTemplateXml().create(VMap([
-    ("template_name", .string("example_template_name"))  // String
+    ("templateName", .string("example_templateName"))  // String
 ]), nil)
 ```
 
@@ -1543,15 +1542,15 @@ Create an instance: `let introduceMandator = client.IntroduceMandator()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `mandator_name` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `mandatorName` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
 ```swift
 let introduceMandator = try client.IntroduceMandator().create(VMap([
-    ("mandator_name", .string("example_mandator_name"))  // String
+    ("mandatorName", .string("example_mandatorName"))  // String
 ]), nil)
 ```
 
@@ -1570,15 +1569,15 @@ Create an instance: `let introducePackage = client.IntroducePackage()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `terminal_template_description` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `terminalTemplateDescription` | `String` |  |
 
 #### Example: Create
 
 ```swift
 let introducePackage = try client.IntroducePackage().create(VMap([
-    ("terminal_template_description", .string("example_terminal_template_description"))  // String
+    ("terminalTemplateDescription", .string("example_terminalTemplateDescription"))  // String
 ]), nil)
 ```
 
@@ -1598,15 +1597,15 @@ Create an instance: `let keepAlive = client.KeepAlive()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `hwserialno` | `String` |  |
-| `ka_date_time_from` | `String` |  |
-| `ka_date_time_to` | `String` |  |
-| `keep_alive_data` | `[Value]` |  |
+| `kaDateTimeFrom` | `String` |  |
+| `kaDateTimeTo` | `String` |  |
+| `keepAliveData` | `[Value]` |  |
 | `pagination` | `VMap` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `terminal_date_time_from` | `String` |  |
-| `terminal_date_time_to` | `String` |  |
-| `terminal_id` | `Int` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `terminalDateTimeFrom` | `String` |  |
+| `terminalDateTimeTo` | `String` |  |
+| `terminalId` | `Int` |  |
 
 #### Example: Create
 
@@ -1630,12 +1629,12 @@ Create an instance: `let listTerminal = client.ListTerminal()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `corporate_uuid` | `[Value]` |  |
+| `corporateUuid` | `[Value]` |  |
 | `filter` | `VMap` |  |
 | `pagination` | `VMap` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `terminal` | `[Value]` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `terminals` | `[Value]` |  |
 
 #### Example: Create
 
@@ -1659,19 +1658,19 @@ Create an instance: `let mandatorClearingExport = client.MandatorClearingExport(
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `clearing_date_from` | `String` |  |
-| `clearing_date_to` | `String` |  |
+| `clearingDateFrom` | `String` |  |
+| `clearingDateTo` | `String` |  |
 | `pagination` | `VMap` |  |
-| `record` | `[Value]` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `records` | `[Value]` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
 ```swift
 let mandatorClearingExport = try client.MandatorClearingExport().create(VMap([
-    ("clearing_date_from", .string("example_clearing_date_from")),  // String
-    ("clearing_date_to", .string("example_clearing_date_to"))  // String
+    ("clearingDateFrom", .string("example_clearingDateFrom")),  // String
+    ("clearingDateTo", .string("example_clearingDateTo"))  // String
 ]), nil)
 ```
 
@@ -1691,12 +1690,12 @@ Create an instance: `let mandatorClearingExportDownload = client.MandatorClearin
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `clearing_date_from` | `String` |  |
-| `clearing_date_to` | `String` |  |
-| `file_id` | `String` |  |
-| `filename_template` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `clearingDateFrom` | `String` |  |
+| `clearingDateTo` | `String` |  |
+| `fileId` | `String` |  |
+| `filenameTemplate` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 | `status` | `String` |  |
 
 #### Example: Load
@@ -1709,8 +1708,8 @@ let mandatorClearingExportDownload = try client.MandatorClearingExportDownload()
 
 ```swift
 let mandatorClearingExportDownload = try client.MandatorClearingExportDownload().create(VMap([
-    ("clearing_date_from", .string("example_clearing_date_from")),  // String
-    ("clearing_date_to", .string("example_clearing_date_to"))  // String
+    ("clearingDateFrom", .string("example_clearingDateFrom")),  // String
+    ("clearingDateTo", .string("example_clearingDateTo"))  // String
 ]), nil)
 ```
 
@@ -1729,18 +1728,18 @@ Create an instance: `let mandatorClearingExportSummary = client.MandatorClearing
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `clearing_date_from` | `String` |  |
-| `clearing_date_to` | `String` |  |
-| `record` | `[Value]` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `clearingDateFrom` | `String` |  |
+| `clearingDateTo` | `String` |  |
+| `records` | `[Value]` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 
 #### Example: Create
 
 ```swift
 let mandatorClearingExportSummary = try client.MandatorClearingExportSummary().create(VMap([
-    ("clearing_date_from", .string("example_clearing_date_from")),  // String
-    ("clearing_date_to", .string("example_clearing_date_to"))  // String
+    ("clearingDateFrom", .string("example_clearingDateFrom")),  // String
+    ("clearingDateTo", .string("example_clearingDateTo"))  // String
 ]), nil)
 ```
 
@@ -1759,30 +1758,30 @@ Create an instance: `let merchantPortalServicesApi = client.MerchantPortalServic
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `3_d_secure` | `String` |  |
-| `authorization_code` | `String` |  |
-| `card_brand` | `String` |  |
-| `clearing_amount_from` | `String` |  |
-| `clearing_amount_to` | `String` |  |
-| `clearing_currency` | `String` |  |
-| `clearing_status` | `String` |  |
-| `corporate_uuid` | `String` |  |
-| `order_by_transaction_date` | `String` |  |
+| `3DSecure` | `String` |  |
+| `authorizationCode` | `String` |  |
+| `cardBrand` | `String` |  |
+| `clearingAmountFrom` | `String` |  |
+| `clearingAmountTo` | `String` |  |
+| `clearingCurrency` | `String` |  |
+| `clearingStatus` | `String` |  |
+| `corporateUUID` | `String` |  |
+| `orderByTransactionDate` | `String` |  |
 | `pagination` | `VMap` |  |
-| `receipt_number` | `String` |  |
-| `referenced_transaction_id` | `String` |  |
-| `retrieval_reference_number` | `String` |  |
-| `source_id` | `Int` |  |
-| `tecsengine_response_code_from` | `String` |  |
-| `tecsengine_response_code_to` | `String` |  |
-| `terminal_id` | `Int` |  |
-| `trace_number` | `String` |  |
-| `transaction_amount_from` | `String` |  |
-| `transaction_amount_to` | `String` |  |
-| `transaction_date_from` | `String` |  |
-| `transaction_date_to` | `String` |  |
-| `transaction_id` | `String` |  |
-| `transaction_type` | `String` |  |
+| `receiptNumber` | `String` |  |
+| `referencedTransactionId` | `String` |  |
+| `retrievalReferenceNumber` | `String` |  |
+| `sourceId` | `Int` |  |
+| `tecsengineResponseCodeFrom` | `String` |  |
+| `tecsengineResponseCodeTo` | `String` |  |
+| `terminalId` | `Int` |  |
+| `traceNumber` | `String` |  |
+| `transactionAmountFrom` | `String` |  |
+| `transactionAmountTo` | `String` |  |
+| `transactionDateFrom` | `String` |  |
+| `transactionDateTo` | `String` |  |
+| `transactionId` | `String` |  |
+| `transactionType` | `String` |  |
 | `wallet` | `String` |  |
 
 #### Example: Create
@@ -1807,17 +1806,17 @@ Create an instance: `let moveTid = client.MoveTid()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `productorderuuid` | `[Value]` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `target_packageorderuuid` | `String` |  |
-| `target_productorderuuid` | `String` |  |
+| `productorderuuids` | `[Value]` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `targetPackageorderuuid` | `String` |  |
+| `targetProductorderuuid` | `String` |  |
 
 #### Example: Create
 
 ```swift
 let moveTid = try client.MoveTid().create(VMap([
-    ("productorderuuid", .list([]))  // [Value]
+    ("productorderuuids", .list([]))  // [Value]
 ]), nil)
 ```
 
@@ -1836,22 +1835,22 @@ Create an instance: `let paymentManual = client.PaymentManual()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_name` | `String` |  |
+| `acquirerName` | `String` |  |
 | `amount` | `Int` |  |
-| `authorization_number` | `String` |  |
-| `card_number` | `String` |  |
-| `card_type` | `String` |  |
+| `authorizationNumber` | `String` |  |
+| `cardNumber` | `String` |  |
+| `cardType` | `String` |  |
 | `currency` | `String` |  |
 | `cvc` | `String` |  |
-| `date_time_tx` | `String` |  |
-| `exp_date` | `String` |  |
-| `merchant_id` | `String` |  |
-| `original_transaction_id` | `String` |  |
+| `dateTimeTx` | `String` |  |
+| `expDate` | `String` |  |
+| `merchantId` | `String` |  |
+| `originalTransactionId` | `String` |  |
 | `password` | `String` |  |
-| `response_code` | `String` |  |
-| `response_message` | `String` |  |
-| `terminal_id` | `String` |  |
-| `transaction_id` | `String` |  |
+| `responseCode` | `String` |  |
+| `responseMessage` | `String` |  |
+| `terminalId` | `String` |  |
+| `transactionId` | `String` |  |
 | `txtype` | `String` |  |
 
 #### Example: Create
@@ -1859,9 +1858,9 @@ Create an instance: `let paymentManual = client.PaymentManual()`
 ```swift
 let paymentManual = try client.PaymentManual().create(VMap([
     ("amount", .int(1)),  // Int
-    ("card_number", .string("example_card_number")),  // String
+    ("cardNumber", .string("example_cardNumber")),  // String
     ("currency", .string("example_currency")),  // String
-    ("exp_date", .string("example_exp_date")),  // String
+    ("expDate", .string("example_expDate")),  // String
     ("txtype", .string("example_txtype"))  // String
 ]), nil)
 ```
@@ -1881,21 +1880,17 @@ Create an instance: `let paymentSred = client.PaymentSred()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_name` | `String` |  |
 | `amount` | `Int` |  |
-| `authorization_number` | `String` |  |
-| `card_type` | `String` |  |
 | `currency` | `String` |  |
-| `date_time_tx` | `String` |  |
-| `device_payload` | `String` |  |
-| `merchant_id` | `String` |  |
-| `original_transaction_id` | `String` |  |
+| `device` | `String` |  |
+| `devicePayload` | `String` |  |
+| `expDate` | `String` |  |
+| `mode` | `String` |  |
+| `panMasked` | `String` |  |
 | `password` | `String` |  |
-| `response_code` | `String` |  |
-| `response_message` | `String` |  |
-| `sred` | `VMap` |  |
-| `terminal_id` | `String` |  |
-| `transaction_id` | `String` |  |
+| `serial` | `String` |  |
+| `serviceCode` | `String` |  |
+| `terminalId` | `String` |  |
 | `txtype` | `String` |  |
 
 #### Example: Create
@@ -1904,7 +1899,8 @@ Create an instance: `let paymentSred = client.PaymentSred()`
 let paymentSred = try client.PaymentSred().create(VMap([
     ("amount", .int(1)),  // Int
     ("currency", .string("example_currency")),  // String
-    ("device_payload", .string("example_device_payload")),  // String
+    ("devicePayload", .string("example_devicePayload")),  // String
+    ("terminalId", .string("example_terminalId")),  // String
     ("txtype", .string("example_txtype"))  // String
 ]), nil)
 ```
@@ -1924,59 +1920,59 @@ Create an instance: `let preAuthTransactionCompletion = client.PreAuthTransactio
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_id` | `String` |  |
-| `acquirer_name` | `String` |  |
-| `actual_bonus_point` | `String` |  |
+| `acquirerId` | `String` |  |
+| `acquirerName` | `String` |  |
+| `actualBonusPoints` | `String` |  |
 | `amount` | `Int` |  |
-| `authorization_code` | `String` |  |
-| `balance_amount` | `String` |  |
-| `card_brand` | `String` |  |
-| `card_number` | `String` |  |
-| `card_number_reference` | `String` |  |
-| `client_id` | `Int` |  |
+| `authorizationCode` | `String` |  |
+| `balanceAmount` | `String` |  |
+| `cardBrand` | `String` |  |
+| `cardNumber` | `String` |  |
+| `cardNumberReference` | `String` |  |
+| `clientId` | `Int` |  |
 | `currency` | `String` |  |
 | `cvc` | `String` |  |
-| `ec_data` | `String` |  |
-| `ecr_data` | `String` |  |
-| `emv_data` | `String` |  |
-| `exchange_fee` | `Int` |  |
-| `exchange_rate` | `String` |  |
-| `language_code` | `String` |  |
-| `merchant_address` | `String` |  |
-| `merchant_name` | `String` |  |
-| `merchant_number` | `String` |  |
-| `message_type` | `String` |  |
-| `original_trace_number` | `Int` |  |
-| `original_transaction_id` | `String` |  |
+| `ecData` | `String` |  |
+| `ecrData` | `String` |  |
+| `emvData` | `String` |  |
+| `exchangeFee` | `Int` |  |
+| `exchangeRate` | `String` |  |
+| `languageCode` | `String` |  |
+| `merchantAddress` | `String` |  |
+| `merchantName` | `String` |  |
+| `merchantNumber` | `String` |  |
+| `messageType` | `String` |  |
+| `originalTraceNumber` | `Int` |  |
+| `originalTransactionId` | `String` |  |
 | `password` | `String` |  |
-| `payment_reason` | `String` |  |
-| `receipt_footer` | `String` |  |
-| `receipt_header` | `String` |  |
-| `receipt_layout` | `Int` |  |
-| `receipt_number` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `serial_number` | `String` |  |
+| `paymentReason` | `String` |  |
+| `receiptFooter` | `String` |  |
+| `receiptHeader` | `String` |  |
+| `receiptLayout` | `Int` |  |
+| `receiptNumber` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `serialNumber` | `String` |  |
 | `svc` | `String` |  |
-| `terminal_id` | `Int` |  |
-| `terminal_location` | `String` |  |
-| `trace_number` | `Int` |  |
-| `transaction_date` | `String` |  |
-| `transaction_id` | `String` |  |
-| `transaction_type` | `String` |  |
-| `tx_type` | `String` |  |
-| `user_data` | `String` |  |
+| `terminalId` | `Int` |  |
+| `terminalLocation` | `String` |  |
+| `traceNumber` | `Int` |  |
+| `transactionDate` | `String` |  |
+| `transactionId` | `String` |  |
+| `transactionType` | `String` |  |
+| `txType` | `String` |  |
+| `userData` | `String` |  |
 
 #### Example: Create
 
 ```swift
 let preAuthTransactionCompletion = try client.PreAuthTransactionCompletion().create(VMap([
-    ("card_number_reference", .string("example_card_number_reference")),  // String
-    ("client_id", .int(1)),  // Int
+    ("cardNumberReference", .string("example_cardNumberReference")),  // String
+    ("clientId", .int(1)),  // Int
     ("currency", .string("example_currency")),  // String
-    ("receipt_number", .string("example_receipt_number")),  // String
-    ("terminal_id", .int(1)),  // Int
-    ("transaction_type", .string("example_transaction_type"))  // String
+    ("receiptNumber", .string("example_receiptNumber")),  // String
+    ("terminalId", .int(1)),  // Int
+    ("transactionType", .string("example_transactionType"))  // String
 ]), nil)
 ```
 
@@ -1995,20 +1991,20 @@ Create an instance: `let reactivateTerminal = client.ReactivateTerminal()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `corporate_uuid` | `String` |  |
-| `package_order_uuid` | `String` |  |
-| `product_order_uuid` | `String` |  |
-| `reactivation_reason` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `terminal_id` | `Int` |  |
+| `corporateUuid` | `String` |  |
+| `packageOrderUuid` | `String` |  |
+| `productOrderUuid` | `String` |  |
+| `reactivationReason` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `terminalId` | `Int` |  |
 
 #### Example: Create
 
 ```swift
 let reactivateTerminal = try client.ReactivateTerminal().create(VMap([
-    ("reactivation_reason", .string("example_reactivation_reason")),  // String
-    ("terminal_id", .int(1))  // Int
+    ("reactivationReason", .string("example_reactivationReason")),  // String
+    ("terminalId", .int(1))  // Int
 ]), nil)
 ```
 
@@ -2027,55 +2023,55 @@ Create an instance: `let refundTransaction = client.RefundTransaction()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_id` | `String` |  |
-| `acquirer_name` | `String` |  |
-| `actual_bonus_point` | `String` |  |
+| `acquirerId` | `String` |  |
+| `acquirerName` | `String` |  |
+| `actualBonusPoints` | `String` |  |
 | `amount` | `Int` |  |
-| `authorization_code` | `String` |  |
-| `balance_amount` | `String` |  |
-| `card_brand` | `String` |  |
-| `card_number` | `String` |  |
-| `client_id` | `Int` |  |
+| `authorizationCode` | `String` |  |
+| `balanceAmount` | `String` |  |
+| `cardBrand` | `String` |  |
+| `cardNumber` | `String` |  |
+| `clientId` | `Int` |  |
 | `currency` | `String` |  |
 | `cvc` | `String` |  |
-| `ec_data` | `String` |  |
-| `ecr_data` | `String` |  |
-| `emv_data` | `String` |  |
-| `exchange_fee` | `Int` |  |
-| `exchange_rate` | `String` |  |
-| `language_code` | `String` |  |
-| `merchant_address` | `String` |  |
-| `merchant_name` | `String` |  |
-| `merchant_number` | `String` |  |
-| `message_type` | `String` |  |
-| `original_trace_number` | `Int` |  |
-| `original_transaction_id` | `String` |  |
+| `ecData` | `String` |  |
+| `ecrData` | `String` |  |
+| `emvData` | `String` |  |
+| `exchangeFee` | `Int` |  |
+| `exchangeRate` | `String` |  |
+| `languageCode` | `String` |  |
+| `merchantAddress` | `String` |  |
+| `merchantName` | `String` |  |
+| `merchantNumber` | `String` |  |
+| `messageType` | `String` |  |
+| `originalTraceNumber` | `Int` |  |
+| `originalTransactionId` | `String` |  |
 | `password` | `String` |  |
-| `payment_reason` | `String` |  |
-| `receipt_footer` | `String` |  |
-| `receipt_header` | `String` |  |
-| `receipt_layout` | `Int` |  |
-| `receipt_number` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `serial_number` | `String` |  |
+| `paymentReason` | `String` |  |
+| `receiptFooter` | `String` |  |
+| `receiptHeader` | `String` |  |
+| `receiptLayout` | `Int` |  |
+| `receiptNumber` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `serialNumber` | `String` |  |
 | `svc` | `String` |  |
-| `terminal_id` | `Int` |  |
-| `terminal_location` | `String` |  |
-| `trace_number` | `Int` |  |
-| `transaction_date` | `String` |  |
-| `transaction_id` | `String` |  |
-| `tx_type` | `String` |  |
-| `user_data` | `String` |  |
+| `terminalId` | `Int` |  |
+| `terminalLocation` | `String` |  |
+| `traceNumber` | `Int` |  |
+| `transactionDate` | `String` |  |
+| `transactionId` | `String` |  |
+| `txType` | `String` |  |
+| `userData` | `String` |  |
 
 #### Example: Create
 
 ```swift
 let refundTransaction = try client.RefundTransaction().create(VMap([
-    ("client_id", .int(1)),  // Int
+    ("clientId", .int(1)),  // Int
     ("currency", .string("example_currency")),  // String
-    ("receipt_number", .string("example_receipt_number")),  // String
-    ("terminal_id", .int(1))  // Int
+    ("receiptNumber", .string("example_receiptNumber")),  // String
+    ("terminalId", .int(1))  // Int
 ]), nil)
 ```
 
@@ -2094,23 +2090,23 @@ Create an instance: `let registerTecsCompany = client.RegisterTecsCompany()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `corporate_uuid` | `String` |  |
-| `package_order_uuid` | `String` |  |
-| `partner_id` | `Int` |  |
-| `partner_name` | `String` |  |
-| `product_order_uuid` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `template_name` | `String` |  |
+| `corporateUuid` | `String` |  |
+| `packageOrderUuid` | `String` |  |
+| `partnerId` | `Int` |  |
+| `partnerName` | `String` |  |
+| `productOrderUuid` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `templateName` | `String` |  |
 
 #### Example: Create
 
 ```swift
 let registerTecsCompany = try client.RegisterTecsCompany().create(VMap([
-    ("corporate_uuid", .string("example_corporate_uuid")),  // String
-    ("package_order_uuid", .string("example_package_order_uuid")),  // String
-    ("product_order_uuid", .string("example_product_order_uuid")),  // String
-    ("template_name", .string("example_template_name"))  // String
+    ("corporateUuid", .string("example_corporateUuid")),  // String
+    ("packageOrderUuid", .string("example_packageOrderUuid")),  // String
+    ("productOrderUuid", .string("example_productOrderUuid")),  // String
+    ("templateName", .string("example_templateName"))  // String
 ]), nil)
 ```
 
@@ -2129,36 +2125,36 @@ Create an instance: `let registerTerminal = client.RegisterTerminal()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `additional_data` | `VMap` |  |
-| `corporate_uuid` | `String` |  |
-| `package_order_uuid` | `String` |  |
-| `product_order_uuid` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `tecs_web_secret_key` | `String` |  |
-| `template_name` | `String` |  |
-| `terminal_country_code` | `String` |  |
-| `terminal_id` | `Int` |  |
-| `terminal_id_acq` | `String` |  |
-| `terminal_language_code` | `String` |  |
-| `terminal_location` | `String` |  |
-| `terminal_serial_number` | `String` |  |
-| `token_io_alia` | `String` |  |
-| `token_io_iban` | `String` |  |
-| `token_io_member_id` | `String` |  |
-| `web_shop_url` | `String` |  |
+| `additionalData` | `VMap` |  |
+| `corporateUuid` | `String` |  |
+| `packageOrderUuid` | `String` |  |
+| `productOrderUuid` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `tecsWebSecretKey` | `String` |  |
+| `templateName` | `String` |  |
+| `terminalCountryCode` | `String` |  |
+| `terminalId` | `Int` |  |
+| `terminalIdAcq` | `String` |  |
+| `terminalLanguageCode` | `String` |  |
+| `terminalLocation` | `String` |  |
+| `terminalSerialNumber` | `String` |  |
+| `tokenIOAlias` | `String` |  |
+| `tokenIOIban` | `String` |  |
+| `tokenIOMemberId` | `String` |  |
+| `webShopUrl` | `String` |  |
 
 #### Example: Create
 
 ```swift
 let registerTerminal = try client.RegisterTerminal().create(VMap([
-    ("corporate_uuid", .string("example_corporate_uuid")),  // String
-    ("package_order_uuid", .string("example_package_order_uuid")),  // String
-    ("product_order_uuid", .string("example_product_order_uuid")),  // String
-    ("template_name", .string("example_template_name")),  // String
-    ("terminal_country_code", .string("example_terminal_country_code")),  // String
-    ("terminal_language_code", .string("example_terminal_language_code")),  // String
-    ("terminal_location", .string("example_terminal_location"))  // String
+    ("corporateUuid", .string("example_corporateUuid")),  // String
+    ("packageOrderUuid", .string("example_packageOrderUuid")),  // String
+    ("productOrderUuid", .string("example_productOrderUuid")),  // String
+    ("templateName", .string("example_templateName")),  // String
+    ("terminalCountryCode", .string("example_terminalCountryCode")),  // String
+    ("terminalLanguageCode", .string("example_terminalLanguageCode")),  // String
+    ("terminalLocation", .string("example_terminalLocation"))  // String
 ]), nil)
 ```
 
@@ -2177,24 +2173,24 @@ Create an instance: `let reportData = client.ReportData()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `card_brand_report_data` | `[Value]` |  |
-| `clearing_date_from` | `String` |  |
-| `clearing_date_to` | `String` |  |
-| `corporate_id` | `String` |  |
+| `cardBrandReportData` | `[Value]` |  |
+| `clearingDateFrom` | `String` |  |
+| `clearingDateTo` | `String` |  |
+| `corporateId` | `String` |  |
 | `currency` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `sum_over_credit_tx` | `VMap` |  |
-| `sum_over_debit_tx` | `VMap` |  |
-| `terminal_id` | `Int` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `sumOverCreditTx` | `VMap` |  |
+| `sumOverDebitTx` | `VMap` |  |
+| `terminalId` | `Int` |  |
 
 #### Example: Create
 
 ```swift
 let reportData = try client.ReportData().create(VMap([
-    ("clearing_date_from", .string("example_clearing_date_from")),  // String
-    ("clearing_date_to", .string("example_clearing_date_to")),  // String
-    ("corporate_id", .string("example_corporate_id")),  // String
+    ("clearingDateFrom", .string("example_clearingDateFrom")),  // String
+    ("clearingDateTo", .string("example_clearingDateTo")),  // String
+    ("corporateId", .string("example_corporateId")),  // String
     ("currency", .string("example_currency"))  // String
 ]), nil)
 ```
@@ -2214,56 +2210,56 @@ Create an instance: `let statusTransaction = client.StatusTransaction()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acquirer_name` | `String` |  |
-| `acquirer_terminal_id` | `String` |  |
+| `acquirerName` | `String` |  |
+| `acquirerTerminalId` | `String` |  |
 | `amount` | `Int` |  |
-| `application_cryptogram` | `String` |  |
-| `authorization_code` | `Value` |  |
-| `authorization_date` | `String` |  |
-| `card_brand` | `String` |  |
-| `card_entry` | `String` |  |
-| `card_expiration` | `String` |  |
-| `card_number` | `String` |  |
-| `clearing_amount` | `Int` |  |
-| `clearing_batch_id` | `String` |  |
-| `clearing_currency` | `String` |  |
-| `clearing_date` | `String` |  |
-| `clearing_processed_date` | `String` |  |
-| `clearing_status` | `String` |  |
-| `client_id` | `Int` |  |
+| `applicationCryptogram` | `String` |  |
+| `authorizationCode` | `Value` |  |
+| `authorizationDate` | `String` |  |
+| `cardBrand` | `String` |  |
+| `cardEntry` | `String` |  |
+| `cardExpiration` | `String` |  |
+| `cardNumber` | `String` |  |
+| `clearingAmount` | `Int` |  |
+| `clearingBatchId` | `String` |  |
+| `clearingCurrency` | `String` |  |
+| `clearingDate` | `String` |  |
+| `clearingProcessedDate` | `String` |  |
+| `clearingStatus` | `String` |  |
+| `clientId` | `Int` |  |
 | `currency` | `String` |  |
 | `cvm` | `String` |  |
-| `ecr_data` | `String` |  |
-| `emv_application_id` | `String` |  |
-| `emv_application_label` | `String` |  |
-| `merchant_name` | `String` |  |
-| `merchant_number` | `String` |  |
-| `original_client_id` | `String` |  |
-| `original_terminal_id` | `Int` |  |
-| `original_transaction_id` | `String` |  |
-| `payment_reason` | `String` |  |
-| `receipt_number` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_code_from_a` | `String` |  |
-| `response_message` | `String` |  |
-| `retrieval_reference_number` | `String` |  |
-| `service_code` | `String` |  |
-| `settlement_status` | `String` |  |
-| `source_id` | `Int` |  |
-| `tecsengine_response_code` | `Int` |  |
-| `tecsengine_response_text` | `String` |  |
-| `terminal_end_of_day_date` | `String` |  |
-| `terminal_id` | `Int` |  |
-| `terminal_location` | `String` |  |
-| `tip_amount` | `Int` |  |
-| `trace_number` | `Int` |  |
-| `transaction_clearing_date` | `String` |  |
-| `transaction_date` | `String` |  |
-| `transaction_id` | `String` |  |
-| `transaction_seq_number` | `Int` |  |
-| `transaction_server_date` | `String` |  |
-| `transaction_source` | `String` |  |
-| `transaction_type` | `String` |  |
+| `ecrData` | `String` |  |
+| `emvApplicationId` | `String` |  |
+| `emvApplicationLabel` | `String` |  |
+| `merchantName` | `String` |  |
+| `merchantNumber` | `String` |  |
+| `originalClientId` | `String` |  |
+| `originalTerminalId` | `Int` |  |
+| `originalTransactionId` | `String` |  |
+| `paymentReason` | `String` |  |
+| `receiptNumber` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseCodeFromAS` | `String` |  |
+| `responseMessage` | `String` |  |
+| `retrievalReferenceNumber` | `String` |  |
+| `serviceCode` | `String` |  |
+| `settlementStatus` | `String` |  |
+| `sourceId` | `Int` |  |
+| `tecsengineResponseCode` | `Int` |  |
+| `tecsengineResponseText` | `String` |  |
+| `terminalEndOfDayDate` | `String` |  |
+| `terminalId` | `Int` |  |
+| `terminalLocation` | `String` |  |
+| `tipAmount` | `Int` |  |
+| `traceNumber` | `Int` |  |
+| `transactionClearingDate` | `String` |  |
+| `transactionDate` | `String` |  |
+| `transactionId` | `String` |  |
+| `transactionSeqNumber` | `Int` |  |
+| `transactionServerDate` | `String` |  |
+| `transactionSource` | `String` |  |
+| `transactionType` | `String` |  |
 
 #### Example: Create
 
@@ -2287,18 +2283,18 @@ Create an instance: `let storeTerminalParameter = client.StoreTerminalParameter(
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `acq_tab_nexo` | `VMap` |  |
-| `config_version` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `serial_number` | `String` |  |
-| `tid_sent` | `String` |  |
+| `acqTabNexo` | `VMap` |  |
+| `configVersion` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `serialNumber` | `String` |  |
+| `tidSent` | `String` |  |
 
 #### Example: Create
 
 ```swift
 let storeTerminalParameter = try client.StoreTerminalParameter().create(VMap([
-    ("serial_number", .string("example_serial_number"))  // String
+    ("serialNumber", .string("example_serialNumber"))  // String
 ]), nil)
 ```
 
@@ -2317,17 +2313,17 @@ Create an instance: `let terminalId = client.TerminalId()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `device_serial_number` | `[Value]` |  |
-| `duplicate_terminal_id` | `[Value]` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `terminal` | `[Value]` |  |
+| `deviceSerialNumber` | `[Value]` |  |
+| `duplicateTerminalIds` | `[Value]` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `terminals` | `[Value]` |  |
 
 #### Example: Create
 
 ```swift
 let terminalId = try client.TerminalId().create(VMap([
-    ("device_serial_number", .list([]))  // [Value]
+    ("deviceSerialNumber", .list([]))  // [Value]
 ]), nil)
 ```
 
@@ -2346,34 +2342,34 @@ Create an instance: `let transactionHistory = client.TransactionHistory()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `3_d_secure` | `String` |  |
-| `authorization_code` | `String` |  |
-| `card_brand` | `String` |  |
-| `clearing_amount_from` | `String` |  |
-| `clearing_amount_to` | `String` |  |
-| `clearing_currency` | `String` |  |
-| `clearing_status` | `String` |  |
-| `corporate_uuid` | `String` |  |
-| `order_by_transaction_date` | `String` |  |
+| `3DSecure` | `String` |  |
+| `authorizationCode` | `String` |  |
+| `cardBrand` | `String` |  |
+| `clearingAmountFrom` | `String` |  |
+| `clearingAmountTo` | `String` |  |
+| `clearingCurrency` | `String` |  |
+| `clearingStatus` | `String` |  |
+| `corporateUUID` | `String` |  |
+| `orderByTransactionDate` | `String` |  |
 | `pagination` | `VMap` |  |
-| `payment_token_public_id` | `String` |  |
-| `receipt_number` | `String` |  |
-| `referenced_transaction_id` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `retrieval_reference_number` | `String` |  |
-| `source_id` | `Int` |  |
-| `tecsengine_response_code_from` | `String` |  |
-| `tecsengine_response_code_to` | `String` |  |
-| `terminal_id` | `Int` |  |
-| `trace_number` | `String` |  |
-| `transaction_amount_from` | `String` |  |
-| `transaction_amount_to` | `String` |  |
-| `transaction_date_from` | `String` |  |
-| `transaction_date_to` | `String` |  |
-| `transaction_history` | `[Value]` |  |
-| `transaction_id` | `String` |  |
-| `transaction_type` | `String` |  |
+| `paymentTokenPublicId` | `String` |  |
+| `receiptNumber` | `String` |  |
+| `referencedTransactionId` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `retrievalReferenceNumber` | `String` |  |
+| `sourceId` | `Int` |  |
+| `tecsengineResponseCodeFrom` | `String` |  |
+| `tecsengineResponseCodeTo` | `String` |  |
+| `terminalId` | `Int` |  |
+| `traceNumber` | `String` |  |
+| `transactionAmountFrom` | `String` |  |
+| `transactionAmountTo` | `String` |  |
+| `transactionDateFrom` | `String` |  |
+| `transactionDateTo` | `String` |  |
+| `transactionHistories` | `[Value]` |  |
+| `transactionId` | `String` |  |
+| `transactionType` | `String` |  |
 | `wallet` | `String` |  |
 
 #### Example: Create
@@ -2399,11 +2395,11 @@ Create an instance: `let transactionsCount = client.TransactionsCount()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `period` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `transaction_date_from` | `String` |  |
-| `transaction_date_to` | `String` |  |
-| `transactions_count` | `[Value]` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `transactionDateFrom` | `String` |  |
+| `transactionDateTo` | `String` |  |
+| `transactionsCount` | `[Value]` |  |
 
 #### Example: Create
 
@@ -2428,11 +2424,11 @@ Create an instance: `let transactionsCountCardBrand = client.TransactionsCountCa
 | Field | Type | Description |
 | --- | --- | --- |
 | `period` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `transaction_date_from` | `String` |  |
-| `transaction_date_to` | `String` |  |
-| `transactions_count` | `[Value]` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `transactionDateFrom` | `String` |  |
+| `transactionDateTo` | `String` |  |
+| `transactionsCount` | `[Value]` |  |
 
 #### Example: Create
 
@@ -2457,11 +2453,11 @@ Create an instance: `let transactionsTurnover = client.TransactionsTurnover()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `period` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `transaction_date_from` | `String` |  |
-| `transaction_date_to` | `String` |  |
-| `turnover` | `[Value]` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `transactionDateFrom` | `String` |  |
+| `transactionDateTo` | `String` |  |
+| `turnovers` | `[Value]` |  |
 
 #### Example: Create
 
@@ -2486,22 +2482,22 @@ Create an instance: `let updateMerchant = client.UpdateMerchant()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `city` | `String` |  |
-| `corporate_uuid` | `String` |  |
+| `corporateUuid` | `String` |  |
 | `country` | `String` |  |
-| `merchant_category_code` | `String` |  |
+| `merchantCategoryCode` | `String` |  |
 | `name` | `String` |  |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
 | `state` | `String` |  |
 | `street` | `String` |  |
-| `vu_nummer` | `String` |  |
+| `vuNummer` | `String` |  |
 | `zipcode` | `String` |  |
 
 #### Example: Create
 
 ```swift
 let updateMerchant = try client.UpdateMerchant().create(VMap([
-    ("corporate_uuid", .string("example_corporate_uuid"))  // String
+    ("corporateUuid", .string("example_corporateUuid"))  // String
 ]), nil)
 ```
 
@@ -2520,17 +2516,17 @@ Create an instance: `let updateTemplateXml = client.UpdateTemplateXml()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `response_code` | `Int` |  |
-| `response_message` | `String` |  |
-| `template_name` | `String` |  |
-| `template_xml` | `String` |  |
+| `responseCode` | `Int` |  |
+| `responseMessage` | `String` |  |
+| `templateName` | `String` |  |
+| `templateXml` | `String` |  |
 
 #### Example: Create
 
 ```swift
 let updateTemplateXml = try client.UpdateTemplateXml().create(VMap([
-    ("template_name", .string("example_template_name")),  // String
-    ("template_xml", .string("example_template_xml"))  // String
+    ("templateName", .string("example_templateName")),  // String
+    ("templateXml", .string("example_templateXml"))  // String
 ]), nil)
 ```
 
@@ -2549,8 +2545,8 @@ Create an instance: `let version = client.Version()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `app_name` | `String` |  |
-| `build_date` | `String` |  |
+| `appName` | `String` |  |
+| `buildDate` | `String` |  |
 | `version` | `String` |  |
 
 #### Example: Load

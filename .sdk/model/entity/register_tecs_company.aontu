@@ -6,42 +6,42 @@ main: kit: entity: register_tecs_company: {
 
   fields: [
     {
-      name: "corporate_uuid"
+      name: "corporateUuid"
       req: true
       type: "`$STRING`"
     }
     {
-      name: "package_order_uuid"
+      name: "packageOrderUuid"
       req: true
       type: "`$STRING`"
     }
     {
-      name: "partner_id"
+      name: "partnerId"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "partner_name"
+      name: "partnerName"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "product_order_uuid"
+      name: "productOrderUuid"
       req: true
       type: "`$STRING`"
     }
     {
-      name: "response_code"
+      name: "responseCode"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "response_message"
+      name: "responseMessage"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "template_name"
+      name: "templateName"
       req: true
       type: "`$STRING`"
     }

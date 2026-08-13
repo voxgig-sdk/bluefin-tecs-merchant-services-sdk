@@ -6,37 +6,37 @@ main: kit: entity: create_product: {
 
   fields: [
     {
-      name: "acquirer_id"
+      name: "acquirerId"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "response_code"
+      name: "responseCode"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "response_message"
+      name: "responseMessage"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "template_name"
+      name: "templateName"
       req: true
       type: "`$STRING`"
     }
     {
-      name: "template_type"
+      name: "templateType"
       req: true
       type: "`$STRING`"
     }
     {
-      name: "template_xml"
+      name: "templateXml"
       req: true
       type: "`$STRING`"
     }
     {
-      name: "terminal_type"
+      name: "terminalType"
       req: true
       type: "`$STRING`"
     }

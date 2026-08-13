@@ -35,7 +35,7 @@ object TransactionsCountCardBrandEntityTest {
       var transactionsCountCardBrandRef01Data = Helpers.toMapAny(Struct.getprop(
           Struct.getpath(entityData, "new.transactions_count_card_brand"), "transactions_count_card_brand_ref01"))
       val transactionsCountCardBrandRef01DataResult = transactionsCountCardBrandRef01Ent.create(transactionsCountCardBrandRef01Data, null)
-      transactionsCountCardBrandRef01Data = Helpers.toMapAny(transactionsCountCardBrandRef01DataResult)
+      transactionsCountCardBrandRef01Data = Helpers.toMapAny(transactionsCountCardBrandRef01DataResult match { case e: SdkEntity => e.data(); case o => o })
       rep.check("transactions_count_card_brand.create.map", transactionsCountCardBrandRef01Data != null, "expected create result to be a map")
     }
   }

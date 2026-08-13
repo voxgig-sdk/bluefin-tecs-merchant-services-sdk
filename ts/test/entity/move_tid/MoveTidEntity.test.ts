@@ -26,8 +26,8 @@ import {
 describe('MoveTidEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when BLUEFINTECSMERCHANTSERVICES_TEST_LIVE=TRUE.
-  afterEach(liveDelay('BLUEFINTECSMERCHANTSERVICES_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE=TRUE.
+  afterEach(liveDelay('BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = BluefinTecsMerchantServicesSDK.test()
@@ -62,7 +62,7 @@ describe('MoveTidEntity', async () => {
     const move_tid_ref01_ent = client.MoveTid()
     let move_tid_ref01_data = setup.data.new.move_tid['move_tid_ref01']
 
-    move_tid_ref01_data = await move_tid_ref01_ent.create(move_tid_ref01_data)
+    move_tid_ref01_data = (await move_tid_ref01_ent.create(move_tid_ref01_data)).data()
     assert(null != move_tid_ref01_data)
 
 

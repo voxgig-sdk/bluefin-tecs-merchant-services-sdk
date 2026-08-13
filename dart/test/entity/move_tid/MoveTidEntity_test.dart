@@ -47,7 +47,7 @@ void tests() {
       final move_tid_ref01_ent = client.MoveTid();
       dynamic move_tid_ref01_data = setup['data']['new']['move_tid']['move_tid_ref01'];
 
-      move_tid_ref01_data = await move_tid_ref01_ent.create(move_tid_ref01_data);
+      move_tid_ref01_data = (await move_tid_ref01_ent.create(move_tid_ref01_data)).data();
       ok(null != move_tid_ref01_data);
 
 

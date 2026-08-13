@@ -47,7 +47,7 @@ void tests() {
       final status_transaction_ref01_ent = client.StatusTransaction();
       dynamic status_transaction_ref01_data = setup['data']['new']['status_transaction']['status_transaction_ref01'];
 
-      status_transaction_ref01_data = await status_transaction_ref01_ent.create(status_transaction_ref01_data);
+      status_transaction_ref01_data = (await status_transaction_ref01_ent.create(status_transaction_ref01_data)).data();
       ok(null != status_transaction_ref01_data);
 
 

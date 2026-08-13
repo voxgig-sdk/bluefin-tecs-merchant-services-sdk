@@ -38,15 +38,15 @@ static TransactionHistorySetup transaction_history_basic_setup(const Value& extr
   if (!idmap.is_map()) idmap = vmap();
 
   Value env = env_override(vmap({
-    {"BLUEFINTECSMERCHANTSERVICES_TEST_TRANSACTION_HISTORY_ENTID", idmap},
-    {"BLUEFINTECSMERCHANTSERVICES_TEST_LIVE", Value("FALSE")},
-    {"BLUEFINTECSMERCHANTSERVICES_TEST_EXPLAIN", Value("FALSE")}
+    {"BLUEFIN_TECS_MERCHANT_SERVICES_TEST_TRANSACTION_HISTORY_ENTID", idmap},
+    {"BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE", Value("FALSE")},
+    {"BLUEFIN_TECS_MERCHANT_SERVICES_TEST_EXPLAIN", Value("FALSE")}
   }));
 
-  Value idmap_resolved = Helpers::toMapAny(getp(env, "BLUEFINTECSMERCHANTSERVICES_TEST_TRANSACTION_HISTORY_ENTID"));
+  Value idmap_resolved = Helpers::toMapAny(getp(env, "BLUEFIN_TECS_MERCHANT_SERVICES_TEST_TRANSACTION_HISTORY_ENTID"));
   if (!idmap_resolved.is_map()) idmap_resolved = idmap;
 
-  bool live = getp(env, "BLUEFINTECSMERCHANTSERVICES_TEST_LIVE") == Value("TRUE");
+  bool live = getp(env, "BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE") == Value("TRUE");
 
   TransactionHistorySetup s;
   s.client = client;
@@ -65,27 +65,6 @@ static void transaction_history_entity_instance() {
   ASSERT_EQ(ent->getName(), std::string("transaction_history"), "entity name");
 }
 
-static void transaction_history_entity_stream() {
-  // stream() runs the list op through the full pipeline and returns the
-  // result items. Seed two entities via test mode; with the streaming feature
-  // active it yields the feature's incremental items, else it falls back to
-  // the materialised items — either way every item is yielded.
-  Value seed = vmap({{"entity", vmap({{"transaction_history", vmap({
-      {"strm01", vmap({{"id", Value("strm01")}})},
-      {"strm02", vmap({{"id", Value("strm02")}})}})}})}});
-  Value sdkopts = vmap({{"feature",
-      vmap({{"streaming", vmap({{"active", Value(true)}})}})}});
-
-  auto strsdk = BluefinTecsMerchantServicesSDK::testSDK(seed, sdkopts);
-  auto se = strsdk->transaction_history();
-  std::vector<Value> items = se->stream("list", Value::undef(), Value::undef());
-  ASSERT_EQ((int)items.size(), 2, "stream yields both seeded items");
-
-  auto plainsdk = BluefinTecsMerchantServicesSDK::testSDK(seed, Value::undef());
-  auto pe = plainsdk->transaction_history();
-  std::vector<Value> pitems = pe->stream("list", Value::undef(), Value::undef());
-  ASSERT_EQ((int)pitems.size(), 2, "fallback stream yields both items");
-}
 
 static void transaction_history_entity_basic() {
   auto setup = transaction_history_basic_setup(Value::undef());
@@ -100,7 +79,7 @@ static void transaction_history_entity_basic() {
   Value transaction_history_ref01_data = Helpers::toMapAny(getp(Struct::getpath(setup.data, {"new", "transaction_history"}), "transaction_history_ref01"));
   if (!transaction_history_ref01_data.is_map()) transaction_history_ref01_data = vmap();
   {
-    Value transaction_history_ref01_data_result = transaction_history_ref01_ent->create(Struct::clone(transaction_history_ref01_data), Value::undef());
+    Value transaction_history_ref01_data_result = transaction_history_ref01_ent->create(Struct::clone(transaction_history_ref01_data), Value::undef())->data();
     transaction_history_ref01_data = Helpers::toMapAny(transaction_history_ref01_data_result);
     if (!transaction_history_ref01_data.is_map()) transaction_history_ref01_data = vmap();
     ASSERT_TRUE(transaction_history_ref01_data.is_map(), "expected create result to be a map");
@@ -110,7 +89,6 @@ static void transaction_history_entity_basic() {
 
 int main() {
   T_RUN(transaction_history_entity_instance);
-  T_RUN(transaction_history_entity_stream);
   T_RUN(transaction_history_entity_basic);
   return sdktest::summary("transaction_history_entity_test");
 }

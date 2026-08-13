@@ -33,7 +33,7 @@ class DigitalServicesApiEntityTest extends TestCase
         // The basic flow consumes synthetic IDs from the fixture. In live mode
         // without an *_ENTID env override, those IDs hit the live API and 4xx.
         if (!empty($setup["synthetic_only"])) {
-            $this->markTestSkipped("live entity test uses synthetic IDs from fixture — set BLUEFINTECSMERCHANTSERVICES_TEST_DIGITAL_SERVICES_API_ENTID JSON to run live");
+            $this->markTestSkipped("live entity test uses synthetic IDs from fixture — set BLUEFIN_TECS_MERCHANT_SERVICES_TEST_DIGITAL_SERVICES_API_ENTID JSON to run live");
             return;
         }
         $client = $setup["client"];
@@ -44,7 +44,7 @@ class DigitalServicesApiEntityTest extends TestCase
             Vs::getpath($setup["data"], "new.digital_services_api"), "digital_services_api_ref01"));
 
         $digital_services_api_ref01_data_result = $digital_services_api_ref01_ent->create($digital_services_api_ref01_data, null);
-        $digital_services_api_ref01_data = Helpers::to_map($digital_services_api_ref01_data_result);
+        $digital_services_api_ref01_data = Helpers::to_map(is_object($digital_services_api_ref01_data_result) && method_exists($digital_services_api_ref01_data_result, 'data_get') ? $digital_services_api_ref01_data_result->data_get() : $digital_services_api_ref01_data_result);
         $this->assertNotNull($digital_services_api_ref01_data);
 
         // LOAD
@@ -77,39 +77,39 @@ function digital_services_api_basic_setup($extra)
     // Detect ENTID env override before envOverride consumes it. When live
     // mode is on without a real override, the basic test runs against synthetic
     // IDs from the fixture and 4xx's. Surface this so the test can skip.
-    $entid_env_raw = getenv("BLUEFINTECSMERCHANTSERVICES_TEST_DIGITAL_SERVICES_API_ENTID");
+    $entid_env_raw = getenv("BLUEFIN_TECS_MERCHANT_SERVICES_TEST_DIGITAL_SERVICES_API_ENTID");
     $idmap_overridden = $entid_env_raw !== false && str_starts_with(trim($entid_env_raw), "{");
 
     $env = Runner::env_override([
-        "BLUEFINTECSMERCHANTSERVICES_TEST_DIGITAL_SERVICES_API_ENTID" => $idmap,
-        "BLUEFINTECSMERCHANTSERVICES_TEST_LIVE" => "FALSE",
-        "BLUEFINTECSMERCHANTSERVICES_TEST_EXPLAIN" => "FALSE",
-        "BLUEFINTECSMERCHANTSERVICES_APIKEY" => "NONE",
+        "BLUEFIN_TECS_MERCHANT_SERVICES_TEST_DIGITAL_SERVICES_API_ENTID" => $idmap,
+        "BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE" => "FALSE",
+        "BLUEFIN_TECS_MERCHANT_SERVICES_TEST_EXPLAIN" => "FALSE",
+        "BLUEFIN_TECS_MERCHANT_SERVICES_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
-        $env["BLUEFINTECSMERCHANTSERVICES_TEST_DIGITAL_SERVICES_API_ENTID"]);
+        $env["BLUEFIN_TECS_MERCHANT_SERVICES_TEST_DIGITAL_SERVICES_API_ENTID"]);
     if ($idmap_resolved === null) {
         $idmap_resolved = Helpers::to_map($idmap);
     }
 
-    if ($env["BLUEFINTECSMERCHANTSERVICES_TEST_LIVE"] === "TRUE") {
+    if ($env["BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["BLUEFINTECSMERCHANTSERVICES_APIKEY"],
+                "apikey" => $env["BLUEFIN_TECS_MERCHANT_SERVICES_APIKEY"],
             ],
             $extra ?? [],
         ]);
         $client = new BluefinTecsMerchantServicesSDK(Helpers::to_map($merged_opts));
     }
 
-    $live = $env["BLUEFINTECSMERCHANTSERVICES_TEST_LIVE"] === "TRUE";
+    $live = $env["BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE"] === "TRUE";
     return [
         "client" => $client,
         "data" => $entity_data,
         "idmap" => $idmap_resolved,
         "env" => $env,
-        "explain" => $env["BLUEFINTECSMERCHANTSERVICES_TEST_EXPLAIN"] === "TRUE",
+        "explain" => $env["BLUEFIN_TECS_MERCHANT_SERVICES_TEST_EXPLAIN"] === "TRUE",
         "live" => $live,
         "synthetic_only" => $live && !$idmap_overridden,
         "now" => (int)(microtime(true) * 1000),

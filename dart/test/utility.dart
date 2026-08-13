@@ -34,8 +34,8 @@ String resolveTestPath(String rel) {
 Map<String, dynamic> envOverride(Map<String, dynamic> m) {
   final env = Platform.environment;
 
-  if ('TRUE' == env['BLUEFINTECSMERCHANTSERVICES_TEST_LIVE'] ||
-      'TRUE' == env['BLUEFINTECSMERCHANTSERVICES_TEST_OVERRIDE']) {
+  if ('TRUE' == env['BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE'] ||
+      'TRUE' == env['BLUEFIN_TECS_MERCHANT_SERVICES_TEST_OVERRIDE']) {
     for (final k in m.keys.toList()) {
       var envval = env[k];
       if (null != envval) {
@@ -45,8 +45,8 @@ Map<String, dynamic> envOverride(Map<String, dynamic> m) {
     }
   }
 
-  m['BLUEFINTECSMERCHANTSERVICES_TEST_EXPLAIN'] =
-      env['BLUEFINTECSMERCHANTSERVICES_TEST_EXPLAIN'] ?? m['BLUEFINTECSMERCHANTSERVICES_TEST_EXPLAIN'];
+  m['BLUEFIN_TECS_MERCHANT_SERVICES_TEST_EXPLAIN'] =
+      env['BLUEFIN_TECS_MERCHANT_SERVICES_TEST_EXPLAIN'] ?? m['BLUEFIN_TECS_MERCHANT_SERVICES_TEST_EXPLAIN'];
 
   return m;
 }

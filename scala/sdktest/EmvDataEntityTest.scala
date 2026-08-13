@@ -35,7 +35,7 @@ object EmvDataEntityTest {
       var emvDataRef01Data = Helpers.toMapAny(Struct.getprop(
           Struct.getpath(entityData, "new.emv_data"), "emv_data_ref01"))
       val emvDataRef01DataResult = emvDataRef01Ent.create(emvDataRef01Data, null)
-      emvDataRef01Data = Helpers.toMapAny(emvDataRef01DataResult)
+      emvDataRef01Data = Helpers.toMapAny(emvDataRef01DataResult match { case e: SdkEntity => e.data(); case o => o })
       rep.check("emv_data.create.map", emvDataRef01Data != null, "expected create result to be a map")
     }
   }

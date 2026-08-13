@@ -6,32 +6,32 @@ main: kit: entity: store_terminal_parameter: {
 
   fields: [
     {
-      name: "acq_tab_nexo"
+      name: "acqTabNexo"
       req: false
       type: "`$OBJECT`"
     }
     {
-      name: "config_version"
+      name: "configVersion"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "response_code"
+      name: "responseCode"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "response_message"
+      name: "responseMessage"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "serial_number"
+      name: "serialNumber"
       req: true
       type: "`$STRING`"
     }
     {
-      name: "tid_sent"
+      name: "tidSent"
       req: false
       type: "`$STRING`"
     }

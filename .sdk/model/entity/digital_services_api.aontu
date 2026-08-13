@@ -6,52 +6,52 @@ main: kit: entity: digital_services_api: {
 
   fields: [
     {
-      name: "clearing_date_from"
+      name: "clearingDateFrom"
       req: true
       type: "`$STRING`"
     }
     {
-      name: "clearing_date_to"
+      name: "clearingDateTo"
       req: true
       type: "`$STRING`"
     }
     {
-      name: "response_code"
+      name: "responseCode"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "response_message"
+      name: "responseMessage"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "tx_count"
+      name: "txCount"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "tx_id_end"
+      name: "txIdEnd"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "tx_id_start"
+      name: "txIdStart"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "tx_seq_no_end"
+      name: "txSeqNoEnd"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "tx_seq_no_start"
+      name: "txSeqNoStart"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "tx_total"
+      name: "txTotal"
       req: false
       type: "`$INTEGER`"
     }

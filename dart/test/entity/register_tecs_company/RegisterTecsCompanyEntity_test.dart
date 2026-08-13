@@ -47,7 +47,7 @@ void tests() {
       final register_tecs_company_ref01_ent = client.RegisterTecsCompany();
       dynamic register_tecs_company_ref01_data = setup['data']['new']['register_tecs_company']['register_tecs_company_ref01'];
 
-      register_tecs_company_ref01_data = await register_tecs_company_ref01_ent.create(register_tecs_company_ref01_data);
+      register_tecs_company_ref01_data = (await register_tecs_company_ref01_ent.create(register_tecs_company_ref01_data)).data();
       ok(null != register_tecs_company_ref01_data);
 
 

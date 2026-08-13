@@ -6,7 +6,7 @@ main: kit: entity: payment_manual: {
 
   fields: [
     {
-      name: "acquirer_name"
+      name: "acquirerName"
       req: false
       type: "`$STRING`"
     }
@@ -16,17 +16,17 @@ main: kit: entity: payment_manual: {
       type: "`$INTEGER`"
     }
     {
-      name: "authorization_number"
+      name: "authorizationNumber"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "card_number"
+      name: "cardNumber"
       req: true
       type: "`$STRING`"
     }
     {
-      name: "card_type"
+      name: "cardType"
       req: false
       type: "`$STRING`"
     }
@@ -41,22 +41,22 @@ main: kit: entity: payment_manual: {
       type: "`$STRING`"
     }
     {
-      name: "date_time_tx"
+      name: "dateTimeTx"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "exp_date"
+      name: "expDate"
       req: true
       type: "`$STRING`"
     }
     {
-      name: "merchant_id"
+      name: "merchantId"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "original_transaction_id"
+      name: "originalTransactionId"
       req: false
       type: "`$STRING`"
     }
@@ -66,17 +66,17 @@ main: kit: entity: payment_manual: {
       type: "`$STRING`"
     }
     {
-      name: "response_code"
+      name: "responseCode"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "response_message"
+      name: "responseMessage"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "terminal_id"
+      name: "terminalId"
       op: {
         create: {
           req: true
@@ -87,7 +87,7 @@ main: kit: entity: payment_manual: {
       type: "`$STRING`"
     }
     {
-      name: "transaction_id"
+      name: "transactionId"
       req: false
       type: "`$STRING`"
     }

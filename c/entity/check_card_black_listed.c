@@ -14,6 +14,8 @@ typedef struct check_card_black_listed_entity {
   voxgig_value* data;     // Map
   voxgig_value* mtch;     // Map
   Context* entctx;
+  // Set once a successful `remove` resolves on this instance.
+  bool deleted;
 } check_card_black_listed_entity;
 
 typedef void (*check_card_black_listed_postdone_fn)(check_card_black_listed_entity* self, Context* ctx);
@@ -24,11 +26,14 @@ static const char* check_card_black_listed_get_name(Entity* e);
 static Entity* check_card_black_listed_make(Entity* e);
 static voxgig_value* check_card_black_listed_data(Entity* e, voxgig_value* args);
 static voxgig_value* check_card_black_listed_matchv(Entity* e, voxgig_value* args);
-static voxgig_value* check_card_black_listed_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
-static voxgig_value* check_card_black_listed_list(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
-static voxgig_value* check_card_black_listed_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
-static voxgig_value* check_card_black_listed_update(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
-static voxgig_value* check_card_black_listed_remove(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+// Ops resolve to the ENTITY (`list` to a NULL-terminated array of them).
+static Entity* check_card_black_listed_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static Entity** check_card_black_listed_list(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static Entity* check_card_black_listed_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
+static Entity* check_card_black_listed_update(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
+static Entity* check_card_black_listed_remove(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static void check_card_black_listed_mark_deleted(Entity* e);
+static bool check_card_black_listed_deleted(Entity* e);
 
 static Context* check_card_black_listed_ent_ctx(check_card_black_listed_entity* self) {
   return self->entctx;
@@ -236,13 +241,13 @@ static voxgig_value* check_card_black_listed_matchv(Entity* e, voxgig_value* arg
   return voxgig_clone(self->mtch);
 }
 
-static voxgig_value* check_card_black_listed_load(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* check_card_black_listed_load(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("load", "check_card_black_listed");
   return NULL;
 }
 
-static voxgig_value* check_card_black_listed_list(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity** check_card_black_listed_list(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("list", "check_card_black_listed");
   return NULL;
@@ -260,7 +265,7 @@ static void check_card_black_listed_create_postdone(check_card_black_listed_enti
   }
 }
 
-static voxgig_value* check_card_black_listed_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err) {
+static Entity* check_card_black_listed_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err) {
   check_card_black_listed_entity* self = (check_card_black_listed_entity*)e;
   CtxSpec cs;
   memset(&cs, 0, sizeof(cs));
@@ -270,20 +275,38 @@ static voxgig_value* check_card_black_listed_create(Entity* e, voxgig_value* req
   cs.data = self->data;
   cs.reqdata = reqdata;
   Context* ctx = make_context_util(cs, check_card_black_listed_ent_ctx(self));
-  return check_card_black_listed_run_op(self, ctx, check_card_black_listed_create_postdone, err);
+  check_card_black_listed_run_op(self, ctx, check_card_black_listed_create_postdone, err);
+  if (*err) return NULL;
+
+  // The operation resolves to THIS entity: run_op has just absorbed the
+  // result into it, and the caller reaches the record through vt->data.
+  // See AGENTS.md "Entity operations return ENTITIES".
+
+  return e;
 }
 
 
-static voxgig_value* check_card_black_listed_update(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* check_card_black_listed_update(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("update", "check_card_black_listed");
   return NULL;
 }
 
-static voxgig_value* check_card_black_listed_remove(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* check_card_black_listed_remove(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("remove", "check_card_black_listed");
   return NULL;
+}
+
+// `remove` resolves to the entity, marked. The instance KEEPS the data it
+// held - a caller can still read what was deleted - but it is no longer a
+// live record.
+static void check_card_black_listed_mark_deleted(Entity* e) {
+  ((check_card_black_listed_entity*)e)->deleted = true;
+}
+
+static bool check_card_black_listed_deleted(Entity* e) {
+  return ((check_card_black_listed_entity*)e)->deleted;
 }
 
 static const EntityVT check_card_black_listed_VT = {
@@ -291,6 +314,8 @@ static const EntityVT check_card_black_listed_VT = {
   check_card_black_listed_make,
   check_card_black_listed_data,
   check_card_black_listed_matchv,
+  check_card_black_listed_mark_deleted,
+  check_card_black_listed_deleted,
   check_card_black_listed_load,
   check_card_black_listed_list,
   check_card_black_listed_create,

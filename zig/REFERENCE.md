@@ -283,91 +283,91 @@ const cancel_transaction = client.cancel_transaction(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `[]const u8` | No |  |
-| `acquirer_name` | `[]const u8` | No |  |
-| `actual_bonus_point` | `[]const u8` | No |  |
+| `acquirerId` | `[]const u8` | No |  |
+| `acquirerName` | `[]const u8` | No |  |
+| `actualBonusPoints` | `[]const u8` | No |  |
 | `amount` | `i64` | No |  |
-| `authorization_code` | `[]const u8` | No |  |
-| `balance_amount` | `[]const u8` | No |  |
-| `card_brand` | `[]const u8` | No |  |
-| `card_number` | `[]const u8` | No |  |
-| `client_id` | `i64` | Yes |  |
+| `authorizationCode` | `[]const u8` | No |  |
+| `balanceAmount` | `[]const u8` | No |  |
+| `cardBrand` | `[]const u8` | No |  |
+| `cardNumber` | `[]const u8` | No |  |
+| `clientId` | `i64` | Yes |  |
 | `currency` | `[]const u8` | Yes |  |
 | `cvc` | `[]const u8` | No |  |
-| `ec_data` | `[]const u8` | No |  |
-| `ecr_data` | `[]const u8` | No |  |
-| `emv_data` | `[]const u8` | No |  |
-| `exchange_fee` | `i64` | No |  |
-| `exchange_rate` | `[]const u8` | No |  |
-| `language_code` | `[]const u8` | No |  |
-| `merchant_address` | `[]const u8` | No |  |
-| `merchant_name` | `[]const u8` | No |  |
-| `merchant_number` | `[]const u8` | No |  |
-| `message_type` | `[]const u8` | No |  |
-| `original_trace_number` | `i64` | No |  |
-| `original_transaction_id` | `[]const u8` | No |  |
+| `ecData` | `[]const u8` | No |  |
+| `ecrData` | `[]const u8` | No |  |
+| `emvData` | `[]const u8` | No |  |
+| `exchangeFee` | `i64` | No |  |
+| `exchangeRate` | `[]const u8` | No |  |
+| `languageCode` | `[]const u8` | No |  |
+| `merchantAddress` | `[]const u8` | No |  |
+| `merchantName` | `[]const u8` | No |  |
+| `merchantNumber` | `[]const u8` | No |  |
+| `messageType` | `[]const u8` | No |  |
+| `originalTraceNumber` | `i64` | No |  |
+| `originalTransactionId` | `[]const u8` | No |  |
 | `password` | `[]const u8` | No |  |
-| `payment_reason` | `[]const u8` | No |  |
-| `receipt_footer` | `[]const u8` | No |  |
-| `receipt_header` | `[]const u8` | No |  |
-| `receipt_layout` | `i64` | No |  |
-| `receipt_number` | `[]const u8` | Yes |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `[]const u8` | No |  |
-| `serial_number` | `[]const u8` | No |  |
+| `paymentReason` | `[]const u8` | No |  |
+| `receiptFooter` | `[]const u8` | No |  |
+| `receiptHeader` | `[]const u8` | No |  |
+| `receiptLayout` | `i64` | No |  |
+| `receiptNumber` | `[]const u8` | Yes |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `[]const u8` | No |  |
+| `serialNumber` | `[]const u8` | No |  |
 | `svc` | `[]const u8` | No |  |
-| `terminal_id` | `i64` | Yes |  |
-| `terminal_location` | `[]const u8` | No |  |
-| `trace_number` | `i64` | No |  |
-| `transaction_date` | `[]const u8` | No |  |
-| `transaction_id` | `[]const u8` | No |  |
-| `tx_type` | `[]const u8` | No |  |
-| `user_data` | `[]const u8` | No |  |
+| `terminalId` | `i64` | Yes |  |
+| `terminalLocation` | `[]const u8` | No |  |
+| `traceNumber` | `i64` | No |  |
+| `transactionDate` | `[]const u8` | No |  |
+| `transactionId` | `[]const u8` | No |  |
+| `txType` | `[]const u8` | No |  |
+| `userData` | `[]const u8` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `acquirer_id` | - |
-| `acquirer_name` | - |
-| `actual_bonus_point` | - |
+| `acquirerId` | - |
+| `acquirerName` | - |
+| `actualBonusPoints` | - |
 | `amount` | Yes |
-| `authorization_code` | - |
-| `balance_amount` | - |
-| `card_brand` | - |
-| `card_number` | - |
-| `client_id` | - |
+| `authorizationCode` | - |
+| `balanceAmount` | - |
+| `cardBrand` | - |
+| `cardNumber` | - |
+| `clientId` | - |
 | `currency` | - |
 | `cvc` | - |
-| `ec_data` | - |
-| `ecr_data` | - |
-| `emv_data` | - |
-| `exchange_fee` | - |
-| `exchange_rate` | - |
-| `language_code` | - |
-| `merchant_address` | - |
-| `merchant_name` | - |
-| `merchant_number` | - |
-| `message_type` | Yes |
-| `original_trace_number` | - |
-| `original_transaction_id` | Yes |
+| `ecData` | - |
+| `ecrData` | - |
+| `emvData` | - |
+| `exchangeFee` | - |
+| `exchangeRate` | - |
+| `languageCode` | - |
+| `merchantAddress` | - |
+| `merchantName` | - |
+| `merchantNumber` | - |
+| `messageType` | Yes |
+| `originalTraceNumber` | - |
+| `originalTransactionId` | Yes |
 | `password` | - |
-| `payment_reason` | - |
-| `receipt_footer` | - |
-| `receipt_header` | - |
-| `receipt_layout` | - |
-| `receipt_number` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `serial_number` | - |
+| `paymentReason` | - |
+| `receiptFooter` | - |
+| `receiptHeader` | - |
+| `receiptLayout` | - |
+| `receiptNumber` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `serialNumber` | - |
 | `svc` | - |
-| `terminal_id` | - |
-| `terminal_location` | - |
-| `trace_number` | - |
-| `transaction_date` | Yes |
-| `transaction_id` | Yes |
-| `tx_type` | - |
-| `user_data` | - |
+| `terminalId` | - |
+| `terminalLocation` | - |
+| `traceNumber` | - |
+| `transactionDate` | Yes |
+| `transactionId` | Yes |
+| `txType` | - |
+| `userData` | - |
 
 ### Operations
 
@@ -377,10 +377,10 @@ Create a new entity with the given data. `.ok` carries the created entity data.
 
 ```zig
 switch (client.cancel_transaction(h.vnull()).create(h.jo(&.{
-    .{ "client_id", h.vnum(1) }, // i64
+    .{ "clientId", h.vnum(1) }, // i64
     .{ "currency", h.vstr("example_currency") }, // []const u8
-    .{ "receipt_number", h.vstr("example_receipt_number") }, // []const u8
-    .{ "terminal_id", h.vnum(1) }, // i64
+    .{ "receiptNumber", h.vstr("example_receiptNumber") }, // []const u8
+    .{ "terminalId", h.vnum(1) }, // i64
 }), h.vnull())) {
     .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -418,9 +418,9 @@ const check_card_black_listed = client.check_card_black_listed(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `card_no` | `[]const u8` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `[]const u8` | No |  |
+| `cardNo` | `[]const u8` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `[]const u8` | No |  |
 
 ### Operations
 
@@ -467,13 +467,13 @@ const create_product = client.create_product(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `i64` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `[]const u8` | No |  |
-| `template_name` | `[]const u8` | Yes |  |
-| `template_type` | `[]const u8` | Yes |  |
-| `template_xml` | `[]const u8` | Yes |  |
-| `terminal_type` | `[]const u8` | Yes |  |
+| `acquirerId` | `i64` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `[]const u8` | No |  |
+| `templateName` | `[]const u8` | Yes |  |
+| `templateType` | `[]const u8` | Yes |  |
+| `templateXml` | `[]const u8` | Yes |  |
+| `terminalType` | `[]const u8` | Yes |  |
 
 ### Operations
 
@@ -483,10 +483,10 @@ Create a new entity with the given data. `.ok` carries the created entity data.
 
 ```zig
 switch (client.create_product(h.vnull()).create(h.jo(&.{
-    .{ "template_name", h.vstr("example_template_name") }, // []const u8
-    .{ "template_type", h.vstr("example_template_type") }, // []const u8
-    .{ "template_xml", h.vstr("example_template_xml") }, // []const u8
-    .{ "terminal_type", h.vstr("example_terminal_type") }, // []const u8
+    .{ "templateName", h.vstr("example_templateName") }, // []const u8
+    .{ "templateType", h.vstr("example_templateType") }, // []const u8
+    .{ "templateXml", h.vstr("example_templateXml") }, // []const u8
+    .{ "terminalType", h.vstr("example_terminalType") }, // []const u8
 }), h.vnull())) {
     .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -524,13 +524,13 @@ const deactivate_terminal = client.deactivate_terminal(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `corporate_uuid` | `[]const u8` | No |  |
-| `deactivation_reason` | `[]const u8` | Yes |  |
-| `package_order_uuid` | `[]const u8` | No |  |
-| `product_order_uuid` | `[]const u8` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `[]const u8` | No |  |
-| `terminal_id` | `i64` | Yes |  |
+| `corporateUuid` | `[]const u8` | No |  |
+| `deactivationReason` | `[]const u8` | Yes |  |
+| `packageOrderUuid` | `[]const u8` | No |  |
+| `productOrderUuid` | `[]const u8` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `[]const u8` | No |  |
+| `terminalId` | `i64` | Yes |  |
 
 ### Operations
 
@@ -540,8 +540,8 @@ Create a new entity with the given data. `.ok` carries the created entity data.
 
 ```zig
 switch (client.deactivate_terminal(h.vnull()).create(h.jo(&.{
-    .{ "deactivation_reason", h.vstr("example_deactivation_reason") }, // []const u8
-    .{ "terminal_id", h.vnum(1) }, // i64
+    .{ "deactivationReason", h.vstr("example_deactivationReason") }, // []const u8
+    .{ "terminalId", h.vnum(1) }, // i64
 }), h.vnull())) {
     .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -579,16 +579,16 @@ const digital_services_api = client.digital_services_api(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearing_date_from` | `[]const u8` | Yes |  |
-| `clearing_date_to` | `[]const u8` | Yes |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `[]const u8` | No |  |
-| `tx_count` | `i64` | No |  |
-| `tx_id_end` | `[]const u8` | No |  |
-| `tx_id_start` | `[]const u8` | No |  |
-| `tx_seq_no_end` | `i64` | No |  |
-| `tx_seq_no_start` | `i64` | No |  |
-| `tx_total` | `i64` | No |  |
+| `clearingDateFrom` | `[]const u8` | Yes |  |
+| `clearingDateTo` | `[]const u8` | Yes |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `[]const u8` | No |  |
+| `txCount` | `i64` | No |  |
+| `txIdEnd` | `[]const u8` | No |  |
+| `txIdStart` | `[]const u8` | No |  |
+| `txSeqNoEnd` | `i64` | No |  |
+| `txSeqNoStart` | `i64` | No |  |
+| `txTotal` | `i64` | No |  |
 
 ### Operations
 
@@ -598,6 +598,8 @@ Create a new entity with the given data. `.ok` carries the created entity data.
 
 ```zig
 switch (client.digital_services_api(h.vnull()).create(h.jo(&.{
+    .{ "clearingDateFrom", h.vstr("example_clearingDateFrom") }, // []const u8
+    .{ "clearingDateTo", h.vstr("example_clearingDateTo") }, // []const u8
 }), h.vnull())) {
     .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -646,12 +648,12 @@ const ec_data_ecom = client.ec_data_ecom(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ecom_data` | `[]const u8` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `[]const u8` | No |  |
-| `terminal_id` | `i64` | Yes |  |
-| `transaction_id` | `[]const u8` | Yes |  |
-| `transaction_type` | `[]const u8` | Yes |  |
+| `ecomData` | `[]const u8` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `[]const u8` | No |  |
+| `terminalId` | `i64` | Yes |  |
+| `transactionId` | `[]const u8` | Yes |  |
+| `transactionType` | `[]const u8` | Yes |  |
 
 ### Operations
 
@@ -661,9 +663,9 @@ Create a new entity with the given data. `.ok` carries the created entity data.
 
 ```zig
 switch (client.ec_data_ecom(h.vnull()).create(h.jo(&.{
-    .{ "terminal_id", h.vnum(1) }, // i64
-    .{ "transaction_id", h.vstr("example_transaction_id") }, // []const u8
-    .{ "transaction_type", h.vstr("example_transaction_type") }, // []const u8
+    .{ "terminalId", h.vnum(1) }, // i64
+    .{ "transactionId", h.vstr("example_transactionId") }, // []const u8
+    .{ "transactionType", h.vstr("example_transactionType") }, // []const u8
 }), h.vnull())) {
     .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -701,11 +703,11 @@ const ecom_parameter = client.ecom_parameter(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ecom_pass` | `[]const u8` | No |  |
-| `ecom_skey` | `[]const u8` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `[]const u8` | No |  |
-| `terminal_id` | `i64` | Yes |  |
+| `ecomPass` | `[]const u8` | No |  |
+| `ecomSkey` | `[]const u8` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `[]const u8` | No |  |
+| `terminalId` | `i64` | Yes |  |
 
 ### Operations
 
@@ -715,7 +717,7 @@ Create a new entity with the given data. `.ok` carries the created entity data.
 
 ```zig
 switch (client.ecom_parameter(h.vnull()).create(h.jo(&.{
-    .{ "terminal_id", h.vnum(1) }, // i64
+    .{ "terminalId", h.vnum(1) }, // i64
 }), h.vnull())) {
     .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -753,12 +755,12 @@ const ecr_data = client.ecr_data(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `ecr_data` | `[]const u8` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `[]const u8` | No |  |
-| `terminal_id` | `i64` | Yes |  |
-| `transaction_id` | `[]const u8` | Yes |  |
-| `transaction_type` | `[]const u8` | Yes |  |
+| `ecrData` | `[]const u8` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `[]const u8` | No |  |
+| `terminalId` | `i64` | Yes |  |
+| `transactionId` | `[]const u8` | Yes |  |
+| `transactionType` | `[]const u8` | Yes |  |
 
 ### Operations
 
@@ -768,9 +770,9 @@ Create a new entity with the given data. `.ok` carries the created entity data.
 
 ```zig
 switch (client.ecr_data(h.vnull()).create(h.jo(&.{
-    .{ "terminal_id", h.vnum(1) }, // i64
-    .{ "transaction_id", h.vstr("example_transaction_id") }, // []const u8
-    .{ "transaction_type", h.vstr("example_transaction_type") }, // []const u8
+    .{ "terminalId", h.vnum(1) }, // i64
+    .{ "transactionId", h.vstr("example_transactionId") }, // []const u8
+    .{ "transactionType", h.vstr("example_transactionType") }, // []const u8
 }), h.vnull())) {
     .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -808,12 +810,12 @@ const emv_data = client.emv_data(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `emv_data` | `[]const u8` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `[]const u8` | No |  |
-| `terminal_id` | `i64` | Yes |  |
-| `transaction_id` | `[]const u8` | Yes |  |
-| `transaction_type` | `[]const u8` | Yes |  |
+| `emvData` | `[]const u8` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `[]const u8` | No |  |
+| `terminalId` | `i64` | Yes |  |
+| `transactionId` | `[]const u8` | Yes |  |
+| `transactionType` | `[]const u8` | Yes |  |
 
 ### Operations
 
@@ -823,9 +825,9 @@ Create a new entity with the given data. `.ok` carries the created entity data.
 
 ```zig
 switch (client.emv_data(h.vnull()).create(h.jo(&.{
-    .{ "terminal_id", h.vnum(1) }, // i64
-    .{ "transaction_id", h.vstr("example_transaction_id") }, // []const u8
-    .{ "transaction_type", h.vstr("example_transaction_type") }, // []const u8
+    .{ "terminalId", h.vnum(1) }, // i64
+    .{ "transactionId", h.vstr("example_transactionId") }, // []const u8
+    .{ "transactionType", h.vstr("example_transactionType") }, // []const u8
 }), h.vnull())) {
     .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -863,20 +865,20 @@ const enable_acquiring = client.enable_acquiring(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `account_no` | `i64` | No |  |
-| `additional_data` | `Value (object)` | No |  |
-| `corporate_uuid` | `[]const u8` | Yes |  |
+| `accountNo` | `i64` | No |  |
+| `additionalData` | `Value (object)` | No |  |
+| `corporateUuid` | `[]const u8` | Yes |  |
 | `currency` | `[]const u8` | Yes |  |
-| `merchant_category_code` | `i64` | Yes |  |
-| `package_order_uuid` | `[]const u8` | Yes |  |
-| `product_order_uuid` | `[]const u8` | Yes |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `[]const u8` | No |  |
-| `sorting_code` | `i64` | No |  |
-| `template_name` | `[]const u8` | Yes |  |
-| `terminal_id` | `Value (array)` | No |  |
-| `terminal_id_acq` | `[]const u8` | No |  |
-| `vu_nummer` | `[]const u8` | No |  |
+| `merchantCategoryCode` | `i64` | Yes |  |
+| `packageOrderUuid` | `[]const u8` | Yes |  |
+| `productOrderUuid` | `[]const u8` | Yes |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `[]const u8` | No |  |
+| `sortingCode` | `i64` | No |  |
+| `templateName` | `[]const u8` | Yes |  |
+| `terminalIdAcq` | `[]const u8` | No |  |
+| `terminalIds` | `Value (array)` | No |  |
+| `vuNummer` | `[]const u8` | No |  |
 
 ### Operations
 
@@ -886,12 +888,12 @@ Create a new entity with the given data. `.ok` carries the created entity data.
 
 ```zig
 switch (client.enable_acquiring(h.vnull()).create(h.jo(&.{
-    .{ "corporate_uuid", h.vstr("example_corporate_uuid") }, // []const u8
+    .{ "corporateUuid", h.vstr("example_corporateUuid") }, // []const u8
     .{ "currency", h.vstr("example_currency") }, // []const u8
-    .{ "merchant_category_code", h.vnum(1) }, // i64
-    .{ "package_order_uuid", h.vstr("example_package_order_uuid") }, // []const u8
-    .{ "product_order_uuid", h.vstr("example_product_order_uuid") }, // []const u8
-    .{ "template_name", h.vstr("example_template_name") }, // []const u8
+    .{ "merchantCategoryCode", h.vnum(1) }, // i64
+    .{ "packageOrderUuid", h.vstr("example_packageOrderUuid") }, // []const u8
+    .{ "productOrderUuid", h.vstr("example_productOrderUuid") }, // []const u8
+    .{ "templateName", h.vstr("example_templateName") }, // []const u8
 }), h.vnull())) {
     .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -929,9 +931,9 @@ const get_merchant_contract_number = client.get_merchant_contract_number(h.vnull
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `merchant_contract_number` | `[]const u8` | Yes |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `[]const u8` | No |  |
+| `merchantContractNumber` | `[]const u8` | Yes |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `[]const u8` | No |  |
 
 ### Operations
 
@@ -941,7 +943,7 @@ Create a new entity with the given data. `.ok` carries the created entity data.
 
 ```zig
 switch (client.get_merchant_contract_number(h.vnull()).create(h.jo(&.{
-    .{ "merchant_contract_number", h.vstr("example_merchant_contract_number") }, // []const u8
+    .{ "merchantContractNumber", h.vstr("example_merchantContractNumber") }, // []const u8
 }), h.vnull())) {
     .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -979,9 +981,9 @@ const get_template_xml = client.get_template_xml(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `i64` | No |  |
-| `response_message` | `[]const u8` | No |  |
-| `template_name` | `[]const u8` | Yes |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `[]const u8` | No |  |
+| `templateName` | `[]const u8` | Yes |  |
 
 ### Operations
 
@@ -991,7 +993,7 @@ Create a new entity with the given data. `.ok` carries the created entity data.
 
 ```zig
 switch (client.get_template_xml(h.vnull()).create(h.jo(&.{
-    .{ "template_name", h.vstr("example_template_name") }, // []const u8
+    .{ "templateName", h.vstr("example_templateName") }, // []const u8
 }), h.vnull())) {
     .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -1029,9 +1031,9 @@ const introduce_mandator = client.introduce_mandator(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `mandator_name` | `[]const u8` | Yes |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `[]const u8` | No |  |
+| `mandatorName` | `[]const u8` | Yes |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `[]const u8` | No |  |
 
 ### Operations
 
@@ -1041,7 +1043,7 @@ Create a new entity with the given data. `.ok` carries the created entity data.
 
 ```zig
 switch (client.introduce_mandator(h.vnull()).create(h.jo(&.{
-    .{ "mandator_name", h.vstr("example_mandator_name") }, // []const u8
+    .{ "mandatorName", h.vstr("example_mandatorName") }, // []const u8
 }), h.vnull())) {
     .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -1079,9 +1081,9 @@ const introduce_package = client.introduce_package(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `i64` | No |  |
-| `response_message` | `[]const u8` | No |  |
-| `terminal_template_description` | `[]const u8` | Yes |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `[]const u8` | No |  |
+| `terminalTemplateDescription` | `[]const u8` | Yes |  |
 
 ### Operations
 
@@ -1091,7 +1093,7 @@ Create a new entity with the given data. `.ok` carries the created entity data.
 
 ```zig
 switch (client.introduce_package(h.vnull()).create(h.jo(&.{
-    .{ "terminal_template_description", h.vstr("example_terminal_template_description") }, // []const u8
+    .{ "terminalTemplateDescription", h.vstr("example_terminalTemplateDescription") }, // []const u8
 }), h.vnull())) {
     .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -1130,15 +1132,15 @@ const keep_alive = client.keep_alive(h.vnull());
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `hwserialno` | `[]const u8` | No |  |
-| `ka_date_time_from` | `[]const u8` | No |  |
-| `ka_date_time_to` | `[]const u8` | No |  |
-| `keep_alive_data` | `Value (array)` | No |  |
+| `kaDateTimeFrom` | `[]const u8` | No |  |
+| `kaDateTimeTo` | `[]const u8` | No |  |
+| `keepAliveData` | `Value (array)` | No |  |
 | `pagination` | `Value (object)` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `[]const u8` | No |  |
-| `terminal_date_time_from` | `[]const u8` | No |  |
-| `terminal_date_time_to` | `[]const u8` | No |  |
-| `terminal_id` | `i64` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `[]const u8` | No |  |
+| `terminalDateTimeFrom` | `[]const u8` | No |  |
+| `terminalDateTimeTo` | `[]const u8` | No |  |
+| `terminalId` | `i64` | No |  |
 
 ### Operations
 
@@ -1185,12 +1187,12 @@ const list_terminal = client.list_terminal(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `corporate_uuid` | `Value (array)` | No |  |
+| `corporateUuid` | `Value (array)` | No |  |
 | `filter` | `Value (object)` | No |  |
 | `pagination` | `Value (object)` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `[]const u8` | No |  |
-| `terminal` | `Value (array)` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `[]const u8` | No |  |
+| `terminals` | `Value (array)` | No |  |
 
 ### Operations
 
@@ -1237,12 +1239,12 @@ const mandator_clearing_export = client.mandator_clearing_export(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearing_date_from` | `[]const u8` | Yes |  |
-| `clearing_date_to` | `[]const u8` | Yes |  |
+| `clearingDateFrom` | `[]const u8` | Yes |  |
+| `clearingDateTo` | `[]const u8` | Yes |  |
 | `pagination` | `Value (object)` | No |  |
-| `record` | `Value (array)` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `[]const u8` | No |  |
+| `records` | `Value (array)` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `[]const u8` | No |  |
 
 ### Operations
 
@@ -1252,8 +1254,8 @@ Create a new entity with the given data. `.ok` carries the created entity data.
 
 ```zig
 switch (client.mandator_clearing_export(h.vnull()).create(h.jo(&.{
-    .{ "clearing_date_from", h.vstr("example_clearing_date_from") }, // []const u8
-    .{ "clearing_date_to", h.vstr("example_clearing_date_to") }, // []const u8
+    .{ "clearingDateFrom", h.vstr("example_clearingDateFrom") }, // []const u8
+    .{ "clearingDateTo", h.vstr("example_clearingDateTo") }, // []const u8
 }), h.vnull())) {
     .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -1291,12 +1293,12 @@ const mandator_clearing_export_download = client.mandator_clearing_export_downlo
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearing_date_from` | `[]const u8` | Yes |  |
-| `clearing_date_to` | `[]const u8` | Yes |  |
-| `file_id` | `[]const u8` | No |  |
-| `filename_template` | `[]const u8` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `[]const u8` | No |  |
+| `clearingDateFrom` | `[]const u8` | Yes |  |
+| `clearingDateTo` | `[]const u8` | Yes |  |
+| `fileId` | `[]const u8` | No |  |
+| `filenameTemplate` | `[]const u8` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `[]const u8` | No |  |
 | `status` | `[]const u8` | No |  |
 
 ### Operations
@@ -1307,8 +1309,8 @@ Create a new entity with the given data. `.ok` carries the created entity data.
 
 ```zig
 switch (client.mandator_clearing_export_download(h.vnull()).create(h.jo(&.{
-    .{ "clearing_date_from", h.vstr("example_clearing_date_from") }, // []const u8
-    .{ "clearing_date_to", h.vstr("example_clearing_date_to") }, // []const u8
+    .{ "clearingDateFrom", h.vstr("example_clearingDateFrom") }, // []const u8
+    .{ "clearingDateTo", h.vstr("example_clearingDateTo") }, // []const u8
 }), h.vnull())) {
     .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -1357,11 +1359,11 @@ const mandator_clearing_export_summary = client.mandator_clearing_export_summary
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearing_date_from` | `[]const u8` | Yes |  |
-| `clearing_date_to` | `[]const u8` | Yes |  |
-| `record` | `Value (array)` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `[]const u8` | No |  |
+| `clearingDateFrom` | `[]const u8` | Yes |  |
+| `clearingDateTo` | `[]const u8` | Yes |  |
+| `records` | `Value (array)` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `[]const u8` | No |  |
 
 ### Operations
 
@@ -1371,8 +1373,8 @@ Create a new entity with the given data. `.ok` carries the created entity data.
 
 ```zig
 switch (client.mandator_clearing_export_summary(h.vnull()).create(h.jo(&.{
-    .{ "clearing_date_from", h.vstr("example_clearing_date_from") }, // []const u8
-    .{ "clearing_date_to", h.vstr("example_clearing_date_to") }, // []const u8
+    .{ "clearingDateFrom", h.vstr("example_clearingDateFrom") }, // []const u8
+    .{ "clearingDateTo", h.vstr("example_clearingDateTo") }, // []const u8
 }), h.vnull())) {
     .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -1410,30 +1412,30 @@ const merchant_portal_services_api = client.merchant_portal_services_api(h.vnull
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `3_d_secure` | `[]const u8` | No |  |
-| `authorization_code` | `[]const u8` | No |  |
-| `card_brand` | `[]const u8` | No |  |
-| `clearing_amount_from` | `[]const u8` | No |  |
-| `clearing_amount_to` | `[]const u8` | No |  |
-| `clearing_currency` | `[]const u8` | No |  |
-| `clearing_status` | `[]const u8` | No |  |
-| `corporate_uuid` | `[]const u8` | No |  |
-| `order_by_transaction_date` | `[]const u8` | No |  |
+| `3DSecure` | `[]const u8` | No |  |
+| `authorizationCode` | `[]const u8` | No |  |
+| `cardBrand` | `[]const u8` | No |  |
+| `clearingAmountFrom` | `[]const u8` | No |  |
+| `clearingAmountTo` | `[]const u8` | No |  |
+| `clearingCurrency` | `[]const u8` | No |  |
+| `clearingStatus` | `[]const u8` | No |  |
+| `corporateUUID` | `[]const u8` | No |  |
+| `orderByTransactionDate` | `[]const u8` | No |  |
 | `pagination` | `Value (object)` | No |  |
-| `receipt_number` | `[]const u8` | No |  |
-| `referenced_transaction_id` | `[]const u8` | No |  |
-| `retrieval_reference_number` | `[]const u8` | No |  |
-| `source_id` | `i64` | No |  |
-| `tecsengine_response_code_from` | `[]const u8` | No |  |
-| `tecsengine_response_code_to` | `[]const u8` | No |  |
-| `terminal_id` | `i64` | No |  |
-| `trace_number` | `[]const u8` | No |  |
-| `transaction_amount_from` | `[]const u8` | No |  |
-| `transaction_amount_to` | `[]const u8` | No |  |
-| `transaction_date_from` | `[]const u8` | No |  |
-| `transaction_date_to` | `[]const u8` | No |  |
-| `transaction_id` | `[]const u8` | No |  |
-| `transaction_type` | `[]const u8` | No |  |
+| `receiptNumber` | `[]const u8` | No |  |
+| `referencedTransactionId` | `[]const u8` | No |  |
+| `retrievalReferenceNumber` | `[]const u8` | No |  |
+| `sourceId` | `i64` | No |  |
+| `tecsengineResponseCodeFrom` | `[]const u8` | No |  |
+| `tecsengineResponseCodeTo` | `[]const u8` | No |  |
+| `terminalId` | `i64` | No |  |
+| `traceNumber` | `[]const u8` | No |  |
+| `transactionAmountFrom` | `[]const u8` | No |  |
+| `transactionAmountTo` | `[]const u8` | No |  |
+| `transactionDateFrom` | `[]const u8` | No |  |
+| `transactionDateTo` | `[]const u8` | No |  |
+| `transactionId` | `[]const u8` | No |  |
+| `transactionType` | `[]const u8` | No |  |
 | `wallet` | `[]const u8` | No |  |
 
 ### Operations
@@ -1481,11 +1483,11 @@ const move_tid = client.move_tid(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `productorderuuid` | `Value (array)` | Yes |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `[]const u8` | No |  |
-| `target_packageorderuuid` | `[]const u8` | No |  |
-| `target_productorderuuid` | `[]const u8` | No |  |
+| `productorderuuids` | `Value (array)` | Yes |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `[]const u8` | No |  |
+| `targetPackageorderuuid` | `[]const u8` | No |  |
+| `targetProductorderuuid` | `[]const u8` | No |  |
 
 ### Operations
 
@@ -1495,7 +1497,7 @@ Create a new entity with the given data. `.ok` carries the created entity data.
 
 ```zig
 switch (client.move_tid(h.vnull()).create(h.jo(&.{
-    .{ "productorderuuid", h.olist() }, // Value (array)
+    .{ "productorderuuids", h.olist() }, // Value (array)
 }), h.vnull())) {
     .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -1533,44 +1535,44 @@ const payment_manual = client.payment_manual(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_name` | `[]const u8` | No |  |
+| `acquirerName` | `[]const u8` | No |  |
 | `amount` | `i64` | Yes |  |
-| `authorization_number` | `[]const u8` | No |  |
-| `card_number` | `[]const u8` | Yes |  |
-| `card_type` | `[]const u8` | No |  |
+| `authorizationNumber` | `[]const u8` | No |  |
+| `cardNumber` | `[]const u8` | Yes |  |
+| `cardType` | `[]const u8` | No |  |
 | `currency` | `[]const u8` | Yes |  |
 | `cvc` | `[]const u8` | No |  |
-| `date_time_tx` | `[]const u8` | No |  |
-| `exp_date` | `[]const u8` | Yes |  |
-| `merchant_id` | `[]const u8` | No |  |
-| `original_transaction_id` | `[]const u8` | No |  |
+| `dateTimeTx` | `[]const u8` | No |  |
+| `expDate` | `[]const u8` | Yes |  |
+| `merchantId` | `[]const u8` | No |  |
+| `originalTransactionId` | `[]const u8` | No |  |
 | `password` | `[]const u8` | No |  |
-| `response_code` | `[]const u8` | No |  |
-| `response_message` | `[]const u8` | No |  |
-| `terminal_id` | `[]const u8` | No |  |
-| `transaction_id` | `[]const u8` | No |  |
+| `responseCode` | `[]const u8` | No |  |
+| `responseMessage` | `[]const u8` | No |  |
+| `terminalId` | `[]const u8` | No |  |
+| `transactionId` | `[]const u8` | No |  |
 | `txtype` | `[]const u8` | Yes |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `acquirer_name` | - |
+| `acquirerName` | - |
 | `amount` | - |
-| `authorization_number` | - |
-| `card_number` | - |
-| `card_type` | - |
+| `authorizationNumber` | - |
+| `cardNumber` | - |
+| `cardType` | - |
 | `currency` | - |
 | `cvc` | - |
-| `date_time_tx` | - |
-| `exp_date` | - |
-| `merchant_id` | - |
-| `original_transaction_id` | - |
+| `dateTimeTx` | - |
+| `expDate` | - |
+| `merchantId` | - |
+| `originalTransactionId` | - |
 | `password` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `terminal_id` | Yes |
-| `transaction_id` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `terminalId` | Yes |
+| `transactionId` | - |
 | `txtype` | - |
 
 ### Operations
@@ -1582,9 +1584,9 @@ Create a new entity with the given data. `.ok` carries the created entity data.
 ```zig
 switch (client.payment_manual(h.vnull()).create(h.jo(&.{
     .{ "amount", h.vnum(1) }, // i64
-    .{ "card_number", h.vstr("example_card_number") }, // []const u8
+    .{ "cardNumber", h.vstr("example_cardNumber") }, // []const u8
     .{ "currency", h.vstr("example_currency") }, // []const u8
-    .{ "exp_date", h.vstr("example_exp_date") }, // []const u8
+    .{ "expDate", h.vstr("example_expDate") }, // []const u8
     .{ "txtype", h.vstr("example_txtype") }, // []const u8
 }), h.vnull())) {
     .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
@@ -1623,43 +1625,18 @@ const payment_sred = client.payment_sred(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_name` | `[]const u8` | No |  |
 | `amount` | `i64` | Yes |  |
-| `authorization_number` | `[]const u8` | No |  |
-| `card_type` | `[]const u8` | No |  |
 | `currency` | `[]const u8` | Yes |  |
-| `date_time_tx` | `[]const u8` | No |  |
-| `device_payload` | `[]const u8` | Yes |  |
-| `merchant_id` | `[]const u8` | No |  |
-| `original_transaction_id` | `[]const u8` | No |  |
+| `device` | `[]const u8` | No |  |
+| `devicePayload` | `[]const u8` | Yes |  |
+| `expDate` | `[]const u8` | No |  |
+| `mode` | `[]const u8` | No |  |
+| `panMasked` | `[]const u8` | No |  |
 | `password` | `[]const u8` | No |  |
-| `response_code` | `[]const u8` | No |  |
-| `response_message` | `[]const u8` | No |  |
-| `sred` | `Value (object)` | No |  |
-| `terminal_id` | `[]const u8` | No |  |
-| `transaction_id` | `[]const u8` | No |  |
+| `serial` | `[]const u8` | No |  |
+| `serviceCode` | `[]const u8` | No |  |
+| `terminalId` | `[]const u8` | Yes |  |
 | `txtype` | `[]const u8` | Yes |  |
-
-### Field Usage by Operation
-
-| Field | create |
-| --- | --- |
-| `acquirer_name` | - |
-| `amount` | - |
-| `authorization_number` | - |
-| `card_type` | - |
-| `currency` | - |
-| `date_time_tx` | - |
-| `device_payload` | - |
-| `merchant_id` | - |
-| `original_transaction_id` | - |
-| `password` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `sred` | - |
-| `terminal_id` | Yes |
-| `transaction_id` | - |
-| `txtype` | - |
 
 ### Operations
 
@@ -1671,7 +1648,8 @@ Create a new entity with the given data. `.ok` carries the created entity data.
 switch (client.payment_sred(h.vnull()).create(h.jo(&.{
     .{ "amount", h.vnum(1) }, // i64
     .{ "currency", h.vstr("example_currency") }, // []const u8
-    .{ "device_payload", h.vstr("example_device_payload") }, // []const u8
+    .{ "devicePayload", h.vstr("example_devicePayload") }, // []const u8
+    .{ "terminalId", h.vstr("example_terminalId") }, // []const u8
     .{ "txtype", h.vstr("example_txtype") }, // []const u8
 }), h.vnull())) {
     .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
@@ -1710,95 +1688,95 @@ const pre_auth_transaction_completion = client.pre_auth_transaction_completion(h
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `[]const u8` | No |  |
-| `acquirer_name` | `[]const u8` | No |  |
-| `actual_bonus_point` | `[]const u8` | No |  |
+| `acquirerId` | `[]const u8` | No |  |
+| `acquirerName` | `[]const u8` | No |  |
+| `actualBonusPoints` | `[]const u8` | No |  |
 | `amount` | `i64` | No |  |
-| `authorization_code` | `[]const u8` | No |  |
-| `balance_amount` | `[]const u8` | No |  |
-| `card_brand` | `[]const u8` | No |  |
-| `card_number` | `[]const u8` | No |  |
-| `card_number_reference` | `[]const u8` | Yes |  |
-| `client_id` | `i64` | Yes |  |
+| `authorizationCode` | `[]const u8` | No |  |
+| `balanceAmount` | `[]const u8` | No |  |
+| `cardBrand` | `[]const u8` | No |  |
+| `cardNumber` | `[]const u8` | No |  |
+| `cardNumberReference` | `[]const u8` | Yes |  |
+| `clientId` | `i64` | Yes |  |
 | `currency` | `[]const u8` | Yes |  |
 | `cvc` | `[]const u8` | No |  |
-| `ec_data` | `[]const u8` | No |  |
-| `ecr_data` | `[]const u8` | No |  |
-| `emv_data` | `[]const u8` | No |  |
-| `exchange_fee` | `i64` | No |  |
-| `exchange_rate` | `[]const u8` | No |  |
-| `language_code` | `[]const u8` | No |  |
-| `merchant_address` | `[]const u8` | No |  |
-| `merchant_name` | `[]const u8` | No |  |
-| `merchant_number` | `[]const u8` | No |  |
-| `message_type` | `[]const u8` | No |  |
-| `original_trace_number` | `i64` | No |  |
-| `original_transaction_id` | `[]const u8` | No |  |
+| `ecData` | `[]const u8` | No |  |
+| `ecrData` | `[]const u8` | No |  |
+| `emvData` | `[]const u8` | No |  |
+| `exchangeFee` | `i64` | No |  |
+| `exchangeRate` | `[]const u8` | No |  |
+| `languageCode` | `[]const u8` | No |  |
+| `merchantAddress` | `[]const u8` | No |  |
+| `merchantName` | `[]const u8` | No |  |
+| `merchantNumber` | `[]const u8` | No |  |
+| `messageType` | `[]const u8` | No |  |
+| `originalTraceNumber` | `i64` | No |  |
+| `originalTransactionId` | `[]const u8` | No |  |
 | `password` | `[]const u8` | No |  |
-| `payment_reason` | `[]const u8` | No |  |
-| `receipt_footer` | `[]const u8` | No |  |
-| `receipt_header` | `[]const u8` | No |  |
-| `receipt_layout` | `i64` | No |  |
-| `receipt_number` | `[]const u8` | Yes |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `[]const u8` | No |  |
-| `serial_number` | `[]const u8` | No |  |
+| `paymentReason` | `[]const u8` | No |  |
+| `receiptFooter` | `[]const u8` | No |  |
+| `receiptHeader` | `[]const u8` | No |  |
+| `receiptLayout` | `i64` | No |  |
+| `receiptNumber` | `[]const u8` | Yes |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `[]const u8` | No |  |
+| `serialNumber` | `[]const u8` | No |  |
 | `svc` | `[]const u8` | No |  |
-| `terminal_id` | `i64` | Yes |  |
-| `terminal_location` | `[]const u8` | No |  |
-| `trace_number` | `i64` | No |  |
-| `transaction_date` | `[]const u8` | No |  |
-| `transaction_id` | `[]const u8` | No |  |
-| `transaction_type` | `[]const u8` | Yes |  |
-| `tx_type` | `[]const u8` | No |  |
-| `user_data` | `[]const u8` | No |  |
+| `terminalId` | `i64` | Yes |  |
+| `terminalLocation` | `[]const u8` | No |  |
+| `traceNumber` | `i64` | No |  |
+| `transactionDate` | `[]const u8` | No |  |
+| `transactionId` | `[]const u8` | No |  |
+| `transactionType` | `[]const u8` | Yes |  |
+| `txType` | `[]const u8` | No |  |
+| `userData` | `[]const u8` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `acquirer_id` | - |
-| `acquirer_name` | - |
-| `actual_bonus_point` | - |
+| `acquirerId` | - |
+| `acquirerName` | - |
+| `actualBonusPoints` | - |
 | `amount` | Yes |
-| `authorization_code` | - |
-| `balance_amount` | - |
-| `card_brand` | - |
-| `card_number` | - |
-| `card_number_reference` | - |
-| `client_id` | - |
+| `authorizationCode` | - |
+| `balanceAmount` | - |
+| `cardBrand` | - |
+| `cardNumber` | - |
+| `cardNumberReference` | - |
+| `clientId` | - |
 | `currency` | - |
 | `cvc` | - |
-| `ec_data` | - |
-| `ecr_data` | - |
-| `emv_data` | - |
-| `exchange_fee` | - |
-| `exchange_rate` | - |
-| `language_code` | - |
-| `merchant_address` | - |
-| `merchant_name` | - |
-| `merchant_number` | - |
-| `message_type` | - |
-| `original_trace_number` | - |
-| `original_transaction_id` | Yes |
+| `ecData` | - |
+| `ecrData` | - |
+| `emvData` | - |
+| `exchangeFee` | - |
+| `exchangeRate` | - |
+| `languageCode` | - |
+| `merchantAddress` | - |
+| `merchantName` | - |
+| `merchantNumber` | - |
+| `messageType` | - |
+| `originalTraceNumber` | - |
+| `originalTransactionId` | Yes |
 | `password` | - |
-| `payment_reason` | - |
-| `receipt_footer` | - |
-| `receipt_header` | - |
-| `receipt_layout` | - |
-| `receipt_number` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `serial_number` | - |
+| `paymentReason` | - |
+| `receiptFooter` | - |
+| `receiptHeader` | - |
+| `receiptLayout` | - |
+| `receiptNumber` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `serialNumber` | - |
 | `svc` | - |
-| `terminal_id` | - |
-| `terminal_location` | - |
-| `trace_number` | - |
-| `transaction_date` | Yes |
-| `transaction_id` | Yes |
-| `transaction_type` | - |
-| `tx_type` | - |
-| `user_data` | - |
+| `terminalId` | - |
+| `terminalLocation` | - |
+| `traceNumber` | - |
+| `transactionDate` | Yes |
+| `transactionId` | Yes |
+| `transactionType` | - |
+| `txType` | - |
+| `userData` | - |
 
 ### Operations
 
@@ -1808,12 +1786,12 @@ Create a new entity with the given data. `.ok` carries the created entity data.
 
 ```zig
 switch (client.pre_auth_transaction_completion(h.vnull()).create(h.jo(&.{
-    .{ "card_number_reference", h.vstr("example_card_number_reference") }, // []const u8
-    .{ "client_id", h.vnum(1) }, // i64
+    .{ "cardNumberReference", h.vstr("example_cardNumberReference") }, // []const u8
+    .{ "clientId", h.vnum(1) }, // i64
     .{ "currency", h.vstr("example_currency") }, // []const u8
-    .{ "receipt_number", h.vstr("example_receipt_number") }, // []const u8
-    .{ "terminal_id", h.vnum(1) }, // i64
-    .{ "transaction_type", h.vstr("example_transaction_type") }, // []const u8
+    .{ "receiptNumber", h.vstr("example_receiptNumber") }, // []const u8
+    .{ "terminalId", h.vnum(1) }, // i64
+    .{ "transactionType", h.vstr("example_transactionType") }, // []const u8
 }), h.vnull())) {
     .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -1851,13 +1829,13 @@ const reactivate_terminal = client.reactivate_terminal(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `corporate_uuid` | `[]const u8` | No |  |
-| `package_order_uuid` | `[]const u8` | No |  |
-| `product_order_uuid` | `[]const u8` | No |  |
-| `reactivation_reason` | `[]const u8` | Yes |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `[]const u8` | No |  |
-| `terminal_id` | `i64` | Yes |  |
+| `corporateUuid` | `[]const u8` | No |  |
+| `packageOrderUuid` | `[]const u8` | No |  |
+| `productOrderUuid` | `[]const u8` | No |  |
+| `reactivationReason` | `[]const u8` | Yes |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `[]const u8` | No |  |
+| `terminalId` | `i64` | Yes |  |
 
 ### Operations
 
@@ -1867,8 +1845,8 @@ Create a new entity with the given data. `.ok` carries the created entity data.
 
 ```zig
 switch (client.reactivate_terminal(h.vnull()).create(h.jo(&.{
-    .{ "reactivation_reason", h.vstr("example_reactivation_reason") }, // []const u8
-    .{ "terminal_id", h.vnum(1) }, // i64
+    .{ "reactivationReason", h.vstr("example_reactivationReason") }, // []const u8
+    .{ "terminalId", h.vnum(1) }, // i64
 }), h.vnull())) {
     .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -1906,91 +1884,91 @@ const refund_transaction = client.refund_transaction(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_id` | `[]const u8` | No |  |
-| `acquirer_name` | `[]const u8` | No |  |
-| `actual_bonus_point` | `[]const u8` | No |  |
+| `acquirerId` | `[]const u8` | No |  |
+| `acquirerName` | `[]const u8` | No |  |
+| `actualBonusPoints` | `[]const u8` | No |  |
 | `amount` | `i64` | No |  |
-| `authorization_code` | `[]const u8` | No |  |
-| `balance_amount` | `[]const u8` | No |  |
-| `card_brand` | `[]const u8` | No |  |
-| `card_number` | `[]const u8` | No |  |
-| `client_id` | `i64` | Yes |  |
+| `authorizationCode` | `[]const u8` | No |  |
+| `balanceAmount` | `[]const u8` | No |  |
+| `cardBrand` | `[]const u8` | No |  |
+| `cardNumber` | `[]const u8` | No |  |
+| `clientId` | `i64` | Yes |  |
 | `currency` | `[]const u8` | Yes |  |
 | `cvc` | `[]const u8` | No |  |
-| `ec_data` | `[]const u8` | No |  |
-| `ecr_data` | `[]const u8` | No |  |
-| `emv_data` | `[]const u8` | No |  |
-| `exchange_fee` | `i64` | No |  |
-| `exchange_rate` | `[]const u8` | No |  |
-| `language_code` | `[]const u8` | No |  |
-| `merchant_address` | `[]const u8` | No |  |
-| `merchant_name` | `[]const u8` | No |  |
-| `merchant_number` | `[]const u8` | No |  |
-| `message_type` | `[]const u8` | No |  |
-| `original_trace_number` | `i64` | No |  |
-| `original_transaction_id` | `[]const u8` | No |  |
+| `ecData` | `[]const u8` | No |  |
+| `ecrData` | `[]const u8` | No |  |
+| `emvData` | `[]const u8` | No |  |
+| `exchangeFee` | `i64` | No |  |
+| `exchangeRate` | `[]const u8` | No |  |
+| `languageCode` | `[]const u8` | No |  |
+| `merchantAddress` | `[]const u8` | No |  |
+| `merchantName` | `[]const u8` | No |  |
+| `merchantNumber` | `[]const u8` | No |  |
+| `messageType` | `[]const u8` | No |  |
+| `originalTraceNumber` | `i64` | No |  |
+| `originalTransactionId` | `[]const u8` | No |  |
 | `password` | `[]const u8` | No |  |
-| `payment_reason` | `[]const u8` | No |  |
-| `receipt_footer` | `[]const u8` | No |  |
-| `receipt_header` | `[]const u8` | No |  |
-| `receipt_layout` | `i64` | No |  |
-| `receipt_number` | `[]const u8` | Yes |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `[]const u8` | No |  |
-| `serial_number` | `[]const u8` | No |  |
+| `paymentReason` | `[]const u8` | No |  |
+| `receiptFooter` | `[]const u8` | No |  |
+| `receiptHeader` | `[]const u8` | No |  |
+| `receiptLayout` | `i64` | No |  |
+| `receiptNumber` | `[]const u8` | Yes |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `[]const u8` | No |  |
+| `serialNumber` | `[]const u8` | No |  |
 | `svc` | `[]const u8` | No |  |
-| `terminal_id` | `i64` | Yes |  |
-| `terminal_location` | `[]const u8` | No |  |
-| `trace_number` | `i64` | No |  |
-| `transaction_date` | `[]const u8` | No |  |
-| `transaction_id` | `[]const u8` | No |  |
-| `tx_type` | `[]const u8` | No |  |
-| `user_data` | `[]const u8` | No |  |
+| `terminalId` | `i64` | Yes |  |
+| `terminalLocation` | `[]const u8` | No |  |
+| `traceNumber` | `i64` | No |  |
+| `transactionDate` | `[]const u8` | No |  |
+| `transactionId` | `[]const u8` | No |  |
+| `txType` | `[]const u8` | No |  |
+| `userData` | `[]const u8` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
-| `acquirer_id` | - |
-| `acquirer_name` | - |
-| `actual_bonus_point` | - |
+| `acquirerId` | - |
+| `acquirerName` | - |
+| `actualBonusPoints` | - |
 | `amount` | Yes |
-| `authorization_code` | - |
-| `balance_amount` | - |
-| `card_brand` | - |
-| `card_number` | - |
-| `client_id` | - |
+| `authorizationCode` | - |
+| `balanceAmount` | - |
+| `cardBrand` | - |
+| `cardNumber` | - |
+| `clientId` | - |
 | `currency` | - |
 | `cvc` | - |
-| `ec_data` | - |
-| `ecr_data` | - |
-| `emv_data` | - |
-| `exchange_fee` | - |
-| `exchange_rate` | - |
-| `language_code` | - |
-| `merchant_address` | - |
-| `merchant_name` | - |
-| `merchant_number` | - |
-| `message_type` | - |
-| `original_trace_number` | - |
-| `original_transaction_id` | Yes |
+| `ecData` | - |
+| `ecrData` | - |
+| `emvData` | - |
+| `exchangeFee` | - |
+| `exchangeRate` | - |
+| `languageCode` | - |
+| `merchantAddress` | - |
+| `merchantName` | - |
+| `merchantNumber` | - |
+| `messageType` | - |
+| `originalTraceNumber` | - |
+| `originalTransactionId` | Yes |
 | `password` | - |
-| `payment_reason` | - |
-| `receipt_footer` | - |
-| `receipt_header` | - |
-| `receipt_layout` | - |
-| `receipt_number` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `serial_number` | - |
+| `paymentReason` | - |
+| `receiptFooter` | - |
+| `receiptHeader` | - |
+| `receiptLayout` | - |
+| `receiptNumber` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `serialNumber` | - |
 | `svc` | - |
-| `terminal_id` | - |
-| `terminal_location` | - |
-| `trace_number` | - |
-| `transaction_date` | Yes |
-| `transaction_id` | Yes |
-| `tx_type` | - |
-| `user_data` | - |
+| `terminalId` | - |
+| `terminalLocation` | - |
+| `traceNumber` | - |
+| `transactionDate` | Yes |
+| `transactionId` | Yes |
+| `txType` | - |
+| `userData` | - |
 
 ### Operations
 
@@ -2000,10 +1978,10 @@ Create a new entity with the given data. `.ok` carries the created entity data.
 
 ```zig
 switch (client.refund_transaction(h.vnull()).create(h.jo(&.{
-    .{ "client_id", h.vnum(1) }, // i64
+    .{ "clientId", h.vnum(1) }, // i64
     .{ "currency", h.vstr("example_currency") }, // []const u8
-    .{ "receipt_number", h.vstr("example_receipt_number") }, // []const u8
-    .{ "terminal_id", h.vnum(1) }, // i64
+    .{ "receiptNumber", h.vstr("example_receiptNumber") }, // []const u8
+    .{ "terminalId", h.vnum(1) }, // i64
 }), h.vnull())) {
     .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -2041,14 +2019,14 @@ const register_tecs_company = client.register_tecs_company(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `corporate_uuid` | `[]const u8` | Yes |  |
-| `package_order_uuid` | `[]const u8` | Yes |  |
-| `partner_id` | `i64` | No |  |
-| `partner_name` | `[]const u8` | No |  |
-| `product_order_uuid` | `[]const u8` | Yes |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `[]const u8` | No |  |
-| `template_name` | `[]const u8` | Yes |  |
+| `corporateUuid` | `[]const u8` | Yes |  |
+| `packageOrderUuid` | `[]const u8` | Yes |  |
+| `partnerId` | `i64` | No |  |
+| `partnerName` | `[]const u8` | No |  |
+| `productOrderUuid` | `[]const u8` | Yes |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `[]const u8` | No |  |
+| `templateName` | `[]const u8` | Yes |  |
 
 ### Operations
 
@@ -2058,10 +2036,10 @@ Create a new entity with the given data. `.ok` carries the created entity data.
 
 ```zig
 switch (client.register_tecs_company(h.vnull()).create(h.jo(&.{
-    .{ "corporate_uuid", h.vstr("example_corporate_uuid") }, // []const u8
-    .{ "package_order_uuid", h.vstr("example_package_order_uuid") }, // []const u8
-    .{ "product_order_uuid", h.vstr("example_product_order_uuid") }, // []const u8
-    .{ "template_name", h.vstr("example_template_name") }, // []const u8
+    .{ "corporateUuid", h.vstr("example_corporateUuid") }, // []const u8
+    .{ "packageOrderUuid", h.vstr("example_packageOrderUuid") }, // []const u8
+    .{ "productOrderUuid", h.vstr("example_productOrderUuid") }, // []const u8
+    .{ "templateName", h.vstr("example_templateName") }, // []const u8
 }), h.vnull())) {
     .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -2099,24 +2077,24 @@ const register_terminal = client.register_terminal(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `additional_data` | `Value (object)` | No |  |
-| `corporate_uuid` | `[]const u8` | Yes |  |
-| `package_order_uuid` | `[]const u8` | Yes |  |
-| `product_order_uuid` | `[]const u8` | Yes |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `[]const u8` | No |  |
-| `tecs_web_secret_key` | `[]const u8` | No |  |
-| `template_name` | `[]const u8` | Yes |  |
-| `terminal_country_code` | `[]const u8` | Yes |  |
-| `terminal_id` | `i64` | No |  |
-| `terminal_id_acq` | `[]const u8` | No |  |
-| `terminal_language_code` | `[]const u8` | Yes |  |
-| `terminal_location` | `[]const u8` | Yes |  |
-| `terminal_serial_number` | `[]const u8` | No |  |
-| `token_io_alia` | `[]const u8` | No |  |
-| `token_io_iban` | `[]const u8` | No |  |
-| `token_io_member_id` | `[]const u8` | No |  |
-| `web_shop_url` | `[]const u8` | No |  |
+| `additionalData` | `Value (object)` | No |  |
+| `corporateUuid` | `[]const u8` | Yes |  |
+| `packageOrderUuid` | `[]const u8` | Yes |  |
+| `productOrderUuid` | `[]const u8` | Yes |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `[]const u8` | No |  |
+| `tecsWebSecretKey` | `[]const u8` | No |  |
+| `templateName` | `[]const u8` | Yes |  |
+| `terminalCountryCode` | `[]const u8` | Yes |  |
+| `terminalId` | `i64` | No |  |
+| `terminalIdAcq` | `[]const u8` | No |  |
+| `terminalLanguageCode` | `[]const u8` | Yes |  |
+| `terminalLocation` | `[]const u8` | Yes |  |
+| `terminalSerialNumber` | `[]const u8` | No |  |
+| `tokenIOAlias` | `[]const u8` | No |  |
+| `tokenIOIban` | `[]const u8` | No |  |
+| `tokenIOMemberId` | `[]const u8` | No |  |
+| `webShopUrl` | `[]const u8` | No |  |
 
 ### Operations
 
@@ -2126,13 +2104,13 @@ Create a new entity with the given data. `.ok` carries the created entity data.
 
 ```zig
 switch (client.register_terminal(h.vnull()).create(h.jo(&.{
-    .{ "corporate_uuid", h.vstr("example_corporate_uuid") }, // []const u8
-    .{ "package_order_uuid", h.vstr("example_package_order_uuid") }, // []const u8
-    .{ "product_order_uuid", h.vstr("example_product_order_uuid") }, // []const u8
-    .{ "template_name", h.vstr("example_template_name") }, // []const u8
-    .{ "terminal_country_code", h.vstr("example_terminal_country_code") }, // []const u8
-    .{ "terminal_language_code", h.vstr("example_terminal_language_code") }, // []const u8
-    .{ "terminal_location", h.vstr("example_terminal_location") }, // []const u8
+    .{ "corporateUuid", h.vstr("example_corporateUuid") }, // []const u8
+    .{ "packageOrderUuid", h.vstr("example_packageOrderUuid") }, // []const u8
+    .{ "productOrderUuid", h.vstr("example_productOrderUuid") }, // []const u8
+    .{ "templateName", h.vstr("example_templateName") }, // []const u8
+    .{ "terminalCountryCode", h.vstr("example_terminalCountryCode") }, // []const u8
+    .{ "terminalLanguageCode", h.vstr("example_terminalLanguageCode") }, // []const u8
+    .{ "terminalLocation", h.vstr("example_terminalLocation") }, // []const u8
 }), h.vnull())) {
     .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -2170,16 +2148,16 @@ const report_data = client.report_data(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `card_brand_report_data` | `Value (array)` | No |  |
-| `clearing_date_from` | `[]const u8` | Yes |  |
-| `clearing_date_to` | `[]const u8` | Yes |  |
-| `corporate_id` | `[]const u8` | Yes |  |
+| `cardBrandReportData` | `Value (array)` | No |  |
+| `clearingDateFrom` | `[]const u8` | Yes |  |
+| `clearingDateTo` | `[]const u8` | Yes |  |
+| `corporateId` | `[]const u8` | Yes |  |
 | `currency` | `[]const u8` | Yes |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `[]const u8` | No |  |
-| `sum_over_credit_tx` | `Value (object)` | No |  |
-| `sum_over_debit_tx` | `Value (object)` | No |  |
-| `terminal_id` | `i64` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `[]const u8` | No |  |
+| `sumOverCreditTx` | `Value (object)` | No |  |
+| `sumOverDebitTx` | `Value (object)` | No |  |
+| `terminalId` | `i64` | No |  |
 
 ### Operations
 
@@ -2189,9 +2167,9 @@ Create a new entity with the given data. `.ok` carries the created entity data.
 
 ```zig
 switch (client.report_data(h.vnull()).create(h.jo(&.{
-    .{ "clearing_date_from", h.vstr("example_clearing_date_from") }, // []const u8
-    .{ "clearing_date_to", h.vstr("example_clearing_date_to") }, // []const u8
-    .{ "corporate_id", h.vstr("example_corporate_id") }, // []const u8
+    .{ "clearingDateFrom", h.vstr("example_clearingDateFrom") }, // []const u8
+    .{ "clearingDateTo", h.vstr("example_clearingDateTo") }, // []const u8
+    .{ "corporateId", h.vstr("example_corporateId") }, // []const u8
     .{ "currency", h.vstr("example_currency") }, // []const u8
 }), h.vnull())) {
     .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
@@ -2230,56 +2208,56 @@ const status_transaction = client.status_transaction(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirer_name` | `[]const u8` | No |  |
-| `acquirer_terminal_id` | `[]const u8` | No |  |
+| `acquirerName` | `[]const u8` | No |  |
+| `acquirerTerminalId` | `[]const u8` | No |  |
 | `amount` | `i64` | No |  |
-| `application_cryptogram` | `[]const u8` | No |  |
-| `authorization_code` | `Value` | No |  |
-| `authorization_date` | `[]const u8` | No |  |
-| `card_brand` | `[]const u8` | No |  |
-| `card_entry` | `[]const u8` | No |  |
-| `card_expiration` | `[]const u8` | No |  |
-| `card_number` | `[]const u8` | No |  |
-| `clearing_amount` | `i64` | No |  |
-| `clearing_batch_id` | `[]const u8` | No |  |
-| `clearing_currency` | `[]const u8` | No |  |
-| `clearing_date` | `[]const u8` | No |  |
-| `clearing_processed_date` | `[]const u8` | No |  |
-| `clearing_status` | `[]const u8` | No |  |
-| `client_id` | `i64` | No |  |
+| `applicationCryptogram` | `[]const u8` | No |  |
+| `authorizationCode` | `Value` | No |  |
+| `authorizationDate` | `[]const u8` | No |  |
+| `cardBrand` | `[]const u8` | No |  |
+| `cardEntry` | `[]const u8` | No |  |
+| `cardExpiration` | `[]const u8` | No |  |
+| `cardNumber` | `[]const u8` | No |  |
+| `clearingAmount` | `i64` | No |  |
+| `clearingBatchId` | `[]const u8` | No |  |
+| `clearingCurrency` | `[]const u8` | No |  |
+| `clearingDate` | `[]const u8` | No |  |
+| `clearingProcessedDate` | `[]const u8` | No |  |
+| `clearingStatus` | `[]const u8` | No |  |
+| `clientId` | `i64` | No |  |
 | `currency` | `[]const u8` | No |  |
 | `cvm` | `[]const u8` | No |  |
-| `ecr_data` | `[]const u8` | No |  |
-| `emv_application_id` | `[]const u8` | No |  |
-| `emv_application_label` | `[]const u8` | No |  |
-| `merchant_name` | `[]const u8` | No |  |
-| `merchant_number` | `[]const u8` | No |  |
-| `original_client_id` | `[]const u8` | No |  |
-| `original_terminal_id` | `i64` | No |  |
-| `original_transaction_id` | `[]const u8` | No |  |
-| `payment_reason` | `[]const u8` | No |  |
-| `receipt_number` | `[]const u8` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_code_from_a` | `[]const u8` | No |  |
-| `response_message` | `[]const u8` | No |  |
-| `retrieval_reference_number` | `[]const u8` | No |  |
-| `service_code` | `[]const u8` | No |  |
-| `settlement_status` | `[]const u8` | No |  |
-| `source_id` | `i64` | No |  |
-| `tecsengine_response_code` | `i64` | No |  |
-| `tecsengine_response_text` | `[]const u8` | No |  |
-| `terminal_end_of_day_date` | `[]const u8` | No |  |
-| `terminal_id` | `i64` | No |  |
-| `terminal_location` | `[]const u8` | No |  |
-| `tip_amount` | `i64` | No |  |
-| `trace_number` | `i64` | No |  |
-| `transaction_clearing_date` | `[]const u8` | No |  |
-| `transaction_date` | `[]const u8` | No |  |
-| `transaction_id` | `[]const u8` | No |  |
-| `transaction_seq_number` | `i64` | No |  |
-| `transaction_server_date` | `[]const u8` | No |  |
-| `transaction_source` | `[]const u8` | No |  |
-| `transaction_type` | `[]const u8` | No |  |
+| `ecrData` | `[]const u8` | No |  |
+| `emvApplicationId` | `[]const u8` | No |  |
+| `emvApplicationLabel` | `[]const u8` | No |  |
+| `merchantName` | `[]const u8` | No |  |
+| `merchantNumber` | `[]const u8` | No |  |
+| `originalClientId` | `[]const u8` | No |  |
+| `originalTerminalId` | `i64` | No |  |
+| `originalTransactionId` | `[]const u8` | No |  |
+| `paymentReason` | `[]const u8` | No |  |
+| `receiptNumber` | `[]const u8` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseCodeFromAS` | `[]const u8` | No |  |
+| `responseMessage` | `[]const u8` | No |  |
+| `retrievalReferenceNumber` | `[]const u8` | No |  |
+| `serviceCode` | `[]const u8` | No |  |
+| `settlementStatus` | `[]const u8` | No |  |
+| `sourceId` | `i64` | No |  |
+| `tecsengineResponseCode` | `i64` | No |  |
+| `tecsengineResponseText` | `[]const u8` | No |  |
+| `terminalEndOfDayDate` | `[]const u8` | No |  |
+| `terminalId` | `i64` | No |  |
+| `terminalLocation` | `[]const u8` | No |  |
+| `tipAmount` | `i64` | No |  |
+| `traceNumber` | `i64` | No |  |
+| `transactionClearingDate` | `[]const u8` | No |  |
+| `transactionDate` | `[]const u8` | No |  |
+| `transactionId` | `[]const u8` | No |  |
+| `transactionSeqNumber` | `i64` | No |  |
+| `transactionServerDate` | `[]const u8` | No |  |
+| `transactionSource` | `[]const u8` | No |  |
+| `transactionType` | `[]const u8` | No |  |
 
 ### Operations
 
@@ -2326,12 +2304,12 @@ const store_terminal_parameter = client.store_terminal_parameter(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acq_tab_nexo` | `Value (object)` | No |  |
-| `config_version` | `[]const u8` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `[]const u8` | No |  |
-| `serial_number` | `[]const u8` | Yes |  |
-| `tid_sent` | `[]const u8` | No |  |
+| `acqTabNexo` | `Value (object)` | No |  |
+| `configVersion` | `[]const u8` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `[]const u8` | No |  |
+| `serialNumber` | `[]const u8` | Yes |  |
+| `tidSent` | `[]const u8` | No |  |
 
 ### Operations
 
@@ -2341,7 +2319,7 @@ Create a new entity with the given data. `.ok` carries the created entity data.
 
 ```zig
 switch (client.store_terminal_parameter(h.vnull()).create(h.jo(&.{
-    .{ "serial_number", h.vstr("example_serial_number") }, // []const u8
+    .{ "serialNumber", h.vstr("example_serialNumber") }, // []const u8
 }), h.vnull())) {
     .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -2379,11 +2357,11 @@ const terminal_id = client.terminal_id(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `device_serial_number` | `Value (array)` | Yes |  |
-| `duplicate_terminal_id` | `Value (array)` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `[]const u8` | No |  |
-| `terminal` | `Value (array)` | No |  |
+| `deviceSerialNumber` | `Value (array)` | Yes |  |
+| `duplicateTerminalIds` | `Value (array)` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `[]const u8` | No |  |
+| `terminals` | `Value (array)` | No |  |
 
 ### Operations
 
@@ -2393,7 +2371,7 @@ Create a new entity with the given data. `.ok` carries the created entity data.
 
 ```zig
 switch (client.terminal_id(h.vnull()).create(h.jo(&.{
-    .{ "device_serial_number", h.olist() }, // Value (array)
+    .{ "deviceSerialNumber", h.olist() }, // Value (array)
 }), h.vnull())) {
     .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -2431,34 +2409,34 @@ const transaction_history = client.transaction_history(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `3_d_secure` | `[]const u8` | No |  |
-| `authorization_code` | `[]const u8` | No |  |
-| `card_brand` | `[]const u8` | No |  |
-| `clearing_amount_from` | `[]const u8` | No |  |
-| `clearing_amount_to` | `[]const u8` | No |  |
-| `clearing_currency` | `[]const u8` | No |  |
-| `clearing_status` | `[]const u8` | No |  |
-| `corporate_uuid` | `[]const u8` | No |  |
-| `order_by_transaction_date` | `[]const u8` | No |  |
+| `3DSecure` | `[]const u8` | No |  |
+| `authorizationCode` | `[]const u8` | No |  |
+| `cardBrand` | `[]const u8` | No |  |
+| `clearingAmountFrom` | `[]const u8` | No |  |
+| `clearingAmountTo` | `[]const u8` | No |  |
+| `clearingCurrency` | `[]const u8` | No |  |
+| `clearingStatus` | `[]const u8` | No |  |
+| `corporateUUID` | `[]const u8` | No |  |
+| `orderByTransactionDate` | `[]const u8` | No |  |
 | `pagination` | `Value (object)` | No |  |
-| `payment_token_public_id` | `[]const u8` | No |  |
-| `receipt_number` | `[]const u8` | No |  |
-| `referenced_transaction_id` | `[]const u8` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `[]const u8` | No |  |
-| `retrieval_reference_number` | `[]const u8` | No |  |
-| `source_id` | `i64` | No |  |
-| `tecsengine_response_code_from` | `[]const u8` | No |  |
-| `tecsengine_response_code_to` | `[]const u8` | No |  |
-| `terminal_id` | `i64` | No |  |
-| `trace_number` | `[]const u8` | No |  |
-| `transaction_amount_from` | `[]const u8` | No |  |
-| `transaction_amount_to` | `[]const u8` | No |  |
-| `transaction_date_from` | `[]const u8` | No |  |
-| `transaction_date_to` | `[]const u8` | No |  |
-| `transaction_history` | `Value (array)` | No |  |
-| `transaction_id` | `[]const u8` | No |  |
-| `transaction_type` | `[]const u8` | No |  |
+| `paymentTokenPublicId` | `[]const u8` | No |  |
+| `receiptNumber` | `[]const u8` | No |  |
+| `referencedTransactionId` | `[]const u8` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `[]const u8` | No |  |
+| `retrievalReferenceNumber` | `[]const u8` | No |  |
+| `sourceId` | `i64` | No |  |
+| `tecsengineResponseCodeFrom` | `[]const u8` | No |  |
+| `tecsengineResponseCodeTo` | `[]const u8` | No |  |
+| `terminalId` | `i64` | No |  |
+| `traceNumber` | `[]const u8` | No |  |
+| `transactionAmountFrom` | `[]const u8` | No |  |
+| `transactionAmountTo` | `[]const u8` | No |  |
+| `transactionDateFrom` | `[]const u8` | No |  |
+| `transactionDateTo` | `[]const u8` | No |  |
+| `transactionHistories` | `Value (array)` | No |  |
+| `transactionId` | `[]const u8` | No |  |
+| `transactionType` | `[]const u8` | No |  |
 | `wallet` | `[]const u8` | No |  |
 
 ### Operations
@@ -2507,22 +2485,22 @@ const transactions_count = client.transactions_count(h.vnull());
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `period` | `[]const u8` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `[]const u8` | No |  |
-| `transaction_date_from` | `[]const u8` | No |  |
-| `transaction_date_to` | `[]const u8` | No |  |
-| `transactions_count` | `Value (array)` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `[]const u8` | No |  |
+| `transactionDateFrom` | `[]const u8` | No |  |
+| `transactionDateTo` | `[]const u8` | No |  |
+| `transactionsCount` | `Value (array)` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
 | `period` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `transaction_date_from` | Yes |
-| `transaction_date_to` | Yes |
-| `transactions_count` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `transactionDateFrom` | Yes |
+| `transactionDateTo` | Yes |
+| `transactionsCount` | - |
 
 ### Operations
 
@@ -2570,22 +2548,22 @@ const transactions_count_card_brand = client.transactions_count_card_brand(h.vnu
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `period` | `[]const u8` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `[]const u8` | No |  |
-| `transaction_date_from` | `[]const u8` | No |  |
-| `transaction_date_to` | `[]const u8` | No |  |
-| `transactions_count` | `Value (array)` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `[]const u8` | No |  |
+| `transactionDateFrom` | `[]const u8` | No |  |
+| `transactionDateTo` | `[]const u8` | No |  |
+| `transactionsCount` | `Value (array)` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
 | `period` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `transaction_date_from` | Yes |
-| `transaction_date_to` | Yes |
-| `transactions_count` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `transactionDateFrom` | Yes |
+| `transactionDateTo` | Yes |
+| `transactionsCount` | - |
 
 ### Operations
 
@@ -2633,22 +2611,22 @@ const transactions_turnover = client.transactions_turnover(h.vnull());
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `period` | `[]const u8` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `[]const u8` | No |  |
-| `transaction_date_from` | `[]const u8` | No |  |
-| `transaction_date_to` | `[]const u8` | No |  |
-| `turnover` | `Value (array)` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `[]const u8` | No |  |
+| `transactionDateFrom` | `[]const u8` | No |  |
+| `transactionDateTo` | `[]const u8` | No |  |
+| `turnovers` | `Value (array)` | No |  |
 
 ### Field Usage by Operation
 
 | Field | create |
 | --- | --- |
 | `period` | - |
-| `response_code` | - |
-| `response_message` | - |
-| `transaction_date_from` | Yes |
-| `transaction_date_to` | Yes |
-| `turnover` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `transactionDateFrom` | Yes |
+| `transactionDateTo` | Yes |
+| `turnovers` | - |
 
 ### Operations
 
@@ -2696,15 +2674,15 @@ const update_merchant = client.update_merchant(h.vnull());
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `city` | `[]const u8` | No |  |
-| `corporate_uuid` | `[]const u8` | Yes |  |
+| `corporateUuid` | `[]const u8` | Yes |  |
 | `country` | `[]const u8` | No |  |
-| `merchant_category_code` | `[]const u8` | No |  |
+| `merchantCategoryCode` | `[]const u8` | No |  |
 | `name` | `[]const u8` | No |  |
-| `response_code` | `i64` | No |  |
-| `response_message` | `[]const u8` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `[]const u8` | No |  |
 | `state` | `[]const u8` | No |  |
 | `street` | `[]const u8` | No |  |
-| `vu_nummer` | `[]const u8` | No |  |
+| `vuNummer` | `[]const u8` | No |  |
 | `zipcode` | `[]const u8` | No |  |
 
 ### Operations
@@ -2715,7 +2693,7 @@ Create a new entity with the given data. `.ok` carries the created entity data.
 
 ```zig
 switch (client.update_merchant(h.vnull()).create(h.jo(&.{
-    .{ "corporate_uuid", h.vstr("example_corporate_uuid") }, // []const u8
+    .{ "corporateUuid", h.vstr("example_corporateUuid") }, // []const u8
 }), h.vnull())) {
     .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -2753,10 +2731,10 @@ const update_template_xml = client.update_template_xml(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `response_code` | `i64` | No |  |
-| `response_message` | `[]const u8` | No |  |
-| `template_name` | `[]const u8` | Yes |  |
-| `template_xml` | `[]const u8` | Yes |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `[]const u8` | No |  |
+| `templateName` | `[]const u8` | Yes |  |
+| `templateXml` | `[]const u8` | Yes |  |
 
 ### Operations
 
@@ -2766,8 +2744,8 @@ Create a new entity with the given data. `.ok` carries the created entity data.
 
 ```zig
 switch (client.update_template_xml(h.vnull()).create(h.jo(&.{
-    .{ "template_name", h.vstr("example_template_name") }, // []const u8
-    .{ "template_xml", h.vstr("example_template_xml") }, // []const u8
+    .{ "templateName", h.vstr("example_templateName") }, // []const u8
+    .{ "templateXml", h.vstr("example_templateXml") }, // []const u8
 }), h.vnull())) {
     .ok => |result| std.debug.print("{s}\n", .{h.stringify(result)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
@@ -2805,8 +2783,8 @@ const version = client.version(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `app_name` | `[]const u8` | No |  |
-| `build_date` | `[]const u8` | No |  |
+| `appName` | `[]const u8` | No |  |
+| `buildDate` | `[]const u8` | No |  |
 | `version` | `[]const u8` | No |  |
 
 ### Operations

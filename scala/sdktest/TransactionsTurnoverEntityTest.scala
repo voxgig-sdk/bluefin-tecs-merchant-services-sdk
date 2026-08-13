@@ -35,7 +35,7 @@ object TransactionsTurnoverEntityTest {
       var transactionsTurnoverRef01Data = Helpers.toMapAny(Struct.getprop(
           Struct.getpath(entityData, "new.transactions_turnover"), "transactions_turnover_ref01"))
       val transactionsTurnoverRef01DataResult = transactionsTurnoverRef01Ent.create(transactionsTurnoverRef01Data, null)
-      transactionsTurnoverRef01Data = Helpers.toMapAny(transactionsTurnoverRef01DataResult)
+      transactionsTurnoverRef01Data = Helpers.toMapAny(transactionsTurnoverRef01DataResult match { case e: SdkEntity => e.data(); case o => o })
       rep.check("transactions_turnover.create.map", transactionsTurnoverRef01Data != null, "expected create result to be a map")
     }
   }

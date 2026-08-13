@@ -6,12 +6,12 @@ main: kit: entity: status_transaction: {
 
   fields: [
     {
-      name: "acquirer_name"
+      name: "acquirerName"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "acquirer_terminal_id"
+      name: "acquirerTerminalId"
       req: false
       type: "`$STRING`"
     }
@@ -21,12 +21,12 @@ main: kit: entity: status_transaction: {
       type: "`$INTEGER`"
     }
     {
-      name: "application_cryptogram"
+      name: "applicationCryptogram"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "authorization_code"
+      name: "authorizationCode"
       req: false
       type: [
         "`$ONE`"
@@ -37,62 +37,62 @@ main: kit: entity: status_transaction: {
       ]
     }
     {
-      name: "authorization_date"
+      name: "authorizationDate"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "card_brand"
+      name: "cardBrand"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "card_entry"
+      name: "cardEntry"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "card_expiration"
+      name: "cardExpiration"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "card_number"
+      name: "cardNumber"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "clearing_amount"
+      name: "clearingAmount"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "clearing_batch_id"
+      name: "clearingBatchId"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "clearing_currency"
+      name: "clearingCurrency"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "clearing_date"
+      name: "clearingDate"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "clearing_processed_date"
+      name: "clearingProcessedDate"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "clearing_status"
+      name: "clearingStatus"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "client_id"
+      name: "clientId"
       req: false
       type: "`$INTEGER`"
     }
@@ -107,157 +107,157 @@ main: kit: entity: status_transaction: {
       type: "`$STRING`"
     }
     {
-      name: "ecr_data"
+      name: "ecrData"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "emv_application_id"
+      name: "emvApplicationId"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "emv_application_label"
+      name: "emvApplicationLabel"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "merchant_name"
+      name: "merchantName"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "merchant_number"
+      name: "merchantNumber"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "original_client_id"
+      name: "originalClientId"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "original_terminal_id"
+      name: "originalTerminalId"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "original_transaction_id"
+      name: "originalTransactionId"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "payment_reason"
+      name: "paymentReason"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "receipt_number"
+      name: "receiptNumber"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "response_code"
+      name: "responseCode"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "response_code_from_a"
+      name: "responseCodeFromAS"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "response_message"
+      name: "responseMessage"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "retrieval_reference_number"
+      name: "retrievalReferenceNumber"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "service_code"
+      name: "serviceCode"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "settlement_status"
+      name: "settlementStatus"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "source_id"
+      name: "sourceId"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "tecsengine_response_code"
+      name: "tecsengineResponseCode"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "tecsengine_response_text"
+      name: "tecsengineResponseText"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "terminal_end_of_day_date"
+      name: "terminalEndOfDayDate"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "terminal_id"
+      name: "terminalId"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "terminal_location"
+      name: "terminalLocation"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "tip_amount"
+      name: "tipAmount"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "trace_number"
+      name: "traceNumber"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "transaction_clearing_date"
+      name: "transactionClearingDate"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "transaction_date"
+      name: "transactionDate"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "transaction_id"
+      name: "transactionId"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "transaction_seq_number"
+      name: "transactionSeqNumber"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "transaction_server_date"
+      name: "transactionServerDate"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "transaction_source"
+      name: "transactionSource"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "transaction_type"
+      name: "transactionType"
       req: false
       type: "`$STRING`"
     }

@@ -34,7 +34,8 @@ defmodule BluefinTecsMerchantServices.VersionEntityTest do
     if id != nil do
       sdk = mk_sdk()
       ent = BluefinTecsMerchantServices.version(sdk)
-      rec = BluefinTecsMerchantServices.Entity.Version.load(ent, S.jm(["id", id]))
+      loaded = BluefinTecsMerchantServices.Entity.Version.load(ent, S.jm(["id", id]))
+      rec = BluefinTecsMerchantServices.EntityBase.data_get(loaded)
       assert S.ismap(rec)
       assert S.getprop(rec, "id") == id
     end

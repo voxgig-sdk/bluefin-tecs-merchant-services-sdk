@@ -6,27 +6,27 @@ main: kit: entity: ecom_parameter: {
 
   fields: [
     {
-      name: "ecom_pass"
+      name: "ecomPass"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "ecom_skey"
+      name: "ecomSkey"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "response_code"
+      name: "responseCode"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "response_message"
+      name: "responseMessage"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "terminal_id"
+      name: "terminalId"
       req: true
       type: "`$INTEGER`"
     }

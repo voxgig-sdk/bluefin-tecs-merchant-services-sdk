@@ -47,7 +47,7 @@ void tests() {
       final deactivate_terminal_ref01_ent = client.DeactivateTerminal();
       dynamic deactivate_terminal_ref01_data = setup['data']['new']['deactivate_terminal']['deactivate_terminal_ref01'];
 
-      deactivate_terminal_ref01_data = await deactivate_terminal_ref01_ent.create(deactivate_terminal_ref01_data);
+      deactivate_terminal_ref01_data = (await deactivate_terminal_ref01_ent.create(deactivate_terminal_ref01_data)).data();
       ok(null != deactivate_terminal_ref01_data);
 
 

@@ -11,17 +11,17 @@ main: kit: entity: keep_alive: {
       type: "`$STRING`"
     }
     {
-      name: "ka_date_time_from"
+      name: "kaDateTimeFrom"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "ka_date_time_to"
+      name: "kaDateTimeTo"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "keep_alive_data"
+      name: "keepAliveData"
       req: false
       type: "`$ARRAY`"
     }
@@ -31,27 +31,27 @@ main: kit: entity: keep_alive: {
       type: "`$OBJECT`"
     }
     {
-      name: "response_code"
+      name: "responseCode"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "response_message"
+      name: "responseMessage"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "terminal_date_time_from"
+      name: "terminalDateTimeFrom"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "terminal_date_time_to"
+      name: "terminalDateTimeTo"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "terminal_id"
+      name: "terminalId"
       req: false
       type: "`$INTEGER`"
     }

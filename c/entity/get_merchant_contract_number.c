@@ -14,6 +14,8 @@ typedef struct get_merchant_contract_number_entity {
   voxgig_value* data;     // Map
   voxgig_value* mtch;     // Map
   Context* entctx;
+  // Set once a successful `remove` resolves on this instance.
+  bool deleted;
 } get_merchant_contract_number_entity;
 
 typedef void (*get_merchant_contract_number_postdone_fn)(get_merchant_contract_number_entity* self, Context* ctx);
@@ -24,11 +26,14 @@ static const char* get_merchant_contract_number_get_name(Entity* e);
 static Entity* get_merchant_contract_number_make(Entity* e);
 static voxgig_value* get_merchant_contract_number_data(Entity* e, voxgig_value* args);
 static voxgig_value* get_merchant_contract_number_matchv(Entity* e, voxgig_value* args);
-static voxgig_value* get_merchant_contract_number_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
-static voxgig_value* get_merchant_contract_number_list(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
-static voxgig_value* get_merchant_contract_number_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
-static voxgig_value* get_merchant_contract_number_update(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
-static voxgig_value* get_merchant_contract_number_remove(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+// Ops resolve to the ENTITY (`list` to a NULL-terminated array of them).
+static Entity* get_merchant_contract_number_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static Entity** get_merchant_contract_number_list(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static Entity* get_merchant_contract_number_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
+static Entity* get_merchant_contract_number_update(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
+static Entity* get_merchant_contract_number_remove(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static void get_merchant_contract_number_mark_deleted(Entity* e);
+static bool get_merchant_contract_number_deleted(Entity* e);
 
 static Context* get_merchant_contract_number_ent_ctx(get_merchant_contract_number_entity* self) {
   return self->entctx;
@@ -236,13 +241,13 @@ static voxgig_value* get_merchant_contract_number_matchv(Entity* e, voxgig_value
   return voxgig_clone(self->mtch);
 }
 
-static voxgig_value* get_merchant_contract_number_load(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* get_merchant_contract_number_load(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("load", "get_merchant_contract_number");
   return NULL;
 }
 
-static voxgig_value* get_merchant_contract_number_list(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity** get_merchant_contract_number_list(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("list", "get_merchant_contract_number");
   return NULL;
@@ -260,7 +265,7 @@ static void get_merchant_contract_number_create_postdone(get_merchant_contract_n
   }
 }
 
-static voxgig_value* get_merchant_contract_number_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err) {
+static Entity* get_merchant_contract_number_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err) {
   get_merchant_contract_number_entity* self = (get_merchant_contract_number_entity*)e;
   CtxSpec cs;
   memset(&cs, 0, sizeof(cs));
@@ -270,20 +275,38 @@ static voxgig_value* get_merchant_contract_number_create(Entity* e, voxgig_value
   cs.data = self->data;
   cs.reqdata = reqdata;
   Context* ctx = make_context_util(cs, get_merchant_contract_number_ent_ctx(self));
-  return get_merchant_contract_number_run_op(self, ctx, get_merchant_contract_number_create_postdone, err);
+  get_merchant_contract_number_run_op(self, ctx, get_merchant_contract_number_create_postdone, err);
+  if (*err) return NULL;
+
+  // The operation resolves to THIS entity: run_op has just absorbed the
+  // result into it, and the caller reaches the record through vt->data.
+  // See AGENTS.md "Entity operations return ENTITIES".
+
+  return e;
 }
 
 
-static voxgig_value* get_merchant_contract_number_update(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* get_merchant_contract_number_update(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("update", "get_merchant_contract_number");
   return NULL;
 }
 
-static voxgig_value* get_merchant_contract_number_remove(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* get_merchant_contract_number_remove(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("remove", "get_merchant_contract_number");
   return NULL;
+}
+
+// `remove` resolves to the entity, marked. The instance KEEPS the data it
+// held - a caller can still read what was deleted - but it is no longer a
+// live record.
+static void get_merchant_contract_number_mark_deleted(Entity* e) {
+  ((get_merchant_contract_number_entity*)e)->deleted = true;
+}
+
+static bool get_merchant_contract_number_deleted(Entity* e) {
+  return ((get_merchant_contract_number_entity*)e)->deleted;
 }
 
 static const EntityVT get_merchant_contract_number_VT = {
@@ -291,6 +314,8 @@ static const EntityVT get_merchant_contract_number_VT = {
   get_merchant_contract_number_make,
   get_merchant_contract_number_data,
   get_merchant_contract_number_matchv,
+  get_merchant_contract_number_mark_deleted,
+  get_merchant_contract_number_deleted,
   get_merchant_contract_number_load,
   get_merchant_contract_number_list,
   get_merchant_contract_number_create,

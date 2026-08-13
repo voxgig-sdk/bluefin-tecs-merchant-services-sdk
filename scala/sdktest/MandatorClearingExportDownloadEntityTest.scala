@@ -35,7 +35,7 @@ object MandatorClearingExportDownloadEntityTest {
       var mandatorClearingExportDownloadRef01Data = Helpers.toMapAny(Struct.getprop(
           Struct.getpath(entityData, "new.mandator_clearing_export_download"), "mandator_clearing_export_download_ref01"))
       val mandatorClearingExportDownloadRef01DataResult = mandatorClearingExportDownloadRef01Ent.create(mandatorClearingExportDownloadRef01Data, null)
-      mandatorClearingExportDownloadRef01Data = Helpers.toMapAny(mandatorClearingExportDownloadRef01DataResult)
+      mandatorClearingExportDownloadRef01Data = Helpers.toMapAny(mandatorClearingExportDownloadRef01DataResult match { case e: SdkEntity => e.data(); case o => o })
       rep.check("mandator_clearing_export_download.create.map", mandatorClearingExportDownloadRef01Data != null, "expected create result to be a map")
 
       // LOAD

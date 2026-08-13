@@ -47,7 +47,7 @@ void tests() {
       final emv_data_ref01_ent = client.EmvData();
       dynamic emv_data_ref01_data = setup['data']['new']['emv_data']['emv_data_ref01'];
 
-      emv_data_ref01_data = await emv_data_ref01_ent.create(emv_data_ref01_data);
+      emv_data_ref01_data = (await emv_data_ref01_ent.create(emv_data_ref01_data)).data();
       ok(null != emv_data_ref01_data);
 
 

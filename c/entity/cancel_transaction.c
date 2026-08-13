@@ -14,6 +14,8 @@ typedef struct cancel_transaction_entity {
   voxgig_value* data;     // Map
   voxgig_value* mtch;     // Map
   Context* entctx;
+  // Set once a successful `remove` resolves on this instance.
+  bool deleted;
 } cancel_transaction_entity;
 
 typedef void (*cancel_transaction_postdone_fn)(cancel_transaction_entity* self, Context* ctx);
@@ -24,11 +26,14 @@ static const char* cancel_transaction_get_name(Entity* e);
 static Entity* cancel_transaction_make(Entity* e);
 static voxgig_value* cancel_transaction_data(Entity* e, voxgig_value* args);
 static voxgig_value* cancel_transaction_matchv(Entity* e, voxgig_value* args);
-static voxgig_value* cancel_transaction_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
-static voxgig_value* cancel_transaction_list(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
-static voxgig_value* cancel_transaction_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
-static voxgig_value* cancel_transaction_update(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
-static voxgig_value* cancel_transaction_remove(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+// Ops resolve to the ENTITY (`list` to a NULL-terminated array of them).
+static Entity* cancel_transaction_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static Entity** cancel_transaction_list(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static Entity* cancel_transaction_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
+static Entity* cancel_transaction_update(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
+static Entity* cancel_transaction_remove(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static void cancel_transaction_mark_deleted(Entity* e);
+static bool cancel_transaction_deleted(Entity* e);
 
 static Context* cancel_transaction_ent_ctx(cancel_transaction_entity* self) {
   return self->entctx;
@@ -236,13 +241,13 @@ static voxgig_value* cancel_transaction_matchv(Entity* e, voxgig_value* args) {
   return voxgig_clone(self->mtch);
 }
 
-static voxgig_value* cancel_transaction_load(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* cancel_transaction_load(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("load", "cancel_transaction");
   return NULL;
 }
 
-static voxgig_value* cancel_transaction_list(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity** cancel_transaction_list(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("list", "cancel_transaction");
   return NULL;
@@ -260,7 +265,7 @@ static void cancel_transaction_create_postdone(cancel_transaction_entity* self, 
   }
 }
 
-static voxgig_value* cancel_transaction_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err) {
+static Entity* cancel_transaction_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err) {
   cancel_transaction_entity* self = (cancel_transaction_entity*)e;
   CtxSpec cs;
   memset(&cs, 0, sizeof(cs));
@@ -270,20 +275,38 @@ static voxgig_value* cancel_transaction_create(Entity* e, voxgig_value* reqdata,
   cs.data = self->data;
   cs.reqdata = reqdata;
   Context* ctx = make_context_util(cs, cancel_transaction_ent_ctx(self));
-  return cancel_transaction_run_op(self, ctx, cancel_transaction_create_postdone, err);
+  cancel_transaction_run_op(self, ctx, cancel_transaction_create_postdone, err);
+  if (*err) return NULL;
+
+  // The operation resolves to THIS entity: run_op has just absorbed the
+  // result into it, and the caller reaches the record through vt->data.
+  // See AGENTS.md "Entity operations return ENTITIES".
+
+  return e;
 }
 
 
-static voxgig_value* cancel_transaction_update(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* cancel_transaction_update(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("update", "cancel_transaction");
   return NULL;
 }
 
-static voxgig_value* cancel_transaction_remove(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* cancel_transaction_remove(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("remove", "cancel_transaction");
   return NULL;
+}
+
+// `remove` resolves to the entity, marked. The instance KEEPS the data it
+// held - a caller can still read what was deleted - but it is no longer a
+// live record.
+static void cancel_transaction_mark_deleted(Entity* e) {
+  ((cancel_transaction_entity*)e)->deleted = true;
+}
+
+static bool cancel_transaction_deleted(Entity* e) {
+  return ((cancel_transaction_entity*)e)->deleted;
 }
 
 static const EntityVT cancel_transaction_VT = {
@@ -291,6 +314,8 @@ static const EntityVT cancel_transaction_VT = {
   cancel_transaction_make,
   cancel_transaction_data,
   cancel_transaction_matchv,
+  cancel_transaction_mark_deleted,
+  cancel_transaction_deleted,
   cancel_transaction_load,
   cancel_transaction_list,
   cancel_transaction_create,

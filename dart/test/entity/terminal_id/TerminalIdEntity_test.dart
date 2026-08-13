@@ -47,7 +47,7 @@ void tests() {
       final terminal_id_ref01_ent = client.TerminalId();
       dynamic terminal_id_ref01_data = setup['data']['new']['terminal_id']['terminal_id_ref01'];
 
-      terminal_id_ref01_data = await terminal_id_ref01_ent.create(terminal_id_ref01_data);
+      terminal_id_ref01_data = (await terminal_id_ref01_ent.create(terminal_id_ref01_data)).data();
       ok(null != terminal_id_ref01_data);
 
 

@@ -14,6 +14,8 @@ typedef struct register_tecs_company_entity {
   voxgig_value* data;     // Map
   voxgig_value* mtch;     // Map
   Context* entctx;
+  // Set once a successful `remove` resolves on this instance.
+  bool deleted;
 } register_tecs_company_entity;
 
 typedef void (*register_tecs_company_postdone_fn)(register_tecs_company_entity* self, Context* ctx);
@@ -24,11 +26,14 @@ static const char* register_tecs_company_get_name(Entity* e);
 static Entity* register_tecs_company_make(Entity* e);
 static voxgig_value* register_tecs_company_data(Entity* e, voxgig_value* args);
 static voxgig_value* register_tecs_company_matchv(Entity* e, voxgig_value* args);
-static voxgig_value* register_tecs_company_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
-static voxgig_value* register_tecs_company_list(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
-static voxgig_value* register_tecs_company_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
-static voxgig_value* register_tecs_company_update(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
-static voxgig_value* register_tecs_company_remove(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+// Ops resolve to the ENTITY (`list` to a NULL-terminated array of them).
+static Entity* register_tecs_company_load(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static Entity** register_tecs_company_list(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static Entity* register_tecs_company_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
+static Entity* register_tecs_company_update(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err);
+static Entity* register_tecs_company_remove(Entity* e, voxgig_value* reqmatch, voxgig_value* ctrl, PNError** err);
+static void register_tecs_company_mark_deleted(Entity* e);
+static bool register_tecs_company_deleted(Entity* e);
 
 static Context* register_tecs_company_ent_ctx(register_tecs_company_entity* self) {
   return self->entctx;
@@ -236,13 +241,13 @@ static voxgig_value* register_tecs_company_matchv(Entity* e, voxgig_value* args)
   return voxgig_clone(self->mtch);
 }
 
-static voxgig_value* register_tecs_company_load(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* register_tecs_company_load(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("load", "register_tecs_company");
   return NULL;
 }
 
-static voxgig_value* register_tecs_company_list(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity** register_tecs_company_list(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("list", "register_tecs_company");
   return NULL;
@@ -260,7 +265,7 @@ static void register_tecs_company_create_postdone(register_tecs_company_entity* 
   }
 }
 
-static voxgig_value* register_tecs_company_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err) {
+static Entity* register_tecs_company_create(Entity* e, voxgig_value* reqdata, voxgig_value* ctrl, PNError** err) {
   register_tecs_company_entity* self = (register_tecs_company_entity*)e;
   CtxSpec cs;
   memset(&cs, 0, sizeof(cs));
@@ -270,20 +275,38 @@ static voxgig_value* register_tecs_company_create(Entity* e, voxgig_value* reqda
   cs.data = self->data;
   cs.reqdata = reqdata;
   Context* ctx = make_context_util(cs, register_tecs_company_ent_ctx(self));
-  return register_tecs_company_run_op(self, ctx, register_tecs_company_create_postdone, err);
+  register_tecs_company_run_op(self, ctx, register_tecs_company_create_postdone, err);
+  if (*err) return NULL;
+
+  // The operation resolves to THIS entity: run_op has just absorbed the
+  // result into it, and the caller reaches the record through vt->data.
+  // See AGENTS.md "Entity operations return ENTITIES".
+
+  return e;
 }
 
 
-static voxgig_value* register_tecs_company_update(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* register_tecs_company_update(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("update", "register_tecs_company");
   return NULL;
 }
 
-static voxgig_value* register_tecs_company_remove(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
+static Entity* register_tecs_company_remove(Entity* e, voxgig_value* reqarg, voxgig_value* ctrl, PNError** err) {
   (void)e; (void)reqarg; (void)ctrl;
   *err = unsupported_op("remove", "register_tecs_company");
   return NULL;
+}
+
+// `remove` resolves to the entity, marked. The instance KEEPS the data it
+// held - a caller can still read what was deleted - but it is no longer a
+// live record.
+static void register_tecs_company_mark_deleted(Entity* e) {
+  ((register_tecs_company_entity*)e)->deleted = true;
+}
+
+static bool register_tecs_company_deleted(Entity* e) {
+  return ((register_tecs_company_entity*)e)->deleted;
 }
 
 static const EntityVT register_tecs_company_VT = {
@@ -291,6 +314,8 @@ static const EntityVT register_tecs_company_VT = {
   register_tecs_company_make,
   register_tecs_company_data,
   register_tecs_company_matchv,
+  register_tecs_company_mark_deleted,
+  register_tecs_company_deleted,
   register_tecs_company_load,
   register_tecs_company_list,
   register_tecs_company_create,
