@@ -8,276 +8,157 @@
       "cancel_transaction" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "acquirerId"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "acquirerName"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "actualBonusPoints"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "amount"
             "op" (vs/jm
               "create" (vs/jm
                 "req" true
                 "type" "`$INTEGER`"))
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 4
             "name" "authorizationCode"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 5
             "name" "balanceAmount"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 6
             "name" "cardBrand"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 7
             "name" "cardNumber"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 8
             "name" "clientId"
             "req" true
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 9
             "name" "currency"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 10
             "name" "cvc"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 11
             "name" "ecData"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 12
             "name" "ecrData"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 13
             "name" "emvData"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 14
             "name" "exchangeFee"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 15
             "name" "exchangeRate"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 16
             "name" "languageCode"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 17
             "name" "merchantAddress"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 18
             "name" "merchantName"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 19
             "name" "merchantNumber"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 20
             "name" "messageType"
             "op" (vs/jm
               "create" (vs/jm
                 "req" true
                 "type" "`$STRING`"))
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 21
             "name" "originalTraceNumber"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 22
             "name" "originalTransactionId"
             "op" (vs/jm
               "create" (vs/jm
                 "req" true
                 "type" "`$STRING`"))
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 23
             "name" "password"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 24
             "name" "paymentReason"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 25
             "name" "receiptFooter"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 26
             "name" "receiptHeader"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 27
             "name" "receiptLayout"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 28
             "name" "receiptNumber"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 29
             "name" "responseCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 30
             "name" "responseMessage"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 31
             "name" "serialNumber"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 32
             "name" "svc"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 33
             "name" "terminalId"
             "req" true
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 34
             "name" "terminalLocation"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 35
             "name" "traceNumber"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 36
             "name" "transactionDate"
             "op" (vs/jm
               "create" (vs/jm
                 "req" true
                 "type" "`$STRING`"))
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 37
             "name" "transactionId"
             "op" (vs/jm
               "create" (vs/jm
                 "req" true
                 "type" "`$STRING`"))
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 38
             "name" "txType"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 39
             "name" "userData"
-            "req" false
             "type" "`$STRING`"))
         "name" "cancel_transaction"
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm)
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/public/cancelTransaction"
@@ -293,42 +174,29 @@
       "check_card_black_listed" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "cardNo"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "responseCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "responseMessage"
-            "req" false
             "type" "`$STRING`"))
         "name" "check_card_black_listed"
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "header" (vs/jt
                     (vs/jm
-                      "active" true
                       "kind" "header"
                       "name" "authorization"
                       "orig" "authorization"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/checkCardBlackListed"
@@ -345,44 +213,27 @@
       "create_product" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "acquirerId"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "responseCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "responseMessage"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "templateName"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 4
             "name" "templateType"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 5
             "name" "templateXml"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 6
             "name" "terminalType"
             "req" true
             "type" "`$STRING`"))
@@ -390,13 +241,10 @@
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm)
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/createProduct"
@@ -411,44 +259,25 @@
       "deactivate_terminal" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "corporateUuid"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "deactivationReason"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "packageOrderUuid"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "productOrderUuid"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 4
             "name" "responseCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 5
             "name" "responseMessage"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 6
             "name" "terminalId"
             "req" true
             "type" "`$INTEGER`"))
@@ -456,13 +285,10 @@
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm)
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/deactivateTerminal"
@@ -477,85 +303,52 @@
       "digital_services_api" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "clearingDateFrom"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "clearingDateTo"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "responseCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "responseMessage"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 4
             "name" "txCount"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 5
             "name" "txIdEnd"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 6
             "name" "txIdStart"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 7
             "name" "txSeqNoEnd"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 8
             "name" "txSeqNoStart"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 9
             "name" "txTotal"
-            "req" false
             "type" "`$INTEGER`"))
         "name" "digital_services_api"
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "params" (vs/jt
                     (vs/jm
-                      "active" true
-                      "index$" 0
                       "kind" "param"
                       "name" "file_id"
                       "orig" "file_id"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/public/digitalservices/mandatorClearingExportDownload/{fileId}"
@@ -574,9 +367,7 @@
                   "req" "`reqdata`"
                   "res" "`body`"))
               (vs/jm
-                "active" true
                 "args" (vs/jm)
-                "index$" 1
                 "kind" "http"
                 "method" "POST"
                 "orig" "/public/digitalservices/mandatorClearingExportMetadata"
@@ -590,13 +381,10 @@
                   "res" "`body`"))))
           "load" (vs/jm
             "input" "data"
-            "key$" "load"
             "name" "load"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm)
-                "index$" 0
                 "kind" "http"
                 "method" "GET"
                 "orig" "/public/digitalservices/mandatorClearingExportDownload/status"
@@ -616,38 +404,23 @@
       "ec_data_ecom" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "ecomData"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "responseCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "responseMessage"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "terminalId"
             "req" true
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 4
             "name" "transactionId"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 5
             "name" "transactionType"
             "req" true
             "type" "`$STRING`"))
@@ -655,13 +428,10 @@
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm)
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/public/getEcData"
@@ -677,32 +447,18 @@
       "ecom_parameter" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "ecomPass"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "ecomSkey"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "responseCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "responseMessage"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 4
             "name" "terminalId"
             "req" true
             "type" "`$INTEGER`"))
@@ -710,13 +466,10 @@
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm)
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/public/getEcomParameters"
@@ -732,38 +485,23 @@
       "ecr_data" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "ecrData"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "responseCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "responseMessage"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "terminalId"
             "req" true
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 4
             "name" "transactionId"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 5
             "name" "transactionType"
             "req" true
             "type" "`$STRING`"))
@@ -771,13 +509,10 @@
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm)
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/public/getEcrData"
@@ -793,38 +528,23 @@
       "emv_data" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "emvData"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "responseCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "responseMessage"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "terminalId"
             "req" true
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 4
             "name" "transactionId"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 5
             "name" "transactionType"
             "req" true
             "type" "`$STRING`"))
@@ -832,13 +552,10 @@
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm)
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/public/getEmvData"
@@ -854,100 +571,61 @@
       "enable_acquiring" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "accountNo"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "additionalData"
-            "req" false
             "type" "`$OBJECT`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "corporateUuid"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "currency"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 4
             "name" "merchantCategoryCode"
             "req" true
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 5
             "name" "packageOrderUuid"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 6
             "name" "productOrderUuid"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 7
             "name" "responseCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 8
             "name" "responseMessage"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 9
             "name" "sortingCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 10
             "name" "templateName"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 11
             "name" "terminalIdAcq"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 12
             "name" "terminalIds"
-            "req" false
             "type" "`$ARRAY`")
           (vs/jm
-            "active" true
-            "index$" 13
             "name" "vuNummer"
-            "req" false
             "type" "`$STRING`"))
         "name" "enable_acquiring"
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm)
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/enableAcquiring"
@@ -962,34 +640,23 @@
       "get_merchant_contract_number" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "merchantContractNumber"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "responseCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "responseMessage"
-            "req" false
             "type" "`$STRING`"))
         "name" "get_merchant_contract_number"
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm)
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/getMerchantContractNumber"
@@ -1004,20 +671,12 @@
       "get_template_xml" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "responseCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "responseMessage"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "templateName"
             "req" true
             "type" "`$STRING`"))
@@ -1025,13 +684,10 @@
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm)
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/public/getTemplateXml"
@@ -1047,34 +703,23 @@
       "introduce_mandator" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "mandatorName"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "responseCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "responseMessage"
-            "req" false
             "type" "`$STRING`"))
         "name" "introduce_mandator"
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm)
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/introduceMandator"
@@ -1089,20 +734,12 @@
       "introduce_package" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "responseCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "responseMessage"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "terminalTemplateDescription"
             "req" true
             "type" "`$STRING`"))
@@ -1110,13 +747,10 @@
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm)
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/introducePackage"
@@ -1131,76 +765,43 @@
       "keep_alive" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "hwserialno"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "kaDateTimeFrom"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "kaDateTimeTo"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "keepAliveData"
-            "req" false
             "type" "`$ARRAY`")
           (vs/jm
-            "active" true
-            "index$" 4
             "name" "pagination"
-            "req" false
             "type" "`$OBJECT`")
           (vs/jm
-            "active" true
-            "index$" 5
             "name" "responseCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 6
             "name" "responseMessage"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 7
             "name" "terminalDateTimeFrom"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 8
             "name" "terminalDateTimeTo"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 9
             "name" "terminalId"
-            "req" false
             "type" "`$INTEGER`"))
         "name" "keep_alive"
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm)
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/public/keepalive"
@@ -1216,52 +817,31 @@
       "list_terminal" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "corporateUuid"
-            "req" false
             "type" "`$ARRAY`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "filter"
-            "req" false
             "type" "`$OBJECT`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "pagination"
-            "req" false
             "type" "`$OBJECT`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "responseCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 4
             "name" "responseMessage"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 5
             "name" "terminals"
-            "req" false
             "type" "`$ARRAY`"))
         "name" "list_terminal"
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm)
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/public/listTerminals"
@@ -1277,52 +857,33 @@
       "mandator_clearing_export" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "clearingDateFrom"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "clearingDateTo"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "pagination"
-            "req" false
             "type" "`$OBJECT`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "records"
-            "req" false
             "type" "`$ARRAY`")
           (vs/jm
-            "active" true
-            "index$" 4
             "name" "responseCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 5
             "name" "responseMessage"
-            "req" false
             "type" "`$STRING`"))
         "name" "mandator_clearing_export"
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm)
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/public/digitalservices/mandatorClearingExport"
@@ -1339,58 +900,36 @@
       "mandator_clearing_export_download" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "clearingDateFrom"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "clearingDateTo"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "fileId"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "filenameTemplate"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 4
             "name" "responseCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 5
             "name" "responseMessage"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 6
             "name" "status"
-            "req" false
             "type" "`$STRING`"))
         "name" "mandator_clearing_export_download"
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm)
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/public/digitalservices/mandatorClearingExportDownload"
@@ -1404,22 +943,17 @@
                   "res" "`body`"))))
           "load" (vs/jm
             "input" "data"
-            "key$" "load"
             "name" "load"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm
                   "params" (vs/jt
                     (vs/jm
-                      "active" true
-                      "index$" 0
                       "kind" "param"
                       "name" "id"
                       "orig" "file_id"
                       "reqd" true
                       "type" "`$STRING`")))
-                "index$" 0
                 "kind" "http"
                 "method" "GET"
                 "orig" "/public/digitalservices/mandatorClearingExportDownload/{fileId}"
@@ -1442,46 +976,30 @@
       "mandator_clearing_export_summary" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "clearingDateFrom"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "clearingDateTo"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "records"
-            "req" false
             "type" "`$ARRAY`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "responseCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 4
             "name" "responseMessage"
-            "req" false
             "type" "`$STRING`"))
         "name" "mandator_clearing_export_summary"
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm)
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/public/digitalservices/mandatorClearingExportSummary"
@@ -1498,166 +1016,88 @@
       "merchant_portal_services_api" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "3DSecure"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "authorizationCode"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "cardBrand"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "clearingAmountFrom"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 4
             "name" "clearingAmountTo"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 5
             "name" "clearingCurrency"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 6
             "name" "clearingStatus"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 7
             "name" "corporateUUID"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 8
             "name" "orderByTransactionDate"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 9
             "name" "pagination"
-            "req" false
             "type" "`$OBJECT`")
           (vs/jm
-            "active" true
-            "index$" 10
             "name" "receiptNumber"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 11
             "name" "referencedTransactionId"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 12
             "name" "retrievalReferenceNumber"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 13
             "name" "sourceId"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 14
             "name" "tecsengineResponseCodeFrom"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 15
             "name" "tecsengineResponseCodeTo"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 16
             "name" "terminalId"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 17
             "name" "traceNumber"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 18
             "name" "transactionAmountFrom"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 19
             "name" "transactionAmountTo"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 20
             "name" "transactionDateFrom"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 21
             "name" "transactionDateTo"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 22
             "name" "transactionId"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 23
             "name" "transactionType"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 24
             "name" "wallet"
-            "req" false
             "type" "`$STRING`"))
         "name" "merchant_portal_services_api"
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm)
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/public/transactionHistoryCsv"
@@ -1673,46 +1113,29 @@
       "move_tid" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "productorderuuids"
             "req" true
             "type" "`$ARRAY`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "responseCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "responseMessage"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "targetPackageorderuuid"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 4
             "name" "targetProductorderuuid"
-            "req" false
             "type" "`$STRING`"))
         "name" "move_tid"
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm)
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/moveTid"
@@ -1727,108 +1150,62 @@
       "payment_manual" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "acquirerName"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "amount"
             "req" true
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "authorizationNumber"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "cardNumber"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 4
             "name" "cardType"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 5
             "name" "currency"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 6
             "name" "cvc"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 7
             "name" "dateTimeTx"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 8
             "name" "expDate"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 9
             "name" "merchantId"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 10
             "name" "originalTransactionId"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 11
             "name" "password"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 12
             "name" "responseCode"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 13
             "name" "responseMessage"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 14
             "name" "terminalId"
             "op" (vs/jm
               "create" (vs/jm
                 "req" true
                 "type" "`$STRING`"))
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 15
             "name" "transactionId"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 16
             "name" "txtype"
             "req" true
             "type" "`$STRING`"))
@@ -1836,13 +1213,10 @@
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm)
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/public/paymentManual"
@@ -1858,74 +1232,43 @@
       "payment_sred" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "amount"
             "req" true
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "currency"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "device"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "devicePayload"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 4
             "name" "expDate"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 5
             "name" "mode"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 6
             "name" "panMasked"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 7
             "name" "password"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 8
             "name" "serial"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 9
             "name" "serviceCode"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 10
             "name" "terminalId"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 11
             "name" "txtype"
             "req" true
             "type" "`$STRING`"))
@@ -1933,13 +1276,10 @@
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm)
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/public/paymentSred"
@@ -1955,284 +1295,161 @@
       "pre_auth_transaction_completion" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "acquirerId"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "acquirerName"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "actualBonusPoints"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "amount"
             "op" (vs/jm
               "create" (vs/jm
                 "req" true
                 "type" "`$INTEGER`"))
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 4
             "name" "authorizationCode"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 5
             "name" "balanceAmount"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 6
             "name" "cardBrand"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 7
             "name" "cardNumber"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 8
             "name" "cardNumberReference"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 9
             "name" "clientId"
             "req" true
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 10
             "name" "currency"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 11
             "name" "cvc"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 12
             "name" "ecData"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 13
             "name" "ecrData"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 14
             "name" "emvData"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 15
             "name" "exchangeFee"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 16
             "name" "exchangeRate"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 17
             "name" "languageCode"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 18
             "name" "merchantAddress"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 19
             "name" "merchantName"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 20
             "name" "merchantNumber"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 21
             "name" "messageType"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 22
             "name" "originalTraceNumber"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 23
             "name" "originalTransactionId"
             "op" (vs/jm
               "create" (vs/jm
                 "req" true
                 "type" "`$STRING`"))
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 24
             "name" "password"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 25
             "name" "paymentReason"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 26
             "name" "receiptFooter"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 27
             "name" "receiptHeader"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 28
             "name" "receiptLayout"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 29
             "name" "receiptNumber"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 30
             "name" "responseCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 31
             "name" "responseMessage"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 32
             "name" "serialNumber"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 33
             "name" "svc"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 34
             "name" "terminalId"
             "req" true
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 35
             "name" "terminalLocation"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 36
             "name" "traceNumber"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 37
             "name" "transactionDate"
             "op" (vs/jm
               "create" (vs/jm
                 "req" true
                 "type" "`$STRING`"))
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 38
             "name" "transactionId"
             "op" (vs/jm
               "create" (vs/jm
                 "req" true
                 "type" "`$STRING`"))
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 39
             "name" "transactionType"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 40
             "name" "txType"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 41
             "name" "userData"
-            "req" false
             "type" "`$STRING`"))
         "name" "pre_auth_transaction_completion"
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm)
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/public/paymentTransaction"
@@ -2244,9 +1461,7 @@
                   "req" "`reqdata`"
                   "res" "`body`"))
               (vs/jm
-                "active" true
                 "args" (vs/jm)
-                "index$" 1
                 "kind" "http"
                 "method" "POST"
                 "orig" "/public/preAuthCompletionTransaction"
@@ -2262,44 +1477,25 @@
       "reactivate_terminal" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "corporateUuid"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "packageOrderUuid"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "productOrderUuid"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "reactivationReason"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 4
             "name" "responseCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 5
             "name" "responseMessage"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 6
             "name" "terminalId"
             "req" true
             "type" "`$INTEGER`"))
@@ -2307,13 +1503,10 @@
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm)
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/reactivateTerminal"
@@ -2328,272 +1521,153 @@
       "refund_transaction" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "acquirerId"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "acquirerName"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "actualBonusPoints"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "amount"
             "op" (vs/jm
               "create" (vs/jm
                 "req" true
                 "type" "`$INTEGER`"))
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 4
             "name" "authorizationCode"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 5
             "name" "balanceAmount"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 6
             "name" "cardBrand"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 7
             "name" "cardNumber"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 8
             "name" "clientId"
             "req" true
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 9
             "name" "currency"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 10
             "name" "cvc"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 11
             "name" "ecData"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 12
             "name" "ecrData"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 13
             "name" "emvData"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 14
             "name" "exchangeFee"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 15
             "name" "exchangeRate"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 16
             "name" "languageCode"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 17
             "name" "merchantAddress"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 18
             "name" "merchantName"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 19
             "name" "merchantNumber"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 20
             "name" "messageType"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 21
             "name" "originalTraceNumber"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 22
             "name" "originalTransactionId"
             "op" (vs/jm
               "create" (vs/jm
                 "req" true
                 "type" "`$STRING`"))
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 23
             "name" "password"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 24
             "name" "paymentReason"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 25
             "name" "receiptFooter"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 26
             "name" "receiptHeader"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 27
             "name" "receiptLayout"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 28
             "name" "receiptNumber"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 29
             "name" "responseCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 30
             "name" "responseMessage"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 31
             "name" "serialNumber"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 32
             "name" "svc"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 33
             "name" "terminalId"
             "req" true
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 34
             "name" "terminalLocation"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 35
             "name" "traceNumber"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 36
             "name" "transactionDate"
             "op" (vs/jm
               "create" (vs/jm
                 "req" true
                 "type" "`$STRING`"))
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 37
             "name" "transactionId"
             "op" (vs/jm
               "create" (vs/jm
                 "req" true
                 "type" "`$STRING`"))
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 38
             "name" "txType"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 39
             "name" "userData"
-            "req" false
             "type" "`$STRING`"))
         "name" "refund_transaction"
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm)
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/public/refundTransaction"
@@ -2609,50 +1683,30 @@
       "register_tecs_company" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "corporateUuid"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "packageOrderUuid"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "partnerId"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "partnerName"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 4
             "name" "productOrderUuid"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 5
             "name" "responseCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 6
             "name" "responseMessage"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 7
             "name" "templateName"
             "req" true
             "type" "`$STRING`"))
@@ -2660,13 +1714,10 @@
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm)
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/registerTecsCompany"
@@ -2681,124 +1732,74 @@
       "register_terminal" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "additionalData"
-            "req" false
             "type" "`$OBJECT`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "corporateUuid"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "packageOrderUuid"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "productOrderUuid"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 4
             "name" "responseCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 5
             "name" "responseMessage"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 6
             "name" "tecsWebSecretKey"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 7
             "name" "templateName"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 8
             "name" "terminalCountryCode"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 9
             "name" "terminalId"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 10
             "name" "terminalIdAcq"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 11
             "name" "terminalLanguageCode"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 12
             "name" "terminalLocation"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 13
             "name" "terminalSerialNumber"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 14
             "name" "tokenIOAlias"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 15
             "name" "tokenIOIban"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 16
             "name" "tokenIOMemberId"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 17
             "name" "webShopUrl"
-            "req" false
             "type" "`$STRING`"))
         "name" "register_terminal"
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm)
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/registerTerminal"
@@ -2813,76 +1814,47 @@
       "report_data" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "cardBrandReportData"
-            "req" false
             "type" "`$ARRAY`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "clearingDateFrom"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "clearingDateTo"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "corporateId"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 4
             "name" "currency"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 5
             "name" "responseCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 6
             "name" "responseMessage"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 7
             "name" "sumOverCreditTx"
-            "req" false
             "type" "`$OBJECT`")
           (vs/jm
-            "active" true
-            "index$" 8
             "name" "sumOverDebitTx"
-            "req" false
             "type" "`$OBJECT`")
           (vs/jm
-            "active" true
-            "index$" 9
             "name" "terminalId"
-            "req" false
             "type" "`$INTEGER`"))
         "name" "report_data"
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm)
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/public/digitalservices/reportData"
@@ -2899,320 +1871,167 @@
       "status_transaction" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "acquirerName"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "acquirerTerminalId"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "amount"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "applicationCryptogram"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 4
             "name" "authorizationCode"
-            "req" false
             "type" (vs/jt
               "`$ONE`"
               (vs/jt
                 "`$STRING`"
                 "`$NULL`")))
           (vs/jm
-            "active" true
-            "index$" 5
             "name" "authorizationDate"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 6
             "name" "cardBrand"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 7
             "name" "cardEntry"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 8
             "name" "cardExpiration"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 9
             "name" "cardNumber"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 10
             "name" "clearingAmount"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 11
             "name" "clearingBatchId"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 12
             "name" "clearingCurrency"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 13
             "name" "clearingDate"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 14
             "name" "clearingProcessedDate"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 15
             "name" "clearingStatus"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 16
             "name" "clientId"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 17
             "name" "currency"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 18
             "name" "cvm"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 19
             "name" "ecrData"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 20
             "name" "emvApplicationId"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 21
             "name" "emvApplicationLabel"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 22
             "name" "merchantName"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 23
             "name" "merchantNumber"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 24
             "name" "originalClientId"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 25
             "name" "originalTerminalId"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 26
             "name" "originalTransactionId"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 27
             "name" "paymentReason"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 28
             "name" "receiptNumber"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 29
             "name" "responseCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 30
             "name" "responseCodeFromAS"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 31
             "name" "responseMessage"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 32
             "name" "retrievalReferenceNumber"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 33
             "name" "serviceCode"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 34
             "name" "settlementStatus"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 35
             "name" "sourceId"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 36
             "name" "tecsengineResponseCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 37
             "name" "tecsengineResponseText"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 38
             "name" "terminalEndOfDayDate"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 39
             "name" "terminalId"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 40
             "name" "terminalLocation"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 41
             "name" "tipAmount"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 42
             "name" "traceNumber"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 43
             "name" "transactionClearingDate"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 44
             "name" "transactionDate"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 45
             "name" "transactionId"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 46
             "name" "transactionSeqNumber"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 47
             "name" "transactionServerDate"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 48
             "name" "transactionSource"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 49
             "name" "transactionType"
-            "req" false
             "type" "`$STRING`"))
         "name" "status_transaction"
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm)
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/public/statusTransaction"
@@ -3228,52 +2047,32 @@
       "store_terminal_parameter" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "acqTabNexo"
-            "req" false
             "type" "`$OBJECT`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "configVersion"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "responseCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "responseMessage"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 4
             "name" "serialNumber"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 5
             "name" "tidSent"
-            "req" false
             "type" "`$STRING`"))
         "name" "store_terminal_parameter"
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm)
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/storeTerminalParameters"
@@ -3288,46 +2087,29 @@
       "terminal_id" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "deviceSerialNumber"
             "req" true
             "type" "`$ARRAY`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "duplicateTerminalIds"
-            "req" false
             "type" "`$ARRAY`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "responseCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "responseMessage"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 4
             "name" "terminals"
-            "req" false
             "type" "`$ARRAY`"))
         "name" "terminal_id"
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm)
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/public/getTerminalId"
@@ -3343,190 +2125,100 @@
       "transaction_history" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "3DSecure"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "authorizationCode"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "cardBrand"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "clearingAmountFrom"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 4
             "name" "clearingAmountTo"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 5
             "name" "clearingCurrency"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 6
             "name" "clearingStatus"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 7
             "name" "corporateUUID"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 8
             "name" "orderByTransactionDate"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 9
             "name" "pagination"
-            "req" false
             "type" "`$OBJECT`")
           (vs/jm
-            "active" true
-            "index$" 10
             "name" "paymentTokenPublicId"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 11
             "name" "receiptNumber"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 12
             "name" "referencedTransactionId"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 13
             "name" "responseCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 14
             "name" "responseMessage"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 15
             "name" "retrievalReferenceNumber"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 16
             "name" "sourceId"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 17
             "name" "tecsengineResponseCodeFrom"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 18
             "name" "tecsengineResponseCodeTo"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 19
             "name" "terminalId"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 20
             "name" "traceNumber"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 21
             "name" "transactionAmountFrom"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 22
             "name" "transactionAmountTo"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 23
             "name" "transactionDateFrom"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 24
             "name" "transactionDateTo"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 25
             "name" "transactionHistories"
-            "req" false
             "type" "`$ARRAY`")
           (vs/jm
-            "active" true
-            "index$" 26
             "name" "transactionId"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 27
             "name" "transactionType"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 28
             "name" "wallet"
-            "req" false
             "type" "`$STRING`"))
         "name" "transaction_history"
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm)
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/public/mcom/transactionHistory"
@@ -3539,9 +2231,7 @@
                   "req" "`reqdata`"
                   "res" "`body`"))
               (vs/jm
-                "active" true
                 "args" (vs/jm)
-                "index$" 1
                 "kind" "http"
                 "method" "POST"
                 "orig" "/public/transactionHistory"
@@ -3557,60 +2247,39 @@
       "transactions_count" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "period"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "responseCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "responseMessage"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "transactionDateFrom"
             "op" (vs/jm
               "create" (vs/jm
                 "req" true
                 "type" "`$STRING`"))
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 4
             "name" "transactionDateTo"
             "op" (vs/jm
               "create" (vs/jm
                 "req" true
                 "type" "`$STRING`"))
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 5
             "name" "transactionsCount"
-            "req" false
             "type" "`$ARRAY`"))
         "name" "transactions_count"
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm)
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/public/countAuthorisedTransactions"
@@ -3622,9 +2291,7 @@
                   "req" "`reqdata`"
                   "res" "`body`"))
               (vs/jm
-                "active" true
                 "args" (vs/jm)
-                "index$" 1
                 "kind" "http"
                 "method" "POST"
                 "orig" "/public/countNotAuthorisedTransactions"
@@ -3640,60 +2307,39 @@
       "transactions_count_card_brand" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "period"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "responseCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "responseMessage"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "transactionDateFrom"
             "op" (vs/jm
               "create" (vs/jm
                 "req" true
                 "type" "`$STRING`"))
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 4
             "name" "transactionDateTo"
             "op" (vs/jm
               "create" (vs/jm
                 "req" true
                 "type" "`$STRING`"))
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 5
             "name" "transactionsCount"
-            "req" false
             "type" "`$ARRAY`"))
         "name" "transactions_count_card_brand"
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm)
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/public/countTransactionsByCardBrand"
@@ -3709,60 +2355,39 @@
       "transactions_turnover" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "period"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "responseCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "responseMessage"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "transactionDateFrom"
             "op" (vs/jm
               "create" (vs/jm
                 "req" true
                 "type" "`$STRING`"))
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 4
             "name" "transactionDateTo"
             "op" (vs/jm
               "create" (vs/jm
                 "req" true
                 "type" "`$STRING`"))
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 5
             "name" "turnovers"
-            "req" false
             "type" "`$ARRAY`"))
         "name" "transactions_turnover"
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm)
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/public/transactionTurnover"
@@ -3778,82 +2403,47 @@
       "update_merchant" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "city"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "corporateUuid"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "country"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "merchantCategoryCode"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 4
             "name" "name"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 5
             "name" "responseCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 6
             "name" "responseMessage"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 7
             "name" "state"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 8
             "name" "street"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 9
             "name" "vuNummer"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 10
             "name" "zipcode"
-            "req" false
             "type" "`$STRING`"))
         "name" "update_merchant"
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm)
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/public/updateMerchant"
@@ -3869,26 +2459,16 @@
       "update_template_xml" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "responseCode"
-            "req" false
             "type" "`$INTEGER`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "responseMessage"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "templateName"
             "req" true
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 3
             "name" "templateXml"
             "req" true
             "type" "`$STRING`"))
@@ -3896,13 +2476,10 @@
         "op" (vs/jm
           "create" (vs/jm
             "input" "data"
-            "key$" "create"
             "name" "create"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm)
-                "index$" 0
                 "kind" "http"
                 "method" "POST"
                 "orig" "/public/updateTemplateXml"
@@ -3918,34 +2495,22 @@
       "version" (vs/jm
         "fields" (vs/jt
           (vs/jm
-            "active" true
-            "index$" 0
             "name" "appName"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 1
             "name" "buildDate"
-            "req" false
             "type" "`$STRING`")
           (vs/jm
-            "active" true
-            "index$" 2
             "name" "version"
-            "req" false
             "type" "`$STRING`"))
         "name" "version"
         "op" (vs/jm
           "load" (vs/jm
             "input" "data"
-            "key$" "load"
             "name" "load"
             "points" (vs/jt
               (vs/jm
-                "active" true
                 "args" (vs/jm)
-                "index$" 0
                 "kind" "http"
                 "method" "GET"
                 "orig" "/public/version"

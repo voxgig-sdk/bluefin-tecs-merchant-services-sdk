@@ -23,6 +23,7 @@ build = {
   modules = {
     ["bluefin-tecs-merchant-services_sdk"] = "bluefin-tecs-merchant-services_sdk.lua",
     ["config"] = "config.lua",
+    ["config_shared"] = "config_shared.lua",
     ["features"] = "features.lua",
   }
 }

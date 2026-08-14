@@ -15,7 +15,7 @@ require_relative "../BluefinTecsMerchantServices_sdk"
 module BluefinTecsMerchantServicesFeatureHarness
   # True when this SDK was generated with the named feature.
   def self.has_feature?(name)
-    f = BluefinTecsMerchantServicesConfig.make_config["feature"]
+    f = BluefinTecsMerchantServicesConfig.shared_config["feature"]
     f.is_a?(Hash) && !f[name].nil?
   end
 

@@ -28,7 +28,7 @@ class BluefinTecsMerchantServicesSDK
     utility = BluefinTecsMerchantServicesUtility.new
     @_utility = utility
 
-    config = BluefinTecsMerchantServicesConfig.make_config
+    config = BluefinTecsMerchantServicesConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,

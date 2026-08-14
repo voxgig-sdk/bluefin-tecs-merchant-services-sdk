@@ -66,28 +66,18 @@ defmodule BluefinTecsMerchantServices.Config do
         "cancel_transaction" => %{
           "fields" => [
             %{
-              "active" => true,
               "name" => "acquirerId",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 0
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "acquirerName",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 1
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "actualBonusPoints",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 2
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "amount",
               "op" => %{
                 "create" => %{
@@ -95,124 +85,75 @@ defmodule BluefinTecsMerchantServices.Config do
                   "type" => "`$INTEGER`"
                 }
               },
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 3
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "authorizationCode",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 4
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "balanceAmount",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 5
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "cardBrand",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 6
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "cardNumber",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 7
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "clientId",
               "req" => true,
-              "type" => "`$INTEGER`",
-              "index$" => 8
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "currency",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 9
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "cvc",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 10
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "ecData",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 11
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "ecrData",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 12
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "emvData",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 13
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "exchangeFee",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 14
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "exchangeRate",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 15
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "languageCode",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 16
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "merchantAddress",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 17
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "merchantName",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 18
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "merchantNumber",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 19
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "messageType",
               "op" => %{
                 "create" => %{
@@ -220,19 +161,13 @@ defmodule BluefinTecsMerchantServices.Config do
                   "type" => "`$STRING`"
                 }
               },
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 20
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "originalTraceNumber",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 21
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "originalTransactionId",
               "op" => %{
                 "create" => %{
@@ -240,103 +175,63 @@ defmodule BluefinTecsMerchantServices.Config do
                   "type" => "`$STRING`"
                 }
               },
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 22
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "password",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 23
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "paymentReason",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 24
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "receiptFooter",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 25
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "receiptHeader",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 26
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "receiptLayout",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 27
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "receiptNumber",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 28
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "responseCode",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 29
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "responseMessage",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 30
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "serialNumber",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 31
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "svc",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 32
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "terminalId",
               "req" => true,
-              "type" => "`$INTEGER`",
-              "index$" => 33
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "terminalLocation",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 34
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "traceNumber",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 35
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "transactionDate",
               "op" => %{
                 "create" => %{
@@ -344,12 +239,9 @@ defmodule BluefinTecsMerchantServices.Config do
                   "type" => "`$STRING`"
                 }
               },
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 36
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "transactionId",
               "op" => %{
                 "create" => %{
@@ -357,23 +249,15 @@ defmodule BluefinTecsMerchantServices.Config do
                   "type" => "`$STRING`"
                 }
               },
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 37
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "txType",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 38
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "userData",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 39
+              "type" => "`$STRING`"
             }
           ],
           "name" => "cancel_transaction",
@@ -383,7 +267,6 @@ defmodule BluefinTecsMerchantServices.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "active" => true,
                   "args" => %{},
                   "kind" => "http",
                   "method" => "POST",
@@ -396,11 +279,9 @@ defmodule BluefinTecsMerchantServices.Config do
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  },
-                  "index$" => 0
+                  }
                 }
-              ],
-              "key$" => "create"
+              ]
             }
           },
           "relations" => %{
@@ -410,25 +291,16 @@ defmodule BluefinTecsMerchantServices.Config do
         "check_card_black_listed" => %{
           "fields" => [
             %{
-              "active" => true,
               "name" => "cardNo",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 0
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "responseCode",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 1
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "responseMessage",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 2
+              "type" => "`$STRING`"
             }
           ],
           "name" => "check_card_black_listed",
@@ -438,11 +310,9 @@ defmodule BluefinTecsMerchantServices.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "active" => true,
                   "args" => %{
                     "header" => [
                       %{
-                        "active" => true,
                         "kind" => "header",
                         "name" => "authorization",
                         "orig" => "authorization",
@@ -465,11 +335,9 @@ defmodule BluefinTecsMerchantServices.Config do
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  },
-                  "index$" => 0
+                  }
                 }
-              ],
-              "key$" => "create"
+              ]
             }
           },
           "relations" => %{
@@ -479,53 +347,36 @@ defmodule BluefinTecsMerchantServices.Config do
         "create_product" => %{
           "fields" => [
             %{
-              "active" => true,
               "name" => "acquirerId",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 0
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "responseCode",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 1
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "responseMessage",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 2
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "templateName",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 3
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "templateType",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 4
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "templateXml",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 5
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "terminalType",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 6
+              "type" => "`$STRING`"
             }
           ],
           "name" => "create_product",
@@ -535,7 +386,6 @@ defmodule BluefinTecsMerchantServices.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "active" => true,
                   "args" => %{},
                   "kind" => "http",
                   "method" => "POST",
@@ -547,11 +397,9 @@ defmodule BluefinTecsMerchantServices.Config do
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  },
-                  "index$" => 0
+                  }
                 }
-              ],
-              "key$" => "create"
+              ]
             }
           },
           "relations" => %{
@@ -561,53 +409,34 @@ defmodule BluefinTecsMerchantServices.Config do
         "deactivate_terminal" => %{
           "fields" => [
             %{
-              "active" => true,
               "name" => "corporateUuid",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 0
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "deactivationReason",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 1
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "packageOrderUuid",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 2
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "productOrderUuid",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 3
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "responseCode",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 4
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "responseMessage",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 5
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "terminalId",
               "req" => true,
-              "type" => "`$INTEGER`",
-              "index$" => 6
+              "type" => "`$INTEGER`"
             }
           ],
           "name" => "deactivate_terminal",
@@ -617,7 +446,6 @@ defmodule BluefinTecsMerchantServices.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "active" => true,
                   "args" => %{},
                   "kind" => "http",
                   "method" => "POST",
@@ -629,11 +457,9 @@ defmodule BluefinTecsMerchantServices.Config do
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  },
-                  "index$" => 0
+                  }
                 }
-              ],
-              "key$" => "create"
+              ]
             }
           },
           "relations" => %{
@@ -643,74 +469,46 @@ defmodule BluefinTecsMerchantServices.Config do
         "digital_services_api" => %{
           "fields" => [
             %{
-              "active" => true,
               "name" => "clearingDateFrom",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 0
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "clearingDateTo",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 1
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "responseCode",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 2
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "responseMessage",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 3
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "txCount",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 4
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "txIdEnd",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 5
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "txIdStart",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 6
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "txSeqNoEnd",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 7
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "txSeqNoStart",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 8
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "txTotal",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 9
+              "type" => "`$INTEGER`"
             }
           ],
           "name" => "digital_services_api",
@@ -720,17 +518,14 @@ defmodule BluefinTecsMerchantServices.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "active" => true,
                   "args" => %{
                     "params" => [
                       %{
-                        "active" => true,
                         "kind" => "param",
                         "name" => "file_id",
                         "orig" => "file_id",
                         "reqd" => true,
-                        "type" => "`$STRING`",
-                        "index$" => 0
+                        "type" => "`$STRING`"
                       }
                     ]
                   },
@@ -756,11 +551,9 @@ defmodule BluefinTecsMerchantServices.Config do
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  },
-                  "index$" => 0
+                  }
                 },
                 %{
-                  "active" => true,
                   "args" => %{},
                   "kind" => "http",
                   "method" => "POST",
@@ -774,18 +567,15 @@ defmodule BluefinTecsMerchantServices.Config do
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  },
-                  "index$" => 1
+                  }
                 }
-              ],
-              "key$" => "create"
+              ]
             },
             "load" => %{
               "input" => "data",
               "name" => "load",
               "points" => [
                 %{
-                  "active" => true,
                   "args" => %{},
                   "kind" => "http",
                   "method" => "GET",
@@ -800,11 +590,9 @@ defmodule BluefinTecsMerchantServices.Config do
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  },
-                  "index$" => 0
+                  }
                 }
-              ],
-              "key$" => "load"
+              ]
             }
           },
           "relations" => %{
@@ -818,46 +606,31 @@ defmodule BluefinTecsMerchantServices.Config do
         "ec_data_ecom" => %{
           "fields" => [
             %{
-              "active" => true,
               "name" => "ecomData",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 0
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "responseCode",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 1
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "responseMessage",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 2
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "terminalId",
               "req" => true,
-              "type" => "`$INTEGER`",
-              "index$" => 3
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "transactionId",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 4
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "transactionType",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 5
+              "type" => "`$STRING`"
             }
           ],
           "name" => "ec_data_ecom",
@@ -867,7 +640,6 @@ defmodule BluefinTecsMerchantServices.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "active" => true,
                   "args" => %{},
                   "kind" => "http",
                   "method" => "POST",
@@ -880,11 +652,9 @@ defmodule BluefinTecsMerchantServices.Config do
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  },
-                  "index$" => 0
+                  }
                 }
-              ],
-              "key$" => "create"
+              ]
             }
           },
           "relations" => %{
@@ -894,39 +664,25 @@ defmodule BluefinTecsMerchantServices.Config do
         "ecom_parameter" => %{
           "fields" => [
             %{
-              "active" => true,
               "name" => "ecomPass",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 0
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "ecomSkey",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 1
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "responseCode",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 2
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "responseMessage",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 3
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "terminalId",
               "req" => true,
-              "type" => "`$INTEGER`",
-              "index$" => 4
+              "type" => "`$INTEGER`"
             }
           ],
           "name" => "ecom_parameter",
@@ -936,7 +692,6 @@ defmodule BluefinTecsMerchantServices.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "active" => true,
                   "args" => %{},
                   "kind" => "http",
                   "method" => "POST",
@@ -949,11 +704,9 @@ defmodule BluefinTecsMerchantServices.Config do
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  },
-                  "index$" => 0
+                  }
                 }
-              ],
-              "key$" => "create"
+              ]
             }
           },
           "relations" => %{
@@ -963,46 +716,31 @@ defmodule BluefinTecsMerchantServices.Config do
         "ecr_data" => %{
           "fields" => [
             %{
-              "active" => true,
               "name" => "ecrData",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 0
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "responseCode",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 1
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "responseMessage",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 2
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "terminalId",
               "req" => true,
-              "type" => "`$INTEGER`",
-              "index$" => 3
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "transactionId",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 4
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "transactionType",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 5
+              "type" => "`$STRING`"
             }
           ],
           "name" => "ecr_data",
@@ -1012,7 +750,6 @@ defmodule BluefinTecsMerchantServices.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "active" => true,
                   "args" => %{},
                   "kind" => "http",
                   "method" => "POST",
@@ -1025,11 +762,9 @@ defmodule BluefinTecsMerchantServices.Config do
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  },
-                  "index$" => 0
+                  }
                 }
-              ],
-              "key$" => "create"
+              ]
             }
           },
           "relations" => %{
@@ -1039,46 +774,31 @@ defmodule BluefinTecsMerchantServices.Config do
         "emv_data" => %{
           "fields" => [
             %{
-              "active" => true,
               "name" => "emvData",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 0
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "responseCode",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 1
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "responseMessage",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 2
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "terminalId",
               "req" => true,
-              "type" => "`$INTEGER`",
-              "index$" => 3
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "transactionId",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 4
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "transactionType",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 5
+              "type" => "`$STRING`"
             }
           ],
           "name" => "emv_data",
@@ -1088,7 +808,6 @@ defmodule BluefinTecsMerchantServices.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "active" => true,
                   "args" => %{},
                   "kind" => "http",
                   "method" => "POST",
@@ -1101,11 +820,9 @@ defmodule BluefinTecsMerchantServices.Config do
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  },
-                  "index$" => 0
+                  }
                 }
-              ],
-              "key$" => "create"
+              ]
             }
           },
           "relations" => %{
@@ -1115,102 +832,66 @@ defmodule BluefinTecsMerchantServices.Config do
         "enable_acquiring" => %{
           "fields" => [
             %{
-              "active" => true,
               "name" => "accountNo",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 0
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "additionalData",
-              "req" => false,
-              "type" => "`$OBJECT`",
-              "index$" => 1
+              "type" => "`$OBJECT`"
             },
             %{
-              "active" => true,
               "name" => "corporateUuid",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 2
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "currency",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 3
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "merchantCategoryCode",
               "req" => true,
-              "type" => "`$INTEGER`",
-              "index$" => 4
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "packageOrderUuid",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 5
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "productOrderUuid",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 6
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "responseCode",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 7
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "responseMessage",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 8
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "sortingCode",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 9
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "templateName",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 10
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "terminalIdAcq",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 11
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "terminalIds",
-              "req" => false,
-              "type" => "`$ARRAY`",
-              "index$" => 12
+              "type" => "`$ARRAY`"
             },
             %{
-              "active" => true,
               "name" => "vuNummer",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 13
+              "type" => "`$STRING`"
             }
           ],
           "name" => "enable_acquiring",
@@ -1220,7 +901,6 @@ defmodule BluefinTecsMerchantServices.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "active" => true,
                   "args" => %{},
                   "kind" => "http",
                   "method" => "POST",
@@ -1232,11 +912,9 @@ defmodule BluefinTecsMerchantServices.Config do
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  },
-                  "index$" => 0
+                  }
                 }
-              ],
-              "key$" => "create"
+              ]
             }
           },
           "relations" => %{
@@ -1246,25 +924,17 @@ defmodule BluefinTecsMerchantServices.Config do
         "get_merchant_contract_number" => %{
           "fields" => [
             %{
-              "active" => true,
               "name" => "merchantContractNumber",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 0
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "responseCode",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 1
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "responseMessage",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 2
+              "type" => "`$STRING`"
             }
           ],
           "name" => "get_merchant_contract_number",
@@ -1274,7 +944,6 @@ defmodule BluefinTecsMerchantServices.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "active" => true,
                   "args" => %{},
                   "kind" => "http",
                   "method" => "POST",
@@ -1286,11 +955,9 @@ defmodule BluefinTecsMerchantServices.Config do
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  },
-                  "index$" => 0
+                  }
                 }
-              ],
-              "key$" => "create"
+              ]
             }
           },
           "relations" => %{
@@ -1300,25 +967,17 @@ defmodule BluefinTecsMerchantServices.Config do
         "get_template_xml" => %{
           "fields" => [
             %{
-              "active" => true,
               "name" => "responseCode",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 0
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "responseMessage",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 1
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "templateName",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 2
+              "type" => "`$STRING`"
             }
           ],
           "name" => "get_template_xml",
@@ -1328,7 +987,6 @@ defmodule BluefinTecsMerchantServices.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "active" => true,
                   "args" => %{},
                   "kind" => "http",
                   "method" => "POST",
@@ -1341,11 +999,9 @@ defmodule BluefinTecsMerchantServices.Config do
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  },
-                  "index$" => 0
+                  }
                 }
-              ],
-              "key$" => "create"
+              ]
             }
           },
           "relations" => %{
@@ -1355,25 +1011,17 @@ defmodule BluefinTecsMerchantServices.Config do
         "introduce_mandator" => %{
           "fields" => [
             %{
-              "active" => true,
               "name" => "mandatorName",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 0
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "responseCode",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 1
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "responseMessage",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 2
+              "type" => "`$STRING`"
             }
           ],
           "name" => "introduce_mandator",
@@ -1383,7 +1031,6 @@ defmodule BluefinTecsMerchantServices.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "active" => true,
                   "args" => %{},
                   "kind" => "http",
                   "method" => "POST",
@@ -1395,11 +1042,9 @@ defmodule BluefinTecsMerchantServices.Config do
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  },
-                  "index$" => 0
+                  }
                 }
-              ],
-              "key$" => "create"
+              ]
             }
           },
           "relations" => %{
@@ -1409,25 +1054,17 @@ defmodule BluefinTecsMerchantServices.Config do
         "introduce_package" => %{
           "fields" => [
             %{
-              "active" => true,
               "name" => "responseCode",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 0
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "responseMessage",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 1
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "terminalTemplateDescription",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 2
+              "type" => "`$STRING`"
             }
           ],
           "name" => "introduce_package",
@@ -1437,7 +1074,6 @@ defmodule BluefinTecsMerchantServices.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "active" => true,
                   "args" => %{},
                   "kind" => "http",
                   "method" => "POST",
@@ -1449,11 +1085,9 @@ defmodule BluefinTecsMerchantServices.Config do
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  },
-                  "index$" => 0
+                  }
                 }
-              ],
-              "key$" => "create"
+              ]
             }
           },
           "relations" => %{
@@ -1463,74 +1097,44 @@ defmodule BluefinTecsMerchantServices.Config do
         "keep_alive" => %{
           "fields" => [
             %{
-              "active" => true,
               "name" => "hwserialno",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 0
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "kaDateTimeFrom",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 1
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "kaDateTimeTo",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 2
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "keepAliveData",
-              "req" => false,
-              "type" => "`$ARRAY`",
-              "index$" => 3
+              "type" => "`$ARRAY`"
             },
             %{
-              "active" => true,
               "name" => "pagination",
-              "req" => false,
-              "type" => "`$OBJECT`",
-              "index$" => 4
+              "type" => "`$OBJECT`"
             },
             %{
-              "active" => true,
               "name" => "responseCode",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 5
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "responseMessage",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 6
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "terminalDateTimeFrom",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 7
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "terminalDateTimeTo",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 8
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "terminalId",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 9
+              "type" => "`$INTEGER`"
             }
           ],
           "name" => "keep_alive",
@@ -1540,7 +1144,6 @@ defmodule BluefinTecsMerchantServices.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "active" => true,
                   "args" => %{},
                   "kind" => "http",
                   "method" => "POST",
@@ -1553,11 +1156,9 @@ defmodule BluefinTecsMerchantServices.Config do
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  },
-                  "index$" => 0
+                  }
                 }
-              ],
-              "key$" => "create"
+              ]
             }
           },
           "relations" => %{
@@ -1567,46 +1168,28 @@ defmodule BluefinTecsMerchantServices.Config do
         "list_terminal" => %{
           "fields" => [
             %{
-              "active" => true,
               "name" => "corporateUuid",
-              "req" => false,
-              "type" => "`$ARRAY`",
-              "index$" => 0
+              "type" => "`$ARRAY`"
             },
             %{
-              "active" => true,
               "name" => "filter",
-              "req" => false,
-              "type" => "`$OBJECT`",
-              "index$" => 1
+              "type" => "`$OBJECT`"
             },
             %{
-              "active" => true,
               "name" => "pagination",
-              "req" => false,
-              "type" => "`$OBJECT`",
-              "index$" => 2
+              "type" => "`$OBJECT`"
             },
             %{
-              "active" => true,
               "name" => "responseCode",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 3
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "responseMessage",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 4
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "terminals",
-              "req" => false,
-              "type" => "`$ARRAY`",
-              "index$" => 5
+              "type" => "`$ARRAY`"
             }
           ],
           "name" => "list_terminal",
@@ -1616,7 +1199,6 @@ defmodule BluefinTecsMerchantServices.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "active" => true,
                   "args" => %{},
                   "kind" => "http",
                   "method" => "POST",
@@ -1629,11 +1211,9 @@ defmodule BluefinTecsMerchantServices.Config do
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  },
-                  "index$" => 0
+                  }
                 }
-              ],
-              "key$" => "create"
+              ]
             }
           },
           "relations" => %{
@@ -1643,46 +1223,30 @@ defmodule BluefinTecsMerchantServices.Config do
         "mandator_clearing_export" => %{
           "fields" => [
             %{
-              "active" => true,
               "name" => "clearingDateFrom",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 0
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "clearingDateTo",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 1
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "pagination",
-              "req" => false,
-              "type" => "`$OBJECT`",
-              "index$" => 2
+              "type" => "`$OBJECT`"
             },
             %{
-              "active" => true,
               "name" => "records",
-              "req" => false,
-              "type" => "`$ARRAY`",
-              "index$" => 3
+              "type" => "`$ARRAY`"
             },
             %{
-              "active" => true,
               "name" => "responseCode",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 4
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "responseMessage",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 5
+              "type" => "`$STRING`"
             }
           ],
           "name" => "mandator_clearing_export",
@@ -1692,7 +1256,6 @@ defmodule BluefinTecsMerchantServices.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "active" => true,
                   "args" => %{},
                   "kind" => "http",
                   "method" => "POST",
@@ -1706,11 +1269,9 @@ defmodule BluefinTecsMerchantServices.Config do
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  },
-                  "index$" => 0
+                  }
                 }
-              ],
-              "key$" => "create"
+              ]
             }
           },
           "relations" => %{
@@ -1720,53 +1281,34 @@ defmodule BluefinTecsMerchantServices.Config do
         "mandator_clearing_export_download" => %{
           "fields" => [
             %{
-              "active" => true,
               "name" => "clearingDateFrom",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 0
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "clearingDateTo",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 1
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "fileId",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 2
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "filenameTemplate",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 3
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "responseCode",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 4
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "responseMessage",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 5
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "status",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 6
+              "type" => "`$STRING`"
             }
           ],
           "name" => "mandator_clearing_export_download",
@@ -1776,7 +1318,6 @@ defmodule BluefinTecsMerchantServices.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "active" => true,
                   "args" => %{},
                   "kind" => "http",
                   "method" => "POST",
@@ -1790,28 +1331,23 @@ defmodule BluefinTecsMerchantServices.Config do
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  },
-                  "index$" => 0
+                  }
                 }
-              ],
-              "key$" => "create"
+              ]
             },
             "load" => %{
               "input" => "data",
               "name" => "load",
               "points" => [
                 %{
-                  "active" => true,
                   "args" => %{
                     "params" => [
                       %{
-                        "active" => true,
                         "kind" => "param",
                         "name" => "id",
                         "orig" => "file_id",
                         "reqd" => true,
-                        "type" => "`$STRING`",
-                        "index$" => 0
+                        "type" => "`$STRING`"
                       }
                     ]
                   },
@@ -1837,11 +1373,9 @@ defmodule BluefinTecsMerchantServices.Config do
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  },
-                  "index$" => 0
+                  }
                 }
-              ],
-              "key$" => "load"
+              ]
             }
           },
           "relations" => %{
@@ -1851,39 +1385,26 @@ defmodule BluefinTecsMerchantServices.Config do
         "mandator_clearing_export_summary" => %{
           "fields" => [
             %{
-              "active" => true,
               "name" => "clearingDateFrom",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 0
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "clearingDateTo",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 1
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "records",
-              "req" => false,
-              "type" => "`$ARRAY`",
-              "index$" => 2
+              "type" => "`$ARRAY`"
             },
             %{
-              "active" => true,
               "name" => "responseCode",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 3
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "responseMessage",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 4
+              "type" => "`$STRING`"
             }
           ],
           "name" => "mandator_clearing_export_summary",
@@ -1893,7 +1414,6 @@ defmodule BluefinTecsMerchantServices.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "active" => true,
                   "args" => %{},
                   "kind" => "http",
                   "method" => "POST",
@@ -1907,11 +1427,9 @@ defmodule BluefinTecsMerchantServices.Config do
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  },
-                  "index$" => 0
+                  }
                 }
-              ],
-              "key$" => "create"
+              ]
             }
           },
           "relations" => %{
@@ -1921,179 +1439,104 @@ defmodule BluefinTecsMerchantServices.Config do
         "merchant_portal_services_api" => %{
           "fields" => [
             %{
-              "active" => true,
               "name" => "3DSecure",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 0
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "authorizationCode",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 1
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "cardBrand",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 2
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "clearingAmountFrom",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 3
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "clearingAmountTo",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 4
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "clearingCurrency",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 5
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "clearingStatus",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 6
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "corporateUUID",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 7
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "orderByTransactionDate",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 8
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "pagination",
-              "req" => false,
-              "type" => "`$OBJECT`",
-              "index$" => 9
+              "type" => "`$OBJECT`"
             },
             %{
-              "active" => true,
               "name" => "receiptNumber",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 10
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "referencedTransactionId",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 11
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "retrievalReferenceNumber",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 12
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "sourceId",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 13
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "tecsengineResponseCodeFrom",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 14
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "tecsengineResponseCodeTo",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 15
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "terminalId",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 16
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "traceNumber",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 17
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "transactionAmountFrom",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 18
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "transactionAmountTo",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 19
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "transactionDateFrom",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 20
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "transactionDateTo",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 21
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "transactionId",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 22
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "transactionType",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 23
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "wallet",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 24
+              "type" => "`$STRING`"
             }
           ],
           "name" => "merchant_portal_services_api",
@@ -2103,7 +1546,6 @@ defmodule BluefinTecsMerchantServices.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "active" => true,
                   "args" => %{},
                   "kind" => "http",
                   "method" => "POST",
@@ -2116,11 +1558,9 @@ defmodule BluefinTecsMerchantServices.Config do
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  },
-                  "index$" => 0
+                  }
                 }
-              ],
-              "key$" => "create"
+              ]
             }
           },
           "relations" => %{
@@ -2130,39 +1570,25 @@ defmodule BluefinTecsMerchantServices.Config do
         "move_tid" => %{
           "fields" => [
             %{
-              "active" => true,
               "name" => "productorderuuids",
               "req" => true,
-              "type" => "`$ARRAY`",
-              "index$" => 0
+              "type" => "`$ARRAY`"
             },
             %{
-              "active" => true,
               "name" => "responseCode",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 1
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "responseMessage",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 2
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "targetPackageorderuuid",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 3
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "targetProductorderuuid",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 4
+              "type" => "`$STRING`"
             }
           ],
           "name" => "move_tid",
@@ -2172,7 +1598,6 @@ defmodule BluefinTecsMerchantServices.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "active" => true,
                   "args" => %{},
                   "kind" => "http",
                   "method" => "POST",
@@ -2184,11 +1609,9 @@ defmodule BluefinTecsMerchantServices.Config do
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  },
-                  "index$" => 0
+                  }
                 }
-              ],
-              "key$" => "create"
+              ]
             }
           },
           "relations" => %{
@@ -2198,105 +1621,66 @@ defmodule BluefinTecsMerchantServices.Config do
         "payment_manual" => %{
           "fields" => [
             %{
-              "active" => true,
               "name" => "acquirerName",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 0
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "amount",
               "req" => true,
-              "type" => "`$INTEGER`",
-              "index$" => 1
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "authorizationNumber",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 2
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "cardNumber",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 3
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "cardType",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 4
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "currency",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 5
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "cvc",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 6
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "dateTimeTx",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 7
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "expDate",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 8
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "merchantId",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 9
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "originalTransactionId",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 10
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "password",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 11
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "responseCode",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 12
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "responseMessage",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 13
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "terminalId",
               "op" => %{
                 "create" => %{
@@ -2304,23 +1688,16 @@ defmodule BluefinTecsMerchantServices.Config do
                   "type" => "`$STRING`"
                 }
               },
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 14
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "transactionId",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 15
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "txtype",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 16
+              "type" => "`$STRING`"
             }
           ],
           "name" => "payment_manual",
@@ -2330,7 +1707,6 @@ defmodule BluefinTecsMerchantServices.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "active" => true,
                   "args" => %{},
                   "kind" => "http",
                   "method" => "POST",
@@ -2343,11 +1719,9 @@ defmodule BluefinTecsMerchantServices.Config do
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  },
-                  "index$" => 0
+                  }
                 }
-              ],
-              "key$" => "create"
+              ]
             }
           },
           "relations" => %{
@@ -2357,88 +1731,57 @@ defmodule BluefinTecsMerchantServices.Config do
         "payment_sred" => %{
           "fields" => [
             %{
-              "active" => true,
               "name" => "amount",
               "req" => true,
-              "type" => "`$INTEGER`",
-              "index$" => 0
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "currency",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 1
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "device",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 2
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "devicePayload",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 3
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "expDate",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 4
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "mode",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 5
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "panMasked",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 6
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "password",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 7
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "serial",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 8
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "serviceCode",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 9
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "terminalId",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 10
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "txtype",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 11
+              "type" => "`$STRING`"
             }
           ],
           "name" => "payment_sred",
@@ -2448,7 +1791,6 @@ defmodule BluefinTecsMerchantServices.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "active" => true,
                   "args" => %{},
                   "kind" => "http",
                   "method" => "POST",
@@ -2461,11 +1803,9 @@ defmodule BluefinTecsMerchantServices.Config do
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  },
-                  "index$" => 0
+                  }
                 }
-              ],
-              "key$" => "create"
+              ]
             }
           },
           "relations" => %{
@@ -2475,28 +1815,18 @@ defmodule BluefinTecsMerchantServices.Config do
         "pre_auth_transaction_completion" => %{
           "fields" => [
             %{
-              "active" => true,
               "name" => "acquirerId",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 0
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "acquirerName",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 1
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "actualBonusPoints",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 2
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "amount",
               "op" => %{
                 "create" => %{
@@ -2504,145 +1834,88 @@ defmodule BluefinTecsMerchantServices.Config do
                   "type" => "`$INTEGER`"
                 }
               },
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 3
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "authorizationCode",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 4
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "balanceAmount",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 5
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "cardBrand",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 6
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "cardNumber",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 7
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "cardNumberReference",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 8
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "clientId",
               "req" => true,
-              "type" => "`$INTEGER`",
-              "index$" => 9
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "currency",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 10
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "cvc",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 11
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "ecData",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 12
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "ecrData",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 13
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "emvData",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 14
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "exchangeFee",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 15
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "exchangeRate",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 16
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "languageCode",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 17
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "merchantAddress",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 18
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "merchantName",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 19
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "merchantNumber",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 20
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "messageType",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 21
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "originalTraceNumber",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 22
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "originalTransactionId",
               "op" => %{
                 "create" => %{
@@ -2650,103 +1923,63 @@ defmodule BluefinTecsMerchantServices.Config do
                   "type" => "`$STRING`"
                 }
               },
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 23
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "password",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 24
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "paymentReason",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 25
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "receiptFooter",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 26
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "receiptHeader",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 27
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "receiptLayout",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 28
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "receiptNumber",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 29
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "responseCode",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 30
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "responseMessage",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 31
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "serialNumber",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 32
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "svc",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 33
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "terminalId",
               "req" => true,
-              "type" => "`$INTEGER`",
-              "index$" => 34
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "terminalLocation",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 35
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "traceNumber",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 36
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "transactionDate",
               "op" => %{
                 "create" => %{
@@ -2754,12 +1987,9 @@ defmodule BluefinTecsMerchantServices.Config do
                   "type" => "`$STRING`"
                 }
               },
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 37
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "transactionId",
               "op" => %{
                 "create" => %{
@@ -2767,30 +1997,20 @@ defmodule BluefinTecsMerchantServices.Config do
                   "type" => "`$STRING`"
                 }
               },
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 38
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "transactionType",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 39
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "txType",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 40
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "userData",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 41
+              "type" => "`$STRING`"
             }
           ],
           "name" => "pre_auth_transaction_completion",
@@ -2800,7 +2020,6 @@ defmodule BluefinTecsMerchantServices.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "active" => true,
                   "args" => %{},
                   "kind" => "http",
                   "method" => "POST",
@@ -2813,11 +2032,9 @@ defmodule BluefinTecsMerchantServices.Config do
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  },
-                  "index$" => 0
+                  }
                 },
                 %{
-                  "active" => true,
                   "args" => %{},
                   "kind" => "http",
                   "method" => "POST",
@@ -2830,11 +2047,9 @@ defmodule BluefinTecsMerchantServices.Config do
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  },
-                  "index$" => 1
+                  }
                 }
-              ],
-              "key$" => "create"
+              ]
             }
           },
           "relations" => %{
@@ -2844,53 +2059,34 @@ defmodule BluefinTecsMerchantServices.Config do
         "reactivate_terminal" => %{
           "fields" => [
             %{
-              "active" => true,
               "name" => "corporateUuid",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 0
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "packageOrderUuid",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 1
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "productOrderUuid",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 2
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "reactivationReason",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 3
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "responseCode",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 4
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "responseMessage",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 5
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "terminalId",
               "req" => true,
-              "type" => "`$INTEGER`",
-              "index$" => 6
+              "type" => "`$INTEGER`"
             }
           ],
           "name" => "reactivate_terminal",
@@ -2900,7 +2096,6 @@ defmodule BluefinTecsMerchantServices.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "active" => true,
                   "args" => %{},
                   "kind" => "http",
                   "method" => "POST",
@@ -2912,11 +2107,9 @@ defmodule BluefinTecsMerchantServices.Config do
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  },
-                  "index$" => 0
+                  }
                 }
-              ],
-              "key$" => "create"
+              ]
             }
           },
           "relations" => %{
@@ -2926,28 +2119,18 @@ defmodule BluefinTecsMerchantServices.Config do
         "refund_transaction" => %{
           "fields" => [
             %{
-              "active" => true,
               "name" => "acquirerId",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 0
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "acquirerName",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 1
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "actualBonusPoints",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 2
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "amount",
               "op" => %{
                 "create" => %{
@@ -2955,138 +2138,83 @@ defmodule BluefinTecsMerchantServices.Config do
                   "type" => "`$INTEGER`"
                 }
               },
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 3
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "authorizationCode",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 4
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "balanceAmount",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 5
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "cardBrand",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 6
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "cardNumber",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 7
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "clientId",
               "req" => true,
-              "type" => "`$INTEGER`",
-              "index$" => 8
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "currency",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 9
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "cvc",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 10
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "ecData",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 11
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "ecrData",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 12
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "emvData",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 13
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "exchangeFee",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 14
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "exchangeRate",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 15
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "languageCode",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 16
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "merchantAddress",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 17
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "merchantName",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 18
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "merchantNumber",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 19
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "messageType",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 20
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "originalTraceNumber",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 21
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "originalTransactionId",
               "op" => %{
                 "create" => %{
@@ -3094,103 +2222,63 @@ defmodule BluefinTecsMerchantServices.Config do
                   "type" => "`$STRING`"
                 }
               },
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 22
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "password",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 23
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "paymentReason",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 24
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "receiptFooter",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 25
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "receiptHeader",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 26
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "receiptLayout",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 27
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "receiptNumber",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 28
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "responseCode",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 29
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "responseMessage",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 30
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "serialNumber",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 31
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "svc",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 32
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "terminalId",
               "req" => true,
-              "type" => "`$INTEGER`",
-              "index$" => 33
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "terminalLocation",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 34
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "traceNumber",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 35
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "transactionDate",
               "op" => %{
                 "create" => %{
@@ -3198,12 +2286,9 @@ defmodule BluefinTecsMerchantServices.Config do
                   "type" => "`$STRING`"
                 }
               },
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 36
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "transactionId",
               "op" => %{
                 "create" => %{
@@ -3211,23 +2296,15 @@ defmodule BluefinTecsMerchantServices.Config do
                   "type" => "`$STRING`"
                 }
               },
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 37
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "txType",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 38
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "userData",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 39
+              "type" => "`$STRING`"
             }
           ],
           "name" => "refund_transaction",
@@ -3237,7 +2314,6 @@ defmodule BluefinTecsMerchantServices.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "active" => true,
                   "args" => %{},
                   "kind" => "http",
                   "method" => "POST",
@@ -3250,11 +2326,9 @@ defmodule BluefinTecsMerchantServices.Config do
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  },
-                  "index$" => 0
+                  }
                 }
-              ],
-              "key$" => "create"
+              ]
             }
           },
           "relations" => %{
@@ -3264,60 +2338,40 @@ defmodule BluefinTecsMerchantServices.Config do
         "register_tecs_company" => %{
           "fields" => [
             %{
-              "active" => true,
               "name" => "corporateUuid",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 0
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "packageOrderUuid",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 1
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "partnerId",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 2
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "partnerName",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 3
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "productOrderUuid",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 4
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "responseCode",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 5
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "responseMessage",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 6
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "templateName",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 7
+              "type" => "`$STRING`"
             }
           ],
           "name" => "register_tecs_company",
@@ -3327,7 +2381,6 @@ defmodule BluefinTecsMerchantServices.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "active" => true,
                   "args" => %{},
                   "kind" => "http",
                   "method" => "POST",
@@ -3339,11 +2392,9 @@ defmodule BluefinTecsMerchantServices.Config do
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  },
-                  "index$" => 0
+                  }
                 }
-              ],
-              "key$" => "create"
+              ]
             }
           },
           "relations" => %{
@@ -3353,130 +2404,83 @@ defmodule BluefinTecsMerchantServices.Config do
         "register_terminal" => %{
           "fields" => [
             %{
-              "active" => true,
               "name" => "additionalData",
-              "req" => false,
-              "type" => "`$OBJECT`",
-              "index$" => 0
+              "type" => "`$OBJECT`"
             },
             %{
-              "active" => true,
               "name" => "corporateUuid",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 1
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "packageOrderUuid",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 2
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "productOrderUuid",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 3
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "responseCode",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 4
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "responseMessage",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 5
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "tecsWebSecretKey",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 6
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "templateName",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 7
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "terminalCountryCode",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 8
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "terminalId",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 9
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "terminalIdAcq",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 10
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "terminalLanguageCode",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 11
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "terminalLocation",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 12
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "terminalSerialNumber",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 13
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "tokenIOAlias",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 14
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "tokenIOIban",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 15
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "tokenIOMemberId",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 16
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "webShopUrl",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 17
+              "type" => "`$STRING`"
             }
           ],
           "name" => "register_terminal",
@@ -3486,7 +2490,6 @@ defmodule BluefinTecsMerchantServices.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "active" => true,
                   "args" => %{},
                   "kind" => "http",
                   "method" => "POST",
@@ -3498,11 +2501,9 @@ defmodule BluefinTecsMerchantServices.Config do
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  },
-                  "index$" => 0
+                  }
                 }
-              ],
-              "key$" => "create"
+              ]
             }
           },
           "relations" => %{
@@ -3512,74 +2513,48 @@ defmodule BluefinTecsMerchantServices.Config do
         "report_data" => %{
           "fields" => [
             %{
-              "active" => true,
               "name" => "cardBrandReportData",
-              "req" => false,
-              "type" => "`$ARRAY`",
-              "index$" => 0
+              "type" => "`$ARRAY`"
             },
             %{
-              "active" => true,
               "name" => "clearingDateFrom",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 1
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "clearingDateTo",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 2
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "corporateId",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 3
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "currency",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 4
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "responseCode",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 5
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "responseMessage",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 6
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "sumOverCreditTx",
-              "req" => false,
-              "type" => "`$OBJECT`",
-              "index$" => 7
+              "type" => "`$OBJECT`"
             },
             %{
-              "active" => true,
               "name" => "sumOverDebitTx",
-              "req" => false,
-              "type" => "`$OBJECT`",
-              "index$" => 8
+              "type" => "`$OBJECT`"
             },
             %{
-              "active" => true,
               "name" => "terminalId",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 9
+              "type" => "`$INTEGER`"
             }
           ],
           "name" => "report_data",
@@ -3589,7 +2564,6 @@ defmodule BluefinTecsMerchantServices.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "active" => true,
                   "args" => %{},
                   "kind" => "http",
                   "method" => "POST",
@@ -3603,11 +2577,9 @@ defmodule BluefinTecsMerchantServices.Config do
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  },
-                  "index$" => 0
+                  }
                 }
-              ],
-              "key$" => "create"
+              ]
             }
           },
           "relations" => %{
@@ -3617,360 +2589,210 @@ defmodule BluefinTecsMerchantServices.Config do
         "status_transaction" => %{
           "fields" => [
             %{
-              "active" => true,
               "name" => "acquirerName",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 0
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "acquirerTerminalId",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 1
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "amount",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 2
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "applicationCryptogram",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 3
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "authorizationCode",
-              "req" => false,
               "type" => [
                 "`$ONE`",
                 [
                   "`$STRING`",
                   "`$NULL`"
                 ]
-              ],
-              "index$" => 4
+              ]
             },
             %{
-              "active" => true,
               "name" => "authorizationDate",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 5
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "cardBrand",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 6
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "cardEntry",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 7
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "cardExpiration",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 8
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "cardNumber",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 9
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "clearingAmount",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 10
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "clearingBatchId",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 11
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "clearingCurrency",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 12
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "clearingDate",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 13
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "clearingProcessedDate",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 14
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "clearingStatus",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 15
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "clientId",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 16
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "currency",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 17
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "cvm",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 18
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "ecrData",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 19
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "emvApplicationId",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 20
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "emvApplicationLabel",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 21
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "merchantName",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 22
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "merchantNumber",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 23
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "originalClientId",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 24
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "originalTerminalId",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 25
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "originalTransactionId",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 26
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "paymentReason",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 27
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "receiptNumber",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 28
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "responseCode",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 29
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "responseCodeFromAS",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 30
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "responseMessage",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 31
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "retrievalReferenceNumber",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 32
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "serviceCode",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 33
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "settlementStatus",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 34
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "sourceId",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 35
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "tecsengineResponseCode",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 36
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "tecsengineResponseText",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 37
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "terminalEndOfDayDate",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 38
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "terminalId",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 39
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "terminalLocation",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 40
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "tipAmount",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 41
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "traceNumber",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 42
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "transactionClearingDate",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 43
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "transactionDate",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 44
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "transactionId",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 45
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "transactionSeqNumber",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 46
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "transactionServerDate",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 47
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "transactionSource",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 48
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "transactionType",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 49
+              "type" => "`$STRING`"
             }
           ],
           "name" => "status_transaction",
@@ -3980,7 +2802,6 @@ defmodule BluefinTecsMerchantServices.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "active" => true,
                   "args" => %{},
                   "kind" => "http",
                   "method" => "POST",
@@ -3993,11 +2814,9 @@ defmodule BluefinTecsMerchantServices.Config do
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  },
-                  "index$" => 0
+                  }
                 }
-              ],
-              "key$" => "create"
+              ]
             }
           },
           "relations" => %{
@@ -4007,46 +2826,29 @@ defmodule BluefinTecsMerchantServices.Config do
         "store_terminal_parameter" => %{
           "fields" => [
             %{
-              "active" => true,
               "name" => "acqTabNexo",
-              "req" => false,
-              "type" => "`$OBJECT`",
-              "index$" => 0
+              "type" => "`$OBJECT`"
             },
             %{
-              "active" => true,
               "name" => "configVersion",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 1
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "responseCode",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 2
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "responseMessage",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 3
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "serialNumber",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 4
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "tidSent",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 5
+              "type" => "`$STRING`"
             }
           ],
           "name" => "store_terminal_parameter",
@@ -4056,7 +2858,6 @@ defmodule BluefinTecsMerchantServices.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "active" => true,
                   "args" => %{},
                   "kind" => "http",
                   "method" => "POST",
@@ -4068,11 +2869,9 @@ defmodule BluefinTecsMerchantServices.Config do
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  },
-                  "index$" => 0
+                  }
                 }
-              ],
-              "key$" => "create"
+              ]
             }
           },
           "relations" => %{
@@ -4082,39 +2881,25 @@ defmodule BluefinTecsMerchantServices.Config do
         "terminal_id" => %{
           "fields" => [
             %{
-              "active" => true,
               "name" => "deviceSerialNumber",
               "req" => true,
-              "type" => "`$ARRAY`",
-              "index$" => 0
+              "type" => "`$ARRAY`"
             },
             %{
-              "active" => true,
               "name" => "duplicateTerminalIds",
-              "req" => false,
-              "type" => "`$ARRAY`",
-              "index$" => 1
+              "type" => "`$ARRAY`"
             },
             %{
-              "active" => true,
               "name" => "responseCode",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 2
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "responseMessage",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 3
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "terminals",
-              "req" => false,
-              "type" => "`$ARRAY`",
-              "index$" => 4
+              "type" => "`$ARRAY`"
             }
           ],
           "name" => "terminal_id",
@@ -4124,7 +2909,6 @@ defmodule BluefinTecsMerchantServices.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "active" => true,
                   "args" => %{},
                   "kind" => "http",
                   "method" => "POST",
@@ -4137,11 +2921,9 @@ defmodule BluefinTecsMerchantServices.Config do
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  },
-                  "index$" => 0
+                  }
                 }
-              ],
-              "key$" => "create"
+              ]
             }
           },
           "relations" => %{
@@ -4151,207 +2933,120 @@ defmodule BluefinTecsMerchantServices.Config do
         "transaction_history" => %{
           "fields" => [
             %{
-              "active" => true,
               "name" => "3DSecure",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 0
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "authorizationCode",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 1
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "cardBrand",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 2
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "clearingAmountFrom",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 3
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "clearingAmountTo",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 4
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "clearingCurrency",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 5
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "clearingStatus",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 6
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "corporateUUID",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 7
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "orderByTransactionDate",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 8
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "pagination",
-              "req" => false,
-              "type" => "`$OBJECT`",
-              "index$" => 9
+              "type" => "`$OBJECT`"
             },
             %{
-              "active" => true,
               "name" => "paymentTokenPublicId",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 10
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "receiptNumber",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 11
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "referencedTransactionId",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 12
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "responseCode",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 13
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "responseMessage",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 14
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "retrievalReferenceNumber",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 15
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "sourceId",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 16
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "tecsengineResponseCodeFrom",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 17
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "tecsengineResponseCodeTo",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 18
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "terminalId",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 19
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "traceNumber",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 20
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "transactionAmountFrom",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 21
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "transactionAmountTo",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 22
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "transactionDateFrom",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 23
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "transactionDateTo",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 24
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "transactionHistories",
-              "req" => false,
-              "type" => "`$ARRAY`",
-              "index$" => 25
+              "type" => "`$ARRAY`"
             },
             %{
-              "active" => true,
               "name" => "transactionId",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 26
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "transactionType",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 27
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "wallet",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 28
+              "type" => "`$STRING`"
             }
           ],
           "name" => "transaction_history",
@@ -4361,7 +3056,6 @@ defmodule BluefinTecsMerchantServices.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "active" => true,
                   "args" => %{},
                   "kind" => "http",
                   "method" => "POST",
@@ -4375,11 +3069,9 @@ defmodule BluefinTecsMerchantServices.Config do
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  },
-                  "index$" => 0
+                  }
                 },
                 %{
-                  "active" => true,
                   "args" => %{},
                   "kind" => "http",
                   "method" => "POST",
@@ -4392,11 +3084,9 @@ defmodule BluefinTecsMerchantServices.Config do
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  },
-                  "index$" => 1
+                  }
                 }
-              ],
-              "key$" => "create"
+              ]
             }
           },
           "relations" => %{
@@ -4406,28 +3096,18 @@ defmodule BluefinTecsMerchantServices.Config do
         "transactions_count" => %{
           "fields" => [
             %{
-              "active" => true,
               "name" => "period",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 0
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "responseCode",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 1
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "responseMessage",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 2
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "transactionDateFrom",
               "op" => %{
                 "create" => %{
@@ -4435,12 +3115,9 @@ defmodule BluefinTecsMerchantServices.Config do
                   "type" => "`$STRING`"
                 }
               },
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 3
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "transactionDateTo",
               "op" => %{
                 "create" => %{
@@ -4448,16 +3125,11 @@ defmodule BluefinTecsMerchantServices.Config do
                   "type" => "`$STRING`"
                 }
               },
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 4
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "transactionsCount",
-              "req" => false,
-              "type" => "`$ARRAY`",
-              "index$" => 5
+              "type" => "`$ARRAY`"
             }
           ],
           "name" => "transactions_count",
@@ -4467,7 +3139,6 @@ defmodule BluefinTecsMerchantServices.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "active" => true,
                   "args" => %{},
                   "kind" => "http",
                   "method" => "POST",
@@ -4480,11 +3151,9 @@ defmodule BluefinTecsMerchantServices.Config do
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  },
-                  "index$" => 0
+                  }
                 },
                 %{
-                  "active" => true,
                   "args" => %{},
                   "kind" => "http",
                   "method" => "POST",
@@ -4497,11 +3166,9 @@ defmodule BluefinTecsMerchantServices.Config do
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  },
-                  "index$" => 1
+                  }
                 }
-              ],
-              "key$" => "create"
+              ]
             }
           },
           "relations" => %{
@@ -4511,28 +3178,18 @@ defmodule BluefinTecsMerchantServices.Config do
         "transactions_count_card_brand" => %{
           "fields" => [
             %{
-              "active" => true,
               "name" => "period",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 0
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "responseCode",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 1
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "responseMessage",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 2
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "transactionDateFrom",
               "op" => %{
                 "create" => %{
@@ -4540,12 +3197,9 @@ defmodule BluefinTecsMerchantServices.Config do
                   "type" => "`$STRING`"
                 }
               },
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 3
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "transactionDateTo",
               "op" => %{
                 "create" => %{
@@ -4553,16 +3207,11 @@ defmodule BluefinTecsMerchantServices.Config do
                   "type" => "`$STRING`"
                 }
               },
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 4
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "transactionsCount",
-              "req" => false,
-              "type" => "`$ARRAY`",
-              "index$" => 5
+              "type" => "`$ARRAY`"
             }
           ],
           "name" => "transactions_count_card_brand",
@@ -4572,7 +3221,6 @@ defmodule BluefinTecsMerchantServices.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "active" => true,
                   "args" => %{},
                   "kind" => "http",
                   "method" => "POST",
@@ -4585,11 +3233,9 @@ defmodule BluefinTecsMerchantServices.Config do
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  },
-                  "index$" => 0
+                  }
                 }
-              ],
-              "key$" => "create"
+              ]
             }
           },
           "relations" => %{
@@ -4599,28 +3245,18 @@ defmodule BluefinTecsMerchantServices.Config do
         "transactions_turnover" => %{
           "fields" => [
             %{
-              "active" => true,
               "name" => "period",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 0
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "responseCode",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 1
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "responseMessage",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 2
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "transactionDateFrom",
               "op" => %{
                 "create" => %{
@@ -4628,12 +3264,9 @@ defmodule BluefinTecsMerchantServices.Config do
                   "type" => "`$STRING`"
                 }
               },
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 3
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "transactionDateTo",
               "op" => %{
                 "create" => %{
@@ -4641,16 +3274,11 @@ defmodule BluefinTecsMerchantServices.Config do
                   "type" => "`$STRING`"
                 }
               },
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 4
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "turnovers",
-              "req" => false,
-              "type" => "`$ARRAY`",
-              "index$" => 5
+              "type" => "`$ARRAY`"
             }
           ],
           "name" => "transactions_turnover",
@@ -4660,7 +3288,6 @@ defmodule BluefinTecsMerchantServices.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "active" => true,
                   "args" => %{},
                   "kind" => "http",
                   "method" => "POST",
@@ -4673,11 +3300,9 @@ defmodule BluefinTecsMerchantServices.Config do
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  },
-                  "index$" => 0
+                  }
                 }
-              ],
-              "key$" => "create"
+              ]
             }
           },
           "relations" => %{
@@ -4687,81 +3312,49 @@ defmodule BluefinTecsMerchantServices.Config do
         "update_merchant" => %{
           "fields" => [
             %{
-              "active" => true,
               "name" => "city",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 0
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "corporateUuid",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 1
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "country",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 2
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "merchantCategoryCode",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 3
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "name",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 4
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "responseCode",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 5
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "responseMessage",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 6
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "state",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 7
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "street",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 8
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "vuNummer",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 9
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "zipcode",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 10
+              "type" => "`$STRING`"
             }
           ],
           "name" => "update_merchant",
@@ -4771,7 +3364,6 @@ defmodule BluefinTecsMerchantServices.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "active" => true,
                   "args" => %{},
                   "kind" => "http",
                   "method" => "POST",
@@ -4784,11 +3376,9 @@ defmodule BluefinTecsMerchantServices.Config do
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  },
-                  "index$" => 0
+                  }
                 }
-              ],
-              "key$" => "create"
+              ]
             }
           },
           "relations" => %{
@@ -4798,32 +3388,22 @@ defmodule BluefinTecsMerchantServices.Config do
         "update_template_xml" => %{
           "fields" => [
             %{
-              "active" => true,
               "name" => "responseCode",
-              "req" => false,
-              "type" => "`$INTEGER`",
-              "index$" => 0
+              "type" => "`$INTEGER`"
             },
             %{
-              "active" => true,
               "name" => "responseMessage",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 1
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "templateName",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 2
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "templateXml",
               "req" => true,
-              "type" => "`$STRING`",
-              "index$" => 3
+              "type" => "`$STRING`"
             }
           ],
           "name" => "update_template_xml",
@@ -4833,7 +3413,6 @@ defmodule BluefinTecsMerchantServices.Config do
               "name" => "create",
               "points" => [
                 %{
-                  "active" => true,
                   "args" => %{},
                   "kind" => "http",
                   "method" => "POST",
@@ -4846,11 +3425,9 @@ defmodule BluefinTecsMerchantServices.Config do
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  },
-                  "index$" => 0
+                  }
                 }
-              ],
-              "key$" => "create"
+              ]
             }
           },
           "relations" => %{
@@ -4860,25 +3437,16 @@ defmodule BluefinTecsMerchantServices.Config do
         "version" => %{
           "fields" => [
             %{
-              "active" => true,
               "name" => "appName",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 0
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "buildDate",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 1
+              "type" => "`$STRING`"
             },
             %{
-              "active" => true,
               "name" => "version",
-              "req" => false,
-              "type" => "`$STRING`",
-              "index$" => 2
+              "type" => "`$STRING`"
             }
           ],
           "name" => "version",
@@ -4888,7 +3456,6 @@ defmodule BluefinTecsMerchantServices.Config do
               "name" => "load",
               "points" => [
                 %{
-                  "active" => true,
                   "args" => %{},
                   "kind" => "http",
                   "method" => "GET",
@@ -4901,11 +3468,9 @@ defmodule BluefinTecsMerchantServices.Config do
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  },
-                  "index$" => 0
+                  }
                 }
-              ],
-              "key$" => "load"
+              ]
             }
           },
           "relations" => %{

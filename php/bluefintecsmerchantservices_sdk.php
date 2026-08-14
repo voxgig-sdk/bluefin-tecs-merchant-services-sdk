@@ -40,7 +40,7 @@ class BluefinTecsMerchantServicesSDK
         $utility = new BluefinTecsMerchantServicesUtility();
         $this->_utility = $utility;
 
-        $config = BluefinTecsMerchantServicesConfig::make_config();
+        $config = BluefinTecsMerchantServicesConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,
