@@ -8,21 +8,25 @@ main: kit: entity: mandator_clearing_export_download: {
     {
       name: "clearingDateFrom"
       req: true
+      short: "Start date for clearing export (inclusive)"
       type: "`$STRING`"
     }
     {
       name: "clearingDateTo"
       req: true
+      short: "End date for clearing export (inclusive)"
       type: "`$STRING`"
     }
     {
       name: "fileId"
       req: false
+      short: "Unique file identifier for tracking and downloading"
       type: "`$STRING`"
     }
     {
       name: "filenameTemplate"
       req: false
+      short: "Optional filename template for the export file"
       type: "`$STRING`"
     }
     {
@@ -38,6 +42,7 @@ main: kit: entity: mandator_clearing_export_download: {
     {
       name: "status"
       req: false
+      short: "Processing status of the export request"
       type: "`$STRING`"
     }
   ]

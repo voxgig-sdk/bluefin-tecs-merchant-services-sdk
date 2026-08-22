@@ -223,7 +223,7 @@ defmodule BluefinTecsMerchantServices.Types do
   Request payload for DigitalServicesApi create.
 
   Members:
-    * `"file_id"` — String.t() (optional)
+    * `"file_id"` — String.t() (required)
     * `"clearingDateFrom"` — String.t() (required)
     * `"clearingDateTo"` — String.t() (required)
     * `"responseCode"` — integer() (optional)

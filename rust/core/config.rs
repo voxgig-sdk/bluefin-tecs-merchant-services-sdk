@@ -10,6 +10,9 @@ pub fn make_config() -> Value {
     Value::map_of([
         ("main".to_string(), Value::map_of([
             ("name".to_string(), Value::str("BluefinTecsMerchantServices")),
+            ("slug".to_string(), Value::str("bluefin-tecs-merchant-services")),
+            ("version".to_string(), Value::str("0.0.1")),
+            ("target".to_string(), Value::str("rust")),
         ])),
         ("feature".to_string(), Value::map_of([
             ("test".to_string(), Value::map_of([
@@ -20,6 +23,9 @@ pub fn make_config() -> Value {
         ])),
         ("options".to_string(), Value::map_of([
             ("base".to_string(), Value::str("https://test.tecs.at/merchantservices")),
+            ("auth".to_string(), Value::map_of([
+                ("prefix".to_string(), Value::str("Bearer")),
+            ])),
             ("headers".to_string(), Value::map_of([
                 ("content-type".to_string(), Value::str("application/json")),
             ])),
@@ -63,9 +69,6 @@ pub fn make_config() -> Value {
                 ("update_merchant".to_string(), Value::empty_map()),
                 ("update_template_xml".to_string(), Value::empty_map()),
                 ("version".to_string(), Value::empty_map()),
-            ])),
-            ("auth".to_string(), Value::map_of([
-                ("prefix".to_string(), Value::str("Bearer")),
             ])),
         ])),
         ("entity".to_string(), Value::map_of([
@@ -477,11 +480,13 @@ pub fn make_config() -> Value {
                     Value::map_of([
                         ("name".to_string(), Value::str("clearingDateFrom")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Date and time in the format yyyy-MM-dd'T'HH:mm:ssz")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("clearingDateTo")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Date and time in the format yyyy-MM-dd'T'HH:mm:ssz")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
@@ -1231,11 +1236,13 @@ pub fn make_config() -> Value {
                     Value::map_of([
                         ("name".to_string(), Value::str("clearingDateFrom")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Date and time in the format yyyy-MM-dd'T'HH:mm:ssZ")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("clearingDateTo")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Date and time in the format yyyy-MM-dd'T'HH:mm:ssZ")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
@@ -1289,19 +1296,23 @@ pub fn make_config() -> Value {
                     Value::map_of([
                         ("name".to_string(), Value::str("clearingDateFrom")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Start date for clearing export (inclusive)")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("clearingDateTo")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("End date for clearing export (inclusive)")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("fileId")),
+                        ("short".to_string(), Value::str("Unique file identifier for tracking and downloading")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("filenameTemplate")),
+                        ("short".to_string(), Value::str("Optional filename template for the export file")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
@@ -1314,6 +1325,7 @@ pub fn make_config() -> Value {
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("status")),
+                        ("short".to_string(), Value::str("Processing status of the export request")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                 ])),
@@ -1393,11 +1405,13 @@ pub fn make_config() -> Value {
                     Value::map_of([
                         ("name".to_string(), Value::str("clearingDateFrom")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Date and time in the format yyyy-MM-dd'T'HH:mm:ssz")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("clearingDateTo")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Date and time in the format yyyy-MM-dd'T'HH:mm:ssz")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
@@ -1542,6 +1556,7 @@ pub fn make_config() -> Value {
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("wallet")),
+                        ("short".to_string(), Value::str("Filter by wallet type.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                 ])),
@@ -1628,62 +1643,76 @@ pub fn make_config() -> Value {
                 ("fields".to_string(), Value::list(vec![
                     Value::map_of([
                         ("name".to_string(), Value::str("acquirerName")),
+                        ("short".to_string(), Value::str("Acquirer name parsed from KKG field")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("amount")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Transaction amount in minor units (cents)")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("authorizationNumber")),
+                        ("short".to_string(), Value::str("Authorization number from the gateway")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("cardNumber")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Card number - 12 to 19 digits, must pass Luhn validation")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("cardType")),
+                        ("short".to_string(), Value::str("Card type parsed from KKG field")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("currency")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Currency code - 3 uppercase letters (ISO 4217)")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("cvc")),
+                        ("short".to_string(), Value::str("Card verification code - 3-4 digits (optional)")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("dateTimeTx")),
+                        ("short".to_string(), Value::str("Date and time of the transaction")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("expDate")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Card expiry date in MMYY format")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("merchantId")),
+                        ("short".to_string(), Value::str("Merchant ID (VU-NUMMER)")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("originalTransactionId")),
+                        ("short".to_string(), Value::str("Original transaction ID from gateway")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("password")),
+                        ("short".to_string(), Value::str("Terminal password sent as Kennwort in TECS XML (optional)")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("responseCode")),
+                        ("short".to_string(), Value::str("Response code - 00 for success, otherwise error code")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("responseMessage")),
+                        ("short".to_string(), Value::str("Response message - 'Approved' for success, error description otherwise")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
@@ -1694,15 +1723,18 @@ pub fn make_config() -> Value {
                                 ("type".to_string(), Value::str("`$STRING`")),
                             ])),
                         ])),
+                        ("short".to_string(), Value::str("Terminal ID used for the transaction")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("transactionId")),
+                        ("short".to_string(), Value::str("Transaction ID generated by the backend")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("txtype")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Transaction type")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                 ])),
@@ -1739,54 +1771,66 @@ pub fn make_config() -> Value {
                     Value::map_of([
                         ("name".to_string(), Value::str("amount")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Transaction amount in minor units (cents)")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("currency")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Currency code - 3 uppercase letters (ISO 4217)")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("device")),
+                        ("short".to_string(), Value::str("Device type that provided the SRED payload")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("devicePayload")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("SRED encrypted device payload from the device (minimum 32 characters)")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("expDate")),
+                        ("short".to_string(), Value::str("Card expiry date in MMYY format")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("mode")),
+                        ("short".to_string(), Value::str("Decryption mode")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("panMasked")),
+                        ("short".to_string(), Value::str("Masked PAN (first 6 and last 4 digits)")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("password")),
+                        ("short".to_string(), Value::str("Terminal password sent as Kennwort in TECS XML (optional)")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("serial")),
+                        ("short".to_string(), Value::str("Device serial number")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("serviceCode")),
+                        ("short".to_string(), Value::str("Service code from the card")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("terminalId")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Terminal ID - 8 digits")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("txtype")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Transaction type")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                 ])),
@@ -2525,11 +2569,13 @@ pub fn make_config() -> Value {
                     Value::map_of([
                         ("name".to_string(), Value::str("clearingDateFrom")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Date and time in the format yyyy-MM-dd'T'HH:mm:ss")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("clearingDateTo")),
                         ("req".to_string(), Value::Bool(true)),
+                        ("short".to_string(), Value::str("Date and time in the format yyyy-MM-dd'T'HH:mm:ss")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
@@ -2612,6 +2658,7 @@ pub fn make_config() -> Value {
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("authorizationCode")),
+                        ("short".to_string(), Value::str("Authorization code returned by the acquirer; null when not available")),
                         ("type".to_string(), Value::list(vec![
                             Value::str("`$ONE`"),
                             Value::list(vec![
@@ -3052,6 +3099,7 @@ pub fn make_config() -> Value {
                     ]),
                     Value::map_of([
                         ("name".to_string(), Value::str("wallet")),
+                        ("short".to_string(), Value::str("Filter by wallet type.")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                 ])),
@@ -3485,6 +3533,28 @@ pub fn make_config() -> Value {
             ])),
         ])),
     ])
+}
+
+// SHARED CONFIG (sdkgen rung L2).
+//
+// The SDK reads the config on every request and never writes to it, so one
+// instance is shared by every client rather than rebuilt per client. Above the
+// size threshold make_config re-parses the whole embedded JSON, so this is the
+// difference between parsing the model once and once per client.
+//
+// THREAD-LOCAL, not a global: Value is Rc/RefCell-backed and so is neither
+// Send nor Sync. One config per thread is the widest scope that is sound here,
+// and the clone is an Rc bump, not a deep copy.
+thread_local! {
+    static SHARED_CONFIG: Value = make_config();
+}
+
+/// The per-thread config, built once on first use.
+///
+/// The returned Value SHARES its nodes: treat it as read-only. Callers that
+/// need to mutate should use make_config, which always returns a fresh copy.
+pub fn shared_config() -> Value {
+    SHARED_CONFIG.with(|c| c.clone())
 }
 
 pub fn make_feature(name: &str) -> FeatureRef {

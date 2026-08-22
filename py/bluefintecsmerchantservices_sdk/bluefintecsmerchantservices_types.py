@@ -202,12 +202,12 @@ class DigitalServicesApiLoadMatch(TypedDict, total=False):
 
 
 class DigitalServicesApiCreateDataRequired(TypedDict):
+    file_id: str
     clearingDateFrom: str
     clearingDateTo: str
 
 
 class DigitalServicesApiCreateData(DigitalServicesApiCreateDataRequired, total=False):
-    file_id: str
     responseCode: int
     responseMessage: str
     txCount: int

@@ -188,7 +188,7 @@ type DigitalServicesApiLoadMatch struct {
 
 // DigitalServicesApiCreateData is the typed request payload for DigitalServicesApi.CreateTyped.
 type DigitalServicesApiCreateData struct {
-	FileId *string `json:"file_id,omitempty"`
+	FileId string `json:"file_id"`
 	ClearingDateFrom string `json:"clearingDateFrom"`
 	ClearingDateTo string `json:"clearingDateTo"`
 	ResponseCode *int `json:"responseCode,omitempty"`

@@ -561,8 +561,8 @@ Entity* digital_services_api = bluefintecsmerchantservices_digital_services_api(
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearingDateFrom` | `char*` | Yes |  |
-| `clearingDateTo` | `char*` | Yes |  |
+| `clearingDateFrom` | `char*` | Yes | Date and time in the format yyyy-MM-dd'T'HH:mm:ssz |
+| `clearingDateTo` | `char*` | Yes | Date and time in the format yyyy-MM-dd'T'HH:mm:ssz |
 | `responseCode` | `int64_t` | No |  |
 | `responseMessage` | `char*` | No |  |
 | `txCount` | `int64_t` | No |  |
@@ -580,7 +580,8 @@ Create a new entity with the given data. Returns the created entity data and set
 
 ```c
 Entity* digital_services_api = bluefintecsmerchantservices_digital_services_api(client, NULL);
-voxgig_value* result = digital_services_api->vt->create(digital_services_api, cmap(2,
+voxgig_value* result = digital_services_api->vt->create(digital_services_api, cmap(3,
+    "file_id", v_str("example_file_id"),  // char*
     "clearingDateFrom", v_str("example_clearingDateFrom"),  // char*
     "clearingDateTo", v_str("example_clearingDateTo"))  // char*
 , NULL, &err);
@@ -1193,8 +1194,8 @@ Entity* mandator_clearing_export = bluefintecsmerchantservices_mandator_clearing
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearingDateFrom` | `char*` | Yes |  |
-| `clearingDateTo` | `char*` | Yes |  |
+| `clearingDateFrom` | `char*` | Yes | Date and time in the format yyyy-MM-dd'T'HH:mm:ssZ |
+| `clearingDateTo` | `char*` | Yes | Date and time in the format yyyy-MM-dd'T'HH:mm:ssZ |
 | `pagination` | `voxgig_value* (map)` | No |  |
 | `records` | `voxgig_value* (list)` | No |  |
 | `responseCode` | `int64_t` | No |  |
@@ -1245,13 +1246,13 @@ Entity* mandator_clearing_export_download = bluefintecsmerchantservices_mandator
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearingDateFrom` | `char*` | Yes |  |
-| `clearingDateTo` | `char*` | Yes |  |
-| `fileId` | `char*` | No |  |
-| `filenameTemplate` | `char*` | No |  |
+| `clearingDateFrom` | `char*` | Yes | Start date for clearing export (inclusive) |
+| `clearingDateTo` | `char*` | Yes | End date for clearing export (inclusive) |
+| `fileId` | `char*` | No | Unique file identifier for tracking and downloading |
+| `filenameTemplate` | `char*` | No | Optional filename template for the export file |
 | `responseCode` | `int64_t` | No |  |
 | `responseMessage` | `char*` | No |  |
-| `status` | `char*` | No |  |
+| `status` | `char*` | No | Processing status of the export request |
 
 ### Operations
 
@@ -1307,8 +1308,8 @@ Entity* mandator_clearing_export_summary = bluefintecsmerchantservices_mandator_
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearingDateFrom` | `char*` | Yes |  |
-| `clearingDateTo` | `char*` | Yes |  |
+| `clearingDateFrom` | `char*` | Yes | Date and time in the format yyyy-MM-dd'T'HH:mm:ssz |
+| `clearingDateTo` | `char*` | Yes | Date and time in the format yyyy-MM-dd'T'HH:mm:ssz |
 | `records` | `voxgig_value* (list)` | No |  |
 | `responseCode` | `int64_t` | No |  |
 | `responseMessage` | `char*` | No |  |
@@ -1382,7 +1383,7 @@ Entity* merchant_portal_services_api = bluefintecsmerchantservices_merchant_port
 | `transactionDateTo` | `char*` | No |  |
 | `transactionId` | `char*` | No |  |
 | `transactionType` | `char*` | No |  |
-| `wallet` | `char*` | No |  |
+| `wallet` | `char*` | No | Filter by wallet type. |
 
 ### Operations
 
@@ -1476,23 +1477,23 @@ Entity* payment_manual = bluefintecsmerchantservices_payment_manual(client, NULL
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirerName` | `char*` | No |  |
-| `amount` | `int64_t` | Yes |  |
-| `authorizationNumber` | `char*` | No |  |
-| `cardNumber` | `char*` | Yes |  |
-| `cardType` | `char*` | No |  |
-| `currency` | `char*` | Yes |  |
-| `cvc` | `char*` | No |  |
-| `dateTimeTx` | `char*` | No |  |
-| `expDate` | `char*` | Yes |  |
-| `merchantId` | `char*` | No |  |
-| `originalTransactionId` | `char*` | No |  |
-| `password` | `char*` | No |  |
-| `responseCode` | `char*` | No |  |
-| `responseMessage` | `char*` | No |  |
-| `terminalId` | `char*` | No |  |
-| `transactionId` | `char*` | No |  |
-| `txtype` | `char*` | Yes |  |
+| `acquirerName` | `char*` | No | Acquirer name parsed from KKG field |
+| `amount` | `int64_t` | Yes | Transaction amount in minor units (cents) |
+| `authorizationNumber` | `char*` | No | Authorization number from the gateway |
+| `cardNumber` | `char*` | Yes | Card number - 12 to 19 digits, must pass Luhn validation |
+| `cardType` | `char*` | No | Card type parsed from KKG field |
+| `currency` | `char*` | Yes | Currency code - 3 uppercase letters (ISO 4217) |
+| `cvc` | `char*` | No | Card verification code - 3-4 digits (optional) |
+| `dateTimeTx` | `char*` | No | Date and time of the transaction |
+| `expDate` | `char*` | Yes | Card expiry date in MMYY format |
+| `merchantId` | `char*` | No | Merchant ID (VU-NUMMER) |
+| `originalTransactionId` | `char*` | No | Original transaction ID from gateway |
+| `password` | `char*` | No | Terminal password sent as Kennwort in TECS XML (optional) |
+| `responseCode` | `char*` | No | Response code - 00 for success, otherwise error code |
+| `responseMessage` | `char*` | No | Response message - 'Approved' for success, error description otherwise |
+| `terminalId` | `char*` | No | Terminal ID used for the transaction |
+| `transactionId` | `char*` | No | Transaction ID generated by the backend |
+| `txtype` | `char*` | Yes | Transaction type |
 
 ### Field Usage by Operation
 
@@ -1564,18 +1565,18 @@ Entity* payment_sred = bluefintecsmerchantservices_payment_sred(client, NULL);
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `amount` | `int64_t` | Yes |  |
-| `currency` | `char*` | Yes |  |
-| `device` | `char*` | No |  |
-| `devicePayload` | `char*` | Yes |  |
-| `expDate` | `char*` | No |  |
-| `mode` | `char*` | No |  |
-| `panMasked` | `char*` | No |  |
-| `password` | `char*` | No |  |
-| `serial` | `char*` | No |  |
-| `serviceCode` | `char*` | No |  |
-| `terminalId` | `char*` | Yes |  |
-| `txtype` | `char*` | Yes |  |
+| `amount` | `int64_t` | Yes | Transaction amount in minor units (cents) |
+| `currency` | `char*` | Yes | Currency code - 3 uppercase letters (ISO 4217) |
+| `device` | `char*` | No | Device type that provided the SRED payload |
+| `devicePayload` | `char*` | Yes | SRED encrypted device payload from the device (minimum 32 characters) |
+| `expDate` | `char*` | No | Card expiry date in MMYY format |
+| `mode` | `char*` | No | Decryption mode |
+| `panMasked` | `char*` | No | Masked PAN (first 6 and last 4 digits) |
+| `password` | `char*` | No | Terminal password sent as Kennwort in TECS XML (optional) |
+| `serial` | `char*` | No | Device serial number |
+| `serviceCode` | `char*` | No | Service code from the card |
+| `terminalId` | `char*` | Yes | Terminal ID - 8 digits |
+| `txtype` | `char*` | Yes | Transaction type |
 
 ### Operations
 
@@ -2076,8 +2077,8 @@ Entity* report_data = bluefintecsmerchantservices_report_data(client, NULL);
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `cardBrandReportData` | `voxgig_value* (list)` | No |  |
-| `clearingDateFrom` | `char*` | Yes |  |
-| `clearingDateTo` | `char*` | Yes |  |
+| `clearingDateFrom` | `char*` | Yes | Date and time in the format yyyy-MM-dd'T'HH:mm:ss |
+| `clearingDateTo` | `char*` | Yes | Date and time in the format yyyy-MM-dd'T'HH:mm:ss |
 | `corporateId` | `char*` | Yes |  |
 | `currency` | `char*` | Yes |  |
 | `responseCode` | `int64_t` | No |  |
@@ -2137,7 +2138,7 @@ Entity* status_transaction = bluefintecsmerchantservices_status_transaction(clie
 | `acquirerTerminalId` | `char*` | No |  |
 | `amount` | `int64_t` | No |  |
 | `applicationCryptogram` | `char*` | No |  |
-| `authorizationCode` | `voxgig_value*` | No |  |
+| `authorizationCode` | `voxgig_value*` | No | Authorization code returned by the acquirer; null when not available |
 | `authorizationDate` | `char*` | No |  |
 | `cardBrand` | `char*` | No |  |
 | `cardEntry` | `char*` | No |  |
@@ -2355,7 +2356,7 @@ Entity* transaction_history = bluefintecsmerchantservices_transaction_history(cl
 | `transactionHistories` | `voxgig_value* (list)` | No |  |
 | `transactionId` | `char*` | No |  |
 | `transactionType` | `char*` | No |  |
-| `wallet` | `char*` | No |  |
+| `wallet` | `char*` | No | Filter by wallet type. |
 
 ### Operations
 

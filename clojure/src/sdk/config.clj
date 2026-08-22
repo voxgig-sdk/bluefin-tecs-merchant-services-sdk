@@ -305,10 +305,12 @@
           (vs/jm
             "name" "clearingDateFrom"
             "req" true
+            "short" "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz"
             "type" "`$STRING`")
           (vs/jm
             "name" "clearingDateTo"
             "req" true
+            "short" "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz"
             "type" "`$STRING`")
           (vs/jm
             "name" "responseCode"
@@ -859,10 +861,12 @@
           (vs/jm
             "name" "clearingDateFrom"
             "req" true
+            "short" "Date and time in the format yyyy-MM-dd'T'HH:mm:ssZ"
             "type" "`$STRING`")
           (vs/jm
             "name" "clearingDateTo"
             "req" true
+            "short" "Date and time in the format yyyy-MM-dd'T'HH:mm:ssZ"
             "type" "`$STRING`")
           (vs/jm
             "name" "pagination"
@@ -902,16 +906,20 @@
           (vs/jm
             "name" "clearingDateFrom"
             "req" true
+            "short" "Start date for clearing export (inclusive)"
             "type" "`$STRING`")
           (vs/jm
             "name" "clearingDateTo"
             "req" true
+            "short" "End date for clearing export (inclusive)"
             "type" "`$STRING`")
           (vs/jm
             "name" "fileId"
+            "short" "Unique file identifier for tracking and downloading"
             "type" "`$STRING`")
           (vs/jm
             "name" "filenameTemplate"
+            "short" "Optional filename template for the export file"
             "type" "`$STRING`")
           (vs/jm
             "name" "responseCode"
@@ -921,6 +929,7 @@
             "type" "`$STRING`")
           (vs/jm
             "name" "status"
+            "short" "Processing status of the export request"
             "type" "`$STRING`"))
         "name" "mandator_clearing_export_download"
         "op" (vs/jm
@@ -978,10 +987,12 @@
           (vs/jm
             "name" "clearingDateFrom"
             "req" true
+            "short" "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz"
             "type" "`$STRING`")
           (vs/jm
             "name" "clearingDateTo"
             "req" true
+            "short" "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz"
             "type" "`$STRING`")
           (vs/jm
             "name" "records"
@@ -1089,6 +1100,7 @@
             "type" "`$STRING`")
           (vs/jm
             "name" "wallet"
+            "short" "Filter by wallet type."
             "type" "`$STRING`"))
         "name" "merchant_portal_services_api"
         "op" (vs/jm
@@ -1151,49 +1163,63 @@
         "fields" (vs/jt
           (vs/jm
             "name" "acquirerName"
+            "short" "Acquirer name parsed from KKG field"
             "type" "`$STRING`")
           (vs/jm
             "name" "amount"
             "req" true
+            "short" "Transaction amount in minor units (cents)"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "authorizationNumber"
+            "short" "Authorization number from the gateway"
             "type" "`$STRING`")
           (vs/jm
             "name" "cardNumber"
             "req" true
+            "short" "Card number - 12 to 19 digits, must pass Luhn validation"
             "type" "`$STRING`")
           (vs/jm
             "name" "cardType"
+            "short" "Card type parsed from KKG field"
             "type" "`$STRING`")
           (vs/jm
             "name" "currency"
             "req" true
+            "short" "Currency code - 3 uppercase letters (ISO 4217)"
             "type" "`$STRING`")
           (vs/jm
             "name" "cvc"
+            "short" "Card verification code - 3-4 digits (optional)"
             "type" "`$STRING`")
           (vs/jm
             "name" "dateTimeTx"
+            "short" "Date and time of the transaction"
             "type" "`$STRING`")
           (vs/jm
             "name" "expDate"
             "req" true
+            "short" "Card expiry date in MMYY format"
             "type" "`$STRING`")
           (vs/jm
             "name" "merchantId"
+            "short" "Merchant ID (VU-NUMMER)"
             "type" "`$STRING`")
           (vs/jm
             "name" "originalTransactionId"
+            "short" "Original transaction ID from gateway"
             "type" "`$STRING`")
           (vs/jm
             "name" "password"
+            "short" "Terminal password sent as Kennwort in TECS XML (optional)"
             "type" "`$STRING`")
           (vs/jm
             "name" "responseCode"
+            "short" "Response code - 00 for success, otherwise error code"
             "type" "`$STRING`")
           (vs/jm
             "name" "responseMessage"
+            "short" "Response message - 'Approved' for success, error description otherwise"
             "type" "`$STRING`")
           (vs/jm
             "name" "terminalId"
@@ -1201,13 +1227,16 @@
               "create" (vs/jm
                 "req" true
                 "type" "`$STRING`"))
+            "short" "Terminal ID used for the transaction"
             "type" "`$STRING`")
           (vs/jm
             "name" "transactionId"
+            "short" "Transaction ID generated by the backend"
             "type" "`$STRING`")
           (vs/jm
             "name" "txtype"
             "req" true
+            "short" "Transaction type"
             "type" "`$STRING`"))
         "name" "payment_manual"
         "op" (vs/jm
@@ -1234,43 +1263,55 @@
           (vs/jm
             "name" "amount"
             "req" true
+            "short" "Transaction amount in minor units (cents)"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "currency"
             "req" true
+            "short" "Currency code - 3 uppercase letters (ISO 4217)"
             "type" "`$STRING`")
           (vs/jm
             "name" "device"
+            "short" "Device type that provided the SRED payload"
             "type" "`$STRING`")
           (vs/jm
             "name" "devicePayload"
             "req" true
+            "short" "SRED encrypted device payload from the device (minimum 32 characters)"
             "type" "`$STRING`")
           (vs/jm
             "name" "expDate"
+            "short" "Card expiry date in MMYY format"
             "type" "`$STRING`")
           (vs/jm
             "name" "mode"
+            "short" "Decryption mode"
             "type" "`$STRING`")
           (vs/jm
             "name" "panMasked"
+            "short" "Masked PAN (first 6 and last 4 digits)"
             "type" "`$STRING`")
           (vs/jm
             "name" "password"
+            "short" "Terminal password sent as Kennwort in TECS XML (optional)"
             "type" "`$STRING`")
           (vs/jm
             "name" "serial"
+            "short" "Device serial number"
             "type" "`$STRING`")
           (vs/jm
             "name" "serviceCode"
+            "short" "Service code from the card"
             "type" "`$STRING`")
           (vs/jm
             "name" "terminalId"
             "req" true
+            "short" "Terminal ID - 8 digits"
             "type" "`$STRING`")
           (vs/jm
             "name" "txtype"
             "req" true
+            "short" "Transaction type"
             "type" "`$STRING`"))
         "name" "payment_sred"
         "op" (vs/jm
@@ -1819,10 +1860,12 @@
           (vs/jm
             "name" "clearingDateFrom"
             "req" true
+            "short" "Date and time in the format yyyy-MM-dd'T'HH:mm:ss"
             "type" "`$STRING`")
           (vs/jm
             "name" "clearingDateTo"
             "req" true
+            "short" "Date and time in the format yyyy-MM-dd'T'HH:mm:ss"
             "type" "`$STRING`")
           (vs/jm
             "name" "corporateId"
@@ -1884,6 +1927,7 @@
             "type" "`$STRING`")
           (vs/jm
             "name" "authorizationCode"
+            "short" "Authorization code returned by the acquirer; null when not available"
             "type" (vs/jt
               "`$ONE`"
               (vs/jt
@@ -2210,6 +2254,7 @@
             "type" "`$STRING`")
           (vs/jm
             "name" "wallet"
+            "short" "Filter by wallet type."
             "type" "`$STRING`"))
         "name" "transaction_history"
         "op" (vs/jm

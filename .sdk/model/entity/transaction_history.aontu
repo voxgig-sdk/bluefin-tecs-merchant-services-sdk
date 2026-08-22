@@ -148,6 +148,7 @@ main: kit: entity: transaction_history: {
     {
       name: "wallet"
       req: false
+      short: "Filter by wallet type."
       type: "`$STRING`"
     }
   ]

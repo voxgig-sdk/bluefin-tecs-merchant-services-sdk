@@ -19,6 +19,9 @@ module BluefinTecsMerchantServicesConfig
     {
       "main" => {
         "name" => "BluefinTecsMerchantServices",
+        "slug" => "bluefin-tecs-merchant-services",
+        "version" => "0.0.1",
+        "target" => "rb",
       },
       "feature" => {
         "test" => {
@@ -486,11 +489,13 @@ module BluefinTecsMerchantServicesConfig
             {
               "name" => "clearingDateFrom",
               "req" => true,
+              "short" => "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz",
               "type" => "`$STRING`",
             },
             {
               "name" => "clearingDateTo",
               "req" => true,
+              "short" => "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz",
               "type" => "`$STRING`",
             },
             {
@@ -1240,11 +1245,13 @@ module BluefinTecsMerchantServicesConfig
             {
               "name" => "clearingDateFrom",
               "req" => true,
+              "short" => "Date and time in the format yyyy-MM-dd'T'HH:mm:ssZ",
               "type" => "`$STRING`",
             },
             {
               "name" => "clearingDateTo",
               "req" => true,
+              "short" => "Date and time in the format yyyy-MM-dd'T'HH:mm:ssZ",
               "type" => "`$STRING`",
             },
             {
@@ -1298,19 +1305,23 @@ module BluefinTecsMerchantServicesConfig
             {
               "name" => "clearingDateFrom",
               "req" => true,
+              "short" => "Start date for clearing export (inclusive)",
               "type" => "`$STRING`",
             },
             {
               "name" => "clearingDateTo",
               "req" => true,
+              "short" => "End date for clearing export (inclusive)",
               "type" => "`$STRING`",
             },
             {
               "name" => "fileId",
+              "short" => "Unique file identifier for tracking and downloading",
               "type" => "`$STRING`",
             },
             {
               "name" => "filenameTemplate",
+              "short" => "Optional filename template for the export file",
               "type" => "`$STRING`",
             },
             {
@@ -1323,6 +1334,7 @@ module BluefinTecsMerchantServicesConfig
             },
             {
               "name" => "status",
+              "short" => "Processing status of the export request",
               "type" => "`$STRING`",
             },
           ],
@@ -1402,11 +1414,13 @@ module BluefinTecsMerchantServicesConfig
             {
               "name" => "clearingDateFrom",
               "req" => true,
+              "short" => "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz",
               "type" => "`$STRING`",
             },
             {
               "name" => "clearingDateTo",
               "req" => true,
+              "short" => "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz",
               "type" => "`$STRING`",
             },
             {
@@ -1551,6 +1565,7 @@ module BluefinTecsMerchantServicesConfig
             },
             {
               "name" => "wallet",
+              "short" => "Filter by wallet type.",
               "type" => "`$STRING`",
             },
           ],
@@ -1637,62 +1652,76 @@ module BluefinTecsMerchantServicesConfig
           "fields" => [
             {
               "name" => "acquirerName",
+              "short" => "Acquirer name parsed from KKG field",
               "type" => "`$STRING`",
             },
             {
               "name" => "amount",
               "req" => true,
+              "short" => "Transaction amount in minor units (cents)",
               "type" => "`$INTEGER`",
             },
             {
               "name" => "authorizationNumber",
+              "short" => "Authorization number from the gateway",
               "type" => "`$STRING`",
             },
             {
               "name" => "cardNumber",
               "req" => true,
+              "short" => "Card number - 12 to 19 digits, must pass Luhn validation",
               "type" => "`$STRING`",
             },
             {
               "name" => "cardType",
+              "short" => "Card type parsed from KKG field",
               "type" => "`$STRING`",
             },
             {
               "name" => "currency",
               "req" => true,
+              "short" => "Currency code - 3 uppercase letters (ISO 4217)",
               "type" => "`$STRING`",
             },
             {
               "name" => "cvc",
+              "short" => "Card verification code - 3-4 digits (optional)",
               "type" => "`$STRING`",
             },
             {
               "name" => "dateTimeTx",
+              "short" => "Date and time of the transaction",
               "type" => "`$STRING`",
             },
             {
               "name" => "expDate",
               "req" => true,
+              "short" => "Card expiry date in MMYY format",
               "type" => "`$STRING`",
             },
             {
               "name" => "merchantId",
+              "short" => "Merchant ID (VU-NUMMER)",
               "type" => "`$STRING`",
             },
             {
               "name" => "originalTransactionId",
+              "short" => "Original transaction ID from gateway",
               "type" => "`$STRING`",
             },
             {
               "name" => "password",
+              "short" => "Terminal password sent as Kennwort in TECS XML (optional)",
               "type" => "`$STRING`",
             },
             {
               "name" => "responseCode",
+              "short" => "Response code - 00 for success, otherwise error code",
               "type" => "`$STRING`",
             },
             {
               "name" => "responseMessage",
+              "short" => "Response message - 'Approved' for success, error description otherwise",
               "type" => "`$STRING`",
             },
             {
@@ -1703,15 +1732,18 @@ module BluefinTecsMerchantServicesConfig
                   "type" => "`$STRING`",
                 },
               },
+              "short" => "Terminal ID used for the transaction",
               "type" => "`$STRING`",
             },
             {
               "name" => "transactionId",
+              "short" => "Transaction ID generated by the backend",
               "type" => "`$STRING`",
             },
             {
               "name" => "txtype",
               "req" => true,
+              "short" => "Transaction type",
               "type" => "`$STRING`",
             },
           ],
@@ -1748,54 +1780,66 @@ module BluefinTecsMerchantServicesConfig
             {
               "name" => "amount",
               "req" => true,
+              "short" => "Transaction amount in minor units (cents)",
               "type" => "`$INTEGER`",
             },
             {
               "name" => "currency",
               "req" => true,
+              "short" => "Currency code - 3 uppercase letters (ISO 4217)",
               "type" => "`$STRING`",
             },
             {
               "name" => "device",
+              "short" => "Device type that provided the SRED payload",
               "type" => "`$STRING`",
             },
             {
               "name" => "devicePayload",
               "req" => true,
+              "short" => "SRED encrypted device payload from the device (minimum 32 characters)",
               "type" => "`$STRING`",
             },
             {
               "name" => "expDate",
+              "short" => "Card expiry date in MMYY format",
               "type" => "`$STRING`",
             },
             {
               "name" => "mode",
+              "short" => "Decryption mode",
               "type" => "`$STRING`",
             },
             {
               "name" => "panMasked",
+              "short" => "Masked PAN (first 6 and last 4 digits)",
               "type" => "`$STRING`",
             },
             {
               "name" => "password",
+              "short" => "Terminal password sent as Kennwort in TECS XML (optional)",
               "type" => "`$STRING`",
             },
             {
               "name" => "serial",
+              "short" => "Device serial number",
               "type" => "`$STRING`",
             },
             {
               "name" => "serviceCode",
+              "short" => "Service code from the card",
               "type" => "`$STRING`",
             },
             {
               "name" => "terminalId",
               "req" => true,
+              "short" => "Terminal ID - 8 digits",
               "type" => "`$STRING`",
             },
             {
               "name" => "txtype",
               "req" => true,
+              "short" => "Transaction type",
               "type" => "`$STRING`",
             },
           ],
@@ -2534,11 +2578,13 @@ module BluefinTecsMerchantServicesConfig
             {
               "name" => "clearingDateFrom",
               "req" => true,
+              "short" => "Date and time in the format yyyy-MM-dd'T'HH:mm:ss",
               "type" => "`$STRING`",
             },
             {
               "name" => "clearingDateTo",
               "req" => true,
+              "short" => "Date and time in the format yyyy-MM-dd'T'HH:mm:ss",
               "type" => "`$STRING`",
             },
             {
@@ -2621,6 +2667,7 @@ module BluefinTecsMerchantServicesConfig
             },
             {
               "name" => "authorizationCode",
+              "short" => "Authorization code returned by the acquirer; null when not available",
               "type" => [
                 "`$ONE`",
                 [
@@ -3061,6 +3108,7 @@ module BluefinTecsMerchantServicesConfig
             },
             {
               "name" => "wallet",
+              "short" => "Filter by wallet type.",
               "type" => "`$STRING`",
             },
           ],

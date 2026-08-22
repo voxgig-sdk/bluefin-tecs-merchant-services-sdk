@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "BluefinTecsMerchantServices",
+			"slug": "bluefin-tecs-merchant-services",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -478,11 +481,13 @@ func MakeConfig() map[string]any {
 					map[string]any{
 						"name": "clearingDateFrom",
 						"req": true,
+						"short": "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "clearingDateTo",
 						"req": true,
+						"short": "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz",
 						"type": "`$STRING`",
 					},
 					map[string]any{
@@ -1232,11 +1237,13 @@ func MakeConfig() map[string]any {
 					map[string]any{
 						"name": "clearingDateFrom",
 						"req": true,
+						"short": "Date and time in the format yyyy-MM-dd'T'HH:mm:ssZ",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "clearingDateTo",
 						"req": true,
+						"short": "Date and time in the format yyyy-MM-dd'T'HH:mm:ssZ",
 						"type": "`$STRING`",
 					},
 					map[string]any{
@@ -1290,19 +1297,23 @@ func MakeConfig() map[string]any {
 					map[string]any{
 						"name": "clearingDateFrom",
 						"req": true,
+						"short": "Start date for clearing export (inclusive)",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "clearingDateTo",
 						"req": true,
+						"short": "End date for clearing export (inclusive)",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "fileId",
+						"short": "Unique file identifier for tracking and downloading",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "filenameTemplate",
+						"short": "Optional filename template for the export file",
 						"type": "`$STRING`",
 					},
 					map[string]any{
@@ -1315,6 +1326,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "status",
+						"short": "Processing status of the export request",
 						"type": "`$STRING`",
 					},
 				},
@@ -1394,11 +1406,13 @@ func MakeConfig() map[string]any {
 					map[string]any{
 						"name": "clearingDateFrom",
 						"req": true,
+						"short": "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "clearingDateTo",
 						"req": true,
+						"short": "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz",
 						"type": "`$STRING`",
 					},
 					map[string]any{
@@ -1543,6 +1557,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "wallet",
+						"short": "Filter by wallet type.",
 						"type": "`$STRING`",
 					},
 				},
@@ -1629,62 +1644,76 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "acquirerName",
+						"short": "Acquirer name parsed from KKG field",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "amount",
 						"req": true,
+						"short": "Transaction amount in minor units (cents)",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "authorizationNumber",
+						"short": "Authorization number from the gateway",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "cardNumber",
 						"req": true,
+						"short": "Card number - 12 to 19 digits, must pass Luhn validation",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "cardType",
+						"short": "Card type parsed from KKG field",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "currency",
 						"req": true,
+						"short": "Currency code - 3 uppercase letters (ISO 4217)",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "cvc",
+						"short": "Card verification code - 3-4 digits (optional)",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "dateTimeTx",
+						"short": "Date and time of the transaction",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "expDate",
 						"req": true,
+						"short": "Card expiry date in MMYY format",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "merchantId",
+						"short": "Merchant ID (VU-NUMMER)",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "originalTransactionId",
+						"short": "Original transaction ID from gateway",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "password",
+						"short": "Terminal password sent as Kennwort in TECS XML (optional)",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "responseCode",
+						"short": "Response code - 00 for success, otherwise error code",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "responseMessage",
+						"short": "Response message - 'Approved' for success, error description otherwise",
 						"type": "`$STRING`",
 					},
 					map[string]any{
@@ -1695,15 +1724,18 @@ func MakeConfig() map[string]any {
 								"type": "`$STRING`",
 							},
 						},
+						"short": "Terminal ID used for the transaction",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "transactionId",
+						"short": "Transaction ID generated by the backend",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "txtype",
 						"req": true,
+						"short": "Transaction type",
 						"type": "`$STRING`",
 					},
 				},
@@ -1740,54 +1772,66 @@ func MakeConfig() map[string]any {
 					map[string]any{
 						"name": "amount",
 						"req": true,
+						"short": "Transaction amount in minor units (cents)",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "currency",
 						"req": true,
+						"short": "Currency code - 3 uppercase letters (ISO 4217)",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "device",
+						"short": "Device type that provided the SRED payload",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "devicePayload",
 						"req": true,
+						"short": "SRED encrypted device payload from the device (minimum 32 characters)",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "expDate",
+						"short": "Card expiry date in MMYY format",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "mode",
+						"short": "Decryption mode",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "panMasked",
+						"short": "Masked PAN (first 6 and last 4 digits)",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "password",
+						"short": "Terminal password sent as Kennwort in TECS XML (optional)",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "serial",
+						"short": "Device serial number",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "serviceCode",
+						"short": "Service code from the card",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "terminalId",
 						"req": true,
+						"short": "Terminal ID - 8 digits",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "txtype",
 						"req": true,
+						"short": "Transaction type",
 						"type": "`$STRING`",
 					},
 				},
@@ -2526,11 +2570,13 @@ func MakeConfig() map[string]any {
 					map[string]any{
 						"name": "clearingDateFrom",
 						"req": true,
+						"short": "Date and time in the format yyyy-MM-dd'T'HH:mm:ss",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "clearingDateTo",
 						"req": true,
+						"short": "Date and time in the format yyyy-MM-dd'T'HH:mm:ss",
 						"type": "`$STRING`",
 					},
 					map[string]any{
@@ -2613,6 +2659,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "authorizationCode",
+						"short": "Authorization code returned by the acquirer; null when not available",
 						"type": []any{
 							"`$ONE`",
 							[]any{
@@ -3053,6 +3100,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "wallet",
+						"short": "Filter by wallet type.",
 						"type": "`$STRING`",
 					},
 				},

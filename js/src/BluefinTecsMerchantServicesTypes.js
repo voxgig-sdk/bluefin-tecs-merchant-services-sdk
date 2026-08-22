@@ -182,7 +182,7 @@
 
 /**
  * @typedef {Object} DigitalServicesApiCreateData
- * @property {string} [file_id]
+ * @property {string} file_id
  * @property {string} clearingDateFrom
  * @property {string} clearingDateTo
  * @property {number} [responseCode]

@@ -13,11 +13,13 @@ main: kit: entity: report_data: {
     {
       name: "clearingDateFrom"
       req: true
+      short: "Date and time in the format yyyy-MM-dd'T'HH:mm:ss"
       type: "`$STRING`"
     }
     {
       name: "clearingDateTo"
       req: true
+      short: "Date and time in the format yyyy-MM-dd'T'HH:mm:ss"
       type: "`$STRING`"
     }
     {

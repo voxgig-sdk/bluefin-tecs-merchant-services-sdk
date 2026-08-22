@@ -20,6 +20,9 @@ pub fn make_config() Value {
         }) },
         .{ "options", h.jo(&.{
             .{ "base", h.vstr("https://test.tecs.at/merchantservices") },
+            .{ "auth", h.jo(&.{
+                .{ "prefix", h.vstr("Bearer") },
+            }) },
             .{ "headers", h.jo(&.{
                 .{ "content-type", h.vstr("application/json") },
             }) },
@@ -63,9 +66,6 @@ pub fn make_config() Value {
                 .{ "update_merchant", h.omap() },
                 .{ "update_template_xml", h.omap() },
                 .{ "version", h.omap() },
-            }) },
-            .{ "auth", h.jo(&.{
-                .{ "prefix", h.vstr("Bearer") },
             }) },
         }) },
         .{ "entity", h.jo(&.{
@@ -477,11 +477,13 @@ pub fn make_config() Value {
                     h.jo(&.{
                         .{ "name", h.vstr("clearingDateFrom") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Date and time in the format yyyy-MM-dd'T'HH:mm:ssz") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("clearingDateTo") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Date and time in the format yyyy-MM-dd'T'HH:mm:ssz") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
@@ -1231,11 +1233,13 @@ pub fn make_config() Value {
                     h.jo(&.{
                         .{ "name", h.vstr("clearingDateFrom") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Date and time in the format yyyy-MM-dd'T'HH:mm:ssZ") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("clearingDateTo") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Date and time in the format yyyy-MM-dd'T'HH:mm:ssZ") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
@@ -1289,19 +1293,23 @@ pub fn make_config() Value {
                     h.jo(&.{
                         .{ "name", h.vstr("clearingDateFrom") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Start date for clearing export (inclusive)") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("clearingDateTo") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("End date for clearing export (inclusive)") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("fileId") },
+                        .{ "short", h.vstr("Unique file identifier for tracking and downloading") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("filenameTemplate") },
+                        .{ "short", h.vstr("Optional filename template for the export file") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
@@ -1314,6 +1322,7 @@ pub fn make_config() Value {
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("status") },
+                        .{ "short", h.vstr("Processing status of the export request") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                 }) },
@@ -1393,11 +1402,13 @@ pub fn make_config() Value {
                     h.jo(&.{
                         .{ "name", h.vstr("clearingDateFrom") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Date and time in the format yyyy-MM-dd'T'HH:mm:ssz") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("clearingDateTo") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Date and time in the format yyyy-MM-dd'T'HH:mm:ssz") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
@@ -1542,6 +1553,7 @@ pub fn make_config() Value {
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("wallet") },
+                        .{ "short", h.vstr("Filter by wallet type.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                 }) },
@@ -1628,62 +1640,76 @@ pub fn make_config() Value {
                 .{ "fields", h.ja(&.{
                     h.jo(&.{
                         .{ "name", h.vstr("acquirerName") },
+                        .{ "short", h.vstr("Acquirer name parsed from KKG field") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("amount") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Transaction amount in minor units (cents)") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("authorizationNumber") },
+                        .{ "short", h.vstr("Authorization number from the gateway") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("cardNumber") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Card number - 12 to 19 digits, must pass Luhn validation") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("cardType") },
+                        .{ "short", h.vstr("Card type parsed from KKG field") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("currency") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Currency code - 3 uppercase letters (ISO 4217)") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("cvc") },
+                        .{ "short", h.vstr("Card verification code - 3-4 digits (optional)") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("dateTimeTx") },
+                        .{ "short", h.vstr("Date and time of the transaction") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("expDate") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Card expiry date in MMYY format") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("merchantId") },
+                        .{ "short", h.vstr("Merchant ID (VU-NUMMER)") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("originalTransactionId") },
+                        .{ "short", h.vstr("Original transaction ID from gateway") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("password") },
+                        .{ "short", h.vstr("Terminal password sent as Kennwort in TECS XML (optional)") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("responseCode") },
+                        .{ "short", h.vstr("Response code - 00 for success, otherwise error code") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("responseMessage") },
+                        .{ "short", h.vstr("Response message - 'Approved' for success, error description otherwise") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
@@ -1694,15 +1720,18 @@ pub fn make_config() Value {
                                 .{ "type", h.vstr("`$STRING`") },
                             }) },
                         }) },
+                        .{ "short", h.vstr("Terminal ID used for the transaction") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("transactionId") },
+                        .{ "short", h.vstr("Transaction ID generated by the backend") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("txtype") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Transaction type") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                 }) },
@@ -1739,54 +1768,66 @@ pub fn make_config() Value {
                     h.jo(&.{
                         .{ "name", h.vstr("amount") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Transaction amount in minor units (cents)") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("currency") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Currency code - 3 uppercase letters (ISO 4217)") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("device") },
+                        .{ "short", h.vstr("Device type that provided the SRED payload") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("devicePayload") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("SRED encrypted device payload from the device (minimum 32 characters)") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("expDate") },
+                        .{ "short", h.vstr("Card expiry date in MMYY format") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("mode") },
+                        .{ "short", h.vstr("Decryption mode") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("panMasked") },
+                        .{ "short", h.vstr("Masked PAN (first 6 and last 4 digits)") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("password") },
+                        .{ "short", h.vstr("Terminal password sent as Kennwort in TECS XML (optional)") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("serial") },
+                        .{ "short", h.vstr("Device serial number") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("serviceCode") },
+                        .{ "short", h.vstr("Service code from the card") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("terminalId") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Terminal ID - 8 digits") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("txtype") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Transaction type") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                 }) },
@@ -2525,11 +2566,13 @@ pub fn make_config() Value {
                     h.jo(&.{
                         .{ "name", h.vstr("clearingDateFrom") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Date and time in the format yyyy-MM-dd'T'HH:mm:ss") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("clearingDateTo") },
                         .{ "req", h.vbool(true) },
+                        .{ "short", h.vstr("Date and time in the format yyyy-MM-dd'T'HH:mm:ss") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
@@ -2612,6 +2655,7 @@ pub fn make_config() Value {
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("authorizationCode") },
+                        .{ "short", h.vstr("Authorization code returned by the acquirer; null when not available") },
                         .{ "type", h.ja(&.{
                             h.vstr("`$ONE`"),
                             h.ja(&.{
@@ -3052,6 +3096,7 @@ pub fn make_config() Value {
                     }),
                     h.jo(&.{
                         .{ "name", h.vstr("wallet") },
+                        .{ "short", h.vstr("Filter by wallet type.") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                 }) },
@@ -3485,6 +3530,28 @@ pub fn make_config() Value {
             }) },
         }) },
     });
+}
+
+// SHARED CONFIG (sdkgen rung L2).
+//
+// The SDK reads the config on every request and never writes to it, so one
+// instance is shared by every client rather than rebuilt per client. Above the
+// size threshold make_config re-parses the whole embedded JSON, so this is the
+// difference between parsing the model once and once per client.
+//
+// Value nodes are arena-allocated and reference-stable, so the shared value is
+// genuinely one structure, not a copy.
+var shared_config_val: ?Value = null;
+
+/// The process-wide config, built once on first use.
+///
+/// The returned Value SHARES its nodes: treat it as read-only. Callers that
+/// need to mutate should use make_config, which always returns a fresh copy.
+pub fn shared_config() Value {
+    if (shared_config_val) |c| return c;
+    const c = make_config();
+    shared_config_val = c;
+    return c;
 }
 
 pub fn make_feature(name: []const u8) Feature {

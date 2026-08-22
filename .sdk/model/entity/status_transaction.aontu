@@ -28,6 +28,7 @@ main: kit: entity: status_transaction: {
     {
       name: "authorizationCode"
       req: false
+      short: "Authorization code returned by the acquirer; null when not available"
       type: [
         "`$ONE`"
         [

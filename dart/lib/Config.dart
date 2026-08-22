@@ -18,8 +18,17 @@ class Config {
     return fc();
   }
 
+  // False for a feature added at runtime via options.extend (station's
+  // adopt path) - the constructor uses this to skip makeFeature for names
+  // no generated class backs.
+  bool hasFeature(String fn) => null != FEATURE_CLASS[fn];
+
   final Map<String, dynamic> main = <String, dynamic>{
     'name': 'BluefinTecsMerchantServices',
+        'slug': 'bluefin-tecs-merchant-services',
+    'version': '0.0.1',
+    'target': 'dart',
+
   };
 
   final Map<String, dynamic> feature = <String, dynamic>{
@@ -31,19 +40,21 @@ class Config {
 
   };
 
+  // Rendered whole from the canonical config definition rather than assembled
+  // slot by slot. Assembling it here meant `options.server` - the OpenAPI
+  // server-variable defaults - was simply absent from this branch, so a
+  // templated server URL produced a different config either side of the
+  // threshold.
   final Map<String, dynamic> options = <String, dynamic>{
     'base': 'https://test.tecs.at/merchantservices',
-
     'auth': <String, dynamic>{
       'prefix': 'Bearer',
     },
-
     'headers': <String, dynamic>{
       'content-type': 'application/json',
     },
-
     'entity': <String, dynamic>{
-            'cancel_transaction': <String, dynamic>{},
+      'cancel_transaction': <String, dynamic>{},
       'check_card_black_listed': <String, dynamic>{},
       'create_product': <String, dynamic>{},
       'deactivate_terminal': <String, dynamic>{},
@@ -82,8 +93,7 @@ class Config {
       'update_merchant': <String, dynamic>{},
       'update_template_xml': <String, dynamic>{},
       'version': <String, dynamic>{},
-
-    }
+    },
   };
 
   final Map<String, dynamic> entity = <String, dynamic>{
@@ -495,11 +505,13 @@ class Config {
         <String, dynamic>{
           'name': 'clearingDateFrom',
           'req': true,
+          'short': 'Date and time in the format yyyy-MM-dd\'T\'HH:mm:ssz',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'clearingDateTo',
           'req': true,
+          'short': 'Date and time in the format yyyy-MM-dd\'T\'HH:mm:ssz',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
@@ -1249,11 +1261,13 @@ class Config {
         <String, dynamic>{
           'name': 'clearingDateFrom',
           'req': true,
+          'short': 'Date and time in the format yyyy-MM-dd\'T\'HH:mm:ssZ',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'clearingDateTo',
           'req': true,
+          'short': 'Date and time in the format yyyy-MM-dd\'T\'HH:mm:ssZ',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
@@ -1307,19 +1321,23 @@ class Config {
         <String, dynamic>{
           'name': 'clearingDateFrom',
           'req': true,
+          'short': 'Start date for clearing export (inclusive)',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'clearingDateTo',
           'req': true,
+          'short': 'End date for clearing export (inclusive)',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'fileId',
+          'short': 'Unique file identifier for tracking and downloading',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'filenameTemplate',
+          'short': 'Optional filename template for the export file',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
@@ -1332,6 +1350,7 @@ class Config {
         },
         <String, dynamic>{
           'name': 'status',
+          'short': 'Processing status of the export request',
           'type': '`\$STRING`',
         },
       ],
@@ -1411,11 +1430,13 @@ class Config {
         <String, dynamic>{
           'name': 'clearingDateFrom',
           'req': true,
+          'short': 'Date and time in the format yyyy-MM-dd\'T\'HH:mm:ssz',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'clearingDateTo',
           'req': true,
+          'short': 'Date and time in the format yyyy-MM-dd\'T\'HH:mm:ssz',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
@@ -1560,6 +1581,7 @@ class Config {
         },
         <String, dynamic>{
           'name': 'wallet',
+          'short': 'Filter by wallet type.',
           'type': '`\$STRING`',
         },
       ],
@@ -1646,62 +1668,76 @@ class Config {
       'fields': <dynamic>[
         <String, dynamic>{
           'name': 'acquirerName',
+          'short': 'Acquirer name parsed from KKG field',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'amount',
           'req': true,
+          'short': 'Transaction amount in minor units (cents)',
           'type': '`\$INTEGER`',
         },
         <String, dynamic>{
           'name': 'authorizationNumber',
+          'short': 'Authorization number from the gateway',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'cardNumber',
           'req': true,
+          'short': 'Card number - 12 to 19 digits, must pass Luhn validation',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'cardType',
+          'short': 'Card type parsed from KKG field',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'currency',
           'req': true,
+          'short': 'Currency code - 3 uppercase letters (ISO 4217)',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'cvc',
+          'short': 'Card verification code - 3-4 digits (optional)',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'dateTimeTx',
+          'short': 'Date and time of the transaction',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'expDate',
           'req': true,
+          'short': 'Card expiry date in MMYY format',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'merchantId',
+          'short': 'Merchant ID (VU-NUMMER)',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'originalTransactionId',
+          'short': 'Original transaction ID from gateway',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'password',
+          'short': 'Terminal password sent as Kennwort in TECS XML (optional)',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'responseCode',
+          'short': 'Response code - 00 for success, otherwise error code',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'responseMessage',
+          'short': 'Response message - \'Approved\' for success, error description otherwise',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
@@ -1712,15 +1748,18 @@ class Config {
               'type': '`\$STRING`',
             },
           },
+          'short': 'Terminal ID used for the transaction',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'transactionId',
+          'short': 'Transaction ID generated by the backend',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'txtype',
           'req': true,
+          'short': 'Transaction type',
           'type': '`\$STRING`',
         },
       ],
@@ -1757,54 +1796,66 @@ class Config {
         <String, dynamic>{
           'name': 'amount',
           'req': true,
+          'short': 'Transaction amount in minor units (cents)',
           'type': '`\$INTEGER`',
         },
         <String, dynamic>{
           'name': 'currency',
           'req': true,
+          'short': 'Currency code - 3 uppercase letters (ISO 4217)',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'device',
+          'short': 'Device type that provided the SRED payload',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'devicePayload',
           'req': true,
+          'short': 'SRED encrypted device payload from the device (minimum 32 characters)',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'expDate',
+          'short': 'Card expiry date in MMYY format',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'mode',
+          'short': 'Decryption mode',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'panMasked',
+          'short': 'Masked PAN (first 6 and last 4 digits)',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'password',
+          'short': 'Terminal password sent as Kennwort in TECS XML (optional)',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'serial',
+          'short': 'Device serial number',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'serviceCode',
+          'short': 'Service code from the card',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'terminalId',
           'req': true,
+          'short': 'Terminal ID - 8 digits',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'txtype',
           'req': true,
+          'short': 'Transaction type',
           'type': '`\$STRING`',
         },
       ],
@@ -2543,11 +2594,13 @@ class Config {
         <String, dynamic>{
           'name': 'clearingDateFrom',
           'req': true,
+          'short': 'Date and time in the format yyyy-MM-dd\'T\'HH:mm:ss',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
           'name': 'clearingDateTo',
           'req': true,
+          'short': 'Date and time in the format yyyy-MM-dd\'T\'HH:mm:ss',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
@@ -2630,6 +2683,7 @@ class Config {
         },
         <String, dynamic>{
           'name': 'authorizationCode',
+          'short': 'Authorization code returned by the acquirer; null when not available',
           'type': <dynamic>[
             '`\$ONE`',
             <dynamic>[
@@ -3070,6 +3124,7 @@ class Config {
         },
         <String, dynamic>{
           'name': 'wallet',
+          'short': 'Filter by wallet type.',
           'type': '`\$STRING`',
         },
       ],

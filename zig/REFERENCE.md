@@ -579,8 +579,8 @@ const digital_services_api = client.digital_services_api(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearingDateFrom` | `[]const u8` | Yes |  |
-| `clearingDateTo` | `[]const u8` | Yes |  |
+| `clearingDateFrom` | `[]const u8` | Yes | Date and time in the format yyyy-MM-dd'T'HH:mm:ssz |
+| `clearingDateTo` | `[]const u8` | Yes | Date and time in the format yyyy-MM-dd'T'HH:mm:ssz |
 | `responseCode` | `i64` | No |  |
 | `responseMessage` | `[]const u8` | No |  |
 | `txCount` | `i64` | No |  |
@@ -598,6 +598,7 @@ Create a new entity with the given data. `.ok` carries the created entity data.
 
 ```zig
 switch (client.digital_services_api(h.vnull()).create(h.jo(&.{
+    .{ "file_id", h.vstr("example_file_id") }, // []const u8
     .{ "clearingDateFrom", h.vstr("example_clearingDateFrom") }, // []const u8
     .{ "clearingDateTo", h.vstr("example_clearingDateTo") }, // []const u8
 }), h.vnull())) {
@@ -1239,8 +1240,8 @@ const mandator_clearing_export = client.mandator_clearing_export(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearingDateFrom` | `[]const u8` | Yes |  |
-| `clearingDateTo` | `[]const u8` | Yes |  |
+| `clearingDateFrom` | `[]const u8` | Yes | Date and time in the format yyyy-MM-dd'T'HH:mm:ssZ |
+| `clearingDateTo` | `[]const u8` | Yes | Date and time in the format yyyy-MM-dd'T'HH:mm:ssZ |
 | `pagination` | `Value (object)` | No |  |
 | `records` | `Value (array)` | No |  |
 | `responseCode` | `i64` | No |  |
@@ -1293,13 +1294,13 @@ const mandator_clearing_export_download = client.mandator_clearing_export_downlo
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearingDateFrom` | `[]const u8` | Yes |  |
-| `clearingDateTo` | `[]const u8` | Yes |  |
-| `fileId` | `[]const u8` | No |  |
-| `filenameTemplate` | `[]const u8` | No |  |
+| `clearingDateFrom` | `[]const u8` | Yes | Start date for clearing export (inclusive) |
+| `clearingDateTo` | `[]const u8` | Yes | End date for clearing export (inclusive) |
+| `fileId` | `[]const u8` | No | Unique file identifier for tracking and downloading |
+| `filenameTemplate` | `[]const u8` | No | Optional filename template for the export file |
 | `responseCode` | `i64` | No |  |
 | `responseMessage` | `[]const u8` | No |  |
-| `status` | `[]const u8` | No |  |
+| `status` | `[]const u8` | No | Processing status of the export request |
 
 ### Operations
 
@@ -1359,8 +1360,8 @@ const mandator_clearing_export_summary = client.mandator_clearing_export_summary
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearingDateFrom` | `[]const u8` | Yes |  |
-| `clearingDateTo` | `[]const u8` | Yes |  |
+| `clearingDateFrom` | `[]const u8` | Yes | Date and time in the format yyyy-MM-dd'T'HH:mm:ssz |
+| `clearingDateTo` | `[]const u8` | Yes | Date and time in the format yyyy-MM-dd'T'HH:mm:ssz |
 | `records` | `Value (array)` | No |  |
 | `responseCode` | `i64` | No |  |
 | `responseMessage` | `[]const u8` | No |  |
@@ -1436,7 +1437,7 @@ const merchant_portal_services_api = client.merchant_portal_services_api(h.vnull
 | `transactionDateTo` | `[]const u8` | No |  |
 | `transactionId` | `[]const u8` | No |  |
 | `transactionType` | `[]const u8` | No |  |
-| `wallet` | `[]const u8` | No |  |
+| `wallet` | `[]const u8` | No | Filter by wallet type. |
 
 ### Operations
 
@@ -1535,23 +1536,23 @@ const payment_manual = client.payment_manual(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirerName` | `[]const u8` | No |  |
-| `amount` | `i64` | Yes |  |
-| `authorizationNumber` | `[]const u8` | No |  |
-| `cardNumber` | `[]const u8` | Yes |  |
-| `cardType` | `[]const u8` | No |  |
-| `currency` | `[]const u8` | Yes |  |
-| `cvc` | `[]const u8` | No |  |
-| `dateTimeTx` | `[]const u8` | No |  |
-| `expDate` | `[]const u8` | Yes |  |
-| `merchantId` | `[]const u8` | No |  |
-| `originalTransactionId` | `[]const u8` | No |  |
-| `password` | `[]const u8` | No |  |
-| `responseCode` | `[]const u8` | No |  |
-| `responseMessage` | `[]const u8` | No |  |
-| `terminalId` | `[]const u8` | No |  |
-| `transactionId` | `[]const u8` | No |  |
-| `txtype` | `[]const u8` | Yes |  |
+| `acquirerName` | `[]const u8` | No | Acquirer name parsed from KKG field |
+| `amount` | `i64` | Yes | Transaction amount in minor units (cents) |
+| `authorizationNumber` | `[]const u8` | No | Authorization number from the gateway |
+| `cardNumber` | `[]const u8` | Yes | Card number - 12 to 19 digits, must pass Luhn validation |
+| `cardType` | `[]const u8` | No | Card type parsed from KKG field |
+| `currency` | `[]const u8` | Yes | Currency code - 3 uppercase letters (ISO 4217) |
+| `cvc` | `[]const u8` | No | Card verification code - 3-4 digits (optional) |
+| `dateTimeTx` | `[]const u8` | No | Date and time of the transaction |
+| `expDate` | `[]const u8` | Yes | Card expiry date in MMYY format |
+| `merchantId` | `[]const u8` | No | Merchant ID (VU-NUMMER) |
+| `originalTransactionId` | `[]const u8` | No | Original transaction ID from gateway |
+| `password` | `[]const u8` | No | Terminal password sent as Kennwort in TECS XML (optional) |
+| `responseCode` | `[]const u8` | No | Response code - 00 for success, otherwise error code |
+| `responseMessage` | `[]const u8` | No | Response message - 'Approved' for success, error description otherwise |
+| `terminalId` | `[]const u8` | No | Terminal ID used for the transaction |
+| `transactionId` | `[]const u8` | No | Transaction ID generated by the backend |
+| `txtype` | `[]const u8` | Yes | Transaction type |
 
 ### Field Usage by Operation
 
@@ -1625,18 +1626,18 @@ const payment_sred = client.payment_sred(h.vnull());
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `amount` | `i64` | Yes |  |
-| `currency` | `[]const u8` | Yes |  |
-| `device` | `[]const u8` | No |  |
-| `devicePayload` | `[]const u8` | Yes |  |
-| `expDate` | `[]const u8` | No |  |
-| `mode` | `[]const u8` | No |  |
-| `panMasked` | `[]const u8` | No |  |
-| `password` | `[]const u8` | No |  |
-| `serial` | `[]const u8` | No |  |
-| `serviceCode` | `[]const u8` | No |  |
-| `terminalId` | `[]const u8` | Yes |  |
-| `txtype` | `[]const u8` | Yes |  |
+| `amount` | `i64` | Yes | Transaction amount in minor units (cents) |
+| `currency` | `[]const u8` | Yes | Currency code - 3 uppercase letters (ISO 4217) |
+| `device` | `[]const u8` | No | Device type that provided the SRED payload |
+| `devicePayload` | `[]const u8` | Yes | SRED encrypted device payload from the device (minimum 32 characters) |
+| `expDate` | `[]const u8` | No | Card expiry date in MMYY format |
+| `mode` | `[]const u8` | No | Decryption mode |
+| `panMasked` | `[]const u8` | No | Masked PAN (first 6 and last 4 digits) |
+| `password` | `[]const u8` | No | Terminal password sent as Kennwort in TECS XML (optional) |
+| `serial` | `[]const u8` | No | Device serial number |
+| `serviceCode` | `[]const u8` | No | Service code from the card |
+| `terminalId` | `[]const u8` | Yes | Terminal ID - 8 digits |
+| `txtype` | `[]const u8` | Yes | Transaction type |
 
 ### Operations
 
@@ -2149,8 +2150,8 @@ const report_data = client.report_data(h.vnull());
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `cardBrandReportData` | `Value (array)` | No |  |
-| `clearingDateFrom` | `[]const u8` | Yes |  |
-| `clearingDateTo` | `[]const u8` | Yes |  |
+| `clearingDateFrom` | `[]const u8` | Yes | Date and time in the format yyyy-MM-dd'T'HH:mm:ss |
+| `clearingDateTo` | `[]const u8` | Yes | Date and time in the format yyyy-MM-dd'T'HH:mm:ss |
 | `corporateId` | `[]const u8` | Yes |  |
 | `currency` | `[]const u8` | Yes |  |
 | `responseCode` | `i64` | No |  |
@@ -2212,7 +2213,7 @@ const status_transaction = client.status_transaction(h.vnull());
 | `acquirerTerminalId` | `[]const u8` | No |  |
 | `amount` | `i64` | No |  |
 | `applicationCryptogram` | `[]const u8` | No |  |
-| `authorizationCode` | `Value` | No |  |
+| `authorizationCode` | `Value` | No | Authorization code returned by the acquirer; null when not available |
 | `authorizationDate` | `[]const u8` | No |  |
 | `cardBrand` | `[]const u8` | No |  |
 | `cardEntry` | `[]const u8` | No |  |
@@ -2437,7 +2438,7 @@ const transaction_history = client.transaction_history(h.vnull());
 | `transactionHistories` | `Value (array)` | No |  |
 | `transactionId` | `[]const u8` | No |  |
 | `transactionType` | `[]const u8` | No |  |
-| `wallet` | `[]const u8` | No |  |
+| `wallet` | `[]const u8` | No | Filter by wallet type. |
 
 ### Operations
 

@@ -12,6 +12,9 @@ public static class SdkConfig
             ["main"] = new Dictionary<string, object?>
             {
                 ["name"] = "BluefinTecsMerchantServices",
+                ["slug"] = "bluefin-tecs-merchant-services",
+                ["version"] = "0.0.1",
+                ["target"] = "csharp",
             },
             ["feature"] = new Dictionary<string, object?>
             {
@@ -598,12 +601,14 @@ public static class SdkConfig
                         {
                             ["name"] = "clearingDateFrom",
                             ["req"] = true,
+                            ["short"] = "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "clearingDateTo",
                             ["req"] = true,
+                            ["short"] = "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
@@ -1552,12 +1557,14 @@ public static class SdkConfig
                         {
                             ["name"] = "clearingDateFrom",
                             ["req"] = true,
+                            ["short"] = "Date and time in the format yyyy-MM-dd'T'HH:mm:ssZ",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "clearingDateTo",
                             ["req"] = true,
+                            ["short"] = "Date and time in the format yyyy-MM-dd'T'HH:mm:ssZ",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
@@ -1625,22 +1632,26 @@ public static class SdkConfig
                         {
                             ["name"] = "clearingDateFrom",
                             ["req"] = true,
+                            ["short"] = "Start date for clearing export (inclusive)",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "clearingDateTo",
                             ["req"] = true,
+                            ["short"] = "End date for clearing export (inclusive)",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "fileId",
+                            ["short"] = "Unique file identifier for tracking and downloading",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "filenameTemplate",
+                            ["short"] = "Optional filename template for the export file",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
@@ -1656,6 +1667,7 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "status",
+                            ["short"] = "Processing status of the export request",
                             ["type"] = "`$STRING`",
                         },
                     },
@@ -1757,12 +1769,14 @@ public static class SdkConfig
                         {
                             ["name"] = "clearingDateFrom",
                             ["req"] = true,
+                            ["short"] = "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "clearingDateTo",
                             ["req"] = true,
+                            ["short"] = "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
@@ -1944,6 +1958,7 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "wallet",
+                            ["short"] = "Filter by wallet type.",
                             ["type"] = "`$STRING`",
                         },
                     },
@@ -2054,75 +2069,89 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "acquirerName",
+                            ["short"] = "Acquirer name parsed from KKG field",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "amount",
                             ["req"] = true,
+                            ["short"] = "Transaction amount in minor units (cents)",
                             ["type"] = "`$INTEGER`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "authorizationNumber",
+                            ["short"] = "Authorization number from the gateway",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "cardNumber",
                             ["req"] = true,
+                            ["short"] = "Card number - 12 to 19 digits, must pass Luhn validation",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "cardType",
+                            ["short"] = "Card type parsed from KKG field",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "currency",
                             ["req"] = true,
+                            ["short"] = "Currency code - 3 uppercase letters (ISO 4217)",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "cvc",
+                            ["short"] = "Card verification code - 3-4 digits (optional)",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "dateTimeTx",
+                            ["short"] = "Date and time of the transaction",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "expDate",
                             ["req"] = true,
+                            ["short"] = "Card expiry date in MMYY format",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "merchantId",
+                            ["short"] = "Merchant ID (VU-NUMMER)",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "originalTransactionId",
+                            ["short"] = "Original transaction ID from gateway",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "password",
+                            ["short"] = "Terminal password sent as Kennwort in TECS XML (optional)",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseCode",
+                            ["short"] = "Response code - 00 for success, otherwise error code",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["short"] = "Response message - 'Approved' for success, error description otherwise",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
@@ -2136,17 +2165,20 @@ public static class SdkConfig
                                     ["type"] = "`$STRING`",
                                 },
                             },
+                            ["short"] = "Terminal ID used for the transaction",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "transactionId",
+                            ["short"] = "Transaction ID generated by the backend",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "txtype",
                             ["req"] = true,
+                            ["short"] = "Transaction type",
                             ["type"] = "`$STRING`",
                         },
                     },
@@ -2193,65 +2225,77 @@ public static class SdkConfig
                         {
                             ["name"] = "amount",
                             ["req"] = true,
+                            ["short"] = "Transaction amount in minor units (cents)",
                             ["type"] = "`$INTEGER`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "currency",
                             ["req"] = true,
+                            ["short"] = "Currency code - 3 uppercase letters (ISO 4217)",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "device",
+                            ["short"] = "Device type that provided the SRED payload",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "devicePayload",
                             ["req"] = true,
+                            ["short"] = "SRED encrypted device payload from the device (minimum 32 characters)",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "expDate",
+                            ["short"] = "Card expiry date in MMYY format",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "mode",
+                            ["short"] = "Decryption mode",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "panMasked",
+                            ["short"] = "Masked PAN (first 6 and last 4 digits)",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "password",
+                            ["short"] = "Terminal password sent as Kennwort in TECS XML (optional)",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "serial",
+                            ["short"] = "Device serial number",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "serviceCode",
+                            ["short"] = "Service code from the card",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "terminalId",
                             ["req"] = true,
+                            ["short"] = "Terminal ID - 8 digits",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "txtype",
                             ["req"] = true,
+                            ["short"] = "Transaction type",
                             ["type"] = "`$STRING`",
                         },
                     },
@@ -3180,12 +3224,14 @@ public static class SdkConfig
                         {
                             ["name"] = "clearingDateFrom",
                             ["req"] = true,
+                            ["short"] = "Date and time in the format yyyy-MM-dd'T'HH:mm:ss",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "clearingDateTo",
                             ["req"] = true,
+                            ["short"] = "Date and time in the format yyyy-MM-dd'T'HH:mm:ss",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
@@ -3289,6 +3335,7 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "authorizationCode",
+                            ["short"] = "Authorization code returned by the acquirer; null when not available",
                             ["type"] = new List<object?>
                             {
                                 "`$ONE`",
@@ -3843,6 +3890,7 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "wallet",
+                            ["short"] = "Filter by wallet type.",
                             ["type"] = "`$STRING`",
                         },
                     },
@@ -4391,6 +4439,18 @@ public static class SdkConfig
                 },
             },
         };
+    }
+
+    private static readonly Lazy<Dictionary<string, object?>> SharedConfigVal =
+        new(MakeConfig);
+
+    // The process-wide config, built once on first use.
+    //
+    // The returned dictionary is SHARED: treat it as read-only. Callers that
+    // need to mutate should use MakeConfig, which always returns a fresh copy.
+    public static Dictionary<string, object?> SharedConfig()
+    {
+        return SharedConfigVal.Value;
     }
 
     public static Feature.BaseFeature MakeFeature(string name)

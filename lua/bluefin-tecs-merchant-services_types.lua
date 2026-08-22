@@ -161,7 +161,7 @@
 ---@field txTotal? number
 
 ---@class DigitalServicesApiCreateData
----@field file_id? string
+---@field file_id string
 ---@field clearingDateFrom string
 ---@field clearingDateTo string
 ---@field responseCode? number

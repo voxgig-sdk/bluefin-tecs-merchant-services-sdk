@@ -527,8 +527,8 @@ auto digital_services_api = client->digital_services_api();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearingDateFrom` | `std::string` | Yes |  |
-| `clearingDateTo` | `std::string` | Yes |  |
+| `clearingDateFrom` | `std::string` | Yes | Date and time in the format yyyy-MM-dd'T'HH:mm:ssz |
+| `clearingDateTo` | `std::string` | Yes | Date and time in the format yyyy-MM-dd'T'HH:mm:ssz |
 | `responseCode` | `int64_t` | No |  |
 | `responseMessage` | `std::string` | No |  |
 | `txCount` | `int64_t` | No |  |
@@ -546,6 +546,7 @@ Create a new entity with the given data. Returns the created entity data and thr
 
 ```cpp
 Value result = client->digital_services_api()->create(vmap({
+    {"file_id", Value("example_file_id")},  // std::string
     {"clearingDateFrom", Value("example_clearingDateFrom")},  // std::string
     {"clearingDateTo", Value("example_clearingDateTo")},  // std::string
 }), Value::undef());
@@ -1148,8 +1149,8 @@ auto mandator_clearing_export = client->mandator_clearing_export();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearingDateFrom` | `std::string` | Yes |  |
-| `clearingDateTo` | `std::string` | Yes |  |
+| `clearingDateFrom` | `std::string` | Yes | Date and time in the format yyyy-MM-dd'T'HH:mm:ssZ |
+| `clearingDateTo` | `std::string` | Yes | Date and time in the format yyyy-MM-dd'T'HH:mm:ssZ |
 | `pagination` | `std::map<std::string, Value>` | No |  |
 | `records` | `std::vector<Value>` | No |  |
 | `responseCode` | `int64_t` | No |  |
@@ -1199,13 +1200,13 @@ auto mandator_clearing_export_download = client->mandator_clearing_export_downlo
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearingDateFrom` | `std::string` | Yes |  |
-| `clearingDateTo` | `std::string` | Yes |  |
-| `fileId` | `std::string` | No |  |
-| `filenameTemplate` | `std::string` | No |  |
+| `clearingDateFrom` | `std::string` | Yes | Start date for clearing export (inclusive) |
+| `clearingDateTo` | `std::string` | Yes | End date for clearing export (inclusive) |
+| `fileId` | `std::string` | No | Unique file identifier for tracking and downloading |
+| `filenameTemplate` | `std::string` | No | Optional filename template for the export file |
 | `responseCode` | `int64_t` | No |  |
 | `responseMessage` | `std::string` | No |  |
-| `status` | `std::string` | No |  |
+| `status` | `std::string` | No | Processing status of the export request |
 
 ### Operations
 
@@ -1259,8 +1260,8 @@ auto mandator_clearing_export_summary = client->mandator_clearing_export_summary
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearingDateFrom` | `std::string` | Yes |  |
-| `clearingDateTo` | `std::string` | Yes |  |
+| `clearingDateFrom` | `std::string` | Yes | Date and time in the format yyyy-MM-dd'T'HH:mm:ssz |
+| `clearingDateTo` | `std::string` | Yes | Date and time in the format yyyy-MM-dd'T'HH:mm:ssz |
 | `records` | `std::vector<Value>` | No |  |
 | `responseCode` | `int64_t` | No |  |
 | `responseMessage` | `std::string` | No |  |
@@ -1333,7 +1334,7 @@ auto merchant_portal_services_api = client->merchant_portal_services_api();
 | `transactionDateTo` | `std::string` | No |  |
 | `transactionId` | `std::string` | No |  |
 | `transactionType` | `std::string` | No |  |
-| `wallet` | `std::string` | No |  |
+| `wallet` | `std::string` | No | Filter by wallet type. |
 
 ### Operations
 
@@ -1426,23 +1427,23 @@ auto payment_manual = client->payment_manual();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirerName` | `std::string` | No |  |
-| `amount` | `int64_t` | Yes |  |
-| `authorizationNumber` | `std::string` | No |  |
-| `cardNumber` | `std::string` | Yes |  |
-| `cardType` | `std::string` | No |  |
-| `currency` | `std::string` | Yes |  |
-| `cvc` | `std::string` | No |  |
-| `dateTimeTx` | `std::string` | No |  |
-| `expDate` | `std::string` | Yes |  |
-| `merchantId` | `std::string` | No |  |
-| `originalTransactionId` | `std::string` | No |  |
-| `password` | `std::string` | No |  |
-| `responseCode` | `std::string` | No |  |
-| `responseMessage` | `std::string` | No |  |
-| `terminalId` | `std::string` | No |  |
-| `transactionId` | `std::string` | No |  |
-| `txtype` | `std::string` | Yes |  |
+| `acquirerName` | `std::string` | No | Acquirer name parsed from KKG field |
+| `amount` | `int64_t` | Yes | Transaction amount in minor units (cents) |
+| `authorizationNumber` | `std::string` | No | Authorization number from the gateway |
+| `cardNumber` | `std::string` | Yes | Card number - 12 to 19 digits, must pass Luhn validation |
+| `cardType` | `std::string` | No | Card type parsed from KKG field |
+| `currency` | `std::string` | Yes | Currency code - 3 uppercase letters (ISO 4217) |
+| `cvc` | `std::string` | No | Card verification code - 3-4 digits (optional) |
+| `dateTimeTx` | `std::string` | No | Date and time of the transaction |
+| `expDate` | `std::string` | Yes | Card expiry date in MMYY format |
+| `merchantId` | `std::string` | No | Merchant ID (VU-NUMMER) |
+| `originalTransactionId` | `std::string` | No | Original transaction ID from gateway |
+| `password` | `std::string` | No | Terminal password sent as Kennwort in TECS XML (optional) |
+| `responseCode` | `std::string` | No | Response code - 00 for success, otherwise error code |
+| `responseMessage` | `std::string` | No | Response message - 'Approved' for success, error description otherwise |
+| `terminalId` | `std::string` | No | Terminal ID used for the transaction |
+| `transactionId` | `std::string` | No | Transaction ID generated by the backend |
+| `txtype` | `std::string` | Yes | Transaction type |
 
 ### Field Usage by Operation
 
@@ -1513,18 +1514,18 @@ auto payment_sred = client->payment_sred();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `amount` | `int64_t` | Yes |  |
-| `currency` | `std::string` | Yes |  |
-| `device` | `std::string` | No |  |
-| `devicePayload` | `std::string` | Yes |  |
-| `expDate` | `std::string` | No |  |
-| `mode` | `std::string` | No |  |
-| `panMasked` | `std::string` | No |  |
-| `password` | `std::string` | No |  |
-| `serial` | `std::string` | No |  |
-| `serviceCode` | `std::string` | No |  |
-| `terminalId` | `std::string` | Yes |  |
-| `txtype` | `std::string` | Yes |  |
+| `amount` | `int64_t` | Yes | Transaction amount in minor units (cents) |
+| `currency` | `std::string` | Yes | Currency code - 3 uppercase letters (ISO 4217) |
+| `device` | `std::string` | No | Device type that provided the SRED payload |
+| `devicePayload` | `std::string` | Yes | SRED encrypted device payload from the device (minimum 32 characters) |
+| `expDate` | `std::string` | No | Card expiry date in MMYY format |
+| `mode` | `std::string` | No | Decryption mode |
+| `panMasked` | `std::string` | No | Masked PAN (first 6 and last 4 digits) |
+| `password` | `std::string` | No | Terminal password sent as Kennwort in TECS XML (optional) |
+| `serial` | `std::string` | No | Device serial number |
+| `serviceCode` | `std::string` | No | Service code from the card |
+| `terminalId` | `std::string` | Yes | Terminal ID - 8 digits |
+| `txtype` | `std::string` | Yes | Transaction type |
 
 ### Operations
 
@@ -2019,8 +2020,8 @@ auto report_data = client->report_data();
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `cardBrandReportData` | `std::vector<Value>` | No |  |
-| `clearingDateFrom` | `std::string` | Yes |  |
-| `clearingDateTo` | `std::string` | Yes |  |
+| `clearingDateFrom` | `std::string` | Yes | Date and time in the format yyyy-MM-dd'T'HH:mm:ss |
+| `clearingDateTo` | `std::string` | Yes | Date and time in the format yyyy-MM-dd'T'HH:mm:ss |
 | `corporateId` | `std::string` | Yes |  |
 | `currency` | `std::string` | Yes |  |
 | `responseCode` | `int64_t` | No |  |
@@ -2079,7 +2080,7 @@ auto status_transaction = client->status_transaction();
 | `acquirerTerminalId` | `std::string` | No |  |
 | `amount` | `int64_t` | No |  |
 | `applicationCryptogram` | `std::string` | No |  |
-| `authorizationCode` | `Value` | No |  |
+| `authorizationCode` | `Value` | No | Authorization code returned by the acquirer; null when not available |
 | `authorizationDate` | `std::string` | No |  |
 | `cardBrand` | `std::string` | No |  |
 | `cardEntry` | `std::string` | No |  |
@@ -2295,7 +2296,7 @@ auto transaction_history = client->transaction_history();
 | `transactionHistories` | `std::vector<Value>` | No |  |
 | `transactionId` | `std::string` | No |  |
 | `transactionType` | `std::string` | No |  |
-| `wallet` | `std::string` | No |  |
+| `wallet` | `std::string` | No | Filter by wallet type. |
 
 ### Operations
 

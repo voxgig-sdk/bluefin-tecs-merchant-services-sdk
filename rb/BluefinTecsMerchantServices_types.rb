@@ -597,7 +597,7 @@ DigitalServicesApiLoadMatch = Struct.new(
 # Request payload for DigitalServicesApi#create.
 #
 # @!attribute [rw] file_id
-#   @return [String, nil]
+#   @return [String]
 #
 # @!attribute [rw] clearingDateFrom
 #   @return [String]

@@ -198,7 +198,7 @@ pub struct DigitalServicesApiLoadMatch {
 /// DigitalServicesApiCreateData is the typed request payload for DigitalServicesApi.create.
 #[derive(Debug, Clone)]
 pub struct DigitalServicesApiCreateData {
-    pub file_id: Option<String>,
+    pub file_id: String,
     pub clearingdatefrom: String,
     pub clearingdateto: String,
     pub responsecode: Option<i64>,

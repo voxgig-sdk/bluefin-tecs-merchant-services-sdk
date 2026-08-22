@@ -18,6 +18,8 @@ let make_config () : value =
           ("active", (Bool false)) ])) ])) ]));
     ("options", (jo [
       ("base", (Str "https://test.tecs.at/merchantservices"));
+      ("auth", (jo [
+        ("prefix", (Str "Bearer")) ]));
       ("headers", (jo [
         ("content-type", (Str "application/json")) ]));
       ("entity", (jo [
@@ -59,9 +61,7 @@ let make_config () : value =
         ("transactions_turnover", (empty_map ()));
         ("update_merchant", (empty_map ()));
         ("update_template_xml", (empty_map ()));
-        ("version", (empty_map ())) ]));
-      ("auth", (jo [
-        ("prefix", (Str "Bearer")) ])) ]));
+        ("version", (empty_map ())) ])) ]));
     ("entity", (jo [
       ("cancel_transaction", (jo [
         ("fields", (ja [
@@ -363,10 +363,12 @@ let make_config () : value =
           (jo [
             ("name", (Str "clearingDateFrom"));
             ("req", (Bool true));
+            ("short", (Str "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "clearingDateTo"));
             ("req", (Bool true));
+            ("short", (Str "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "responseCode"));
@@ -917,10 +919,12 @@ let make_config () : value =
           (jo [
             ("name", (Str "clearingDateFrom"));
             ("req", (Bool true));
+            ("short", (Str "Date and time in the format yyyy-MM-dd'T'HH:mm:ssZ"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "clearingDateTo"));
             ("req", (Bool true));
+            ("short", (Str "Date and time in the format yyyy-MM-dd'T'HH:mm:ssZ"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "pagination"));
@@ -960,16 +964,20 @@ let make_config () : value =
           (jo [
             ("name", (Str "clearingDateFrom"));
             ("req", (Bool true));
+            ("short", (Str "Start date for clearing export (inclusive)"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "clearingDateTo"));
             ("req", (Bool true));
+            ("short", (Str "End date for clearing export (inclusive)"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "fileId"));
+            ("short", (Str "Unique file identifier for tracking and downloading"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "filenameTemplate"));
+            ("short", (Str "Optional filename template for the export file"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "responseCode"));
@@ -979,6 +987,7 @@ let make_config () : value =
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "status"));
+            ("short", (Str "Processing status of the export request"));
             ("type", (Str "`$STRING`")) ]) ]));
         ("name", (Str "mandator_clearing_export_download"));
         ("op", (jo [
@@ -1036,10 +1045,12 @@ let make_config () : value =
           (jo [
             ("name", (Str "clearingDateFrom"));
             ("req", (Bool true));
+            ("short", (Str "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "clearingDateTo"));
             ("req", (Bool true));
+            ("short", (Str "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "records"));
@@ -1147,6 +1158,7 @@ let make_config () : value =
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "wallet"));
+            ("short", (Str "Filter by wallet type."));
             ("type", (Str "`$STRING`")) ]) ]));
         ("name", (Str "merchant_portal_services_api"));
         ("op", (jo [
@@ -1209,49 +1221,63 @@ let make_config () : value =
         ("fields", (ja [
           (jo [
             ("name", (Str "acquirerName"));
+            ("short", (Str "Acquirer name parsed from KKG field"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "amount"));
             ("req", (Bool true));
+            ("short", (Str "Transaction amount in minor units (cents)"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
             ("name", (Str "authorizationNumber"));
+            ("short", (Str "Authorization number from the gateway"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "cardNumber"));
             ("req", (Bool true));
+            ("short", (Str "Card number - 12 to 19 digits, must pass Luhn validation"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "cardType"));
+            ("short", (Str "Card type parsed from KKG field"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "currency"));
             ("req", (Bool true));
+            ("short", (Str "Currency code - 3 uppercase letters (ISO 4217)"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "cvc"));
+            ("short", (Str "Card verification code - 3-4 digits (optional)"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "dateTimeTx"));
+            ("short", (Str "Date and time of the transaction"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "expDate"));
             ("req", (Bool true));
+            ("short", (Str "Card expiry date in MMYY format"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "merchantId"));
+            ("short", (Str "Merchant ID (VU-NUMMER)"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "originalTransactionId"));
+            ("short", (Str "Original transaction ID from gateway"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "password"));
+            ("short", (Str "Terminal password sent as Kennwort in TECS XML (optional)"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "responseCode"));
+            ("short", (Str "Response code - 00 for success, otherwise error code"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "responseMessage"));
+            ("short", (Str "Response message - 'Approved' for success, error description otherwise"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "terminalId"));
@@ -1259,13 +1285,16 @@ let make_config () : value =
               ("create", (jo [
                 ("req", (Bool true));
                 ("type", (Str "`$STRING`")) ])) ]));
+            ("short", (Str "Terminal ID used for the transaction"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "transactionId"));
+            ("short", (Str "Transaction ID generated by the backend"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "txtype"));
             ("req", (Bool true));
+            ("short", (Str "Transaction type"));
             ("type", (Str "`$STRING`")) ]) ]));
         ("name", (Str "payment_manual"));
         ("op", (jo [
@@ -1292,43 +1321,55 @@ let make_config () : value =
           (jo [
             ("name", (Str "amount"));
             ("req", (Bool true));
+            ("short", (Str "Transaction amount in minor units (cents)"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
             ("name", (Str "currency"));
             ("req", (Bool true));
+            ("short", (Str "Currency code - 3 uppercase letters (ISO 4217)"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "device"));
+            ("short", (Str "Device type that provided the SRED payload"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "devicePayload"));
             ("req", (Bool true));
+            ("short", (Str "SRED encrypted device payload from the device (minimum 32 characters)"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "expDate"));
+            ("short", (Str "Card expiry date in MMYY format"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "mode"));
+            ("short", (Str "Decryption mode"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "panMasked"));
+            ("short", (Str "Masked PAN (first 6 and last 4 digits)"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "password"));
+            ("short", (Str "Terminal password sent as Kennwort in TECS XML (optional)"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "serial"));
+            ("short", (Str "Device serial number"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "serviceCode"));
+            ("short", (Str "Service code from the card"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "terminalId"));
             ("req", (Bool true));
+            ("short", (Str "Terminal ID - 8 digits"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "txtype"));
             ("req", (Bool true));
+            ("short", (Str "Transaction type"));
             ("type", (Str "`$STRING`")) ]) ]));
         ("name", (Str "payment_sred"));
         ("op", (jo [
@@ -1877,10 +1918,12 @@ let make_config () : value =
           (jo [
             ("name", (Str "clearingDateFrom"));
             ("req", (Bool true));
+            ("short", (Str "Date and time in the format yyyy-MM-dd'T'HH:mm:ss"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "clearingDateTo"));
             ("req", (Bool true));
+            ("short", (Str "Date and time in the format yyyy-MM-dd'T'HH:mm:ss"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "corporateId"));
@@ -1942,6 +1985,7 @@ let make_config () : value =
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "authorizationCode"));
+            ("short", (Str "Authorization code returned by the acquirer; null when not available"));
             ("type", (ja [
               (Str "`$ONE`");
               (ja [
@@ -2268,6 +2312,7 @@ let make_config () : value =
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "wallet"));
+            ("short", (Str "Filter by wallet type."));
             ("type", (Str "`$STRING`")) ]) ]));
         ("name", (Str "transaction_history"));
         ("op", (jo [

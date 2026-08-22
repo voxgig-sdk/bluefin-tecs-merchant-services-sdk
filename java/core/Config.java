@@ -14,6 +14,27 @@ public final class Config {
     return (Map<String, Object>) Json.parse(configJson());
   }
 
+  // SHARED CONFIG (sdkgen rung L2).
+  //
+  // The SDK reads the config on every request and never writes to it, so one
+  // instance is shared by every client rather than rebuilt per client - the
+  // difference between parsing the embedded JSON once and once per client.
+  //
+  // Initialization-on-demand holder: the JLS guarantees the class initializer
+  // runs once, lazily, and safely under concurrency, with no locking on the
+  // read path.
+  private static final class SharedHolder {
+    static final Map<String, Object> VALUE = makeConfig();
+  }
+
+  // The process-wide config, built once on first use.
+  //
+  // The returned map is SHARED: treat it as read-only. Callers that need to
+  // mutate should use makeConfig, which always parses a fresh copy.
+  public static Map<String, Object> sharedConfig() {
+    return SharedHolder.VALUE;
+  }
+
   public static Feature makeFeature(String name) {
     switch (name) {
       case "test":
@@ -27,7 +48,10 @@ public final class Config {
     StringBuilder b = new StringBuilder();
     b.append("{");
     b.append(" \"main\": {");
-    b.append("  \"name\": \"BluefinTecsMerchantServices\"");
+    b.append("  \"name\": \"BluefinTecsMerchantServices\",");
+    b.append("  \"slug\": \"bluefin-tecs-merchant-services\",");
+    b.append("  \"version\": \"0.0.1\",");
+    b.append("  \"target\": \"java\"");
     b.append(" },");
     b.append(" \"feature\": {");
     b.append("  \"test\": {");
@@ -495,11 +519,13 @@ public final class Config {
     b.append("    {");
     b.append("     \"name\": \"clearingDateFrom\",");
     b.append("     \"req\": true,");
+    b.append("     \"short\": \"Date and time in the format yyyy-MM-dd'T'HH:mm:ssz\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"clearingDateTo\",");
     b.append("     \"req\": true,");
+    b.append("     \"short\": \"Date and time in the format yyyy-MM-dd'T'HH:mm:ssz\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
@@ -1249,11 +1275,13 @@ public final class Config {
     b.append("    {");
     b.append("     \"name\": \"clearingDateFrom\",");
     b.append("     \"req\": true,");
+    b.append("     \"short\": \"Date and time in the format yyyy-MM-dd'T'HH:mm:ssZ\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"clearingDateTo\",");
     b.append("     \"req\": true,");
+    b.append("     \"short\": \"Date and time in the format yyyy-MM-dd'T'HH:mm:ssZ\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
@@ -1307,19 +1335,23 @@ public final class Config {
     b.append("    {");
     b.append("     \"name\": \"clearingDateFrom\",");
     b.append("     \"req\": true,");
+    b.append("     \"short\": \"Start date for clearing export (inclusive)\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"clearingDateTo\",");
     b.append("     \"req\": true,");
+    b.append("     \"short\": \"End date for clearing export (inclusive)\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"fileId\",");
+    b.append("     \"short\": \"Unique file identifier for tracking and downloading\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"filenameTemplate\",");
+    b.append("     \"short\": \"Optional filename template for the export file\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
@@ -1332,6 +1364,7 @@ public final class Config {
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"status\",");
+    b.append("     \"short\": \"Processing status of the export request\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    }");
     b.append("   ],");
@@ -1411,11 +1444,13 @@ public final class Config {
     b.append("    {");
     b.append("     \"name\": \"clearingDateFrom\",");
     b.append("     \"req\": true,");
+    b.append("     \"short\": \"Date and time in the format yyyy-MM-dd'T'HH:mm:ssz\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"clearingDateTo\",");
     b.append("     \"req\": true,");
+    b.append("     \"short\": \"Date and time in the format yyyy-MM-dd'T'HH:mm:ssz\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
@@ -1560,6 +1595,7 @@ public final class Config {
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"wallet\",");
+    b.append("     \"short\": \"Filter by wallet type.\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    }");
     b.append("   ],");
@@ -1646,62 +1682,76 @@ public final class Config {
     b.append("   \"fields\": [");
     b.append("    {");
     b.append("     \"name\": \"acquirerName\",");
+    b.append("     \"short\": \"Acquirer name parsed from KKG field\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"amount\",");
     b.append("     \"req\": true,");
+    b.append("     \"short\": \"Transaction amount in minor units (cents)\",");
     b.append("     \"type\": \"`$INTEGER`\"");
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"authorizationNumber\",");
+    b.append("     \"short\": \"Authorization number from the gateway\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"cardNumber\",");
     b.append("     \"req\": true,");
+    b.append("     \"short\": \"Card number - 12 to 19 digits, must pass Luhn validation\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"cardType\",");
+    b.append("     \"short\": \"Card type parsed from KKG field\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"currency\",");
     b.append("     \"req\": true,");
+    b.append("     \"short\": \"Currency code - 3 uppercase letters (ISO 4217)\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"cvc\",");
+    b.append("     \"short\": \"Card verification code - 3-4 digits (optional)\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"dateTimeTx\",");
+    b.append("     \"short\": \"Date and time of the transaction\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"expDate\",");
     b.append("     \"req\": true,");
+    b.append("     \"short\": \"Card expiry date in MMYY format\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"merchantId\",");
+    b.append("     \"short\": \"Merchant ID (VU-NUMMER)\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"originalTransactionId\",");
+    b.append("     \"short\": \"Original transaction ID from gateway\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"password\",");
+    b.append("     \"short\": \"Terminal password sent as Kennwort in TECS XML (optional)\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"responseCode\",");
+    b.append("     \"short\": \"Response code - 00 for success, otherwise error code\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"responseMessage\",");
+    b.append("     \"short\": \"Response message - 'Approved' for success, error description otherwise\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
@@ -1712,15 +1762,18 @@ public final class Config {
     b.append("       \"type\": \"`$STRING`\"");
     b.append("      }");
     b.append("     },");
+    b.append("     \"short\": \"Terminal ID used for the transaction\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"transactionId\",");
+    b.append("     \"short\": \"Transaction ID generated by the backend\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"txtype\",");
     b.append("     \"req\": true,");
+    b.append("     \"short\": \"Transaction type\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    }");
     b.append("   ],");
@@ -1757,54 +1810,66 @@ public final class Config {
     b.append("    {");
     b.append("     \"name\": \"amount\",");
     b.append("     \"req\": true,");
+    b.append("     \"short\": \"Transaction amount in minor units (cents)\",");
     b.append("     \"type\": \"`$INTEGER`\"");
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"currency\",");
     b.append("     \"req\": true,");
+    b.append("     \"short\": \"Currency code - 3 uppercase letters (ISO 4217)\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"device\",");
+    b.append("     \"short\": \"Device type that provided the SRED payload\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"devicePayload\",");
     b.append("     \"req\": true,");
+    b.append("     \"short\": \"SRED encrypted device payload from the device (minimum 32 characters)\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"expDate\",");
+    b.append("     \"short\": \"Card expiry date in MMYY format\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"mode\",");
+    b.append("     \"short\": \"Decryption mode\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"panMasked\",");
+    b.append("     \"short\": \"Masked PAN (first 6 and last 4 digits)\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"password\",");
+    b.append("     \"short\": \"Terminal password sent as Kennwort in TECS XML (optional)\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"serial\",");
+    b.append("     \"short\": \"Device serial number\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"serviceCode\",");
+    b.append("     \"short\": \"Service code from the card\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"terminalId\",");
     b.append("     \"req\": true,");
+    b.append("     \"short\": \"Terminal ID - 8 digits\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"txtype\",");
     b.append("     \"req\": true,");
+    b.append("     \"short\": \"Transaction type\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    }");
     b.append("   ],");
@@ -2543,11 +2608,13 @@ public final class Config {
     b.append("    {");
     b.append("     \"name\": \"clearingDateFrom\",");
     b.append("     \"req\": true,");
+    b.append("     \"short\": \"Date and time in the format yyyy-MM-dd'T'HH:mm:ss\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"clearingDateTo\",");
     b.append("     \"req\": true,");
+    b.append("     \"short\": \"Date and time in the format yyyy-MM-dd'T'HH:mm:ss\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    },");
     b.append("    {");
@@ -2630,6 +2697,7 @@ public final class Config {
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"authorizationCode\",");
+    b.append("     \"short\": \"Authorization code returned by the acquirer; null when not available\",");
     b.append("     \"type\": [");
     b.append("      \"`$ONE`\",");
     b.append("      [");
@@ -3070,6 +3138,7 @@ public final class Config {
     b.append("    },");
     b.append("    {");
     b.append("     \"name\": \"wallet\",");
+    b.append("     \"short\": \"Filter by wallet type.\",");
     b.append("     \"type\": \"`$STRING`\"");
     b.append("    }");
     b.append("   ],");

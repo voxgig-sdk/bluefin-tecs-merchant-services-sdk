@@ -186,7 +186,7 @@ public struct DigitalServicesApiLoadMatch {
 
 /// DigitalServicesApiCreateData is the typed request payload for DigitalServicesApi.create.
 public struct DigitalServicesApiCreateData {
-  public var fileId: String?
+  public var fileId: String
   public var clearingDateFrom: String
   public var clearingDateTo: String
   public var responseCode: Int?

@@ -186,7 +186,7 @@ struct DigitalServicesApiLoadMatch {
 };
 
 struct DigitalServicesApiCreateData {
-  std::string file_id;  // optional
+  std::string file_id;
   std::string clearingDateFrom;
   std::string clearingDateTo;
   int64_t responseCode;  // optional

@@ -565,8 +565,8 @@ $digital_services_api = $client->DigitalServicesApi();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearingDateFrom` | `string` | Yes |  |
-| `clearingDateTo` | `string` | Yes |  |
+| `clearingDateFrom` | `string` | Yes | Date and time in the format yyyy-MM-dd'T'HH:mm:ssz |
+| `clearingDateTo` | `string` | Yes | Date and time in the format yyyy-MM-dd'T'HH:mm:ssz |
 | `responseCode` | `int` | No |  |
 | `responseMessage` | `string` | No |  |
 | `txCount` | `int` | No |  |
@@ -584,6 +584,7 @@ Create a new entity with the given data. Throws on error.
 
 ```php
 $result = $client->DigitalServicesApi()->create([
+  "file_id" => null, // string
   "clearingDateFrom" => null, // string
   "clearingDateTo" => null, // string
 ]);
@@ -1294,8 +1295,8 @@ $mandator_clearing_export = $client->MandatorClearingExport();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearingDateFrom` | `string` | Yes |  |
-| `clearingDateTo` | `string` | Yes |  |
+| `clearingDateFrom` | `string` | Yes | Date and time in the format yyyy-MM-dd'T'HH:mm:ssZ |
+| `clearingDateTo` | `string` | Yes | Date and time in the format yyyy-MM-dd'T'HH:mm:ssZ |
 | `pagination` | `array` | No |  |
 | `records` | `array` | No |  |
 | `responseCode` | `int` | No |  |
@@ -1354,13 +1355,13 @@ $mandator_clearing_export_download = $client->MandatorClearingExportDownload();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearingDateFrom` | `string` | Yes |  |
-| `clearingDateTo` | `string` | Yes |  |
-| `fileId` | `string` | No |  |
-| `filenameTemplate` | `string` | No |  |
+| `clearingDateFrom` | `string` | Yes | Start date for clearing export (inclusive) |
+| `clearingDateTo` | `string` | Yes | End date for clearing export (inclusive) |
+| `fileId` | `string` | No | Unique file identifier for tracking and downloading |
+| `filenameTemplate` | `string` | No | Optional filename template for the export file |
 | `responseCode` | `int` | No |  |
 | `responseMessage` | `string` | No |  |
-| `status` | `string` | No |  |
+| `status` | `string` | No | Processing status of the export request |
 
 ### Operations
 
@@ -1423,8 +1424,8 @@ $mandator_clearing_export_summary = $client->MandatorClearingExportSummary();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearingDateFrom` | `string` | Yes |  |
-| `clearingDateTo` | `string` | Yes |  |
+| `clearingDateFrom` | `string` | Yes | Date and time in the format yyyy-MM-dd'T'HH:mm:ssz |
+| `clearingDateTo` | `string` | Yes | Date and time in the format yyyy-MM-dd'T'HH:mm:ssz |
 | `records` | `array` | No |  |
 | `responseCode` | `int` | No |  |
 | `responseMessage` | `string` | No |  |
@@ -1506,7 +1507,7 @@ $merchant_portal_services_api = $client->MerchantPortalServicesApi();
 | `transactionDateTo` | `string` | No |  |
 | `transactionId` | `string` | No |  |
 | `transactionType` | `string` | No |  |
-| `wallet` | `string` | No |  |
+| `wallet` | `string` | No | Filter by wallet type. |
 
 ### Operations
 
@@ -1617,23 +1618,23 @@ $payment_manual = $client->PaymentManual();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirerName` | `string` | No |  |
-| `amount` | `int` | Yes |  |
-| `authorizationNumber` | `string` | No |  |
-| `cardNumber` | `string` | Yes |  |
-| `cardType` | `string` | No |  |
-| `currency` | `string` | Yes |  |
-| `cvc` | `string` | No |  |
-| `dateTimeTx` | `string` | No |  |
-| `expDate` | `string` | Yes |  |
-| `merchantId` | `string` | No |  |
-| `originalTransactionId` | `string` | No |  |
-| `password` | `string` | No |  |
-| `responseCode` | `string` | No |  |
-| `responseMessage` | `string` | No |  |
-| `terminalId` | `string` | No |  |
-| `transactionId` | `string` | No |  |
-| `txtype` | `string` | Yes |  |
+| `acquirerName` | `string` | No | Acquirer name parsed from KKG field |
+| `amount` | `int` | Yes | Transaction amount in minor units (cents) |
+| `authorizationNumber` | `string` | No | Authorization number from the gateway |
+| `cardNumber` | `string` | Yes | Card number - 12 to 19 digits, must pass Luhn validation |
+| `cardType` | `string` | No | Card type parsed from KKG field |
+| `currency` | `string` | Yes | Currency code - 3 uppercase letters (ISO 4217) |
+| `cvc` | `string` | No | Card verification code - 3-4 digits (optional) |
+| `dateTimeTx` | `string` | No | Date and time of the transaction |
+| `expDate` | `string` | Yes | Card expiry date in MMYY format |
+| `merchantId` | `string` | No | Merchant ID (VU-NUMMER) |
+| `originalTransactionId` | `string` | No | Original transaction ID from gateway |
+| `password` | `string` | No | Terminal password sent as Kennwort in TECS XML (optional) |
+| `responseCode` | `string` | No | Response code - 00 for success, otherwise error code |
+| `responseMessage` | `string` | No | Response message - 'Approved' for success, error description otherwise |
+| `terminalId` | `string` | No | Terminal ID used for the transaction |
+| `transactionId` | `string` | No | Transaction ID generated by the backend |
+| `txtype` | `string` | Yes | Transaction type |
 
 ### Field Usage by Operation
 
@@ -1713,18 +1714,18 @@ $payment_sred = $client->PaymentSred();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `amount` | `int` | Yes |  |
-| `currency` | `string` | Yes |  |
-| `device` | `string` | No |  |
-| `devicePayload` | `string` | Yes |  |
-| `expDate` | `string` | No |  |
-| `mode` | `string` | No |  |
-| `panMasked` | `string` | No |  |
-| `password` | `string` | No |  |
-| `serial` | `string` | No |  |
-| `serviceCode` | `string` | No |  |
-| `terminalId` | `string` | Yes |  |
-| `txtype` | `string` | Yes |  |
+| `amount` | `int` | Yes | Transaction amount in minor units (cents) |
+| `currency` | `string` | Yes | Currency code - 3 uppercase letters (ISO 4217) |
+| `device` | `string` | No | Device type that provided the SRED payload |
+| `devicePayload` | `string` | Yes | SRED encrypted device payload from the device (minimum 32 characters) |
+| `expDate` | `string` | No | Card expiry date in MMYY format |
+| `mode` | `string` | No | Decryption mode |
+| `panMasked` | `string` | No | Masked PAN (first 6 and last 4 digits) |
+| `password` | `string` | No | Terminal password sent as Kennwort in TECS XML (optional) |
+| `serial` | `string` | No | Device serial number |
+| `serviceCode` | `string` | No | Service code from the card |
+| `terminalId` | `string` | Yes | Terminal ID - 8 digits |
+| `txtype` | `string` | Yes | Transaction type |
 
 ### Operations
 
@@ -2273,8 +2274,8 @@ $report_data = $client->ReportData();
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `cardBrandReportData` | `array` | No |  |
-| `clearingDateFrom` | `string` | Yes |  |
-| `clearingDateTo` | `string` | Yes |  |
+| `clearingDateFrom` | `string` | Yes | Date and time in the format yyyy-MM-dd'T'HH:mm:ss |
+| `clearingDateTo` | `string` | Yes | Date and time in the format yyyy-MM-dd'T'HH:mm:ss |
 | `corporateId` | `string` | Yes |  |
 | `currency` | `string` | Yes |  |
 | `responseCode` | `int` | No |  |
@@ -2342,7 +2343,7 @@ $status_transaction = $client->StatusTransaction();
 | `acquirerTerminalId` | `string` | No |  |
 | `amount` | `int` | No |  |
 | `applicationCryptogram` | `string` | No |  |
-| `authorizationCode` | `mixed` | No |  |
+| `authorizationCode` | `mixed` | No | Authorization code returned by the acquirer; null when not available |
 | `authorizationDate` | `string` | No |  |
 | `cardBrand` | `string` | No |  |
 | `cardEntry` | `string` | No |  |
@@ -2585,7 +2586,7 @@ $transaction_history = $client->TransactionHistory();
 | `transactionHistories` | `array` | No |  |
 | `transactionId` | `string` | No |  |
 | `transactionType` | `string` | No |  |
-| `wallet` | `string` | No |  |
+| `wallet` | `string` | No | Filter by wallet type. |
 
 ### Operations
 

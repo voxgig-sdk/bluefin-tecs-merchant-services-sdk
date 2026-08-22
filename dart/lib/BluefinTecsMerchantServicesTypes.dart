@@ -1087,7 +1087,7 @@ class DigitalServicesApiLoadMatch {
 }
 
 class DigitalServicesApiCreateData {
-  /// STRING
+  /// STRING (required at the API)
   String? file_id;
   /// STRING (required at the API)
   String? clearingDateFrom;

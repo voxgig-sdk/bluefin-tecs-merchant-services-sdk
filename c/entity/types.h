@@ -190,7 +190,7 @@ typedef struct {
 
 // DigitalServicesApiCreateData is the typed request payload for DigitalServicesApi.create.
 typedef struct {
-  char*file_id;  // optional
+  char*file_id;
   char*clearingdatefrom;
   char*clearingdateto;
   int64_t responsecode;  // optional

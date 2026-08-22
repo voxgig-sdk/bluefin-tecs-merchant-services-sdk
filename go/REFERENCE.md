@@ -567,8 +567,8 @@ fmt.Println(digitalServicesApi.GetName()) // "digital_services_api"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearingDateFrom` | `string` | Yes |  |
-| `clearingDateTo` | `string` | Yes |  |
+| `clearingDateFrom` | `string` | Yes | Date and time in the format yyyy-MM-dd'T'HH:mm:ssz |
+| `clearingDateTo` | `string` | Yes | Date and time in the format yyyy-MM-dd'T'HH:mm:ssz |
 | `responseCode` | `int` | No |  |
 | `responseMessage` | `string` | No |  |
 | `txCount` | `int` | No |  |
@@ -598,6 +598,7 @@ Create a new entity with the given data.
 
 ```go
 result, err := client.DigitalServicesApi(nil).Create(map[string]any{
+    "file_id": "example_file_id",
     "clearingDateFrom": "example_clearingDateFrom",
     "clearingDateTo": "example_clearingDateTo",
 }, nil)
@@ -1288,8 +1289,8 @@ fmt.Println(mandatorClearingExport.GetName()) // "mandator_clearing_export"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearingDateFrom` | `string` | Yes |  |
-| `clearingDateTo` | `string` | Yes |  |
+| `clearingDateFrom` | `string` | Yes | Date and time in the format yyyy-MM-dd'T'HH:mm:ssZ |
+| `clearingDateTo` | `string` | Yes | Date and time in the format yyyy-MM-dd'T'HH:mm:ssZ |
 | `pagination` | `map[string]any` | No |  |
 | `records` | `[]any` | No |  |
 | `responseCode` | `int` | No |  |
@@ -1347,13 +1348,13 @@ fmt.Println(mandatorClearingExportDownload.GetName()) // "mandator_clearing_expo
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearingDateFrom` | `string` | Yes |  |
-| `clearingDateTo` | `string` | Yes |  |
-| `fileId` | `string` | No |  |
-| `filenameTemplate` | `string` | No |  |
+| `clearingDateFrom` | `string` | Yes | Start date for clearing export (inclusive) |
+| `clearingDateTo` | `string` | Yes | End date for clearing export (inclusive) |
+| `fileId` | `string` | No | Unique file identifier for tracking and downloading |
+| `filenameTemplate` | `string` | No | Optional filename template for the export file |
 | `responseCode` | `int` | No |  |
 | `responseMessage` | `string` | No |  |
-| `status` | `string` | No |  |
+| `status` | `string` | No | Processing status of the export request |
 
 ### Operations
 
@@ -1419,8 +1420,8 @@ fmt.Println(mandatorClearingExportSummary.GetName()) // "mandator_clearing_expor
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearingDateFrom` | `string` | Yes |  |
-| `clearingDateTo` | `string` | Yes |  |
+| `clearingDateFrom` | `string` | Yes | Date and time in the format yyyy-MM-dd'T'HH:mm:ssz |
+| `clearingDateTo` | `string` | Yes | Date and time in the format yyyy-MM-dd'T'HH:mm:ssz |
 | `records` | `[]any` | No |  |
 | `responseCode` | `int` | No |  |
 | `responseMessage` | `string` | No |  |
@@ -1501,7 +1502,7 @@ fmt.Println(merchantPortalServicesApi.GetName()) // "merchant_portal_services_ap
 | `transactionDateTo` | `string` | No |  |
 | `transactionId` | `string` | No |  |
 | `transactionType` | `string` | No |  |
-| `wallet` | `string` | No |  |
+| `wallet` | `string` | No | Filter by wallet type. |
 
 ### Operations
 
@@ -1610,23 +1611,23 @@ fmt.Println(paymentManual.GetName()) // "payment_manual"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirerName` | `string` | No |  |
-| `amount` | `int` | Yes |  |
-| `authorizationNumber` | `string` | No |  |
-| `cardNumber` | `string` | Yes |  |
-| `cardType` | `string` | No |  |
-| `currency` | `string` | Yes |  |
-| `cvc` | `string` | No |  |
-| `dateTimeTx` | `string` | No |  |
-| `expDate` | `string` | Yes |  |
-| `merchantId` | `string` | No |  |
-| `originalTransactionId` | `string` | No |  |
-| `password` | `string` | No |  |
-| `responseCode` | `string` | No |  |
-| `responseMessage` | `string` | No |  |
-| `terminalId` | `string` | No |  |
-| `transactionId` | `string` | No |  |
-| `txtype` | `string` | Yes |  |
+| `acquirerName` | `string` | No | Acquirer name parsed from KKG field |
+| `amount` | `int` | Yes | Transaction amount in minor units (cents) |
+| `authorizationNumber` | `string` | No | Authorization number from the gateway |
+| `cardNumber` | `string` | Yes | Card number - 12 to 19 digits, must pass Luhn validation |
+| `cardType` | `string` | No | Card type parsed from KKG field |
+| `currency` | `string` | Yes | Currency code - 3 uppercase letters (ISO 4217) |
+| `cvc` | `string` | No | Card verification code - 3-4 digits (optional) |
+| `dateTimeTx` | `string` | No | Date and time of the transaction |
+| `expDate` | `string` | Yes | Card expiry date in MMYY format |
+| `merchantId` | `string` | No | Merchant ID (VU-NUMMER) |
+| `originalTransactionId` | `string` | No | Original transaction ID from gateway |
+| `password` | `string` | No | Terminal password sent as Kennwort in TECS XML (optional) |
+| `responseCode` | `string` | No | Response code - 00 for success, otherwise error code |
+| `responseMessage` | `string` | No | Response message - 'Approved' for success, error description otherwise |
+| `terminalId` | `string` | No | Terminal ID used for the transaction |
+| `transactionId` | `string` | No | Transaction ID generated by the backend |
+| `txtype` | `string` | Yes | Transaction type |
 
 ### Field Usage by Operation
 
@@ -1705,18 +1706,18 @@ fmt.Println(paymentSred.GetName()) // "payment_sred"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `amount` | `int` | Yes |  |
-| `currency` | `string` | Yes |  |
-| `device` | `string` | No |  |
-| `devicePayload` | `string` | Yes |  |
-| `expDate` | `string` | No |  |
-| `mode` | `string` | No |  |
-| `panMasked` | `string` | No |  |
-| `password` | `string` | No |  |
-| `serial` | `string` | No |  |
-| `serviceCode` | `string` | No |  |
-| `terminalId` | `string` | Yes |  |
-| `txtype` | `string` | Yes |  |
+| `amount` | `int` | Yes | Transaction amount in minor units (cents) |
+| `currency` | `string` | Yes | Currency code - 3 uppercase letters (ISO 4217) |
+| `device` | `string` | No | Device type that provided the SRED payload |
+| `devicePayload` | `string` | Yes | SRED encrypted device payload from the device (minimum 32 characters) |
+| `expDate` | `string` | No | Card expiry date in MMYY format |
+| `mode` | `string` | No | Decryption mode |
+| `panMasked` | `string` | No | Masked PAN (first 6 and last 4 digits) |
+| `password` | `string` | No | Terminal password sent as Kennwort in TECS XML (optional) |
+| `serial` | `string` | No | Device serial number |
+| `serviceCode` | `string` | No | Service code from the card |
+| `terminalId` | `string` | Yes | Terminal ID - 8 digits |
+| `txtype` | `string` | Yes | Transaction type |
 
 ### Operations
 
@@ -2259,8 +2260,8 @@ fmt.Println(reportData.GetName()) // "report_data"
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `cardBrandReportData` | `[]any` | No |  |
-| `clearingDateFrom` | `string` | Yes |  |
-| `clearingDateTo` | `string` | Yes |  |
+| `clearingDateFrom` | `string` | Yes | Date and time in the format yyyy-MM-dd'T'HH:mm:ss |
+| `clearingDateTo` | `string` | Yes | Date and time in the format yyyy-MM-dd'T'HH:mm:ss |
 | `corporateId` | `string` | Yes |  |
 | `currency` | `string` | Yes |  |
 | `responseCode` | `int` | No |  |
@@ -2327,7 +2328,7 @@ fmt.Println(statusTransaction.GetName()) // "status_transaction"
 | `acquirerTerminalId` | `string` | No |  |
 | `amount` | `int` | No |  |
 | `applicationCryptogram` | `string` | No |  |
-| `authorizationCode` | `any` | No |  |
+| `authorizationCode` | `any` | No | Authorization code returned by the acquirer; null when not available |
 | `authorizationDate` | `string` | No |  |
 | `cardBrand` | `string` | No |  |
 | `cardEntry` | `string` | No |  |
@@ -2567,7 +2568,7 @@ fmt.Println(transactionHistory.GetName()) // "transaction_history"
 | `transactionHistories` | `[]any` | No |  |
 | `transactionId` | `string` | No |  |
 | `transactionType` | `string` | No |  |
-| `wallet` | `string` | No |  |
+| `wallet` | `string` | No | Filter by wallet type. |
 
 ### Operations
 

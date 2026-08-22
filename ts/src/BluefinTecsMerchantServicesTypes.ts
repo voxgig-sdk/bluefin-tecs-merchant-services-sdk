@@ -170,7 +170,7 @@ export interface DigitalServicesApiLoadMatch {
 }
 
 export interface DigitalServicesApiCreateData {
-  file_id?: string
+  file_id: string
   clearingDateFrom: string
   clearingDateTo: string
   responseCode?: number

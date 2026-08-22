@@ -510,8 +510,8 @@ digital_services_api = BluefinTecsMerchantServices.digital_services_api(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearingDateFrom` | `String.t()` | Yes |  |
-| `clearingDateTo` | `String.t()` | Yes |  |
+| `clearingDateFrom` | `String.t()` | Yes | Date and time in the format yyyy-MM-dd'T'HH:mm:ssz |
+| `clearingDateTo` | `String.t()` | Yes | Date and time in the format yyyy-MM-dd'T'HH:mm:ssz |
 | `responseCode` | `integer()` | No |  |
 | `responseMessage` | `String.t()` | No |  |
 | `txCount` | `integer()` | No |  |
@@ -529,6 +529,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```elixir
 record = BluefinTecsMerchantServices.Entity.DigitalServicesApi.create(digital_services_api, BluefinTecsMerchantServices.Helpers.deep(%{
+  "file_id" => "example_file_id",  # String.t()
   "clearingDateFrom" => "example_clearingDateFrom",  # String.t()
   "clearingDateTo" => "example_clearingDateTo",  # String.t()
 }))
@@ -1227,8 +1228,8 @@ mandator_clearing_export = BluefinTecsMerchantServices.mandator_clearing_export(
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearingDateFrom` | `String.t()` | Yes |  |
-| `clearingDateTo` | `String.t()` | Yes |  |
+| `clearingDateFrom` | `String.t()` | Yes | Date and time in the format yyyy-MM-dd'T'HH:mm:ssZ |
+| `clearingDateTo` | `String.t()` | Yes | Date and time in the format yyyy-MM-dd'T'HH:mm:ssZ |
 | `pagination` | `map()` | No |  |
 | `records` | `list()` | No |  |
 | `responseCode` | `integer()` | No |  |
@@ -1286,13 +1287,13 @@ mandator_clearing_export_download = BluefinTecsMerchantServices.mandator_clearin
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearingDateFrom` | `String.t()` | Yes |  |
-| `clearingDateTo` | `String.t()` | Yes |  |
-| `fileId` | `String.t()` | No |  |
-| `filenameTemplate` | `String.t()` | No |  |
+| `clearingDateFrom` | `String.t()` | Yes | Start date for clearing export (inclusive) |
+| `clearingDateTo` | `String.t()` | Yes | End date for clearing export (inclusive) |
+| `fileId` | `String.t()` | No | Unique file identifier for tracking and downloading |
+| `filenameTemplate` | `String.t()` | No | Optional filename template for the export file |
 | `responseCode` | `integer()` | No |  |
 | `responseMessage` | `String.t()` | No |  |
-| `status` | `String.t()` | No |  |
+| `status` | `String.t()` | No | Processing status of the export request |
 
 ### Operations
 
@@ -1354,8 +1355,8 @@ mandator_clearing_export_summary = BluefinTecsMerchantServices.mandator_clearing
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearingDateFrom` | `String.t()` | Yes |  |
-| `clearingDateTo` | `String.t()` | Yes |  |
+| `clearingDateFrom` | `String.t()` | Yes | Date and time in the format yyyy-MM-dd'T'HH:mm:ssz |
+| `clearingDateTo` | `String.t()` | Yes | Date and time in the format yyyy-MM-dd'T'HH:mm:ssz |
 | `records` | `list()` | No |  |
 | `responseCode` | `integer()` | No |  |
 | `responseMessage` | `String.t()` | No |  |
@@ -1436,7 +1437,7 @@ merchant_portal_services_api = BluefinTecsMerchantServices.merchant_portal_servi
 | `transactionDateTo` | `String.t()` | No |  |
 | `transactionId` | `String.t()` | No |  |
 | `transactionType` | `String.t()` | No |  |
-| `wallet` | `String.t()` | No |  |
+| `wallet` | `String.t()` | No | Filter by wallet type. |
 
 ### Operations
 
@@ -1545,23 +1546,23 @@ payment_manual = BluefinTecsMerchantServices.payment_manual(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirerName` | `String.t()` | No |  |
-| `amount` | `integer()` | Yes |  |
-| `authorizationNumber` | `String.t()` | No |  |
-| `cardNumber` | `String.t()` | Yes |  |
-| `cardType` | `String.t()` | No |  |
-| `currency` | `String.t()` | Yes |  |
-| `cvc` | `String.t()` | No |  |
-| `dateTimeTx` | `String.t()` | No |  |
-| `expDate` | `String.t()` | Yes |  |
-| `merchantId` | `String.t()` | No |  |
-| `originalTransactionId` | `String.t()` | No |  |
-| `password` | `String.t()` | No |  |
-| `responseCode` | `String.t()` | No |  |
-| `responseMessage` | `String.t()` | No |  |
-| `terminalId` | `String.t()` | No |  |
-| `transactionId` | `String.t()` | No |  |
-| `txtype` | `String.t()` | Yes |  |
+| `acquirerName` | `String.t()` | No | Acquirer name parsed from KKG field |
+| `amount` | `integer()` | Yes | Transaction amount in minor units (cents) |
+| `authorizationNumber` | `String.t()` | No | Authorization number from the gateway |
+| `cardNumber` | `String.t()` | Yes | Card number - 12 to 19 digits, must pass Luhn validation |
+| `cardType` | `String.t()` | No | Card type parsed from KKG field |
+| `currency` | `String.t()` | Yes | Currency code - 3 uppercase letters (ISO 4217) |
+| `cvc` | `String.t()` | No | Card verification code - 3-4 digits (optional) |
+| `dateTimeTx` | `String.t()` | No | Date and time of the transaction |
+| `expDate` | `String.t()` | Yes | Card expiry date in MMYY format |
+| `merchantId` | `String.t()` | No | Merchant ID (VU-NUMMER) |
+| `originalTransactionId` | `String.t()` | No | Original transaction ID from gateway |
+| `password` | `String.t()` | No | Terminal password sent as Kennwort in TECS XML (optional) |
+| `responseCode` | `String.t()` | No | Response code - 00 for success, otherwise error code |
+| `responseMessage` | `String.t()` | No | Response message - 'Approved' for success, error description otherwise |
+| `terminalId` | `String.t()` | No | Terminal ID used for the transaction |
+| `transactionId` | `String.t()` | No | Transaction ID generated by the backend |
+| `txtype` | `String.t()` | Yes | Transaction type |
 
 ### Operations
 
@@ -1618,18 +1619,18 @@ payment_sred = BluefinTecsMerchantServices.payment_sred(sdk)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `amount` | `integer()` | Yes |  |
-| `currency` | `String.t()` | Yes |  |
-| `device` | `String.t()` | No |  |
-| `devicePayload` | `String.t()` | Yes |  |
-| `expDate` | `String.t()` | No |  |
-| `mode` | `String.t()` | No |  |
-| `panMasked` | `String.t()` | No |  |
-| `password` | `String.t()` | No |  |
-| `serial` | `String.t()` | No |  |
-| `serviceCode` | `String.t()` | No |  |
-| `terminalId` | `String.t()` | Yes |  |
-| `txtype` | `String.t()` | Yes |  |
+| `amount` | `integer()` | Yes | Transaction amount in minor units (cents) |
+| `currency` | `String.t()` | Yes | Currency code - 3 uppercase letters (ISO 4217) |
+| `device` | `String.t()` | No | Device type that provided the SRED payload |
+| `devicePayload` | `String.t()` | Yes | SRED encrypted device payload from the device (minimum 32 characters) |
+| `expDate` | `String.t()` | No | Card expiry date in MMYY format |
+| `mode` | `String.t()` | No | Decryption mode |
+| `panMasked` | `String.t()` | No | Masked PAN (first 6 and last 4 digits) |
+| `password` | `String.t()` | No | Terminal password sent as Kennwort in TECS XML (optional) |
+| `serial` | `String.t()` | No | Device serial number |
+| `serviceCode` | `String.t()` | No | Service code from the card |
+| `terminalId` | `String.t()` | Yes | Terminal ID - 8 digits |
+| `txtype` | `String.t()` | Yes | Transaction type |
 
 ### Operations
 
@@ -2080,8 +2081,8 @@ report_data = BluefinTecsMerchantServices.report_data(sdk)
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `cardBrandReportData` | `list()` | No |  |
-| `clearingDateFrom` | `String.t()` | Yes |  |
-| `clearingDateTo` | `String.t()` | Yes |  |
+| `clearingDateFrom` | `String.t()` | Yes | Date and time in the format yyyy-MM-dd'T'HH:mm:ss |
+| `clearingDateTo` | `String.t()` | Yes | Date and time in the format yyyy-MM-dd'T'HH:mm:ss |
 | `corporateId` | `String.t()` | Yes |  |
 | `currency` | `String.t()` | Yes |  |
 | `responseCode` | `integer()` | No |  |
@@ -2148,7 +2149,7 @@ status_transaction = BluefinTecsMerchantServices.status_transaction(sdk)
 | `acquirerTerminalId` | `String.t()` | No |  |
 | `amount` | `integer()` | No |  |
 | `applicationCryptogram` | `String.t()` | No |  |
-| `authorizationCode` | `String.t() | nil` | No |  |
+| `authorizationCode` | `String.t() | nil` | No | Authorization code returned by the acquirer; null when not available |
 | `authorizationDate` | `String.t()` | No |  |
 | `cardBrand` | `String.t()` | No |  |
 | `cardEntry` | `String.t()` | No |  |
@@ -2388,7 +2389,7 @@ transaction_history = BluefinTecsMerchantServices.transaction_history(sdk)
 | `transactionHistories` | `list()` | No |  |
 | `transactionId` | `String.t()` | No |  |
 | `transactionType` | `String.t()` | No |  |
-| `wallet` | `String.t()` | No |  |
+| `wallet` | `String.t()` | No | Filter by wallet type. |
 
 ### Operations
 

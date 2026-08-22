@@ -199,7 +199,7 @@ class DigitalServicesApiLoadMatch
 /** Request payload for DigitalServicesApi#create. */
 class DigitalServicesApiCreateData
 {
-    public ?string $file_id = null;
+    public string $file_id;
     public string $clearingDateFrom;
     public string $clearingDateTo;
     public ?int $responseCode = null;

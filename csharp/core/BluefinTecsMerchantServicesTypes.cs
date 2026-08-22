@@ -189,7 +189,7 @@ public record DigitalServicesApiLoadMatch
 
 public record DigitalServicesApiCreateData
 {
-    public string? file_id { get; init; }
+    public string file_id { get; init; }
     public string clearingDateFrom { get; init; }
     public string clearingDateTo { get; init; }
     public long? responseCode { get; init; }
