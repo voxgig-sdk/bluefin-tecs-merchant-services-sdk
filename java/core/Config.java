@@ -50,7 +50,7 @@ public final class Config {
     b.append(" \"main\": {");
     b.append("  \"name\": \"BluefinTecsMerchantServices\",");
     b.append("  \"slug\": \"bluefin-tecs-merchant-services\",");
-    b.append("  \"version\": \"0.0.1\",");
+    b.append("  \"version\": \"0.1.1\",");
     b.append("  \"target\": \"java\"");
     b.append(" },");
     b.append(" \"feature\": {");
@@ -1891,7 +1891,7 @@ public final class Config {
     b.append("       \"select\": {},");
     b.append("       \"transform\": {");
     b.append("        \"req\": \"`reqdata`\",");
-    b.append("        \"res\": \"`body`\"");
+    b.append("        \"res\": \"`body.sred`\"");
     b.append("       }");
     b.append("      }");
     b.append("     ]");

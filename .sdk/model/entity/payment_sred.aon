@@ -1,0 +1,105 @@
+# Entity: payment_sred
+
+main: kit: entity: payment_sred: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "amount"
+      req: true
+      short: "Transaction amount in minor units (cents)"
+      type: "`$INTEGER`"
+    }
+    {
+      name: "currency"
+      req: true
+      short: "Currency code - 3 uppercase letters (ISO 4217)"
+      type: "`$STRING`"
+    }
+    {
+      name: "device"
+      req: false
+      short: "Device type that provided the SRED payload"
+      type: "`$STRING`"
+    }
+    {
+      name: "devicePayload"
+      req: true
+      short: "SRED encrypted device payload from the device (minimum 32 characters)"
+      type: "`$STRING`"
+    }
+    {
+      name: "expDate"
+      req: false
+      short: "Card expiry date in MMYY format"
+      type: "`$STRING`"
+    }
+    {
+      name: "mode"
+      req: false
+      short: "Decryption mode"
+      type: "`$STRING`"
+    }
+    {
+      name: "panMasked"
+      req: false
+      short: "Masked PAN (first 6 and last 4 digits)"
+      type: "`$STRING`"
+    }
+    {
+      name: "password"
+      req: false
+      short: "Terminal password sent as Kennwort in TECS XML (optional)"
+      type: "`$STRING`"
+    }
+    {
+      name: "serial"
+      req: false
+      short: "Device serial number"
+      type: "`$STRING`"
+    }
+    {
+      name: "serviceCode"
+      req: false
+      short: "Service code from the card"
+      type: "`$STRING`"
+    }
+    {
+      name: "terminalId"
+      req: true
+      short: "Terminal ID - 8 digits"
+      type: "`$STRING`"
+    }
+    {
+      name: "txtype"
+      req: true
+      short: "Transaction type"
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "payment_sred"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          method: "POST"
+          orig: "/public/paymentSred"
+          parts: [
+            "public"
+            "paymentSred"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body.sred`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

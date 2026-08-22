@@ -1874,7 +1874,7 @@ object Config {
     b.append("       \"select\": {},")
     b.append("       \"transform\": {")
     b.append("        \"req\": \"`reqdata`\",")
-    b.append("        \"res\": \"`body`\"")
+    b.append("        \"res\": \"`body.sred`\"")
     b.append("       }")
     b.append("      }")
     b.append("     ]")

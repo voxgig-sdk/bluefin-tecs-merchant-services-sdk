@@ -1330,7 +1330,7 @@
                 "select" (vs/jm)
                 "transform" (vs/jm
                   "req" "`reqdata`"
-                  "res" "`body`")))))
+                  "res" "`body.sred`")))))
         "relations" (vs/jm
           "ancestors" (vs/jt)))
       "pre_auth_transaction_completion" (vs/jm

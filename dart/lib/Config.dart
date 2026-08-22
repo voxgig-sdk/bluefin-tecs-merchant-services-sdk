@@ -26,7 +26,7 @@ class Config {
   final Map<String, dynamic> main = <String, dynamic>{
     'name': 'BluefinTecsMerchantServices',
         'slug': 'bluefin-tecs-merchant-services',
-    'version': '0.0.1',
+    'version': '0.1.1',
     'target': 'dart',
 
   };
@@ -1877,7 +1877,7 @@ class Config {
               'select': <String, dynamic>{},
               'transform': <String, dynamic>{
                 'req': '`reqdata`',
-                'res': '`body`',
+                'res': '`body.sred`',
               },
             },
           ],

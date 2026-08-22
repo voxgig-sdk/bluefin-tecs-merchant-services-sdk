@@ -1,0 +1,263 @@
+# Guide
+
+guide: {
+  metrics: count: entity: 39
+  metrics: count: path: 44
+  metrics: count: method: 45
+
+  entity: cancel_transaction: {
+    path: "/public/cancelTransaction": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: check_card_black_listed: {
+    path: "/checkCardBlackListed": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: create_product: {
+    path: "/createProduct": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: deactivate_terminal: {
+    path: "/deactivateTerminal": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: digital_services_api: {
+    path: "/public/digitalservices/mandatorClearingExportDownload/status": {
+      op: load: method: *GET
+    }
+    path: "/public/digitalservices/mandatorClearingExportDownload/{fileId}": {
+      rename: param: "fileId": *"file_id"
+      op: create: method: *POST
+    }
+    path: "/public/digitalservices/mandatorClearingExportMetadata": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: ec_data_ecom: {
+    path: "/public/getEcData": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: ecom_parameter: {
+    path: "/public/getEcomParameters": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: ecr_data: {
+    path: "/public/getEcrData": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: emv_data: {
+    path: "/public/getEmvData": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: enable_acquiring: {
+    path: "/enableAcquiring": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: get_merchant_contract_number: {
+    path: "/getMerchantContractNumber": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: get_template_xml: {
+    path: "/public/getTemplateXml": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: introduce_mandator: {
+    path: "/introduceMandator": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: introduce_package: {
+    path: "/introducePackage": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: keep_alive: {
+    path: "/public/keepalive": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: list_terminal: {
+    path: "/public/listTerminals": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: mandator_clearing_export: {
+    path: "/public/digitalservices/mandatorClearingExport": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: mandator_clearing_export_download: {
+    path: "/public/digitalservices/mandatorClearingExportDownload": {
+      op: create: method: *POST
+    }
+    path: "/public/digitalservices/mandatorClearingExportDownload/{fileId}": {
+      rename: param: "fileId": *"id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: mandator_clearing_export_summary: {
+    path: "/public/digitalservices/mandatorClearingExportSummary": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: merchant_portal_services_api: {
+    path: "/public/transactionHistoryCsv": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: move_tid: {
+    path: "/moveTid": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: payment_manual: {
+    path: "/public/paymentManual": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: payment_sred: {
+    path: "/public/paymentSred": {
+      op: create: method: *POST
+      op: create: transform: res: *("`body.sred`")|top
+    }
+  }
+
+  entity: pre_auth_transaction_completion: {
+    path: "/public/paymentTransaction": {
+      op: create: method: *POST
+    }
+    path: "/public/preAuthCompletionTransaction": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: reactivate_terminal: {
+    path: "/reactivateTerminal": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: refund_transaction: {
+    path: "/public/refundTransaction": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: register_tecs_company: {
+    path: "/registerTecsCompany": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: register_terminal: {
+    path: "/registerTerminal": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: report_data: {
+    path: "/public/digitalservices/reportData": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: status_transaction: {
+    path: "/public/statusTransaction": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: store_terminal_parameter: {
+    path: "/storeTerminalParameters": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: terminal_id: {
+    path: "/public/getTerminalId": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: transaction_history: {
+    path: "/public/mcom/transactionHistory": {
+      op: create: method: *POST
+    }
+    path: "/public/transactionHistory": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: transactions_count: {
+    path: "/public/countAuthorisedTransactions": {
+      op: create: method: *POST
+    }
+    path: "/public/countNotAuthorisedTransactions": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: transactions_count_card_brand: {
+    path: "/public/countTransactionsByCardBrand": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: transactions_turnover: {
+    path: "/public/transactionTurnover": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: update_merchant: {
+    path: "/public/updateMerchant": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: update_template_xml: {
+    path: "/public/updateTemplateXml": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: version: {
+    path: "/public/version": {
+      op: load: method: *GET
+    }
+  }
+
+}
