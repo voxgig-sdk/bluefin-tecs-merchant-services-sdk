@@ -1,6 +1,15 @@
 {
+  "NAME": "BLUEFIN-TECS-MERCHANT-SERVICES",
+  "Name": "BluefinTecsMerchantServices",
   "def": "tecs-merchant-services-openapi.json",
   "main": {
+    "api": {
+      "entity": {},
+      "guide": {}
+    },
+    "custom": {
+      "plurals": {}
+    },
     "def": {
       "desc": ""
     },
@@ -7011,5 +7020,8 @@
     }
   },
   "name": "bluefin-tecs-merchant-services",
+  "name-": "bluefin-tecs-merchant-services",
+  "name_": "bluefin_tecs_merchant_services",
+  "name__orig": "bluefin-tecs-merchant-services",
   "origin": "voxgig-sdk"
 }
