@@ -21,7 +21,7 @@ BASIC_FLOW: {
   my $setup = update_template_xml_basic_setup(undef);
   my $_live = $setup->{live} ? 1 : 0;
   # Per-op sdk-test-control.json skip.
-  for my $_op ('create') {
+  for my $_op (('create')) {
     my ($_should_skip, $_reason) = BluefinTecsMerchantServicesTestRunner::is_control_skipped(
       'entityOp', "update_template_xml." . $_op, $_live ? 'live' : 'unit');
     if ($_should_skip) {

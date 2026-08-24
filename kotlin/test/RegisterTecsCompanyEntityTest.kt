@@ -31,7 +31,7 @@ class RegisterTecsCompanyEntityTest {
     val setup = registerTecsCompanyBasicSetup(null)
     // Per-op sdk-test-control.json skip.
     val mode = if (setup.live) "live" else "unit"
-    for (op in arrayOf("create")) {
+    for (op in arrayOf<String>("create")) {
       val reason = RunnerSupport.skipReason("entityOp", "register_tecs_company.$op", mode)
       Assumptions.assumeTrue(
         reason == null,

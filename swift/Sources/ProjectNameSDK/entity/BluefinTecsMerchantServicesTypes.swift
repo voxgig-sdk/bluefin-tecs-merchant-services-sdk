@@ -484,7 +484,7 @@ public struct MandatorClearingExportSummaryCreateData {
 
 /// MerchantPortalServicesApi is the typed data model for the merchant_portal_services_api entity.
 public struct MerchantPortalServicesApi {
-  public var 3DSecure: String?
+  public var _3DSecure: String?
   public var authorizationCode: String?
   public var cardBrand: String?
   public var clearingAmountFrom: String?
@@ -513,7 +513,7 @@ public struct MerchantPortalServicesApi {
 
 /// MerchantPortalServicesApiCreateData is the typed request payload for MerchantPortalServicesApi.create.
 public struct MerchantPortalServicesApiCreateData {
-  public var 3DSecure: String?
+  public var _3DSecure: String?
   public var authorizationCode: String?
   public var cardBrand: String?
   public var clearingAmountFrom: String?
@@ -1078,7 +1078,7 @@ public struct TerminalIdCreateData {
 
 /// TransactionHistory is the typed data model for the transaction_history entity.
 public struct TransactionHistory {
-  public var 3DSecure: String?
+  public var _3DSecure: String?
   public var authorizationCode: String?
   public var cardBrand: String?
   public var clearingAmountFrom: String?
@@ -1111,7 +1111,7 @@ public struct TransactionHistory {
 
 /// TransactionHistoryCreateData is the typed request payload for TransactionHistory.create.
 public struct TransactionHistoryCreateData {
-  public var 3DSecure: String?
+  public var _3DSecure: String?
   public var authorizationCode: String?
   public var cardBrand: String?
   public var clearingAmountFrom: String?

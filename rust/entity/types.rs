@@ -526,7 +526,7 @@ pub struct MandatorClearingExportSummaryCreateData {
 /// MerchantPortalServicesApi is the typed data model for the merchant_portal_services_api entity.
 #[derive(Debug, Clone)]
 pub struct MerchantPortalServicesApi {
-    pub 3dsecure: Option<String>,
+    pub _3dsecure: Option<String>,
     pub authorizationcode: Option<String>,
     pub cardbrand: Option<String>,
     pub clearingamountfrom: Option<String>,
@@ -556,7 +556,7 @@ pub struct MerchantPortalServicesApi {
 /// MerchantPortalServicesApiCreateData is the typed request payload for MerchantPortalServicesApi.create.
 #[derive(Debug, Clone)]
 pub struct MerchantPortalServicesApiCreateData {
-    pub 3dsecure: Option<String>,
+    pub _3dsecure: Option<String>,
     pub authorizationcode: Option<String>,
     pub cardbrand: Option<String>,
     pub clearingamountfrom: Option<String>,
@@ -1146,7 +1146,7 @@ pub struct TerminalIdCreateData {
 /// TransactionHistory is the typed data model for the transaction_history entity.
 #[derive(Debug, Clone)]
 pub struct TransactionHistory {
-    pub 3dsecure: Option<String>,
+    pub _3dsecure: Option<String>,
     pub authorizationcode: Option<String>,
     pub cardbrand: Option<String>,
     pub clearingamountfrom: Option<String>,
@@ -1180,7 +1180,7 @@ pub struct TransactionHistory {
 /// TransactionHistoryCreateData is the typed request payload for TransactionHistory.create.
 #[derive(Debug, Clone)]
 pub struct TransactionHistoryCreateData {
-    pub 3dsecure: Option<String>,
+    pub _3dsecure: Option<String>,
     pub authorizationcode: Option<String>,
     pub cardbrand: Option<String>,
     pub clearingamountfrom: Option<String>,

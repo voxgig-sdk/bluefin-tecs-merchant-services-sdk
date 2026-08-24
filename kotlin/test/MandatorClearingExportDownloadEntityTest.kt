@@ -31,7 +31,7 @@ class MandatorClearingExportDownloadEntityTest {
     val setup = mandatorClearingExportDownloadBasicSetup(null)
     // Per-op sdk-test-control.json skip.
     val mode = if (setup.live) "live" else "unit"
-    for (op in arrayOf("create", "load")) {
+    for (op in arrayOf<String>("create", "load")) {
       val reason = RunnerSupport.skipReason("entityOp", "mandator_clearing_export_download.$op", mode)
       Assumptions.assumeTrue(
         reason == null,

@@ -31,7 +31,7 @@ class PreAuthTransactionCompletionEntityTest {
     val setup = preAuthTransactionCompletionBasicSetup(null)
     // Per-op sdk-test-control.json skip.
     val mode = if (setup.live) "live" else "unit"
-    for (op in arrayOf("create")) {
+    for (op in arrayOf<String>("create")) {
       val reason = RunnerSupport.skipReason("entityOp", "pre_auth_transaction_completion.$op", mode)
       Assumptions.assumeTrue(
         reason == null,

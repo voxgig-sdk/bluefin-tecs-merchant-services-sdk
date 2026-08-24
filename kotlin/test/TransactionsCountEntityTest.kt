@@ -31,7 +31,7 @@ class TransactionsCountEntityTest {
     val setup = transactionsCountBasicSetup(null)
     // Per-op sdk-test-control.json skip.
     val mode = if (setup.live) "live" else "unit"
-    for (op in arrayOf("create")) {
+    for (op in arrayOf<String>("create")) {
       val reason = RunnerSupport.skipReason("entityOp", "transactions_count.$op", mode)
       Assumptions.assumeTrue(
         reason == null,
