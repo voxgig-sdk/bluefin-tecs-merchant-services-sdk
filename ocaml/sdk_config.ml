@@ -11,11 +11,15 @@ open Sdk_features
 let make_config () : value =
   (jo [
     ("main", (jo [
-      ("name", (Str "BluefinTecsMerchantServices")) ]));
+      ("name", (Str "BluefinTecsMerchantServices"));
+      ("slug", (Str "bluefin-tecs-merchant-services"));
+      ("version", (Str "0.1.1"));
+      ("target", (Str "ocaml")) ]));
     ("feature", (jo [
       ("test", (jo [
         ("options", (jo [
-          ("active", (Bool false)) ])) ])) ]));
+          ("active", (Bool false)) ]));
+        ("transport", (Str "base")) ])) ]));
     ("options", (jo [
       ("base", (Str "https://test.tecs.at/merchantservices"));
       ("auth", (jo [
