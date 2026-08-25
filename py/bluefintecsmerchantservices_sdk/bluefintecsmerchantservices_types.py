@@ -500,6 +500,7 @@ class MandatorClearingExportDownloadRequired(TypedDict):
 class MandatorClearingExportDownload(MandatorClearingExportDownloadRequired, total=False):
     fileId: str
     filenameTemplate: str
+    id: str
     responseCode: int
     responseMessage: str
     status: str
@@ -517,6 +518,7 @@ class MandatorClearingExportDownloadCreateDataRequired(TypedDict):
 class MandatorClearingExportDownloadCreateData(MandatorClearingExportDownloadCreateDataRequired, total=False):
     fileId: str
     filenameTemplate: str
+    id: str
     responseCode: int
     responseMessage: str
     status: str

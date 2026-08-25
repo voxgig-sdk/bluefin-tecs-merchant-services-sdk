@@ -48,11 +48,16 @@ BASIC_FLOW: {
   $V{mandator_clearing_export_download_ref01_data_result} = $V{mandator_clearing_export_download_ref01_ent}->create($V{mandator_clearing_export_download_ref01_data}, undef);
   $V{mandator_clearing_export_download_ref01_data} = BluefinTecsMerchantServicesHelpers::to_map(ref($V{mandator_clearing_export_download_ref01_data_result}) && $V{mandator_clearing_export_download_ref01_data_result}->can('data_get') ? $V{mandator_clearing_export_download_ref01_data_result}->data_get : $V{mandator_clearing_export_download_ref01_data_result});
   ok(defined $V{mandator_clearing_export_download_ref01_data}, 'mandator_clearing_export_download create: data');
+  ok(defined $V{mandator_clearing_export_download_ref01_data}{id}, 'mandator_clearing_export_download create: id');
 
   # LOAD
-  $V{mandator_clearing_export_download_ref01_match_dt0} = {};
+  $V{mandator_clearing_export_download_ref01_match_dt0} = {
+    'id' => $V{mandator_clearing_export_download_ref01_data}{id},
+  };
   $V{mandator_clearing_export_download_ref01_data_dt0_loaded} = $V{mandator_clearing_export_download_ref01_ent}->load($V{mandator_clearing_export_download_ref01_match_dt0}, undef);
-  ok(defined $V{mandator_clearing_export_download_ref01_data_dt0_loaded}, 'mandator_clearing_export_download load: data');
+  $V{mandator_clearing_export_download_ref01_data_dt0_load_result} = BluefinTecsMerchantServicesHelpers::to_map(ref($V{mandator_clearing_export_download_ref01_data_dt0_loaded}) && $V{mandator_clearing_export_download_ref01_data_dt0_loaded}->can('data_get') ? $V{mandator_clearing_export_download_ref01_data_dt0_loaded}->data_get : $V{mandator_clearing_export_download_ref01_data_dt0_loaded});
+  ok(defined $V{mandator_clearing_export_download_ref01_data_dt0_load_result}, 'mandator_clearing_export_download load: data');
+  is($V{mandator_clearing_export_download_ref01_data_dt0_load_result}{id}, $V{mandator_clearing_export_download_ref01_data}{id}, 'mandator_clearing_export_download load: id');
 
 }
 

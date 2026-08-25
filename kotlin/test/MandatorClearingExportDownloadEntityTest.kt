@@ -52,11 +52,16 @@ class MandatorClearingExportDownloadEntityTest {
     val mandatorClearingExportDownloadRef01DataResult = mandatorClearingExportDownloadRef01Ent.create(mandatorClearingExportDownloadRef01Data, null)
     mandatorClearingExportDownloadRef01Data = Helpers.toMapAny(if (mandatorClearingExportDownloadRef01DataResult is SdkEntity) mandatorClearingExportDownloadRef01DataResult.data() else mandatorClearingExportDownloadRef01DataResult) ?: linkedMapOf()
     assertNotNull(mandatorClearingExportDownloadRef01Data, "expected create result to be a map")
+    assertNotNull(mandatorClearingExportDownloadRef01Data["id"], "expected created entity to have an id")
 
     // LOAD
     val mandatorClearingExportDownloadRef01MatchDt0 = linkedMapOf<String, Any?>()
+    mandatorClearingExportDownloadRef01MatchDt0["id"] = mandatorClearingExportDownloadRef01Data["id"]
     val mandatorClearingExportDownloadRef01DataDt0Loaded = mandatorClearingExportDownloadRef01Ent.load(mandatorClearingExportDownloadRef01MatchDt0, null)
-    assertNotNull(mandatorClearingExportDownloadRef01DataDt0Loaded, "expected load result to be non-null")
+    val mandatorClearingExportDownloadRef01DataDt0LoadResult = Helpers.toMapAny(if (mandatorClearingExportDownloadRef01DataDt0Loaded is SdkEntity) mandatorClearingExportDownloadRef01DataDt0Loaded.data() else mandatorClearingExportDownloadRef01DataDt0Loaded) ?: linkedMapOf()
+    assertNotNull(mandatorClearingExportDownloadRef01DataDt0LoadResult, "expected load result to be a map")
+    assertEquals(mandatorClearingExportDownloadRef01Data["id"], mandatorClearingExportDownloadRef01DataDt0LoadResult["id"],
+        "expected load result id to match")
 
   }
 

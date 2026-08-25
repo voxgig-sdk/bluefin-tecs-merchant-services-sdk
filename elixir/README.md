@@ -603,6 +603,7 @@ API path: `/public/digitalservices/mandatorClearingExport`
 | `clearingDateTo` | End date for clearing export (inclusive) |
 | `fileId` | Unique file identifier for tracking and downloading |
 | `filenameTemplate` | Optional filename template for the export file |
+| `id` |  |
 | `responseCode` |  |
 | `responseMessage` |  |
 | `status` | Processing status of the export request |
@@ -1731,6 +1732,7 @@ Create a handle: `mandator_clearing_export_download = BluefinTecsMerchantService
 | `clearingDateTo` | `String.t()` | End date for clearing export (inclusive) |
 | `fileId` | `String.t()` | Unique file identifier for tracking and downloading |
 | `filenameTemplate` | `String.t()` | Optional filename template for the export file |
+| `id` | `String.t()` |  |
 | `responseCode` | `integer()` |  |
 | `responseMessage` | `String.t()` |  |
 | `status` | `String.t()` | Processing status of the export request |

@@ -1326,6 +1326,10 @@ module BluefinTecsMerchantServicesConfig
               "type" => "`$STRING`",
             },
             {
+              "name" => "id",
+              "type" => "`$STRING`",
+            },
+            {
               "name" => "responseCode",
               "type" => "`$INTEGER`",
             },

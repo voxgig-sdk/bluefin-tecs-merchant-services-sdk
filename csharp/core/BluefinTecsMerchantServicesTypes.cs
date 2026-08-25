@@ -446,6 +446,7 @@ public record MandatorClearingExportDownload
     public string clearingDateTo { get; init; }
     public string? fileId { get; init; }
     public string? filenameTemplate { get; init; }
+    public string? id { get; init; }
     public long? responseCode { get; init; }
     public string? responseMessage { get; init; }
     public string? status { get; init; }
@@ -462,6 +463,7 @@ public record MandatorClearingExportDownloadCreateData
     public string clearingDateTo { get; init; }
     public string? fileId { get; init; }
     public string? filenameTemplate { get; init; }
+    public string? id { get; init; }
     public long? responseCode { get; init; }
     public string? responseMessage { get; init; }
     public string? status { get; init; }

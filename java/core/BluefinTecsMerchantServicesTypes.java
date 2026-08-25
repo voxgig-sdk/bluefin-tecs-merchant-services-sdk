@@ -90,11 +90,11 @@ public final class BluefinTecsMerchantServicesTypes {
 
   public record MandatorClearingExportCreateData(String clearingDateFrom, String clearingDateTo, Map<String, Object> pagination, List<Object> records, Long responseCode, String responseMessage) {}
 
-  public record MandatorClearingExportDownload(String clearingDateFrom, String clearingDateTo, String fileId, String filenameTemplate, Long responseCode, String responseMessage, String status) {}
+  public record MandatorClearingExportDownload(String clearingDateFrom, String clearingDateTo, String fileId, String filenameTemplate, String id, Long responseCode, String responseMessage, String status) {}
 
   public record MandatorClearingExportDownloadLoadMatch(String id) {}
 
-  public record MandatorClearingExportDownloadCreateData(String clearingDateFrom, String clearingDateTo, String fileId, String filenameTemplate, Long responseCode, String responseMessage, String status) {}
+  public record MandatorClearingExportDownloadCreateData(String clearingDateFrom, String clearingDateTo, String fileId, String filenameTemplate, String id, Long responseCode, String responseMessage, String status) {}
 
   public record MandatorClearingExportSummary(String clearingDateFrom, String clearingDateTo, List<Object> records, Long responseCode, String responseMessage) {}
 

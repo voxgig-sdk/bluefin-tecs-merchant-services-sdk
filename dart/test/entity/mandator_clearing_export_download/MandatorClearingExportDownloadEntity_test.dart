@@ -48,8 +48,14 @@ void tests() {
       dynamic mandator_clearing_export_download_ref01_data = setup['data']['new']['mandator_clearing_export_download']['mandator_clearing_export_download_ref01'];
 
       mandator_clearing_export_download_ref01_data = (await mandator_clearing_export_download_ref01_ent.create(mandator_clearing_export_download_ref01_data)).data();
-      ok(null != mandator_clearing_export_download_ref01_data);
+      ok(null != mandator_clearing_export_download_ref01_data['id']);
 
+
+      // LOAD
+      final mandator_clearing_export_download_ref01_match_dt0 = <String, dynamic>{};
+      mandator_clearing_export_download_ref01_match_dt0['id'] = mandator_clearing_export_download_ref01_data['id'];
+      final mandator_clearing_export_download_ref01_data_dt0 = (await mandator_clearing_export_download_ref01_ent.load(mandator_clearing_export_download_ref01_match_dt0)).data();
+      ok(mandator_clearing_export_download_ref01_data_dt0['id'] == mandator_clearing_export_download_ref01_data['id']);
 
 
     });

@@ -46,11 +46,16 @@ class MandatorClearingExportDownloadEntityTest extends TestCase
         $mandator_clearing_export_download_ref01_data_result = $mandator_clearing_export_download_ref01_ent->create($mandator_clearing_export_download_ref01_data, null);
         $mandator_clearing_export_download_ref01_data = Helpers::to_map(is_object($mandator_clearing_export_download_ref01_data_result) && method_exists($mandator_clearing_export_download_ref01_data_result, 'data_get') ? $mandator_clearing_export_download_ref01_data_result->data_get() : $mandator_clearing_export_download_ref01_data_result);
         $this->assertNotNull($mandator_clearing_export_download_ref01_data);
+        $this->assertNotNull($mandator_clearing_export_download_ref01_data["id"]);
 
         // LOAD
-        $mandator_clearing_export_download_ref01_match_dt0 = [];
+        $mandator_clearing_export_download_ref01_match_dt0 = [
+            "id" => $mandator_clearing_export_download_ref01_data["id"],
+        ];
         $mandator_clearing_export_download_ref01_data_dt0_loaded = $mandator_clearing_export_download_ref01_ent->load($mandator_clearing_export_download_ref01_match_dt0, null);
-        $this->assertNotNull($mandator_clearing_export_download_ref01_data_dt0_loaded);
+        $mandator_clearing_export_download_ref01_data_dt0_load_result = Helpers::to_map(is_object($mandator_clearing_export_download_ref01_data_dt0_loaded) && method_exists($mandator_clearing_export_download_ref01_data_dt0_loaded, 'data_get') ? $mandator_clearing_export_download_ref01_data_dt0_loaded->data_get() : $mandator_clearing_export_download_ref01_data_dt0_loaded);
+        $this->assertNotNull($mandator_clearing_export_download_ref01_data_dt0_load_result);
+        $this->assertEquals($mandator_clearing_export_download_ref01_data_dt0_load_result["id"], $mandator_clearing_export_download_ref01_data["id"]);
 
     }
 }

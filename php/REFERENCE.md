@@ -1359,6 +1359,7 @@ $mandator_clearing_export_download = $client->MandatorClearingExportDownload();
 | `clearingDateTo` | `string` | Yes | End date for clearing export (inclusive) |
 | `fileId` | `string` | No | Unique file identifier for tracking and downloading |
 | `filenameTemplate` | `string` | No | Optional filename template for the export file |
+| `id` | `string` | No |  |
 | `responseCode` | `int` | No |  |
 | `responseMessage` | `string` | No |  |
 | `status` | `string` | No | Processing status of the export request |

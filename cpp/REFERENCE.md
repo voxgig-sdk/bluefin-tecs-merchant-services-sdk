@@ -1204,6 +1204,7 @@ auto mandator_clearing_export_download = client->mandator_clearing_export_downlo
 | `clearingDateTo` | `std::string` | Yes | End date for clearing export (inclusive) |
 | `fileId` | `std::string` | No | Unique file identifier for tracking and downloading |
 | `filenameTemplate` | `std::string` | No | Optional filename template for the export file |
+| `id` | `std::string` | No |  |
 | `responseCode` | `int64_t` | No |  |
 | `responseMessage` | `std::string` | No |  |
 | `status` | `std::string` | No | Processing status of the export request |

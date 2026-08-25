@@ -984,6 +984,9 @@ let make_config () : value =
             ("short", (Str "Optional filename template for the export file"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("name", (Str "id"));
+            ("type", (Str "`$STRING`")) ]);
+          (jo [
             ("name", (Str "responseCode"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [

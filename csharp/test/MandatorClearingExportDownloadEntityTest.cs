@@ -51,11 +51,18 @@ public class MandatorClearingExportDownloadEntityTest
         var mandatorClearingExportDownloadRef01DataResult = mandatorClearingExportDownloadRef01Ent.Create(mandatorClearingExportDownloadRef01Data, null);
         mandatorClearingExportDownloadRef01Data = Helpers.ToMapAny(mandatorClearingExportDownloadRef01DataResult is IEntity ce ? ce.Data() : mandatorClearingExportDownloadRef01DataResult);
         Assert.True(mandatorClearingExportDownloadRef01Data != null, "expected create result to be a map");
+        Assert.True(mandatorClearingExportDownloadRef01Data!["id"] != null, "expected created entity to have an id");
 
         // LOAD
-        var mandatorClearingExportDownloadRef01MatchDt0 = new Dictionary<string, object?>();
+        var mandatorClearingExportDownloadRef01MatchDt0 = new Dictionary<string, object?>
+        {
+            ["id"] = mandatorClearingExportDownloadRef01Data!["id"],
+        };
         var mandatorClearingExportDownloadRef01DataDt0Loaded = mandatorClearingExportDownloadRef01Ent.Load(mandatorClearingExportDownloadRef01MatchDt0, null);
-        Assert.True(mandatorClearingExportDownloadRef01DataDt0Loaded != null, "expected load result to be non-null");
+        var mandatorClearingExportDownloadRef01DataDt0LoadResult = Helpers.ToMapAny(mandatorClearingExportDownloadRef01DataDt0Loaded is IEntity le ? le.Data() : mandatorClearingExportDownloadRef01DataDt0Loaded);
+        Assert.True(mandatorClearingExportDownloadRef01DataDt0LoadResult != null, "expected load result to be a map");
+        Assert.True(StructRunner.DeepEqual(mandatorClearingExportDownloadRef01DataDt0LoadResult!["id"], mandatorClearingExportDownloadRef01Data["id"]),
+            "expected load result id to match");
 
     }
 

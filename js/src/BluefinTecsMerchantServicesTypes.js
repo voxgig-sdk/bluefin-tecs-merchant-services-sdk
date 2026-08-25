@@ -439,6 +439,7 @@
  * @property {string} clearingDateTo
  * @property {string} [fileId]
  * @property {string} [filenameTemplate]
+ * @property {string} [id]
  * @property {number} [responseCode]
  * @property {string} [responseMessage]
  * @property {string} [status]
@@ -455,6 +456,7 @@
  * @property {string} clearingDateTo
  * @property {string} [fileId]
  * @property {string} [filenameTemplate]
+ * @property {string} [id]
  * @property {number} [responseCode]
  * @property {string} [responseMessage]
  * @property {string} [status]

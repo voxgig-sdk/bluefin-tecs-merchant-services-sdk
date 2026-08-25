@@ -58,11 +58,16 @@ public class MandatorClearingExportDownloadEntityTest {
     Object mandatorClearingExportDownloadRef01DataResult = mandatorClearingExportDownloadRef01Ent.create(mandatorClearingExportDownloadRef01Data, null);
     mandatorClearingExportDownloadRef01Data = Helpers.toMapAny(mandatorClearingExportDownloadRef01DataResult instanceof SdkEntity ? ((SdkEntity) mandatorClearingExportDownloadRef01DataResult).data() : mandatorClearingExportDownloadRef01DataResult);
     assertNotNull(mandatorClearingExportDownloadRef01Data, "expected create result to be a map");
+    assertNotNull(mandatorClearingExportDownloadRef01Data.get("id"), "expected created entity to have an id");
 
     // LOAD
     Map<String, Object> mandatorClearingExportDownloadRef01MatchDt0 = new LinkedHashMap<>();
+    mandatorClearingExportDownloadRef01MatchDt0.put("id", mandatorClearingExportDownloadRef01Data.get("id"));
     Object mandatorClearingExportDownloadRef01DataDt0Loaded = mandatorClearingExportDownloadRef01Ent.load(mandatorClearingExportDownloadRef01MatchDt0, null);
-    assertNotNull(mandatorClearingExportDownloadRef01DataDt0Loaded, "expected load result to be non-null");
+    Map<String, Object> mandatorClearingExportDownloadRef01DataDt0LoadResult = Helpers.toMapAny(mandatorClearingExportDownloadRef01DataDt0Loaded instanceof SdkEntity ? ((SdkEntity) mandatorClearingExportDownloadRef01DataDt0Loaded).data() : mandatorClearingExportDownloadRef01DataDt0Loaded);
+    assertNotNull(mandatorClearingExportDownloadRef01DataDt0LoadResult, "expected load result to be a map");
+    assertEquals(mandatorClearingExportDownloadRef01Data.get("id"), mandatorClearingExportDownloadRef01DataDt0LoadResult.get("id"),
+        "expected load result id to match");
 
   }
 

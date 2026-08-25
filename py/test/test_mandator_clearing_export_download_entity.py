@@ -46,11 +46,16 @@ class TestMandatorClearingExportDownloadEntity:
 
         mandator_clearing_export_download_ref01_data = helpers.to_map(runner.entity_data(mandator_clearing_export_download_ref01_ent.create(mandator_clearing_export_download_ref01_data, None)))
         assert mandator_clearing_export_download_ref01_data is not None
+        assert mandator_clearing_export_download_ref01_data["id"] is not None
 
         # LOAD
-        mandator_clearing_export_download_ref01_match_dt0 = {}
+        mandator_clearing_export_download_ref01_match_dt0 = {
+            "id": mandator_clearing_export_download_ref01_data["id"],
+        }
         mandator_clearing_export_download_ref01_data_dt0_loaded = mandator_clearing_export_download_ref01_ent.load(mandator_clearing_export_download_ref01_match_dt0, None)
-        assert mandator_clearing_export_download_ref01_data_dt0_loaded is not None
+        mandator_clearing_export_download_ref01_data_dt0_load_result = helpers.to_map(runner.entity_data(mandator_clearing_export_download_ref01_data_dt0_loaded))
+        assert mandator_clearing_export_download_ref01_data_dt0_load_result is not None
+        assert mandator_clearing_export_download_ref01_data_dt0_load_result["id"] == mandator_clearing_export_download_ref01_data["id"]
 
 
 

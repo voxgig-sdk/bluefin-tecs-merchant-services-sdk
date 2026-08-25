@@ -418,6 +418,7 @@ struct MandatorClearingExportDownload {
   std::string clearingDateTo;
   std::string fileId;  // optional
   std::string filenameTemplate;  // optional
+  std::string id;  // optional
   int64_t responseCode;  // optional
   std::string responseMessage;  // optional
   std::string status;  // optional
@@ -432,6 +433,7 @@ struct MandatorClearingExportDownloadCreateData {
   std::string clearingDateTo;
   std::string fileId;  // optional
   std::string filenameTemplate;  // optional
+  std::string id;  // optional
   int64_t responseCode;  // optional
   std::string responseMessage;  // optional
   std::string status;  // optional

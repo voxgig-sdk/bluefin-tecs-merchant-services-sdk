@@ -1612,6 +1612,12 @@
             },
             {
               "active": true,
+              "name": "id",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
               "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
@@ -1630,6 +1636,10 @@
               "type": "`$STRING`"
             }
           ],
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
           "name": "mandator_clearing_export_download",
           "op": {
             "create": {

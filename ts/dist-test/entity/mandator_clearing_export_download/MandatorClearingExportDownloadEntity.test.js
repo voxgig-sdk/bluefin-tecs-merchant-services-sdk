@@ -75,7 +75,12 @@ const utility_1 = require("../../utility");
         const mandator_clearing_export_download_ref01_ent = client.MandatorClearingExportDownload();
         let mandator_clearing_export_download_ref01_data = setup.data.new.mandator_clearing_export_download['mandator_clearing_export_download_ref01'];
         mandator_clearing_export_download_ref01_data = (await mandator_clearing_export_download_ref01_ent.create(mandator_clearing_export_download_ref01_data)).data();
-        (0, node_assert_1.default)(null != mandator_clearing_export_download_ref01_data);
+        (0, node_assert_1.default)(null != mandator_clearing_export_download_ref01_data.id);
+        // LOAD
+        const mandator_clearing_export_download_ref01_match_dt0 = {};
+        mandator_clearing_export_download_ref01_match_dt0.id = mandator_clearing_export_download_ref01_data.id;
+        const mandator_clearing_export_download_ref01_data_dt0 = (await mandator_clearing_export_download_ref01_ent.load(mandator_clearing_export_download_ref01_match_dt0)).data();
+        (0, node_assert_1.default)(mandator_clearing_export_download_ref01_data_dt0.id === mandator_clearing_export_download_ref01_data.id);
     });
 });
 function basicSetup(extra) {

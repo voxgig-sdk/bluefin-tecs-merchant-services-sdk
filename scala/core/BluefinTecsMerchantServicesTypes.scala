@@ -86,11 +86,11 @@ object BluefinTecsMerchantServicesTypes {
 
   final case class MandatorClearingExportCreateData(clearingDateFrom: String, clearingDateTo: String, pagination: java.util.Map[String, Object], records: java.util.List[Object], responseCode: java.lang.Long, responseMessage: String)
 
-  final case class MandatorClearingExportDownload(clearingDateFrom: String, clearingDateTo: String, fileId: String, filenameTemplate: String, responseCode: java.lang.Long, responseMessage: String, status: String)
+  final case class MandatorClearingExportDownload(clearingDateFrom: String, clearingDateTo: String, fileId: String, filenameTemplate: String, id: String, responseCode: java.lang.Long, responseMessage: String, status: String)
 
   final case class MandatorClearingExportDownloadLoadMatch(id: String)
 
-  final case class MandatorClearingExportDownloadCreateData(clearingDateFrom: String, clearingDateTo: String, fileId: String, filenameTemplate: String, responseCode: java.lang.Long, responseMessage: String, status: String)
+  final case class MandatorClearingExportDownloadCreateData(clearingDateFrom: String, clearingDateTo: String, fileId: String, filenameTemplate: String, id: String, responseCode: java.lang.Long, responseMessage: String, status: String)
 
   final case class MandatorClearingExportSummary(clearingDateFrom: String, clearingDateTo: String, records: java.util.List[Object], responseCode: java.lang.Long, responseMessage: String)
 

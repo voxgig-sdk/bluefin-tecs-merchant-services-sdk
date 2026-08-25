@@ -584,6 +584,7 @@ API path: `/public/digitalservices/mandatorClearingExport`
 | `clearingDateTo` | End date for clearing export (inclusive) |
 | `fileId` | Unique file identifier for tracking and downloading |
 | `filenameTemplate` | Optional filename template for the export file |
+| `id` |  |
 | `responseCode` |  |
 | `responseMessage` |  |
 | `status` | Processing status of the export request |
@@ -1799,6 +1800,7 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 | `clearingDateTo` | `[]const u8` | End date for clearing export (inclusive) |
 | `fileId` | `[]const u8` | Unique file identifier for tracking and downloading |
 | `filenameTemplate` | `[]const u8` | Optional filename template for the export file |
+| `id` | `[]const u8` |  |
 | `responseCode` | `i64` |  |
 | `responseMessage` | `[]const u8` |  |
 | `status` | `[]const u8` | Processing status of the export request |

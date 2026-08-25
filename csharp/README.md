@@ -586,6 +586,7 @@ API path: `/public/digitalservices/mandatorClearingExport`
 | `clearingDateTo` | End date for clearing export (inclusive) |
 | `fileId` | Unique file identifier for tracking and downloading |
 | `filenameTemplate` | Optional filename template for the export file |
+| `id` |  |
 | `responseCode` |  |
 | `responseMessage` |  |
 | `status` | Processing status of the export request |
@@ -1710,6 +1711,7 @@ Create an instance: `var mandatorClearingExportDownload = client.MandatorClearin
 | `clearingDateTo` | `string` | End date for clearing export (inclusive) |
 | `fileId` | `string` | Unique file identifier for tracking and downloading |
 | `filenameTemplate` | `string` | Optional filename template for the export file |
+| `id` | `string` |  |
 | `responseCode` | `long` |  |
 | `responseMessage` | `string` |  |
 | `status` | `string` | Processing status of the export request |

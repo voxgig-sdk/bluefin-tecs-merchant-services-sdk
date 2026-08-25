@@ -1317,6 +1317,10 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "name", h.vstr("id") },
+                        .{ "type", h.vstr("`$STRING`") },
+                    }),
+                    h.jo(&.{
                         .{ "name", h.vstr("responseCode") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),

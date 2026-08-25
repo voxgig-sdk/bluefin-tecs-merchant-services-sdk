@@ -39,11 +39,16 @@ class MandatorClearingExportDownloadEntityTest < Minitest::Test
     mandator_clearing_export_download_ref01_data_result = mandator_clearing_export_download_ref01_ent.create(mandator_clearing_export_download_ref01_data, nil)
     mandator_clearing_export_download_ref01_data = Helpers.to_map(mandator_clearing_export_download_ref01_data_result.respond_to?(:data_get) ? mandator_clearing_export_download_ref01_data_result.data_get : mandator_clearing_export_download_ref01_data_result)
     assert !mandator_clearing_export_download_ref01_data.nil?
+    assert !mandator_clearing_export_download_ref01_data["id"].nil?
 
     # LOAD
-    mandator_clearing_export_download_ref01_match_dt0 = {}
+    mandator_clearing_export_download_ref01_match_dt0 = {
+      "id" => mandator_clearing_export_download_ref01_data["id"],
+    }
     mandator_clearing_export_download_ref01_data_dt0_loaded = mandator_clearing_export_download_ref01_ent.load(mandator_clearing_export_download_ref01_match_dt0, nil)
-    assert !mandator_clearing_export_download_ref01_data_dt0_loaded.nil?
+    mandator_clearing_export_download_ref01_data_dt0_load_result = Helpers.to_map(mandator_clearing_export_download_ref01_data_dt0_loaded.respond_to?(:data_get) ? mandator_clearing_export_download_ref01_data_dt0_loaded.data_get : mandator_clearing_export_download_ref01_data_dt0_loaded)
+    assert !mandator_clearing_export_download_ref01_data_dt0_load_result.nil?
+    assert_equal mandator_clearing_export_download_ref01_data_dt0_load_result["id"], mandator_clearing_export_download_ref01_data["id"]
 
   end
 end

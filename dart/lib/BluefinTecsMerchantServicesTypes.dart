@@ -2516,6 +2516,8 @@ class MandatorClearingExportDownload {
   String? fileId;
   /// STRING
   String? filenameTemplate;
+  /// STRING
+  String? id;
   /// INTEGER
   int? responseCode;
   /// STRING
@@ -2528,6 +2530,7 @@ class MandatorClearingExportDownload {
     this.clearingDateTo,
     this.fileId,
     this.filenameTemplate,
+    this.id,
     this.responseCode,
     this.responseMessage,
     this.status,
@@ -2538,6 +2541,7 @@ class MandatorClearingExportDownload {
         clearingDateTo: m['clearingDateTo'] is String ? m['clearingDateTo'] : null,
         fileId: m['fileId'] is String ? m['fileId'] : null,
         filenameTemplate: m['filenameTemplate'] is String ? m['filenameTemplate'] : null,
+        id: m['id'] is String ? m['id'] : null,
         responseCode: m['responseCode'] is int ? m['responseCode'] : null,
         responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
         status: m['status'] is String ? m['status'] : null,
@@ -2556,6 +2560,9 @@ class MandatorClearingExportDownload {
     }
     if (null != filenameTemplate) {
       m['filenameTemplate'] = filenameTemplate;
+    }
+    if (null != id) {
+      m['id'] = id;
     }
     if (null != responseCode) {
       m['responseCode'] = responseCode;
@@ -2600,6 +2607,8 @@ class MandatorClearingExportDownloadCreateData {
   String? fileId;
   /// STRING
   String? filenameTemplate;
+  /// STRING
+  String? id;
   /// INTEGER
   int? responseCode;
   /// STRING
@@ -2612,6 +2621,7 @@ class MandatorClearingExportDownloadCreateData {
     this.clearingDateTo,
     this.fileId,
     this.filenameTemplate,
+    this.id,
     this.responseCode,
     this.responseMessage,
     this.status,
@@ -2622,6 +2632,7 @@ class MandatorClearingExportDownloadCreateData {
         clearingDateTo: m['clearingDateTo'] is String ? m['clearingDateTo'] : null,
         fileId: m['fileId'] is String ? m['fileId'] : null,
         filenameTemplate: m['filenameTemplate'] is String ? m['filenameTemplate'] : null,
+        id: m['id'] is String ? m['id'] : null,
         responseCode: m['responseCode'] is int ? m['responseCode'] : null,
         responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
         status: m['status'] is String ? m['status'] : null,
@@ -2640,6 +2651,9 @@ class MandatorClearingExportDownloadCreateData {
     }
     if (null != filenameTemplate) {
       m['filenameTemplate'] = filenameTemplate;
+    }
+    if (null != id) {
+      m['id'] = id;
     }
     if (null != responseCode) {
       m['responseCode'] = responseCode;

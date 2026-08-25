@@ -445,6 +445,7 @@ type MandatorClearingExportDownload struct {
 	ClearingDateTo string `json:"clearingDateTo"`
 	FileId *string `json:"fileId,omitempty"`
 	FilenameTemplate *string `json:"filenameTemplate,omitempty"`
+	Id *string `json:"id,omitempty"`
 	ResponseCode *int `json:"responseCode,omitempty"`
 	ResponseMessage *string `json:"responseMessage,omitempty"`
 	Status *string `json:"status,omitempty"`
@@ -461,6 +462,7 @@ type MandatorClearingExportDownloadCreateData struct {
 	ClearingDateTo string `json:"clearingDateTo"`
 	FileId *string `json:"fileId,omitempty"`
 	FilenameTemplate *string `json:"filenameTemplate,omitempty"`
+	Id *string `json:"id,omitempty"`
 	ResponseCode *int `json:"responseCode,omitempty"`
 	ResponseMessage *string `json:"responseMessage,omitempty"`
 	Status *string `json:"status,omitempty"`

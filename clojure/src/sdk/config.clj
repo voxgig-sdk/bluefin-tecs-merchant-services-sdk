@@ -922,6 +922,9 @@
             "short" "Optional filename template for the export file"
             "type" "`$STRING`")
           (vs/jm
+            "name" "id"
+            "type" "`$STRING`")
+          (vs/jm
             "name" "responseCode"
             "type" "`$INTEGER`")
           (vs/jm

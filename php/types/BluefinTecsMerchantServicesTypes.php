@@ -481,6 +481,7 @@ class MandatorClearingExportDownload
     public string $clearingDateTo;
     public ?string $fileId = null;
     public ?string $filenameTemplate = null;
+    public ?string $id = null;
     public ?int $responseCode = null;
     public ?string $responseMessage = null;
     public ?string $status = null;
@@ -499,6 +500,7 @@ class MandatorClearingExportDownloadCreateData
     public string $clearingDateTo;
     public ?string $fileId = null;
     public ?string $filenameTemplate = null;
+    public ?string $id = null;
     public ?int $responseCode = null;
     public ?string $responseMessage = null;
     public ?string $status = null;

@@ -60,16 +60,25 @@ fn mandator_clearing_export_download_entity_basic() {
         matches!(mandator_clearing_export_download_ref01_data, Value::Map(_)),
         "expected create result to be a map"
     );
+    assert!(
+        !getp(&mandator_clearing_export_download_ref01_data, "id").is_noval(),
+        "expected created entity to have an id"
+    );
 
     // LOAD
-    let mandator_clearing_export_download_ref01_match_dt0 = Value::empty_map();
+    let mandator_clearing_export_download_ref01_match_dt0 = jo(vec![("id", getp(&mandator_clearing_export_download_ref01_data, "id"))]);
     let mandator_clearing_export_download_ref01_data_dt0_loaded = mandator_clearing_export_download_ref01_ent
         .load(mandator_clearing_export_download_ref01_match_dt0.clone(), Value::Noval)
         .expect("load failed");
-    // load resolves to the ENTITY; the record is reached through data().
+    let mandator_clearing_export_download_ref01_data_dt0_load_result = to_map(&mandator_clearing_export_download_ref01_data_dt0_loaded.data(None));
     assert!(
-        !mandator_clearing_export_download_ref01_data_dt0_loaded.data(None).is_noval(),
-        "expected load result to carry data"
+        matches!(mandator_clearing_export_download_ref01_data_dt0_load_result, Value::Map(_)),
+        "expected load result to be a map"
+    );
+    assert_eq!(
+        getp(&mandator_clearing_export_download_ref01_data_dt0_load_result, "id"),
+        getp(&mandator_clearing_export_download_ref01_data, "id"),
+        "expected load result id to match"
     );
 
 }

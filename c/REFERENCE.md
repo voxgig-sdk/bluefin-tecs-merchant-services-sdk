@@ -1250,6 +1250,7 @@ Entity* mandator_clearing_export_download = bluefintecsmerchantservices_mandator
 | `clearingDateTo` | `char*` | Yes | End date for clearing export (inclusive) |
 | `fileId` | `char*` | No | Unique file identifier for tracking and downloading |
 | `filenameTemplate` | `char*` | No | Optional filename template for the export file |
+| `id` | `char*` | No |  |
 | `responseCode` | `int64_t` | No |  |
 | `responseMessage` | `char*` | No |  |
 | `status` | `char*` | No | Processing status of the export request |

@@ -1291,6 +1291,7 @@ mandator_clearing_export_download = BluefinTecsMerchantServices.mandator_clearin
 | `clearingDateTo` | `String.t()` | Yes | End date for clearing export (inclusive) |
 | `fileId` | `String.t()` | No | Unique file identifier for tracking and downloading |
 | `filenameTemplate` | `String.t()` | No | Optional filename template for the export file |
+| `id` | `String.t()` | No |  |
 | `responseCode` | `integer()` | No |  |
 | `responseMessage` | `String.t()` | No |  |
 | `status` | `String.t()` | No | Processing status of the export request |

@@ -86,11 +86,11 @@ object BluefinTecsMerchantServicesTypes {
 
   data class MandatorClearingExportCreateData(val clearingDateFrom: String?, val clearingDateTo: String?, val pagination: Map<String, Any?>?, val records: List<Any?>?, val responseCode: Long?, val responseMessage: String?)
 
-  data class MandatorClearingExportDownload(val clearingDateFrom: String?, val clearingDateTo: String?, val fileId: String?, val filenameTemplate: String?, val responseCode: Long?, val responseMessage: String?, val status: String?)
+  data class MandatorClearingExportDownload(val clearingDateFrom: String?, val clearingDateTo: String?, val fileId: String?, val filenameTemplate: String?, val id: String?, val responseCode: Long?, val responseMessage: String?, val status: String?)
 
   data class MandatorClearingExportDownloadLoadMatch(val id: String?)
 
-  data class MandatorClearingExportDownloadCreateData(val clearingDateFrom: String?, val clearingDateTo: String?, val fileId: String?, val filenameTemplate: String?, val responseCode: Long?, val responseMessage: String?, val status: String?)
+  data class MandatorClearingExportDownloadCreateData(val clearingDateFrom: String?, val clearingDateTo: String?, val fileId: String?, val filenameTemplate: String?, val id: String?, val responseCode: Long?, val responseMessage: String?, val status: String?)
 
   data class MandatorClearingExportSummary(val clearingDateFrom: String?, val clearingDateTo: String?, val records: List<Any?>?, val responseCode: Long?, val responseMessage: String?)
 

@@ -576,6 +576,7 @@ API path: `/public/digitalservices/mandatorClearingExport`
 | `clearingDateTo` | End date for clearing export (inclusive) |
 | `fileId` | Unique file identifier for tracking and downloading |
 | `filenameTemplate` | Optional filename template for the export file |
+| `id` |  |
 | `responseCode` |  |
 | `responseMessage` |  |
 | `status` | Processing status of the export request |
@@ -1702,6 +1703,7 @@ Create an instance: `let mandator_clearing_export_download = Sdk_client.mandator
 | `clearingDateTo` | `string` | End date for clearing export (inclusive) |
 | `fileId` | `string` | Unique file identifier for tracking and downloading |
 | `filenameTemplate` | `string` | Optional filename template for the export file |
+| `id` | `string` |  |
 | `responseCode` | `int` |  |
 | `responseMessage` | `string` |  |
 | `status` | `string` | Processing status of the export request |

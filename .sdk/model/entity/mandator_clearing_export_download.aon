@@ -30,6 +30,11 @@ main: kit: entity: mandator_clearing_export_download: {
       type: "`$STRING`"
     }
     {
+      name: "id"
+      req: false
+      type: "`$STRING`"
+    }
+    {
       name: "responseCode"
       req: false
       type: "`$INTEGER`"
@@ -46,6 +51,11 @@ main: kit: entity: mandator_clearing_export_download: {
       type: "`$STRING`"
     }
   ]
+
+  id: {
+    field: "id"
+    name: "id"
+  }
 
   name: "mandator_clearing_export_download"
   op: {

@@ -62,15 +62,24 @@ func TestMandatorClearingExportDownloadEntity(t *testing.T) {
 		if mandatorClearingExportDownloadRef01Data == nil {
 			t.Fatal("expected create result to be a map")
 		}
+		if mandatorClearingExportDownloadRef01Data["id"] == nil {
+			t.Fatal("expected created entity to have an id")
+		}
 
 		// LOAD
-		mandatorClearingExportDownloadRef01MatchDt0 := map[string]any{}
+		mandatorClearingExportDownloadRef01MatchDt0 := map[string]any{
+			"id": mandatorClearingExportDownloadRef01Data["id"],
+		}
 		mandatorClearingExportDownloadRef01DataDt0Loaded, err := mandatorClearingExportDownloadRef01Ent.Load(mandatorClearingExportDownloadRef01MatchDt0, nil)
 		if err != nil {
 			t.Fatalf("load failed: %v", err)
 		}
-		if mandatorClearingExportDownloadRef01DataDt0Loaded == nil {
-			t.Fatal("expected load result to be non-nil")
+		mandatorClearingExportDownloadRef01DataDt0LoadResult := core.ToMapAny(entityData(mandatorClearingExportDownloadRef01DataDt0Loaded))
+		if mandatorClearingExportDownloadRef01DataDt0LoadResult == nil {
+			t.Fatal("expected load result to be a map")
+		}
+		if mandatorClearingExportDownloadRef01DataDt0LoadResult["id"] != mandatorClearingExportDownloadRef01Data["id"] {
+			t.Fatal("expected load result id to match")
 		}
 
 	})

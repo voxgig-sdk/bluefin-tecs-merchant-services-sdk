@@ -368,6 +368,7 @@
 ---@field clearingDateTo string
 ---@field fileId? string
 ---@field filenameTemplate? string
+---@field id? string
 ---@field responseCode? number
 ---@field responseMessage? string
 ---@field status? string
@@ -380,6 +381,7 @@
 ---@field clearingDateTo string
 ---@field fileId? string
 ---@field filenameTemplate? string
+---@field id? string
 ---@field responseCode? number
 ---@field responseMessage? string
 ---@field status? string

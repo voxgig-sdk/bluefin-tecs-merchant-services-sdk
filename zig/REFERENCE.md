@@ -1298,6 +1298,7 @@ const mandator_clearing_export_download = client.mandator_clearing_export_downlo
 | `clearingDateTo` | `[]const u8` | Yes | End date for clearing export (inclusive) |
 | `fileId` | `[]const u8` | No | Unique file identifier for tracking and downloading |
 | `filenameTemplate` | `[]const u8` | No | Optional filename template for the export file |
+| `id` | `[]const u8` | No |  |
 | `responseCode` | `i64` | No |  |
 | `responseMessage` | `[]const u8` | No |  |
 | `status` | `[]const u8` | No | Processing status of the export request |

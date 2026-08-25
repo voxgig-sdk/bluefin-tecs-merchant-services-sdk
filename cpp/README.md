@@ -585,6 +585,7 @@ API path: `/public/digitalservices/mandatorClearingExport`
 | `clearingDateTo` | End date for clearing export (inclusive) |
 | `fileId` | Unique file identifier for tracking and downloading |
 | `filenameTemplate` | Optional filename template for the export file |
+| `id` |  |
 | `responseCode` |  |
 | `responseMessage` |  |
 | `status` | Processing status of the export request |
@@ -1692,6 +1693,7 @@ Create an instance: `auto mandator_clearing_export_download = client->mandator_c
 | `clearingDateTo` | `std::string` | End date for clearing export (inclusive) |
 | `fileId` | `std::string` | Unique file identifier for tracking and downloading |
 | `filenameTemplate` | `std::string` | Optional filename template for the export file |
+| `id` | `std::string` |  |
 | `responseCode` | `int64_t` |  |
 | `responseMessage` | `std::string` |  |
 | `status` | `std::string` | Processing status of the export request |

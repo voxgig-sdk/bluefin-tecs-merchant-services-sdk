@@ -1200,6 +1200,7 @@ final mandator_clearing_export_download = client.MandatorClearingExportDownload(
 | `clearingDateTo` | `String` | Yes | End date for clearing export (inclusive) |
 | `fileId` | `String` | No | Unique file identifier for tracking and downloading |
 | `filenameTemplate` | `String` | No | Optional filename template for the export file |
+| `id` | `String` | No |  |
 | `responseCode` | `int` | No |  |
 | `responseMessage` | `String` | No |  |
 | `status` | `String` | No | Processing status of the export request |

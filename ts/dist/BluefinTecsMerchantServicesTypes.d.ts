@@ -360,6 +360,7 @@ export interface MandatorClearingExportDownload {
     clearingDateTo: string;
     fileId?: string;
     filenameTemplate?: string;
+    id?: string;
     responseCode?: number;
     responseMessage?: string;
     status?: string;
@@ -372,6 +373,7 @@ export interface MandatorClearingExportDownloadCreateData {
     clearingDateTo: string;
     fileId?: string;
     filenameTemplate?: string;
+    id?: string;
     responseCode?: number;
     responseMessage?: string;
     status?: string;

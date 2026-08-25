@@ -443,6 +443,7 @@ public struct MandatorClearingExportDownload {
   public var clearingDateTo: String
   public var fileId: String?
   public var filenameTemplate: String?
+  public var id: String?
   public var responseCode: Int?
   public var responseMessage: String?
   public var status: String?
@@ -459,6 +460,7 @@ public struct MandatorClearingExportDownloadCreateData {
   public var clearingDateTo: String
   public var fileId: String?
   public var filenameTemplate: String?
+  public var id: String?
   public var responseCode: Int?
   public var responseMessage: String?
   public var status: String?

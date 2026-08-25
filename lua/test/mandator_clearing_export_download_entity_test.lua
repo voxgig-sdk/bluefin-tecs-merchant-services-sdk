@@ -43,12 +43,17 @@ describe("MandatorClearingExportDownloadEntity", function()
     assert.is_nil(err)
     mandator_clearing_export_download_ref01_data = helpers.to_map(type(mandator_clearing_export_download_ref01_data_result) == 'table' and mandator_clearing_export_download_ref01_data_result.data_get and mandator_clearing_export_download_ref01_data_result:data_get() or mandator_clearing_export_download_ref01_data_result)
     assert.is_not_nil(mandator_clearing_export_download_ref01_data)
+    assert.is_not_nil(mandator_clearing_export_download_ref01_data["id"])
 
     -- LOAD
-    local mandator_clearing_export_download_ref01_match_dt0 = {}
+    local mandator_clearing_export_download_ref01_match_dt0 = {
+      id = mandator_clearing_export_download_ref01_data["id"],
+    }
     local mandator_clearing_export_download_ref01_data_dt0_loaded, err = mandator_clearing_export_download_ref01_ent:load(mandator_clearing_export_download_ref01_match_dt0, nil)
     assert.is_nil(err)
-    assert.is_not_nil(mandator_clearing_export_download_ref01_data_dt0_loaded)
+    local mandator_clearing_export_download_ref01_data_dt0_load_result = helpers.to_map(type(mandator_clearing_export_download_ref01_data_dt0_loaded) == 'table' and mandator_clearing_export_download_ref01_data_dt0_loaded.data_get and mandator_clearing_export_download_ref01_data_dt0_loaded:data_get() or mandator_clearing_export_download_ref01_data_dt0_loaded)
+    assert.is_not_nil(mandator_clearing_export_download_ref01_data_dt0_load_result)
+    assert.are.equal(mandator_clearing_export_download_ref01_data_dt0_load_result["id"], mandator_clearing_export_download_ref01_data["id"])
 
   end)
 end)

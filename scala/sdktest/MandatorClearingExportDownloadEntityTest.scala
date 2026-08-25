@@ -37,11 +37,15 @@ object MandatorClearingExportDownloadEntityTest {
       val mandatorClearingExportDownloadRef01DataResult = mandatorClearingExportDownloadRef01Ent.create(mandatorClearingExportDownloadRef01Data, null)
       mandatorClearingExportDownloadRef01Data = Helpers.toMapAny(mandatorClearingExportDownloadRef01DataResult match { case e: SdkEntity => e.data(); case o => o })
       rep.check("mandator_clearing_export_download.create.map", mandatorClearingExportDownloadRef01Data != null, "expected create result to be a map")
+      rep.check("mandator_clearing_export_download.create.id", mandatorClearingExportDownloadRef01Data != null && mandatorClearingExportDownloadRef01Data.get("id") != null, "expected created entity to have an id")
 
       // LOAD
       val mandatorClearingExportDownloadRef01MatchDt0 = new LinkedHashMap[String, Object]()
+      mandatorClearingExportDownloadRef01MatchDt0.put("id", mandatorClearingExportDownloadRef01Data.get("id"))
       val mandatorClearingExportDownloadRef01DataDt0Loaded = mandatorClearingExportDownloadRef01Ent.load(mandatorClearingExportDownloadRef01MatchDt0, null)
-      rep.check("mandator_clearing_export_download.load.nonnull", mandatorClearingExportDownloadRef01DataDt0Loaded != null, "expected load result to be non-null")
+      val mandatorClearingExportDownloadRef01DataDt0LoadResult = Helpers.toMapAny(mandatorClearingExportDownloadRef01DataDt0Loaded match { case e: SdkEntity => e.data(); case o => o })
+      rep.check("mandator_clearing_export_download.load.map", mandatorClearingExportDownloadRef01DataDt0LoadResult != null, "expected load result to be a map")
+      rep.eq("mandator_clearing_export_download.load.id", mandatorClearingExportDownloadRef01Data.get("id"), mandatorClearingExportDownloadRef01DataDt0LoadResult.get("id"))
     }
   }
 }

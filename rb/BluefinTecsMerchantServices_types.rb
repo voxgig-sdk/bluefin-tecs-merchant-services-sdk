@@ -1345,6 +1345,9 @@ MandatorClearingExportCreateData = Struct.new(
 # @!attribute [rw] filenameTemplate
 #   @return [String, nil]
 #
+# @!attribute [rw] id
+#   @return [String, nil]
+#
 # @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
@@ -1358,6 +1361,7 @@ MandatorClearingExportDownload = Struct.new(
   :clearingDateTo,
   :fileId,
   :filenameTemplate,
+  :id,
   :responseCode,
   :responseMessage,
   :status,
@@ -1387,6 +1391,9 @@ MandatorClearingExportDownloadLoadMatch = Struct.new(
 # @!attribute [rw] filenameTemplate
 #   @return [String, nil]
 #
+# @!attribute [rw] id
+#   @return [String, nil]
+#
 # @!attribute [rw] responseCode
 #   @return [Integer, nil]
 #
@@ -1400,6 +1407,7 @@ MandatorClearingExportDownloadCreateData = Struct.new(
   :clearingDateTo,
   :fileId,
   :filenameTemplate,
+  :id,
   :responseCode,
   :responseMessage,
   :status,

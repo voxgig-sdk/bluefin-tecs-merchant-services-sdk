@@ -447,6 +447,7 @@ typedef struct {
   char*clearingdateto;
   char*fileid;  // optional
   char*filenametemplate;  // optional
+  char*id;  // optional
   int64_t responsecode;  // optional
   char*responsemessage;  // optional
   char*status;  // optional
@@ -463,6 +464,7 @@ typedef struct {
   char*clearingdateto;
   char*fileid;  // optional
   char*filenametemplate;  // optional
+  char*id;  // optional
   int64_t responsecode;  // optional
   char*responsemessage;  // optional
   char*status;  // optional
