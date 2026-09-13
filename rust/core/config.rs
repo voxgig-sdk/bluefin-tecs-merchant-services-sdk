@@ -185,6 +185,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("amount")),
                         ("op".to_string(), Value::map_of([
                             ("create".to_string(), Value::map_of([
@@ -211,6 +212,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("clientId")),
                         ("req".to_string(), Value::Bool(true)),
                         ("type".to_string(), Value::str("`$INTEGER`")),
@@ -237,6 +239,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int64")),
                         ("name".to_string(), Value::str("exchangeFee")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -271,6 +274,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("originalTraceNumber")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -301,6 +305,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("receiptLayout")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -310,6 +315,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("responseCode")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -326,6 +332,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("terminalId")),
                         ("req".to_string(), Value::Bool(true)),
                         ("type".to_string(), Value::str("`$INTEGER`")),
@@ -335,10 +342,12 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("traceNumber")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("date-time")),
                         ("name".to_string(), Value::str("transactionDate")),
                         ("op".to_string(), Value::map_of([
                             ("create".to_string(), Value::map_of([
@@ -378,14 +387,22 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/public/cancelTransaction")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("public"),
-                                    Value::str("cancelTransaction"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("public")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("cancelTransaction")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::empty_map()),
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("public"),
+                                    Value::str("cancelTransaction"),
                                 ])),
                             ]),
                         ])),
@@ -402,6 +419,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("responseCode")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -431,8 +449,10 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/checkCardBlackListed")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("checkCardBlackListed"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("checkCardBlackListed")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::map_of([
                                     ("exist".to_string(), Value::list(vec![
@@ -442,6 +462,9 @@ pub fn make_config() -> Value {
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("checkCardBlackListed"),
                                 ])),
                             ]),
                         ])),
@@ -454,10 +477,12 @@ pub fn make_config() -> Value {
             ("create_product".to_string(), Value::map_of([
                 ("fields".to_string(), Value::list(vec![
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("acquirerId")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("responseCode")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -497,13 +522,18 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/createProduct")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("createProduct"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("createProduct")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::empty_map()),
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("createProduct"),
                                 ])),
                             ]),
                         ])),
@@ -533,6 +563,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("responseCode")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -541,6 +572,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("terminalId")),
                         ("req".to_string(), Value::Bool(true)),
                         ("type".to_string(), Value::str("`$INTEGER`")),
@@ -557,13 +589,18 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/deactivateTerminal")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("deactivateTerminal"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("deactivateTerminal")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::empty_map()),
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("deactivateTerminal"),
                                 ])),
                             ]),
                         ])),
@@ -588,6 +625,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("responseCode")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -596,6 +634,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("txCount")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -608,14 +647,17 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("txSeqNoEnd")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("txSeqNoStart")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("txTotal")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -641,16 +683,24 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/public/digitalservices/mandatorClearingExportDownload/{fileId}")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("public"),
-                                    Value::str("digitalservices"),
-                                    Value::str("mandatorClearingExportDownload"),
-                                    Value::str("{file_id}"),
-                                ])),
                                 ("rename".to_string(), Value::map_of([
                                     ("param".to_string(), Value::map_of([
                                         ("fileId".to_string(), Value::str("file_id")),
                                     ])),
+                                ])),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("public")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("digitalservices")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("mandatorClearingExportDownload")),
+                                    ]),
+                                    Value::map_of([
+                                        ("var".to_string(), Value::str("file_id")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::map_of([
                                     ("exist".to_string(), Value::list(vec![
@@ -661,21 +711,38 @@ pub fn make_config() -> Value {
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
                                 ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("public"),
+                                    Value::str("digitalservices"),
+                                    Value::str("mandatorClearingExportDownload"),
+                                    Value::str("{file_id}"),
+                                ])),
                             ]),
                             Value::map_of([
                                 ("args".to_string(), Value::empty_map()),
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/public/digitalservices/mandatorClearingExportMetadata")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("public"),
-                                    Value::str("digitalservices"),
-                                    Value::str("mandatorClearingExportMetadata"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("public")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("digitalservices")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("mandatorClearingExportMetadata")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::empty_map()),
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("public"),
+                                    Value::str("digitalservices"),
+                                    Value::str("mandatorClearingExportMetadata"),
                                 ])),
                             ]),
                         ])),
@@ -689,16 +756,30 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("GET")),
                                 ("orig".to_string(), Value::str("/public/digitalservices/mandatorClearingExportDownload/status")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("public"),
-                                    Value::str("digitalservices"),
-                                    Value::str("mandatorClearingExportDownload"),
-                                    Value::str("status"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("public")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("digitalservices")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("mandatorClearingExportDownload")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("status")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::empty_map()),
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("public"),
+                                    Value::str("digitalservices"),
+                                    Value::str("mandatorClearingExportDownload"),
+                                    Value::str("status"),
                                 ])),
                             ]),
                         ])),
@@ -719,6 +800,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("responseCode")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -727,6 +809,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("terminalId")),
                         ("req".to_string(), Value::Bool(true)),
                         ("type".to_string(), Value::str("`$INTEGER`")),
@@ -753,14 +836,22 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/public/getEcData")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("public"),
-                                    Value::str("getEcData"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("public")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("getEcData")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::empty_map()),
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("public"),
+                                    Value::str("getEcData"),
                                 ])),
                             ]),
                         ])),
@@ -781,6 +872,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("responseCode")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -789,6 +881,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("terminalId")),
                         ("req".to_string(), Value::Bool(true)),
                         ("type".to_string(), Value::str("`$INTEGER`")),
@@ -805,14 +898,22 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/public/getEcomParameters")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("public"),
-                                    Value::str("getEcomParameters"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("public")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("getEcomParameters")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::empty_map()),
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("public"),
+                                    Value::str("getEcomParameters"),
                                 ])),
                             ]),
                         ])),
@@ -829,6 +930,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("responseCode")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -837,6 +939,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("terminalId")),
                         ("req".to_string(), Value::Bool(true)),
                         ("type".to_string(), Value::str("`$INTEGER`")),
@@ -863,14 +966,22 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/public/getEcrData")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("public"),
-                                    Value::str("getEcrData"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("public")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("getEcrData")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::empty_map()),
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("public"),
+                                    Value::str("getEcrData"),
                                 ])),
                             ]),
                         ])),
@@ -887,6 +998,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("responseCode")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -895,6 +1007,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("terminalId")),
                         ("req".to_string(), Value::Bool(true)),
                         ("type".to_string(), Value::str("`$INTEGER`")),
@@ -921,14 +1034,22 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/public/getEmvData")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("public"),
-                                    Value::str("getEmvData"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("public")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("getEmvData")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::empty_map()),
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("public"),
+                                    Value::str("getEmvData"),
                                 ])),
                             ]),
                         ])),
@@ -941,6 +1062,7 @@ pub fn make_config() -> Value {
             ("enable_acquiring".to_string(), Value::map_of([
                 ("fields".to_string(), Value::list(vec![
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("accountNo")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -959,6 +1081,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("merchantCategoryCode")),
                         ("req".to_string(), Value::Bool(true)),
                         ("type".to_string(), Value::str("`$INTEGER`")),
@@ -974,6 +1097,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("responseCode")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -982,6 +1106,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("sortingCode")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -1014,13 +1139,18 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/enableAcquiring")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("enableAcquiring"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("enableAcquiring")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::empty_map()),
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("enableAcquiring"),
                                 ])),
                             ]),
                         ])),
@@ -1038,6 +1168,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("responseCode")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -1057,13 +1188,18 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/getMerchantContractNumber")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("getMerchantContractNumber"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("getMerchantContractNumber")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::empty_map()),
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("getMerchantContractNumber"),
                                 ])),
                             ]),
                         ])),
@@ -1076,6 +1212,7 @@ pub fn make_config() -> Value {
             ("get_template_xml".to_string(), Value::map_of([
                 ("fields".to_string(), Value::list(vec![
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("responseCode")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -1100,14 +1237,22 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/public/getTemplateXml")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("public"),
-                                    Value::str("getTemplateXml"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("public")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("getTemplateXml")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::empty_map()),
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("public"),
+                                    Value::str("getTemplateXml"),
                                 ])),
                             ]),
                         ])),
@@ -1125,6 +1270,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("responseCode")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -1144,13 +1290,18 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/introduceMandator")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("introduceMandator"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("introduceMandator")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::empty_map()),
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("introduceMandator"),
                                 ])),
                             ]),
                         ])),
@@ -1163,6 +1314,7 @@ pub fn make_config() -> Value {
             ("introduce_package".to_string(), Value::map_of([
                 ("fields".to_string(), Value::list(vec![
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("responseCode")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -1187,13 +1339,18 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/introducePackage")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("introducePackage"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("introducePackage")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::empty_map()),
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("introducePackage"),
                                 ])),
                             ]),
                         ])),
@@ -1226,6 +1383,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$OBJECT`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("responseCode")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -1242,6 +1400,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("terminalId")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -1257,14 +1416,22 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/public/keepalive")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("public"),
-                                    Value::str("keepalive"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("public")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("keepalive")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::empty_map()),
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("public"),
+                                    Value::str("keepalive"),
                                 ])),
                             ]),
                         ])),
@@ -1289,6 +1456,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$OBJECT`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("responseCode")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -1312,14 +1480,22 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/public/listTerminals")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("public"),
-                                    Value::str("listTerminals"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("public")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("listTerminals")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::empty_map()),
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("public"),
+                                    Value::str("listTerminals"),
                                 ])),
                             ]),
                         ])),
@@ -1352,6 +1528,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$ARRAY`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("responseCode")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -1371,15 +1548,26 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/public/digitalservices/mandatorClearingExport")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("public"),
-                                    Value::str("digitalservices"),
-                                    Value::str("mandatorClearingExport"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("public")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("digitalservices")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("mandatorClearingExport")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::empty_map()),
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("public"),
+                                    Value::str("digitalservices"),
+                                    Value::str("mandatorClearingExport"),
                                 ])),
                             ]),
                         ])),
@@ -1392,12 +1580,14 @@ pub fn make_config() -> Value {
             ("mandator_clearing_export_download".to_string(), Value::map_of([
                 ("fields".to_string(), Value::list(vec![
                     Value::map_of([
+                        ("format".to_string(), Value::str("date-time")),
                         ("name".to_string(), Value::str("clearingDateFrom")),
                         ("req".to_string(), Value::Bool(true)),
                         ("short".to_string(), Value::str("Start date for clearing export (inclusive)")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("date-time")),
                         ("name".to_string(), Value::str("clearingDateTo")),
                         ("req".to_string(), Value::Bool(true)),
                         ("short".to_string(), Value::str("End date for clearing export (inclusive)")),
@@ -1418,6 +1608,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("responseCode")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -1431,6 +1622,10 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                 ])),
+                ("id".to_string(), Value::map_of([
+                    ("field".to_string(), Value::str("id")),
+                    ("name".to_string(), Value::str("id")),
+                ])),
                 ("name".to_string(), Value::str("mandator_clearing_export_download")),
                 ("op".to_string(), Value::map_of([
                     ("create".to_string(), Value::map_of([
@@ -1442,15 +1637,26 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/public/digitalservices/mandatorClearingExportDownload")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("public"),
-                                    Value::str("digitalservices"),
-                                    Value::str("mandatorClearingExportDownload"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("public")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("digitalservices")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("mandatorClearingExportDownload")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::empty_map()),
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("public"),
+                                    Value::str("digitalservices"),
+                                    Value::str("mandatorClearingExportDownload"),
                                 ])),
                             ]),
                         ])),
@@ -1474,16 +1680,24 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("GET")),
                                 ("orig".to_string(), Value::str("/public/digitalservices/mandatorClearingExportDownload/{fileId}")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("public"),
-                                    Value::str("digitalservices"),
-                                    Value::str("mandatorClearingExportDownload"),
-                                    Value::str("{id}"),
-                                ])),
                                 ("rename".to_string(), Value::map_of([
                                     ("param".to_string(), Value::map_of([
                                         ("fileId".to_string(), Value::str("id")),
                                     ])),
+                                ])),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("public")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("digitalservices")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("mandatorClearingExportDownload")),
+                                    ]),
+                                    Value::map_of([
+                                        ("var".to_string(), Value::str("id")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::map_of([
                                     ("exist".to_string(), Value::list(vec![
@@ -1493,6 +1707,12 @@ pub fn make_config() -> Value {
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("public"),
+                                    Value::str("digitalservices"),
+                                    Value::str("mandatorClearingExportDownload"),
+                                    Value::str("{id}"),
                                 ])),
                             ]),
                         ])),
@@ -1521,6 +1741,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$ARRAY`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("responseCode")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -1540,15 +1761,26 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/public/digitalservices/mandatorClearingExportSummary")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("public"),
-                                    Value::str("digitalservices"),
-                                    Value::str("mandatorClearingExportSummary"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("public")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("digitalservices")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("mandatorClearingExportSummary")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::empty_map()),
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("public"),
+                                    Value::str("digitalservices"),
+                                    Value::str("mandatorClearingExportSummary"),
                                 ])),
                             ]),
                         ])),
@@ -1613,6 +1845,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("sourceId")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -1625,6 +1858,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("terminalId")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -1641,10 +1875,12 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("date-time")),
                         ("name".to_string(), Value::str("transactionDateFrom")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("date-time")),
                         ("name".to_string(), Value::str("transactionDateTo")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
@@ -1673,14 +1909,22 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/public/transactionHistoryCsv")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("public"),
-                                    Value::str("transactionHistoryCsv"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("public")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("transactionHistoryCsv")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::empty_map()),
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("public"),
+                                    Value::str("transactionHistoryCsv"),
                                 ])),
                             ]),
                         ])),
@@ -1698,6 +1942,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$ARRAY`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("responseCode")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -1725,13 +1970,18 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/moveTid")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("moveTid"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("moveTid")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::empty_map()),
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("moveTid"),
                                 ])),
                             ]),
                         ])),
@@ -1749,6 +1999,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("amount")),
                         ("req".to_string(), Value::Bool(true)),
                         ("short".to_string(), Value::str("Transaction amount in minor units (cents)")),
@@ -1851,14 +2102,22 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/public/paymentManual")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("public"),
-                                    Value::str("paymentManual"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("public")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("paymentManual")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::empty_map()),
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("public"),
+                                    Value::str("paymentManual"),
                                 ])),
                             ]),
                         ])),
@@ -1871,6 +2130,7 @@ pub fn make_config() -> Value {
             ("payment_sred".to_string(), Value::map_of([
                 ("fields".to_string(), Value::list(vec![
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("amount")),
                         ("req".to_string(), Value::Bool(true)),
                         ("short".to_string(), Value::str("Transaction amount in minor units (cents)")),
@@ -1947,14 +2207,22 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/public/paymentSred")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("public"),
-                                    Value::str("paymentSred"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("public")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("paymentSred")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::empty_map()),
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body.sred`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("public"),
+                                    Value::str("paymentSred"),
                                 ])),
                             ]),
                         ])),
@@ -1979,6 +2247,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("amount")),
                         ("op".to_string(), Value::map_of([
                             ("create".to_string(), Value::map_of([
@@ -2010,6 +2279,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("clientId")),
                         ("req".to_string(), Value::Bool(true)),
                         ("type".to_string(), Value::str("`$INTEGER`")),
@@ -2036,6 +2306,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int64")),
                         ("name".to_string(), Value::str("exchangeFee")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -2064,6 +2335,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("originalTraceNumber")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -2094,6 +2366,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("receiptLayout")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -2103,6 +2376,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("responseCode")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -2119,6 +2393,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("terminalId")),
                         ("req".to_string(), Value::Bool(true)),
                         ("type".to_string(), Value::str("`$INTEGER`")),
@@ -2128,10 +2403,12 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("traceNumber")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("date-time")),
                         ("name".to_string(), Value::str("transactionDate")),
                         ("op".to_string(), Value::map_of([
                             ("create".to_string(), Value::map_of([
@@ -2176,14 +2453,22 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/public/paymentTransaction")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("public"),
-                                    Value::str("paymentTransaction"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("public")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("paymentTransaction")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::empty_map()),
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("public"),
+                                    Value::str("paymentTransaction"),
                                 ])),
                             ]),
                             Value::map_of([
@@ -2191,14 +2476,22 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/public/preAuthCompletionTransaction")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("public"),
-                                    Value::str("preAuthCompletionTransaction"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("public")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("preAuthCompletionTransaction")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::empty_map()),
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("public"),
+                                    Value::str("preAuthCompletionTransaction"),
                                 ])),
                             ]),
                         ])),
@@ -2228,6 +2521,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("responseCode")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -2236,6 +2530,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("terminalId")),
                         ("req".to_string(), Value::Bool(true)),
                         ("type".to_string(), Value::str("`$INTEGER`")),
@@ -2252,13 +2547,18 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/reactivateTerminal")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("reactivateTerminal"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("reactivateTerminal")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::empty_map()),
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("reactivateTerminal"),
                                 ])),
                             ]),
                         ])),
@@ -2283,6 +2583,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("amount")),
                         ("op".to_string(), Value::map_of([
                             ("create".to_string(), Value::map_of([
@@ -2309,6 +2610,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("clientId")),
                         ("req".to_string(), Value::Bool(true)),
                         ("type".to_string(), Value::str("`$INTEGER`")),
@@ -2335,6 +2637,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int64")),
                         ("name".to_string(), Value::str("exchangeFee")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -2363,6 +2666,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("originalTraceNumber")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -2393,6 +2697,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("receiptLayout")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -2402,6 +2707,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("responseCode")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -2418,6 +2724,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("terminalId")),
                         ("req".to_string(), Value::Bool(true)),
                         ("type".to_string(), Value::str("`$INTEGER`")),
@@ -2427,10 +2734,12 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("traceNumber")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("date-time")),
                         ("name".to_string(), Value::str("transactionDate")),
                         ("op".to_string(), Value::map_of([
                             ("create".to_string(), Value::map_of([
@@ -2470,14 +2779,22 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/public/refundTransaction")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("public"),
-                                    Value::str("refundTransaction"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("public")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("refundTransaction")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::empty_map()),
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("public"),
+                                    Value::str("refundTransaction"),
                                 ])),
                             ]),
                         ])),
@@ -2500,6 +2817,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("partnerId")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -2513,6 +2831,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("responseCode")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -2537,13 +2856,18 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/registerTecsCompany")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("registerTecsCompany"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("registerTecsCompany")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::empty_map()),
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("registerTecsCompany"),
                                 ])),
                             ]),
                         ])),
@@ -2575,6 +2899,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("responseCode")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -2597,6 +2922,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("terminalId")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -2646,13 +2972,18 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/registerTerminal")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("registerTerminal"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("registerTerminal")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::empty_map()),
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("registerTerminal"),
                                 ])),
                             ]),
                         ])),
@@ -2691,6 +3022,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("responseCode")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -2707,6 +3039,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$OBJECT`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("terminalId")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -2722,15 +3055,26 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/public/digitalservices/reportData")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("public"),
-                                    Value::str("digitalservices"),
-                                    Value::str("reportData"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("public")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("digitalservices")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("reportData")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::empty_map()),
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("public"),
+                                    Value::str("digitalservices"),
+                                    Value::str("reportData"),
                                 ])),
                             ]),
                         ])),
@@ -2751,6 +3095,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("amount")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -2770,6 +3115,7 @@ pub fn make_config() -> Value {
                         ])),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("date-time")),
                         ("name".to_string(), Value::str("authorizationDate")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
@@ -2790,6 +3136,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("clearingAmount")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -2802,10 +3149,12 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("date-time")),
                         ("name".to_string(), Value::str("clearingDate")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("date-time")),
                         ("name".to_string(), Value::str("clearingProcessedDate")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
@@ -2814,6 +3163,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("clientId")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -2850,6 +3200,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("originalTerminalId")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -2866,6 +3217,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("responseCode")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -2890,10 +3242,12 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("sourceId")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("tecsengineResponseCode")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -2902,10 +3256,12 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("date-time")),
                         ("name".to_string(), Value::str("terminalEndOfDayDate")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("terminalId")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -2914,18 +3270,22 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("tipAmount")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("traceNumber")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("date-time")),
                         ("name".to_string(), Value::str("transactionClearingDate")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("date-time")),
                         ("name".to_string(), Value::str("transactionDate")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
@@ -2934,10 +3294,12 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int64")),
                         ("name".to_string(), Value::str("transactionSeqNumber")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("date-time")),
                         ("name".to_string(), Value::str("transactionServerDate")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
@@ -2961,14 +3323,22 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/public/statusTransaction")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("public"),
-                                    Value::str("statusTransaction"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("public")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("statusTransaction")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::empty_map()),
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("public"),
+                                    Value::str("statusTransaction"),
                                 ])),
                             ]),
                         ])),
@@ -2989,6 +3359,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("responseCode")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -3017,13 +3388,18 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/storeTerminalParameters")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("storeTerminalParameters"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("storeTerminalParameters")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::empty_map()),
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("storeTerminalParameters"),
                                 ])),
                             ]),
                         ])),
@@ -3045,6 +3421,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$ARRAY`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("responseCode")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -3068,14 +3445,22 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/public/getTerminalId")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("public"),
-                                    Value::str("getTerminalId"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("public")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("getTerminalId")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::empty_map()),
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("public"),
+                                    Value::str("getTerminalId"),
                                 ])),
                             ]),
                         ])),
@@ -3140,6 +3525,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("responseCode")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -3152,6 +3538,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("sourceId")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -3164,6 +3551,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("terminalId")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -3180,10 +3568,12 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("date-time")),
                         ("name".to_string(), Value::str("transactionDateFrom")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("date-time")),
                         ("name".to_string(), Value::str("transactionDateTo")),
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
@@ -3216,15 +3606,26 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/public/mcom/transactionHistory")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("public"),
-                                    Value::str("mcom"),
-                                    Value::str("transactionHistory"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("public")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("mcom")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("transactionHistory")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::empty_map()),
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("public"),
+                                    Value::str("mcom"),
+                                    Value::str("transactionHistory"),
                                 ])),
                             ]),
                             Value::map_of([
@@ -3232,14 +3633,22 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/public/transactionHistory")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("public"),
-                                    Value::str("transactionHistory"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("public")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("transactionHistory")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::empty_map()),
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("public"),
+                                    Value::str("transactionHistory"),
                                 ])),
                             ]),
                         ])),
@@ -3256,6 +3665,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("responseCode")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -3264,6 +3674,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("date-time")),
                         ("name".to_string(), Value::str("transactionDateFrom")),
                         ("op".to_string(), Value::map_of([
                             ("create".to_string(), Value::map_of([
@@ -3274,6 +3685,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("date-time")),
                         ("name".to_string(), Value::str("transactionDateTo")),
                         ("op".to_string(), Value::map_of([
                             ("create".to_string(), Value::map_of([
@@ -3299,14 +3711,22 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/public/countAuthorisedTransactions")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("public"),
-                                    Value::str("countAuthorisedTransactions"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("public")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("countAuthorisedTransactions")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::empty_map()),
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("public"),
+                                    Value::str("countAuthorisedTransactions"),
                                 ])),
                             ]),
                             Value::map_of([
@@ -3314,14 +3734,22 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/public/countNotAuthorisedTransactions")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("public"),
-                                    Value::str("countNotAuthorisedTransactions"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("public")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("countNotAuthorisedTransactions")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::empty_map()),
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("public"),
+                                    Value::str("countNotAuthorisedTransactions"),
                                 ])),
                             ]),
                         ])),
@@ -3338,6 +3766,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("responseCode")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -3346,6 +3775,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("date-time")),
                         ("name".to_string(), Value::str("transactionDateFrom")),
                         ("op".to_string(), Value::map_of([
                             ("create".to_string(), Value::map_of([
@@ -3356,6 +3786,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("date-time")),
                         ("name".to_string(), Value::str("transactionDateTo")),
                         ("op".to_string(), Value::map_of([
                             ("create".to_string(), Value::map_of([
@@ -3381,14 +3812,22 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/public/countTransactionsByCardBrand")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("public"),
-                                    Value::str("countTransactionsByCardBrand"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("public")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("countTransactionsByCardBrand")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::empty_map()),
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("public"),
+                                    Value::str("countTransactionsByCardBrand"),
                                 ])),
                             ]),
                         ])),
@@ -3405,6 +3844,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("responseCode")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -3413,6 +3853,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("date-time")),
                         ("name".to_string(), Value::str("transactionDateFrom")),
                         ("op".to_string(), Value::map_of([
                             ("create".to_string(), Value::map_of([
@@ -3423,6 +3864,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("date-time")),
                         ("name".to_string(), Value::str("transactionDateTo")),
                         ("op".to_string(), Value::map_of([
                             ("create".to_string(), Value::map_of([
@@ -3448,14 +3890,22 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/public/transactionTurnover")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("public"),
-                                    Value::str("transactionTurnover"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("public")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("transactionTurnover")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::empty_map()),
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("public"),
+                                    Value::str("transactionTurnover"),
                                 ])),
                             ]),
                         ])),
@@ -3489,6 +3939,7 @@ pub fn make_config() -> Value {
                         ("type".to_string(), Value::str("`$STRING`")),
                     ]),
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("responseCode")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -3524,14 +3975,22 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/public/updateMerchant")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("public"),
-                                    Value::str("updateMerchant"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("public")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("updateMerchant")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::empty_map()),
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("public"),
+                                    Value::str("updateMerchant"),
                                 ])),
                             ]),
                         ])),
@@ -3544,6 +4003,7 @@ pub fn make_config() -> Value {
             ("update_template_xml".to_string(), Value::map_of([
                 ("fields".to_string(), Value::list(vec![
                     Value::map_of([
+                        ("format".to_string(), Value::str("int32")),
                         ("name".to_string(), Value::str("responseCode")),
                         ("type".to_string(), Value::str("`$INTEGER`")),
                     ]),
@@ -3573,14 +4033,22 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("POST")),
                                 ("orig".to_string(), Value::str("/public/updateTemplateXml")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("public"),
-                                    Value::str("updateTemplateXml"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("public")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("updateTemplateXml")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::empty_map()),
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("public"),
+                                    Value::str("updateTemplateXml"),
                                 ])),
                             ]),
                         ])),
@@ -3616,14 +4084,22 @@ pub fn make_config() -> Value {
                                 ("kind".to_string(), Value::str("http")),
                                 ("method".to_string(), Value::str("GET")),
                                 ("orig".to_string(), Value::str("/public/version")),
-                                ("parts".to_string(), Value::list(vec![
-                                    Value::str("public"),
-                                    Value::str("version"),
+                                ("segments".to_string(), Value::list(vec![
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("public")),
+                                    ]),
+                                    Value::map_of([
+                                        ("lit".to_string(), Value::str("version")),
+                                    ]),
                                 ])),
                                 ("select".to_string(), Value::empty_map()),
                                 ("transform".to_string(), Value::map_of([
                                     ("req".to_string(), Value::str("`reqdata`")),
                                     ("res".to_string(), Value::str("`body`")),
+                                ])),
+                                ("parts".to_string(), Value::list(vec![
+                                    Value::str("public"),
+                                    Value::str("version"),
                                 ])),
                             ]),
                         ])),

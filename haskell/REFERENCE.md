@@ -561,8 +561,8 @@ The entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearingDateFrom` | `String` | Yes |  |
-| `clearingDateTo` | `String` | Yes |  |
+| `clearingDateFrom` | `String` | Yes | Date and time in the format yyyy-MM-dd'T'HH:mm:ssz |
+| `clearingDateTo` | `String` | Yes | Date and time in the format yyyy-MM-dd'T'HH:mm:ssz |
 | `responseCode` | `Int` | No |  |
 | `responseMessage` | `String` | No |  |
 | `txCount` | `Int` | No |  |
@@ -581,7 +581,8 @@ Create a new entity with the given data. Resolves to the ENTITY (read the record
 ```haskell
   ent <- Sdk.digital_services_api sdk VNoval
   d <- jo
-    [ ("clearingDateFrom", VStr "example_clearingDateFrom")   -- String
+    [ ("file_id", VStr "example_file_id")   -- String
+    , ("clearingDateFrom", VStr "example_clearingDateFrom")   -- String
     , ("clearingDateTo", VStr "example_clearingDateTo")   -- String
     ]
   ctrl <- emptyMap
@@ -1281,8 +1282,8 @@ The entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearingDateFrom` | `String` | Yes |  |
-| `clearingDateTo` | `String` | Yes |  |
+| `clearingDateFrom` | `String` | Yes | Date and time in the format yyyy-MM-dd'T'HH:mm:ssZ |
+| `clearingDateTo` | `String` | Yes | Date and time in the format yyyy-MM-dd'T'HH:mm:ssZ |
 | `pagination` | `Value` | No |  |
 | `records` | `[Value]` | No |  |
 | `responseCode` | `Int` | No |  |
@@ -1340,13 +1341,14 @@ The entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearingDateFrom` | `String` | Yes |  |
-| `clearingDateTo` | `String` | Yes |  |
-| `fileId` | `String` | No |  |
-| `filenameTemplate` | `String` | No |  |
+| `clearingDateFrom` | `String` | Yes | Start date for clearing export (inclusive) |
+| `clearingDateTo` | `String` | Yes | End date for clearing export (inclusive) |
+| `fileId` | `String` | No | Unique file identifier for tracking and downloading |
+| `filenameTemplate` | `String` | No | Optional filename template for the export file |
+| `id` | `String` | No |  |
 | `responseCode` | `Int` | No |  |
 | `responseMessage` | `String` | No |  |
-| `status` | `String` | No |  |
+| `status` | `String` | No | Processing status of the export request |
 
 ### Operations
 
@@ -1411,8 +1413,8 @@ The entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `clearingDateFrom` | `String` | Yes |  |
-| `clearingDateTo` | `String` | Yes |  |
+| `clearingDateFrom` | `String` | Yes | Date and time in the format yyyy-MM-dd'T'HH:mm:ssz |
+| `clearingDateTo` | `String` | Yes | Date and time in the format yyyy-MM-dd'T'HH:mm:ssz |
 | `records` | `[Value]` | No |  |
 | `responseCode` | `Int` | No |  |
 | `responseMessage` | `String` | No |  |
@@ -1493,7 +1495,7 @@ The entity name.
 | `transactionDateTo` | `String` | No |  |
 | `transactionId` | `String` | No |  |
 | `transactionType` | `String` | No |  |
-| `wallet` | `String` | No |  |
+| `wallet` | `String` | No | Filter by wallet type. |
 
 ### Operations
 
@@ -1602,23 +1604,23 @@ The entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `acquirerName` | `String` | No |  |
-| `amount` | `Int` | Yes |  |
-| `authorizationNumber` | `String` | No |  |
-| `cardNumber` | `String` | Yes |  |
-| `cardType` | `String` | No |  |
-| `currency` | `String` | Yes |  |
-| `cvc` | `String` | No |  |
-| `dateTimeTx` | `String` | No |  |
-| `expDate` | `String` | Yes |  |
-| `merchantId` | `String` | No |  |
-| `originalTransactionId` | `String` | No |  |
-| `password` | `String` | No |  |
-| `responseCode` | `String` | No |  |
-| `responseMessage` | `String` | No |  |
-| `terminalId` | `String` | No |  |
-| `transactionId` | `String` | No |  |
-| `txtype` | `String` | Yes |  |
+| `acquirerName` | `String` | No | Acquirer name parsed from KKG field |
+| `amount` | `Int` | Yes | Transaction amount in minor units (cents) |
+| `authorizationNumber` | `String` | No | Authorization number from the gateway |
+| `cardNumber` | `String` | Yes | Card number - 12 to 19 digits, must pass Luhn validation |
+| `cardType` | `String` | No | Card type parsed from KKG field |
+| `currency` | `String` | Yes | Currency code - 3 uppercase letters (ISO 4217) |
+| `cvc` | `String` | No | Card verification code - 3-4 digits (optional) |
+| `dateTimeTx` | `String` | No | Date and time of the transaction |
+| `expDate` | `String` | Yes | Card expiry date in MMYY format |
+| `merchantId` | `String` | No | Merchant ID (VU-NUMMER) |
+| `originalTransactionId` | `String` | No | Original transaction ID from gateway |
+| `password` | `String` | No | Terminal password sent as Kennwort in TECS XML (optional) |
+| `responseCode` | `String` | No | Response code - 00 for success, otherwise error code |
+| `responseMessage` | `String` | No | Response message - 'Approved' for success, error description otherwise |
+| `terminalId` | `String` | No | Terminal ID used for the transaction |
+| `transactionId` | `String` | No | Transaction ID generated by the backend |
+| `txtype` | `String` | Yes | Transaction type |
 
 ### Field Usage by Operation
 
@@ -1697,18 +1699,18 @@ The entity name.
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `amount` | `Int` | Yes |  |
-| `currency` | `String` | Yes |  |
-| `device` | `String` | No |  |
-| `devicePayload` | `String` | Yes |  |
-| `expDate` | `String` | No |  |
-| `mode` | `String` | No |  |
-| `panMasked` | `String` | No |  |
-| `password` | `String` | No |  |
-| `serial` | `String` | No |  |
-| `serviceCode` | `String` | No |  |
-| `terminalId` | `String` | Yes |  |
-| `txtype` | `String` | Yes |  |
+| `amount` | `Int` | Yes | Transaction amount in minor units (cents) |
+| `currency` | `String` | Yes | Currency code - 3 uppercase letters (ISO 4217) |
+| `device` | `String` | No | Device type that provided the SRED payload |
+| `devicePayload` | `String` | Yes | SRED encrypted device payload from the device (minimum 32 characters) |
+| `expDate` | `String` | No | Card expiry date in MMYY format |
+| `mode` | `String` | No | Decryption mode |
+| `panMasked` | `String` | No | Masked PAN (first 6 and last 4 digits) |
+| `password` | `String` | No | Terminal password sent as Kennwort in TECS XML (optional) |
+| `serial` | `String` | No | Device serial number |
+| `serviceCode` | `String` | No | Service code from the card |
+| `terminalId` | `String` | Yes | Terminal ID - 8 digits |
+| `txtype` | `String` | Yes | Transaction type |
 
 ### Operations
 
@@ -2251,8 +2253,8 @@ The entity name.
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `cardBrandReportData` | `[Value]` | No |  |
-| `clearingDateFrom` | `String` | Yes |  |
-| `clearingDateTo` | `String` | Yes |  |
+| `clearingDateFrom` | `String` | Yes | Date and time in the format yyyy-MM-dd'T'HH:mm:ss |
+| `clearingDateTo` | `String` | Yes | Date and time in the format yyyy-MM-dd'T'HH:mm:ss |
 | `corporateId` | `String` | Yes |  |
 | `currency` | `String` | Yes |  |
 | `responseCode` | `Int` | No |  |
@@ -2319,7 +2321,7 @@ The entity name.
 | `acquirerTerminalId` | `String` | No |  |
 | `amount` | `Int` | No |  |
 | `applicationCryptogram` | `String` | No |  |
-| `authorizationCode` | `Value` | No |  |
+| `authorizationCode` | `Value` | No | Authorization code returned by the acquirer; null when not available |
 | `authorizationDate` | `String` | No |  |
 | `cardBrand` | `String` | No |  |
 | `cardEntry` | `String` | No |  |
@@ -2559,7 +2561,7 @@ The entity name.
 | `transactionHistories` | `[Value]` | No |  |
 | `transactionId` | `String` | No |  |
 | `transactionType` | `String` | No |  |
-| `wallet` | `String` | No |  |
+| `wallet` | `String` | No | Filter by wallet type. |
 
 ### Operations
 
@@ -2981,7 +2983,17 @@ The entity name.
 
 | Feature | Version | Description |
 | --- | --- | --- |
+| `audit` | 0.0.1 | Structured audit trail of operations |
+| `clienttrack` | 0.0.1 | Client identity and per-request correlation headers |
+| `idempotency` | 0.0.1 | Idempotency keys for safe retries of mutating operations |
+| `log` | 0.0.1 | Structured request and response logging |
+| `metrics` | 0.0.1 | Statistics capture: per-operation counters and latency |
+| `paging` | 0.0.1 | Pagination signals for list operations |
+| `ratelimit` | 0.0.1 | Client-side rate limiting via a token bucket |
+| `retry` | 0.0.1 | Automatic retry of transient failures with exponential backoff |
+| `telemetry` | 0.0.1 | Distributed tracing spans with W3C trace-context propagation |
 | `test` | 0.0.1 | In-memory mock transport for testing without a live server |
+| `timeout` | 0.0.1 | Per-request timeout with transport abort |
 
 
 Features are activated via the `feature` option:
@@ -2989,7 +3001,17 @@ Features are activated via the `feature` option:
 ```haskell
   active <- jo [("active", VBool True)]
   featureCfg <- jo
-    [ ("test", active)
+    [ ("audit", active)
+    , ("clienttrack", active)
+    , ("idempotency", active)
+    , ("log", active)
+    , ("metrics", active)
+    , ("paging", active)
+    , ("ratelimit", active)
+    , ("retry", active)
+    , ("telemetry", active)
+    , ("test", active)
+    , ("timeout", active)
     ]
   opts <- jo [("feature", featureCfg)]
   client <- Sdk.newSdk opts

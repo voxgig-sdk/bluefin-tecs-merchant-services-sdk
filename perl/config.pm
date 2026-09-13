@@ -193,6 +193,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "amount",
           "op": {
             "create": {
@@ -219,6 +220,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "clientId",
           "req": true,
           "type": "`$INTEGER`"
@@ -245,6 +247,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int64",
           "name": "exchangeFee",
           "type": "`$INTEGER`"
         },
@@ -279,6 +282,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "originalTraceNumber",
           "type": "`$INTEGER`"
         },
@@ -309,6 +313,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "receiptLayout",
           "type": "`$INTEGER`"
         },
@@ -318,6 +323,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "responseCode",
           "type": "`$INTEGER`"
         },
@@ -334,6 +340,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "terminalId",
           "req": true,
           "type": "`$INTEGER`"
@@ -343,10 +350,12 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "traceNumber",
           "type": "`$INTEGER`"
         },
         {
+          "format": "date-time",
           "name": "transactionDate",
           "op": {
             "create": {
@@ -386,15 +395,23 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
               "kind": "http",
               "method": "POST",
               "orig": "/public/cancelTransaction",
-              "parts": [
-                "public",
-                "cancelTransaction"
+              "segments": [
+                {
+                  "lit": "public"
+                },
+                {
+                  "lit": "cancelTransaction"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "public",
+                "cancelTransaction"
+              ]
             }
           ]
         }
@@ -410,6 +427,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "responseCode",
           "type": "`$INTEGER`"
         },
@@ -439,8 +457,10 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
               "kind": "http",
               "method": "POST",
               "orig": "/checkCardBlackListed",
-              "parts": [
-                "checkCardBlackListed"
+              "segments": [
+                {
+                  "lit": "checkCardBlackListed"
+                }
               ],
               "select": {
                 "exist": [
@@ -450,7 +470,10 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "checkCardBlackListed"
+              ]
             }
           ]
         }
@@ -462,10 +485,12 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
     "create_product": {
       "fields": [
         {
+          "format": "int32",
           "name": "acquirerId",
           "type": "`$INTEGER`"
         },
         {
+          "format": "int32",
           "name": "responseCode",
           "type": "`$INTEGER`"
         },
@@ -505,14 +530,19 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
               "kind": "http",
               "method": "POST",
               "orig": "/createProduct",
-              "parts": [
-                "createProduct"
+              "segments": [
+                {
+                  "lit": "createProduct"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "createProduct"
+              ]
             }
           ]
         }
@@ -541,6 +571,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "responseCode",
           "type": "`$INTEGER`"
         },
@@ -549,6 +580,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "terminalId",
           "req": true,
           "type": "`$INTEGER`"
@@ -565,14 +597,19 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
               "kind": "http",
               "method": "POST",
               "orig": "/deactivateTerminal",
-              "parts": [
-                "deactivateTerminal"
+              "segments": [
+                {
+                  "lit": "deactivateTerminal"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "deactivateTerminal"
+              ]
             }
           ]
         }
@@ -596,6 +633,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "responseCode",
           "type": "`$INTEGER`"
         },
@@ -604,6 +642,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "txCount",
           "type": "`$INTEGER`"
         },
@@ -616,14 +655,17 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "txSeqNoEnd",
           "type": "`$INTEGER`"
         },
         {
+          "format": "int32",
           "name": "txSeqNoStart",
           "type": "`$INTEGER`"
         },
         {
+          "format": "int32",
           "name": "txTotal",
           "type": "`$INTEGER`"
         }
@@ -649,17 +691,25 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
               "kind": "http",
               "method": "POST",
               "orig": "/public/digitalservices/mandatorClearingExportDownload/{fileId}",
-              "parts": [
-                "public",
-                "digitalservices",
-                "mandatorClearingExportDownload",
-                "{file_id}"
-              ],
               "rename": {
                 "param": {
                   "fileId": "file_id"
                 }
               },
+              "segments": [
+                {
+                  "lit": "public"
+                },
+                {
+                  "lit": "digitalservices"
+                },
+                {
+                  "lit": "mandatorClearingExportDownload"
+                },
+                {
+                  "var": "file_id"
+                }
+              ],
               "select": {
                 "exist": [
                   "file_id"
@@ -668,23 +718,40 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "public",
+                "digitalservices",
+                "mandatorClearingExportDownload",
+                "{file_id}"
+              ]
             },
             {
               "args": {},
               "kind": "http",
               "method": "POST",
               "orig": "/public/digitalservices/mandatorClearingExportMetadata",
-              "parts": [
-                "public",
-                "digitalservices",
-                "mandatorClearingExportMetadata"
+              "segments": [
+                {
+                  "lit": "public"
+                },
+                {
+                  "lit": "digitalservices"
+                },
+                {
+                  "lit": "mandatorClearingExportMetadata"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "public",
+                "digitalservices",
+                "mandatorClearingExportMetadata"
+              ]
             }
           ]
         },
@@ -697,17 +764,31 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
               "kind": "http",
               "method": "GET",
               "orig": "/public/digitalservices/mandatorClearingExportDownload/status",
-              "parts": [
-                "public",
-                "digitalservices",
-                "mandatorClearingExportDownload",
-                "status"
+              "segments": [
+                {
+                  "lit": "public"
+                },
+                {
+                  "lit": "digitalservices"
+                },
+                {
+                  "lit": "mandatorClearingExportDownload"
+                },
+                {
+                  "lit": "status"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "public",
+                "digitalservices",
+                "mandatorClearingExportDownload",
+                "status"
+              ]
             }
           ]
         }
@@ -727,6 +808,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "responseCode",
           "type": "`$INTEGER`"
         },
@@ -735,6 +817,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "terminalId",
           "req": true,
           "type": "`$INTEGER`"
@@ -761,15 +844,23 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
               "kind": "http",
               "method": "POST",
               "orig": "/public/getEcData",
-              "parts": [
-                "public",
-                "getEcData"
+              "segments": [
+                {
+                  "lit": "public"
+                },
+                {
+                  "lit": "getEcData"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "public",
+                "getEcData"
+              ]
             }
           ]
         }
@@ -789,6 +880,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "responseCode",
           "type": "`$INTEGER`"
         },
@@ -797,6 +889,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "terminalId",
           "req": true,
           "type": "`$INTEGER`"
@@ -813,15 +906,23 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
               "kind": "http",
               "method": "POST",
               "orig": "/public/getEcomParameters",
-              "parts": [
-                "public",
-                "getEcomParameters"
+              "segments": [
+                {
+                  "lit": "public"
+                },
+                {
+                  "lit": "getEcomParameters"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "public",
+                "getEcomParameters"
+              ]
             }
           ]
         }
@@ -837,6 +938,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "responseCode",
           "type": "`$INTEGER`"
         },
@@ -845,6 +947,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "terminalId",
           "req": true,
           "type": "`$INTEGER`"
@@ -871,15 +974,23 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
               "kind": "http",
               "method": "POST",
               "orig": "/public/getEcrData",
-              "parts": [
-                "public",
-                "getEcrData"
+              "segments": [
+                {
+                  "lit": "public"
+                },
+                {
+                  "lit": "getEcrData"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "public",
+                "getEcrData"
+              ]
             }
           ]
         }
@@ -895,6 +1006,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "responseCode",
           "type": "`$INTEGER`"
         },
@@ -903,6 +1015,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "terminalId",
           "req": true,
           "type": "`$INTEGER`"
@@ -929,15 +1042,23 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
               "kind": "http",
               "method": "POST",
               "orig": "/public/getEmvData",
-              "parts": [
-                "public",
-                "getEmvData"
+              "segments": [
+                {
+                  "lit": "public"
+                },
+                {
+                  "lit": "getEmvData"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "public",
+                "getEmvData"
+              ]
             }
           ]
         }
@@ -949,6 +1070,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
     "enable_acquiring": {
       "fields": [
         {
+          "format": "int32",
           "name": "accountNo",
           "type": "`$INTEGER`"
         },
@@ -967,6 +1089,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "merchantCategoryCode",
           "req": true,
           "type": "`$INTEGER`"
@@ -982,6 +1105,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "responseCode",
           "type": "`$INTEGER`"
         },
@@ -990,6 +1114,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "sortingCode",
           "type": "`$INTEGER`"
         },
@@ -1022,14 +1147,19 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
               "kind": "http",
               "method": "POST",
               "orig": "/enableAcquiring",
-              "parts": [
-                "enableAcquiring"
+              "segments": [
+                {
+                  "lit": "enableAcquiring"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "enableAcquiring"
+              ]
             }
           ]
         }
@@ -1046,6 +1176,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "responseCode",
           "type": "`$INTEGER`"
         },
@@ -1065,14 +1196,19 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
               "kind": "http",
               "method": "POST",
               "orig": "/getMerchantContractNumber",
-              "parts": [
-                "getMerchantContractNumber"
+              "segments": [
+                {
+                  "lit": "getMerchantContractNumber"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "getMerchantContractNumber"
+              ]
             }
           ]
         }
@@ -1084,6 +1220,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
     "get_template_xml": {
       "fields": [
         {
+          "format": "int32",
           "name": "responseCode",
           "type": "`$INTEGER`"
         },
@@ -1108,15 +1245,23 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
               "kind": "http",
               "method": "POST",
               "orig": "/public/getTemplateXml",
-              "parts": [
-                "public",
-                "getTemplateXml"
+              "segments": [
+                {
+                  "lit": "public"
+                },
+                {
+                  "lit": "getTemplateXml"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "public",
+                "getTemplateXml"
+              ]
             }
           ]
         }
@@ -1133,6 +1278,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "responseCode",
           "type": "`$INTEGER`"
         },
@@ -1152,14 +1298,19 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
               "kind": "http",
               "method": "POST",
               "orig": "/introduceMandator",
-              "parts": [
-                "introduceMandator"
+              "segments": [
+                {
+                  "lit": "introduceMandator"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "introduceMandator"
+              ]
             }
           ]
         }
@@ -1171,6 +1322,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
     "introduce_package": {
       "fields": [
         {
+          "format": "int32",
           "name": "responseCode",
           "type": "`$INTEGER`"
         },
@@ -1195,14 +1347,19 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
               "kind": "http",
               "method": "POST",
               "orig": "/introducePackage",
-              "parts": [
-                "introducePackage"
+              "segments": [
+                {
+                  "lit": "introducePackage"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "introducePackage"
+              ]
             }
           ]
         }
@@ -1234,6 +1391,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$OBJECT`"
         },
         {
+          "format": "int32",
           "name": "responseCode",
           "type": "`$INTEGER`"
         },
@@ -1250,6 +1408,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "terminalId",
           "type": "`$INTEGER`"
         }
@@ -1265,15 +1424,23 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
               "kind": "http",
               "method": "POST",
               "orig": "/public/keepalive",
-              "parts": [
-                "public",
-                "keepalive"
+              "segments": [
+                {
+                  "lit": "public"
+                },
+                {
+                  "lit": "keepalive"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "public",
+                "keepalive"
+              ]
             }
           ]
         }
@@ -1297,6 +1464,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$OBJECT`"
         },
         {
+          "format": "int32",
           "name": "responseCode",
           "type": "`$INTEGER`"
         },
@@ -1320,15 +1488,23 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
               "kind": "http",
               "method": "POST",
               "orig": "/public/listTerminals",
-              "parts": [
-                "public",
-                "listTerminals"
+              "segments": [
+                {
+                  "lit": "public"
+                },
+                {
+                  "lit": "listTerminals"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "public",
+                "listTerminals"
+              ]
             }
           ]
         }
@@ -1360,6 +1536,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$ARRAY`"
         },
         {
+          "format": "int32",
           "name": "responseCode",
           "type": "`$INTEGER`"
         },
@@ -1379,16 +1556,27 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
               "kind": "http",
               "method": "POST",
               "orig": "/public/digitalservices/mandatorClearingExport",
-              "parts": [
-                "public",
-                "digitalservices",
-                "mandatorClearingExport"
+              "segments": [
+                {
+                  "lit": "public"
+                },
+                {
+                  "lit": "digitalservices"
+                },
+                {
+                  "lit": "mandatorClearingExport"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "public",
+                "digitalservices",
+                "mandatorClearingExport"
+              ]
             }
           ]
         }
@@ -1400,12 +1588,14 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
     "mandator_clearing_export_download": {
       "fields": [
         {
+          "format": "date-time",
           "name": "clearingDateFrom",
           "req": true,
           "short": "Start date for clearing export (inclusive)",
           "type": "`$STRING`"
         },
         {
+          "format": "date-time",
           "name": "clearingDateTo",
           "req": true,
           "short": "End date for clearing export (inclusive)",
@@ -1426,6 +1616,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "responseCode",
           "type": "`$INTEGER`"
         },
@@ -1439,6 +1630,10 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         }
       ],
+      "id": {
+        "field": "id",
+        "name": "id"
+      },
       "name": "mandator_clearing_export_download",
       "op": {
         "create": {
@@ -1450,16 +1645,27 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
               "kind": "http",
               "method": "POST",
               "orig": "/public/digitalservices/mandatorClearingExportDownload",
-              "parts": [
-                "public",
-                "digitalservices",
-                "mandatorClearingExportDownload"
+              "segments": [
+                {
+                  "lit": "public"
+                },
+                {
+                  "lit": "digitalservices"
+                },
+                {
+                  "lit": "mandatorClearingExportDownload"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "public",
+                "digitalservices",
+                "mandatorClearingExportDownload"
+              ]
             }
           ]
         },
@@ -1482,17 +1688,25 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
               "kind": "http",
               "method": "GET",
               "orig": "/public/digitalservices/mandatorClearingExportDownload/{fileId}",
-              "parts": [
-                "public",
-                "digitalservices",
-                "mandatorClearingExportDownload",
-                "{id}"
-              ],
               "rename": {
                 "param": {
                   "fileId": "id"
                 }
               },
+              "segments": [
+                {
+                  "lit": "public"
+                },
+                {
+                  "lit": "digitalservices"
+                },
+                {
+                  "lit": "mandatorClearingExportDownload"
+                },
+                {
+                  "var": "id"
+                }
+              ],
               "select": {
                 "exist": [
                   "id"
@@ -1501,7 +1715,13 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "public",
+                "digitalservices",
+                "mandatorClearingExportDownload",
+                "{id}"
+              ]
             }
           ]
         }
@@ -1529,6 +1749,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$ARRAY`"
         },
         {
+          "format": "int32",
           "name": "responseCode",
           "type": "`$INTEGER`"
         },
@@ -1548,16 +1769,27 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
               "kind": "http",
               "method": "POST",
               "orig": "/public/digitalservices/mandatorClearingExportSummary",
-              "parts": [
-                "public",
-                "digitalservices",
-                "mandatorClearingExportSummary"
+              "segments": [
+                {
+                  "lit": "public"
+                },
+                {
+                  "lit": "digitalservices"
+                },
+                {
+                  "lit": "mandatorClearingExportSummary"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "public",
+                "digitalservices",
+                "mandatorClearingExportSummary"
+              ]
             }
           ]
         }
@@ -1621,6 +1853,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "sourceId",
           "type": "`$INTEGER`"
         },
@@ -1633,6 +1866,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "terminalId",
           "type": "`$INTEGER`"
         },
@@ -1649,10 +1883,12 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "date-time",
           "name": "transactionDateFrom",
           "type": "`$STRING`"
         },
         {
+          "format": "date-time",
           "name": "transactionDateTo",
           "type": "`$STRING`"
         },
@@ -1681,15 +1917,23 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
               "kind": "http",
               "method": "POST",
               "orig": "/public/transactionHistoryCsv",
-              "parts": [
-                "public",
-                "transactionHistoryCsv"
+              "segments": [
+                {
+                  "lit": "public"
+                },
+                {
+                  "lit": "transactionHistoryCsv"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "public",
+                "transactionHistoryCsv"
+              ]
             }
           ]
         }
@@ -1706,6 +1950,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$ARRAY`"
         },
         {
+          "format": "int32",
           "name": "responseCode",
           "type": "`$INTEGER`"
         },
@@ -1733,14 +1978,19 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
               "kind": "http",
               "method": "POST",
               "orig": "/moveTid",
-              "parts": [
-                "moveTid"
+              "segments": [
+                {
+                  "lit": "moveTid"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "moveTid"
+              ]
             }
           ]
         }
@@ -1757,6 +2007,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "amount",
           "req": true,
           "short": "Transaction amount in minor units (cents)",
@@ -1859,15 +2110,23 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
               "kind": "http",
               "method": "POST",
               "orig": "/public/paymentManual",
-              "parts": [
-                "public",
-                "paymentManual"
+              "segments": [
+                {
+                  "lit": "public"
+                },
+                {
+                  "lit": "paymentManual"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "public",
+                "paymentManual"
+              ]
             }
           ]
         }
@@ -1879,6 +2138,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
     "payment_sred": {
       "fields": [
         {
+          "format": "int32",
           "name": "amount",
           "req": true,
           "short": "Transaction amount in minor units (cents)",
@@ -1955,15 +2215,23 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
               "kind": "http",
               "method": "POST",
               "orig": "/public/paymentSred",
-              "parts": [
-                "public",
-                "paymentSred"
+              "segments": [
+                {
+                  "lit": "public"
+                },
+                {
+                  "lit": "paymentSred"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body.sred`"
-              }
+              },
+              "parts": [
+                "public",
+                "paymentSred"
+              ]
             }
           ]
         }
@@ -1987,6 +2255,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "amount",
           "op": {
             "create": {
@@ -2018,6 +2287,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "clientId",
           "req": true,
           "type": "`$INTEGER`"
@@ -2044,6 +2314,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int64",
           "name": "exchangeFee",
           "type": "`$INTEGER`"
         },
@@ -2072,6 +2343,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "originalTraceNumber",
           "type": "`$INTEGER`"
         },
@@ -2102,6 +2374,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "receiptLayout",
           "type": "`$INTEGER`"
         },
@@ -2111,6 +2384,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "responseCode",
           "type": "`$INTEGER`"
         },
@@ -2127,6 +2401,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "terminalId",
           "req": true,
           "type": "`$INTEGER`"
@@ -2136,10 +2411,12 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "traceNumber",
           "type": "`$INTEGER`"
         },
         {
+          "format": "date-time",
           "name": "transactionDate",
           "op": {
             "create": {
@@ -2184,30 +2461,46 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
               "kind": "http",
               "method": "POST",
               "orig": "/public/paymentTransaction",
-              "parts": [
-                "public",
-                "paymentTransaction"
+              "segments": [
+                {
+                  "lit": "public"
+                },
+                {
+                  "lit": "paymentTransaction"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "public",
+                "paymentTransaction"
+              ]
             },
             {
               "args": {},
               "kind": "http",
               "method": "POST",
               "orig": "/public/preAuthCompletionTransaction",
-              "parts": [
-                "public",
-                "preAuthCompletionTransaction"
+              "segments": [
+                {
+                  "lit": "public"
+                },
+                {
+                  "lit": "preAuthCompletionTransaction"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "public",
+                "preAuthCompletionTransaction"
+              ]
             }
           ]
         }
@@ -2236,6 +2529,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "responseCode",
           "type": "`$INTEGER`"
         },
@@ -2244,6 +2538,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "terminalId",
           "req": true,
           "type": "`$INTEGER`"
@@ -2260,14 +2555,19 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
               "kind": "http",
               "method": "POST",
               "orig": "/reactivateTerminal",
-              "parts": [
-                "reactivateTerminal"
+              "segments": [
+                {
+                  "lit": "reactivateTerminal"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "reactivateTerminal"
+              ]
             }
           ]
         }
@@ -2291,6 +2591,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "amount",
           "op": {
             "create": {
@@ -2317,6 +2618,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "clientId",
           "req": true,
           "type": "`$INTEGER`"
@@ -2343,6 +2645,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int64",
           "name": "exchangeFee",
           "type": "`$INTEGER`"
         },
@@ -2371,6 +2674,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "originalTraceNumber",
           "type": "`$INTEGER`"
         },
@@ -2401,6 +2705,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "receiptLayout",
           "type": "`$INTEGER`"
         },
@@ -2410,6 +2715,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "responseCode",
           "type": "`$INTEGER`"
         },
@@ -2426,6 +2732,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "terminalId",
           "req": true,
           "type": "`$INTEGER`"
@@ -2435,10 +2742,12 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "traceNumber",
           "type": "`$INTEGER`"
         },
         {
+          "format": "date-time",
           "name": "transactionDate",
           "op": {
             "create": {
@@ -2478,15 +2787,23 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
               "kind": "http",
               "method": "POST",
               "orig": "/public/refundTransaction",
-              "parts": [
-                "public",
-                "refundTransaction"
+              "segments": [
+                {
+                  "lit": "public"
+                },
+                {
+                  "lit": "refundTransaction"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "public",
+                "refundTransaction"
+              ]
             }
           ]
         }
@@ -2508,6 +2825,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "partnerId",
           "type": "`$INTEGER`"
         },
@@ -2521,6 +2839,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "responseCode",
           "type": "`$INTEGER`"
         },
@@ -2545,14 +2864,19 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
               "kind": "http",
               "method": "POST",
               "orig": "/registerTecsCompany",
-              "parts": [
-                "registerTecsCompany"
+              "segments": [
+                {
+                  "lit": "registerTecsCompany"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "registerTecsCompany"
+              ]
             }
           ]
         }
@@ -2583,6 +2907,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "responseCode",
           "type": "`$INTEGER`"
         },
@@ -2605,6 +2930,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "terminalId",
           "type": "`$INTEGER`"
         },
@@ -2654,14 +2980,19 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
               "kind": "http",
               "method": "POST",
               "orig": "/registerTerminal",
-              "parts": [
-                "registerTerminal"
+              "segments": [
+                {
+                  "lit": "registerTerminal"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "registerTerminal"
+              ]
             }
           ]
         }
@@ -2699,6 +3030,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "responseCode",
           "type": "`$INTEGER`"
         },
@@ -2715,6 +3047,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$OBJECT`"
         },
         {
+          "format": "int32",
           "name": "terminalId",
           "type": "`$INTEGER`"
         }
@@ -2730,16 +3063,27 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
               "kind": "http",
               "method": "POST",
               "orig": "/public/digitalservices/reportData",
-              "parts": [
-                "public",
-                "digitalservices",
-                "reportData"
+              "segments": [
+                {
+                  "lit": "public"
+                },
+                {
+                  "lit": "digitalservices"
+                },
+                {
+                  "lit": "reportData"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "public",
+                "digitalservices",
+                "reportData"
+              ]
             }
           ]
         }
@@ -2759,6 +3103,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "amount",
           "type": "`$INTEGER`"
         },
@@ -2778,6 +3123,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           ]
         },
         {
+          "format": "date-time",
           "name": "authorizationDate",
           "type": "`$STRING`"
         },
@@ -2798,6 +3144,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "clearingAmount",
           "type": "`$INTEGER`"
         },
@@ -2810,10 +3157,12 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "date-time",
           "name": "clearingDate",
           "type": "`$STRING`"
         },
         {
+          "format": "date-time",
           "name": "clearingProcessedDate",
           "type": "`$STRING`"
         },
@@ -2822,6 +3171,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "clientId",
           "type": "`$INTEGER`"
         },
@@ -2858,6 +3208,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "originalTerminalId",
           "type": "`$INTEGER`"
         },
@@ -2874,6 +3225,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "responseCode",
           "type": "`$INTEGER`"
         },
@@ -2898,10 +3250,12 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "sourceId",
           "type": "`$INTEGER`"
         },
         {
+          "format": "int32",
           "name": "tecsengineResponseCode",
           "type": "`$INTEGER`"
         },
@@ -2910,10 +3264,12 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "date-time",
           "name": "terminalEndOfDayDate",
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "terminalId",
           "type": "`$INTEGER`"
         },
@@ -2922,18 +3278,22 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "tipAmount",
           "type": "`$INTEGER`"
         },
         {
+          "format": "int32",
           "name": "traceNumber",
           "type": "`$INTEGER`"
         },
         {
+          "format": "date-time",
           "name": "transactionClearingDate",
           "type": "`$STRING`"
         },
         {
+          "format": "date-time",
           "name": "transactionDate",
           "type": "`$STRING`"
         },
@@ -2942,10 +3302,12 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int64",
           "name": "transactionSeqNumber",
           "type": "`$INTEGER`"
         },
         {
+          "format": "date-time",
           "name": "transactionServerDate",
           "type": "`$STRING`"
         },
@@ -2969,15 +3331,23 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
               "kind": "http",
               "method": "POST",
               "orig": "/public/statusTransaction",
-              "parts": [
-                "public",
-                "statusTransaction"
+              "segments": [
+                {
+                  "lit": "public"
+                },
+                {
+                  "lit": "statusTransaction"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "public",
+                "statusTransaction"
+              ]
             }
           ]
         }
@@ -2997,6 +3367,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "responseCode",
           "type": "`$INTEGER`"
         },
@@ -3025,14 +3396,19 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
               "kind": "http",
               "method": "POST",
               "orig": "/storeTerminalParameters",
-              "parts": [
-                "storeTerminalParameters"
+              "segments": [
+                {
+                  "lit": "storeTerminalParameters"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "storeTerminalParameters"
+              ]
             }
           ]
         }
@@ -3053,6 +3429,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$ARRAY`"
         },
         {
+          "format": "int32",
           "name": "responseCode",
           "type": "`$INTEGER`"
         },
@@ -3076,15 +3453,23 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
               "kind": "http",
               "method": "POST",
               "orig": "/public/getTerminalId",
-              "parts": [
-                "public",
-                "getTerminalId"
+              "segments": [
+                {
+                  "lit": "public"
+                },
+                {
+                  "lit": "getTerminalId"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "public",
+                "getTerminalId"
+              ]
             }
           ]
         }
@@ -3148,6 +3533,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "responseCode",
           "type": "`$INTEGER`"
         },
@@ -3160,6 +3546,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "sourceId",
           "type": "`$INTEGER`"
         },
@@ -3172,6 +3559,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "terminalId",
           "type": "`$INTEGER`"
         },
@@ -3188,10 +3576,12 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "date-time",
           "name": "transactionDateFrom",
           "type": "`$STRING`"
         },
         {
+          "format": "date-time",
           "name": "transactionDateTo",
           "type": "`$STRING`"
         },
@@ -3224,31 +3614,50 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
               "kind": "http",
               "method": "POST",
               "orig": "/public/mcom/transactionHistory",
-              "parts": [
-                "public",
-                "mcom",
-                "transactionHistory"
+              "segments": [
+                {
+                  "lit": "public"
+                },
+                {
+                  "lit": "mcom"
+                },
+                {
+                  "lit": "transactionHistory"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "public",
+                "mcom",
+                "transactionHistory"
+              ]
             },
             {
               "args": {},
               "kind": "http",
               "method": "POST",
               "orig": "/public/transactionHistory",
-              "parts": [
-                "public",
-                "transactionHistory"
+              "segments": [
+                {
+                  "lit": "public"
+                },
+                {
+                  "lit": "transactionHistory"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "public",
+                "transactionHistory"
+              ]
             }
           ]
         }
@@ -3264,6 +3673,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "responseCode",
           "type": "`$INTEGER`"
         },
@@ -3272,6 +3682,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "date-time",
           "name": "transactionDateFrom",
           "op": {
             "create": {
@@ -3282,6 +3693,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "date-time",
           "name": "transactionDateTo",
           "op": {
             "create": {
@@ -3307,30 +3719,46 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
               "kind": "http",
               "method": "POST",
               "orig": "/public/countAuthorisedTransactions",
-              "parts": [
-                "public",
-                "countAuthorisedTransactions"
+              "segments": [
+                {
+                  "lit": "public"
+                },
+                {
+                  "lit": "countAuthorisedTransactions"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "public",
+                "countAuthorisedTransactions"
+              ]
             },
             {
               "args": {},
               "kind": "http",
               "method": "POST",
               "orig": "/public/countNotAuthorisedTransactions",
-              "parts": [
-                "public",
-                "countNotAuthorisedTransactions"
+              "segments": [
+                {
+                  "lit": "public"
+                },
+                {
+                  "lit": "countNotAuthorisedTransactions"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "public",
+                "countNotAuthorisedTransactions"
+              ]
             }
           ]
         }
@@ -3346,6 +3774,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "responseCode",
           "type": "`$INTEGER`"
         },
@@ -3354,6 +3783,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "date-time",
           "name": "transactionDateFrom",
           "op": {
             "create": {
@@ -3364,6 +3794,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "date-time",
           "name": "transactionDateTo",
           "op": {
             "create": {
@@ -3389,15 +3820,23 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
               "kind": "http",
               "method": "POST",
               "orig": "/public/countTransactionsByCardBrand",
-              "parts": [
-                "public",
-                "countTransactionsByCardBrand"
+              "segments": [
+                {
+                  "lit": "public"
+                },
+                {
+                  "lit": "countTransactionsByCardBrand"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "public",
+                "countTransactionsByCardBrand"
+              ]
             }
           ]
         }
@@ -3413,6 +3852,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "responseCode",
           "type": "`$INTEGER`"
         },
@@ -3421,6 +3861,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "date-time",
           "name": "transactionDateFrom",
           "op": {
             "create": {
@@ -3431,6 +3872,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "date-time",
           "name": "transactionDateTo",
           "op": {
             "create": {
@@ -3456,15 +3898,23 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
               "kind": "http",
               "method": "POST",
               "orig": "/public/transactionTurnover",
-              "parts": [
-                "public",
-                "transactionTurnover"
+              "segments": [
+                {
+                  "lit": "public"
+                },
+                {
+                  "lit": "transactionTurnover"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "public",
+                "transactionTurnover"
+              ]
             }
           ]
         }
@@ -3497,6 +3947,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "type": "`$STRING`"
         },
         {
+          "format": "int32",
           "name": "responseCode",
           "type": "`$INTEGER`"
         },
@@ -3532,15 +3983,23 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
               "kind": "http",
               "method": "POST",
               "orig": "/public/updateMerchant",
-              "parts": [
-                "public",
-                "updateMerchant"
+              "segments": [
+                {
+                  "lit": "public"
+                },
+                {
+                  "lit": "updateMerchant"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "public",
+                "updateMerchant"
+              ]
             }
           ]
         }
@@ -3552,6 +4011,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
     "update_template_xml": {
       "fields": [
         {
+          "format": "int32",
           "name": "responseCode",
           "type": "`$INTEGER`"
         },
@@ -3581,15 +4041,23 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
               "kind": "http",
               "method": "POST",
               "orig": "/public/updateTemplateXml",
-              "parts": [
-                "public",
-                "updateTemplateXml"
+              "segments": [
+                {
+                  "lit": "public"
+                },
+                {
+                  "lit": "updateTemplateXml"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "public",
+                "updateTemplateXml"
+              ]
             }
           ]
         }
@@ -3624,15 +4092,23 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
               "kind": "http",
               "method": "GET",
               "orig": "/public/version",
-              "parts": [
-                "public",
-                "version"
+              "segments": [
+                {
+                  "lit": "public"
+                },
+                {
+                  "lit": "version"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "public",
+                "version"
+              ]
             }
           ]
         }

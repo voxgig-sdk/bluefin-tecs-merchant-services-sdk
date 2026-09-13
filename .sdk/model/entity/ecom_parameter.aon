@@ -16,6 +16,7 @@ main: kit: entity: ecom_parameter: {
       type: "`$STRING`"
     }
     {
+      format: "int32"
       name: "responseCode"
       req: false
       type: "`$INTEGER`"
@@ -26,6 +27,7 @@ main: kit: entity: ecom_parameter: {
       type: "`$STRING`"
     }
     {
+      format: "int32"
       name: "terminalId"
       req: true
       type: "`$INTEGER`"
@@ -40,9 +42,13 @@ main: kit: entity: ecom_parameter: {
         {
           method: "POST"
           orig: "/public/getEcomParameters"
-          parts: [
-            "public"
-            "getEcomParameters"
+          segments: [
+            {
+              lit: "public"
+            }
+            {
+              lit: "getEcomParameters"
+            }
           ]
           transform: {
             req: "`reqdata`"

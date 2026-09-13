@@ -67,15 +67,17 @@ function version_direct_setup($mockres)
     $env = Runner::env_override([
         "BLUEFIN_TECS_MERCHANT_SERVICES_TEST_VERSION_ENTID" => [],
         "BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE" => "FALSE",
-        "BLUEFIN_TECS_MERCHANT_SERVICES_APIKEY" => "NONE",
+        "BLUEFIN_TECS_MERCHANT_SERVICES_APIKEY" => "",
     ]);
 
     $live = $env["BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE"] === "TRUE";
 
     if ($live) {
-        $merged_opts = [
+        // Merged so the generated fields win: sdk-test-control.json's
+        // test.client.options adds to the live client, it does not redirect it.
+        $merged_opts = array_merge(Runner::live_client_options(), [
             "apikey" => $env["BLUEFIN_TECS_MERCHANT_SERVICES_APIKEY"],
-        ];
+        ]);
         $client = new BluefinTecsMerchantServicesSDK($merged_opts);
         return [
             "client" => $client,

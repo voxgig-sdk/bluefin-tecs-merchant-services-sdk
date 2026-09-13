@@ -11,6 +11,7 @@ main: kit: entity: introduce_mandator: {
       type: "`$STRING`"
     }
     {
+      format: "int32"
       name: "responseCode"
       req: false
       type: "`$INTEGER`"
@@ -30,8 +31,10 @@ main: kit: entity: introduce_mandator: {
         {
           method: "POST"
           orig: "/introduceMandator"
-          parts: [
-            "introduceMandator"
+          segments: [
+            {
+              lit: "introduceMandator"
+            }
           ]
           transform: {
             req: "`reqdata`"

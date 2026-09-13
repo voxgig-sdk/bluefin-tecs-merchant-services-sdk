@@ -6,6 +6,7 @@ main: kit: entity: enable_acquiring: {
 
   fields: [
     {
+      format: "int32"
       name: "accountNo"
       req: false
       type: "`$INTEGER`"
@@ -26,6 +27,7 @@ main: kit: entity: enable_acquiring: {
       type: "`$STRING`"
     }
     {
+      format: "int32"
       name: "merchantCategoryCode"
       req: true
       type: "`$INTEGER`"
@@ -41,6 +43,7 @@ main: kit: entity: enable_acquiring: {
       type: "`$STRING`"
     }
     {
+      format: "int32"
       name: "responseCode"
       req: false
       type: "`$INTEGER`"
@@ -51,6 +54,7 @@ main: kit: entity: enable_acquiring: {
       type: "`$STRING`"
     }
     {
+      format: "int32"
       name: "sortingCode"
       req: false
       type: "`$INTEGER`"
@@ -85,8 +89,10 @@ main: kit: entity: enable_acquiring: {
         {
           method: "POST"
           orig: "/enableAcquiring"
-          parts: [
-            "enableAcquiring"
+          segments: [
+            {
+              lit: "enableAcquiring"
+            }
           ]
           transform: {
             req: "`reqdata`"

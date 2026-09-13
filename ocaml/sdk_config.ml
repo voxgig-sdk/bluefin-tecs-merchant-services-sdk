@@ -153,6 +153,7 @@ let make_config () : value =
             ("name", (Str "actualBonusPoints"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "amount"));
             ("op", (jo [
               ("create", (jo [
@@ -172,6 +173,7 @@ let make_config () : value =
             ("name", (Str "cardNumber"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "clientId"));
             ("req", (Bool true));
             ("type", (Str "`$INTEGER`")) ]);
@@ -192,6 +194,7 @@ let make_config () : value =
             ("name", (Str "emvData"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int64"));
             ("name", (Str "exchangeFee"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -217,6 +220,7 @@ let make_config () : value =
                 ("type", (Str "`$STRING`")) ])) ]));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "originalTraceNumber"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -239,6 +243,7 @@ let make_config () : value =
             ("name", (Str "receiptHeader"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "receiptLayout"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -246,6 +251,7 @@ let make_config () : value =
             ("req", (Bool true));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -258,6 +264,7 @@ let make_config () : value =
             ("name", (Str "svc"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "terminalId"));
             ("req", (Bool true));
             ("type", (Str "`$INTEGER`")) ]);
@@ -265,9 +272,11 @@ let make_config () : value =
             ("name", (Str "terminalLocation"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "traceNumber"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
+            ("format", (Str "date-time"));
             ("name", (Str "transactionDate"));
             ("op", (jo [
               ("create", (jo [
@@ -298,13 +307,18 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/public/cancelTransaction"));
-                ("parts", (ja [
-                  (Str "public");
-                  (Str "cancelTransaction") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "public")) ]);
+                  (jo [
+                    ("lit", (Str "cancelTransaction")) ]) ]));
                 ("select", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "public");
+                  (Str "cancelTransaction") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("check_card_black_listed", (jo [
@@ -313,6 +327,7 @@ let make_config () : value =
             ("name", (Str "cardNo"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -336,22 +351,27 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/checkCardBlackListed"));
-                ("parts", (ja [
-                  (Str "checkCardBlackListed") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "checkCardBlackListed")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "authorization") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "checkCardBlackListed") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("create_product", (jo [
         ("fields", (ja [
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "acquirerId"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -384,12 +404,15 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/createProduct"));
-                ("parts", (ja [
-                  (Str "createProduct") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "createProduct")) ]) ]));
                 ("select", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "createProduct") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("deactivate_terminal", (jo [
@@ -408,12 +431,14 @@ let make_config () : value =
             ("name", (Str "productOrderUuid"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
             ("name", (Str "responseMessage"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "terminalId"));
             ("req", (Bool true));
             ("type", (Str "`$INTEGER`")) ]) ]));
@@ -428,12 +453,15 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/deactivateTerminal"));
-                ("parts", (ja [
-                  (Str "deactivateTerminal") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "deactivateTerminal")) ]) ]));
                 ("select", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "deactivateTerminal") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("digital_services_api", (jo [
@@ -449,12 +477,14 @@ let make_config () : value =
             ("short", (Str "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
             ("name", (Str "responseMessage"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "txCount"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -464,12 +494,15 @@ let make_config () : value =
             ("name", (Str "txIdStart"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "txSeqNoEnd"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "txSeqNoStart"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "txTotal"));
             ("type", (Str "`$INTEGER`")) ]) ]));
         ("name", (Str "digital_services_api"));
@@ -490,33 +523,49 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/public/digitalservices/mandatorClearingExportDownload/{fileId}"));
-                ("parts", (ja [
-                  (Str "public");
-                  (Str "digitalservices");
-                  (Str "mandatorClearingExportDownload");
-                  (Str "{file_id}") ]));
                 ("rename", (jo [
                   ("param", (jo [
                     ("fileId", (Str "file_id")) ])) ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "public")) ]);
+                  (jo [
+                    ("lit", (Str "digitalservices")) ]);
+                  (jo [
+                    ("lit", (Str "mandatorClearingExportDownload")) ]);
+                  (jo [
+                    ("var", (Str "file_id")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "file_id") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]);
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "public");
+                  (Str "digitalservices");
+                  (Str "mandatorClearingExportDownload");
+                  (Str "{file_id}") ])) ]);
               (jo [
                 ("args", (empty_map ()));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/public/digitalservices/mandatorClearingExportMetadata"));
-                ("parts", (ja [
-                  (Str "public");
-                  (Str "digitalservices");
-                  (Str "mandatorClearingExportMetadata") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "public")) ]);
+                  (jo [
+                    ("lit", (Str "digitalservices")) ]);
+                  (jo [
+                    ("lit", (Str "mandatorClearingExportMetadata")) ]) ]));
                 ("select", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "public");
+                  (Str "digitalservices");
+                  (Str "mandatorClearingExportMetadata") ])) ]) ])) ]));
           ("load", (jo [
             ("input", (Str "data"));
             ("name", (Str "load"));
@@ -526,15 +575,24 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "GET"));
                 ("orig", (Str "/public/digitalservices/mandatorClearingExportDownload/status"));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "public")) ]);
+                  (jo [
+                    ("lit", (Str "digitalservices")) ]);
+                  (jo [
+                    ("lit", (Str "mandatorClearingExportDownload")) ]);
+                  (jo [
+                    ("lit", (Str "status")) ]) ]));
+                ("select", (empty_map ()));
+                ("transform", (jo [
+                  ("req", (Str "`reqdata`"));
+                  ("res", (Str "`body`")) ]));
                 ("parts", (ja [
                   (Str "public");
                   (Str "digitalservices");
                   (Str "mandatorClearingExportDownload");
-                  (Str "status") ]));
-                ("select", (empty_map ()));
-                ("transform", (jo [
-                  ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  (Str "status") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (ja [
             (ja [
@@ -545,12 +603,14 @@ let make_config () : value =
             ("name", (Str "ecomData"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
             ("name", (Str "responseMessage"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "terminalId"));
             ("req", (Bool true));
             ("type", (Str "`$INTEGER`")) ]);
@@ -573,13 +633,18 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/public/getEcData"));
-                ("parts", (ja [
-                  (Str "public");
-                  (Str "getEcData") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "public")) ]);
+                  (jo [
+                    ("lit", (Str "getEcData")) ]) ]));
                 ("select", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "public");
+                  (Str "getEcData") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("ecom_parameter", (jo [
@@ -591,12 +656,14 @@ let make_config () : value =
             ("name", (Str "ecomSkey"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
             ("name", (Str "responseMessage"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "terminalId"));
             ("req", (Bool true));
             ("type", (Str "`$INTEGER`")) ]) ]));
@@ -611,13 +678,18 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/public/getEcomParameters"));
-                ("parts", (ja [
-                  (Str "public");
-                  (Str "getEcomParameters") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "public")) ]);
+                  (jo [
+                    ("lit", (Str "getEcomParameters")) ]) ]));
                 ("select", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "public");
+                  (Str "getEcomParameters") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("ecr_data", (jo [
@@ -626,12 +698,14 @@ let make_config () : value =
             ("name", (Str "ecrData"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
             ("name", (Str "responseMessage"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "terminalId"));
             ("req", (Bool true));
             ("type", (Str "`$INTEGER`")) ]);
@@ -654,13 +728,18 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/public/getEcrData"));
-                ("parts", (ja [
-                  (Str "public");
-                  (Str "getEcrData") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "public")) ]);
+                  (jo [
+                    ("lit", (Str "getEcrData")) ]) ]));
                 ("select", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "public");
+                  (Str "getEcrData") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("emv_data", (jo [
@@ -669,12 +748,14 @@ let make_config () : value =
             ("name", (Str "emvData"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
             ("name", (Str "responseMessage"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "terminalId"));
             ("req", (Bool true));
             ("type", (Str "`$INTEGER`")) ]);
@@ -697,18 +778,24 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/public/getEmvData"));
-                ("parts", (ja [
-                  (Str "public");
-                  (Str "getEmvData") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "public")) ]);
+                  (jo [
+                    ("lit", (Str "getEmvData")) ]) ]));
                 ("select", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "public");
+                  (Str "getEmvData") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("enable_acquiring", (jo [
         ("fields", (ja [
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "accountNo"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -723,6 +810,7 @@ let make_config () : value =
             ("req", (Bool true));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "merchantCategoryCode"));
             ("req", (Bool true));
             ("type", (Str "`$INTEGER`")) ]);
@@ -735,12 +823,14 @@ let make_config () : value =
             ("req", (Bool true));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
             ("name", (Str "responseMessage"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "sortingCode"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -767,12 +857,15 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/enableAcquiring"));
-                ("parts", (ja [
-                  (Str "enableAcquiring") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "enableAcquiring")) ]) ]));
                 ("select", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "enableAcquiring") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("get_merchant_contract_number", (jo [
@@ -782,6 +875,7 @@ let make_config () : value =
             ("req", (Bool true));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -798,17 +892,21 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/getMerchantContractNumber"));
-                ("parts", (ja [
-                  (Str "getMerchantContractNumber") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "getMerchantContractNumber")) ]) ]));
                 ("select", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "getMerchantContractNumber") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("get_template_xml", (jo [
         ("fields", (ja [
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -829,13 +927,18 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/public/getTemplateXml"));
-                ("parts", (ja [
-                  (Str "public");
-                  (Str "getTemplateXml") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "public")) ]);
+                  (jo [
+                    ("lit", (Str "getTemplateXml")) ]) ]));
                 ("select", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "public");
+                  (Str "getTemplateXml") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("introduce_mandator", (jo [
@@ -845,6 +948,7 @@ let make_config () : value =
             ("req", (Bool true));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -861,17 +965,21 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/introduceMandator"));
-                ("parts", (ja [
-                  (Str "introduceMandator") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "introduceMandator")) ]) ]));
                 ("select", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "introduceMandator") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("introduce_package", (jo [
         ("fields", (ja [
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -892,12 +1000,15 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/introducePackage"));
-                ("parts", (ja [
-                  (Str "introducePackage") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "introducePackage")) ]) ]));
                 ("select", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "introducePackage") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("keep_alive", (jo [
@@ -918,6 +1029,7 @@ let make_config () : value =
             ("name", (Str "pagination"));
             ("type", (Str "`$OBJECT`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -930,6 +1042,7 @@ let make_config () : value =
             ("name", (Str "terminalDateTimeTo"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "terminalId"));
             ("type", (Str "`$INTEGER`")) ]) ]));
         ("name", (Str "keep_alive"));
@@ -943,13 +1056,18 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/public/keepalive"));
-                ("parts", (ja [
-                  (Str "public");
-                  (Str "keepalive") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "public")) ]);
+                  (jo [
+                    ("lit", (Str "keepalive")) ]) ]));
                 ("select", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "public");
+                  (Str "keepalive") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("list_terminal", (jo [
@@ -964,6 +1082,7 @@ let make_config () : value =
             ("name", (Str "pagination"));
             ("type", (Str "`$OBJECT`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -983,13 +1102,18 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/public/listTerminals"));
-                ("parts", (ja [
-                  (Str "public");
-                  (Str "listTerminals") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "public")) ]);
+                  (jo [
+                    ("lit", (Str "listTerminals")) ]) ]));
                 ("select", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "public");
+                  (Str "listTerminals") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("mandator_clearing_export", (jo [
@@ -1011,6 +1135,7 @@ let make_config () : value =
             ("name", (Str "records"));
             ("type", (Str "`$ARRAY`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -1027,24 +1152,33 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/public/digitalservices/mandatorClearingExport"));
-                ("parts", (ja [
-                  (Str "public");
-                  (Str "digitalservices");
-                  (Str "mandatorClearingExport") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "public")) ]);
+                  (jo [
+                    ("lit", (Str "digitalservices")) ]);
+                  (jo [
+                    ("lit", (Str "mandatorClearingExport")) ]) ]));
                 ("select", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "public");
+                  (Str "digitalservices");
+                  (Str "mandatorClearingExport") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("mandator_clearing_export_download", (jo [
         ("fields", (ja [
           (jo [
+            ("format", (Str "date-time"));
             ("name", (Str "clearingDateFrom"));
             ("req", (Bool true));
             ("short", (Str "Start date for clearing export (inclusive)"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "date-time"));
             ("name", (Str "clearingDateTo"));
             ("req", (Bool true));
             ("short", (Str "End date for clearing export (inclusive)"));
@@ -1061,6 +1195,7 @@ let make_config () : value =
             ("name", (Str "id"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -1070,6 +1205,9 @@ let make_config () : value =
             ("name", (Str "status"));
             ("short", (Str "Processing status of the export request"));
             ("type", (Str "`$STRING`")) ]) ]));
+        ("id", (jo [
+          ("field", (Str "id"));
+          ("name", (Str "id")) ]));
         ("name", (Str "mandator_clearing_export_download"));
         ("op", (jo [
           ("create", (jo [
@@ -1081,14 +1219,21 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/public/digitalservices/mandatorClearingExportDownload"));
-                ("parts", (ja [
-                  (Str "public");
-                  (Str "digitalservices");
-                  (Str "mandatorClearingExportDownload") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "public")) ]);
+                  (jo [
+                    ("lit", (Str "digitalservices")) ]);
+                  (jo [
+                    ("lit", (Str "mandatorClearingExportDownload")) ]) ]));
                 ("select", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "public");
+                  (Str "digitalservices");
+                  (Str "mandatorClearingExportDownload") ])) ]) ])) ]));
           ("load", (jo [
             ("input", (Str "data"));
             ("name", (Str "load"));
@@ -1105,20 +1250,29 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "GET"));
                 ("orig", (Str "/public/digitalservices/mandatorClearingExportDownload/{fileId}"));
-                ("parts", (ja [
-                  (Str "public");
-                  (Str "digitalservices");
-                  (Str "mandatorClearingExportDownload");
-                  (Str "{id}") ]));
                 ("rename", (jo [
                   ("param", (jo [
                     ("fileId", (Str "id")) ])) ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "public")) ]);
+                  (jo [
+                    ("lit", (Str "digitalservices")) ]);
+                  (jo [
+                    ("lit", (Str "mandatorClearingExportDownload")) ]);
+                  (jo [
+                    ("var", (Str "id")) ]) ]));
                 ("select", (jo [
                   ("exist", (ja [
                     (Str "id") ])) ]));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "public");
+                  (Str "digitalservices");
+                  (Str "mandatorClearingExportDownload");
+                  (Str "{id}") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("mandator_clearing_export_summary", (jo [
@@ -1137,6 +1291,7 @@ let make_config () : value =
             ("name", (Str "records"));
             ("type", (Str "`$ARRAY`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -1153,14 +1308,21 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/public/digitalservices/mandatorClearingExportSummary"));
-                ("parts", (ja [
-                  (Str "public");
-                  (Str "digitalservices");
-                  (Str "mandatorClearingExportSummary") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "public")) ]);
+                  (jo [
+                    ("lit", (Str "digitalservices")) ]);
+                  (jo [
+                    ("lit", (Str "mandatorClearingExportSummary")) ]) ]));
                 ("select", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "public");
+                  (Str "digitalservices");
+                  (Str "mandatorClearingExportSummary") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("merchant_portal_services_api", (jo [
@@ -1205,6 +1367,7 @@ let make_config () : value =
             ("name", (Str "retrievalReferenceNumber"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "sourceId"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -1214,6 +1377,7 @@ let make_config () : value =
             ("name", (Str "tecsengineResponseCodeTo"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "terminalId"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -1226,9 +1390,11 @@ let make_config () : value =
             ("name", (Str "transactionAmountTo"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "date-time"));
             ("name", (Str "transactionDateFrom"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "date-time"));
             ("name", (Str "transactionDateTo"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
@@ -1252,13 +1418,18 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/public/transactionHistoryCsv"));
-                ("parts", (ja [
-                  (Str "public");
-                  (Str "transactionHistoryCsv") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "public")) ]);
+                  (jo [
+                    ("lit", (Str "transactionHistoryCsv")) ]) ]));
                 ("select", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "public");
+                  (Str "transactionHistoryCsv") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("move_tid", (jo [
@@ -1268,6 +1439,7 @@ let make_config () : value =
             ("req", (Bool true));
             ("type", (Str "`$ARRAY`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -1290,12 +1462,15 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/moveTid"));
-                ("parts", (ja [
-                  (Str "moveTid") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "moveTid")) ]) ]));
                 ("select", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "moveTid") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("payment_manual", (jo [
@@ -1305,6 +1480,7 @@ let make_config () : value =
             ("short", (Str "Acquirer name parsed from KKG field"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "amount"));
             ("req", (Bool true));
             ("short", (Str "Transaction amount in minor units (cents)"));
@@ -1388,18 +1564,24 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/public/paymentManual"));
-                ("parts", (ja [
-                  (Str "public");
-                  (Str "paymentManual") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "public")) ]);
+                  (jo [
+                    ("lit", (Str "paymentManual")) ]) ]));
                 ("select", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "public");
+                  (Str "paymentManual") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("payment_sred", (jo [
         ("fields", (ja [
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "amount"));
             ("req", (Bool true));
             ("short", (Str "Transaction amount in minor units (cents)"));
@@ -1463,13 +1645,18 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/public/paymentSred"));
-                ("parts", (ja [
-                  (Str "public");
-                  (Str "paymentSred") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "public")) ]);
+                  (jo [
+                    ("lit", (Str "paymentSred")) ]) ]));
                 ("select", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body.sred`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body.sred`")) ]));
+                ("parts", (ja [
+                  (Str "public");
+                  (Str "paymentSred") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("pre_auth_transaction_completion", (jo [
@@ -1484,6 +1671,7 @@ let make_config () : value =
             ("name", (Str "actualBonusPoints"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "amount"));
             ("op", (jo [
               ("create", (jo [
@@ -1507,6 +1695,7 @@ let make_config () : value =
             ("req", (Bool true));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "clientId"));
             ("req", (Bool true));
             ("type", (Str "`$INTEGER`")) ]);
@@ -1527,6 +1716,7 @@ let make_config () : value =
             ("name", (Str "emvData"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int64"));
             ("name", (Str "exchangeFee"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -1548,6 +1738,7 @@ let make_config () : value =
             ("name", (Str "messageType"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "originalTraceNumber"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -1570,6 +1761,7 @@ let make_config () : value =
             ("name", (Str "receiptHeader"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "receiptLayout"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -1577,6 +1769,7 @@ let make_config () : value =
             ("req", (Bool true));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -1589,6 +1782,7 @@ let make_config () : value =
             ("name", (Str "svc"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "terminalId"));
             ("req", (Bool true));
             ("type", (Str "`$INTEGER`")) ]);
@@ -1596,9 +1790,11 @@ let make_config () : value =
             ("name", (Str "terminalLocation"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "traceNumber"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
+            ("format", (Str "date-time"));
             ("name", (Str "transactionDate"));
             ("op", (jo [
               ("create", (jo [
@@ -1633,25 +1829,35 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/public/paymentTransaction"));
-                ("parts", (ja [
-                  (Str "public");
-                  (Str "paymentTransaction") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "public")) ]);
+                  (jo [
+                    ("lit", (Str "paymentTransaction")) ]) ]));
                 ("select", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]);
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "public");
+                  (Str "paymentTransaction") ])) ]);
               (jo [
                 ("args", (empty_map ()));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/public/preAuthCompletionTransaction"));
-                ("parts", (ja [
-                  (Str "public");
-                  (Str "preAuthCompletionTransaction") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "public")) ]);
+                  (jo [
+                    ("lit", (Str "preAuthCompletionTransaction")) ]) ]));
                 ("select", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "public");
+                  (Str "preAuthCompletionTransaction") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("reactivate_terminal", (jo [
@@ -1670,12 +1876,14 @@ let make_config () : value =
             ("req", (Bool true));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
             ("name", (Str "responseMessage"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "terminalId"));
             ("req", (Bool true));
             ("type", (Str "`$INTEGER`")) ]) ]));
@@ -1690,12 +1898,15 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/reactivateTerminal"));
-                ("parts", (ja [
-                  (Str "reactivateTerminal") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "reactivateTerminal")) ]) ]));
                 ("select", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "reactivateTerminal") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("refund_transaction", (jo [
@@ -1710,6 +1921,7 @@ let make_config () : value =
             ("name", (Str "actualBonusPoints"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "amount"));
             ("op", (jo [
               ("create", (jo [
@@ -1729,6 +1941,7 @@ let make_config () : value =
             ("name", (Str "cardNumber"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "clientId"));
             ("req", (Bool true));
             ("type", (Str "`$INTEGER`")) ]);
@@ -1749,6 +1962,7 @@ let make_config () : value =
             ("name", (Str "emvData"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int64"));
             ("name", (Str "exchangeFee"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -1770,6 +1984,7 @@ let make_config () : value =
             ("name", (Str "messageType"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "originalTraceNumber"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -1792,6 +2007,7 @@ let make_config () : value =
             ("name", (Str "receiptHeader"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "receiptLayout"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -1799,6 +2015,7 @@ let make_config () : value =
             ("req", (Bool true));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -1811,6 +2028,7 @@ let make_config () : value =
             ("name", (Str "svc"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "terminalId"));
             ("req", (Bool true));
             ("type", (Str "`$INTEGER`")) ]);
@@ -1818,9 +2036,11 @@ let make_config () : value =
             ("name", (Str "terminalLocation"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "traceNumber"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
+            ("format", (Str "date-time"));
             ("name", (Str "transactionDate"));
             ("op", (jo [
               ("create", (jo [
@@ -1851,13 +2071,18 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/public/refundTransaction"));
-                ("parts", (ja [
-                  (Str "public");
-                  (Str "refundTransaction") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "public")) ]);
+                  (jo [
+                    ("lit", (Str "refundTransaction")) ]) ]));
                 ("select", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "public");
+                  (Str "refundTransaction") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("register_tecs_company", (jo [
@@ -1871,6 +2096,7 @@ let make_config () : value =
             ("req", (Bool true));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "partnerId"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -1881,6 +2107,7 @@ let make_config () : value =
             ("req", (Bool true));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -1901,12 +2128,15 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/registerTecsCompany"));
-                ("parts", (ja [
-                  (Str "registerTecsCompany") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "registerTecsCompany")) ]) ]));
                 ("select", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "registerTecsCompany") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("register_terminal", (jo [
@@ -1927,6 +2157,7 @@ let make_config () : value =
             ("req", (Bool true));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -1944,6 +2175,7 @@ let make_config () : value =
             ("req", (Bool true));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "terminalId"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -1983,12 +2215,15 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/registerTerminal"));
-                ("parts", (ja [
-                  (Str "registerTerminal") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "registerTerminal")) ]) ]));
                 ("select", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "registerTerminal") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("report_data", (jo [
@@ -2015,6 +2250,7 @@ let make_config () : value =
             ("req", (Bool true));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -2027,6 +2263,7 @@ let make_config () : value =
             ("name", (Str "sumOverDebitTx"));
             ("type", (Str "`$OBJECT`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "terminalId"));
             ("type", (Str "`$INTEGER`")) ]) ]));
         ("name", (Str "report_data"));
@@ -2040,14 +2277,21 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/public/digitalservices/reportData"));
-                ("parts", (ja [
-                  (Str "public");
-                  (Str "digitalservices");
-                  (Str "reportData") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "public")) ]);
+                  (jo [
+                    ("lit", (Str "digitalservices")) ]);
+                  (jo [
+                    ("lit", (Str "reportData")) ]) ]));
                 ("select", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "public");
+                  (Str "digitalservices");
+                  (Str "reportData") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("status_transaction", (jo [
@@ -2059,6 +2303,7 @@ let make_config () : value =
             ("name", (Str "acquirerTerminalId"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "amount"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -2073,6 +2318,7 @@ let make_config () : value =
                 (Str "`$STRING`");
                 (Str "`$NULL`") ]) ])) ]);
           (jo [
+            ("format", (Str "date-time"));
             ("name", (Str "authorizationDate"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
@@ -2088,6 +2334,7 @@ let make_config () : value =
             ("name", (Str "cardNumber"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "clearingAmount"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -2097,15 +2344,18 @@ let make_config () : value =
             ("name", (Str "clearingCurrency"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "date-time"));
             ("name", (Str "clearingDate"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "date-time"));
             ("name", (Str "clearingProcessedDate"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "clearingStatus"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "clientId"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -2133,6 +2383,7 @@ let make_config () : value =
             ("name", (Str "originalClientId"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "originalTerminalId"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -2145,6 +2396,7 @@ let make_config () : value =
             ("name", (Str "receiptNumber"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -2163,42 +2415,52 @@ let make_config () : value =
             ("name", (Str "settlementStatus"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "sourceId"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "tecsengineResponseCode"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
             ("name", (Str "tecsengineResponseText"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "date-time"));
             ("name", (Str "terminalEndOfDayDate"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "terminalId"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
             ("name", (Str "terminalLocation"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "tipAmount"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "traceNumber"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
+            ("format", (Str "date-time"));
             ("name", (Str "transactionClearingDate"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "date-time"));
             ("name", (Str "transactionDate"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "transactionId"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int64"));
             ("name", (Str "transactionSeqNumber"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
+            ("format", (Str "date-time"));
             ("name", (Str "transactionServerDate"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
@@ -2218,13 +2480,18 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/public/statusTransaction"));
-                ("parts", (ja [
-                  (Str "public");
-                  (Str "statusTransaction") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "public")) ]);
+                  (jo [
+                    ("lit", (Str "statusTransaction")) ]) ]));
                 ("select", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "public");
+                  (Str "statusTransaction") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("store_terminal_parameter", (jo [
@@ -2236,6 +2503,7 @@ let make_config () : value =
             ("name", (Str "configVersion"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -2259,12 +2527,15 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/storeTerminalParameters"));
-                ("parts", (ja [
-                  (Str "storeTerminalParameters") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "storeTerminalParameters")) ]) ]));
                 ("select", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "storeTerminalParameters") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("terminal_id", (jo [
@@ -2277,6 +2548,7 @@ let make_config () : value =
             ("name", (Str "duplicateTerminalIds"));
             ("type", (Str "`$ARRAY`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -2296,13 +2568,18 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/public/getTerminalId"));
-                ("parts", (ja [
-                  (Str "public");
-                  (Str "getTerminalId") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "public")) ]);
+                  (jo [
+                    ("lit", (Str "getTerminalId")) ]) ]));
                 ("select", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "public");
+                  (Str "getTerminalId") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("transaction_history", (jo [
@@ -2347,6 +2624,7 @@ let make_config () : value =
             ("name", (Str "referencedTransactionId"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -2356,6 +2634,7 @@ let make_config () : value =
             ("name", (Str "retrievalReferenceNumber"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "sourceId"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -2365,6 +2644,7 @@ let make_config () : value =
             ("name", (Str "tecsengineResponseCodeTo"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "terminalId"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -2377,9 +2657,11 @@ let make_config () : value =
             ("name", (Str "transactionAmountTo"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "date-time"));
             ("name", (Str "transactionDateFrom"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "date-time"));
             ("name", (Str "transactionDateTo"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
@@ -2406,26 +2688,38 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/public/mcom/transactionHistory"));
-                ("parts", (ja [
-                  (Str "public");
-                  (Str "mcom");
-                  (Str "transactionHistory") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "public")) ]);
+                  (jo [
+                    ("lit", (Str "mcom")) ]);
+                  (jo [
+                    ("lit", (Str "transactionHistory")) ]) ]));
                 ("select", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]);
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "public");
+                  (Str "mcom");
+                  (Str "transactionHistory") ])) ]);
               (jo [
                 ("args", (empty_map ()));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/public/transactionHistory"));
-                ("parts", (ja [
-                  (Str "public");
-                  (Str "transactionHistory") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "public")) ]);
+                  (jo [
+                    ("lit", (Str "transactionHistory")) ]) ]));
                 ("select", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "public");
+                  (Str "transactionHistory") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("transactions_count", (jo [
@@ -2434,12 +2728,14 @@ let make_config () : value =
             ("name", (Str "period"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
             ("name", (Str "responseMessage"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "date-time"));
             ("name", (Str "transactionDateFrom"));
             ("op", (jo [
               ("create", (jo [
@@ -2447,6 +2743,7 @@ let make_config () : value =
                 ("type", (Str "`$STRING`")) ])) ]));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "date-time"));
             ("name", (Str "transactionDateTo"));
             ("op", (jo [
               ("create", (jo [
@@ -2467,25 +2764,35 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/public/countAuthorisedTransactions"));
-                ("parts", (ja [
-                  (Str "public");
-                  (Str "countAuthorisedTransactions") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "public")) ]);
+                  (jo [
+                    ("lit", (Str "countAuthorisedTransactions")) ]) ]));
                 ("select", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]);
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "public");
+                  (Str "countAuthorisedTransactions") ])) ]);
               (jo [
                 ("args", (empty_map ()));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/public/countNotAuthorisedTransactions"));
-                ("parts", (ja [
-                  (Str "public");
-                  (Str "countNotAuthorisedTransactions") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "public")) ]);
+                  (jo [
+                    ("lit", (Str "countNotAuthorisedTransactions")) ]) ]));
                 ("select", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "public");
+                  (Str "countNotAuthorisedTransactions") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("transactions_count_card_brand", (jo [
@@ -2494,12 +2801,14 @@ let make_config () : value =
             ("name", (Str "period"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
             ("name", (Str "responseMessage"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "date-time"));
             ("name", (Str "transactionDateFrom"));
             ("op", (jo [
               ("create", (jo [
@@ -2507,6 +2816,7 @@ let make_config () : value =
                 ("type", (Str "`$STRING`")) ])) ]));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "date-time"));
             ("name", (Str "transactionDateTo"));
             ("op", (jo [
               ("create", (jo [
@@ -2527,13 +2837,18 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/public/countTransactionsByCardBrand"));
-                ("parts", (ja [
-                  (Str "public");
-                  (Str "countTransactionsByCardBrand") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "public")) ]);
+                  (jo [
+                    ("lit", (Str "countTransactionsByCardBrand")) ]) ]));
                 ("select", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "public");
+                  (Str "countTransactionsByCardBrand") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("transactions_turnover", (jo [
@@ -2542,12 +2857,14 @@ let make_config () : value =
             ("name", (Str "period"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
             ("name", (Str "responseMessage"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "date-time"));
             ("name", (Str "transactionDateFrom"));
             ("op", (jo [
               ("create", (jo [
@@ -2555,6 +2872,7 @@ let make_config () : value =
                 ("type", (Str "`$STRING`")) ])) ]));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "date-time"));
             ("name", (Str "transactionDateTo"));
             ("op", (jo [
               ("create", (jo [
@@ -2575,13 +2893,18 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/public/transactionTurnover"));
-                ("parts", (ja [
-                  (Str "public");
-                  (Str "transactionTurnover") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "public")) ]);
+                  (jo [
+                    ("lit", (Str "transactionTurnover")) ]) ]));
                 ("select", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "public");
+                  (Str "transactionTurnover") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("update_merchant", (jo [
@@ -2603,6 +2926,7 @@ let make_config () : value =
             ("name", (Str "name"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -2631,18 +2955,24 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/public/updateMerchant"));
-                ("parts", (ja [
-                  (Str "public");
-                  (Str "updateMerchant") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "public")) ]);
+                  (jo [
+                    ("lit", (Str "updateMerchant")) ]) ]));
                 ("select", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "public");
+                  (Str "updateMerchant") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("update_template_xml", (jo [
         ("fields", (ja [
           (jo [
+            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
             ("type", (Str "`$INTEGER`")) ]);
           (jo [
@@ -2667,13 +2997,18 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/public/updateTemplateXml"));
-                ("parts", (ja [
-                  (Str "public");
-                  (Str "updateTemplateXml") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "public")) ]);
+                  (jo [
+                    ("lit", (Str "updateTemplateXml")) ]) ]));
                 ("select", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "public");
+                  (Str "updateTemplateXml") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("version", (jo [
@@ -2698,15 +3033,24 @@ let make_config () : value =
                 ("kind", (Str "http"));
                 ("method", (Str "GET"));
                 ("orig", (Str "/public/version"));
-                ("parts", (ja [
-                  (Str "public");
-                  (Str "version") ]));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "public")) ]);
+                  (jo [
+                    ("lit", (Str "version")) ]) ]));
                 ("select", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ])) ]) ])) ])) ]));
+                  ("res", (Str "`body`")) ]));
+                ("parts", (ja [
+                  (Str "public");
+                  (Str "version") ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ])) ])) ])
+
+(* The plugin definitions the model selected, per feature: none - no
+ * plugin-bearing feature is active in this SDK. *)
+let feature_plugins (_name : string) = []
 
 let make_feature (name : string) : feature =
   match name with

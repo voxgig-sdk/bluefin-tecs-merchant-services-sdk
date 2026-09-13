@@ -186,6 +186,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "amount",
 						"op": map[string]any{
 							"create": map[string]any{
@@ -212,6 +213,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "clientId",
 						"req": true,
 						"type": "`$INTEGER`",
@@ -238,6 +240,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int64",
 						"name": "exchangeFee",
 						"type": "`$INTEGER`",
 					},
@@ -272,6 +275,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "originalTraceNumber",
 						"type": "`$INTEGER`",
 					},
@@ -302,6 +306,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "receiptLayout",
 						"type": "`$INTEGER`",
 					},
@@ -311,6 +316,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "responseCode",
 						"type": "`$INTEGER`",
 					},
@@ -327,6 +333,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "terminalId",
 						"req": true,
 						"type": "`$INTEGER`",
@@ -336,10 +343,12 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "traceNumber",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
+						"format": "date-time",
 						"name": "transactionDate",
 						"op": map[string]any{
 							"create": map[string]any{
@@ -379,14 +388,22 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/public/cancelTransaction",
-								"parts": []any{
-									"public",
-									"cancelTransaction",
+								"segments": []any{
+									map[string]any{
+										"lit": "public",
+									},
+									map[string]any{
+										"lit": "cancelTransaction",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"public",
+									"cancelTransaction",
 								},
 							},
 						},
@@ -403,6 +420,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "responseCode",
 						"type": "`$INTEGER`",
 					},
@@ -432,8 +450,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/checkCardBlackListed",
-								"parts": []any{
-									"checkCardBlackListed",
+								"segments": []any{
+									map[string]any{
+										"lit": "checkCardBlackListed",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -443,6 +463,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"checkCardBlackListed",
 								},
 							},
 						},
@@ -455,10 +478,12 @@ func MakeConfig() map[string]any {
 			"create_product": map[string]any{
 				"fields": []any{
 					map[string]any{
+						"format": "int32",
 						"name": "acquirerId",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "responseCode",
 						"type": "`$INTEGER`",
 					},
@@ -498,13 +523,18 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/createProduct",
-								"parts": []any{
-									"createProduct",
+								"segments": []any{
+									map[string]any{
+										"lit": "createProduct",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"createProduct",
 								},
 							},
 						},
@@ -534,6 +564,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "responseCode",
 						"type": "`$INTEGER`",
 					},
@@ -542,6 +573,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "terminalId",
 						"req": true,
 						"type": "`$INTEGER`",
@@ -558,13 +590,18 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/deactivateTerminal",
-								"parts": []any{
-									"deactivateTerminal",
+								"segments": []any{
+									map[string]any{
+										"lit": "deactivateTerminal",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"deactivateTerminal",
 								},
 							},
 						},
@@ -589,6 +626,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "responseCode",
 						"type": "`$INTEGER`",
 					},
@@ -597,6 +635,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "txCount",
 						"type": "`$INTEGER`",
 					},
@@ -609,14 +648,17 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "txSeqNoEnd",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "txSeqNoStart",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "txTotal",
 						"type": "`$INTEGER`",
 					},
@@ -642,15 +684,23 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/public/digitalservices/mandatorClearingExportDownload/{fileId}",
-								"parts": []any{
-									"public",
-									"digitalservices",
-									"mandatorClearingExportDownload",
-									"{file_id}",
-								},
 								"rename": map[string]any{
 									"param": map[string]any{
 										"fileId": "file_id",
+									},
+								},
+								"segments": []any{
+									map[string]any{
+										"lit": "public",
+									},
+									map[string]any{
+										"lit": "digitalservices",
+									},
+									map[string]any{
+										"lit": "mandatorClearingExportDownload",
+									},
+									map[string]any{
+										"var": "file_id",
 									},
 								},
 								"select": map[string]any{
@@ -662,21 +712,38 @@ func MakeConfig() map[string]any {
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
+								"parts": []any{
+									"public",
+									"digitalservices",
+									"mandatorClearingExportDownload",
+									"{file_id}",
+								},
 							},
 							map[string]any{
 								"args": map[string]any{},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/public/digitalservices/mandatorClearingExportMetadata",
-								"parts": []any{
-									"public",
-									"digitalservices",
-									"mandatorClearingExportMetadata",
+								"segments": []any{
+									map[string]any{
+										"lit": "public",
+									},
+									map[string]any{
+										"lit": "digitalservices",
+									},
+									map[string]any{
+										"lit": "mandatorClearingExportMetadata",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"public",
+									"digitalservices",
+									"mandatorClearingExportMetadata",
 								},
 							},
 						},
@@ -690,16 +757,30 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/public/digitalservices/mandatorClearingExportDownload/status",
-								"parts": []any{
-									"public",
-									"digitalservices",
-									"mandatorClearingExportDownload",
-									"status",
+								"segments": []any{
+									map[string]any{
+										"lit": "public",
+									},
+									map[string]any{
+										"lit": "digitalservices",
+									},
+									map[string]any{
+										"lit": "mandatorClearingExportDownload",
+									},
+									map[string]any{
+										"lit": "status",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"public",
+									"digitalservices",
+									"mandatorClearingExportDownload",
+									"status",
 								},
 							},
 						},
@@ -720,6 +801,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "responseCode",
 						"type": "`$INTEGER`",
 					},
@@ -728,6 +810,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "terminalId",
 						"req": true,
 						"type": "`$INTEGER`",
@@ -754,14 +837,22 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/public/getEcData",
-								"parts": []any{
-									"public",
-									"getEcData",
+								"segments": []any{
+									map[string]any{
+										"lit": "public",
+									},
+									map[string]any{
+										"lit": "getEcData",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"public",
+									"getEcData",
 								},
 							},
 						},
@@ -782,6 +873,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "responseCode",
 						"type": "`$INTEGER`",
 					},
@@ -790,6 +882,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "terminalId",
 						"req": true,
 						"type": "`$INTEGER`",
@@ -806,14 +899,22 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/public/getEcomParameters",
-								"parts": []any{
-									"public",
-									"getEcomParameters",
+								"segments": []any{
+									map[string]any{
+										"lit": "public",
+									},
+									map[string]any{
+										"lit": "getEcomParameters",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"public",
+									"getEcomParameters",
 								},
 							},
 						},
@@ -830,6 +931,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "responseCode",
 						"type": "`$INTEGER`",
 					},
@@ -838,6 +940,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "terminalId",
 						"req": true,
 						"type": "`$INTEGER`",
@@ -864,14 +967,22 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/public/getEcrData",
-								"parts": []any{
-									"public",
-									"getEcrData",
+								"segments": []any{
+									map[string]any{
+										"lit": "public",
+									},
+									map[string]any{
+										"lit": "getEcrData",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"public",
+									"getEcrData",
 								},
 							},
 						},
@@ -888,6 +999,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "responseCode",
 						"type": "`$INTEGER`",
 					},
@@ -896,6 +1008,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "terminalId",
 						"req": true,
 						"type": "`$INTEGER`",
@@ -922,14 +1035,22 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/public/getEmvData",
-								"parts": []any{
-									"public",
-									"getEmvData",
+								"segments": []any{
+									map[string]any{
+										"lit": "public",
+									},
+									map[string]any{
+										"lit": "getEmvData",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"public",
+									"getEmvData",
 								},
 							},
 						},
@@ -942,6 +1063,7 @@ func MakeConfig() map[string]any {
 			"enable_acquiring": map[string]any{
 				"fields": []any{
 					map[string]any{
+						"format": "int32",
 						"name": "accountNo",
 						"type": "`$INTEGER`",
 					},
@@ -960,6 +1082,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "merchantCategoryCode",
 						"req": true,
 						"type": "`$INTEGER`",
@@ -975,6 +1098,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "responseCode",
 						"type": "`$INTEGER`",
 					},
@@ -983,6 +1107,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "sortingCode",
 						"type": "`$INTEGER`",
 					},
@@ -1015,13 +1140,18 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/enableAcquiring",
-								"parts": []any{
-									"enableAcquiring",
+								"segments": []any{
+									map[string]any{
+										"lit": "enableAcquiring",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"enableAcquiring",
 								},
 							},
 						},
@@ -1039,6 +1169,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "responseCode",
 						"type": "`$INTEGER`",
 					},
@@ -1058,13 +1189,18 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/getMerchantContractNumber",
-								"parts": []any{
-									"getMerchantContractNumber",
+								"segments": []any{
+									map[string]any{
+										"lit": "getMerchantContractNumber",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"getMerchantContractNumber",
 								},
 							},
 						},
@@ -1077,6 +1213,7 @@ func MakeConfig() map[string]any {
 			"get_template_xml": map[string]any{
 				"fields": []any{
 					map[string]any{
+						"format": "int32",
 						"name": "responseCode",
 						"type": "`$INTEGER`",
 					},
@@ -1101,14 +1238,22 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/public/getTemplateXml",
-								"parts": []any{
-									"public",
-									"getTemplateXml",
+								"segments": []any{
+									map[string]any{
+										"lit": "public",
+									},
+									map[string]any{
+										"lit": "getTemplateXml",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"public",
+									"getTemplateXml",
 								},
 							},
 						},
@@ -1126,6 +1271,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "responseCode",
 						"type": "`$INTEGER`",
 					},
@@ -1145,13 +1291,18 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/introduceMandator",
-								"parts": []any{
-									"introduceMandator",
+								"segments": []any{
+									map[string]any{
+										"lit": "introduceMandator",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"introduceMandator",
 								},
 							},
 						},
@@ -1164,6 +1315,7 @@ func MakeConfig() map[string]any {
 			"introduce_package": map[string]any{
 				"fields": []any{
 					map[string]any{
+						"format": "int32",
 						"name": "responseCode",
 						"type": "`$INTEGER`",
 					},
@@ -1188,13 +1340,18 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/introducePackage",
-								"parts": []any{
-									"introducePackage",
+								"segments": []any{
+									map[string]any{
+										"lit": "introducePackage",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"introducePackage",
 								},
 							},
 						},
@@ -1227,6 +1384,7 @@ func MakeConfig() map[string]any {
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "responseCode",
 						"type": "`$INTEGER`",
 					},
@@ -1243,6 +1401,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "terminalId",
 						"type": "`$INTEGER`",
 					},
@@ -1258,14 +1417,22 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/public/keepalive",
-								"parts": []any{
-									"public",
-									"keepalive",
+								"segments": []any{
+									map[string]any{
+										"lit": "public",
+									},
+									map[string]any{
+										"lit": "keepalive",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"public",
+									"keepalive",
 								},
 							},
 						},
@@ -1290,6 +1457,7 @@ func MakeConfig() map[string]any {
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "responseCode",
 						"type": "`$INTEGER`",
 					},
@@ -1313,14 +1481,22 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/public/listTerminals",
-								"parts": []any{
-									"public",
-									"listTerminals",
+								"segments": []any{
+									map[string]any{
+										"lit": "public",
+									},
+									map[string]any{
+										"lit": "listTerminals",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"public",
+									"listTerminals",
 								},
 							},
 						},
@@ -1353,6 +1529,7 @@ func MakeConfig() map[string]any {
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "responseCode",
 						"type": "`$INTEGER`",
 					},
@@ -1372,15 +1549,26 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/public/digitalservices/mandatorClearingExport",
-								"parts": []any{
-									"public",
-									"digitalservices",
-									"mandatorClearingExport",
+								"segments": []any{
+									map[string]any{
+										"lit": "public",
+									},
+									map[string]any{
+										"lit": "digitalservices",
+									},
+									map[string]any{
+										"lit": "mandatorClearingExport",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"public",
+									"digitalservices",
+									"mandatorClearingExport",
 								},
 							},
 						},
@@ -1393,12 +1581,14 @@ func MakeConfig() map[string]any {
 			"mandator_clearing_export_download": map[string]any{
 				"fields": []any{
 					map[string]any{
+						"format": "date-time",
 						"name": "clearingDateFrom",
 						"req": true,
 						"short": "Start date for clearing export (inclusive)",
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "date-time",
 						"name": "clearingDateTo",
 						"req": true,
 						"short": "End date for clearing export (inclusive)",
@@ -1419,6 +1609,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "responseCode",
 						"type": "`$INTEGER`",
 					},
@@ -1432,6 +1623,10 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 				},
+				"id": map[string]any{
+					"field": "id",
+					"name": "id",
+				},
 				"name": "mandator_clearing_export_download",
 				"op": map[string]any{
 					"create": map[string]any{
@@ -1443,15 +1638,26 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/public/digitalservices/mandatorClearingExportDownload",
-								"parts": []any{
-									"public",
-									"digitalservices",
-									"mandatorClearingExportDownload",
+								"segments": []any{
+									map[string]any{
+										"lit": "public",
+									},
+									map[string]any{
+										"lit": "digitalservices",
+									},
+									map[string]any{
+										"lit": "mandatorClearingExportDownload",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"public",
+									"digitalservices",
+									"mandatorClearingExportDownload",
 								},
 							},
 						},
@@ -1475,15 +1681,23 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/public/digitalservices/mandatorClearingExportDownload/{fileId}",
-								"parts": []any{
-									"public",
-									"digitalservices",
-									"mandatorClearingExportDownload",
-									"{id}",
-								},
 								"rename": map[string]any{
 									"param": map[string]any{
 										"fileId": "id",
+									},
+								},
+								"segments": []any{
+									map[string]any{
+										"lit": "public",
+									},
+									map[string]any{
+										"lit": "digitalservices",
+									},
+									map[string]any{
+										"lit": "mandatorClearingExportDownload",
+									},
+									map[string]any{
+										"var": "id",
 									},
 								},
 								"select": map[string]any{
@@ -1494,6 +1708,12 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"public",
+									"digitalservices",
+									"mandatorClearingExportDownload",
+									"{id}",
 								},
 							},
 						},
@@ -1522,6 +1742,7 @@ func MakeConfig() map[string]any {
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "responseCode",
 						"type": "`$INTEGER`",
 					},
@@ -1541,15 +1762,26 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/public/digitalservices/mandatorClearingExportSummary",
-								"parts": []any{
-									"public",
-									"digitalservices",
-									"mandatorClearingExportSummary",
+								"segments": []any{
+									map[string]any{
+										"lit": "public",
+									},
+									map[string]any{
+										"lit": "digitalservices",
+									},
+									map[string]any{
+										"lit": "mandatorClearingExportSummary",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"public",
+									"digitalservices",
+									"mandatorClearingExportSummary",
 								},
 							},
 						},
@@ -1614,6 +1846,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "sourceId",
 						"type": "`$INTEGER`",
 					},
@@ -1626,6 +1859,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "terminalId",
 						"type": "`$INTEGER`",
 					},
@@ -1642,10 +1876,12 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "date-time",
 						"name": "transactionDateFrom",
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "date-time",
 						"name": "transactionDateTo",
 						"type": "`$STRING`",
 					},
@@ -1674,14 +1910,22 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/public/transactionHistoryCsv",
-								"parts": []any{
-									"public",
-									"transactionHistoryCsv",
+								"segments": []any{
+									map[string]any{
+										"lit": "public",
+									},
+									map[string]any{
+										"lit": "transactionHistoryCsv",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"public",
+									"transactionHistoryCsv",
 								},
 							},
 						},
@@ -1699,6 +1943,7 @@ func MakeConfig() map[string]any {
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "responseCode",
 						"type": "`$INTEGER`",
 					},
@@ -1726,13 +1971,18 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/moveTid",
-								"parts": []any{
-									"moveTid",
+								"segments": []any{
+									map[string]any{
+										"lit": "moveTid",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"moveTid",
 								},
 							},
 						},
@@ -1750,6 +2000,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "amount",
 						"req": true,
 						"short": "Transaction amount in minor units (cents)",
@@ -1852,14 +2103,22 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/public/paymentManual",
-								"parts": []any{
-									"public",
-									"paymentManual",
+								"segments": []any{
+									map[string]any{
+										"lit": "public",
+									},
+									map[string]any{
+										"lit": "paymentManual",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"public",
+									"paymentManual",
 								},
 							},
 						},
@@ -1872,6 +2131,7 @@ func MakeConfig() map[string]any {
 			"payment_sred": map[string]any{
 				"fields": []any{
 					map[string]any{
+						"format": "int32",
 						"name": "amount",
 						"req": true,
 						"short": "Transaction amount in minor units (cents)",
@@ -1948,14 +2208,22 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/public/paymentSred",
-								"parts": []any{
-									"public",
-									"paymentSred",
+								"segments": []any{
+									map[string]any{
+										"lit": "public",
+									},
+									map[string]any{
+										"lit": "paymentSred",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body.sred`",
+								},
+								"parts": []any{
+									"public",
+									"paymentSred",
 								},
 							},
 						},
@@ -1980,6 +2248,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "amount",
 						"op": map[string]any{
 							"create": map[string]any{
@@ -2011,6 +2280,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "clientId",
 						"req": true,
 						"type": "`$INTEGER`",
@@ -2037,6 +2307,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int64",
 						"name": "exchangeFee",
 						"type": "`$INTEGER`",
 					},
@@ -2065,6 +2336,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "originalTraceNumber",
 						"type": "`$INTEGER`",
 					},
@@ -2095,6 +2367,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "receiptLayout",
 						"type": "`$INTEGER`",
 					},
@@ -2104,6 +2377,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "responseCode",
 						"type": "`$INTEGER`",
 					},
@@ -2120,6 +2394,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "terminalId",
 						"req": true,
 						"type": "`$INTEGER`",
@@ -2129,10 +2404,12 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "traceNumber",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
+						"format": "date-time",
 						"name": "transactionDate",
 						"op": map[string]any{
 							"create": map[string]any{
@@ -2177,14 +2454,22 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/public/paymentTransaction",
-								"parts": []any{
-									"public",
-									"paymentTransaction",
+								"segments": []any{
+									map[string]any{
+										"lit": "public",
+									},
+									map[string]any{
+										"lit": "paymentTransaction",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"public",
+									"paymentTransaction",
 								},
 							},
 							map[string]any{
@@ -2192,14 +2477,22 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/public/preAuthCompletionTransaction",
-								"parts": []any{
-									"public",
-									"preAuthCompletionTransaction",
+								"segments": []any{
+									map[string]any{
+										"lit": "public",
+									},
+									map[string]any{
+										"lit": "preAuthCompletionTransaction",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"public",
+									"preAuthCompletionTransaction",
 								},
 							},
 						},
@@ -2229,6 +2522,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "responseCode",
 						"type": "`$INTEGER`",
 					},
@@ -2237,6 +2531,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "terminalId",
 						"req": true,
 						"type": "`$INTEGER`",
@@ -2253,13 +2548,18 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/reactivateTerminal",
-								"parts": []any{
-									"reactivateTerminal",
+								"segments": []any{
+									map[string]any{
+										"lit": "reactivateTerminal",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"reactivateTerminal",
 								},
 							},
 						},
@@ -2284,6 +2584,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "amount",
 						"op": map[string]any{
 							"create": map[string]any{
@@ -2310,6 +2611,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "clientId",
 						"req": true,
 						"type": "`$INTEGER`",
@@ -2336,6 +2638,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int64",
 						"name": "exchangeFee",
 						"type": "`$INTEGER`",
 					},
@@ -2364,6 +2667,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "originalTraceNumber",
 						"type": "`$INTEGER`",
 					},
@@ -2394,6 +2698,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "receiptLayout",
 						"type": "`$INTEGER`",
 					},
@@ -2403,6 +2708,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "responseCode",
 						"type": "`$INTEGER`",
 					},
@@ -2419,6 +2725,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "terminalId",
 						"req": true,
 						"type": "`$INTEGER`",
@@ -2428,10 +2735,12 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "traceNumber",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
+						"format": "date-time",
 						"name": "transactionDate",
 						"op": map[string]any{
 							"create": map[string]any{
@@ -2471,14 +2780,22 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/public/refundTransaction",
-								"parts": []any{
-									"public",
-									"refundTransaction",
+								"segments": []any{
+									map[string]any{
+										"lit": "public",
+									},
+									map[string]any{
+										"lit": "refundTransaction",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"public",
+									"refundTransaction",
 								},
 							},
 						},
@@ -2501,6 +2818,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "partnerId",
 						"type": "`$INTEGER`",
 					},
@@ -2514,6 +2832,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "responseCode",
 						"type": "`$INTEGER`",
 					},
@@ -2538,13 +2857,18 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/registerTecsCompany",
-								"parts": []any{
-									"registerTecsCompany",
+								"segments": []any{
+									map[string]any{
+										"lit": "registerTecsCompany",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"registerTecsCompany",
 								},
 							},
 						},
@@ -2576,6 +2900,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "responseCode",
 						"type": "`$INTEGER`",
 					},
@@ -2598,6 +2923,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "terminalId",
 						"type": "`$INTEGER`",
 					},
@@ -2647,13 +2973,18 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/registerTerminal",
-								"parts": []any{
-									"registerTerminal",
+								"segments": []any{
+									map[string]any{
+										"lit": "registerTerminal",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"registerTerminal",
 								},
 							},
 						},
@@ -2692,6 +3023,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "responseCode",
 						"type": "`$INTEGER`",
 					},
@@ -2708,6 +3040,7 @@ func MakeConfig() map[string]any {
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "terminalId",
 						"type": "`$INTEGER`",
 					},
@@ -2723,15 +3056,26 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/public/digitalservices/reportData",
-								"parts": []any{
-									"public",
-									"digitalservices",
-									"reportData",
+								"segments": []any{
+									map[string]any{
+										"lit": "public",
+									},
+									map[string]any{
+										"lit": "digitalservices",
+									},
+									map[string]any{
+										"lit": "reportData",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"public",
+									"digitalservices",
+									"reportData",
 								},
 							},
 						},
@@ -2752,6 +3096,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "amount",
 						"type": "`$INTEGER`",
 					},
@@ -2771,6 +3116,7 @@ func MakeConfig() map[string]any {
 						},
 					},
 					map[string]any{
+						"format": "date-time",
 						"name": "authorizationDate",
 						"type": "`$STRING`",
 					},
@@ -2791,6 +3137,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "clearingAmount",
 						"type": "`$INTEGER`",
 					},
@@ -2803,10 +3150,12 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "date-time",
 						"name": "clearingDate",
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "date-time",
 						"name": "clearingProcessedDate",
 						"type": "`$STRING`",
 					},
@@ -2815,6 +3164,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "clientId",
 						"type": "`$INTEGER`",
 					},
@@ -2851,6 +3201,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "originalTerminalId",
 						"type": "`$INTEGER`",
 					},
@@ -2867,6 +3218,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "responseCode",
 						"type": "`$INTEGER`",
 					},
@@ -2891,10 +3243,12 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "sourceId",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "tecsengineResponseCode",
 						"type": "`$INTEGER`",
 					},
@@ -2903,10 +3257,12 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "date-time",
 						"name": "terminalEndOfDayDate",
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "terminalId",
 						"type": "`$INTEGER`",
 					},
@@ -2915,18 +3271,22 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "tipAmount",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "traceNumber",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
+						"format": "date-time",
 						"name": "transactionClearingDate",
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "date-time",
 						"name": "transactionDate",
 						"type": "`$STRING`",
 					},
@@ -2935,10 +3295,12 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int64",
 						"name": "transactionSeqNumber",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
+						"format": "date-time",
 						"name": "transactionServerDate",
 						"type": "`$STRING`",
 					},
@@ -2962,14 +3324,22 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/public/statusTransaction",
-								"parts": []any{
-									"public",
-									"statusTransaction",
+								"segments": []any{
+									map[string]any{
+										"lit": "public",
+									},
+									map[string]any{
+										"lit": "statusTransaction",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"public",
+									"statusTransaction",
 								},
 							},
 						},
@@ -2990,6 +3360,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "responseCode",
 						"type": "`$INTEGER`",
 					},
@@ -3018,13 +3389,18 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/storeTerminalParameters",
-								"parts": []any{
-									"storeTerminalParameters",
+								"segments": []any{
+									map[string]any{
+										"lit": "storeTerminalParameters",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"storeTerminalParameters",
 								},
 							},
 						},
@@ -3046,6 +3422,7 @@ func MakeConfig() map[string]any {
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "responseCode",
 						"type": "`$INTEGER`",
 					},
@@ -3069,14 +3446,22 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/public/getTerminalId",
-								"parts": []any{
-									"public",
-									"getTerminalId",
+								"segments": []any{
+									map[string]any{
+										"lit": "public",
+									},
+									map[string]any{
+										"lit": "getTerminalId",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"public",
+									"getTerminalId",
 								},
 							},
 						},
@@ -3141,6 +3526,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "responseCode",
 						"type": "`$INTEGER`",
 					},
@@ -3153,6 +3539,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "sourceId",
 						"type": "`$INTEGER`",
 					},
@@ -3165,6 +3552,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "terminalId",
 						"type": "`$INTEGER`",
 					},
@@ -3181,10 +3569,12 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "date-time",
 						"name": "transactionDateFrom",
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "date-time",
 						"name": "transactionDateTo",
 						"type": "`$STRING`",
 					},
@@ -3217,15 +3607,26 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/public/mcom/transactionHistory",
-								"parts": []any{
-									"public",
-									"mcom",
-									"transactionHistory",
+								"segments": []any{
+									map[string]any{
+										"lit": "public",
+									},
+									map[string]any{
+										"lit": "mcom",
+									},
+									map[string]any{
+										"lit": "transactionHistory",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"public",
+									"mcom",
+									"transactionHistory",
 								},
 							},
 							map[string]any{
@@ -3233,14 +3634,22 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/public/transactionHistory",
-								"parts": []any{
-									"public",
-									"transactionHistory",
+								"segments": []any{
+									map[string]any{
+										"lit": "public",
+									},
+									map[string]any{
+										"lit": "transactionHistory",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"public",
+									"transactionHistory",
 								},
 							},
 						},
@@ -3257,6 +3666,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "responseCode",
 						"type": "`$INTEGER`",
 					},
@@ -3265,6 +3675,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "date-time",
 						"name": "transactionDateFrom",
 						"op": map[string]any{
 							"create": map[string]any{
@@ -3275,6 +3686,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "date-time",
 						"name": "transactionDateTo",
 						"op": map[string]any{
 							"create": map[string]any{
@@ -3300,14 +3712,22 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/public/countAuthorisedTransactions",
-								"parts": []any{
-									"public",
-									"countAuthorisedTransactions",
+								"segments": []any{
+									map[string]any{
+										"lit": "public",
+									},
+									map[string]any{
+										"lit": "countAuthorisedTransactions",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"public",
+									"countAuthorisedTransactions",
 								},
 							},
 							map[string]any{
@@ -3315,14 +3735,22 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/public/countNotAuthorisedTransactions",
-								"parts": []any{
-									"public",
-									"countNotAuthorisedTransactions",
+								"segments": []any{
+									map[string]any{
+										"lit": "public",
+									},
+									map[string]any{
+										"lit": "countNotAuthorisedTransactions",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"public",
+									"countNotAuthorisedTransactions",
 								},
 							},
 						},
@@ -3339,6 +3767,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "responseCode",
 						"type": "`$INTEGER`",
 					},
@@ -3347,6 +3776,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "date-time",
 						"name": "transactionDateFrom",
 						"op": map[string]any{
 							"create": map[string]any{
@@ -3357,6 +3787,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "date-time",
 						"name": "transactionDateTo",
 						"op": map[string]any{
 							"create": map[string]any{
@@ -3382,14 +3813,22 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/public/countTransactionsByCardBrand",
-								"parts": []any{
-									"public",
-									"countTransactionsByCardBrand",
+								"segments": []any{
+									map[string]any{
+										"lit": "public",
+									},
+									map[string]any{
+										"lit": "countTransactionsByCardBrand",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"public",
+									"countTransactionsByCardBrand",
 								},
 							},
 						},
@@ -3406,6 +3845,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "responseCode",
 						"type": "`$INTEGER`",
 					},
@@ -3414,6 +3854,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "date-time",
 						"name": "transactionDateFrom",
 						"op": map[string]any{
 							"create": map[string]any{
@@ -3424,6 +3865,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "date-time",
 						"name": "transactionDateTo",
 						"op": map[string]any{
 							"create": map[string]any{
@@ -3449,14 +3891,22 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/public/transactionTurnover",
-								"parts": []any{
-									"public",
-									"transactionTurnover",
+								"segments": []any{
+									map[string]any{
+										"lit": "public",
+									},
+									map[string]any{
+										"lit": "transactionTurnover",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"public",
+									"transactionTurnover",
 								},
 							},
 						},
@@ -3490,6 +3940,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "int32",
 						"name": "responseCode",
 						"type": "`$INTEGER`",
 					},
@@ -3525,14 +3976,22 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/public/updateMerchant",
-								"parts": []any{
-									"public",
-									"updateMerchant",
+								"segments": []any{
+									map[string]any{
+										"lit": "public",
+									},
+									map[string]any{
+										"lit": "updateMerchant",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"public",
+									"updateMerchant",
 								},
 							},
 						},
@@ -3545,6 +4004,7 @@ func MakeConfig() map[string]any {
 			"update_template_xml": map[string]any{
 				"fields": []any{
 					map[string]any{
+						"format": "int32",
 						"name": "responseCode",
 						"type": "`$INTEGER`",
 					},
@@ -3574,14 +4034,22 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "POST",
 								"orig": "/public/updateTemplateXml",
-								"parts": []any{
-									"public",
-									"updateTemplateXml",
+								"segments": []any{
+									map[string]any{
+										"lit": "public",
+									},
+									map[string]any{
+										"lit": "updateTemplateXml",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"public",
+									"updateTemplateXml",
 								},
 							},
 						},
@@ -3617,14 +4085,22 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/public/version",
-								"parts": []any{
-									"public",
-									"version",
+								"segments": []any{
+									map[string]any{
+										"lit": "public",
+									},
+									map[string]any{
+										"lit": "version",
+									},
 								},
 								"select": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"public",
+									"version",
 								},
 							},
 						},
@@ -3636,6 +4112,17 @@ func MakeConfig() map[string]any {
 			},
 		},
 	}
+}
+
+// The plugin definitions the model selected per feature, as []any so a
+// feature package can consume them without core naming its types. Empty
+// when no active feature declares active plugin groups for this target.
+var featurePlugins = map[string][]any{
+}
+
+// FeaturePlugins is the definitions list for one feature's chain.
+func FeaturePlugins(name string) []any {
+	return featurePlugins[name]
 }
 
 var (

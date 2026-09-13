@@ -16,6 +16,7 @@ main: kit: entity: register_tecs_company: {
       type: "`$STRING`"
     }
     {
+      format: "int32"
       name: "partnerId"
       req: false
       type: "`$INTEGER`"
@@ -31,6 +32,7 @@ main: kit: entity: register_tecs_company: {
       type: "`$STRING`"
     }
     {
+      format: "int32"
       name: "responseCode"
       req: false
       type: "`$INTEGER`"
@@ -55,8 +57,10 @@ main: kit: entity: register_tecs_company: {
         {
           method: "POST"
           orig: "/registerTecsCompany"
-          parts: [
-            "registerTecsCompany"
+          segments: [
+            {
+              lit: "registerTecsCompany"
+            }
           ]
           transform: {
             req: "`reqdata`"

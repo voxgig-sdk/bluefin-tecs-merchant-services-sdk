@@ -17,6 +17,7 @@
             "name" "actualBonusPoints"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "amount"
             "op" (vs/jm
               "create" (vs/jm
@@ -36,6 +37,7 @@
             "name" "cardNumber"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "clientId"
             "req" true
             "type" "`$INTEGER`")
@@ -56,6 +58,7 @@
             "name" "emvData"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int64"
             "name" "exchangeFee"
             "type" "`$INTEGER`")
           (vs/jm
@@ -81,6 +84,7 @@
                 "type" "`$STRING`"))
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "originalTraceNumber"
             "type" "`$INTEGER`")
           (vs/jm
@@ -103,6 +107,7 @@
             "name" "receiptHeader"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "receiptLayout"
             "type" "`$INTEGER`")
           (vs/jm
@@ -110,6 +115,7 @@
             "req" true
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "type" "`$INTEGER`")
           (vs/jm
@@ -122,6 +128,7 @@
             "name" "svc"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "terminalId"
             "req" true
             "type" "`$INTEGER`")
@@ -129,9 +136,11 @@
             "name" "terminalLocation"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "traceNumber"
             "type" "`$INTEGER`")
           (vs/jm
+            "format" "date-time"
             "name" "transactionDate"
             "op" (vs/jm
               "create" (vs/jm
@@ -165,6 +174,11 @@
                 "parts" (vs/jt
                   "public"
                   "cancelTransaction")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "public")
+                  (vs/jm
+                    "lit" "cancelTransaction"))
                 "select" (vs/jm)
                 "transform" (vs/jm
                   "req" "`reqdata`"
@@ -177,6 +191,7 @@
             "name" "cardNo"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "type" "`$INTEGER`")
           (vs/jm
@@ -202,6 +217,9 @@
                 "orig" "/checkCardBlackListed"
                 "parts" (vs/jt
                   "checkCardBlackListed")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "checkCardBlackListed"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "authorization"))
@@ -213,9 +231,11 @@
       "create_product" (vs/jm
         "fields" (vs/jt
           (vs/jm
+            "format" "int32"
             "name" "acquirerId"
             "type" "`$INTEGER`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "type" "`$INTEGER`")
           (vs/jm
@@ -250,6 +270,9 @@
                 "orig" "/createProduct"
                 "parts" (vs/jt
                   "createProduct")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "createProduct"))
                 "select" (vs/jm)
                 "transform" (vs/jm
                   "req" "`reqdata`"
@@ -272,12 +295,14 @@
             "name" "productOrderUuid"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "terminalId"
             "req" true
             "type" "`$INTEGER`"))
@@ -294,6 +319,9 @@
                 "orig" "/deactivateTerminal"
                 "parts" (vs/jt
                   "deactivateTerminal")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "deactivateTerminal"))
                 "select" (vs/jm)
                 "transform" (vs/jm
                   "req" "`reqdata`"
@@ -313,12 +341,14 @@
             "short" "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "txCount"
             "type" "`$INTEGER`")
           (vs/jm
@@ -328,12 +358,15 @@
             "name" "txIdStart"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "txSeqNoEnd"
             "type" "`$INTEGER`")
           (vs/jm
+            "format" "int32"
             "name" "txSeqNoStart"
             "type" "`$INTEGER`")
           (vs/jm
+            "format" "int32"
             "name" "txTotal"
             "type" "`$INTEGER`"))
         "name" "digital_services_api"
@@ -362,6 +395,15 @@
                 "rename" (vs/jm
                   "param" (vs/jm
                     "fileId" "file_id"))
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "public")
+                  (vs/jm
+                    "lit" "digitalservices")
+                  (vs/jm
+                    "lit" "mandatorClearingExportDownload")
+                  (vs/jm
+                    "var" "file_id"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "file_id"))
@@ -377,6 +419,13 @@
                   "public"
                   "digitalservices"
                   "mandatorClearingExportMetadata")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "public")
+                  (vs/jm
+                    "lit" "digitalservices")
+                  (vs/jm
+                    "lit" "mandatorClearingExportMetadata"))
                 "select" (vs/jm)
                 "transform" (vs/jm
                   "req" "`reqdata`"
@@ -395,6 +444,15 @@
                   "digitalservices"
                   "mandatorClearingExportDownload"
                   "status")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "public")
+                  (vs/jm
+                    "lit" "digitalservices")
+                  (vs/jm
+                    "lit" "mandatorClearingExportDownload")
+                  (vs/jm
+                    "lit" "status"))
                 "select" (vs/jm)
                 "transform" (vs/jm
                   "req" "`reqdata`"
@@ -409,12 +467,14 @@
             "name" "ecomData"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "terminalId"
             "req" true
             "type" "`$INTEGER`")
@@ -440,6 +500,11 @@
                 "parts" (vs/jt
                   "public"
                   "getEcData")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "public")
+                  (vs/jm
+                    "lit" "getEcData"))
                 "select" (vs/jm)
                 "transform" (vs/jm
                   "req" "`reqdata`"
@@ -455,12 +520,14 @@
             "name" "ecomSkey"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "terminalId"
             "req" true
             "type" "`$INTEGER`"))
@@ -478,6 +545,11 @@
                 "parts" (vs/jt
                   "public"
                   "getEcomParameters")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "public")
+                  (vs/jm
+                    "lit" "getEcomParameters"))
                 "select" (vs/jm)
                 "transform" (vs/jm
                   "req" "`reqdata`"
@@ -490,12 +562,14 @@
             "name" "ecrData"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "terminalId"
             "req" true
             "type" "`$INTEGER`")
@@ -521,6 +595,11 @@
                 "parts" (vs/jt
                   "public"
                   "getEcrData")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "public")
+                  (vs/jm
+                    "lit" "getEcrData"))
                 "select" (vs/jm)
                 "transform" (vs/jm
                   "req" "`reqdata`"
@@ -533,12 +612,14 @@
             "name" "emvData"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "terminalId"
             "req" true
             "type" "`$INTEGER`")
@@ -564,6 +645,11 @@
                 "parts" (vs/jt
                   "public"
                   "getEmvData")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "public")
+                  (vs/jm
+                    "lit" "getEmvData"))
                 "select" (vs/jm)
                 "transform" (vs/jm
                   "req" "`reqdata`"
@@ -573,6 +659,7 @@
       "enable_acquiring" (vs/jm
         "fields" (vs/jt
           (vs/jm
+            "format" "int32"
             "name" "accountNo"
             "type" "`$INTEGER`")
           (vs/jm
@@ -587,6 +674,7 @@
             "req" true
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "merchantCategoryCode"
             "req" true
             "type" "`$INTEGER`")
@@ -599,12 +687,14 @@
             "req" true
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "sortingCode"
             "type" "`$INTEGER`")
           (vs/jm
@@ -633,6 +723,9 @@
                 "orig" "/enableAcquiring"
                 "parts" (vs/jt
                   "enableAcquiring")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "enableAcquiring"))
                 "select" (vs/jm)
                 "transform" (vs/jm
                   "req" "`reqdata`"
@@ -646,6 +739,7 @@
             "req" true
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "type" "`$INTEGER`")
           (vs/jm
@@ -664,6 +758,9 @@
                 "orig" "/getMerchantContractNumber"
                 "parts" (vs/jt
                   "getMerchantContractNumber")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "getMerchantContractNumber"))
                 "select" (vs/jm)
                 "transform" (vs/jm
                   "req" "`reqdata`"
@@ -673,6 +770,7 @@
       "get_template_xml" (vs/jm
         "fields" (vs/jt
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "type" "`$INTEGER`")
           (vs/jm
@@ -696,6 +794,11 @@
                 "parts" (vs/jt
                   "public"
                   "getTemplateXml")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "public")
+                  (vs/jm
+                    "lit" "getTemplateXml"))
                 "select" (vs/jm)
                 "transform" (vs/jm
                   "req" "`reqdata`"
@@ -709,6 +812,7 @@
             "req" true
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "type" "`$INTEGER`")
           (vs/jm
@@ -727,6 +831,9 @@
                 "orig" "/introduceMandator"
                 "parts" (vs/jt
                   "introduceMandator")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "introduceMandator"))
                 "select" (vs/jm)
                 "transform" (vs/jm
                   "req" "`reqdata`"
@@ -736,6 +843,7 @@
       "introduce_package" (vs/jm
         "fields" (vs/jt
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "type" "`$INTEGER`")
           (vs/jm
@@ -758,6 +866,9 @@
                 "orig" "/introducePackage"
                 "parts" (vs/jt
                   "introducePackage")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "introducePackage"))
                 "select" (vs/jm)
                 "transform" (vs/jm
                   "req" "`reqdata`"
@@ -782,6 +893,7 @@
             "name" "pagination"
             "type" "`$OBJECT`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "type" "`$INTEGER`")
           (vs/jm
@@ -794,6 +906,7 @@
             "name" "terminalDateTimeTo"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "terminalId"
             "type" "`$INTEGER`"))
         "name" "keep_alive"
@@ -810,6 +923,11 @@
                 "parts" (vs/jt
                   "public"
                   "keepalive")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "public")
+                  (vs/jm
+                    "lit" "keepalive"))
                 "select" (vs/jm)
                 "transform" (vs/jm
                   "req" "`reqdata`"
@@ -828,6 +946,7 @@
             "name" "pagination"
             "type" "`$OBJECT`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "type" "`$INTEGER`")
           (vs/jm
@@ -850,6 +969,11 @@
                 "parts" (vs/jt
                   "public"
                   "listTerminals")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "public")
+                  (vs/jm
+                    "lit" "listTerminals"))
                 "select" (vs/jm)
                 "transform" (vs/jm
                   "req" "`reqdata`"
@@ -875,6 +999,7 @@
             "name" "records"
             "type" "`$ARRAY`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "type" "`$INTEGER`")
           (vs/jm
@@ -895,6 +1020,13 @@
                   "public"
                   "digitalservices"
                   "mandatorClearingExport")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "public")
+                  (vs/jm
+                    "lit" "digitalservices")
+                  (vs/jm
+                    "lit" "mandatorClearingExport"))
                 "select" (vs/jm)
                 "transform" (vs/jm
                   "req" "`reqdata`"
@@ -904,11 +1036,13 @@
       "mandator_clearing_export_download" (vs/jm
         "fields" (vs/jt
           (vs/jm
+            "format" "date-time"
             "name" "clearingDateFrom"
             "req" true
             "short" "Start date for clearing export (inclusive)"
             "type" "`$STRING`")
           (vs/jm
+            "format" "date-time"
             "name" "clearingDateTo"
             "req" true
             "short" "End date for clearing export (inclusive)"
@@ -925,6 +1059,7 @@
             "name" "id"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "type" "`$INTEGER`")
           (vs/jm
@@ -934,6 +1069,9 @@
             "name" "status"
             "short" "Processing status of the export request"
             "type" "`$STRING`"))
+        "id" (vs/jm
+          "field" "id"
+          "name" "id")
         "name" "mandator_clearing_export_download"
         "op" (vs/jm
           "create" (vs/jm
@@ -949,6 +1087,13 @@
                   "public"
                   "digitalservices"
                   "mandatorClearingExportDownload")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "public")
+                  (vs/jm
+                    "lit" "digitalservices")
+                  (vs/jm
+                    "lit" "mandatorClearingExportDownload"))
                 "select" (vs/jm)
                 "transform" (vs/jm
                   "req" "`reqdata`"
@@ -977,6 +1122,15 @@
                 "rename" (vs/jm
                   "param" (vs/jm
                     "fileId" "id"))
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "public")
+                  (vs/jm
+                    "lit" "digitalservices")
+                  (vs/jm
+                    "lit" "mandatorClearingExportDownload")
+                  (vs/jm
+                    "var" "id"))
                 "select" (vs/jm
                   "exist" (vs/jt
                     "id"))
@@ -1001,6 +1155,7 @@
             "name" "records"
             "type" "`$ARRAY`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "type" "`$INTEGER`")
           (vs/jm
@@ -1021,6 +1176,13 @@
                   "public"
                   "digitalservices"
                   "mandatorClearingExportSummary")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "public")
+                  (vs/jm
+                    "lit" "digitalservices")
+                  (vs/jm
+                    "lit" "mandatorClearingExportSummary"))
                 "select" (vs/jm)
                 "transform" (vs/jm
                   "req" "`reqdata`"
@@ -1069,6 +1231,7 @@
             "name" "retrievalReferenceNumber"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "sourceId"
             "type" "`$INTEGER`")
           (vs/jm
@@ -1078,6 +1241,7 @@
             "name" "tecsengineResponseCodeTo"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "terminalId"
             "type" "`$INTEGER`")
           (vs/jm
@@ -1090,9 +1254,11 @@
             "name" "transactionAmountTo"
             "type" "`$STRING`")
           (vs/jm
+            "format" "date-time"
             "name" "transactionDateFrom"
             "type" "`$STRING`")
           (vs/jm
+            "format" "date-time"
             "name" "transactionDateTo"
             "type" "`$STRING`")
           (vs/jm
@@ -1119,6 +1285,11 @@
                 "parts" (vs/jt
                   "public"
                   "transactionHistoryCsv")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "public")
+                  (vs/jm
+                    "lit" "transactionHistoryCsv"))
                 "select" (vs/jm)
                 "transform" (vs/jm
                   "req" "`reqdata`"
@@ -1132,6 +1303,7 @@
             "req" true
             "type" "`$ARRAY`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "type" "`$INTEGER`")
           (vs/jm
@@ -1156,6 +1328,9 @@
                 "orig" "/moveTid"
                 "parts" (vs/jt
                   "moveTid")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "moveTid"))
                 "select" (vs/jm)
                 "transform" (vs/jm
                   "req" "`reqdata`"
@@ -1169,6 +1344,7 @@
             "short" "Acquirer name parsed from KKG field"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "amount"
             "req" true
             "short" "Transaction amount in minor units (cents)"
@@ -1255,6 +1431,11 @@
                 "parts" (vs/jt
                   "public"
                   "paymentManual")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "public")
+                  (vs/jm
+                    "lit" "paymentManual"))
                 "select" (vs/jm)
                 "transform" (vs/jm
                   "req" "`reqdata`"
@@ -1264,6 +1445,7 @@
       "payment_sred" (vs/jm
         "fields" (vs/jt
           (vs/jm
+            "format" "int32"
             "name" "amount"
             "req" true
             "short" "Transaction amount in minor units (cents)"
@@ -1330,6 +1512,11 @@
                 "parts" (vs/jt
                   "public"
                   "paymentSred")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "public")
+                  (vs/jm
+                    "lit" "paymentSred"))
                 "select" (vs/jm)
                 "transform" (vs/jm
                   "req" "`reqdata`"
@@ -1348,6 +1535,7 @@
             "name" "actualBonusPoints"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "amount"
             "op" (vs/jm
               "create" (vs/jm
@@ -1371,6 +1559,7 @@
             "req" true
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "clientId"
             "req" true
             "type" "`$INTEGER`")
@@ -1391,6 +1580,7 @@
             "name" "emvData"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int64"
             "name" "exchangeFee"
             "type" "`$INTEGER`")
           (vs/jm
@@ -1412,6 +1602,7 @@
             "name" "messageType"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "originalTraceNumber"
             "type" "`$INTEGER`")
           (vs/jm
@@ -1434,6 +1625,7 @@
             "name" "receiptHeader"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "receiptLayout"
             "type" "`$INTEGER`")
           (vs/jm
@@ -1441,6 +1633,7 @@
             "req" true
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "type" "`$INTEGER`")
           (vs/jm
@@ -1453,6 +1646,7 @@
             "name" "svc"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "terminalId"
             "req" true
             "type" "`$INTEGER`")
@@ -1460,9 +1654,11 @@
             "name" "terminalLocation"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "traceNumber"
             "type" "`$INTEGER`")
           (vs/jm
+            "format" "date-time"
             "name" "transactionDate"
             "op" (vs/jm
               "create" (vs/jm
@@ -1500,6 +1696,11 @@
                 "parts" (vs/jt
                   "public"
                   "paymentTransaction")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "public")
+                  (vs/jm
+                    "lit" "paymentTransaction"))
                 "select" (vs/jm)
                 "transform" (vs/jm
                   "req" "`reqdata`"
@@ -1512,6 +1713,11 @@
                 "parts" (vs/jt
                   "public"
                   "preAuthCompletionTransaction")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "public")
+                  (vs/jm
+                    "lit" "preAuthCompletionTransaction"))
                 "select" (vs/jm)
                 "transform" (vs/jm
                   "req" "`reqdata`"
@@ -1534,12 +1740,14 @@
             "req" true
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "terminalId"
             "req" true
             "type" "`$INTEGER`"))
@@ -1556,6 +1764,9 @@
                 "orig" "/reactivateTerminal"
                 "parts" (vs/jt
                   "reactivateTerminal")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "reactivateTerminal"))
                 "select" (vs/jm)
                 "transform" (vs/jm
                   "req" "`reqdata`"
@@ -1574,6 +1785,7 @@
             "name" "actualBonusPoints"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "amount"
             "op" (vs/jm
               "create" (vs/jm
@@ -1593,6 +1805,7 @@
             "name" "cardNumber"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "clientId"
             "req" true
             "type" "`$INTEGER`")
@@ -1613,6 +1826,7 @@
             "name" "emvData"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int64"
             "name" "exchangeFee"
             "type" "`$INTEGER`")
           (vs/jm
@@ -1634,6 +1848,7 @@
             "name" "messageType"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "originalTraceNumber"
             "type" "`$INTEGER`")
           (vs/jm
@@ -1656,6 +1871,7 @@
             "name" "receiptHeader"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "receiptLayout"
             "type" "`$INTEGER`")
           (vs/jm
@@ -1663,6 +1879,7 @@
             "req" true
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "type" "`$INTEGER`")
           (vs/jm
@@ -1675,6 +1892,7 @@
             "name" "svc"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "terminalId"
             "req" true
             "type" "`$INTEGER`")
@@ -1682,9 +1900,11 @@
             "name" "terminalLocation"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "traceNumber"
             "type" "`$INTEGER`")
           (vs/jm
+            "format" "date-time"
             "name" "transactionDate"
             "op" (vs/jm
               "create" (vs/jm
@@ -1718,6 +1938,11 @@
                 "parts" (vs/jt
                   "public"
                   "refundTransaction")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "public")
+                  (vs/jm
+                    "lit" "refundTransaction"))
                 "select" (vs/jm)
                 "transform" (vs/jm
                   "req" "`reqdata`"
@@ -1735,6 +1960,7 @@
             "req" true
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "partnerId"
             "type" "`$INTEGER`")
           (vs/jm
@@ -1745,6 +1971,7 @@
             "req" true
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "type" "`$INTEGER`")
           (vs/jm
@@ -1767,6 +1994,9 @@
                 "orig" "/registerTecsCompany"
                 "parts" (vs/jt
                   "registerTecsCompany")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "registerTecsCompany"))
                 "select" (vs/jm)
                 "transform" (vs/jm
                   "req" "`reqdata`"
@@ -1791,6 +2021,7 @@
             "req" true
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "type" "`$INTEGER`")
           (vs/jm
@@ -1808,6 +2039,7 @@
             "req" true
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "terminalId"
             "type" "`$INTEGER`")
           (vs/jm
@@ -1849,6 +2081,9 @@
                 "orig" "/registerTerminal"
                 "parts" (vs/jt
                   "registerTerminal")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "registerTerminal"))
                 "select" (vs/jm)
                 "transform" (vs/jm
                   "req" "`reqdata`"
@@ -1879,6 +2114,7 @@
             "req" true
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "type" "`$INTEGER`")
           (vs/jm
@@ -1891,6 +2127,7 @@
             "name" "sumOverDebitTx"
             "type" "`$OBJECT`")
           (vs/jm
+            "format" "int32"
             "name" "terminalId"
             "type" "`$INTEGER`"))
         "name" "report_data"
@@ -1908,6 +2145,13 @@
                   "public"
                   "digitalservices"
                   "reportData")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "public")
+                  (vs/jm
+                    "lit" "digitalservices")
+                  (vs/jm
+                    "lit" "reportData"))
                 "select" (vs/jm)
                 "transform" (vs/jm
                   "req" "`reqdata`"
@@ -1923,6 +2167,7 @@
             "name" "acquirerTerminalId"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "amount"
             "type" "`$INTEGER`")
           (vs/jm
@@ -1937,6 +2182,7 @@
                 "`$STRING`"
                 "`$NULL`")))
           (vs/jm
+            "format" "date-time"
             "name" "authorizationDate"
             "type" "`$STRING`")
           (vs/jm
@@ -1952,6 +2198,7 @@
             "name" "cardNumber"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "clearingAmount"
             "type" "`$INTEGER`")
           (vs/jm
@@ -1961,15 +2208,18 @@
             "name" "clearingCurrency"
             "type" "`$STRING`")
           (vs/jm
+            "format" "date-time"
             "name" "clearingDate"
             "type" "`$STRING`")
           (vs/jm
+            "format" "date-time"
             "name" "clearingProcessedDate"
             "type" "`$STRING`")
           (vs/jm
             "name" "clearingStatus"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "clientId"
             "type" "`$INTEGER`")
           (vs/jm
@@ -1997,6 +2247,7 @@
             "name" "originalClientId"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "originalTerminalId"
             "type" "`$INTEGER`")
           (vs/jm
@@ -2009,6 +2260,7 @@
             "name" "receiptNumber"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "type" "`$INTEGER`")
           (vs/jm
@@ -2027,42 +2279,52 @@
             "name" "settlementStatus"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "sourceId"
             "type" "`$INTEGER`")
           (vs/jm
+            "format" "int32"
             "name" "tecsengineResponseCode"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "tecsengineResponseText"
             "type" "`$STRING`")
           (vs/jm
+            "format" "date-time"
             "name" "terminalEndOfDayDate"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "terminalId"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "terminalLocation"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "tipAmount"
             "type" "`$INTEGER`")
           (vs/jm
+            "format" "int32"
             "name" "traceNumber"
             "type" "`$INTEGER`")
           (vs/jm
+            "format" "date-time"
             "name" "transactionClearingDate"
             "type" "`$STRING`")
           (vs/jm
+            "format" "date-time"
             "name" "transactionDate"
             "type" "`$STRING`")
           (vs/jm
             "name" "transactionId"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int64"
             "name" "transactionSeqNumber"
             "type" "`$INTEGER`")
           (vs/jm
+            "format" "date-time"
             "name" "transactionServerDate"
             "type" "`$STRING`")
           (vs/jm
@@ -2085,6 +2347,11 @@
                 "parts" (vs/jt
                   "public"
                   "statusTransaction")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "public")
+                  (vs/jm
+                    "lit" "statusTransaction"))
                 "select" (vs/jm)
                 "transform" (vs/jm
                   "req" "`reqdata`"
@@ -2100,6 +2367,7 @@
             "name" "configVersion"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "type" "`$INTEGER`")
           (vs/jm
@@ -2125,6 +2393,9 @@
                 "orig" "/storeTerminalParameters"
                 "parts" (vs/jt
                   "storeTerminalParameters")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "storeTerminalParameters"))
                 "select" (vs/jm)
                 "transform" (vs/jm
                   "req" "`reqdata`"
@@ -2141,6 +2412,7 @@
             "name" "duplicateTerminalIds"
             "type" "`$ARRAY`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "type" "`$INTEGER`")
           (vs/jm
@@ -2163,6 +2435,11 @@
                 "parts" (vs/jt
                   "public"
                   "getTerminalId")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "public")
+                  (vs/jm
+                    "lit" "getTerminalId"))
                 "select" (vs/jm)
                 "transform" (vs/jm
                   "req" "`reqdata`"
@@ -2211,6 +2488,7 @@
             "name" "referencedTransactionId"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "type" "`$INTEGER`")
           (vs/jm
@@ -2220,6 +2498,7 @@
             "name" "retrievalReferenceNumber"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "sourceId"
             "type" "`$INTEGER`")
           (vs/jm
@@ -2229,6 +2508,7 @@
             "name" "tecsengineResponseCodeTo"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "terminalId"
             "type" "`$INTEGER`")
           (vs/jm
@@ -2241,9 +2521,11 @@
             "name" "transactionAmountTo"
             "type" "`$STRING`")
           (vs/jm
+            "format" "date-time"
             "name" "transactionDateFrom"
             "type" "`$STRING`")
           (vs/jm
+            "format" "date-time"
             "name" "transactionDateTo"
             "type" "`$STRING`")
           (vs/jm
@@ -2274,6 +2556,13 @@
                   "public"
                   "mcom"
                   "transactionHistory")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "public")
+                  (vs/jm
+                    "lit" "mcom")
+                  (vs/jm
+                    "lit" "transactionHistory"))
                 "select" (vs/jm)
                 "transform" (vs/jm
                   "req" "`reqdata`"
@@ -2286,6 +2575,11 @@
                 "parts" (vs/jt
                   "public"
                   "transactionHistory")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "public")
+                  (vs/jm
+                    "lit" "transactionHistory"))
                 "select" (vs/jm)
                 "transform" (vs/jm
                   "req" "`reqdata`"
@@ -2298,12 +2592,14 @@
             "name" "period"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
             "type" "`$STRING`")
           (vs/jm
+            "format" "date-time"
             "name" "transactionDateFrom"
             "op" (vs/jm
               "create" (vs/jm
@@ -2311,6 +2607,7 @@
                 "type" "`$STRING`"))
             "type" "`$STRING`")
           (vs/jm
+            "format" "date-time"
             "name" "transactionDateTo"
             "op" (vs/jm
               "create" (vs/jm
@@ -2334,6 +2631,11 @@
                 "parts" (vs/jt
                   "public"
                   "countAuthorisedTransactions")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "public")
+                  (vs/jm
+                    "lit" "countAuthorisedTransactions"))
                 "select" (vs/jm)
                 "transform" (vs/jm
                   "req" "`reqdata`"
@@ -2346,6 +2648,11 @@
                 "parts" (vs/jt
                   "public"
                   "countNotAuthorisedTransactions")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "public")
+                  (vs/jm
+                    "lit" "countNotAuthorisedTransactions"))
                 "select" (vs/jm)
                 "transform" (vs/jm
                   "req" "`reqdata`"
@@ -2358,12 +2665,14 @@
             "name" "period"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
             "type" "`$STRING`")
           (vs/jm
+            "format" "date-time"
             "name" "transactionDateFrom"
             "op" (vs/jm
               "create" (vs/jm
@@ -2371,6 +2680,7 @@
                 "type" "`$STRING`"))
             "type" "`$STRING`")
           (vs/jm
+            "format" "date-time"
             "name" "transactionDateTo"
             "op" (vs/jm
               "create" (vs/jm
@@ -2394,6 +2704,11 @@
                 "parts" (vs/jt
                   "public"
                   "countTransactionsByCardBrand")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "public")
+                  (vs/jm
+                    "lit" "countTransactionsByCardBrand"))
                 "select" (vs/jm)
                 "transform" (vs/jm
                   "req" "`reqdata`"
@@ -2406,12 +2721,14 @@
             "name" "period"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
             "type" "`$STRING`")
           (vs/jm
+            "format" "date-time"
             "name" "transactionDateFrom"
             "op" (vs/jm
               "create" (vs/jm
@@ -2419,6 +2736,7 @@
                 "type" "`$STRING`"))
             "type" "`$STRING`")
           (vs/jm
+            "format" "date-time"
             "name" "transactionDateTo"
             "op" (vs/jm
               "create" (vs/jm
@@ -2442,6 +2760,11 @@
                 "parts" (vs/jt
                   "public"
                   "transactionTurnover")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "public")
+                  (vs/jm
+                    "lit" "transactionTurnover"))
                 "select" (vs/jm)
                 "transform" (vs/jm
                   "req" "`reqdata`"
@@ -2467,6 +2790,7 @@
             "name" "name"
             "type" "`$STRING`")
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "type" "`$INTEGER`")
           (vs/jm
@@ -2498,6 +2822,11 @@
                 "parts" (vs/jt
                   "public"
                   "updateMerchant")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "public")
+                  (vs/jm
+                    "lit" "updateMerchant"))
                 "select" (vs/jm)
                 "transform" (vs/jm
                   "req" "`reqdata`"
@@ -2507,6 +2836,7 @@
       "update_template_xml" (vs/jm
         "fields" (vs/jt
           (vs/jm
+            "format" "int32"
             "name" "responseCode"
             "type" "`$INTEGER`")
           (vs/jm
@@ -2534,6 +2864,11 @@
                 "parts" (vs/jt
                   "public"
                   "updateTemplateXml")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "public")
+                  (vs/jm
+                    "lit" "updateTemplateXml"))
                 "select" (vs/jm)
                 "transform" (vs/jm
                   "req" "`reqdata`"
@@ -2565,6 +2900,11 @@
                 "parts" (vs/jt
                   "public"
                   "version")
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "public")
+                  (vs/jm
+                    "lit" "version"))
                 "select" (vs/jm)
                 "transform" (vs/jm
                   "req" "`reqdata`"
@@ -2701,3 +3041,9 @@
         "version" (vs/jm))
       "headers" (vs/jm
         "content-type" "application/json"))))
+
+(def feature-plugins
+  {})
+
+(def feature-extra
+  {})

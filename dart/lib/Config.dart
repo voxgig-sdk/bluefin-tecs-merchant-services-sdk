@@ -12,6 +12,7 @@ import 'feature/test/TestFeature.dart';
 import 'feature/timeout/TimeoutFeature.dart';
 
 
+
 // ignore: non_constant_identifier_names
 final Map<String, BaseFeature Function()> FEATURE_CLASS = {
     'audit': () => AuditFeature(),
@@ -26,6 +27,24 @@ final Map<String, BaseFeature Function()> FEATURE_CLASS = {
   'test': () => TestFeature(),
   'timeout': () => TimeoutFeature(),
 
+};
+
+// Per-feature plugin DEFINITIONS (voxgig/plugin `Definition` values), from
+// the model's active plugin groups. A feature that takes a `plugins` option
+// (secrets over sekreto) reads its own entry; a feature with no plugins has
+// none. The named `show` imports above make each definition statically
+// reachable, so an SDK carries exactly the plugin libraries its model
+// selects - the same leanness the old side-effect registry bought, without
+// a registry.
+//
+// Emitted UNCONDITIONALLY, empty when no group is active: SecretsFeature
+// imports this name, and the feature source can be present in a tree whose
+// model selects no plugin group at all. An emission conditional on the map
+// having entries would make that tree fail `dart analyze`.
+//
+// ignore: non_constant_identifier_names
+final Map<String, List<dynamic>> FEATURE_PLUGINS = <String, List<dynamic>>{
+  
 };
 
 class Config {
@@ -230,6 +249,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'amount',
           'op': <String, dynamic>{
             'create': <String, dynamic>{
@@ -256,6 +276,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'clientId',
           'req': true,
           'type': '`\$INTEGER`',
@@ -282,6 +303,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int64',
           'name': 'exchangeFee',
           'type': '`\$INTEGER`',
         },
@@ -316,6 +338,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'originalTraceNumber',
           'type': '`\$INTEGER`',
         },
@@ -346,6 +369,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'receiptLayout',
           'type': '`\$INTEGER`',
         },
@@ -355,6 +379,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'type': '`\$INTEGER`',
         },
@@ -371,6 +396,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'terminalId',
           'req': true,
           'type': '`\$INTEGER`',
@@ -380,10 +406,12 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'traceNumber',
           'type': '`\$INTEGER`',
         },
         <String, dynamic>{
+          'format': 'date-time',
           'name': 'transactionDate',
           'op': <String, dynamic>{
             'create': <String, dynamic>{
@@ -423,15 +451,23 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/public/cancelTransaction',
-              'parts': <dynamic>[
-                'public',
-                'cancelTransaction',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'public',
+                },
+                <String, dynamic>{
+                  'lit': 'cancelTransaction',
+                },
               ],
               'select': <String, dynamic>{},
               'transform': <String, dynamic>{
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'public',
+                'cancelTransaction',
+              ],
             },
           ],
         },
@@ -447,6 +483,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'type': '`\$INTEGER`',
         },
@@ -476,8 +513,10 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/checkCardBlackListed',
-              'parts': <dynamic>[
-                'checkCardBlackListed',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'checkCardBlackListed',
+                },
               ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
@@ -488,6 +527,9 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'checkCardBlackListed',
+              ],
             },
           ],
         },
@@ -499,10 +541,12 @@ class Config {
     'create_product': <String, dynamic>{
       'fields': <dynamic>[
         <String, dynamic>{
+          'format': 'int32',
           'name': 'acquirerId',
           'type': '`\$INTEGER`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'type': '`\$INTEGER`',
         },
@@ -542,14 +586,19 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/createProduct',
-              'parts': <dynamic>[
-                'createProduct',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'createProduct',
+                },
               ],
               'select': <String, dynamic>{},
               'transform': <String, dynamic>{
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'createProduct',
+              ],
             },
           ],
         },
@@ -578,6 +627,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'type': '`\$INTEGER`',
         },
@@ -586,6 +636,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'terminalId',
           'req': true,
           'type': '`\$INTEGER`',
@@ -602,14 +653,19 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/deactivateTerminal',
-              'parts': <dynamic>[
-                'deactivateTerminal',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'deactivateTerminal',
+                },
               ],
               'select': <String, dynamic>{},
               'transform': <String, dynamic>{
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'deactivateTerminal',
+              ],
             },
           ],
         },
@@ -633,6 +689,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'type': '`\$INTEGER`',
         },
@@ -641,6 +698,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'txCount',
           'type': '`\$INTEGER`',
         },
@@ -653,14 +711,17 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'txSeqNoEnd',
           'type': '`\$INTEGER`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'txSeqNoStart',
           'type': '`\$INTEGER`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'txTotal',
           'type': '`\$INTEGER`',
         },
@@ -686,17 +747,25 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/public/digitalservices/mandatorClearingExportDownload/{fileId}',
-              'parts': <dynamic>[
-                'public',
-                'digitalservices',
-                'mandatorClearingExportDownload',
-                '{file_id}',
-              ],
               'rename': <String, dynamic>{
                 'param': <String, dynamic>{
                   'fileId': 'file_id',
                 },
               },
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'public',
+                },
+                <String, dynamic>{
+                  'lit': 'digitalservices',
+                },
+                <String, dynamic>{
+                  'lit': 'mandatorClearingExportDownload',
+                },
+                <String, dynamic>{
+                  'var': 'file_id',
+                },
+              ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'file_id',
@@ -706,22 +775,39 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'public',
+                'digitalservices',
+                'mandatorClearingExportDownload',
+                '{file_id}',
+              ],
             },
             <String, dynamic>{
               'args': <String, dynamic>{},
               'kind': 'http',
               'method': 'POST',
               'orig': '/public/digitalservices/mandatorClearingExportMetadata',
-              'parts': <dynamic>[
-                'public',
-                'digitalservices',
-                'mandatorClearingExportMetadata',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'public',
+                },
+                <String, dynamic>{
+                  'lit': 'digitalservices',
+                },
+                <String, dynamic>{
+                  'lit': 'mandatorClearingExportMetadata',
+                },
               ],
               'select': <String, dynamic>{},
               'transform': <String, dynamic>{
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'public',
+                'digitalservices',
+                'mandatorClearingExportMetadata',
+              ],
             },
           ],
         },
@@ -734,17 +820,31 @@ class Config {
               'kind': 'http',
               'method': 'GET',
               'orig': '/public/digitalservices/mandatorClearingExportDownload/status',
-              'parts': <dynamic>[
-                'public',
-                'digitalservices',
-                'mandatorClearingExportDownload',
-                'status',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'public',
+                },
+                <String, dynamic>{
+                  'lit': 'digitalservices',
+                },
+                <String, dynamic>{
+                  'lit': 'mandatorClearingExportDownload',
+                },
+                <String, dynamic>{
+                  'lit': 'status',
+                },
               ],
               'select': <String, dynamic>{},
               'transform': <String, dynamic>{
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'public',
+                'digitalservices',
+                'mandatorClearingExportDownload',
+                'status',
+              ],
             },
           ],
         },
@@ -764,6 +864,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'type': '`\$INTEGER`',
         },
@@ -772,6 +873,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'terminalId',
           'req': true,
           'type': '`\$INTEGER`',
@@ -798,15 +900,23 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/public/getEcData',
-              'parts': <dynamic>[
-                'public',
-                'getEcData',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'public',
+                },
+                <String, dynamic>{
+                  'lit': 'getEcData',
+                },
               ],
               'select': <String, dynamic>{},
               'transform': <String, dynamic>{
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'public',
+                'getEcData',
+              ],
             },
           ],
         },
@@ -826,6 +936,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'type': '`\$INTEGER`',
         },
@@ -834,6 +945,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'terminalId',
           'req': true,
           'type': '`\$INTEGER`',
@@ -850,15 +962,23 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/public/getEcomParameters',
-              'parts': <dynamic>[
-                'public',
-                'getEcomParameters',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'public',
+                },
+                <String, dynamic>{
+                  'lit': 'getEcomParameters',
+                },
               ],
               'select': <String, dynamic>{},
               'transform': <String, dynamic>{
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'public',
+                'getEcomParameters',
+              ],
             },
           ],
         },
@@ -874,6 +994,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'type': '`\$INTEGER`',
         },
@@ -882,6 +1003,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'terminalId',
           'req': true,
           'type': '`\$INTEGER`',
@@ -908,15 +1030,23 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/public/getEcrData',
-              'parts': <dynamic>[
-                'public',
-                'getEcrData',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'public',
+                },
+                <String, dynamic>{
+                  'lit': 'getEcrData',
+                },
               ],
               'select': <String, dynamic>{},
               'transform': <String, dynamic>{
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'public',
+                'getEcrData',
+              ],
             },
           ],
         },
@@ -932,6 +1062,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'type': '`\$INTEGER`',
         },
@@ -940,6 +1071,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'terminalId',
           'req': true,
           'type': '`\$INTEGER`',
@@ -966,15 +1098,23 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/public/getEmvData',
-              'parts': <dynamic>[
-                'public',
-                'getEmvData',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'public',
+                },
+                <String, dynamic>{
+                  'lit': 'getEmvData',
+                },
               ],
               'select': <String, dynamic>{},
               'transform': <String, dynamic>{
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'public',
+                'getEmvData',
+              ],
             },
           ],
         },
@@ -986,6 +1126,7 @@ class Config {
     'enable_acquiring': <String, dynamic>{
       'fields': <dynamic>[
         <String, dynamic>{
+          'format': 'int32',
           'name': 'accountNo',
           'type': '`\$INTEGER`',
         },
@@ -1004,6 +1145,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'merchantCategoryCode',
           'req': true,
           'type': '`\$INTEGER`',
@@ -1019,6 +1161,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'type': '`\$INTEGER`',
         },
@@ -1027,6 +1170,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'sortingCode',
           'type': '`\$INTEGER`',
         },
@@ -1059,14 +1203,19 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/enableAcquiring',
-              'parts': <dynamic>[
-                'enableAcquiring',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'enableAcquiring',
+                },
               ],
               'select': <String, dynamic>{},
               'transform': <String, dynamic>{
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'enableAcquiring',
+              ],
             },
           ],
         },
@@ -1083,6 +1232,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'type': '`\$INTEGER`',
         },
@@ -1102,14 +1252,19 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/getMerchantContractNumber',
-              'parts': <dynamic>[
-                'getMerchantContractNumber',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'getMerchantContractNumber',
+                },
               ],
               'select': <String, dynamic>{},
               'transform': <String, dynamic>{
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'getMerchantContractNumber',
+              ],
             },
           ],
         },
@@ -1121,6 +1276,7 @@ class Config {
     'get_template_xml': <String, dynamic>{
       'fields': <dynamic>[
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'type': '`\$INTEGER`',
         },
@@ -1145,15 +1301,23 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/public/getTemplateXml',
-              'parts': <dynamic>[
-                'public',
-                'getTemplateXml',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'public',
+                },
+                <String, dynamic>{
+                  'lit': 'getTemplateXml',
+                },
               ],
               'select': <String, dynamic>{},
               'transform': <String, dynamic>{
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'public',
+                'getTemplateXml',
+              ],
             },
           ],
         },
@@ -1170,6 +1334,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'type': '`\$INTEGER`',
         },
@@ -1189,14 +1354,19 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/introduceMandator',
-              'parts': <dynamic>[
-                'introduceMandator',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'introduceMandator',
+                },
               ],
               'select': <String, dynamic>{},
               'transform': <String, dynamic>{
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'introduceMandator',
+              ],
             },
           ],
         },
@@ -1208,6 +1378,7 @@ class Config {
     'introduce_package': <String, dynamic>{
       'fields': <dynamic>[
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'type': '`\$INTEGER`',
         },
@@ -1232,14 +1403,19 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/introducePackage',
-              'parts': <dynamic>[
-                'introducePackage',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'introducePackage',
+                },
               ],
               'select': <String, dynamic>{},
               'transform': <String, dynamic>{
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'introducePackage',
+              ],
             },
           ],
         },
@@ -1271,6 +1447,7 @@ class Config {
           'type': '`\$OBJECT`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'type': '`\$INTEGER`',
         },
@@ -1287,6 +1464,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'terminalId',
           'type': '`\$INTEGER`',
         },
@@ -1302,15 +1480,23 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/public/keepalive',
-              'parts': <dynamic>[
-                'public',
-                'keepalive',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'public',
+                },
+                <String, dynamic>{
+                  'lit': 'keepalive',
+                },
               ],
               'select': <String, dynamic>{},
               'transform': <String, dynamic>{
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'public',
+                'keepalive',
+              ],
             },
           ],
         },
@@ -1334,6 +1520,7 @@ class Config {
           'type': '`\$OBJECT`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'type': '`\$INTEGER`',
         },
@@ -1357,15 +1544,23 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/public/listTerminals',
-              'parts': <dynamic>[
-                'public',
-                'listTerminals',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'public',
+                },
+                <String, dynamic>{
+                  'lit': 'listTerminals',
+                },
               ],
               'select': <String, dynamic>{},
               'transform': <String, dynamic>{
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'public',
+                'listTerminals',
+              ],
             },
           ],
         },
@@ -1397,6 +1592,7 @@ class Config {
           'type': '`\$ARRAY`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'type': '`\$INTEGER`',
         },
@@ -1416,16 +1612,27 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/public/digitalservices/mandatorClearingExport',
-              'parts': <dynamic>[
-                'public',
-                'digitalservices',
-                'mandatorClearingExport',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'public',
+                },
+                <String, dynamic>{
+                  'lit': 'digitalservices',
+                },
+                <String, dynamic>{
+                  'lit': 'mandatorClearingExport',
+                },
               ],
               'select': <String, dynamic>{},
               'transform': <String, dynamic>{
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'public',
+                'digitalservices',
+                'mandatorClearingExport',
+              ],
             },
           ],
         },
@@ -1437,12 +1644,14 @@ class Config {
     'mandator_clearing_export_download': <String, dynamic>{
       'fields': <dynamic>[
         <String, dynamic>{
+          'format': 'date-time',
           'name': 'clearingDateFrom',
           'req': true,
           'short': 'Start date for clearing export (inclusive)',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'date-time',
           'name': 'clearingDateTo',
           'req': true,
           'short': 'End date for clearing export (inclusive)',
@@ -1463,6 +1672,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'type': '`\$INTEGER`',
         },
@@ -1476,6 +1686,10 @@ class Config {
           'type': '`\$STRING`',
         },
       ],
+      'id': <String, dynamic>{
+        'field': 'id',
+        'name': 'id',
+      },
       'name': 'mandator_clearing_export_download',
       'op': <String, dynamic>{
         'create': <String, dynamic>{
@@ -1487,16 +1701,27 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/public/digitalservices/mandatorClearingExportDownload',
-              'parts': <dynamic>[
-                'public',
-                'digitalservices',
-                'mandatorClearingExportDownload',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'public',
+                },
+                <String, dynamic>{
+                  'lit': 'digitalservices',
+                },
+                <String, dynamic>{
+                  'lit': 'mandatorClearingExportDownload',
+                },
               ],
               'select': <String, dynamic>{},
               'transform': <String, dynamic>{
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'public',
+                'digitalservices',
+                'mandatorClearingExportDownload',
+              ],
             },
           ],
         },
@@ -1519,17 +1744,25 @@ class Config {
               'kind': 'http',
               'method': 'GET',
               'orig': '/public/digitalservices/mandatorClearingExportDownload/{fileId}',
-              'parts': <dynamic>[
-                'public',
-                'digitalservices',
-                'mandatorClearingExportDownload',
-                '{id}',
-              ],
               'rename': <String, dynamic>{
                 'param': <String, dynamic>{
                   'fileId': 'id',
                 },
               },
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'public',
+                },
+                <String, dynamic>{
+                  'lit': 'digitalservices',
+                },
+                <String, dynamic>{
+                  'lit': 'mandatorClearingExportDownload',
+                },
+                <String, dynamic>{
+                  'var': 'id',
+                },
+              ],
               'select': <String, dynamic>{
                 'exist': <dynamic>[
                   'id',
@@ -1539,6 +1772,12 @@ class Config {
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'public',
+                'digitalservices',
+                'mandatorClearingExportDownload',
+                '{id}',
+              ],
             },
           ],
         },
@@ -1566,6 +1805,7 @@ class Config {
           'type': '`\$ARRAY`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'type': '`\$INTEGER`',
         },
@@ -1585,16 +1825,27 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/public/digitalservices/mandatorClearingExportSummary',
-              'parts': <dynamic>[
-                'public',
-                'digitalservices',
-                'mandatorClearingExportSummary',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'public',
+                },
+                <String, dynamic>{
+                  'lit': 'digitalservices',
+                },
+                <String, dynamic>{
+                  'lit': 'mandatorClearingExportSummary',
+                },
               ],
               'select': <String, dynamic>{},
               'transform': <String, dynamic>{
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'public',
+                'digitalservices',
+                'mandatorClearingExportSummary',
+              ],
             },
           ],
         },
@@ -1658,6 +1909,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'sourceId',
           'type': '`\$INTEGER`',
         },
@@ -1670,6 +1922,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'terminalId',
           'type': '`\$INTEGER`',
         },
@@ -1686,10 +1939,12 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'date-time',
           'name': 'transactionDateFrom',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'date-time',
           'name': 'transactionDateTo',
           'type': '`\$STRING`',
         },
@@ -1718,15 +1973,23 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/public/transactionHistoryCsv',
-              'parts': <dynamic>[
-                'public',
-                'transactionHistoryCsv',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'public',
+                },
+                <String, dynamic>{
+                  'lit': 'transactionHistoryCsv',
+                },
               ],
               'select': <String, dynamic>{},
               'transform': <String, dynamic>{
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'public',
+                'transactionHistoryCsv',
+              ],
             },
           ],
         },
@@ -1743,6 +2006,7 @@ class Config {
           'type': '`\$ARRAY`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'type': '`\$INTEGER`',
         },
@@ -1770,14 +2034,19 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/moveTid',
-              'parts': <dynamic>[
-                'moveTid',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'moveTid',
+                },
               ],
               'select': <String, dynamic>{},
               'transform': <String, dynamic>{
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'moveTid',
+              ],
             },
           ],
         },
@@ -1794,6 +2063,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'amount',
           'req': true,
           'short': 'Transaction amount in minor units (cents)',
@@ -1896,15 +2166,23 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/public/paymentManual',
-              'parts': <dynamic>[
-                'public',
-                'paymentManual',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'public',
+                },
+                <String, dynamic>{
+                  'lit': 'paymentManual',
+                },
               ],
               'select': <String, dynamic>{},
               'transform': <String, dynamic>{
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'public',
+                'paymentManual',
+              ],
             },
           ],
         },
@@ -1916,6 +2194,7 @@ class Config {
     'payment_sred': <String, dynamic>{
       'fields': <dynamic>[
         <String, dynamic>{
+          'format': 'int32',
           'name': 'amount',
           'req': true,
           'short': 'Transaction amount in minor units (cents)',
@@ -1992,15 +2271,23 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/public/paymentSred',
-              'parts': <dynamic>[
-                'public',
-                'paymentSred',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'public',
+                },
+                <String, dynamic>{
+                  'lit': 'paymentSred',
+                },
               ],
               'select': <String, dynamic>{},
               'transform': <String, dynamic>{
                 'req': '`reqdata`',
                 'res': '`body.sred`',
               },
+              'parts': <dynamic>[
+                'public',
+                'paymentSred',
+              ],
             },
           ],
         },
@@ -2024,6 +2311,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'amount',
           'op': <String, dynamic>{
             'create': <String, dynamic>{
@@ -2055,6 +2343,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'clientId',
           'req': true,
           'type': '`\$INTEGER`',
@@ -2081,6 +2370,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int64',
           'name': 'exchangeFee',
           'type': '`\$INTEGER`',
         },
@@ -2109,6 +2399,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'originalTraceNumber',
           'type': '`\$INTEGER`',
         },
@@ -2139,6 +2430,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'receiptLayout',
           'type': '`\$INTEGER`',
         },
@@ -2148,6 +2440,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'type': '`\$INTEGER`',
         },
@@ -2164,6 +2457,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'terminalId',
           'req': true,
           'type': '`\$INTEGER`',
@@ -2173,10 +2467,12 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'traceNumber',
           'type': '`\$INTEGER`',
         },
         <String, dynamic>{
+          'format': 'date-time',
           'name': 'transactionDate',
           'op': <String, dynamic>{
             'create': <String, dynamic>{
@@ -2221,30 +2517,46 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/public/paymentTransaction',
-              'parts': <dynamic>[
-                'public',
-                'paymentTransaction',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'public',
+                },
+                <String, dynamic>{
+                  'lit': 'paymentTransaction',
+                },
               ],
               'select': <String, dynamic>{},
               'transform': <String, dynamic>{
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'public',
+                'paymentTransaction',
+              ],
             },
             <String, dynamic>{
               'args': <String, dynamic>{},
               'kind': 'http',
               'method': 'POST',
               'orig': '/public/preAuthCompletionTransaction',
-              'parts': <dynamic>[
-                'public',
-                'preAuthCompletionTransaction',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'public',
+                },
+                <String, dynamic>{
+                  'lit': 'preAuthCompletionTransaction',
+                },
               ],
               'select': <String, dynamic>{},
               'transform': <String, dynamic>{
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'public',
+                'preAuthCompletionTransaction',
+              ],
             },
           ],
         },
@@ -2273,6 +2585,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'type': '`\$INTEGER`',
         },
@@ -2281,6 +2594,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'terminalId',
           'req': true,
           'type': '`\$INTEGER`',
@@ -2297,14 +2611,19 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/reactivateTerminal',
-              'parts': <dynamic>[
-                'reactivateTerminal',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'reactivateTerminal',
+                },
               ],
               'select': <String, dynamic>{},
               'transform': <String, dynamic>{
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'reactivateTerminal',
+              ],
             },
           ],
         },
@@ -2328,6 +2647,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'amount',
           'op': <String, dynamic>{
             'create': <String, dynamic>{
@@ -2354,6 +2674,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'clientId',
           'req': true,
           'type': '`\$INTEGER`',
@@ -2380,6 +2701,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int64',
           'name': 'exchangeFee',
           'type': '`\$INTEGER`',
         },
@@ -2408,6 +2730,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'originalTraceNumber',
           'type': '`\$INTEGER`',
         },
@@ -2438,6 +2761,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'receiptLayout',
           'type': '`\$INTEGER`',
         },
@@ -2447,6 +2771,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'type': '`\$INTEGER`',
         },
@@ -2463,6 +2788,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'terminalId',
           'req': true,
           'type': '`\$INTEGER`',
@@ -2472,10 +2798,12 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'traceNumber',
           'type': '`\$INTEGER`',
         },
         <String, dynamic>{
+          'format': 'date-time',
           'name': 'transactionDate',
           'op': <String, dynamic>{
             'create': <String, dynamic>{
@@ -2515,15 +2843,23 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/public/refundTransaction',
-              'parts': <dynamic>[
-                'public',
-                'refundTransaction',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'public',
+                },
+                <String, dynamic>{
+                  'lit': 'refundTransaction',
+                },
               ],
               'select': <String, dynamic>{},
               'transform': <String, dynamic>{
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'public',
+                'refundTransaction',
+              ],
             },
           ],
         },
@@ -2545,6 +2881,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'partnerId',
           'type': '`\$INTEGER`',
         },
@@ -2558,6 +2895,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'type': '`\$INTEGER`',
         },
@@ -2582,14 +2920,19 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/registerTecsCompany',
-              'parts': <dynamic>[
-                'registerTecsCompany',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'registerTecsCompany',
+                },
               ],
               'select': <String, dynamic>{},
               'transform': <String, dynamic>{
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'registerTecsCompany',
+              ],
             },
           ],
         },
@@ -2620,6 +2963,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'type': '`\$INTEGER`',
         },
@@ -2642,6 +2986,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'terminalId',
           'type': '`\$INTEGER`',
         },
@@ -2691,14 +3036,19 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/registerTerminal',
-              'parts': <dynamic>[
-                'registerTerminal',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'registerTerminal',
+                },
               ],
               'select': <String, dynamic>{},
               'transform': <String, dynamic>{
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'registerTerminal',
+              ],
             },
           ],
         },
@@ -2736,6 +3086,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'type': '`\$INTEGER`',
         },
@@ -2752,6 +3103,7 @@ class Config {
           'type': '`\$OBJECT`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'terminalId',
           'type': '`\$INTEGER`',
         },
@@ -2767,16 +3119,27 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/public/digitalservices/reportData',
-              'parts': <dynamic>[
-                'public',
-                'digitalservices',
-                'reportData',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'public',
+                },
+                <String, dynamic>{
+                  'lit': 'digitalservices',
+                },
+                <String, dynamic>{
+                  'lit': 'reportData',
+                },
               ],
               'select': <String, dynamic>{},
               'transform': <String, dynamic>{
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'public',
+                'digitalservices',
+                'reportData',
+              ],
             },
           ],
         },
@@ -2796,6 +3159,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'amount',
           'type': '`\$INTEGER`',
         },
@@ -2815,6 +3179,7 @@ class Config {
           ],
         },
         <String, dynamic>{
+          'format': 'date-time',
           'name': 'authorizationDate',
           'type': '`\$STRING`',
         },
@@ -2835,6 +3200,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'clearingAmount',
           'type': '`\$INTEGER`',
         },
@@ -2847,10 +3213,12 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'date-time',
           'name': 'clearingDate',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'date-time',
           'name': 'clearingProcessedDate',
           'type': '`\$STRING`',
         },
@@ -2859,6 +3227,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'clientId',
           'type': '`\$INTEGER`',
         },
@@ -2895,6 +3264,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'originalTerminalId',
           'type': '`\$INTEGER`',
         },
@@ -2911,6 +3281,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'type': '`\$INTEGER`',
         },
@@ -2935,10 +3306,12 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'sourceId',
           'type': '`\$INTEGER`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'tecsengineResponseCode',
           'type': '`\$INTEGER`',
         },
@@ -2947,10 +3320,12 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'date-time',
           'name': 'terminalEndOfDayDate',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'terminalId',
           'type': '`\$INTEGER`',
         },
@@ -2959,18 +3334,22 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'tipAmount',
           'type': '`\$INTEGER`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'traceNumber',
           'type': '`\$INTEGER`',
         },
         <String, dynamic>{
+          'format': 'date-time',
           'name': 'transactionClearingDate',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'date-time',
           'name': 'transactionDate',
           'type': '`\$STRING`',
         },
@@ -2979,10 +3358,12 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int64',
           'name': 'transactionSeqNumber',
           'type': '`\$INTEGER`',
         },
         <String, dynamic>{
+          'format': 'date-time',
           'name': 'transactionServerDate',
           'type': '`\$STRING`',
         },
@@ -3006,15 +3387,23 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/public/statusTransaction',
-              'parts': <dynamic>[
-                'public',
-                'statusTransaction',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'public',
+                },
+                <String, dynamic>{
+                  'lit': 'statusTransaction',
+                },
               ],
               'select': <String, dynamic>{},
               'transform': <String, dynamic>{
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'public',
+                'statusTransaction',
+              ],
             },
           ],
         },
@@ -3034,6 +3423,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'type': '`\$INTEGER`',
         },
@@ -3062,14 +3452,19 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/storeTerminalParameters',
-              'parts': <dynamic>[
-                'storeTerminalParameters',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'storeTerminalParameters',
+                },
               ],
               'select': <String, dynamic>{},
               'transform': <String, dynamic>{
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'storeTerminalParameters',
+              ],
             },
           ],
         },
@@ -3090,6 +3485,7 @@ class Config {
           'type': '`\$ARRAY`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'type': '`\$INTEGER`',
         },
@@ -3113,15 +3509,23 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/public/getTerminalId',
-              'parts': <dynamic>[
-                'public',
-                'getTerminalId',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'public',
+                },
+                <String, dynamic>{
+                  'lit': 'getTerminalId',
+                },
               ],
               'select': <String, dynamic>{},
               'transform': <String, dynamic>{
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'public',
+                'getTerminalId',
+              ],
             },
           ],
         },
@@ -3185,6 +3589,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'type': '`\$INTEGER`',
         },
@@ -3197,6 +3602,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'sourceId',
           'type': '`\$INTEGER`',
         },
@@ -3209,6 +3615,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'terminalId',
           'type': '`\$INTEGER`',
         },
@@ -3225,10 +3632,12 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'date-time',
           'name': 'transactionDateFrom',
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'date-time',
           'name': 'transactionDateTo',
           'type': '`\$STRING`',
         },
@@ -3261,31 +3670,50 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/public/mcom/transactionHistory',
-              'parts': <dynamic>[
-                'public',
-                'mcom',
-                'transactionHistory',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'public',
+                },
+                <String, dynamic>{
+                  'lit': 'mcom',
+                },
+                <String, dynamic>{
+                  'lit': 'transactionHistory',
+                },
               ],
               'select': <String, dynamic>{},
               'transform': <String, dynamic>{
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'public',
+                'mcom',
+                'transactionHistory',
+              ],
             },
             <String, dynamic>{
               'args': <String, dynamic>{},
               'kind': 'http',
               'method': 'POST',
               'orig': '/public/transactionHistory',
-              'parts': <dynamic>[
-                'public',
-                'transactionHistory',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'public',
+                },
+                <String, dynamic>{
+                  'lit': 'transactionHistory',
+                },
               ],
               'select': <String, dynamic>{},
               'transform': <String, dynamic>{
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'public',
+                'transactionHistory',
+              ],
             },
           ],
         },
@@ -3301,6 +3729,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'type': '`\$INTEGER`',
         },
@@ -3309,6 +3738,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'date-time',
           'name': 'transactionDateFrom',
           'op': <String, dynamic>{
             'create': <String, dynamic>{
@@ -3319,6 +3749,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'date-time',
           'name': 'transactionDateTo',
           'op': <String, dynamic>{
             'create': <String, dynamic>{
@@ -3344,30 +3775,46 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/public/countAuthorisedTransactions',
-              'parts': <dynamic>[
-                'public',
-                'countAuthorisedTransactions',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'public',
+                },
+                <String, dynamic>{
+                  'lit': 'countAuthorisedTransactions',
+                },
               ],
               'select': <String, dynamic>{},
               'transform': <String, dynamic>{
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'public',
+                'countAuthorisedTransactions',
+              ],
             },
             <String, dynamic>{
               'args': <String, dynamic>{},
               'kind': 'http',
               'method': 'POST',
               'orig': '/public/countNotAuthorisedTransactions',
-              'parts': <dynamic>[
-                'public',
-                'countNotAuthorisedTransactions',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'public',
+                },
+                <String, dynamic>{
+                  'lit': 'countNotAuthorisedTransactions',
+                },
               ],
               'select': <String, dynamic>{},
               'transform': <String, dynamic>{
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'public',
+                'countNotAuthorisedTransactions',
+              ],
             },
           ],
         },
@@ -3383,6 +3830,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'type': '`\$INTEGER`',
         },
@@ -3391,6 +3839,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'date-time',
           'name': 'transactionDateFrom',
           'op': <String, dynamic>{
             'create': <String, dynamic>{
@@ -3401,6 +3850,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'date-time',
           'name': 'transactionDateTo',
           'op': <String, dynamic>{
             'create': <String, dynamic>{
@@ -3426,15 +3876,23 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/public/countTransactionsByCardBrand',
-              'parts': <dynamic>[
-                'public',
-                'countTransactionsByCardBrand',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'public',
+                },
+                <String, dynamic>{
+                  'lit': 'countTransactionsByCardBrand',
+                },
               ],
               'select': <String, dynamic>{},
               'transform': <String, dynamic>{
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'public',
+                'countTransactionsByCardBrand',
+              ],
             },
           ],
         },
@@ -3450,6 +3908,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'type': '`\$INTEGER`',
         },
@@ -3458,6 +3917,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'date-time',
           'name': 'transactionDateFrom',
           'op': <String, dynamic>{
             'create': <String, dynamic>{
@@ -3468,6 +3928,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'date-time',
           'name': 'transactionDateTo',
           'op': <String, dynamic>{
             'create': <String, dynamic>{
@@ -3493,15 +3954,23 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/public/transactionTurnover',
-              'parts': <dynamic>[
-                'public',
-                'transactionTurnover',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'public',
+                },
+                <String, dynamic>{
+                  'lit': 'transactionTurnover',
+                },
               ],
               'select': <String, dynamic>{},
               'transform': <String, dynamic>{
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'public',
+                'transactionTurnover',
+              ],
             },
           ],
         },
@@ -3534,6 +4003,7 @@ class Config {
           'type': '`\$STRING`',
         },
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'type': '`\$INTEGER`',
         },
@@ -3569,15 +4039,23 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/public/updateMerchant',
-              'parts': <dynamic>[
-                'public',
-                'updateMerchant',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'public',
+                },
+                <String, dynamic>{
+                  'lit': 'updateMerchant',
+                },
               ],
               'select': <String, dynamic>{},
               'transform': <String, dynamic>{
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'public',
+                'updateMerchant',
+              ],
             },
           ],
         },
@@ -3589,6 +4067,7 @@ class Config {
     'update_template_xml': <String, dynamic>{
       'fields': <dynamic>[
         <String, dynamic>{
+          'format': 'int32',
           'name': 'responseCode',
           'type': '`\$INTEGER`',
         },
@@ -3618,15 +4097,23 @@ class Config {
               'kind': 'http',
               'method': 'POST',
               'orig': '/public/updateTemplateXml',
-              'parts': <dynamic>[
-                'public',
-                'updateTemplateXml',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'public',
+                },
+                <String, dynamic>{
+                  'lit': 'updateTemplateXml',
+                },
               ],
               'select': <String, dynamic>{},
               'transform': <String, dynamic>{
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'public',
+                'updateTemplateXml',
+              ],
             },
           ],
         },
@@ -3661,15 +4148,23 @@ class Config {
               'kind': 'http',
               'method': 'GET',
               'orig': '/public/version',
-              'parts': <dynamic>[
-                'public',
-                'version',
+              'segments': <dynamic>[
+                <String, dynamic>{
+                  'lit': 'public',
+                },
+                <String, dynamic>{
+                  'lit': 'version',
+                },
               ],
               'select': <String, dynamic>{},
               'transform': <String, dynamic>{
                 'req': '`reqdata`',
                 'res': '`body`',
               },
+              'parts': <dynamic>[
+                'public',
+                'version',
+              ],
             },
           ],
         },

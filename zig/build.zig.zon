@@ -1,6 +1,7 @@
 .{
-    .name = "bluefin_tecs_merchant_services_sdk",
+    .name = .bluefin_tecs_merchant_services_sdk,
     .version = "0.1.1",
+    .fingerprint = 0x77266a3d1d5ed900,
     .dependencies = .{},
     .paths = .{
         "src",

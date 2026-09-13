@@ -1,6 +1,14 @@
 # BluefinTecsMerchantServices SDK configuration
 
 
+# The sekreto plugin DEFINITIONS the model selected per feature, imported
+# above by name from the modules the catalogue's active `plugin.def`
+# entries declare. Handed to each feature (secrets builds its Sekreto
+# with them): a provider kind not listed here is unknown to that SDK.
+FEATURE_PLUGINS = {
+}
+
+
 _shared_config = None
 
 
@@ -203,6 +211,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "amount",
             "op": {
               "create": {
@@ -229,6 +238,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "clientId",
             "req": True,
             "type": "`$INTEGER`",
@@ -255,6 +265,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int64",
             "name": "exchangeFee",
             "type": "`$INTEGER`",
           },
@@ -289,6 +300,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "originalTraceNumber",
             "type": "`$INTEGER`",
           },
@@ -319,6 +331,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "receiptLayout",
             "type": "`$INTEGER`",
           },
@@ -328,6 +341,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "type": "`$INTEGER`",
           },
@@ -344,6 +358,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "terminalId",
             "req": True,
             "type": "`$INTEGER`",
@@ -353,10 +368,12 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "traceNumber",
             "type": "`$INTEGER`",
           },
           {
+            "format": "date-time",
             "name": "transactionDate",
             "op": {
               "create": {
@@ -396,15 +413,23 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/public/cancelTransaction",
-                "parts": [
-                  "public",
-                  "cancelTransaction",
+                "segments": [
+                  {
+                    "lit": "public",
+                  },
+                  {
+                    "lit": "cancelTransaction",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "public",
+                  "cancelTransaction",
+                ],
               },
             ],
           },
@@ -420,6 +445,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "type": "`$INTEGER`",
           },
@@ -449,8 +475,10 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/checkCardBlackListed",
-                "parts": [
-                  "checkCardBlackListed",
+                "segments": [
+                  {
+                    "lit": "checkCardBlackListed",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -461,6 +489,9 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "checkCardBlackListed",
+                ],
               },
             ],
           },
@@ -472,10 +503,12 @@ def make_config():
       "create_product": {
         "fields": [
           {
+            "format": "int32",
             "name": "acquirerId",
             "type": "`$INTEGER`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "type": "`$INTEGER`",
           },
@@ -515,14 +548,19 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/createProduct",
-                "parts": [
-                  "createProduct",
+                "segments": [
+                  {
+                    "lit": "createProduct",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "createProduct",
+                ],
               },
             ],
           },
@@ -551,6 +589,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "type": "`$INTEGER`",
           },
@@ -559,6 +598,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "terminalId",
             "req": True,
             "type": "`$INTEGER`",
@@ -575,14 +615,19 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/deactivateTerminal",
-                "parts": [
-                  "deactivateTerminal",
+                "segments": [
+                  {
+                    "lit": "deactivateTerminal",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "deactivateTerminal",
+                ],
               },
             ],
           },
@@ -606,6 +651,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "type": "`$INTEGER`",
           },
@@ -614,6 +660,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "txCount",
             "type": "`$INTEGER`",
           },
@@ -626,14 +673,17 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "txSeqNoEnd",
             "type": "`$INTEGER`",
           },
           {
+            "format": "int32",
             "name": "txSeqNoStart",
             "type": "`$INTEGER`",
           },
           {
+            "format": "int32",
             "name": "txTotal",
             "type": "`$INTEGER`",
           },
@@ -659,17 +709,25 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/public/digitalservices/mandatorClearingExportDownload/{fileId}",
-                "parts": [
-                  "public",
-                  "digitalservices",
-                  "mandatorClearingExportDownload",
-                  "{file_id}",
-                ],
                 "rename": {
                   "param": {
                     "fileId": "file_id",
                   },
                 },
+                "segments": [
+                  {
+                    "lit": "public",
+                  },
+                  {
+                    "lit": "digitalservices",
+                  },
+                  {
+                    "lit": "mandatorClearingExportDownload",
+                  },
+                  {
+                    "var": "file_id",
+                  },
+                ],
                 "select": {
                   "exist": [
                     "file_id",
@@ -679,22 +737,39 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "public",
+                  "digitalservices",
+                  "mandatorClearingExportDownload",
+                  "{file_id}",
+                ],
               },
               {
                 "args": {},
                 "kind": "http",
                 "method": "POST",
                 "orig": "/public/digitalservices/mandatorClearingExportMetadata",
-                "parts": [
-                  "public",
-                  "digitalservices",
-                  "mandatorClearingExportMetadata",
+                "segments": [
+                  {
+                    "lit": "public",
+                  },
+                  {
+                    "lit": "digitalservices",
+                  },
+                  {
+                    "lit": "mandatorClearingExportMetadata",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "public",
+                  "digitalservices",
+                  "mandatorClearingExportMetadata",
+                ],
               },
             ],
           },
@@ -707,17 +782,31 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/public/digitalservices/mandatorClearingExportDownload/status",
-                "parts": [
-                  "public",
-                  "digitalservices",
-                  "mandatorClearingExportDownload",
-                  "status",
+                "segments": [
+                  {
+                    "lit": "public",
+                  },
+                  {
+                    "lit": "digitalservices",
+                  },
+                  {
+                    "lit": "mandatorClearingExportDownload",
+                  },
+                  {
+                    "lit": "status",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "public",
+                  "digitalservices",
+                  "mandatorClearingExportDownload",
+                  "status",
+                ],
               },
             ],
           },
@@ -737,6 +826,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "type": "`$INTEGER`",
           },
@@ -745,6 +835,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "terminalId",
             "req": True,
             "type": "`$INTEGER`",
@@ -771,15 +862,23 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/public/getEcData",
-                "parts": [
-                  "public",
-                  "getEcData",
+                "segments": [
+                  {
+                    "lit": "public",
+                  },
+                  {
+                    "lit": "getEcData",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "public",
+                  "getEcData",
+                ],
               },
             ],
           },
@@ -799,6 +898,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "type": "`$INTEGER`",
           },
@@ -807,6 +907,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "terminalId",
             "req": True,
             "type": "`$INTEGER`",
@@ -823,15 +924,23 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/public/getEcomParameters",
-                "parts": [
-                  "public",
-                  "getEcomParameters",
+                "segments": [
+                  {
+                    "lit": "public",
+                  },
+                  {
+                    "lit": "getEcomParameters",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "public",
+                  "getEcomParameters",
+                ],
               },
             ],
           },
@@ -847,6 +956,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "type": "`$INTEGER`",
           },
@@ -855,6 +965,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "terminalId",
             "req": True,
             "type": "`$INTEGER`",
@@ -881,15 +992,23 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/public/getEcrData",
-                "parts": [
-                  "public",
-                  "getEcrData",
+                "segments": [
+                  {
+                    "lit": "public",
+                  },
+                  {
+                    "lit": "getEcrData",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "public",
+                  "getEcrData",
+                ],
               },
             ],
           },
@@ -905,6 +1024,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "type": "`$INTEGER`",
           },
@@ -913,6 +1033,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "terminalId",
             "req": True,
             "type": "`$INTEGER`",
@@ -939,15 +1060,23 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/public/getEmvData",
-                "parts": [
-                  "public",
-                  "getEmvData",
+                "segments": [
+                  {
+                    "lit": "public",
+                  },
+                  {
+                    "lit": "getEmvData",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "public",
+                  "getEmvData",
+                ],
               },
             ],
           },
@@ -959,6 +1088,7 @@ def make_config():
       "enable_acquiring": {
         "fields": [
           {
+            "format": "int32",
             "name": "accountNo",
             "type": "`$INTEGER`",
           },
@@ -977,6 +1107,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "merchantCategoryCode",
             "req": True,
             "type": "`$INTEGER`",
@@ -992,6 +1123,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "type": "`$INTEGER`",
           },
@@ -1000,6 +1132,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "sortingCode",
             "type": "`$INTEGER`",
           },
@@ -1032,14 +1165,19 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/enableAcquiring",
-                "parts": [
-                  "enableAcquiring",
+                "segments": [
+                  {
+                    "lit": "enableAcquiring",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "enableAcquiring",
+                ],
               },
             ],
           },
@@ -1056,6 +1194,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "type": "`$INTEGER`",
           },
@@ -1075,14 +1214,19 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/getMerchantContractNumber",
-                "parts": [
-                  "getMerchantContractNumber",
+                "segments": [
+                  {
+                    "lit": "getMerchantContractNumber",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "getMerchantContractNumber",
+                ],
               },
             ],
           },
@@ -1094,6 +1238,7 @@ def make_config():
       "get_template_xml": {
         "fields": [
           {
+            "format": "int32",
             "name": "responseCode",
             "type": "`$INTEGER`",
           },
@@ -1118,15 +1263,23 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/public/getTemplateXml",
-                "parts": [
-                  "public",
-                  "getTemplateXml",
+                "segments": [
+                  {
+                    "lit": "public",
+                  },
+                  {
+                    "lit": "getTemplateXml",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "public",
+                  "getTemplateXml",
+                ],
               },
             ],
           },
@@ -1143,6 +1296,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "type": "`$INTEGER`",
           },
@@ -1162,14 +1316,19 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/introduceMandator",
-                "parts": [
-                  "introduceMandator",
+                "segments": [
+                  {
+                    "lit": "introduceMandator",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "introduceMandator",
+                ],
               },
             ],
           },
@@ -1181,6 +1340,7 @@ def make_config():
       "introduce_package": {
         "fields": [
           {
+            "format": "int32",
             "name": "responseCode",
             "type": "`$INTEGER`",
           },
@@ -1205,14 +1365,19 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/introducePackage",
-                "parts": [
-                  "introducePackage",
+                "segments": [
+                  {
+                    "lit": "introducePackage",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "introducePackage",
+                ],
               },
             ],
           },
@@ -1244,6 +1409,7 @@ def make_config():
             "type": "`$OBJECT`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "type": "`$INTEGER`",
           },
@@ -1260,6 +1426,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "terminalId",
             "type": "`$INTEGER`",
           },
@@ -1275,15 +1442,23 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/public/keepalive",
-                "parts": [
-                  "public",
-                  "keepalive",
+                "segments": [
+                  {
+                    "lit": "public",
+                  },
+                  {
+                    "lit": "keepalive",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "public",
+                  "keepalive",
+                ],
               },
             ],
           },
@@ -1307,6 +1482,7 @@ def make_config():
             "type": "`$OBJECT`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "type": "`$INTEGER`",
           },
@@ -1330,15 +1506,23 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/public/listTerminals",
-                "parts": [
-                  "public",
-                  "listTerminals",
+                "segments": [
+                  {
+                    "lit": "public",
+                  },
+                  {
+                    "lit": "listTerminals",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "public",
+                  "listTerminals",
+                ],
               },
             ],
           },
@@ -1370,6 +1554,7 @@ def make_config():
             "type": "`$ARRAY`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "type": "`$INTEGER`",
           },
@@ -1389,16 +1574,27 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/public/digitalservices/mandatorClearingExport",
-                "parts": [
-                  "public",
-                  "digitalservices",
-                  "mandatorClearingExport",
+                "segments": [
+                  {
+                    "lit": "public",
+                  },
+                  {
+                    "lit": "digitalservices",
+                  },
+                  {
+                    "lit": "mandatorClearingExport",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "public",
+                  "digitalservices",
+                  "mandatorClearingExport",
+                ],
               },
             ],
           },
@@ -1410,12 +1606,14 @@ def make_config():
       "mandator_clearing_export_download": {
         "fields": [
           {
+            "format": "date-time",
             "name": "clearingDateFrom",
             "req": True,
             "short": "Start date for clearing export (inclusive)",
             "type": "`$STRING`",
           },
           {
+            "format": "date-time",
             "name": "clearingDateTo",
             "req": True,
             "short": "End date for clearing export (inclusive)",
@@ -1436,6 +1634,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "type": "`$INTEGER`",
           },
@@ -1449,6 +1648,10 @@ def make_config():
             "type": "`$STRING`",
           },
         ],
+        "id": {
+          "field": "id",
+          "name": "id",
+        },
         "name": "mandator_clearing_export_download",
         "op": {
           "create": {
@@ -1460,16 +1663,27 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/public/digitalservices/mandatorClearingExportDownload",
-                "parts": [
-                  "public",
-                  "digitalservices",
-                  "mandatorClearingExportDownload",
+                "segments": [
+                  {
+                    "lit": "public",
+                  },
+                  {
+                    "lit": "digitalservices",
+                  },
+                  {
+                    "lit": "mandatorClearingExportDownload",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "public",
+                  "digitalservices",
+                  "mandatorClearingExportDownload",
+                ],
               },
             ],
           },
@@ -1492,17 +1706,25 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/public/digitalservices/mandatorClearingExportDownload/{fileId}",
-                "parts": [
-                  "public",
-                  "digitalservices",
-                  "mandatorClearingExportDownload",
-                  "{id}",
-                ],
                 "rename": {
                   "param": {
                     "fileId": "id",
                   },
                 },
+                "segments": [
+                  {
+                    "lit": "public",
+                  },
+                  {
+                    "lit": "digitalservices",
+                  },
+                  {
+                    "lit": "mandatorClearingExportDownload",
+                  },
+                  {
+                    "var": "id",
+                  },
+                ],
                 "select": {
                   "exist": [
                     "id",
@@ -1512,6 +1734,12 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "public",
+                  "digitalservices",
+                  "mandatorClearingExportDownload",
+                  "{id}",
+                ],
               },
             ],
           },
@@ -1539,6 +1767,7 @@ def make_config():
             "type": "`$ARRAY`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "type": "`$INTEGER`",
           },
@@ -1558,16 +1787,27 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/public/digitalservices/mandatorClearingExportSummary",
-                "parts": [
-                  "public",
-                  "digitalservices",
-                  "mandatorClearingExportSummary",
+                "segments": [
+                  {
+                    "lit": "public",
+                  },
+                  {
+                    "lit": "digitalservices",
+                  },
+                  {
+                    "lit": "mandatorClearingExportSummary",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "public",
+                  "digitalservices",
+                  "mandatorClearingExportSummary",
+                ],
               },
             ],
           },
@@ -1631,6 +1871,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "sourceId",
             "type": "`$INTEGER`",
           },
@@ -1643,6 +1884,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "terminalId",
             "type": "`$INTEGER`",
           },
@@ -1659,10 +1901,12 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "date-time",
             "name": "transactionDateFrom",
             "type": "`$STRING`",
           },
           {
+            "format": "date-time",
             "name": "transactionDateTo",
             "type": "`$STRING`",
           },
@@ -1691,15 +1935,23 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/public/transactionHistoryCsv",
-                "parts": [
-                  "public",
-                  "transactionHistoryCsv",
+                "segments": [
+                  {
+                    "lit": "public",
+                  },
+                  {
+                    "lit": "transactionHistoryCsv",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "public",
+                  "transactionHistoryCsv",
+                ],
               },
             ],
           },
@@ -1716,6 +1968,7 @@ def make_config():
             "type": "`$ARRAY`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "type": "`$INTEGER`",
           },
@@ -1743,14 +1996,19 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/moveTid",
-                "parts": [
-                  "moveTid",
+                "segments": [
+                  {
+                    "lit": "moveTid",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "moveTid",
+                ],
               },
             ],
           },
@@ -1767,6 +2025,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "amount",
             "req": True,
             "short": "Transaction amount in minor units (cents)",
@@ -1869,15 +2128,23 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/public/paymentManual",
-                "parts": [
-                  "public",
-                  "paymentManual",
+                "segments": [
+                  {
+                    "lit": "public",
+                  },
+                  {
+                    "lit": "paymentManual",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "public",
+                  "paymentManual",
+                ],
               },
             ],
           },
@@ -1889,6 +2156,7 @@ def make_config():
       "payment_sred": {
         "fields": [
           {
+            "format": "int32",
             "name": "amount",
             "req": True,
             "short": "Transaction amount in minor units (cents)",
@@ -1965,15 +2233,23 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/public/paymentSred",
-                "parts": [
-                  "public",
-                  "paymentSred",
+                "segments": [
+                  {
+                    "lit": "public",
+                  },
+                  {
+                    "lit": "paymentSred",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body.sred`",
                 },
+                "parts": [
+                  "public",
+                  "paymentSred",
+                ],
               },
             ],
           },
@@ -1997,6 +2273,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "amount",
             "op": {
               "create": {
@@ -2028,6 +2305,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "clientId",
             "req": True,
             "type": "`$INTEGER`",
@@ -2054,6 +2332,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int64",
             "name": "exchangeFee",
             "type": "`$INTEGER`",
           },
@@ -2082,6 +2361,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "originalTraceNumber",
             "type": "`$INTEGER`",
           },
@@ -2112,6 +2392,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "receiptLayout",
             "type": "`$INTEGER`",
           },
@@ -2121,6 +2402,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "type": "`$INTEGER`",
           },
@@ -2137,6 +2419,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "terminalId",
             "req": True,
             "type": "`$INTEGER`",
@@ -2146,10 +2429,12 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "traceNumber",
             "type": "`$INTEGER`",
           },
           {
+            "format": "date-time",
             "name": "transactionDate",
             "op": {
               "create": {
@@ -2194,30 +2479,46 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/public/paymentTransaction",
-                "parts": [
-                  "public",
-                  "paymentTransaction",
+                "segments": [
+                  {
+                    "lit": "public",
+                  },
+                  {
+                    "lit": "paymentTransaction",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "public",
+                  "paymentTransaction",
+                ],
               },
               {
                 "args": {},
                 "kind": "http",
                 "method": "POST",
                 "orig": "/public/preAuthCompletionTransaction",
-                "parts": [
-                  "public",
-                  "preAuthCompletionTransaction",
+                "segments": [
+                  {
+                    "lit": "public",
+                  },
+                  {
+                    "lit": "preAuthCompletionTransaction",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "public",
+                  "preAuthCompletionTransaction",
+                ],
               },
             ],
           },
@@ -2246,6 +2547,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "type": "`$INTEGER`",
           },
@@ -2254,6 +2556,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "terminalId",
             "req": True,
             "type": "`$INTEGER`",
@@ -2270,14 +2573,19 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/reactivateTerminal",
-                "parts": [
-                  "reactivateTerminal",
+                "segments": [
+                  {
+                    "lit": "reactivateTerminal",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "reactivateTerminal",
+                ],
               },
             ],
           },
@@ -2301,6 +2609,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "amount",
             "op": {
               "create": {
@@ -2327,6 +2636,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "clientId",
             "req": True,
             "type": "`$INTEGER`",
@@ -2353,6 +2663,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int64",
             "name": "exchangeFee",
             "type": "`$INTEGER`",
           },
@@ -2381,6 +2692,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "originalTraceNumber",
             "type": "`$INTEGER`",
           },
@@ -2411,6 +2723,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "receiptLayout",
             "type": "`$INTEGER`",
           },
@@ -2420,6 +2733,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "type": "`$INTEGER`",
           },
@@ -2436,6 +2750,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "terminalId",
             "req": True,
             "type": "`$INTEGER`",
@@ -2445,10 +2760,12 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "traceNumber",
             "type": "`$INTEGER`",
           },
           {
+            "format": "date-time",
             "name": "transactionDate",
             "op": {
               "create": {
@@ -2488,15 +2805,23 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/public/refundTransaction",
-                "parts": [
-                  "public",
-                  "refundTransaction",
+                "segments": [
+                  {
+                    "lit": "public",
+                  },
+                  {
+                    "lit": "refundTransaction",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "public",
+                  "refundTransaction",
+                ],
               },
             ],
           },
@@ -2518,6 +2843,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "partnerId",
             "type": "`$INTEGER`",
           },
@@ -2531,6 +2857,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "type": "`$INTEGER`",
           },
@@ -2555,14 +2882,19 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/registerTecsCompany",
-                "parts": [
-                  "registerTecsCompany",
+                "segments": [
+                  {
+                    "lit": "registerTecsCompany",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "registerTecsCompany",
+                ],
               },
             ],
           },
@@ -2593,6 +2925,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "type": "`$INTEGER`",
           },
@@ -2615,6 +2948,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "terminalId",
             "type": "`$INTEGER`",
           },
@@ -2664,14 +2998,19 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/registerTerminal",
-                "parts": [
-                  "registerTerminal",
+                "segments": [
+                  {
+                    "lit": "registerTerminal",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "registerTerminal",
+                ],
               },
             ],
           },
@@ -2709,6 +3048,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "type": "`$INTEGER`",
           },
@@ -2725,6 +3065,7 @@ def make_config():
             "type": "`$OBJECT`",
           },
           {
+            "format": "int32",
             "name": "terminalId",
             "type": "`$INTEGER`",
           },
@@ -2740,16 +3081,27 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/public/digitalservices/reportData",
-                "parts": [
-                  "public",
-                  "digitalservices",
-                  "reportData",
+                "segments": [
+                  {
+                    "lit": "public",
+                  },
+                  {
+                    "lit": "digitalservices",
+                  },
+                  {
+                    "lit": "reportData",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "public",
+                  "digitalservices",
+                  "reportData",
+                ],
               },
             ],
           },
@@ -2769,6 +3121,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "amount",
             "type": "`$INTEGER`",
           },
@@ -2788,6 +3141,7 @@ def make_config():
             ],
           },
           {
+            "format": "date-time",
             "name": "authorizationDate",
             "type": "`$STRING`",
           },
@@ -2808,6 +3162,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "clearingAmount",
             "type": "`$INTEGER`",
           },
@@ -2820,10 +3175,12 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "date-time",
             "name": "clearingDate",
             "type": "`$STRING`",
           },
           {
+            "format": "date-time",
             "name": "clearingProcessedDate",
             "type": "`$STRING`",
           },
@@ -2832,6 +3189,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "clientId",
             "type": "`$INTEGER`",
           },
@@ -2868,6 +3226,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "originalTerminalId",
             "type": "`$INTEGER`",
           },
@@ -2884,6 +3243,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "type": "`$INTEGER`",
           },
@@ -2908,10 +3268,12 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "sourceId",
             "type": "`$INTEGER`",
           },
           {
+            "format": "int32",
             "name": "tecsengineResponseCode",
             "type": "`$INTEGER`",
           },
@@ -2920,10 +3282,12 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "date-time",
             "name": "terminalEndOfDayDate",
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "terminalId",
             "type": "`$INTEGER`",
           },
@@ -2932,18 +3296,22 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "tipAmount",
             "type": "`$INTEGER`",
           },
           {
+            "format": "int32",
             "name": "traceNumber",
             "type": "`$INTEGER`",
           },
           {
+            "format": "date-time",
             "name": "transactionClearingDate",
             "type": "`$STRING`",
           },
           {
+            "format": "date-time",
             "name": "transactionDate",
             "type": "`$STRING`",
           },
@@ -2952,10 +3320,12 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int64",
             "name": "transactionSeqNumber",
             "type": "`$INTEGER`",
           },
           {
+            "format": "date-time",
             "name": "transactionServerDate",
             "type": "`$STRING`",
           },
@@ -2979,15 +3349,23 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/public/statusTransaction",
-                "parts": [
-                  "public",
-                  "statusTransaction",
+                "segments": [
+                  {
+                    "lit": "public",
+                  },
+                  {
+                    "lit": "statusTransaction",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "public",
+                  "statusTransaction",
+                ],
               },
             ],
           },
@@ -3007,6 +3385,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "type": "`$INTEGER`",
           },
@@ -3035,14 +3414,19 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/storeTerminalParameters",
-                "parts": [
-                  "storeTerminalParameters",
+                "segments": [
+                  {
+                    "lit": "storeTerminalParameters",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "storeTerminalParameters",
+                ],
               },
             ],
           },
@@ -3063,6 +3447,7 @@ def make_config():
             "type": "`$ARRAY`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "type": "`$INTEGER`",
           },
@@ -3086,15 +3471,23 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/public/getTerminalId",
-                "parts": [
-                  "public",
-                  "getTerminalId",
+                "segments": [
+                  {
+                    "lit": "public",
+                  },
+                  {
+                    "lit": "getTerminalId",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "public",
+                  "getTerminalId",
+                ],
               },
             ],
           },
@@ -3158,6 +3551,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "type": "`$INTEGER`",
           },
@@ -3170,6 +3564,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "sourceId",
             "type": "`$INTEGER`",
           },
@@ -3182,6 +3577,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "terminalId",
             "type": "`$INTEGER`",
           },
@@ -3198,10 +3594,12 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "date-time",
             "name": "transactionDateFrom",
             "type": "`$STRING`",
           },
           {
+            "format": "date-time",
             "name": "transactionDateTo",
             "type": "`$STRING`",
           },
@@ -3234,31 +3632,50 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/public/mcom/transactionHistory",
-                "parts": [
-                  "public",
-                  "mcom",
-                  "transactionHistory",
+                "segments": [
+                  {
+                    "lit": "public",
+                  },
+                  {
+                    "lit": "mcom",
+                  },
+                  {
+                    "lit": "transactionHistory",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "public",
+                  "mcom",
+                  "transactionHistory",
+                ],
               },
               {
                 "args": {},
                 "kind": "http",
                 "method": "POST",
                 "orig": "/public/transactionHistory",
-                "parts": [
-                  "public",
-                  "transactionHistory",
+                "segments": [
+                  {
+                    "lit": "public",
+                  },
+                  {
+                    "lit": "transactionHistory",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "public",
+                  "transactionHistory",
+                ],
               },
             ],
           },
@@ -3274,6 +3691,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "type": "`$INTEGER`",
           },
@@ -3282,6 +3700,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "date-time",
             "name": "transactionDateFrom",
             "op": {
               "create": {
@@ -3292,6 +3711,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "date-time",
             "name": "transactionDateTo",
             "op": {
               "create": {
@@ -3317,30 +3737,46 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/public/countAuthorisedTransactions",
-                "parts": [
-                  "public",
-                  "countAuthorisedTransactions",
+                "segments": [
+                  {
+                    "lit": "public",
+                  },
+                  {
+                    "lit": "countAuthorisedTransactions",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "public",
+                  "countAuthorisedTransactions",
+                ],
               },
               {
                 "args": {},
                 "kind": "http",
                 "method": "POST",
                 "orig": "/public/countNotAuthorisedTransactions",
-                "parts": [
-                  "public",
-                  "countNotAuthorisedTransactions",
+                "segments": [
+                  {
+                    "lit": "public",
+                  },
+                  {
+                    "lit": "countNotAuthorisedTransactions",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "public",
+                  "countNotAuthorisedTransactions",
+                ],
               },
             ],
           },
@@ -3356,6 +3792,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "type": "`$INTEGER`",
           },
@@ -3364,6 +3801,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "date-time",
             "name": "transactionDateFrom",
             "op": {
               "create": {
@@ -3374,6 +3812,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "date-time",
             "name": "transactionDateTo",
             "op": {
               "create": {
@@ -3399,15 +3838,23 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/public/countTransactionsByCardBrand",
-                "parts": [
-                  "public",
-                  "countTransactionsByCardBrand",
+                "segments": [
+                  {
+                    "lit": "public",
+                  },
+                  {
+                    "lit": "countTransactionsByCardBrand",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "public",
+                  "countTransactionsByCardBrand",
+                ],
               },
             ],
           },
@@ -3423,6 +3870,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "type": "`$INTEGER`",
           },
@@ -3431,6 +3879,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "date-time",
             "name": "transactionDateFrom",
             "op": {
               "create": {
@@ -3441,6 +3890,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "date-time",
             "name": "transactionDateTo",
             "op": {
               "create": {
@@ -3466,15 +3916,23 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/public/transactionTurnover",
-                "parts": [
-                  "public",
-                  "transactionTurnover",
+                "segments": [
+                  {
+                    "lit": "public",
+                  },
+                  {
+                    "lit": "transactionTurnover",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "public",
+                  "transactionTurnover",
+                ],
               },
             ],
           },
@@ -3507,6 +3965,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "int32",
             "name": "responseCode",
             "type": "`$INTEGER`",
           },
@@ -3542,15 +4001,23 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/public/updateMerchant",
-                "parts": [
-                  "public",
-                  "updateMerchant",
+                "segments": [
+                  {
+                    "lit": "public",
+                  },
+                  {
+                    "lit": "updateMerchant",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "public",
+                  "updateMerchant",
+                ],
               },
             ],
           },
@@ -3562,6 +4029,7 @@ def make_config():
       "update_template_xml": {
         "fields": [
           {
+            "format": "int32",
             "name": "responseCode",
             "type": "`$INTEGER`",
           },
@@ -3591,15 +4059,23 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/public/updateTemplateXml",
-                "parts": [
-                  "public",
-                  "updateTemplateXml",
+                "segments": [
+                  {
+                    "lit": "public",
+                  },
+                  {
+                    "lit": "updateTemplateXml",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "public",
+                  "updateTemplateXml",
+                ],
               },
             ],
           },
@@ -3634,15 +4110,23 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/public/version",
-                "parts": [
-                  "public",
-                  "version",
+                "segments": [
+                  {
+                    "lit": "public",
+                  },
+                  {
+                    "lit": "version",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "public",
+                  "version",
+                ],
               },
             ],
           },

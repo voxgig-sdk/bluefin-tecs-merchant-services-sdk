@@ -21,6 +21,7 @@ main: kit: entity: list_terminal: {
       type: "`$OBJECT`"
     }
     {
+      format: "int32"
       name: "responseCode"
       req: false
       type: "`$INTEGER`"
@@ -45,9 +46,13 @@ main: kit: entity: list_terminal: {
         {
           method: "POST"
           orig: "/public/listTerminals"
-          parts: [
-            "public"
-            "listTerminals"
+          segments: [
+            {
+              lit: "public"
+            }
+            {
+              lit: "listTerminals"
+            }
           ]
           transform: {
             req: "`reqdata`"

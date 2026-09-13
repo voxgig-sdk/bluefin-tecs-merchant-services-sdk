@@ -6,6 +6,7 @@ main: kit: entity: payment_sred: {
 
   fields: [
     {
+      format: "int32"
       name: "amount"
       req: true
       short: "Transaction amount in minor units (cents)"
@@ -87,9 +88,13 @@ main: kit: entity: payment_sred: {
         {
           method: "POST"
           orig: "/public/paymentSred"
-          parts: [
-            "public"
-            "paymentSred"
+          segments: [
+            {
+              lit: "public"
+            }
+            {
+              lit: "paymentSred"
+            }
           ]
           transform: {
             req: "`reqdata`"

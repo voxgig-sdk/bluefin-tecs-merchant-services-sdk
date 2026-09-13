@@ -31,6 +31,7 @@ main: kit: entity: update_merchant: {
       type: "`$STRING`"
     }
     {
+      format: "int32"
       name: "responseCode"
       req: false
       type: "`$INTEGER`"
@@ -70,9 +71,13 @@ main: kit: entity: update_merchant: {
         {
           method: "POST"
           orig: "/public/updateMerchant"
-          parts: [
-            "public"
-            "updateMerchant"
+          segments: [
+            {
+              lit: "public"
+            }
+            {
+              lit: "updateMerchant"
+            }
           ]
           transform: {
             req: "`reqdata`"

@@ -52,6 +52,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "amount",
               "op": {
                 "create": {
@@ -88,6 +89,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "clientId",
               "req": true,
               "type": "`$INTEGER`"
@@ -124,6 +126,7 @@
             },
             {
               "active": true,
+              "format": "int64",
               "name": "exchangeFee",
               "req": false,
               "type": "`$INTEGER`"
@@ -172,6 +175,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "originalTraceNumber",
               "req": false,
               "type": "`$INTEGER`"
@@ -214,6 +218,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "receiptLayout",
               "req": false,
               "type": "`$INTEGER`"
@@ -226,6 +231,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
@@ -250,6 +256,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "terminalId",
               "req": true,
               "type": "`$INTEGER`"
@@ -262,12 +269,14 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "traceNumber",
               "req": false,
               "type": "`$INTEGER`"
             },
             {
               "active": true,
+              "format": "date-time",
               "name": "transactionDate",
               "op": {
                 "create": {
@@ -315,9 +324,13 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/cancelTransaction",
-                  "parts": [
-                    "public",
-                    "cancelTransaction"
+                  "segments": [
+                    {
+                      "lit": "public"
+                    },
+                    {
+                      "lit": "cancelTransaction"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -346,6 +359,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
@@ -380,8 +394,10 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/checkCardBlackListed",
-                  "parts": [
-                    "checkCardBlackListed"
+                  "segments": [
+                    {
+                      "lit": "checkCardBlackListed"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -408,12 +424,14 @@
           "fields": [
             {
               "active": true,
+              "format": "int32",
               "name": "acquirerId",
               "req": false,
               "type": "`$INTEGER`"
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
@@ -461,8 +479,10 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/createProduct",
-                  "parts": [
-                    "createProduct"
+                  "segments": [
+                    {
+                      "lit": "createProduct"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -509,6 +529,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
@@ -521,6 +542,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "terminalId",
               "req": true,
               "type": "`$INTEGER`"
@@ -538,8 +560,10 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/deactivateTerminal",
-                  "parts": [
-                    "deactivateTerminal"
+                  "segments": [
+                    {
+                      "lit": "deactivateTerminal"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -576,6 +600,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
@@ -588,6 +613,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "txCount",
               "req": false,
               "type": "`$INTEGER`"
@@ -606,18 +632,21 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "txSeqNoEnd",
               "req": false,
               "type": "`$INTEGER`"
             },
             {
               "active": true,
+              "format": "int32",
               "name": "txSeqNoStart",
               "req": false,
               "type": "`$INTEGER`"
             },
             {
               "active": true,
+              "format": "int32",
               "name": "txTotal",
               "req": false,
               "type": "`$INTEGER`"
@@ -646,17 +675,25 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/digitalservices/mandatorClearingExportDownload/{fileId}",
-                  "parts": [
-                    "public",
-                    "digitalservices",
-                    "mandatorClearingExportDownload",
-                    "{file_id}"
-                  ],
                   "rename": {
                     "param": {
                       "fileId": "file_id"
                     }
                   },
+                  "segments": [
+                    {
+                      "lit": "public"
+                    },
+                    {
+                      "lit": "digitalservices"
+                    },
+                    {
+                      "lit": "mandatorClearingExportDownload"
+                    },
+                    {
+                      "var": "file_id"
+                    }
+                  ],
                   "select": {
                     "exist": [
                       "file_id"
@@ -673,10 +710,16 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/digitalservices/mandatorClearingExportMetadata",
-                  "parts": [
-                    "public",
-                    "digitalservices",
-                    "mandatorClearingExportMetadata"
+                  "segments": [
+                    {
+                      "lit": "public"
+                    },
+                    {
+                      "lit": "digitalservices"
+                    },
+                    {
+                      "lit": "mandatorClearingExportMetadata"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -696,11 +739,19 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/public/digitalservices/mandatorClearingExportDownload/status",
-                  "parts": [
-                    "public",
-                    "digitalservices",
-                    "mandatorClearingExportDownload",
-                    "status"
+                  "segments": [
+                    {
+                      "lit": "public"
+                    },
+                    {
+                      "lit": "digitalservices"
+                    },
+                    {
+                      "lit": "mandatorClearingExportDownload"
+                    },
+                    {
+                      "lit": "status"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -733,6 +784,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
@@ -745,6 +797,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "terminalId",
               "req": true,
               "type": "`$INTEGER`"
@@ -774,9 +827,13 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/getEcData",
-                  "parts": [
-                    "public",
-                    "getEcData"
+                  "segments": [
+                    {
+                      "lit": "public"
+                    },
+                    {
+                      "lit": "getEcData"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -811,6 +868,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
@@ -823,6 +881,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "terminalId",
               "req": true,
               "type": "`$INTEGER`"
@@ -840,9 +899,13 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/getEcomParameters",
-                  "parts": [
-                    "public",
-                    "getEcomParameters"
+                  "segments": [
+                    {
+                      "lit": "public"
+                    },
+                    {
+                      "lit": "getEcomParameters"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -871,6 +934,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
@@ -883,6 +947,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "terminalId",
               "req": true,
               "type": "`$INTEGER`"
@@ -912,9 +977,13 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/getEcrData",
-                  "parts": [
-                    "public",
-                    "getEcrData"
+                  "segments": [
+                    {
+                      "lit": "public"
+                    },
+                    {
+                      "lit": "getEcrData"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -943,6 +1012,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
@@ -955,6 +1025,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "terminalId",
               "req": true,
               "type": "`$INTEGER`"
@@ -984,9 +1055,13 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/getEmvData",
-                  "parts": [
-                    "public",
-                    "getEmvData"
+                  "segments": [
+                    {
+                      "lit": "public"
+                    },
+                    {
+                      "lit": "getEmvData"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -1009,6 +1084,7 @@
           "fields": [
             {
               "active": true,
+              "format": "int32",
               "name": "accountNo",
               "req": false,
               "type": "`$INTEGER`"
@@ -1033,6 +1109,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "merchantCategoryCode",
               "req": true,
               "type": "`$INTEGER`"
@@ -1051,6 +1128,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
@@ -1063,6 +1141,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "sortingCode",
               "req": false,
               "type": "`$INTEGER`"
@@ -1104,8 +1183,10 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/enableAcquiring",
-                  "parts": [
-                    "enableAcquiring"
+                  "segments": [
+                    {
+                      "lit": "enableAcquiring"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -1134,6 +1215,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
@@ -1157,8 +1239,10 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/getMerchantContractNumber",
-                  "parts": [
-                    "getMerchantContractNumber"
+                  "segments": [
+                    {
+                      "lit": "getMerchantContractNumber"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -1181,6 +1265,7 @@
           "fields": [
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
@@ -1210,9 +1295,13 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/getTemplateXml",
-                  "parts": [
-                    "public",
-                    "getTemplateXml"
+                  "segments": [
+                    {
+                      "lit": "public"
+                    },
+                    {
+                      "lit": "getTemplateXml"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -1241,6 +1330,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
@@ -1264,8 +1354,10 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/introduceMandator",
-                  "parts": [
-                    "introduceMandator"
+                  "segments": [
+                    {
+                      "lit": "introduceMandator"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -1288,6 +1380,7 @@
           "fields": [
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
@@ -1317,8 +1410,10 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/introducePackage",
-                  "parts": [
-                    "introducePackage"
+                  "segments": [
+                    {
+                      "lit": "introducePackage"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -1371,6 +1466,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
@@ -1395,6 +1491,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "terminalId",
               "req": false,
               "type": "`$INTEGER`"
@@ -1412,9 +1509,13 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/keepalive",
-                  "parts": [
-                    "public",
-                    "keepalive"
+                  "segments": [
+                    {
+                      "lit": "public"
+                    },
+                    {
+                      "lit": "keepalive"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -1455,6 +1556,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
@@ -1484,9 +1586,13 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/listTerminals",
-                  "parts": [
-                    "public",
-                    "listTerminals"
+                  "segments": [
+                    {
+                      "lit": "public"
+                    },
+                    {
+                      "lit": "listTerminals"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -1535,6 +1641,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
@@ -1558,10 +1665,16 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/digitalservices/mandatorClearingExport",
-                  "parts": [
-                    "public",
-                    "digitalservices",
-                    "mandatorClearingExport"
+                  "segments": [
+                    {
+                      "lit": "public"
+                    },
+                    {
+                      "lit": "digitalservices"
+                    },
+                    {
+                      "lit": "mandatorClearingExport"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -1584,6 +1697,7 @@
           "fields": [
             {
               "active": true,
+              "format": "date-time",
               "name": "clearingDateFrom",
               "req": true,
               "short": "Start date for clearing export (inclusive)",
@@ -1591,6 +1705,7 @@
             },
             {
               "active": true,
+              "format": "date-time",
               "name": "clearingDateTo",
               "req": true,
               "short": "End date for clearing export (inclusive)",
@@ -1618,6 +1733,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
@@ -1652,10 +1768,16 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/digitalservices/mandatorClearingExportDownload",
-                  "parts": [
-                    "public",
-                    "digitalservices",
-                    "mandatorClearingExportDownload"
+                  "segments": [
+                    {
+                      "lit": "public"
+                    },
+                    {
+                      "lit": "digitalservices"
+                    },
+                    {
+                      "lit": "mandatorClearingExportDownload"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -1686,17 +1808,25 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/public/digitalservices/mandatorClearingExportDownload/{fileId}",
-                  "parts": [
-                    "public",
-                    "digitalservices",
-                    "mandatorClearingExportDownload",
-                    "{id}"
-                  ],
                   "rename": {
                     "param": {
                       "fileId": "id"
                     }
                   },
+                  "segments": [
+                    {
+                      "lit": "public"
+                    },
+                    {
+                      "lit": "digitalservices"
+                    },
+                    {
+                      "lit": "mandatorClearingExportDownload"
+                    },
+                    {
+                      "var": "id"
+                    }
+                  ],
                   "select": {
                     "exist": [
                       "id"
@@ -1742,6 +1872,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
@@ -1765,10 +1896,16 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/digitalservices/mandatorClearingExportSummary",
-                  "parts": [
-                    "public",
-                    "digitalservices",
-                    "mandatorClearingExportSummary"
+                  "segments": [
+                    {
+                      "lit": "public"
+                    },
+                    {
+                      "lit": "digitalservices"
+                    },
+                    {
+                      "lit": "mandatorClearingExportSummary"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -1869,6 +2006,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "sourceId",
               "req": false,
               "type": "`$INTEGER`"
@@ -1887,6 +2025,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "terminalId",
               "req": false,
               "type": "`$INTEGER`"
@@ -1911,12 +2050,14 @@
             },
             {
               "active": true,
+              "format": "date-time",
               "name": "transactionDateFrom",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
+              "format": "date-time",
               "name": "transactionDateTo",
               "req": false,
               "type": "`$STRING`"
@@ -1953,9 +2094,13 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/transactionHistoryCsv",
-                  "parts": [
-                    "public",
-                    "transactionHistoryCsv"
+                  "segments": [
+                    {
+                      "lit": "public"
+                    },
+                    {
+                      "lit": "transactionHistoryCsv"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -1984,6 +2129,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
@@ -2019,8 +2165,10 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/moveTid",
-                  "parts": [
-                    "moveTid"
+                  "segments": [
+                    {
+                      "lit": "moveTid"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -2050,6 +2198,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "amount",
               "req": true,
               "short": "Transaction amount in minor units (cents)",
@@ -2179,9 +2328,13 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/paymentManual",
-                  "parts": [
-                    "public",
-                    "paymentManual"
+                  "segments": [
+                    {
+                      "lit": "public"
+                    },
+                    {
+                      "lit": "paymentManual"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -2204,6 +2357,7 @@
           "fields": [
             {
               "active": true,
+              "format": "int32",
               "name": "amount",
               "req": true,
               "short": "Transaction amount in minor units (cents)",
@@ -2299,9 +2453,13 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/paymentSred",
-                  "parts": [
-                    "public",
-                    "paymentSred"
+                  "segments": [
+                    {
+                      "lit": "public"
+                    },
+                    {
+                      "lit": "paymentSred"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -2342,6 +2500,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "amount",
               "op": {
                 "create": {
@@ -2384,6 +2543,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "clientId",
               "req": true,
               "type": "`$INTEGER`"
@@ -2420,6 +2580,7 @@
             },
             {
               "active": true,
+              "format": "int64",
               "name": "exchangeFee",
               "req": false,
               "type": "`$INTEGER`"
@@ -2462,6 +2623,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "originalTraceNumber",
               "req": false,
               "type": "`$INTEGER`"
@@ -2504,6 +2666,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "receiptLayout",
               "req": false,
               "type": "`$INTEGER`"
@@ -2516,6 +2679,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
@@ -2540,6 +2704,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "terminalId",
               "req": true,
               "type": "`$INTEGER`"
@@ -2552,12 +2717,14 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "traceNumber",
               "req": false,
               "type": "`$INTEGER`"
             },
             {
               "active": true,
+              "format": "date-time",
               "name": "transactionDate",
               "op": {
                 "create": {
@@ -2611,9 +2778,13 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/paymentTransaction",
-                  "parts": [
-                    "public",
-                    "paymentTransaction"
+                  "segments": [
+                    {
+                      "lit": "public"
+                    },
+                    {
+                      "lit": "paymentTransaction"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -2627,9 +2798,13 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/preAuthCompletionTransaction",
-                  "parts": [
-                    "public",
-                    "preAuthCompletionTransaction"
+                  "segments": [
+                    {
+                      "lit": "public"
+                    },
+                    {
+                      "lit": "preAuthCompletionTransaction"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -2676,6 +2851,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
@@ -2688,6 +2864,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "terminalId",
               "req": true,
               "type": "`$INTEGER`"
@@ -2705,8 +2882,10 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/reactivateTerminal",
-                  "parts": [
-                    "reactivateTerminal"
+                  "segments": [
+                    {
+                      "lit": "reactivateTerminal"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -2747,6 +2926,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "amount",
               "op": {
                 "create": {
@@ -2783,6 +2963,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "clientId",
               "req": true,
               "type": "`$INTEGER`"
@@ -2819,6 +3000,7 @@
             },
             {
               "active": true,
+              "format": "int64",
               "name": "exchangeFee",
               "req": false,
               "type": "`$INTEGER`"
@@ -2861,6 +3043,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "originalTraceNumber",
               "req": false,
               "type": "`$INTEGER`"
@@ -2903,6 +3086,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "receiptLayout",
               "req": false,
               "type": "`$INTEGER`"
@@ -2915,6 +3099,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
@@ -2939,6 +3124,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "terminalId",
               "req": true,
               "type": "`$INTEGER`"
@@ -2951,12 +3137,14 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "traceNumber",
               "req": false,
               "type": "`$INTEGER`"
             },
             {
               "active": true,
+              "format": "date-time",
               "name": "transactionDate",
               "op": {
                 "create": {
@@ -3004,9 +3192,13 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/refundTransaction",
-                  "parts": [
-                    "public",
-                    "refundTransaction"
+                  "segments": [
+                    {
+                      "lit": "public"
+                    },
+                    {
+                      "lit": "refundTransaction"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -3041,6 +3233,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "partnerId",
               "req": false,
               "type": "`$INTEGER`"
@@ -3059,6 +3252,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
@@ -3088,8 +3282,10 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/registerTecsCompany",
-                  "parts": [
-                    "registerTecsCompany"
+                  "segments": [
+                    {
+                      "lit": "registerTecsCompany"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -3136,6 +3332,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
@@ -3166,6 +3363,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "terminalId",
               "req": false,
               "type": "`$INTEGER`"
@@ -3231,8 +3429,10 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/registerTerminal",
-                  "parts": [
-                    "registerTerminal"
+                  "segments": [
+                    {
+                      "lit": "registerTerminal"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -3287,6 +3487,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
@@ -3311,6 +3512,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "terminalId",
               "req": false,
               "type": "`$INTEGER`"
@@ -3328,10 +3530,16 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/digitalservices/reportData",
-                  "parts": [
-                    "public",
-                    "digitalservices",
-                    "reportData"
+                  "segments": [
+                    {
+                      "lit": "public"
+                    },
+                    {
+                      "lit": "digitalservices"
+                    },
+                    {
+                      "lit": "reportData"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -3366,6 +3574,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "amount",
               "req": false,
               "type": "`$INTEGER`"
@@ -3391,6 +3600,7 @@
             },
             {
               "active": true,
+              "format": "date-time",
               "name": "authorizationDate",
               "req": false,
               "type": "`$STRING`"
@@ -3421,6 +3631,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "clearingAmount",
               "req": false,
               "type": "`$INTEGER`"
@@ -3439,12 +3650,14 @@
             },
             {
               "active": true,
+              "format": "date-time",
               "name": "clearingDate",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
+              "format": "date-time",
               "name": "clearingProcessedDate",
               "req": false,
               "type": "`$STRING`"
@@ -3457,6 +3670,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "clientId",
               "req": false,
               "type": "`$INTEGER`"
@@ -3511,6 +3725,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "originalTerminalId",
               "req": false,
               "type": "`$INTEGER`"
@@ -3535,6 +3750,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
@@ -3571,12 +3787,14 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "sourceId",
               "req": false,
               "type": "`$INTEGER`"
             },
             {
               "active": true,
+              "format": "int32",
               "name": "tecsengineResponseCode",
               "req": false,
               "type": "`$INTEGER`"
@@ -3589,12 +3807,14 @@
             },
             {
               "active": true,
+              "format": "date-time",
               "name": "terminalEndOfDayDate",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
+              "format": "int32",
               "name": "terminalId",
               "req": false,
               "type": "`$INTEGER`"
@@ -3607,24 +3827,28 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "tipAmount",
               "req": false,
               "type": "`$INTEGER`"
             },
             {
               "active": true,
+              "format": "int32",
               "name": "traceNumber",
               "req": false,
               "type": "`$INTEGER`"
             },
             {
               "active": true,
+              "format": "date-time",
               "name": "transactionClearingDate",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
+              "format": "date-time",
               "name": "transactionDate",
               "req": false,
               "type": "`$STRING`"
@@ -3637,12 +3861,14 @@
             },
             {
               "active": true,
+              "format": "int64",
               "name": "transactionSeqNumber",
               "req": false,
               "type": "`$INTEGER`"
             },
             {
               "active": true,
+              "format": "date-time",
               "name": "transactionServerDate",
               "req": false,
               "type": "`$STRING`"
@@ -3672,9 +3898,13 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/statusTransaction",
-                  "parts": [
-                    "public",
-                    "statusTransaction"
+                  "segments": [
+                    {
+                      "lit": "public"
+                    },
+                    {
+                      "lit": "statusTransaction"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -3709,6 +3939,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
@@ -3744,8 +3975,10 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/storeTerminalParameters",
-                  "parts": [
-                    "storeTerminalParameters"
+                  "segments": [
+                    {
+                      "lit": "storeTerminalParameters"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -3780,6 +4013,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
@@ -3809,9 +4043,13 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/getTerminalId",
-                  "parts": [
-                    "public",
-                    "getTerminalId"
+                  "segments": [
+                    {
+                      "lit": "public"
+                    },
+                    {
+                      "lit": "getTerminalId"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -3912,6 +4150,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
@@ -3930,6 +4169,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "sourceId",
               "req": false,
               "type": "`$INTEGER`"
@@ -3948,6 +4188,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "terminalId",
               "req": false,
               "type": "`$INTEGER`"
@@ -3972,12 +4213,14 @@
             },
             {
               "active": true,
+              "format": "date-time",
               "name": "transactionDateFrom",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
+              "format": "date-time",
               "name": "transactionDateTo",
               "req": false,
               "type": "`$STRING`"
@@ -4020,10 +4263,16 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/mcom/transactionHistory",
-                  "parts": [
-                    "public",
-                    "mcom",
-                    "transactionHistory"
+                  "segments": [
+                    {
+                      "lit": "public"
+                    },
+                    {
+                      "lit": "mcom"
+                    },
+                    {
+                      "lit": "transactionHistory"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -4037,9 +4286,13 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/transactionHistory",
-                  "parts": [
-                    "public",
-                    "transactionHistory"
+                  "segments": [
+                    {
+                      "lit": "public"
+                    },
+                    {
+                      "lit": "transactionHistory"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -4068,6 +4321,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
@@ -4080,6 +4334,7 @@
             },
             {
               "active": true,
+              "format": "date-time",
               "name": "transactionDateFrom",
               "op": {
                 "create": {
@@ -4092,6 +4347,7 @@
             },
             {
               "active": true,
+              "format": "date-time",
               "name": "transactionDateTo",
               "op": {
                 "create": {
@@ -4121,9 +4377,13 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/countAuthorisedTransactions",
-                  "parts": [
-                    "public",
-                    "countAuthorisedTransactions"
+                  "segments": [
+                    {
+                      "lit": "public"
+                    },
+                    {
+                      "lit": "countAuthorisedTransactions"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -4137,9 +4397,13 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/countNotAuthorisedTransactions",
-                  "parts": [
-                    "public",
-                    "countNotAuthorisedTransactions"
+                  "segments": [
+                    {
+                      "lit": "public"
+                    },
+                    {
+                      "lit": "countNotAuthorisedTransactions"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -4168,6 +4432,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
@@ -4180,6 +4445,7 @@
             },
             {
               "active": true,
+              "format": "date-time",
               "name": "transactionDateFrom",
               "op": {
                 "create": {
@@ -4192,6 +4458,7 @@
             },
             {
               "active": true,
+              "format": "date-time",
               "name": "transactionDateTo",
               "op": {
                 "create": {
@@ -4221,9 +4488,13 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/countTransactionsByCardBrand",
-                  "parts": [
-                    "public",
-                    "countTransactionsByCardBrand"
+                  "segments": [
+                    {
+                      "lit": "public"
+                    },
+                    {
+                      "lit": "countTransactionsByCardBrand"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -4252,6 +4523,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
@@ -4264,6 +4536,7 @@
             },
             {
               "active": true,
+              "format": "date-time",
               "name": "transactionDateFrom",
               "op": {
                 "create": {
@@ -4276,6 +4549,7 @@
             },
             {
               "active": true,
+              "format": "date-time",
               "name": "transactionDateTo",
               "op": {
                 "create": {
@@ -4305,9 +4579,13 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/transactionTurnover",
-                  "parts": [
-                    "public",
-                    "transactionTurnover"
+                  "segments": [
+                    {
+                      "lit": "public"
+                    },
+                    {
+                      "lit": "transactionTurnover"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -4360,6 +4638,7 @@
             },
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
@@ -4407,9 +4686,13 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/updateMerchant",
-                  "parts": [
-                    "public",
-                    "updateMerchant"
+                  "segments": [
+                    {
+                      "lit": "public"
+                    },
+                    {
+                      "lit": "updateMerchant"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -4432,6 +4715,7 @@
           "fields": [
             {
               "active": true,
+              "format": "int32",
               "name": "responseCode",
               "req": false,
               "type": "`$INTEGER`"
@@ -4467,9 +4751,13 @@
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/updateTemplateXml",
-                  "parts": [
-                    "public",
-                    "updateTemplateXml"
+                  "segments": [
+                    {
+                      "lit": "public"
+                    },
+                    {
+                      "lit": "updateTemplateXml"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -4521,9 +4809,13 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/public/version",
-                  "parts": [
-                    "public",
-                    "version"
+                  "segments": [
+                    {
+                      "lit": "public"
+                    },
+                    {
+                      "lit": "version"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -4605,8 +4897,11 @@
             }
           },
           "name": "audit",
+          "needs": {},
           "origname": "",
           "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
           "target": {
             "c": {
               "deps": {}
@@ -4635,6 +4930,9 @@
             "go-mcp": {
               "deps": {}
             },
+            "haskell": {
+              "deps": {}
+            },
             "java": {
               "deps": {}
             },
@@ -4642,6 +4940,9 @@
               "deps": {}
             },
             "kotlin": {
+              "deps": {}
+            },
+            "lean": {
               "deps": {}
             },
             "lua": {
@@ -4738,8 +5039,11 @@
             }
           },
           "name": "clienttrack",
+          "needs": {},
           "origname": "",
           "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
           "target": {
             "c": {
               "deps": {}
@@ -4768,6 +5072,9 @@
             "go-mcp": {
               "deps": {}
             },
+            "haskell": {
+              "deps": {}
+            },
             "java": {
               "deps": {}
             },
@@ -4775,6 +5082,9 @@
               "deps": {}
             },
             "kotlin": {
+              "deps": {}
+            },
+            "lean": {
               "deps": {}
             },
             "lua": {
@@ -4882,8 +5192,11 @@
             }
           },
           "name": "idempotency",
+          "needs": {},
           "origname": "",
           "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
           "target": {
             "c": {
               "deps": {}
@@ -4912,6 +5225,9 @@
             "go-mcp": {
               "deps": {}
             },
+            "haskell": {
+              "deps": {}
+            },
             "java": {
               "deps": {}
             },
@@ -4919,6 +5235,9 @@
               "deps": {}
             },
             "kotlin": {
+              "deps": {}
+            },
+            "lean": {
               "deps": {}
             },
             "lua": {
@@ -5048,8 +5367,11 @@
             }
           },
           "name": "log",
+          "needs": {},
           "origname": "",
           "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
           "target": {
             "c": {
               "deps": {}
@@ -5078,6 +5400,9 @@
             "go-mcp": {
               "deps": {}
             },
+            "haskell": {
+              "deps": {}
+            },
             "java": {
               "deps": {}
             },
@@ -5085,6 +5410,9 @@
               "deps": {}
             },
             "kotlin": {
+              "deps": {}
+            },
+            "lean": {
               "deps": {}
             },
             "lua": {
@@ -5192,8 +5520,11 @@
             }
           },
           "name": "metrics",
+          "needs": {},
           "origname": "",
           "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
           "target": {
             "c": {
               "deps": {}
@@ -5222,6 +5553,9 @@
             "go-mcp": {
               "deps": {}
             },
+            "haskell": {
+              "deps": {}
+            },
             "java": {
               "deps": {}
             },
@@ -5229,6 +5563,9 @@
               "deps": {}
             },
             "kotlin": {
+              "deps": {}
+            },
+            "lean": {
               "deps": {}
             },
             "lua": {
@@ -5330,8 +5667,11 @@
             }
           },
           "name": "paging",
+          "needs": {},
           "origname": "",
           "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
           "target": {
             "c": {
               "deps": {}
@@ -5360,6 +5700,9 @@
             "go-mcp": {
               "deps": {}
             },
+            "haskell": {
+              "deps": {}
+            },
             "java": {
               "deps": {}
             },
@@ -5367,6 +5710,9 @@
               "deps": {}
             },
             "kotlin": {
+              "deps": {}
+            },
+            "lean": {
               "deps": {}
             },
             "lua": {
@@ -5464,8 +5810,11 @@
             }
           },
           "name": "ratelimit",
+          "needs": {},
           "origname": "",
           "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
           "target": {
             "c": {
               "deps": {}
@@ -5494,6 +5843,9 @@
             "go-mcp": {
               "deps": {}
             },
+            "haskell": {
+              "deps": {}
+            },
             "java": {
               "deps": {}
             },
@@ -5501,6 +5853,9 @@
               "deps": {}
             },
             "kotlin": {
+              "deps": {}
+            },
+            "lean": {
               "deps": {}
             },
             "lua": {
@@ -5609,8 +5964,11 @@
             }
           },
           "name": "retry",
+          "needs": {},
           "origname": "",
           "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
           "target": {
             "c": {
               "deps": {}
@@ -5639,6 +5997,9 @@
             "go-mcp": {
               "deps": {}
             },
+            "haskell": {
+              "deps": {}
+            },
             "java": {
               "deps": {}
             },
@@ -5646,6 +6007,9 @@
               "deps": {}
             },
             "kotlin": {
+              "deps": {}
+            },
+            "lean": {
               "deps": {}
             },
             "lua": {
@@ -5753,8 +6117,11 @@
             }
           },
           "name": "telemetry",
+          "needs": {},
           "origname": "",
           "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
           "target": {
             "c": {
               "deps": {}
@@ -5783,6 +6150,9 @@
             "go-mcp": {
               "deps": {}
             },
+            "haskell": {
+              "deps": {}
+            },
             "java": {
               "deps": {}
             },
@@ -5790,6 +6160,9 @@
               "deps": {}
             },
             "kotlin": {
+              "deps": {}
+            },
+            "lean": {
               "deps": {}
             },
             "lua": {
@@ -5893,8 +6266,11 @@
             }
           },
           "name": "test",
+          "needs": {},
           "origname": "",
           "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
           "target": {
             "c": {
               "deps": {}
@@ -5923,6 +6299,9 @@
             "go-mcp": {
               "deps": {}
             },
+            "haskell": {
+              "deps": {}
+            },
             "java": {
               "deps": {}
             },
@@ -5930,6 +6309,9 @@
               "deps": {}
             },
             "kotlin": {
+              "deps": {}
+            },
+            "lean": {
               "deps": {}
             },
             "lua": {
@@ -6026,8 +6408,11 @@
             }
           },
           "name": "timeout",
+          "needs": {},
           "origname": "",
           "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
           "target": {
             "c": {
               "deps": {}
@@ -6056,6 +6441,9 @@
             "go-mcp": {
               "deps": {}
             },
+            "haskell": {
+              "deps": {}
+            },
             "java": {
               "deps": {}
             },
@@ -6063,6 +6451,9 @@
               "deps": {}
             },
             "kotlin": {
+              "deps": {}
+            },
+            "lean": {
               "deps": {}
             },
             "lua": {
@@ -7037,6 +7428,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -7062,6 +7456,9 @@
             "version": "0.1.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "tests/runner.h"
+          ],
           "title": "C"
         },
         "clojure": {
@@ -7096,6 +7493,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -7121,6 +7521,7 @@
             "version": "0.1.1"
           },
           "srcfeature": false,
+          "superseded": [],
           "title": "Clojure"
         },
         "cpp": {
@@ -7157,6 +7558,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -7182,6 +7586,9 @@
             "version": "0.1.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/struct_runner.hpp"
+          ],
           "title": "C++"
         },
         "csharp": {
@@ -7218,6 +7625,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -7243,6 +7653,9 @@
             "version": "0.1.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/StructRunner.cs"
+          ],
           "title": "C#"
         },
         "dart": {
@@ -7251,7 +7664,7 @@
             "name": "",
             "url": ""
           },
-          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "base": "node_modules/@voxgig/sdkgen-langpack/.sdk",
           "comment": {
             "line": "//"
           },
@@ -7276,7 +7689,10 @@
             "repo": "",
             "sdkrel": ""
           },
-          "package": "@voxgig/sdkgen",
+          "package": "@voxgig/sdkgen-langpack",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -7302,6 +7718,10 @@
             "version": "0.1.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/runner.dart",
+            "test/struct_corpus.dart"
+          ],
           "title": "Dart"
         },
         "elixir": {
@@ -7336,6 +7756,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -7361,6 +7784,9 @@
             "version": "0.1.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/support/struct_corpus.ex"
+          ],
           "title": "Elixir"
         },
         "go": {
@@ -7397,6 +7823,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -7422,6 +7851,10 @@
             "version": "0.1.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/runner_test.go",
+            "test/struct_runner_test.go"
+          ],
           "title": "Golang"
         },
         "go-cli": {
@@ -7473,6 +7906,7 @@
               "active": false
             }
           },
+          "provides": {},
           "publish": {
             "registry": {
               "active": false,
@@ -7497,6 +7931,7 @@
             },
             "version": "0.1.1"
           },
+          "superseded": [],
           "title": "Go CLI"
         },
         "go-mcp": {
@@ -7548,6 +7983,7 @@
               "active": false
             }
           },
+          "provides": {},
           "publish": {
             "registry": {
               "active": false,
@@ -7572,7 +8008,86 @@
             },
             "version": "0.1.1"
           },
+          "superseded": [],
           "title": "Go MCP server"
+        },
+        "haskell": {
+          "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
+          "base": "node_modules/@voxgig/sdkgen-langpack/.sdk",
+          "comment": {
+            "line": "--"
+          },
+          "deps": {},
+          "ext": "hs",
+          "feature": {
+            "fullset": [],
+            "trim": false
+          },
+          "module": {
+            "goversion": "",
+            "name": "bluefin-tecs-merchant-services",
+            "package": "",
+            "path": ""
+          },
+          "name": "haskell",
+          "origname": "",
+          "output": {
+            "adopt": false,
+            "create": true,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
+          "package": "@voxgig/sdkgen-langpack",
+          "phase": {
+            "agentguide": {
+              "active": true
+            },
+            "entity": {
+              "active": false
+            },
+            "feature": {
+              "active": false
+            },
+            "readme": {
+              "active": true
+            },
+            "test": {
+              "active": true
+            }
+          },
+          "provides": {},
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "hackage",
+              "package": "",
+              "state": "pending",
+              "url": "https://hackage.haskell.org",
+              "vault": {
+                "alias": "hackage",
+                "env": "HACKAGE_TOKEN",
+                "recipe": ""
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "port"
+            },
+            "version": "0.0.1"
+          },
+          "srcfeature": false,
+          "superseded": [],
+          "title": "Haskell"
         },
         "java": {
           "active": true,
@@ -7608,6 +8123,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -7633,6 +8151,9 @@
             "version": "0.1.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/StructRunner.java"
+          ],
           "title": "Java"
         },
         "js": {
@@ -7673,6 +8194,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -7697,6 +8221,9 @@
             },
             "version": "0.1.1"
           },
+          "superseded": [
+            "test/runner.js"
+          ],
           "title": "JavaScript"
         },
         "kotlin": {
@@ -7733,6 +8260,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -7758,7 +8288,88 @@
             "version": "0.1.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/StructRunner.kt"
+          ],
           "title": "Kotlin"
+        },
+        "lean": {
+          "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
+          "base": "node_modules/@voxgig/sdkgen-langpack/.sdk",
+          "comment": {
+            "line": "--"
+          },
+          "deps": {},
+          "ext": "lean",
+          "feature": {
+            "fullset": [],
+            "trim": false
+          },
+          "module": {
+            "goversion": "",
+            "name": "bluefin-tecs-merchant-services",
+            "package": "",
+            "path": ""
+          },
+          "name": "lean",
+          "origname": "",
+          "output": {
+            "adopt": false,
+            "create": true,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
+          "package": "@voxgig/sdkgen-langpack",
+          "phase": {
+            "agentguide": {
+              "active": true
+            },
+            "entity": {
+              "active": false
+            },
+            "feature": {
+              "active": false
+            },
+            "readme": {
+              "active": true
+            },
+            "test": {
+              "active": true
+            }
+          },
+          "provides": {},
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "reservoir",
+              "package": "",
+              "state": "pending",
+              "url": "https://reservoir.lean-lang.org",
+              "vault": {
+                "alias": "reservoir",
+                "env": "RESERVOIR_TOKEN",
+                "recipe": ""
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "port"
+            },
+            "version": "0.0.1"
+          },
+          "srcfeature": false,
+          "superseded": [],
+          "title": "Lean"
         },
         "lua": {
           "active": true,
@@ -7798,6 +8409,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -7823,6 +8437,9 @@
             "version": "0.1.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/struct_runner.lua"
+          ],
           "title": "Lua"
         },
         "ocaml": {
@@ -7839,7 +8456,7 @@
           "ext": "ml",
           "feature": {
             "fullset": [],
-            "trim": false
+            "trim": true
           },
           "module": {
             "goversion": "",
@@ -7857,6 +8474,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -7882,6 +8502,9 @@
             "version": "0.1.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/corpus_runner.ml"
+          ],
           "title": "OCaml"
         },
         "perl": {
@@ -7916,6 +8539,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -7941,6 +8567,9 @@
             "version": "0.1.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "t/struct_runner.pm"
+          ],
           "title": "Perl"
         },
         "php": {
@@ -7975,6 +8604,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -8000,6 +8632,9 @@
             "version": "0.1.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/StructRunner.php"
+          ],
           "title": "PHP"
         },
         "py": {
@@ -8040,6 +8675,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -8065,6 +8703,9 @@
             "version": "0.1.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/struct_runner.py"
+          ],
           "title": "Python"
         },
         "rb": {
@@ -8110,6 +8751,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -8135,6 +8779,9 @@
             "version": "0.1.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/struct_runner.rb"
+          ],
           "title": "Ruby"
         },
         "rust": {
@@ -8177,6 +8824,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -8202,6 +8852,9 @@
             "version": "0.1.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "tests/struct_runner/mod.rs"
+          ],
           "title": "Rust"
         },
         "scala": {
@@ -8236,6 +8889,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -8261,6 +8917,7 @@
             "version": "0.1.1"
           },
           "srcfeature": false,
+          "superseded": [],
           "title": "Scala"
         },
         "swift": {
@@ -8297,6 +8954,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -8322,6 +8982,7 @@
             "version": "0.1.1"
           },
           "srcfeature": false,
+          "superseded": [],
           "title": "Swift"
         },
         "ts": {
@@ -8339,11 +9000,6 @@
               "active": true,
               "kind": "dev",
               "version": "^25.6.0"
-            },
-            "dotenv": {
-              "active": true,
-              "kind": "dev",
-              "version": "^17.4.2"
             },
             "typescript": {
               "active": true,
@@ -8372,6 +9028,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -8396,6 +9055,14 @@
             },
             "version": "0.1.1"
           },
+          "superseded": [
+            "test/runner.ts",
+            "test/vendor/omni/compat.ts",
+            "src/feature/secrets/sekreto/Providers.ts",
+            "src/feature/secrets/sekreto/Sigv4.ts",
+            "src/feature/secrets/sekreto/provider/Registry.ts",
+            "src/feature/secrets/sekreto/provider/http.ts"
+          ],
           "title": "TypeScript"
         },
         "zig": {
@@ -8430,6 +9097,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -8455,6 +9125,9 @@
             "version": "0.1.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/struct_runner.zig"
+          ],
           "title": "Zig"
         }
       },

@@ -52,7 +52,7 @@ func TestKeepAliveEntity(t *testing.T) {
 		// CREATE
 		keepAliveRef01Ent := client.KeepAlive(nil)
 		keepAliveRef01Data := core.ToMapAny(vs.GetProp(
-			vs.GetPath([]any{"new", "keep_alive"}, setup.data), "keep_alive_ref01"))
+			vs.GetPath(setup.data, []any{"new", "keep_alive"}), "keep_alive_ref01"))
 
 		keepAliveRef01DataResult, err := keepAliveRef01Ent.Create(keepAliveRef01Data, nil)
 		if err != nil {
@@ -90,7 +90,7 @@ func keep_aliveBasicSetup(extra map[string]any) *entityTestSetup {
 	client := sdk.TestSDK(options, extra)
 
 	// Generate idmap via transform, matching TS pattern.
-	idmap := vs.Transform(
+	idmap, _ := vs.Transform(
 		[]any{"keep_alive01", "keep_alive02", "keep_alive03"},
 		map[string]any{
 			"`$PACK`": []any{"", map[string]any{
@@ -110,7 +110,7 @@ func keep_aliveBasicSetup(extra map[string]any) *entityTestSetup {
 		"BLUEFIN_TECS_MERCHANT_SERVICES_TEST_KEEP_ALIVE_ENTID": idmap,
 		"BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE":      "FALSE",
 		"BLUEFIN_TECS_MERCHANT_SERVICES_TEST_EXPLAIN":   "FALSE",
-		"BLUEFIN_TECS_MERCHANT_SERVICES_APIKEY":         "NONE",
+		"BLUEFIN_TECS_MERCHANT_SERVICES_APIKEY":         "",
 	})
 
 	idmapResolved := core.ToMapAny(env["BLUEFIN_TECS_MERCHANT_SERVICES_TEST_KEEP_ALIVE_ENTID"])
@@ -119,11 +119,23 @@ func keep_aliveBasicSetup(extra map[string]any) *entityTestSetup {
 	}
 
 	if env["BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE"] == "TRUE" {
+		// An empty map, not a nil one: Merge returns nil when its last entry
+		// is nil, and BasicSetup is normally called with no extras - so a
+		// bare nil silently discarded the apikey and server values below.
+		extraOpts := extra
+		if extraOpts == nil {
+			extraOpts = map[string]any{}
+		}
+
 		mergedOpts := vs.Merge([]any{
+			// liveClientOptions() FIRST, so the generated fields below win:
+			// sdk-test-control.json's test.client.options adds to the live
+			// client, it does not redirect it.
+			liveClientOptions(),
 			map[string]any{
 				"apikey": env["BLUEFIN_TECS_MERCHANT_SERVICES_APIKEY"],
 			},
-			extra,
+			extraOpts,
 		})
 		client = sdk.NewBluefinTecsMerchantServicesSDK(core.ToMapAny(mergedOpts))
 	}

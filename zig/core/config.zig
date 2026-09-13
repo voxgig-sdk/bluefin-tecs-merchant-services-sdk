@@ -185,6 +185,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("amount") },
                         .{ "op", h.jo(&.{
                             .{ "create", h.jo(&.{
@@ -211,6 +212,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("clientId") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$INTEGER`") },
@@ -237,6 +239,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int64") },
                         .{ "name", h.vstr("exchangeFee") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -271,6 +274,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("originalTraceNumber") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -301,6 +305,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("receiptLayout") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -310,6 +315,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("responseCode") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -326,6 +332,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("terminalId") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$INTEGER`") },
@@ -335,10 +342,12 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("traceNumber") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("date-time") },
                         .{ "name", h.vstr("transactionDate") },
                         .{ "op", h.jo(&.{
                             .{ "create", h.jo(&.{
@@ -378,14 +387,22 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/public/cancelTransaction") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("public"),
-                                    h.vstr("cancelTransaction"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("public") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("cancelTransaction") },
+                                    }),
                                 }) },
                                 .{ "select", h.omap() },
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("public"),
+                                    h.vstr("cancelTransaction"),
                                 }) },
                             }),
                         }) },
@@ -402,6 +419,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("responseCode") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -431,8 +449,10 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/checkCardBlackListed") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("checkCardBlackListed"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("checkCardBlackListed") },
+                                    }),
                                 }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
@@ -442,6 +462,9 @@ pub fn make_config() Value {
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("checkCardBlackListed"),
                                 }) },
                             }),
                         }) },
@@ -454,10 +477,12 @@ pub fn make_config() Value {
             .{ "create_product", h.jo(&.{
                 .{ "fields", h.ja(&.{
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("acquirerId") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("responseCode") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -497,13 +522,18 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/createProduct") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("createProduct"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("createProduct") },
+                                    }),
                                 }) },
                                 .{ "select", h.omap() },
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("createProduct"),
                                 }) },
                             }),
                         }) },
@@ -533,6 +563,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("responseCode") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -541,6 +572,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("terminalId") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$INTEGER`") },
@@ -557,13 +589,18 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/deactivateTerminal") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("deactivateTerminal"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("deactivateTerminal") },
+                                    }),
                                 }) },
                                 .{ "select", h.omap() },
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("deactivateTerminal"),
                                 }) },
                             }),
                         }) },
@@ -588,6 +625,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("responseCode") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -596,6 +634,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("txCount") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -608,14 +647,17 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("txSeqNoEnd") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("txSeqNoStart") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("txTotal") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -641,16 +683,24 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/public/digitalservices/mandatorClearingExportDownload/{fileId}") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("public"),
-                                    h.vstr("digitalservices"),
-                                    h.vstr("mandatorClearingExportDownload"),
-                                    h.vstr("{file_id}"),
-                                }) },
                                 .{ "rename", h.jo(&.{
                                     .{ "param", h.jo(&.{
                                         .{ "fileId", h.vstr("file_id") },
                                     }) },
+                                }) },
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("public") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("digitalservices") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("mandatorClearingExportDownload") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "var", h.vstr("file_id") },
+                                    }),
                                 }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
@@ -661,21 +711,38 @@ pub fn make_config() Value {
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
                                 }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("public"),
+                                    h.vstr("digitalservices"),
+                                    h.vstr("mandatorClearingExportDownload"),
+                                    h.vstr("{file_id}"),
+                                }) },
                             }),
                             h.jo(&.{
                                 .{ "args", h.omap() },
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/public/digitalservices/mandatorClearingExportMetadata") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("public"),
-                                    h.vstr("digitalservices"),
-                                    h.vstr("mandatorClearingExportMetadata"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("public") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("digitalservices") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("mandatorClearingExportMetadata") },
+                                    }),
                                 }) },
                                 .{ "select", h.omap() },
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("public"),
+                                    h.vstr("digitalservices"),
+                                    h.vstr("mandatorClearingExportMetadata"),
                                 }) },
                             }),
                         }) },
@@ -689,16 +756,30 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("GET") },
                                 .{ "orig", h.vstr("/public/digitalservices/mandatorClearingExportDownload/status") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("public"),
-                                    h.vstr("digitalservices"),
-                                    h.vstr("mandatorClearingExportDownload"),
-                                    h.vstr("status"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("public") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("digitalservices") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("mandatorClearingExportDownload") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("status") },
+                                    }),
                                 }) },
                                 .{ "select", h.omap() },
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("public"),
+                                    h.vstr("digitalservices"),
+                                    h.vstr("mandatorClearingExportDownload"),
+                                    h.vstr("status"),
                                 }) },
                             }),
                         }) },
@@ -719,6 +800,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("responseCode") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -727,6 +809,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("terminalId") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$INTEGER`") },
@@ -753,14 +836,22 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/public/getEcData") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("public"),
-                                    h.vstr("getEcData"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("public") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("getEcData") },
+                                    }),
                                 }) },
                                 .{ "select", h.omap() },
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("public"),
+                                    h.vstr("getEcData"),
                                 }) },
                             }),
                         }) },
@@ -781,6 +872,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("responseCode") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -789,6 +881,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("terminalId") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$INTEGER`") },
@@ -805,14 +898,22 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/public/getEcomParameters") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("public"),
-                                    h.vstr("getEcomParameters"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("public") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("getEcomParameters") },
+                                    }),
                                 }) },
                                 .{ "select", h.omap() },
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("public"),
+                                    h.vstr("getEcomParameters"),
                                 }) },
                             }),
                         }) },
@@ -829,6 +930,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("responseCode") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -837,6 +939,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("terminalId") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$INTEGER`") },
@@ -863,14 +966,22 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/public/getEcrData") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("public"),
-                                    h.vstr("getEcrData"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("public") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("getEcrData") },
+                                    }),
                                 }) },
                                 .{ "select", h.omap() },
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("public"),
+                                    h.vstr("getEcrData"),
                                 }) },
                             }),
                         }) },
@@ -887,6 +998,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("responseCode") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -895,6 +1007,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("terminalId") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$INTEGER`") },
@@ -921,14 +1034,22 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/public/getEmvData") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("public"),
-                                    h.vstr("getEmvData"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("public") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("getEmvData") },
+                                    }),
                                 }) },
                                 .{ "select", h.omap() },
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("public"),
+                                    h.vstr("getEmvData"),
                                 }) },
                             }),
                         }) },
@@ -941,6 +1062,7 @@ pub fn make_config() Value {
             .{ "enable_acquiring", h.jo(&.{
                 .{ "fields", h.ja(&.{
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("accountNo") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -959,6 +1081,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("merchantCategoryCode") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$INTEGER`") },
@@ -974,6 +1097,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("responseCode") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -982,6 +1106,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("sortingCode") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -1014,13 +1139,18 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/enableAcquiring") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("enableAcquiring"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("enableAcquiring") },
+                                    }),
                                 }) },
                                 .{ "select", h.omap() },
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("enableAcquiring"),
                                 }) },
                             }),
                         }) },
@@ -1038,6 +1168,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("responseCode") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -1057,13 +1188,18 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/getMerchantContractNumber") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("getMerchantContractNumber"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("getMerchantContractNumber") },
+                                    }),
                                 }) },
                                 .{ "select", h.omap() },
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("getMerchantContractNumber"),
                                 }) },
                             }),
                         }) },
@@ -1076,6 +1212,7 @@ pub fn make_config() Value {
             .{ "get_template_xml", h.jo(&.{
                 .{ "fields", h.ja(&.{
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("responseCode") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -1100,14 +1237,22 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/public/getTemplateXml") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("public"),
-                                    h.vstr("getTemplateXml"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("public") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("getTemplateXml") },
+                                    }),
                                 }) },
                                 .{ "select", h.omap() },
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("public"),
+                                    h.vstr("getTemplateXml"),
                                 }) },
                             }),
                         }) },
@@ -1125,6 +1270,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("responseCode") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -1144,13 +1290,18 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/introduceMandator") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("introduceMandator"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("introduceMandator") },
+                                    }),
                                 }) },
                                 .{ "select", h.omap() },
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("introduceMandator"),
                                 }) },
                             }),
                         }) },
@@ -1163,6 +1314,7 @@ pub fn make_config() Value {
             .{ "introduce_package", h.jo(&.{
                 .{ "fields", h.ja(&.{
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("responseCode") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -1187,13 +1339,18 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/introducePackage") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("introducePackage"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("introducePackage") },
+                                    }),
                                 }) },
                                 .{ "select", h.omap() },
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("introducePackage"),
                                 }) },
                             }),
                         }) },
@@ -1226,6 +1383,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$OBJECT`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("responseCode") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -1242,6 +1400,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("terminalId") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -1257,14 +1416,22 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/public/keepalive") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("public"),
-                                    h.vstr("keepalive"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("public") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("keepalive") },
+                                    }),
                                 }) },
                                 .{ "select", h.omap() },
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("public"),
+                                    h.vstr("keepalive"),
                                 }) },
                             }),
                         }) },
@@ -1289,6 +1456,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$OBJECT`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("responseCode") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -1312,14 +1480,22 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/public/listTerminals") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("public"),
-                                    h.vstr("listTerminals"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("public") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("listTerminals") },
+                                    }),
                                 }) },
                                 .{ "select", h.omap() },
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("public"),
+                                    h.vstr("listTerminals"),
                                 }) },
                             }),
                         }) },
@@ -1352,6 +1528,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$ARRAY`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("responseCode") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -1371,15 +1548,26 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/public/digitalservices/mandatorClearingExport") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("public"),
-                                    h.vstr("digitalservices"),
-                                    h.vstr("mandatorClearingExport"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("public") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("digitalservices") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("mandatorClearingExport") },
+                                    }),
                                 }) },
                                 .{ "select", h.omap() },
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("public"),
+                                    h.vstr("digitalservices"),
+                                    h.vstr("mandatorClearingExport"),
                                 }) },
                             }),
                         }) },
@@ -1392,12 +1580,14 @@ pub fn make_config() Value {
             .{ "mandator_clearing_export_download", h.jo(&.{
                 .{ "fields", h.ja(&.{
                     h.jo(&.{
+                        .{ "format", h.vstr("date-time") },
                         .{ "name", h.vstr("clearingDateFrom") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Start date for clearing export (inclusive)") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("date-time") },
                         .{ "name", h.vstr("clearingDateTo") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("End date for clearing export (inclusive)") },
@@ -1418,6 +1608,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("responseCode") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -1431,6 +1622,10 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                 }) },
+                .{ "id", h.jo(&.{
+                    .{ "field", h.vstr("id") },
+                    .{ "name", h.vstr("id") },
+                }) },
                 .{ "name", h.vstr("mandator_clearing_export_download") },
                 .{ "op", h.jo(&.{
                     .{ "create", h.jo(&.{
@@ -1442,15 +1637,26 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/public/digitalservices/mandatorClearingExportDownload") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("public"),
-                                    h.vstr("digitalservices"),
-                                    h.vstr("mandatorClearingExportDownload"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("public") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("digitalservices") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("mandatorClearingExportDownload") },
+                                    }),
                                 }) },
                                 .{ "select", h.omap() },
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("public"),
+                                    h.vstr("digitalservices"),
+                                    h.vstr("mandatorClearingExportDownload"),
                                 }) },
                             }),
                         }) },
@@ -1474,16 +1680,24 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("GET") },
                                 .{ "orig", h.vstr("/public/digitalservices/mandatorClearingExportDownload/{fileId}") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("public"),
-                                    h.vstr("digitalservices"),
-                                    h.vstr("mandatorClearingExportDownload"),
-                                    h.vstr("{id}"),
-                                }) },
                                 .{ "rename", h.jo(&.{
                                     .{ "param", h.jo(&.{
                                         .{ "fileId", h.vstr("id") },
                                     }) },
+                                }) },
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("public") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("digitalservices") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("mandatorClearingExportDownload") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "var", h.vstr("id") },
+                                    }),
                                 }) },
                                 .{ "select", h.jo(&.{
                                     .{ "exist", h.ja(&.{
@@ -1493,6 +1707,12 @@ pub fn make_config() Value {
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("public"),
+                                    h.vstr("digitalservices"),
+                                    h.vstr("mandatorClearingExportDownload"),
+                                    h.vstr("{id}"),
                                 }) },
                             }),
                         }) },
@@ -1521,6 +1741,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$ARRAY`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("responseCode") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -1540,15 +1761,26 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/public/digitalservices/mandatorClearingExportSummary") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("public"),
-                                    h.vstr("digitalservices"),
-                                    h.vstr("mandatorClearingExportSummary"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("public") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("digitalservices") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("mandatorClearingExportSummary") },
+                                    }),
                                 }) },
                                 .{ "select", h.omap() },
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("public"),
+                                    h.vstr("digitalservices"),
+                                    h.vstr("mandatorClearingExportSummary"),
                                 }) },
                             }),
                         }) },
@@ -1613,6 +1845,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("sourceId") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -1625,6 +1858,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("terminalId") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -1641,10 +1875,12 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("date-time") },
                         .{ "name", h.vstr("transactionDateFrom") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("date-time") },
                         .{ "name", h.vstr("transactionDateTo") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
@@ -1673,14 +1909,22 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/public/transactionHistoryCsv") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("public"),
-                                    h.vstr("transactionHistoryCsv"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("public") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("transactionHistoryCsv") },
+                                    }),
                                 }) },
                                 .{ "select", h.omap() },
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("public"),
+                                    h.vstr("transactionHistoryCsv"),
                                 }) },
                             }),
                         }) },
@@ -1698,6 +1942,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$ARRAY`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("responseCode") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -1725,13 +1970,18 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/moveTid") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("moveTid"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("moveTid") },
+                                    }),
                                 }) },
                                 .{ "select", h.omap() },
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("moveTid"),
                                 }) },
                             }),
                         }) },
@@ -1749,6 +1999,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("amount") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Transaction amount in minor units (cents)") },
@@ -1851,14 +2102,22 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/public/paymentManual") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("public"),
-                                    h.vstr("paymentManual"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("public") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("paymentManual") },
+                                    }),
                                 }) },
                                 .{ "select", h.omap() },
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("public"),
+                                    h.vstr("paymentManual"),
                                 }) },
                             }),
                         }) },
@@ -1871,6 +2130,7 @@ pub fn make_config() Value {
             .{ "payment_sred", h.jo(&.{
                 .{ "fields", h.ja(&.{
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("amount") },
                         .{ "req", h.vbool(true) },
                         .{ "short", h.vstr("Transaction amount in minor units (cents)") },
@@ -1947,14 +2207,22 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/public/paymentSred") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("public"),
-                                    h.vstr("paymentSred"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("public") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("paymentSred") },
+                                    }),
                                 }) },
                                 .{ "select", h.omap() },
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body.sred`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("public"),
+                                    h.vstr("paymentSred"),
                                 }) },
                             }),
                         }) },
@@ -1979,6 +2247,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("amount") },
                         .{ "op", h.jo(&.{
                             .{ "create", h.jo(&.{
@@ -2010,6 +2279,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("clientId") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$INTEGER`") },
@@ -2036,6 +2306,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int64") },
                         .{ "name", h.vstr("exchangeFee") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -2064,6 +2335,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("originalTraceNumber") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -2094,6 +2366,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("receiptLayout") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -2103,6 +2376,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("responseCode") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -2119,6 +2393,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("terminalId") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$INTEGER`") },
@@ -2128,10 +2403,12 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("traceNumber") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("date-time") },
                         .{ "name", h.vstr("transactionDate") },
                         .{ "op", h.jo(&.{
                             .{ "create", h.jo(&.{
@@ -2176,14 +2453,22 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/public/paymentTransaction") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("public"),
-                                    h.vstr("paymentTransaction"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("public") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("paymentTransaction") },
+                                    }),
                                 }) },
                                 .{ "select", h.omap() },
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("public"),
+                                    h.vstr("paymentTransaction"),
                                 }) },
                             }),
                             h.jo(&.{
@@ -2191,14 +2476,22 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/public/preAuthCompletionTransaction") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("public"),
-                                    h.vstr("preAuthCompletionTransaction"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("public") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("preAuthCompletionTransaction") },
+                                    }),
                                 }) },
                                 .{ "select", h.omap() },
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("public"),
+                                    h.vstr("preAuthCompletionTransaction"),
                                 }) },
                             }),
                         }) },
@@ -2228,6 +2521,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("responseCode") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -2236,6 +2530,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("terminalId") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$INTEGER`") },
@@ -2252,13 +2547,18 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/reactivateTerminal") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("reactivateTerminal"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("reactivateTerminal") },
+                                    }),
                                 }) },
                                 .{ "select", h.omap() },
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("reactivateTerminal"),
                                 }) },
                             }),
                         }) },
@@ -2283,6 +2583,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("amount") },
                         .{ "op", h.jo(&.{
                             .{ "create", h.jo(&.{
@@ -2309,6 +2610,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("clientId") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$INTEGER`") },
@@ -2335,6 +2637,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int64") },
                         .{ "name", h.vstr("exchangeFee") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -2363,6 +2666,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("originalTraceNumber") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -2393,6 +2697,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("receiptLayout") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -2402,6 +2707,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("responseCode") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -2418,6 +2724,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("terminalId") },
                         .{ "req", h.vbool(true) },
                         .{ "type", h.vstr("`$INTEGER`") },
@@ -2427,10 +2734,12 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("traceNumber") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("date-time") },
                         .{ "name", h.vstr("transactionDate") },
                         .{ "op", h.jo(&.{
                             .{ "create", h.jo(&.{
@@ -2470,14 +2779,22 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/public/refundTransaction") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("public"),
-                                    h.vstr("refundTransaction"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("public") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("refundTransaction") },
+                                    }),
                                 }) },
                                 .{ "select", h.omap() },
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("public"),
+                                    h.vstr("refundTransaction"),
                                 }) },
                             }),
                         }) },
@@ -2500,6 +2817,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("partnerId") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -2513,6 +2831,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("responseCode") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -2537,13 +2856,18 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/registerTecsCompany") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("registerTecsCompany"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("registerTecsCompany") },
+                                    }),
                                 }) },
                                 .{ "select", h.omap() },
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("registerTecsCompany"),
                                 }) },
                             }),
                         }) },
@@ -2575,6 +2899,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("responseCode") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -2597,6 +2922,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("terminalId") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -2646,13 +2972,18 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/registerTerminal") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("registerTerminal"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("registerTerminal") },
+                                    }),
                                 }) },
                                 .{ "select", h.omap() },
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("registerTerminal"),
                                 }) },
                             }),
                         }) },
@@ -2691,6 +3022,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("responseCode") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -2707,6 +3039,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$OBJECT`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("terminalId") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -2722,15 +3055,26 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/public/digitalservices/reportData") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("public"),
-                                    h.vstr("digitalservices"),
-                                    h.vstr("reportData"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("public") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("digitalservices") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("reportData") },
+                                    }),
                                 }) },
                                 .{ "select", h.omap() },
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("public"),
+                                    h.vstr("digitalservices"),
+                                    h.vstr("reportData"),
                                 }) },
                             }),
                         }) },
@@ -2751,6 +3095,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("amount") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -2770,6 +3115,7 @@ pub fn make_config() Value {
                         }) },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("date-time") },
                         .{ "name", h.vstr("authorizationDate") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
@@ -2790,6 +3136,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("clearingAmount") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -2802,10 +3149,12 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("date-time") },
                         .{ "name", h.vstr("clearingDate") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("date-time") },
                         .{ "name", h.vstr("clearingProcessedDate") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
@@ -2814,6 +3163,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("clientId") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -2850,6 +3200,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("originalTerminalId") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -2866,6 +3217,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("responseCode") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -2890,10 +3242,12 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("sourceId") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("tecsengineResponseCode") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -2902,10 +3256,12 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("date-time") },
                         .{ "name", h.vstr("terminalEndOfDayDate") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("terminalId") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -2914,18 +3270,22 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("tipAmount") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("traceNumber") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("date-time") },
                         .{ "name", h.vstr("transactionClearingDate") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("date-time") },
                         .{ "name", h.vstr("transactionDate") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
@@ -2934,10 +3294,12 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int64") },
                         .{ "name", h.vstr("transactionSeqNumber") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("date-time") },
                         .{ "name", h.vstr("transactionServerDate") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
@@ -2961,14 +3323,22 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/public/statusTransaction") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("public"),
-                                    h.vstr("statusTransaction"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("public") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("statusTransaction") },
+                                    }),
                                 }) },
                                 .{ "select", h.omap() },
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("public"),
+                                    h.vstr("statusTransaction"),
                                 }) },
                             }),
                         }) },
@@ -2989,6 +3359,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("responseCode") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -3017,13 +3388,18 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/storeTerminalParameters") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("storeTerminalParameters"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("storeTerminalParameters") },
+                                    }),
                                 }) },
                                 .{ "select", h.omap() },
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("storeTerminalParameters"),
                                 }) },
                             }),
                         }) },
@@ -3045,6 +3421,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$ARRAY`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("responseCode") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -3068,14 +3445,22 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/public/getTerminalId") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("public"),
-                                    h.vstr("getTerminalId"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("public") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("getTerminalId") },
+                                    }),
                                 }) },
                                 .{ "select", h.omap() },
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("public"),
+                                    h.vstr("getTerminalId"),
                                 }) },
                             }),
                         }) },
@@ -3140,6 +3525,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("responseCode") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -3152,6 +3538,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("sourceId") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -3164,6 +3551,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("terminalId") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -3180,10 +3568,12 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("date-time") },
                         .{ "name", h.vstr("transactionDateFrom") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("date-time") },
                         .{ "name", h.vstr("transactionDateTo") },
                         .{ "type", h.vstr("`$STRING`") },
                     }),
@@ -3216,15 +3606,26 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/public/mcom/transactionHistory") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("public"),
-                                    h.vstr("mcom"),
-                                    h.vstr("transactionHistory"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("public") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("mcom") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("transactionHistory") },
+                                    }),
                                 }) },
                                 .{ "select", h.omap() },
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("public"),
+                                    h.vstr("mcom"),
+                                    h.vstr("transactionHistory"),
                                 }) },
                             }),
                             h.jo(&.{
@@ -3232,14 +3633,22 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/public/transactionHistory") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("public"),
-                                    h.vstr("transactionHistory"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("public") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("transactionHistory") },
+                                    }),
                                 }) },
                                 .{ "select", h.omap() },
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("public"),
+                                    h.vstr("transactionHistory"),
                                 }) },
                             }),
                         }) },
@@ -3256,6 +3665,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("responseCode") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -3264,6 +3674,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("date-time") },
                         .{ "name", h.vstr("transactionDateFrom") },
                         .{ "op", h.jo(&.{
                             .{ "create", h.jo(&.{
@@ -3274,6 +3685,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("date-time") },
                         .{ "name", h.vstr("transactionDateTo") },
                         .{ "op", h.jo(&.{
                             .{ "create", h.jo(&.{
@@ -3299,14 +3711,22 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/public/countAuthorisedTransactions") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("public"),
-                                    h.vstr("countAuthorisedTransactions"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("public") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("countAuthorisedTransactions") },
+                                    }),
                                 }) },
                                 .{ "select", h.omap() },
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("public"),
+                                    h.vstr("countAuthorisedTransactions"),
                                 }) },
                             }),
                             h.jo(&.{
@@ -3314,14 +3734,22 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/public/countNotAuthorisedTransactions") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("public"),
-                                    h.vstr("countNotAuthorisedTransactions"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("public") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("countNotAuthorisedTransactions") },
+                                    }),
                                 }) },
                                 .{ "select", h.omap() },
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("public"),
+                                    h.vstr("countNotAuthorisedTransactions"),
                                 }) },
                             }),
                         }) },
@@ -3338,6 +3766,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("responseCode") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -3346,6 +3775,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("date-time") },
                         .{ "name", h.vstr("transactionDateFrom") },
                         .{ "op", h.jo(&.{
                             .{ "create", h.jo(&.{
@@ -3356,6 +3786,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("date-time") },
                         .{ "name", h.vstr("transactionDateTo") },
                         .{ "op", h.jo(&.{
                             .{ "create", h.jo(&.{
@@ -3381,14 +3812,22 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/public/countTransactionsByCardBrand") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("public"),
-                                    h.vstr("countTransactionsByCardBrand"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("public") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("countTransactionsByCardBrand") },
+                                    }),
                                 }) },
                                 .{ "select", h.omap() },
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("public"),
+                                    h.vstr("countTransactionsByCardBrand"),
                                 }) },
                             }),
                         }) },
@@ -3405,6 +3844,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("responseCode") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -3413,6 +3853,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("date-time") },
                         .{ "name", h.vstr("transactionDateFrom") },
                         .{ "op", h.jo(&.{
                             .{ "create", h.jo(&.{
@@ -3423,6 +3864,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("date-time") },
                         .{ "name", h.vstr("transactionDateTo") },
                         .{ "op", h.jo(&.{
                             .{ "create", h.jo(&.{
@@ -3448,14 +3890,22 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/public/transactionTurnover") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("public"),
-                                    h.vstr("transactionTurnover"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("public") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("transactionTurnover") },
+                                    }),
                                 }) },
                                 .{ "select", h.omap() },
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("public"),
+                                    h.vstr("transactionTurnover"),
                                 }) },
                             }),
                         }) },
@@ -3489,6 +3939,7 @@ pub fn make_config() Value {
                         .{ "type", h.vstr("`$STRING`") },
                     }),
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("responseCode") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -3524,14 +3975,22 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/public/updateMerchant") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("public"),
-                                    h.vstr("updateMerchant"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("public") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("updateMerchant") },
+                                    }),
                                 }) },
                                 .{ "select", h.omap() },
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("public"),
+                                    h.vstr("updateMerchant"),
                                 }) },
                             }),
                         }) },
@@ -3544,6 +4003,7 @@ pub fn make_config() Value {
             .{ "update_template_xml", h.jo(&.{
                 .{ "fields", h.ja(&.{
                     h.jo(&.{
+                        .{ "format", h.vstr("int32") },
                         .{ "name", h.vstr("responseCode") },
                         .{ "type", h.vstr("`$INTEGER`") },
                     }),
@@ -3573,14 +4033,22 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("POST") },
                                 .{ "orig", h.vstr("/public/updateTemplateXml") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("public"),
-                                    h.vstr("updateTemplateXml"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("public") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("updateTemplateXml") },
+                                    }),
                                 }) },
                                 .{ "select", h.omap() },
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("public"),
+                                    h.vstr("updateTemplateXml"),
                                 }) },
                             }),
                         }) },
@@ -3616,14 +4084,22 @@ pub fn make_config() Value {
                                 .{ "kind", h.vstr("http") },
                                 .{ "method", h.vstr("GET") },
                                 .{ "orig", h.vstr("/public/version") },
-                                .{ "parts", h.ja(&.{
-                                    h.vstr("public"),
-                                    h.vstr("version"),
+                                .{ "segments", h.ja(&.{
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("public") },
+                                    }),
+                                    h.jo(&.{
+                                        .{ "lit", h.vstr("version") },
+                                    }),
                                 }) },
                                 .{ "select", h.omap() },
                                 .{ "transform", h.jo(&.{
                                     .{ "req", h.vstr("`reqdata`") },
                                     .{ "res", h.vstr("`body`") },
+                                }) },
+                                .{ "parts", h.ja(&.{
+                                    h.vstr("public"),
+                                    h.vstr("version"),
                                 }) },
                             }),
                         }) },

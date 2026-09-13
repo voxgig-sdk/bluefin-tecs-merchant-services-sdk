@@ -6,11 +6,13 @@ main: kit: entity: create_product: {
 
   fields: [
     {
+      format: "int32"
       name: "acquirerId"
       req: false
       type: "`$INTEGER`"
     }
     {
+      format: "int32"
       name: "responseCode"
       req: false
       type: "`$INTEGER`"
@@ -50,8 +52,10 @@ main: kit: entity: create_product: {
         {
           method: "POST"
           orig: "/createProduct"
-          parts: [
-            "createProduct"
+          segments: [
+            {
+              lit: "createProduct"
+            }
           ]
           transform: {
             req: "`reqdata`"

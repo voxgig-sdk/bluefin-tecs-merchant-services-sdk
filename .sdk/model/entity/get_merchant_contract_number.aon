@@ -11,6 +11,7 @@ main: kit: entity: get_merchant_contract_number: {
       type: "`$STRING`"
     }
     {
+      format: "int32"
       name: "responseCode"
       req: false
       type: "`$INTEGER`"
@@ -30,8 +31,10 @@ main: kit: entity: get_merchant_contract_number: {
         {
           method: "POST"
           orig: "/getMerchantContractNumber"
-          parts: [
-            "getMerchantContractNumber"
+          segments: [
+            {
+              lit: "getMerchantContractNumber"
+            }
           ]
           transform: {
             req: "`reqdata`"

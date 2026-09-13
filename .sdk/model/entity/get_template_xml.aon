@@ -6,6 +6,7 @@ main: kit: entity: get_template_xml: {
 
   fields: [
     {
+      format: "int32"
       name: "responseCode"
       req: false
       type: "`$INTEGER`"
@@ -30,9 +31,13 @@ main: kit: entity: get_template_xml: {
         {
           method: "POST"
           orig: "/public/getTemplateXml"
-          parts: [
-            "public"
-            "getTemplateXml"
+          segments: [
+            {
+              lit: "public"
+            }
+            {
+              lit: "getTemplateXml"
+            }
           ]
           transform: {
             req: "`reqdata`"

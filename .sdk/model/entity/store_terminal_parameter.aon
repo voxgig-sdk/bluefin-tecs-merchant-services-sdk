@@ -16,6 +16,7 @@ main: kit: entity: store_terminal_parameter: {
       type: "`$STRING`"
     }
     {
+      format: "int32"
       name: "responseCode"
       req: false
       type: "`$INTEGER`"
@@ -45,8 +46,10 @@ main: kit: entity: store_terminal_parameter: {
         {
           method: "POST"
           orig: "/storeTerminalParameters"
-          parts: [
-            "storeTerminalParameters"
+          segments: [
+            {
+              lit: "storeTerminalParameters"
+            }
           ]
           transform: {
             req: "`reqdata`"

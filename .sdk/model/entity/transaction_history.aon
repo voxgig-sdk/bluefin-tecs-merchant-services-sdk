@@ -71,6 +71,7 @@ main: kit: entity: transaction_history: {
       type: "`$STRING`"
     }
     {
+      format: "int32"
       name: "responseCode"
       req: false
       type: "`$INTEGER`"
@@ -86,6 +87,7 @@ main: kit: entity: transaction_history: {
       type: "`$STRING`"
     }
     {
+      format: "int32"
       name: "sourceId"
       req: false
       type: "`$INTEGER`"
@@ -101,6 +103,7 @@ main: kit: entity: transaction_history: {
       type: "`$STRING`"
     }
     {
+      format: "int32"
       name: "terminalId"
       req: false
       type: "`$INTEGER`"
@@ -121,11 +124,13 @@ main: kit: entity: transaction_history: {
       type: "`$STRING`"
     }
     {
+      format: "date-time"
       name: "transactionDateFrom"
       req: false
       type: "`$STRING`"
     }
     {
+      format: "date-time"
       name: "transactionDateTo"
       req: false
       type: "`$STRING`"
@@ -161,10 +166,16 @@ main: kit: entity: transaction_history: {
         {
           method: "POST"
           orig: "/public/mcom/transactionHistory"
-          parts: [
-            "public"
-            "mcom"
-            "transactionHistory"
+          segments: [
+            {
+              lit: "public"
+            }
+            {
+              lit: "mcom"
+            }
+            {
+              lit: "transactionHistory"
+            }
           ]
           transform: {
             req: "`reqdata`"
@@ -174,9 +185,13 @@ main: kit: entity: transaction_history: {
         {
           method: "POST"
           orig: "/public/transactionHistory"
-          parts: [
-            "public"
-            "transactionHistory"
+          segments: [
+            {
+              lit: "public"
+            }
+            {
+              lit: "transactionHistory"
+            }
           ]
           transform: {
             req: "`reqdata`"

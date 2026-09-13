@@ -30,9 +30,13 @@ main: kit: entity: version: {
         {
           method: "GET"
           orig: "/public/version"
-          parts: [
-            "public"
-            "version"
+          segments: [
+            {
+              lit: "public"
+            }
+            {
+              lit: "version"
+            }
           ]
           transform: {
             req: "`reqdata`"

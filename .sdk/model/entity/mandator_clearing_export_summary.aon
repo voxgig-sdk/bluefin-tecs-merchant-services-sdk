@@ -23,6 +23,7 @@ main: kit: entity: mandator_clearing_export_summary: {
       type: "`$ARRAY`"
     }
     {
+      format: "int32"
       name: "responseCode"
       req: false
       type: "`$INTEGER`"
@@ -42,10 +43,16 @@ main: kit: entity: mandator_clearing_export_summary: {
         {
           method: "POST"
           orig: "/public/digitalservices/mandatorClearingExportSummary"
-          parts: [
-            "public"
-            "digitalservices"
-            "mandatorClearingExportSummary"
+          segments: [
+            {
+              lit: "public"
+            }
+            {
+              lit: "digitalservices"
+            }
+            {
+              lit: "mandatorClearingExportSummary"
+            }
           ]
           transform: {
             req: "`reqdata`"

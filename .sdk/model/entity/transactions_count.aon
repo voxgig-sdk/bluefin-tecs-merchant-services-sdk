@@ -11,6 +11,7 @@ main: kit: entity: transactions_count: {
       type: "`$STRING`"
     }
     {
+      format: "int32"
       name: "responseCode"
       req: false
       type: "`$INTEGER`"
@@ -21,6 +22,7 @@ main: kit: entity: transactions_count: {
       type: "`$STRING`"
     }
     {
+      format: "date-time"
       name: "transactionDateFrom"
       op: {
         create: {
@@ -32,6 +34,7 @@ main: kit: entity: transactions_count: {
       type: "`$STRING`"
     }
     {
+      format: "date-time"
       name: "transactionDateTo"
       op: {
         create: {
@@ -57,9 +60,13 @@ main: kit: entity: transactions_count: {
         {
           method: "POST"
           orig: "/public/countAuthorisedTransactions"
-          parts: [
-            "public"
-            "countAuthorisedTransactions"
+          segments: [
+            {
+              lit: "public"
+            }
+            {
+              lit: "countAuthorisedTransactions"
+            }
           ]
           transform: {
             req: "`reqdata`"
@@ -69,9 +76,13 @@ main: kit: entity: transactions_count: {
         {
           method: "POST"
           orig: "/public/countNotAuthorisedTransactions"
-          parts: [
-            "public"
-            "countNotAuthorisedTransactions"
+          segments: [
+            {
+              lit: "public"
+            }
+            {
+              lit: "countNotAuthorisedTransactions"
+            }
           ]
           transform: {
             req: "`reqdata`"

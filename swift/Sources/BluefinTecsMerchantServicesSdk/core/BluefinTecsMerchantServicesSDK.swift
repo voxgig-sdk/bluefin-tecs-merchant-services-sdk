@@ -1,16 +1,30 @@
 // BluefinTecsMerchantServices SDK client.
+//
+// SDK TYPES ARE MODULE-QUALIFIED IN THIS FILE (`BluefinTecsMerchantServicesSdk.VMap`, not
+// `VMap`), and only in this file. MainEntity_swift emits one accessor PER
+// ENTITY into this class body, named after the entity - `Utility()`,
+// `Spec()`, `Value()` for an API with entities of those names - and inside
+// a class body a METHOD of that name shadows the TYPE for every unqualified
+// use: `utility = Utility()` then reads as a call to the accessor, and
+// `-> Utility` as a return type that does not exist. The entity TYPE is
+// already renamed on such a collision (swiftSafeTypeName), but the accessor
+// keeps the entity's own name, which is the public API. Qualifying by
+// module - the generated module is <Name>Sdk, so `BluefinTecsMerchantServicesSdk.` lands as
+// `<Name>Sdk.` - is the one spelling a method cannot shadow. The shared
+// fixture's `utility` entity is what found this; every other swift file is
+// outside this class and unaffected.
 
 import Foundation
 
 public final class BluefinTecsMerchantServicesSDK {
   public var mode = "live"
-  private var options: VMap = VMap()
-  private let utility: Utility
+  private var options: BluefinTecsMerchantServicesSdk.VMap = BluefinTecsMerchantServicesSdk.VMap()
+  private let utility: BluefinTecsMerchantServicesSdk.Utility
   public var features: [BaseFeature] = []
-  private var rootctx: Context!
+  private var rootctx: BluefinTecsMerchantServicesSdk.Context!
 
-  public init(_ optionsIn: VMap? = nil) {
-    utility = Utility()
+  public init(_ optionsIn: BluefinTecsMerchantServicesSdk.VMap? = nil) {
+    utility = BluefinTecsMerchantServicesSdk.Utility()
 
     // The process-wide config (sdkgen rung L2): read-only on the request path,
     // so every client shares one rather than rebuilding it.
@@ -20,7 +34,7 @@ public final class BluefinTecsMerchantServicesSDK {
       "client": self,
       "utility": utility,
       "config": config,
-      "shared": VMap(),
+      "shared": BluefinTecsMerchantServicesSdk.VMap(),
     ]
     if let o = optionsIn { ctxmap["options"] = o }
 
@@ -39,7 +53,7 @@ public final class BluefinTecsMerchantServicesSDK {
     // feature installs the base mock transport and the transport features
     // (retry/cache/netsim/proxy/ratelimit) wrap whatever is current, so `test`
     // must be added before them to sit at the base of the chain.
-    let featureOpts = gp(options, "feature").asMap ?? VMap()
+    let featureOpts = gp(options, "feature").asMap ?? BluefinTecsMerchantServicesSdk.VMap()
     if let featureOrder = gpath(options, "__derived__", "featureorder").asList {
       for fnameVal in featureOrder.items {
         let fname = fnameVal.asString ?? ""
@@ -67,24 +81,24 @@ public final class BluefinTecsMerchantServicesSDK {
     utility.featureHook(rootctx, "PostConstruct")
   }
 
-  public func optionsMap() -> VMap {
-    return clone(.map(options)).asMap ?? VMap()
+  public func optionsMap() -> BluefinTecsMerchantServicesSdk.VMap {
+    return clone(.map(options)).asMap ?? BluefinTecsMerchantServicesSdk.VMap()
   }
 
-  public func getUtility() -> Utility {
-    return Utility.copy(utility)
+  public func getUtility() -> BluefinTecsMerchantServicesSdk.Utility {
+    return BluefinTecsMerchantServicesSdk.Utility.copy(utility)
   }
 
-  public func getRootCtx() -> Context {
+  public func getRootCtx() -> BluefinTecsMerchantServicesSdk.Context {
     return rootctx
   }
 
-  public func prepare(_ fetchargsIn: VMap?) throws -> VMap {
+  public func prepare(_ fetchargsIn: BluefinTecsMerchantServicesSdk.VMap?) throws -> BluefinTecsMerchantServicesSdk.VMap {
     let utility = self.utility
 
-    let fetchargs = fetchargsIn ?? VMap()
+    let fetchargs = fetchargsIn ?? BluefinTecsMerchantServicesSdk.VMap()
 
-    let ctrl = gp(fetchargs, "ctrl").asMap ?? VMap()
+    let ctrl = gp(fetchargs, "ctrl").asMap ?? BluefinTecsMerchantServicesSdk.VMap()
 
     let ctx = utility.makeContext(["opname": "prepare", "ctrl": ctrl], rootctx)
 
@@ -94,8 +108,8 @@ public final class BluefinTecsMerchantServicesSDK {
     var method = gp(fetchargs, "method").asString ?? ""
     if method == "" { method = "GET" }
 
-    let pathParams = gp(fetchargs, "params").asMap ?? VMap()
-    let query = gp(fetchargs, "query").asMap ?? VMap()
+    let pathParams = gp(fetchargs, "params").asMap ?? BluefinTecsMerchantServicesSdk.VMap()
+    let query = gp(fetchargs, "query").asMap ?? BluefinTecsMerchantServicesSdk.VMap()
 
     let headers = utility.prepareHeaders(ctx)
 
@@ -103,7 +117,7 @@ public final class BluefinTecsMerchantServicesSDK {
     let prefix = gp(options, "prefix").asString ?? ""
     let suffix = gp(options, "suffix").asString ?? ""
 
-    let specmap = VMap()
+    let specmap = BluefinTecsMerchantServicesSdk.VMap()
     specmap.entries["base"] = .string(basev)
     specmap.entries["prefix"] = .string(prefix)
     specmap.entries["suffix"] = .string(suffix)
@@ -114,7 +128,7 @@ public final class BluefinTecsMerchantServicesSDK {
     specmap.entries["headers"] = .map(headers)
     specmap.entries["body"] = gp(fetchargs, "body")
     specmap.entries["step"] = .string("start")
-    ctx.spec = Spec(specmap)
+    ctx.spec = BluefinTecsMerchantServicesSdk.Spec(specmap)
 
     // Merge user-provided headers.
     if let uhm = gp(fetchargs, "headers").asMap {
@@ -131,7 +145,7 @@ public final class BluefinTecsMerchantServicesSDK {
   // Raw endpoint access is operator-controllable, like every entity op.
   // Blocking it means denying BOTH the 'direct' and 'graphql' tokens, since
   // either one reaches the same endpoint.
-  public func direct(_ fetchargsIn: VMap?) -> VMap {
+  public func direct(_ fetchargsIn: BluefinTecsMerchantServicesSdk.VMap?) -> BluefinTecsMerchantServicesSdk.VMap {
     if !opAllowed("direct") {
       return opDenied("direct")
     }
@@ -145,9 +159,9 @@ public final class BluefinTecsMerchantServicesSDK {
     return allow.contains(op)
   }
 
-  private func opDenied(_ op: String) -> VMap {
+  private func opDenied(_ op: String) -> BluefinTecsMerchantServicesSdk.VMap {
     let allow = gpath(options, "allow", "op").asString ?? ""
-    let r = VMap()
+    let r = BluefinTecsMerchantServicesSdk.VMap()
     r.entries["ok"] = .bool(false)
     r.entries["err"] = .nat(BluefinTecsMerchantServicesError(
       op + "_allow",
@@ -160,38 +174,38 @@ public final class BluefinTecsMerchantServicesSDK {
   // its own allow.op token first. Private, rather than a flag on fetchargs:
   // a caller-supplied marker would let anyone opt straight back out of the
   // gate by passing it.
-  private func rawRequest(_ fetchargsIn: VMap?) -> VMap {
+  private func rawRequest(_ fetchargsIn: BluefinTecsMerchantServicesSdk.VMap?) -> BluefinTecsMerchantServicesSdk.VMap {
     let utility = self.utility
 
-    let fetchdef: VMap
+    let fetchdef: BluefinTecsMerchantServicesSdk.VMap
     do {
       fetchdef = try prepare(fetchargsIn)
     } catch {
-      let r = VMap()
+      let r = BluefinTecsMerchantServicesSdk.VMap()
       r.entries["ok"] = .bool(false)
       r.entries["err"] = .nat(error)
       return r
     }
 
-    let fetchargs = fetchargsIn ?? VMap()
-    let ctrl = gp(fetchargs, "ctrl").asMap ?? VMap()
+    let fetchargs = fetchargsIn ?? BluefinTecsMerchantServicesSdk.VMap()
+    let ctrl = gp(fetchargs, "ctrl").asMap ?? BluefinTecsMerchantServicesSdk.VMap()
 
     let ctx = utility.makeContext(["opname": "direct", "ctrl": ctrl], rootctx)
 
     let url = gp(fetchdef, "url").asString ?? ""
 
-    let fetched: Value
+    let fetched: BluefinTecsMerchantServicesSdk.Value
     do {
       fetched = try utility.fetcher(ctx, url, fetchdef)
     } catch {
-      let r = VMap()
+      let r = BluefinTecsMerchantServicesSdk.VMap()
       r.entries["ok"] = .bool(false)
       r.entries["err"] = .nat(error)
       return r
     }
 
     if isNil(fetched) {
-      let r = VMap()
+      let r = BluefinTecsMerchantServicesSdk.VMap()
       r.entries["ok"] = .bool(false)
       r.entries["err"] = .nat(ctx.makeError("direct_no_response", "response: undefined"))
       return r
@@ -209,12 +223,12 @@ public final class BluefinTecsMerchantServicesSDK {
       }
       let noBody = status == 204 || status == 304 || contentLength == "0"
 
-      var jsonData: Value = .noval
-      if !noBody, let jf = gp(fm, "json").asNative as? NativeCall0 {
+      var jsonData: BluefinTecsMerchantServicesSdk.Value = .noval
+      if !noBody, let jf = gp(fm, "json").asNative as? BluefinTecsMerchantServicesSdk.NativeCall0 {
         jsonData = jf()
       }
 
-      let r = VMap()
+      let r = BluefinTecsMerchantServicesSdk.VMap()
       r.entries["ok"] = .bool(status >= 200 && status < 300)
       r.entries["status"] = .int(Int64(status))
       r.entries["headers"] = headers
@@ -222,7 +236,7 @@ public final class BluefinTecsMerchantServicesSDK {
       return r
     }
 
-    let r = VMap()
+    let r = BluefinTecsMerchantServicesSdk.VMap()
     r.entries["ok"] = .bool(false)
     r.entries["err"] = .nat(ctx.makeError("direct_invalid", "invalid response type"))
     return r
@@ -240,24 +254,24 @@ public final class BluefinTecsMerchantServicesSDK {
   // NOTE: like direct, this bypasses the feature pipeline — no retry,
   // ratelimit or paging features apply.
   public func graphql(
-    _ query: String, _ variables: VMap? = nil, _ ctrl: VMap? = nil
-  ) -> VMap {
+    _ query: String, _ variables: BluefinTecsMerchantServicesSdk.VMap? = nil, _ ctrl: BluefinTecsMerchantServicesSdk.VMap? = nil
+  ) -> BluefinTecsMerchantServicesSdk.VMap {
     if !opAllowed("graphql") {
       return opDenied("graphql")
     }
 
-    let headers = VMap()
+    let headers = BluefinTecsMerchantServicesSdk.VMap()
     headers.entries["content-type"] = .string("application/json")
 
-    let body = VMap()
+    let body = BluefinTecsMerchantServicesSdk.VMap()
     body.entries["query"] = .string(query)
-    body.entries["variables"] = .map(variables ?? VMap())
+    body.entries["variables"] = .map(variables ?? BluefinTecsMerchantServicesSdk.VMap())
 
-    let fetchargs = VMap()
+    let fetchargs = BluefinTecsMerchantServicesSdk.VMap()
     fetchargs.entries["method"] = .string("POST")
     fetchargs.entries["headers"] = .map(headers)
     fetchargs.entries["body"] = .map(body)
-    fetchargs.entries["ctrl"] = .map(ctrl ?? VMap())
+    fetchargs.entries["ctrl"] = .map(ctrl ?? BluefinTecsMerchantServicesSdk.VMap())
 
     let res = rawRequest(fetchargs)
 
@@ -557,10 +571,10 @@ public final class BluefinTecsMerchantServicesSDK {
   }
 
 
-  public static func testSDK(_ testoptsIn: VMap?, _ sdkoptsIn: VMap?) -> BluefinTecsMerchantServicesSDK {
-    let sdkopts = clone(.map(sdkoptsIn ?? VMap())).asMap ?? VMap()
+  public static func testSDK(_ testoptsIn: BluefinTecsMerchantServicesSdk.VMap?, _ sdkoptsIn: BluefinTecsMerchantServicesSdk.VMap?) -> BluefinTecsMerchantServicesSDK {
+    let sdkopts = clone(.map(sdkoptsIn ?? BluefinTecsMerchantServicesSdk.VMap())).asMap ?? BluefinTecsMerchantServicesSdk.VMap()
 
-    let testopts = clone(.map(testoptsIn ?? VMap())).asMap ?? VMap()
+    let testopts = clone(.map(testoptsIn ?? BluefinTecsMerchantServicesSdk.VMap())).asMap ?? BluefinTecsMerchantServicesSdk.VMap()
     testopts.entries["active"] = .bool(true)
 
     _ = setpath(.map(sdkopts), jtp("feature", "test"), .map(testopts))

@@ -26,6 +26,7 @@ main: kit: entity: register_terminal: {
       type: "`$STRING`"
     }
     {
+      format: "int32"
       name: "responseCode"
       req: false
       type: "`$INTEGER`"
@@ -51,6 +52,7 @@ main: kit: entity: register_terminal: {
       type: "`$STRING`"
     }
     {
+      format: "int32"
       name: "terminalId"
       req: false
       type: "`$INTEGER`"
@@ -105,8 +107,10 @@ main: kit: entity: register_terminal: {
         {
           method: "POST"
           orig: "/registerTerminal"
-          parts: [
-            "registerTerminal"
+          segments: [
+            {
+              lit: "registerTerminal"
+            }
           ]
           transform: {
             req: "`reqdata`"

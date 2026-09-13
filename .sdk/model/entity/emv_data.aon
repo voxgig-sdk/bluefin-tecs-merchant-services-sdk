@@ -11,6 +11,7 @@ main: kit: entity: emv_data: {
       type: "`$STRING`"
     }
     {
+      format: "int32"
       name: "responseCode"
       req: false
       type: "`$INTEGER`"
@@ -21,6 +22,7 @@ main: kit: entity: emv_data: {
       type: "`$STRING`"
     }
     {
+      format: "int32"
       name: "terminalId"
       req: true
       type: "`$INTEGER`"
@@ -45,9 +47,13 @@ main: kit: entity: emv_data: {
         {
           method: "POST"
           orig: "/public/getEmvData"
-          parts: [
-            "public"
-            "getEmvData"
+          segments: [
+            {
+              lit: "public"
+            }
+            {
+              lit: "getEmvData"
+            }
           ]
           transform: {
             req: "`reqdata`"

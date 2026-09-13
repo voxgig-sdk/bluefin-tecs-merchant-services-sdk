@@ -83,13 +83,17 @@ sub mandator_clearing_export_download_direct_setup {
   my $env = BluefinTecsMerchantServicesTestRunner::env_override({
     'BLUEFIN_TECS_MERCHANT_SERVICES_TEST_MANDATOR_CLEARING_EXPORT_DOWNLOAD_ENTID' => {},
     'BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE' => 'FALSE',
-    'BLUEFIN_TECS_MERCHANT_SERVICES_APIKEY' => 'NONE',
+    'BLUEFIN_TECS_MERCHANT_SERVICES_APIKEY' => '',
   });
 
   my $live = ((($env->{'BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE'}) || '') eq 'TRUE') ? 1 : 0;
 
   if ($live) {
+    # live_client_options() FIRST so the generated fields below win:
+    # sdk-test-control.json's test.client.options adds to the live client,
+    # it does not redirect it (a later key wins in a Perl hash literal).
     my $client = BluefinTecsMerchantServicesSDK->new({
+      %{ BluefinTecsMerchantServicesTestRunner::live_client_options() },
       'apikey' => $env->{'BLUEFIN_TECS_MERCHANT_SERVICES_APIKEY'},
     });
     return {

@@ -16,6 +16,7 @@ main: kit: entity: terminal_id: {
       type: "`$ARRAY`"
     }
     {
+      format: "int32"
       name: "responseCode"
       req: false
       type: "`$INTEGER`"
@@ -40,9 +41,13 @@ main: kit: entity: terminal_id: {
         {
           method: "POST"
           orig: "/public/getTerminalId"
-          parts: [
-            "public"
-            "getTerminalId"
+          segments: [
+            {
+              lit: "public"
+            }
+            {
+              lit: "getTerminalId"
+            }
           ]
           transform: {
             req: "`reqdata`"

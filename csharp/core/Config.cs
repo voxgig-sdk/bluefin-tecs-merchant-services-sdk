@@ -224,6 +224,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "amount",
                             ["op"] = new Dictionary<string, object?>
                             {
@@ -257,6 +258,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "clientId",
                             ["req"] = true,
                             ["type"] = "`$INTEGER`",
@@ -289,6 +291,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int64",
                             ["name"] = "exchangeFee",
                             ["type"] = "`$INTEGER`",
                         },
@@ -332,6 +335,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "originalTraceNumber",
                             ["type"] = "`$INTEGER`",
                         },
@@ -370,6 +374,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "receiptLayout",
                             ["type"] = "`$INTEGER`",
                         },
@@ -381,6 +386,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["type"] = "`$INTEGER`",
                         },
@@ -401,6 +407,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "terminalId",
                             ["req"] = true,
                             ["type"] = "`$INTEGER`",
@@ -412,11 +419,13 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "traceNumber",
                             ["type"] = "`$INTEGER`",
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "date-time",
                             ["name"] = "transactionDate",
                             ["op"] = new Dictionary<string, object?>
                             {
@@ -467,16 +476,27 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/public/cancelTransaction",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "public",
-                                        "cancelTransaction",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "public",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "cancelTransaction",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "public",
+                                        "cancelTransaction",
                                     },
                                 },
                             },
@@ -498,6 +518,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["type"] = "`$INTEGER`",
                         },
@@ -535,9 +556,12 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/checkCardBlackListed",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "checkCardBlackListed",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "checkCardBlackListed",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>
                                     {
@@ -550,6 +574,10 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "checkCardBlackListed",
                                     },
                                 },
                             },
@@ -566,11 +594,13 @@ public static class SdkConfig
                     {
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "acquirerId",
                             ["type"] = "`$INTEGER`",
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["type"] = "`$INTEGER`",
                         },
@@ -619,15 +649,22 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/createProduct",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "createProduct",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "createProduct",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "createProduct",
                                     },
                                 },
                             },
@@ -665,6 +702,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["type"] = "`$INTEGER`",
                         },
@@ -675,6 +713,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "terminalId",
                             ["req"] = true,
                             ["type"] = "`$INTEGER`",
@@ -695,15 +734,22 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/deactivateTerminal",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "deactivateTerminal",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "deactivateTerminal",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "deactivateTerminal",
                                     },
                                 },
                             },
@@ -734,6 +780,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["type"] = "`$INTEGER`",
                         },
@@ -744,6 +791,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "txCount",
                             ["type"] = "`$INTEGER`",
                         },
@@ -759,16 +807,19 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "txSeqNoEnd",
                             ["type"] = "`$INTEGER`",
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "txSeqNoStart",
                             ["type"] = "`$INTEGER`",
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "txTotal",
                             ["type"] = "`$INTEGER`",
                         },
@@ -801,18 +852,30 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/public/digitalservices/mandatorClearingExportDownload/{fileId}",
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "public",
-                                        "digitalservices",
-                                        "mandatorClearingExportDownload",
-                                        "{file_id}",
-                                    },
                                     ["rename"] = new Dictionary<string, object?>
                                     {
                                         ["param"] = new Dictionary<string, object?>
                                         {
                                             ["fileId"] = "file_id",
+                                        },
+                                    },
+                                    ["segments"] = new List<object?>
+                                    {
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "public",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "digitalservices",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "mandatorClearingExportDownload",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["var"] = "file_id",
                                         },
                                     },
                                     ["select"] = new Dictionary<string, object?>
@@ -827,6 +890,13 @@ public static class SdkConfig
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "public",
+                                        "digitalservices",
+                                        "mandatorClearingExportDownload",
+                                        "{file_id}",
+                                    },
                                 },
                                 new Dictionary<string, object?>
                                 {
@@ -834,17 +904,32 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/public/digitalservices/mandatorClearingExportMetadata",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "public",
-                                        "digitalservices",
-                                        "mandatorClearingExportMetadata",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "public",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "digitalservices",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "mandatorClearingExportMetadata",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "public",
+                                        "digitalservices",
+                                        "mandatorClearingExportMetadata",
                                     },
                                 },
                             },
@@ -861,18 +946,37 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "GET",
                                     ["orig"] = "/public/digitalservices/mandatorClearingExportDownload/status",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "public",
-                                        "digitalservices",
-                                        "mandatorClearingExportDownload",
-                                        "status",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "public",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "digitalservices",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "mandatorClearingExportDownload",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "status",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "public",
+                                        "digitalservices",
+                                        "mandatorClearingExportDownload",
+                                        "status",
                                     },
                                 },
                             },
@@ -900,6 +1004,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["type"] = "`$INTEGER`",
                         },
@@ -910,6 +1015,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "terminalId",
                             ["req"] = true,
                             ["type"] = "`$INTEGER`",
@@ -942,16 +1048,27 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/public/getEcData",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "public",
-                                        "getEcData",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "public",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "getEcData",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "public",
+                                        "getEcData",
                                     },
                                 },
                             },
@@ -978,6 +1095,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["type"] = "`$INTEGER`",
                         },
@@ -988,6 +1106,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "terminalId",
                             ["req"] = true,
                             ["type"] = "`$INTEGER`",
@@ -1008,16 +1127,27 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/public/getEcomParameters",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "public",
-                                        "getEcomParameters",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "public",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "getEcomParameters",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "public",
+                                        "getEcomParameters",
                                     },
                                 },
                             },
@@ -1039,6 +1169,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["type"] = "`$INTEGER`",
                         },
@@ -1049,6 +1180,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "terminalId",
                             ["req"] = true,
                             ["type"] = "`$INTEGER`",
@@ -1081,16 +1213,27 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/public/getEcrData",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "public",
-                                        "getEcrData",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "public",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "getEcrData",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "public",
+                                        "getEcrData",
                                     },
                                 },
                             },
@@ -1112,6 +1255,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["type"] = "`$INTEGER`",
                         },
@@ -1122,6 +1266,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "terminalId",
                             ["req"] = true,
                             ["type"] = "`$INTEGER`",
@@ -1154,16 +1299,27 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/public/getEmvData",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "public",
-                                        "getEmvData",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "public",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "getEmvData",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "public",
+                                        "getEmvData",
                                     },
                                 },
                             },
@@ -1180,6 +1336,7 @@ public static class SdkConfig
                     {
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "accountNo",
                             ["type"] = "`$INTEGER`",
                         },
@@ -1202,6 +1359,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "merchantCategoryCode",
                             ["req"] = true,
                             ["type"] = "`$INTEGER`",
@@ -1220,6 +1378,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["type"] = "`$INTEGER`",
                         },
@@ -1230,6 +1389,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "sortingCode",
                             ["type"] = "`$INTEGER`",
                         },
@@ -1270,15 +1430,22 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/enableAcquiring",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "enableAcquiring",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "enableAcquiring",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "enableAcquiring",
                                     },
                                 },
                             },
@@ -1301,6 +1468,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["type"] = "`$INTEGER`",
                         },
@@ -1325,15 +1493,22 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/getMerchantContractNumber",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "getMerchantContractNumber",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "getMerchantContractNumber",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "getMerchantContractNumber",
                                     },
                                 },
                             },
@@ -1350,6 +1525,7 @@ public static class SdkConfig
                     {
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["type"] = "`$INTEGER`",
                         },
@@ -1380,16 +1556,27 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/public/getTemplateXml",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "public",
-                                        "getTemplateXml",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "public",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "getTemplateXml",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "public",
+                                        "getTemplateXml",
                                     },
                                 },
                             },
@@ -1412,6 +1599,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["type"] = "`$INTEGER`",
                         },
@@ -1436,15 +1624,22 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/introduceMandator",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "introduceMandator",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "introduceMandator",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "introduceMandator",
                                     },
                                 },
                             },
@@ -1461,6 +1656,7 @@ public static class SdkConfig
                     {
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["type"] = "`$INTEGER`",
                         },
@@ -1491,15 +1687,22 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/introducePackage",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "introducePackage",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "introducePackage",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "introducePackage",
                                     },
                                 },
                             },
@@ -1541,6 +1744,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["type"] = "`$INTEGER`",
                         },
@@ -1561,6 +1765,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "terminalId",
                             ["type"] = "`$INTEGER`",
                         },
@@ -1580,16 +1785,27 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/public/keepalive",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "public",
-                                        "keepalive",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "public",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "keepalive",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "public",
+                                        "keepalive",
                                     },
                                 },
                             },
@@ -1621,6 +1837,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["type"] = "`$INTEGER`",
                         },
@@ -1650,16 +1867,27 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/public/listTerminals",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "public",
-                                        "listTerminals",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "public",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "listTerminals",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "public",
+                                        "listTerminals",
                                     },
                                 },
                             },
@@ -1700,6 +1928,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["type"] = "`$INTEGER`",
                         },
@@ -1724,17 +1953,32 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/public/digitalservices/mandatorClearingExport",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "public",
-                                        "digitalservices",
-                                        "mandatorClearingExport",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "public",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "digitalservices",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "mandatorClearingExport",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "public",
+                                        "digitalservices",
+                                        "mandatorClearingExport",
                                     },
                                 },
                             },
@@ -1751,6 +1995,7 @@ public static class SdkConfig
                     {
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "date-time",
                             ["name"] = "clearingDateFrom",
                             ["req"] = true,
                             ["short"] = "Start date for clearing export (inclusive)",
@@ -1758,6 +2003,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "date-time",
                             ["name"] = "clearingDateTo",
                             ["req"] = true,
                             ["short"] = "End date for clearing export (inclusive)",
@@ -1782,6 +2028,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["type"] = "`$INTEGER`",
                         },
@@ -1796,6 +2043,11 @@ public static class SdkConfig
                             ["short"] = "Processing status of the export request",
                             ["type"] = "`$STRING`",
                         },
+                    },
+                    ["id"] = new Dictionary<string, object?>
+                    {
+                        ["field"] = "id",
+                        ["name"] = "id",
                     },
                     ["name"] = "mandator_clearing_export_download",
                     ["op"] = new Dictionary<string, object?>
@@ -1812,17 +2064,32 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/public/digitalservices/mandatorClearingExportDownload",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "public",
-                                        "digitalservices",
-                                        "mandatorClearingExportDownload",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "public",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "digitalservices",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "mandatorClearingExportDownload",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "public",
+                                        "digitalservices",
+                                        "mandatorClearingExportDownload",
                                     },
                                 },
                             },
@@ -1852,18 +2119,30 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "GET",
                                     ["orig"] = "/public/digitalservices/mandatorClearingExportDownload/{fileId}",
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "public",
-                                        "digitalservices",
-                                        "mandatorClearingExportDownload",
-                                        "{id}",
-                                    },
                                     ["rename"] = new Dictionary<string, object?>
                                     {
                                         ["param"] = new Dictionary<string, object?>
                                         {
                                             ["fileId"] = "id",
+                                        },
+                                    },
+                                    ["segments"] = new List<object?>
+                                    {
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "public",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "digitalservices",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "mandatorClearingExportDownload",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["var"] = "id",
                                         },
                                     },
                                     ["select"] = new Dictionary<string, object?>
@@ -1877,6 +2156,13 @@ public static class SdkConfig
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "public",
+                                        "digitalservices",
+                                        "mandatorClearingExportDownload",
+                                        "{id}",
                                     },
                                 },
                             },
@@ -1912,6 +2198,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["type"] = "`$INTEGER`",
                         },
@@ -1936,17 +2223,32 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/public/digitalservices/mandatorClearingExportSummary",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "public",
-                                        "digitalservices",
-                                        "mandatorClearingExportSummary",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "public",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "digitalservices",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "mandatorClearingExportSummary",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "public",
+                                        "digitalservices",
+                                        "mandatorClearingExportSummary",
                                     },
                                 },
                             },
@@ -2028,6 +2330,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "sourceId",
                             ["type"] = "`$INTEGER`",
                         },
@@ -2043,6 +2346,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "terminalId",
                             ["type"] = "`$INTEGER`",
                         },
@@ -2063,11 +2367,13 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "date-time",
                             ["name"] = "transactionDateFrom",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "date-time",
                             ["name"] = "transactionDateTo",
                             ["type"] = "`$STRING`",
                         },
@@ -2103,16 +2409,27 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/public/transactionHistoryCsv",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "public",
-                                        "transactionHistoryCsv",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "public",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "transactionHistoryCsv",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "public",
+                                        "transactionHistoryCsv",
                                     },
                                 },
                             },
@@ -2135,6 +2452,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["type"] = "`$INTEGER`",
                         },
@@ -2169,15 +2487,22 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/moveTid",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "moveTid",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "moveTid",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "moveTid",
                                     },
                                 },
                             },
@@ -2200,6 +2525,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "amount",
                             ["req"] = true,
                             ["short"] = "Transaction amount in minor units (cents)",
@@ -2323,16 +2649,27 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/public/paymentManual",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "public",
-                                        "paymentManual",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "public",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "paymentManual",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "public",
+                                        "paymentManual",
                                     },
                                 },
                             },
@@ -2349,6 +2686,7 @@ public static class SdkConfig
                     {
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "amount",
                             ["req"] = true,
                             ["short"] = "Transaction amount in minor units (cents)",
@@ -2440,16 +2778,27 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/public/paymentSred",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "public",
-                                        "paymentSred",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "public",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "paymentSred",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body.sred`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "public",
+                                        "paymentSred",
                                     },
                                 },
                             },
@@ -2481,6 +2830,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "amount",
                             ["op"] = new Dictionary<string, object?>
                             {
@@ -2520,6 +2870,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "clientId",
                             ["req"] = true,
                             ["type"] = "`$INTEGER`",
@@ -2552,6 +2903,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int64",
                             ["name"] = "exchangeFee",
                             ["type"] = "`$INTEGER`",
                         },
@@ -2587,6 +2939,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "originalTraceNumber",
                             ["type"] = "`$INTEGER`",
                         },
@@ -2625,6 +2978,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "receiptLayout",
                             ["type"] = "`$INTEGER`",
                         },
@@ -2636,6 +2990,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["type"] = "`$INTEGER`",
                         },
@@ -2656,6 +3011,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "terminalId",
                             ["req"] = true,
                             ["type"] = "`$INTEGER`",
@@ -2667,11 +3023,13 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "traceNumber",
                             ["type"] = "`$INTEGER`",
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "date-time",
                             ["name"] = "transactionDate",
                             ["op"] = new Dictionary<string, object?>
                             {
@@ -2728,16 +3086,27 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/public/paymentTransaction",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "public",
-                                        "paymentTransaction",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "public",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "paymentTransaction",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "public",
+                                        "paymentTransaction",
                                     },
                                 },
                                 new Dictionary<string, object?>
@@ -2746,16 +3115,27 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/public/preAuthCompletionTransaction",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "public",
-                                        "preAuthCompletionTransaction",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "public",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "preAuthCompletionTransaction",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "public",
+                                        "preAuthCompletionTransaction",
                                     },
                                 },
                             },
@@ -2793,6 +3173,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["type"] = "`$INTEGER`",
                         },
@@ -2803,6 +3184,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "terminalId",
                             ["req"] = true,
                             ["type"] = "`$INTEGER`",
@@ -2823,15 +3205,22 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/reactivateTerminal",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "reactivateTerminal",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "reactivateTerminal",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "reactivateTerminal",
                                     },
                                 },
                             },
@@ -2863,6 +3252,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "amount",
                             ["op"] = new Dictionary<string, object?>
                             {
@@ -2896,6 +3286,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "clientId",
                             ["req"] = true,
                             ["type"] = "`$INTEGER`",
@@ -2928,6 +3319,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int64",
                             ["name"] = "exchangeFee",
                             ["type"] = "`$INTEGER`",
                         },
@@ -2963,6 +3355,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "originalTraceNumber",
                             ["type"] = "`$INTEGER`",
                         },
@@ -3001,6 +3394,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "receiptLayout",
                             ["type"] = "`$INTEGER`",
                         },
@@ -3012,6 +3406,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["type"] = "`$INTEGER`",
                         },
@@ -3032,6 +3427,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "terminalId",
                             ["req"] = true,
                             ["type"] = "`$INTEGER`",
@@ -3043,11 +3439,13 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "traceNumber",
                             ["type"] = "`$INTEGER`",
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "date-time",
                             ["name"] = "transactionDate",
                             ["op"] = new Dictionary<string, object?>
                             {
@@ -3098,16 +3496,27 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/public/refundTransaction",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "public",
-                                        "refundTransaction",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "public",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "refundTransaction",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "public",
+                                        "refundTransaction",
                                     },
                                 },
                             },
@@ -3136,6 +3545,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "partnerId",
                             ["type"] = "`$INTEGER`",
                         },
@@ -3152,6 +3562,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["type"] = "`$INTEGER`",
                         },
@@ -3182,15 +3593,22 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/registerTecsCompany",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "registerTecsCompany",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "registerTecsCompany",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "registerTecsCompany",
                                     },
                                 },
                             },
@@ -3230,6 +3648,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["type"] = "`$INTEGER`",
                         },
@@ -3257,6 +3676,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "terminalId",
                             ["type"] = "`$INTEGER`",
                         },
@@ -3318,15 +3738,22 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/registerTerminal",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "registerTerminal",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "registerTerminal",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "registerTerminal",
                                     },
                                 },
                             },
@@ -3374,6 +3801,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["type"] = "`$INTEGER`",
                         },
@@ -3394,6 +3822,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "terminalId",
                             ["type"] = "`$INTEGER`",
                         },
@@ -3413,17 +3842,32 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/public/digitalservices/reportData",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "public",
-                                        "digitalservices",
-                                        "reportData",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "public",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "digitalservices",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "reportData",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "public",
+                                        "digitalservices",
+                                        "reportData",
                                     },
                                 },
                             },
@@ -3450,6 +3894,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "amount",
                             ["type"] = "`$INTEGER`",
                         },
@@ -3474,6 +3919,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "date-time",
                             ["name"] = "authorizationDate",
                             ["type"] = "`$STRING`",
                         },
@@ -3499,6 +3945,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "clearingAmount",
                             ["type"] = "`$INTEGER`",
                         },
@@ -3514,11 +3961,13 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "date-time",
                             ["name"] = "clearingDate",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "date-time",
                             ["name"] = "clearingProcessedDate",
                             ["type"] = "`$STRING`",
                         },
@@ -3529,6 +3978,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "clientId",
                             ["type"] = "`$INTEGER`",
                         },
@@ -3574,6 +4024,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "originalTerminalId",
                             ["type"] = "`$INTEGER`",
                         },
@@ -3594,6 +4045,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["type"] = "`$INTEGER`",
                         },
@@ -3624,11 +4076,13 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "sourceId",
                             ["type"] = "`$INTEGER`",
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "tecsengineResponseCode",
                             ["type"] = "`$INTEGER`",
                         },
@@ -3639,11 +4093,13 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "date-time",
                             ["name"] = "terminalEndOfDayDate",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "terminalId",
                             ["type"] = "`$INTEGER`",
                         },
@@ -3654,21 +4110,25 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "tipAmount",
                             ["type"] = "`$INTEGER`",
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "traceNumber",
                             ["type"] = "`$INTEGER`",
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "date-time",
                             ["name"] = "transactionClearingDate",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "date-time",
                             ["name"] = "transactionDate",
                             ["type"] = "`$STRING`",
                         },
@@ -3679,11 +4139,13 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int64",
                             ["name"] = "transactionSeqNumber",
                             ["type"] = "`$INTEGER`",
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "date-time",
                             ["name"] = "transactionServerDate",
                             ["type"] = "`$STRING`",
                         },
@@ -3713,16 +4175,27 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/public/statusTransaction",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "public",
-                                        "statusTransaction",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "public",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "statusTransaction",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "public",
+                                        "statusTransaction",
                                     },
                                 },
                             },
@@ -3749,6 +4222,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["type"] = "`$INTEGER`",
                         },
@@ -3784,15 +4258,22 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/storeTerminalParameters",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "storeTerminalParameters",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "storeTerminalParameters",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "storeTerminalParameters",
                                     },
                                 },
                             },
@@ -3820,6 +4301,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["type"] = "`$INTEGER`",
                         },
@@ -3849,16 +4331,27 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/public/getTerminalId",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "public",
-                                        "getTerminalId",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "public",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "getTerminalId",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "public",
+                                        "getTerminalId",
                                     },
                                 },
                             },
@@ -3940,6 +4433,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["type"] = "`$INTEGER`",
                         },
@@ -3955,6 +4449,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "sourceId",
                             ["type"] = "`$INTEGER`",
                         },
@@ -3970,6 +4465,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "terminalId",
                             ["type"] = "`$INTEGER`",
                         },
@@ -3990,11 +4486,13 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "date-time",
                             ["name"] = "transactionDateFrom",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "date-time",
                             ["name"] = "transactionDateTo",
                             ["type"] = "`$STRING`",
                         },
@@ -4035,17 +4533,32 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/public/mcom/transactionHistory",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "public",
-                                        "mcom",
-                                        "transactionHistory",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "public",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "mcom",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "transactionHistory",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "public",
+                                        "mcom",
+                                        "transactionHistory",
                                     },
                                 },
                                 new Dictionary<string, object?>
@@ -4054,16 +4567,27 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/public/transactionHistory",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "public",
-                                        "transactionHistory",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "public",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "transactionHistory",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "public",
+                                        "transactionHistory",
                                     },
                                 },
                             },
@@ -4085,6 +4609,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["type"] = "`$INTEGER`",
                         },
@@ -4095,6 +4620,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "date-time",
                             ["name"] = "transactionDateFrom",
                             ["op"] = new Dictionary<string, object?>
                             {
@@ -4108,6 +4634,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "date-time",
                             ["name"] = "transactionDateTo",
                             ["op"] = new Dictionary<string, object?>
                             {
@@ -4140,16 +4667,27 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/public/countAuthorisedTransactions",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "public",
-                                        "countAuthorisedTransactions",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "public",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "countAuthorisedTransactions",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "public",
+                                        "countAuthorisedTransactions",
                                     },
                                 },
                                 new Dictionary<string, object?>
@@ -4158,16 +4696,27 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/public/countNotAuthorisedTransactions",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "public",
-                                        "countNotAuthorisedTransactions",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "public",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "countNotAuthorisedTransactions",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "public",
+                                        "countNotAuthorisedTransactions",
                                     },
                                 },
                             },
@@ -4189,6 +4738,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["type"] = "`$INTEGER`",
                         },
@@ -4199,6 +4749,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "date-time",
                             ["name"] = "transactionDateFrom",
                             ["op"] = new Dictionary<string, object?>
                             {
@@ -4212,6 +4763,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "date-time",
                             ["name"] = "transactionDateTo",
                             ["op"] = new Dictionary<string, object?>
                             {
@@ -4244,16 +4796,27 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/public/countTransactionsByCardBrand",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "public",
-                                        "countTransactionsByCardBrand",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "public",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "countTransactionsByCardBrand",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "public",
+                                        "countTransactionsByCardBrand",
                                     },
                                 },
                             },
@@ -4275,6 +4838,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["type"] = "`$INTEGER`",
                         },
@@ -4285,6 +4849,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "date-time",
                             ["name"] = "transactionDateFrom",
                             ["op"] = new Dictionary<string, object?>
                             {
@@ -4298,6 +4863,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "date-time",
                             ["name"] = "transactionDateTo",
                             ["op"] = new Dictionary<string, object?>
                             {
@@ -4330,16 +4896,27 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/public/transactionTurnover",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "public",
-                                        "transactionTurnover",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "public",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "transactionTurnover",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "public",
+                                        "transactionTurnover",
                                     },
                                 },
                             },
@@ -4382,6 +4959,7 @@ public static class SdkConfig
                         },
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["type"] = "`$INTEGER`",
                         },
@@ -4426,16 +5004,27 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/public/updateMerchant",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "public",
-                                        "updateMerchant",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "public",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "updateMerchant",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "public",
+                                        "updateMerchant",
                                     },
                                 },
                             },
@@ -4452,6 +5041,7 @@ public static class SdkConfig
                     {
                         new Dictionary<string, object?>
                         {
+                            ["format"] = "int32",
                             ["name"] = "responseCode",
                             ["type"] = "`$INTEGER`",
                         },
@@ -4488,16 +5078,27 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/public/updateTemplateXml",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "public",
-                                        "updateTemplateXml",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "public",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "updateTemplateXml",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "public",
+                                        "updateTemplateXml",
                                     },
                                 },
                             },
@@ -4543,16 +5144,27 @@ public static class SdkConfig
                                     ["kind"] = "http",
                                     ["method"] = "GET",
                                     ["orig"] = "/public/version",
-                                    ["parts"] = new List<object?>
+                                    ["segments"] = new List<object?>
                                     {
-                                        "public",
-                                        "version",
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "public",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "version",
+                                        },
                                     },
                                     ["select"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "public",
+                                        "version",
                                     },
                                 },
                             },
@@ -4577,6 +5189,15 @@ public static class SdkConfig
     public static Dictionary<string, object?> SharedConfig()
     {
         return SharedConfigVal.Value;
+    }
+
+    public static List<object?> FeaturePlugins(string name)
+    {
+        switch (name)
+        {
+            default:
+                return new List<object?>();
+        }
     }
 
     public static Feature.BaseFeature MakeFeature(string name)

@@ -183,6 +183,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "amount",
               "op" => %{
                 "create" => %{
@@ -209,6 +210,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "clientId",
               "req" => true,
               "type" => "`$INTEGER`"
@@ -235,6 +237,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int64",
               "name" => "exchangeFee",
               "type" => "`$INTEGER`"
             },
@@ -269,6 +272,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "originalTraceNumber",
               "type" => "`$INTEGER`"
             },
@@ -299,6 +303,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "receiptLayout",
               "type" => "`$INTEGER`"
             },
@@ -308,6 +313,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "responseCode",
               "type" => "`$INTEGER`"
             },
@@ -324,6 +330,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "terminalId",
               "req" => true,
               "type" => "`$INTEGER`"
@@ -333,10 +340,12 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "traceNumber",
               "type" => "`$INTEGER`"
             },
             %{
+              "format" => "date-time",
               "name" => "transactionDate",
               "op" => %{
                 "create" => %{
@@ -376,15 +385,23 @@ defmodule BluefinTecsMerchantServices.Config do
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/public/cancelTransaction",
-                  "parts" => [
-                    "public",
-                    "cancelTransaction"
+                  "segments" => [
+                    %{
+                      "lit" => "public"
+                    },
+                    %{
+                      "lit" => "cancelTransaction"
+                    }
                   ],
                   "select" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  }
+                  },
+                  "parts" => [
+                    "public",
+                    "cancelTransaction"
+                  ]
                 }
               ]
             }
@@ -400,6 +417,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "responseCode",
               "type" => "`$INTEGER`"
             },
@@ -429,8 +447,10 @@ defmodule BluefinTecsMerchantServices.Config do
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/checkCardBlackListed",
-                  "parts" => [
-                    "checkCardBlackListed"
+                  "segments" => [
+                    %{
+                      "lit" => "checkCardBlackListed"
+                    }
                   ],
                   "select" => %{
                     "exist" => [
@@ -440,7 +460,10 @@ defmodule BluefinTecsMerchantServices.Config do
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  }
+                  },
+                  "parts" => [
+                    "checkCardBlackListed"
+                  ]
                 }
               ]
             }
@@ -452,10 +475,12 @@ defmodule BluefinTecsMerchantServices.Config do
         "create_product" => %{
           "fields" => [
             %{
+              "format" => "int32",
               "name" => "acquirerId",
               "type" => "`$INTEGER`"
             },
             %{
+              "format" => "int32",
               "name" => "responseCode",
               "type" => "`$INTEGER`"
             },
@@ -495,14 +520,19 @@ defmodule BluefinTecsMerchantServices.Config do
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/createProduct",
-                  "parts" => [
-                    "createProduct"
+                  "segments" => [
+                    %{
+                      "lit" => "createProduct"
+                    }
                   ],
                   "select" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  }
+                  },
+                  "parts" => [
+                    "createProduct"
+                  ]
                 }
               ]
             }
@@ -531,6 +561,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "responseCode",
               "type" => "`$INTEGER`"
             },
@@ -539,6 +570,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "terminalId",
               "req" => true,
               "type" => "`$INTEGER`"
@@ -555,14 +587,19 @@ defmodule BluefinTecsMerchantServices.Config do
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/deactivateTerminal",
-                  "parts" => [
-                    "deactivateTerminal"
+                  "segments" => [
+                    %{
+                      "lit" => "deactivateTerminal"
+                    }
                   ],
                   "select" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  }
+                  },
+                  "parts" => [
+                    "deactivateTerminal"
+                  ]
                 }
               ]
             }
@@ -586,6 +623,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "responseCode",
               "type" => "`$INTEGER`"
             },
@@ -594,6 +632,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "txCount",
               "type" => "`$INTEGER`"
             },
@@ -606,14 +645,17 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "txSeqNoEnd",
               "type" => "`$INTEGER`"
             },
             %{
+              "format" => "int32",
               "name" => "txSeqNoStart",
               "type" => "`$INTEGER`"
             },
             %{
+              "format" => "int32",
               "name" => "txTotal",
               "type" => "`$INTEGER`"
             }
@@ -639,17 +681,25 @@ defmodule BluefinTecsMerchantServices.Config do
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/public/digitalservices/mandatorClearingExportDownload/{fileId}",
-                  "parts" => [
-                    "public",
-                    "digitalservices",
-                    "mandatorClearingExportDownload",
-                    "{file_id}"
-                  ],
                   "rename" => %{
                     "param" => %{
                       "fileId" => "file_id"
                     }
                   },
+                  "segments" => [
+                    %{
+                      "lit" => "public"
+                    },
+                    %{
+                      "lit" => "digitalservices"
+                    },
+                    %{
+                      "lit" => "mandatorClearingExportDownload"
+                    },
+                    %{
+                      "var" => "file_id"
+                    }
+                  ],
                   "select" => %{
                     "exist" => [
                       "file_id"
@@ -658,23 +708,40 @@ defmodule BluefinTecsMerchantServices.Config do
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  }
+                  },
+                  "parts" => [
+                    "public",
+                    "digitalservices",
+                    "mandatorClearingExportDownload",
+                    "{file_id}"
+                  ]
                 },
                 %{
                   "args" => %{},
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/public/digitalservices/mandatorClearingExportMetadata",
-                  "parts" => [
-                    "public",
-                    "digitalservices",
-                    "mandatorClearingExportMetadata"
+                  "segments" => [
+                    %{
+                      "lit" => "public"
+                    },
+                    %{
+                      "lit" => "digitalservices"
+                    },
+                    %{
+                      "lit" => "mandatorClearingExportMetadata"
+                    }
                   ],
                   "select" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  }
+                  },
+                  "parts" => [
+                    "public",
+                    "digitalservices",
+                    "mandatorClearingExportMetadata"
+                  ]
                 }
               ]
             },
@@ -687,17 +754,31 @@ defmodule BluefinTecsMerchantServices.Config do
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/public/digitalservices/mandatorClearingExportDownload/status",
-                  "parts" => [
-                    "public",
-                    "digitalservices",
-                    "mandatorClearingExportDownload",
-                    "status"
+                  "segments" => [
+                    %{
+                      "lit" => "public"
+                    },
+                    %{
+                      "lit" => "digitalservices"
+                    },
+                    %{
+                      "lit" => "mandatorClearingExportDownload"
+                    },
+                    %{
+                      "lit" => "status"
+                    }
                   ],
                   "select" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  }
+                  },
+                  "parts" => [
+                    "public",
+                    "digitalservices",
+                    "mandatorClearingExportDownload",
+                    "status"
+                  ]
                 }
               ]
             }
@@ -717,6 +798,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "responseCode",
               "type" => "`$INTEGER`"
             },
@@ -725,6 +807,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "terminalId",
               "req" => true,
               "type" => "`$INTEGER`"
@@ -751,15 +834,23 @@ defmodule BluefinTecsMerchantServices.Config do
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/public/getEcData",
-                  "parts" => [
-                    "public",
-                    "getEcData"
+                  "segments" => [
+                    %{
+                      "lit" => "public"
+                    },
+                    %{
+                      "lit" => "getEcData"
+                    }
                   ],
                   "select" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  }
+                  },
+                  "parts" => [
+                    "public",
+                    "getEcData"
+                  ]
                 }
               ]
             }
@@ -779,6 +870,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "responseCode",
               "type" => "`$INTEGER`"
             },
@@ -787,6 +879,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "terminalId",
               "req" => true,
               "type" => "`$INTEGER`"
@@ -803,15 +896,23 @@ defmodule BluefinTecsMerchantServices.Config do
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/public/getEcomParameters",
-                  "parts" => [
-                    "public",
-                    "getEcomParameters"
+                  "segments" => [
+                    %{
+                      "lit" => "public"
+                    },
+                    %{
+                      "lit" => "getEcomParameters"
+                    }
                   ],
                   "select" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  }
+                  },
+                  "parts" => [
+                    "public",
+                    "getEcomParameters"
+                  ]
                 }
               ]
             }
@@ -827,6 +928,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "responseCode",
               "type" => "`$INTEGER`"
             },
@@ -835,6 +937,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "terminalId",
               "req" => true,
               "type" => "`$INTEGER`"
@@ -861,15 +964,23 @@ defmodule BluefinTecsMerchantServices.Config do
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/public/getEcrData",
-                  "parts" => [
-                    "public",
-                    "getEcrData"
+                  "segments" => [
+                    %{
+                      "lit" => "public"
+                    },
+                    %{
+                      "lit" => "getEcrData"
+                    }
                   ],
                   "select" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  }
+                  },
+                  "parts" => [
+                    "public",
+                    "getEcrData"
+                  ]
                 }
               ]
             }
@@ -885,6 +996,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "responseCode",
               "type" => "`$INTEGER`"
             },
@@ -893,6 +1005,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "terminalId",
               "req" => true,
               "type" => "`$INTEGER`"
@@ -919,15 +1032,23 @@ defmodule BluefinTecsMerchantServices.Config do
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/public/getEmvData",
-                  "parts" => [
-                    "public",
-                    "getEmvData"
+                  "segments" => [
+                    %{
+                      "lit" => "public"
+                    },
+                    %{
+                      "lit" => "getEmvData"
+                    }
                   ],
                   "select" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  }
+                  },
+                  "parts" => [
+                    "public",
+                    "getEmvData"
+                  ]
                 }
               ]
             }
@@ -939,6 +1060,7 @@ defmodule BluefinTecsMerchantServices.Config do
         "enable_acquiring" => %{
           "fields" => [
             %{
+              "format" => "int32",
               "name" => "accountNo",
               "type" => "`$INTEGER`"
             },
@@ -957,6 +1079,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "merchantCategoryCode",
               "req" => true,
               "type" => "`$INTEGER`"
@@ -972,6 +1095,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "responseCode",
               "type" => "`$INTEGER`"
             },
@@ -980,6 +1104,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "sortingCode",
               "type" => "`$INTEGER`"
             },
@@ -1012,14 +1137,19 @@ defmodule BluefinTecsMerchantServices.Config do
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/enableAcquiring",
-                  "parts" => [
-                    "enableAcquiring"
+                  "segments" => [
+                    %{
+                      "lit" => "enableAcquiring"
+                    }
                   ],
                   "select" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  }
+                  },
+                  "parts" => [
+                    "enableAcquiring"
+                  ]
                 }
               ]
             }
@@ -1036,6 +1166,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "responseCode",
               "type" => "`$INTEGER`"
             },
@@ -1055,14 +1186,19 @@ defmodule BluefinTecsMerchantServices.Config do
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/getMerchantContractNumber",
-                  "parts" => [
-                    "getMerchantContractNumber"
+                  "segments" => [
+                    %{
+                      "lit" => "getMerchantContractNumber"
+                    }
                   ],
                   "select" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  }
+                  },
+                  "parts" => [
+                    "getMerchantContractNumber"
+                  ]
                 }
               ]
             }
@@ -1074,6 +1210,7 @@ defmodule BluefinTecsMerchantServices.Config do
         "get_template_xml" => %{
           "fields" => [
             %{
+              "format" => "int32",
               "name" => "responseCode",
               "type" => "`$INTEGER`"
             },
@@ -1098,15 +1235,23 @@ defmodule BluefinTecsMerchantServices.Config do
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/public/getTemplateXml",
-                  "parts" => [
-                    "public",
-                    "getTemplateXml"
+                  "segments" => [
+                    %{
+                      "lit" => "public"
+                    },
+                    %{
+                      "lit" => "getTemplateXml"
+                    }
                   ],
                   "select" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  }
+                  },
+                  "parts" => [
+                    "public",
+                    "getTemplateXml"
+                  ]
                 }
               ]
             }
@@ -1123,6 +1268,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "responseCode",
               "type" => "`$INTEGER`"
             },
@@ -1142,14 +1288,19 @@ defmodule BluefinTecsMerchantServices.Config do
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/introduceMandator",
-                  "parts" => [
-                    "introduceMandator"
+                  "segments" => [
+                    %{
+                      "lit" => "introduceMandator"
+                    }
                   ],
                   "select" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  }
+                  },
+                  "parts" => [
+                    "introduceMandator"
+                  ]
                 }
               ]
             }
@@ -1161,6 +1312,7 @@ defmodule BluefinTecsMerchantServices.Config do
         "introduce_package" => %{
           "fields" => [
             %{
+              "format" => "int32",
               "name" => "responseCode",
               "type" => "`$INTEGER`"
             },
@@ -1185,14 +1337,19 @@ defmodule BluefinTecsMerchantServices.Config do
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/introducePackage",
-                  "parts" => [
-                    "introducePackage"
+                  "segments" => [
+                    %{
+                      "lit" => "introducePackage"
+                    }
                   ],
                   "select" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  }
+                  },
+                  "parts" => [
+                    "introducePackage"
+                  ]
                 }
               ]
             }
@@ -1224,6 +1381,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$OBJECT`"
             },
             %{
+              "format" => "int32",
               "name" => "responseCode",
               "type" => "`$INTEGER`"
             },
@@ -1240,6 +1398,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "terminalId",
               "type" => "`$INTEGER`"
             }
@@ -1255,15 +1414,23 @@ defmodule BluefinTecsMerchantServices.Config do
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/public/keepalive",
-                  "parts" => [
-                    "public",
-                    "keepalive"
+                  "segments" => [
+                    %{
+                      "lit" => "public"
+                    },
+                    %{
+                      "lit" => "keepalive"
+                    }
                   ],
                   "select" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  }
+                  },
+                  "parts" => [
+                    "public",
+                    "keepalive"
+                  ]
                 }
               ]
             }
@@ -1287,6 +1454,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$OBJECT`"
             },
             %{
+              "format" => "int32",
               "name" => "responseCode",
               "type" => "`$INTEGER`"
             },
@@ -1310,15 +1478,23 @@ defmodule BluefinTecsMerchantServices.Config do
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/public/listTerminals",
-                  "parts" => [
-                    "public",
-                    "listTerminals"
+                  "segments" => [
+                    %{
+                      "lit" => "public"
+                    },
+                    %{
+                      "lit" => "listTerminals"
+                    }
                   ],
                   "select" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  }
+                  },
+                  "parts" => [
+                    "public",
+                    "listTerminals"
+                  ]
                 }
               ]
             }
@@ -1350,6 +1526,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$ARRAY`"
             },
             %{
+              "format" => "int32",
               "name" => "responseCode",
               "type" => "`$INTEGER`"
             },
@@ -1369,16 +1546,27 @@ defmodule BluefinTecsMerchantServices.Config do
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/public/digitalservices/mandatorClearingExport",
-                  "parts" => [
-                    "public",
-                    "digitalservices",
-                    "mandatorClearingExport"
+                  "segments" => [
+                    %{
+                      "lit" => "public"
+                    },
+                    %{
+                      "lit" => "digitalservices"
+                    },
+                    %{
+                      "lit" => "mandatorClearingExport"
+                    }
                   ],
                   "select" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  }
+                  },
+                  "parts" => [
+                    "public",
+                    "digitalservices",
+                    "mandatorClearingExport"
+                  ]
                 }
               ]
             }
@@ -1390,12 +1578,14 @@ defmodule BluefinTecsMerchantServices.Config do
         "mandator_clearing_export_download" => %{
           "fields" => [
             %{
+              "format" => "date-time",
               "name" => "clearingDateFrom",
               "req" => true,
               "short" => "Start date for clearing export (inclusive)",
               "type" => "`$STRING`"
             },
             %{
+              "format" => "date-time",
               "name" => "clearingDateTo",
               "req" => true,
               "short" => "End date for clearing export (inclusive)",
@@ -1416,6 +1606,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "responseCode",
               "type" => "`$INTEGER`"
             },
@@ -1429,6 +1620,10 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             }
           ],
+          "id" => %{
+            "field" => "id",
+            "name" => "id"
+          },
           "name" => "mandator_clearing_export_download",
           "op" => %{
             "create" => %{
@@ -1440,16 +1635,27 @@ defmodule BluefinTecsMerchantServices.Config do
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/public/digitalservices/mandatorClearingExportDownload",
-                  "parts" => [
-                    "public",
-                    "digitalservices",
-                    "mandatorClearingExportDownload"
+                  "segments" => [
+                    %{
+                      "lit" => "public"
+                    },
+                    %{
+                      "lit" => "digitalservices"
+                    },
+                    %{
+                      "lit" => "mandatorClearingExportDownload"
+                    }
                   ],
                   "select" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  }
+                  },
+                  "parts" => [
+                    "public",
+                    "digitalservices",
+                    "mandatorClearingExportDownload"
+                  ]
                 }
               ]
             },
@@ -1472,17 +1678,25 @@ defmodule BluefinTecsMerchantServices.Config do
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/public/digitalservices/mandatorClearingExportDownload/{fileId}",
-                  "parts" => [
-                    "public",
-                    "digitalservices",
-                    "mandatorClearingExportDownload",
-                    "{id}"
-                  ],
                   "rename" => %{
                     "param" => %{
                       "fileId" => "id"
                     }
                   },
+                  "segments" => [
+                    %{
+                      "lit" => "public"
+                    },
+                    %{
+                      "lit" => "digitalservices"
+                    },
+                    %{
+                      "lit" => "mandatorClearingExportDownload"
+                    },
+                    %{
+                      "var" => "id"
+                    }
+                  ],
                   "select" => %{
                     "exist" => [
                       "id"
@@ -1491,7 +1705,13 @@ defmodule BluefinTecsMerchantServices.Config do
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  }
+                  },
+                  "parts" => [
+                    "public",
+                    "digitalservices",
+                    "mandatorClearingExportDownload",
+                    "{id}"
+                  ]
                 }
               ]
             }
@@ -1519,6 +1739,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$ARRAY`"
             },
             %{
+              "format" => "int32",
               "name" => "responseCode",
               "type" => "`$INTEGER`"
             },
@@ -1538,16 +1759,27 @@ defmodule BluefinTecsMerchantServices.Config do
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/public/digitalservices/mandatorClearingExportSummary",
-                  "parts" => [
-                    "public",
-                    "digitalservices",
-                    "mandatorClearingExportSummary"
+                  "segments" => [
+                    %{
+                      "lit" => "public"
+                    },
+                    %{
+                      "lit" => "digitalservices"
+                    },
+                    %{
+                      "lit" => "mandatorClearingExportSummary"
+                    }
                   ],
                   "select" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  }
+                  },
+                  "parts" => [
+                    "public",
+                    "digitalservices",
+                    "mandatorClearingExportSummary"
+                  ]
                 }
               ]
             }
@@ -1611,6 +1843,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "sourceId",
               "type" => "`$INTEGER`"
             },
@@ -1623,6 +1856,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "terminalId",
               "type" => "`$INTEGER`"
             },
@@ -1639,10 +1873,12 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "date-time",
               "name" => "transactionDateFrom",
               "type" => "`$STRING`"
             },
             %{
+              "format" => "date-time",
               "name" => "transactionDateTo",
               "type" => "`$STRING`"
             },
@@ -1671,15 +1907,23 @@ defmodule BluefinTecsMerchantServices.Config do
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/public/transactionHistoryCsv",
-                  "parts" => [
-                    "public",
-                    "transactionHistoryCsv"
+                  "segments" => [
+                    %{
+                      "lit" => "public"
+                    },
+                    %{
+                      "lit" => "transactionHistoryCsv"
+                    }
                   ],
                   "select" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  }
+                  },
+                  "parts" => [
+                    "public",
+                    "transactionHistoryCsv"
+                  ]
                 }
               ]
             }
@@ -1696,6 +1940,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$ARRAY`"
             },
             %{
+              "format" => "int32",
               "name" => "responseCode",
               "type" => "`$INTEGER`"
             },
@@ -1723,14 +1968,19 @@ defmodule BluefinTecsMerchantServices.Config do
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/moveTid",
-                  "parts" => [
-                    "moveTid"
+                  "segments" => [
+                    %{
+                      "lit" => "moveTid"
+                    }
                   ],
                   "select" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  }
+                  },
+                  "parts" => [
+                    "moveTid"
+                  ]
                 }
               ]
             }
@@ -1747,6 +1997,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "amount",
               "req" => true,
               "short" => "Transaction amount in minor units (cents)",
@@ -1849,15 +2100,23 @@ defmodule BluefinTecsMerchantServices.Config do
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/public/paymentManual",
-                  "parts" => [
-                    "public",
-                    "paymentManual"
+                  "segments" => [
+                    %{
+                      "lit" => "public"
+                    },
+                    %{
+                      "lit" => "paymentManual"
+                    }
                   ],
                   "select" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  }
+                  },
+                  "parts" => [
+                    "public",
+                    "paymentManual"
+                  ]
                 }
               ]
             }
@@ -1869,6 +2128,7 @@ defmodule BluefinTecsMerchantServices.Config do
         "payment_sred" => %{
           "fields" => [
             %{
+              "format" => "int32",
               "name" => "amount",
               "req" => true,
               "short" => "Transaction amount in minor units (cents)",
@@ -1945,15 +2205,23 @@ defmodule BluefinTecsMerchantServices.Config do
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/public/paymentSred",
-                  "parts" => [
-                    "public",
-                    "paymentSred"
+                  "segments" => [
+                    %{
+                      "lit" => "public"
+                    },
+                    %{
+                      "lit" => "paymentSred"
+                    }
                   ],
                   "select" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body.sred`"
-                  }
+                  },
+                  "parts" => [
+                    "public",
+                    "paymentSred"
+                  ]
                 }
               ]
             }
@@ -1977,6 +2245,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "amount",
               "op" => %{
                 "create" => %{
@@ -2008,6 +2277,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "clientId",
               "req" => true,
               "type" => "`$INTEGER`"
@@ -2034,6 +2304,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int64",
               "name" => "exchangeFee",
               "type" => "`$INTEGER`"
             },
@@ -2062,6 +2333,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "originalTraceNumber",
               "type" => "`$INTEGER`"
             },
@@ -2092,6 +2364,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "receiptLayout",
               "type" => "`$INTEGER`"
             },
@@ -2101,6 +2374,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "responseCode",
               "type" => "`$INTEGER`"
             },
@@ -2117,6 +2391,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "terminalId",
               "req" => true,
               "type" => "`$INTEGER`"
@@ -2126,10 +2401,12 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "traceNumber",
               "type" => "`$INTEGER`"
             },
             %{
+              "format" => "date-time",
               "name" => "transactionDate",
               "op" => %{
                 "create" => %{
@@ -2174,30 +2451,46 @@ defmodule BluefinTecsMerchantServices.Config do
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/public/paymentTransaction",
-                  "parts" => [
-                    "public",
-                    "paymentTransaction"
+                  "segments" => [
+                    %{
+                      "lit" => "public"
+                    },
+                    %{
+                      "lit" => "paymentTransaction"
+                    }
                   ],
                   "select" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  }
+                  },
+                  "parts" => [
+                    "public",
+                    "paymentTransaction"
+                  ]
                 },
                 %{
                   "args" => %{},
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/public/preAuthCompletionTransaction",
-                  "parts" => [
-                    "public",
-                    "preAuthCompletionTransaction"
+                  "segments" => [
+                    %{
+                      "lit" => "public"
+                    },
+                    %{
+                      "lit" => "preAuthCompletionTransaction"
+                    }
                   ],
                   "select" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  }
+                  },
+                  "parts" => [
+                    "public",
+                    "preAuthCompletionTransaction"
+                  ]
                 }
               ]
             }
@@ -2226,6 +2519,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "responseCode",
               "type" => "`$INTEGER`"
             },
@@ -2234,6 +2528,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "terminalId",
               "req" => true,
               "type" => "`$INTEGER`"
@@ -2250,14 +2545,19 @@ defmodule BluefinTecsMerchantServices.Config do
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/reactivateTerminal",
-                  "parts" => [
-                    "reactivateTerminal"
+                  "segments" => [
+                    %{
+                      "lit" => "reactivateTerminal"
+                    }
                   ],
                   "select" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  }
+                  },
+                  "parts" => [
+                    "reactivateTerminal"
+                  ]
                 }
               ]
             }
@@ -2281,6 +2581,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "amount",
               "op" => %{
                 "create" => %{
@@ -2307,6 +2608,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "clientId",
               "req" => true,
               "type" => "`$INTEGER`"
@@ -2333,6 +2635,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int64",
               "name" => "exchangeFee",
               "type" => "`$INTEGER`"
             },
@@ -2361,6 +2664,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "originalTraceNumber",
               "type" => "`$INTEGER`"
             },
@@ -2391,6 +2695,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "receiptLayout",
               "type" => "`$INTEGER`"
             },
@@ -2400,6 +2705,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "responseCode",
               "type" => "`$INTEGER`"
             },
@@ -2416,6 +2722,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "terminalId",
               "req" => true,
               "type" => "`$INTEGER`"
@@ -2425,10 +2732,12 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "traceNumber",
               "type" => "`$INTEGER`"
             },
             %{
+              "format" => "date-time",
               "name" => "transactionDate",
               "op" => %{
                 "create" => %{
@@ -2468,15 +2777,23 @@ defmodule BluefinTecsMerchantServices.Config do
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/public/refundTransaction",
-                  "parts" => [
-                    "public",
-                    "refundTransaction"
+                  "segments" => [
+                    %{
+                      "lit" => "public"
+                    },
+                    %{
+                      "lit" => "refundTransaction"
+                    }
                   ],
                   "select" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  }
+                  },
+                  "parts" => [
+                    "public",
+                    "refundTransaction"
+                  ]
                 }
               ]
             }
@@ -2498,6 +2815,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "partnerId",
               "type" => "`$INTEGER`"
             },
@@ -2511,6 +2829,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "responseCode",
               "type" => "`$INTEGER`"
             },
@@ -2535,14 +2854,19 @@ defmodule BluefinTecsMerchantServices.Config do
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/registerTecsCompany",
-                  "parts" => [
-                    "registerTecsCompany"
+                  "segments" => [
+                    %{
+                      "lit" => "registerTecsCompany"
+                    }
                   ],
                   "select" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  }
+                  },
+                  "parts" => [
+                    "registerTecsCompany"
+                  ]
                 }
               ]
             }
@@ -2573,6 +2897,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "responseCode",
               "type" => "`$INTEGER`"
             },
@@ -2595,6 +2920,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "terminalId",
               "type" => "`$INTEGER`"
             },
@@ -2644,14 +2970,19 @@ defmodule BluefinTecsMerchantServices.Config do
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/registerTerminal",
-                  "parts" => [
-                    "registerTerminal"
+                  "segments" => [
+                    %{
+                      "lit" => "registerTerminal"
+                    }
                   ],
                   "select" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  }
+                  },
+                  "parts" => [
+                    "registerTerminal"
+                  ]
                 }
               ]
             }
@@ -2689,6 +3020,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "responseCode",
               "type" => "`$INTEGER`"
             },
@@ -2705,6 +3037,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$OBJECT`"
             },
             %{
+              "format" => "int32",
               "name" => "terminalId",
               "type" => "`$INTEGER`"
             }
@@ -2720,16 +3053,27 @@ defmodule BluefinTecsMerchantServices.Config do
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/public/digitalservices/reportData",
-                  "parts" => [
-                    "public",
-                    "digitalservices",
-                    "reportData"
+                  "segments" => [
+                    %{
+                      "lit" => "public"
+                    },
+                    %{
+                      "lit" => "digitalservices"
+                    },
+                    %{
+                      "lit" => "reportData"
+                    }
                   ],
                   "select" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  }
+                  },
+                  "parts" => [
+                    "public",
+                    "digitalservices",
+                    "reportData"
+                  ]
                 }
               ]
             }
@@ -2749,6 +3093,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "amount",
               "type" => "`$INTEGER`"
             },
@@ -2768,6 +3113,7 @@ defmodule BluefinTecsMerchantServices.Config do
               ]
             },
             %{
+              "format" => "date-time",
               "name" => "authorizationDate",
               "type" => "`$STRING`"
             },
@@ -2788,6 +3134,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "clearingAmount",
               "type" => "`$INTEGER`"
             },
@@ -2800,10 +3147,12 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "date-time",
               "name" => "clearingDate",
               "type" => "`$STRING`"
             },
             %{
+              "format" => "date-time",
               "name" => "clearingProcessedDate",
               "type" => "`$STRING`"
             },
@@ -2812,6 +3161,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "clientId",
               "type" => "`$INTEGER`"
             },
@@ -2848,6 +3198,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "originalTerminalId",
               "type" => "`$INTEGER`"
             },
@@ -2864,6 +3215,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "responseCode",
               "type" => "`$INTEGER`"
             },
@@ -2888,10 +3240,12 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "sourceId",
               "type" => "`$INTEGER`"
             },
             %{
+              "format" => "int32",
               "name" => "tecsengineResponseCode",
               "type" => "`$INTEGER`"
             },
@@ -2900,10 +3254,12 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "date-time",
               "name" => "terminalEndOfDayDate",
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "terminalId",
               "type" => "`$INTEGER`"
             },
@@ -2912,18 +3268,22 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "tipAmount",
               "type" => "`$INTEGER`"
             },
             %{
+              "format" => "int32",
               "name" => "traceNumber",
               "type" => "`$INTEGER`"
             },
             %{
+              "format" => "date-time",
               "name" => "transactionClearingDate",
               "type" => "`$STRING`"
             },
             %{
+              "format" => "date-time",
               "name" => "transactionDate",
               "type" => "`$STRING`"
             },
@@ -2932,10 +3292,12 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int64",
               "name" => "transactionSeqNumber",
               "type" => "`$INTEGER`"
             },
             %{
+              "format" => "date-time",
               "name" => "transactionServerDate",
               "type" => "`$STRING`"
             },
@@ -2959,15 +3321,23 @@ defmodule BluefinTecsMerchantServices.Config do
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/public/statusTransaction",
-                  "parts" => [
-                    "public",
-                    "statusTransaction"
+                  "segments" => [
+                    %{
+                      "lit" => "public"
+                    },
+                    %{
+                      "lit" => "statusTransaction"
+                    }
                   ],
                   "select" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  }
+                  },
+                  "parts" => [
+                    "public",
+                    "statusTransaction"
+                  ]
                 }
               ]
             }
@@ -2987,6 +3357,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "responseCode",
               "type" => "`$INTEGER`"
             },
@@ -3015,14 +3386,19 @@ defmodule BluefinTecsMerchantServices.Config do
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/storeTerminalParameters",
-                  "parts" => [
-                    "storeTerminalParameters"
+                  "segments" => [
+                    %{
+                      "lit" => "storeTerminalParameters"
+                    }
                   ],
                   "select" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  }
+                  },
+                  "parts" => [
+                    "storeTerminalParameters"
+                  ]
                 }
               ]
             }
@@ -3043,6 +3419,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$ARRAY`"
             },
             %{
+              "format" => "int32",
               "name" => "responseCode",
               "type" => "`$INTEGER`"
             },
@@ -3066,15 +3443,23 @@ defmodule BluefinTecsMerchantServices.Config do
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/public/getTerminalId",
-                  "parts" => [
-                    "public",
-                    "getTerminalId"
+                  "segments" => [
+                    %{
+                      "lit" => "public"
+                    },
+                    %{
+                      "lit" => "getTerminalId"
+                    }
                   ],
                   "select" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  }
+                  },
+                  "parts" => [
+                    "public",
+                    "getTerminalId"
+                  ]
                 }
               ]
             }
@@ -3138,6 +3523,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "responseCode",
               "type" => "`$INTEGER`"
             },
@@ -3150,6 +3536,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "sourceId",
               "type" => "`$INTEGER`"
             },
@@ -3162,6 +3549,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "terminalId",
               "type" => "`$INTEGER`"
             },
@@ -3178,10 +3566,12 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "date-time",
               "name" => "transactionDateFrom",
               "type" => "`$STRING`"
             },
             %{
+              "format" => "date-time",
               "name" => "transactionDateTo",
               "type" => "`$STRING`"
             },
@@ -3214,31 +3604,50 @@ defmodule BluefinTecsMerchantServices.Config do
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/public/mcom/transactionHistory",
-                  "parts" => [
-                    "public",
-                    "mcom",
-                    "transactionHistory"
+                  "segments" => [
+                    %{
+                      "lit" => "public"
+                    },
+                    %{
+                      "lit" => "mcom"
+                    },
+                    %{
+                      "lit" => "transactionHistory"
+                    }
                   ],
                   "select" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  }
+                  },
+                  "parts" => [
+                    "public",
+                    "mcom",
+                    "transactionHistory"
+                  ]
                 },
                 %{
                   "args" => %{},
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/public/transactionHistory",
-                  "parts" => [
-                    "public",
-                    "transactionHistory"
+                  "segments" => [
+                    %{
+                      "lit" => "public"
+                    },
+                    %{
+                      "lit" => "transactionHistory"
+                    }
                   ],
                   "select" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  }
+                  },
+                  "parts" => [
+                    "public",
+                    "transactionHistory"
+                  ]
                 }
               ]
             }
@@ -3254,6 +3663,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "responseCode",
               "type" => "`$INTEGER`"
             },
@@ -3262,6 +3672,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "date-time",
               "name" => "transactionDateFrom",
               "op" => %{
                 "create" => %{
@@ -3272,6 +3683,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "date-time",
               "name" => "transactionDateTo",
               "op" => %{
                 "create" => %{
@@ -3297,30 +3709,46 @@ defmodule BluefinTecsMerchantServices.Config do
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/public/countAuthorisedTransactions",
-                  "parts" => [
-                    "public",
-                    "countAuthorisedTransactions"
+                  "segments" => [
+                    %{
+                      "lit" => "public"
+                    },
+                    %{
+                      "lit" => "countAuthorisedTransactions"
+                    }
                   ],
                   "select" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  }
+                  },
+                  "parts" => [
+                    "public",
+                    "countAuthorisedTransactions"
+                  ]
                 },
                 %{
                   "args" => %{},
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/public/countNotAuthorisedTransactions",
-                  "parts" => [
-                    "public",
-                    "countNotAuthorisedTransactions"
+                  "segments" => [
+                    %{
+                      "lit" => "public"
+                    },
+                    %{
+                      "lit" => "countNotAuthorisedTransactions"
+                    }
                   ],
                   "select" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  }
+                  },
+                  "parts" => [
+                    "public",
+                    "countNotAuthorisedTransactions"
+                  ]
                 }
               ]
             }
@@ -3336,6 +3764,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "responseCode",
               "type" => "`$INTEGER`"
             },
@@ -3344,6 +3773,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "date-time",
               "name" => "transactionDateFrom",
               "op" => %{
                 "create" => %{
@@ -3354,6 +3784,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "date-time",
               "name" => "transactionDateTo",
               "op" => %{
                 "create" => %{
@@ -3379,15 +3810,23 @@ defmodule BluefinTecsMerchantServices.Config do
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/public/countTransactionsByCardBrand",
-                  "parts" => [
-                    "public",
-                    "countTransactionsByCardBrand"
+                  "segments" => [
+                    %{
+                      "lit" => "public"
+                    },
+                    %{
+                      "lit" => "countTransactionsByCardBrand"
+                    }
                   ],
                   "select" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  }
+                  },
+                  "parts" => [
+                    "public",
+                    "countTransactionsByCardBrand"
+                  ]
                 }
               ]
             }
@@ -3403,6 +3842,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "responseCode",
               "type" => "`$INTEGER`"
             },
@@ -3411,6 +3851,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "date-time",
               "name" => "transactionDateFrom",
               "op" => %{
                 "create" => %{
@@ -3421,6 +3862,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "date-time",
               "name" => "transactionDateTo",
               "op" => %{
                 "create" => %{
@@ -3446,15 +3888,23 @@ defmodule BluefinTecsMerchantServices.Config do
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/public/transactionTurnover",
-                  "parts" => [
-                    "public",
-                    "transactionTurnover"
+                  "segments" => [
+                    %{
+                      "lit" => "public"
+                    },
+                    %{
+                      "lit" => "transactionTurnover"
+                    }
                   ],
                   "select" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  }
+                  },
+                  "parts" => [
+                    "public",
+                    "transactionTurnover"
+                  ]
                 }
               ]
             }
@@ -3487,6 +3937,7 @@ defmodule BluefinTecsMerchantServices.Config do
               "type" => "`$STRING`"
             },
             %{
+              "format" => "int32",
               "name" => "responseCode",
               "type" => "`$INTEGER`"
             },
@@ -3522,15 +3973,23 @@ defmodule BluefinTecsMerchantServices.Config do
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/public/updateMerchant",
-                  "parts" => [
-                    "public",
-                    "updateMerchant"
+                  "segments" => [
+                    %{
+                      "lit" => "public"
+                    },
+                    %{
+                      "lit" => "updateMerchant"
+                    }
                   ],
                   "select" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  }
+                  },
+                  "parts" => [
+                    "public",
+                    "updateMerchant"
+                  ]
                 }
               ]
             }
@@ -3542,6 +4001,7 @@ defmodule BluefinTecsMerchantServices.Config do
         "update_template_xml" => %{
           "fields" => [
             %{
+              "format" => "int32",
               "name" => "responseCode",
               "type" => "`$INTEGER`"
             },
@@ -3571,15 +4031,23 @@ defmodule BluefinTecsMerchantServices.Config do
                   "kind" => "http",
                   "method" => "POST",
                   "orig" => "/public/updateTemplateXml",
-                  "parts" => [
-                    "public",
-                    "updateTemplateXml"
+                  "segments" => [
+                    %{
+                      "lit" => "public"
+                    },
+                    %{
+                      "lit" => "updateTemplateXml"
+                    }
                   ],
                   "select" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  }
+                  },
+                  "parts" => [
+                    "public",
+                    "updateTemplateXml"
+                  ]
                 }
               ]
             }
@@ -3614,15 +4082,23 @@ defmodule BluefinTecsMerchantServices.Config do
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/public/version",
-                  "parts" => [
-                    "public",
-                    "version"
+                  "segments" => [
+                    %{
+                      "lit" => "public"
+                    },
+                    %{
+                      "lit" => "version"
+                    }
                   ],
                   "select" => %{},
                   "transform" => %{
                     "req" => "`reqdata`",
                     "res" => "`body`"
-                  }
+                  },
+                  "parts" => [
+                    "public",
+                    "version"
+                  ]
                 }
               ]
             }

@@ -11,6 +11,7 @@ main: kit: entity: move_tid: {
       type: "`$ARRAY`"
     }
     {
+      format: "int32"
       name: "responseCode"
       req: false
       type: "`$INTEGER`"
@@ -40,8 +41,10 @@ main: kit: entity: move_tid: {
         {
           method: "POST"
           orig: "/moveTid"
-          parts: [
-            "moveTid"
+          segments: [
+            {
+              lit: "moveTid"
+            }
           ]
           transform: {
             req: "`reqdata`"

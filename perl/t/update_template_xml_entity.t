@@ -90,7 +90,7 @@ sub update_template_xml_basic_setup {
     'BLUEFIN_TECS_MERCHANT_SERVICES_TEST_UPDATE_TEMPLATE_XML_ENTID' => $idmap,
     'BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE' => 'FALSE',
     'BLUEFIN_TECS_MERCHANT_SERVICES_TEST_EXPLAIN' => 'FALSE',
-    'BLUEFIN_TECS_MERCHANT_SERVICES_APIKEY' => 'NONE',
+    'BLUEFIN_TECS_MERCHANT_SERVICES_APIKEY' => '',
   });
 
   my $idmap_resolved = BluefinTecsMerchantServicesHelpers::to_map($env->{'BLUEFIN_TECS_MERCHANT_SERVICES_TEST_UPDATE_TEMPLATE_XML_ENTID'});
@@ -100,6 +100,9 @@ sub update_template_xml_basic_setup {
 
   if ((($env->{'BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE'}) || '') eq 'TRUE') {
     my $merged_opts = Voxgig::Struct::merge([
+      # FIRST, so the generated fields below win: sdk-test-control.json's
+      # test.client.options adds to the live client, it does not redirect it.
+      BluefinTecsMerchantServicesTestRunner::live_client_options(),
       {
         'apikey' => $env->{'BLUEFIN_TECS_MERCHANT_SERVICES_APIKEY'},
       },

@@ -71,6 +71,7 @@ main: kit: entity: merchant_portal_services_api: {
       type: "`$STRING`"
     }
     {
+      format: "int32"
       name: "sourceId"
       req: false
       type: "`$INTEGER`"
@@ -86,6 +87,7 @@ main: kit: entity: merchant_portal_services_api: {
       type: "`$STRING`"
     }
     {
+      format: "int32"
       name: "terminalId"
       req: false
       type: "`$INTEGER`"
@@ -106,11 +108,13 @@ main: kit: entity: merchant_portal_services_api: {
       type: "`$STRING`"
     }
     {
+      format: "date-time"
       name: "transactionDateFrom"
       req: false
       type: "`$STRING`"
     }
     {
+      format: "date-time"
       name: "transactionDateTo"
       req: false
       type: "`$STRING`"
@@ -141,9 +145,13 @@ main: kit: entity: merchant_portal_services_api: {
         {
           method: "POST"
           orig: "/public/transactionHistoryCsv"
-          parts: [
-            "public"
-            "transactionHistoryCsv"
+          segments: [
+            {
+              lit: "public"
+            }
+            {
+              lit: "transactionHistoryCsv"
+            }
           ]
           transform: {
             req: "`reqdata`"

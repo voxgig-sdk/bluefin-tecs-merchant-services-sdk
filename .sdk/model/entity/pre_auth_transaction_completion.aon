@@ -21,6 +21,7 @@ main: kit: entity: pre_auth_transaction_completion: {
       type: "`$STRING`"
     }
     {
+      format: "int32"
       name: "amount"
       op: {
         create: {
@@ -57,6 +58,7 @@ main: kit: entity: pre_auth_transaction_completion: {
       type: "`$STRING`"
     }
     {
+      format: "int32"
       name: "clientId"
       req: true
       type: "`$INTEGER`"
@@ -87,6 +89,7 @@ main: kit: entity: pre_auth_transaction_completion: {
       type: "`$STRING`"
     }
     {
+      format: "int64"
       name: "exchangeFee"
       req: false
       type: "`$INTEGER`"
@@ -122,6 +125,7 @@ main: kit: entity: pre_auth_transaction_completion: {
       type: "`$STRING`"
     }
     {
+      format: "int32"
       name: "originalTraceNumber"
       req: false
       type: "`$INTEGER`"
@@ -158,6 +162,7 @@ main: kit: entity: pre_auth_transaction_completion: {
       type: "`$STRING`"
     }
     {
+      format: "int32"
       name: "receiptLayout"
       req: false
       type: "`$INTEGER`"
@@ -168,6 +173,7 @@ main: kit: entity: pre_auth_transaction_completion: {
       type: "`$STRING`"
     }
     {
+      format: "int32"
       name: "responseCode"
       req: false
       type: "`$INTEGER`"
@@ -188,6 +194,7 @@ main: kit: entity: pre_auth_transaction_completion: {
       type: "`$STRING`"
     }
     {
+      format: "int32"
       name: "terminalId"
       req: true
       type: "`$INTEGER`"
@@ -198,11 +205,13 @@ main: kit: entity: pre_auth_transaction_completion: {
       type: "`$STRING`"
     }
     {
+      format: "int32"
       name: "traceNumber"
       req: false
       type: "`$INTEGER`"
     }
     {
+      format: "date-time"
       name: "transactionDate"
       op: {
         create: {
@@ -249,9 +258,13 @@ main: kit: entity: pre_auth_transaction_completion: {
         {
           method: "POST"
           orig: "/public/paymentTransaction"
-          parts: [
-            "public"
-            "paymentTransaction"
+          segments: [
+            {
+              lit: "public"
+            }
+            {
+              lit: "paymentTransaction"
+            }
           ]
           transform: {
             req: "`reqdata`"
@@ -261,9 +274,13 @@ main: kit: entity: pre_auth_transaction_completion: {
         {
           method: "POST"
           orig: "/public/preAuthCompletionTransaction"
-          parts: [
-            "public"
-            "preAuthCompletionTransaction"
+          segments: [
+            {
+              lit: "public"
+            }
+            {
+              lit: "preAuthCompletionTransaction"
+            }
           ]
           transform: {
             req: "`reqdata`"

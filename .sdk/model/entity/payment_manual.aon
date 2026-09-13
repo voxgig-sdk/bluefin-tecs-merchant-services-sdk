@@ -12,6 +12,7 @@ main: kit: entity: payment_manual: {
       type: "`$STRING`"
     }
     {
+      format: "int32"
       name: "amount"
       req: true
       short: "Transaction amount in minor units (cents)"
@@ -123,9 +124,13 @@ main: kit: entity: payment_manual: {
         {
           method: "POST"
           orig: "/public/paymentManual"
-          parts: [
-            "public"
-            "paymentManual"
+          segments: [
+            {
+              lit: "public"
+            }
+            {
+              lit: "paymentManual"
+            }
           ]
           transform: {
             req: "`reqdata`"

@@ -52,7 +52,7 @@ func TestStatusTransactionEntity(t *testing.T) {
 		// CREATE
 		statusTransactionRef01Ent := client.StatusTransaction(nil)
 		statusTransactionRef01Data := core.ToMapAny(vs.GetProp(
-			vs.GetPath([]any{"new", "status_transaction"}, setup.data), "status_transaction_ref01"))
+			vs.GetPath(setup.data, []any{"new", "status_transaction"}), "status_transaction_ref01"))
 
 		statusTransactionRef01DataResult, err := statusTransactionRef01Ent.Create(statusTransactionRef01Data, nil)
 		if err != nil {
@@ -90,7 +90,7 @@ func status_transactionBasicSetup(extra map[string]any) *entityTestSetup {
 	client := sdk.TestSDK(options, extra)
 
 	// Generate idmap via transform, matching TS pattern.
-	idmap := vs.Transform(
+	idmap, _ := vs.Transform(
 		[]any{"status_transaction01", "status_transaction02", "status_transaction03"},
 		map[string]any{
 			"`$PACK`": []any{"", map[string]any{
@@ -110,7 +110,7 @@ func status_transactionBasicSetup(extra map[string]any) *entityTestSetup {
 		"BLUEFIN_TECS_MERCHANT_SERVICES_TEST_STATUS_TRANSACTION_ENTID": idmap,
 		"BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE":      "FALSE",
 		"BLUEFIN_TECS_MERCHANT_SERVICES_TEST_EXPLAIN":   "FALSE",
-		"BLUEFIN_TECS_MERCHANT_SERVICES_APIKEY":         "NONE",
+		"BLUEFIN_TECS_MERCHANT_SERVICES_APIKEY":         "",
 	})
 
 	idmapResolved := core.ToMapAny(env["BLUEFIN_TECS_MERCHANT_SERVICES_TEST_STATUS_TRANSACTION_ENTID"])
@@ -119,11 +119,23 @@ func status_transactionBasicSetup(extra map[string]any) *entityTestSetup {
 	}
 
 	if env["BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE"] == "TRUE" {
+		// An empty map, not a nil one: Merge returns nil when its last entry
+		// is nil, and BasicSetup is normally called with no extras - so a
+		// bare nil silently discarded the apikey and server values below.
+		extraOpts := extra
+		if extraOpts == nil {
+			extraOpts = map[string]any{}
+		}
+
 		mergedOpts := vs.Merge([]any{
+			// liveClientOptions() FIRST, so the generated fields below win:
+			// sdk-test-control.json's test.client.options adds to the live
+			// client, it does not redirect it.
+			liveClientOptions(),
 			map[string]any{
 				"apikey": env["BLUEFIN_TECS_MERCHANT_SERVICES_APIKEY"],
 			},
-			extra,
+			extraOpts,
 		})
 		client = sdk.NewBluefinTecsMerchantServicesSDK(core.ToMapAny(mergedOpts))
 	}

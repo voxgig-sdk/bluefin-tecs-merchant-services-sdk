@@ -16,6 +16,7 @@ main: kit: entity: status_transaction: {
       type: "`$STRING`"
     }
     {
+      format: "int32"
       name: "amount"
       req: false
       type: "`$INTEGER`"
@@ -38,6 +39,7 @@ main: kit: entity: status_transaction: {
       ]
     }
     {
+      format: "date-time"
       name: "authorizationDate"
       req: false
       type: "`$STRING`"
@@ -63,6 +65,7 @@ main: kit: entity: status_transaction: {
       type: "`$STRING`"
     }
     {
+      format: "int32"
       name: "clearingAmount"
       req: false
       type: "`$INTEGER`"
@@ -78,11 +81,13 @@ main: kit: entity: status_transaction: {
       type: "`$STRING`"
     }
     {
+      format: "date-time"
       name: "clearingDate"
       req: false
       type: "`$STRING`"
     }
     {
+      format: "date-time"
       name: "clearingProcessedDate"
       req: false
       type: "`$STRING`"
@@ -93,6 +98,7 @@ main: kit: entity: status_transaction: {
       type: "`$STRING`"
     }
     {
+      format: "int32"
       name: "clientId"
       req: false
       type: "`$INTEGER`"
@@ -138,6 +144,7 @@ main: kit: entity: status_transaction: {
       type: "`$STRING`"
     }
     {
+      format: "int32"
       name: "originalTerminalId"
       req: false
       type: "`$INTEGER`"
@@ -158,6 +165,7 @@ main: kit: entity: status_transaction: {
       type: "`$STRING`"
     }
     {
+      format: "int32"
       name: "responseCode"
       req: false
       type: "`$INTEGER`"
@@ -188,11 +196,13 @@ main: kit: entity: status_transaction: {
       type: "`$STRING`"
     }
     {
+      format: "int32"
       name: "sourceId"
       req: false
       type: "`$INTEGER`"
     }
     {
+      format: "int32"
       name: "tecsengineResponseCode"
       req: false
       type: "`$INTEGER`"
@@ -203,11 +213,13 @@ main: kit: entity: status_transaction: {
       type: "`$STRING`"
     }
     {
+      format: "date-time"
       name: "terminalEndOfDayDate"
       req: false
       type: "`$STRING`"
     }
     {
+      format: "int32"
       name: "terminalId"
       req: false
       type: "`$INTEGER`"
@@ -218,21 +230,25 @@ main: kit: entity: status_transaction: {
       type: "`$STRING`"
     }
     {
+      format: "int32"
       name: "tipAmount"
       req: false
       type: "`$INTEGER`"
     }
     {
+      format: "int32"
       name: "traceNumber"
       req: false
       type: "`$INTEGER`"
     }
     {
+      format: "date-time"
       name: "transactionClearingDate"
       req: false
       type: "`$STRING`"
     }
     {
+      format: "date-time"
       name: "transactionDate"
       req: false
       type: "`$STRING`"
@@ -243,11 +259,13 @@ main: kit: entity: status_transaction: {
       type: "`$STRING`"
     }
     {
+      format: "int64"
       name: "transactionSeqNumber"
       req: false
       type: "`$INTEGER`"
     }
     {
+      format: "date-time"
       name: "transactionServerDate"
       req: false
       type: "`$STRING`"
@@ -272,9 +290,13 @@ main: kit: entity: status_transaction: {
         {
           method: "POST"
           orig: "/public/statusTransaction"
-          parts: [
-            "public"
-            "statusTransaction"
+          segments: [
+            {
+              lit: "public"
+            }
+            {
+              lit: "statusTransaction"
+            }
           ]
           transform: {
             req: "`reqdata`"

@@ -6,6 +6,7 @@ main: kit: entity: introduce_package: {
 
   fields: [
     {
+      format: "int32"
       name: "responseCode"
       req: false
       type: "`$INTEGER`"
@@ -30,8 +31,10 @@ main: kit: entity: introduce_package: {
         {
           method: "POST"
           orig: "/introducePackage"
-          parts: [
-            "introducePackage"
+          segments: [
+            {
+              lit: "introducePackage"
+            }
           ]
           transform: {
             req: "`reqdata`"

@@ -76,7 +76,7 @@ def check_card_black_listed_basic_setup(extra)
     "BLUEFIN_TECS_MERCHANT_SERVICES_TEST_CHECK_CARD_BLACK_LISTED_ENTID" => idmap,
     "BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE" => "FALSE",
     "BLUEFIN_TECS_MERCHANT_SERVICES_TEST_EXPLAIN" => "FALSE",
-    "BLUEFIN_TECS_MERCHANT_SERVICES_APIKEY" => "NONE",
+    "BLUEFIN_TECS_MERCHANT_SERVICES_APIKEY" => "",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -87,6 +87,9 @@ def check_card_black_listed_basic_setup(extra)
 
   if env["BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
+      # FIRST, so the generated fields below win: sdk-test-control.json's
+      # test.client.options adds to the live client, it does not redirect it.
+      Runner.live_client_options,
       {
         "apikey" => env["BLUEFIN_TECS_MERCHANT_SERVICES_APIKEY"],
       },

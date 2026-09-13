@@ -26,6 +26,7 @@ main: kit: entity: reactivate_terminal: {
       type: "`$STRING`"
     }
     {
+      format: "int32"
       name: "responseCode"
       req: false
       type: "`$INTEGER`"
@@ -36,6 +37,7 @@ main: kit: entity: reactivate_terminal: {
       type: "`$STRING`"
     }
     {
+      format: "int32"
       name: "terminalId"
       req: true
       type: "`$INTEGER`"
@@ -50,8 +52,10 @@ main: kit: entity: reactivate_terminal: {
         {
           method: "POST"
           orig: "/reactivateTerminal"
-          parts: [
-            "reactivateTerminal"
+          segments: [
+            {
+              lit: "reactivateTerminal"
+            }
           ]
           transform: {
             req: "`reqdata`"

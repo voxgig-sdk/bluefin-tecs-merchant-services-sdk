@@ -33,6 +33,7 @@ main: kit: entity: report_data: {
       type: "`$STRING`"
     }
     {
+      format: "int32"
       name: "responseCode"
       req: false
       type: "`$INTEGER`"
@@ -53,6 +54,7 @@ main: kit: entity: report_data: {
       type: "`$OBJECT`"
     }
     {
+      format: "int32"
       name: "terminalId"
       req: false
       type: "`$INTEGER`"
@@ -67,10 +69,16 @@ main: kit: entity: report_data: {
         {
           method: "POST"
           orig: "/public/digitalservices/reportData"
-          parts: [
-            "public"
-            "digitalservices"
-            "reportData"
+          segments: [
+            {
+              lit: "public"
+            }
+            {
+              lit: "digitalservices"
+            }
+            {
+              lit: "reportData"
+            }
           ]
           transform: {
             req: "`reqdata`"

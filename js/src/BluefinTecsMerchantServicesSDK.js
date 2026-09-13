@@ -51,6 +51,7 @@ const { BluefinTecsMerchantServicesEntityBase } = require('./BluefinTecsMerchant
 const { BaseFeature } = require('./feature/base/BaseFeature')
 
 
+
 const stdutil = new Utility()
 
 
@@ -60,6 +61,7 @@ class BluefinTecsMerchantServicesSDK {
   _utility = new Utility()
   _features
   _rootctx
+  
 
   constructor(options) {
 
@@ -132,6 +134,8 @@ class BluefinTecsMerchantServicesSDK {
     return this._utility.struct.clone(this._utility)
   }
 
+  
+
 
   async prepare(fetchargs) {
     const utility = this._utility
@@ -177,6 +181,8 @@ class BluefinTecsMerchantServicesSDK {
         spec.headers[key] = uheaders[key]
       }
     }
+
+    
 
     // Apply SDK auth (apikey, auth prefix, etc.)
     const authResult = prepareAuth(ctx)
@@ -725,6 +731,7 @@ const SDK = BluefinTecsMerchantServicesSDK
 module.exports = {
   stdutil,
   config,
+  
 
   BaseFeature,
   BluefinTecsMerchantServicesEntityBase,
