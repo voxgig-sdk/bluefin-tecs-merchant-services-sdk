@@ -55,6 +55,12 @@ main: kit: entity: register_tecs_company: {
       name: "create"
       points: [
         {
+          contract: {
+            id: "POST /registerTecsCompany"
+            json: "{\"operationId\":\"registerTecsCompany\",\"parameters\":[],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"corporateUuid\":{\"minLength\":1,\"type\":\"string\"},\"packageOrderUuid\":{\"minLength\":1,\"type\":\"string\"},\"partnerId\":{\"format\":\"int32\",\"type\":\"integer\"},\"partnerName\":{\"type\":\"string\"},\"productOrderUuid\":{\"minLength\":1,\"type\":\"string\"},\"templateName\":{\"minLength\":1,\"type\":\"string\"}},\"required\":[\"corporateUuid\",\"packageOrderUuid\",\"productOrderUuid\",\"templateName\"],\"type\":\"object\"}}},\"required\":true},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Successful operation\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"type\":\"string\"}}},\"description\":\"\\n* Mandator not found\\n* Invalid template \\n              \"},\"401\":{\"content\":{\"application/json\":{\"schema\":{\"type\":\"string\"}}},\"description\":\"Unauthorized - Authentication failed, e.g. when user is not active\"},\"403\":{\"content\":{\"application/json\":{\"schema\":{\"type\":\"string\"}}},\"description\":\"Forbidden - Missing role: TE_MERCHANT_TERMINAL_MANAGEMENT\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"type\":\"string\"}}},\"description\":\"Internal server error\"}},\"security\":[{\"bearer-key\":[]}],\"securitySchemes\":{\"basic-key\":{\"scheme\":\"basic\",\"type\":\"http\"},\"bearer-key\":{\"bearerFormat\":\"JWT\",\"scheme\":\"bearer\",\"type\":\"http\"},\"tecsweb-key\":{\"description\":\"TecsWeb token\",\"in\":\"header\",\"name\":\"TecsWebToken\",\"type\":\"apiKey\"}},\"securitySource\":\"operation\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "POST"
           orig: "/registerTecsCompany"
           segments: [

@@ -3,7 +3,7 @@
     "move_tid": {
       "MOVE_TID00": {
         "productorderuuids": [],
-        "responseCode": "s33",
+        "responseCode": 51,
         "responseMessage": "s34",
         "targetPackageorderuuid": "s35",
         "targetProductorderuuid": "s36",
@@ -11,7 +11,7 @@
       },
       "MOVE_TID01": {
         "productorderuuids": [],
-        "responseCode": "s65",
+        "responseCode": 101,
         "responseMessage": "s66",
         "targetPackageorderuuid": "s67",
         "targetProductorderuuid": "s68",
@@ -19,7 +19,7 @@
       },
       "MOVE_TID02": {
         "productorderuuids": [],
-        "responseCode": "s97",
+        "responseCode": 151,
         "responseMessage": "s98",
         "targetPackageorderuuid": "s99",
         "targetProductorderuuid": "s9a",
@@ -31,10 +31,171 @@
     "move_tid": {
       "move_tid_ref01": {
         "productorderuuids": [],
-        "responseCode": "sc9",
+        "responseCode": 201,
         "responseMessage": "sca",
         "targetPackageorderuuid": "scb",
         "targetProductorderuuid": "scc"
+      }
+    }
+  },
+  "requests": {
+    "POST /moveTid": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "moveTid",
+        "parameters": [],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "productorderuuids": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "minItems": 1,
+                    "type": "array"
+                  },
+                  "targetPackageorderuuid": {
+                    "type": "string"
+                  },
+                  "targetProductorderuuid": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "productorderuuids"
+                ],
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "In case the terminal ID is moved successfully"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Bad request"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Unauthenticated - Authentication failed"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Unauthorized - Missing role BO_MP_MOVE_TID"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "security": [
+          {
+            "bearer-key": []
+          },
+          {
+            "basic-key": []
+          }
+        ],
+        "securitySchemes": {
+          "basic-key": {
+            "scheme": "basic",
+            "type": "http"
+          },
+          "bearer-key": {
+            "bearerFormat": "JWT",
+            "scheme": "bearer",
+            "type": "http"
+          },
+          "tecsweb-key": {
+            "description": "TecsWeb token",
+            "in": "header",
+            "name": "TecsWebToken",
+            "type": "apiKey"
+          }
+        },
+        "securitySource": "operation"
       }
     }
   }

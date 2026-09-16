@@ -5,7 +5,7 @@
         "corporateUuid": [],
         "filter": {},
         "pagination": {},
-        "responseCode": "s3f",
+        "responseCode": 63,
         "responseMessage": "s40",
         "terminals": [],
         "id": "LIST_TERMINAL00"
@@ -14,7 +14,7 @@
         "corporateUuid": [],
         "filter": {},
         "pagination": {},
-        "responseCode": "s7b",
+        "responseCode": 123,
         "responseMessage": "s7c",
         "terminals": [],
         "id": "LIST_TERMINAL01"
@@ -23,7 +23,7 @@
         "corporateUuid": [],
         "filter": {},
         "pagination": {},
-        "responseCode": "sb7",
+        "responseCode": 183,
         "responseMessage": "sb8",
         "terminals": [],
         "id": "LIST_TERMINAL02"
@@ -36,9 +36,249 @@
         "corporateUuid": [],
         "filter": {},
         "pagination": {},
-        "responseCode": "sf3",
+        "responseCode": 243,
         "responseMessage": "sf4",
         "terminals": []
+      }
+    }
+  },
+  "requests": {
+    "POST /public/listTerminals": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "listTerminals",
+        "parameters": [],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "corporateUuid": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "type": "array"
+                  },
+                  "filter": {
+                    "properties": {
+                      "corporateUuid": {
+                        "items": {
+                          "type": "string"
+                        },
+                        "type": "array"
+                      },
+                      "fulltextSearch": {
+                        "type": "string"
+                      },
+                      "hwserialno": {
+                        "items": {
+                          "type": "string"
+                        },
+                        "type": "array"
+                      },
+                      "terminalType": {
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "pagination": {
+                    "properties": {
+                      "page": {
+                        "format": "int32",
+                        "type": "integer"
+                      },
+                      "size": {
+                        "format": "int32",
+                        "type": "integer"
+                      }
+                    },
+                    "type": "object"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    },
+                    "terminals": {
+                      "items": {
+                        "properties": {
+                          "acquirings": {
+                            "items": {
+                              "properties": {
+                                "name": {
+                                  "type": "string"
+                                },
+                                "productOrderUuid": {
+                                  "type": "string"
+                                }
+                              },
+                              "type": "object"
+                            },
+                            "type": "array"
+                          },
+                          "currency": {
+                            "type": "string"
+                          },
+                          "hwSerialNo": {
+                            "type": "string"
+                          },
+                          "kaDateTimeCreate": {
+                            "format": "date-time",
+                            "type": "string"
+                          },
+                          "keepAliveStatus": {
+                            "type": "string"
+                          },
+                          "mpExpectedSerialNo": {
+                            "type": "string"
+                          },
+                          "no": {
+                            "type": "string"
+                          },
+                          "packageOrderUuid": {
+                            "type": "string"
+                          },
+                          "status": {
+                            "type": "string"
+                          },
+                          "termLocation": {
+                            "type": "string"
+                          },
+                          "termModel": {
+                            "type": "string"
+                          },
+                          "termn": {
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Bad request"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Unauthenticated - Authentication failed"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Unauthorized - Missing role TE_MERCHANT_TERMINAL_MANAGEMENT"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "security": [
+          {
+            "bearer-key": []
+          }
+        ],
+        "securitySchemes": {
+          "basic-key": {
+            "scheme": "basic",
+            "type": "http"
+          },
+          "bearer-key": {
+            "bearerFormat": "JWT",
+            "scheme": "bearer",
+            "type": "http"
+          },
+          "tecsweb-key": {
+            "description": "TecsWeb token",
+            "in": "header",
+            "name": "TecsWebToken",
+            "type": "apiKey"
+          }
+        },
+        "securitySource": "operation"
       }
     }
   }

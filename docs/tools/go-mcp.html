@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Go MCP server | Merchant Services</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><a class="skip" href="#content">Skip to content</a>
+<header class="site-header"><a class="site-title" href="../index.html">Merchant Services<span>SDK documentation</span></a><div class="site-links"><a class="repo-link" href="https://github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk">voxgig-sdk/bluefin-tecs-merchant-services-sdk</a></div></header>
+<div class="site-notice" role="note"></div>
+<div class="shell"><nav class="site-nav" aria-label="Documentation"><div class="search"><label for="search">Search documentation</label><input id="search" type="search" data-base="../" placeholder="Find a guide or reference"><div id="results" aria-live="polite"></div></div><details><summary>Overview</summary><a href="../index.html">Merchant Services</a></details>
+<details><summary>API</summary><a href="../api/index.html">API overview</a>
+<a href="../api/cancel_transaction.html">CancelTransaction</a>
+<a href="../api/check_card_black_listed.html">CheckCardBlackListed</a>
+<a href="../api/create_product.html">CreateProduct</a>
+<a href="../api/deactivate_terminal.html">DeactivateTerminal</a>
+<a href="../api/digital_services_api.html">DigitalServicesApi</a>
+<a href="../api/ec_data_ecom.html">EcDataEcom</a>
+<a href="../api/ecom_parameter.html">EcomParameter</a>
+<a href="../api/ecr_data.html">EcrData</a>
+<a href="../api/emv_data.html">EmvData</a>
+<a href="../api/enable_acquiring.html">EnableAcquiring</a>
+<a href="../api/get_merchant_contract_number.html">GetMerchantContractNumber</a>
+<a href="../api/get_template_xml.html">GetTemplateXml</a>
+<a href="../api/introduce_mandator.html">IntroduceMandator</a>
+<a href="../api/introduce_package.html">IntroducePackage</a>
+<a href="../api/keep_alive.html">KeepAlive</a>
+<a href="../api/list_terminal.html">ListTerminal</a>
+<a href="../api/mandator_clearing_export.html">MandatorClearingExport</a>
+<a href="../api/mandator_clearing_export_download.html">MandatorClearingExportDownload</a>
+<a href="../api/mandator_clearing_export_summary.html">MandatorClearingExportSummary</a>
+<a href="../api/merchant_portal_services_api.html">MerchantPortalServicesApi</a>
+<a href="../api/move_tid.html">MoveTid</a>
+<a href="../api/payment_manual.html">PaymentManual</a>
+<a href="../api/payment_sred.html">PaymentSred</a>
+<a href="../api/pre_auth_transaction_completion.html">PreAuthTransactionCompletion</a>
+<a href="../api/reactivate_terminal.html">ReactivateTerminal</a>
+<a href="../api/refund_transaction.html">RefundTransaction</a>
+<a href="../api/register_tecs_company.html">RegisterTecsCompany</a>
+<a href="../api/register_terminal.html">RegisterTerminal</a>
+<a href="../api/report_data.html">ReportData</a>
+<a href="../api/status_transaction.html">StatusTransaction</a>
+<a href="../api/store_terminal_parameter.html">StoreTerminalParameter</a>
+<a href="../api/terminal_id.html">TerminalId</a>
+<a href="../api/transaction_history.html">TransactionHistory</a>
+<a href="../api/transactions_count.html">TransactionsCount</a>
+<a href="../api/transactions_count_card_brand.html">TransactionsCountCardBrand</a>
+<a href="../api/transactions_turnover.html">TransactionsTurnover</a>
+<a href="../api/update_merchant.html">UpdateMerchant</a>
+<a href="../api/update_template_xml.html">UpdateTemplateXml</a>
+<a href="../api/version.html">Version</a></details>
+<details><summary>Guides</summary><a href="../guides/authentication.html">Authentication</a>
+<a href="../guides/first-call.html">Make your first API call</a>
+<a href="../guides/errors.html">Handle errors</a>
+<a href="../guides/concepts.html">Entities, SDKs, and tools</a></details>
+<details><summary>SDKs</summary><a href="../sdks/c.html">C</a>
+<a href="../sdks/clojure.html">Clojure</a>
+<a href="../sdks/cpp.html">C++</a>
+<a href="../sdks/csharp.html">C#</a>
+<a href="../sdks/dart.html">Dart</a>
+<a href="../sdks/elixir.html">Elixir</a>
+<a href="../sdks/go.html">Golang</a>
+<a href="../sdks/haskell.html">Haskell</a>
+<a href="../sdks/java.html">Java</a>
+<a href="../sdks/js.html">JavaScript</a>
+<a href="../sdks/kotlin.html">Kotlin</a>
+<a href="../sdks/lean.html">Lean</a>
+<a href="../sdks/lua.html">Lua</a>
+<a href="../sdks/ocaml.html">OCaml</a>
+<a href="../sdks/perl.html">Perl</a>
+<a href="../sdks/php.html">PHP</a>
+<a href="../sdks/py.html">Python</a>
+<a href="../sdks/rb.html">Ruby</a>
+<a href="../sdks/rust.html">Rust</a>
+<a href="../sdks/scala.html">Scala</a>
+<a href="../sdks/swift.html">Swift</a>
+<a href="../sdks/ts.html">TypeScript</a>
+<a href="../sdks/zig.html">Zig</a></details>
+<details open><summary>Tools</summary><a href="../tools/go-cli.html">Go CLI</a>
+<a aria-current="page" href="../tools/go-mcp.html">Go MCP server</a></details>
+<details><summary>Features</summary><a href="../features/audit.html">Structured audit trail of operations</a>
+<a href="../features/clienttrack.html">Client identity and per-request correlation headers</a>
+<a href="../features/debug.html">Request/response capture ring buffer for debugging</a>
+<a href="../features/idempotency.html">Idempotency keys for safe retries of mutating operations</a>
+<a href="../features/log.html">Structured request and response logging</a>
+<a href="../features/metrics.html">Statistics capture: per-operation counters and latency</a>
+<a href="../features/paging.html">Pagination signals for list operations</a>
+<a href="../features/ratelimit.html">Client-side rate limiting via a token bucket</a>
+<a href="../features/retry.html">Automatic retry of transient failures with exponential backoff</a>
+<a href="../features/telemetry.html">Distributed tracing spans with W3C trace-context propagation</a>
+<a href="../features/test.html">In-memory mock transport for testing without a live server</a>
+<a href="../features/timeout.html">Per-request timeout with transport abort</a></details></nav><main id="content"><div class="page-context"><span class="section-dot" aria-hidden="true"></span>Tools</div><h1 id="go-mcp-server">Go MCP server</h1>
+<p>Go MCP server</p>
+<h2 id="install">Install</h2>
+<p>Not published. Build from the go-mcp directory.</p>
+<h2 id="package">Package</h2>
+<p><code>github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk/go-mcp</code></p>
+<h2 id="api-reference">API reference</h2>
+<p>The API reference covers all entities. The tools section lists the operations this server exposes.</p>
+<table>
+<thead>
+<tr>
+<th>Entity</th>
+<th>Operations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../api/cancel_transaction.html">CancelTransaction</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/check_card_black_listed.html">CheckCardBlackListed</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/create_product.html">CreateProduct</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/deactivate_terminal.html">DeactivateTerminal</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/digital_services_api.html">DigitalServicesApi</a></td>
+<td><code>create</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/ec_data_ecom.html">EcDataEcom</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/ecom_parameter.html">EcomParameter</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/ecr_data.html">EcrData</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/emv_data.html">EmvData</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/enable_acquiring.html">EnableAcquiring</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/get_merchant_contract_number.html">GetMerchantContractNumber</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/get_template_xml.html">GetTemplateXml</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/introduce_mandator.html">IntroduceMandator</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/introduce_package.html">IntroducePackage</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/keep_alive.html">KeepAlive</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/list_terminal.html">ListTerminal</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/mandator_clearing_export.html">MandatorClearingExport</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/mandator_clearing_export_download.html">MandatorClearingExportDownload</a></td>
+<td><code>create</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/mandator_clearing_export_summary.html">MandatorClearingExportSummary</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/merchant_portal_services_api.html">MerchantPortalServicesApi</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/move_tid.html">MoveTid</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/payment_manual.html">PaymentManual</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/payment_sred.html">PaymentSred</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/pre_auth_transaction_completion.html">PreAuthTransactionCompletion</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/reactivate_terminal.html">ReactivateTerminal</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/refund_transaction.html">RefundTransaction</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/register_tecs_company.html">RegisterTecsCompany</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/register_terminal.html">RegisterTerminal</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/report_data.html">ReportData</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/status_transaction.html">StatusTransaction</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/store_terminal_parameter.html">StoreTerminalParameter</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/terminal_id.html">TerminalId</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/transaction_history.html">TransactionHistory</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/transactions_count.html">TransactionsCount</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/transactions_count_card_brand.html">TransactionsCountCardBrand</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/transactions_turnover.html">TransactionsTurnover</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/update_merchant.html">UpdateMerchant</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/update_template_xml.html">UpdateTemplateXml</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/version.html">Version</a></td>
+<td><code>load</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="configuration">Configuration</h2>
+<p>Set the server URL and credentials for your environment. Enable only the features your application needs.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li><a href="../features/audit.html">Structured audit trail of operations</a></li>
+<li><a href="../features/clienttrack.html">Client identity and per-request correlation headers</a></li>
+<li><a href="../features/debug.html">Request/response capture ring buffer for debugging</a></li>
+<li><a href="../features/idempotency.html">Idempotency keys for safe retries of mutating operations</a></li>
+<li><a href="../features/log.html">Structured request and response logging</a></li>
+<li><a href="../features/metrics.html">Statistics capture: per-operation counters and latency</a></li>
+<li><a href="../features/paging.html">Pagination signals for list operations</a></li>
+<li><a href="../features/ratelimit.html">Client-side rate limiting via a token bucket</a></li>
+<li><a href="../features/retry.html">Automatic retry of transient failures with exponential backoff</a></li>
+<li><a href="../features/telemetry.html">Distributed tracing spans with W3C trace-context propagation</a></li>
+<li><a href="../features/test.html">In-memory mock transport for testing without a live server</a></li>
+<li><a href="../features/timeout.html">Per-request timeout with transport abort</a></li>
+</ul>
+<h2 id="tools">Tools</h2>
+<h3 id="bluefin-tecs-merchant-services_list"><code>bluefin-tecs-merchant-services_list</code></h3>
+<p>List records for an entity.</p>
+<pre><code class="language-json">{
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;required&quot;: [
+    &quot;entity&quot;
+  ],
+  &quot;properties&quot;: {
+    &quot;entity&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;description&quot;: &quot;cancel_transaction | check_card_black_listed | create_product | deactivate_terminal | digital_services_api | ec_data_ecom | ecom_parameter | ecr_data | emv_data | enable_acquiring | get_merchant_contract_number | get_template_xml | introduce_mandator | introduce_package | keep_alive | list_terminal | mandator_clearing_export | mandator_clearing_export_download | mandator_clearing_export_summary | merchant_portal_services_api | move_tid | payment_manual | payment_sred | pre_auth_transaction_completion | reactivate_terminal | refund_transaction | register_tecs_company | register_terminal | report_data | status_transaction | store_terminal_parameter | terminal_id | transaction_history | transactions_count | transactions_count_card_brand | transactions_turnover | update_merchant | update_template_xml | version&quot;
+    },
+    &quot;query&quot;: {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;description&quot;: &quot;Optional match fields for the selected entity.&quot;
+    }
+  }
+}
+</code></pre>
+<p>This tool is registered, but no active entity supports <code>list</code>.</p>
+<h3 id="bluefin-tecs-merchant-services_load"><code>bluefin-tecs-merchant-services_load</code></h3>
+<p>Load one record for an entity.</p>
+<pre><code class="language-json">{
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;required&quot;: [
+    &quot;entity&quot;
+  ],
+  &quot;properties&quot;: {
+    &quot;entity&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;description&quot;: &quot;cancel_transaction | check_card_black_listed | create_product | deactivate_terminal | digital_services_api | ec_data_ecom | ecom_parameter | ecr_data | emv_data | enable_acquiring | get_merchant_contract_number | get_template_xml | introduce_mandator | introduce_package | keep_alive | list_terminal | mandator_clearing_export | mandator_clearing_export_download | mandator_clearing_export_summary | merchant_portal_services_api | move_tid | payment_manual | payment_sred | pre_auth_transaction_completion | reactivate_terminal | refund_transaction | register_tecs_company | register_terminal | report_data | status_transaction | store_terminal_parameter | terminal_id | transaction_history | transactions_count | transactions_count_card_brand | transactions_turnover | update_merchant | update_template_xml | version&quot;
+    },
+    &quot;query&quot;: {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;description&quot;: &quot;Optional match fields for the selected entity.&quot;
+    }
+  }
+}
+</code></pre>
+<p>Supported entities: <code>digital_services_api</code>, <code>mandator_clearing_export_download</code>, <code>version</code>.</p>
+</main></div>
+<script src="../assets/search.js" defer></script></body></html>

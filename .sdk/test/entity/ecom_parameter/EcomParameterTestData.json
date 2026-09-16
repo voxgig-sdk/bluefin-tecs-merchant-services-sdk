@@ -4,25 +4,25 @@
       "ECOM_PARAMETER00": {
         "ecomPass": "s32",
         "ecomSkey": "s33",
-        "responseCode": "s34",
+        "responseCode": 52,
         "responseMessage": "s35",
-        "terminalId": "s36",
+        "terminalId": 54,
         "id": "ECOM_PARAMETER00"
       },
       "ECOM_PARAMETER01": {
         "ecomPass": "s64",
         "ecomSkey": "s65",
-        "responseCode": "s66",
+        "responseCode": 102,
         "responseMessage": "s67",
-        "terminalId": "s68",
+        "terminalId": 104,
         "id": "ECOM_PARAMETER01"
       },
       "ECOM_PARAMETER02": {
         "ecomPass": "s96",
         "ecomSkey": "s97",
-        "responseCode": "s98",
+        "responseCode": 152,
         "responseMessage": "s99",
-        "terminalId": "s9a",
+        "terminalId": 154,
         "id": "ECOM_PARAMETER02"
       }
     }
@@ -32,9 +32,167 @@
       "ecom_parameter_ref01": {
         "ecomPass": "sc8",
         "ecomSkey": "sc9",
-        "responseCode": "sca",
+        "responseCode": 202,
         "responseMessage": "scb",
-        "terminalId": "scc"
+        "terminalId": 204
+      }
+    }
+  },
+  "requests": {
+    "POST /public/getEcomParameters": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getEcomParameters",
+        "parameters": [],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "terminalId": {
+                    "format": "int32",
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "terminalId"
+                ],
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "ecomPass": {
+                      "type": "string"
+                    },
+                    "ecomSkey": {
+                      "type": "string"
+                    },
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Bad request"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Unauthenticated - Authentication failed"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Unauthorized - Missing role TW_GET_ECOM_PARAMETERS"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "security": [
+          {
+            "bearer-key": []
+          },
+          {
+            "basic-key": []
+          }
+        ],
+        "securitySchemes": {
+          "basic-key": {
+            "scheme": "basic",
+            "type": "http"
+          },
+          "bearer-key": {
+            "bearerFormat": "JWT",
+            "scheme": "bearer",
+            "type": "http"
+          },
+          "tecsweb-key": {
+            "description": "TecsWeb token",
+            "in": "header",
+            "name": "TecsWebToken",
+            "type": "apiKey"
+          }
+        },
+        "securitySource": "operation"
       }
     }
   }

@@ -3,7 +3,7 @@
     "transactions_count": {
       "TRANSACTIONS_COUNT00": {
         "period": "s3c",
-        "responseCode": "s3d",
+        "responseCode": 61,
         "responseMessage": "s3e",
         "transactionDateFrom": "s3f",
         "transactionDateTo": "s40",
@@ -12,7 +12,7 @@
       },
       "TRANSACTIONS_COUNT01": {
         "period": "s78",
-        "responseCode": "s79",
+        "responseCode": 121,
         "responseMessage": "s7a",
         "transactionDateFrom": "s7b",
         "transactionDateTo": "s7c",
@@ -21,7 +21,7 @@
       },
       "TRANSACTIONS_COUNT02": {
         "period": "sb4",
-        "responseCode": "sb5",
+        "responseCode": 181,
         "responseMessage": "sb6",
         "transactionDateFrom": "sb7",
         "transactionDateTo": "sb8",
@@ -34,11 +34,377 @@
     "transactions_count": {
       "transactions_count_ref01": {
         "period": "sf0",
-        "responseCode": "sf1",
+        "responseCode": 241,
         "responseMessage": "sf2",
         "transactionDateFrom": "sf3",
         "transactionDateTo": "sf4",
         "transactionsCount": []
+      }
+    }
+  },
+  "requests": {
+    "POST /public/countAuthorisedTransactions": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "countAuthorisedTransactions",
+        "parameters": [],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "period": {
+                    "pattern": "HOUR|DAY|MONTH|YEAR",
+                    "type": "string"
+                  },
+                  "transactionDateFrom": {
+                    "format": "date-time",
+                    "type": "string"
+                  },
+                  "transactionDateTo": {
+                    "format": "date-time",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "transactionDateFrom",
+                  "transactionDateTo"
+                ],
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "period": {
+                      "type": "string"
+                    },
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    },
+                    "transactionDateFrom": {
+                      "format": "date-time",
+                      "type": "string"
+                    },
+                    "transactionDateTo": {
+                      "format": "date-time",
+                      "type": "string"
+                    },
+                    "transactionsCount": {
+                      "items": {
+                        "properties": {
+                          "amount": {
+                            "format": "int32",
+                            "type": "integer"
+                          },
+                          "datePart": {
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Bad request"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Unauthenticated - Authentication failed"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Unauthorized - Missing role TE_MERCHANT_TERMINAL_MANAGEMENT or MP_CORPORATE"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "security": [
+          {
+            "bearer-key": []
+          }
+        ],
+        "securitySchemes": {
+          "basic-key": {
+            "scheme": "basic",
+            "type": "http"
+          },
+          "bearer-key": {
+            "bearerFormat": "JWT",
+            "scheme": "bearer",
+            "type": "http"
+          },
+          "tecsweb-key": {
+            "description": "TecsWeb token",
+            "in": "header",
+            "name": "TecsWebToken",
+            "type": "apiKey"
+          }
+        },
+        "securitySource": "operation"
+      }
+    },
+    "POST /public/countNotAuthorisedTransactions": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "countNotAuthorisedTransactions",
+        "parameters": [],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "period": {
+                    "pattern": "HOUR|DAY|MONTH|YEAR",
+                    "type": "string"
+                  },
+                  "transactionDateFrom": {
+                    "format": "date-time",
+                    "type": "string"
+                  },
+                  "transactionDateTo": {
+                    "format": "date-time",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "transactionDateFrom",
+                  "transactionDateTo"
+                ],
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "period": {
+                      "type": "string"
+                    },
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    },
+                    "transactionDateFrom": {
+                      "format": "date-time",
+                      "type": "string"
+                    },
+                    "transactionDateTo": {
+                      "format": "date-time",
+                      "type": "string"
+                    },
+                    "transactionsCount": {
+                      "items": {
+                        "properties": {
+                          "amount": {
+                            "format": "int32",
+                            "type": "integer"
+                          },
+                          "datePart": {
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Bad request"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Unauthenticated - Authentication failed"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Unauthorized - Missing role TE_MERCHANT_TERMINAL_MANAGEMENT or MP_CORPORATE"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "security": [
+          {
+            "bearer-key": []
+          }
+        ],
+        "securitySchemes": {
+          "basic-key": {
+            "scheme": "basic",
+            "type": "http"
+          },
+          "bearer-key": {
+            "bearerFormat": "JWT",
+            "scheme": "bearer",
+            "type": "http"
+          },
+          "tecsweb-key": {
+            "description": "TecsWeb token",
+            "in": "header",
+            "name": "TecsWebToken",
+            "type": "apiKey"
+          }
+        },
+        "securitySource": "operation"
       }
     }
   }

@@ -44,6 +44,12 @@ main: kit: entity: store_terminal_parameter: {
       name: "create"
       points: [
         {
+          contract: {
+            id: "POST /storeTerminalParameters"
+            json: "{\"operationId\":\"storeProtocolParameters\",\"parameters\":[],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"acqTabNexo\":{\"properties\":{\"acqId\":{\"format\":\"int32\",\"type\":\"integer\"},\"initPartyId\":{\"type\":\"string\"},\"msgItms\":{\"type\":\"string\"},\"offLnCmplXchgIfDclnd\":{\"type\":\"boolean\"},\"offLnCmplXchgIfFaild\":{\"type\":\"boolean\"},\"onLnCmplXchgIfDclnd\":{\"type\":\"boolean\"},\"onLnCmplXchgIfFaild\":{\"type\":\"boolean\"},\"prtctCardData\":{\"type\":\"boolean\"}},\"type\":\"object\"},\"configVersion\":{\"type\":\"string\"},\"serialNumber\":{\"minLength\":1,\"type\":\"string\"},\"tidSent\":{\"type\":\"string\"}},\"required\":[\"serialNumber\"],\"type\":\"object\"}}},\"required\":true},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Successful operation\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"SerialNumber parameter not provided\"},\"401\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Unauthorized - Authentication failed\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"security\":[{\"basic-key\":[]}],\"securitySchemes\":{\"basic-key\":{\"scheme\":\"basic\",\"type\":\"http\"},\"bearer-key\":{\"bearerFormat\":\"JWT\",\"scheme\":\"bearer\",\"type\":\"http\"},\"tecsweb-key\":{\"description\":\"TecsWeb token\",\"in\":\"header\",\"name\":\"TecsWebToken\",\"type\":\"apiKey\"}},\"securitySource\":\"operation\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "POST"
           orig: "/storeTerminalParameters"
           segments: [

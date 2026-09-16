@@ -3,7 +3,7 @@
     "payment_manual": {
       "PAYMENT_MANUAL00": {
         "acquirerName": "saa",
-        "amount": "sab",
+        "amount": 171,
         "authorizationNumber": "sac",
         "cardNumber": "sad",
         "cardType": "sae",
@@ -23,7 +23,7 @@
       },
       "PAYMENT_MANUAL01": {
         "acquirerName": "s154",
-        "amount": "s155",
+        "amount": 341,
         "authorizationNumber": "s156",
         "cardNumber": "s157",
         "cardType": "s158",
@@ -43,7 +43,7 @@
       },
       "PAYMENT_MANUAL02": {
         "acquirerName": "s1fe",
-        "amount": "s1ff",
+        "amount": 511,
         "authorizationNumber": "s200",
         "cardNumber": "s201",
         "cardType": "s202",
@@ -67,7 +67,7 @@
     "payment_manual": {
       "payment_manual_ref01": {
         "acquirerName": "s2a8",
-        "amount": "s2a9",
+        "amount": 681,
         "authorizationNumber": "s2aa",
         "cardNumber": "s2ab",
         "cardType": "s2ac",
@@ -83,6 +83,277 @@
         "terminalId": "s2b6",
         "transactionId": "s2b7",
         "txtype": "s2b8"
+      }
+    }
+  },
+  "requests": {
+    "POST /public/paymentManual": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "paymentManual",
+        "parameters": [],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "description": "Payment Manual request for processing card payments via TECS XML gateway",
+                "properties": {
+                  "amount": {
+                    "description": "Transaction amount in minor units (cents)",
+                    "example": 1234,
+                    "format": "int32",
+                    "minimum": 1,
+                    "type": "integer"
+                  },
+                  "cardNumber": {
+                    "description": "Card number - 12 to 19 digits, must pass Luhn validation",
+                    "example": "5413330056003537",
+                    "minLength": 1,
+                    "pattern": "^\\d{12,19}$",
+                    "type": "string"
+                  },
+                  "currency": {
+                    "description": "Currency code - 3 uppercase letters (ISO 4217)",
+                    "example": "EUR",
+                    "minLength": 1,
+                    "pattern": "^[A-Z]{3}$",
+                    "type": "string"
+                  },
+                  "cvc": {
+                    "description": "Card verification code - 3-4 digits (optional)",
+                    "example": "123",
+                    "pattern": "^\\d{3,4}$",
+                    "type": "string"
+                  },
+                  "expDate": {
+                    "description": "Card expiry date in MMYY format",
+                    "example": "1027",
+                    "minLength": 1,
+                    "pattern": "^(0[1-9]|1[0-2])\\d{2}$",
+                    "type": "string"
+                  },
+                  "password": {
+                    "description": "Terminal password sent as Kennwort in TECS XML (optional)",
+                    "example": "testPWD",
+                    "type": "string"
+                  },
+                  "terminalId": {
+                    "description": "Terminal ID - 8 digits",
+                    "example": "88092010",
+                    "minLength": 1,
+                    "pattern": "^\\d{8}$",
+                    "type": "string"
+                  },
+                  "txtype": {
+                    "description": "Transaction type",
+                    "enum": [
+                      "SALE",
+                      "PRE-AUTH"
+                    ],
+                    "example": "SALE",
+                    "minLength": 1,
+                    "pattern": "^(SALE|PRE-AUTH)$",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "amount",
+                  "cardNumber",
+                  "currency",
+                  "expDate",
+                  "terminalId",
+                  "txtype"
+                ],
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Payment Manual response from TECS XML gateway",
+                  "properties": {
+                    "acquirerName": {
+                      "description": "Acquirer name parsed from KKG field",
+                      "example": "TECS Offline",
+                      "type": "string"
+                    },
+                    "authorizationNumber": {
+                      "description": "Authorization number from the gateway",
+                      "example": 68529,
+                      "type": "string"
+                    },
+                    "cardType": {
+                      "description": "Card type parsed from KKG field",
+                      "example": "MASTERCARD",
+                      "type": "string"
+                    },
+                    "dateTimeTx": {
+                      "description": "Date and time of the transaction",
+                      "example": "20251008160321",
+                      "type": "string"
+                    },
+                    "merchantId": {
+                      "description": "Merchant ID (VU-NUMMER)",
+                      "example": "123456789012345",
+                      "type": "string"
+                    },
+                    "originalTransactionId": {
+                      "description": "Original transaction ID from gateway",
+                      "example": 20251008160321,
+                      "type": "string"
+                    },
+                    "responseCode": {
+                      "description": "Response code - 00 for success, otherwise error code",
+                      "example": "00",
+                      "type": "string"
+                    },
+                    "responseMessage": {
+                      "description": "Response message - 'Approved' for success, error description otherwise",
+                      "example": "Approved",
+                      "type": "string"
+                    },
+                    "terminalId": {
+                      "description": "Terminal ID used for the transaction",
+                      "example": "88092010",
+                      "type": "string"
+                    },
+                    "transactionId": {
+                      "description": "Transaction ID generated by the backend",
+                      "example": "20251008160321",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "\n* Invalid JSON\n* Invalid terminalId - must be 8 digits\n* Invalid currency - must be 3 uppercase letters\n* Invalid amount - must be greater than 0\n* Invalid txtype - must be SALE or PRE-AUTH\n* Invalid cardNumber - must be 12-19 digits and Luhn-valid\n* Invalid expDate - must be MMYY format and not expired\n* Invalid cvc - must be 3-4 digits if provided\n"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Unauthorized - Authentication failed"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Forbidden - Missing role: BO_VIRTUAL_TERMINAL or VIRTUAL_TERMINAL"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Internal server error"
+          },
+          "502": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Gateway error - TECS XML gateway error or invalid XML response"
+          }
+        },
+        "security": [
+          {
+            "bearer-key": []
+          }
+        ],
+        "securitySchemes": {
+          "basic-key": {
+            "scheme": "basic",
+            "type": "http"
+          },
+          "bearer-key": {
+            "bearerFormat": "JWT",
+            "scheme": "bearer",
+            "type": "http"
+          },
+          "tecsweb-key": {
+            "description": "TecsWeb token",
+            "in": "header",
+            "name": "TecsWebToken",
+            "type": "apiKey"
+          }
+        },
+        "securitySource": "operation"
       }
     }
   }

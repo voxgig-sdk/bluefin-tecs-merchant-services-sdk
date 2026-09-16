@@ -1,12 +1,14 @@
 
 const envlocal = __dirname + '/../../../.env.local'
-require('dotenv').config({ quiet: true, path: [envlocal] })
+require('../../utility').loadEnvLocal(envlocal)
 
 const Path = require('node:path')
 const Fs = require('node:fs')
 
 const { test, describe, afterEach } = require('node:test')
 const assert = require('node:assert')
+const { createLiveTransport } = require('../../live-runner')
+const { runLiveEntity } = require('../../live-entity')
 
 
 const { BluefinTecsMerchantServicesSDK, BaseFeature, stdutil, config } = require('../../..')
@@ -36,9 +38,13 @@ describe('ListTerminalEntity', async () => {
   })
 
 
-  test('basic', async () => {
+  test('basic', async (t) => {
 
+    
     const setup = basicSetup()
+    if (setup.live) {
+      return runLiveEntity(setup, {"active":true,"alias":{"field":{}},"fields":[{"active":true,"name":"corporateUuid","req":false,"type":"`$ARRAY`","index$":0},{"active":true,"name":"filter","req":false,"type":"`$OBJECT`","index$":1},{"active":true,"name":"pagination","req":false,"type":"`$OBJECT`","index$":2},{"active":true,"format":"int32","name":"responseCode","req":false,"type":"`$INTEGER`","index$":3},{"active":true,"name":"responseMessage","req":false,"type":"`$STRING`","index$":4},{"active":true,"name":"terminals","req":false,"type":"`$ARRAY`","index$":5}],"name":"list_terminal","op":{"create":{"input":"data","name":"create","points":[{"active":true,"args":{},"contract":{"id":"POST /public/listTerminals","json":"{\"operationId\":\"listTerminals\",\"parameters\":[],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"corporateUuid\":{\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"filter\":{\"properties\":{\"corporateUuid\":{\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"fulltextSearch\":{\"type\":\"string\"},\"hwserialno\":{\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"terminalType\":{\"type\":\"string\"}},\"type\":\"object\"},\"pagination\":{\"properties\":{\"page\":{\"format\":\"int32\",\"type\":\"integer\"},\"size\":{\"format\":\"int32\",\"type\":\"integer\"}},\"type\":\"object\"}},\"type\":\"object\"}}},\"required\":true},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"},\"terminals\":{\"items\":{\"properties\":{\"acquirings\":{\"items\":{\"properties\":{\"name\":{\"type\":\"string\"},\"productOrderUuid\":{\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"},\"currency\":{\"type\":\"string\"},\"hwSerialNo\":{\"type\":\"string\"},\"kaDateTimeCreate\":{\"format\":\"date-time\",\"type\":\"string\"},\"keepAliveStatus\":{\"type\":\"string\"},\"mpExpectedSerialNo\":{\"type\":\"string\"},\"no\":{\"type\":\"string\"},\"packageOrderUuid\":{\"type\":\"string\"},\"status\":{\"type\":\"string\"},\"termLocation\":{\"type\":\"string\"},\"termModel\":{\"type\":\"string\"},\"termn\":{\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"}},\"type\":\"object\"}}},\"description\":\"Successful operation\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Bad request\"},\"401\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Unauthenticated - Authentication failed\"},\"403\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Unauthorized - Missing role TE_MERCHANT_TERMINAL_MANAGEMENT\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"security\":[{\"bearer-key\":[]}],\"securitySchemes\":{\"basic-key\":{\"scheme\":\"basic\",\"type\":\"http\"},\"bearer-key\":{\"bearerFormat\":\"JWT\",\"scheme\":\"bearer\",\"type\":\"http\"},\"tecsweb-key\":{\"description\":\"TecsWeb token\",\"in\":\"header\",\"name\":\"TecsWebToken\",\"type\":\"apiKey\"}},\"securitySource\":\"operation\"}","source":"openapi3","version":1},"kind":"http","method":"POST","orig":"/public/listTerminals","segments":[{"lit":"public"},{"lit":"listTerminals"}],"select":{},"transform":{"req":"`reqdata`","res":"`body`"},"index$":0}],"key$":"create"}},"relations":{"ancestors":[]},"key$":"list_terminal","name__orig":"list_terminal","Name":"ListTerminal","name_":"list_terminal","name-":"list-terminal","NAME":"LIST_TERMINAL","index$":15}, {"active":true,"entity":"list_terminal","key$":"BasicListTerminalFlow","kind":"basic","name":"BasicListTerminalFlow","param":{},"step":[{"active":true,"data":{},"input":{"ref":"list_terminal_ref01"},"match":{},"op":"create","spec":[],"valid":[],"index$":0}]}, 'ListTerminal')
+    }
     const client = setup.client
     const struct = setup.struct
 
@@ -99,7 +105,14 @@ function basicSetup(extra) {
 
   idmap = env['BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIST_TERMINAL_ENTID']
 
-  if ('TRUE' === env.BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE) {
+  const live = 'TRUE' === env.BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE
+  const transport = createLiveTransport()
+  if (live) {
+    const rawIds = process.env['BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIST_TERMINAL_ENTID']
+    idmap = rawIds && rawIds.trim() ? JSON.parse(rawIds) : {}
+    if (!idmap || Array.isArray(idmap) || typeof idmap !== 'object') {
+      throw new Error('Live ENTID must be a JSON object')
+    }
     client = new BluefinTecsMerchantServicesSDK(merge([
       // FIRST, so the generated fields below win: sdk-test-control.json's
       // test.client.options adds to the live client, it does not redirect it.
@@ -111,7 +124,8 @@ function basicSetup(extra) {
       // the last entry is undefined, and basicSetup is normally called with no
       // argument at all - so a bare 'extra' silently discarded the apikey and
       // server values above and handed the SDK undefined.
-      extra || {}
+      extra || {},
+      { system: { fetch: transport.fetch } }
     ]))
   }
 
@@ -123,6 +137,8 @@ function basicSetup(extra) {
     struct,
     data: entityData,
     explain: 'TRUE' === env.BLUEFIN_TECS_MERCHANT_SERVICES_TEST_EXPLAIN,
+    live,
+    transport,
     now: Date.now(),
   }
 

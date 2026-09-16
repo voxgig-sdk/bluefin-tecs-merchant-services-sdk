@@ -3,19 +3,19 @@
     "get_merchant_contract_number": {
       "GET_MERCHANT_CONTRACT_NUMBER00": {
         "merchantContractNumber": "s1e",
-        "responseCode": "s1f",
+        "responseCode": 31,
         "responseMessage": "s20",
         "id": "GET_MERCHANT_CONTRACT_NUMBER00"
       },
       "GET_MERCHANT_CONTRACT_NUMBER01": {
         "merchantContractNumber": "s3c",
-        "responseCode": "s3d",
+        "responseCode": 61,
         "responseMessage": "s3e",
         "id": "GET_MERCHANT_CONTRACT_NUMBER01"
       },
       "GET_MERCHANT_CONTRACT_NUMBER02": {
         "merchantContractNumber": "s5a",
-        "responseCode": "s5b",
+        "responseCode": 91,
         "responseMessage": "s5c",
         "id": "GET_MERCHANT_CONTRACT_NUMBER02"
       }
@@ -25,8 +25,179 @@
     "get_merchant_contract_number": {
       "get_merchant_contract_number_ref01": {
         "merchantContractNumber": "s78",
-        "responseCode": "s79",
+        "responseCode": 121,
         "responseMessage": "s7a"
+      }
+    }
+  },
+  "requests": {
+    "POST /getMerchantContractNumber": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getMerchantContractNumber",
+        "parameters": [],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "merchantContractNumber": {
+                    "minLength": 1,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "merchantContractNumber"
+                ],
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "In case the merchant contract number is not registered yet"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Bad request"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Unauthenticated - Authentication failed"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Unauthorized - Missing role SYSTEM_REGISTER_MERCHANT_TERMINAL"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "In case the merchant contract number is already registered"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "security": [
+          {
+            "bearer-key": []
+          },
+          {
+            "basic-key": []
+          }
+        ],
+        "securitySchemes": {
+          "basic-key": {
+            "scheme": "basic",
+            "type": "http"
+          },
+          "bearer-key": {
+            "bearerFormat": "JWT",
+            "scheme": "bearer",
+            "type": "http"
+          },
+          "tecsweb-key": {
+            "description": "TecsWeb token",
+            "in": "header",
+            "name": "TecsWebToken",
+            "type": "apiKey"
+          }
+        },
+        "securitySource": "operation"
       }
     }
   }

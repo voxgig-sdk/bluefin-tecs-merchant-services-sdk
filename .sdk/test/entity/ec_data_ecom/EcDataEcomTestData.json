@@ -3,27 +3,27 @@
     "ec_data_ecom": {
       "EC_DATA_ECOM00": {
         "ecomData": "s3c",
-        "responseCode": "s3d",
+        "responseCode": 61,
         "responseMessage": "s3e",
-        "terminalId": "s3f",
+        "terminalId": 63,
         "transactionId": "s40",
         "transactionType": "s41",
         "id": "EC_DATA_ECOM00"
       },
       "EC_DATA_ECOM01": {
         "ecomData": "s78",
-        "responseCode": "s79",
+        "responseCode": 121,
         "responseMessage": "s7a",
-        "terminalId": "s7b",
+        "terminalId": 123,
         "transactionId": "s7c",
         "transactionType": "s7d",
         "id": "EC_DATA_ECOM01"
       },
       "EC_DATA_ECOM02": {
         "ecomData": "sb4",
-        "responseCode": "sb5",
+        "responseCode": 181,
         "responseMessage": "sb6",
-        "terminalId": "sb7",
+        "terminalId": 183,
         "transactionId": "sb8",
         "transactionType": "sb9",
         "id": "EC_DATA_ECOM02"
@@ -34,11 +34,175 @@
     "ec_data_ecom": {
       "ec_data_ecom_ref01": {
         "ecomData": "sf0",
-        "responseCode": "sf1",
+        "responseCode": 241,
         "responseMessage": "sf2",
-        "terminalId": "sf3",
+        "terminalId": 243,
         "transactionId": "sf4",
         "transactionType": "sf5"
+      }
+    }
+  },
+  "requests": {
+    "POST /public/getEcData": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getEcData",
+        "parameters": [],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "terminalId": {
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "transactionId": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "transactionType": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "terminalId",
+                  "transactionId",
+                  "transactionType"
+                ],
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "ecomData": {
+                      "type": "string"
+                    },
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Bad request"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Unauthenticated - Authentication failed"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Unauthorized - Missing role BO_TRANSACTIONMANAGEMENT_ECOM"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "security": [
+          {
+            "bearer-key": []
+          },
+          {
+            "basic-key": []
+          }
+        ],
+        "securitySchemes": {
+          "basic-key": {
+            "scheme": "basic",
+            "type": "http"
+          },
+          "bearer-key": {
+            "bearerFormat": "JWT",
+            "scheme": "bearer",
+            "type": "http"
+          },
+          "tecsweb-key": {
+            "description": "TecsWeb token",
+            "in": "header",
+            "name": "TecsWebToken",
+            "type": "apiKey"
+          }
+        },
+        "securitySource": "operation"
       }
     }
   }

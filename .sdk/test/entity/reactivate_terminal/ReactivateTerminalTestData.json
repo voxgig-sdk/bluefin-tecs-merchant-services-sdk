@@ -6,9 +6,9 @@
         "packageOrderUuid": "s47",
         "productOrderUuid": "s48",
         "reactivationReason": "s49",
-        "responseCode": "s4a",
+        "responseCode": 74,
         "responseMessage": "s4b",
-        "terminalId": "s4c",
+        "terminalId": 76,
         "id": "REACTIVATE_TERMINAL00"
       },
       "REACTIVATE_TERMINAL01": {
@@ -16,9 +16,9 @@
         "packageOrderUuid": "s8d",
         "productOrderUuid": "s8e",
         "reactivationReason": "s8f",
-        "responseCode": "s90",
+        "responseCode": 144,
         "responseMessage": "s91",
-        "terminalId": "s92",
+        "terminalId": 146,
         "id": "REACTIVATE_TERMINAL01"
       },
       "REACTIVATE_TERMINAL02": {
@@ -26,9 +26,9 @@
         "packageOrderUuid": "sd3",
         "productOrderUuid": "sd4",
         "reactivationReason": "sd5",
-        "responseCode": "sd6",
+        "responseCode": 214,
         "responseMessage": "sd7",
-        "terminalId": "sd8",
+        "terminalId": 216,
         "id": "REACTIVATE_TERMINAL02"
       }
     }
@@ -40,9 +40,163 @@
         "packageOrderUuid": "s119",
         "productOrderUuid": "s11a",
         "reactivationReason": "s11b",
-        "responseCode": "s11c",
+        "responseCode": 284,
         "responseMessage": "s11d",
-        "terminalId": "s11e"
+        "terminalId": 286
+      }
+    }
+  },
+  "requests": {
+    "POST /reactivateTerminal": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "reactivateTerminal",
+        "parameters": [],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "reactivationReason": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "terminalId": {
+                    "format": "int32",
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "reactivationReason",
+                  "terminalId"
+                ],
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "corporateUuid": {
+                      "type": "string"
+                    },
+                    "packageOrderUuid": {
+                      "type": "string"
+                    },
+                    "productOrderUuid": {
+                      "type": "string"
+                    },
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "\n* Terminal not found\n* Mandator not found\n* MandatorConfig not found\n"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Unauthorized - Authentication failed, e.g. MandatorId does not march"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Forbidden - Missing role: TE_MERCHANT_TERMINAL_MANAGEMENT"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "\n* Internal server error\n* Tecscompany2Tecsterm record not found\n* Tecscompany record not found\n"
+          }
+        },
+        "security": [
+          {
+            "bearer-key": []
+          }
+        ],
+        "securitySchemes": {
+          "basic-key": {
+            "scheme": "basic",
+            "type": "http"
+          },
+          "bearer-key": {
+            "bearerFormat": "JWT",
+            "scheme": "bearer",
+            "type": "http"
+          },
+          "tecsweb-key": {
+            "description": "TecsWeb token",
+            "in": "header",
+            "name": "TecsWebToken",
+            "type": "apiKey"
+          }
+        },
+        "securitySource": "operation"
       }
     }
   }

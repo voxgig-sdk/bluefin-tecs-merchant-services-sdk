@@ -4,7 +4,7 @@
       "TERMINAL_ID00": {
         "deviceSerialNumber": [],
         "duplicateTerminalIds": [],
-        "responseCode": "s34",
+        "responseCode": 52,
         "responseMessage": "s35",
         "terminals": [],
         "id": "TERMINAL_ID00"
@@ -12,7 +12,7 @@
       "TERMINAL_ID01": {
         "deviceSerialNumber": [],
         "duplicateTerminalIds": [],
-        "responseCode": "s66",
+        "responseCode": 102,
         "responseMessage": "s67",
         "terminals": [],
         "id": "TERMINAL_ID01"
@@ -20,7 +20,7 @@
       "TERMINAL_ID02": {
         "deviceSerialNumber": [],
         "duplicateTerminalIds": [],
-        "responseCode": "s98",
+        "responseCode": 152,
         "responseMessage": "s99",
         "terminals": [],
         "id": "TERMINAL_ID02"
@@ -32,9 +32,188 @@
       "terminal_id_ref01": {
         "deviceSerialNumber": [],
         "duplicateTerminalIds": [],
-        "responseCode": "sca",
+        "responseCode": 202,
         "responseMessage": "scb",
         "terminals": []
+      }
+    }
+  },
+  "requests": {
+    "POST /public/getTerminalId": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getTerminalId",
+        "parameters": [],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "deviceSerialNumber": {
+                    "items": {
+                      "type": "string"
+                    },
+                    "maxItems": 2147483647,
+                    "minItems": 1,
+                    "type": "array"
+                  }
+                },
+                "required": [
+                  "deviceSerialNumber"
+                ],
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "duplicateTerminalIds": {
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    },
+                    "terminals": {
+                      "items": {
+                        "properties": {
+                          "hwSerialNo": {
+                            "type": "string"
+                          },
+                          "mpExpectedSerialNo": {
+                            "type": "string"
+                          },
+                          "termn": {
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Bad request. e.g, Input validation failed or there already exist a template with the same name."
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Unauthenticated - Authentication failed"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Unauthorized - Missing role SYSTEM_GET_TERMINAL_ID"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "security": [
+          {
+            "bearer-key": []
+          },
+          {
+            "basic-key": []
+          }
+        ],
+        "securitySchemes": {
+          "basic-key": {
+            "scheme": "basic",
+            "type": "http"
+          },
+          "bearer-key": {
+            "bearerFormat": "JWT",
+            "scheme": "bearer",
+            "type": "http"
+          },
+          "tecsweb-key": {
+            "description": "TecsWeb token",
+            "in": "header",
+            "name": "TecsWebToken",
+            "type": "apiKey"
+          }
+        },
+        "securitySource": "operation"
       }
     }
   }

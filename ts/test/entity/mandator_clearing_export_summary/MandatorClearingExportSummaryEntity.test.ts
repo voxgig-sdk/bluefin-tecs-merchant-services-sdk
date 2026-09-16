@@ -5,6 +5,8 @@ import * as Fs from 'node:fs'
 
 import { test, describe, afterEach } from 'node:test'
 import assert from 'node:assert'
+import { createLiveTransport } from '../../live-runner'
+import { runLiveEntity } from '../../live-entity'
 
 
 import { BluefinTecsMerchantServicesSDK, BaseFeature, stdutil } from '../../..'
@@ -47,16 +49,13 @@ describe('MandatorClearingExportSummaryEntity', async () => {
 
     const live = 'TRUE' === process.env.BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE
     for (const op of ['create']) {
-      if (maybeSkipControl(t, 'entityOp', 'mandator_clearing_export_summary.' + op, live)) return
+      if (!live && maybeSkipControl(t, 'entityOp', 'mandator_clearing_export_summary.' + op, live)) return
     }
 
+    
     const setup = basicSetup()
-    // The basic flow consumes synthetic IDs and field values from the
-    // fixture (entity TestData.json). Those don't exist on the live API.
-    // Skip live runs unless the user provided a real ENTID env override.
-    if (setup.syntheticOnly) {
-      t.skip('live entity test uses synthetic IDs from fixture — set BLUEFIN_TECS_MERCHANT_SERVICES_TEST_MANDATOR_CLEARING_EXPORT_SUMMARY_ENTID JSON to run live')
-      return
+    if (setup.live) {
+      return runLiveEntity(setup, {"active":true,"alias":{"field":{}},"fields":[{"active":true,"name":"clearingDateFrom","req":true,"short":"Date and time in the format yyyy-MM-dd'T'HH:mm:ssz","type":"`$STRING`","index$":0},{"active":true,"name":"clearingDateTo","req":true,"short":"Date and time in the format yyyy-MM-dd'T'HH:mm:ssz","type":"`$STRING`","index$":1},{"active":true,"name":"records","req":false,"type":"`$ARRAY`","index$":2},{"active":true,"format":"int32","name":"responseCode","req":false,"type":"`$INTEGER`","index$":3},{"active":true,"name":"responseMessage","req":false,"type":"`$STRING`","index$":4}],"name":"mandator_clearing_export_summary","op":{"create":{"input":"data","name":"create","points":[{"active":true,"args":{},"contract":{"id":"POST /public/digitalservices/mandatorClearingExportSummary","json":"{\"operationId\":\"mandatorClearingExportSummary\",\"parameters\":[],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"clearingDateFrom\":{\"description\":\"Date and time in the format yyyy-MM-dd'T'HH:mm:ssz\",\"example\":\"2024-04-11T11:41:31+02:00\",\"pattern\":\"yyyy-MM-dd'T'HH:mm:ssZ\",\"type\":\"string\"},\"clearingDateTo\":{\"description\":\"Date and time in the format yyyy-MM-dd'T'HH:mm:ssz\",\"example\":\"2024-04-11T11:41:31+02:00\",\"pattern\":\"yyyy-MM-dd'T'HH:mm:ssZ\",\"type\":\"string\"}},\"required\":[\"clearingDateFrom\",\"clearingDateTo\"],\"type\":\"object\"}}},\"required\":true},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"records\":{\"items\":{\"properties\":{\"cardType\":{\"type\":\"string\"},\"currency\":{\"type\":\"string\"},\"tipTotal\":{\"format\":\"int32\",\"type\":\"integer\"},\"txCount\":{\"format\":\"int32\",\"type\":\"integer\"},\"txFlag\":{\"type\":\"string\"},\"txTotal\":{\"format\":\"int64\",\"type\":\"integer\"}},\"type\":\"object\"},\"type\":\"array\"},\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Successful operation\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"\\n* Invalid request data. Bad request\\n\"},\"401\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"\\nUnauthorized - Authentication failed:<br>\\n\"},\"403\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Forbidden - Missing role: BO_MANDATOR_CLEARING_EXPORT\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"security\":[{\"bearer-key\":[]}],\"securitySchemes\":{\"basic-key\":{\"scheme\":\"basic\",\"type\":\"http\"},\"bearer-key\":{\"bearerFormat\":\"JWT\",\"scheme\":\"bearer\",\"type\":\"http\"},\"tecsweb-key\":{\"description\":\"TecsWeb token\",\"in\":\"header\",\"name\":\"TecsWebToken\",\"type\":\"apiKey\"}},\"securitySource\":\"operation\"}","source":"openapi3","version":1},"kind":"http","method":"POST","orig":"/public/digitalservices/mandatorClearingExportSummary","segments":[{"lit":"public"},{"lit":"digitalservices"},{"lit":"mandatorClearingExportSummary"}],"select":{},"transform":{"req":"`reqdata`","res":"`body`"},"index$":0}],"key$":"create"}},"relations":{"ancestors":[]},"key$":"mandator_clearing_export_summary","name__orig":"mandator_clearing_export_summary","Name":"MandatorClearingExportSummary","name_":"mandator_clearing_export_summary","name-":"mandator-clearing-export-summary","NAME":"MANDATOR_CLEARING_EXPORT_SUMMARY","index$":18}, {"active":true,"entity":"mandator_clearing_export_summary","key$":"BasicMandatorClearingExportSummaryFlow","kind":"basic","name":"BasicMandatorClearingExportSummaryFlow","param":{},"step":[{"active":true,"data":{},"input":{"ref":"mandator_clearing_export_summary_ref01"},"match":{},"op":"create","spec":[],"valid":[],"index$":0}]}, 'MandatorClearingExportSummary')
     }
     const client = setup.client
     const struct = setup.struct
@@ -109,13 +108,6 @@ function basicSetup(extra?: any) {
       }]
     })
 
-  // Detect whether the user provided a real ENTID JSON via env var. The
-  // basic flow consumes synthetic IDs from the fixture file; without an
-  // override those synthetic IDs reach the live API and 4xx. Surface this
-  // to the test so it can skip rather than fail.
-  const idmapEnvVal = process.env['BLUEFIN_TECS_MERCHANT_SERVICES_TEST_MANDATOR_CLEARING_EXPORT_SUMMARY_ENTID']
-  const idmapOverridden = null != idmapEnvVal && idmapEnvVal.trim().startsWith('{')
-
   const env = envOverride({
     'BLUEFIN_TECS_MERCHANT_SERVICES_TEST_MANDATOR_CLEARING_EXPORT_SUMMARY_ENTID': idmap,
     'BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE': 'FALSE',
@@ -127,7 +119,13 @@ function basicSetup(extra?: any) {
 
   const live = 'TRUE' === env.BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE
 
+  const transport = createLiveTransport()
   if (live) {
+    const rawIds = process.env['BLUEFIN_TECS_MERCHANT_SERVICES_TEST_MANDATOR_CLEARING_EXPORT_SUMMARY_ENTID']
+    idmap = rawIds && rawIds.trim() ? JSON.parse(rawIds) : {}
+    if (!idmap || Array.isArray(idmap) || typeof idmap !== 'object') {
+      throw new Error('Live ENTID must be a JSON object')
+    }
     client = new BluefinTecsMerchantServicesSDK(merge([
       // FIRST, so the generated fields below win: sdk-test-control.json's
       // test.client.options adds to the live client, it does not redirect it.
@@ -140,7 +138,8 @@ function basicSetup(extra?: any) {
       // argument at all - so a bare 'extra' silently discarded the apikey
       // and server values above and handed the SDK undefined. Harmless
       // while there was nothing in that object; not harmless now.
-      extra || {}
+      extra || {},
+      { system: { fetch: transport.fetch } }
     ]))
   }
 
@@ -153,7 +152,7 @@ function basicSetup(extra?: any) {
     data: entityData,
     explain: 'TRUE' === env.BLUEFIN_TECS_MERCHANT_SERVICES_TEST_EXPLAIN,
     live,
-    syntheticOnly: live && !idmapOverridden,
+    transport,
     now: Date.now(),
   }
 

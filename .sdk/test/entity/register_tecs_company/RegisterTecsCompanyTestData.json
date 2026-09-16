@@ -4,10 +4,10 @@
       "REGISTER_TECS_COMPANY00": {
         "corporateUuid": "s50",
         "packageOrderUuid": "s51",
-        "partnerId": "s52",
+        "partnerId": 82,
         "partnerName": "s53",
         "productOrderUuid": "s54",
-        "responseCode": "s55",
+        "responseCode": 85,
         "responseMessage": "s56",
         "templateName": "s57",
         "id": "REGISTER_TECS_COMPANY00"
@@ -15,10 +15,10 @@
       "REGISTER_TECS_COMPANY01": {
         "corporateUuid": "sa0",
         "packageOrderUuid": "sa1",
-        "partnerId": "sa2",
+        "partnerId": 162,
         "partnerName": "sa3",
         "productOrderUuid": "sa4",
-        "responseCode": "sa5",
+        "responseCode": 165,
         "responseMessage": "sa6",
         "templateName": "sa7",
         "id": "REGISTER_TECS_COMPANY01"
@@ -26,10 +26,10 @@
       "REGISTER_TECS_COMPANY02": {
         "corporateUuid": "sf0",
         "packageOrderUuid": "sf1",
-        "partnerId": "sf2",
+        "partnerId": 242,
         "partnerName": "sf3",
         "productOrderUuid": "sf4",
-        "responseCode": "sf5",
+        "responseCode": 245,
         "responseMessage": "sf6",
         "templateName": "sf7",
         "id": "REGISTER_TECS_COMPANY02"
@@ -41,12 +41,147 @@
       "register_tecs_company_ref01": {
         "corporateUuid": "s140",
         "packageOrderUuid": "s141",
-        "partnerId": "s142",
+        "partnerId": 322,
         "partnerName": "s143",
         "productOrderUuid": "s144",
-        "responseCode": "s145",
+        "responseCode": 325,
         "responseMessage": "s146",
         "templateName": "s147"
+      }
+    }
+  },
+  "requests": {
+    "POST /registerTecsCompany": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "registerTecsCompany",
+        "parameters": [],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "corporateUuid": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "packageOrderUuid": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "partnerId": {
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "partnerName": {
+                    "type": "string"
+                  },
+                  "productOrderUuid": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "templateName": {
+                    "minLength": 1,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "corporateUuid",
+                  "packageOrderUuid",
+                  "productOrderUuid",
+                  "templateName"
+                ],
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "\n* Mandator not found\n* Invalid template \n              "
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Unauthorized - Authentication failed, e.g. when user is not active"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Forbidden - Missing role: TE_MERCHANT_TERMINAL_MANAGEMENT"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "security": [
+          {
+            "bearer-key": []
+          }
+        ],
+        "securitySchemes": {
+          "basic-key": {
+            "scheme": "basic",
+            "type": "http"
+          },
+          "bearer-key": {
+            "bearerFormat": "JWT",
+            "scheme": "bearer",
+            "type": "http"
+          },
+          "tecsweb-key": {
+            "description": "TecsWeb token",
+            "in": "header",
+            "name": "TecsWebToken",
+            "type": "apiKey"
+          }
+        },
+        "securitySource": "operation"
       }
     }
   }

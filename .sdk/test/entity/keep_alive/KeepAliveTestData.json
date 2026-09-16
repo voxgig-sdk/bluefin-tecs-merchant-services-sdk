@@ -7,11 +7,11 @@
         "kaDateTimeTo": "s66",
         "keepAliveData": [],
         "pagination": {},
-        "responseCode": "s69",
+        "responseCode": 105,
         "responseMessage": "s6a",
         "terminalDateTimeFrom": "s6b",
         "terminalDateTimeTo": "s6c",
-        "terminalId": "s6d",
+        "terminalId": 109,
         "id": "KEEP_ALIVE00"
       },
       "KEEP_ALIVE01": {
@@ -20,11 +20,11 @@
         "kaDateTimeTo": "sca",
         "keepAliveData": [],
         "pagination": {},
-        "responseCode": "scd",
+        "responseCode": 205,
         "responseMessage": "sce",
         "terminalDateTimeFrom": "scf",
         "terminalDateTimeTo": "sd0",
-        "terminalId": "sd1",
+        "terminalId": 209,
         "id": "KEEP_ALIVE01"
       },
       "KEEP_ALIVE02": {
@@ -33,11 +33,11 @@
         "kaDateTimeTo": "s12e",
         "keepAliveData": [],
         "pagination": {},
-        "responseCode": "s131",
+        "responseCode": 305,
         "responseMessage": "s132",
         "terminalDateTimeFrom": "s133",
         "terminalDateTimeTo": "s134",
-        "terminalId": "s135",
+        "terminalId": 309,
         "id": "KEEP_ALIVE02"
       }
     }
@@ -50,11 +50,252 @@
         "kaDateTimeTo": "s192",
         "keepAliveData": [],
         "pagination": {},
-        "responseCode": "s195",
+        "responseCode": 405,
         "responseMessage": "s196",
         "terminalDateTimeFrom": "s197",
         "terminalDateTimeTo": "s198",
-        "terminalId": "s199"
+        "terminalId": 409
+      }
+    }
+  },
+  "requests": {
+    "POST /public/keepalive": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "keepAlive",
+        "parameters": [],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "hwserialno": {
+                    "type": "string"
+                  },
+                  "kaDateTimeFrom": {
+                    "example": "2024-04-11T11:41:31",
+                    "pattern": "yyyy-MM-dd'T'HH:mm:ss",
+                    "type": "string"
+                  },
+                  "kaDateTimeTo": {
+                    "example": "2024-04-11T11:41:31",
+                    "pattern": "yyyy-MM-dd'T'HH:mm:ss",
+                    "type": "string"
+                  },
+                  "pagination": {
+                    "properties": {
+                      "page": {
+                        "format": "int32",
+                        "type": "integer"
+                      },
+                      "size": {
+                        "format": "int32",
+                        "type": "integer"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "terminalDateTimeFrom": {
+                    "example": "2024-04-11T11:41:31",
+                    "pattern": "yyyy-MM-dd'T'HH:mm:ss",
+                    "type": "string"
+                  },
+                  "terminalDateTimeTo": {
+                    "example": "2024-04-11T11:41:31",
+                    "pattern": "yyyy-MM-dd'T'HH:mm:ss",
+                    "type": "string"
+                  },
+                  "terminalId": {
+                    "format": "int32",
+                    "type": "integer"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "keepAliveData": {
+                      "items": {
+                        "properties": {
+                          "hwSerialNo": {
+                            "type": "string"
+                          },
+                          "kaConfigParams": {
+                            "type": "string"
+                          },
+                          "kaDateTime": {
+                            "format": "date-time",
+                            "type": "string"
+                          },
+                          "kaResponseCode": {
+                            "type": "number"
+                          },
+                          "pinPadFw": {
+                            "type": "string"
+                          },
+                          "pinPadFwExpec": {
+                            "type": "string"
+                          },
+                          "pinPadSn": {
+                            "type": "string"
+                          },
+                          "pinPadSnExpec": {
+                            "type": "string"
+                          },
+                          "responseConfigParam": {
+                            "type": "string"
+                          },
+                          "responseDateTime": {
+                            "format": "date-time",
+                            "type": "string"
+                          },
+                          "swVersion": {
+                            "type": "string"
+                          },
+                          "swVersionExpec": {
+                            "type": "string"
+                          },
+                          "termConfigParams": {
+                            "type": "string"
+                          },
+                          "terminalDateTime": {
+                            "format": "date-time",
+                            "type": "string"
+                          },
+                          "terminalId": {
+                            "format": "int32",
+                            "type": "integer"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "pagination": {
+                      "properties": {
+                        "page": {
+                          "format": "int32",
+                          "type": "integer"
+                        },
+                        "size": {
+                          "format": "int32",
+                          "type": "integer"
+                        },
+                        "totalElements": {
+                          "format": "int64",
+                          "type": "integer"
+                        },
+                        "totalPages": {
+                          "format": "int32",
+                          "type": "integer"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Unauthorized - Authentication failed, e.g. MandatorId does not march"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Forbidden - Missing role: TE_KEEP_ALIVE_LIST"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "\n* Internal server error\n"
+          }
+        },
+        "security": [
+          {
+            "bearer-key": []
+          }
+        ],
+        "securitySchemes": {
+          "basic-key": {
+            "scheme": "basic",
+            "type": "http"
+          },
+          "bearer-key": {
+            "bearerFormat": "JWT",
+            "scheme": "bearer",
+            "type": "http"
+          },
+          "tecsweb-key": {
+            "description": "TecsWeb token",
+            "in": "header",
+            "name": "TecsWebToken",
+            "type": "apiKey"
+          }
+        },
+        "securitySource": "operation"
       }
     }
   }

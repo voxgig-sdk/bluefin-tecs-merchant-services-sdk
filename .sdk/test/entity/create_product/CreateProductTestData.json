@@ -2,8 +2,8 @@
   "existing": {
     "create_product": {
       "CREATE_PRODUCT00": {
-        "acquirerId": "s46",
-        "responseCode": "s47",
+        "acquirerId": 70,
+        "responseCode": 71,
         "responseMessage": "s48",
         "templateName": "s49",
         "templateType": "s4a",
@@ -12,8 +12,8 @@
         "id": "CREATE_PRODUCT00"
       },
       "CREATE_PRODUCT01": {
-        "acquirerId": "s8c",
-        "responseCode": "s8d",
+        "acquirerId": 140,
+        "responseCode": 141,
         "responseMessage": "s8e",
         "templateName": "s8f",
         "templateType": "s90",
@@ -22,8 +22,8 @@
         "id": "CREATE_PRODUCT01"
       },
       "CREATE_PRODUCT02": {
-        "acquirerId": "sd2",
-        "responseCode": "sd3",
+        "acquirerId": 210,
+        "responseCode": 211,
         "responseMessage": "sd4",
         "templateName": "sd5",
         "templateType": "sd6",
@@ -36,13 +36,187 @@
   "new": {
     "create_product": {
       "create_product_ref01": {
-        "acquirerId": "s118",
-        "responseCode": "s119",
+        "acquirerId": 280,
+        "responseCode": 281,
         "responseMessage": "s11a",
         "templateName": "s11b",
         "templateType": "s11c",
         "templateXml": "s11d",
         "terminalType": "s11e"
+      }
+    }
+  },
+  "requests": {
+    "POST /createProduct": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "createProduct",
+        "parameters": [],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "acquirerId": {
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "templateName": {
+                    "maxLength": 100,
+                    "minLength": 0,
+                    "type": "string"
+                  },
+                  "templateType": {
+                    "minLength": 1,
+                    "pattern": "acquirer|terminal",
+                    "type": "string"
+                  },
+                  "templateXml": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "terminalType": {
+                    "maxLength": 100,
+                    "minLength": 0,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "templateName",
+                  "templateType",
+                  "templateXml",
+                  "terminalType"
+                ],
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Bad request. e.g, Input validation failed or there already exist a template with the same name."
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Unauthenticated - Authentication failed"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Unauthorized - Missing role BO_MP_CREATE_NEW_PRODUCT"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "security": [
+          {
+            "bearer-key": []
+          },
+          {
+            "basic-key": []
+          }
+        ],
+        "securitySchemes": {
+          "basic-key": {
+            "scheme": "basic",
+            "type": "http"
+          },
+          "bearer-key": {
+            "bearerFormat": "JWT",
+            "scheme": "bearer",
+            "type": "http"
+          },
+          "tecsweb-key": {
+            "description": "TecsWeb token",
+            "in": "header",
+            "name": "TecsWebToken",
+            "type": "apiKey"
+          }
+        },
+        "securitySource": "operation"
       }
     }
   }

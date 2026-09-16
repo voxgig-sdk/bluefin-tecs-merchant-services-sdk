@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>In-memory mock transport for testing without a live server | Merchant Services</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><a class="skip" href="#content">Skip to content</a>
+<header class="site-header"><a class="site-title" href="../index.html">Merchant Services<span>SDK documentation</span></a><div class="site-links"><a class="repo-link" href="https://github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk">voxgig-sdk/bluefin-tecs-merchant-services-sdk</a></div></header>
+<div class="site-notice" role="note"></div>
+<div class="shell"><nav class="site-nav" aria-label="Documentation"><div class="search"><label for="search">Search documentation</label><input id="search" type="search" data-base="../" placeholder="Find a guide or reference"><div id="results" aria-live="polite"></div></div><details><summary>Overview</summary><a href="../index.html">Merchant Services</a></details>
+<details><summary>API</summary><a href="../api/index.html">API overview</a>
+<a href="../api/cancel_transaction.html">CancelTransaction</a>
+<a href="../api/check_card_black_listed.html">CheckCardBlackListed</a>
+<a href="../api/create_product.html">CreateProduct</a>
+<a href="../api/deactivate_terminal.html">DeactivateTerminal</a>
+<a href="../api/digital_services_api.html">DigitalServicesApi</a>
+<a href="../api/ec_data_ecom.html">EcDataEcom</a>
+<a href="../api/ecom_parameter.html">EcomParameter</a>
+<a href="../api/ecr_data.html">EcrData</a>
+<a href="../api/emv_data.html">EmvData</a>
+<a href="../api/enable_acquiring.html">EnableAcquiring</a>
+<a href="../api/get_merchant_contract_number.html">GetMerchantContractNumber</a>
+<a href="../api/get_template_xml.html">GetTemplateXml</a>
+<a href="../api/introduce_mandator.html">IntroduceMandator</a>
+<a href="../api/introduce_package.html">IntroducePackage</a>
+<a href="../api/keep_alive.html">KeepAlive</a>
+<a href="../api/list_terminal.html">ListTerminal</a>
+<a href="../api/mandator_clearing_export.html">MandatorClearingExport</a>
+<a href="../api/mandator_clearing_export_download.html">MandatorClearingExportDownload</a>
+<a href="../api/mandator_clearing_export_summary.html">MandatorClearingExportSummary</a>
+<a href="../api/merchant_portal_services_api.html">MerchantPortalServicesApi</a>
+<a href="../api/move_tid.html">MoveTid</a>
+<a href="../api/payment_manual.html">PaymentManual</a>
+<a href="../api/payment_sred.html">PaymentSred</a>
+<a href="../api/pre_auth_transaction_completion.html">PreAuthTransactionCompletion</a>
+<a href="../api/reactivate_terminal.html">ReactivateTerminal</a>
+<a href="../api/refund_transaction.html">RefundTransaction</a>
+<a href="../api/register_tecs_company.html">RegisterTecsCompany</a>
+<a href="../api/register_terminal.html">RegisterTerminal</a>
+<a href="../api/report_data.html">ReportData</a>
+<a href="../api/status_transaction.html">StatusTransaction</a>
+<a href="../api/store_terminal_parameter.html">StoreTerminalParameter</a>
+<a href="../api/terminal_id.html">TerminalId</a>
+<a href="../api/transaction_history.html">TransactionHistory</a>
+<a href="../api/transactions_count.html">TransactionsCount</a>
+<a href="../api/transactions_count_card_brand.html">TransactionsCountCardBrand</a>
+<a href="../api/transactions_turnover.html">TransactionsTurnover</a>
+<a href="../api/update_merchant.html">UpdateMerchant</a>
+<a href="../api/update_template_xml.html">UpdateTemplateXml</a>
+<a href="../api/version.html">Version</a></details>
+<details><summary>Guides</summary><a href="../guides/authentication.html">Authentication</a>
+<a href="../guides/first-call.html">Make your first API call</a>
+<a href="../guides/errors.html">Handle errors</a>
+<a href="../guides/concepts.html">Entities, SDKs, and tools</a></details>
+<details><summary>SDKs</summary><a href="../sdks/c.html">C</a>
+<a href="../sdks/clojure.html">Clojure</a>
+<a href="../sdks/cpp.html">C++</a>
+<a href="../sdks/csharp.html">C#</a>
+<a href="../sdks/dart.html">Dart</a>
+<a href="../sdks/elixir.html">Elixir</a>
+<a href="../sdks/go.html">Golang</a>
+<a href="../sdks/haskell.html">Haskell</a>
+<a href="../sdks/java.html">Java</a>
+<a href="../sdks/js.html">JavaScript</a>
+<a href="../sdks/kotlin.html">Kotlin</a>
+<a href="../sdks/lean.html">Lean</a>
+<a href="../sdks/lua.html">Lua</a>
+<a href="../sdks/ocaml.html">OCaml</a>
+<a href="../sdks/perl.html">Perl</a>
+<a href="../sdks/php.html">PHP</a>
+<a href="../sdks/py.html">Python</a>
+<a href="../sdks/rb.html">Ruby</a>
+<a href="../sdks/rust.html">Rust</a>
+<a href="../sdks/scala.html">Scala</a>
+<a href="../sdks/swift.html">Swift</a>
+<a href="../sdks/ts.html">TypeScript</a>
+<a href="../sdks/zig.html">Zig</a></details>
+<details><summary>Tools</summary><a href="../tools/go-cli.html">Go CLI</a>
+<a href="../tools/go-mcp.html">Go MCP server</a></details>
+<details open><summary>Features</summary><a href="../features/audit.html">Structured audit trail of operations</a>
+<a href="../features/clienttrack.html">Client identity and per-request correlation headers</a>
+<a href="../features/debug.html">Request/response capture ring buffer for debugging</a>
+<a href="../features/idempotency.html">Idempotency keys for safe retries of mutating operations</a>
+<a href="../features/log.html">Structured request and response logging</a>
+<a href="../features/metrics.html">Statistics capture: per-operation counters and latency</a>
+<a href="../features/paging.html">Pagination signals for list operations</a>
+<a href="../features/ratelimit.html">Client-side rate limiting via a token bucket</a>
+<a href="../features/retry.html">Automatic retry of transient failures with exponential backoff</a>
+<a href="../features/telemetry.html">Distributed tracing spans with W3C trace-context propagation</a>
+<a aria-current="page" href="../features/test.html">In-memory mock transport for testing without a live server</a>
+<a href="../features/timeout.html">Per-request timeout with transport abort</a></details></nav><main id="content"><div class="page-context"><span class="section-dot" aria-hidden="true"></span>Features</div><h1 id="in-memory-mock-transport-for-testing-without-a-live-server">In-memory mock transport for testing without a live server</h1>
+<p>A feature adds behaviour around API calls without changing how you call the API. Being documented here does not mean it is switched on: features are off by default, and you enable the ones your application needs when you construct the client.</p>
+<h2 id="options">Options</h2>
+<p>The settings this feature reads, with the defaults compiled into the SDK. Pass replacements in the client configuration to change them; set <code>active</code> to turn the feature on.</p>
+<pre><code class="language-json">{
+  &quot;active&quot;: false
+}
+</code></pre>
+<h2 id="pipeline-stages">Pipeline stages</h2>
+<p>The points in the request lifecycle where this feature runs. The SDK calls each stage in order as it prepares a request, sends it, and handles the response.</p>
+<ul>
+<li><code>GetData</code></li>
+<li><code>GetMatch</code></li>
+<li><code>PostConstruct</code></li>
+<li><code>PostConstructEntity</code></li>
+<li><code>PrePoint</code></li>
+<li><code>PreRequest</code></li>
+<li><code>PreResponse</code></li>
+<li><code>PreResult</code></li>
+<li><code>PreSpec</code></li>
+<li><code>SetData</code></li>
+<li><code>SetMatch</code></li>
+</ul>
+</main></div>
+<script src="../assets/search.js" defer></script></body></html>

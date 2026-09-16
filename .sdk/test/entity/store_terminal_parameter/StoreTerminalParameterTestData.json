@@ -4,7 +4,7 @@
       "STORE_TERMINAL_PARAMETER00": {
         "acqTabNexo": {},
         "configVersion": "s3d",
-        "responseCode": "s3e",
+        "responseCode": 62,
         "responseMessage": "s3f",
         "serialNumber": "s40",
         "tidSent": "s41",
@@ -13,7 +13,7 @@
       "STORE_TERMINAL_PARAMETER01": {
         "acqTabNexo": {},
         "configVersion": "s79",
-        "responseCode": "s7a",
+        "responseCode": 122,
         "responseMessage": "s7b",
         "serialNumber": "s7c",
         "tidSent": "s7d",
@@ -22,7 +22,7 @@
       "STORE_TERMINAL_PARAMETER02": {
         "acqTabNexo": {},
         "configVersion": "sb5",
-        "responseCode": "sb6",
+        "responseCode": 182,
         "responseMessage": "sb7",
         "serialNumber": "sb8",
         "tidSent": "sb9",
@@ -35,10 +35,176 @@
       "store_terminal_parameter_ref01": {
         "acqTabNexo": {},
         "configVersion": "sf1",
-        "responseCode": "sf2",
+        "responseCode": 242,
         "responseMessage": "sf3",
         "serialNumber": "sf4",
         "tidSent": "sf5"
+      }
+    }
+  },
+  "requests": {
+    "POST /storeTerminalParameters": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "storeProtocolParameters",
+        "parameters": [],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "acqTabNexo": {
+                    "properties": {
+                      "acqId": {
+                        "format": "int32",
+                        "type": "integer"
+                      },
+                      "initPartyId": {
+                        "type": "string"
+                      },
+                      "msgItms": {
+                        "type": "string"
+                      },
+                      "offLnCmplXchgIfDclnd": {
+                        "type": "boolean"
+                      },
+                      "offLnCmplXchgIfFaild": {
+                        "type": "boolean"
+                      },
+                      "onLnCmplXchgIfDclnd": {
+                        "type": "boolean"
+                      },
+                      "onLnCmplXchgIfFaild": {
+                        "type": "boolean"
+                      },
+                      "prtctCardData": {
+                        "type": "boolean"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "configVersion": {
+                    "type": "string"
+                  },
+                  "serialNumber": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "tidSent": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "serialNumber"
+                ],
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "SerialNumber parameter not provided"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Unauthorized - Authentication failed"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "security": [
+          {
+            "basic-key": []
+          }
+        ],
+        "securitySchemes": {
+          "basic-key": {
+            "scheme": "basic",
+            "type": "http"
+          },
+          "bearer-key": {
+            "bearerFormat": "JWT",
+            "scheme": "bearer",
+            "type": "http"
+          },
+          "tecsweb-key": {
+            "description": "TecsWeb token",
+            "in": "header",
+            "name": "TecsWebToken",
+            "type": "apiKey"
+          }
+        },
+        "securitySource": "operation"
       }
     }
   }

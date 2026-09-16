@@ -33,7 +33,93 @@
         "repr": "auto"
       },
       "contributor": {},
-      "docs": {},
+      "doc": {
+        "active": true,
+        "assets": {
+          "path": ".sdk/doc/assets"
+        },
+        "brand": {
+          "label": "",
+          "notice": "",
+          "shortNotice": "",
+          "url": ""
+        },
+        "ci": {
+          "active": true,
+          "branch": "main"
+        },
+        "content": {
+          "path": ".sdk/doc/content"
+        },
+        "edition": {
+          "github-pages": {
+            "active": true,
+            "base": "node_modules/@voxgig/docgen/project/.sdk",
+            "brand": {},
+            "filter": {
+              "entities": [],
+              "features": [],
+              "targets": []
+            },
+            "kind": "github-pages",
+            "name": "github-pages",
+            "origname": "",
+            "output": {
+              "path": "docs"
+            },
+            "package": "@voxgig/docgen",
+            "site": {
+              "active": true
+            },
+            "style": {},
+            "title": ""
+          },
+          "summary": {
+            "active": true,
+            "base": "node_modules/@voxgig/docgen/project/.sdk",
+            "brand": {},
+            "filter": {
+              "entities": [],
+              "features": [],
+              "targets": []
+            },
+            "kind": "summary",
+            "name": "summary",
+            "origname": "",
+            "output": {
+              "path": "SUMMARY.md"
+            },
+            "package": "@voxgig/docgen",
+            "site": {
+              "active": true
+            },
+            "style": {},
+            "title": ""
+          }
+        },
+        "qa": {
+          "vocabulary": []
+        },
+        "style": {
+          "color": {
+            "accent": "#00c6d8",
+            "background": "#f5f5f9",
+            "darkBackground": "#0f1117",
+            "darkText": "#e6edf3",
+            "primary": "#e70042",
+            "text": "#0a0a0a"
+          },
+          "font": "Nunito, system-ui, sans-serif",
+          "fontFile": "",
+          "headingFont": "Nunito, system-ui, sans-serif",
+          "headingFontFile": "",
+          "logo": "",
+          "mode": "light",
+          "mono": "ui-monospace, monospace",
+          "monoFile": ""
+        },
+        "target": {}
+      },
       "entity": {
         "cancel_transaction": {
           "active": true,
@@ -330,6 +416,12 @@
                 {
                   "active": true,
                   "args": {},
+                  "contract": {
+                    "id": "POST /public/cancelTransaction",
+                    "json": "{\"operationId\":\"cancelTransaction\",\"parameters\":[],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"amount\":{\"format\":\"int32\",\"type\":\"integer\"},\"clientId\":{\"format\":\"int32\",\"type\":\"integer\"},\"currency\":{\"minLength\":1,\"type\":\"string\"},\"cvc\":{\"type\":\"string\"},\"ecData\":{\"type\":\"string\"},\"ecrData\":{\"type\":\"string\"},\"emvData\":{\"type\":\"string\"},\"languageCode\":{\"type\":\"string\"},\"messageType\":{\"type\":\"string\"},\"originalTransactionId\":{\"minLength\":1,\"type\":\"string\"},\"password\":{\"type\":\"string\"},\"paymentReason\":{\"type\":\"string\"},\"receiptLayout\":{\"format\":\"int32\",\"type\":\"integer\"},\"receiptNumber\":{\"minLength\":1,\"type\":\"string\"},\"terminalId\":{\"format\":\"int32\",\"type\":\"integer\"},\"terminalLocation\":{\"type\":\"string\"},\"transactionDate\":{\"example\":\"20230509114131\",\"pattern\":\"(\\\\d{4}(0[0-9]|1[0-2])([0-2][0-9]|3[0-1])([0-1][0-9]|2[0-4])(([0-5][0-9]){2}))\",\"type\":\"string\"},\"transactionId\":{\"minLength\":1,\"type\":\"string\"}},\"required\":[\"amount\",\"clientId\",\"currency\",\"messageType\",\"originalTransactionId\",\"receiptNumber\",\"terminalId\",\"transactionDate\",\"transactionId\"],\"type\":\"object\"}}},\"required\":true},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"acquirerId\":{\"type\":\"string\"},\"acquirerName\":{\"type\":\"string\"},\"actualBonusPoints\":{\"type\":\"string\"},\"amount\":{\"format\":\"int32\",\"type\":\"integer\"},\"authorizationCode\":{\"type\":\"string\"},\"balanceAmount\":{\"type\":\"string\"},\"cardBrand\":{\"type\":\"string\"},\"cardNumber\":{\"type\":\"string\"},\"ecrData\":{\"type\":\"string\"},\"emvData\":{\"type\":\"string\"},\"exchangeFee\":{\"format\":\"int64\",\"type\":\"integer\"},\"exchangeRate\":{\"type\":\"string\"},\"merchantAddress\":{\"type\":\"string\"},\"merchantName\":{\"type\":\"string\"},\"merchantNumber\":{\"type\":\"string\"},\"messageType\":{\"type\":\"string\"},\"originalTraceNumber\":{\"format\":\"int32\",\"type\":\"integer\"},\"originalTransactionId\":{\"type\":\"string\"},\"receiptFooter\":{\"type\":\"string\"},\"receiptHeader\":{\"type\":\"string\"},\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"},\"serialNumber\":{\"type\":\"string\"},\"svc\":{\"type\":\"string\"},\"traceNumber\":{\"format\":\"int32\",\"type\":\"integer\"},\"transactionDate\":{\"format\":\"date-time\",\"type\":\"string\"},\"transactionId\":{\"type\":\"string\"},\"txType\":{\"type\":\"string\"},\"userData\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Successful operation\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"\\n* Transaction not found\\n* Mandator not found\\n\"},\"401\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Unauthorized - Authentication failed, e.g. MandatorId does not march\"},\"403\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Forbidden - Missing role: BO_TRANSACTIONMANAGEMENT_CANCEL\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"security\":[{\"bearer-key\":[]},{\"basic-key\":[]},{\"tecsweb-key\":[]}],\"securitySchemes\":{\"basic-key\":{\"scheme\":\"basic\",\"type\":\"http\"},\"bearer-key\":{\"bearerFormat\":\"JWT\",\"scheme\":\"bearer\",\"type\":\"http\"},\"tecsweb-key\":{\"description\":\"TecsWeb token\",\"in\":\"header\",\"name\":\"TecsWebToken\",\"type\":\"apiKey\"}},\"securitySource\":\"operation\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/cancelTransaction",
@@ -399,6 +491,12 @@
                         "type": "`$STRING`"
                       }
                     ]
+                  },
+                  "contract": {
+                    "id": "POST /checkCardBlackListed",
+                    "json": "{\"operationId\":\"checkCardBlackListed\",\"parameters\":[{\"in\":\"header\",\"name\":\"Authorization\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"cardNo\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"required\":true},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Successful operation\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Mandator not found\"},\"401\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Unauthorized - Authentication failed, e.g. CAS authentication failed\"},\"403\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Forbidden - Missing role: SERVICE_BLACKLISTCHECK\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"security\":[{\"basic-key\":[]}],\"securitySchemes\":{\"basic-key\":{\"scheme\":\"basic\",\"type\":\"http\"},\"bearer-key\":{\"bearerFormat\":\"JWT\",\"scheme\":\"bearer\",\"type\":\"http\"},\"tecsweb-key\":{\"description\":\"TecsWeb token\",\"in\":\"header\",\"name\":\"TecsWebToken\",\"type\":\"apiKey\"}},\"securitySource\":\"operation\"}",
+                    "source": "openapi3",
+                    "version": 1
                   },
                   "kind": "http",
                   "method": "POST",
@@ -485,6 +583,12 @@
                 {
                   "active": true,
                   "args": {},
+                  "contract": {
+                    "id": "POST /createProduct",
+                    "json": "{\"operationId\":\"createProduct\",\"parameters\":[],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"acquirerId\":{\"format\":\"int32\",\"type\":\"integer\"},\"templateName\":{\"maxLength\":100,\"minLength\":0,\"type\":\"string\"},\"templateType\":{\"minLength\":1,\"pattern\":\"acquirer|terminal\",\"type\":\"string\"},\"templateXml\":{\"minLength\":1,\"type\":\"string\"},\"terminalType\":{\"maxLength\":100,\"minLength\":0,\"type\":\"string\"}},\"required\":[\"templateName\",\"templateType\",\"templateXml\",\"terminalType\"],\"type\":\"object\"}}},\"required\":true},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Successful operation\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Bad request. e.g, Input validation failed or there already exist a template with the same name.\"},\"401\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Unauthenticated - Authentication failed\"},\"403\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Unauthorized - Missing role BO_MP_CREATE_NEW_PRODUCT\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"security\":[{\"bearer-key\":[]},{\"basic-key\":[]}],\"securitySchemes\":{\"basic-key\":{\"scheme\":\"basic\",\"type\":\"http\"},\"bearer-key\":{\"bearerFormat\":\"JWT\",\"scheme\":\"bearer\",\"type\":\"http\"},\"tecsweb-key\":{\"description\":\"TecsWeb token\",\"in\":\"header\",\"name\":\"TecsWebToken\",\"type\":\"apiKey\"}},\"securitySource\":\"operation\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/createProduct",
@@ -566,6 +670,12 @@
                 {
                   "active": true,
                   "args": {},
+                  "contract": {
+                    "id": "POST /deactivateTerminal",
+                    "json": "{\"operationId\":\"deactivateTerminal\",\"parameters\":[],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"deactivationReason\":{\"minLength\":1,\"type\":\"string\"},\"terminalId\":{\"format\":\"int32\",\"type\":\"integer\"}},\"required\":[\"deactivationReason\",\"terminalId\"],\"type\":\"object\"}}},\"required\":true},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"corporateUuid\":{\"type\":\"string\"},\"packageOrderUuid\":{\"type\":\"string\"},\"productOrderUuid\":{\"type\":\"string\"},\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Successful operation\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"type\":\"string\"}}},\"description\":\"\\n* Terminal not found\\n* Mandator not found\\n* MandatorConfig not found\\n\"},\"401\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Unauthorized - Authentication failed, e.g. MandatorId does not march\"},\"403\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Forbidden - Missing role: TE_MERCHANT_TERMINAL_MANAGEMENT\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"\\n* Internal server error\\n* Tecscompany2Tecsterm record not found\\n* Tecscompany record not found\\n\"}},\"security\":[{\"bearer-key\":[]}],\"securitySchemes\":{\"basic-key\":{\"scheme\":\"basic\",\"type\":\"http\"},\"bearer-key\":{\"bearerFormat\":\"JWT\",\"scheme\":\"bearer\",\"type\":\"http\"},\"tecsweb-key\":{\"description\":\"TecsWeb token\",\"in\":\"header\",\"name\":\"TecsWebToken\",\"type\":\"apiKey\"}},\"securitySource\":\"operation\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/deactivateTerminal",
@@ -681,6 +791,12 @@
                       }
                     ]
                   },
+                  "contract": {
+                    "id": "POST /public/digitalservices/mandatorClearingExportDownload/{fileId}",
+                    "json": "{\"operationId\":\"downloadMandatorClearingExport\",\"parameters\":[{\"description\":\"File ID returned from the initial export request\",\"in\":\"path\",\"name\":\"fileId\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/zip\":{}},\"description\":\"ZIP file download containing CSV data\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"File is still processing\"},\"401\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"\\nUnauthorized - Authentication failed:<br>\\n\"},\"403\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Forbidden - Missing role: BO_MANDATOR_CLEARING_EXPORT\"},\"404\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"File not found\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"security\":[{\"bearer-key\":[]}],\"securitySchemes\":{\"basic-key\":{\"scheme\":\"basic\",\"type\":\"http\"},\"bearer-key\":{\"bearerFormat\":\"JWT\",\"scheme\":\"bearer\",\"type\":\"http\"},\"tecsweb-key\":{\"description\":\"TecsWeb token\",\"in\":\"header\",\"name\":\"TecsWebToken\",\"type\":\"apiKey\"}},\"securitySource\":\"operation\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/digitalservices/mandatorClearingExportDownload/{fileId}",
@@ -716,6 +832,12 @@
                 {
                   "active": true,
                   "args": {},
+                  "contract": {
+                    "id": "POST /public/digitalservices/mandatorClearingExportMetadata",
+                    "json": "{\"operationId\":\"mandatorClearingExportMetadata\",\"parameters\":[],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"clearingDateFrom\":{\"description\":\"Date and time in the format yyyy-MM-dd'T'HH:mm:ssz\",\"example\":\"2024-04-11T11:41:31+02:00\",\"pattern\":\"yyyy-MM-dd'T'HH:mm:ssZ\",\"type\":\"string\"},\"clearingDateTo\":{\"description\":\"Date and time in the format yyyy-MM-dd'T'HH:mm:ssz\",\"example\":\"2024-04-11T11:41:31+02:00\",\"pattern\":\"yyyy-MM-dd'T'HH:mm:ssZ\",\"type\":\"string\"}},\"required\":[\"clearingDateFrom\",\"clearingDateTo\"],\"type\":\"object\"}}},\"required\":true},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"},\"txCount\":{\"format\":\"int32\",\"type\":\"integer\"},\"txIdEnd\":{\"type\":\"string\"},\"txIdStart\":{\"type\":\"string\"},\"txSeqNoEnd\":{\"format\":\"int32\",\"type\":\"integer\"},\"txSeqNoStart\":{\"format\":\"int32\",\"type\":\"integer\"},\"txTotal\":{\"format\":\"int32\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Successful operation\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"\\n* Invalid request data. Bad request\\n\"},\"401\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"\\nUnauthorized - Authentication failed:<br>\\n\"},\"403\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Forbidden - Missing role: BO_MANDATOR_CLEARING_EXPORT\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"security\":[{\"bearer-key\":[]}],\"securitySchemes\":{\"basic-key\":{\"scheme\":\"basic\",\"type\":\"http\"},\"bearer-key\":{\"bearerFormat\":\"JWT\",\"scheme\":\"bearer\",\"type\":\"http\"},\"tecsweb-key\":{\"description\":\"TecsWeb token\",\"in\":\"header\",\"name\":\"TecsWebToken\",\"type\":\"apiKey\"}},\"securitySource\":\"operation\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/digitalservices/mandatorClearingExportMetadata",
@@ -745,6 +867,12 @@
                 {
                   "active": true,
                   "args": {},
+                  "contract": {
+                    "id": "GET /public/digitalservices/mandatorClearingExportDownload/status",
+                    "json": "{\"operationId\":\"getMandatorClearingExportConcurrencyStatus\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"type\":\"string\"}}},\"description\":\"Export concurrency status retrieved successfully\"},\"401\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Unauthorized\"},\"403\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Forbidden - no permissions\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"securitySchemes\":{\"basic-key\":{\"scheme\":\"basic\",\"type\":\"http\"},\"bearer-key\":{\"bearerFormat\":\"JWT\",\"scheme\":\"bearer\",\"type\":\"http\"},\"tecsweb-key\":{\"description\":\"TecsWeb token\",\"in\":\"header\",\"name\":\"TecsWebToken\",\"type\":\"apiKey\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "GET",
                   "orig": "/public/digitalservices/mandatorClearingExportDownload/status",
@@ -833,6 +961,12 @@
                 {
                   "active": true,
                   "args": {},
+                  "contract": {
+                    "id": "POST /public/getEcData",
+                    "json": "{\"operationId\":\"getEcData\",\"parameters\":[],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"terminalId\":{\"format\":\"int32\",\"type\":\"integer\"},\"transactionId\":{\"minLength\":1,\"type\":\"string\"},\"transactionType\":{\"type\":\"string\"}},\"required\":[\"terminalId\",\"transactionId\",\"transactionType\"],\"type\":\"object\"}}},\"required\":true},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"ecomData\":{\"type\":\"string\"},\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Successful operation\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Bad request\"},\"401\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Unauthenticated - Authentication failed\"},\"403\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Unauthorized - Missing role BO_TRANSACTIONMANAGEMENT_ECOM\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"security\":[{\"bearer-key\":[]},{\"basic-key\":[]}],\"securitySchemes\":{\"basic-key\":{\"scheme\":\"basic\",\"type\":\"http\"},\"bearer-key\":{\"bearerFormat\":\"JWT\",\"scheme\":\"bearer\",\"type\":\"http\"},\"tecsweb-key\":{\"description\":\"TecsWeb token\",\"in\":\"header\",\"name\":\"TecsWebToken\",\"type\":\"apiKey\"}},\"securitySource\":\"operation\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/getEcData",
@@ -905,6 +1039,12 @@
                 {
                   "active": true,
                   "args": {},
+                  "contract": {
+                    "id": "POST /public/getEcomParameters",
+                    "json": "{\"operationId\":\"getEcomParameters\",\"parameters\":[],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"terminalId\":{\"format\":\"int32\",\"type\":\"integer\"}},\"required\":[\"terminalId\"],\"type\":\"object\"}}},\"required\":true},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"ecomPass\":{\"type\":\"string\"},\"ecomSkey\":{\"type\":\"string\"},\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Successful operation\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Bad request\"},\"401\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Unauthenticated - Authentication failed\"},\"403\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Unauthorized - Missing role TW_GET_ECOM_PARAMETERS\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"security\":[{\"bearer-key\":[]},{\"basic-key\":[]}],\"securitySchemes\":{\"basic-key\":{\"scheme\":\"basic\",\"type\":\"http\"},\"bearer-key\":{\"bearerFormat\":\"JWT\",\"scheme\":\"bearer\",\"type\":\"http\"},\"tecsweb-key\":{\"description\":\"TecsWeb token\",\"in\":\"header\",\"name\":\"TecsWebToken\",\"type\":\"apiKey\"}},\"securitySource\":\"operation\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/getEcomParameters",
@@ -983,6 +1123,12 @@
                 {
                   "active": true,
                   "args": {},
+                  "contract": {
+                    "id": "POST /public/getEcrData",
+                    "json": "{\"operationId\":\"getEcrData\",\"parameters\":[],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"terminalId\":{\"format\":\"int32\",\"type\":\"integer\"},\"transactionId\":{\"minLength\":1,\"type\":\"string\"},\"transactionType\":{\"type\":\"string\"}},\"required\":[\"terminalId\",\"transactionId\",\"transactionType\"],\"type\":\"object\"}}},\"required\":true},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"ecrData\":{\"type\":\"string\"},\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Successful operation\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Bad request\"},\"401\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Unauthenticated - Authentication failed\"},\"403\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Unauthorized - Missing role BO_TRANSACTIONMANAGEMENT_ECR\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"security\":[{\"bearer-key\":[]},{\"basic-key\":[]}],\"securitySchemes\":{\"basic-key\":{\"scheme\":\"basic\",\"type\":\"http\"},\"bearer-key\":{\"bearerFormat\":\"JWT\",\"scheme\":\"bearer\",\"type\":\"http\"},\"tecsweb-key\":{\"description\":\"TecsWeb token\",\"in\":\"header\",\"name\":\"TecsWebToken\",\"type\":\"apiKey\"}},\"securitySource\":\"operation\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/getEcrData",
@@ -1061,6 +1207,12 @@
                 {
                   "active": true,
                   "args": {},
+                  "contract": {
+                    "id": "POST /public/getEmvData",
+                    "json": "{\"operationId\":\"getEmvData\",\"parameters\":[],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"terminalId\":{\"format\":\"int32\",\"type\":\"integer\"},\"transactionId\":{\"minLength\":1,\"type\":\"string\"},\"transactionType\":{\"type\":\"string\"}},\"required\":[\"terminalId\",\"transactionId\",\"transactionType\"],\"type\":\"object\"}}},\"required\":true},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"emvData\":{\"type\":\"string\"},\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Successful operation\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Bad request\"},\"401\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Unauthenticated - Authentication failed\"},\"403\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Unauthorized - Missing role TE_MERCHANT_TERMINAL_MANAGEMENT\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"security\":[{\"bearer-key\":[]},{\"basic-key\":[]}],\"securitySchemes\":{\"basic-key\":{\"scheme\":\"basic\",\"type\":\"http\"},\"bearer-key\":{\"bearerFormat\":\"JWT\",\"scheme\":\"bearer\",\"type\":\"http\"},\"tecsweb-key\":{\"description\":\"TecsWeb token\",\"in\":\"header\",\"name\":\"TecsWebToken\",\"type\":\"apiKey\"}},\"securitySource\":\"operation\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/getEmvData",
@@ -1189,6 +1341,12 @@
                 {
                   "active": true,
                   "args": {},
+                  "contract": {
+                    "id": "POST /enableAcquiring",
+                    "json": "{\"operationId\":\"enableAcquiring\",\"parameters\":[],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"accountNo\":{\"format\":\"int32\",\"type\":\"integer\"},\"additionalData\":{\"additionalProperties\":{\"type\":\"string\"},\"type\":\"object\"},\"corporateUuid\":{\"minLength\":1,\"type\":\"string\"},\"currency\":{\"maxLength\":3,\"minLength\":3,\"type\":\"string\"},\"merchantCategoryCode\":{\"format\":\"int32\",\"minimum\":0,\"type\":\"integer\"},\"packageOrderUuid\":{\"minLength\":1,\"type\":\"string\"},\"productOrderUuid\":{\"minLength\":1,\"type\":\"string\"},\"sortingCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"templateName\":{\"minLength\":1,\"type\":\"string\"},\"terminalIdAcq\":{\"type\":\"string\"},\"terminalIds\":{\"items\":{\"format\":\"int32\",\"type\":\"integer\"},\"type\":\"array\"},\"vuNummer\":{\"maxLength\":15,\"minLength\":1,\"type\":\"string\"}},\"required\":[\"corporateUuid\",\"currency\",\"merchantCategoryCode\",\"packageOrderUuid\",\"productOrderUuid\",\"templateName\"],\"type\":\"object\"}}},\"required\":true},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Successful operation\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"type\":\"string\"}}},\"description\":\"\\n* Mandator not found\\n* Invalid template \\n* Invalid TECS company specified\\n* MandatorConfig not found\\n* Invalid country code Alpha3 specified \\n* Vu-nummer has to be unique\\n\"},\"401\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Unauthorized - Authentication failed, e.g. when user is not active\"},\"403\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Forbidden - Missing role: TE_MERCHANT_TERMINAL_MANAGEMENT\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"\\n* Internal server error\\n* Error getting Corporate Account\\n\"}},\"security\":[{\"bearer-key\":[]}],\"securitySchemes\":{\"basic-key\":{\"scheme\":\"basic\",\"type\":\"http\"},\"bearer-key\":{\"bearerFormat\":\"JWT\",\"scheme\":\"bearer\",\"type\":\"http\"},\"tecsweb-key\":{\"description\":\"TecsWeb token\",\"in\":\"header\",\"name\":\"TecsWebToken\",\"type\":\"apiKey\"}},\"securitySource\":\"operation\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/enableAcquiring",
@@ -1245,6 +1403,12 @@
                 {
                   "active": true,
                   "args": {},
+                  "contract": {
+                    "id": "POST /getMerchantContractNumber",
+                    "json": "{\"operationId\":\"getMerchantContractNumber\",\"parameters\":[],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"merchantContractNumber\":{\"minLength\":1,\"type\":\"string\"}},\"required\":[\"merchantContractNumber\"],\"type\":\"object\"}}},\"required\":true},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"In case the merchant contract number is not registered yet\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Bad request\"},\"401\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Unauthenticated - Authentication failed\"},\"403\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Unauthorized - Missing role SYSTEM_REGISTER_MERCHANT_TERMINAL\"},\"409\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"In case the merchant contract number is already registered\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"security\":[{\"bearer-key\":[]},{\"basic-key\":[]}],\"securitySchemes\":{\"basic-key\":{\"scheme\":\"basic\",\"type\":\"http\"},\"bearer-key\":{\"bearerFormat\":\"JWT\",\"scheme\":\"bearer\",\"type\":\"http\"},\"tecsweb-key\":{\"description\":\"TecsWeb token\",\"in\":\"header\",\"name\":\"TecsWebToken\",\"type\":\"apiKey\"}},\"securitySource\":\"operation\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/getMerchantContractNumber",
@@ -1301,6 +1465,12 @@
                 {
                   "active": true,
                   "args": {},
+                  "contract": {
+                    "id": "POST /public/getTemplateXml",
+                    "json": "{\"operationId\":\"getTemplateXml\",\"parameters\":[],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"templateName\":{\"minLength\":1,\"type\":\"string\"}},\"required\":[\"templateName\"],\"type\":\"object\"}}},\"required\":true},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Successful operation\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Bad request\"},\"401\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Unauthenticated - Authentication failed\"},\"403\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Unauthorized - Missing role BO_MP_GET_XML_TEMPLATE\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"security\":[{\"bearer-key\":[]},{\"basic-key\":[]}],\"securitySchemes\":{\"basic-key\":{\"scheme\":\"basic\",\"type\":\"http\"},\"bearer-key\":{\"bearerFormat\":\"JWT\",\"scheme\":\"bearer\",\"type\":\"http\"},\"tecsweb-key\":{\"description\":\"TecsWeb token\",\"in\":\"header\",\"name\":\"TecsWebToken\",\"type\":\"apiKey\"}},\"securitySource\":\"operation\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/getTemplateXml",
@@ -1360,6 +1530,12 @@
                 {
                   "active": true,
                   "args": {},
+                  "contract": {
+                    "id": "POST /introduceMandator",
+                    "json": "{\"operationId\":\"introducePackage_1\",\"parameters\":[],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"mandatorName\":{\"minLength\":1,\"type\":\"string\"}},\"required\":[\"mandatorName\"],\"type\":\"object\"}}},\"required\":true},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Successful operation\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Bad request\"},\"401\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Unauthenticated - Authentication failed\"},\"403\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Unauthorized - Missing role BO_USERMANAGEMENT_MANDATOR_MANAGER\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"security\":[{\"bearer-key\":[]}],\"securitySchemes\":{\"basic-key\":{\"scheme\":\"basic\",\"type\":\"http\"},\"bearer-key\":{\"bearerFormat\":\"JWT\",\"scheme\":\"bearer\",\"type\":\"http\"},\"tecsweb-key\":{\"description\":\"TecsWeb token\",\"in\":\"header\",\"name\":\"TecsWebToken\",\"type\":\"apiKey\"}},\"securitySource\":\"operation\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/introduceMandator",
@@ -1416,6 +1592,12 @@
                 {
                   "active": true,
                   "args": {},
+                  "contract": {
+                    "id": "POST /introducePackage",
+                    "json": "{\"operationId\":\"introducePackage\",\"parameters\":[],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"terminalTemplateDescription\":{\"minLength\":1,\"type\":\"string\"}},\"required\":[\"terminalTemplateDescription\"],\"type\":\"object\"}}},\"required\":true},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Successful operation\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Bad request\"},\"401\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Unauthenticated - Authentication failed\"},\"403\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Unauthorized - Missing role BO_USERMANAGEMENT_MANDATOR_MANAGER\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"security\":[{\"bearer-key\":[]}],\"securitySchemes\":{\"basic-key\":{\"scheme\":\"basic\",\"type\":\"http\"},\"bearer-key\":{\"bearerFormat\":\"JWT\",\"scheme\":\"bearer\",\"type\":\"http\"},\"tecsweb-key\":{\"description\":\"TecsWeb token\",\"in\":\"header\",\"name\":\"TecsWebToken\",\"type\":\"apiKey\"}},\"securitySource\":\"operation\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/introducePackage",
@@ -1515,6 +1697,12 @@
                 {
                   "active": true,
                   "args": {},
+                  "contract": {
+                    "id": "POST /public/keepalive",
+                    "json": "{\"operationId\":\"keepAlive\",\"parameters\":[],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"hwserialno\":{\"type\":\"string\"},\"kaDateTimeFrom\":{\"example\":\"2024-04-11T11:41:31\",\"pattern\":\"yyyy-MM-dd'T'HH:mm:ss\",\"type\":\"string\"},\"kaDateTimeTo\":{\"example\":\"2024-04-11T11:41:31\",\"pattern\":\"yyyy-MM-dd'T'HH:mm:ss\",\"type\":\"string\"},\"pagination\":{\"properties\":{\"page\":{\"format\":\"int32\",\"type\":\"integer\"},\"size\":{\"format\":\"int32\",\"type\":\"integer\"}},\"type\":\"object\"},\"terminalDateTimeFrom\":{\"example\":\"2024-04-11T11:41:31\",\"pattern\":\"yyyy-MM-dd'T'HH:mm:ss\",\"type\":\"string\"},\"terminalDateTimeTo\":{\"example\":\"2024-04-11T11:41:31\",\"pattern\":\"yyyy-MM-dd'T'HH:mm:ss\",\"type\":\"string\"},\"terminalId\":{\"format\":\"int32\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"required\":true},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"keepAliveData\":{\"items\":{\"properties\":{\"hwSerialNo\":{\"type\":\"string\"},\"kaConfigParams\":{\"type\":\"string\"},\"kaDateTime\":{\"format\":\"date-time\",\"type\":\"string\"},\"kaResponseCode\":{\"type\":\"number\"},\"pinPadFw\":{\"type\":\"string\"},\"pinPadFwExpec\":{\"type\":\"string\"},\"pinPadSn\":{\"type\":\"string\"},\"pinPadSnExpec\":{\"type\":\"string\"},\"responseConfigParam\":{\"type\":\"string\"},\"responseDateTime\":{\"format\":\"date-time\",\"type\":\"string\"},\"swVersion\":{\"type\":\"string\"},\"swVersionExpec\":{\"type\":\"string\"},\"termConfigParams\":{\"type\":\"string\"},\"terminalDateTime\":{\"format\":\"date-time\",\"type\":\"string\"},\"terminalId\":{\"format\":\"int32\",\"type\":\"integer\"}},\"type\":\"object\"},\"type\":\"array\"},\"pagination\":{\"properties\":{\"page\":{\"format\":\"int32\",\"type\":\"integer\"},\"size\":{\"format\":\"int32\",\"type\":\"integer\"},\"totalElements\":{\"format\":\"int64\",\"type\":\"integer\"},\"totalPages\":{\"format\":\"int32\",\"type\":\"integer\"}},\"type\":\"object\"},\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Successful operation\"},\"401\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Unauthorized - Authentication failed, e.g. MandatorId does not march\"},\"403\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Forbidden - Missing role: TE_KEEP_ALIVE_LIST\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"\\n* Internal server error\\n\"}},\"security\":[{\"bearer-key\":[]}],\"securitySchemes\":{\"basic-key\":{\"scheme\":\"basic\",\"type\":\"http\"},\"bearer-key\":{\"bearerFormat\":\"JWT\",\"scheme\":\"bearer\",\"type\":\"http\"},\"tecsweb-key\":{\"description\":\"TecsWeb token\",\"in\":\"header\",\"name\":\"TecsWebToken\",\"type\":\"apiKey\"}},\"securitySource\":\"operation\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/keepalive",
@@ -1592,6 +1780,12 @@
                 {
                   "active": true,
                   "args": {},
+                  "contract": {
+                    "id": "POST /public/listTerminals",
+                    "json": "{\"operationId\":\"listTerminals\",\"parameters\":[],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"corporateUuid\":{\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"filter\":{\"properties\":{\"corporateUuid\":{\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"fulltextSearch\":{\"type\":\"string\"},\"hwserialno\":{\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"terminalType\":{\"type\":\"string\"}},\"type\":\"object\"},\"pagination\":{\"properties\":{\"page\":{\"format\":\"int32\",\"type\":\"integer\"},\"size\":{\"format\":\"int32\",\"type\":\"integer\"}},\"type\":\"object\"}},\"type\":\"object\"}}},\"required\":true},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"},\"terminals\":{\"items\":{\"properties\":{\"acquirings\":{\"items\":{\"properties\":{\"name\":{\"type\":\"string\"},\"productOrderUuid\":{\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"},\"currency\":{\"type\":\"string\"},\"hwSerialNo\":{\"type\":\"string\"},\"kaDateTimeCreate\":{\"format\":\"date-time\",\"type\":\"string\"},\"keepAliveStatus\":{\"type\":\"string\"},\"mpExpectedSerialNo\":{\"type\":\"string\"},\"no\":{\"type\":\"string\"},\"packageOrderUuid\":{\"type\":\"string\"},\"status\":{\"type\":\"string\"},\"termLocation\":{\"type\":\"string\"},\"termModel\":{\"type\":\"string\"},\"termn\":{\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"}},\"type\":\"object\"}}},\"description\":\"Successful operation\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Bad request\"},\"401\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Unauthenticated - Authentication failed\"},\"403\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Unauthorized - Missing role TE_MERCHANT_TERMINAL_MANAGEMENT\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"security\":[{\"bearer-key\":[]}],\"securitySchemes\":{\"basic-key\":{\"scheme\":\"basic\",\"type\":\"http\"},\"bearer-key\":{\"bearerFormat\":\"JWT\",\"scheme\":\"bearer\",\"type\":\"http\"},\"tecsweb-key\":{\"description\":\"TecsWeb token\",\"in\":\"header\",\"name\":\"TecsWebToken\",\"type\":\"apiKey\"}},\"securitySource\":\"operation\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/listTerminals",
@@ -1671,6 +1865,12 @@
                 {
                   "active": true,
                   "args": {},
+                  "contract": {
+                    "id": "POST /public/digitalservices/mandatorClearingExport",
+                    "json": "{\"operationId\":\"mandatorClearingExport\",\"parameters\":[],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"clearingDateFrom\":{\"description\":\"Date and time in the format yyyy-MM-dd'T'HH:mm:ssZ\",\"example\":\"2024-04-11T11:41:31+02:00\",\"pattern\":\"yyyy-MM-dd'T'HH:mm:ssZ\",\"type\":\"string\"},\"clearingDateTo\":{\"description\":\"Date and time in the format yyyy-MM-dd'T'HH:mm:ssZ\",\"example\":\"2024-04-11T11:41:31+02:00\",\"pattern\":\"yyyy-MM-dd'T'HH:mm:ssZ\",\"type\":\"string\"},\"pagination\":{\"properties\":{\"page\":{\"format\":\"int32\",\"type\":\"integer\"},\"size\":{\"format\":\"int32\",\"type\":\"integer\"}},\"type\":\"object\"}},\"required\":[\"clearingDateFrom\",\"clearingDateTo\"],\"type\":\"object\"}}},\"required\":true},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"records\":{\"items\":{\"properties\":{\"acquirerName\":{\"type\":\"string\"},\"acquirerTerminalId\":{\"type\":\"string\"},\"amount\":{\"format\":\"int32\",\"type\":\"integer\"},\"authorizationCode\":{\"type\":\"string\"},\"authorizationDate\":{\"description\":\"Date and time in the format yyyy-MM-dd'T'HH:mm:ss\",\"example\":\"2024-04-11T11:41:31\",\"pattern\":\"yyyy-MM-dd'T'HH:mm:ss\",\"type\":\"string\"},\"cardBrand\":{\"type\":\"string\"},\"cardEntry\":{\"type\":\"string\"},\"cardExpiration\":{\"type\":\"string\"},\"cardNumber\":{\"type\":\"string\"},\"clearingAmount\":{\"format\":\"int32\",\"type\":\"integer\"},\"clearingBatchId\":{\"format\":\"int32\",\"type\":\"integer\"},\"clearingCurrency\":{\"type\":\"string\"},\"clearingDate\":{\"description\":\"Date and time in the format yyyy-MM-dd'T'HH:mm:ss\",\"example\":\"2024-04-11T11:41:31\",\"pattern\":\"yyyy-MM-dd'T'HH:mm:ss\",\"type\":\"string\"},\"clearingProcessedDate\":{\"description\":\"Date and time in the format yyyy-MM-dd'T'HH:mm:ss\",\"example\":\"2024-04-11T11:41:31\",\"pattern\":\"yyyy-MM-dd'T'HH:mm:ss\",\"type\":\"string\"},\"clearingStatus\":{\"format\":\"int32\",\"type\":\"integer\"},\"clientId\":{\"format\":\"int32\",\"type\":\"integer\"},\"currency\":{\"type\":\"string\"},\"merchantName\":{\"type\":\"string\"},\"merchantNumber\":{\"type\":\"string\"},\"partnerId\":{\"type\":\"string\"},\"partnerName\":{\"type\":\"string\"},\"paymentReason\":{\"type\":\"string\"},\"receiptNumber\":{\"type\":\"string\"},\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseCodeFromAS\":{\"type\":\"string\"},\"responseMessage\":{\"type\":\"string\"},\"retrievalReferenceNumber\":{\"format\":\"int64\",\"type\":\"integer\"},\"serviceCode\":{\"type\":\"string\"},\"terminalId\":{\"format\":\"int32\",\"type\":\"integer\"},\"terminalLocation\":{\"type\":\"string\"},\"tipamt\":{\"format\":\"int32\",\"type\":\"integer\"},\"traceNumber\":{\"format\":\"int32\",\"type\":\"integer\"},\"transactionDate\":{\"description\":\"Date and time in the format yyyy-MM-dd'T'HH:mm:ss\",\"example\":\"2024-04-11T11:41:31\",\"pattern\":\"yyyy-MM-dd'T'HH:mm:ss\",\"type\":\"string\"},\"transactionId\":{\"type\":\"string\"},\"transactionSeqNumber\":{\"format\":\"int32\",\"type\":\"integer\"},\"transactionServerDate\":{\"description\":\"Date and time in the format yyyy-MM-dd'T'HH:mm:ss\",\"example\":\"2024-04-11T11:41:31\",\"pattern\":\"yyyy-MM-dd'T'HH:mm:ss\",\"type\":\"string\"},\"transactionSource\":{\"type\":\"string\"},\"transactionType\":{\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"},\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Successful operation\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"\\n* Invalid request data. Bad request\\n\"},\"401\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"\\nUnauthorized - Authentication failed:<br>\\n\"},\"403\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Forbidden - Missing role: DAILY_REPORTS_VIEW or DAILY_BO_REPORTS_VIEW or BO_DAILY_REPORTS_CUSTOM or DAILY_REPORTS_CUSTOM\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"security\":[{\"bearer-key\":[]}],\"securitySchemes\":{\"basic-key\":{\"scheme\":\"basic\",\"type\":\"http\"},\"bearer-key\":{\"bearerFormat\":\"JWT\",\"scheme\":\"bearer\",\"type\":\"http\"},\"tecsweb-key\":{\"description\":\"TecsWeb token\",\"in\":\"header\",\"name\":\"TecsWebToken\",\"type\":\"apiKey\"}},\"securitySource\":\"operation\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/digitalservices/mandatorClearingExport",
@@ -1774,6 +1974,12 @@
                 {
                   "active": true,
                   "args": {},
+                  "contract": {
+                    "id": "POST /public/digitalservices/mandatorClearingExportDownload",
+                    "json": "{\"operationId\":\"mandatorClearingExportDownload\",\"parameters\":[],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"description\":\"Request for async mandator clearing export download\",\"properties\":{\"clearingDateFrom\":{\"description\":\"Start date for clearing export (inclusive)\",\"example\":\"2024-04-25T01:00:00+02:00\",\"format\":\"date-time\",\"type\":\"string\"},\"clearingDateTo\":{\"description\":\"End date for clearing export (inclusive)\",\"example\":\"2025-01-01T01:00:00+02:00\",\"format\":\"date-time\",\"type\":\"string\"},\"filenameTemplate\":{\"description\":\"Optional filename template for the export file\",\"example\":\"{mandator}-clearing-transactions-{clearingDateFrom}-{clearingDateTo}\",\"type\":\"string\"}},\"required\":[\"clearingDateFrom\",\"clearingDateTo\"],\"type\":\"object\"}}},\"required\":true},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"description\":\"Response for async mandator clearing export download request\",\"properties\":{\"fileId\":{\"description\":\"Unique file identifier for tracking and downloading\",\"example\":\"ad6352d9-b992-45f7-adce-ee306a01ef68\",\"type\":\"string\"},\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"},\"status\":{\"description\":\"Processing status of the export request\",\"example\":\"PROCESSING\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Successful operation - processing started\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"\\n* Invalid request data. Bad request\\n* System is busy processing another file\\n\"},\"401\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"\\nUnauthorized - Authentication failed:<br>\\n\"},\"403\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Forbidden - Missing role: BO_MANDATOR_CLEARING_EXPORT\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"security\":[{\"bearer-key\":[]}],\"securitySchemes\":{\"basic-key\":{\"scheme\":\"basic\",\"type\":\"http\"},\"bearer-key\":{\"bearerFormat\":\"JWT\",\"scheme\":\"bearer\",\"type\":\"http\"},\"tecsweb-key\":{\"description\":\"TecsWeb token\",\"in\":\"header\",\"name\":\"TecsWebToken\",\"type\":\"apiKey\"}},\"securitySource\":\"operation\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/digitalservices/mandatorClearingExportDownload",
@@ -1813,6 +2019,12 @@
                         "type": "`$STRING`"
                       }
                     ]
+                  },
+                  "contract": {
+                    "id": "GET /public/digitalservices/mandatorClearingExportDownload/{fileId}",
+                    "json": "{\"operationId\":\"checkMandatorClearingExportStatus\",\"parameters\":[{\"description\":\"File ID returned from the initial export request\",\"in\":\"path\",\"name\":\"fileId\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"description\":\"Response for async mandator clearing export download request\",\"properties\":{\"fileId\":{\"description\":\"Unique file identifier for tracking and downloading\",\"example\":\"ad6352d9-b992-45f7-adce-ee306a01ef68\",\"type\":\"string\"},\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"},\"status\":{\"description\":\"Processing status of the export request\",\"example\":\"PROCESSING\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Status information\"},\"401\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"\\nUnauthorized - Authentication failed:<br>\\n\"},\"403\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Forbidden - Missing role: BO_MANDATOR_CLEARING_EXPORT\"},\"404\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"File not found\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"security\":[{\"bearer-key\":[]}],\"securitySchemes\":{\"basic-key\":{\"scheme\":\"basic\",\"type\":\"http\"},\"bearer-key\":{\"bearerFormat\":\"JWT\",\"scheme\":\"bearer\",\"type\":\"http\"},\"tecsweb-key\":{\"description\":\"TecsWeb token\",\"in\":\"header\",\"name\":\"TecsWebToken\",\"type\":\"apiKey\"}},\"securitySource\":\"operation\"}",
+                    "source": "openapi3",
+                    "version": 1
                   },
                   "kind": "http",
                   "method": "GET",
@@ -1902,6 +2114,12 @@
                 {
                   "active": true,
                   "args": {},
+                  "contract": {
+                    "id": "POST /public/digitalservices/mandatorClearingExportSummary",
+                    "json": "{\"operationId\":\"mandatorClearingExportSummary\",\"parameters\":[],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"clearingDateFrom\":{\"description\":\"Date and time in the format yyyy-MM-dd'T'HH:mm:ssz\",\"example\":\"2024-04-11T11:41:31+02:00\",\"pattern\":\"yyyy-MM-dd'T'HH:mm:ssZ\",\"type\":\"string\"},\"clearingDateTo\":{\"description\":\"Date and time in the format yyyy-MM-dd'T'HH:mm:ssz\",\"example\":\"2024-04-11T11:41:31+02:00\",\"pattern\":\"yyyy-MM-dd'T'HH:mm:ssZ\",\"type\":\"string\"}},\"required\":[\"clearingDateFrom\",\"clearingDateTo\"],\"type\":\"object\"}}},\"required\":true},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"records\":{\"items\":{\"properties\":{\"cardType\":{\"type\":\"string\"},\"currency\":{\"type\":\"string\"},\"tipTotal\":{\"format\":\"int32\",\"type\":\"integer\"},\"txCount\":{\"format\":\"int32\",\"type\":\"integer\"},\"txFlag\":{\"type\":\"string\"},\"txTotal\":{\"format\":\"int64\",\"type\":\"integer\"}},\"type\":\"object\"},\"type\":\"array\"},\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Successful operation\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"\\n* Invalid request data. Bad request\\n\"},\"401\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"\\nUnauthorized - Authentication failed:<br>\\n\"},\"403\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Forbidden - Missing role: BO_MANDATOR_CLEARING_EXPORT\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"security\":[{\"bearer-key\":[]}],\"securitySchemes\":{\"basic-key\":{\"scheme\":\"basic\",\"type\":\"http\"},\"bearer-key\":{\"bearerFormat\":\"JWT\",\"scheme\":\"bearer\",\"type\":\"http\"},\"tecsweb-key\":{\"description\":\"TecsWeb token\",\"in\":\"header\",\"name\":\"TecsWebToken\",\"type\":\"apiKey\"}},\"securitySource\":\"operation\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/digitalservices/mandatorClearingExportSummary",
@@ -2100,6 +2318,12 @@
                 {
                   "active": true,
                   "args": {},
+                  "contract": {
+                    "id": "POST /public/transactionHistoryCsv",
+                    "json": "{\"operationId\":\"transactionHistoryCsv\",\"parameters\":[],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"3DSecure\":{\"type\":\"string\"},\"authorizationCode\":{\"type\":\"string\"},\"cardBrand\":{\"type\":\"string\"},\"clearingAmountFrom\":{\"type\":\"string\"},\"clearingAmountTo\":{\"type\":\"string\"},\"clearingCurrency\":{\"type\":\"string\"},\"clearingStatus\":{\"type\":\"string\"},\"corporateUUID\":{\"type\":\"string\"},\"orderByTransactionDate\":{\"pattern\":\"asc|desc\",\"type\":\"string\"},\"pagination\":{\"properties\":{\"page\":{\"format\":\"int32\",\"type\":\"integer\"},\"size\":{\"format\":\"int32\",\"type\":\"integer\"}},\"type\":\"object\"},\"receiptNumber\":{\"type\":\"string\"},\"referencedTransactionId\":{\"type\":\"string\"},\"retrievalReferenceNumber\":{\"type\":\"string\"},\"sourceId\":{\"format\":\"int32\",\"type\":\"integer\"},\"tecsengineResponseCodeFrom\":{\"type\":\"string\"},\"tecsengineResponseCodeTo\":{\"type\":\"string\"},\"terminalId\":{\"format\":\"int32\",\"type\":\"integer\"},\"traceNumber\":{\"type\":\"string\"},\"transactionAmountFrom\":{\"type\":\"string\"},\"transactionAmountTo\":{\"type\":\"string\"},\"transactionDateFrom\":{\"format\":\"date-time\",\"type\":\"string\"},\"transactionDateTo\":{\"format\":\"date-time\",\"type\":\"string\"},\"transactionId\":{\"type\":\"string\"},\"transactionType\":{\"type\":\"string\"},\"wallet\":{\"description\":\"Filter by wallet type. Allowed values: APAY, GPAY, GPAY3D\",\"enum\":[\"APAY\",\"GPAY\",\"GPAY3D\"],\"pattern\":\"APAY|GPAY|GPAY3D\",\"type\":\"string\"}},\"type\":\"object\"}}},\"required\":true},\"responses\":{\"200\":{\"content\":{\"text/plain\":{}},\"description\":\"Successful operation\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"type\":\"string\"}}},\"description\":\"\\n* Invalid combination of transactionId and referencedTransactionId parameters\\n* ReferencedTransactionId is set and TerminalId not set\\n* ReferencedTransactionId not set and TransactionDateFrom not set\\n* ReferencedTransactionId not set and TransactionDateTo parameters not set\\n* Mandator not found\\n* Invalid TerminalId\\n\"},\"401\":{\"content\":{\"application/json\":{\"schema\":{\"type\":\"string\"}}},\"description\":\"\\nUnauthorized - Authentication failed:<br>\\n* MandatorId does not march\\n* Inactive user\\n\"},\"403\":{\"content\":{\"application/json\":{\"schema\":{\"type\":\"string\"}}},\"description\":\"Forbidden - Missing role: MP_CORPORATE or BO_TE_TRANSACTION_HISTORY\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"type\":\"string\"}}},\"description\":\"Internal server error\"}},\"security\":[{\"bearer-key\":[]}],\"securitySchemes\":{\"basic-key\":{\"scheme\":\"basic\",\"type\":\"http\"},\"bearer-key\":{\"bearerFormat\":\"JWT\",\"scheme\":\"bearer\",\"type\":\"http\"},\"tecsweb-key\":{\"description\":\"TecsWeb token\",\"in\":\"header\",\"name\":\"TecsWebToken\",\"type\":\"apiKey\"}},\"securitySource\":\"operation\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/transactionHistoryCsv",
@@ -2171,6 +2395,12 @@
                 {
                   "active": true,
                   "args": {},
+                  "contract": {
+                    "id": "POST /moveTid",
+                    "json": "{\"operationId\":\"moveTid\",\"parameters\":[],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"productorderuuids\":{\"items\":{\"type\":\"string\"},\"minItems\":1,\"type\":\"array\"},\"targetPackageorderuuid\":{\"type\":\"string\"},\"targetProductorderuuid\":{\"type\":\"string\"}},\"required\":[\"productorderuuids\"],\"type\":\"object\"}}},\"required\":true},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"In case the terminal ID is moved successfully\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Bad request\"},\"401\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Unauthenticated - Authentication failed\"},\"403\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Unauthorized - Missing role BO_MP_MOVE_TID\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"security\":[{\"bearer-key\":[]},{\"basic-key\":[]}],\"securitySchemes\":{\"basic-key\":{\"scheme\":\"basic\",\"type\":\"http\"},\"bearer-key\":{\"bearerFormat\":\"JWT\",\"scheme\":\"bearer\",\"type\":\"http\"},\"tecsweb-key\":{\"description\":\"TecsWeb token\",\"in\":\"header\",\"name\":\"TecsWebToken\",\"type\":\"apiKey\"}},\"securitySource\":\"operation\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/moveTid",
@@ -2334,6 +2564,12 @@
                 {
                   "active": true,
                   "args": {},
+                  "contract": {
+                    "id": "POST /public/paymentManual",
+                    "json": "{\"operationId\":\"paymentManual\",\"parameters\":[],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"description\":\"Payment Manual request for processing card payments via TECS XML gateway\",\"properties\":{\"amount\":{\"description\":\"Transaction amount in minor units (cents)\",\"example\":1234,\"format\":\"int32\",\"minimum\":1,\"type\":\"integer\"},\"cardNumber\":{\"description\":\"Card number - 12 to 19 digits, must pass Luhn validation\",\"example\":\"5413330056003537\",\"minLength\":1,\"pattern\":\"^\\\\d{12,19}$\",\"type\":\"string\"},\"currency\":{\"description\":\"Currency code - 3 uppercase letters (ISO 4217)\",\"example\":\"EUR\",\"minLength\":1,\"pattern\":\"^[A-Z]{3}$\",\"type\":\"string\"},\"cvc\":{\"description\":\"Card verification code - 3-4 digits (optional)\",\"example\":\"123\",\"pattern\":\"^\\\\d{3,4}$\",\"type\":\"string\"},\"expDate\":{\"description\":\"Card expiry date in MMYY format\",\"example\":\"1027\",\"minLength\":1,\"pattern\":\"^(0[1-9]|1[0-2])\\\\d{2}$\",\"type\":\"string\"},\"password\":{\"description\":\"Terminal password sent as Kennwort in TECS XML (optional)\",\"example\":\"testPWD\",\"type\":\"string\"},\"terminalId\":{\"description\":\"Terminal ID - 8 digits\",\"example\":\"88092010\",\"minLength\":1,\"pattern\":\"^\\\\d{8}$\",\"type\":\"string\"},\"txtype\":{\"description\":\"Transaction type\",\"enum\":[\"SALE\",\"PRE-AUTH\"],\"example\":\"SALE\",\"minLength\":1,\"pattern\":\"^(SALE|PRE-AUTH)$\",\"type\":\"string\"}},\"required\":[\"amount\",\"cardNumber\",\"currency\",\"expDate\",\"terminalId\",\"txtype\"],\"type\":\"object\"}}},\"required\":true},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"description\":\"Payment Manual response from TECS XML gateway\",\"properties\":{\"acquirerName\":{\"description\":\"Acquirer name parsed from KKG field\",\"example\":\"TECS Offline\",\"type\":\"string\"},\"authorizationNumber\":{\"description\":\"Authorization number from the gateway\",\"example\":68529,\"type\":\"string\"},\"cardType\":{\"description\":\"Card type parsed from KKG field\",\"example\":\"MASTERCARD\",\"type\":\"string\"},\"dateTimeTx\":{\"description\":\"Date and time of the transaction\",\"example\":\"20251008160321\",\"type\":\"string\"},\"merchantId\":{\"description\":\"Merchant ID (VU-NUMMER)\",\"example\":\"123456789012345\",\"type\":\"string\"},\"originalTransactionId\":{\"description\":\"Original transaction ID from gateway\",\"example\":20251008160321,\"type\":\"string\"},\"responseCode\":{\"description\":\"Response code - 00 for success, otherwise error code\",\"example\":\"00\",\"type\":\"string\"},\"responseMessage\":{\"description\":\"Response message - 'Approved' for success, error description otherwise\",\"example\":\"Approved\",\"type\":\"string\"},\"terminalId\":{\"description\":\"Terminal ID used for the transaction\",\"example\":\"88092010\",\"type\":\"string\"},\"transactionId\":{\"description\":\"Transaction ID generated by the backend\",\"example\":\"20251008160321\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Successful operation\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"\\n* Invalid JSON\\n* Invalid terminalId - must be 8 digits\\n* Invalid currency - must be 3 uppercase letters\\n* Invalid amount - must be greater than 0\\n* Invalid txtype - must be SALE or PRE-AUTH\\n* Invalid cardNumber - must be 12-19 digits and Luhn-valid\\n* Invalid expDate - must be MMYY format and not expired\\n* Invalid cvc - must be 3-4 digits if provided\\n\"},\"401\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Unauthorized - Authentication failed\"},\"403\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Forbidden - Missing role: BO_VIRTUAL_TERMINAL or VIRTUAL_TERMINAL\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"},\"502\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Gateway error - TECS XML gateway error or invalid XML response\"}},\"security\":[{\"bearer-key\":[]}],\"securitySchemes\":{\"basic-key\":{\"scheme\":\"basic\",\"type\":\"http\"},\"bearer-key\":{\"bearerFormat\":\"JWT\",\"scheme\":\"bearer\",\"type\":\"http\"},\"tecsweb-key\":{\"description\":\"TecsWeb token\",\"in\":\"header\",\"name\":\"TecsWebToken\",\"type\":\"apiKey\"}},\"securitySource\":\"operation\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/paymentManual",
@@ -2459,6 +2695,12 @@
                 {
                   "active": true,
                   "args": {},
+                  "contract": {
+                    "id": "POST /public/paymentSred",
+                    "json": "{\"operationId\":\"paymentSred\",\"parameters\":[],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"description\":\"Payment SRED request for processing card-present SRED payload via DecryptX and TECS XML gateway\",\"properties\":{\"amount\":{\"description\":\"Transaction amount in minor units (cents)\",\"example\":1234,\"format\":\"int32\",\"minimum\":1,\"type\":\"integer\"},\"currency\":{\"description\":\"Currency code - 3 uppercase letters (ISO 4217)\",\"example\":\"EUR\",\"minLength\":1,\"pattern\":\"^[A-Z]{3}$\",\"type\":\"string\"},\"devicePayload\":{\"description\":\"SRED encrypted device payload from the device (minimum 32 characters)\",\"example\":\"<SRED_PAYLOAD_FROM_DEVICE>\",\"maxLength\":2147483647,\"minLength\":32,\"type\":\"string\"},\"password\":{\"description\":\"Terminal password sent as Kennwort in TECS XML (optional)\",\"example\":\"testPWD\",\"type\":\"string\"},\"terminalId\":{\"description\":\"Terminal ID - 8 digits\",\"example\":\"88092010\",\"minLength\":1,\"pattern\":\"^\\\\d{8}$\",\"type\":\"string\"},\"txtype\":{\"description\":\"Transaction type\",\"enum\":[\"SALE\",\"PRE-AUTH\"],\"example\":\"SALE\",\"minLength\":1,\"pattern\":\"^(SALE|PRE-AUTH)$\",\"type\":\"string\"}},\"required\":[\"amount\",\"currency\",\"devicePayload\",\"terminalId\",\"txtype\"],\"type\":\"object\"}}},\"required\":true},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"description\":\"Payment SRED response from TECS XML gateway with DecryptX data\",\"properties\":{\"acquirerName\":{\"description\":\"Acquirer name parsed from KKG field\",\"example\":\"TECS Offline\",\"type\":\"string\"},\"authorizationNumber\":{\"description\":\"Authorization number from the gateway\",\"example\":68529,\"type\":\"string\"},\"cardType\":{\"description\":\"Card type parsed from KKG field\",\"example\":\"MASTERCARD\",\"type\":\"string\"},\"dateTimeTx\":{\"description\":\"Date and time of the transaction\",\"example\":\"20251008160321\",\"type\":\"string\"},\"merchantId\":{\"description\":\"Merchant ID (VU-NUMMER)\",\"example\":\"123456789012345\",\"type\":\"string\"},\"originalTransactionId\":{\"description\":\"Original transaction ID from gateway\",\"example\":20251008160321,\"type\":\"string\"},\"responseCode\":{\"description\":\"Response code - 00 for success, otherwise error code\",\"example\":\"00\",\"type\":\"string\"},\"responseMessage\":{\"description\":\"Response message - 'Approved' for success, error description otherwise\",\"example\":\"Approved\",\"type\":\"string\"},\"sred\":{\"description\":\"SRED-specific data from DecryptX\",\"properties\":{\"device\":{\"description\":\"Device type that provided the SRED payload\",\"example\":\"IDTECH\",\"type\":\"string\"},\"expDate\":{\"description\":\"Card expiry date in MMYY format\",\"example\":\"1027\",\"type\":\"string\"},\"mode\":{\"description\":\"Decryption mode\",\"example\":\"SRED\",\"type\":\"string\"},\"panMasked\":{\"description\":\"Masked PAN (first 6 and last 4 digits)\",\"example\":\"541333******3537\",\"type\":\"string\"},\"serial\":{\"description\":\"Device serial number\",\"example\":\"1234567890\",\"type\":\"string\"},\"serviceCode\":{\"description\":\"Service code from the card\",\"example\":\"201\",\"type\":\"string\"}},\"type\":\"object\"},\"terminalId\":{\"description\":\"Terminal ID used for the transaction\",\"example\":\"88092010\",\"type\":\"string\"},\"transactionId\":{\"description\":\"Transaction ID generated by the backend\",\"example\":\"20251008160321\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Successful operation\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"\\n* Invalid JSON\\n* Invalid terminalId - must be 8 digits\\n* Invalid currency - must be 3 uppercase letters\\n* Invalid amount - must be greater than 0\\n* Invalid txtype - must be SALE or PRE-AUTH\\n* Invalid devicePayload - must be at least 32 characters\\n* Decrypt error - DecryptX API returned non-2xx or success=false\\n* Decrypt error - PAN not found in response\\n* Decrypt error - Invalid PAN length (must be 12-19 digits)\\n* Decrypt error - Invalid PAN - Luhn check failed\\n* Decrypt error - Invalid expiry date\\n* Gateway error - TECS XML gateway error\\n\"},\"401\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Unauthorized - Authentication failed\"},\"403\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Forbidden - Missing role: BO_VIRTUAL_TERMINAL or VIRTUAL_TERMINAL\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"\\n* Internal server error\\n* DecryptX configuration is missing\\n\"}},\"security\":[{\"bearer-key\":[]}],\"securitySchemes\":{\"basic-key\":{\"scheme\":\"basic\",\"type\":\"http\"},\"bearer-key\":{\"bearerFormat\":\"JWT\",\"scheme\":\"bearer\",\"type\":\"http\"},\"tecsweb-key\":{\"description\":\"TecsWeb token\",\"in\":\"header\",\"name\":\"TecsWebToken\",\"type\":\"apiKey\"}},\"securitySource\":\"operation\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/paymentSred",
@@ -2784,6 +3026,12 @@
                 {
                   "active": true,
                   "args": {},
+                  "contract": {
+                    "id": "POST /public/paymentTransaction",
+                    "json": "{\"operationId\":\"paymentTransaction\",\"parameters\":[],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"amount\":{\"format\":\"int32\",\"type\":\"integer\"},\"cardNumberReference\":{\"minLength\":1,\"type\":\"string\"},\"clientId\":{\"format\":\"int32\",\"type\":\"integer\"},\"currency\":{\"minLength\":1,\"type\":\"string\"},\"cvc\":{\"type\":\"string\"},\"ecData\":{\"type\":\"string\"},\"ecrData\":{\"type\":\"string\"},\"emvData\":{\"type\":\"string\"},\"languageCode\":{\"type\":\"string\"},\"password\":{\"type\":\"string\"},\"paymentReason\":{\"type\":\"string\"},\"receiptLayout\":{\"format\":\"int32\",\"maximum\":99,\"minimum\":1,\"type\":\"integer\"},\"receiptNumber\":{\"minLength\":1,\"type\":\"string\"},\"terminalId\":{\"format\":\"int32\",\"type\":\"integer\"},\"terminalLocation\":{\"type\":\"string\"},\"transactionDate\":{\"example\":\"20230509114131\",\"pattern\":\"(\\\\d{4}(0[0-9]|1[0-2])([0-2][0-9]|3[0-1])([0-1][0-9]|2[0-4])(([0-5][0-9]){2}))\",\"type\":\"string\"},\"transactionId\":{\"type\":\"string\"},\"transactionType\":{\"minLength\":1,\"pattern\":\"AUTHORIZATION|PRE-AUTH\",\"type\":\"string\"}},\"required\":[\"amount\",\"cardNumberReference\",\"clientId\",\"currency\",\"receiptNumber\",\"terminalId\",\"transactionDate\",\"transactionType\"],\"type\":\"object\"}}},\"required\":true},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"acquirerId\":{\"type\":\"string\"},\"acquirerName\":{\"type\":\"string\"},\"actualBonusPoints\":{\"type\":\"string\"},\"amount\":{\"format\":\"int32\",\"type\":\"integer\"},\"authorizationCode\":{\"type\":\"string\"},\"balanceAmount\":{\"type\":\"string\"},\"cardBrand\":{\"type\":\"string\"},\"cardNumber\":{\"type\":\"string\"},\"ecrData\":{\"type\":\"string\"},\"emvData\":{\"type\":\"string\"},\"exchangeFee\":{\"format\":\"int64\",\"type\":\"integer\"},\"exchangeRate\":{\"type\":\"string\"},\"merchantAddress\":{\"type\":\"string\"},\"merchantName\":{\"type\":\"string\"},\"merchantNumber\":{\"type\":\"string\"},\"messageType\":{\"type\":\"string\"},\"originalTraceNumber\":{\"format\":\"int32\",\"type\":\"integer\"},\"originalTransactionId\":{\"type\":\"string\"},\"receiptFooter\":{\"type\":\"string\"},\"receiptHeader\":{\"type\":\"string\"},\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"},\"serialNumber\":{\"type\":\"string\"},\"svc\":{\"type\":\"string\"},\"traceNumber\":{\"format\":\"int32\",\"type\":\"integer\"},\"transactionDate\":{\"format\":\"date-time\",\"type\":\"string\"},\"transactionId\":{\"type\":\"string\"},\"txType\":{\"type\":\"string\"},\"userData\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Successful operation\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"\\n* Transaction not found\\n* Mandator not found\\n\"},\"401\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Unauthorized - Authentication failed, e.g. MandatorId does not march\"},\"403\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Forbidden - Missing role: BO_TRANSACTIONMANAGEMENT_PAYMENT\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"security\":[{\"bearer-key\":[]},{\"tecsweb-key\":[]}],\"securitySchemes\":{\"basic-key\":{\"scheme\":\"basic\",\"type\":\"http\"},\"bearer-key\":{\"bearerFormat\":\"JWT\",\"scheme\":\"bearer\",\"type\":\"http\"},\"tecsweb-key\":{\"description\":\"TecsWeb token\",\"in\":\"header\",\"name\":\"TecsWebToken\",\"type\":\"apiKey\"}},\"securitySource\":\"operation\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/paymentTransaction",
@@ -2804,6 +3052,12 @@
                 {
                   "active": true,
                   "args": {},
+                  "contract": {
+                    "id": "POST /public/preAuthCompletionTransaction",
+                    "json": "{\"operationId\":\"preAuthCompletionTransaction\",\"parameters\":[],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"amount\":{\"format\":\"int32\",\"type\":\"integer\"},\"clientId\":{\"format\":\"int32\",\"type\":\"integer\"},\"currency\":{\"minLength\":1,\"type\":\"string\"},\"cvc\":{\"type\":\"string\"},\"ecData\":{\"type\":\"string\"},\"ecrData\":{\"type\":\"string\"},\"emvData\":{\"type\":\"string\"},\"languageCode\":{\"type\":\"string\"},\"originalTransactionId\":{\"minLength\":1,\"type\":\"string\"},\"password\":{\"type\":\"string\"},\"paymentReason\":{\"type\":\"string\"},\"receiptLayout\":{\"format\":\"int32\",\"maximum\":99,\"minimum\":1,\"type\":\"integer\"},\"receiptNumber\":{\"minLength\":1,\"type\":\"string\"},\"terminalId\":{\"format\":\"int32\",\"type\":\"integer\"},\"terminalLocation\":{\"type\":\"string\"},\"transactionDate\":{\"example\":\"20230509114131\",\"pattern\":\"(\\\\d{4}(0[0-9]|1[0-2])([0-2][0-9]|3[0-1])([0-1][0-9]|2[0-4])(([0-5][0-9]){2}))\",\"type\":\"string\"},\"transactionId\":{\"minLength\":1,\"type\":\"string\"}},\"required\":[\"amount\",\"clientId\",\"currency\",\"originalTransactionId\",\"receiptNumber\",\"terminalId\",\"transactionDate\",\"transactionId\"],\"type\":\"object\"}}},\"required\":true},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"acquirerId\":{\"type\":\"string\"},\"acquirerName\":{\"type\":\"string\"},\"actualBonusPoints\":{\"type\":\"string\"},\"amount\":{\"format\":\"int32\",\"type\":\"integer\"},\"authorizationCode\":{\"type\":\"string\"},\"balanceAmount\":{\"type\":\"string\"},\"cardBrand\":{\"type\":\"string\"},\"cardNumber\":{\"type\":\"string\"},\"ecrData\":{\"type\":\"string\"},\"emvData\":{\"type\":\"string\"},\"exchangeFee\":{\"format\":\"int64\",\"type\":\"integer\"},\"exchangeRate\":{\"type\":\"string\"},\"merchantAddress\":{\"type\":\"string\"},\"merchantName\":{\"type\":\"string\"},\"merchantNumber\":{\"type\":\"string\"},\"messageType\":{\"type\":\"string\"},\"originalTraceNumber\":{\"format\":\"int32\",\"type\":\"integer\"},\"originalTransactionId\":{\"type\":\"string\"},\"receiptFooter\":{\"type\":\"string\"},\"receiptHeader\":{\"type\":\"string\"},\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"},\"serialNumber\":{\"type\":\"string\"},\"svc\":{\"type\":\"string\"},\"traceNumber\":{\"format\":\"int32\",\"type\":\"integer\"},\"transactionDate\":{\"format\":\"date-time\",\"type\":\"string\"},\"transactionId\":{\"type\":\"string\"},\"txType\":{\"type\":\"string\"},\"userData\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Successful operation\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"\\n* Transaction not found\\n* Mandator not found\\n\"},\"401\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Unauthorized - Authentication failed, e.g. MandatorId does not march\"},\"403\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Forbidden - Missing role: BO_TRANSACTIONMANAGEMENT_COMPLETION\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"security\":[{\"bearer-key\":[]},{\"tecsweb-key\":[]}],\"securitySchemes\":{\"basic-key\":{\"scheme\":\"basic\",\"type\":\"http\"},\"bearer-key\":{\"bearerFormat\":\"JWT\",\"scheme\":\"bearer\",\"type\":\"http\"},\"tecsweb-key\":{\"description\":\"TecsWeb token\",\"in\":\"header\",\"name\":\"TecsWebToken\",\"type\":\"apiKey\"}},\"securitySource\":\"operation\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/preAuthCompletionTransaction",
@@ -2888,6 +3142,12 @@
                 {
                   "active": true,
                   "args": {},
+                  "contract": {
+                    "id": "POST /reactivateTerminal",
+                    "json": "{\"operationId\":\"reactivateTerminal\",\"parameters\":[],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"reactivationReason\":{\"minLength\":1,\"type\":\"string\"},\"terminalId\":{\"format\":\"int32\",\"type\":\"integer\"}},\"required\":[\"reactivationReason\",\"terminalId\"],\"type\":\"object\"}}},\"required\":true},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"corporateUuid\":{\"type\":\"string\"},\"packageOrderUuid\":{\"type\":\"string\"},\"productOrderUuid\":{\"type\":\"string\"},\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Successful operation\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"type\":\"string\"}}},\"description\":\"\\n* Terminal not found\\n* Mandator not found\\n* MandatorConfig not found\\n\"},\"401\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Unauthorized - Authentication failed, e.g. MandatorId does not march\"},\"403\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Forbidden - Missing role: TE_MERCHANT_TERMINAL_MANAGEMENT\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"\\n* Internal server error\\n* Tecscompany2Tecsterm record not found\\n* Tecscompany record not found\\n\"}},\"security\":[{\"bearer-key\":[]}],\"securitySchemes\":{\"basic-key\":{\"scheme\":\"basic\",\"type\":\"http\"},\"bearer-key\":{\"bearerFormat\":\"JWT\",\"scheme\":\"bearer\",\"type\":\"http\"},\"tecsweb-key\":{\"description\":\"TecsWeb token\",\"in\":\"header\",\"name\":\"TecsWebToken\",\"type\":\"apiKey\"}},\"securitySource\":\"operation\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/reactivateTerminal",
@@ -3198,6 +3458,12 @@
                 {
                   "active": true,
                   "args": {},
+                  "contract": {
+                    "id": "POST /public/refundTransaction",
+                    "json": "{\"operationId\":\"refundTransaction\",\"parameters\":[],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"amount\":{\"format\":\"int32\",\"type\":\"integer\"},\"clientId\":{\"format\":\"int32\",\"type\":\"integer\"},\"currency\":{\"minLength\":1,\"type\":\"string\"},\"cvc\":{\"type\":\"string\"},\"ecData\":{\"type\":\"string\"},\"ecrData\":{\"type\":\"string\"},\"emvData\":{\"type\":\"string\"},\"languageCode\":{\"type\":\"string\"},\"originalTransactionId\":{\"minLength\":1,\"type\":\"string\"},\"password\":{\"type\":\"string\"},\"paymentReason\":{\"type\":\"string\"},\"receiptLayout\":{\"format\":\"int32\",\"maximum\":99,\"minimum\":1,\"type\":\"integer\"},\"receiptNumber\":{\"minLength\":1,\"type\":\"string\"},\"terminalId\":{\"format\":\"int32\",\"type\":\"integer\"},\"terminalLocation\":{\"type\":\"string\"},\"transactionDate\":{\"example\":\"20230509114131\",\"pattern\":\"(\\\\d{4}(0[0-9]|1[0-2])([0-2][0-9]|3[0-1])([0-1][0-9]|2[0-4])(([0-5][0-9]){2}))\",\"type\":\"string\"},\"transactionId\":{\"minLength\":1,\"type\":\"string\"}},\"required\":[\"amount\",\"clientId\",\"currency\",\"originalTransactionId\",\"receiptNumber\",\"terminalId\",\"transactionDate\",\"transactionId\"],\"type\":\"object\"}}},\"required\":true},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"acquirerId\":{\"type\":\"string\"},\"acquirerName\":{\"type\":\"string\"},\"actualBonusPoints\":{\"type\":\"string\"},\"amount\":{\"format\":\"int32\",\"type\":\"integer\"},\"authorizationCode\":{\"type\":\"string\"},\"balanceAmount\":{\"type\":\"string\"},\"cardBrand\":{\"type\":\"string\"},\"cardNumber\":{\"type\":\"string\"},\"ecrData\":{\"type\":\"string\"},\"emvData\":{\"type\":\"string\"},\"exchangeFee\":{\"format\":\"int64\",\"type\":\"integer\"},\"exchangeRate\":{\"type\":\"string\"},\"merchantAddress\":{\"type\":\"string\"},\"merchantName\":{\"type\":\"string\"},\"merchantNumber\":{\"type\":\"string\"},\"messageType\":{\"type\":\"string\"},\"originalTraceNumber\":{\"format\":\"int32\",\"type\":\"integer\"},\"originalTransactionId\":{\"type\":\"string\"},\"receiptFooter\":{\"type\":\"string\"},\"receiptHeader\":{\"type\":\"string\"},\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"},\"serialNumber\":{\"type\":\"string\"},\"svc\":{\"type\":\"string\"},\"traceNumber\":{\"format\":\"int32\",\"type\":\"integer\"},\"transactionDate\":{\"format\":\"date-time\",\"type\":\"string\"},\"transactionId\":{\"type\":\"string\"},\"txType\":{\"type\":\"string\"},\"userData\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Successful operation\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"\\n* Transaction not found\\n* Mandator not found\\n\"},\"401\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Unauthorized - Authentication failed, e.g. MandatorId does not march\"},\"403\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Forbidden - Missing role: BO_TRANSACTIONMANAGEMENT_REFUND\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"security\":[{\"bearer-key\":[]},{\"basic-key\":[]},{\"tecsweb-key\":[]}],\"securitySchemes\":{\"basic-key\":{\"scheme\":\"basic\",\"type\":\"http\"},\"bearer-key\":{\"bearerFormat\":\"JWT\",\"scheme\":\"bearer\",\"type\":\"http\"},\"tecsweb-key\":{\"description\":\"TecsWeb token\",\"in\":\"header\",\"name\":\"TecsWebToken\",\"type\":\"apiKey\"}},\"securitySource\":\"operation\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/refundTransaction",
@@ -3288,6 +3554,12 @@
                 {
                   "active": true,
                   "args": {},
+                  "contract": {
+                    "id": "POST /registerTecsCompany",
+                    "json": "{\"operationId\":\"registerTecsCompany\",\"parameters\":[],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"corporateUuid\":{\"minLength\":1,\"type\":\"string\"},\"packageOrderUuid\":{\"minLength\":1,\"type\":\"string\"},\"partnerId\":{\"format\":\"int32\",\"type\":\"integer\"},\"partnerName\":{\"type\":\"string\"},\"productOrderUuid\":{\"minLength\":1,\"type\":\"string\"},\"templateName\":{\"minLength\":1,\"type\":\"string\"}},\"required\":[\"corporateUuid\",\"packageOrderUuid\",\"productOrderUuid\",\"templateName\"],\"type\":\"object\"}}},\"required\":true},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Successful operation\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"type\":\"string\"}}},\"description\":\"\\n* Mandator not found\\n* Invalid template \\n              \"},\"401\":{\"content\":{\"application/json\":{\"schema\":{\"type\":\"string\"}}},\"description\":\"Unauthorized - Authentication failed, e.g. when user is not active\"},\"403\":{\"content\":{\"application/json\":{\"schema\":{\"type\":\"string\"}}},\"description\":\"Forbidden - Missing role: TE_MERCHANT_TERMINAL_MANAGEMENT\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"type\":\"string\"}}},\"description\":\"Internal server error\"}},\"security\":[{\"bearer-key\":[]}],\"securitySchemes\":{\"basic-key\":{\"scheme\":\"basic\",\"type\":\"http\"},\"bearer-key\":{\"bearerFormat\":\"JWT\",\"scheme\":\"bearer\",\"type\":\"http\"},\"tecsweb-key\":{\"description\":\"TecsWeb token\",\"in\":\"header\",\"name\":\"TecsWebToken\",\"type\":\"apiKey\"}},\"securitySource\":\"operation\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/registerTecsCompany",
@@ -3435,6 +3707,12 @@
                 {
                   "active": true,
                   "args": {},
+                  "contract": {
+                    "id": "POST /registerTerminal",
+                    "json": "{\"operationId\":\"registerTerminal\",\"parameters\":[],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"additionalData\":{\"additionalProperties\":{\"type\":\"string\"},\"type\":\"object\"},\"corporateUuid\":{\"minLength\":1,\"type\":\"string\"},\"packageOrderUuid\":{\"minLength\":1,\"type\":\"string\"},\"productOrderUuid\":{\"minLength\":1,\"type\":\"string\"},\"templateName\":{\"minLength\":1,\"type\":\"string\"},\"terminalCountryCode\":{\"minLength\":1,\"type\":\"string\"},\"terminalIdAcq\":{\"type\":\"string\"},\"terminalLanguageCode\":{\"minLength\":1,\"type\":\"string\"},\"terminalLocation\":{\"minLength\":1,\"type\":\"string\"},\"terminalSerialNumber\":{\"type\":\"string\"},\"tokenIOIban\":{\"type\":\"string\"},\"webShopUrl\":{\"type\":\"string\"}},\"required\":[\"corporateUuid\",\"packageOrderUuid\",\"productOrderUuid\",\"templateName\",\"terminalCountryCode\",\"terminalLanguageCode\",\"terminalLocation\"],\"type\":\"object\"}}},\"required\":true},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"},\"tecsWebSecretKey\":{\"type\":\"string\"},\"terminalId\":{\"format\":\"int32\",\"type\":\"integer\"},\"tokenIOAlias\":{\"type\":\"string\"},\"tokenIOMemberId\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Successful operation\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"\\n* Mandator not found\\n* Invalid template \\n* Invalid TECS company specified\\n* MandatorConfig not found\\n* Invalid country code Alpha3 specified \\n\"},\"401\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Unauthorized - Authentication failed, e.g. when user is not active\"},\"403\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Forbidden - Missing role: TE_MERCHANT_TERMINAL_MANAGEMENT\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"\\n* Internal server error\\n* Error getting Corporate Account\\n\"}},\"security\":[{\"bearer-key\":[]}],\"securitySchemes\":{\"basic-key\":{\"scheme\":\"basic\",\"type\":\"http\"},\"bearer-key\":{\"bearerFormat\":\"JWT\",\"scheme\":\"bearer\",\"type\":\"http\"},\"tecsweb-key\":{\"description\":\"TecsWeb token\",\"in\":\"header\",\"name\":\"TecsWebToken\",\"type\":\"apiKey\"}},\"securitySource\":\"operation\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/registerTerminal",
@@ -3536,6 +3814,12 @@
                 {
                   "active": true,
                   "args": {},
+                  "contract": {
+                    "id": "POST /public/digitalservices/reportData",
+                    "json": "{\"operationId\":\"getReportData\",\"parameters\":[],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"clearingDateFrom\":{\"description\":\"Date and time in the format yyyy-MM-dd'T'HH:mm:ss\",\"example\":\"2024-04-11T11:41:31\",\"pattern\":\"yyyy-MM-dd'T'HH:mm:ss\",\"type\":\"string\"},\"clearingDateTo\":{\"description\":\"Date and time in the format yyyy-MM-dd'T'HH:mm:ss\",\"example\":\"2024-04-11T11:41:31\",\"pattern\":\"yyyy-MM-dd'T'HH:mm:ss\",\"type\":\"string\"},\"corporateId\":{\"type\":\"string\"},\"currency\":{\"maxLength\":3,\"minLength\":3,\"type\":\"string\"},\"terminalId\":{\"format\":\"int32\",\"type\":\"integer\"}},\"required\":[\"clearingDateFrom\",\"clearingDateTo\",\"corporateId\",\"currency\"],\"type\":\"object\"}}},\"required\":true},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"cardBrandReportData\":{\"items\":{\"properties\":{\"cardBrand\":{\"type\":\"string\"},\"creditCount\":{\"format\":\"int32\",\"type\":\"integer\"},\"creditTotal\":{\"format\":\"int32\",\"type\":\"integer\"},\"debitCount\":{\"format\":\"int32\",\"type\":\"integer\"},\"debitTotal\":{\"format\":\"int32\",\"type\":\"integer\"},\"tipAmount\":{\"format\":\"int32\",\"type\":\"integer\"}},\"type\":\"object\"},\"type\":\"array\"},\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"},\"sumOverCreditTx\":{\"properties\":{\"creditCountSum\":{\"format\":\"int32\",\"type\":\"integer\"},\"creditTotalSum\":{\"format\":\"int32\",\"type\":\"integer\"},\"firstTx\":{\"type\":\"number\"},\"lastTx\":{\"type\":\"number\"}},\"type\":\"object\"},\"sumOverDebitTx\":{\"properties\":{\"debitCountSum\":{\"format\":\"int32\",\"type\":\"integer\"},\"debitTotalSum\":{\"format\":\"int32\",\"type\":\"integer\"},\"firstTx\":{\"type\":\"number\"},\"lastTx\":{\"type\":\"number\"},\"tipAmountSum\":{\"format\":\"int32\",\"type\":\"integer\"}},\"type\":\"object\"}},\"type\":\"object\"}}},\"description\":\"Successful operation\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"\\n* Invalid request data. Bad request\\n\"},\"401\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"\\nUnauthorized - Authentication failed:<br>\\n\"},\"403\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Forbidden - Missing role: DAILY_REPORTS_VIEW or DAILY_BO_REPORTS_VIEW\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"security\":[{\"bearer-key\":[]}],\"securitySchemes\":{\"basic-key\":{\"scheme\":\"basic\",\"type\":\"http\"},\"bearer-key\":{\"bearerFormat\":\"JWT\",\"scheme\":\"bearer\",\"type\":\"http\"},\"tecsweb-key\":{\"description\":\"TecsWeb token\",\"in\":\"header\",\"name\":\"TecsWebToken\",\"type\":\"apiKey\"}},\"securitySource\":\"operation\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/digitalservices/reportData",
@@ -3904,6 +4188,12 @@
                 {
                   "active": true,
                   "args": {},
+                  "contract": {
+                    "id": "POST /public/statusTransaction",
+                    "json": "{\"operationId\":\"statusTransaction\",\"parameters\":[],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"clientId\":{\"format\":\"int32\",\"type\":\"integer\"},\"sourceId\":{\"format\":\"int32\",\"type\":\"integer\"},\"terminalId\":{\"format\":\"int32\",\"type\":\"integer\"},\"transactionId\":{\"type\":\"string\"},\"transactionSeqNumber\":{\"format\":\"int32\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"required\":true},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"acquirerName\":{\"type\":\"string\"},\"acquirerTerminalId\":{\"type\":\"string\"},\"amount\":{\"format\":\"int32\",\"type\":\"integer\"},\"applicationCryptogram\":{\"type\":\"string\"},\"authorizationCode\":{\"description\":\"Authorization code returned by the acquirer; null when not available\",\"type\":[\"string\",\"null\"]},\"authorizationDate\":{\"format\":\"date-time\",\"type\":\"string\"},\"cardBrand\":{\"type\":\"string\"},\"cardEntry\":{\"type\":\"string\"},\"cardExpiration\":{\"type\":\"string\"},\"cardNumber\":{\"type\":\"string\"},\"clearingAmount\":{\"format\":\"int32\",\"type\":\"integer\"},\"clearingBatchId\":{\"type\":\"string\"},\"clearingCurrency\":{\"type\":\"string\"},\"clearingDate\":{\"format\":\"date-time\",\"type\":\"string\"},\"clearingProcessedDate\":{\"format\":\"date-time\",\"type\":\"string\"},\"clearingStatus\":{\"type\":\"string\"},\"clientId\":{\"format\":\"int32\",\"type\":\"integer\"},\"currency\":{\"type\":\"string\"},\"cvm\":{\"type\":\"string\"},\"ecrData\":{\"type\":\"string\"},\"emvApplicationId\":{\"type\":\"string\"},\"emvApplicationLabel\":{\"type\":\"string\"},\"merchantName\":{\"type\":\"string\"},\"merchantNumber\":{\"type\":\"string\"},\"originalClientId\":{\"type\":\"string\"},\"originalTerminalId\":{\"format\":\"int32\",\"type\":\"integer\"},\"originalTransactionId\":{\"type\":\"string\"},\"paymentReason\":{\"type\":\"string\"},\"receiptNumber\":{\"type\":\"string\"},\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseCodeFromAS\":{\"type\":\"string\"},\"responseMessage\":{\"type\":\"string\"},\"retrievalReferenceNumber\":{\"type\":\"string\"},\"serviceCode\":{\"type\":\"string\"},\"settlementStatus\":{\"type\":\"string\"},\"tecsengineResponseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"tecsengineResponseText\":{\"type\":\"string\"},\"terminalEndOfDayDate\":{\"format\":\"date-time\",\"type\":\"string\"},\"terminalId\":{\"format\":\"int32\",\"type\":\"integer\"},\"terminalLocation\":{\"type\":\"string\"},\"tipAmount\":{\"format\":\"int32\",\"type\":\"integer\"},\"traceNumber\":{\"format\":\"int32\",\"type\":\"integer\"},\"transactionClearingDate\":{\"format\":\"date-time\",\"type\":\"string\"},\"transactionDate\":{\"format\":\"date-time\",\"type\":\"string\"},\"transactionId\":{\"type\":\"string\"},\"transactionSeqNumber\":{\"format\":\"int64\",\"type\":\"integer\"},\"transactionServerDate\":{\"format\":\"date-time\",\"type\":\"string\"},\"transactionSource\":{\"type\":\"string\"},\"transactionType\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Successful operation\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"\\n* Transaction not found\\n* Mandator not found\\n* MandatorConfig not found\\n              \"},\"401\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Unauthorized - Authentication failed: \\n* Authorization header was not provided\\n* MandatorId does not match\\n\"},\"403\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Forbidden - Missing role: BO_TE_TRANSACTION_HISTORY\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"security\":[{\"bearer-key\":[]},{\"basic-key\":[]},{\"tecsweb-key\":[]}],\"securitySchemes\":{\"basic-key\":{\"scheme\":\"basic\",\"type\":\"http\"},\"bearer-key\":{\"bearerFormat\":\"JWT\",\"scheme\":\"bearer\",\"type\":\"http\"},\"tecsweb-key\":{\"description\":\"TecsWeb token\",\"in\":\"header\",\"name\":\"TecsWebToken\",\"type\":\"apiKey\"}},\"securitySource\":\"operation\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/statusTransaction",
@@ -3981,6 +4271,12 @@
                 {
                   "active": true,
                   "args": {},
+                  "contract": {
+                    "id": "POST /storeTerminalParameters",
+                    "json": "{\"operationId\":\"storeProtocolParameters\",\"parameters\":[],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"acqTabNexo\":{\"properties\":{\"acqId\":{\"format\":\"int32\",\"type\":\"integer\"},\"initPartyId\":{\"type\":\"string\"},\"msgItms\":{\"type\":\"string\"},\"offLnCmplXchgIfDclnd\":{\"type\":\"boolean\"},\"offLnCmplXchgIfFaild\":{\"type\":\"boolean\"},\"onLnCmplXchgIfDclnd\":{\"type\":\"boolean\"},\"onLnCmplXchgIfFaild\":{\"type\":\"boolean\"},\"prtctCardData\":{\"type\":\"boolean\"}},\"type\":\"object\"},\"configVersion\":{\"type\":\"string\"},\"serialNumber\":{\"minLength\":1,\"type\":\"string\"},\"tidSent\":{\"type\":\"string\"}},\"required\":[\"serialNumber\"],\"type\":\"object\"}}},\"required\":true},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Successful operation\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"SerialNumber parameter not provided\"},\"401\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Unauthorized - Authentication failed\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"security\":[{\"basic-key\":[]}],\"securitySchemes\":{\"basic-key\":{\"scheme\":\"basic\",\"type\":\"http\"},\"bearer-key\":{\"bearerFormat\":\"JWT\",\"scheme\":\"bearer\",\"type\":\"http\"},\"tecsweb-key\":{\"description\":\"TecsWeb token\",\"in\":\"header\",\"name\":\"TecsWebToken\",\"type\":\"apiKey\"}},\"securitySource\":\"operation\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/storeTerminalParameters",
@@ -4049,6 +4345,12 @@
                 {
                   "active": true,
                   "args": {},
+                  "contract": {
+                    "id": "POST /public/getTerminalId",
+                    "json": "{\"operationId\":\"getTerminalId\",\"parameters\":[],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"deviceSerialNumber\":{\"items\":{\"type\":\"string\"},\"maxItems\":2147483647,\"minItems\":1,\"type\":\"array\"}},\"required\":[\"deviceSerialNumber\"],\"type\":\"object\"}}},\"required\":true},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"duplicateTerminalIds\":{\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"},\"terminals\":{\"items\":{\"properties\":{\"hwSerialNo\":{\"type\":\"string\"},\"mpExpectedSerialNo\":{\"type\":\"string\"},\"termn\":{\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"}},\"type\":\"object\"}}},\"description\":\"Successful operation\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Bad request. e.g, Input validation failed or there already exist a template with the same name.\"},\"401\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Unauthenticated - Authentication failed\"},\"403\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Unauthorized - Missing role SYSTEM_GET_TERMINAL_ID\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"security\":[{\"bearer-key\":[]},{\"basic-key\":[]}],\"securitySchemes\":{\"basic-key\":{\"scheme\":\"basic\",\"type\":\"http\"},\"bearer-key\":{\"bearerFormat\":\"JWT\",\"scheme\":\"bearer\",\"type\":\"http\"},\"tecsweb-key\":{\"description\":\"TecsWeb token\",\"in\":\"header\",\"name\":\"TecsWebToken\",\"type\":\"apiKey\"}},\"securitySource\":\"operation\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/getTerminalId",
@@ -4269,6 +4571,12 @@
                 {
                   "active": true,
                   "args": {},
+                  "contract": {
+                    "id": "POST /public/mcom/transactionHistory",
+                    "json": "{\"operationId\":\"transactionHistory_1\",\"parameters\":[],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"authorizationCode\":{\"type\":\"string\"},\"cardBrand\":{\"type\":\"string\"},\"clearingAmountFrom\":{\"type\":\"string\"},\"clearingAmountTo\":{\"type\":\"string\"},\"clearingCurrency\":{\"type\":\"string\"},\"clearingStatus\":{\"type\":\"string\"},\"corporateUUID\":{\"type\":\"string\"},\"pagination\":{\"properties\":{\"page\":{\"format\":\"int32\",\"type\":\"integer\"},\"size\":{\"format\":\"int32\",\"type\":\"integer\"}},\"type\":\"object\"},\"paymentTokenPublicId\":{\"type\":\"string\"},\"receiptNumber\":{\"type\":\"string\"},\"referencedTransactionId\":{\"type\":\"string\"},\"retrievalReferenceNumber\":{\"type\":\"string\"},\"sourceId\":{\"format\":\"int32\",\"type\":\"integer\"},\"tecsengineResponseCodeFrom\":{\"type\":\"string\"},\"tecsengineResponseCodeTo\":{\"type\":\"string\"},\"terminalId\":{\"format\":\"int32\",\"type\":\"integer\"},\"traceNumber\":{\"type\":\"string\"},\"transactionAmountFrom\":{\"type\":\"string\"},\"transactionAmountTo\":{\"type\":\"string\"},\"transactionDateFrom\":{\"format\":\"date-time\",\"type\":\"string\"},\"transactionDateTo\":{\"format\":\"date-time\",\"type\":\"string\"},\"transactionId\":{\"type\":\"string\"},\"transactionType\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"required\":true},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"pagination\":{\"properties\":{\"page\":{\"format\":\"int32\",\"type\":\"integer\"},\"size\":{\"format\":\"int32\",\"type\":\"integer\"},\"totalElements\":{\"format\":\"int64\",\"type\":\"integer\"},\"totalPages\":{\"format\":\"int32\",\"type\":\"integer\"}},\"type\":\"object\"},\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"},\"transactionHistories\":{\"items\":{\"properties\":{\"authorizationCode\":{\"type\":\"string\"},\"cardBrand\":{\"type\":\"string\"},\"cardEntry\":{\"type\":\"string\"},\"cardExpiration\":{\"type\":\"string\"},\"cardNumber\":{\"type\":\"string\"},\"clearingAmount\":{\"format\":\"int32\",\"type\":\"integer\"},\"clearingCurrency\":{\"type\":\"string\"},\"clearingStatus\":{\"type\":\"string\"},\"clientId\":{\"format\":\"int32\",\"type\":\"integer\"},\"corporateName\":{\"type\":\"string\"},\"dateTimeCreate\":{\"format\":\"date-time\",\"type\":\"string\"},\"merchantNumber\":{\"type\":\"string\"},\"paymentReason\":{\"type\":\"string\"},\"paymentTokenPublicId\":{\"type\":\"string\"},\"receiptNumber\":{\"type\":\"string\"},\"requestIssuerDate\":{\"format\":\"date-time\",\"type\":\"string\"},\"responseCodeFromAS\":{\"type\":\"string\"},\"responseIssuerDate\":{\"format\":\"date-time\",\"type\":\"string\"},\"retrievalReferenceNumber\":{\"type\":\"string\"},\"seqNo\":{\"format\":\"int64\",\"type\":\"integer\"},\"tecsengineResponseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"tecsengineResponseText\":{\"type\":\"string\"},\"terminalId\":{\"format\":\"int32\",\"type\":\"integer\"},\"traceNumber\":{\"format\":\"int32\",\"type\":\"integer\"},\"transactionAmount\":{\"format\":\"int32\",\"type\":\"integer\"},\"transactionCurrency\":{\"type\":\"string\"},\"transactionDate\":{\"format\":\"date-time\",\"type\":\"string\"},\"transactionId\":{\"type\":\"string\"},\"transactionSource\":{\"type\":\"string\"},\"transactionType\":{\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"}},\"type\":\"object\"}}},\"description\":\"Successful operation\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"\\n* Invalid combination of transactionId and referencedTransactionId parameters\\n* ReferencedTransactionId is set and TerminalId not set\\n* ReferencedTransactionId not set and TransactionDateFrom not set\\n* ReferencedTransactionId not set and TransactionDateTo parameters not set\\n* Mandator not found\\n* Invalid TerminalId\\n\"},\"401\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"\\nUnauthorized - Authentication failed:<br>\\n* MandatorId does not march\\n* Inactive user\\n\"},\"403\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Forbidden - Missing role: MCOM_WEBAPP_TX_HISTORY or BO_TE_TRANSACTION_HISTORY\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"security\":[{\"bearer-key\":[]}],\"securitySchemes\":{\"basic-key\":{\"scheme\":\"basic\",\"type\":\"http\"},\"bearer-key\":{\"bearerFormat\":\"JWT\",\"scheme\":\"bearer\",\"type\":\"http\"},\"tecsweb-key\":{\"description\":\"TecsWeb token\",\"in\":\"header\",\"name\":\"TecsWebToken\",\"type\":\"apiKey\"}},\"securitySource\":\"operation\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/mcom/transactionHistory",
@@ -4292,6 +4600,12 @@
                 {
                   "active": true,
                   "args": {},
+                  "contract": {
+                    "id": "POST /public/transactionHistory",
+                    "json": "{\"operationId\":\"transactionHistory\",\"parameters\":[],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"3DSecure\":{\"type\":\"string\"},\"authorizationCode\":{\"type\":\"string\"},\"cardBrand\":{\"type\":\"string\"},\"clearingAmountFrom\":{\"type\":\"string\"},\"clearingAmountTo\":{\"type\":\"string\"},\"clearingCurrency\":{\"type\":\"string\"},\"clearingStatus\":{\"type\":\"string\"},\"corporateUUID\":{\"type\":\"string\"},\"orderByTransactionDate\":{\"pattern\":\"asc|desc\",\"type\":\"string\"},\"pagination\":{\"properties\":{\"page\":{\"format\":\"int32\",\"type\":\"integer\"},\"size\":{\"format\":\"int32\",\"type\":\"integer\"}},\"type\":\"object\"},\"receiptNumber\":{\"type\":\"string\"},\"referencedTransactionId\":{\"type\":\"string\"},\"retrievalReferenceNumber\":{\"type\":\"string\"},\"sourceId\":{\"format\":\"int32\",\"type\":\"integer\"},\"tecsengineResponseCodeFrom\":{\"type\":\"string\"},\"tecsengineResponseCodeTo\":{\"type\":\"string\"},\"terminalId\":{\"format\":\"int32\",\"type\":\"integer\"},\"traceNumber\":{\"type\":\"string\"},\"transactionAmountFrom\":{\"type\":\"string\"},\"transactionAmountTo\":{\"type\":\"string\"},\"transactionDateFrom\":{\"format\":\"date-time\",\"type\":\"string\"},\"transactionDateTo\":{\"format\":\"date-time\",\"type\":\"string\"},\"transactionId\":{\"type\":\"string\"},\"transactionType\":{\"type\":\"string\"},\"wallet\":{\"description\":\"Filter by wallet type. Allowed values: APAY, GPAY, GPAY3D\",\"enum\":[\"APAY\",\"GPAY\",\"GPAY3D\"],\"pattern\":\"APAY|GPAY|GPAY3D\",\"type\":\"string\"}},\"type\":\"object\"}}},\"required\":true},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"pagination\":{\"properties\":{\"page\":{\"format\":\"int32\",\"type\":\"integer\"},\"size\":{\"format\":\"int32\",\"type\":\"integer\"},\"totalElements\":{\"format\":\"int64\",\"type\":\"integer\"},\"totalPages\":{\"format\":\"int32\",\"type\":\"integer\"}},\"type\":\"object\"},\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"},\"transactionHistories\":{\"items\":{\"properties\":{\"authorizationCode\":{\"type\":\"string\"},\"cardBrand\":{\"type\":\"string\"},\"cardEntry\":{\"type\":\"string\"},\"cardExpiration\":{\"type\":\"string\"},\"cardNumber\":{\"type\":\"string\"},\"clearingAmount\":{\"format\":\"int32\",\"type\":\"integer\"},\"clearingCurrency\":{\"type\":\"string\"},\"clearingStatus\":{\"type\":\"string\"},\"clientId\":{\"format\":\"int32\",\"type\":\"integer\"},\"corporateName\":{\"type\":\"string\"},\"dateTimeCreate\":{\"format\":\"date-time\",\"type\":\"string\"},\"merchantNumber\":{\"type\":\"string\"},\"paymentReason\":{\"type\":\"string\"},\"paymentTokenPublicId\":{\"type\":\"string\"},\"receiptNumber\":{\"type\":\"string\"},\"requestIssuerDate\":{\"format\":\"date-time\",\"type\":\"string\"},\"responseCodeFromAS\":{\"type\":\"string\"},\"responseIssuerDate\":{\"format\":\"date-time\",\"type\":\"string\"},\"retrievalReferenceNumber\":{\"type\":\"string\"},\"seqNo\":{\"format\":\"int64\",\"type\":\"integer\"},\"tecsengineResponseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"tecsengineResponseText\":{\"type\":\"string\"},\"terminalId\":{\"format\":\"int32\",\"type\":\"integer\"},\"traceNumber\":{\"format\":\"int32\",\"type\":\"integer\"},\"transactionAmount\":{\"format\":\"int32\",\"type\":\"integer\"},\"transactionCurrency\":{\"type\":\"string\"},\"transactionDate\":{\"format\":\"date-time\",\"type\":\"string\"},\"transactionId\":{\"type\":\"string\"},\"transactionSource\":{\"type\":\"string\"},\"transactionType\":{\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"}},\"type\":\"object\"}}},\"description\":\"Successful operation\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"\\n* Invalid combination of transactionId and referencedTransactionId parameters\\n* ReferencedTransactionId is set and TerminalId not set\\n* ReferencedTransactionId not set and TransactionDateFrom not set\\n* ReferencedTransactionId not set and TransactionDateTo parameters not set\\n* Mandator not found\\n* Invalid TerminalId\\n\"},\"401\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"\\nUnauthorized - Authentication failed:<br>\\n* MandatorId does not march\\n* Inactive user\\n\"},\"403\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Forbidden - Missing role: MP_CORPORATE or BO_TE_TRANSACTION_HISTORY\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"security\":[{\"bearer-key\":[]}],\"securitySchemes\":{\"basic-key\":{\"scheme\":\"basic\",\"type\":\"http\"},\"bearer-key\":{\"bearerFormat\":\"JWT\",\"scheme\":\"bearer\",\"type\":\"http\"},\"tecsweb-key\":{\"description\":\"TecsWeb token\",\"in\":\"header\",\"name\":\"TecsWebToken\",\"type\":\"apiKey\"}},\"securitySource\":\"operation\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/transactionHistory",
@@ -4383,6 +4697,12 @@
                 {
                   "active": true,
                   "args": {},
+                  "contract": {
+                    "id": "POST /public/countAuthorisedTransactions",
+                    "json": "{\"operationId\":\"countAuthorisedTransactions\",\"parameters\":[],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"period\":{\"pattern\":\"HOUR|DAY|MONTH|YEAR\",\"type\":\"string\"},\"transactionDateFrom\":{\"format\":\"date-time\",\"type\":\"string\"},\"transactionDateTo\":{\"format\":\"date-time\",\"type\":\"string\"}},\"required\":[\"transactionDateFrom\",\"transactionDateTo\"],\"type\":\"object\"}}},\"required\":true},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"period\":{\"type\":\"string\"},\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"},\"transactionDateFrom\":{\"format\":\"date-time\",\"type\":\"string\"},\"transactionDateTo\":{\"format\":\"date-time\",\"type\":\"string\"},\"transactionsCount\":{\"items\":{\"properties\":{\"amount\":{\"format\":\"int32\",\"type\":\"integer\"},\"datePart\":{\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"}},\"type\":\"object\"}}},\"description\":\"Successful operation\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Bad request\"},\"401\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Unauthenticated - Authentication failed\"},\"403\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Unauthorized - Missing role TE_MERCHANT_TERMINAL_MANAGEMENT or MP_CORPORATE\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"security\":[{\"bearer-key\":[]}],\"securitySchemes\":{\"basic-key\":{\"scheme\":\"basic\",\"type\":\"http\"},\"bearer-key\":{\"bearerFormat\":\"JWT\",\"scheme\":\"bearer\",\"type\":\"http\"},\"tecsweb-key\":{\"description\":\"TecsWeb token\",\"in\":\"header\",\"name\":\"TecsWebToken\",\"type\":\"apiKey\"}},\"securitySource\":\"operation\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/countAuthorisedTransactions",
@@ -4403,6 +4723,12 @@
                 {
                   "active": true,
                   "args": {},
+                  "contract": {
+                    "id": "POST /public/countNotAuthorisedTransactions",
+                    "json": "{\"operationId\":\"countNotAuthorisedTransactions\",\"parameters\":[],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"period\":{\"pattern\":\"HOUR|DAY|MONTH|YEAR\",\"type\":\"string\"},\"transactionDateFrom\":{\"format\":\"date-time\",\"type\":\"string\"},\"transactionDateTo\":{\"format\":\"date-time\",\"type\":\"string\"}},\"required\":[\"transactionDateFrom\",\"transactionDateTo\"],\"type\":\"object\"}}},\"required\":true},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"period\":{\"type\":\"string\"},\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"},\"transactionDateFrom\":{\"format\":\"date-time\",\"type\":\"string\"},\"transactionDateTo\":{\"format\":\"date-time\",\"type\":\"string\"},\"transactionsCount\":{\"items\":{\"properties\":{\"amount\":{\"format\":\"int32\",\"type\":\"integer\"},\"datePart\":{\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"}},\"type\":\"object\"}}},\"description\":\"Successful operation\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Bad request\"},\"401\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Unauthenticated - Authentication failed\"},\"403\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Unauthorized - Missing role TE_MERCHANT_TERMINAL_MANAGEMENT or MP_CORPORATE\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"security\":[{\"bearer-key\":[]}],\"securitySchemes\":{\"basic-key\":{\"scheme\":\"basic\",\"type\":\"http\"},\"bearer-key\":{\"bearerFormat\":\"JWT\",\"scheme\":\"bearer\",\"type\":\"http\"},\"tecsweb-key\":{\"description\":\"TecsWeb token\",\"in\":\"header\",\"name\":\"TecsWebToken\",\"type\":\"apiKey\"}},\"securitySource\":\"operation\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/countNotAuthorisedTransactions",
@@ -4494,6 +4820,12 @@
                 {
                   "active": true,
                   "args": {},
+                  "contract": {
+                    "id": "POST /public/countTransactionsByCardBrand",
+                    "json": "{\"operationId\":\"countTransactionsByCardBrand\",\"parameters\":[],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"period\":{\"pattern\":\"HOUR|DAY|MONTH|YEAR\",\"type\":\"string\"},\"transactionDateFrom\":{\"format\":\"date-time\",\"type\":\"string\"},\"transactionDateTo\":{\"format\":\"date-time\",\"type\":\"string\"}},\"required\":[\"transactionDateFrom\",\"transactionDateTo\"],\"type\":\"object\"}}},\"required\":true},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"period\":{\"type\":\"string\"},\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"},\"transactionDateFrom\":{\"format\":\"date-time\",\"type\":\"string\"},\"transactionDateTo\":{\"format\":\"date-time\",\"type\":\"string\"},\"transactionsCount\":{\"items\":{\"properties\":{\"amount\":{\"format\":\"int32\",\"type\":\"integer\"},\"datePart\":{\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"}},\"type\":\"object\"}}},\"description\":\"Successful operation\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Bad request\"},\"401\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Unauthenticated - Authentication failed\"},\"403\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Unauthorized - Missing role TE_MERCHANT_TERMINAL_MANAGEMENT or MP_CORPORATE\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"security\":[{\"bearer-key\":[]}],\"securitySchemes\":{\"basic-key\":{\"scheme\":\"basic\",\"type\":\"http\"},\"bearer-key\":{\"bearerFormat\":\"JWT\",\"scheme\":\"bearer\",\"type\":\"http\"},\"tecsweb-key\":{\"description\":\"TecsWeb token\",\"in\":\"header\",\"name\":\"TecsWebToken\",\"type\":\"apiKey\"}},\"securitySource\":\"operation\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/countTransactionsByCardBrand",
@@ -4585,6 +4917,12 @@
                 {
                   "active": true,
                   "args": {},
+                  "contract": {
+                    "id": "POST /public/transactionTurnover",
+                    "json": "{\"operationId\":\"transactionTurnover\",\"parameters\":[],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"period\":{\"pattern\":\"HOUR|DAY|MONTH|YEAR\",\"type\":\"string\"},\"transactionDateFrom\":{\"format\":\"date-time\",\"type\":\"string\"},\"transactionDateTo\":{\"format\":\"date-time\",\"type\":\"string\"}},\"required\":[\"transactionDateFrom\",\"transactionDateTo\"],\"type\":\"object\"}}},\"required\":true},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"period\":{\"type\":\"string\"},\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"},\"transactionDateFrom\":{\"format\":\"date-time\",\"type\":\"string\"},\"transactionDateTo\":{\"format\":\"date-time\",\"type\":\"string\"},\"turnovers\":{\"items\":{\"properties\":{\"currency\":{\"type\":\"string\"},\"turnover\":{\"items\":{\"properties\":{\"amount\":{\"format\":\"int64\",\"type\":\"integer\"},\"datePart\":{\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"}},\"type\":\"object\"},\"type\":\"array\"}},\"type\":\"object\"}}},\"description\":\"Successful operation\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Bad request\"},\"401\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Unauthenticated - Authentication failed\"},\"403\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Unauthorized - Missing role TE_MERCHANT_TERMINAL_MANAGEMENT or MP_CORPORATE\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"security\":[{\"bearer-key\":[]}],\"securitySchemes\":{\"basic-key\":{\"scheme\":\"basic\",\"type\":\"http\"},\"bearer-key\":{\"bearerFormat\":\"JWT\",\"scheme\":\"bearer\",\"type\":\"http\"},\"tecsweb-key\":{\"description\":\"TecsWeb token\",\"in\":\"header\",\"name\":\"TecsWebToken\",\"type\":\"apiKey\"}},\"securitySource\":\"operation\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/transactionTurnover",
@@ -4692,6 +5030,12 @@
                 {
                   "active": true,
                   "args": {},
+                  "contract": {
+                    "id": "POST /public/updateMerchant",
+                    "json": "{\"operationId\":\"updateMerchant\",\"parameters\":[],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"city\":{\"type\":\"string\"},\"corporateUuid\":{\"minLength\":1,\"type\":\"string\"},\"country\":{\"type\":\"string\"},\"merchantCategoryCode\":{\"maxLength\":100,\"minLength\":0,\"type\":\"string\"},\"name\":{\"type\":\"string\"},\"state\":{\"type\":\"string\"},\"street\":{\"type\":\"string\"},\"vuNummer\":{\"maxLength\":15,\"minLength\":0,\"type\":\"string\"},\"zipcode\":{\"type\":\"string\"}},\"required\":[\"corporateUuid\"],\"type\":\"object\"}}},\"required\":true},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Successful operation\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Bad request\"},\"401\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Unauthenticated - Authentication failed\"},\"403\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Unauthorized - Missing role BO_USERMANAGEMENT_UPDATE_CORPORATE\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"security\":[{\"bearer-key\":[]},{\"basic-key\":[]}],\"securitySchemes\":{\"basic-key\":{\"scheme\":\"basic\",\"type\":\"http\"},\"bearer-key\":{\"bearerFormat\":\"JWT\",\"scheme\":\"bearer\",\"type\":\"http\"},\"tecsweb-key\":{\"description\":\"TecsWeb token\",\"in\":\"header\",\"name\":\"TecsWebToken\",\"type\":\"apiKey\"}},\"securitySource\":\"operation\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/updateMerchant",
@@ -4757,6 +5101,12 @@
                 {
                   "active": true,
                   "args": {},
+                  "contract": {
+                    "id": "POST /public/updateTemplateXml",
+                    "json": "{\"operationId\":\"updateTemplateXml\",\"parameters\":[],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"templateName\":{\"minLength\":1,\"type\":\"string\"},\"templateXml\":{\"minLength\":1,\"type\":\"string\"}},\"required\":[\"templateName\",\"templateXml\"],\"type\":\"object\"}}},\"required\":true},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Successful operation\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Bad request\"},\"401\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Unauthenticated - Authentication failed\"},\"403\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Unauthorized - Missing role BO_MP_UPDATE_XML_TEMPLATE\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"responseCode\":{\"format\":\"int32\",\"type\":\"integer\"},\"responseMessage\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"security\":[{\"bearer-key\":[]},{\"basic-key\":[]}],\"securitySchemes\":{\"basic-key\":{\"scheme\":\"basic\",\"type\":\"http\"},\"bearer-key\":{\"bearerFormat\":\"JWT\",\"scheme\":\"bearer\",\"type\":\"http\"},\"tecsweb-key\":{\"description\":\"TecsWeb token\",\"in\":\"header\",\"name\":\"TecsWebToken\",\"type\":\"apiKey\"}},\"securitySource\":\"operation\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "POST",
                   "orig": "/public/updateTemplateXml",
@@ -4815,6 +5165,12 @@
                 {
                   "active": true,
                   "args": {},
+                  "contract": {
+                    "id": "GET /public/version",
+                    "json": "{\"operationId\":\"getVersion\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"appName\":{\"type\":\"string\"},\"buildDate\":{\"type\":\"string\"},\"version\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Successful operation\"}},\"securitySchemes\":{\"basic-key\":{\"scheme\":\"basic\",\"type\":\"http\"},\"bearer-key\":{\"bearerFormat\":\"JWT\",\"scheme\":\"bearer\",\"type\":\"http\"},\"tecsweb-key\":{\"description\":\"TecsWeb token\",\"in\":\"header\",\"name\":\"TecsWebToken\",\"type\":\"apiKey\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "GET",
                   "orig": "/public/version",
@@ -4849,7 +5205,12 @@
               "active": false,
               "actor": "anonymous",
               "max": 1000
-            }
+            },
+            "optspec": {
+              "now": "`$FUNCTION`",
+              "sink": "`$FUNCTION`"
+            },
+            "strict": false
           },
           "hook": {
             "GetData": {
@@ -4999,7 +5360,15 @@
             "options": {
               "active": false,
               "clientVersion": "0.0.1"
-            }
+            },
+            "optspec": {
+              "clientName": "`$STRING`",
+              "clientVersion": "`$STRING`",
+              "headers": "`$MAP`",
+              "idgen": "`$FUNCTION`",
+              "sessionId": "`$STRING`"
+            },
+            "strict": false
           },
           "hook": {
             "GetData": {
@@ -5134,6 +5503,170 @@
           "transport": "none",
           "version": "0.0.1"
         },
+        "debug": {
+          "active": true,
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "config": {
+            "options": {
+              "active": false,
+              "max": 100,
+              "redact": [
+                "authorization",
+                "cookie",
+                "set-cookie",
+                "api-key",
+                "apikey",
+                "x-api-key",
+                "idempotency-key"
+              ]
+            },
+            "optspec": {
+              "now": "`$FUNCTION`",
+              "onEntry": "`$FUNCTION`"
+            },
+            "strict": false
+          },
+          "hook": {
+            "GetData": {
+              "active": false,
+              "await": false
+            },
+            "GetMatch": {
+              "active": false,
+              "await": false
+            },
+            "PostConstruct": {
+              "active": false,
+              "await": false
+            },
+            "PostConstructEntity": {
+              "active": false,
+              "await": false
+            },
+            "PostOperation": {
+              "active": false,
+              "await": false
+            },
+            "PreDone": {
+              "active": true,
+              "await": false
+            },
+            "PreRequest": {
+              "active": true,
+              "await": false
+            },
+            "PreResponse": {
+              "active": true,
+              "await": false
+            },
+            "PreResult": {
+              "active": false,
+              "await": false
+            },
+            "PreSpec": {
+              "active": false,
+              "await": false
+            },
+            "PreTarget": {
+              "active": false,
+              "await": false
+            },
+            "PreUnexpected": {
+              "active": true,
+              "await": false
+            },
+            "SetData": {
+              "active": false,
+              "await": false
+            }
+          },
+          "name": "debug",
+          "needs": {},
+          "origname": "",
+          "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
+          "target": {
+            "c": {
+              "deps": {}
+            },
+            "clojure": {
+              "deps": {}
+            },
+            "cpp": {
+              "deps": {}
+            },
+            "csharp": {
+              "deps": {}
+            },
+            "dart": {
+              "deps": {}
+            },
+            "elixir": {
+              "deps": {}
+            },
+            "go": {
+              "deps": {}
+            },
+            "go-cli": {
+              "deps": {}
+            },
+            "go-mcp": {
+              "deps": {}
+            },
+            "haskell": {
+              "deps": {}
+            },
+            "java": {
+              "deps": {}
+            },
+            "js": {
+              "deps": {}
+            },
+            "kotlin": {
+              "deps": {}
+            },
+            "lean": {
+              "deps": {}
+            },
+            "lua": {
+              "deps": {}
+            },
+            "ocaml": {
+              "deps": {}
+            },
+            "perl": {
+              "deps": {}
+            },
+            "php": {
+              "deps": {}
+            },
+            "py": {
+              "deps": {}
+            },
+            "rb": {
+              "deps": {}
+            },
+            "rust": {
+              "deps": {}
+            },
+            "scala": {
+              "deps": {}
+            },
+            "swift": {
+              "deps": {}
+            },
+            "ts": {
+              "deps": {}
+            },
+            "zig": {
+              "deps": {}
+            }
+          },
+          "title": "Request/response capture ring buffer for debugging",
+          "transport": "none",
+          "version": "0.0.1"
+        },
         "idempotency": {
           "active": true,
           "base": "node_modules/@voxgig/sdkgen/project/.sdk",
@@ -5152,7 +5685,11 @@
                 "update",
                 "remove"
               ]
-            }
+            },
+            "optspec": {
+              "keygen": "`$FUNCTION`"
+            },
+            "strict": false
           },
           "hook": {
             "GetData": {
@@ -5293,7 +5830,12 @@
           "config": {
             "options": {
               "active": true
-            }
+            },
+            "optspec": {
+              "level": "`$STRING`",
+              "logger": "`$ANY`"
+            },
+            "strict": false
           },
           "deps": {
             "js": {
@@ -5468,7 +6010,11 @@
           "config": {
             "options": {
               "active": false
-            }
+            },
+            "optspec": {
+              "now": "`$FUNCTION`"
+            },
+            "strict": false
           },
           "hook": {
             "GetData": {
@@ -5627,7 +6173,12 @@
               "limitParam": "limit",
               "pageParam": "page",
               "startPage": 1
-            }
+            },
+            "optspec": {
+              "limit": "`$NUMBER`",
+              "ops": "`$LIST`"
+            },
+            "strict": false
           },
           "hook": {
             "GetData": {
@@ -5770,7 +6321,12 @@
               "active": false,
               "burst": 5,
               "rate": 5
-            }
+            },
+            "optspec": {
+              "now": "`$FUNCTION`",
+              "sleep": "`$FUNCTION`"
+            },
+            "strict": false
           },
           "hook": {
             "GetData": {
@@ -5924,7 +6480,12 @@
                 503,
                 504
               ]
-            }
+            },
+            "optspec": {
+              "jitter": "`$BOOLEAN`",
+              "sleep": "`$FUNCTION`"
+            },
+            "strict": false
           },
           "hook": {
             "GetData": {
@@ -6065,7 +6626,14 @@
           "config": {
             "options": {
               "active": false
-            }
+            },
+            "optspec": {
+              "exporter": "`$FUNCTION`",
+              "headers": "`$MAP`",
+              "idgen": "`$FUNCTION`",
+              "now": "`$FUNCTION`"
+            },
+            "strict": false
           },
           "hook": {
             "GetData": {
@@ -6218,7 +6786,12 @@
           "config": {
             "options": {
               "active": false
-            }
+            },
+            "optspec": {
+              "entity": "`$MAP`",
+              "net": "`$MAP`"
+            },
+            "strict": false
           },
           "hook": {
             "GetData": {
@@ -6368,7 +6941,12 @@
             "options": {
               "active": false,
               "ms": 30000
-            }
+            },
+            "optspec": {
+              "clearTimer": "`$FUNCTION`",
+              "setTimer": "`$FUNCTION`"
+            },
+            "strict": false
           },
           "hook": {
             "GetData": {
@@ -7397,6 +7975,48 @@
         "website": "https://test.tecs.at"
       },
       "option": {},
+      "optspec": {
+        "allow": {
+          "method": "GET,PUT,POST,PATCH,DELETE,OPTIONS",
+          "op": "create,update,load,list,remove,command,direct,graphql"
+        },
+        "apikey": "",
+        "auth": {
+          "basic": false,
+          "prefix": ""
+        },
+        "base": "http://localhost:8000",
+        "clean": {
+          "keys": "key,token,id"
+        },
+        "entity": {
+          "`$CHILD`": {
+            "`$OPEN`": true,
+            "active": false,
+            "alias": {}
+          }
+        },
+        "extend": "`$ANY`",
+        "headers": {
+          "`$CHILD`": "`$STRING`"
+        },
+        "prefix": "",
+        "secret": "",
+        "server": {
+          "`$CHILD`": ""
+        },
+        "suffix": "",
+        "system": {
+          "fetch": "`$ANY`"
+        },
+        "test": {
+          "active": false,
+          "entity": {
+            "`$OPEN`": true
+          }
+        },
+        "utility": {}
+      },
       "repo": {
         "host": "github.com",
         "path": ""
@@ -8204,6 +8824,7 @@
           },
           "package": "@voxgig/sdkgen",
           "provides": {
+            "schema": true,
             "sekreto": true
           },
           "publish": {
@@ -9038,6 +9659,7 @@
           },
           "package": "@voxgig/sdkgen",
           "provides": {
+            "schema": true,
             "sekreto": true
           },
           "publish": {
@@ -9144,7 +9766,7 @@
         "live": {
           "app": false,
           "base": "",
-          "strict": false
+          "strict": true
         }
       }
     }

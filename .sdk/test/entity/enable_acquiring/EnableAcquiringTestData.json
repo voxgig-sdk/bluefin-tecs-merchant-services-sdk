@@ -2,16 +2,16 @@
   "existing": {
     "enable_acquiring": {
       "ENABLE_ACQUIRING00": {
-        "accountNo": "s8c",
+        "accountNo": 140,
         "additionalData": {},
         "corporateUuid": "s8e",
         "currency": "s8f",
-        "merchantCategoryCode": "s90",
+        "merchantCategoryCode": 144,
         "packageOrderUuid": "s91",
         "productOrderUuid": "s92",
-        "responseCode": "s93",
+        "responseCode": 147,
         "responseMessage": "s94",
-        "sortingCode": "s95",
+        "sortingCode": 149,
         "templateName": "s96",
         "terminalIdAcq": "s97",
         "terminalIds": [],
@@ -19,16 +19,16 @@
         "id": "ENABLE_ACQUIRING00"
       },
       "ENABLE_ACQUIRING01": {
-        "accountNo": "s118",
+        "accountNo": 280,
         "additionalData": {},
         "corporateUuid": "s11a",
         "currency": "s11b",
-        "merchantCategoryCode": "s11c",
+        "merchantCategoryCode": 284,
         "packageOrderUuid": "s11d",
         "productOrderUuid": "s11e",
-        "responseCode": "s11f",
+        "responseCode": 287,
         "responseMessage": "s120",
-        "sortingCode": "s121",
+        "sortingCode": 289,
         "templateName": "s122",
         "terminalIdAcq": "s123",
         "terminalIds": [],
@@ -36,16 +36,16 @@
         "id": "ENABLE_ACQUIRING01"
       },
       "ENABLE_ACQUIRING02": {
-        "accountNo": "s1a4",
+        "accountNo": 420,
         "additionalData": {},
         "corporateUuid": "s1a6",
         "currency": "s1a7",
-        "merchantCategoryCode": "s1a8",
+        "merchantCategoryCode": 424,
         "packageOrderUuid": "s1a9",
         "productOrderUuid": "s1aa",
-        "responseCode": "s1ab",
+        "responseCode": 427,
         "responseMessage": "s1ac",
-        "sortingCode": "s1ad",
+        "sortingCode": 429,
         "templateName": "s1ae",
         "terminalIdAcq": "s1af",
         "terminalIds": [],
@@ -57,20 +57,216 @@
   "new": {
     "enable_acquiring": {
       "enable_acquiring_ref01": {
-        "accountNo": "s230",
+        "accountNo": 560,
         "additionalData": {},
         "corporateUuid": "s232",
         "currency": "s233",
-        "merchantCategoryCode": "s234",
+        "merchantCategoryCode": 564,
         "packageOrderUuid": "s235",
         "productOrderUuid": "s236",
-        "responseCode": "s237",
+        "responseCode": 567,
         "responseMessage": "s238",
-        "sortingCode": "s239",
+        "sortingCode": 569,
         "templateName": "s23a",
         "terminalIdAcq": "s23b",
         "terminalIds": [],
         "vuNummer": "s23d"
+      }
+    }
+  },
+  "requests": {
+    "POST /enableAcquiring": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "enableAcquiring",
+        "parameters": [],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "accountNo": {
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "additionalData": {
+                    "additionalProperties": {
+                      "type": "string"
+                    },
+                    "type": "object"
+                  },
+                  "corporateUuid": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "currency": {
+                    "maxLength": 3,
+                    "minLength": 3,
+                    "type": "string"
+                  },
+                  "merchantCategoryCode": {
+                    "format": "int32",
+                    "minimum": 0,
+                    "type": "integer"
+                  },
+                  "packageOrderUuid": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "productOrderUuid": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "sortingCode": {
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "templateName": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "terminalIdAcq": {
+                    "type": "string"
+                  },
+                  "terminalIds": {
+                    "items": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "type": "array"
+                  },
+                  "vuNummer": {
+                    "maxLength": 15,
+                    "minLength": 1,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "corporateUuid",
+                  "currency",
+                  "merchantCategoryCode",
+                  "packageOrderUuid",
+                  "productOrderUuid",
+                  "templateName"
+                ],
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "\n* Mandator not found\n* Invalid template \n* Invalid TECS company specified\n* MandatorConfig not found\n* Invalid country code Alpha3 specified \n* Vu-nummer has to be unique\n"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Unauthorized - Authentication failed, e.g. when user is not active"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Forbidden - Missing role: TE_MERCHANT_TERMINAL_MANAGEMENT"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "\n* Internal server error\n* Error getting Corporate Account\n"
+          }
+        },
+        "security": [
+          {
+            "bearer-key": []
+          }
+        ],
+        "securitySchemes": {
+          "basic-key": {
+            "scheme": "basic",
+            "type": "http"
+          },
+          "bearer-key": {
+            "bearerFormat": "JWT",
+            "scheme": "bearer",
+            "type": "http"
+          },
+          "tecsweb-key": {
+            "description": "TecsWeb token",
+            "in": "header",
+            "name": "TecsWebToken",
+            "type": "apiKey"
+          }
+        },
+        "securitySource": "operation"
       }
     }
   }

@@ -1,0 +1,619 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>DigitalServicesApi | Merchant Services</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><a class="skip" href="#content">Skip to content</a>
+<header class="site-header"><a class="site-title" href="../index.html">Merchant Services<span>SDK documentation</span></a><div class="site-links"><a class="repo-link" href="https://github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk">voxgig-sdk/bluefin-tecs-merchant-services-sdk</a></div></header>
+<div class="site-notice" role="note"></div>
+<div class="shell"><nav class="site-nav" aria-label="Documentation"><div class="search"><label for="search">Search documentation</label><input id="search" type="search" data-base="../" placeholder="Find a guide or reference"><div id="results" aria-live="polite"></div></div><details><summary>Overview</summary><a href="../index.html">Merchant Services</a></details>
+<details open><summary>API</summary><a href="../api/index.html">API overview</a>
+<a href="../api/cancel_transaction.html">CancelTransaction</a>
+<a href="../api/check_card_black_listed.html">CheckCardBlackListed</a>
+<a href="../api/create_product.html">CreateProduct</a>
+<a href="../api/deactivate_terminal.html">DeactivateTerminal</a>
+<a aria-current="page" href="../api/digital_services_api.html">DigitalServicesApi</a><div class="nav-sections"><a class="nav-section" href="#post-publicdigitalservicesmandatorclearingexportdownloadfileid">POST /public/digitalservices/mandatorClearingExportDownload/{fileId}</a>
+<a class="nav-section" href="#post-publicdigitalservicesmandatorclearingexportmetadata">POST /public/digitalservices/mandatorClearingExportMetadata</a>
+<a class="nav-section" href="#get-publicdigitalservicesmandatorclearingexportdownloadstatus">GET /public/digitalservices/mandatorClearingExportDownload/status</a></div>
+<a href="../api/ec_data_ecom.html">EcDataEcom</a>
+<a href="../api/ecom_parameter.html">EcomParameter</a>
+<a href="../api/ecr_data.html">EcrData</a>
+<a href="../api/emv_data.html">EmvData</a>
+<a href="../api/enable_acquiring.html">EnableAcquiring</a>
+<a href="../api/get_merchant_contract_number.html">GetMerchantContractNumber</a>
+<a href="../api/get_template_xml.html">GetTemplateXml</a>
+<a href="../api/introduce_mandator.html">IntroduceMandator</a>
+<a href="../api/introduce_package.html">IntroducePackage</a>
+<a href="../api/keep_alive.html">KeepAlive</a>
+<a href="../api/list_terminal.html">ListTerminal</a>
+<a href="../api/mandator_clearing_export.html">MandatorClearingExport</a>
+<a href="../api/mandator_clearing_export_download.html">MandatorClearingExportDownload</a>
+<a href="../api/mandator_clearing_export_summary.html">MandatorClearingExportSummary</a>
+<a href="../api/merchant_portal_services_api.html">MerchantPortalServicesApi</a>
+<a href="../api/move_tid.html">MoveTid</a>
+<a href="../api/payment_manual.html">PaymentManual</a>
+<a href="../api/payment_sred.html">PaymentSred</a>
+<a href="../api/pre_auth_transaction_completion.html">PreAuthTransactionCompletion</a>
+<a href="../api/reactivate_terminal.html">ReactivateTerminal</a>
+<a href="../api/refund_transaction.html">RefundTransaction</a>
+<a href="../api/register_tecs_company.html">RegisterTecsCompany</a>
+<a href="../api/register_terminal.html">RegisterTerminal</a>
+<a href="../api/report_data.html">ReportData</a>
+<a href="../api/status_transaction.html">StatusTransaction</a>
+<a href="../api/store_terminal_parameter.html">StoreTerminalParameter</a>
+<a href="../api/terminal_id.html">TerminalId</a>
+<a href="../api/transaction_history.html">TransactionHistory</a>
+<a href="../api/transactions_count.html">TransactionsCount</a>
+<a href="../api/transactions_count_card_brand.html">TransactionsCountCardBrand</a>
+<a href="../api/transactions_turnover.html">TransactionsTurnover</a>
+<a href="../api/update_merchant.html">UpdateMerchant</a>
+<a href="../api/update_template_xml.html">UpdateTemplateXml</a>
+<a href="../api/version.html">Version</a></details>
+<details><summary>Guides</summary><a href="../guides/authentication.html">Authentication</a>
+<a href="../guides/first-call.html">Make your first API call</a>
+<a href="../guides/errors.html">Handle errors</a>
+<a href="../guides/concepts.html">Entities, SDKs, and tools</a></details>
+<details><summary>SDKs</summary><a href="../sdks/c.html">C</a>
+<a href="../sdks/clojure.html">Clojure</a>
+<a href="../sdks/cpp.html">C++</a>
+<a href="../sdks/csharp.html">C#</a>
+<a href="../sdks/dart.html">Dart</a>
+<a href="../sdks/elixir.html">Elixir</a>
+<a href="../sdks/go.html">Golang</a>
+<a href="../sdks/haskell.html">Haskell</a>
+<a href="../sdks/java.html">Java</a>
+<a href="../sdks/js.html">JavaScript</a>
+<a href="../sdks/kotlin.html">Kotlin</a>
+<a href="../sdks/lean.html">Lean</a>
+<a href="../sdks/lua.html">Lua</a>
+<a href="../sdks/ocaml.html">OCaml</a>
+<a href="../sdks/perl.html">Perl</a>
+<a href="../sdks/php.html">PHP</a>
+<a href="../sdks/py.html">Python</a>
+<a href="../sdks/rb.html">Ruby</a>
+<a href="../sdks/rust.html">Rust</a>
+<a href="../sdks/scala.html">Scala</a>
+<a href="../sdks/swift.html">Swift</a>
+<a href="../sdks/ts.html">TypeScript</a>
+<a href="../sdks/zig.html">Zig</a></details>
+<details><summary>Tools</summary><a href="../tools/go-cli.html">Go CLI</a>
+<a href="../tools/go-mcp.html">Go MCP server</a></details>
+<details><summary>Features</summary><a href="../features/audit.html">Structured audit trail of operations</a>
+<a href="../features/clienttrack.html">Client identity and per-request correlation headers</a>
+<a href="../features/debug.html">Request/response capture ring buffer for debugging</a>
+<a href="../features/idempotency.html">Idempotency keys for safe retries of mutating operations</a>
+<a href="../features/log.html">Structured request and response logging</a>
+<a href="../features/metrics.html">Statistics capture: per-operation counters and latency</a>
+<a href="../features/paging.html">Pagination signals for list operations</a>
+<a href="../features/ratelimit.html">Client-side rate limiting via a token bucket</a>
+<a href="../features/retry.html">Automatic retry of transient failures with exponential backoff</a>
+<a href="../features/telemetry.html">Distributed tracing spans with W3C trace-context propagation</a>
+<a href="../features/test.html">In-memory mock transport for testing without a live server</a>
+<a href="../features/timeout.html">Per-request timeout with transport abort</a></details></nav><main id="content"><div class="page-context"><span class="section-dot" aria-hidden="true"></span>API</div><h1 id="digitalservicesapi">DigitalServicesApi</h1>
+<h2 id="operations">Operations</h2>
+<p>Every route this entity exposes. Each route links to its own reference on this page.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Route</th>
+<th>SDK operation</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-publicdigitalservicesmandatorclearingexportdownloadfileid"><code>/public/digitalservices/mandatorClearingExportDownload/{fileId}</code></a></td>
+<td><code>create</code></td>
+<td>ZIP file download containing CSV data</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-publicdigitalservicesmandatorclearingexportmetadata"><code>/public/digitalservices/mandatorClearingExportMetadata</code></a></td>
+<td><code>create</code></td>
+<td>Successful operation</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-publicdigitalservicesmandatorclearingexportdownloadstatus"><code>/public/digitalservices/mandatorClearingExportDownload/status</code></a></td>
+<td><code>load</code></td>
+<td>Export concurrency status retrieved successfully</td>
+</tr>
+</tbody>
+</table>
+<h2 id="fields">Fields</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>clearingDateFrom</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Date and time in the format yyyy-MM-dd'T'HH:mm:ssz</td>
+</tr>
+<tr>
+<td><code>clearingDateTo</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Date and time in the format yyyy-MM-dd'T'HH:mm:ssz</td>
+</tr>
+<tr>
+<td><code>responseCode</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>responseMessage</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>txCount</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>txIdEnd</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>txIdStart</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>txSeqNoEnd</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>txSeqNoStart</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>txTotal</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="create">create</h2>
+<h3 id="post-publicdigitalservicesmandatorclearingexportdownloadfileid" class="operation" data-method="post"><code>POST</code> /public/digitalservices/mandatorClearingExportDownload/{fileId}</h3>
+<p>Operation ID: <code>downloadMandatorClearingExport</code>.</p>
+<p>Authentication: bearer token (<code>bearer-key</code>).</p>
+<h4 id="parameters">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>fileId</code> | <code>path</code> | <code>string</code> | Yes | File ID returned from the initial export request |</p>
+<h4 id="responses">Responses</h4>
+<h5 id="200-zip-file-download-containing-csv-data" class="status" data-status="2xx">200: ZIP file download containing CSV data</h5>
+<p><code>application/zip</code></p>
+<h5 id="400-file-is-still-processing" class="status" data-status="4xx">400: File is still processing</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>responseCode</code></td>
+<td><code>integer (int32)</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>responseMessage</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="401-unauthorized---authentication-failed" class="status" data-status="4xx">401: Unauthorized - Authentication failed:</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>responseCode</code></td>
+<td><code>integer (int32)</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>responseMessage</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="403-forbidden---missing-role-bo_mandator_clearing_export" class="status" data-status="4xx">403: Forbidden - Missing role: BO_MANDATOR_CLEARING_EXPORT</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>responseCode</code></td>
+<td><code>integer (int32)</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>responseMessage</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="404-file-not-found" class="status" data-status="4xx">404: File not found</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>responseCode</code></td>
+<td><code>integer (int32)</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>responseMessage</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="500-internal-server-error" class="status" data-status="5xx">500: Internal server error</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>responseCode</code></td>
+<td><code>integer (int32)</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>responseMessage</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="post-publicdigitalservicesmandatorclearingexportmetadata" class="operation" data-method="post"><code>POST</code> /public/digitalservices/mandatorClearingExportMetadata</h3>
+<p>Operation ID: <code>mandatorClearingExportMetadata</code>.</p>
+<p>Authentication: bearer token (<code>bearer-key</code>).</p>
+<h4 id="request-body">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>clearingDateFrom</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Date and time in the format yyyy-MM-dd'T'HH:mm:ssz</td>
+</tr>
+<tr>
+<td><code>clearingDateTo</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Date and time in the format yyyy-MM-dd'T'HH:mm:ssz</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-1">Responses</h4>
+<h5 id="200-successful-operation" class="status" data-status="2xx">200: Successful operation</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>responseCode</code></td>
+<td><code>integer (int32)</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>responseMessage</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>txCount</code></td>
+<td><code>integer (int32)</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>txIdEnd</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>txIdStart</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>txSeqNoEnd</code></td>
+<td><code>integer (int32)</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>txSeqNoStart</code></td>
+<td><code>integer (int32)</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>txTotal</code></td>
+<td><code>integer (int32)</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400--invalid-request-data-bad-request" class="status" data-status="4xx">400: * Invalid request data. Bad request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>responseCode</code></td>
+<td><code>integer (int32)</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>responseMessage</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="401-unauthorized---authentication-failed-1" class="status" data-status="4xx">401: Unauthorized - Authentication failed:</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>responseCode</code></td>
+<td><code>integer (int32)</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>responseMessage</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="403-forbidden---missing-role-bo_mandator_clearing_export-1" class="status" data-status="4xx">403: Forbidden - Missing role: BO_MANDATOR_CLEARING_EXPORT</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>responseCode</code></td>
+<td><code>integer (int32)</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>responseMessage</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="500-internal-server-error-1" class="status" data-status="5xx">500: Internal server error</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>responseCode</code></td>
+<td><code>integer (int32)</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>responseMessage</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="load">load</h2>
+<h3 id="get-publicdigitalservicesmandatorclearingexportdownloadstatus" class="operation" data-method="get"><code>GET</code> /public/digitalservices/mandatorClearingExportDownload/status</h3>
+<p>Operation ID: <code>getMandatorClearingExportConcurrencyStatus</code>.</p>
+<h4 id="responses-2">Responses</h4>
+<h5 id="200-export-concurrency-status-retrieved-successfully" class="status" data-status="2xx">200: Export concurrency status retrieved successfully</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>string</code>.</p>
+<h5 id="401-unauthorized" class="status" data-status="4xx">401: Unauthorized</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>responseCode</code></td>
+<td><code>integer (int32)</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>responseMessage</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="403-forbidden---no-permissions" class="status" data-status="4xx">403: Forbidden - no permissions</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>responseCode</code></td>
+<td><code>integer (int32)</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>responseMessage</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="500-internal-server-error-2" class="status" data-status="5xx">500: Internal server error</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>responseCode</code></td>
+<td><code>integer (int32)</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>responseMessage</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</main></div>
+<script src="../assets/search.js" defer></script></body></html>

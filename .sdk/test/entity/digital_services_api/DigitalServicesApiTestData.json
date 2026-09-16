@@ -4,42 +4,42 @@
       "DIGITAL_SERVICES_API00": {
         "clearingDateFrom": "s64",
         "clearingDateTo": "s65",
-        "responseCode": "s66",
+        "responseCode": 102,
         "responseMessage": "s67",
-        "txCount": "s68",
+        "txCount": 104,
         "txIdEnd": "s69",
         "txIdStart": "s6a",
-        "txSeqNoEnd": "s6b",
-        "txSeqNoStart": "s6c",
-        "txTotal": "s6d",
+        "txSeqNoEnd": 107,
+        "txSeqNoStart": 108,
+        "txTotal": 109,
         "file_id": "FILE01",
         "id": "DIGITAL_SERVICES_API00"
       },
       "DIGITAL_SERVICES_API01": {
         "clearingDateFrom": "sc8",
         "clearingDateTo": "sc9",
-        "responseCode": "sca",
+        "responseCode": 202,
         "responseMessage": "scb",
-        "txCount": "scc",
+        "txCount": 204,
         "txIdEnd": "scd",
         "txIdStart": "sce",
-        "txSeqNoEnd": "scf",
-        "txSeqNoStart": "sd0",
-        "txTotal": "sd1",
+        "txSeqNoEnd": 207,
+        "txSeqNoStart": 208,
+        "txTotal": 209,
         "file_id": "FILE01",
         "id": "DIGITAL_SERVICES_API01"
       },
       "DIGITAL_SERVICES_API02": {
         "clearingDateFrom": "s12c",
         "clearingDateTo": "s12d",
-        "responseCode": "s12e",
+        "responseCode": 302,
         "responseMessage": "s12f",
-        "txCount": "s130",
+        "txCount": 304,
         "txIdEnd": "s131",
         "txIdStart": "s132",
-        "txSeqNoEnd": "s133",
-        "txSeqNoStart": "s134",
-        "txTotal": "s135",
+        "txSeqNoEnd": 307,
+        "txSeqNoStart": 308,
+        "txTotal": 309,
         "file_id": "FILE01",
         "id": "DIGITAL_SERVICES_API02"
       }
@@ -50,14 +50,433 @@
       "digital_services_api_ref01": {
         "clearingDateFrom": "s190",
         "clearingDateTo": "s191",
-        "responseCode": "s192",
+        "responseCode": 402,
         "responseMessage": "s193",
-        "txCount": "s194",
+        "txCount": 404,
         "txIdEnd": "s195",
         "txIdStart": "s196",
-        "txSeqNoEnd": "s197",
-        "txSeqNoStart": "s198",
-        "txTotal": "s199"
+        "txSeqNoEnd": 407,
+        "txSeqNoStart": 408,
+        "txTotal": 409
+      }
+    }
+  },
+  "requests": {
+    "POST /public/digitalservices/mandatorClearingExportDownload/{fileId}": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "downloadMandatorClearingExport",
+        "parameters": [
+          {
+            "description": "File ID returned from the initial export request",
+            "in": "path",
+            "name": "fileId",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/zip": {}
+            },
+            "description": "ZIP file download containing CSV data"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "File is still processing"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "\nUnauthorized - Authentication failed:<br>\n"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Forbidden - Missing role: BO_MANDATOR_CLEARING_EXPORT"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "File not found"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "security": [
+          {
+            "bearer-key": []
+          }
+        ],
+        "securitySchemes": {
+          "basic-key": {
+            "scheme": "basic",
+            "type": "http"
+          },
+          "bearer-key": {
+            "bearerFormat": "JWT",
+            "scheme": "bearer",
+            "type": "http"
+          },
+          "tecsweb-key": {
+            "description": "TecsWeb token",
+            "in": "header",
+            "name": "TecsWebToken",
+            "type": "apiKey"
+          }
+        },
+        "securitySource": "operation"
+      }
+    },
+    "POST /public/digitalservices/mandatorClearingExportMetadata": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "mandatorClearingExportMetadata",
+        "parameters": [],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "clearingDateFrom": {
+                    "description": "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz",
+                    "example": "2024-04-11T11:41:31+02:00",
+                    "pattern": "yyyy-MM-dd'T'HH:mm:ssZ",
+                    "type": "string"
+                  },
+                  "clearingDateTo": {
+                    "description": "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz",
+                    "example": "2024-04-11T11:41:31+02:00",
+                    "pattern": "yyyy-MM-dd'T'HH:mm:ssZ",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "clearingDateFrom",
+                  "clearingDateTo"
+                ],
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    },
+                    "txCount": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "txIdEnd": {
+                      "type": "string"
+                    },
+                    "txIdStart": {
+                      "type": "string"
+                    },
+                    "txSeqNoEnd": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "txSeqNoStart": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "txTotal": {
+                      "format": "int32",
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "\n* Invalid request data. Bad request\n"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "\nUnauthorized - Authentication failed:<br>\n"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Forbidden - Missing role: BO_MANDATOR_CLEARING_EXPORT"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "security": [
+          {
+            "bearer-key": []
+          }
+        ],
+        "securitySchemes": {
+          "basic-key": {
+            "scheme": "basic",
+            "type": "http"
+          },
+          "bearer-key": {
+            "bearerFormat": "JWT",
+            "scheme": "bearer",
+            "type": "http"
+          },
+          "tecsweb-key": {
+            "description": "TecsWeb token",
+            "in": "header",
+            "name": "TecsWebToken",
+            "type": "apiKey"
+          }
+        },
+        "securitySource": "operation"
+      }
+    },
+    "GET /public/digitalservices/mandatorClearingExportDownload/status": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getMandatorClearingExportConcurrencyStatus",
+        "parameters": [],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Export concurrency status retrieved successfully"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Forbidden - no permissions"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "securitySchemes": {
+          "basic-key": {
+            "scheme": "basic",
+            "type": "http"
+          },
+          "bearer-key": {
+            "bearerFormat": "JWT",
+            "scheme": "bearer",
+            "type": "http"
+          },
+          "tecsweb-key": {
+            "description": "TecsWeb token",
+            "in": "header",
+            "name": "TecsWebToken",
+            "type": "apiKey"
+          }
+        },
+        "securitySource": "unspecified"
       }
     }
   }

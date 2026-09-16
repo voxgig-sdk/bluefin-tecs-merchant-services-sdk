@@ -6,7 +6,7 @@
         "clearingDateTo": "s3d",
         "pagination": {},
         "records": [],
-        "responseCode": "s40",
+        "responseCode": 64,
         "responseMessage": "s41",
         "id": "MANDATOR_CLEARING_EXPORT00"
       },
@@ -15,7 +15,7 @@
         "clearingDateTo": "s79",
         "pagination": {},
         "records": [],
-        "responseCode": "s7c",
+        "responseCode": 124,
         "responseMessage": "s7d",
         "id": "MANDATOR_CLEARING_EXPORT01"
       },
@@ -24,7 +24,7 @@
         "clearingDateTo": "sb5",
         "pagination": {},
         "records": [],
-        "responseCode": "sb8",
+        "responseCode": 184,
         "responseMessage": "sb9",
         "id": "MANDATOR_CLEARING_EXPORT02"
       }
@@ -37,8 +37,327 @@
         "clearingDateTo": "sf1",
         "pagination": {},
         "records": [],
-        "responseCode": "sf4",
+        "responseCode": 244,
         "responseMessage": "sf5"
+      }
+    }
+  },
+  "requests": {
+    "POST /public/digitalservices/mandatorClearingExport": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "mandatorClearingExport",
+        "parameters": [],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "clearingDateFrom": {
+                    "description": "Date and time in the format yyyy-MM-dd'T'HH:mm:ssZ",
+                    "example": "2024-04-11T11:41:31+02:00",
+                    "pattern": "yyyy-MM-dd'T'HH:mm:ssZ",
+                    "type": "string"
+                  },
+                  "clearingDateTo": {
+                    "description": "Date and time in the format yyyy-MM-dd'T'HH:mm:ssZ",
+                    "example": "2024-04-11T11:41:31+02:00",
+                    "pattern": "yyyy-MM-dd'T'HH:mm:ssZ",
+                    "type": "string"
+                  },
+                  "pagination": {
+                    "properties": {
+                      "page": {
+                        "format": "int32",
+                        "type": "integer"
+                      },
+                      "size": {
+                        "format": "int32",
+                        "type": "integer"
+                      }
+                    },
+                    "type": "object"
+                  }
+                },
+                "required": [
+                  "clearingDateFrom",
+                  "clearingDateTo"
+                ],
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "records": {
+                      "items": {
+                        "properties": {
+                          "acquirerName": {
+                            "type": "string"
+                          },
+                          "acquirerTerminalId": {
+                            "type": "string"
+                          },
+                          "amount": {
+                            "format": "int32",
+                            "type": "integer"
+                          },
+                          "authorizationCode": {
+                            "type": "string"
+                          },
+                          "authorizationDate": {
+                            "description": "Date and time in the format yyyy-MM-dd'T'HH:mm:ss",
+                            "example": "2024-04-11T11:41:31",
+                            "pattern": "yyyy-MM-dd'T'HH:mm:ss",
+                            "type": "string"
+                          },
+                          "cardBrand": {
+                            "type": "string"
+                          },
+                          "cardEntry": {
+                            "type": "string"
+                          },
+                          "cardExpiration": {
+                            "type": "string"
+                          },
+                          "cardNumber": {
+                            "type": "string"
+                          },
+                          "clearingAmount": {
+                            "format": "int32",
+                            "type": "integer"
+                          },
+                          "clearingBatchId": {
+                            "format": "int32",
+                            "type": "integer"
+                          },
+                          "clearingCurrency": {
+                            "type": "string"
+                          },
+                          "clearingDate": {
+                            "description": "Date and time in the format yyyy-MM-dd'T'HH:mm:ss",
+                            "example": "2024-04-11T11:41:31",
+                            "pattern": "yyyy-MM-dd'T'HH:mm:ss",
+                            "type": "string"
+                          },
+                          "clearingProcessedDate": {
+                            "description": "Date and time in the format yyyy-MM-dd'T'HH:mm:ss",
+                            "example": "2024-04-11T11:41:31",
+                            "pattern": "yyyy-MM-dd'T'HH:mm:ss",
+                            "type": "string"
+                          },
+                          "clearingStatus": {
+                            "format": "int32",
+                            "type": "integer"
+                          },
+                          "clientId": {
+                            "format": "int32",
+                            "type": "integer"
+                          },
+                          "currency": {
+                            "type": "string"
+                          },
+                          "merchantName": {
+                            "type": "string"
+                          },
+                          "merchantNumber": {
+                            "type": "string"
+                          },
+                          "partnerId": {
+                            "type": "string"
+                          },
+                          "partnerName": {
+                            "type": "string"
+                          },
+                          "paymentReason": {
+                            "type": "string"
+                          },
+                          "receiptNumber": {
+                            "type": "string"
+                          },
+                          "responseCode": {
+                            "format": "int32",
+                            "type": "integer"
+                          },
+                          "responseCodeFromAS": {
+                            "type": "string"
+                          },
+                          "responseMessage": {
+                            "type": "string"
+                          },
+                          "retrievalReferenceNumber": {
+                            "format": "int64",
+                            "type": "integer"
+                          },
+                          "serviceCode": {
+                            "type": "string"
+                          },
+                          "terminalId": {
+                            "format": "int32",
+                            "type": "integer"
+                          },
+                          "terminalLocation": {
+                            "type": "string"
+                          },
+                          "tipamt": {
+                            "format": "int32",
+                            "type": "integer"
+                          },
+                          "traceNumber": {
+                            "format": "int32",
+                            "type": "integer"
+                          },
+                          "transactionDate": {
+                            "description": "Date and time in the format yyyy-MM-dd'T'HH:mm:ss",
+                            "example": "2024-04-11T11:41:31",
+                            "pattern": "yyyy-MM-dd'T'HH:mm:ss",
+                            "type": "string"
+                          },
+                          "transactionId": {
+                            "type": "string"
+                          },
+                          "transactionSeqNumber": {
+                            "format": "int32",
+                            "type": "integer"
+                          },
+                          "transactionServerDate": {
+                            "description": "Date and time in the format yyyy-MM-dd'T'HH:mm:ss",
+                            "example": "2024-04-11T11:41:31",
+                            "pattern": "yyyy-MM-dd'T'HH:mm:ss",
+                            "type": "string"
+                          },
+                          "transactionSource": {
+                            "type": "string"
+                          },
+                          "transactionType": {
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "\n* Invalid request data. Bad request\n"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "\nUnauthorized - Authentication failed:<br>\n"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Forbidden - Missing role: DAILY_REPORTS_VIEW or DAILY_BO_REPORTS_VIEW or BO_DAILY_REPORTS_CUSTOM or DAILY_REPORTS_CUSTOM"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "security": [
+          {
+            "bearer-key": []
+          }
+        ],
+        "securitySchemes": {
+          "basic-key": {
+            "scheme": "basic",
+            "type": "http"
+          },
+          "bearer-key": {
+            "bearerFormat": "JWT",
+            "scheme": "bearer",
+            "type": "http"
+          },
+          "tecsweb-key": {
+            "description": "TecsWeb token",
+            "in": "header",
+            "name": "TecsWebToken",
+            "type": "apiKey"
+          }
+        },
+        "securitySource": "operation"
       }
     }
   }

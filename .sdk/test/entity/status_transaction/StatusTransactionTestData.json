@@ -4,7 +4,7 @@
       "STATUS_TRANSACTION00": {
         "acquirerName": "s1f4",
         "acquirerTerminalId": "s1f5",
-        "amount": "s1f6",
+        "amount": 502,
         "applicationCryptogram": "s1f7",
         "authorizationCode": "s1f8",
         "authorizationDate": "s1f9",
@@ -12,13 +12,13 @@
         "cardEntry": "s1fb",
         "cardExpiration": "s1fc",
         "cardNumber": "s1fd",
-        "clearingAmount": "s1fe",
+        "clearingAmount": 510,
         "clearingBatchId": "s1ff",
         "clearingCurrency": "s200",
         "clearingDate": "s201",
         "clearingProcessedDate": "s202",
         "clearingStatus": "s203",
-        "clientId": "s204",
+        "clientId": 516,
         "currency": "s205",
         "cvm": "s206",
         "ecrData": "s207",
@@ -27,28 +27,28 @@
         "merchantName": "s20a",
         "merchantNumber": "s20b",
         "originalClientId": "s20c",
-        "originalTerminalId": "s20d",
+        "originalTerminalId": 525,
         "originalTransactionId": "s20e",
         "paymentReason": "s20f",
         "receiptNumber": "s210",
-        "responseCode": "s211",
+        "responseCode": 529,
         "responseCodeFromAS": "s212",
         "responseMessage": "s213",
         "retrievalReferenceNumber": "s214",
         "serviceCode": "s215",
         "settlementStatus": "s216",
-        "sourceId": "s217",
-        "tecsengineResponseCode": "s218",
+        "sourceId": 535,
+        "tecsengineResponseCode": 536,
         "tecsengineResponseText": "s219",
         "terminalEndOfDayDate": "s21a",
-        "terminalId": "s21b",
+        "terminalId": 539,
         "terminalLocation": "s21c",
-        "tipAmount": "s21d",
-        "traceNumber": "s21e",
+        "tipAmount": 541,
+        "traceNumber": 542,
         "transactionClearingDate": "s21f",
         "transactionDate": "s220",
         "transactionId": "s221",
-        "transactionSeqNumber": "s222",
+        "transactionSeqNumber": 546,
         "transactionServerDate": "s223",
         "transactionSource": "s224",
         "transactionType": "s225",
@@ -57,7 +57,7 @@
       "STATUS_TRANSACTION01": {
         "acquirerName": "s3e8",
         "acquirerTerminalId": "s3e9",
-        "amount": "s3ea",
+        "amount": 1002,
         "applicationCryptogram": "s3eb",
         "authorizationCode": "s3ec",
         "authorizationDate": "s3ed",
@@ -65,13 +65,13 @@
         "cardEntry": "s3ef",
         "cardExpiration": "s3f0",
         "cardNumber": "s3f1",
-        "clearingAmount": "s3f2",
+        "clearingAmount": 1010,
         "clearingBatchId": "s3f3",
         "clearingCurrency": "s3f4",
         "clearingDate": "s3f5",
         "clearingProcessedDate": "s3f6",
         "clearingStatus": "s3f7",
-        "clientId": "s3f8",
+        "clientId": 1016,
         "currency": "s3f9",
         "cvm": "s3fa",
         "ecrData": "s3fb",
@@ -80,28 +80,28 @@
         "merchantName": "s3fe",
         "merchantNumber": "s3ff",
         "originalClientId": "s400",
-        "originalTerminalId": "s401",
+        "originalTerminalId": 1025,
         "originalTransactionId": "s402",
         "paymentReason": "s403",
         "receiptNumber": "s404",
-        "responseCode": "s405",
+        "responseCode": 1029,
         "responseCodeFromAS": "s406",
         "responseMessage": "s407",
         "retrievalReferenceNumber": "s408",
         "serviceCode": "s409",
         "settlementStatus": "s40a",
-        "sourceId": "s40b",
-        "tecsengineResponseCode": "s40c",
+        "sourceId": 1035,
+        "tecsengineResponseCode": 1036,
         "tecsengineResponseText": "s40d",
         "terminalEndOfDayDate": "s40e",
-        "terminalId": "s40f",
+        "terminalId": 1039,
         "terminalLocation": "s410",
-        "tipAmount": "s411",
-        "traceNumber": "s412",
+        "tipAmount": 1041,
+        "traceNumber": 1042,
         "transactionClearingDate": "s413",
         "transactionDate": "s414",
         "transactionId": "s415",
-        "transactionSeqNumber": "s416",
+        "transactionSeqNumber": 1046,
         "transactionServerDate": "s417",
         "transactionSource": "s418",
         "transactionType": "s419",
@@ -110,7 +110,7 @@
       "STATUS_TRANSACTION02": {
         "acquirerName": "s5dc",
         "acquirerTerminalId": "s5dd",
-        "amount": "s5de",
+        "amount": 1502,
         "applicationCryptogram": "s5df",
         "authorizationCode": "s5e0",
         "authorizationDate": "s5e1",
@@ -118,13 +118,13 @@
         "cardEntry": "s5e3",
         "cardExpiration": "s5e4",
         "cardNumber": "s5e5",
-        "clearingAmount": "s5e6",
+        "clearingAmount": 1510,
         "clearingBatchId": "s5e7",
         "clearingCurrency": "s5e8",
         "clearingDate": "s5e9",
         "clearingProcessedDate": "s5ea",
         "clearingStatus": "s5eb",
-        "clientId": "s5ec",
+        "clientId": 1516,
         "currency": "s5ed",
         "cvm": "s5ee",
         "ecrData": "s5ef",
@@ -133,28 +133,28 @@
         "merchantName": "s5f2",
         "merchantNumber": "s5f3",
         "originalClientId": "s5f4",
-        "originalTerminalId": "s5f5",
+        "originalTerminalId": 1525,
         "originalTransactionId": "s5f6",
         "paymentReason": "s5f7",
         "receiptNumber": "s5f8",
-        "responseCode": "s5f9",
+        "responseCode": 1529,
         "responseCodeFromAS": "s5fa",
         "responseMessage": "s5fb",
         "retrievalReferenceNumber": "s5fc",
         "serviceCode": "s5fd",
         "settlementStatus": "s5fe",
-        "sourceId": "s5ff",
-        "tecsengineResponseCode": "s600",
+        "sourceId": 1535,
+        "tecsengineResponseCode": 1536,
         "tecsengineResponseText": "s601",
         "terminalEndOfDayDate": "s602",
-        "terminalId": "s603",
+        "terminalId": 1539,
         "terminalLocation": "s604",
-        "tipAmount": "s605",
-        "traceNumber": "s606",
+        "tipAmount": 1541,
+        "traceNumber": 1542,
         "transactionClearingDate": "s607",
         "transactionDate": "s608",
         "transactionId": "s609",
-        "transactionSeqNumber": "s60a",
+        "transactionSeqNumber": 1546,
         "transactionServerDate": "s60b",
         "transactionSource": "s60c",
         "transactionType": "s60d",
@@ -167,7 +167,7 @@
       "status_transaction_ref01": {
         "acquirerName": "s7d0",
         "acquirerTerminalId": "s7d1",
-        "amount": "s7d2",
+        "amount": 2002,
         "applicationCryptogram": "s7d3",
         "authorizationCode": "s7d4",
         "authorizationDate": "s7d5",
@@ -175,13 +175,13 @@
         "cardEntry": "s7d7",
         "cardExpiration": "s7d8",
         "cardNumber": "s7d9",
-        "clearingAmount": "s7da",
+        "clearingAmount": 2010,
         "clearingBatchId": "s7db",
         "clearingCurrency": "s7dc",
         "clearingDate": "s7dd",
         "clearingProcessedDate": "s7de",
         "clearingStatus": "s7df",
-        "clientId": "s7e0",
+        "clientId": 2016,
         "currency": "s7e1",
         "cvm": "s7e2",
         "ecrData": "s7e3",
@@ -190,31 +190,359 @@
         "merchantName": "s7e6",
         "merchantNumber": "s7e7",
         "originalClientId": "s7e8",
-        "originalTerminalId": "s7e9",
+        "originalTerminalId": 2025,
         "originalTransactionId": "s7ea",
         "paymentReason": "s7eb",
         "receiptNumber": "s7ec",
-        "responseCode": "s7ed",
+        "responseCode": 2029,
         "responseCodeFromAS": "s7ee",
         "responseMessage": "s7ef",
         "retrievalReferenceNumber": "s7f0",
         "serviceCode": "s7f1",
         "settlementStatus": "s7f2",
-        "sourceId": "s7f3",
-        "tecsengineResponseCode": "s7f4",
+        "sourceId": 2035,
+        "tecsengineResponseCode": 2036,
         "tecsengineResponseText": "s7f5",
         "terminalEndOfDayDate": "s7f6",
-        "terminalId": "s7f7",
+        "terminalId": 2039,
         "terminalLocation": "s7f8",
-        "tipAmount": "s7f9",
-        "traceNumber": "s7fa",
+        "tipAmount": 2041,
+        "traceNumber": 2042,
         "transactionClearingDate": "s7fb",
         "transactionDate": "s7fc",
         "transactionId": "s7fd",
-        "transactionSeqNumber": "s7fe",
+        "transactionSeqNumber": 2046,
         "transactionServerDate": "s7ff",
         "transactionSource": "s800",
         "transactionType": "s801"
+      }
+    }
+  },
+  "requests": {
+    "POST /public/statusTransaction": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "statusTransaction",
+        "parameters": [],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "clientId": {
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "sourceId": {
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "terminalId": {
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "transactionId": {
+                    "type": "string"
+                  },
+                  "transactionSeqNumber": {
+                    "format": "int32",
+                    "type": "integer"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "acquirerName": {
+                      "type": "string"
+                    },
+                    "acquirerTerminalId": {
+                      "type": "string"
+                    },
+                    "amount": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "applicationCryptogram": {
+                      "type": "string"
+                    },
+                    "authorizationCode": {
+                      "description": "Authorization code returned by the acquirer; null when not available",
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "authorizationDate": {
+                      "format": "date-time",
+                      "type": "string"
+                    },
+                    "cardBrand": {
+                      "type": "string"
+                    },
+                    "cardEntry": {
+                      "type": "string"
+                    },
+                    "cardExpiration": {
+                      "type": "string"
+                    },
+                    "cardNumber": {
+                      "type": "string"
+                    },
+                    "clearingAmount": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "clearingBatchId": {
+                      "type": "string"
+                    },
+                    "clearingCurrency": {
+                      "type": "string"
+                    },
+                    "clearingDate": {
+                      "format": "date-time",
+                      "type": "string"
+                    },
+                    "clearingProcessedDate": {
+                      "format": "date-time",
+                      "type": "string"
+                    },
+                    "clearingStatus": {
+                      "type": "string"
+                    },
+                    "clientId": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "currency": {
+                      "type": "string"
+                    },
+                    "cvm": {
+                      "type": "string"
+                    },
+                    "ecrData": {
+                      "type": "string"
+                    },
+                    "emvApplicationId": {
+                      "type": "string"
+                    },
+                    "emvApplicationLabel": {
+                      "type": "string"
+                    },
+                    "merchantName": {
+                      "type": "string"
+                    },
+                    "merchantNumber": {
+                      "type": "string"
+                    },
+                    "originalClientId": {
+                      "type": "string"
+                    },
+                    "originalTerminalId": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "originalTransactionId": {
+                      "type": "string"
+                    },
+                    "paymentReason": {
+                      "type": "string"
+                    },
+                    "receiptNumber": {
+                      "type": "string"
+                    },
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseCodeFromAS": {
+                      "type": "string"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    },
+                    "retrievalReferenceNumber": {
+                      "type": "string"
+                    },
+                    "serviceCode": {
+                      "type": "string"
+                    },
+                    "settlementStatus": {
+                      "type": "string"
+                    },
+                    "tecsengineResponseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "tecsengineResponseText": {
+                      "type": "string"
+                    },
+                    "terminalEndOfDayDate": {
+                      "format": "date-time",
+                      "type": "string"
+                    },
+                    "terminalId": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "terminalLocation": {
+                      "type": "string"
+                    },
+                    "tipAmount": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "traceNumber": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "transactionClearingDate": {
+                      "format": "date-time",
+                      "type": "string"
+                    },
+                    "transactionDate": {
+                      "format": "date-time",
+                      "type": "string"
+                    },
+                    "transactionId": {
+                      "type": "string"
+                    },
+                    "transactionSeqNumber": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "transactionServerDate": {
+                      "format": "date-time",
+                      "type": "string"
+                    },
+                    "transactionSource": {
+                      "type": "string"
+                    },
+                    "transactionType": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "\n* Transaction not found\n* Mandator not found\n* MandatorConfig not found\n              "
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Unauthorized - Authentication failed: \n* Authorization header was not provided\n* MandatorId does not match\n"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Forbidden - Missing role: BO_TE_TRANSACTION_HISTORY"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "security": [
+          {
+            "bearer-key": []
+          },
+          {
+            "basic-key": []
+          },
+          {
+            "tecsweb-key": []
+          }
+        ],
+        "securitySchemes": {
+          "basic-key": {
+            "scheme": "basic",
+            "type": "http"
+          },
+          "bearer-key": {
+            "bearerFormat": "JWT",
+            "scheme": "bearer",
+            "type": "http"
+          },
+          "tecsweb-key": {
+            "description": "TecsWeb token",
+            "in": "header",
+            "name": "TecsWebToken",
+            "type": "apiKey"
+          }
+        },
+        "securitySource": "operation"
       }
     }
   }

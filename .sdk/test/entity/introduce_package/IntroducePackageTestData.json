@@ -2,19 +2,19 @@
   "existing": {
     "introduce_package": {
       "INTRODUCE_PACKAGE00": {
-        "responseCode": "s1e",
+        "responseCode": 30,
         "responseMessage": "s1f",
         "terminalTemplateDescription": "s20",
         "id": "INTRODUCE_PACKAGE00"
       },
       "INTRODUCE_PACKAGE01": {
-        "responseCode": "s3c",
+        "responseCode": 60,
         "responseMessage": "s3d",
         "terminalTemplateDescription": "s3e",
         "id": "INTRODUCE_PACKAGE01"
       },
       "INTRODUCE_PACKAGE02": {
-        "responseCode": "s5a",
+        "responseCode": 90,
         "responseMessage": "s5b",
         "terminalTemplateDescription": "s5c",
         "id": "INTRODUCE_PACKAGE02"
@@ -24,9 +24,158 @@
   "new": {
     "introduce_package": {
       "introduce_package_ref01": {
-        "responseCode": "s78",
+        "responseCode": 120,
         "responseMessage": "s79",
         "terminalTemplateDescription": "s7a"
+      }
+    }
+  },
+  "requests": {
+    "POST /introducePackage": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "introducePackage",
+        "parameters": [],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "terminalTemplateDescription": {
+                    "minLength": 1,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "terminalTemplateDescription"
+                ],
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Bad request"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Unauthenticated - Authentication failed"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Unauthorized - Missing role BO_USERMANAGEMENT_MANDATOR_MANAGER"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "security": [
+          {
+            "bearer-key": []
+          }
+        ],
+        "securitySchemes": {
+          "basic-key": {
+            "scheme": "basic",
+            "type": "http"
+          },
+          "bearer-key": {
+            "bearerFormat": "JWT",
+            "scheme": "bearer",
+            "type": "http"
+          },
+          "tecsweb-key": {
+            "description": "TecsWeb token",
+            "in": "header",
+            "name": "TecsWebToken",
+            "type": "apiKey"
+          }
+        },
+        "securitySource": "operation"
       }
     }
   }

@@ -5,40 +5,40 @@
         "acquirerId": "s1a4",
         "acquirerName": "s1a5",
         "actualBonusPoints": "s1a6",
-        "amount": "s1a7",
+        "amount": 423,
         "authorizationCode": "s1a8",
         "balanceAmount": "s1a9",
         "cardBrand": "s1aa",
         "cardNumber": "s1ab",
         "cardNumberReference": "s1ac",
-        "clientId": "s1ad",
+        "clientId": 429,
         "currency": "s1ae",
         "cvc": "s1af",
         "ecData": "s1b0",
         "ecrData": "s1b1",
         "emvData": "s1b2",
-        "exchangeFee": "s1b3",
+        "exchangeFee": 435,
         "exchangeRate": "s1b4",
         "languageCode": "s1b5",
         "merchantAddress": "s1b6",
         "merchantName": "s1b7",
         "merchantNumber": "s1b8",
         "messageType": "s1b9",
-        "originalTraceNumber": "s1ba",
+        "originalTraceNumber": 442,
         "originalTransactionId": "s1bb",
         "password": "s1bc",
         "paymentReason": "s1bd",
         "receiptFooter": "s1be",
         "receiptHeader": "s1bf",
-        "receiptLayout": "s1c0",
+        "receiptLayout": 448,
         "receiptNumber": "s1c1",
-        "responseCode": "s1c2",
+        "responseCode": 450,
         "responseMessage": "s1c3",
         "serialNumber": "s1c4",
         "svc": "s1c5",
-        "terminalId": "s1c6",
+        "terminalId": 454,
         "terminalLocation": "s1c7",
-        "traceNumber": "s1c8",
+        "traceNumber": 456,
         "transactionDate": "s1c9",
         "transactionId": "s1ca",
         "transactionType": "s1cb",
@@ -50,40 +50,40 @@
         "acquirerId": "s348",
         "acquirerName": "s349",
         "actualBonusPoints": "s34a",
-        "amount": "s34b",
+        "amount": 843,
         "authorizationCode": "s34c",
         "balanceAmount": "s34d",
         "cardBrand": "s34e",
         "cardNumber": "s34f",
         "cardNumberReference": "s350",
-        "clientId": "s351",
+        "clientId": 849,
         "currency": "s352",
         "cvc": "s353",
         "ecData": "s354",
         "ecrData": "s355",
         "emvData": "s356",
-        "exchangeFee": "s357",
+        "exchangeFee": 855,
         "exchangeRate": "s358",
         "languageCode": "s359",
         "merchantAddress": "s35a",
         "merchantName": "s35b",
         "merchantNumber": "s35c",
         "messageType": "s35d",
-        "originalTraceNumber": "s35e",
+        "originalTraceNumber": 862,
         "originalTransactionId": "s35f",
         "password": "s360",
         "paymentReason": "s361",
         "receiptFooter": "s362",
         "receiptHeader": "s363",
-        "receiptLayout": "s364",
+        "receiptLayout": 868,
         "receiptNumber": "s365",
-        "responseCode": "s366",
+        "responseCode": 870,
         "responseMessage": "s367",
         "serialNumber": "s368",
         "svc": "s369",
-        "terminalId": "s36a",
+        "terminalId": 874,
         "terminalLocation": "s36b",
-        "traceNumber": "s36c",
+        "traceNumber": 876,
         "transactionDate": "s36d",
         "transactionId": "s36e",
         "transactionType": "s36f",
@@ -95,40 +95,40 @@
         "acquirerId": "s4ec",
         "acquirerName": "s4ed",
         "actualBonusPoints": "s4ee",
-        "amount": "s4ef",
+        "amount": 1263,
         "authorizationCode": "s4f0",
         "balanceAmount": "s4f1",
         "cardBrand": "s4f2",
         "cardNumber": "s4f3",
         "cardNumberReference": "s4f4",
-        "clientId": "s4f5",
+        "clientId": 1269,
         "currency": "s4f6",
         "cvc": "s4f7",
         "ecData": "s4f8",
         "ecrData": "s4f9",
         "emvData": "s4fa",
-        "exchangeFee": "s4fb",
+        "exchangeFee": 1275,
         "exchangeRate": "s4fc",
         "languageCode": "s4fd",
         "merchantAddress": "s4fe",
         "merchantName": "s4ff",
         "merchantNumber": "s500",
         "messageType": "s501",
-        "originalTraceNumber": "s502",
+        "originalTraceNumber": 1282,
         "originalTransactionId": "s503",
         "password": "s504",
         "paymentReason": "s505",
         "receiptFooter": "s506",
         "receiptHeader": "s507",
-        "receiptLayout": "s508",
+        "receiptLayout": 1288,
         "receiptNumber": "s509",
-        "responseCode": "s50a",
+        "responseCode": 1290,
         "responseMessage": "s50b",
         "serialNumber": "s50c",
         "svc": "s50d",
-        "terminalId": "s50e",
+        "terminalId": 1294,
         "terminalLocation": "s50f",
-        "traceNumber": "s510",
+        "traceNumber": 1296,
         "transactionDate": "s511",
         "transactionId": "s512",
         "transactionType": "s513",
@@ -144,45 +144,655 @@
         "acquirerId": "s690",
         "acquirerName": "s691",
         "actualBonusPoints": "s692",
-        "amount": "s693",
+        "amount": 1683,
         "authorizationCode": "s694",
         "balanceAmount": "s695",
         "cardBrand": "s696",
         "cardNumber": "s697",
         "cardNumberReference": "s698",
-        "clientId": "s699",
+        "clientId": 1689,
         "currency": "s69a",
         "cvc": "s69b",
         "ecData": "s69c",
         "ecrData": "s69d",
         "emvData": "s69e",
-        "exchangeFee": "s69f",
+        "exchangeFee": 1695,
         "exchangeRate": "s6a0",
         "languageCode": "s6a1",
         "merchantAddress": "s6a2",
         "merchantName": "s6a3",
         "merchantNumber": "s6a4",
         "messageType": "s6a5",
-        "originalTraceNumber": "s6a6",
+        "originalTraceNumber": 1702,
         "originalTransactionId": "s6a7",
         "password": "s6a8",
         "paymentReason": "s6a9",
         "receiptFooter": "s6aa",
         "receiptHeader": "s6ab",
-        "receiptLayout": "s6ac",
+        "receiptLayout": 1708,
         "receiptNumber": "s6ad",
-        "responseCode": "s6ae",
+        "responseCode": 1710,
         "responseMessage": "s6af",
         "serialNumber": "s6b0",
         "svc": "s6b1",
-        "terminalId": "s6b2",
+        "terminalId": 1714,
         "terminalLocation": "s6b3",
-        "traceNumber": "s6b4",
+        "traceNumber": 1716,
         "transactionDate": "s6b5",
         "transactionId": "s6b6",
         "transactionType": "s6b7",
         "txType": "s6b8",
         "userData": "s6b9"
+      }
+    }
+  },
+  "requests": {
+    "POST /public/paymentTransaction": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "paymentTransaction",
+        "parameters": [],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "amount": {
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "cardNumberReference": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "clientId": {
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "currency": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "cvc": {
+                    "type": "string"
+                  },
+                  "ecData": {
+                    "type": "string"
+                  },
+                  "ecrData": {
+                    "type": "string"
+                  },
+                  "emvData": {
+                    "type": "string"
+                  },
+                  "languageCode": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "paymentReason": {
+                    "type": "string"
+                  },
+                  "receiptLayout": {
+                    "format": "int32",
+                    "maximum": 99,
+                    "minimum": 1,
+                    "type": "integer"
+                  },
+                  "receiptNumber": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "terminalId": {
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "terminalLocation": {
+                    "type": "string"
+                  },
+                  "transactionDate": {
+                    "example": "20230509114131",
+                    "pattern": "(\\d{4}(0[0-9]|1[0-2])([0-2][0-9]|3[0-1])([0-1][0-9]|2[0-4])(([0-5][0-9]){2}))",
+                    "type": "string"
+                  },
+                  "transactionId": {
+                    "type": "string"
+                  },
+                  "transactionType": {
+                    "minLength": 1,
+                    "pattern": "AUTHORIZATION|PRE-AUTH",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "amount",
+                  "cardNumberReference",
+                  "clientId",
+                  "currency",
+                  "receiptNumber",
+                  "terminalId",
+                  "transactionDate",
+                  "transactionType"
+                ],
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "acquirerId": {
+                      "type": "string"
+                    },
+                    "acquirerName": {
+                      "type": "string"
+                    },
+                    "actualBonusPoints": {
+                      "type": "string"
+                    },
+                    "amount": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "authorizationCode": {
+                      "type": "string"
+                    },
+                    "balanceAmount": {
+                      "type": "string"
+                    },
+                    "cardBrand": {
+                      "type": "string"
+                    },
+                    "cardNumber": {
+                      "type": "string"
+                    },
+                    "ecrData": {
+                      "type": "string"
+                    },
+                    "emvData": {
+                      "type": "string"
+                    },
+                    "exchangeFee": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "exchangeRate": {
+                      "type": "string"
+                    },
+                    "merchantAddress": {
+                      "type": "string"
+                    },
+                    "merchantName": {
+                      "type": "string"
+                    },
+                    "merchantNumber": {
+                      "type": "string"
+                    },
+                    "messageType": {
+                      "type": "string"
+                    },
+                    "originalTraceNumber": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "originalTransactionId": {
+                      "type": "string"
+                    },
+                    "receiptFooter": {
+                      "type": "string"
+                    },
+                    "receiptHeader": {
+                      "type": "string"
+                    },
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    },
+                    "serialNumber": {
+                      "type": "string"
+                    },
+                    "svc": {
+                      "type": "string"
+                    },
+                    "traceNumber": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "transactionDate": {
+                      "format": "date-time",
+                      "type": "string"
+                    },
+                    "transactionId": {
+                      "type": "string"
+                    },
+                    "txType": {
+                      "type": "string"
+                    },
+                    "userData": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "\n* Transaction not found\n* Mandator not found\n"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Unauthorized - Authentication failed, e.g. MandatorId does not march"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Forbidden - Missing role: BO_TRANSACTIONMANAGEMENT_PAYMENT"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "security": [
+          {
+            "bearer-key": []
+          },
+          {
+            "tecsweb-key": []
+          }
+        ],
+        "securitySchemes": {
+          "basic-key": {
+            "scheme": "basic",
+            "type": "http"
+          },
+          "bearer-key": {
+            "bearerFormat": "JWT",
+            "scheme": "bearer",
+            "type": "http"
+          },
+          "tecsweb-key": {
+            "description": "TecsWeb token",
+            "in": "header",
+            "name": "TecsWebToken",
+            "type": "apiKey"
+          }
+        },
+        "securitySource": "operation"
+      }
+    },
+    "POST /public/preAuthCompletionTransaction": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "preAuthCompletionTransaction",
+        "parameters": [],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "amount": {
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "clientId": {
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "currency": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "cvc": {
+                    "type": "string"
+                  },
+                  "ecData": {
+                    "type": "string"
+                  },
+                  "ecrData": {
+                    "type": "string"
+                  },
+                  "emvData": {
+                    "type": "string"
+                  },
+                  "languageCode": {
+                    "type": "string"
+                  },
+                  "originalTransactionId": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "paymentReason": {
+                    "type": "string"
+                  },
+                  "receiptLayout": {
+                    "format": "int32",
+                    "maximum": 99,
+                    "minimum": 1,
+                    "type": "integer"
+                  },
+                  "receiptNumber": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "terminalId": {
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "terminalLocation": {
+                    "type": "string"
+                  },
+                  "transactionDate": {
+                    "example": "20230509114131",
+                    "pattern": "(\\d{4}(0[0-9]|1[0-2])([0-2][0-9]|3[0-1])([0-1][0-9]|2[0-4])(([0-5][0-9]){2}))",
+                    "type": "string"
+                  },
+                  "transactionId": {
+                    "minLength": 1,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "amount",
+                  "clientId",
+                  "currency",
+                  "originalTransactionId",
+                  "receiptNumber",
+                  "terminalId",
+                  "transactionDate",
+                  "transactionId"
+                ],
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "acquirerId": {
+                      "type": "string"
+                    },
+                    "acquirerName": {
+                      "type": "string"
+                    },
+                    "actualBonusPoints": {
+                      "type": "string"
+                    },
+                    "amount": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "authorizationCode": {
+                      "type": "string"
+                    },
+                    "balanceAmount": {
+                      "type": "string"
+                    },
+                    "cardBrand": {
+                      "type": "string"
+                    },
+                    "cardNumber": {
+                      "type": "string"
+                    },
+                    "ecrData": {
+                      "type": "string"
+                    },
+                    "emvData": {
+                      "type": "string"
+                    },
+                    "exchangeFee": {
+                      "format": "int64",
+                      "type": "integer"
+                    },
+                    "exchangeRate": {
+                      "type": "string"
+                    },
+                    "merchantAddress": {
+                      "type": "string"
+                    },
+                    "merchantName": {
+                      "type": "string"
+                    },
+                    "merchantNumber": {
+                      "type": "string"
+                    },
+                    "messageType": {
+                      "type": "string"
+                    },
+                    "originalTraceNumber": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "originalTransactionId": {
+                      "type": "string"
+                    },
+                    "receiptFooter": {
+                      "type": "string"
+                    },
+                    "receiptHeader": {
+                      "type": "string"
+                    },
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    },
+                    "serialNumber": {
+                      "type": "string"
+                    },
+                    "svc": {
+                      "type": "string"
+                    },
+                    "traceNumber": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "transactionDate": {
+                      "format": "date-time",
+                      "type": "string"
+                    },
+                    "transactionId": {
+                      "type": "string"
+                    },
+                    "txType": {
+                      "type": "string"
+                    },
+                    "userData": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "\n* Transaction not found\n* Mandator not found\n"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Unauthorized - Authentication failed, e.g. MandatorId does not march"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Forbidden - Missing role: BO_TRANSACTIONMANAGEMENT_COMPLETION"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "security": [
+          {
+            "bearer-key": []
+          },
+          {
+            "tecsweb-key": []
+          }
+        ],
+        "securitySchemes": {
+          "basic-key": {
+            "scheme": "basic",
+            "type": "http"
+          },
+          "bearer-key": {
+            "bearerFormat": "JWT",
+            "scheme": "bearer",
+            "type": "http"
+          },
+          "tecsweb-key": {
+            "description": "TecsWeb token",
+            "in": "header",
+            "name": "TecsWebToken",
+            "type": "apiKey"
+          }
+        },
+        "securitySource": "operation"
       }
     }
   }

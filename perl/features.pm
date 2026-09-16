@@ -11,6 +11,7 @@ BEGIN { $__dir = File::Basename::dirname(Cwd::abs_path(__FILE__)) }
 require(Cwd::abs_path("$__dir/feature/base_feature.pm"));
 require(Cwd::abs_path("$__dir/feature/audit_feature.pm"));
 require(Cwd::abs_path("$__dir/feature/clienttrack_feature.pm"));
+require(Cwd::abs_path("$__dir/feature/debug_feature.pm"));
 require(Cwd::abs_path("$__dir/feature/idempotency_feature.pm"));
 require(Cwd::abs_path("$__dir/feature/log_feature.pm"));
 require(Cwd::abs_path("$__dir/feature/metrics_feature.pm"));
@@ -29,6 +30,7 @@ sub make_feature {
   return BluefinTecsMerchantServicesBaseFeature->new if 'base' eq $name;
   return BluefinTecsMerchantServicesAuditFeature->new if 'audit' eq $name;
   return BluefinTecsMerchantServicesClienttrackFeature->new if 'clienttrack' eq $name;
+  return BluefinTecsMerchantServicesDebugFeature->new if 'debug' eq $name;
   return BluefinTecsMerchantServicesIdempotencyFeature->new if 'idempotency' eq $name;
   return BluefinTecsMerchantServicesLogFeature->new if 'log' eq $name;
   return BluefinTecsMerchantServicesMetricsFeature->new if 'metrics' eq $name;

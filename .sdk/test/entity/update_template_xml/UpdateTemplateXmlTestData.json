@@ -2,21 +2,21 @@
   "existing": {
     "update_template_xml": {
       "UPDATE_TEMPLATE_XML00": {
-        "responseCode": "s28",
+        "responseCode": 40,
         "responseMessage": "s29",
         "templateName": "s2a",
         "templateXml": "s2b",
         "id": "UPDATE_TEMPLATE_XML00"
       },
       "UPDATE_TEMPLATE_XML01": {
-        "responseCode": "s50",
+        "responseCode": 80,
         "responseMessage": "s51",
         "templateName": "s52",
         "templateXml": "s53",
         "id": "UPDATE_TEMPLATE_XML01"
       },
       "UPDATE_TEMPLATE_XML02": {
-        "responseCode": "s78",
+        "responseCode": 120,
         "responseMessage": "s79",
         "templateName": "s7a",
         "templateXml": "s7b",
@@ -27,10 +27,167 @@
   "new": {
     "update_template_xml": {
       "update_template_xml_ref01": {
-        "responseCode": "sa0",
+        "responseCode": 160,
         "responseMessage": "sa1",
         "templateName": "sa2",
         "templateXml": "sa3"
+      }
+    }
+  },
+  "requests": {
+    "POST /public/updateTemplateXml": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "updateTemplateXml",
+        "parameters": [],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "templateName": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "templateXml": {
+                    "minLength": 1,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "templateName",
+                  "templateXml"
+                ],
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Bad request"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Unauthenticated - Authentication failed"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Unauthorized - Missing role BO_MP_UPDATE_XML_TEMPLATE"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "security": [
+          {
+            "bearer-key": []
+          },
+          {
+            "basic-key": []
+          }
+        ],
+        "securitySchemes": {
+          "basic-key": {
+            "scheme": "basic",
+            "type": "http"
+          },
+          "bearer-key": {
+            "bearerFormat": "JWT",
+            "scheme": "bearer",
+            "type": "http"
+          },
+          "tecsweb-key": {
+            "description": "TecsWeb token",
+            "in": "header",
+            "name": "TecsWebToken",
+            "type": "apiKey"
+          }
+        },
+        "securitySource": "operation"
       }
     }
   }

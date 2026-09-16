@@ -2,19 +2,19 @@
   "existing": {
     "get_template_xml": {
       "GET_TEMPLATE_XML00": {
-        "responseCode": "s1e",
+        "responseCode": 30,
         "responseMessage": "s1f",
         "templateName": "s20",
         "id": "GET_TEMPLATE_XML00"
       },
       "GET_TEMPLATE_XML01": {
-        "responseCode": "s3c",
+        "responseCode": 60,
         "responseMessage": "s3d",
         "templateName": "s3e",
         "id": "GET_TEMPLATE_XML01"
       },
       "GET_TEMPLATE_XML02": {
-        "responseCode": "s5a",
+        "responseCode": 90,
         "responseMessage": "s5b",
         "templateName": "s5c",
         "id": "GET_TEMPLATE_XML02"
@@ -24,9 +24,161 @@
   "new": {
     "get_template_xml": {
       "get_template_xml_ref01": {
-        "responseCode": "s78",
+        "responseCode": 120,
         "responseMessage": "s79",
         "templateName": "s7a"
+      }
+    }
+  },
+  "requests": {
+    "POST /public/getTemplateXml": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getTemplateXml",
+        "parameters": [],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "templateName": {
+                    "minLength": 1,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "templateName"
+                ],
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Bad request"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Unauthenticated - Authentication failed"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Unauthorized - Missing role BO_MP_GET_XML_TEMPLATE"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "security": [
+          {
+            "bearer-key": []
+          },
+          {
+            "basic-key": []
+          }
+        ],
+        "securitySchemes": {
+          "basic-key": {
+            "scheme": "basic",
+            "type": "http"
+          },
+          "bearer-key": {
+            "bearerFormat": "JWT",
+            "scheme": "bearer",
+            "type": "http"
+          },
+          "tecsweb-key": {
+            "description": "TecsWeb token",
+            "in": "header",
+            "name": "TecsWebToken",
+            "type": "apiKey"
+          }
+        },
+        "securitySource": "operation"
       }
     }
   }

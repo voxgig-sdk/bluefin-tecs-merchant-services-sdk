@@ -15,10 +15,10 @@
         "receiptNumber": "s104",
         "referencedTransactionId": "s105",
         "retrievalReferenceNumber": "s106",
-        "sourceId": "s107",
+        "sourceId": 263,
         "tecsengineResponseCodeFrom": "s108",
         "tecsengineResponseCodeTo": "s109",
-        "terminalId": "s10a",
+        "terminalId": 266,
         "traceNumber": "s10b",
         "transactionAmountFrom": "s10c",
         "transactionAmountTo": "s10d",
@@ -43,10 +43,10 @@
         "receiptNumber": "s1fe",
         "referencedTransactionId": "s1ff",
         "retrievalReferenceNumber": "s200",
-        "sourceId": "s201",
+        "sourceId": 513,
         "tecsengineResponseCodeFrom": "s202",
         "tecsengineResponseCodeTo": "s203",
-        "terminalId": "s204",
+        "terminalId": 516,
         "traceNumber": "s205",
         "transactionAmountFrom": "s206",
         "transactionAmountTo": "s207",
@@ -71,10 +71,10 @@
         "receiptNumber": "s2f8",
         "referencedTransactionId": "s2f9",
         "retrievalReferenceNumber": "s2fa",
-        "sourceId": "s2fb",
+        "sourceId": 763,
         "tecsengineResponseCodeFrom": "s2fc",
         "tecsengineResponseCodeTo": "s2fd",
-        "terminalId": "s2fe",
+        "terminalId": 766,
         "traceNumber": "s2ff",
         "transactionAmountFrom": "s300",
         "transactionAmountTo": "s301",
@@ -103,10 +103,10 @@
         "receiptNumber": "s3f2",
         "referencedTransactionId": "s3f3",
         "retrievalReferenceNumber": "s3f4",
-        "sourceId": "s3f5",
+        "sourceId": 1013,
         "tecsengineResponseCodeFrom": "s3f6",
         "tecsengineResponseCodeTo": "s3f7",
-        "terminalId": "s3f8",
+        "terminalId": 1016,
         "traceNumber": "s3f9",
         "transactionAmountFrom": "s3fa",
         "transactionAmountTo": "s3fb",
@@ -115,6 +115,196 @@
         "transactionId": "s3fe",
         "transactionType": "s3ff",
         "wallet": "s400"
+      }
+    }
+  },
+  "requests": {
+    "POST /public/transactionHistoryCsv": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "transactionHistoryCsv",
+        "parameters": [],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "3DSecure": {
+                    "type": "string"
+                  },
+                  "authorizationCode": {
+                    "type": "string"
+                  },
+                  "cardBrand": {
+                    "type": "string"
+                  },
+                  "clearingAmountFrom": {
+                    "type": "string"
+                  },
+                  "clearingAmountTo": {
+                    "type": "string"
+                  },
+                  "clearingCurrency": {
+                    "type": "string"
+                  },
+                  "clearingStatus": {
+                    "type": "string"
+                  },
+                  "corporateUUID": {
+                    "type": "string"
+                  },
+                  "orderByTransactionDate": {
+                    "pattern": "asc|desc",
+                    "type": "string"
+                  },
+                  "pagination": {
+                    "properties": {
+                      "page": {
+                        "format": "int32",
+                        "type": "integer"
+                      },
+                      "size": {
+                        "format": "int32",
+                        "type": "integer"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "receiptNumber": {
+                    "type": "string"
+                  },
+                  "referencedTransactionId": {
+                    "type": "string"
+                  },
+                  "retrievalReferenceNumber": {
+                    "type": "string"
+                  },
+                  "sourceId": {
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "tecsengineResponseCodeFrom": {
+                    "type": "string"
+                  },
+                  "tecsengineResponseCodeTo": {
+                    "type": "string"
+                  },
+                  "terminalId": {
+                    "format": "int32",
+                    "type": "integer"
+                  },
+                  "traceNumber": {
+                    "type": "string"
+                  },
+                  "transactionAmountFrom": {
+                    "type": "string"
+                  },
+                  "transactionAmountTo": {
+                    "type": "string"
+                  },
+                  "transactionDateFrom": {
+                    "format": "date-time",
+                    "type": "string"
+                  },
+                  "transactionDateTo": {
+                    "format": "date-time",
+                    "type": "string"
+                  },
+                  "transactionId": {
+                    "type": "string"
+                  },
+                  "transactionType": {
+                    "type": "string"
+                  },
+                  "wallet": {
+                    "description": "Filter by wallet type. Allowed values: APAY, GPAY, GPAY3D",
+                    "enum": [
+                      "APAY",
+                      "GPAY",
+                      "GPAY3D"
+                    ],
+                    "pattern": "APAY|GPAY|GPAY3D",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "text/plain": {}
+            },
+            "description": "Successful operation"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "\n* Invalid combination of transactionId and referencedTransactionId parameters\n* ReferencedTransactionId is set and TerminalId not set\n* ReferencedTransactionId not set and TransactionDateFrom not set\n* ReferencedTransactionId not set and TransactionDateTo parameters not set\n* Mandator not found\n* Invalid TerminalId\n"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "\nUnauthorized - Authentication failed:<br>\n* MandatorId does not march\n* Inactive user\n"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Forbidden - Missing role: MP_CORPORATE or BO_TE_TRANSACTION_HISTORY"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "security": [
+          {
+            "bearer-key": []
+          }
+        ],
+        "securitySchemes": {
+          "basic-key": {
+            "scheme": "basic",
+            "type": "http"
+          },
+          "bearer-key": {
+            "bearerFormat": "JWT",
+            "scheme": "bearer",
+            "type": "http"
+          },
+          "tecsweb-key": {
+            "description": "TecsWeb token",
+            "in": "header",
+            "name": "TecsWebToken",
+            "type": "apiKey"
+          }
+        },
+        "securitySource": "operation"
       }
     }
   }

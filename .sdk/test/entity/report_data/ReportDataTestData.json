@@ -7,11 +7,11 @@
         "clearingDateTo": "s66",
         "corporateId": "s67",
         "currency": "s68",
-        "responseCode": "s69",
+        "responseCode": 105,
         "responseMessage": "s6a",
         "sumOverCreditTx": {},
         "sumOverDebitTx": {},
-        "terminalId": "s6d",
+        "terminalId": 109,
         "id": "REPORT_DATA00"
       },
       "REPORT_DATA01": {
@@ -20,11 +20,11 @@
         "clearingDateTo": "sca",
         "corporateId": "scb",
         "currency": "scc",
-        "responseCode": "scd",
+        "responseCode": 205,
         "responseMessage": "sce",
         "sumOverCreditTx": {},
         "sumOverDebitTx": {},
-        "terminalId": "sd1",
+        "terminalId": 209,
         "id": "REPORT_DATA01"
       },
       "REPORT_DATA02": {
@@ -33,11 +33,11 @@
         "clearingDateTo": "s12e",
         "corporateId": "s12f",
         "currency": "s130",
-        "responseCode": "s131",
+        "responseCode": 305,
         "responseMessage": "s132",
         "sumOverCreditTx": {},
         "sumOverDebitTx": {},
-        "terminalId": "s135",
+        "terminalId": 309,
         "id": "REPORT_DATA02"
       }
     }
@@ -50,11 +50,256 @@
         "clearingDateTo": "s192",
         "corporateId": "s193",
         "currency": "s194",
-        "responseCode": "s195",
+        "responseCode": 405,
         "responseMessage": "s196",
         "sumOverCreditTx": {},
         "sumOverDebitTx": {},
-        "terminalId": "s199"
+        "terminalId": 409
+      }
+    }
+  },
+  "requests": {
+    "POST /public/digitalservices/reportData": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getReportData",
+        "parameters": [],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "clearingDateFrom": {
+                    "description": "Date and time in the format yyyy-MM-dd'T'HH:mm:ss",
+                    "example": "2024-04-11T11:41:31",
+                    "pattern": "yyyy-MM-dd'T'HH:mm:ss",
+                    "type": "string"
+                  },
+                  "clearingDateTo": {
+                    "description": "Date and time in the format yyyy-MM-dd'T'HH:mm:ss",
+                    "example": "2024-04-11T11:41:31",
+                    "pattern": "yyyy-MM-dd'T'HH:mm:ss",
+                    "type": "string"
+                  },
+                  "corporateId": {
+                    "type": "string"
+                  },
+                  "currency": {
+                    "maxLength": 3,
+                    "minLength": 3,
+                    "type": "string"
+                  },
+                  "terminalId": {
+                    "format": "int32",
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "clearingDateFrom",
+                  "clearingDateTo",
+                  "corporateId",
+                  "currency"
+                ],
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "cardBrandReportData": {
+                      "items": {
+                        "properties": {
+                          "cardBrand": {
+                            "type": "string"
+                          },
+                          "creditCount": {
+                            "format": "int32",
+                            "type": "integer"
+                          },
+                          "creditTotal": {
+                            "format": "int32",
+                            "type": "integer"
+                          },
+                          "debitCount": {
+                            "format": "int32",
+                            "type": "integer"
+                          },
+                          "debitTotal": {
+                            "format": "int32",
+                            "type": "integer"
+                          },
+                          "tipAmount": {
+                            "format": "int32",
+                            "type": "integer"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    },
+                    "sumOverCreditTx": {
+                      "properties": {
+                        "creditCountSum": {
+                          "format": "int32",
+                          "type": "integer"
+                        },
+                        "creditTotalSum": {
+                          "format": "int32",
+                          "type": "integer"
+                        },
+                        "firstTx": {
+                          "type": "number"
+                        },
+                        "lastTx": {
+                          "type": "number"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "sumOverDebitTx": {
+                      "properties": {
+                        "debitCountSum": {
+                          "format": "int32",
+                          "type": "integer"
+                        },
+                        "debitTotalSum": {
+                          "format": "int32",
+                          "type": "integer"
+                        },
+                        "firstTx": {
+                          "type": "number"
+                        },
+                        "lastTx": {
+                          "type": "number"
+                        },
+                        "tipAmountSum": {
+                          "format": "int32",
+                          "type": "integer"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "\n* Invalid request data. Bad request\n"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "\nUnauthorized - Authentication failed:<br>\n"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Forbidden - Missing role: DAILY_REPORTS_VIEW or DAILY_BO_REPORTS_VIEW"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "security": [
+          {
+            "bearer-key": []
+          }
+        ],
+        "securitySchemes": {
+          "basic-key": {
+            "scheme": "basic",
+            "type": "http"
+          },
+          "bearer-key": {
+            "bearerFormat": "JWT",
+            "scheme": "bearer",
+            "type": "http"
+          },
+          "tecsweb-key": {
+            "description": "TecsWeb token",
+            "in": "header",
+            "name": "TecsWebToken",
+            "type": "apiKey"
+          }
+        },
+        "securitySource": "operation"
       }
     }
   }

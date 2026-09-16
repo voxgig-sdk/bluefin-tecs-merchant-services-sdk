@@ -40,6 +40,8 @@ const node_path_1 = __importDefault(require("node:path"));
 const Fs = __importStar(require("node:fs"));
 const node_test_1 = require("node:test");
 const node_assert_1 = __importDefault(require("node:assert"));
+const live_runner_1 = require("../../live-runner");
+const live_entity_1 = require("../../live-entity");
 const __1 = require("../../..");
 const utility_1 = require("../../utility");
 // AFTER the imports on purpose: TypeScript hoists `import` above any
@@ -59,16 +61,12 @@ const utility_1 = require("../../utility");
     (0, node_test_1.test)('basic', async (t) => {
         const live = 'TRUE' === process.env.BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE;
         for (const op of ['create']) {
-            if ((0, utility_1.maybeSkipControl)(t, 'entityOp', 'merchant_portal_services_api.' + op, live))
+            if (!live && (0, utility_1.maybeSkipControl)(t, 'entityOp', 'merchant_portal_services_api.' + op, live))
                 return;
         }
         const setup = basicSetup();
-        // The basic flow consumes synthetic IDs and field values from the
-        // fixture (entity TestData.json). Those don't exist on the live API.
-        // Skip live runs unless the user provided a real ENTID env override.
-        if (setup.syntheticOnly) {
-            t.skip('live entity test uses synthetic IDs from fixture — set BLUEFIN_TECS_MERCHANT_SERVICES_TEST_MERCHANT_PORTAL_SERVICES_API_ENTID JSON to run live');
-            return;
+        if (setup.live) {
+            return (0, live_entity_1.runLiveEntity)(setup, { "active": true, "alias": { "field": {} }, "fields": [{ "active": true, "name": "3DSecure", "req": false, "type": "`$STRING`", "index$": 0 }, { "active": true, "name": "authorizationCode", "req": false, "type": "`$STRING`", "index$": 1 }, { "active": true, "name": "cardBrand", "req": false, "type": "`$STRING`", "index$": 2 }, { "active": true, "name": "clearingAmountFrom", "req": false, "type": "`$STRING`", "index$": 3 }, { "active": true, "name": "clearingAmountTo", "req": false, "type": "`$STRING`", "index$": 4 }, { "active": true, "name": "clearingCurrency", "req": false, "type": "`$STRING`", "index$": 5 }, { "active": true, "name": "clearingStatus", "req": false, "type": "`$STRING`", "index$": 6 }, { "active": true, "name": "corporateUUID", "req": false, "type": "`$STRING`", "index$": 7 }, { "active": true, "name": "orderByTransactionDate", "req": false, "type": "`$STRING`", "index$": 8 }, { "active": true, "name": "pagination", "req": false, "type": "`$OBJECT`", "index$": 9 }, { "active": true, "name": "receiptNumber", "req": false, "type": "`$STRING`", "index$": 10 }, { "active": true, "name": "referencedTransactionId", "req": false, "type": "`$STRING`", "index$": 11 }, { "active": true, "name": "retrievalReferenceNumber", "req": false, "type": "`$STRING`", "index$": 12 }, { "active": true, "format": "int32", "name": "sourceId", "req": false, "type": "`$INTEGER`", "index$": 13 }, { "active": true, "name": "tecsengineResponseCodeFrom", "req": false, "type": "`$STRING`", "index$": 14 }, { "active": true, "name": "tecsengineResponseCodeTo", "req": false, "type": "`$STRING`", "index$": 15 }, { "active": true, "format": "int32", "name": "terminalId", "req": false, "type": "`$INTEGER`", "index$": 16 }, { "active": true, "name": "traceNumber", "req": false, "type": "`$STRING`", "index$": 17 }, { "active": true, "name": "transactionAmountFrom", "req": false, "type": "`$STRING`", "index$": 18 }, { "active": true, "name": "transactionAmountTo", "req": false, "type": "`$STRING`", "index$": 19 }, { "active": true, "format": "date-time", "name": "transactionDateFrom", "req": false, "type": "`$STRING`", "index$": 20 }, { "active": true, "format": "date-time", "name": "transactionDateTo", "req": false, "type": "`$STRING`", "index$": 21 }, { "active": true, "name": "transactionId", "req": false, "type": "`$STRING`", "index$": 22 }, { "active": true, "name": "transactionType", "req": false, "type": "`$STRING`", "index$": 23 }, { "active": true, "name": "wallet", "req": false, "short": "Filter by wallet type.", "type": "`$STRING`", "index$": 24 }], "name": "merchant_portal_services_api", "op": { "create": { "input": "data", "name": "create", "points": [{ "active": true, "args": {}, "contract": { "id": "POST /public/transactionHistoryCsv", "json": "{\"operationId\":\"transactionHistoryCsv\",\"parameters\":[],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"3DSecure\":{\"type\":\"string\"},\"authorizationCode\":{\"type\":\"string\"},\"cardBrand\":{\"type\":\"string\"},\"clearingAmountFrom\":{\"type\":\"string\"},\"clearingAmountTo\":{\"type\":\"string\"},\"clearingCurrency\":{\"type\":\"string\"},\"clearingStatus\":{\"type\":\"string\"},\"corporateUUID\":{\"type\":\"string\"},\"orderByTransactionDate\":{\"pattern\":\"asc|desc\",\"type\":\"string\"},\"pagination\":{\"properties\":{\"page\":{\"format\":\"int32\",\"type\":\"integer\"},\"size\":{\"format\":\"int32\",\"type\":\"integer\"}},\"type\":\"object\"},\"receiptNumber\":{\"type\":\"string\"},\"referencedTransactionId\":{\"type\":\"string\"},\"retrievalReferenceNumber\":{\"type\":\"string\"},\"sourceId\":{\"format\":\"int32\",\"type\":\"integer\"},\"tecsengineResponseCodeFrom\":{\"type\":\"string\"},\"tecsengineResponseCodeTo\":{\"type\":\"string\"},\"terminalId\":{\"format\":\"int32\",\"type\":\"integer\"},\"traceNumber\":{\"type\":\"string\"},\"transactionAmountFrom\":{\"type\":\"string\"},\"transactionAmountTo\":{\"type\":\"string\"},\"transactionDateFrom\":{\"format\":\"date-time\",\"type\":\"string\"},\"transactionDateTo\":{\"format\":\"date-time\",\"type\":\"string\"},\"transactionId\":{\"type\":\"string\"},\"transactionType\":{\"type\":\"string\"},\"wallet\":{\"description\":\"Filter by wallet type. Allowed values: APAY, GPAY, GPAY3D\",\"enum\":[\"APAY\",\"GPAY\",\"GPAY3D\"],\"pattern\":\"APAY|GPAY|GPAY3D\",\"type\":\"string\"}},\"type\":\"object\"}}},\"required\":true},\"responses\":{\"200\":{\"content\":{\"text/plain\":{}},\"description\":\"Successful operation\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"type\":\"string\"}}},\"description\":\"\\n* Invalid combination of transactionId and referencedTransactionId parameters\\n* ReferencedTransactionId is set and TerminalId not set\\n* ReferencedTransactionId not set and TransactionDateFrom not set\\n* ReferencedTransactionId not set and TransactionDateTo parameters not set\\n* Mandator not found\\n* Invalid TerminalId\\n\"},\"401\":{\"content\":{\"application/json\":{\"schema\":{\"type\":\"string\"}}},\"description\":\"\\nUnauthorized - Authentication failed:<br>\\n* MandatorId does not march\\n* Inactive user\\n\"},\"403\":{\"content\":{\"application/json\":{\"schema\":{\"type\":\"string\"}}},\"description\":\"Forbidden - Missing role: MP_CORPORATE or BO_TE_TRANSACTION_HISTORY\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"type\":\"string\"}}},\"description\":\"Internal server error\"}},\"security\":[{\"bearer-key\":[]}],\"securitySchemes\":{\"basic-key\":{\"scheme\":\"basic\",\"type\":\"http\"},\"bearer-key\":{\"bearerFormat\":\"JWT\",\"scheme\":\"bearer\",\"type\":\"http\"},\"tecsweb-key\":{\"description\":\"TecsWeb token\",\"in\":\"header\",\"name\":\"TecsWebToken\",\"type\":\"apiKey\"}},\"securitySource\":\"operation\"}", "source": "openapi3", "version": 1 }, "kind": "http", "method": "POST", "orig": "/public/transactionHistoryCsv", "segments": [{ "lit": "public" }, { "lit": "transactionHistoryCsv" }], "select": {}, "transform": { "req": "`reqdata`", "res": "`body`" }, "index$": 0 }], "key$": "create" } }, "relations": { "ancestors": [] }, "key$": "merchant_portal_services_api", "name__orig": "merchant_portal_services_api", "Name": "MerchantPortalServicesApi", "name_": "merchant_portal_services_api", "name-": "merchant-portal-services-api", "NAME": "MERCHANT_PORTAL_SERVICES_API", "index$": 19 }, { "active": true, "entity": "merchant_portal_services_api", "key$": "BasicMerchantPortalServicesApiFlow", "kind": "basic", "name": "BasicMerchantPortalServicesApiFlow", "param": {}, "step": [{ "active": true, "data": {}, "input": { "ref": "merchant_portal_services_api_ref01" }, "match": {}, "op": "create", "spec": [], "valid": [], "index$": 0 }] }, 'MerchantPortalServicesApi');
         }
         const client = setup.client;
         const struct = setup.struct;
@@ -101,12 +99,6 @@ function basicSetup(extra) {
                 '`$VAL`': ['`$FORMAT`', 'upper', '`$COPY`']
             }]
     });
-    // Detect whether the user provided a real ENTID JSON via env var. The
-    // basic flow consumes synthetic IDs from the fixture file; without an
-    // override those synthetic IDs reach the live API and 4xx. Surface this
-    // to the test so it can skip rather than fail.
-    const idmapEnvVal = process.env['BLUEFIN_TECS_MERCHANT_SERVICES_TEST_MERCHANT_PORTAL_SERVICES_API_ENTID'];
-    const idmapOverridden = null != idmapEnvVal && idmapEnvVal.trim().startsWith('{');
     const env = (0, utility_1.envOverride)({
         'BLUEFIN_TECS_MERCHANT_SERVICES_TEST_MERCHANT_PORTAL_SERVICES_API_ENTID': idmap,
         'BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE': 'FALSE',
@@ -115,7 +107,13 @@ function basicSetup(extra) {
     });
     idmap = env['BLUEFIN_TECS_MERCHANT_SERVICES_TEST_MERCHANT_PORTAL_SERVICES_API_ENTID'];
     const live = 'TRUE' === env.BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE;
+    const transport = (0, live_runner_1.createLiveTransport)();
     if (live) {
+        const rawIds = process.env['BLUEFIN_TECS_MERCHANT_SERVICES_TEST_MERCHANT_PORTAL_SERVICES_API_ENTID'];
+        idmap = rawIds && rawIds.trim() ? JSON.parse(rawIds) : {};
+        if (!idmap || Array.isArray(idmap) || typeof idmap !== 'object') {
+            throw new Error('Live ENTID must be a JSON object');
+        }
         client = new __1.BluefinTecsMerchantServicesSDK(merge([
             // FIRST, so the generated fields below win: sdk-test-control.json's
             // test.client.options adds to the live client, it does not redirect it.
@@ -128,7 +126,8 @@ function basicSetup(extra) {
             // argument at all - so a bare 'extra' silently discarded the apikey
             // and server values above and handed the SDK undefined. Harmless
             // while there was nothing in that object; not harmless now.
-            extra || {}
+            extra || {},
+            { system: { fetch: transport.fetch } }
         ]));
     }
     const setup = {
@@ -140,7 +139,7 @@ function basicSetup(extra) {
         data: entityData,
         explain: 'TRUE' === env.BLUEFIN_TECS_MERCHANT_SERVICES_TEST_EXPLAIN,
         live,
-        syntheticOnly: live && !idmapOverridden,
+        transport,
         now: Date.now(),
     };
     return setup;

@@ -7,7 +7,7 @@
         "country": "s70",
         "merchantCategoryCode": "s71",
         "name": "s72",
-        "responseCode": "s73",
+        "responseCode": 115,
         "responseMessage": "s74",
         "state": "s75",
         "street": "s76",
@@ -21,7 +21,7 @@
         "country": "sde",
         "merchantCategoryCode": "sdf",
         "name": "se0",
-        "responseCode": "se1",
+        "responseCode": 225,
         "responseMessage": "se2",
         "state": "se3",
         "street": "se4",
@@ -35,7 +35,7 @@
         "country": "s14c",
         "merchantCategoryCode": "s14d",
         "name": "s14e",
-        "responseCode": "s14f",
+        "responseCode": 335,
         "responseMessage": "s150",
         "state": "s151",
         "street": "s152",
@@ -53,12 +53,192 @@
         "country": "s1ba",
         "merchantCategoryCode": "s1bb",
         "name": "s1bc",
-        "responseCode": "s1bd",
+        "responseCode": 445,
         "responseMessage": "s1be",
         "state": "s1bf",
         "street": "s1c0",
         "vuNummer": "s1c1",
         "zipcode": "s1c2"
+      }
+    }
+  },
+  "requests": {
+    "POST /public/updateMerchant": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "updateMerchant",
+        "parameters": [],
+        "protocol": "http",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "city": {
+                    "type": "string"
+                  },
+                  "corporateUuid": {
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "country": {
+                    "type": "string"
+                  },
+                  "merchantCategoryCode": {
+                    "maxLength": 100,
+                    "minLength": 0,
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "state": {
+                    "type": "string"
+                  },
+                  "street": {
+                    "type": "string"
+                  },
+                  "vuNummer": {
+                    "maxLength": 15,
+                    "minLength": 0,
+                    "type": "string"
+                  },
+                  "zipcode": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "corporateUuid"
+                ],
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful operation"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Bad request"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Unauthenticated - Authentication failed"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Unauthorized - Missing role BO_USERMANAGEMENT_UPDATE_CORPORATE"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "format": "int32",
+                      "type": "integer"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "security": [
+          {
+            "bearer-key": []
+          },
+          {
+            "basic-key": []
+          }
+        ],
+        "securitySchemes": {
+          "basic-key": {
+            "scheme": "basic",
+            "type": "http"
+          },
+          "bearer-key": {
+            "bearerFormat": "JWT",
+            "scheme": "bearer",
+            "type": "http"
+          },
+          "tecsweb-key": {
+            "description": "TecsWeb token",
+            "in": "header",
+            "name": "TecsWebToken",
+            "type": "apiKey"
+          }
+        },
+        "securitySource": "operation"
       }
     }
   }
