@@ -217,6 +217,8 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
     "entity": {
       "cancel_transaction": {},
       "check_card_black_listed": {},
+      "count_authorised_transaction": {},
+      "count_not_authorised_transaction": {},
       "create_product": {},
       "deactivate_terminal": {},
       "digital_services_api": {},
@@ -248,7 +250,6 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "store_terminal_parameter": {},
       "terminal_id": {},
       "transaction_history": {},
-      "transactions_count": {},
       "transactions_count_card_brand": {},
       "transactions_turnover": {},
       "update_merchant": {},
@@ -261,205 +262,245 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "name": "acquirerId",
+          "title": "Acquirer Id",
           "type": "`$STRING`"
         },
         {
           "name": "acquirerName",
+          "title": "Acquirer Name",
           "type": "`$STRING`"
         },
         {
           "name": "actualBonusPoints",
+          "title": "Actual Bonus Points",
           "type": "`$STRING`"
         },
         {
-          "format": "int32",
           "name": "amount",
+          "title": "Amount",
+          "type": "`$INTEGER`",
           "op": {
             "create": {
               "req": true,
               "type": "`$INTEGER`"
             }
           },
-          "type": "`$INTEGER`"
+          "format": "int32"
         },
         {
           "name": "authorizationCode",
+          "title": "Authorization Code",
           "type": "`$STRING`"
         },
         {
           "name": "balanceAmount",
+          "title": "Balance Amount",
           "type": "`$STRING`"
         },
         {
           "name": "cardBrand",
+          "title": "Card Brand",
           "type": "`$STRING`"
         },
         {
           "name": "cardNumber",
+          "title": "Card Number",
           "type": "`$STRING`"
         },
         {
-          "format": "int32",
           "name": "clientId",
+          "title": "Client Id",
+          "type": "`$INTEGER`",
           "req": true,
-          "type": "`$INTEGER`"
+          "format": "int32"
         },
         {
           "name": "currency",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Currency",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "cvc",
+          "title": "Cvc",
           "type": "`$STRING`"
         },
         {
           "name": "ecData",
+          "title": "Ec Data",
           "type": "`$STRING`"
         },
         {
           "name": "ecrData",
+          "title": "Ecr Data",
           "type": "`$STRING`"
         },
         {
           "name": "emvData",
+          "title": "Emv Data",
           "type": "`$STRING`"
         },
         {
-          "format": "int64",
           "name": "exchangeFee",
-          "type": "`$INTEGER`"
+          "title": "Exchange Fee",
+          "type": "`$INTEGER`",
+          "format": "int64"
         },
         {
           "name": "exchangeRate",
+          "title": "Exchange Rate",
           "type": "`$STRING`"
         },
         {
           "name": "languageCode",
+          "title": "Language Code",
           "type": "`$STRING`"
         },
         {
           "name": "merchantAddress",
+          "title": "Merchant Address",
           "type": "`$STRING`"
         },
         {
           "name": "merchantName",
+          "title": "Merchant Name",
           "type": "`$STRING`"
         },
         {
           "name": "merchantNumber",
+          "title": "Merchant Number",
           "type": "`$STRING`"
         },
         {
           "name": "messageType",
+          "title": "Message Type",
+          "type": "`$STRING`",
           "op": {
             "create": {
               "req": true,
               "type": "`$STRING`"
             }
-          },
-          "type": "`$STRING`"
+          }
         },
         {
-          "format": "int32",
           "name": "originalTraceNumber",
-          "type": "`$INTEGER`"
+          "title": "Original Trace Number",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
           "name": "originalTransactionId",
+          "title": "Original Transaction Id",
+          "type": "`$STRING`",
           "op": {
             "create": {
               "req": true,
               "type": "`$STRING`"
             }
-          },
-          "type": "`$STRING`"
+          }
         },
         {
           "name": "password",
+          "title": "Password",
           "type": "`$STRING`"
         },
         {
           "name": "paymentReason",
+          "title": "Payment Reason",
           "type": "`$STRING`"
         },
         {
           "name": "receiptFooter",
+          "title": "Receipt Footer",
           "type": "`$STRING`"
         },
         {
           "name": "receiptHeader",
+          "title": "Receipt Header",
           "type": "`$STRING`"
         },
         {
-          "format": "int32",
           "name": "receiptLayout",
-          "type": "`$INTEGER`"
+          "title": "Receipt Layout",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
           "name": "receiptNumber",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Receipt Number",
+          "type": "`$STRING`",
+          "req": true
         },
         {
-          "format": "int32",
           "name": "responseCode",
-          "type": "`$INTEGER`"
+          "title": "Response Code",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
           "name": "responseMessage",
+          "title": "Response Message",
           "type": "`$STRING`"
         },
         {
           "name": "serialNumber",
+          "title": "Serial Number",
           "type": "`$STRING`"
         },
         {
           "name": "svc",
+          "title": "Svc",
           "type": "`$STRING`"
         },
         {
-          "format": "int32",
           "name": "terminalId",
+          "title": "Terminal Id",
+          "type": "`$INTEGER`",
           "req": true,
-          "type": "`$INTEGER`"
+          "format": "int32"
         },
         {
           "name": "terminalLocation",
+          "title": "Terminal Location",
           "type": "`$STRING`"
         },
         {
-          "format": "int32",
           "name": "traceNumber",
-          "type": "`$INTEGER`"
+          "title": "Trace Number",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
-          "format": "date-time",
           "name": "transactionDate",
+          "title": "Transaction Date",
+          "type": "`$STRING`",
           "op": {
             "create": {
               "req": true,
               "type": "`$STRING`"
             }
           },
-          "type": "`$STRING`"
+          "format": "date-time"
         },
         {
           "name": "transactionId",
+          "title": "Transaction Id",
+          "type": "`$STRING`",
           "op": {
             "create": {
               "req": true,
               "type": "`$STRING`"
             }
-          },
-          "type": "`$STRING`"
+          }
         },
         {
           "name": "txType",
+          "title": "Tx Type",
           "type": "`$STRING`"
         },
         {
           "name": "userData",
+          "title": "User Data",
           "type": "`$STRING`"
         }
       ],
@@ -470,7 +511,6 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "name": "create",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "POST",
               "orig": "/public/cancelTransaction",
@@ -482,15 +522,17 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   "lit": "cancelTransaction"
                 }
               ],
-              "select": {},
+              "parts": [
+                "public",
+                "cancelTransaction"
+              ],
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "parts": [
-                "public",
-                "cancelTransaction"
-              ]
+              "args": {},
+              "select": {}
             }
           ]
         }
@@ -503,15 +545,18 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "name": "cardNo",
+          "title": "Card No",
           "type": "`$STRING`"
         },
         {
-          "format": "int32",
           "name": "responseCode",
-          "type": "`$INTEGER`"
+          "title": "Response Code",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
           "name": "responseMessage",
+          "title": "Response Message",
           "type": "`$STRING`"
         }
       ],
@@ -522,17 +567,6 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "name": "create",
           "points": [
             {
-              "args": {
-                "header": [
-                  {
-                    "kind": "header",
-                    "name": "authorization",
-                    "orig": "authorization",
-                    "reqd": true,
-                    "type": "`$STRING`"
-                  }
-                ]
-              },
               "kind": "http",
               "method": "POST",
               "orig": "/checkCardBlackListed",
@@ -541,18 +575,200 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   "lit": "checkCardBlackListed"
                 }
               ],
-              "select": {
-                "exist": [
-                  "authorization"
-                ]
-              },
+              "parts": [
+                "checkCardBlackListed"
+              ],
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
+              "args": {
+                "header": [
+                  {
+                    "name": "authorization",
+                    "orig": "authorization",
+                    "type": "`$STRING`",
+                    "kind": "header",
+                    "reqd": true
+                  }
+                ]
+              },
+              "select": {
+                "exist": [
+                  "authorization"
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "relations": {
+        "ancestors": []
+      }
+    },
+    "count_authorised_transaction": {
+      "fields": [
+        {
+          "name": "period",
+          "title": "Period",
+          "type": "`$STRING`"
+        },
+        {
+          "name": "responseCode",
+          "title": "Response Code",
+          "type": "`$INTEGER`",
+          "format": "int32"
+        },
+        {
+          "name": "responseMessage",
+          "title": "Response Message",
+          "type": "`$STRING`"
+        },
+        {
+          "name": "transactionDateFrom",
+          "title": "Transaction Date From",
+          "type": "`$STRING`",
+          "op": {
+            "create": {
+              "req": true,
+              "type": "`$STRING`"
+            }
+          },
+          "format": "date-time"
+        },
+        {
+          "name": "transactionDateTo",
+          "title": "Transaction Date To",
+          "type": "`$STRING`",
+          "op": {
+            "create": {
+              "req": true,
+              "type": "`$STRING`"
+            }
+          },
+          "format": "date-time"
+        },
+        {
+          "name": "transactionsCount",
+          "title": "Transactions Count",
+          "type": "`$ARRAY`"
+        }
+      ],
+      "name": "count_authorised_transaction",
+      "op": {
+        "create": {
+          "input": "data",
+          "name": "create",
+          "points": [
+            {
+              "kind": "http",
+              "method": "POST",
+              "orig": "/public/countAuthorisedTransactions",
+              "segments": [
+                {
+                  "lit": "public"
+                },
+                {
+                  "lit": "countAuthorisedTransactions"
+                }
+              ],
               "parts": [
-                "checkCardBlackListed"
-              ]
+                "public",
+                "countAuthorisedTransactions"
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body`"
+              },
+              "args": {},
+              "select": {}
+            }
+          ]
+        }
+      },
+      "relations": {
+        "ancestors": []
+      }
+    },
+    "count_not_authorised_transaction": {
+      "fields": [
+        {
+          "name": "period",
+          "title": "Period",
+          "type": "`$STRING`"
+        },
+        {
+          "name": "responseCode",
+          "title": "Response Code",
+          "type": "`$INTEGER`",
+          "format": "int32"
+        },
+        {
+          "name": "responseMessage",
+          "title": "Response Message",
+          "type": "`$STRING`"
+        },
+        {
+          "name": "transactionDateFrom",
+          "title": "Transaction Date From",
+          "type": "`$STRING`",
+          "op": {
+            "create": {
+              "req": true,
+              "type": "`$STRING`"
+            }
+          },
+          "format": "date-time"
+        },
+        {
+          "name": "transactionDateTo",
+          "title": "Transaction Date To",
+          "type": "`$STRING`",
+          "op": {
+            "create": {
+              "req": true,
+              "type": "`$STRING`"
+            }
+          },
+          "format": "date-time"
+        },
+        {
+          "name": "transactionsCount",
+          "title": "Transactions Count",
+          "type": "`$ARRAY`"
+        }
+      ],
+      "name": "count_not_authorised_transaction",
+      "op": {
+        "create": {
+          "input": "data",
+          "name": "create",
+          "points": [
+            {
+              "kind": "http",
+              "method": "POST",
+              "orig": "/public/countNotAuthorisedTransactions",
+              "segments": [
+                {
+                  "lit": "public"
+                },
+                {
+                  "lit": "countNotAuthorisedTransactions"
+                }
+              ],
+              "parts": [
+                "public",
+                "countNotAuthorisedTransactions"
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body`"
+              },
+              "args": {},
+              "select": {}
             }
           ]
         }
@@ -564,38 +780,45 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
     "create_product": {
       "fields": [
         {
-          "format": "int32",
           "name": "acquirerId",
-          "type": "`$INTEGER`"
+          "title": "Acquirer Id",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
-          "format": "int32",
           "name": "responseCode",
-          "type": "`$INTEGER`"
+          "title": "Response Code",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
           "name": "responseMessage",
+          "title": "Response Message",
           "type": "`$STRING`"
         },
         {
           "name": "templateName",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Template Name",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "templateType",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Template Type",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "templateXml",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Template Xml",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "terminalType",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Terminal Type",
+          "type": "`$STRING`",
+          "req": true
         }
       ],
       "name": "create_product",
@@ -605,7 +828,6 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "name": "create",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "POST",
               "orig": "/createProduct",
@@ -614,14 +836,16 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   "lit": "createProduct"
                 }
               ],
-              "select": {},
+              "parts": [
+                "createProduct"
+              ],
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "parts": [
-                "createProduct"
-              ]
+              "args": {},
+              "select": {}
             }
           ]
         }
@@ -634,35 +858,42 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "name": "corporateUuid",
+          "title": "Corporate Uuid",
           "type": "`$STRING`"
         },
         {
           "name": "deactivationReason",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Deactivation Reason",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "packageOrderUuid",
+          "title": "Package Order Uuid",
           "type": "`$STRING`"
         },
         {
           "name": "productOrderUuid",
+          "title": "Product Order Uuid",
           "type": "`$STRING`"
         },
         {
-          "format": "int32",
           "name": "responseCode",
-          "type": "`$INTEGER`"
+          "title": "Response Code",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
           "name": "responseMessage",
+          "title": "Response Message",
           "type": "`$STRING`"
         },
         {
-          "format": "int32",
           "name": "terminalId",
+          "title": "Terminal Id",
+          "type": "`$INTEGER`",
           "req": true,
-          "type": "`$INTEGER`"
+          "format": "int32"
         }
       ],
       "name": "deactivate_terminal",
@@ -672,7 +903,6 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "name": "create",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "POST",
               "orig": "/deactivateTerminal",
@@ -681,14 +911,16 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   "lit": "deactivateTerminal"
                 }
               ],
-              "select": {},
+              "parts": [
+                "deactivateTerminal"
+              ],
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "parts": [
-                "deactivateTerminal"
-              ]
+              "args": {},
+              "select": {}
             }
           ]
         }
@@ -701,52 +933,62 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "name": "clearingDateFrom",
+          "title": "Clearing Date From",
+          "type": "`$STRING`",
           "req": true,
-          "short": "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz",
-          "type": "`$STRING`"
+          "short": "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz"
         },
         {
           "name": "clearingDateTo",
+          "title": "Clearing Date To",
+          "type": "`$STRING`",
           "req": true,
-          "short": "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz",
-          "type": "`$STRING`"
+          "short": "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz"
         },
         {
-          "format": "int32",
           "name": "responseCode",
-          "type": "`$INTEGER`"
+          "title": "Response Code",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
           "name": "responseMessage",
+          "title": "Response Message",
           "type": "`$STRING`"
         },
         {
-          "format": "int32",
           "name": "txCount",
-          "type": "`$INTEGER`"
+          "title": "Tx Count",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
           "name": "txIdEnd",
+          "title": "Tx Id End",
           "type": "`$STRING`"
         },
         {
           "name": "txIdStart",
+          "title": "Tx Id Start",
           "type": "`$STRING`"
         },
         {
-          "format": "int32",
           "name": "txSeqNoEnd",
-          "type": "`$INTEGER`"
+          "title": "Tx Seq No End",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
-          "format": "int32",
           "name": "txSeqNoStart",
-          "type": "`$INTEGER`"
+          "title": "Tx Seq No Start",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
-          "format": "int32",
           "name": "txTotal",
-          "type": "`$INTEGER`"
+          "title": "Tx Total",
+          "type": "`$INTEGER`",
+          "format": "int32"
         }
       ],
       "name": "digital_services_api",
@@ -756,25 +998,9 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "name": "create",
           "points": [
             {
-              "args": {
-                "params": [
-                  {
-                    "kind": "param",
-                    "name": "file_id",
-                    "orig": "file_id",
-                    "reqd": true,
-                    "type": "`$STRING`"
-                  }
-                ]
-              },
               "kind": "http",
               "method": "POST",
               "orig": "/public/digitalservices/mandatorClearingExportDownload/{fileId}",
-              "rename": {
-                "param": {
-                  "fileId": "file_id"
-                }
-              },
               "segments": [
                 {
                   "lit": "public"
@@ -789,24 +1015,39 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   "var": "file_id"
                 }
               ],
-              "select": {
-                "exist": [
-                  "file_id"
-                ]
-              },
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body`"
-              },
               "parts": [
                 "public",
                 "digitalservices",
                 "mandatorClearingExportDownload",
                 "{file_id}"
-              ]
+              ],
+              "rename": {
+                "param": {
+                  "fileId": "file_id"
+                }
+              },
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body`"
+              },
+              "args": {
+                "params": [
+                  {
+                    "name": "file_id",
+                    "orig": "file_id",
+                    "type": "`$STRING`",
+                    "kind": "param",
+                    "reqd": true
+                  }
+                ]
+              },
+              "select": {
+                "exist": [
+                  "file_id"
+                ]
+              }
             },
             {
-              "args": {},
               "kind": "http",
               "method": "POST",
               "orig": "/public/digitalservices/mandatorClearingExportMetadata",
@@ -821,16 +1062,18 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   "lit": "mandatorClearingExportMetadata"
                 }
               ],
-              "select": {},
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body`"
-              },
               "parts": [
                 "public",
                 "digitalservices",
                 "mandatorClearingExportMetadata"
-              ]
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body`"
+              },
+              "args": {},
+              "select": {}
             }
           ]
         },
@@ -839,7 +1082,6 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "name": "load",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "GET",
               "orig": "/public/digitalservices/mandatorClearingExportDownload/status",
@@ -857,17 +1099,19 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   "lit": "status"
                 }
               ],
-              "select": {},
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body`"
-              },
               "parts": [
                 "public",
                 "digitalservices",
                 "mandatorClearingExportDownload",
                 "status"
-              ]
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body`"
+              },
+              "args": {},
+              "select": {}
             }
           ]
         }
@@ -875,7 +1119,7 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "relations": {
         "ancestors": [
           [
-            "mandator_clearing_export_download"
+            "$.main.kit.entity.mandator_clearing_export_download"
           ]
         ]
       }
@@ -884,32 +1128,38 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "name": "ecomData",
+          "title": "Ecom Data",
           "type": "`$STRING`"
         },
         {
-          "format": "int32",
           "name": "responseCode",
-          "type": "`$INTEGER`"
+          "title": "Response Code",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
           "name": "responseMessage",
+          "title": "Response Message",
           "type": "`$STRING`"
         },
         {
-          "format": "int32",
           "name": "terminalId",
+          "title": "Terminal Id",
+          "type": "`$INTEGER`",
           "req": true,
-          "type": "`$INTEGER`"
+          "format": "int32"
         },
         {
           "name": "transactionId",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Transaction Id",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "transactionType",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Transaction Type",
+          "type": "`$STRING`",
+          "req": true
         }
       ],
       "name": "ec_data_ecom",
@@ -919,7 +1169,6 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "name": "create",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "POST",
               "orig": "/public/getEcData",
@@ -931,15 +1180,17 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   "lit": "getEcData"
                 }
               ],
-              "select": {},
+              "parts": [
+                "public",
+                "getEcData"
+              ],
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "parts": [
-                "public",
-                "getEcData"
-              ]
+              "args": {},
+              "select": {}
             }
           ]
         }
@@ -952,26 +1203,31 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "name": "ecomPass",
+          "title": "Ecom Pass",
           "type": "`$STRING`"
         },
         {
           "name": "ecomSkey",
+          "title": "Ecom Skey",
           "type": "`$STRING`"
         },
         {
-          "format": "int32",
           "name": "responseCode",
-          "type": "`$INTEGER`"
+          "title": "Response Code",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
           "name": "responseMessage",
+          "title": "Response Message",
           "type": "`$STRING`"
         },
         {
-          "format": "int32",
           "name": "terminalId",
+          "title": "Terminal Id",
+          "type": "`$INTEGER`",
           "req": true,
-          "type": "`$INTEGER`"
+          "format": "int32"
         }
       ],
       "name": "ecom_parameter",
@@ -981,7 +1237,6 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "name": "create",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "POST",
               "orig": "/public/getEcomParameters",
@@ -993,15 +1248,17 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   "lit": "getEcomParameters"
                 }
               ],
-              "select": {},
+              "parts": [
+                "public",
+                "getEcomParameters"
+              ],
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "parts": [
-                "public",
-                "getEcomParameters"
-              ]
+              "args": {},
+              "select": {}
             }
           ]
         }
@@ -1014,32 +1271,38 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "name": "ecrData",
+          "title": "Ecr Data",
           "type": "`$STRING`"
         },
         {
-          "format": "int32",
           "name": "responseCode",
-          "type": "`$INTEGER`"
+          "title": "Response Code",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
           "name": "responseMessage",
+          "title": "Response Message",
           "type": "`$STRING`"
         },
         {
-          "format": "int32",
           "name": "terminalId",
+          "title": "Terminal Id",
+          "type": "`$INTEGER`",
           "req": true,
-          "type": "`$INTEGER`"
+          "format": "int32"
         },
         {
           "name": "transactionId",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Transaction Id",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "transactionType",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Transaction Type",
+          "type": "`$STRING`",
+          "req": true
         }
       ],
       "name": "ecr_data",
@@ -1049,7 +1312,6 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "name": "create",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "POST",
               "orig": "/public/getEcrData",
@@ -1061,15 +1323,17 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   "lit": "getEcrData"
                 }
               ],
-              "select": {},
+              "parts": [
+                "public",
+                "getEcrData"
+              ],
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "parts": [
-                "public",
-                "getEcrData"
-              ]
+              "args": {},
+              "select": {}
             }
           ]
         }
@@ -1082,32 +1346,38 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "name": "emvData",
+          "title": "Emv Data",
           "type": "`$STRING`"
         },
         {
-          "format": "int32",
           "name": "responseCode",
-          "type": "`$INTEGER`"
+          "title": "Response Code",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
           "name": "responseMessage",
+          "title": "Response Message",
           "type": "`$STRING`"
         },
         {
-          "format": "int32",
           "name": "terminalId",
+          "title": "Terminal Id",
+          "type": "`$INTEGER`",
           "req": true,
-          "type": "`$INTEGER`"
+          "format": "int32"
         },
         {
           "name": "transactionId",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Transaction Id",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "transactionType",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Transaction Type",
+          "type": "`$STRING`",
+          "req": true
         }
       ],
       "name": "emv_data",
@@ -1117,7 +1387,6 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "name": "create",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "POST",
               "orig": "/public/getEmvData",
@@ -1129,15 +1398,17 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   "lit": "getEmvData"
                 }
               ],
-              "select": {},
+              "parts": [
+                "public",
+                "getEmvData"
+              ],
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "parts": [
-                "public",
-                "getEmvData"
-              ]
+              "args": {},
+              "select": {}
             }
           ]
         }
@@ -1149,69 +1420,83 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
     "enable_acquiring": {
       "fields": [
         {
-          "format": "int32",
           "name": "accountNo",
-          "type": "`$INTEGER`"
+          "title": "Account No",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
           "name": "additionalData",
+          "title": "Additional Data",
           "type": "`$OBJECT`"
         },
         {
           "name": "corporateUuid",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Corporate Uuid",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "currency",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Currency",
+          "type": "`$STRING`",
+          "req": true
         },
         {
-          "format": "int32",
           "name": "merchantCategoryCode",
+          "title": "Merchant Category Code",
+          "type": "`$INTEGER`",
           "req": true,
-          "type": "`$INTEGER`"
+          "format": "int32"
         },
         {
           "name": "packageOrderUuid",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Package Order Uuid",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "productOrderUuid",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Product Order Uuid",
+          "type": "`$STRING`",
+          "req": true
         },
         {
-          "format": "int32",
           "name": "responseCode",
-          "type": "`$INTEGER`"
+          "title": "Response Code",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
           "name": "responseMessage",
+          "title": "Response Message",
           "type": "`$STRING`"
         },
         {
-          "format": "int32",
           "name": "sortingCode",
-          "type": "`$INTEGER`"
+          "title": "Sorting Code",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
           "name": "templateName",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Template Name",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "terminalIdAcq",
+          "title": "Terminal Id Acq",
           "type": "`$STRING`"
         },
         {
           "name": "terminalIds",
+          "title": "Terminal Ids",
           "type": "`$ARRAY`"
         },
         {
           "name": "vuNummer",
+          "title": "Vu Nummer",
           "type": "`$STRING`"
         }
       ],
@@ -1222,7 +1507,6 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "name": "create",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "POST",
               "orig": "/enableAcquiring",
@@ -1231,14 +1515,16 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   "lit": "enableAcquiring"
                 }
               ],
-              "select": {},
+              "parts": [
+                "enableAcquiring"
+              ],
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "parts": [
-                "enableAcquiring"
-              ]
+              "args": {},
+              "select": {}
             }
           ]
         }
@@ -1251,16 +1537,19 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "name": "merchantContractNumber",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Merchant Contract Number",
+          "type": "`$STRING`",
+          "req": true
         },
         {
-          "format": "int32",
           "name": "responseCode",
-          "type": "`$INTEGER`"
+          "title": "Response Code",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
           "name": "responseMessage",
+          "title": "Response Message",
           "type": "`$STRING`"
         }
       ],
@@ -1271,7 +1560,6 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "name": "create",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "POST",
               "orig": "/getMerchantContractNumber",
@@ -1280,14 +1568,16 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   "lit": "getMerchantContractNumber"
                 }
               ],
-              "select": {},
+              "parts": [
+                "getMerchantContractNumber"
+              ],
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "parts": [
-                "getMerchantContractNumber"
-              ]
+              "args": {},
+              "select": {}
             }
           ]
         }
@@ -1299,18 +1589,21 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
     "get_template_xml": {
       "fields": [
         {
-          "format": "int32",
           "name": "responseCode",
-          "type": "`$INTEGER`"
+          "title": "Response Code",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
           "name": "responseMessage",
+          "title": "Response Message",
           "type": "`$STRING`"
         },
         {
           "name": "templateName",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Template Name",
+          "type": "`$STRING`",
+          "req": true
         }
       ],
       "name": "get_template_xml",
@@ -1320,7 +1613,6 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "name": "create",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "POST",
               "orig": "/public/getTemplateXml",
@@ -1332,15 +1624,17 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   "lit": "getTemplateXml"
                 }
               ],
-              "select": {},
+              "parts": [
+                "public",
+                "getTemplateXml"
+              ],
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "parts": [
-                "public",
-                "getTemplateXml"
-              ]
+              "args": {},
+              "select": {}
             }
           ]
         }
@@ -1353,16 +1647,19 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "name": "mandatorName",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Mandator Name",
+          "type": "`$STRING`",
+          "req": true
         },
         {
-          "format": "int32",
           "name": "responseCode",
-          "type": "`$INTEGER`"
+          "title": "Response Code",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
           "name": "responseMessage",
+          "title": "Response Message",
           "type": "`$STRING`"
         }
       ],
@@ -1373,7 +1670,6 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "name": "create",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "POST",
               "orig": "/introduceMandator",
@@ -1382,14 +1678,16 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   "lit": "introduceMandator"
                 }
               ],
-              "select": {},
+              "parts": [
+                "introduceMandator"
+              ],
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "parts": [
-                "introduceMandator"
-              ]
+              "args": {},
+              "select": {}
             }
           ]
         }
@@ -1401,18 +1699,21 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
     "introduce_package": {
       "fields": [
         {
-          "format": "int32",
           "name": "responseCode",
-          "type": "`$INTEGER`"
+          "title": "Response Code",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
           "name": "responseMessage",
+          "title": "Response Message",
           "type": "`$STRING`"
         },
         {
           "name": "terminalTemplateDescription",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Terminal Template Description",
+          "type": "`$STRING`",
+          "req": true
         }
       ],
       "name": "introduce_package",
@@ -1422,7 +1723,6 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "name": "create",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "POST",
               "orig": "/introducePackage",
@@ -1431,14 +1731,16 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   "lit": "introducePackage"
                 }
               ],
-              "select": {},
+              "parts": [
+                "introducePackage"
+              ],
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "parts": [
-                "introducePackage"
-              ]
+              "args": {},
+              "select": {}
             }
           ]
         }
@@ -1451,45 +1753,55 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "name": "hwserialno",
+          "title": "Hwserialno",
           "type": "`$STRING`"
         },
         {
           "name": "kaDateTimeFrom",
+          "title": "Ka Date Time From",
           "type": "`$STRING`"
         },
         {
           "name": "kaDateTimeTo",
+          "title": "Ka Date Time To",
           "type": "`$STRING`"
         },
         {
           "name": "keepAliveData",
+          "title": "Keep Alive Data",
           "type": "`$ARRAY`"
         },
         {
           "name": "pagination",
+          "title": "Pagination",
           "type": "`$OBJECT`"
         },
         {
-          "format": "int32",
           "name": "responseCode",
-          "type": "`$INTEGER`"
+          "title": "Response Code",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
           "name": "responseMessage",
+          "title": "Response Message",
           "type": "`$STRING`"
         },
         {
           "name": "terminalDateTimeFrom",
+          "title": "Terminal Date Time From",
           "type": "`$STRING`"
         },
         {
           "name": "terminalDateTimeTo",
+          "title": "Terminal Date Time To",
           "type": "`$STRING`"
         },
         {
-          "format": "int32",
           "name": "terminalId",
-          "type": "`$INTEGER`"
+          "title": "Terminal Id",
+          "type": "`$INTEGER`",
+          "format": "int32"
         }
       ],
       "name": "keep_alive",
@@ -1499,7 +1811,6 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "name": "create",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "POST",
               "orig": "/public/keepalive",
@@ -1511,15 +1822,17 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   "lit": "keepalive"
                 }
               ],
-              "select": {},
+              "parts": [
+                "public",
+                "keepalive"
+              ],
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "parts": [
-                "public",
-                "keepalive"
-              ]
+              "args": {},
+              "select": {}
             }
           ]
         }
@@ -1532,27 +1845,33 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "name": "corporateUuid",
+          "title": "Corporate Uuid",
           "type": "`$ARRAY`"
         },
         {
           "name": "filter",
+          "title": "Filter",
           "type": "`$OBJECT`"
         },
         {
           "name": "pagination",
+          "title": "Pagination",
           "type": "`$OBJECT`"
         },
         {
-          "format": "int32",
           "name": "responseCode",
-          "type": "`$INTEGER`"
+          "title": "Response Code",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
           "name": "responseMessage",
+          "title": "Response Message",
           "type": "`$STRING`"
         },
         {
           "name": "terminals",
+          "title": "Terminals",
           "type": "`$ARRAY`"
         }
       ],
@@ -1563,7 +1882,6 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "name": "create",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "POST",
               "orig": "/public/listTerminals",
@@ -1575,15 +1893,17 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   "lit": "listTerminals"
                 }
               ],
-              "select": {},
+              "parts": [
+                "public",
+                "listTerminals"
+              ],
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "parts": [
-                "public",
-                "listTerminals"
-              ]
+              "args": {},
+              "select": {}
             }
           ]
         }
@@ -1596,31 +1916,37 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "name": "clearingDateFrom",
+          "title": "Clearing Date From",
+          "type": "`$STRING`",
           "req": true,
-          "short": "Date and time in the format yyyy-MM-dd'T'HH:mm:ssZ",
-          "type": "`$STRING`"
+          "short": "Date and time in the format yyyy-MM-dd'T'HH:mm:ssZ"
         },
         {
           "name": "clearingDateTo",
+          "title": "Clearing Date To",
+          "type": "`$STRING`",
           "req": true,
-          "short": "Date and time in the format yyyy-MM-dd'T'HH:mm:ssZ",
-          "type": "`$STRING`"
+          "short": "Date and time in the format yyyy-MM-dd'T'HH:mm:ssZ"
         },
         {
           "name": "pagination",
+          "title": "Pagination",
           "type": "`$OBJECT`"
         },
         {
           "name": "records",
+          "title": "Records",
           "type": "`$ARRAY`"
         },
         {
-          "format": "int32",
           "name": "responseCode",
-          "type": "`$INTEGER`"
+          "title": "Response Code",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
           "name": "responseMessage",
+          "title": "Response Message",
           "type": "`$STRING`"
         }
       ],
@@ -1631,7 +1957,6 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "name": "create",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "POST",
               "orig": "/public/digitalservices/mandatorClearingExport",
@@ -1646,16 +1971,18 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   "lit": "mandatorClearingExport"
                 }
               ],
-              "select": {},
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body`"
-              },
               "parts": [
                 "public",
                 "digitalservices",
                 "mandatorClearingExport"
-              ]
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body`"
+              },
+              "args": {},
+              "select": {}
             }
           ]
         }
@@ -1667,46 +1994,54 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
     "mandator_clearing_export_download": {
       "fields": [
         {
-          "format": "date-time",
           "name": "clearingDateFrom",
+          "title": "Clearing Date From",
+          "type": "`$STRING`",
           "req": true,
           "short": "Start date for clearing export (inclusive)",
-          "type": "`$STRING`"
+          "format": "date-time"
         },
         {
-          "format": "date-time",
           "name": "clearingDateTo",
+          "title": "Clearing Date To",
+          "type": "`$STRING`",
           "req": true,
           "short": "End date for clearing export (inclusive)",
-          "type": "`$STRING`"
+          "format": "date-time"
         },
         {
           "name": "fileId",
-          "short": "Unique file identifier for tracking and downloading",
-          "type": "`$STRING`"
+          "title": "File Id",
+          "type": "`$STRING`",
+          "short": "Unique file identifier for tracking and downloading"
         },
         {
           "name": "filenameTemplate",
-          "short": "Optional filename template for the export file",
-          "type": "`$STRING`"
+          "title": "Filename Template",
+          "type": "`$STRING`",
+          "short": "Optional filename template for the export file"
         },
         {
           "name": "id",
+          "title": "Id",
           "type": "`$STRING`"
         },
         {
-          "format": "int32",
           "name": "responseCode",
-          "type": "`$INTEGER`"
+          "title": "Response Code",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
           "name": "responseMessage",
+          "title": "Response Message",
           "type": "`$STRING`"
         },
         {
           "name": "status",
-          "short": "Processing status of the export request",
-          "type": "`$STRING`"
+          "title": "Status",
+          "type": "`$STRING`",
+          "short": "Processing status of the export request"
         }
       ],
       "id": {
@@ -1720,7 +2055,6 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "name": "create",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "POST",
               "orig": "/public/digitalservices/mandatorClearingExportDownload",
@@ -1735,16 +2069,18 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   "lit": "mandatorClearingExportDownload"
                 }
               ],
-              "select": {},
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body`"
-              },
               "parts": [
                 "public",
                 "digitalservices",
                 "mandatorClearingExportDownload"
-              ]
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body`"
+              },
+              "args": {},
+              "select": {}
             }
           ]
         },
@@ -1753,25 +2089,9 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "name": "load",
           "points": [
             {
-              "args": {
-                "params": [
-                  {
-                    "kind": "param",
-                    "name": "id",
-                    "orig": "file_id",
-                    "reqd": true,
-                    "type": "`$STRING`"
-                  }
-                ]
-              },
               "kind": "http",
               "method": "GET",
               "orig": "/public/digitalservices/mandatorClearingExportDownload/{fileId}",
-              "rename": {
-                "param": {
-                  "fileId": "id"
-                }
-              },
               "segments": [
                 {
                   "lit": "public"
@@ -1786,21 +2106,37 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   "var": "id"
                 }
               ],
-              "select": {
-                "exist": [
-                  "id"
-                ]
-              },
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body`"
-              },
               "parts": [
                 "public",
                 "digitalservices",
                 "mandatorClearingExportDownload",
                 "{id}"
-              ]
+              ],
+              "rename": {
+                "param": {
+                  "fileId": "id"
+                }
+              },
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body`"
+              },
+              "args": {
+                "params": [
+                  {
+                    "name": "id",
+                    "orig": "file_id",
+                    "type": "`$STRING`",
+                    "kind": "param",
+                    "reqd": true
+                  }
+                ]
+              },
+              "select": {
+                "exist": [
+                  "id"
+                ]
+              }
             }
           ]
         }
@@ -1813,27 +2149,32 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "name": "clearingDateFrom",
+          "title": "Clearing Date From",
+          "type": "`$STRING`",
           "req": true,
-          "short": "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz",
-          "type": "`$STRING`"
+          "short": "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz"
         },
         {
           "name": "clearingDateTo",
+          "title": "Clearing Date To",
+          "type": "`$STRING`",
           "req": true,
-          "short": "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz",
-          "type": "`$STRING`"
+          "short": "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz"
         },
         {
           "name": "records",
+          "title": "Records",
           "type": "`$ARRAY`"
         },
         {
-          "format": "int32",
           "name": "responseCode",
-          "type": "`$INTEGER`"
+          "title": "Response Code",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
           "name": "responseMessage",
+          "title": "Response Message",
           "type": "`$STRING`"
         }
       ],
@@ -1844,7 +2185,6 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "name": "create",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "POST",
               "orig": "/public/digitalservices/mandatorClearingExportSummary",
@@ -1859,16 +2199,18 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   "lit": "mandatorClearingExportSummary"
                 }
               ],
-              "select": {},
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body`"
-              },
               "parts": [
                 "public",
                 "digitalservices",
                 "mandatorClearingExportSummary"
-              ]
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body`"
+              },
+              "args": {},
+              "select": {}
             }
           ]
         }
@@ -1881,108 +2223,133 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "name": "3DSecure",
+          "title": "3 D Secure",
           "type": "`$STRING`"
         },
         {
           "name": "authorizationCode",
+          "title": "Authorization Code",
           "type": "`$STRING`"
         },
         {
           "name": "cardBrand",
+          "title": "Card Brand",
           "type": "`$STRING`"
         },
         {
           "name": "clearingAmountFrom",
+          "title": "Clearing Amount From",
           "type": "`$STRING`"
         },
         {
           "name": "clearingAmountTo",
+          "title": "Clearing Amount To",
           "type": "`$STRING`"
         },
         {
           "name": "clearingCurrency",
+          "title": "Clearing Currency",
           "type": "`$STRING`"
         },
         {
           "name": "clearingStatus",
+          "title": "Clearing Status",
           "type": "`$STRING`"
         },
         {
           "name": "corporateUUID",
+          "title": "Corporate Uuid",
           "type": "`$STRING`"
         },
         {
           "name": "orderByTransactionDate",
+          "title": "Order By Transaction Date",
           "type": "`$STRING`"
         },
         {
           "name": "pagination",
+          "title": "Pagination",
           "type": "`$OBJECT`"
         },
         {
           "name": "receiptNumber",
+          "title": "Receipt Number",
           "type": "`$STRING`"
         },
         {
           "name": "referencedTransactionId",
+          "title": "Referenced Transaction Id",
           "type": "`$STRING`"
         },
         {
           "name": "retrievalReferenceNumber",
+          "title": "Retrieval Reference Number",
           "type": "`$STRING`"
         },
         {
-          "format": "int32",
           "name": "sourceId",
-          "type": "`$INTEGER`"
+          "title": "Source Id",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
           "name": "tecsengineResponseCodeFrom",
+          "title": "Tecsengine Response Code From",
           "type": "`$STRING`"
         },
         {
           "name": "tecsengineResponseCodeTo",
+          "title": "Tecsengine Response Code To",
           "type": "`$STRING`"
         },
         {
-          "format": "int32",
           "name": "terminalId",
-          "type": "`$INTEGER`"
+          "title": "Terminal Id",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
           "name": "traceNumber",
+          "title": "Trace Number",
           "type": "`$STRING`"
         },
         {
           "name": "transactionAmountFrom",
+          "title": "Transaction Amount From",
           "type": "`$STRING`"
         },
         {
           "name": "transactionAmountTo",
+          "title": "Transaction Amount To",
           "type": "`$STRING`"
         },
         {
-          "format": "date-time",
           "name": "transactionDateFrom",
-          "type": "`$STRING`"
+          "title": "Transaction Date From",
+          "type": "`$STRING`",
+          "format": "date-time"
         },
         {
-          "format": "date-time",
           "name": "transactionDateTo",
-          "type": "`$STRING`"
+          "title": "Transaction Date To",
+          "type": "`$STRING`",
+          "format": "date-time"
         },
         {
           "name": "transactionId",
+          "title": "Transaction Id",
           "type": "`$STRING`"
         },
         {
           "name": "transactionType",
+          "title": "Transaction Type",
           "type": "`$STRING`"
         },
         {
           "name": "wallet",
-          "short": "Filter by wallet type.",
-          "type": "`$STRING`"
+          "title": "Wallet",
+          "type": "`$STRING`",
+          "short": "Filter by wallet type."
         }
       ],
       "name": "merchant_portal_services_api",
@@ -1992,7 +2359,6 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "name": "create",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "POST",
               "orig": "/public/transactionHistoryCsv",
@@ -2004,15 +2370,17 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   "lit": "transactionHistoryCsv"
                 }
               ],
-              "select": {},
+              "parts": [
+                "public",
+                "transactionHistoryCsv"
+              ],
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "parts": [
-                "public",
-                "transactionHistoryCsv"
-              ]
+              "args": {},
+              "select": {}
             }
           ]
         }
@@ -2025,24 +2393,29 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "name": "productorderuuids",
-          "req": true,
-          "type": "`$ARRAY`"
+          "title": "Productorderuuids",
+          "type": "`$ARRAY`",
+          "req": true
         },
         {
-          "format": "int32",
           "name": "responseCode",
-          "type": "`$INTEGER`"
+          "title": "Response Code",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
           "name": "responseMessage",
+          "title": "Response Message",
           "type": "`$STRING`"
         },
         {
           "name": "targetPackageorderuuid",
+          "title": "Target Packageorderuuid",
           "type": "`$STRING`"
         },
         {
           "name": "targetProductorderuuid",
+          "title": "Target Productorderuuid",
           "type": "`$STRING`"
         }
       ],
@@ -2053,7 +2426,6 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "name": "create",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "POST",
               "orig": "/moveTid",
@@ -2062,14 +2434,16 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   "lit": "moveTid"
                 }
               ],
-              "select": {},
+              "parts": [
+                "moveTid"
+              ],
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "parts": [
-                "moveTid"
-              ]
+              "args": {},
+              "select": {}
             }
           ]
         }
@@ -2082,100 +2456,117 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "name": "acquirerName",
-          "short": "Acquirer name parsed from KKG field",
-          "type": "`$STRING`"
+          "title": "Acquirer Name",
+          "type": "`$STRING`",
+          "short": "Acquirer name parsed from KKG field"
         },
         {
-          "format": "int32",
           "name": "amount",
+          "title": "Amount",
+          "type": "`$INTEGER`",
           "req": true,
           "short": "Transaction amount in minor units (cents)",
-          "type": "`$INTEGER`"
+          "format": "int32"
         },
         {
           "name": "authorizationNumber",
-          "short": "Authorization number from the gateway",
-          "type": "`$STRING`"
+          "title": "Authorization Number",
+          "type": "`$STRING`",
+          "short": "Authorization number from the gateway"
         },
         {
           "name": "cardNumber",
+          "title": "Card Number",
+          "type": "`$STRING`",
           "req": true,
-          "short": "Card number - 12 to 19 digits, must pass Luhn validation",
-          "type": "`$STRING`"
+          "short": "Card number - 12 to 19 digits, must pass Luhn validation"
         },
         {
           "name": "cardType",
-          "short": "Card type parsed from KKG field",
-          "type": "`$STRING`"
+          "title": "Card Type",
+          "type": "`$STRING`",
+          "short": "Card type parsed from KKG field"
         },
         {
           "name": "currency",
+          "title": "Currency",
+          "type": "`$STRING`",
           "req": true,
-          "short": "Currency code - 3 uppercase letters (ISO 4217)",
-          "type": "`$STRING`"
+          "short": "Currency code - 3 uppercase letters (ISO 4217)"
         },
         {
           "name": "cvc",
-          "short": "Card verification code - 3-4 digits (optional)",
-          "type": "`$STRING`"
+          "title": "Cvc",
+          "type": "`$STRING`",
+          "short": "Card verification code - 3-4 digits (optional)"
         },
         {
           "name": "dateTimeTx",
-          "short": "Date and time of the transaction",
-          "type": "`$STRING`"
+          "title": "Date Time Tx",
+          "type": "`$STRING`",
+          "short": "Date and time of the transaction"
         },
         {
           "name": "expDate",
+          "title": "Exp Date",
+          "type": "`$STRING`",
           "req": true,
-          "short": "Card expiry date in MMYY format",
-          "type": "`$STRING`"
+          "short": "Card expiry date in MMYY format"
         },
         {
           "name": "merchantId",
-          "short": "Merchant ID (VU-NUMMER)",
-          "type": "`$STRING`"
+          "title": "Merchant Id",
+          "type": "`$STRING`",
+          "short": "Merchant ID (VU-NUMMER)"
         },
         {
           "name": "originalTransactionId",
-          "short": "Original transaction ID from gateway",
-          "type": "`$STRING`"
+          "title": "Original Transaction Id",
+          "type": "`$STRING`",
+          "short": "Original transaction ID from gateway"
         },
         {
           "name": "password",
-          "short": "Terminal password sent as Kennwort in TECS XML (optional)",
-          "type": "`$STRING`"
+          "title": "Password",
+          "type": "`$STRING`",
+          "short": "Terminal password sent as Kennwort in TECS XML (optional)"
         },
         {
           "name": "responseCode",
-          "short": "Response code - 00 for success, otherwise error code",
-          "type": "`$STRING`"
+          "title": "Response Code",
+          "type": "`$STRING`",
+          "short": "Response code - 00 for success, otherwise error code"
         },
         {
           "name": "responseMessage",
-          "short": "Response message - 'Approved' for success, error description otherwise",
-          "type": "`$STRING`"
+          "title": "Response Message",
+          "type": "`$STRING`",
+          "short": "Response message - 'Approved' for success, error description otherwise"
         },
         {
           "name": "terminalId",
+          "title": "Terminal Id",
+          "type": "`$STRING`",
           "op": {
             "create": {
               "req": true,
               "type": "`$STRING`"
             }
           },
-          "short": "Terminal ID used for the transaction",
-          "type": "`$STRING`"
+          "short": "Terminal ID used for the transaction"
         },
         {
           "name": "transactionId",
-          "short": "Transaction ID generated by the backend",
-          "type": "`$STRING`"
+          "title": "Transaction Id",
+          "type": "`$STRING`",
+          "short": "Transaction ID generated by the backend"
         },
         {
           "name": "txtype",
+          "title": "Txtype",
+          "type": "`$STRING`",
           "req": true,
-          "short": "Transaction type",
-          "type": "`$STRING`"
+          "short": "Transaction type"
         }
       ],
       "name": "payment_manual",
@@ -2185,7 +2576,6 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "name": "create",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "POST",
               "orig": "/public/paymentManual",
@@ -2197,15 +2587,17 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   "lit": "paymentManual"
                 }
               ],
-              "select": {},
+              "parts": [
+                "public",
+                "paymentManual"
+              ],
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "parts": [
-                "public",
-                "paymentManual"
-              ]
+              "args": {},
+              "select": {}
             }
           ]
         }
@@ -2217,70 +2609,82 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
     "payment_sred": {
       "fields": [
         {
-          "format": "int32",
           "name": "amount",
+          "title": "Amount",
+          "type": "`$INTEGER`",
           "req": true,
           "short": "Transaction amount in minor units (cents)",
-          "type": "`$INTEGER`"
+          "format": "int32"
         },
         {
           "name": "currency",
+          "title": "Currency",
+          "type": "`$STRING`",
           "req": true,
-          "short": "Currency code - 3 uppercase letters (ISO 4217)",
-          "type": "`$STRING`"
+          "short": "Currency code - 3 uppercase letters (ISO 4217)"
         },
         {
           "name": "device",
-          "short": "Device type that provided the SRED payload",
-          "type": "`$STRING`"
+          "title": "Device",
+          "type": "`$STRING`",
+          "short": "Device type that provided the SRED payload"
         },
         {
           "name": "devicePayload",
+          "title": "Device Payload",
+          "type": "`$STRING`",
           "req": true,
-          "short": "SRED encrypted device payload from the device (minimum 32 characters)",
-          "type": "`$STRING`"
+          "short": "SRED encrypted device payload from the device (minimum 32 characters)"
         },
         {
           "name": "expDate",
-          "short": "Card expiry date in MMYY format",
-          "type": "`$STRING`"
+          "title": "Exp Date",
+          "type": "`$STRING`",
+          "short": "Card expiry date in MMYY format"
         },
         {
           "name": "mode",
-          "short": "Decryption mode",
-          "type": "`$STRING`"
+          "title": "Mode",
+          "type": "`$STRING`",
+          "short": "Decryption mode"
         },
         {
           "name": "panMasked",
-          "short": "Masked PAN (first 6 and last 4 digits)",
-          "type": "`$STRING`"
+          "title": "Pan Masked",
+          "type": "`$STRING`",
+          "short": "Masked PAN (first 6 and last 4 digits)"
         },
         {
           "name": "password",
-          "short": "Terminal password sent as Kennwort in TECS XML (optional)",
-          "type": "`$STRING`"
+          "title": "Password",
+          "type": "`$STRING`",
+          "short": "Terminal password sent as Kennwort in TECS XML (optional)"
         },
         {
           "name": "serial",
-          "short": "Device serial number",
-          "type": "`$STRING`"
+          "title": "Serial",
+          "type": "`$STRING`",
+          "short": "Device serial number"
         },
         {
           "name": "serviceCode",
-          "short": "Service code from the card",
-          "type": "`$STRING`"
+          "title": "Service Code",
+          "type": "`$STRING`",
+          "short": "Service code from the card"
         },
         {
           "name": "terminalId",
+          "title": "Terminal Id",
+          "type": "`$STRING`",
           "req": true,
-          "short": "Terminal ID - 8 digits",
-          "type": "`$STRING`"
+          "short": "Terminal ID - 8 digits"
         },
         {
           "name": "txtype",
+          "title": "Txtype",
+          "type": "`$STRING`",
           "req": true,
-          "short": "Transaction type",
-          "type": "`$STRING`"
+          "short": "Transaction type"
         }
       ],
       "name": "payment_sred",
@@ -2290,7 +2694,6 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "name": "create",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "POST",
               "orig": "/public/paymentSred",
@@ -2302,15 +2705,17 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   "lit": "paymentSred"
                 }
               ],
-              "select": {},
+              "parts": [
+                "public",
+                "paymentSred"
+              ],
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body.sred`"
               },
-              "parts": [
-                "public",
-                "paymentSred"
-              ]
+              "args": {},
+              "select": {}
             }
           ]
         }
@@ -2323,209 +2728,251 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "name": "acquirerId",
+          "title": "Acquirer Id",
           "type": "`$STRING`"
         },
         {
           "name": "acquirerName",
+          "title": "Acquirer Name",
           "type": "`$STRING`"
         },
         {
           "name": "actualBonusPoints",
+          "title": "Actual Bonus Points",
           "type": "`$STRING`"
         },
         {
-          "format": "int32",
           "name": "amount",
+          "title": "Amount",
+          "type": "`$INTEGER`",
           "op": {
             "create": {
               "req": true,
               "type": "`$INTEGER`"
             }
           },
-          "type": "`$INTEGER`"
+          "format": "int32"
         },
         {
           "name": "authorizationCode",
+          "title": "Authorization Code",
           "type": "`$STRING`"
         },
         {
           "name": "balanceAmount",
+          "title": "Balance Amount",
           "type": "`$STRING`"
         },
         {
           "name": "cardBrand",
+          "title": "Card Brand",
           "type": "`$STRING`"
         },
         {
           "name": "cardNumber",
+          "title": "Card Number",
           "type": "`$STRING`"
         },
         {
           "name": "cardNumberReference",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Card Number Reference",
+          "type": "`$STRING`",
+          "req": true
         },
         {
-          "format": "int32",
           "name": "clientId",
+          "title": "Client Id",
+          "type": "`$INTEGER`",
           "req": true,
-          "type": "`$INTEGER`"
+          "format": "int32"
         },
         {
           "name": "currency",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Currency",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "cvc",
+          "title": "Cvc",
           "type": "`$STRING`"
         },
         {
           "name": "ecData",
+          "title": "Ec Data",
           "type": "`$STRING`"
         },
         {
           "name": "ecrData",
+          "title": "Ecr Data",
           "type": "`$STRING`"
         },
         {
           "name": "emvData",
+          "title": "Emv Data",
           "type": "`$STRING`"
         },
         {
-          "format": "int64",
           "name": "exchangeFee",
-          "type": "`$INTEGER`"
+          "title": "Exchange Fee",
+          "type": "`$INTEGER`",
+          "format": "int64"
         },
         {
           "name": "exchangeRate",
+          "title": "Exchange Rate",
           "type": "`$STRING`"
         },
         {
           "name": "languageCode",
+          "title": "Language Code",
           "type": "`$STRING`"
         },
         {
           "name": "merchantAddress",
+          "title": "Merchant Address",
           "type": "`$STRING`"
         },
         {
           "name": "merchantName",
+          "title": "Merchant Name",
           "type": "`$STRING`"
         },
         {
           "name": "merchantNumber",
+          "title": "Merchant Number",
           "type": "`$STRING`"
         },
         {
           "name": "messageType",
+          "title": "Message Type",
           "type": "`$STRING`"
         },
         {
-          "format": "int32",
           "name": "originalTraceNumber",
-          "type": "`$INTEGER`"
+          "title": "Original Trace Number",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
           "name": "originalTransactionId",
+          "title": "Original Transaction Id",
+          "type": "`$STRING`",
           "op": {
             "create": {
               "req": true,
               "type": "`$STRING`"
             }
-          },
-          "type": "`$STRING`"
+          }
         },
         {
           "name": "password",
+          "title": "Password",
           "type": "`$STRING`"
         },
         {
           "name": "paymentReason",
+          "title": "Payment Reason",
           "type": "`$STRING`"
         },
         {
           "name": "receiptFooter",
+          "title": "Receipt Footer",
           "type": "`$STRING`"
         },
         {
           "name": "receiptHeader",
+          "title": "Receipt Header",
           "type": "`$STRING`"
         },
         {
-          "format": "int32",
           "name": "receiptLayout",
-          "type": "`$INTEGER`"
+          "title": "Receipt Layout",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
           "name": "receiptNumber",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Receipt Number",
+          "type": "`$STRING`",
+          "req": true
         },
         {
-          "format": "int32",
           "name": "responseCode",
-          "type": "`$INTEGER`"
+          "title": "Response Code",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
           "name": "responseMessage",
+          "title": "Response Message",
           "type": "`$STRING`"
         },
         {
           "name": "serialNumber",
+          "title": "Serial Number",
           "type": "`$STRING`"
         },
         {
           "name": "svc",
+          "title": "Svc",
           "type": "`$STRING`"
         },
         {
-          "format": "int32",
           "name": "terminalId",
+          "title": "Terminal Id",
+          "type": "`$INTEGER`",
           "req": true,
-          "type": "`$INTEGER`"
+          "format": "int32"
         },
         {
           "name": "terminalLocation",
+          "title": "Terminal Location",
           "type": "`$STRING`"
         },
         {
-          "format": "int32",
           "name": "traceNumber",
-          "type": "`$INTEGER`"
+          "title": "Trace Number",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
-          "format": "date-time",
           "name": "transactionDate",
+          "title": "Transaction Date",
+          "type": "`$STRING`",
           "op": {
             "create": {
               "req": true,
               "type": "`$STRING`"
             }
           },
-          "type": "`$STRING`"
+          "format": "date-time"
         },
         {
           "name": "transactionId",
+          "title": "Transaction Id",
+          "type": "`$STRING`",
           "op": {
             "create": {
               "req": true,
               "type": "`$STRING`"
             }
-          },
-          "type": "`$STRING`"
+          }
         },
         {
           "name": "transactionType",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Transaction Type",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "txType",
+          "title": "Tx Type",
           "type": "`$STRING`"
         },
         {
           "name": "userData",
+          "title": "User Data",
           "type": "`$STRING`"
         }
       ],
@@ -2536,7 +2983,6 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "name": "create",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "POST",
               "orig": "/public/paymentTransaction",
@@ -2548,18 +2994,19 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   "lit": "paymentTransaction"
                 }
               ],
-              "select": {},
+              "parts": [
+                "public",
+                "paymentTransaction"
+              ],
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "parts": [
-                "public",
-                "paymentTransaction"
-              ]
+              "args": {},
+              "select": {}
             },
             {
-              "args": {},
               "kind": "http",
               "method": "POST",
               "orig": "/public/preAuthCompletionTransaction",
@@ -2571,15 +3018,17 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   "lit": "preAuthCompletionTransaction"
                 }
               ],
-              "select": {},
+              "parts": [
+                "public",
+                "preAuthCompletionTransaction"
+              ],
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "parts": [
-                "public",
-                "preAuthCompletionTransaction"
-              ]
+              "args": {},
+              "select": {}
             }
           ]
         }
@@ -2592,35 +3041,42 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "name": "corporateUuid",
+          "title": "Corporate Uuid",
           "type": "`$STRING`"
         },
         {
           "name": "packageOrderUuid",
+          "title": "Package Order Uuid",
           "type": "`$STRING`"
         },
         {
           "name": "productOrderUuid",
+          "title": "Product Order Uuid",
           "type": "`$STRING`"
         },
         {
           "name": "reactivationReason",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Reactivation Reason",
+          "type": "`$STRING`",
+          "req": true
         },
         {
-          "format": "int32",
           "name": "responseCode",
-          "type": "`$INTEGER`"
+          "title": "Response Code",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
           "name": "responseMessage",
+          "title": "Response Message",
           "type": "`$STRING`"
         },
         {
-          "format": "int32",
           "name": "terminalId",
+          "title": "Terminal Id",
+          "type": "`$INTEGER`",
           "req": true,
-          "type": "`$INTEGER`"
+          "format": "int32"
         }
       ],
       "name": "reactivate_terminal",
@@ -2630,7 +3086,6 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "name": "create",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "POST",
               "orig": "/reactivateTerminal",
@@ -2639,14 +3094,16 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   "lit": "reactivateTerminal"
                 }
               ],
-              "select": {},
+              "parts": [
+                "reactivateTerminal"
+              ],
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "parts": [
-                "reactivateTerminal"
-              ]
+              "args": {},
+              "select": {}
             }
           ]
         }
@@ -2659,199 +3116,239 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "name": "acquirerId",
+          "title": "Acquirer Id",
           "type": "`$STRING`"
         },
         {
           "name": "acquirerName",
+          "title": "Acquirer Name",
           "type": "`$STRING`"
         },
         {
           "name": "actualBonusPoints",
+          "title": "Actual Bonus Points",
           "type": "`$STRING`"
         },
         {
-          "format": "int32",
           "name": "amount",
+          "title": "Amount",
+          "type": "`$INTEGER`",
           "op": {
             "create": {
               "req": true,
               "type": "`$INTEGER`"
             }
           },
-          "type": "`$INTEGER`"
+          "format": "int32"
         },
         {
           "name": "authorizationCode",
+          "title": "Authorization Code",
           "type": "`$STRING`"
         },
         {
           "name": "balanceAmount",
+          "title": "Balance Amount",
           "type": "`$STRING`"
         },
         {
           "name": "cardBrand",
+          "title": "Card Brand",
           "type": "`$STRING`"
         },
         {
           "name": "cardNumber",
+          "title": "Card Number",
           "type": "`$STRING`"
         },
         {
-          "format": "int32",
           "name": "clientId",
+          "title": "Client Id",
+          "type": "`$INTEGER`",
           "req": true,
-          "type": "`$INTEGER`"
+          "format": "int32"
         },
         {
           "name": "currency",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Currency",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "cvc",
+          "title": "Cvc",
           "type": "`$STRING`"
         },
         {
           "name": "ecData",
+          "title": "Ec Data",
           "type": "`$STRING`"
         },
         {
           "name": "ecrData",
+          "title": "Ecr Data",
           "type": "`$STRING`"
         },
         {
           "name": "emvData",
+          "title": "Emv Data",
           "type": "`$STRING`"
         },
         {
-          "format": "int64",
           "name": "exchangeFee",
-          "type": "`$INTEGER`"
+          "title": "Exchange Fee",
+          "type": "`$INTEGER`",
+          "format": "int64"
         },
         {
           "name": "exchangeRate",
+          "title": "Exchange Rate",
           "type": "`$STRING`"
         },
         {
           "name": "languageCode",
+          "title": "Language Code",
           "type": "`$STRING`"
         },
         {
           "name": "merchantAddress",
+          "title": "Merchant Address",
           "type": "`$STRING`"
         },
         {
           "name": "merchantName",
+          "title": "Merchant Name",
           "type": "`$STRING`"
         },
         {
           "name": "merchantNumber",
+          "title": "Merchant Number",
           "type": "`$STRING`"
         },
         {
           "name": "messageType",
+          "title": "Message Type",
           "type": "`$STRING`"
         },
         {
-          "format": "int32",
           "name": "originalTraceNumber",
-          "type": "`$INTEGER`"
+          "title": "Original Trace Number",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
           "name": "originalTransactionId",
+          "title": "Original Transaction Id",
+          "type": "`$STRING`",
           "op": {
             "create": {
               "req": true,
               "type": "`$STRING`"
             }
-          },
-          "type": "`$STRING`"
+          }
         },
         {
           "name": "password",
+          "title": "Password",
           "type": "`$STRING`"
         },
         {
           "name": "paymentReason",
+          "title": "Payment Reason",
           "type": "`$STRING`"
         },
         {
           "name": "receiptFooter",
+          "title": "Receipt Footer",
           "type": "`$STRING`"
         },
         {
           "name": "receiptHeader",
+          "title": "Receipt Header",
           "type": "`$STRING`"
         },
         {
-          "format": "int32",
           "name": "receiptLayout",
-          "type": "`$INTEGER`"
+          "title": "Receipt Layout",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
           "name": "receiptNumber",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Receipt Number",
+          "type": "`$STRING`",
+          "req": true
         },
         {
-          "format": "int32",
           "name": "responseCode",
-          "type": "`$INTEGER`"
+          "title": "Response Code",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
           "name": "responseMessage",
+          "title": "Response Message",
           "type": "`$STRING`"
         },
         {
           "name": "serialNumber",
+          "title": "Serial Number",
           "type": "`$STRING`"
         },
         {
           "name": "svc",
+          "title": "Svc",
           "type": "`$STRING`"
         },
         {
-          "format": "int32",
           "name": "terminalId",
+          "title": "Terminal Id",
+          "type": "`$INTEGER`",
           "req": true,
-          "type": "`$INTEGER`"
+          "format": "int32"
         },
         {
           "name": "terminalLocation",
+          "title": "Terminal Location",
           "type": "`$STRING`"
         },
         {
-          "format": "int32",
           "name": "traceNumber",
-          "type": "`$INTEGER`"
+          "title": "Trace Number",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
-          "format": "date-time",
           "name": "transactionDate",
+          "title": "Transaction Date",
+          "type": "`$STRING`",
           "op": {
             "create": {
               "req": true,
               "type": "`$STRING`"
             }
           },
-          "type": "`$STRING`"
+          "format": "date-time"
         },
         {
           "name": "transactionId",
+          "title": "Transaction Id",
+          "type": "`$STRING`",
           "op": {
             "create": {
               "req": true,
               "type": "`$STRING`"
             }
-          },
-          "type": "`$STRING`"
+          }
         },
         {
           "name": "txType",
+          "title": "Tx Type",
           "type": "`$STRING`"
         },
         {
           "name": "userData",
+          "title": "User Data",
           "type": "`$STRING`"
         }
       ],
@@ -2862,7 +3359,6 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "name": "create",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "POST",
               "orig": "/public/refundTransaction",
@@ -2874,15 +3370,17 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   "lit": "refundTransaction"
                 }
               ],
-              "select": {},
+              "parts": [
+                "public",
+                "refundTransaction"
+              ],
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "parts": [
-                "public",
-                "refundTransaction"
-              ]
+              "args": {},
+              "select": {}
             }
           ]
         }
@@ -2895,41 +3393,49 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "name": "corporateUuid",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Corporate Uuid",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "packageOrderUuid",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Package Order Uuid",
+          "type": "`$STRING`",
+          "req": true
         },
         {
-          "format": "int32",
           "name": "partnerId",
-          "type": "`$INTEGER`"
+          "title": "Partner Id",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
           "name": "partnerName",
+          "title": "Partner Name",
           "type": "`$STRING`"
         },
         {
           "name": "productOrderUuid",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Product Order Uuid",
+          "type": "`$STRING`",
+          "req": true
         },
         {
-          "format": "int32",
           "name": "responseCode",
-          "type": "`$INTEGER`"
+          "title": "Response Code",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
           "name": "responseMessage",
+          "title": "Response Message",
           "type": "`$STRING`"
         },
         {
           "name": "templateName",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Template Name",
+          "type": "`$STRING`",
+          "req": true
         }
       ],
       "name": "register_tecs_company",
@@ -2939,7 +3445,6 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "name": "create",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "POST",
               "orig": "/registerTecsCompany",
@@ -2948,14 +3453,16 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   "lit": "registerTecsCompany"
                 }
               ],
-              "select": {},
+              "parts": [
+                "registerTecsCompany"
+              ],
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "parts": [
-                "registerTecsCompany"
-              ]
+              "args": {},
+              "select": {}
             }
           ]
         }
@@ -2968,83 +3475,101 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "name": "additionalData",
+          "title": "Additional Data",
           "type": "`$OBJECT`"
         },
         {
           "name": "corporateUuid",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Corporate Uuid",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "packageOrderUuid",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Package Order Uuid",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "productOrderUuid",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Product Order Uuid",
+          "type": "`$STRING`",
+          "req": true
         },
         {
-          "format": "int32",
           "name": "responseCode",
-          "type": "`$INTEGER`"
+          "title": "Response Code",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
           "name": "responseMessage",
+          "title": "Response Message",
           "type": "`$STRING`"
         },
         {
           "name": "tecsWebSecretKey",
+          "title": "Tecs Web Secret Key",
           "type": "`$STRING`"
         },
         {
           "name": "templateName",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Template Name",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "terminalCountryCode",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Terminal Country Code",
+          "type": "`$STRING`",
+          "req": true
         },
         {
-          "format": "int32",
           "name": "terminalId",
-          "type": "`$INTEGER`"
+          "title": "Terminal Id",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
           "name": "terminalIdAcq",
+          "title": "Terminal Id Acq",
           "type": "`$STRING`"
         },
         {
           "name": "terminalLanguageCode",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Terminal Language Code",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "terminalLocation",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Terminal Location",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "terminalSerialNumber",
+          "title": "Terminal Serial Number",
           "type": "`$STRING`"
         },
         {
           "name": "tokenIOAlias",
+          "title": "Token Io Alias",
           "type": "`$STRING`"
         },
         {
           "name": "tokenIOIban",
+          "title": "Token Io Iban",
           "type": "`$STRING`"
         },
         {
           "name": "tokenIOMemberId",
+          "title": "Token Io Member Id",
           "type": "`$STRING`"
         },
         {
           "name": "webShopUrl",
+          "title": "Web Shop Url",
           "type": "`$STRING`"
         }
       ],
@@ -3055,7 +3580,6 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "name": "create",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "POST",
               "orig": "/registerTerminal",
@@ -3064,14 +3588,16 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   "lit": "registerTerminal"
                 }
               ],
-              "select": {},
+              "parts": [
+                "registerTerminal"
+              ],
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "parts": [
-                "registerTerminal"
-              ]
+              "args": {},
+              "select": {}
             }
           ]
         }
@@ -3084,51 +3610,61 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "name": "cardBrandReportData",
+          "title": "Card Brand Report Data",
           "type": "`$ARRAY`"
         },
         {
           "name": "clearingDateFrom",
+          "title": "Clearing Date From",
+          "type": "`$STRING`",
           "req": true,
-          "short": "Date and time in the format yyyy-MM-dd'T'HH:mm:ss",
-          "type": "`$STRING`"
+          "short": "Date and time in the format yyyy-MM-dd'T'HH:mm:ss"
         },
         {
           "name": "clearingDateTo",
+          "title": "Clearing Date To",
+          "type": "`$STRING`",
           "req": true,
-          "short": "Date and time in the format yyyy-MM-dd'T'HH:mm:ss",
-          "type": "`$STRING`"
+          "short": "Date and time in the format yyyy-MM-dd'T'HH:mm:ss"
         },
         {
           "name": "corporateId",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Corporate Id",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "currency",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Currency",
+          "type": "`$STRING`",
+          "req": true
         },
         {
-          "format": "int32",
           "name": "responseCode",
-          "type": "`$INTEGER`"
+          "title": "Response Code",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
           "name": "responseMessage",
+          "title": "Response Message",
           "type": "`$STRING`"
         },
         {
           "name": "sumOverCreditTx",
+          "title": "Sum Over Credit Tx",
           "type": "`$OBJECT`"
         },
         {
           "name": "sumOverDebitTx",
+          "title": "Sum Over Debit Tx",
           "type": "`$OBJECT`"
         },
         {
-          "format": "int32",
           "name": "terminalId",
-          "type": "`$INTEGER`"
+          "title": "Terminal Id",
+          "type": "`$INTEGER`",
+          "format": "int32"
         }
       ],
       "name": "report_data",
@@ -3138,7 +3674,6 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "name": "create",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "POST",
               "orig": "/public/digitalservices/reportData",
@@ -3153,16 +3688,18 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   "lit": "reportData"
                 }
               ],
-              "select": {},
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body`"
-              },
               "parts": [
                 "public",
                 "digitalservices",
                 "reportData"
-              ]
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body`"
+              },
+              "args": {},
+              "select": {}
             }
           ]
         }
@@ -3175,227 +3712,277 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "name": "acquirerName",
+          "title": "Acquirer Name",
           "type": "`$STRING`"
         },
         {
           "name": "acquirerTerminalId",
+          "title": "Acquirer Terminal Id",
           "type": "`$STRING`"
         },
         {
-          "format": "int32",
           "name": "amount",
-          "type": "`$INTEGER`"
+          "title": "Amount",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
           "name": "applicationCryptogram",
+          "title": "Application Cryptogram",
           "type": "`$STRING`"
         },
         {
           "name": "authorizationCode",
-          "short": "Authorization code returned by the acquirer; null when not available",
+          "title": "Authorization Code",
           "type": [
             "`$ONE`",
             [
               "`$STRING`",
               "`$NULL`"
             ]
-          ]
+          ],
+          "short": "Authorization code returned by the acquirer; null when not available"
         },
         {
-          "format": "date-time",
           "name": "authorizationDate",
-          "type": "`$STRING`"
+          "title": "Authorization Date",
+          "type": "`$STRING`",
+          "format": "date-time"
         },
         {
           "name": "cardBrand",
+          "title": "Card Brand",
           "type": "`$STRING`"
         },
         {
           "name": "cardEntry",
+          "title": "Card Entry",
           "type": "`$STRING`"
         },
         {
           "name": "cardExpiration",
+          "title": "Card Expiration",
           "type": "`$STRING`"
         },
         {
           "name": "cardNumber",
+          "title": "Card Number",
           "type": "`$STRING`"
         },
         {
-          "format": "int32",
           "name": "clearingAmount",
-          "type": "`$INTEGER`"
+          "title": "Clearing Amount",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
           "name": "clearingBatchId",
+          "title": "Clearing Batch Id",
           "type": "`$STRING`"
         },
         {
           "name": "clearingCurrency",
+          "title": "Clearing Currency",
           "type": "`$STRING`"
         },
         {
-          "format": "date-time",
           "name": "clearingDate",
-          "type": "`$STRING`"
+          "title": "Clearing Date",
+          "type": "`$STRING`",
+          "format": "date-time"
         },
         {
-          "format": "date-time",
           "name": "clearingProcessedDate",
-          "type": "`$STRING`"
+          "title": "Clearing Processed Date",
+          "type": "`$STRING`",
+          "format": "date-time"
         },
         {
           "name": "clearingStatus",
+          "title": "Clearing Status",
           "type": "`$STRING`"
         },
         {
-          "format": "int32",
           "name": "clientId",
-          "type": "`$INTEGER`"
+          "title": "Client Id",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
           "name": "currency",
+          "title": "Currency",
           "type": "`$STRING`"
         },
         {
           "name": "cvm",
+          "title": "Cvm",
           "type": "`$STRING`"
         },
         {
           "name": "ecrData",
+          "title": "Ecr Data",
           "type": "`$STRING`"
         },
         {
           "name": "emvApplicationId",
+          "title": "Emv Application Id",
           "type": "`$STRING`"
         },
         {
           "name": "emvApplicationLabel",
+          "title": "Emv Application Label",
           "type": "`$STRING`"
         },
         {
           "name": "merchantName",
+          "title": "Merchant Name",
           "type": "`$STRING`"
         },
         {
           "name": "merchantNumber",
+          "title": "Merchant Number",
           "type": "`$STRING`"
         },
         {
           "name": "originalClientId",
+          "title": "Original Client Id",
           "type": "`$STRING`"
         },
         {
-          "format": "int32",
           "name": "originalTerminalId",
-          "type": "`$INTEGER`"
+          "title": "Original Terminal Id",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
           "name": "originalTransactionId",
+          "title": "Original Transaction Id",
           "type": "`$STRING`"
         },
         {
           "name": "paymentReason",
+          "title": "Payment Reason",
           "type": "`$STRING`"
         },
         {
           "name": "receiptNumber",
+          "title": "Receipt Number",
           "type": "`$STRING`"
         },
         {
-          "format": "int32",
           "name": "responseCode",
-          "type": "`$INTEGER`"
+          "title": "Response Code",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
           "name": "responseCodeFromAS",
+          "title": "Response Code From As",
           "type": "`$STRING`"
         },
         {
           "name": "responseMessage",
+          "title": "Response Message",
           "type": "`$STRING`"
         },
         {
           "name": "retrievalReferenceNumber",
+          "title": "Retrieval Reference Number",
           "type": "`$STRING`"
         },
         {
           "name": "serviceCode",
+          "title": "Service Code",
           "type": "`$STRING`"
         },
         {
           "name": "settlementStatus",
+          "title": "Settlement Status",
           "type": "`$STRING`"
         },
         {
-          "format": "int32",
           "name": "sourceId",
-          "type": "`$INTEGER`"
+          "title": "Source Id",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
-          "format": "int32",
           "name": "tecsengineResponseCode",
-          "type": "`$INTEGER`"
+          "title": "Tecsengine Response Code",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
           "name": "tecsengineResponseText",
+          "title": "Tecsengine Response Text",
           "type": "`$STRING`"
         },
         {
-          "format": "date-time",
           "name": "terminalEndOfDayDate",
-          "type": "`$STRING`"
+          "title": "Terminal End Of Day Date",
+          "type": "`$STRING`",
+          "format": "date-time"
         },
         {
-          "format": "int32",
           "name": "terminalId",
-          "type": "`$INTEGER`"
+          "title": "Terminal Id",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
           "name": "terminalLocation",
+          "title": "Terminal Location",
           "type": "`$STRING`"
         },
         {
-          "format": "int32",
           "name": "tipAmount",
-          "type": "`$INTEGER`"
+          "title": "Tip Amount",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
-          "format": "int32",
           "name": "traceNumber",
-          "type": "`$INTEGER`"
+          "title": "Trace Number",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
-          "format": "date-time",
           "name": "transactionClearingDate",
-          "type": "`$STRING`"
+          "title": "Transaction Clearing Date",
+          "type": "`$STRING`",
+          "format": "date-time"
         },
         {
-          "format": "date-time",
           "name": "transactionDate",
-          "type": "`$STRING`"
+          "title": "Transaction Date",
+          "type": "`$STRING`",
+          "format": "date-time"
         },
         {
           "name": "transactionId",
+          "title": "Transaction Id",
           "type": "`$STRING`"
         },
         {
-          "format": "int64",
           "name": "transactionSeqNumber",
-          "type": "`$INTEGER`"
+          "title": "Transaction Seq Number",
+          "type": "`$INTEGER`",
+          "format": "int64"
         },
         {
-          "format": "date-time",
           "name": "transactionServerDate",
-          "type": "`$STRING`"
+          "title": "Transaction Server Date",
+          "type": "`$STRING`",
+          "format": "date-time"
         },
         {
           "name": "transactionSource",
+          "title": "Transaction Source",
           "type": "`$STRING`"
         },
         {
           "name": "transactionType",
+          "title": "Transaction Type",
           "type": "`$STRING`"
         }
       ],
@@ -3406,7 +3993,6 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "name": "create",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "POST",
               "orig": "/public/statusTransaction",
@@ -3418,15 +4004,17 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   "lit": "statusTransaction"
                 }
               ],
-              "select": {},
+              "parts": [
+                "public",
+                "statusTransaction"
+              ],
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "parts": [
-                "public",
-                "statusTransaction"
-              ]
+              "args": {},
+              "select": {}
             }
           ]
         }
@@ -3439,28 +4027,34 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "name": "acqTabNexo",
+          "title": "Acq Tab Nexo",
           "type": "`$OBJECT`"
         },
         {
           "name": "configVersion",
+          "title": "Config Version",
           "type": "`$STRING`"
         },
         {
-          "format": "int32",
           "name": "responseCode",
-          "type": "`$INTEGER`"
+          "title": "Response Code",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
           "name": "responseMessage",
+          "title": "Response Message",
           "type": "`$STRING`"
         },
         {
           "name": "serialNumber",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Serial Number",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "tidSent",
+          "title": "Tid Sent",
           "type": "`$STRING`"
         }
       ],
@@ -3471,7 +4065,6 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "name": "create",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "POST",
               "orig": "/storeTerminalParameters",
@@ -3480,14 +4073,16 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   "lit": "storeTerminalParameters"
                 }
               ],
-              "select": {},
+              "parts": [
+                "storeTerminalParameters"
+              ],
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "parts": [
-                "storeTerminalParameters"
-              ]
+              "args": {},
+              "select": {}
             }
           ]
         }
@@ -3500,24 +4095,29 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "name": "deviceSerialNumber",
-          "req": true,
-          "type": "`$ARRAY`"
+          "title": "Device Serial Number",
+          "type": "`$ARRAY`",
+          "req": true
         },
         {
           "name": "duplicateTerminalIds",
+          "title": "Duplicate Terminal Ids",
           "type": "`$ARRAY`"
         },
         {
-          "format": "int32",
           "name": "responseCode",
-          "type": "`$INTEGER`"
+          "title": "Response Code",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
           "name": "responseMessage",
+          "title": "Response Message",
           "type": "`$STRING`"
         },
         {
           "name": "terminals",
+          "title": "Terminals",
           "type": "`$ARRAY`"
         }
       ],
@@ -3528,7 +4128,6 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "name": "create",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "POST",
               "orig": "/public/getTerminalId",
@@ -3540,15 +4139,17 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   "lit": "getTerminalId"
                 }
               ],
-              "select": {},
+              "parts": [
+                "public",
+                "getTerminalId"
+              ],
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "parts": [
-                "public",
-                "getTerminalId"
-              ]
+              "args": {},
+              "select": {}
             }
           ]
         }
@@ -3561,125 +4162,154 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "name": "3DSecure",
+          "title": "3 D Secure",
           "type": "`$STRING`"
         },
         {
           "name": "authorizationCode",
+          "title": "Authorization Code",
           "type": "`$STRING`"
         },
         {
           "name": "cardBrand",
+          "title": "Card Brand",
           "type": "`$STRING`"
         },
         {
           "name": "clearingAmountFrom",
+          "title": "Clearing Amount From",
           "type": "`$STRING`"
         },
         {
           "name": "clearingAmountTo",
+          "title": "Clearing Amount To",
           "type": "`$STRING`"
         },
         {
           "name": "clearingCurrency",
+          "title": "Clearing Currency",
           "type": "`$STRING`"
         },
         {
           "name": "clearingStatus",
+          "title": "Clearing Status",
           "type": "`$STRING`"
         },
         {
           "name": "corporateUUID",
+          "title": "Corporate Uuid",
           "type": "`$STRING`"
         },
         {
           "name": "orderByTransactionDate",
+          "title": "Order By Transaction Date",
           "type": "`$STRING`"
         },
         {
           "name": "pagination",
+          "title": "Pagination",
           "type": "`$OBJECT`"
         },
         {
           "name": "paymentTokenPublicId",
+          "title": "Payment Token Public Id",
           "type": "`$STRING`"
         },
         {
           "name": "receiptNumber",
+          "title": "Receipt Number",
           "type": "`$STRING`"
         },
         {
           "name": "referencedTransactionId",
+          "title": "Referenced Transaction Id",
           "type": "`$STRING`"
         },
         {
-          "format": "int32",
           "name": "responseCode",
-          "type": "`$INTEGER`"
+          "title": "Response Code",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
           "name": "responseMessage",
+          "title": "Response Message",
           "type": "`$STRING`"
         },
         {
           "name": "retrievalReferenceNumber",
+          "title": "Retrieval Reference Number",
           "type": "`$STRING`"
         },
         {
-          "format": "int32",
           "name": "sourceId",
-          "type": "`$INTEGER`"
+          "title": "Source Id",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
           "name": "tecsengineResponseCodeFrom",
+          "title": "Tecsengine Response Code From",
           "type": "`$STRING`"
         },
         {
           "name": "tecsengineResponseCodeTo",
+          "title": "Tecsengine Response Code To",
           "type": "`$STRING`"
         },
         {
-          "format": "int32",
           "name": "terminalId",
-          "type": "`$INTEGER`"
+          "title": "Terminal Id",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
           "name": "traceNumber",
+          "title": "Trace Number",
           "type": "`$STRING`"
         },
         {
           "name": "transactionAmountFrom",
+          "title": "Transaction Amount From",
           "type": "`$STRING`"
         },
         {
           "name": "transactionAmountTo",
+          "title": "Transaction Amount To",
           "type": "`$STRING`"
         },
         {
-          "format": "date-time",
           "name": "transactionDateFrom",
-          "type": "`$STRING`"
+          "title": "Transaction Date From",
+          "type": "`$STRING`",
+          "format": "date-time"
         },
         {
-          "format": "date-time",
           "name": "transactionDateTo",
-          "type": "`$STRING`"
+          "title": "Transaction Date To",
+          "type": "`$STRING`",
+          "format": "date-time"
         },
         {
           "name": "transactionHistories",
+          "title": "Transaction Histories",
           "type": "`$ARRAY`"
         },
         {
           "name": "transactionId",
+          "title": "Transaction Id",
           "type": "`$STRING`"
         },
         {
           "name": "transactionType",
+          "title": "Transaction Type",
           "type": "`$STRING`"
         },
         {
           "name": "wallet",
-          "short": "Filter by wallet type.",
-          "type": "`$STRING`"
+          "title": "Wallet",
+          "type": "`$STRING`",
+          "short": "Filter by wallet type."
         }
       ],
       "name": "transaction_history",
@@ -3689,7 +4319,6 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "name": "create",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "POST",
               "orig": "/public/mcom/transactionHistory",
@@ -3704,19 +4333,20 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   "lit": "transactionHistory"
                 }
               ],
-              "select": {},
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body`"
-              },
               "parts": [
                 "public",
                 "mcom",
                 "transactionHistory"
-              ]
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body`"
+              },
+              "args": {},
+              "select": {}
             },
             {
-              "args": {},
               "kind": "http",
               "method": "POST",
               "orig": "/public/transactionHistory",
@@ -3728,116 +4358,17 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   "lit": "transactionHistory"
                 }
               ],
-              "select": {},
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body`"
-              },
               "parts": [
                 "public",
                 "transactionHistory"
-              ]
-            }
-          ]
-        }
-      },
-      "relations": {
-        "ancestors": []
-      }
-    },
-    "transactions_count": {
-      "fields": [
-        {
-          "name": "period",
-          "type": "`$STRING`"
-        },
-        {
-          "format": "int32",
-          "name": "responseCode",
-          "type": "`$INTEGER`"
-        },
-        {
-          "name": "responseMessage",
-          "type": "`$STRING`"
-        },
-        {
-          "format": "date-time",
-          "name": "transactionDateFrom",
-          "op": {
-            "create": {
-              "req": true,
-              "type": "`$STRING`"
-            }
-          },
-          "type": "`$STRING`"
-        },
-        {
-          "format": "date-time",
-          "name": "transactionDateTo",
-          "op": {
-            "create": {
-              "req": true,
-              "type": "`$STRING`"
-            }
-          },
-          "type": "`$STRING`"
-        },
-        {
-          "name": "transactionsCount",
-          "type": "`$ARRAY`"
-        }
-      ],
-      "name": "transactions_count",
-      "op": {
-        "create": {
-          "input": "data",
-          "name": "create",
-          "points": [
-            {
-              "args": {},
-              "kind": "http",
-              "method": "POST",
-              "orig": "/public/countAuthorisedTransactions",
-              "segments": [
-                {
-                  "lit": "public"
-                },
-                {
-                  "lit": "countAuthorisedTransactions"
-                }
               ],
-              "select": {},
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "parts": [
-                "public",
-                "countAuthorisedTransactions"
-              ]
-            },
-            {
               "args": {},
-              "kind": "http",
-              "method": "POST",
-              "orig": "/public/countNotAuthorisedTransactions",
-              "segments": [
-                {
-                  "lit": "public"
-                },
-                {
-                  "lit": "countNotAuthorisedTransactions"
-                }
-              ],
-              "select": {},
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body`"
-              },
-              "parts": [
-                "public",
-                "countNotAuthorisedTransactions"
-              ]
+              "select": {}
             }
           ]
         }
@@ -3850,41 +4381,47 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "name": "period",
+          "title": "Period",
           "type": "`$STRING`"
         },
         {
-          "format": "int32",
           "name": "responseCode",
-          "type": "`$INTEGER`"
+          "title": "Response Code",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
           "name": "responseMessage",
+          "title": "Response Message",
           "type": "`$STRING`"
         },
         {
-          "format": "date-time",
           "name": "transactionDateFrom",
+          "title": "Transaction Date From",
+          "type": "`$STRING`",
           "op": {
             "create": {
               "req": true,
               "type": "`$STRING`"
             }
           },
-          "type": "`$STRING`"
+          "format": "date-time"
         },
         {
-          "format": "date-time",
           "name": "transactionDateTo",
+          "title": "Transaction Date To",
+          "type": "`$STRING`",
           "op": {
             "create": {
               "req": true,
               "type": "`$STRING`"
             }
           },
-          "type": "`$STRING`"
+          "format": "date-time"
         },
         {
           "name": "transactionsCount",
+          "title": "Transactions Count",
           "type": "`$ARRAY`"
         }
       ],
@@ -3895,7 +4432,6 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "name": "create",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "POST",
               "orig": "/public/countTransactionsByCardBrand",
@@ -3907,15 +4443,17 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   "lit": "countTransactionsByCardBrand"
                 }
               ],
-              "select": {},
+              "parts": [
+                "public",
+                "countTransactionsByCardBrand"
+              ],
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "parts": [
-                "public",
-                "countTransactionsByCardBrand"
-              ]
+              "args": {},
+              "select": {}
             }
           ]
         }
@@ -3928,41 +4466,47 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "name": "period",
+          "title": "Period",
           "type": "`$STRING`"
         },
         {
-          "format": "int32",
           "name": "responseCode",
-          "type": "`$INTEGER`"
+          "title": "Response Code",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
           "name": "responseMessage",
+          "title": "Response Message",
           "type": "`$STRING`"
         },
         {
-          "format": "date-time",
           "name": "transactionDateFrom",
+          "title": "Transaction Date From",
+          "type": "`$STRING`",
           "op": {
             "create": {
               "req": true,
               "type": "`$STRING`"
             }
           },
-          "type": "`$STRING`"
+          "format": "date-time"
         },
         {
-          "format": "date-time",
           "name": "transactionDateTo",
+          "title": "Transaction Date To",
+          "type": "`$STRING`",
           "op": {
             "create": {
               "req": true,
               "type": "`$STRING`"
             }
           },
-          "type": "`$STRING`"
+          "format": "date-time"
         },
         {
           "name": "turnovers",
+          "title": "Turnovers",
           "type": "`$ARRAY`"
         }
       ],
@@ -3973,7 +4517,6 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "name": "create",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "POST",
               "orig": "/public/transactionTurnover",
@@ -3985,15 +4528,17 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   "lit": "transactionTurnover"
                 }
               ],
-              "select": {},
+              "parts": [
+                "public",
+                "transactionTurnover"
+              ],
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "parts": [
-                "public",
-                "transactionTurnover"
-              ]
+              "args": {},
+              "select": {}
             }
           ]
         }
@@ -4006,48 +4551,59 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "name": "city",
+          "title": "City",
           "type": "`$STRING`"
         },
         {
           "name": "corporateUuid",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Corporate Uuid",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "country",
+          "title": "Country",
           "type": "`$STRING`"
         },
         {
           "name": "merchantCategoryCode",
+          "title": "Merchant Category Code",
           "type": "`$STRING`"
         },
         {
           "name": "name",
+          "title": "Name",
           "type": "`$STRING`"
         },
         {
-          "format": "int32",
           "name": "responseCode",
-          "type": "`$INTEGER`"
+          "title": "Response Code",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
           "name": "responseMessage",
+          "title": "Response Message",
           "type": "`$STRING`"
         },
         {
           "name": "state",
+          "title": "State",
           "type": "`$STRING`"
         },
         {
           "name": "street",
+          "title": "Street",
           "type": "`$STRING`"
         },
         {
           "name": "vuNummer",
+          "title": "Vu Nummer",
           "type": "`$STRING`"
         },
         {
           "name": "zipcode",
+          "title": "Zipcode",
           "type": "`$STRING`"
         }
       ],
@@ -4058,7 +4614,6 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "name": "create",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "POST",
               "orig": "/public/updateMerchant",
@@ -4070,15 +4625,17 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   "lit": "updateMerchant"
                 }
               ],
-              "select": {},
+              "parts": [
+                "public",
+                "updateMerchant"
+              ],
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "parts": [
-                "public",
-                "updateMerchant"
-              ]
+              "args": {},
+              "select": {}
             }
           ]
         }
@@ -4090,23 +4647,27 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
     "update_template_xml": {
       "fields": [
         {
-          "format": "int32",
           "name": "responseCode",
-          "type": "`$INTEGER`"
+          "title": "Response Code",
+          "type": "`$INTEGER`",
+          "format": "int32"
         },
         {
           "name": "responseMessage",
+          "title": "Response Message",
           "type": "`$STRING`"
         },
         {
           "name": "templateName",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Template Name",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "templateXml",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Template Xml",
+          "type": "`$STRING`",
+          "req": true
         }
       ],
       "name": "update_template_xml",
@@ -4116,7 +4677,6 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "name": "create",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "POST",
               "orig": "/public/updateTemplateXml",
@@ -4128,15 +4688,17 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   "lit": "updateTemplateXml"
                 }
               ],
-              "select": {},
+              "parts": [
+                "public",
+                "updateTemplateXml"
+              ],
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "parts": [
-                "public",
-                "updateTemplateXml"
-              ]
+              "args": {},
+              "select": {}
             }
           ]
         }
@@ -4149,14 +4711,17 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
       "fields": [
         {
           "name": "appName",
+          "title": "App Name",
           "type": "`$STRING`"
         },
         {
           "name": "buildDate",
+          "title": "Build Date",
           "type": "`$STRING`"
         },
         {
           "name": "version",
+          "title": "Version",
           "type": "`$STRING`"
         }
       ],
@@ -4167,7 +4732,6 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
           "name": "load",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "GET",
               "orig": "/public/version",
@@ -4179,15 +4743,17 @@ my $CONFIG_JSON = <<'END_CONFIG_JSON';
                   "lit": "version"
                 }
               ],
-              "select": {},
+              "parts": [
+                "public",
+                "version"
+              ],
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "parts": [
-                "public",
-                "version"
-              ]
+              "args": {},
+              "select": {}
             }
           ]
         }

@@ -1,0 +1,18 @@
+# BasicIntroduceMandatorFlow
+
+main: kit: flow: BasicIntroduceMandatorFlow:
+{
+  entity: "introduce_mandator",
+  kind: "basic",
+  name: "BasicIntroduceMandatorFlow",
+  step: [
+    {
+      i: {
+        ref: "introduce_mandator_ref01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicIntroduceMandatorFlow"
+}

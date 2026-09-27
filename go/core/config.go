@@ -210,6 +210,8 @@ func MakeConfig() map[string]any {
 			"entity": map[string]any{
 				"cancel_transaction": map[string]any{},
 				"check_card_black_listed": map[string]any{},
+				"count_authorised_transaction": map[string]any{},
+				"count_not_authorised_transaction": map[string]any{},
 				"create_product": map[string]any{},
 				"deactivate_terminal": map[string]any{},
 				"digital_services_api": map[string]any{},
@@ -241,7 +243,6 @@ func MakeConfig() map[string]any {
 				"store_terminal_parameter": map[string]any{},
 				"terminal_id": map[string]any{},
 				"transaction_history": map[string]any{},
-				"transactions_count": map[string]any{},
 				"transactions_count_card_brand": map[string]any{},
 				"transactions_turnover": map[string]any{},
 				"update_merchant": map[string]any{},
@@ -254,205 +255,245 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "acquirerId",
+						"title": "Acquirer Id",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "acquirerName",
+						"title": "Acquirer Name",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "actualBonusPoints",
+						"title": "Actual Bonus Points",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "amount",
+						"title": "Amount",
+						"type": "`$INTEGER`",
 						"op": map[string]any{
 							"create": map[string]any{
 								"req": true,
 								"type": "`$INTEGER`",
 							},
 						},
-						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "authorizationCode",
+						"title": "Authorization Code",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "balanceAmount",
+						"title": "Balance Amount",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "cardBrand",
+						"title": "Card Brand",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "cardNumber",
+						"title": "Card Number",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "clientId",
-						"req": true,
+						"title": "Client Id",
 						"type": "`$INTEGER`",
+						"req": true,
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "currency",
-						"req": true,
+						"title": "Currency",
 						"type": "`$STRING`",
+						"req": true,
 					},
 					map[string]any{
 						"name": "cvc",
+						"title": "Cvc",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "ecData",
+						"title": "Ec Data",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "ecrData",
+						"title": "Ecr Data",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "emvData",
+						"title": "Emv Data",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int64",
 						"name": "exchangeFee",
+						"title": "Exchange Fee",
 						"type": "`$INTEGER`",
+						"format": "int64",
 					},
 					map[string]any{
 						"name": "exchangeRate",
+						"title": "Exchange Rate",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "languageCode",
+						"title": "Language Code",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "merchantAddress",
+						"title": "Merchant Address",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "merchantName",
+						"title": "Merchant Name",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "merchantNumber",
+						"title": "Merchant Number",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "messageType",
+						"title": "Message Type",
+						"type": "`$STRING`",
 						"op": map[string]any{
 							"create": map[string]any{
 								"req": true,
 								"type": "`$STRING`",
 							},
 						},
-						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "originalTraceNumber",
+						"title": "Original Trace Number",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "originalTransactionId",
+						"title": "Original Transaction Id",
+						"type": "`$STRING`",
 						"op": map[string]any{
 							"create": map[string]any{
 								"req": true,
 								"type": "`$STRING`",
 							},
 						},
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "password",
+						"title": "Password",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "paymentReason",
+						"title": "Payment Reason",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "receiptFooter",
+						"title": "Receipt Footer",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "receiptHeader",
+						"title": "Receipt Header",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "receiptLayout",
+						"title": "Receipt Layout",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "receiptNumber",
-						"req": true,
+						"title": "Receipt Number",
 						"type": "`$STRING`",
+						"req": true,
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "responseCode",
+						"title": "Response Code",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "responseMessage",
+						"title": "Response Message",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "serialNumber",
+						"title": "Serial Number",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "svc",
+						"title": "Svc",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "terminalId",
-						"req": true,
+						"title": "Terminal Id",
 						"type": "`$INTEGER`",
+						"req": true,
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "terminalLocation",
+						"title": "Terminal Location",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "traceNumber",
+						"title": "Trace Number",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
-						"format": "date-time",
 						"name": "transactionDate",
+						"title": "Transaction Date",
+						"type": "`$STRING`",
 						"op": map[string]any{
 							"create": map[string]any{
 								"req": true,
 								"type": "`$STRING`",
 							},
 						},
-						"type": "`$STRING`",
+						"format": "date-time",
 					},
 					map[string]any{
 						"name": "transactionId",
+						"title": "Transaction Id",
+						"type": "`$STRING`",
 						"op": map[string]any{
 							"create": map[string]any{
 								"req": true,
 								"type": "`$STRING`",
 							},
 						},
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "txType",
+						"title": "Tx Type",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "userData",
+						"title": "User Data",
 						"type": "`$STRING`",
 					},
 				},
@@ -463,7 +504,6 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/public/cancelTransaction",
@@ -475,15 +515,17 @@ func MakeConfig() map[string]any {
 										"lit": "cancelTransaction",
 									},
 								},
-								"select": map[string]any{},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
 								"parts": []any{
 									"public",
 									"cancelTransaction",
 								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},
@@ -496,15 +538,18 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "cardNo",
+						"title": "Card No",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "responseCode",
+						"title": "Response Code",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "responseMessage",
+						"title": "Response Message",
 						"type": "`$STRING`",
 					},
 				},
@@ -515,17 +560,6 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"header": []any{
-										map[string]any{
-											"kind": "header",
-											"name": "authorization",
-											"orig": "authorization",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/checkCardBlackListed",
@@ -534,18 +568,200 @@ func MakeConfig() map[string]any {
 										"lit": "checkCardBlackListed",
 									},
 								},
+								"parts": []any{
+									"checkCardBlackListed",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"header": []any{
+										map[string]any{
+											"name": "authorization",
+											"orig": "authorization",
+											"type": "`$STRING`",
+											"kind": "header",
+											"reqd": true,
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"authorization",
 									},
 								},
+							},
+						},
+					},
+				},
+				"relations": map[string]any{
+					"ancestors": []any{},
+				},
+			},
+			"count_authorised_transaction": map[string]any{
+				"fields": []any{
+					map[string]any{
+						"name": "period",
+						"title": "Period",
+						"type": "`$STRING`",
+					},
+					map[string]any{
+						"name": "responseCode",
+						"title": "Response Code",
+						"type": "`$INTEGER`",
+						"format": "int32",
+					},
+					map[string]any{
+						"name": "responseMessage",
+						"title": "Response Message",
+						"type": "`$STRING`",
+					},
+					map[string]any{
+						"name": "transactionDateFrom",
+						"title": "Transaction Date From",
+						"type": "`$STRING`",
+						"op": map[string]any{
+							"create": map[string]any{
+								"req": true,
+								"type": "`$STRING`",
+							},
+						},
+						"format": "date-time",
+					},
+					map[string]any{
+						"name": "transactionDateTo",
+						"title": "Transaction Date To",
+						"type": "`$STRING`",
+						"op": map[string]any{
+							"create": map[string]any{
+								"req": true,
+								"type": "`$STRING`",
+							},
+						},
+						"format": "date-time",
+					},
+					map[string]any{
+						"name": "transactionsCount",
+						"title": "Transactions Count",
+						"type": "`$ARRAY`",
+					},
+				},
+				"name": "count_authorised_transaction",
+				"op": map[string]any{
+					"create": map[string]any{
+						"input": "data",
+						"name": "create",
+						"points": []any{
+							map[string]any{
+								"kind": "http",
+								"method": "POST",
+								"orig": "/public/countAuthorisedTransactions",
+								"segments": []any{
+									map[string]any{
+										"lit": "public",
+									},
+									map[string]any{
+										"lit": "countAuthorisedTransactions",
+									},
+								},
+								"parts": []any{
+									"public",
+									"countAuthorisedTransactions",
+								},
+								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"parts": []any{
-									"checkCardBlackListed",
+								"args": map[string]any{},
+								"select": map[string]any{},
+							},
+						},
+					},
+				},
+				"relations": map[string]any{
+					"ancestors": []any{},
+				},
+			},
+			"count_not_authorised_transaction": map[string]any{
+				"fields": []any{
+					map[string]any{
+						"name": "period",
+						"title": "Period",
+						"type": "`$STRING`",
+					},
+					map[string]any{
+						"name": "responseCode",
+						"title": "Response Code",
+						"type": "`$INTEGER`",
+						"format": "int32",
+					},
+					map[string]any{
+						"name": "responseMessage",
+						"title": "Response Message",
+						"type": "`$STRING`",
+					},
+					map[string]any{
+						"name": "transactionDateFrom",
+						"title": "Transaction Date From",
+						"type": "`$STRING`",
+						"op": map[string]any{
+							"create": map[string]any{
+								"req": true,
+								"type": "`$STRING`",
+							},
+						},
+						"format": "date-time",
+					},
+					map[string]any{
+						"name": "transactionDateTo",
+						"title": "Transaction Date To",
+						"type": "`$STRING`",
+						"op": map[string]any{
+							"create": map[string]any{
+								"req": true,
+								"type": "`$STRING`",
+							},
+						},
+						"format": "date-time",
+					},
+					map[string]any{
+						"name": "transactionsCount",
+						"title": "Transactions Count",
+						"type": "`$ARRAY`",
+					},
+				},
+				"name": "count_not_authorised_transaction",
+				"op": map[string]any{
+					"create": map[string]any{
+						"input": "data",
+						"name": "create",
+						"points": []any{
+							map[string]any{
+								"kind": "http",
+								"method": "POST",
+								"orig": "/public/countNotAuthorisedTransactions",
+								"segments": []any{
+									map[string]any{
+										"lit": "public",
+									},
+									map[string]any{
+										"lit": "countNotAuthorisedTransactions",
+									},
 								},
+								"parts": []any{
+									"public",
+									"countNotAuthorisedTransactions",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},
@@ -557,38 +773,45 @@ func MakeConfig() map[string]any {
 			"create_product": map[string]any{
 				"fields": []any{
 					map[string]any{
-						"format": "int32",
 						"name": "acquirerId",
+						"title": "Acquirer Id",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "responseCode",
+						"title": "Response Code",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "responseMessage",
+						"title": "Response Message",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "templateName",
-						"req": true,
+						"title": "Template Name",
 						"type": "`$STRING`",
+						"req": true,
 					},
 					map[string]any{
 						"name": "templateType",
-						"req": true,
+						"title": "Template Type",
 						"type": "`$STRING`",
+						"req": true,
 					},
 					map[string]any{
 						"name": "templateXml",
-						"req": true,
+						"title": "Template Xml",
 						"type": "`$STRING`",
+						"req": true,
 					},
 					map[string]any{
 						"name": "terminalType",
-						"req": true,
+						"title": "Terminal Type",
 						"type": "`$STRING`",
+						"req": true,
 					},
 				},
 				"name": "create_product",
@@ -598,7 +821,6 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/createProduct",
@@ -607,14 +829,16 @@ func MakeConfig() map[string]any {
 										"lit": "createProduct",
 									},
 								},
-								"select": map[string]any{},
+								"parts": []any{
+									"createProduct",
+								},
+								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"parts": []any{
-									"createProduct",
-								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},
@@ -627,35 +851,42 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "corporateUuid",
+						"title": "Corporate Uuid",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "deactivationReason",
-						"req": true,
+						"title": "Deactivation Reason",
 						"type": "`$STRING`",
+						"req": true,
 					},
 					map[string]any{
 						"name": "packageOrderUuid",
+						"title": "Package Order Uuid",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "productOrderUuid",
+						"title": "Product Order Uuid",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "responseCode",
+						"title": "Response Code",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "responseMessage",
+						"title": "Response Message",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "terminalId",
-						"req": true,
+						"title": "Terminal Id",
 						"type": "`$INTEGER`",
+						"req": true,
+						"format": "int32",
 					},
 				},
 				"name": "deactivate_terminal",
@@ -665,7 +896,6 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/deactivateTerminal",
@@ -674,14 +904,16 @@ func MakeConfig() map[string]any {
 										"lit": "deactivateTerminal",
 									},
 								},
-								"select": map[string]any{},
+								"parts": []any{
+									"deactivateTerminal",
+								},
+								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"parts": []any{
-									"deactivateTerminal",
-								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},
@@ -694,52 +926,62 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "clearingDateFrom",
+						"title": "Clearing Date From",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "clearingDateTo",
+						"title": "Clearing Date To",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz",
-						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "responseCode",
+						"title": "Response Code",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "responseMessage",
+						"title": "Response Message",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "txCount",
+						"title": "Tx Count",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "txIdEnd",
+						"title": "Tx Id End",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "txIdStart",
+						"title": "Tx Id Start",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "txSeqNoEnd",
+						"title": "Tx Seq No End",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "txSeqNoStart",
+						"title": "Tx Seq No Start",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "txTotal",
+						"title": "Tx Total",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 				},
 				"name": "digital_services_api",
@@ -749,25 +991,9 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"params": []any{
-										map[string]any{
-											"kind": "param",
-											"name": "file_id",
-											"orig": "file_id",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/public/digitalservices/mandatorClearingExportDownload/{fileId}",
-								"rename": map[string]any{
-									"param": map[string]any{
-										"fileId": "file_id",
-									},
-								},
 								"segments": []any{
 									map[string]any{
 										"lit": "public",
@@ -782,24 +1008,39 @@ func MakeConfig() map[string]any {
 										"var": "file_id",
 									},
 								},
-								"select": map[string]any{
-									"exist": []any{
-										"file_id",
-									},
-								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
 								"parts": []any{
 									"public",
 									"digitalservices",
 									"mandatorClearingExportDownload",
 									"{file_id}",
 								},
+								"rename": map[string]any{
+									"param": map[string]any{
+										"fileId": "file_id",
+									},
+								},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"params": []any{
+										map[string]any{
+											"name": "file_id",
+											"orig": "file_id",
+											"type": "`$STRING`",
+											"kind": "param",
+											"reqd": true,
+										},
+									},
+								},
+								"select": map[string]any{
+									"exist": []any{
+										"file_id",
+									},
+								},
 							},
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/public/digitalservices/mandatorClearingExportMetadata",
@@ -814,16 +1055,18 @@ func MakeConfig() map[string]any {
 										"lit": "mandatorClearingExportMetadata",
 									},
 								},
-								"select": map[string]any{},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
 								"parts": []any{
 									"public",
 									"digitalservices",
 									"mandatorClearingExportMetadata",
 								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},
@@ -832,7 +1075,6 @@ func MakeConfig() map[string]any {
 						"name": "load",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/public/digitalservices/mandatorClearingExportDownload/status",
@@ -850,17 +1092,19 @@ func MakeConfig() map[string]any {
 										"lit": "status",
 									},
 								},
-								"select": map[string]any{},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
 								"parts": []any{
 									"public",
 									"digitalservices",
 									"mandatorClearingExportDownload",
 									"status",
 								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},
@@ -868,7 +1112,7 @@ func MakeConfig() map[string]any {
 				"relations": map[string]any{
 					"ancestors": []any{
 						[]any{
-							"mandator_clearing_export_download",
+							"$.main.kit.entity.mandator_clearing_export_download",
 						},
 					},
 				},
@@ -877,32 +1121,38 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "ecomData",
+						"title": "Ecom Data",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "responseCode",
+						"title": "Response Code",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "responseMessage",
+						"title": "Response Message",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "terminalId",
-						"req": true,
+						"title": "Terminal Id",
 						"type": "`$INTEGER`",
+						"req": true,
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "transactionId",
-						"req": true,
+						"title": "Transaction Id",
 						"type": "`$STRING`",
+						"req": true,
 					},
 					map[string]any{
 						"name": "transactionType",
-						"req": true,
+						"title": "Transaction Type",
 						"type": "`$STRING`",
+						"req": true,
 					},
 				},
 				"name": "ec_data_ecom",
@@ -912,7 +1162,6 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/public/getEcData",
@@ -924,15 +1173,17 @@ func MakeConfig() map[string]any {
 										"lit": "getEcData",
 									},
 								},
-								"select": map[string]any{},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
 								"parts": []any{
 									"public",
 									"getEcData",
 								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},
@@ -945,26 +1196,31 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "ecomPass",
+						"title": "Ecom Pass",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "ecomSkey",
+						"title": "Ecom Skey",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "responseCode",
+						"title": "Response Code",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "responseMessage",
+						"title": "Response Message",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "terminalId",
-						"req": true,
+						"title": "Terminal Id",
 						"type": "`$INTEGER`",
+						"req": true,
+						"format": "int32",
 					},
 				},
 				"name": "ecom_parameter",
@@ -974,7 +1230,6 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/public/getEcomParameters",
@@ -986,15 +1241,17 @@ func MakeConfig() map[string]any {
 										"lit": "getEcomParameters",
 									},
 								},
-								"select": map[string]any{},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
 								"parts": []any{
 									"public",
 									"getEcomParameters",
 								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},
@@ -1007,32 +1264,38 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "ecrData",
+						"title": "Ecr Data",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "responseCode",
+						"title": "Response Code",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "responseMessage",
+						"title": "Response Message",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "terminalId",
-						"req": true,
+						"title": "Terminal Id",
 						"type": "`$INTEGER`",
+						"req": true,
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "transactionId",
-						"req": true,
+						"title": "Transaction Id",
 						"type": "`$STRING`",
+						"req": true,
 					},
 					map[string]any{
 						"name": "transactionType",
-						"req": true,
+						"title": "Transaction Type",
 						"type": "`$STRING`",
+						"req": true,
 					},
 				},
 				"name": "ecr_data",
@@ -1042,7 +1305,6 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/public/getEcrData",
@@ -1054,15 +1316,17 @@ func MakeConfig() map[string]any {
 										"lit": "getEcrData",
 									},
 								},
-								"select": map[string]any{},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
 								"parts": []any{
 									"public",
 									"getEcrData",
 								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},
@@ -1075,32 +1339,38 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "emvData",
+						"title": "Emv Data",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "responseCode",
+						"title": "Response Code",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "responseMessage",
+						"title": "Response Message",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "terminalId",
-						"req": true,
+						"title": "Terminal Id",
 						"type": "`$INTEGER`",
+						"req": true,
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "transactionId",
-						"req": true,
+						"title": "Transaction Id",
 						"type": "`$STRING`",
+						"req": true,
 					},
 					map[string]any{
 						"name": "transactionType",
-						"req": true,
+						"title": "Transaction Type",
 						"type": "`$STRING`",
+						"req": true,
 					},
 				},
 				"name": "emv_data",
@@ -1110,7 +1380,6 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/public/getEmvData",
@@ -1122,15 +1391,17 @@ func MakeConfig() map[string]any {
 										"lit": "getEmvData",
 									},
 								},
-								"select": map[string]any{},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
 								"parts": []any{
 									"public",
 									"getEmvData",
 								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},
@@ -1142,69 +1413,83 @@ func MakeConfig() map[string]any {
 			"enable_acquiring": map[string]any{
 				"fields": []any{
 					map[string]any{
-						"format": "int32",
 						"name": "accountNo",
+						"title": "Account No",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "additionalData",
+						"title": "Additional Data",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "corporateUuid",
-						"req": true,
+						"title": "Corporate Uuid",
 						"type": "`$STRING`",
+						"req": true,
 					},
 					map[string]any{
 						"name": "currency",
-						"req": true,
+						"title": "Currency",
 						"type": "`$STRING`",
+						"req": true,
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "merchantCategoryCode",
-						"req": true,
+						"title": "Merchant Category Code",
 						"type": "`$INTEGER`",
+						"req": true,
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "packageOrderUuid",
-						"req": true,
+						"title": "Package Order Uuid",
 						"type": "`$STRING`",
+						"req": true,
 					},
 					map[string]any{
 						"name": "productOrderUuid",
-						"req": true,
+						"title": "Product Order Uuid",
 						"type": "`$STRING`",
+						"req": true,
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "responseCode",
+						"title": "Response Code",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "responseMessage",
+						"title": "Response Message",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "sortingCode",
+						"title": "Sorting Code",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "templateName",
-						"req": true,
+						"title": "Template Name",
 						"type": "`$STRING`",
+						"req": true,
 					},
 					map[string]any{
 						"name": "terminalIdAcq",
+						"title": "Terminal Id Acq",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "terminalIds",
+						"title": "Terminal Ids",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "vuNummer",
+						"title": "Vu Nummer",
 						"type": "`$STRING`",
 					},
 				},
@@ -1215,7 +1500,6 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/enableAcquiring",
@@ -1224,14 +1508,16 @@ func MakeConfig() map[string]any {
 										"lit": "enableAcquiring",
 									},
 								},
-								"select": map[string]any{},
+								"parts": []any{
+									"enableAcquiring",
+								},
+								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"parts": []any{
-									"enableAcquiring",
-								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},
@@ -1244,16 +1530,19 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "merchantContractNumber",
-						"req": true,
+						"title": "Merchant Contract Number",
 						"type": "`$STRING`",
+						"req": true,
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "responseCode",
+						"title": "Response Code",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "responseMessage",
+						"title": "Response Message",
 						"type": "`$STRING`",
 					},
 				},
@@ -1264,7 +1553,6 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/getMerchantContractNumber",
@@ -1273,14 +1561,16 @@ func MakeConfig() map[string]any {
 										"lit": "getMerchantContractNumber",
 									},
 								},
-								"select": map[string]any{},
+								"parts": []any{
+									"getMerchantContractNumber",
+								},
+								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"parts": []any{
-									"getMerchantContractNumber",
-								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},
@@ -1292,18 +1582,21 @@ func MakeConfig() map[string]any {
 			"get_template_xml": map[string]any{
 				"fields": []any{
 					map[string]any{
-						"format": "int32",
 						"name": "responseCode",
+						"title": "Response Code",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "responseMessage",
+						"title": "Response Message",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "templateName",
-						"req": true,
+						"title": "Template Name",
 						"type": "`$STRING`",
+						"req": true,
 					},
 				},
 				"name": "get_template_xml",
@@ -1313,7 +1606,6 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/public/getTemplateXml",
@@ -1325,15 +1617,17 @@ func MakeConfig() map[string]any {
 										"lit": "getTemplateXml",
 									},
 								},
-								"select": map[string]any{},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
 								"parts": []any{
 									"public",
 									"getTemplateXml",
 								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},
@@ -1346,16 +1640,19 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "mandatorName",
-						"req": true,
+						"title": "Mandator Name",
 						"type": "`$STRING`",
+						"req": true,
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "responseCode",
+						"title": "Response Code",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "responseMessage",
+						"title": "Response Message",
 						"type": "`$STRING`",
 					},
 				},
@@ -1366,7 +1663,6 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/introduceMandator",
@@ -1375,14 +1671,16 @@ func MakeConfig() map[string]any {
 										"lit": "introduceMandator",
 									},
 								},
-								"select": map[string]any{},
+								"parts": []any{
+									"introduceMandator",
+								},
+								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"parts": []any{
-									"introduceMandator",
-								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},
@@ -1394,18 +1692,21 @@ func MakeConfig() map[string]any {
 			"introduce_package": map[string]any{
 				"fields": []any{
 					map[string]any{
-						"format": "int32",
 						"name": "responseCode",
+						"title": "Response Code",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "responseMessage",
+						"title": "Response Message",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "terminalTemplateDescription",
-						"req": true,
+						"title": "Terminal Template Description",
 						"type": "`$STRING`",
+						"req": true,
 					},
 				},
 				"name": "introduce_package",
@@ -1415,7 +1716,6 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/introducePackage",
@@ -1424,14 +1724,16 @@ func MakeConfig() map[string]any {
 										"lit": "introducePackage",
 									},
 								},
-								"select": map[string]any{},
+								"parts": []any{
+									"introducePackage",
+								},
+								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"parts": []any{
-									"introducePackage",
-								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},
@@ -1444,45 +1746,55 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "hwserialno",
+						"title": "Hwserialno",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "kaDateTimeFrom",
+						"title": "Ka Date Time From",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "kaDateTimeTo",
+						"title": "Ka Date Time To",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "keepAliveData",
+						"title": "Keep Alive Data",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "pagination",
+						"title": "Pagination",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "responseCode",
+						"title": "Response Code",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "responseMessage",
+						"title": "Response Message",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "terminalDateTimeFrom",
+						"title": "Terminal Date Time From",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "terminalDateTimeTo",
+						"title": "Terminal Date Time To",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "terminalId",
+						"title": "Terminal Id",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 				},
 				"name": "keep_alive",
@@ -1492,7 +1804,6 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/public/keepalive",
@@ -1504,15 +1815,17 @@ func MakeConfig() map[string]any {
 										"lit": "keepalive",
 									},
 								},
-								"select": map[string]any{},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
 								"parts": []any{
 									"public",
 									"keepalive",
 								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},
@@ -1525,27 +1838,33 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "corporateUuid",
+						"title": "Corporate Uuid",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "filter",
+						"title": "Filter",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "pagination",
+						"title": "Pagination",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "responseCode",
+						"title": "Response Code",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "responseMessage",
+						"title": "Response Message",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "terminals",
+						"title": "Terminals",
 						"type": "`$ARRAY`",
 					},
 				},
@@ -1556,7 +1875,6 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/public/listTerminals",
@@ -1568,15 +1886,17 @@ func MakeConfig() map[string]any {
 										"lit": "listTerminals",
 									},
 								},
-								"select": map[string]any{},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
 								"parts": []any{
 									"public",
 									"listTerminals",
 								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},
@@ -1589,31 +1909,37 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "clearingDateFrom",
+						"title": "Clearing Date From",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Date and time in the format yyyy-MM-dd'T'HH:mm:ssZ",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "clearingDateTo",
+						"title": "Clearing Date To",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Date and time in the format yyyy-MM-dd'T'HH:mm:ssZ",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "pagination",
+						"title": "Pagination",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "records",
+						"title": "Records",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "responseCode",
+						"title": "Response Code",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "responseMessage",
+						"title": "Response Message",
 						"type": "`$STRING`",
 					},
 				},
@@ -1624,7 +1950,6 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/public/digitalservices/mandatorClearingExport",
@@ -1639,16 +1964,18 @@ func MakeConfig() map[string]any {
 										"lit": "mandatorClearingExport",
 									},
 								},
-								"select": map[string]any{},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
 								"parts": []any{
 									"public",
 									"digitalservices",
 									"mandatorClearingExport",
 								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},
@@ -1660,46 +1987,54 @@ func MakeConfig() map[string]any {
 			"mandator_clearing_export_download": map[string]any{
 				"fields": []any{
 					map[string]any{
-						"format": "date-time",
 						"name": "clearingDateFrom",
+						"title": "Clearing Date From",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Start date for clearing export (inclusive)",
-						"type": "`$STRING`",
+						"format": "date-time",
 					},
 					map[string]any{
-						"format": "date-time",
 						"name": "clearingDateTo",
+						"title": "Clearing Date To",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "End date for clearing export (inclusive)",
-						"type": "`$STRING`",
+						"format": "date-time",
 					},
 					map[string]any{
 						"name": "fileId",
-						"short": "Unique file identifier for tracking and downloading",
+						"title": "File Id",
 						"type": "`$STRING`",
+						"short": "Unique file identifier for tracking and downloading",
 					},
 					map[string]any{
 						"name": "filenameTemplate",
-						"short": "Optional filename template for the export file",
+						"title": "Filename Template",
 						"type": "`$STRING`",
+						"short": "Optional filename template for the export file",
 					},
 					map[string]any{
 						"name": "id",
+						"title": "Id",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "responseCode",
+						"title": "Response Code",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "responseMessage",
+						"title": "Response Message",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "status",
-						"short": "Processing status of the export request",
+						"title": "Status",
 						"type": "`$STRING`",
+						"short": "Processing status of the export request",
 					},
 				},
 				"id": map[string]any{
@@ -1713,7 +2048,6 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/public/digitalservices/mandatorClearingExportDownload",
@@ -1728,16 +2062,18 @@ func MakeConfig() map[string]any {
 										"lit": "mandatorClearingExportDownload",
 									},
 								},
-								"select": map[string]any{},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
 								"parts": []any{
 									"public",
 									"digitalservices",
 									"mandatorClearingExportDownload",
 								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},
@@ -1746,25 +2082,9 @@ func MakeConfig() map[string]any {
 						"name": "load",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"params": []any{
-										map[string]any{
-											"kind": "param",
-											"name": "id",
-											"orig": "file_id",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/public/digitalservices/mandatorClearingExportDownload/{fileId}",
-								"rename": map[string]any{
-									"param": map[string]any{
-										"fileId": "id",
-									},
-								},
 								"segments": []any{
 									map[string]any{
 										"lit": "public",
@@ -1779,20 +2099,36 @@ func MakeConfig() map[string]any {
 										"var": "id",
 									},
 								},
-								"select": map[string]any{
-									"exist": []any{
-										"id",
+								"parts": []any{
+									"public",
+									"digitalservices",
+									"mandatorClearingExportDownload",
+									"{id}",
+								},
+								"rename": map[string]any{
+									"param": map[string]any{
+										"fileId": "id",
 									},
 								},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"parts": []any{
-									"public",
-									"digitalservices",
-									"mandatorClearingExportDownload",
-									"{id}",
+								"args": map[string]any{
+									"params": []any{
+										map[string]any{
+											"name": "id",
+											"orig": "file_id",
+											"type": "`$STRING`",
+											"kind": "param",
+											"reqd": true,
+										},
+									},
+								},
+								"select": map[string]any{
+									"exist": []any{
+										"id",
+									},
 								},
 							},
 						},
@@ -1806,27 +2142,32 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "clearingDateFrom",
+						"title": "Clearing Date From",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "clearingDateTo",
+						"title": "Clearing Date To",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "records",
+						"title": "Records",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "responseCode",
+						"title": "Response Code",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "responseMessage",
+						"title": "Response Message",
 						"type": "`$STRING`",
 					},
 				},
@@ -1837,7 +2178,6 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/public/digitalservices/mandatorClearingExportSummary",
@@ -1852,16 +2192,18 @@ func MakeConfig() map[string]any {
 										"lit": "mandatorClearingExportSummary",
 									},
 								},
-								"select": map[string]any{},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
 								"parts": []any{
 									"public",
 									"digitalservices",
 									"mandatorClearingExportSummary",
 								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},
@@ -1874,108 +2216,133 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "3DSecure",
+						"title": "3 D Secure",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "authorizationCode",
+						"title": "Authorization Code",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "cardBrand",
+						"title": "Card Brand",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "clearingAmountFrom",
+						"title": "Clearing Amount From",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "clearingAmountTo",
+						"title": "Clearing Amount To",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "clearingCurrency",
+						"title": "Clearing Currency",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "clearingStatus",
+						"title": "Clearing Status",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "corporateUUID",
+						"title": "Corporate Uuid",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "orderByTransactionDate",
+						"title": "Order By Transaction Date",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "pagination",
+						"title": "Pagination",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "receiptNumber",
+						"title": "Receipt Number",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "referencedTransactionId",
+						"title": "Referenced Transaction Id",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "retrievalReferenceNumber",
+						"title": "Retrieval Reference Number",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "sourceId",
+						"title": "Source Id",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "tecsengineResponseCodeFrom",
+						"title": "Tecsengine Response Code From",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "tecsengineResponseCodeTo",
+						"title": "Tecsengine Response Code To",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "terminalId",
+						"title": "Terminal Id",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "traceNumber",
+						"title": "Trace Number",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "transactionAmountFrom",
+						"title": "Transaction Amount From",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "transactionAmountTo",
+						"title": "Transaction Amount To",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "date-time",
 						"name": "transactionDateFrom",
+						"title": "Transaction Date From",
 						"type": "`$STRING`",
+						"format": "date-time",
 					},
 					map[string]any{
-						"format": "date-time",
 						"name": "transactionDateTo",
+						"title": "Transaction Date To",
 						"type": "`$STRING`",
+						"format": "date-time",
 					},
 					map[string]any{
 						"name": "transactionId",
+						"title": "Transaction Id",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "transactionType",
+						"title": "Transaction Type",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "wallet",
-						"short": "Filter by wallet type.",
+						"title": "Wallet",
 						"type": "`$STRING`",
+						"short": "Filter by wallet type.",
 					},
 				},
 				"name": "merchant_portal_services_api",
@@ -1985,7 +2352,6 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/public/transactionHistoryCsv",
@@ -1997,15 +2363,17 @@ func MakeConfig() map[string]any {
 										"lit": "transactionHistoryCsv",
 									},
 								},
-								"select": map[string]any{},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
 								"parts": []any{
 									"public",
 									"transactionHistoryCsv",
 								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},
@@ -2018,24 +2386,29 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "productorderuuids",
-						"req": true,
+						"title": "Productorderuuids",
 						"type": "`$ARRAY`",
+						"req": true,
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "responseCode",
+						"title": "Response Code",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "responseMessage",
+						"title": "Response Message",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "targetPackageorderuuid",
+						"title": "Target Packageorderuuid",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "targetProductorderuuid",
+						"title": "Target Productorderuuid",
 						"type": "`$STRING`",
 					},
 				},
@@ -2046,7 +2419,6 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/moveTid",
@@ -2055,14 +2427,16 @@ func MakeConfig() map[string]any {
 										"lit": "moveTid",
 									},
 								},
-								"select": map[string]any{},
+								"parts": []any{
+									"moveTid",
+								},
+								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"parts": []any{
-									"moveTid",
-								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},
@@ -2075,81 +2449,97 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "acquirerName",
-						"short": "Acquirer name parsed from KKG field",
+						"title": "Acquirer Name",
 						"type": "`$STRING`",
+						"short": "Acquirer name parsed from KKG field",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "amount",
+						"title": "Amount",
+						"type": "`$INTEGER`",
 						"req": true,
 						"short": "Transaction amount in minor units (cents)",
-						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "authorizationNumber",
-						"short": "Authorization number from the gateway",
+						"title": "Authorization Number",
 						"type": "`$STRING`",
+						"short": "Authorization number from the gateway",
 					},
 					map[string]any{
 						"name": "cardNumber",
+						"title": "Card Number",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Card number - 12 to 19 digits, must pass Luhn validation",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "cardType",
-						"short": "Card type parsed from KKG field",
+						"title": "Card Type",
 						"type": "`$STRING`",
+						"short": "Card type parsed from KKG field",
 					},
 					map[string]any{
 						"name": "currency",
+						"title": "Currency",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Currency code - 3 uppercase letters (ISO 4217)",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "cvc",
-						"short": "Card verification code - 3-4 digits (optional)",
+						"title": "Cvc",
 						"type": "`$STRING`",
+						"short": "Card verification code - 3-4 digits (optional)",
 					},
 					map[string]any{
 						"name": "dateTimeTx",
-						"short": "Date and time of the transaction",
+						"title": "Date Time Tx",
 						"type": "`$STRING`",
+						"short": "Date and time of the transaction",
 					},
 					map[string]any{
 						"name": "expDate",
+						"title": "Exp Date",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Card expiry date in MMYY format",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "merchantId",
-						"short": "Merchant ID (VU-NUMMER)",
+						"title": "Merchant Id",
 						"type": "`$STRING`",
+						"short": "Merchant ID (VU-NUMMER)",
 					},
 					map[string]any{
 						"name": "originalTransactionId",
-						"short": "Original transaction ID from gateway",
+						"title": "Original Transaction Id",
 						"type": "`$STRING`",
+						"short": "Original transaction ID from gateway",
 					},
 					map[string]any{
 						"name": "password",
-						"short": "Terminal password sent as Kennwort in TECS XML (optional)",
+						"title": "Password",
 						"type": "`$STRING`",
+						"short": "Terminal password sent as Kennwort in TECS XML (optional)",
 					},
 					map[string]any{
 						"name": "responseCode",
-						"short": "Response code - 00 for success, otherwise error code",
+						"title": "Response Code",
 						"type": "`$STRING`",
+						"short": "Response code - 00 for success, otherwise error code",
 					},
 					map[string]any{
 						"name": "responseMessage",
-						"short": "Response message - 'Approved' for success, error description otherwise",
+						"title": "Response Message",
 						"type": "`$STRING`",
+						"short": "Response message - 'Approved' for success, error description otherwise",
 					},
 					map[string]any{
 						"name": "terminalId",
+						"title": "Terminal Id",
+						"type": "`$STRING`",
 						"op": map[string]any{
 							"create": map[string]any{
 								"req": true,
@@ -2157,18 +2547,19 @@ func MakeConfig() map[string]any {
 							},
 						},
 						"short": "Terminal ID used for the transaction",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "transactionId",
-						"short": "Transaction ID generated by the backend",
+						"title": "Transaction Id",
 						"type": "`$STRING`",
+						"short": "Transaction ID generated by the backend",
 					},
 					map[string]any{
 						"name": "txtype",
+						"title": "Txtype",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Transaction type",
-						"type": "`$STRING`",
 					},
 				},
 				"name": "payment_manual",
@@ -2178,7 +2569,6 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/public/paymentManual",
@@ -2190,15 +2580,17 @@ func MakeConfig() map[string]any {
 										"lit": "paymentManual",
 									},
 								},
-								"select": map[string]any{},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
 								"parts": []any{
 									"public",
 									"paymentManual",
 								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},
@@ -2210,70 +2602,82 @@ func MakeConfig() map[string]any {
 			"payment_sred": map[string]any{
 				"fields": []any{
 					map[string]any{
-						"format": "int32",
 						"name": "amount",
+						"title": "Amount",
+						"type": "`$INTEGER`",
 						"req": true,
 						"short": "Transaction amount in minor units (cents)",
-						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "currency",
+						"title": "Currency",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Currency code - 3 uppercase letters (ISO 4217)",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "device",
-						"short": "Device type that provided the SRED payload",
+						"title": "Device",
 						"type": "`$STRING`",
+						"short": "Device type that provided the SRED payload",
 					},
 					map[string]any{
 						"name": "devicePayload",
+						"title": "Device Payload",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "SRED encrypted device payload from the device (minimum 32 characters)",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "expDate",
-						"short": "Card expiry date in MMYY format",
+						"title": "Exp Date",
 						"type": "`$STRING`",
+						"short": "Card expiry date in MMYY format",
 					},
 					map[string]any{
 						"name": "mode",
-						"short": "Decryption mode",
+						"title": "Mode",
 						"type": "`$STRING`",
+						"short": "Decryption mode",
 					},
 					map[string]any{
 						"name": "panMasked",
-						"short": "Masked PAN (first 6 and last 4 digits)",
+						"title": "Pan Masked",
 						"type": "`$STRING`",
+						"short": "Masked PAN (first 6 and last 4 digits)",
 					},
 					map[string]any{
 						"name": "password",
-						"short": "Terminal password sent as Kennwort in TECS XML (optional)",
+						"title": "Password",
 						"type": "`$STRING`",
+						"short": "Terminal password sent as Kennwort in TECS XML (optional)",
 					},
 					map[string]any{
 						"name": "serial",
-						"short": "Device serial number",
+						"title": "Serial",
 						"type": "`$STRING`",
+						"short": "Device serial number",
 					},
 					map[string]any{
 						"name": "serviceCode",
-						"short": "Service code from the card",
+						"title": "Service Code",
 						"type": "`$STRING`",
+						"short": "Service code from the card",
 					},
 					map[string]any{
 						"name": "terminalId",
+						"title": "Terminal Id",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Terminal ID - 8 digits",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "txtype",
+						"title": "Txtype",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Transaction type",
-						"type": "`$STRING`",
 					},
 				},
 				"name": "payment_sred",
@@ -2283,7 +2687,6 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/public/paymentSred",
@@ -2295,15 +2698,17 @@ func MakeConfig() map[string]any {
 										"lit": "paymentSred",
 									},
 								},
-								"select": map[string]any{},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body.sred`",
-								},
 								"parts": []any{
 									"public",
 									"paymentSred",
 								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body.sred`",
+								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},
@@ -2316,209 +2721,251 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "acquirerId",
+						"title": "Acquirer Id",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "acquirerName",
+						"title": "Acquirer Name",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "actualBonusPoints",
+						"title": "Actual Bonus Points",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "amount",
+						"title": "Amount",
+						"type": "`$INTEGER`",
 						"op": map[string]any{
 							"create": map[string]any{
 								"req": true,
 								"type": "`$INTEGER`",
 							},
 						},
-						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "authorizationCode",
+						"title": "Authorization Code",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "balanceAmount",
+						"title": "Balance Amount",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "cardBrand",
+						"title": "Card Brand",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "cardNumber",
+						"title": "Card Number",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "cardNumberReference",
-						"req": true,
+						"title": "Card Number Reference",
 						"type": "`$STRING`",
+						"req": true,
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "clientId",
-						"req": true,
+						"title": "Client Id",
 						"type": "`$INTEGER`",
+						"req": true,
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "currency",
-						"req": true,
+						"title": "Currency",
 						"type": "`$STRING`",
+						"req": true,
 					},
 					map[string]any{
 						"name": "cvc",
+						"title": "Cvc",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "ecData",
+						"title": "Ec Data",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "ecrData",
+						"title": "Ecr Data",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "emvData",
+						"title": "Emv Data",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int64",
 						"name": "exchangeFee",
+						"title": "Exchange Fee",
 						"type": "`$INTEGER`",
+						"format": "int64",
 					},
 					map[string]any{
 						"name": "exchangeRate",
+						"title": "Exchange Rate",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "languageCode",
+						"title": "Language Code",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "merchantAddress",
+						"title": "Merchant Address",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "merchantName",
+						"title": "Merchant Name",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "merchantNumber",
+						"title": "Merchant Number",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "messageType",
+						"title": "Message Type",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "originalTraceNumber",
+						"title": "Original Trace Number",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "originalTransactionId",
+						"title": "Original Transaction Id",
+						"type": "`$STRING`",
 						"op": map[string]any{
 							"create": map[string]any{
 								"req": true,
 								"type": "`$STRING`",
 							},
 						},
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "password",
+						"title": "Password",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "paymentReason",
+						"title": "Payment Reason",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "receiptFooter",
+						"title": "Receipt Footer",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "receiptHeader",
+						"title": "Receipt Header",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "receiptLayout",
+						"title": "Receipt Layout",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "receiptNumber",
-						"req": true,
+						"title": "Receipt Number",
 						"type": "`$STRING`",
+						"req": true,
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "responseCode",
+						"title": "Response Code",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "responseMessage",
+						"title": "Response Message",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "serialNumber",
+						"title": "Serial Number",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "svc",
+						"title": "Svc",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "terminalId",
-						"req": true,
+						"title": "Terminal Id",
 						"type": "`$INTEGER`",
+						"req": true,
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "terminalLocation",
+						"title": "Terminal Location",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "traceNumber",
+						"title": "Trace Number",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
-						"format": "date-time",
 						"name": "transactionDate",
+						"title": "Transaction Date",
+						"type": "`$STRING`",
 						"op": map[string]any{
 							"create": map[string]any{
 								"req": true,
 								"type": "`$STRING`",
 							},
 						},
-						"type": "`$STRING`",
+						"format": "date-time",
 					},
 					map[string]any{
 						"name": "transactionId",
+						"title": "Transaction Id",
+						"type": "`$STRING`",
 						"op": map[string]any{
 							"create": map[string]any{
 								"req": true,
 								"type": "`$STRING`",
 							},
 						},
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "transactionType",
-						"req": true,
+						"title": "Transaction Type",
 						"type": "`$STRING`",
+						"req": true,
 					},
 					map[string]any{
 						"name": "txType",
+						"title": "Tx Type",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "userData",
+						"title": "User Data",
 						"type": "`$STRING`",
 					},
 				},
@@ -2529,7 +2976,6 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/public/paymentTransaction",
@@ -2541,18 +2987,19 @@ func MakeConfig() map[string]any {
 										"lit": "paymentTransaction",
 									},
 								},
-								"select": map[string]any{},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
 								"parts": []any{
 									"public",
 									"paymentTransaction",
 								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/public/preAuthCompletionTransaction",
@@ -2564,15 +3011,17 @@ func MakeConfig() map[string]any {
 										"lit": "preAuthCompletionTransaction",
 									},
 								},
-								"select": map[string]any{},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
 								"parts": []any{
 									"public",
 									"preAuthCompletionTransaction",
 								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},
@@ -2585,35 +3034,42 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "corporateUuid",
+						"title": "Corporate Uuid",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "packageOrderUuid",
+						"title": "Package Order Uuid",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "productOrderUuid",
+						"title": "Product Order Uuid",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "reactivationReason",
-						"req": true,
+						"title": "Reactivation Reason",
 						"type": "`$STRING`",
+						"req": true,
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "responseCode",
+						"title": "Response Code",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "responseMessage",
+						"title": "Response Message",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "terminalId",
-						"req": true,
+						"title": "Terminal Id",
 						"type": "`$INTEGER`",
+						"req": true,
+						"format": "int32",
 					},
 				},
 				"name": "reactivate_terminal",
@@ -2623,7 +3079,6 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/reactivateTerminal",
@@ -2632,14 +3087,16 @@ func MakeConfig() map[string]any {
 										"lit": "reactivateTerminal",
 									},
 								},
-								"select": map[string]any{},
+								"parts": []any{
+									"reactivateTerminal",
+								},
+								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"parts": []any{
-									"reactivateTerminal",
-								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},
@@ -2652,199 +3109,239 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "acquirerId",
+						"title": "Acquirer Id",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "acquirerName",
+						"title": "Acquirer Name",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "actualBonusPoints",
+						"title": "Actual Bonus Points",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "amount",
+						"title": "Amount",
+						"type": "`$INTEGER`",
 						"op": map[string]any{
 							"create": map[string]any{
 								"req": true,
 								"type": "`$INTEGER`",
 							},
 						},
-						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "authorizationCode",
+						"title": "Authorization Code",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "balanceAmount",
+						"title": "Balance Amount",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "cardBrand",
+						"title": "Card Brand",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "cardNumber",
+						"title": "Card Number",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "clientId",
-						"req": true,
+						"title": "Client Id",
 						"type": "`$INTEGER`",
+						"req": true,
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "currency",
-						"req": true,
+						"title": "Currency",
 						"type": "`$STRING`",
+						"req": true,
 					},
 					map[string]any{
 						"name": "cvc",
+						"title": "Cvc",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "ecData",
+						"title": "Ec Data",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "ecrData",
+						"title": "Ecr Data",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "emvData",
+						"title": "Emv Data",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int64",
 						"name": "exchangeFee",
+						"title": "Exchange Fee",
 						"type": "`$INTEGER`",
+						"format": "int64",
 					},
 					map[string]any{
 						"name": "exchangeRate",
+						"title": "Exchange Rate",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "languageCode",
+						"title": "Language Code",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "merchantAddress",
+						"title": "Merchant Address",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "merchantName",
+						"title": "Merchant Name",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "merchantNumber",
+						"title": "Merchant Number",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "messageType",
+						"title": "Message Type",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "originalTraceNumber",
+						"title": "Original Trace Number",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "originalTransactionId",
+						"title": "Original Transaction Id",
+						"type": "`$STRING`",
 						"op": map[string]any{
 							"create": map[string]any{
 								"req": true,
 								"type": "`$STRING`",
 							},
 						},
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "password",
+						"title": "Password",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "paymentReason",
+						"title": "Payment Reason",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "receiptFooter",
+						"title": "Receipt Footer",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "receiptHeader",
+						"title": "Receipt Header",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "receiptLayout",
+						"title": "Receipt Layout",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "receiptNumber",
-						"req": true,
+						"title": "Receipt Number",
 						"type": "`$STRING`",
+						"req": true,
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "responseCode",
+						"title": "Response Code",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "responseMessage",
+						"title": "Response Message",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "serialNumber",
+						"title": "Serial Number",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "svc",
+						"title": "Svc",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "terminalId",
-						"req": true,
+						"title": "Terminal Id",
 						"type": "`$INTEGER`",
+						"req": true,
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "terminalLocation",
+						"title": "Terminal Location",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "traceNumber",
+						"title": "Trace Number",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
-						"format": "date-time",
 						"name": "transactionDate",
+						"title": "Transaction Date",
+						"type": "`$STRING`",
 						"op": map[string]any{
 							"create": map[string]any{
 								"req": true,
 								"type": "`$STRING`",
 							},
 						},
-						"type": "`$STRING`",
+						"format": "date-time",
 					},
 					map[string]any{
 						"name": "transactionId",
+						"title": "Transaction Id",
+						"type": "`$STRING`",
 						"op": map[string]any{
 							"create": map[string]any{
 								"req": true,
 								"type": "`$STRING`",
 							},
 						},
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "txType",
+						"title": "Tx Type",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "userData",
+						"title": "User Data",
 						"type": "`$STRING`",
 					},
 				},
@@ -2855,7 +3352,6 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/public/refundTransaction",
@@ -2867,15 +3363,17 @@ func MakeConfig() map[string]any {
 										"lit": "refundTransaction",
 									},
 								},
-								"select": map[string]any{},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
 								"parts": []any{
 									"public",
 									"refundTransaction",
 								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},
@@ -2888,41 +3386,49 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "corporateUuid",
-						"req": true,
+						"title": "Corporate Uuid",
 						"type": "`$STRING`",
+						"req": true,
 					},
 					map[string]any{
 						"name": "packageOrderUuid",
-						"req": true,
+						"title": "Package Order Uuid",
 						"type": "`$STRING`",
+						"req": true,
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "partnerId",
+						"title": "Partner Id",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "partnerName",
+						"title": "Partner Name",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "productOrderUuid",
-						"req": true,
+						"title": "Product Order Uuid",
 						"type": "`$STRING`",
+						"req": true,
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "responseCode",
+						"title": "Response Code",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "responseMessage",
+						"title": "Response Message",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "templateName",
-						"req": true,
+						"title": "Template Name",
 						"type": "`$STRING`",
+						"req": true,
 					},
 				},
 				"name": "register_tecs_company",
@@ -2932,7 +3438,6 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/registerTecsCompany",
@@ -2941,14 +3446,16 @@ func MakeConfig() map[string]any {
 										"lit": "registerTecsCompany",
 									},
 								},
-								"select": map[string]any{},
+								"parts": []any{
+									"registerTecsCompany",
+								},
+								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"parts": []any{
-									"registerTecsCompany",
-								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},
@@ -2961,83 +3468,101 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "additionalData",
+						"title": "Additional Data",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "corporateUuid",
-						"req": true,
+						"title": "Corporate Uuid",
 						"type": "`$STRING`",
+						"req": true,
 					},
 					map[string]any{
 						"name": "packageOrderUuid",
-						"req": true,
+						"title": "Package Order Uuid",
 						"type": "`$STRING`",
+						"req": true,
 					},
 					map[string]any{
 						"name": "productOrderUuid",
-						"req": true,
+						"title": "Product Order Uuid",
 						"type": "`$STRING`",
+						"req": true,
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "responseCode",
+						"title": "Response Code",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "responseMessage",
+						"title": "Response Message",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "tecsWebSecretKey",
+						"title": "Tecs Web Secret Key",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "templateName",
-						"req": true,
+						"title": "Template Name",
 						"type": "`$STRING`",
+						"req": true,
 					},
 					map[string]any{
 						"name": "terminalCountryCode",
-						"req": true,
+						"title": "Terminal Country Code",
 						"type": "`$STRING`",
+						"req": true,
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "terminalId",
+						"title": "Terminal Id",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "terminalIdAcq",
+						"title": "Terminal Id Acq",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "terminalLanguageCode",
-						"req": true,
+						"title": "Terminal Language Code",
 						"type": "`$STRING`",
+						"req": true,
 					},
 					map[string]any{
 						"name": "terminalLocation",
-						"req": true,
+						"title": "Terminal Location",
 						"type": "`$STRING`",
+						"req": true,
 					},
 					map[string]any{
 						"name": "terminalSerialNumber",
+						"title": "Terminal Serial Number",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "tokenIOAlias",
+						"title": "Token Io Alias",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "tokenIOIban",
+						"title": "Token Io Iban",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "tokenIOMemberId",
+						"title": "Token Io Member Id",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "webShopUrl",
+						"title": "Web Shop Url",
 						"type": "`$STRING`",
 					},
 				},
@@ -3048,7 +3573,6 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/registerTerminal",
@@ -3057,14 +3581,16 @@ func MakeConfig() map[string]any {
 										"lit": "registerTerminal",
 									},
 								},
-								"select": map[string]any{},
+								"parts": []any{
+									"registerTerminal",
+								},
+								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"parts": []any{
-									"registerTerminal",
-								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},
@@ -3077,51 +3603,61 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "cardBrandReportData",
+						"title": "Card Brand Report Data",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "clearingDateFrom",
+						"title": "Clearing Date From",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Date and time in the format yyyy-MM-dd'T'HH:mm:ss",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "clearingDateTo",
+						"title": "Clearing Date To",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Date and time in the format yyyy-MM-dd'T'HH:mm:ss",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "corporateId",
-						"req": true,
+						"title": "Corporate Id",
 						"type": "`$STRING`",
+						"req": true,
 					},
 					map[string]any{
 						"name": "currency",
-						"req": true,
+						"title": "Currency",
 						"type": "`$STRING`",
+						"req": true,
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "responseCode",
+						"title": "Response Code",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "responseMessage",
+						"title": "Response Message",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "sumOverCreditTx",
+						"title": "Sum Over Credit Tx",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "sumOverDebitTx",
+						"title": "Sum Over Debit Tx",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "terminalId",
+						"title": "Terminal Id",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 				},
 				"name": "report_data",
@@ -3131,7 +3667,6 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/public/digitalservices/reportData",
@@ -3146,16 +3681,18 @@ func MakeConfig() map[string]any {
 										"lit": "reportData",
 									},
 								},
-								"select": map[string]any{},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
 								"parts": []any{
 									"public",
 									"digitalservices",
 									"reportData",
 								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},
@@ -3168,24 +3705,28 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "acquirerName",
+						"title": "Acquirer Name",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "acquirerTerminalId",
+						"title": "Acquirer Terminal Id",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "amount",
+						"title": "Amount",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "applicationCryptogram",
+						"title": "Application Cryptogram",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "authorizationCode",
-						"short": "Authorization code returned by the acquirer; null when not available",
+						"title": "Authorization Code",
 						"type": []any{
 							"`$ONE`",
 							[]any{
@@ -3193,202 +3734,248 @@ func MakeConfig() map[string]any {
 								"`$NULL`",
 							},
 						},
+						"short": "Authorization code returned by the acquirer; null when not available",
 					},
 					map[string]any{
-						"format": "date-time",
 						"name": "authorizationDate",
+						"title": "Authorization Date",
 						"type": "`$STRING`",
+						"format": "date-time",
 					},
 					map[string]any{
 						"name": "cardBrand",
+						"title": "Card Brand",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "cardEntry",
+						"title": "Card Entry",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "cardExpiration",
+						"title": "Card Expiration",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "cardNumber",
+						"title": "Card Number",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "clearingAmount",
+						"title": "Clearing Amount",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "clearingBatchId",
+						"title": "Clearing Batch Id",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "clearingCurrency",
+						"title": "Clearing Currency",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "date-time",
 						"name": "clearingDate",
+						"title": "Clearing Date",
 						"type": "`$STRING`",
+						"format": "date-time",
 					},
 					map[string]any{
-						"format": "date-time",
 						"name": "clearingProcessedDate",
+						"title": "Clearing Processed Date",
 						"type": "`$STRING`",
+						"format": "date-time",
 					},
 					map[string]any{
 						"name": "clearingStatus",
+						"title": "Clearing Status",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "clientId",
+						"title": "Client Id",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "currency",
+						"title": "Currency",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "cvm",
+						"title": "Cvm",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "ecrData",
+						"title": "Ecr Data",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "emvApplicationId",
+						"title": "Emv Application Id",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "emvApplicationLabel",
+						"title": "Emv Application Label",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "merchantName",
+						"title": "Merchant Name",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "merchantNumber",
+						"title": "Merchant Number",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "originalClientId",
+						"title": "Original Client Id",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "originalTerminalId",
+						"title": "Original Terminal Id",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "originalTransactionId",
+						"title": "Original Transaction Id",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "paymentReason",
+						"title": "Payment Reason",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "receiptNumber",
+						"title": "Receipt Number",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "responseCode",
+						"title": "Response Code",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "responseCodeFromAS",
+						"title": "Response Code From As",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "responseMessage",
+						"title": "Response Message",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "retrievalReferenceNumber",
+						"title": "Retrieval Reference Number",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "serviceCode",
+						"title": "Service Code",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "settlementStatus",
+						"title": "Settlement Status",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "sourceId",
+						"title": "Source Id",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "tecsengineResponseCode",
+						"title": "Tecsengine Response Code",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "tecsengineResponseText",
+						"title": "Tecsengine Response Text",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "date-time",
 						"name": "terminalEndOfDayDate",
+						"title": "Terminal End Of Day Date",
 						"type": "`$STRING`",
+						"format": "date-time",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "terminalId",
+						"title": "Terminal Id",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "terminalLocation",
+						"title": "Terminal Location",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "tipAmount",
+						"title": "Tip Amount",
 						"type": "`$INTEGER`",
-					},
-					map[string]any{
 						"format": "int32",
+					},
+					map[string]any{
 						"name": "traceNumber",
+						"title": "Trace Number",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
-						"format": "date-time",
 						"name": "transactionClearingDate",
+						"title": "Transaction Clearing Date",
 						"type": "`$STRING`",
+						"format": "date-time",
 					},
 					map[string]any{
-						"format": "date-time",
 						"name": "transactionDate",
+						"title": "Transaction Date",
 						"type": "`$STRING`",
+						"format": "date-time",
 					},
 					map[string]any{
 						"name": "transactionId",
+						"title": "Transaction Id",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int64",
 						"name": "transactionSeqNumber",
+						"title": "Transaction Seq Number",
 						"type": "`$INTEGER`",
+						"format": "int64",
 					},
 					map[string]any{
-						"format": "date-time",
 						"name": "transactionServerDate",
+						"title": "Transaction Server Date",
 						"type": "`$STRING`",
+						"format": "date-time",
 					},
 					map[string]any{
 						"name": "transactionSource",
+						"title": "Transaction Source",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "transactionType",
+						"title": "Transaction Type",
 						"type": "`$STRING`",
 					},
 				},
@@ -3399,7 +3986,6 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/public/statusTransaction",
@@ -3411,15 +3997,17 @@ func MakeConfig() map[string]any {
 										"lit": "statusTransaction",
 									},
 								},
-								"select": map[string]any{},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
 								"parts": []any{
 									"public",
 									"statusTransaction",
 								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},
@@ -3432,28 +4020,34 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "acqTabNexo",
+						"title": "Acq Tab Nexo",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "configVersion",
+						"title": "Config Version",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "responseCode",
+						"title": "Response Code",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "responseMessage",
+						"title": "Response Message",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "serialNumber",
-						"req": true,
+						"title": "Serial Number",
 						"type": "`$STRING`",
+						"req": true,
 					},
 					map[string]any{
 						"name": "tidSent",
+						"title": "Tid Sent",
 						"type": "`$STRING`",
 					},
 				},
@@ -3464,7 +4058,6 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/storeTerminalParameters",
@@ -3473,14 +4066,16 @@ func MakeConfig() map[string]any {
 										"lit": "storeTerminalParameters",
 									},
 								},
-								"select": map[string]any{},
+								"parts": []any{
+									"storeTerminalParameters",
+								},
+								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"parts": []any{
-									"storeTerminalParameters",
-								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},
@@ -3493,24 +4088,29 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "deviceSerialNumber",
-						"req": true,
+						"title": "Device Serial Number",
 						"type": "`$ARRAY`",
+						"req": true,
 					},
 					map[string]any{
 						"name": "duplicateTerminalIds",
+						"title": "Duplicate Terminal Ids",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "responseCode",
+						"title": "Response Code",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "responseMessage",
+						"title": "Response Message",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "terminals",
+						"title": "Terminals",
 						"type": "`$ARRAY`",
 					},
 				},
@@ -3521,7 +4121,6 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/public/getTerminalId",
@@ -3533,15 +4132,17 @@ func MakeConfig() map[string]any {
 										"lit": "getTerminalId",
 									},
 								},
-								"select": map[string]any{},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
 								"parts": []any{
 									"public",
 									"getTerminalId",
 								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},
@@ -3554,125 +4155,154 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "3DSecure",
+						"title": "3 D Secure",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "authorizationCode",
+						"title": "Authorization Code",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "cardBrand",
+						"title": "Card Brand",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "clearingAmountFrom",
+						"title": "Clearing Amount From",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "clearingAmountTo",
+						"title": "Clearing Amount To",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "clearingCurrency",
+						"title": "Clearing Currency",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "clearingStatus",
+						"title": "Clearing Status",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "corporateUUID",
+						"title": "Corporate Uuid",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "orderByTransactionDate",
+						"title": "Order By Transaction Date",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "pagination",
+						"title": "Pagination",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "paymentTokenPublicId",
+						"title": "Payment Token Public Id",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "receiptNumber",
+						"title": "Receipt Number",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "referencedTransactionId",
+						"title": "Referenced Transaction Id",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "responseCode",
+						"title": "Response Code",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "responseMessage",
+						"title": "Response Message",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "retrievalReferenceNumber",
+						"title": "Retrieval Reference Number",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "sourceId",
+						"title": "Source Id",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "tecsengineResponseCodeFrom",
+						"title": "Tecsengine Response Code From",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "tecsengineResponseCodeTo",
+						"title": "Tecsengine Response Code To",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "terminalId",
+						"title": "Terminal Id",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "traceNumber",
+						"title": "Trace Number",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "transactionAmountFrom",
+						"title": "Transaction Amount From",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "transactionAmountTo",
+						"title": "Transaction Amount To",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "date-time",
 						"name": "transactionDateFrom",
+						"title": "Transaction Date From",
 						"type": "`$STRING`",
+						"format": "date-time",
 					},
 					map[string]any{
-						"format": "date-time",
 						"name": "transactionDateTo",
+						"title": "Transaction Date To",
 						"type": "`$STRING`",
+						"format": "date-time",
 					},
 					map[string]any{
 						"name": "transactionHistories",
+						"title": "Transaction Histories",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "transactionId",
+						"title": "Transaction Id",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "transactionType",
+						"title": "Transaction Type",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "wallet",
-						"short": "Filter by wallet type.",
+						"title": "Wallet",
 						"type": "`$STRING`",
+						"short": "Filter by wallet type.",
 					},
 				},
 				"name": "transaction_history",
@@ -3682,7 +4312,6 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/public/mcom/transactionHistory",
@@ -3697,19 +4326,20 @@ func MakeConfig() map[string]any {
 										"lit": "transactionHistory",
 									},
 								},
-								"select": map[string]any{},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
 								"parts": []any{
 									"public",
 									"mcom",
 									"transactionHistory",
 								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/public/transactionHistory",
@@ -3721,116 +4351,17 @@ func MakeConfig() map[string]any {
 										"lit": "transactionHistory",
 									},
 								},
-								"select": map[string]any{},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
 								"parts": []any{
 									"public",
 									"transactionHistory",
 								},
-							},
-						},
-					},
-				},
-				"relations": map[string]any{
-					"ancestors": []any{},
-				},
-			},
-			"transactions_count": map[string]any{
-				"fields": []any{
-					map[string]any{
-						"name": "period",
-						"type": "`$STRING`",
-					},
-					map[string]any{
-						"format": "int32",
-						"name": "responseCode",
-						"type": "`$INTEGER`",
-					},
-					map[string]any{
-						"name": "responseMessage",
-						"type": "`$STRING`",
-					},
-					map[string]any{
-						"format": "date-time",
-						"name": "transactionDateFrom",
-						"op": map[string]any{
-							"create": map[string]any{
-								"req": true,
-								"type": "`$STRING`",
-							},
-						},
-						"type": "`$STRING`",
-					},
-					map[string]any{
-						"format": "date-time",
-						"name": "transactionDateTo",
-						"op": map[string]any{
-							"create": map[string]any{
-								"req": true,
-								"type": "`$STRING`",
-							},
-						},
-						"type": "`$STRING`",
-					},
-					map[string]any{
-						"name": "transactionsCount",
-						"type": "`$ARRAY`",
-					},
-				},
-				"name": "transactions_count",
-				"op": map[string]any{
-					"create": map[string]any{
-						"input": "data",
-						"name": "create",
-						"points": []any{
-							map[string]any{
-								"args": map[string]any{},
-								"kind": "http",
-								"method": "POST",
-								"orig": "/public/countAuthorisedTransactions",
-								"segments": []any{
-									map[string]any{
-										"lit": "public",
-									},
-									map[string]any{
-										"lit": "countAuthorisedTransactions",
-									},
-								},
-								"select": map[string]any{},
+								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"parts": []any{
-									"public",
-									"countAuthorisedTransactions",
-								},
-							},
-							map[string]any{
 								"args": map[string]any{},
-								"kind": "http",
-								"method": "POST",
-								"orig": "/public/countNotAuthorisedTransactions",
-								"segments": []any{
-									map[string]any{
-										"lit": "public",
-									},
-									map[string]any{
-										"lit": "countNotAuthorisedTransactions",
-									},
-								},
 								"select": map[string]any{},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"public",
-									"countNotAuthorisedTransactions",
-								},
 							},
 						},
 					},
@@ -3843,41 +4374,47 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "period",
+						"title": "Period",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "responseCode",
+						"title": "Response Code",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "responseMessage",
+						"title": "Response Message",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "date-time",
 						"name": "transactionDateFrom",
+						"title": "Transaction Date From",
+						"type": "`$STRING`",
 						"op": map[string]any{
 							"create": map[string]any{
 								"req": true,
 								"type": "`$STRING`",
 							},
 						},
-						"type": "`$STRING`",
+						"format": "date-time",
 					},
 					map[string]any{
-						"format": "date-time",
 						"name": "transactionDateTo",
+						"title": "Transaction Date To",
+						"type": "`$STRING`",
 						"op": map[string]any{
 							"create": map[string]any{
 								"req": true,
 								"type": "`$STRING`",
 							},
 						},
-						"type": "`$STRING`",
+						"format": "date-time",
 					},
 					map[string]any{
 						"name": "transactionsCount",
+						"title": "Transactions Count",
 						"type": "`$ARRAY`",
 					},
 				},
@@ -3888,7 +4425,6 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/public/countTransactionsByCardBrand",
@@ -3900,15 +4436,17 @@ func MakeConfig() map[string]any {
 										"lit": "countTransactionsByCardBrand",
 									},
 								},
-								"select": map[string]any{},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
 								"parts": []any{
 									"public",
 									"countTransactionsByCardBrand",
 								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},
@@ -3921,41 +4459,47 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "period",
+						"title": "Period",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "responseCode",
+						"title": "Response Code",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "responseMessage",
+						"title": "Response Message",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "date-time",
 						"name": "transactionDateFrom",
+						"title": "Transaction Date From",
+						"type": "`$STRING`",
 						"op": map[string]any{
 							"create": map[string]any{
 								"req": true,
 								"type": "`$STRING`",
 							},
 						},
-						"type": "`$STRING`",
+						"format": "date-time",
 					},
 					map[string]any{
-						"format": "date-time",
 						"name": "transactionDateTo",
+						"title": "Transaction Date To",
+						"type": "`$STRING`",
 						"op": map[string]any{
 							"create": map[string]any{
 								"req": true,
 								"type": "`$STRING`",
 							},
 						},
-						"type": "`$STRING`",
+						"format": "date-time",
 					},
 					map[string]any{
 						"name": "turnovers",
+						"title": "Turnovers",
 						"type": "`$ARRAY`",
 					},
 				},
@@ -3966,7 +4510,6 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/public/transactionTurnover",
@@ -3978,15 +4521,17 @@ func MakeConfig() map[string]any {
 										"lit": "transactionTurnover",
 									},
 								},
-								"select": map[string]any{},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
 								"parts": []any{
 									"public",
 									"transactionTurnover",
 								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},
@@ -3999,48 +4544,59 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "city",
+						"title": "City",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "corporateUuid",
-						"req": true,
+						"title": "Corporate Uuid",
 						"type": "`$STRING`",
+						"req": true,
 					},
 					map[string]any{
 						"name": "country",
+						"title": "Country",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "merchantCategoryCode",
+						"title": "Merchant Category Code",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "name",
+						"title": "Name",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "int32",
 						"name": "responseCode",
+						"title": "Response Code",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "responseMessage",
+						"title": "Response Message",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "state",
+						"title": "State",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "street",
+						"title": "Street",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "vuNummer",
+						"title": "Vu Nummer",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "zipcode",
+						"title": "Zipcode",
 						"type": "`$STRING`",
 					},
 				},
@@ -4051,7 +4607,6 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/public/updateMerchant",
@@ -4063,15 +4618,17 @@ func MakeConfig() map[string]any {
 										"lit": "updateMerchant",
 									},
 								},
-								"select": map[string]any{},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
 								"parts": []any{
 									"public",
 									"updateMerchant",
 								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},
@@ -4083,23 +4640,27 @@ func MakeConfig() map[string]any {
 			"update_template_xml": map[string]any{
 				"fields": []any{
 					map[string]any{
-						"format": "int32",
 						"name": "responseCode",
+						"title": "Response Code",
 						"type": "`$INTEGER`",
+						"format": "int32",
 					},
 					map[string]any{
 						"name": "responseMessage",
+						"title": "Response Message",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "templateName",
-						"req": true,
+						"title": "Template Name",
 						"type": "`$STRING`",
+						"req": true,
 					},
 					map[string]any{
 						"name": "templateXml",
-						"req": true,
+						"title": "Template Xml",
 						"type": "`$STRING`",
+						"req": true,
 					},
 				},
 				"name": "update_template_xml",
@@ -4109,7 +4670,6 @@ func MakeConfig() map[string]any {
 						"name": "create",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "POST",
 								"orig": "/public/updateTemplateXml",
@@ -4121,15 +4681,17 @@ func MakeConfig() map[string]any {
 										"lit": "updateTemplateXml",
 									},
 								},
-								"select": map[string]any{},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
 								"parts": []any{
 									"public",
 									"updateTemplateXml",
 								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},
@@ -4142,14 +4704,17 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "appName",
+						"title": "App Name",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "buildDate",
+						"title": "Build Date",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "version",
+						"title": "Version",
 						"type": "`$STRING`",
 					},
 				},
@@ -4160,7 +4725,6 @@ func MakeConfig() map[string]any {
 						"name": "load",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/public/version",
@@ -4172,15 +4736,17 @@ func MakeConfig() map[string]any {
 										"lit": "version",
 									},
 								},
-								"select": map[string]any{},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
 								"parts": []any{
 									"public",
 									"version",
 								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},

@@ -1,0 +1,109 @@
+# Entity: report_data
+
+main: kit: entity: report_data: {
+
+  alias: field: {}
+
+  fields: {
+    cardBrandReportData: {
+      h: "Card Brand Report Data"
+      n: "cardBrandReportData"
+      r: false
+      t: "`$ARRAY`"
+    }
+    clearingDateFrom: {
+      h: "Clearing Date From"
+      n: "clearingDateFrom"
+      r: true
+      sh: "Date and time in the format yyyy-MM-dd'T'HH:mm:ss"
+      t: "`$STRING`"
+    }
+    clearingDateTo: {
+      h: "Clearing Date To"
+      n: "clearingDateTo"
+      r: true
+      sh: "Date and time in the format yyyy-MM-dd'T'HH:mm:ss"
+      t: "`$STRING`"
+    }
+    corporateId: {
+      h: "Corporate Id"
+      n: "corporateId"
+      r: true
+      t: "`$STRING`"
+    }
+    currency: {
+      h: "Currency"
+      n: "currency"
+      r: true
+      t: "`$STRING`"
+    }
+    responseCode: {
+      fo: "int32"
+      h: "Response Code"
+      n: "responseCode"
+      r: false
+      t: "`$INTEGER`"
+    }
+    responseMessage: {
+      h: "Response Message"
+      n: "responseMessage"
+      r: false
+      t: "`$STRING`"
+    }
+    sumOverCreditTx: {
+      h: "Sum Over Credit Tx"
+      n: "sumOverCreditTx"
+      r: false
+      t: "`$OBJECT`"
+    }
+    sumOverDebitTx: {
+      h: "Sum Over Debit Tx"
+      n: "sumOverDebitTx"
+      r: false
+      t: "`$OBJECT`"
+    }
+    terminalId: {
+      fo: "int32"
+      h: "Terminal Id"
+      n: "terminalId"
+      r: false
+      t: "`$INTEGER`"
+    }
+  }
+
+  name: "report_data"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /public/digitalservices/reportData"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/public/digitalservices/reportData"
+          s: [
+            {
+              lit: "public"
+            }
+            {
+              lit: "digitalservices"
+            }
+            {
+              lit: "reportData"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

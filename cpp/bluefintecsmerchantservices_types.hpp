@@ -1,6 +1,6 @@
 // Typed reference models for the BluefinTecsMerchantServices SDK (C++).
 //
-// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
+// GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
 // params. The C++ SDK runtime is Value-based, so these structs are
 // DOCUMENTATION / convenience types only — the SDK neither includes nor
 // requires this header. Array fields surface as std::vector<Value>, object
@@ -117,6 +117,42 @@ struct CheckCardBlackListedCreateData {
   std::string cardNo;  // optional
   int64_t responseCode;  // optional
   std::string responseMessage;  // optional
+};
+
+struct CountAuthorisedTransaction {
+  std::string period;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  std::string transactionDateFrom;  // optional
+  std::string transactionDateTo;  // optional
+  std::vector<Value> transactionsCount;  // optional
+};
+
+struct CountAuthorisedTransactionCreateData {
+  std::string period;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  std::string transactionDateFrom;  // optional
+  std::string transactionDateTo;  // optional
+  std::vector<Value> transactionsCount;  // optional
+};
+
+struct CountNotAuthorisedTransaction {
+  std::string period;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  std::string transactionDateFrom;  // optional
+  std::string transactionDateTo;  // optional
+  std::vector<Value> transactionsCount;  // optional
+};
+
+struct CountNotAuthorisedTransactionCreateData {
+  std::string period;  // optional
+  int64_t responseCode;  // optional
+  std::string responseMessage;  // optional
+  std::string transactionDateFrom;  // optional
+  std::string transactionDateTo;  // optional
+  std::vector<Value> transactionsCount;  // optional
 };
 
 struct CreateProduct {
@@ -1081,24 +1117,6 @@ struct TransactionHistoryCreateData {
   std::string transactionId;  // optional
   std::string transactionType;  // optional
   std::string wallet;  // optional
-};
-
-struct TransactionsCount {
-  std::string period;  // optional
-  int64_t responseCode;  // optional
-  std::string responseMessage;  // optional
-  std::string transactionDateFrom;  // optional
-  std::string transactionDateTo;  // optional
-  std::vector<Value> transactionsCount;  // optional
-};
-
-struct TransactionsCountCreateData {
-  std::string period;  // optional
-  int64_t responseCode;  // optional
-  std::string responseMessage;  // optional
-  std::string transactionDateFrom;  // optional
-  std::string transactionDateTo;  // optional
-  std::vector<Value> transactionsCount;  // optional
 };
 
 struct TransactionsCountCardBrand {

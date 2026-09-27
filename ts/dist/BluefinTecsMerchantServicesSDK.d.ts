@@ -1,5 +1,7 @@
 import { CancelTransactionEntity } from './entity/CancelTransactionEntity';
 import { CheckCardBlackListedEntity } from './entity/CheckCardBlackListedEntity';
+import { CountAuthorisedTransactionEntity } from './entity/CountAuthorisedTransactionEntity';
+import { CountNotAuthorisedTransactionEntity } from './entity/CountNotAuthorisedTransactionEntity';
 import { CreateProductEntity } from './entity/CreateProductEntity';
 import { DeactivateTerminalEntity } from './entity/DeactivateTerminalEntity';
 import { DigitalServicesApiEntity } from './entity/DigitalServicesApiEntity';
@@ -31,7 +33,6 @@ import { StatusTransactionEntity } from './entity/StatusTransactionEntity';
 import { StoreTerminalParameterEntity } from './entity/StoreTerminalParameterEntity';
 import { TerminalIdEntity } from './entity/TerminalIdEntity';
 import { TransactionHistoryEntity } from './entity/TransactionHistoryEntity';
-import { TransactionsCountEntity } from './entity/TransactionsCountEntity';
 import { TransactionsCountCardBrandEntity } from './entity/TransactionsCountCardBrandEntity';
 import { TransactionsTurnoverEntity } from './entity/TransactionsTurnoverEntity';
 import { UpdateMerchantEntity } from './entity/UpdateMerchantEntity';
@@ -84,6 +85,8 @@ declare class BluefinTecsMerchantServicesSDK {
     graphql(query: string, variables?: any, ctrl?: any): Promise<any>;
     CancelTransaction(entopts?: Record<string, any>): CancelTransactionEntity;
     CheckCardBlackListed(entopts?: Record<string, any>): CheckCardBlackListedEntity;
+    CountAuthorisedTransaction(entopts?: Record<string, any>): CountAuthorisedTransactionEntity;
+    CountNotAuthorisedTransaction(entopts?: Record<string, any>): CountNotAuthorisedTransactionEntity;
     CreateProduct(entopts?: Record<string, any>): CreateProductEntity;
     DeactivateTerminal(entopts?: Record<string, any>): DeactivateTerminalEntity;
     DigitalServicesApi(entopts?: Record<string, any>): DigitalServicesApiEntity;
@@ -115,7 +118,6 @@ declare class BluefinTecsMerchantServicesSDK {
     StoreTerminalParameter(entopts?: Record<string, any>): StoreTerminalParameterEntity;
     TerminalId(entopts?: Record<string, any>): TerminalIdEntity;
     TransactionHistory(entopts?: Record<string, any>): TransactionHistoryEntity;
-    TransactionsCount(entopts?: Record<string, any>): TransactionsCountEntity;
     TransactionsCountCardBrand(entopts?: Record<string, any>): TransactionsCountCardBrandEntity;
     TransactionsTurnover(entopts?: Record<string, any>): TransactionsTurnoverEntity;
     UpdateMerchant(entopts?: Record<string, any>): UpdateMerchantEntity;

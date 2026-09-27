@@ -1,0 +1,61 @@
+# Entity: get_template_xml
+
+main: kit: entity: get_template_xml: {
+
+  alias: field: {}
+
+  fields: {
+    responseCode: {
+      fo: "int32"
+      h: "Response Code"
+      n: "responseCode"
+      r: false
+      t: "`$INTEGER`"
+    }
+    responseMessage: {
+      h: "Response Message"
+      n: "responseMessage"
+      r: false
+      t: "`$STRING`"
+    }
+    templateName: {
+      h: "Template Name"
+      n: "templateName"
+      r: true
+      t: "`$STRING`"
+    }
+  }
+
+  name: "get_template_xml"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /public/getTemplateXml"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/public/getTemplateXml"
+          s: [
+            {
+              lit: "public"
+            }
+            {
+              lit: "getTemplateXml"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

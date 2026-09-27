@@ -32,6 +32,10 @@ var NewCancelTransactionEntityFunc func(client *BluefinTecsMerchantServicesSDK, 
 
 var NewCheckCardBlackListedEntityFunc func(client *BluefinTecsMerchantServicesSDK, entopts map[string]any) BluefinTecsMerchantServicesEntity
 
+var NewCountAuthorisedTransactionEntityFunc func(client *BluefinTecsMerchantServicesSDK, entopts map[string]any) BluefinTecsMerchantServicesEntity
+
+var NewCountNotAuthorisedTransactionEntityFunc func(client *BluefinTecsMerchantServicesSDK, entopts map[string]any) BluefinTecsMerchantServicesEntity
+
 var NewCreateProductEntityFunc func(client *BluefinTecsMerchantServicesSDK, entopts map[string]any) BluefinTecsMerchantServicesEntity
 
 var NewDeactivateTerminalEntityFunc func(client *BluefinTecsMerchantServicesSDK, entopts map[string]any) BluefinTecsMerchantServicesEntity
@@ -93,8 +97,6 @@ var NewStoreTerminalParameterEntityFunc func(client *BluefinTecsMerchantServices
 var NewTerminalIdEntityFunc func(client *BluefinTecsMerchantServicesSDK, entopts map[string]any) BluefinTecsMerchantServicesEntity
 
 var NewTransactionHistoryEntityFunc func(client *BluefinTecsMerchantServicesSDK, entopts map[string]any) BluefinTecsMerchantServicesEntity
-
-var NewTransactionsCountEntityFunc func(client *BluefinTecsMerchantServicesSDK, entopts map[string]any) BluefinTecsMerchantServicesEntity
 
 var NewTransactionsCountCardBrandEntityFunc func(client *BluefinTecsMerchantServicesSDK, entopts map[string]any) BluefinTecsMerchantServicesEntity
 

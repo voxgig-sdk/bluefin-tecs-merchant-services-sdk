@@ -12,6 +12,8 @@ module SdkClient
   , testSdk0
   , cancel_transaction
   , check_card_black_listed
+  , count_authorised_transaction
+  , count_not_authorised_transaction
   , create_product
   , deactivate_terminal
   , digital_services_api
@@ -43,7 +45,6 @@ module SdkClient
   , store_terminal_parameter
   , terminal_id
   , transaction_history
-  , transactions_count
   , transactions_count_card_brand
   , transactions_turnover
   , update_merchant
@@ -89,6 +90,14 @@ cancel_transaction client entopts = F.makeEntity client "cancel_transaction" ent
 -- | The CheckCardBlackListed entity bound to this client.
 check_card_black_listed :: Client -> Value -> IO Entity
 check_card_black_listed client entopts = F.makeEntity client "check_card_black_listed" entopts
+
+-- | The CountAuthorisedTransaction entity bound to this client.
+count_authorised_transaction :: Client -> Value -> IO Entity
+count_authorised_transaction client entopts = F.makeEntity client "count_authorised_transaction" entopts
+
+-- | The CountNotAuthorisedTransaction entity bound to this client.
+count_not_authorised_transaction :: Client -> Value -> IO Entity
+count_not_authorised_transaction client entopts = F.makeEntity client "count_not_authorised_transaction" entopts
 
 -- | The CreateProduct entity bound to this client.
 create_product :: Client -> Value -> IO Entity
@@ -213,10 +222,6 @@ terminal_id client entopts = F.makeEntity client "terminal_id" entopts
 -- | The TransactionHistory entity bound to this client.
 transaction_history :: Client -> Value -> IO Entity
 transaction_history client entopts = F.makeEntity client "transaction_history" entopts
-
--- | The TransactionsCount entity bound to this client.
-transactions_count :: Client -> Value -> IO Entity
-transactions_count client entopts = F.makeEntity client "transactions_count" entopts
 
 -- | The TransactionsCountCardBrand entity bound to this client.
 transactions_count_card_brand :: Client -> Value -> IO Entity

@@ -2,8 +2,8 @@ package voxgig.bluefintecsmerchantservicessdk.core
 
 // Typed reference models for the BluefinTecsMerchantServices SDK.
 //
-// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
-// params (op.<name>.points[].args.params[]). Field/param types come from the
+// GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+// params (op.<name>.points[].g.params[]). Field/param types come from the
 // canonical type sentinels (source of truth: @voxgig/apidef VALID_CANON). Do
 // not edit by hand.
 //
@@ -23,6 +23,14 @@ object BluefinTecsMerchantServicesTypes {
   data class CheckCardBlackListed(val cardNo: String?, val responseCode: Long?, val responseMessage: String?)
 
   data class CheckCardBlackListedCreateData(val cardNo: String?, val responseCode: Long?, val responseMessage: String?)
+
+  data class CountAuthorisedTransaction(val period: String?, val responseCode: Long?, val responseMessage: String?, val transactionDateFrom: String?, val transactionDateTo: String?, val transactionsCount: List<Any?>?)
+
+  data class CountAuthorisedTransactionCreateData(val period: String?, val responseCode: Long?, val responseMessage: String?, val transactionDateFrom: String?, val transactionDateTo: String?, val transactionsCount: List<Any?>?)
+
+  data class CountNotAuthorisedTransaction(val period: String?, val responseCode: Long?, val responseMessage: String?, val transactionDateFrom: String?, val transactionDateTo: String?, val transactionsCount: List<Any?>?)
+
+  data class CountNotAuthorisedTransactionCreateData(val period: String?, val responseCode: Long?, val responseMessage: String?, val transactionDateFrom: String?, val transactionDateTo: String?, val transactionsCount: List<Any?>?)
 
   data class CreateProduct(val acquirerId: Long?, val responseCode: Long?, val responseMessage: String?, val templateName: String?, val templateType: String?, val templateXml: String?, val terminalType: String?)
 
@@ -151,10 +159,6 @@ object BluefinTecsMerchantServicesTypes {
   data class TransactionHistory(val authorizationCode: String?, val cardBrand: String?, val clearingAmountFrom: String?, val clearingAmountTo: String?, val clearingCurrency: String?, val clearingStatus: String?, val corporateUUID: String?, val orderByTransactionDate: String?, val pagination: Map<String, Any?>?, val paymentTokenPublicId: String?, val receiptNumber: String?, val referencedTransactionId: String?, val responseCode: Long?, val responseMessage: String?, val retrievalReferenceNumber: String?, val sourceId: Long?, val tecsengineResponseCodeFrom: String?, val tecsengineResponseCodeTo: String?, val terminalId: Long?, val traceNumber: String?, val transactionAmountFrom: String?, val transactionAmountTo: String?, val transactionDateFrom: String?, val transactionDateTo: String?, val transactionHistories: List<Any?>?, val transactionId: String?, val transactionType: String?, val wallet: String?)
 
   data class TransactionHistoryCreateData(val authorizationCode: String?, val cardBrand: String?, val clearingAmountFrom: String?, val clearingAmountTo: String?, val clearingCurrency: String?, val clearingStatus: String?, val corporateUUID: String?, val orderByTransactionDate: String?, val pagination: Map<String, Any?>?, val paymentTokenPublicId: String?, val receiptNumber: String?, val referencedTransactionId: String?, val responseCode: Long?, val responseMessage: String?, val retrievalReferenceNumber: String?, val sourceId: Long?, val tecsengineResponseCodeFrom: String?, val tecsengineResponseCodeTo: String?, val terminalId: Long?, val traceNumber: String?, val transactionAmountFrom: String?, val transactionAmountTo: String?, val transactionDateFrom: String?, val transactionDateTo: String?, val transactionHistories: List<Any?>?, val transactionId: String?, val transactionType: String?, val wallet: String?)
-
-  data class TransactionsCount(val period: String?, val responseCode: Long?, val responseMessage: String?, val transactionDateFrom: String?, val transactionDateTo: String?, val transactionsCount: List<Any?>?)
-
-  data class TransactionsCountCreateData(val period: String?, val responseCode: Long?, val responseMessage: String?, val transactionDateFrom: String?, val transactionDateTo: String?, val transactionsCount: List<Any?>?)
 
   data class TransactionsCountCardBrand(val period: String?, val responseCode: Long?, val responseMessage: String?, val transactionDateFrom: String?, val transactionDateTo: String?, val transactionsCount: List<Any?>?)
 

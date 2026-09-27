@@ -50,7 +50,7 @@ static TransactionsCountCardBrandSetup transactions_count_card_brand_basic_setup
 
   TransactionsCountCardBrandSetup s;
   s.client = client;
-  s.data = entity_data;
+  s.d = entity_data;
   s.idmap = idmap_resolved;
   s.env = env;
   s.live = live;

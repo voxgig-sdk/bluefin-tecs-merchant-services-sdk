@@ -1,0 +1,246 @@
+# Entity: transaction_history
+
+main: kit: entity: transaction_history: {
+
+  alias: field: {}
+
+  fields: {
+    "3DSecure": {
+      h: "3 D Secure"
+      n: "3DSecure"
+      r: false
+      t: "`$STRING`"
+    }
+    authorizationCode: {
+      h: "Authorization Code"
+      n: "authorizationCode"
+      r: false
+      t: "`$STRING`"
+    }
+    cardBrand: {
+      h: "Card Brand"
+      n: "cardBrand"
+      r: false
+      t: "`$STRING`"
+    }
+    clearingAmountFrom: {
+      h: "Clearing Amount From"
+      n: "clearingAmountFrom"
+      r: false
+      t: "`$STRING`"
+    }
+    clearingAmountTo: {
+      h: "Clearing Amount To"
+      n: "clearingAmountTo"
+      r: false
+      t: "`$STRING`"
+    }
+    clearingCurrency: {
+      h: "Clearing Currency"
+      n: "clearingCurrency"
+      r: false
+      t: "`$STRING`"
+    }
+    clearingStatus: {
+      h: "Clearing Status"
+      n: "clearingStatus"
+      r: false
+      t: "`$STRING`"
+    }
+    corporateUUID: {
+      h: "Corporate Uuid"
+      n: "corporateUUID"
+      r: false
+      t: "`$STRING`"
+    }
+    orderByTransactionDate: {
+      h: "Order By Transaction Date"
+      n: "orderByTransactionDate"
+      r: false
+      t: "`$STRING`"
+    }
+    pagination: {
+      h: "Pagination"
+      n: "pagination"
+      r: false
+      t: "`$OBJECT`"
+    }
+    paymentTokenPublicId: {
+      h: "Payment Token Public Id"
+      n: "paymentTokenPublicId"
+      r: false
+      t: "`$STRING`"
+    }
+    receiptNumber: {
+      h: "Receipt Number"
+      n: "receiptNumber"
+      r: false
+      t: "`$STRING`"
+    }
+    referencedTransactionId: {
+      h: "Referenced Transaction Id"
+      n: "referencedTransactionId"
+      r: false
+      t: "`$STRING`"
+    }
+    responseCode: {
+      fo: "int32"
+      h: "Response Code"
+      n: "responseCode"
+      r: false
+      t: "`$INTEGER`"
+    }
+    responseMessage: {
+      h: "Response Message"
+      n: "responseMessage"
+      r: false
+      t: "`$STRING`"
+    }
+    retrievalReferenceNumber: {
+      h: "Retrieval Reference Number"
+      n: "retrievalReferenceNumber"
+      r: false
+      t: "`$STRING`"
+    }
+    sourceId: {
+      fo: "int32"
+      h: "Source Id"
+      n: "sourceId"
+      r: false
+      t: "`$INTEGER`"
+    }
+    tecsengineResponseCodeFrom: {
+      h: "Tecsengine Response Code From"
+      n: "tecsengineResponseCodeFrom"
+      r: false
+      t: "`$STRING`"
+    }
+    tecsengineResponseCodeTo: {
+      h: "Tecsengine Response Code To"
+      n: "tecsengineResponseCodeTo"
+      r: false
+      t: "`$STRING`"
+    }
+    terminalId: {
+      fo: "int32"
+      h: "Terminal Id"
+      n: "terminalId"
+      r: false
+      t: "`$INTEGER`"
+    }
+    traceNumber: {
+      h: "Trace Number"
+      n: "traceNumber"
+      r: false
+      t: "`$STRING`"
+    }
+    transactionAmountFrom: {
+      h: "Transaction Amount From"
+      n: "transactionAmountFrom"
+      r: false
+      t: "`$STRING`"
+    }
+    transactionAmountTo: {
+      h: "Transaction Amount To"
+      n: "transactionAmountTo"
+      r: false
+      t: "`$STRING`"
+    }
+    transactionDateFrom: {
+      fo: "date-time"
+      h: "Transaction Date From"
+      n: "transactionDateFrom"
+      r: false
+      t: "`$STRING`"
+    }
+    transactionDateTo: {
+      fo: "date-time"
+      h: "Transaction Date To"
+      n: "transactionDateTo"
+      r: false
+      t: "`$STRING`"
+    }
+    transactionHistories: {
+      h: "Transaction Histories"
+      n: "transactionHistories"
+      r: false
+      t: "`$ARRAY`"
+    }
+    transactionId: {
+      h: "Transaction Id"
+      n: "transactionId"
+      r: false
+      t: "`$STRING`"
+    }
+    transactionType: {
+      h: "Transaction Type"
+      n: "transactionType"
+      r: false
+      t: "`$STRING`"
+    }
+    wallet: {
+      h: "Wallet"
+      n: "wallet"
+      r: false
+      sh: "Filter by wallet type."
+      t: "`$STRING`"
+    }
+  }
+
+  name: "transaction_history"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /public/mcom/transactionHistory"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/public/mcom/transactionHistory"
+          s: [
+            {
+              lit: "public"
+            }
+            {
+              lit: "mcom"
+            }
+            {
+              lit: "transactionHistory"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /public/transactionHistory"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/public/transactionHistory"
+          s: [
+            {
+              lit: "public"
+            }
+            {
+              lit: "transactionHistory"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

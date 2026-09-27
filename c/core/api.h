@@ -13,6 +13,14 @@ voxgig_value* cancel_transaction_stream(Entity* e, const char* action, voxgig_va
 Entity* check_card_black_listed_entity_new(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts);
 Entity* bluefintecsmerchantservices_check_card_black_listed(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts);
 voxgig_value* check_card_black_listed_stream(Entity* e, const char* action, voxgig_value* args, voxgig_value* callopts, PNError** err);
+// CountAuthorisedTransaction entity.
+Entity* count_authorised_transaction_entity_new(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts);
+Entity* bluefintecsmerchantservices_count_authorised_transaction(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts);
+voxgig_value* count_authorised_transaction_stream(Entity* e, const char* action, voxgig_value* args, voxgig_value* callopts, PNError** err);
+// CountNotAuthorisedTransaction entity.
+Entity* count_not_authorised_transaction_entity_new(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts);
+Entity* bluefintecsmerchantservices_count_not_authorised_transaction(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts);
+voxgig_value* count_not_authorised_transaction_stream(Entity* e, const char* action, voxgig_value* args, voxgig_value* callopts, PNError** err);
 // CreateProduct entity.
 Entity* create_product_entity_new(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts);
 Entity* bluefintecsmerchantservices_create_product(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts);
@@ -137,10 +145,6 @@ voxgig_value* terminal_id_stream(Entity* e, const char* action, voxgig_value* ar
 Entity* transaction_history_entity_new(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts);
 Entity* bluefintecsmerchantservices_transaction_history(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts);
 voxgig_value* transaction_history_stream(Entity* e, const char* action, voxgig_value* args, voxgig_value* callopts, PNError** err);
-// TransactionsCount entity.
-Entity* transactions_count_entity_new(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts);
-Entity* bluefintecsmerchantservices_transactions_count(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts);
-voxgig_value* transactions_count_stream(Entity* e, const char* action, voxgig_value* args, voxgig_value* callopts, PNError** err);
 // TransactionsCountCardBrand entity.
 Entity* transactions_count_card_brand_entity_new(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts);
 Entity* bluefintecsmerchantservices_transactions_count_card_brand(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts);

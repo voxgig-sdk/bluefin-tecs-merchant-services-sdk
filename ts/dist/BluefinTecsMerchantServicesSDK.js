@@ -4,6 +4,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.SDK = exports.BluefinTecsMerchantServicesSDK = exports.BluefinTecsMerchantServicesEntityBase = exports.BaseFeature = exports.config = exports.stdutil = void 0;
 const CancelTransactionEntity_1 = require("./entity/CancelTransactionEntity");
 const CheckCardBlackListedEntity_1 = require("./entity/CheckCardBlackListedEntity");
+const CountAuthorisedTransactionEntity_1 = require("./entity/CountAuthorisedTransactionEntity");
+const CountNotAuthorisedTransactionEntity_1 = require("./entity/CountNotAuthorisedTransactionEntity");
 const CreateProductEntity_1 = require("./entity/CreateProductEntity");
 const DeactivateTerminalEntity_1 = require("./entity/DeactivateTerminalEntity");
 const DigitalServicesApiEntity_1 = require("./entity/DigitalServicesApiEntity");
@@ -35,7 +37,6 @@ const StatusTransactionEntity_1 = require("./entity/StatusTransactionEntity");
 const StoreTerminalParameterEntity_1 = require("./entity/StoreTerminalParameterEntity");
 const TerminalIdEntity_1 = require("./entity/TerminalIdEntity");
 const TransactionHistoryEntity_1 = require("./entity/TransactionHistoryEntity");
-const TransactionsCountEntity_1 = require("./entity/TransactionsCountEntity");
 const TransactionsCountCardBrandEntity_1 = require("./entity/TransactionsCountCardBrandEntity");
 const TransactionsTurnoverEntity_1 = require("./entity/TransactionsTurnoverEntity");
 const UpdateMerchantEntity_1 = require("./entity/UpdateMerchantEntity");
@@ -122,7 +123,6 @@ class BluefinTecsMerchantServicesSDK {
             ctrl: fetchargs.ctrl || {},
         }, this._rootctx);
         const options = this._options;
-        // Build spec directly from SDK options + user-provided fetch args.
         const spec = {
             base: options.base,
             prefix: options.prefix,
@@ -136,14 +136,12 @@ class BluefinTecsMerchantServicesSDK {
             step: 'start',
         };
         ctx.spec = spec;
-        // Merge user-provided headers over SDK defaults.
         if (fetchargs.headers) {
             const uheaders = fetchargs.headers;
             for (let key in uheaders) {
                 spec.headers[key] = uheaders[key];
             }
         }
-        // Apply SDK auth (apikey, auth prefix, etc.)
         const authResult = prepareAuth(ctx);
         if (authResult instanceof Error) {
             return authResult;
@@ -218,18 +216,6 @@ class BluefinTecsMerchantServicesSDK {
             return { ok: false, err };
         }
     }
-    // Raw GraphQL access: the pressure valve that makes the generated
-    // surface's deliberate omissions (per-call selection sets, typed filter
-    // builders, batching, subscriptions) livable — the whole schema stays
-    // reachable.
-    //
-    // Thin wrapper over the same prepare/fetch path `direct` uses, with the
-    // one thing raw `direct` cannot do for GraphQL: a GraphQL failure rides
-    // HTTP 200 as a top-level `errors` array, so status alone would report a
-    // failed query as ok.
-    //
-    // NOTE: like `direct`, this bypasses the feature pipeline — no retry,
-    // ratelimit or paging features apply.
     async graphql(query, variables, ctrl) {
         const options = this._options;
         if (!options.allow.op.includes('graphql')) {
@@ -276,6 +262,20 @@ class BluefinTecsMerchantServicesSDK {
     CheckCardBlackListed(entopts) {
         const self = this;
         return new CheckCardBlackListedEntity_1.CheckCardBlackListedEntity(self, entopts);
+    }
+    // Entity access: `client.CountAuthorisedTransaction().list()` / `client.CountAuthorisedTransaction().load({ id })`.
+    // The argument is the entity OPTIONS object (passed to the entity
+    // constructor as entopts), not initial entity data.
+    CountAuthorisedTransaction(entopts) {
+        const self = this;
+        return new CountAuthorisedTransactionEntity_1.CountAuthorisedTransactionEntity(self, entopts);
+    }
+    // Entity access: `client.CountNotAuthorisedTransaction().list()` / `client.CountNotAuthorisedTransaction().load({ id })`.
+    // The argument is the entity OPTIONS object (passed to the entity
+    // constructor as entopts), not initial entity data.
+    CountNotAuthorisedTransaction(entopts) {
+        const self = this;
+        return new CountNotAuthorisedTransactionEntity_1.CountNotAuthorisedTransactionEntity(self, entopts);
     }
     // Entity access: `client.CreateProduct().list()` / `client.CreateProduct().load({ id })`.
     // The argument is the entity OPTIONS object (passed to the entity
@@ -493,13 +493,6 @@ class BluefinTecsMerchantServicesSDK {
     TransactionHistory(entopts) {
         const self = this;
         return new TransactionHistoryEntity_1.TransactionHistoryEntity(self, entopts);
-    }
-    // Entity access: `client.TransactionsCount().list()` / `client.TransactionsCount().load({ id })`.
-    // The argument is the entity OPTIONS object (passed to the entity
-    // constructor as entopts), not initial entity data.
-    TransactionsCount(entopts) {
-        const self = this;
-        return new TransactionsCountEntity_1.TransactionsCountEntity(self, entopts);
     }
     // Entity access: `client.TransactionsCountCardBrand().list()` / `client.TransactionsCountCardBrand().load({ id })`.
     // The argument is the entity OPTIONS object (passed to the entity

@@ -385,6 +385,34 @@ function BluefinTecsMerchantServicesSDK:CheckCardBlackListed(data)
 end
 
 
+-- Idiomatic facade: client:CountAuthorisedTransaction():list() / client:CountAuthorisedTransaction():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function BluefinTecsMerchantServicesSDK:CountAuthorisedTransaction(data)
+  local EntityMod = require("entity.count_authorised_transaction_entity")
+  if data == nil then
+    if self._count_authorised_transaction == nil then
+      self._count_authorised_transaction = EntityMod.new(self, nil)
+    end
+    return self._count_authorised_transaction
+  end
+  return EntityMod.new(self, data)
+end
+
+
+-- Idiomatic facade: client:CountNotAuthorisedTransaction():list() / client:CountNotAuthorisedTransaction():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function BluefinTecsMerchantServicesSDK:CountNotAuthorisedTransaction(data)
+  local EntityMod = require("entity.count_not_authorised_transaction_entity")
+  if data == nil then
+    if self._count_not_authorised_transaction == nil then
+      self._count_not_authorised_transaction = EntityMod.new(self, nil)
+    end
+    return self._count_not_authorised_transaction
+  end
+  return EntityMod.new(self, data)
+end
+
+
 -- Idiomatic facade: client:CreateProduct():list() / client:CreateProduct():load({ id = ... })
 -- Entity access is capitalised (PascalCase) for parity with the other SDKs.
 function BluefinTecsMerchantServicesSDK:CreateProduct(data)
@@ -814,20 +842,6 @@ function BluefinTecsMerchantServicesSDK:TransactionHistory(data)
       self._transaction_history = EntityMod.new(self, nil)
     end
     return self._transaction_history
-  end
-  return EntityMod.new(self, data)
-end
-
-
--- Idiomatic facade: client:TransactionsCount():list() / client:TransactionsCount():load({ id = ... })
--- Entity access is capitalised (PascalCase) for parity with the other SDKs.
-function BluefinTecsMerchantServicesSDK:TransactionsCount(data)
-  local EntityMod = require("entity.transactions_count_entity")
-  if data == nil then
-    if self._transactions_count == nil then
-      self._transactions_count = EntityMod.new(self, nil)
-    end
-    return self._transactions_count
   end
   return EntityMod.new(self, data)
 end

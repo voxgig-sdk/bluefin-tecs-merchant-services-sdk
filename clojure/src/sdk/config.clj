@@ -9,12 +9,15 @@
         "fields" (vs/jt
           (vs/jm
             "name" "acquirerId"
+            "title" "Acquirer Id"
             "type" "`$STRING`")
           (vs/jm
             "name" "acquirerName"
+            "title" "Acquirer Name"
             "type" "`$STRING`")
           (vs/jm
             "name" "actualBonusPoints"
+            "title" "Actual Bonus Points"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
@@ -23,58 +26,75 @@
               "create" (vs/jm
                 "req" true
                 "type" "`$INTEGER`"))
+            "title" "Amount"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "authorizationCode"
+            "title" "Authorization Code"
             "type" "`$STRING`")
           (vs/jm
             "name" "balanceAmount"
+            "title" "Balance Amount"
             "type" "`$STRING`")
           (vs/jm
             "name" "cardBrand"
+            "title" "Card Brand"
             "type" "`$STRING`")
           (vs/jm
             "name" "cardNumber"
+            "title" "Card Number"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "clientId"
             "req" true
+            "title" "Client Id"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "currency"
             "req" true
+            "title" "Currency"
             "type" "`$STRING`")
           (vs/jm
             "name" "cvc"
+            "title" "Cvc"
             "type" "`$STRING`")
           (vs/jm
             "name" "ecData"
+            "title" "Ec Data"
             "type" "`$STRING`")
           (vs/jm
             "name" "ecrData"
+            "title" "Ecr Data"
             "type" "`$STRING`")
           (vs/jm
             "name" "emvData"
+            "title" "Emv Data"
             "type" "`$STRING`")
           (vs/jm
             "format" "int64"
             "name" "exchangeFee"
+            "title" "Exchange Fee"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "exchangeRate"
+            "title" "Exchange Rate"
             "type" "`$STRING`")
           (vs/jm
             "name" "languageCode"
+            "title" "Language Code"
             "type" "`$STRING`")
           (vs/jm
             "name" "merchantAddress"
+            "title" "Merchant Address"
             "type" "`$STRING`")
           (vs/jm
             "name" "merchantName"
+            "title" "Merchant Name"
             "type" "`$STRING`")
           (vs/jm
             "name" "merchantNumber"
+            "title" "Merchant Number"
             "type" "`$STRING`")
           (vs/jm
             "name" "messageType"
@@ -82,10 +102,12 @@
               "create" (vs/jm
                 "req" true
                 "type" "`$STRING`"))
+            "title" "Message Type"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "originalTraceNumber"
+            "title" "Original Trace Number"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "originalTransactionId"
@@ -93,51 +115,65 @@
               "create" (vs/jm
                 "req" true
                 "type" "`$STRING`"))
+            "title" "Original Transaction Id"
             "type" "`$STRING`")
           (vs/jm
             "name" "password"
+            "title" "Password"
             "type" "`$STRING`")
           (vs/jm
             "name" "paymentReason"
+            "title" "Payment Reason"
             "type" "`$STRING`")
           (vs/jm
             "name" "receiptFooter"
+            "title" "Receipt Footer"
             "type" "`$STRING`")
           (vs/jm
             "name" "receiptHeader"
+            "title" "Receipt Header"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "receiptLayout"
+            "title" "Receipt Layout"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "receiptNumber"
             "req" true
+            "title" "Receipt Number"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
+            "title" "Response Message"
             "type" "`$STRING`")
           (vs/jm
             "name" "serialNumber"
+            "title" "Serial Number"
             "type" "`$STRING`")
           (vs/jm
             "name" "svc"
+            "title" "Svc"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "terminalId"
             "req" true
+            "title" "Terminal Id"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "terminalLocation"
+            "title" "Terminal Location"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "traceNumber"
+            "title" "Trace Number"
             "type" "`$INTEGER`")
           (vs/jm
             "format" "date-time"
@@ -146,6 +182,7 @@
               "create" (vs/jm
                 "req" true
                 "type" "`$STRING`"))
+            "title" "Transaction Date"
             "type" "`$STRING`")
           (vs/jm
             "name" "transactionId"
@@ -153,12 +190,15 @@
               "create" (vs/jm
                 "req" true
                 "type" "`$STRING`"))
+            "title" "Transaction Id"
             "type" "`$STRING`")
           (vs/jm
             "name" "txType"
+            "title" "Tx Type"
             "type" "`$STRING`")
           (vs/jm
             "name" "userData"
+            "title" "User Data"
             "type" "`$STRING`"))
         "name" "cancel_transaction"
         "op" (vs/jm
@@ -174,6 +214,7 @@
                 "parts" (vs/jt
                   "public"
                   "cancelTransaction")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "public")
@@ -189,13 +230,16 @@
         "fields" (vs/jt
           (vs/jm
             "name" "cardNo"
+            "title" "Card No"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
+            "title" "Response Message"
             "type" "`$STRING`"))
         "name" "check_card_black_listed"
         "op" (vs/jm
@@ -217,6 +261,7 @@
                 "orig" "/checkCardBlackListed"
                 "parts" (vs/jt
                   "checkCardBlackListed")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "checkCardBlackListed"))
@@ -228,34 +273,167 @@
                   "res" "`body`")))))
         "relations" (vs/jm
           "ancestors" (vs/jt)))
+      "count_authorised_transaction" (vs/jm
+        "fields" (vs/jt
+          (vs/jm
+            "name" "period"
+            "title" "Period"
+            "type" "`$STRING`")
+          (vs/jm
+            "format" "int32"
+            "name" "responseCode"
+            "title" "Response Code"
+            "type" "`$INTEGER`")
+          (vs/jm
+            "name" "responseMessage"
+            "title" "Response Message"
+            "type" "`$STRING`")
+          (vs/jm
+            "format" "date-time"
+            "name" "transactionDateFrom"
+            "op" (vs/jm
+              "create" (vs/jm
+                "req" true
+                "type" "`$STRING`"))
+            "title" "Transaction Date From"
+            "type" "`$STRING`")
+          (vs/jm
+            "format" "date-time"
+            "name" "transactionDateTo"
+            "op" (vs/jm
+              "create" (vs/jm
+                "req" true
+                "type" "`$STRING`"))
+            "title" "Transaction Date To"
+            "type" "`$STRING`")
+          (vs/jm
+            "name" "transactionsCount"
+            "title" "Transactions Count"
+            "type" "`$ARRAY`"))
+        "name" "count_authorised_transaction"
+        "op" (vs/jm
+          "create" (vs/jm
+            "input" "data"
+            "name" "create"
+            "points" (vs/jt
+              (vs/jm
+                "args" (vs/jm)
+                "kind" "http"
+                "method" "POST"
+                "orig" "/public/countAuthorisedTransactions"
+                "parts" (vs/jt
+                  "public"
+                  "countAuthorisedTransactions")
+                "rename" (vs/jm)
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "public")
+                  (vs/jm
+                    "lit" "countAuthorisedTransactions"))
+                "select" (vs/jm)
+                "transform" (vs/jm
+                  "req" "`reqdata`"
+                  "res" "`body`")))))
+        "relations" (vs/jm
+          "ancestors" (vs/jt)))
+      "count_not_authorised_transaction" (vs/jm
+        "fields" (vs/jt
+          (vs/jm
+            "name" "period"
+            "title" "Period"
+            "type" "`$STRING`")
+          (vs/jm
+            "format" "int32"
+            "name" "responseCode"
+            "title" "Response Code"
+            "type" "`$INTEGER`")
+          (vs/jm
+            "name" "responseMessage"
+            "title" "Response Message"
+            "type" "`$STRING`")
+          (vs/jm
+            "format" "date-time"
+            "name" "transactionDateFrom"
+            "op" (vs/jm
+              "create" (vs/jm
+                "req" true
+                "type" "`$STRING`"))
+            "title" "Transaction Date From"
+            "type" "`$STRING`")
+          (vs/jm
+            "format" "date-time"
+            "name" "transactionDateTo"
+            "op" (vs/jm
+              "create" (vs/jm
+                "req" true
+                "type" "`$STRING`"))
+            "title" "Transaction Date To"
+            "type" "`$STRING`")
+          (vs/jm
+            "name" "transactionsCount"
+            "title" "Transactions Count"
+            "type" "`$ARRAY`"))
+        "name" "count_not_authorised_transaction"
+        "op" (vs/jm
+          "create" (vs/jm
+            "input" "data"
+            "name" "create"
+            "points" (vs/jt
+              (vs/jm
+                "args" (vs/jm)
+                "kind" "http"
+                "method" "POST"
+                "orig" "/public/countNotAuthorisedTransactions"
+                "parts" (vs/jt
+                  "public"
+                  "countNotAuthorisedTransactions")
+                "rename" (vs/jm)
+                "segments" (vs/jt
+                  (vs/jm
+                    "lit" "public")
+                  (vs/jm
+                    "lit" "countNotAuthorisedTransactions"))
+                "select" (vs/jm)
+                "transform" (vs/jm
+                  "req" "`reqdata`"
+                  "res" "`body`")))))
+        "relations" (vs/jm
+          "ancestors" (vs/jt)))
       "create_product" (vs/jm
         "fields" (vs/jt
           (vs/jm
             "format" "int32"
             "name" "acquirerId"
+            "title" "Acquirer Id"
             "type" "`$INTEGER`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
+            "title" "Response Message"
             "type" "`$STRING`")
           (vs/jm
             "name" "templateName"
             "req" true
+            "title" "Template Name"
             "type" "`$STRING`")
           (vs/jm
             "name" "templateType"
             "req" true
+            "title" "Template Type"
             "type" "`$STRING`")
           (vs/jm
             "name" "templateXml"
             "req" true
+            "title" "Template Xml"
             "type" "`$STRING`")
           (vs/jm
             "name" "terminalType"
             "req" true
+            "title" "Terminal Type"
             "type" "`$STRING`"))
         "name" "create_product"
         "op" (vs/jm
@@ -270,6 +448,7 @@
                 "orig" "/createProduct"
                 "parts" (vs/jt
                   "createProduct")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "createProduct"))
@@ -283,28 +462,35 @@
         "fields" (vs/jt
           (vs/jm
             "name" "corporateUuid"
+            "title" "Corporate Uuid"
             "type" "`$STRING`")
           (vs/jm
             "name" "deactivationReason"
             "req" true
+            "title" "Deactivation Reason"
             "type" "`$STRING`")
           (vs/jm
             "name" "packageOrderUuid"
+            "title" "Package Order Uuid"
             "type" "`$STRING`")
           (vs/jm
             "name" "productOrderUuid"
+            "title" "Product Order Uuid"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
+            "title" "Response Message"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "terminalId"
             "req" true
+            "title" "Terminal Id"
             "type" "`$INTEGER`"))
         "name" "deactivate_terminal"
         "op" (vs/jm
@@ -319,6 +505,7 @@
                 "orig" "/deactivateTerminal"
                 "parts" (vs/jt
                   "deactivateTerminal")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "deactivateTerminal"))
@@ -334,40 +521,50 @@
             "name" "clearingDateFrom"
             "req" true
             "short" "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz"
+            "title" "Clearing Date From"
             "type" "`$STRING`")
           (vs/jm
             "name" "clearingDateTo"
             "req" true
             "short" "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz"
+            "title" "Clearing Date To"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
+            "title" "Response Message"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "txCount"
+            "title" "Tx Count"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "txIdEnd"
+            "title" "Tx Id End"
             "type" "`$STRING`")
           (vs/jm
             "name" "txIdStart"
+            "title" "Tx Id Start"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "txSeqNoEnd"
+            "title" "Tx Seq No End"
             "type" "`$INTEGER`")
           (vs/jm
             "format" "int32"
             "name" "txSeqNoStart"
+            "title" "Tx Seq No Start"
             "type" "`$INTEGER`")
           (vs/jm
             "format" "int32"
             "name" "txTotal"
+            "title" "Tx Total"
             "type" "`$INTEGER`"))
         "name" "digital_services_api"
         "op" (vs/jm
@@ -419,6 +616,7 @@
                   "public"
                   "digitalservices"
                   "mandatorClearingExportMetadata")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "public")
@@ -444,6 +642,7 @@
                   "digitalservices"
                   "mandatorClearingExportDownload"
                   "status")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "public")
@@ -460,31 +659,37 @@
         "relations" (vs/jm
           "ancestors" (vs/jt
             (vs/jt
-              "mandator_clearing_export_download"))))
+              "$.main.kit.entity.mandator_clearing_export_download"))))
       "ec_data_ecom" (vs/jm
         "fields" (vs/jt
           (vs/jm
             "name" "ecomData"
+            "title" "Ecom Data"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
+            "title" "Response Message"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "terminalId"
             "req" true
+            "title" "Terminal Id"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "transactionId"
             "req" true
+            "title" "Transaction Id"
             "type" "`$STRING`")
           (vs/jm
             "name" "transactionType"
             "req" true
+            "title" "Transaction Type"
             "type" "`$STRING`"))
         "name" "ec_data_ecom"
         "op" (vs/jm
@@ -500,6 +705,7 @@
                 "parts" (vs/jt
                   "public"
                   "getEcData")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "public")
@@ -515,21 +721,26 @@
         "fields" (vs/jt
           (vs/jm
             "name" "ecomPass"
+            "title" "Ecom Pass"
             "type" "`$STRING`")
           (vs/jm
             "name" "ecomSkey"
+            "title" "Ecom Skey"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
+            "title" "Response Message"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "terminalId"
             "req" true
+            "title" "Terminal Id"
             "type" "`$INTEGER`"))
         "name" "ecom_parameter"
         "op" (vs/jm
@@ -545,6 +756,7 @@
                 "parts" (vs/jt
                   "public"
                   "getEcomParameters")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "public")
@@ -560,26 +772,32 @@
         "fields" (vs/jt
           (vs/jm
             "name" "ecrData"
+            "title" "Ecr Data"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
+            "title" "Response Message"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "terminalId"
             "req" true
+            "title" "Terminal Id"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "transactionId"
             "req" true
+            "title" "Transaction Id"
             "type" "`$STRING`")
           (vs/jm
             "name" "transactionType"
             "req" true
+            "title" "Transaction Type"
             "type" "`$STRING`"))
         "name" "ecr_data"
         "op" (vs/jm
@@ -595,6 +813,7 @@
                 "parts" (vs/jt
                   "public"
                   "getEcrData")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "public")
@@ -610,26 +829,32 @@
         "fields" (vs/jt
           (vs/jm
             "name" "emvData"
+            "title" "Emv Data"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
+            "title" "Response Message"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "terminalId"
             "req" true
+            "title" "Terminal Id"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "transactionId"
             "req" true
+            "title" "Transaction Id"
             "type" "`$STRING`")
           (vs/jm
             "name" "transactionType"
             "req" true
+            "title" "Transaction Type"
             "type" "`$STRING`"))
         "name" "emv_data"
         "op" (vs/jm
@@ -645,6 +870,7 @@
                 "parts" (vs/jt
                   "public"
                   "getEmvData")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "public")
@@ -661,54 +887,68 @@
           (vs/jm
             "format" "int32"
             "name" "accountNo"
+            "title" "Account No"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "additionalData"
+            "title" "Additional Data"
             "type" "`$OBJECT`")
           (vs/jm
             "name" "corporateUuid"
             "req" true
+            "title" "Corporate Uuid"
             "type" "`$STRING`")
           (vs/jm
             "name" "currency"
             "req" true
+            "title" "Currency"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "merchantCategoryCode"
             "req" true
+            "title" "Merchant Category Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "packageOrderUuid"
             "req" true
+            "title" "Package Order Uuid"
             "type" "`$STRING`")
           (vs/jm
             "name" "productOrderUuid"
             "req" true
+            "title" "Product Order Uuid"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
+            "title" "Response Message"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "sortingCode"
+            "title" "Sorting Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "templateName"
             "req" true
+            "title" "Template Name"
             "type" "`$STRING`")
           (vs/jm
             "name" "terminalIdAcq"
+            "title" "Terminal Id Acq"
             "type" "`$STRING`")
           (vs/jm
             "name" "terminalIds"
+            "title" "Terminal Ids"
             "type" "`$ARRAY`")
           (vs/jm
             "name" "vuNummer"
+            "title" "Vu Nummer"
             "type" "`$STRING`"))
         "name" "enable_acquiring"
         "op" (vs/jm
@@ -723,6 +963,7 @@
                 "orig" "/enableAcquiring"
                 "parts" (vs/jt
                   "enableAcquiring")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "enableAcquiring"))
@@ -737,13 +978,16 @@
           (vs/jm
             "name" "merchantContractNumber"
             "req" true
+            "title" "Merchant Contract Number"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
+            "title" "Response Message"
             "type" "`$STRING`"))
         "name" "get_merchant_contract_number"
         "op" (vs/jm
@@ -758,6 +1002,7 @@
                 "orig" "/getMerchantContractNumber"
                 "parts" (vs/jt
                   "getMerchantContractNumber")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "getMerchantContractNumber"))
@@ -772,13 +1017,16 @@
           (vs/jm
             "format" "int32"
             "name" "responseCode"
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
+            "title" "Response Message"
             "type" "`$STRING`")
           (vs/jm
             "name" "templateName"
             "req" true
+            "title" "Template Name"
             "type" "`$STRING`"))
         "name" "get_template_xml"
         "op" (vs/jm
@@ -794,6 +1042,7 @@
                 "parts" (vs/jt
                   "public"
                   "getTemplateXml")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "public")
@@ -810,13 +1059,16 @@
           (vs/jm
             "name" "mandatorName"
             "req" true
+            "title" "Mandator Name"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
+            "title" "Response Message"
             "type" "`$STRING`"))
         "name" "introduce_mandator"
         "op" (vs/jm
@@ -831,6 +1083,7 @@
                 "orig" "/introduceMandator"
                 "parts" (vs/jt
                   "introduceMandator")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "introduceMandator"))
@@ -845,13 +1098,16 @@
           (vs/jm
             "format" "int32"
             "name" "responseCode"
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
+            "title" "Response Message"
             "type" "`$STRING`")
           (vs/jm
             "name" "terminalTemplateDescription"
             "req" true
+            "title" "Terminal Template Description"
             "type" "`$STRING`"))
         "name" "introduce_package"
         "op" (vs/jm
@@ -866,6 +1122,7 @@
                 "orig" "/introducePackage"
                 "parts" (vs/jt
                   "introducePackage")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "introducePackage"))
@@ -879,35 +1136,45 @@
         "fields" (vs/jt
           (vs/jm
             "name" "hwserialno"
+            "title" "Hwserialno"
             "type" "`$STRING`")
           (vs/jm
             "name" "kaDateTimeFrom"
+            "title" "Ka Date Time From"
             "type" "`$STRING`")
           (vs/jm
             "name" "kaDateTimeTo"
+            "title" "Ka Date Time To"
             "type" "`$STRING`")
           (vs/jm
             "name" "keepAliveData"
+            "title" "Keep Alive Data"
             "type" "`$ARRAY`")
           (vs/jm
             "name" "pagination"
+            "title" "Pagination"
             "type" "`$OBJECT`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
+            "title" "Response Message"
             "type" "`$STRING`")
           (vs/jm
             "name" "terminalDateTimeFrom"
+            "title" "Terminal Date Time From"
             "type" "`$STRING`")
           (vs/jm
             "name" "terminalDateTimeTo"
+            "title" "Terminal Date Time To"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "terminalId"
+            "title" "Terminal Id"
             "type" "`$INTEGER`"))
         "name" "keep_alive"
         "op" (vs/jm
@@ -923,6 +1190,7 @@
                 "parts" (vs/jt
                   "public"
                   "keepalive")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "public")
@@ -938,22 +1206,28 @@
         "fields" (vs/jt
           (vs/jm
             "name" "corporateUuid"
+            "title" "Corporate Uuid"
             "type" "`$ARRAY`")
           (vs/jm
             "name" "filter"
+            "title" "Filter"
             "type" "`$OBJECT`")
           (vs/jm
             "name" "pagination"
+            "title" "Pagination"
             "type" "`$OBJECT`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
+            "title" "Response Message"
             "type" "`$STRING`")
           (vs/jm
             "name" "terminals"
+            "title" "Terminals"
             "type" "`$ARRAY`"))
         "name" "list_terminal"
         "op" (vs/jm
@@ -969,6 +1243,7 @@
                 "parts" (vs/jt
                   "public"
                   "listTerminals")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "public")
@@ -986,24 +1261,30 @@
             "name" "clearingDateFrom"
             "req" true
             "short" "Date and time in the format yyyy-MM-dd'T'HH:mm:ssZ"
+            "title" "Clearing Date From"
             "type" "`$STRING`")
           (vs/jm
             "name" "clearingDateTo"
             "req" true
             "short" "Date and time in the format yyyy-MM-dd'T'HH:mm:ssZ"
+            "title" "Clearing Date To"
             "type" "`$STRING`")
           (vs/jm
             "name" "pagination"
+            "title" "Pagination"
             "type" "`$OBJECT`")
           (vs/jm
             "name" "records"
+            "title" "Records"
             "type" "`$ARRAY`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
+            "title" "Response Message"
             "type" "`$STRING`"))
         "name" "mandator_clearing_export"
         "op" (vs/jm
@@ -1020,6 +1301,7 @@
                   "public"
                   "digitalservices"
                   "mandatorClearingExport")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "public")
@@ -1040,34 +1322,42 @@
             "name" "clearingDateFrom"
             "req" true
             "short" "Start date for clearing export (inclusive)"
+            "title" "Clearing Date From"
             "type" "`$STRING`")
           (vs/jm
             "format" "date-time"
             "name" "clearingDateTo"
             "req" true
             "short" "End date for clearing export (inclusive)"
+            "title" "Clearing Date To"
             "type" "`$STRING`")
           (vs/jm
             "name" "fileId"
             "short" "Unique file identifier for tracking and downloading"
+            "title" "File Id"
             "type" "`$STRING`")
           (vs/jm
             "name" "filenameTemplate"
             "short" "Optional filename template for the export file"
+            "title" "Filename Template"
             "type" "`$STRING`")
           (vs/jm
             "name" "id"
+            "title" "Id"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
+            "title" "Response Message"
             "type" "`$STRING`")
           (vs/jm
             "name" "status"
             "short" "Processing status of the export request"
+            "title" "Status"
             "type" "`$STRING`"))
         "id" (vs/jm
           "field" "id"
@@ -1087,6 +1377,7 @@
                   "public"
                   "digitalservices"
                   "mandatorClearingExportDownload")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "public")
@@ -1145,21 +1436,26 @@
             "name" "clearingDateFrom"
             "req" true
             "short" "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz"
+            "title" "Clearing Date From"
             "type" "`$STRING`")
           (vs/jm
             "name" "clearingDateTo"
             "req" true
             "short" "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz"
+            "title" "Clearing Date To"
             "type" "`$STRING`")
           (vs/jm
             "name" "records"
+            "title" "Records"
             "type" "`$ARRAY`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
+            "title" "Response Message"
             "type" "`$STRING`"))
         "name" "mandator_clearing_export_summary"
         "op" (vs/jm
@@ -1176,6 +1472,7 @@
                   "public"
                   "digitalservices"
                   "mandatorClearingExportSummary")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "public")
@@ -1193,83 +1490,108 @@
         "fields" (vs/jt
           (vs/jm
             "name" "3DSecure"
+            "title" "3 D Secure"
             "type" "`$STRING`")
           (vs/jm
             "name" "authorizationCode"
+            "title" "Authorization Code"
             "type" "`$STRING`")
           (vs/jm
             "name" "cardBrand"
+            "title" "Card Brand"
             "type" "`$STRING`")
           (vs/jm
             "name" "clearingAmountFrom"
+            "title" "Clearing Amount From"
             "type" "`$STRING`")
           (vs/jm
             "name" "clearingAmountTo"
+            "title" "Clearing Amount To"
             "type" "`$STRING`")
           (vs/jm
             "name" "clearingCurrency"
+            "title" "Clearing Currency"
             "type" "`$STRING`")
           (vs/jm
             "name" "clearingStatus"
+            "title" "Clearing Status"
             "type" "`$STRING`")
           (vs/jm
             "name" "corporateUUID"
+            "title" "Corporate Uuid"
             "type" "`$STRING`")
           (vs/jm
             "name" "orderByTransactionDate"
+            "title" "Order By Transaction Date"
             "type" "`$STRING`")
           (vs/jm
             "name" "pagination"
+            "title" "Pagination"
             "type" "`$OBJECT`")
           (vs/jm
             "name" "receiptNumber"
+            "title" "Receipt Number"
             "type" "`$STRING`")
           (vs/jm
             "name" "referencedTransactionId"
+            "title" "Referenced Transaction Id"
             "type" "`$STRING`")
           (vs/jm
             "name" "retrievalReferenceNumber"
+            "title" "Retrieval Reference Number"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "sourceId"
+            "title" "Source Id"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "tecsengineResponseCodeFrom"
+            "title" "Tecsengine Response Code From"
             "type" "`$STRING`")
           (vs/jm
             "name" "tecsengineResponseCodeTo"
+            "title" "Tecsengine Response Code To"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "terminalId"
+            "title" "Terminal Id"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "traceNumber"
+            "title" "Trace Number"
             "type" "`$STRING`")
           (vs/jm
             "name" "transactionAmountFrom"
+            "title" "Transaction Amount From"
             "type" "`$STRING`")
           (vs/jm
             "name" "transactionAmountTo"
+            "title" "Transaction Amount To"
             "type" "`$STRING`")
           (vs/jm
             "format" "date-time"
             "name" "transactionDateFrom"
+            "title" "Transaction Date From"
             "type" "`$STRING`")
           (vs/jm
             "format" "date-time"
             "name" "transactionDateTo"
+            "title" "Transaction Date To"
             "type" "`$STRING`")
           (vs/jm
             "name" "transactionId"
+            "title" "Transaction Id"
             "type" "`$STRING`")
           (vs/jm
             "name" "transactionType"
+            "title" "Transaction Type"
             "type" "`$STRING`")
           (vs/jm
             "name" "wallet"
             "short" "Filter by wallet type."
+            "title" "Wallet"
             "type" "`$STRING`"))
         "name" "merchant_portal_services_api"
         "op" (vs/jm
@@ -1285,6 +1607,7 @@
                 "parts" (vs/jt
                   "public"
                   "transactionHistoryCsv")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "public")
@@ -1301,19 +1624,24 @@
           (vs/jm
             "name" "productorderuuids"
             "req" true
+            "title" "Productorderuuids"
             "type" "`$ARRAY`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
+            "title" "Response Message"
             "type" "`$STRING`")
           (vs/jm
             "name" "targetPackageorderuuid"
+            "title" "Target Packageorderuuid"
             "type" "`$STRING`")
           (vs/jm
             "name" "targetProductorderuuid"
+            "title" "Target Productorderuuid"
             "type" "`$STRING`"))
         "name" "move_tid"
         "op" (vs/jm
@@ -1328,6 +1656,7 @@
                 "orig" "/moveTid"
                 "parts" (vs/jt
                   "moveTid")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "moveTid"))
@@ -1342,63 +1671,77 @@
           (vs/jm
             "name" "acquirerName"
             "short" "Acquirer name parsed from KKG field"
+            "title" "Acquirer Name"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "amount"
             "req" true
             "short" "Transaction amount in minor units (cents)"
+            "title" "Amount"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "authorizationNumber"
             "short" "Authorization number from the gateway"
+            "title" "Authorization Number"
             "type" "`$STRING`")
           (vs/jm
             "name" "cardNumber"
             "req" true
             "short" "Card number - 12 to 19 digits, must pass Luhn validation"
+            "title" "Card Number"
             "type" "`$STRING`")
           (vs/jm
             "name" "cardType"
             "short" "Card type parsed from KKG field"
+            "title" "Card Type"
             "type" "`$STRING`")
           (vs/jm
             "name" "currency"
             "req" true
             "short" "Currency code - 3 uppercase letters (ISO 4217)"
+            "title" "Currency"
             "type" "`$STRING`")
           (vs/jm
             "name" "cvc"
             "short" "Card verification code - 3-4 digits (optional)"
+            "title" "Cvc"
             "type" "`$STRING`")
           (vs/jm
             "name" "dateTimeTx"
             "short" "Date and time of the transaction"
+            "title" "Date Time Tx"
             "type" "`$STRING`")
           (vs/jm
             "name" "expDate"
             "req" true
             "short" "Card expiry date in MMYY format"
+            "title" "Exp Date"
             "type" "`$STRING`")
           (vs/jm
             "name" "merchantId"
             "short" "Merchant ID (VU-NUMMER)"
+            "title" "Merchant Id"
             "type" "`$STRING`")
           (vs/jm
             "name" "originalTransactionId"
             "short" "Original transaction ID from gateway"
+            "title" "Original Transaction Id"
             "type" "`$STRING`")
           (vs/jm
             "name" "password"
             "short" "Terminal password sent as Kennwort in TECS XML (optional)"
+            "title" "Password"
             "type" "`$STRING`")
           (vs/jm
             "name" "responseCode"
             "short" "Response code - 00 for success, otherwise error code"
+            "title" "Response Code"
             "type" "`$STRING`")
           (vs/jm
             "name" "responseMessage"
             "short" "Response message - 'Approved' for success, error description otherwise"
+            "title" "Response Message"
             "type" "`$STRING`")
           (vs/jm
             "name" "terminalId"
@@ -1407,15 +1750,18 @@
                 "req" true
                 "type" "`$STRING`"))
             "short" "Terminal ID used for the transaction"
+            "title" "Terminal Id"
             "type" "`$STRING`")
           (vs/jm
             "name" "transactionId"
             "short" "Transaction ID generated by the backend"
+            "title" "Transaction Id"
             "type" "`$STRING`")
           (vs/jm
             "name" "txtype"
             "req" true
             "short" "Transaction type"
+            "title" "Txtype"
             "type" "`$STRING`"))
         "name" "payment_manual"
         "op" (vs/jm
@@ -1431,6 +1777,7 @@
                 "parts" (vs/jt
                   "public"
                   "paymentManual")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "public")
@@ -1449,54 +1796,66 @@
             "name" "amount"
             "req" true
             "short" "Transaction amount in minor units (cents)"
+            "title" "Amount"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "currency"
             "req" true
             "short" "Currency code - 3 uppercase letters (ISO 4217)"
+            "title" "Currency"
             "type" "`$STRING`")
           (vs/jm
             "name" "device"
             "short" "Device type that provided the SRED payload"
+            "title" "Device"
             "type" "`$STRING`")
           (vs/jm
             "name" "devicePayload"
             "req" true
             "short" "SRED encrypted device payload from the device (minimum 32 characters)"
+            "title" "Device Payload"
             "type" "`$STRING`")
           (vs/jm
             "name" "expDate"
             "short" "Card expiry date in MMYY format"
+            "title" "Exp Date"
             "type" "`$STRING`")
           (vs/jm
             "name" "mode"
             "short" "Decryption mode"
+            "title" "Mode"
             "type" "`$STRING`")
           (vs/jm
             "name" "panMasked"
             "short" "Masked PAN (first 6 and last 4 digits)"
+            "title" "Pan Masked"
             "type" "`$STRING`")
           (vs/jm
             "name" "password"
             "short" "Terminal password sent as Kennwort in TECS XML (optional)"
+            "title" "Password"
             "type" "`$STRING`")
           (vs/jm
             "name" "serial"
             "short" "Device serial number"
+            "title" "Serial"
             "type" "`$STRING`")
           (vs/jm
             "name" "serviceCode"
             "short" "Service code from the card"
+            "title" "Service Code"
             "type" "`$STRING`")
           (vs/jm
             "name" "terminalId"
             "req" true
             "short" "Terminal ID - 8 digits"
+            "title" "Terminal Id"
             "type" "`$STRING`")
           (vs/jm
             "name" "txtype"
             "req" true
             "short" "Transaction type"
+            "title" "Txtype"
             "type" "`$STRING`"))
         "name" "payment_sred"
         "op" (vs/jm
@@ -1512,6 +1871,7 @@
                 "parts" (vs/jt
                   "public"
                   "paymentSred")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "public")
@@ -1527,12 +1887,15 @@
         "fields" (vs/jt
           (vs/jm
             "name" "acquirerId"
+            "title" "Acquirer Id"
             "type" "`$STRING`")
           (vs/jm
             "name" "acquirerName"
+            "title" "Acquirer Name"
             "type" "`$STRING`")
           (vs/jm
             "name" "actualBonusPoints"
+            "title" "Actual Bonus Points"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
@@ -1541,69 +1904,89 @@
               "create" (vs/jm
                 "req" true
                 "type" "`$INTEGER`"))
+            "title" "Amount"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "authorizationCode"
+            "title" "Authorization Code"
             "type" "`$STRING`")
           (vs/jm
             "name" "balanceAmount"
+            "title" "Balance Amount"
             "type" "`$STRING`")
           (vs/jm
             "name" "cardBrand"
+            "title" "Card Brand"
             "type" "`$STRING`")
           (vs/jm
             "name" "cardNumber"
+            "title" "Card Number"
             "type" "`$STRING`")
           (vs/jm
             "name" "cardNumberReference"
             "req" true
+            "title" "Card Number Reference"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "clientId"
             "req" true
+            "title" "Client Id"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "currency"
             "req" true
+            "title" "Currency"
             "type" "`$STRING`")
           (vs/jm
             "name" "cvc"
+            "title" "Cvc"
             "type" "`$STRING`")
           (vs/jm
             "name" "ecData"
+            "title" "Ec Data"
             "type" "`$STRING`")
           (vs/jm
             "name" "ecrData"
+            "title" "Ecr Data"
             "type" "`$STRING`")
           (vs/jm
             "name" "emvData"
+            "title" "Emv Data"
             "type" "`$STRING`")
           (vs/jm
             "format" "int64"
             "name" "exchangeFee"
+            "title" "Exchange Fee"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "exchangeRate"
+            "title" "Exchange Rate"
             "type" "`$STRING`")
           (vs/jm
             "name" "languageCode"
+            "title" "Language Code"
             "type" "`$STRING`")
           (vs/jm
             "name" "merchantAddress"
+            "title" "Merchant Address"
             "type" "`$STRING`")
           (vs/jm
             "name" "merchantName"
+            "title" "Merchant Name"
             "type" "`$STRING`")
           (vs/jm
             "name" "merchantNumber"
+            "title" "Merchant Number"
             "type" "`$STRING`")
           (vs/jm
             "name" "messageType"
+            "title" "Message Type"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "originalTraceNumber"
+            "title" "Original Trace Number"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "originalTransactionId"
@@ -1611,51 +1994,65 @@
               "create" (vs/jm
                 "req" true
                 "type" "`$STRING`"))
+            "title" "Original Transaction Id"
             "type" "`$STRING`")
           (vs/jm
             "name" "password"
+            "title" "Password"
             "type" "`$STRING`")
           (vs/jm
             "name" "paymentReason"
+            "title" "Payment Reason"
             "type" "`$STRING`")
           (vs/jm
             "name" "receiptFooter"
+            "title" "Receipt Footer"
             "type" "`$STRING`")
           (vs/jm
             "name" "receiptHeader"
+            "title" "Receipt Header"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "receiptLayout"
+            "title" "Receipt Layout"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "receiptNumber"
             "req" true
+            "title" "Receipt Number"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
+            "title" "Response Message"
             "type" "`$STRING`")
           (vs/jm
             "name" "serialNumber"
+            "title" "Serial Number"
             "type" "`$STRING`")
           (vs/jm
             "name" "svc"
+            "title" "Svc"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "terminalId"
             "req" true
+            "title" "Terminal Id"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "terminalLocation"
+            "title" "Terminal Location"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "traceNumber"
+            "title" "Trace Number"
             "type" "`$INTEGER`")
           (vs/jm
             "format" "date-time"
@@ -1664,6 +2061,7 @@
               "create" (vs/jm
                 "req" true
                 "type" "`$STRING`"))
+            "title" "Transaction Date"
             "type" "`$STRING`")
           (vs/jm
             "name" "transactionId"
@@ -1671,16 +2069,20 @@
               "create" (vs/jm
                 "req" true
                 "type" "`$STRING`"))
+            "title" "Transaction Id"
             "type" "`$STRING`")
           (vs/jm
             "name" "transactionType"
             "req" true
+            "title" "Transaction Type"
             "type" "`$STRING`")
           (vs/jm
             "name" "txType"
+            "title" "Tx Type"
             "type" "`$STRING`")
           (vs/jm
             "name" "userData"
+            "title" "User Data"
             "type" "`$STRING`"))
         "name" "pre_auth_transaction_completion"
         "op" (vs/jm
@@ -1696,6 +2098,7 @@
                 "parts" (vs/jt
                   "public"
                   "paymentTransaction")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "public")
@@ -1713,6 +2116,7 @@
                 "parts" (vs/jt
                   "public"
                   "preAuthCompletionTransaction")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "public")
@@ -1728,28 +2132,35 @@
         "fields" (vs/jt
           (vs/jm
             "name" "corporateUuid"
+            "title" "Corporate Uuid"
             "type" "`$STRING`")
           (vs/jm
             "name" "packageOrderUuid"
+            "title" "Package Order Uuid"
             "type" "`$STRING`")
           (vs/jm
             "name" "productOrderUuid"
+            "title" "Product Order Uuid"
             "type" "`$STRING`")
           (vs/jm
             "name" "reactivationReason"
             "req" true
+            "title" "Reactivation Reason"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
+            "title" "Response Message"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "terminalId"
             "req" true
+            "title" "Terminal Id"
             "type" "`$INTEGER`"))
         "name" "reactivate_terminal"
         "op" (vs/jm
@@ -1764,6 +2175,7 @@
                 "orig" "/reactivateTerminal"
                 "parts" (vs/jt
                   "reactivateTerminal")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "reactivateTerminal"))
@@ -1777,12 +2189,15 @@
         "fields" (vs/jt
           (vs/jm
             "name" "acquirerId"
+            "title" "Acquirer Id"
             "type" "`$STRING`")
           (vs/jm
             "name" "acquirerName"
+            "title" "Acquirer Name"
             "type" "`$STRING`")
           (vs/jm
             "name" "actualBonusPoints"
+            "title" "Actual Bonus Points"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
@@ -1791,65 +2206,84 @@
               "create" (vs/jm
                 "req" true
                 "type" "`$INTEGER`"))
+            "title" "Amount"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "authorizationCode"
+            "title" "Authorization Code"
             "type" "`$STRING`")
           (vs/jm
             "name" "balanceAmount"
+            "title" "Balance Amount"
             "type" "`$STRING`")
           (vs/jm
             "name" "cardBrand"
+            "title" "Card Brand"
             "type" "`$STRING`")
           (vs/jm
             "name" "cardNumber"
+            "title" "Card Number"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "clientId"
             "req" true
+            "title" "Client Id"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "currency"
             "req" true
+            "title" "Currency"
             "type" "`$STRING`")
           (vs/jm
             "name" "cvc"
+            "title" "Cvc"
             "type" "`$STRING`")
           (vs/jm
             "name" "ecData"
+            "title" "Ec Data"
             "type" "`$STRING`")
           (vs/jm
             "name" "ecrData"
+            "title" "Ecr Data"
             "type" "`$STRING`")
           (vs/jm
             "name" "emvData"
+            "title" "Emv Data"
             "type" "`$STRING`")
           (vs/jm
             "format" "int64"
             "name" "exchangeFee"
+            "title" "Exchange Fee"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "exchangeRate"
+            "title" "Exchange Rate"
             "type" "`$STRING`")
           (vs/jm
             "name" "languageCode"
+            "title" "Language Code"
             "type" "`$STRING`")
           (vs/jm
             "name" "merchantAddress"
+            "title" "Merchant Address"
             "type" "`$STRING`")
           (vs/jm
             "name" "merchantName"
+            "title" "Merchant Name"
             "type" "`$STRING`")
           (vs/jm
             "name" "merchantNumber"
+            "title" "Merchant Number"
             "type" "`$STRING`")
           (vs/jm
             "name" "messageType"
+            "title" "Message Type"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "originalTraceNumber"
+            "title" "Original Trace Number"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "originalTransactionId"
@@ -1857,51 +2291,65 @@
               "create" (vs/jm
                 "req" true
                 "type" "`$STRING`"))
+            "title" "Original Transaction Id"
             "type" "`$STRING`")
           (vs/jm
             "name" "password"
+            "title" "Password"
             "type" "`$STRING`")
           (vs/jm
             "name" "paymentReason"
+            "title" "Payment Reason"
             "type" "`$STRING`")
           (vs/jm
             "name" "receiptFooter"
+            "title" "Receipt Footer"
             "type" "`$STRING`")
           (vs/jm
             "name" "receiptHeader"
+            "title" "Receipt Header"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "receiptLayout"
+            "title" "Receipt Layout"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "receiptNumber"
             "req" true
+            "title" "Receipt Number"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
+            "title" "Response Message"
             "type" "`$STRING`")
           (vs/jm
             "name" "serialNumber"
+            "title" "Serial Number"
             "type" "`$STRING`")
           (vs/jm
             "name" "svc"
+            "title" "Svc"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "terminalId"
             "req" true
+            "title" "Terminal Id"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "terminalLocation"
+            "title" "Terminal Location"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "traceNumber"
+            "title" "Trace Number"
             "type" "`$INTEGER`")
           (vs/jm
             "format" "date-time"
@@ -1910,6 +2358,7 @@
               "create" (vs/jm
                 "req" true
                 "type" "`$STRING`"))
+            "title" "Transaction Date"
             "type" "`$STRING`")
           (vs/jm
             "name" "transactionId"
@@ -1917,12 +2366,15 @@
               "create" (vs/jm
                 "req" true
                 "type" "`$STRING`"))
+            "title" "Transaction Id"
             "type" "`$STRING`")
           (vs/jm
             "name" "txType"
+            "title" "Tx Type"
             "type" "`$STRING`")
           (vs/jm
             "name" "userData"
+            "title" "User Data"
             "type" "`$STRING`"))
         "name" "refund_transaction"
         "op" (vs/jm
@@ -1938,6 +2390,7 @@
                 "parts" (vs/jt
                   "public"
                   "refundTransaction")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "public")
@@ -1954,32 +2407,40 @@
           (vs/jm
             "name" "corporateUuid"
             "req" true
+            "title" "Corporate Uuid"
             "type" "`$STRING`")
           (vs/jm
             "name" "packageOrderUuid"
             "req" true
+            "title" "Package Order Uuid"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "partnerId"
+            "title" "Partner Id"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "partnerName"
+            "title" "Partner Name"
             "type" "`$STRING`")
           (vs/jm
             "name" "productOrderUuid"
             "req" true
+            "title" "Product Order Uuid"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
+            "title" "Response Message"
             "type" "`$STRING`")
           (vs/jm
             "name" "templateName"
             "req" true
+            "title" "Template Name"
             "type" "`$STRING`"))
         "name" "register_tecs_company"
         "op" (vs/jm
@@ -1994,6 +2455,7 @@
                 "orig" "/registerTecsCompany"
                 "parts" (vs/jt
                   "registerTecsCompany")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "registerTecsCompany"))
@@ -2007,66 +2469,84 @@
         "fields" (vs/jt
           (vs/jm
             "name" "additionalData"
+            "title" "Additional Data"
             "type" "`$OBJECT`")
           (vs/jm
             "name" "corporateUuid"
             "req" true
+            "title" "Corporate Uuid"
             "type" "`$STRING`")
           (vs/jm
             "name" "packageOrderUuid"
             "req" true
+            "title" "Package Order Uuid"
             "type" "`$STRING`")
           (vs/jm
             "name" "productOrderUuid"
             "req" true
+            "title" "Product Order Uuid"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
+            "title" "Response Message"
             "type" "`$STRING`")
           (vs/jm
             "name" "tecsWebSecretKey"
+            "title" "Tecs Web Secret Key"
             "type" "`$STRING`")
           (vs/jm
             "name" "templateName"
             "req" true
+            "title" "Template Name"
             "type" "`$STRING`")
           (vs/jm
             "name" "terminalCountryCode"
             "req" true
+            "title" "Terminal Country Code"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "terminalId"
+            "title" "Terminal Id"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "terminalIdAcq"
+            "title" "Terminal Id Acq"
             "type" "`$STRING`")
           (vs/jm
             "name" "terminalLanguageCode"
             "req" true
+            "title" "Terminal Language Code"
             "type" "`$STRING`")
           (vs/jm
             "name" "terminalLocation"
             "req" true
+            "title" "Terminal Location"
             "type" "`$STRING`")
           (vs/jm
             "name" "terminalSerialNumber"
+            "title" "Terminal Serial Number"
             "type" "`$STRING`")
           (vs/jm
             "name" "tokenIOAlias"
+            "title" "Token Io Alias"
             "type" "`$STRING`")
           (vs/jm
             "name" "tokenIOIban"
+            "title" "Token Io Iban"
             "type" "`$STRING`")
           (vs/jm
             "name" "tokenIOMemberId"
+            "title" "Token Io Member Id"
             "type" "`$STRING`")
           (vs/jm
             "name" "webShopUrl"
+            "title" "Web Shop Url"
             "type" "`$STRING`"))
         "name" "register_terminal"
         "op" (vs/jm
@@ -2081,6 +2561,7 @@
                 "orig" "/registerTerminal"
                 "parts" (vs/jt
                   "registerTerminal")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "registerTerminal"))
@@ -2094,41 +2575,51 @@
         "fields" (vs/jt
           (vs/jm
             "name" "cardBrandReportData"
+            "title" "Card Brand Report Data"
             "type" "`$ARRAY`")
           (vs/jm
             "name" "clearingDateFrom"
             "req" true
             "short" "Date and time in the format yyyy-MM-dd'T'HH:mm:ss"
+            "title" "Clearing Date From"
             "type" "`$STRING`")
           (vs/jm
             "name" "clearingDateTo"
             "req" true
             "short" "Date and time in the format yyyy-MM-dd'T'HH:mm:ss"
+            "title" "Clearing Date To"
             "type" "`$STRING`")
           (vs/jm
             "name" "corporateId"
             "req" true
+            "title" "Corporate Id"
             "type" "`$STRING`")
           (vs/jm
             "name" "currency"
             "req" true
+            "title" "Currency"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
+            "title" "Response Message"
             "type" "`$STRING`")
           (vs/jm
             "name" "sumOverCreditTx"
+            "title" "Sum Over Credit Tx"
             "type" "`$OBJECT`")
           (vs/jm
             "name" "sumOverDebitTx"
+            "title" "Sum Over Debit Tx"
             "type" "`$OBJECT`")
           (vs/jm
             "format" "int32"
             "name" "terminalId"
+            "title" "Terminal Id"
             "type" "`$INTEGER`"))
         "name" "report_data"
         "op" (vs/jm
@@ -2145,6 +2636,7 @@
                   "public"
                   "digitalservices"
                   "reportData")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "public")
@@ -2162,20 +2654,25 @@
         "fields" (vs/jt
           (vs/jm
             "name" "acquirerName"
+            "title" "Acquirer Name"
             "type" "`$STRING`")
           (vs/jm
             "name" "acquirerTerminalId"
+            "title" "Acquirer Terminal Id"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "amount"
+            "title" "Amount"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "applicationCryptogram"
+            "title" "Application Cryptogram"
             "type" "`$STRING`")
           (vs/jm
             "name" "authorizationCode"
             "short" "Authorization code returned by the acquirer; null when not available"
+            "title" "Authorization Code"
             "type" (vs/jt
               "`$ONE`"
               (vs/jt
@@ -2184,154 +2681,199 @@
           (vs/jm
             "format" "date-time"
             "name" "authorizationDate"
+            "title" "Authorization Date"
             "type" "`$STRING`")
           (vs/jm
             "name" "cardBrand"
+            "title" "Card Brand"
             "type" "`$STRING`")
           (vs/jm
             "name" "cardEntry"
+            "title" "Card Entry"
             "type" "`$STRING`")
           (vs/jm
             "name" "cardExpiration"
+            "title" "Card Expiration"
             "type" "`$STRING`")
           (vs/jm
             "name" "cardNumber"
+            "title" "Card Number"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "clearingAmount"
+            "title" "Clearing Amount"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "clearingBatchId"
+            "title" "Clearing Batch Id"
             "type" "`$STRING`")
           (vs/jm
             "name" "clearingCurrency"
+            "title" "Clearing Currency"
             "type" "`$STRING`")
           (vs/jm
             "format" "date-time"
             "name" "clearingDate"
+            "title" "Clearing Date"
             "type" "`$STRING`")
           (vs/jm
             "format" "date-time"
             "name" "clearingProcessedDate"
+            "title" "Clearing Processed Date"
             "type" "`$STRING`")
           (vs/jm
             "name" "clearingStatus"
+            "title" "Clearing Status"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "clientId"
+            "title" "Client Id"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "currency"
+            "title" "Currency"
             "type" "`$STRING`")
           (vs/jm
             "name" "cvm"
+            "title" "Cvm"
             "type" "`$STRING`")
           (vs/jm
             "name" "ecrData"
+            "title" "Ecr Data"
             "type" "`$STRING`")
           (vs/jm
             "name" "emvApplicationId"
+            "title" "Emv Application Id"
             "type" "`$STRING`")
           (vs/jm
             "name" "emvApplicationLabel"
+            "title" "Emv Application Label"
             "type" "`$STRING`")
           (vs/jm
             "name" "merchantName"
+            "title" "Merchant Name"
             "type" "`$STRING`")
           (vs/jm
             "name" "merchantNumber"
+            "title" "Merchant Number"
             "type" "`$STRING`")
           (vs/jm
             "name" "originalClientId"
+            "title" "Original Client Id"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "originalTerminalId"
+            "title" "Original Terminal Id"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "originalTransactionId"
+            "title" "Original Transaction Id"
             "type" "`$STRING`")
           (vs/jm
             "name" "paymentReason"
+            "title" "Payment Reason"
             "type" "`$STRING`")
           (vs/jm
             "name" "receiptNumber"
+            "title" "Receipt Number"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseCodeFromAS"
+            "title" "Response Code From As"
             "type" "`$STRING`")
           (vs/jm
             "name" "responseMessage"
+            "title" "Response Message"
             "type" "`$STRING`")
           (vs/jm
             "name" "retrievalReferenceNumber"
+            "title" "Retrieval Reference Number"
             "type" "`$STRING`")
           (vs/jm
             "name" "serviceCode"
+            "title" "Service Code"
             "type" "`$STRING`")
           (vs/jm
             "name" "settlementStatus"
+            "title" "Settlement Status"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "sourceId"
+            "title" "Source Id"
             "type" "`$INTEGER`")
           (vs/jm
             "format" "int32"
             "name" "tecsengineResponseCode"
+            "title" "Tecsengine Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "tecsengineResponseText"
+            "title" "Tecsengine Response Text"
             "type" "`$STRING`")
           (vs/jm
             "format" "date-time"
             "name" "terminalEndOfDayDate"
+            "title" "Terminal End Of Day Date"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "terminalId"
+            "title" "Terminal Id"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "terminalLocation"
+            "title" "Terminal Location"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "tipAmount"
+            "title" "Tip Amount"
             "type" "`$INTEGER`")
           (vs/jm
             "format" "int32"
             "name" "traceNumber"
+            "title" "Trace Number"
             "type" "`$INTEGER`")
           (vs/jm
             "format" "date-time"
             "name" "transactionClearingDate"
+            "title" "Transaction Clearing Date"
             "type" "`$STRING`")
           (vs/jm
             "format" "date-time"
             "name" "transactionDate"
+            "title" "Transaction Date"
             "type" "`$STRING`")
           (vs/jm
             "name" "transactionId"
+            "title" "Transaction Id"
             "type" "`$STRING`")
           (vs/jm
             "format" "int64"
             "name" "transactionSeqNumber"
+            "title" "Transaction Seq Number"
             "type" "`$INTEGER`")
           (vs/jm
             "format" "date-time"
             "name" "transactionServerDate"
+            "title" "Transaction Server Date"
             "type" "`$STRING`")
           (vs/jm
             "name" "transactionSource"
+            "title" "Transaction Source"
             "type" "`$STRING`")
           (vs/jm
             "name" "transactionType"
+            "title" "Transaction Type"
             "type" "`$STRING`"))
         "name" "status_transaction"
         "op" (vs/jm
@@ -2347,6 +2889,7 @@
                 "parts" (vs/jt
                   "public"
                   "statusTransaction")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "public")
@@ -2362,23 +2905,29 @@
         "fields" (vs/jt
           (vs/jm
             "name" "acqTabNexo"
+            "title" "Acq Tab Nexo"
             "type" "`$OBJECT`")
           (vs/jm
             "name" "configVersion"
+            "title" "Config Version"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
+            "title" "Response Message"
             "type" "`$STRING`")
           (vs/jm
             "name" "serialNumber"
             "req" true
+            "title" "Serial Number"
             "type" "`$STRING`")
           (vs/jm
             "name" "tidSent"
+            "title" "Tid Sent"
             "type" "`$STRING`"))
         "name" "store_terminal_parameter"
         "op" (vs/jm
@@ -2393,6 +2942,7 @@
                 "orig" "/storeTerminalParameters"
                 "parts" (vs/jt
                   "storeTerminalParameters")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "storeTerminalParameters"))
@@ -2407,19 +2957,24 @@
           (vs/jm
             "name" "deviceSerialNumber"
             "req" true
+            "title" "Device Serial Number"
             "type" "`$ARRAY`")
           (vs/jm
             "name" "duplicateTerminalIds"
+            "title" "Duplicate Terminal Ids"
             "type" "`$ARRAY`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
+            "title" "Response Message"
             "type" "`$STRING`")
           (vs/jm
             "name" "terminals"
+            "title" "Terminals"
             "type" "`$ARRAY`"))
         "name" "terminal_id"
         "op" (vs/jm
@@ -2435,6 +2990,7 @@
                 "parts" (vs/jt
                   "public"
                   "getTerminalId")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "public")
@@ -2450,96 +3006,125 @@
         "fields" (vs/jt
           (vs/jm
             "name" "3DSecure"
+            "title" "3 D Secure"
             "type" "`$STRING`")
           (vs/jm
             "name" "authorizationCode"
+            "title" "Authorization Code"
             "type" "`$STRING`")
           (vs/jm
             "name" "cardBrand"
+            "title" "Card Brand"
             "type" "`$STRING`")
           (vs/jm
             "name" "clearingAmountFrom"
+            "title" "Clearing Amount From"
             "type" "`$STRING`")
           (vs/jm
             "name" "clearingAmountTo"
+            "title" "Clearing Amount To"
             "type" "`$STRING`")
           (vs/jm
             "name" "clearingCurrency"
+            "title" "Clearing Currency"
             "type" "`$STRING`")
           (vs/jm
             "name" "clearingStatus"
+            "title" "Clearing Status"
             "type" "`$STRING`")
           (vs/jm
             "name" "corporateUUID"
+            "title" "Corporate Uuid"
             "type" "`$STRING`")
           (vs/jm
             "name" "orderByTransactionDate"
+            "title" "Order By Transaction Date"
             "type" "`$STRING`")
           (vs/jm
             "name" "pagination"
+            "title" "Pagination"
             "type" "`$OBJECT`")
           (vs/jm
             "name" "paymentTokenPublicId"
+            "title" "Payment Token Public Id"
             "type" "`$STRING`")
           (vs/jm
             "name" "receiptNumber"
+            "title" "Receipt Number"
             "type" "`$STRING`")
           (vs/jm
             "name" "referencedTransactionId"
+            "title" "Referenced Transaction Id"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
+            "title" "Response Message"
             "type" "`$STRING`")
           (vs/jm
             "name" "retrievalReferenceNumber"
+            "title" "Retrieval Reference Number"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "sourceId"
+            "title" "Source Id"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "tecsengineResponseCodeFrom"
+            "title" "Tecsengine Response Code From"
             "type" "`$STRING`")
           (vs/jm
             "name" "tecsengineResponseCodeTo"
+            "title" "Tecsengine Response Code To"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "terminalId"
+            "title" "Terminal Id"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "traceNumber"
+            "title" "Trace Number"
             "type" "`$STRING`")
           (vs/jm
             "name" "transactionAmountFrom"
+            "title" "Transaction Amount From"
             "type" "`$STRING`")
           (vs/jm
             "name" "transactionAmountTo"
+            "title" "Transaction Amount To"
             "type" "`$STRING`")
           (vs/jm
             "format" "date-time"
             "name" "transactionDateFrom"
+            "title" "Transaction Date From"
             "type" "`$STRING`")
           (vs/jm
             "format" "date-time"
             "name" "transactionDateTo"
+            "title" "Transaction Date To"
             "type" "`$STRING`")
           (vs/jm
             "name" "transactionHistories"
+            "title" "Transaction Histories"
             "type" "`$ARRAY`")
           (vs/jm
             "name" "transactionId"
+            "title" "Transaction Id"
             "type" "`$STRING`")
           (vs/jm
             "name" "transactionType"
+            "title" "Transaction Type"
             "type" "`$STRING`")
           (vs/jm
             "name" "wallet"
             "short" "Filter by wallet type."
+            "title" "Wallet"
             "type" "`$STRING`"))
         "name" "transaction_history"
         "op" (vs/jm
@@ -2556,6 +3141,7 @@
                   "public"
                   "mcom"
                   "transactionHistory")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "public")
@@ -2575,6 +3161,7 @@
                 "parts" (vs/jt
                   "public"
                   "transactionHistory")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "public")
@@ -2586,90 +3173,20 @@
                   "res" "`body`")))))
         "relations" (vs/jm
           "ancestors" (vs/jt)))
-      "transactions_count" (vs/jm
-        "fields" (vs/jt
-          (vs/jm
-            "name" "period"
-            "type" "`$STRING`")
-          (vs/jm
-            "format" "int32"
-            "name" "responseCode"
-            "type" "`$INTEGER`")
-          (vs/jm
-            "name" "responseMessage"
-            "type" "`$STRING`")
-          (vs/jm
-            "format" "date-time"
-            "name" "transactionDateFrom"
-            "op" (vs/jm
-              "create" (vs/jm
-                "req" true
-                "type" "`$STRING`"))
-            "type" "`$STRING`")
-          (vs/jm
-            "format" "date-time"
-            "name" "transactionDateTo"
-            "op" (vs/jm
-              "create" (vs/jm
-                "req" true
-                "type" "`$STRING`"))
-            "type" "`$STRING`")
-          (vs/jm
-            "name" "transactionsCount"
-            "type" "`$ARRAY`"))
-        "name" "transactions_count"
-        "op" (vs/jm
-          "create" (vs/jm
-            "input" "data"
-            "name" "create"
-            "points" (vs/jt
-              (vs/jm
-                "args" (vs/jm)
-                "kind" "http"
-                "method" "POST"
-                "orig" "/public/countAuthorisedTransactions"
-                "parts" (vs/jt
-                  "public"
-                  "countAuthorisedTransactions")
-                "segments" (vs/jt
-                  (vs/jm
-                    "lit" "public")
-                  (vs/jm
-                    "lit" "countAuthorisedTransactions"))
-                "select" (vs/jm)
-                "transform" (vs/jm
-                  "req" "`reqdata`"
-                  "res" "`body`"))
-              (vs/jm
-                "args" (vs/jm)
-                "kind" "http"
-                "method" "POST"
-                "orig" "/public/countNotAuthorisedTransactions"
-                "parts" (vs/jt
-                  "public"
-                  "countNotAuthorisedTransactions")
-                "segments" (vs/jt
-                  (vs/jm
-                    "lit" "public")
-                  (vs/jm
-                    "lit" "countNotAuthorisedTransactions"))
-                "select" (vs/jm)
-                "transform" (vs/jm
-                  "req" "`reqdata`"
-                  "res" "`body`")))))
-        "relations" (vs/jm
-          "ancestors" (vs/jt)))
       "transactions_count_card_brand" (vs/jm
         "fields" (vs/jt
           (vs/jm
             "name" "period"
+            "title" "Period"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
+            "title" "Response Message"
             "type" "`$STRING`")
           (vs/jm
             "format" "date-time"
@@ -2678,6 +3195,7 @@
               "create" (vs/jm
                 "req" true
                 "type" "`$STRING`"))
+            "title" "Transaction Date From"
             "type" "`$STRING`")
           (vs/jm
             "format" "date-time"
@@ -2686,9 +3204,11 @@
               "create" (vs/jm
                 "req" true
                 "type" "`$STRING`"))
+            "title" "Transaction Date To"
             "type" "`$STRING`")
           (vs/jm
             "name" "transactionsCount"
+            "title" "Transactions Count"
             "type" "`$ARRAY`"))
         "name" "transactions_count_card_brand"
         "op" (vs/jm
@@ -2704,6 +3224,7 @@
                 "parts" (vs/jt
                   "public"
                   "countTransactionsByCardBrand")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "public")
@@ -2719,13 +3240,16 @@
         "fields" (vs/jt
           (vs/jm
             "name" "period"
+            "title" "Period"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
+            "title" "Response Message"
             "type" "`$STRING`")
           (vs/jm
             "format" "date-time"
@@ -2734,6 +3258,7 @@
               "create" (vs/jm
                 "req" true
                 "type" "`$STRING`"))
+            "title" "Transaction Date From"
             "type" "`$STRING`")
           (vs/jm
             "format" "date-time"
@@ -2742,9 +3267,11 @@
               "create" (vs/jm
                 "req" true
                 "type" "`$STRING`"))
+            "title" "Transaction Date To"
             "type" "`$STRING`")
           (vs/jm
             "name" "turnovers"
+            "title" "Turnovers"
             "type" "`$ARRAY`"))
         "name" "transactions_turnover"
         "op" (vs/jm
@@ -2760,6 +3287,7 @@
                 "parts" (vs/jt
                   "public"
                   "transactionTurnover")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "public")
@@ -2775,38 +3303,49 @@
         "fields" (vs/jt
           (vs/jm
             "name" "city"
+            "title" "City"
             "type" "`$STRING`")
           (vs/jm
             "name" "corporateUuid"
             "req" true
+            "title" "Corporate Uuid"
             "type" "`$STRING`")
           (vs/jm
             "name" "country"
+            "title" "Country"
             "type" "`$STRING`")
           (vs/jm
             "name" "merchantCategoryCode"
+            "title" "Merchant Category Code"
             "type" "`$STRING`")
           (vs/jm
             "name" "name"
+            "title" "Name"
             "type" "`$STRING`")
           (vs/jm
             "format" "int32"
             "name" "responseCode"
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
+            "title" "Response Message"
             "type" "`$STRING`")
           (vs/jm
             "name" "state"
+            "title" "State"
             "type" "`$STRING`")
           (vs/jm
             "name" "street"
+            "title" "Street"
             "type" "`$STRING`")
           (vs/jm
             "name" "vuNummer"
+            "title" "Vu Nummer"
             "type" "`$STRING`")
           (vs/jm
             "name" "zipcode"
+            "title" "Zipcode"
             "type" "`$STRING`"))
         "name" "update_merchant"
         "op" (vs/jm
@@ -2822,6 +3361,7 @@
                 "parts" (vs/jt
                   "public"
                   "updateMerchant")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "public")
@@ -2838,17 +3378,21 @@
           (vs/jm
             "format" "int32"
             "name" "responseCode"
+            "title" "Response Code"
             "type" "`$INTEGER`")
           (vs/jm
             "name" "responseMessage"
+            "title" "Response Message"
             "type" "`$STRING`")
           (vs/jm
             "name" "templateName"
             "req" true
+            "title" "Template Name"
             "type" "`$STRING`")
           (vs/jm
             "name" "templateXml"
             "req" true
+            "title" "Template Xml"
             "type" "`$STRING`"))
         "name" "update_template_xml"
         "op" (vs/jm
@@ -2864,6 +3408,7 @@
                 "parts" (vs/jt
                   "public"
                   "updateTemplateXml")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "public")
@@ -2879,12 +3424,15 @@
         "fields" (vs/jt
           (vs/jm
             "name" "appName"
+            "title" "App Name"
             "type" "`$STRING`")
           (vs/jm
             "name" "buildDate"
+            "title" "Build Date"
             "type" "`$STRING`")
           (vs/jm
             "name" "version"
+            "title" "Version"
             "type" "`$STRING`"))
         "name" "version"
         "op" (vs/jm
@@ -2900,6 +3448,7 @@
                 "parts" (vs/jt
                   "public"
                   "version")
+                "rename" (vs/jm)
                 "segments" (vs/jt
                   (vs/jm
                     "lit" "public")
@@ -3066,6 +3615,8 @@
       "entity" (vs/jm
         "cancel_transaction" (vs/jm)
         "check_card_black_listed" (vs/jm)
+        "count_authorised_transaction" (vs/jm)
+        "count_not_authorised_transaction" (vs/jm)
         "create_product" (vs/jm)
         "deactivate_terminal" (vs/jm)
         "digital_services_api" (vs/jm)
@@ -3097,7 +3648,6 @@
         "store_terminal_parameter" (vs/jm)
         "terminal_id" (vs/jm)
         "transaction_history" (vs/jm)
-        "transactions_count" (vs/jm)
         "transactions_count_card_brand" (vs/jm)
         "transactions_turnover" (vs/jm)
         "update_merchant" (vs/jm)

@@ -51,6 +51,12 @@ genTests c = do
   check_card_black_listedInstanceTest c
   check_card_black_listedBasicTest c
   check_card_black_listedDirectTest c
+  count_authorised_transactionInstanceTest c
+  count_authorised_transactionBasicTest c
+  count_authorised_transactionDirectTest c
+  count_not_authorised_transactionInstanceTest c
+  count_not_authorised_transactionBasicTest c
+  count_not_authorised_transactionDirectTest c
   create_productInstanceTest c
   create_productBasicTest c
   create_productDirectTest c
@@ -144,9 +150,6 @@ genTests c = do
   transaction_historyInstanceTest c
   transaction_historyBasicTest c
   transaction_historyDirectTest c
-  transactions_countInstanceTest c
-  transactions_countBasicTest c
-  transactions_countDirectTest c
   transactions_count_card_brandInstanceTest c
   transactions_count_card_brandBasicTest c
   transactions_count_card_brandDirectTest c
@@ -245,6 +248,96 @@ check_card_black_listedDirectTest c = runTest c "check_card_black_listed.direct"
   opts <- jo [("base", VStr "http://localhost:8080"), ("system", sys)]
   sdk <- C.newSdk opts
   args <- jo [("path", VStr "/check_card_black_listed/x"), ("method", VStr "GET")]
+  res <- F.direct sdk args
+  ok <- getp res "ok"
+  st <- getp res "status"
+  dat <- getp res "data"
+  did <- getp dat "id"
+  n <- readIORef calls
+  pure (isTrueV ok && toInt st == 200 && vstring did == "direct01" && n == 1)
+
+count_authorised_transactionInstanceTest :: Counters -> IO ()
+count_authorised_transactionInstanceTest c = runTest c "count_authorised_transaction.instance" $ do
+  sdk <- C.testSdk0
+  ent <- C.count_authorised_transaction sdk VNoval
+  pure (eName ent == "count_authorised_transaction")
+
+count_authorised_transactionBasicTest :: Counters -> IO ()
+count_authorised_transactionBasicTest c = do
+  fixture <- loadFixture "CountAuthorisedTransaction"
+  existing <- getp fixture "existing"
+  opts <- jo [("entity", existing)]
+  runTest c "count_authorised_transaction.create" $ do
+    sdk <- C.testSdk opts VNoval
+    ent <- C.count_authorised_transaction sdk VNoval
+    d <- newRefData fixture "count_authorised_transaction"
+    ctrl <- emptyMap
+    created <- eCreate ent d ctrl
+    cd <- eDataGet created
+    -- The create RESULT is a map. Deliberately NOT "and it carries an id":
+    -- a create response need not return one. univec's convert, embed and
+    -- ephemeral_key all answer {success, data:{...}} with no id, so this
+    -- target failed three entity tests the go target passes -- go asserts
+    -- only that the result is a map, and that is the assertion the model
+    -- actually supports.
+    pure (ismap cd)
+
+count_authorised_transactionDirectTest :: Counters -> IO ()
+count_authorised_transactionDirectTest c = runTest c "count_authorised_transaction.direct" $ do
+  calls <- newIORef (0 :: Int)
+  let mock = VFunc (\_ _ _ _ -> do
+        modifyIORef calls (+ 1)
+        d <- jo [("id", VStr "direct01")]
+        jo [("status", VNum 200), ("statusText", VStr "OK"), ("json", jsonThunk d)])
+  sys <- jo [("fetch", mock)]
+  opts <- jo [("base", VStr "http://localhost:8080"), ("system", sys)]
+  sdk <- C.newSdk opts
+  args <- jo [("path", VStr "/count_authorised_transaction/x"), ("method", VStr "GET")]
+  res <- F.direct sdk args
+  ok <- getp res "ok"
+  st <- getp res "status"
+  dat <- getp res "data"
+  did <- getp dat "id"
+  n <- readIORef calls
+  pure (isTrueV ok && toInt st == 200 && vstring did == "direct01" && n == 1)
+
+count_not_authorised_transactionInstanceTest :: Counters -> IO ()
+count_not_authorised_transactionInstanceTest c = runTest c "count_not_authorised_transaction.instance" $ do
+  sdk <- C.testSdk0
+  ent <- C.count_not_authorised_transaction sdk VNoval
+  pure (eName ent == "count_not_authorised_transaction")
+
+count_not_authorised_transactionBasicTest :: Counters -> IO ()
+count_not_authorised_transactionBasicTest c = do
+  fixture <- loadFixture "CountNotAuthorisedTransaction"
+  existing <- getp fixture "existing"
+  opts <- jo [("entity", existing)]
+  runTest c "count_not_authorised_transaction.create" $ do
+    sdk <- C.testSdk opts VNoval
+    ent <- C.count_not_authorised_transaction sdk VNoval
+    d <- newRefData fixture "count_not_authorised_transaction"
+    ctrl <- emptyMap
+    created <- eCreate ent d ctrl
+    cd <- eDataGet created
+    -- The create RESULT is a map. Deliberately NOT "and it carries an id":
+    -- a create response need not return one. univec's convert, embed and
+    -- ephemeral_key all answer {success, data:{...}} with no id, so this
+    -- target failed three entity tests the go target passes -- go asserts
+    -- only that the result is a map, and that is the assertion the model
+    -- actually supports.
+    pure (ismap cd)
+
+count_not_authorised_transactionDirectTest :: Counters -> IO ()
+count_not_authorised_transactionDirectTest c = runTest c "count_not_authorised_transaction.direct" $ do
+  calls <- newIORef (0 :: Int)
+  let mock = VFunc (\_ _ _ _ -> do
+        modifyIORef calls (+ 1)
+        d <- jo [("id", VStr "direct01")]
+        jo [("status", VNum 200), ("statusText", VStr "OK"), ("json", jsonThunk d)])
+  sys <- jo [("fetch", mock)]
+  opts <- jo [("base", VStr "http://localhost:8080"), ("system", sys)]
+  sdk <- C.newSdk opts
+  args <- jo [("path", VStr "/count_not_authorised_transaction/x"), ("method", VStr "GET")]
   res <- F.direct sdk args
   ok <- getp res "ok"
   st <- getp res "status"
@@ -1666,51 +1759,6 @@ transaction_historyDirectTest c = runTest c "transaction_history.direct" $ do
   opts <- jo [("base", VStr "http://localhost:8080"), ("system", sys)]
   sdk <- C.newSdk opts
   args <- jo [("path", VStr "/transaction_history/x"), ("method", VStr "GET")]
-  res <- F.direct sdk args
-  ok <- getp res "ok"
-  st <- getp res "status"
-  dat <- getp res "data"
-  did <- getp dat "id"
-  n <- readIORef calls
-  pure (isTrueV ok && toInt st == 200 && vstring did == "direct01" && n == 1)
-
-transactions_countInstanceTest :: Counters -> IO ()
-transactions_countInstanceTest c = runTest c "transactions_count.instance" $ do
-  sdk <- C.testSdk0
-  ent <- C.transactions_count sdk VNoval
-  pure (eName ent == "transactions_count")
-
-transactions_countBasicTest :: Counters -> IO ()
-transactions_countBasicTest c = do
-  fixture <- loadFixture "TransactionsCount"
-  existing <- getp fixture "existing"
-  opts <- jo [("entity", existing)]
-  runTest c "transactions_count.create" $ do
-    sdk <- C.testSdk opts VNoval
-    ent <- C.transactions_count sdk VNoval
-    d <- newRefData fixture "transactions_count"
-    ctrl <- emptyMap
-    created <- eCreate ent d ctrl
-    cd <- eDataGet created
-    -- The create RESULT is a map. Deliberately NOT "and it carries an id":
-    -- a create response need not return one. univec's convert, embed and
-    -- ephemeral_key all answer {success, data:{...}} with no id, so this
-    -- target failed three entity tests the go target passes -- go asserts
-    -- only that the result is a map, and that is the assertion the model
-    -- actually supports.
-    pure (ismap cd)
-
-transactions_countDirectTest :: Counters -> IO ()
-transactions_countDirectTest c = runTest c "transactions_count.direct" $ do
-  calls <- newIORef (0 :: Int)
-  let mock = VFunc (\_ _ _ _ -> do
-        modifyIORef calls (+ 1)
-        d <- jo [("id", VStr "direct01")]
-        jo [("status", VNum 200), ("statusText", VStr "OK"), ("json", jsonThunk d)])
-  sys <- jo [("fetch", mock)]
-  opts <- jo [("base", VStr "http://localhost:8080"), ("system", sys)]
-  sdk <- C.newSdk opts
-  args <- jo [("path", VStr "/transactions_count/x"), ("method", VStr "GET")]
   res <- F.direct sdk args
   ok <- getp res "ok"
   st <- getp res "status"

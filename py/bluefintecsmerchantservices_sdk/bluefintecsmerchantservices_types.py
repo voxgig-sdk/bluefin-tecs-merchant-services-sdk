@@ -1,7 +1,7 @@
 # Typed models for the BluefinTecsMerchantServices SDK.
 #
-# GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
-# params (op.<name>.points[].args.params[]). Field/param types come from the
+# GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+# params (op.<name>.points[].g.params[]). Field/param types come from the
 # canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 # @voxgig/apidef VALID_CANON). Do not edit by hand.
 #
@@ -118,6 +118,42 @@ class CheckCardBlackListedCreateData(TypedDict, total=False):
     cardNo: str
     responseCode: int
     responseMessage: str
+
+
+class CountAuthorisedTransaction(TypedDict, total=False):
+    period: str
+    responseCode: int
+    responseMessage: str
+    transactionDateFrom: str
+    transactionDateTo: str
+    transactionsCount: list
+
+
+class CountAuthorisedTransactionCreateData(TypedDict, total=False):
+    period: str
+    responseCode: int
+    responseMessage: str
+    transactionDateFrom: str
+    transactionDateTo: str
+    transactionsCount: list
+
+
+class CountNotAuthorisedTransaction(TypedDict, total=False):
+    period: str
+    responseCode: int
+    responseMessage: str
+    transactionDateFrom: str
+    transactionDateTo: str
+    transactionsCount: list
+
+
+class CountNotAuthorisedTransactionCreateData(TypedDict, total=False):
+    period: str
+    responseCode: int
+    responseMessage: str
+    transactionDateFrom: str
+    transactionDateTo: str
+    transactionsCount: list
 
 
 class CreateProductRequired(TypedDict):
@@ -1238,24 +1274,6 @@ class TransactionHistoryCreateData(TypedDict, total=False):
     transactionId: str
     transactionType: str
     wallet: str
-
-
-class TransactionsCount(TypedDict, total=False):
-    period: str
-    responseCode: int
-    responseMessage: str
-    transactionDateFrom: str
-    transactionDateTo: str
-    transactionsCount: list
-
-
-class TransactionsCountCreateData(TypedDict, total=False):
-    period: str
-    responseCode: int
-    responseMessage: str
-    transactionDateFrom: str
-    transactionDateTo: str
-    transactionsCount: list
 
 
 class TransactionsCountCardBrand(TypedDict, total=False):

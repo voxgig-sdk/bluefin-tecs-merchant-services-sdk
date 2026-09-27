@@ -1,0 +1,76 @@
+# Entity: store_terminal_parameter
+
+main: kit: entity: store_terminal_parameter: {
+
+  alias: field: {}
+
+  fields: {
+    acqTabNexo: {
+      h: "Acq Tab Nexo"
+      n: "acqTabNexo"
+      r: false
+      t: "`$OBJECT`"
+    }
+    configVersion: {
+      h: "Config Version"
+      n: "configVersion"
+      r: false
+      t: "`$STRING`"
+    }
+    responseCode: {
+      fo: "int32"
+      h: "Response Code"
+      n: "responseCode"
+      r: false
+      t: "`$INTEGER`"
+    }
+    responseMessage: {
+      h: "Response Message"
+      n: "responseMessage"
+      r: false
+      t: "`$STRING`"
+    }
+    serialNumber: {
+      h: "Serial Number"
+      n: "serialNumber"
+      r: true
+      t: "`$STRING`"
+    }
+    tidSent: {
+      h: "Tid Sent"
+      n: "tidSent"
+      r: false
+      t: "`$STRING`"
+    }
+  }
+
+  name: "store_terminal_parameter"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /storeTerminalParameters"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/storeTerminalParameters"
+          s: [
+            {
+              lit: "storeTerminalParameters"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

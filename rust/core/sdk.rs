@@ -57,12 +57,6 @@ impl BluefinTecsMerchantServicesSDK {
         *rootctx.options.borrow_mut() = opts.clone();
         *sdk.rootctx.borrow_mut() = Some(rootctx.clone());
 
-        // Add features in the resolved order (make_options puts an explicit
-        // List order first, else defaults to test-first). Ordering matters:
-        // the `test` feature installs the base mock transport and the
-        // transport features (retry/cache/netsim/proxy/ratelimit) wrap
-        // whatever is current, so `test` must be added before them to sit at
-        // the base of the transport wrapper chain.
         let feature_opts = to_map(&getp(&opts, "feature"));
         if let Value::List(order) = getpath(&["__derived__", "featureorder"], &opts) {
             let names: Vec<String> = order
@@ -302,18 +296,6 @@ impl BluefinTecsMerchantServicesSDK {
         ]))
     }
 
-    // Raw GraphQL access: the pressure valve that makes the generated
-    // surface's deliberate omissions (per-call selection sets, typed filter
-    // builders, batching, subscriptions) livable — the whole schema stays
-    // reachable.
-    //
-    // Thin wrapper over the same prepare/fetch path direct uses, with the one
-    // thing raw direct cannot do for GraphQL: a GraphQL failure rides HTTP
-    // 200 as a top-level `errors` array, so status alone would report a
-    // failed query as ok.
-    //
-    // NOTE: like direct, this bypasses the feature pipeline — no retry,
-    // ratelimit or paging features apply.
     pub fn graphql(
         &self, query: &str, variables: Value, ctrl: Value,
     ) -> Result<Value, BluefinTecsMerchantServicesError> {
@@ -342,7 +324,6 @@ impl BluefinTecsMerchantServicesSDK {
         // { errors: [...] } body, and the raw path represents a non-2xx as
         // ok:false with no err — so returning early on status would discard
         // the server's own diagnostics, which are the only useful part of
-        // that response.
         let errors = getpath(&["data", "errors"], &res);
 
         if let Value::List(items) = &errors {
@@ -370,6 +351,16 @@ impl BluefinTecsMerchantServicesSDK {
     /// CheckCardBlackListed entity bound to this client.
     pub fn check_card_black_listed(self: &Rc<Self>, entopts: Value) -> Rc<crate::entity::check_card_black_listed::CheckCardBlackListedEntity> {
         crate::entity::check_card_black_listed::CheckCardBlackListedEntity::new(self, entopts)
+    }
+
+    /// CountAuthorisedTransaction entity bound to this client.
+    pub fn count_authorised_transaction(self: &Rc<Self>, entopts: Value) -> Rc<crate::entity::count_authorised_transaction::CountAuthorisedTransactionEntity> {
+        crate::entity::count_authorised_transaction::CountAuthorisedTransactionEntity::new(self, entopts)
+    }
+
+    /// CountNotAuthorisedTransaction entity bound to this client.
+    pub fn count_not_authorised_transaction(self: &Rc<Self>, entopts: Value) -> Rc<crate::entity::count_not_authorised_transaction::CountNotAuthorisedTransactionEntity> {
+        crate::entity::count_not_authorised_transaction::CountNotAuthorisedTransactionEntity::new(self, entopts)
     }
 
     /// CreateProduct entity bound to this client.
@@ -527,11 +518,6 @@ impl BluefinTecsMerchantServicesSDK {
         crate::entity::transaction_history::TransactionHistoryEntity::new(self, entopts)
     }
 
-    /// TransactionsCount entity bound to this client.
-    pub fn transactions_count(self: &Rc<Self>, entopts: Value) -> Rc<crate::entity::transactions_count::TransactionsCountEntity> {
-        crate::entity::transactions_count::TransactionsCountEntity::new(self, entopts)
-    }
-
     /// TransactionsCountCardBrand entity bound to this client.
     pub fn transactions_count_card_brand(self: &Rc<Self>, entopts: Value) -> Rc<crate::entity::transactions_count_card_brand::TransactionsCountCardBrandEntity> {
         crate::entity::transactions_count_card_brand::TransactionsCountCardBrandEntity::new(self, entopts)
@@ -572,7 +558,6 @@ pub fn test_sdk(testopts: Value, sdkopts: Value) -> Rc<BluefinTecsMerchantServic
     setp(&testopts, "active", Value::Bool(true));
 
     // set_path mutates `sdkopts` in place and returns the inner parent node;
-    // discard the return so we pass the full options root (mirrors go's
     // vs.SetPath(sdkopts, ...) which does not rebind).
     vs::set_path(
         &sdkopts,

@@ -61,6 +61,14 @@ Construct a `CancelTransaction` entity bound to the client. Pass `VNoval` for no
 
 Construct a `CheckCardBlackListed` entity bound to the client. Pass `VNoval` for no initial options.
 
+#### `count_authorised_transaction :: Client -> Value -> IO Entity`
+
+Construct a `CountAuthorisedTransaction` entity bound to the client. Pass `VNoval` for no initial options.
+
+#### `count_not_authorised_transaction :: Client -> Value -> IO Entity`
+
+Construct a `CountNotAuthorisedTransaction` entity bound to the client. Pass `VNoval` for no initial options.
+
 #### `create_product :: Client -> Value -> IO Entity`
 
 Construct a `CreateProduct` entity bound to the client. Pass `VNoval` for no initial options.
@@ -184,10 +192,6 @@ Construct a `TerminalId` entity bound to the client. Pass `VNoval` for no initia
 #### `transaction_history :: Client -> Value -> IO Entity`
 
 Construct a `TransactionHistory` entity bound to the client. Pass `VNoval` for no initial options.
-
-#### `transactions_count :: Client -> Value -> IO Entity`
-
-Construct a `TransactionsCount` entity bound to the client. Pass `VNoval` for no initial options.
 
 #### `transactions_count_card_brand :: Client -> Value -> IO Entity`
 
@@ -421,6 +425,142 @@ Run an operation as a lazy stream of result items.
 #### `eMake :: IO Entity`
 
 Create a new `CheckCardBlackListed` entity with the same options.
+
+#### `eName :: String`
+
+The entity name.
+
+
+---
+
+## CountAuthorisedTransaction
+
+```haskell
+  ent <- Sdk.count_authorised_transaction sdk VNoval
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `period` | `String` | No |  |
+| `responseCode` | `Int` | No |  |
+| `responseMessage` | `String` | No |  |
+| `transactionDateFrom` | `String` | No |  |
+| `transactionDateTo` | `String` | No |  |
+| `transactionsCount` | `[Value]` | No |  |
+
+### Field Usage by Operation
+
+| Field | create |
+| --- | --- |
+| `period` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `transactionDateFrom` | Yes |
+| `transactionDateTo` | Yes |
+| `transactionsCount` | - |
+
+### Operations
+
+#### `eCreate ent data ctrl :: IO Entity`
+
+Create a new entity with the given data. Resolves to the ENTITY (read the record with `eDataGet`) and raises on error.
+
+```haskell
+  ent <- Sdk.count_authorised_transaction sdk VNoval
+  d <- jo
+    []
+  ctrl <- emptyMap
+  result <- Sdk.eCreate ent d ctrl   -- the ENTITY
+  d2 <- Sdk.eDataGet result
+```
+
+### Common Fields
+
+#### `eDataGet :: IO Value`
+
+Get the entity data.
+
+#### `eDataSet :: Value -> IO ()`
+
+Set the entity data.
+
+#### `eStream :: String -> Value -> Value -> IO [Value]`
+
+Run an operation as a lazy stream of result items.
+
+#### `eMake :: IO Entity`
+
+Create a new `CountAuthorisedTransaction` entity with the same options.
+
+#### `eName :: String`
+
+The entity name.
+
+
+---
+
+## CountNotAuthorisedTransaction
+
+```haskell
+  ent <- Sdk.count_not_authorised_transaction sdk VNoval
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `period` | `String` | No |  |
+| `responseCode` | `Int` | No |  |
+| `responseMessage` | `String` | No |  |
+| `transactionDateFrom` | `String` | No |  |
+| `transactionDateTo` | `String` | No |  |
+| `transactionsCount` | `[Value]` | No |  |
+
+### Field Usage by Operation
+
+| Field | create |
+| --- | --- |
+| `period` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `transactionDateFrom` | Yes |
+| `transactionDateTo` | Yes |
+| `transactionsCount` | - |
+
+### Operations
+
+#### `eCreate ent data ctrl :: IO Entity`
+
+Create a new entity with the given data. Resolves to the ENTITY (read the record with `eDataGet`) and raises on error.
+
+```haskell
+  ent <- Sdk.count_not_authorised_transaction sdk VNoval
+  d <- jo
+    []
+  ctrl <- emptyMap
+  result <- Sdk.eCreate ent d ctrl   -- the ENTITY
+  d2 <- Sdk.eDataGet result
+```
+
+### Common Fields
+
+#### `eDataGet :: IO Value`
+
+Get the entity data.
+
+#### `eDataSet :: Value -> IO ()`
+
+Set the entity data.
+
+#### `eStream :: String -> Value -> Value -> IO [Value]`
+
+Run an operation as a lazy stream of result items.
+
+#### `eMake :: IO Entity`
+
+Create a new `CountNotAuthorisedTransaction` entity with the same options.
 
 #### `eName :: String`
 
@@ -2603,74 +2743,6 @@ The entity name.
 
 ---
 
-## TransactionsCount
-
-```haskell
-  ent <- Sdk.transactions_count sdk VNoval
-```
-
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `period` | `String` | No |  |
-| `responseCode` | `Int` | No |  |
-| `responseMessage` | `String` | No |  |
-| `transactionDateFrom` | `String` | No |  |
-| `transactionDateTo` | `String` | No |  |
-| `transactionsCount` | `[Value]` | No |  |
-
-### Field Usage by Operation
-
-| Field | create |
-| --- | --- |
-| `period` | - |
-| `responseCode` | - |
-| `responseMessage` | - |
-| `transactionDateFrom` | Yes |
-| `transactionDateTo` | Yes |
-| `transactionsCount` | - |
-
-### Operations
-
-#### `eCreate ent data ctrl :: IO Entity`
-
-Create a new entity with the given data. Resolves to the ENTITY (read the record with `eDataGet`) and raises on error.
-
-```haskell
-  ent <- Sdk.transactions_count sdk VNoval
-  d <- jo
-    []
-  ctrl <- emptyMap
-  result <- Sdk.eCreate ent d ctrl   -- the ENTITY
-  d2 <- Sdk.eDataGet result
-```
-
-### Common Fields
-
-#### `eDataGet :: IO Value`
-
-Get the entity data.
-
-#### `eDataSet :: Value -> IO ()`
-
-Set the entity data.
-
-#### `eStream :: String -> Value -> Value -> IO [Value]`
-
-Run an operation as a lazy stream of result items.
-
-#### `eMake :: IO Entity`
-
-Create a new `TransactionsCount` entity with the same options.
-
-#### `eName :: String`
-
-The entity name.
-
-
----
-
 ## TransactionsCountCardBrand
 
 ```haskell
@@ -2983,18 +3055,18 @@ The entity name.
 
 | Feature | Version | Description |
 | --- | --- | --- |
-| `audit` | 0.0.1 | Structured audit trail of operations |
-| `clienttrack` | 0.0.1 | Client identity and per-request correlation headers |
-| `debug` | 0.0.1 | Request/response capture ring buffer for debugging |
-| `idempotency` | 0.0.1 | Idempotency keys for safe retries of mutating operations |
-| `log` | 0.0.1 | Structured request and response logging |
-| `metrics` | 0.0.1 | Statistics capture: per-operation counters and latency |
-| `paging` | 0.0.1 | Pagination signals for list operations |
-| `ratelimit` | 0.0.1 | Client-side rate limiting via a token bucket |
-| `retry` | 0.0.1 | Automatic retry of transient failures with exponential backoff |
-| `telemetry` | 0.0.1 | Distributed tracing spans with W3C trace-context propagation |
-| `test` | 0.0.1 | In-memory mock transport for testing without a live server |
-| `timeout` | 0.0.1 | Per-request timeout with transport abort |
+| `audit` | 0.0.1 | Audit trail |
+| `clienttrack` | 0.0.1 | Client tracking |
+| `debug` | 0.0.1 | Debug capture |
+| `idempotency` | 0.0.1 | Idempotency |
+| `log` | 0.0.1 | Logging |
+| `metrics` | 0.0.1 | Metrics |
+| `paging` | 0.0.1 | Paging |
+| `ratelimit` | 0.0.1 | Rate limiting |
+| `retry` | 0.0.1 | Retry |
+| `telemetry` | 0.0.1 | Telemetry |
+| `test` | 0.0.1 | Test transport |
+| `timeout` | 0.0.1 | Timeout |
 
 
 Features are activated via the `feature` option:

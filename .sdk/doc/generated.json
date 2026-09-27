@@ -1,7 +1,18 @@
 {
+  "version": 2,
+  "roots": [
+    ".github/workflows/docgen.yml",
+    ".sdk/admin/setup-github-pages.sh",
+    ".sdk/doc/generated.json",
+    ".sdk/doc/qa",
+    ".sdk/doc/qa-manifest.json",
+    "SUMMARY.md",
+    "docs"
+  ],
   "files": [
     ".github/workflows/docgen.yml",
     ".sdk/admin/setup-github-pages.sh",
+    ".sdk/doc/generated.json",
     ".sdk/doc/qa-manifest.json",
     ".sdk/doc/qa/STYLE-GUIDE.md",
     ".sdk/doc/qa/pages-job.yml",
@@ -14,6 +25,8 @@
     "docs/.nojekyll",
     "docs/api/cancel_transaction.html",
     "docs/api/check_card_black_listed.html",
+    "docs/api/count_authorised_transaction.html",
+    "docs/api/count_not_authorised_transaction.html",
     "docs/api/create_product.html",
     "docs/api/deactivate_terminal.html",
     "docs/api/digital_services_api.html",
@@ -46,7 +59,6 @@
     "docs/api/store_terminal_parameter.html",
     "docs/api/terminal_id.html",
     "docs/api/transaction_history.html",
-    "docs/api/transactions_count.html",
     "docs/api/transactions_count_card_brand.html",
     "docs/api/transactions_turnover.html",
     "docs/api/update_merchant.html",

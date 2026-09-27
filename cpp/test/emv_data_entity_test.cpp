@@ -50,7 +50,7 @@ static EmvDataSetup emv_data_basic_setup(const Value& extra) {
 
   EmvDataSetup s;
   s.client = client;
-  s.data = entity_data;
+  s.d = entity_data;
   s.idmap = idmap_resolved;
   s.env = env;
   s.live = live;

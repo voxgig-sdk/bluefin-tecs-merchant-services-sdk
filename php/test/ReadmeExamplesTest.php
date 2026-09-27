@@ -42,6 +42,8 @@ class ReadmeExamplesTest extends TestCase
     private const ENTITIES = [
         "CancelTransaction" => "cancel_transaction",
         "CheckCardBlackListed" => "check_card_black_listed",
+        "CountAuthorisedTransaction" => "count_authorised_transaction",
+        "CountNotAuthorisedTransaction" => "count_not_authorised_transaction",
         "CreateProduct" => "create_product",
         "DeactivateTerminal" => "deactivate_terminal",
         "DigitalServicesApi" => "digital_services_api",
@@ -73,7 +75,6 @@ class ReadmeExamplesTest extends TestCase
         "StoreTerminalParameter" => "store_terminal_parameter",
         "TerminalId" => "terminal_id",
         "TransactionHistory" => "transaction_history",
-        "TransactionsCount" => "transactions_count",
         "TransactionsCountCardBrand" => "transactions_count_card_brand",
         "TransactionsTurnover" => "transactions_turnover",
         "UpdateMerchant" => "update_merchant",

@@ -71,6 +71,12 @@ func init() {
 	core.NewCheckCardBlackListedEntityFunc = func(client *core.BluefinTecsMerchantServicesSDK, entopts map[string]any) core.BluefinTecsMerchantServicesEntity {
 		return entity.NewCheckCardBlackListedEntity(client, entopts)
 	}
+	core.NewCountAuthorisedTransactionEntityFunc = func(client *core.BluefinTecsMerchantServicesSDK, entopts map[string]any) core.BluefinTecsMerchantServicesEntity {
+		return entity.NewCountAuthorisedTransactionEntity(client, entopts)
+	}
+	core.NewCountNotAuthorisedTransactionEntityFunc = func(client *core.BluefinTecsMerchantServicesSDK, entopts map[string]any) core.BluefinTecsMerchantServicesEntity {
+		return entity.NewCountNotAuthorisedTransactionEntity(client, entopts)
+	}
 	core.NewCreateProductEntityFunc = func(client *core.BluefinTecsMerchantServicesSDK, entopts map[string]any) core.BluefinTecsMerchantServicesEntity {
 		return entity.NewCreateProductEntity(client, entopts)
 	}
@@ -163,9 +169,6 @@ func init() {
 	}
 	core.NewTransactionHistoryEntityFunc = func(client *core.BluefinTecsMerchantServicesSDK, entopts map[string]any) core.BluefinTecsMerchantServicesEntity {
 		return entity.NewTransactionHistoryEntity(client, entopts)
-	}
-	core.NewTransactionsCountEntityFunc = func(client *core.BluefinTecsMerchantServicesSDK, entopts map[string]any) core.BluefinTecsMerchantServicesEntity {
-		return entity.NewTransactionsCountEntity(client, entopts)
 	}
 	core.NewTransactionsCountCardBrandEntityFunc = func(client *core.BluefinTecsMerchantServicesSDK, entopts map[string]any) core.BluefinTecsMerchantServicesEntity {
 		return entity.NewTransactionsCountCardBrandEntity(client, entopts)

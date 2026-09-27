@@ -50,7 +50,7 @@ static GetMerchantContractNumberSetup get_merchant_contract_number_basic_setup(c
 
   GetMerchantContractNumberSetup s;
   s.client = client;
-  s.data = entity_data;
+  s.d = entity_data;
   s.idmap = idmap_resolved;
   s.env = env;
   s.live = live;

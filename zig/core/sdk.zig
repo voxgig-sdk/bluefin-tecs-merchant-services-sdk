@@ -376,6 +376,16 @@ pub const BluefinTecsMerchantServicesSDK = struct {
         return @import("../entity/check_card_black_listed.zig").CheckCardBlackListedEntity.new(self, entopts);
     }
 
+    /// CountAuthorisedTransaction entity bound to this client.
+    pub fn count_authorised_transaction(self: *@This(), entopts: Value) *@import("../entity/count_authorised_transaction.zig").CountAuthorisedTransactionEntity {
+        return @import("../entity/count_authorised_transaction.zig").CountAuthorisedTransactionEntity.new(self, entopts);
+    }
+
+    /// CountNotAuthorisedTransaction entity bound to this client.
+    pub fn count_not_authorised_transaction(self: *@This(), entopts: Value) *@import("../entity/count_not_authorised_transaction.zig").CountNotAuthorisedTransactionEntity {
+        return @import("../entity/count_not_authorised_transaction.zig").CountNotAuthorisedTransactionEntity.new(self, entopts);
+    }
+
     /// CreateProduct entity bound to this client.
     pub fn create_product(self: *@This(), entopts: Value) *@import("../entity/create_product.zig").CreateProductEntity {
         return @import("../entity/create_product.zig").CreateProductEntity.new(self, entopts);
@@ -529,11 +539,6 @@ pub const BluefinTecsMerchantServicesSDK = struct {
     /// TransactionHistory entity bound to this client.
     pub fn transaction_history(self: *@This(), entopts: Value) *@import("../entity/transaction_history.zig").TransactionHistoryEntity {
         return @import("../entity/transaction_history.zig").TransactionHistoryEntity.new(self, entopts);
-    }
-
-    /// TransactionsCount entity bound to this client.
-    pub fn transactions_count(self: *@This(), entopts: Value) *@import("../entity/transactions_count.zig").TransactionsCountEntity {
-        return @import("../entity/transactions_count.zig").TransactionsCountEntity.new(self, entopts);
     }
 
     /// TransactionsCountCardBrand entity bound to this client.

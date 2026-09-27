@@ -1,0 +1,127 @@
+# Entity: payment_sred
+
+main: kit: entity: payment_sred: {
+
+  alias: field: {}
+
+  fields: {
+    amount: {
+      fo: "int32"
+      h: "Amount"
+      n: "amount"
+      r: true
+      sh: "Transaction amount in minor units (cents)"
+      t: "`$INTEGER`"
+    }
+    currency: {
+      h: "Currency"
+      n: "currency"
+      r: true
+      sh: "Currency code - 3 uppercase letters (ISO 4217)"
+      t: "`$STRING`"
+    }
+    device: {
+      h: "Device"
+      n: "device"
+      r: false
+      sh: "Device type that provided the SRED payload"
+      t: "`$STRING`"
+    }
+    devicePayload: {
+      h: "Device Payload"
+      n: "devicePayload"
+      r: true
+      sh: "SRED encrypted device payload from the device (minimum 32 characters)"
+      t: "`$STRING`"
+    }
+    expDate: {
+      h: "Exp Date"
+      n: "expDate"
+      r: false
+      sh: "Card expiry date in MMYY format"
+      t: "`$STRING`"
+    }
+    mode: {
+      h: "Mode"
+      n: "mode"
+      r: false
+      sh: "Decryption mode"
+      t: "`$STRING`"
+    }
+    panMasked: {
+      h: "Pan Masked"
+      n: "panMasked"
+      r: false
+      sh: "Masked PAN (first 6 and last 4 digits)"
+      t: "`$STRING`"
+    }
+    password: {
+      h: "Password"
+      n: "password"
+      r: false
+      sh: "Terminal password sent as Kennwort in TECS XML (optional)"
+      t: "`$STRING`"
+    }
+    serial: {
+      h: "Serial"
+      n: "serial"
+      r: false
+      sh: "Device serial number"
+      t: "`$STRING`"
+    }
+    serviceCode: {
+      h: "Service Code"
+      n: "serviceCode"
+      r: false
+      sh: "Service code from the card"
+      t: "`$STRING`"
+    }
+    terminalId: {
+      h: "Terminal Id"
+      n: "terminalId"
+      r: true
+      sh: "Terminal ID - 8 digits"
+      t: "`$STRING`"
+    }
+    txtype: {
+      h: "Txtype"
+      n: "txtype"
+      r: true
+      sh: "Transaction type"
+      t: "`$STRING`"
+    }
+  }
+
+  name: "payment_sred"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /public/paymentSred"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/public/paymentSred"
+          s: [
+            {
+              lit: "public"
+            }
+            {
+              lit: "paymentSred"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.sred`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

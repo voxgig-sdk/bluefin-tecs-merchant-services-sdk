@@ -3,6 +3,8 @@
   (:require [sdk.client :as client]
             [sdk.entity.cancel_transaction :as e-cancel_transaction]
             [sdk.entity.check_card_black_listed :as e-check_card_black_listed]
+            [sdk.entity.count_authorised_transaction :as e-count_authorised_transaction]
+            [sdk.entity.count_not_authorised_transaction :as e-count_not_authorised_transaction]
             [sdk.entity.create_product :as e-create_product]
             [sdk.entity.deactivate_terminal :as e-deactivate_terminal]
             [sdk.entity.digital_services_api :as e-digital_services_api]
@@ -34,7 +36,6 @@
             [sdk.entity.store_terminal_parameter :as e-store_terminal_parameter]
             [sdk.entity.terminal_id :as e-terminal_id]
             [sdk.entity.transaction_history :as e-transaction_history]
-            [sdk.entity.transactions_count :as e-transactions_count]
             [sdk.entity.transactions_count_card_brand :as e-transactions_count_card_brand]
             [sdk.entity.transactions_turnover :as e-transactions_turnover]
             [sdk.entity.update_merchant :as e-update_merchant]
@@ -53,6 +54,12 @@
 
 ;; CheckCardBlackListed accessor: (check_card_black_listed client data)
 (defn check_card_black_listed [client data] (e-check_card_black_listed/make client data))
+
+;; CountAuthorisedTransaction accessor: (count_authorised_transaction client data)
+(defn count_authorised_transaction [client data] (e-count_authorised_transaction/make client data))
+
+;; CountNotAuthorisedTransaction accessor: (count_not_authorised_transaction client data)
+(defn count_not_authorised_transaction [client data] (e-count_not_authorised_transaction/make client data))
 
 ;; CreateProduct accessor: (create_product client data)
 (defn create_product [client data] (e-create_product/make client data))
@@ -146,9 +153,6 @@
 
 ;; TransactionHistory accessor: (transaction_history client data)
 (defn transaction_history [client data] (e-transaction_history/make client data))
-
-;; TransactionsCount accessor: (transactions_count client data)
-(defn transactions_count [client data] (e-transactions_count/make client data))
 
 ;; TransactionsCountCardBrand accessor: (transactions_count_card_brand client data)
 (defn transactions_count_card_brand [client data] (e-transactions_count_card_brand/make client data))

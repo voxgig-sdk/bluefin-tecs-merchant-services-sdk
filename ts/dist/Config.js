@@ -27,19 +27,12 @@ const FEATURE_CLASS = {
     test: TestFeature_1.TestFeature,
     timeout: TimeoutFeature_1.TimeoutFeature,
 };
-// Per-feature plugin DEFINITIONS (voxgig/plugin `Definition` values), from
-// the model's active plugin groups. A feature that takes a `plugins` option
-// (secrets over sekreto) reads its own entry; a feature with no plugins has
-// none. Named imports above make each definition statically reachable, so
-// an SDK carries exactly the plugin modules its model selects — the same
-// leanness the old side-effect registry imports bought, without a registry.
 const FEATURE_PLUGINS = {};
 exports.FEATURE_PLUGINS = FEATURE_PLUGINS;
 class Config {
     makeFeature(fn) {
         const fc = FEATURE_CLASS[fn];
         const fi = new fc();
-        // TODO: errors etc
         return fi;
     }
     // False for a feature added at runtime via options.extend (station's
@@ -249,6 +242,8 @@ class Config {
         entity: {
             cancel_transaction: {},
             check_card_black_listed: {},
+            count_authorised_transaction: {},
+            count_not_authorised_transaction: {},
             create_product: {},
             deactivate_terminal: {},
             digital_services_api: {},
@@ -280,7 +275,6 @@ class Config {
             store_terminal_parameter: {},
             terminal_id: {},
             transaction_history: {},
-            transactions_count: {},
             transactions_count_card_brand: {},
             transactions_turnover: {},
             update_merchant: {},
@@ -293,205 +287,245 @@ class Config {
             "fields": [
                 {
                     "name": "acquirerId",
+                    "title": "Acquirer Id",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "acquirerName",
+                    "title": "Acquirer Name",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "actualBonusPoints",
+                    "title": "Actual Bonus Points",
                     "type": "`$STRING`"
                 },
                 {
-                    "format": "int32",
                     "name": "amount",
+                    "title": "Amount",
+                    "type": "`$INTEGER`",
                     "op": {
                         "create": {
                             "req": true,
                             "type": "`$INTEGER`"
                         }
                     },
-                    "type": "`$INTEGER`"
+                    "format": "int32"
                 },
                 {
                     "name": "authorizationCode",
+                    "title": "Authorization Code",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "balanceAmount",
+                    "title": "Balance Amount",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "cardBrand",
+                    "title": "Card Brand",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "cardNumber",
+                    "title": "Card Number",
                     "type": "`$STRING`"
                 },
                 {
-                    "format": "int32",
                     "name": "clientId",
+                    "title": "Client Id",
+                    "type": "`$INTEGER`",
                     "req": true,
-                    "type": "`$INTEGER`"
+                    "format": "int32"
                 },
                 {
                     "name": "currency",
-                    "req": true,
-                    "type": "`$STRING`"
+                    "title": "Currency",
+                    "type": "`$STRING`",
+                    "req": true
                 },
                 {
                     "name": "cvc",
+                    "title": "Cvc",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "ecData",
+                    "title": "Ec Data",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "ecrData",
+                    "title": "Ecr Data",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "emvData",
+                    "title": "Emv Data",
                     "type": "`$STRING`"
                 },
                 {
-                    "format": "int64",
                     "name": "exchangeFee",
-                    "type": "`$INTEGER`"
+                    "title": "Exchange Fee",
+                    "type": "`$INTEGER`",
+                    "format": "int64"
                 },
                 {
                     "name": "exchangeRate",
+                    "title": "Exchange Rate",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "languageCode",
+                    "title": "Language Code",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "merchantAddress",
+                    "title": "Merchant Address",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "merchantName",
+                    "title": "Merchant Name",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "merchantNumber",
+                    "title": "Merchant Number",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "messageType",
+                    "title": "Message Type",
+                    "type": "`$STRING`",
                     "op": {
                         "create": {
                             "req": true,
                             "type": "`$STRING`"
                         }
-                    },
-                    "type": "`$STRING`"
+                    }
                 },
                 {
-                    "format": "int32",
                     "name": "originalTraceNumber",
-                    "type": "`$INTEGER`"
+                    "title": "Original Trace Number",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
                     "name": "originalTransactionId",
+                    "title": "Original Transaction Id",
+                    "type": "`$STRING`",
                     "op": {
                         "create": {
                             "req": true,
                             "type": "`$STRING`"
                         }
-                    },
-                    "type": "`$STRING`"
+                    }
                 },
                 {
                     "name": "password",
+                    "title": "Password",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "paymentReason",
+                    "title": "Payment Reason",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "receiptFooter",
+                    "title": "Receipt Footer",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "receiptHeader",
+                    "title": "Receipt Header",
                     "type": "`$STRING`"
                 },
                 {
-                    "format": "int32",
                     "name": "receiptLayout",
-                    "type": "`$INTEGER`"
+                    "title": "Receipt Layout",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
                     "name": "receiptNumber",
-                    "req": true,
-                    "type": "`$STRING`"
+                    "title": "Receipt Number",
+                    "type": "`$STRING`",
+                    "req": true
                 },
                 {
-                    "format": "int32",
                     "name": "responseCode",
-                    "type": "`$INTEGER`"
+                    "title": "Response Code",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
                     "name": "responseMessage",
+                    "title": "Response Message",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "serialNumber",
+                    "title": "Serial Number",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "svc",
+                    "title": "Svc",
                     "type": "`$STRING`"
                 },
                 {
-                    "format": "int32",
                     "name": "terminalId",
+                    "title": "Terminal Id",
+                    "type": "`$INTEGER`",
                     "req": true,
-                    "type": "`$INTEGER`"
+                    "format": "int32"
                 },
                 {
                     "name": "terminalLocation",
+                    "title": "Terminal Location",
                     "type": "`$STRING`"
                 },
                 {
-                    "format": "int32",
                     "name": "traceNumber",
-                    "type": "`$INTEGER`"
+                    "title": "Trace Number",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
-                    "format": "date-time",
                     "name": "transactionDate",
+                    "title": "Transaction Date",
+                    "type": "`$STRING`",
                     "op": {
                         "create": {
                             "req": true,
                             "type": "`$STRING`"
                         }
                     },
-                    "type": "`$STRING`"
+                    "format": "date-time"
                 },
                 {
                     "name": "transactionId",
+                    "title": "Transaction Id",
+                    "type": "`$STRING`",
                     "op": {
                         "create": {
                             "req": true,
                             "type": "`$STRING`"
                         }
-                    },
-                    "type": "`$STRING`"
+                    }
                 },
                 {
                     "name": "txType",
+                    "title": "Tx Type",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "userData",
+                    "title": "User Data",
                     "type": "`$STRING`"
                 }
             ],
@@ -502,7 +536,6 @@ class Config {
                     "name": "create",
                     "points": [
                         {
-                            "args": {},
                             "kind": "http",
                             "method": "POST",
                             "orig": "/public/cancelTransaction",
@@ -514,15 +547,17 @@ class Config {
                                     "lit": "cancelTransaction"
                                 }
                             ],
-                            "select": {},
+                            "parts": [
+                                "public",
+                                "cancelTransaction"
+                            ],
+                            "rename": {},
                             "transform": {
                                 "req": "`reqdata`",
                                 "res": "`body`"
                             },
-                            "parts": [
-                                "public",
-                                "cancelTransaction"
-                            ]
+                            "args": {},
+                            "select": {}
                         }
                     ]
                 }
@@ -535,15 +570,18 @@ class Config {
             "fields": [
                 {
                     "name": "cardNo",
+                    "title": "Card No",
                     "type": "`$STRING`"
                 },
                 {
-                    "format": "int32",
                     "name": "responseCode",
-                    "type": "`$INTEGER`"
+                    "title": "Response Code",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
                     "name": "responseMessage",
+                    "title": "Response Message",
                     "type": "`$STRING`"
                 }
             ],
@@ -554,17 +592,6 @@ class Config {
                     "name": "create",
                     "points": [
                         {
-                            "args": {
-                                "header": [
-                                    {
-                                        "kind": "header",
-                                        "name": "authorization",
-                                        "orig": "authorization",
-                                        "reqd": true,
-                                        "type": "`$STRING`"
-                                    }
-                                ]
-                            },
                             "kind": "http",
                             "method": "POST",
                             "orig": "/checkCardBlackListed",
@@ -573,18 +600,200 @@ class Config {
                                     "lit": "checkCardBlackListed"
                                 }
                             ],
-                            "select": {
-                                "exist": [
-                                    "authorization"
-                                ]
-                            },
+                            "parts": [
+                                "checkCardBlackListed"
+                            ],
+                            "rename": {},
                             "transform": {
                                 "req": "`reqdata`",
                                 "res": "`body`"
                             },
+                            "args": {
+                                "header": [
+                                    {
+                                        "name": "authorization",
+                                        "orig": "authorization",
+                                        "type": "`$STRING`",
+                                        "kind": "header",
+                                        "reqd": true
+                                    }
+                                ]
+                            },
+                            "select": {
+                                "exist": [
+                                    "authorization"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            },
+            "relations": {
+                "ancestors": []
+            }
+        },
+        "count_authorised_transaction": {
+            "fields": [
+                {
+                    "name": "period",
+                    "title": "Period",
+                    "type": "`$STRING`"
+                },
+                {
+                    "name": "responseCode",
+                    "title": "Response Code",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
+                },
+                {
+                    "name": "responseMessage",
+                    "title": "Response Message",
+                    "type": "`$STRING`"
+                },
+                {
+                    "name": "transactionDateFrom",
+                    "title": "Transaction Date From",
+                    "type": "`$STRING`",
+                    "op": {
+                        "create": {
+                            "req": true,
+                            "type": "`$STRING`"
+                        }
+                    },
+                    "format": "date-time"
+                },
+                {
+                    "name": "transactionDateTo",
+                    "title": "Transaction Date To",
+                    "type": "`$STRING`",
+                    "op": {
+                        "create": {
+                            "req": true,
+                            "type": "`$STRING`"
+                        }
+                    },
+                    "format": "date-time"
+                },
+                {
+                    "name": "transactionsCount",
+                    "title": "Transactions Count",
+                    "type": "`$ARRAY`"
+                }
+            ],
+            "name": "count_authorised_transaction",
+            "op": {
+                "create": {
+                    "input": "data",
+                    "name": "create",
+                    "points": [
+                        {
+                            "kind": "http",
+                            "method": "POST",
+                            "orig": "/public/countAuthorisedTransactions",
+                            "segments": [
+                                {
+                                    "lit": "public"
+                                },
+                                {
+                                    "lit": "countAuthorisedTransactions"
+                                }
+                            ],
                             "parts": [
-                                "checkCardBlackListed"
-                            ]
+                                "public",
+                                "countAuthorisedTransactions"
+                            ],
+                            "rename": {},
+                            "transform": {
+                                "req": "`reqdata`",
+                                "res": "`body`"
+                            },
+                            "args": {},
+                            "select": {}
+                        }
+                    ]
+                }
+            },
+            "relations": {
+                "ancestors": []
+            }
+        },
+        "count_not_authorised_transaction": {
+            "fields": [
+                {
+                    "name": "period",
+                    "title": "Period",
+                    "type": "`$STRING`"
+                },
+                {
+                    "name": "responseCode",
+                    "title": "Response Code",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
+                },
+                {
+                    "name": "responseMessage",
+                    "title": "Response Message",
+                    "type": "`$STRING`"
+                },
+                {
+                    "name": "transactionDateFrom",
+                    "title": "Transaction Date From",
+                    "type": "`$STRING`",
+                    "op": {
+                        "create": {
+                            "req": true,
+                            "type": "`$STRING`"
+                        }
+                    },
+                    "format": "date-time"
+                },
+                {
+                    "name": "transactionDateTo",
+                    "title": "Transaction Date To",
+                    "type": "`$STRING`",
+                    "op": {
+                        "create": {
+                            "req": true,
+                            "type": "`$STRING`"
+                        }
+                    },
+                    "format": "date-time"
+                },
+                {
+                    "name": "transactionsCount",
+                    "title": "Transactions Count",
+                    "type": "`$ARRAY`"
+                }
+            ],
+            "name": "count_not_authorised_transaction",
+            "op": {
+                "create": {
+                    "input": "data",
+                    "name": "create",
+                    "points": [
+                        {
+                            "kind": "http",
+                            "method": "POST",
+                            "orig": "/public/countNotAuthorisedTransactions",
+                            "segments": [
+                                {
+                                    "lit": "public"
+                                },
+                                {
+                                    "lit": "countNotAuthorisedTransactions"
+                                }
+                            ],
+                            "parts": [
+                                "public",
+                                "countNotAuthorisedTransactions"
+                            ],
+                            "rename": {},
+                            "transform": {
+                                "req": "`reqdata`",
+                                "res": "`body`"
+                            },
+                            "args": {},
+                            "select": {}
                         }
                     ]
                 }
@@ -596,38 +805,45 @@ class Config {
         "create_product": {
             "fields": [
                 {
-                    "format": "int32",
                     "name": "acquirerId",
-                    "type": "`$INTEGER`"
+                    "title": "Acquirer Id",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
-                    "format": "int32",
                     "name": "responseCode",
-                    "type": "`$INTEGER`"
+                    "title": "Response Code",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
                     "name": "responseMessage",
+                    "title": "Response Message",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "templateName",
-                    "req": true,
-                    "type": "`$STRING`"
+                    "title": "Template Name",
+                    "type": "`$STRING`",
+                    "req": true
                 },
                 {
                     "name": "templateType",
-                    "req": true,
-                    "type": "`$STRING`"
+                    "title": "Template Type",
+                    "type": "`$STRING`",
+                    "req": true
                 },
                 {
                     "name": "templateXml",
-                    "req": true,
-                    "type": "`$STRING`"
+                    "title": "Template Xml",
+                    "type": "`$STRING`",
+                    "req": true
                 },
                 {
                     "name": "terminalType",
-                    "req": true,
-                    "type": "`$STRING`"
+                    "title": "Terminal Type",
+                    "type": "`$STRING`",
+                    "req": true
                 }
             ],
             "name": "create_product",
@@ -637,7 +853,6 @@ class Config {
                     "name": "create",
                     "points": [
                         {
-                            "args": {},
                             "kind": "http",
                             "method": "POST",
                             "orig": "/createProduct",
@@ -646,14 +861,16 @@ class Config {
                                     "lit": "createProduct"
                                 }
                             ],
-                            "select": {},
+                            "parts": [
+                                "createProduct"
+                            ],
+                            "rename": {},
                             "transform": {
                                 "req": "`reqdata`",
                                 "res": "`body`"
                             },
-                            "parts": [
-                                "createProduct"
-                            ]
+                            "args": {},
+                            "select": {}
                         }
                     ]
                 }
@@ -666,35 +883,42 @@ class Config {
             "fields": [
                 {
                     "name": "corporateUuid",
+                    "title": "Corporate Uuid",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "deactivationReason",
-                    "req": true,
-                    "type": "`$STRING`"
+                    "title": "Deactivation Reason",
+                    "type": "`$STRING`",
+                    "req": true
                 },
                 {
                     "name": "packageOrderUuid",
+                    "title": "Package Order Uuid",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "productOrderUuid",
+                    "title": "Product Order Uuid",
                     "type": "`$STRING`"
                 },
                 {
-                    "format": "int32",
                     "name": "responseCode",
-                    "type": "`$INTEGER`"
+                    "title": "Response Code",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
                     "name": "responseMessage",
+                    "title": "Response Message",
                     "type": "`$STRING`"
                 },
                 {
-                    "format": "int32",
                     "name": "terminalId",
+                    "title": "Terminal Id",
+                    "type": "`$INTEGER`",
                     "req": true,
-                    "type": "`$INTEGER`"
+                    "format": "int32"
                 }
             ],
             "name": "deactivate_terminal",
@@ -704,7 +928,6 @@ class Config {
                     "name": "create",
                     "points": [
                         {
-                            "args": {},
                             "kind": "http",
                             "method": "POST",
                             "orig": "/deactivateTerminal",
@@ -713,14 +936,16 @@ class Config {
                                     "lit": "deactivateTerminal"
                                 }
                             ],
-                            "select": {},
+                            "parts": [
+                                "deactivateTerminal"
+                            ],
+                            "rename": {},
                             "transform": {
                                 "req": "`reqdata`",
                                 "res": "`body`"
                             },
-                            "parts": [
-                                "deactivateTerminal"
-                            ]
+                            "args": {},
+                            "select": {}
                         }
                     ]
                 }
@@ -733,52 +958,62 @@ class Config {
             "fields": [
                 {
                     "name": "clearingDateFrom",
+                    "title": "Clearing Date From",
+                    "type": "`$STRING`",
                     "req": true,
-                    "short": "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz",
-                    "type": "`$STRING`"
+                    "short": "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz"
                 },
                 {
                     "name": "clearingDateTo",
+                    "title": "Clearing Date To",
+                    "type": "`$STRING`",
                     "req": true,
-                    "short": "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz",
-                    "type": "`$STRING`"
+                    "short": "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz"
                 },
                 {
-                    "format": "int32",
                     "name": "responseCode",
-                    "type": "`$INTEGER`"
+                    "title": "Response Code",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
                     "name": "responseMessage",
+                    "title": "Response Message",
                     "type": "`$STRING`"
                 },
                 {
-                    "format": "int32",
                     "name": "txCount",
-                    "type": "`$INTEGER`"
+                    "title": "Tx Count",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
                     "name": "txIdEnd",
+                    "title": "Tx Id End",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "txIdStart",
+                    "title": "Tx Id Start",
                     "type": "`$STRING`"
                 },
                 {
-                    "format": "int32",
                     "name": "txSeqNoEnd",
-                    "type": "`$INTEGER`"
+                    "title": "Tx Seq No End",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
-                    "format": "int32",
                     "name": "txSeqNoStart",
-                    "type": "`$INTEGER`"
+                    "title": "Tx Seq No Start",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
-                    "format": "int32",
                     "name": "txTotal",
-                    "type": "`$INTEGER`"
+                    "title": "Tx Total",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 }
             ],
             "name": "digital_services_api",
@@ -788,25 +1023,9 @@ class Config {
                     "name": "create",
                     "points": [
                         {
-                            "args": {
-                                "params": [
-                                    {
-                                        "kind": "param",
-                                        "name": "file_id",
-                                        "orig": "file_id",
-                                        "reqd": true,
-                                        "type": "`$STRING`"
-                                    }
-                                ]
-                            },
                             "kind": "http",
                             "method": "POST",
                             "orig": "/public/digitalservices/mandatorClearingExportDownload/{fileId}",
-                            "rename": {
-                                "param": {
-                                    "fileId": "file_id"
-                                }
-                            },
                             "segments": [
                                 {
                                     "lit": "public"
@@ -821,24 +1040,39 @@ class Config {
                                     "var": "file_id"
                                 }
                             ],
-                            "select": {
-                                "exist": [
-                                    "file_id"
-                                ]
-                            },
-                            "transform": {
-                                "req": "`reqdata`",
-                                "res": "`body`"
-                            },
                             "parts": [
                                 "public",
                                 "digitalservices",
                                 "mandatorClearingExportDownload",
                                 "{file_id}"
-                            ]
+                            ],
+                            "rename": {
+                                "param": {
+                                    "fileId": "file_id"
+                                }
+                            },
+                            "transform": {
+                                "req": "`reqdata`",
+                                "res": "`body`"
+                            },
+                            "args": {
+                                "params": [
+                                    {
+                                        "name": "file_id",
+                                        "orig": "file_id",
+                                        "type": "`$STRING`",
+                                        "kind": "param",
+                                        "reqd": true
+                                    }
+                                ]
+                            },
+                            "select": {
+                                "exist": [
+                                    "file_id"
+                                ]
+                            }
                         },
                         {
-                            "args": {},
                             "kind": "http",
                             "method": "POST",
                             "orig": "/public/digitalservices/mandatorClearingExportMetadata",
@@ -853,16 +1087,18 @@ class Config {
                                     "lit": "mandatorClearingExportMetadata"
                                 }
                             ],
-                            "select": {},
-                            "transform": {
-                                "req": "`reqdata`",
-                                "res": "`body`"
-                            },
                             "parts": [
                                 "public",
                                 "digitalservices",
                                 "mandatorClearingExportMetadata"
-                            ]
+                            ],
+                            "rename": {},
+                            "transform": {
+                                "req": "`reqdata`",
+                                "res": "`body`"
+                            },
+                            "args": {},
+                            "select": {}
                         }
                     ]
                 },
@@ -871,7 +1107,6 @@ class Config {
                     "name": "load",
                     "points": [
                         {
-                            "args": {},
                             "kind": "http",
                             "method": "GET",
                             "orig": "/public/digitalservices/mandatorClearingExportDownload/status",
@@ -889,17 +1124,19 @@ class Config {
                                     "lit": "status"
                                 }
                             ],
-                            "select": {},
-                            "transform": {
-                                "req": "`reqdata`",
-                                "res": "`body`"
-                            },
                             "parts": [
                                 "public",
                                 "digitalservices",
                                 "mandatorClearingExportDownload",
                                 "status"
-                            ]
+                            ],
+                            "rename": {},
+                            "transform": {
+                                "req": "`reqdata`",
+                                "res": "`body`"
+                            },
+                            "args": {},
+                            "select": {}
                         }
                     ]
                 }
@@ -907,7 +1144,7 @@ class Config {
             "relations": {
                 "ancestors": [
                     [
-                        "mandator_clearing_export_download"
+                        "$.main.kit.entity.mandator_clearing_export_download"
                     ]
                 ]
             }
@@ -916,32 +1153,38 @@ class Config {
             "fields": [
                 {
                     "name": "ecomData",
+                    "title": "Ecom Data",
                     "type": "`$STRING`"
                 },
                 {
-                    "format": "int32",
                     "name": "responseCode",
-                    "type": "`$INTEGER`"
+                    "title": "Response Code",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
                     "name": "responseMessage",
+                    "title": "Response Message",
                     "type": "`$STRING`"
                 },
                 {
-                    "format": "int32",
                     "name": "terminalId",
+                    "title": "Terminal Id",
+                    "type": "`$INTEGER`",
                     "req": true,
-                    "type": "`$INTEGER`"
+                    "format": "int32"
                 },
                 {
                     "name": "transactionId",
-                    "req": true,
-                    "type": "`$STRING`"
+                    "title": "Transaction Id",
+                    "type": "`$STRING`",
+                    "req": true
                 },
                 {
                     "name": "transactionType",
-                    "req": true,
-                    "type": "`$STRING`"
+                    "title": "Transaction Type",
+                    "type": "`$STRING`",
+                    "req": true
                 }
             ],
             "name": "ec_data_ecom",
@@ -951,7 +1194,6 @@ class Config {
                     "name": "create",
                     "points": [
                         {
-                            "args": {},
                             "kind": "http",
                             "method": "POST",
                             "orig": "/public/getEcData",
@@ -963,15 +1205,17 @@ class Config {
                                     "lit": "getEcData"
                                 }
                             ],
-                            "select": {},
+                            "parts": [
+                                "public",
+                                "getEcData"
+                            ],
+                            "rename": {},
                             "transform": {
                                 "req": "`reqdata`",
                                 "res": "`body`"
                             },
-                            "parts": [
-                                "public",
-                                "getEcData"
-                            ]
+                            "args": {},
+                            "select": {}
                         }
                     ]
                 }
@@ -984,26 +1228,31 @@ class Config {
             "fields": [
                 {
                     "name": "ecomPass",
+                    "title": "Ecom Pass",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "ecomSkey",
+                    "title": "Ecom Skey",
                     "type": "`$STRING`"
                 },
                 {
-                    "format": "int32",
                     "name": "responseCode",
-                    "type": "`$INTEGER`"
+                    "title": "Response Code",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
                     "name": "responseMessage",
+                    "title": "Response Message",
                     "type": "`$STRING`"
                 },
                 {
-                    "format": "int32",
                     "name": "terminalId",
+                    "title": "Terminal Id",
+                    "type": "`$INTEGER`",
                     "req": true,
-                    "type": "`$INTEGER`"
+                    "format": "int32"
                 }
             ],
             "name": "ecom_parameter",
@@ -1013,7 +1262,6 @@ class Config {
                     "name": "create",
                     "points": [
                         {
-                            "args": {},
                             "kind": "http",
                             "method": "POST",
                             "orig": "/public/getEcomParameters",
@@ -1025,15 +1273,17 @@ class Config {
                                     "lit": "getEcomParameters"
                                 }
                             ],
-                            "select": {},
+                            "parts": [
+                                "public",
+                                "getEcomParameters"
+                            ],
+                            "rename": {},
                             "transform": {
                                 "req": "`reqdata`",
                                 "res": "`body`"
                             },
-                            "parts": [
-                                "public",
-                                "getEcomParameters"
-                            ]
+                            "args": {},
+                            "select": {}
                         }
                     ]
                 }
@@ -1046,32 +1296,38 @@ class Config {
             "fields": [
                 {
                     "name": "ecrData",
+                    "title": "Ecr Data",
                     "type": "`$STRING`"
                 },
                 {
-                    "format": "int32",
                     "name": "responseCode",
-                    "type": "`$INTEGER`"
+                    "title": "Response Code",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
                     "name": "responseMessage",
+                    "title": "Response Message",
                     "type": "`$STRING`"
                 },
                 {
-                    "format": "int32",
                     "name": "terminalId",
+                    "title": "Terminal Id",
+                    "type": "`$INTEGER`",
                     "req": true,
-                    "type": "`$INTEGER`"
+                    "format": "int32"
                 },
                 {
                     "name": "transactionId",
-                    "req": true,
-                    "type": "`$STRING`"
+                    "title": "Transaction Id",
+                    "type": "`$STRING`",
+                    "req": true
                 },
                 {
                     "name": "transactionType",
-                    "req": true,
-                    "type": "`$STRING`"
+                    "title": "Transaction Type",
+                    "type": "`$STRING`",
+                    "req": true
                 }
             ],
             "name": "ecr_data",
@@ -1081,7 +1337,6 @@ class Config {
                     "name": "create",
                     "points": [
                         {
-                            "args": {},
                             "kind": "http",
                             "method": "POST",
                             "orig": "/public/getEcrData",
@@ -1093,15 +1348,17 @@ class Config {
                                     "lit": "getEcrData"
                                 }
                             ],
-                            "select": {},
+                            "parts": [
+                                "public",
+                                "getEcrData"
+                            ],
+                            "rename": {},
                             "transform": {
                                 "req": "`reqdata`",
                                 "res": "`body`"
                             },
-                            "parts": [
-                                "public",
-                                "getEcrData"
-                            ]
+                            "args": {},
+                            "select": {}
                         }
                     ]
                 }
@@ -1114,32 +1371,38 @@ class Config {
             "fields": [
                 {
                     "name": "emvData",
+                    "title": "Emv Data",
                     "type": "`$STRING`"
                 },
                 {
-                    "format": "int32",
                     "name": "responseCode",
-                    "type": "`$INTEGER`"
+                    "title": "Response Code",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
                     "name": "responseMessage",
+                    "title": "Response Message",
                     "type": "`$STRING`"
                 },
                 {
-                    "format": "int32",
                     "name": "terminalId",
+                    "title": "Terminal Id",
+                    "type": "`$INTEGER`",
                     "req": true,
-                    "type": "`$INTEGER`"
+                    "format": "int32"
                 },
                 {
                     "name": "transactionId",
-                    "req": true,
-                    "type": "`$STRING`"
+                    "title": "Transaction Id",
+                    "type": "`$STRING`",
+                    "req": true
                 },
                 {
                     "name": "transactionType",
-                    "req": true,
-                    "type": "`$STRING`"
+                    "title": "Transaction Type",
+                    "type": "`$STRING`",
+                    "req": true
                 }
             ],
             "name": "emv_data",
@@ -1149,7 +1412,6 @@ class Config {
                     "name": "create",
                     "points": [
                         {
-                            "args": {},
                             "kind": "http",
                             "method": "POST",
                             "orig": "/public/getEmvData",
@@ -1161,15 +1423,17 @@ class Config {
                                     "lit": "getEmvData"
                                 }
                             ],
-                            "select": {},
+                            "parts": [
+                                "public",
+                                "getEmvData"
+                            ],
+                            "rename": {},
                             "transform": {
                                 "req": "`reqdata`",
                                 "res": "`body`"
                             },
-                            "parts": [
-                                "public",
-                                "getEmvData"
-                            ]
+                            "args": {},
+                            "select": {}
                         }
                     ]
                 }
@@ -1181,69 +1445,83 @@ class Config {
         "enable_acquiring": {
             "fields": [
                 {
-                    "format": "int32",
                     "name": "accountNo",
-                    "type": "`$INTEGER`"
+                    "title": "Account No",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
                     "name": "additionalData",
+                    "title": "Additional Data",
                     "type": "`$OBJECT`"
                 },
                 {
                     "name": "corporateUuid",
-                    "req": true,
-                    "type": "`$STRING`"
+                    "title": "Corporate Uuid",
+                    "type": "`$STRING`",
+                    "req": true
                 },
                 {
                     "name": "currency",
-                    "req": true,
-                    "type": "`$STRING`"
+                    "title": "Currency",
+                    "type": "`$STRING`",
+                    "req": true
                 },
                 {
-                    "format": "int32",
                     "name": "merchantCategoryCode",
+                    "title": "Merchant Category Code",
+                    "type": "`$INTEGER`",
                     "req": true,
-                    "type": "`$INTEGER`"
+                    "format": "int32"
                 },
                 {
                     "name": "packageOrderUuid",
-                    "req": true,
-                    "type": "`$STRING`"
+                    "title": "Package Order Uuid",
+                    "type": "`$STRING`",
+                    "req": true
                 },
                 {
                     "name": "productOrderUuid",
-                    "req": true,
-                    "type": "`$STRING`"
+                    "title": "Product Order Uuid",
+                    "type": "`$STRING`",
+                    "req": true
                 },
                 {
-                    "format": "int32",
                     "name": "responseCode",
-                    "type": "`$INTEGER`"
+                    "title": "Response Code",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
                     "name": "responseMessage",
+                    "title": "Response Message",
                     "type": "`$STRING`"
                 },
                 {
-                    "format": "int32",
                     "name": "sortingCode",
-                    "type": "`$INTEGER`"
+                    "title": "Sorting Code",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
                     "name": "templateName",
-                    "req": true,
-                    "type": "`$STRING`"
+                    "title": "Template Name",
+                    "type": "`$STRING`",
+                    "req": true
                 },
                 {
                     "name": "terminalIdAcq",
+                    "title": "Terminal Id Acq",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "terminalIds",
+                    "title": "Terminal Ids",
                     "type": "`$ARRAY`"
                 },
                 {
                     "name": "vuNummer",
+                    "title": "Vu Nummer",
                     "type": "`$STRING`"
                 }
             ],
@@ -1254,7 +1532,6 @@ class Config {
                     "name": "create",
                     "points": [
                         {
-                            "args": {},
                             "kind": "http",
                             "method": "POST",
                             "orig": "/enableAcquiring",
@@ -1263,14 +1540,16 @@ class Config {
                                     "lit": "enableAcquiring"
                                 }
                             ],
-                            "select": {},
+                            "parts": [
+                                "enableAcquiring"
+                            ],
+                            "rename": {},
                             "transform": {
                                 "req": "`reqdata`",
                                 "res": "`body`"
                             },
-                            "parts": [
-                                "enableAcquiring"
-                            ]
+                            "args": {},
+                            "select": {}
                         }
                     ]
                 }
@@ -1283,16 +1562,19 @@ class Config {
             "fields": [
                 {
                     "name": "merchantContractNumber",
-                    "req": true,
-                    "type": "`$STRING`"
+                    "title": "Merchant Contract Number",
+                    "type": "`$STRING`",
+                    "req": true
                 },
                 {
-                    "format": "int32",
                     "name": "responseCode",
-                    "type": "`$INTEGER`"
+                    "title": "Response Code",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
                     "name": "responseMessage",
+                    "title": "Response Message",
                     "type": "`$STRING`"
                 }
             ],
@@ -1303,7 +1585,6 @@ class Config {
                     "name": "create",
                     "points": [
                         {
-                            "args": {},
                             "kind": "http",
                             "method": "POST",
                             "orig": "/getMerchantContractNumber",
@@ -1312,14 +1593,16 @@ class Config {
                                     "lit": "getMerchantContractNumber"
                                 }
                             ],
-                            "select": {},
+                            "parts": [
+                                "getMerchantContractNumber"
+                            ],
+                            "rename": {},
                             "transform": {
                                 "req": "`reqdata`",
                                 "res": "`body`"
                             },
-                            "parts": [
-                                "getMerchantContractNumber"
-                            ]
+                            "args": {},
+                            "select": {}
                         }
                     ]
                 }
@@ -1331,18 +1614,21 @@ class Config {
         "get_template_xml": {
             "fields": [
                 {
-                    "format": "int32",
                     "name": "responseCode",
-                    "type": "`$INTEGER`"
+                    "title": "Response Code",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
                     "name": "responseMessage",
+                    "title": "Response Message",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "templateName",
-                    "req": true,
-                    "type": "`$STRING`"
+                    "title": "Template Name",
+                    "type": "`$STRING`",
+                    "req": true
                 }
             ],
             "name": "get_template_xml",
@@ -1352,7 +1638,6 @@ class Config {
                     "name": "create",
                     "points": [
                         {
-                            "args": {},
                             "kind": "http",
                             "method": "POST",
                             "orig": "/public/getTemplateXml",
@@ -1364,15 +1649,17 @@ class Config {
                                     "lit": "getTemplateXml"
                                 }
                             ],
-                            "select": {},
+                            "parts": [
+                                "public",
+                                "getTemplateXml"
+                            ],
+                            "rename": {},
                             "transform": {
                                 "req": "`reqdata`",
                                 "res": "`body`"
                             },
-                            "parts": [
-                                "public",
-                                "getTemplateXml"
-                            ]
+                            "args": {},
+                            "select": {}
                         }
                     ]
                 }
@@ -1385,16 +1672,19 @@ class Config {
             "fields": [
                 {
                     "name": "mandatorName",
-                    "req": true,
-                    "type": "`$STRING`"
+                    "title": "Mandator Name",
+                    "type": "`$STRING`",
+                    "req": true
                 },
                 {
-                    "format": "int32",
                     "name": "responseCode",
-                    "type": "`$INTEGER`"
+                    "title": "Response Code",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
                     "name": "responseMessage",
+                    "title": "Response Message",
                     "type": "`$STRING`"
                 }
             ],
@@ -1405,7 +1695,6 @@ class Config {
                     "name": "create",
                     "points": [
                         {
-                            "args": {},
                             "kind": "http",
                             "method": "POST",
                             "orig": "/introduceMandator",
@@ -1414,14 +1703,16 @@ class Config {
                                     "lit": "introduceMandator"
                                 }
                             ],
-                            "select": {},
+                            "parts": [
+                                "introduceMandator"
+                            ],
+                            "rename": {},
                             "transform": {
                                 "req": "`reqdata`",
                                 "res": "`body`"
                             },
-                            "parts": [
-                                "introduceMandator"
-                            ]
+                            "args": {},
+                            "select": {}
                         }
                     ]
                 }
@@ -1433,18 +1724,21 @@ class Config {
         "introduce_package": {
             "fields": [
                 {
-                    "format": "int32",
                     "name": "responseCode",
-                    "type": "`$INTEGER`"
+                    "title": "Response Code",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
                     "name": "responseMessage",
+                    "title": "Response Message",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "terminalTemplateDescription",
-                    "req": true,
-                    "type": "`$STRING`"
+                    "title": "Terminal Template Description",
+                    "type": "`$STRING`",
+                    "req": true
                 }
             ],
             "name": "introduce_package",
@@ -1454,7 +1748,6 @@ class Config {
                     "name": "create",
                     "points": [
                         {
-                            "args": {},
                             "kind": "http",
                             "method": "POST",
                             "orig": "/introducePackage",
@@ -1463,14 +1756,16 @@ class Config {
                                     "lit": "introducePackage"
                                 }
                             ],
-                            "select": {},
+                            "parts": [
+                                "introducePackage"
+                            ],
+                            "rename": {},
                             "transform": {
                                 "req": "`reqdata`",
                                 "res": "`body`"
                             },
-                            "parts": [
-                                "introducePackage"
-                            ]
+                            "args": {},
+                            "select": {}
                         }
                     ]
                 }
@@ -1483,45 +1778,55 @@ class Config {
             "fields": [
                 {
                     "name": "hwserialno",
+                    "title": "Hwserialno",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "kaDateTimeFrom",
+                    "title": "Ka Date Time From",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "kaDateTimeTo",
+                    "title": "Ka Date Time To",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "keepAliveData",
+                    "title": "Keep Alive Data",
                     "type": "`$ARRAY`"
                 },
                 {
                     "name": "pagination",
+                    "title": "Pagination",
                     "type": "`$OBJECT`"
                 },
                 {
-                    "format": "int32",
                     "name": "responseCode",
-                    "type": "`$INTEGER`"
+                    "title": "Response Code",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
                     "name": "responseMessage",
+                    "title": "Response Message",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "terminalDateTimeFrom",
+                    "title": "Terminal Date Time From",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "terminalDateTimeTo",
+                    "title": "Terminal Date Time To",
                     "type": "`$STRING`"
                 },
                 {
-                    "format": "int32",
                     "name": "terminalId",
-                    "type": "`$INTEGER`"
+                    "title": "Terminal Id",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 }
             ],
             "name": "keep_alive",
@@ -1531,7 +1836,6 @@ class Config {
                     "name": "create",
                     "points": [
                         {
-                            "args": {},
                             "kind": "http",
                             "method": "POST",
                             "orig": "/public/keepalive",
@@ -1543,15 +1847,17 @@ class Config {
                                     "lit": "keepalive"
                                 }
                             ],
-                            "select": {},
+                            "parts": [
+                                "public",
+                                "keepalive"
+                            ],
+                            "rename": {},
                             "transform": {
                                 "req": "`reqdata`",
                                 "res": "`body`"
                             },
-                            "parts": [
-                                "public",
-                                "keepalive"
-                            ]
+                            "args": {},
+                            "select": {}
                         }
                     ]
                 }
@@ -1564,27 +1870,33 @@ class Config {
             "fields": [
                 {
                     "name": "corporateUuid",
+                    "title": "Corporate Uuid",
                     "type": "`$ARRAY`"
                 },
                 {
                     "name": "filter",
+                    "title": "Filter",
                     "type": "`$OBJECT`"
                 },
                 {
                     "name": "pagination",
+                    "title": "Pagination",
                     "type": "`$OBJECT`"
                 },
                 {
-                    "format": "int32",
                     "name": "responseCode",
-                    "type": "`$INTEGER`"
+                    "title": "Response Code",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
                     "name": "responseMessage",
+                    "title": "Response Message",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "terminals",
+                    "title": "Terminals",
                     "type": "`$ARRAY`"
                 }
             ],
@@ -1595,7 +1907,6 @@ class Config {
                     "name": "create",
                     "points": [
                         {
-                            "args": {},
                             "kind": "http",
                             "method": "POST",
                             "orig": "/public/listTerminals",
@@ -1607,15 +1918,17 @@ class Config {
                                     "lit": "listTerminals"
                                 }
                             ],
-                            "select": {},
+                            "parts": [
+                                "public",
+                                "listTerminals"
+                            ],
+                            "rename": {},
                             "transform": {
                                 "req": "`reqdata`",
                                 "res": "`body`"
                             },
-                            "parts": [
-                                "public",
-                                "listTerminals"
-                            ]
+                            "args": {},
+                            "select": {}
                         }
                     ]
                 }
@@ -1628,31 +1941,37 @@ class Config {
             "fields": [
                 {
                     "name": "clearingDateFrom",
+                    "title": "Clearing Date From",
+                    "type": "`$STRING`",
                     "req": true,
-                    "short": "Date and time in the format yyyy-MM-dd'T'HH:mm:ssZ",
-                    "type": "`$STRING`"
+                    "short": "Date and time in the format yyyy-MM-dd'T'HH:mm:ssZ"
                 },
                 {
                     "name": "clearingDateTo",
+                    "title": "Clearing Date To",
+                    "type": "`$STRING`",
                     "req": true,
-                    "short": "Date and time in the format yyyy-MM-dd'T'HH:mm:ssZ",
-                    "type": "`$STRING`"
+                    "short": "Date and time in the format yyyy-MM-dd'T'HH:mm:ssZ"
                 },
                 {
                     "name": "pagination",
+                    "title": "Pagination",
                     "type": "`$OBJECT`"
                 },
                 {
                     "name": "records",
+                    "title": "Records",
                     "type": "`$ARRAY`"
                 },
                 {
-                    "format": "int32",
                     "name": "responseCode",
-                    "type": "`$INTEGER`"
+                    "title": "Response Code",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
                     "name": "responseMessage",
+                    "title": "Response Message",
                     "type": "`$STRING`"
                 }
             ],
@@ -1663,7 +1982,6 @@ class Config {
                     "name": "create",
                     "points": [
                         {
-                            "args": {},
                             "kind": "http",
                             "method": "POST",
                             "orig": "/public/digitalservices/mandatorClearingExport",
@@ -1678,16 +1996,18 @@ class Config {
                                     "lit": "mandatorClearingExport"
                                 }
                             ],
-                            "select": {},
-                            "transform": {
-                                "req": "`reqdata`",
-                                "res": "`body`"
-                            },
                             "parts": [
                                 "public",
                                 "digitalservices",
                                 "mandatorClearingExport"
-                            ]
+                            ],
+                            "rename": {},
+                            "transform": {
+                                "req": "`reqdata`",
+                                "res": "`body`"
+                            },
+                            "args": {},
+                            "select": {}
                         }
                     ]
                 }
@@ -1699,46 +2019,54 @@ class Config {
         "mandator_clearing_export_download": {
             "fields": [
                 {
-                    "format": "date-time",
                     "name": "clearingDateFrom",
+                    "title": "Clearing Date From",
+                    "type": "`$STRING`",
                     "req": true,
                     "short": "Start date for clearing export (inclusive)",
-                    "type": "`$STRING`"
+                    "format": "date-time"
                 },
                 {
-                    "format": "date-time",
                     "name": "clearingDateTo",
+                    "title": "Clearing Date To",
+                    "type": "`$STRING`",
                     "req": true,
                     "short": "End date for clearing export (inclusive)",
-                    "type": "`$STRING`"
+                    "format": "date-time"
                 },
                 {
                     "name": "fileId",
-                    "short": "Unique file identifier for tracking and downloading",
-                    "type": "`$STRING`"
+                    "title": "File Id",
+                    "type": "`$STRING`",
+                    "short": "Unique file identifier for tracking and downloading"
                 },
                 {
                     "name": "filenameTemplate",
-                    "short": "Optional filename template for the export file",
-                    "type": "`$STRING`"
+                    "title": "Filename Template",
+                    "type": "`$STRING`",
+                    "short": "Optional filename template for the export file"
                 },
                 {
                     "name": "id",
+                    "title": "Id",
                     "type": "`$STRING`"
                 },
                 {
-                    "format": "int32",
                     "name": "responseCode",
-                    "type": "`$INTEGER`"
+                    "title": "Response Code",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
                     "name": "responseMessage",
+                    "title": "Response Message",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "status",
-                    "short": "Processing status of the export request",
-                    "type": "`$STRING`"
+                    "title": "Status",
+                    "type": "`$STRING`",
+                    "short": "Processing status of the export request"
                 }
             ],
             "id": {
@@ -1752,7 +2080,6 @@ class Config {
                     "name": "create",
                     "points": [
                         {
-                            "args": {},
                             "kind": "http",
                             "method": "POST",
                             "orig": "/public/digitalservices/mandatorClearingExportDownload",
@@ -1767,16 +2094,18 @@ class Config {
                                     "lit": "mandatorClearingExportDownload"
                                 }
                             ],
-                            "select": {},
-                            "transform": {
-                                "req": "`reqdata`",
-                                "res": "`body`"
-                            },
                             "parts": [
                                 "public",
                                 "digitalservices",
                                 "mandatorClearingExportDownload"
-                            ]
+                            ],
+                            "rename": {},
+                            "transform": {
+                                "req": "`reqdata`",
+                                "res": "`body`"
+                            },
+                            "args": {},
+                            "select": {}
                         }
                     ]
                 },
@@ -1785,25 +2114,9 @@ class Config {
                     "name": "load",
                     "points": [
                         {
-                            "args": {
-                                "params": [
-                                    {
-                                        "kind": "param",
-                                        "name": "id",
-                                        "orig": "file_id",
-                                        "reqd": true,
-                                        "type": "`$STRING`"
-                                    }
-                                ]
-                            },
                             "kind": "http",
                             "method": "GET",
                             "orig": "/public/digitalservices/mandatorClearingExportDownload/{fileId}",
-                            "rename": {
-                                "param": {
-                                    "fileId": "id"
-                                }
-                            },
                             "segments": [
                                 {
                                     "lit": "public"
@@ -1818,21 +2131,37 @@ class Config {
                                     "var": "id"
                                 }
                             ],
-                            "select": {
-                                "exist": [
-                                    "id"
-                                ]
-                            },
-                            "transform": {
-                                "req": "`reqdata`",
-                                "res": "`body`"
-                            },
                             "parts": [
                                 "public",
                                 "digitalservices",
                                 "mandatorClearingExportDownload",
                                 "{id}"
-                            ]
+                            ],
+                            "rename": {
+                                "param": {
+                                    "fileId": "id"
+                                }
+                            },
+                            "transform": {
+                                "req": "`reqdata`",
+                                "res": "`body`"
+                            },
+                            "args": {
+                                "params": [
+                                    {
+                                        "name": "id",
+                                        "orig": "file_id",
+                                        "type": "`$STRING`",
+                                        "kind": "param",
+                                        "reqd": true
+                                    }
+                                ]
+                            },
+                            "select": {
+                                "exist": [
+                                    "id"
+                                ]
+                            }
                         }
                     ]
                 }
@@ -1845,27 +2174,32 @@ class Config {
             "fields": [
                 {
                     "name": "clearingDateFrom",
+                    "title": "Clearing Date From",
+                    "type": "`$STRING`",
                     "req": true,
-                    "short": "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz",
-                    "type": "`$STRING`"
+                    "short": "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz"
                 },
                 {
                     "name": "clearingDateTo",
+                    "title": "Clearing Date To",
+                    "type": "`$STRING`",
                     "req": true,
-                    "short": "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz",
-                    "type": "`$STRING`"
+                    "short": "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz"
                 },
                 {
                     "name": "records",
+                    "title": "Records",
                     "type": "`$ARRAY`"
                 },
                 {
-                    "format": "int32",
                     "name": "responseCode",
-                    "type": "`$INTEGER`"
+                    "title": "Response Code",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
                     "name": "responseMessage",
+                    "title": "Response Message",
                     "type": "`$STRING`"
                 }
             ],
@@ -1876,7 +2210,6 @@ class Config {
                     "name": "create",
                     "points": [
                         {
-                            "args": {},
                             "kind": "http",
                             "method": "POST",
                             "orig": "/public/digitalservices/mandatorClearingExportSummary",
@@ -1891,16 +2224,18 @@ class Config {
                                     "lit": "mandatorClearingExportSummary"
                                 }
                             ],
-                            "select": {},
-                            "transform": {
-                                "req": "`reqdata`",
-                                "res": "`body`"
-                            },
                             "parts": [
                                 "public",
                                 "digitalservices",
                                 "mandatorClearingExportSummary"
-                            ]
+                            ],
+                            "rename": {},
+                            "transform": {
+                                "req": "`reqdata`",
+                                "res": "`body`"
+                            },
+                            "args": {},
+                            "select": {}
                         }
                     ]
                 }
@@ -1913,108 +2248,133 @@ class Config {
             "fields": [
                 {
                     "name": "3DSecure",
+                    "title": "3 D Secure",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "authorizationCode",
+                    "title": "Authorization Code",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "cardBrand",
+                    "title": "Card Brand",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "clearingAmountFrom",
+                    "title": "Clearing Amount From",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "clearingAmountTo",
+                    "title": "Clearing Amount To",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "clearingCurrency",
+                    "title": "Clearing Currency",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "clearingStatus",
+                    "title": "Clearing Status",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "corporateUUID",
+                    "title": "Corporate Uuid",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "orderByTransactionDate",
+                    "title": "Order By Transaction Date",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "pagination",
+                    "title": "Pagination",
                     "type": "`$OBJECT`"
                 },
                 {
                     "name": "receiptNumber",
+                    "title": "Receipt Number",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "referencedTransactionId",
+                    "title": "Referenced Transaction Id",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "retrievalReferenceNumber",
+                    "title": "Retrieval Reference Number",
                     "type": "`$STRING`"
                 },
                 {
-                    "format": "int32",
                     "name": "sourceId",
-                    "type": "`$INTEGER`"
+                    "title": "Source Id",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
                     "name": "tecsengineResponseCodeFrom",
+                    "title": "Tecsengine Response Code From",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "tecsengineResponseCodeTo",
+                    "title": "Tecsengine Response Code To",
                     "type": "`$STRING`"
                 },
                 {
-                    "format": "int32",
                     "name": "terminalId",
-                    "type": "`$INTEGER`"
+                    "title": "Terminal Id",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
                     "name": "traceNumber",
+                    "title": "Trace Number",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "transactionAmountFrom",
+                    "title": "Transaction Amount From",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "transactionAmountTo",
+                    "title": "Transaction Amount To",
                     "type": "`$STRING`"
                 },
                 {
-                    "format": "date-time",
                     "name": "transactionDateFrom",
-                    "type": "`$STRING`"
+                    "title": "Transaction Date From",
+                    "type": "`$STRING`",
+                    "format": "date-time"
                 },
                 {
-                    "format": "date-time",
                     "name": "transactionDateTo",
-                    "type": "`$STRING`"
+                    "title": "Transaction Date To",
+                    "type": "`$STRING`",
+                    "format": "date-time"
                 },
                 {
                     "name": "transactionId",
+                    "title": "Transaction Id",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "transactionType",
+                    "title": "Transaction Type",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "wallet",
-                    "short": "Filter by wallet type.",
-                    "type": "`$STRING`"
+                    "title": "Wallet",
+                    "type": "`$STRING`",
+                    "short": "Filter by wallet type."
                 }
             ],
             "name": "merchant_portal_services_api",
@@ -2024,7 +2384,6 @@ class Config {
                     "name": "create",
                     "points": [
                         {
-                            "args": {},
                             "kind": "http",
                             "method": "POST",
                             "orig": "/public/transactionHistoryCsv",
@@ -2036,15 +2395,17 @@ class Config {
                                     "lit": "transactionHistoryCsv"
                                 }
                             ],
-                            "select": {},
+                            "parts": [
+                                "public",
+                                "transactionHistoryCsv"
+                            ],
+                            "rename": {},
                             "transform": {
                                 "req": "`reqdata`",
                                 "res": "`body`"
                             },
-                            "parts": [
-                                "public",
-                                "transactionHistoryCsv"
-                            ]
+                            "args": {},
+                            "select": {}
                         }
                     ]
                 }
@@ -2057,24 +2418,29 @@ class Config {
             "fields": [
                 {
                     "name": "productorderuuids",
-                    "req": true,
-                    "type": "`$ARRAY`"
+                    "title": "Productorderuuids",
+                    "type": "`$ARRAY`",
+                    "req": true
                 },
                 {
-                    "format": "int32",
                     "name": "responseCode",
-                    "type": "`$INTEGER`"
+                    "title": "Response Code",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
                     "name": "responseMessage",
+                    "title": "Response Message",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "targetPackageorderuuid",
+                    "title": "Target Packageorderuuid",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "targetProductorderuuid",
+                    "title": "Target Productorderuuid",
                     "type": "`$STRING`"
                 }
             ],
@@ -2085,7 +2451,6 @@ class Config {
                     "name": "create",
                     "points": [
                         {
-                            "args": {},
                             "kind": "http",
                             "method": "POST",
                             "orig": "/moveTid",
@@ -2094,14 +2459,16 @@ class Config {
                                     "lit": "moveTid"
                                 }
                             ],
-                            "select": {},
+                            "parts": [
+                                "moveTid"
+                            ],
+                            "rename": {},
                             "transform": {
                                 "req": "`reqdata`",
                                 "res": "`body`"
                             },
-                            "parts": [
-                                "moveTid"
-                            ]
+                            "args": {},
+                            "select": {}
                         }
                     ]
                 }
@@ -2114,100 +2481,117 @@ class Config {
             "fields": [
                 {
                     "name": "acquirerName",
-                    "short": "Acquirer name parsed from KKG field",
-                    "type": "`$STRING`"
+                    "title": "Acquirer Name",
+                    "type": "`$STRING`",
+                    "short": "Acquirer name parsed from KKG field"
                 },
                 {
-                    "format": "int32",
                     "name": "amount",
+                    "title": "Amount",
+                    "type": "`$INTEGER`",
                     "req": true,
                     "short": "Transaction amount in minor units (cents)",
-                    "type": "`$INTEGER`"
+                    "format": "int32"
                 },
                 {
                     "name": "authorizationNumber",
-                    "short": "Authorization number from the gateway",
-                    "type": "`$STRING`"
+                    "title": "Authorization Number",
+                    "type": "`$STRING`",
+                    "short": "Authorization number from the gateway"
                 },
                 {
                     "name": "cardNumber",
+                    "title": "Card Number",
+                    "type": "`$STRING`",
                     "req": true,
-                    "short": "Card number - 12 to 19 digits, must pass Luhn validation",
-                    "type": "`$STRING`"
+                    "short": "Card number - 12 to 19 digits, must pass Luhn validation"
                 },
                 {
                     "name": "cardType",
-                    "short": "Card type parsed from KKG field",
-                    "type": "`$STRING`"
+                    "title": "Card Type",
+                    "type": "`$STRING`",
+                    "short": "Card type parsed from KKG field"
                 },
                 {
                     "name": "currency",
+                    "title": "Currency",
+                    "type": "`$STRING`",
                     "req": true,
-                    "short": "Currency code - 3 uppercase letters (ISO 4217)",
-                    "type": "`$STRING`"
+                    "short": "Currency code - 3 uppercase letters (ISO 4217)"
                 },
                 {
                     "name": "cvc",
-                    "short": "Card verification code - 3-4 digits (optional)",
-                    "type": "`$STRING`"
+                    "title": "Cvc",
+                    "type": "`$STRING`",
+                    "short": "Card verification code - 3-4 digits (optional)"
                 },
                 {
                     "name": "dateTimeTx",
-                    "short": "Date and time of the transaction",
-                    "type": "`$STRING`"
+                    "title": "Date Time Tx",
+                    "type": "`$STRING`",
+                    "short": "Date and time of the transaction"
                 },
                 {
                     "name": "expDate",
+                    "title": "Exp Date",
+                    "type": "`$STRING`",
                     "req": true,
-                    "short": "Card expiry date in MMYY format",
-                    "type": "`$STRING`"
+                    "short": "Card expiry date in MMYY format"
                 },
                 {
                     "name": "merchantId",
-                    "short": "Merchant ID (VU-NUMMER)",
-                    "type": "`$STRING`"
+                    "title": "Merchant Id",
+                    "type": "`$STRING`",
+                    "short": "Merchant ID (VU-NUMMER)"
                 },
                 {
                     "name": "originalTransactionId",
-                    "short": "Original transaction ID from gateway",
-                    "type": "`$STRING`"
+                    "title": "Original Transaction Id",
+                    "type": "`$STRING`",
+                    "short": "Original transaction ID from gateway"
                 },
                 {
                     "name": "password",
-                    "short": "Terminal password sent as Kennwort in TECS XML (optional)",
-                    "type": "`$STRING`"
+                    "title": "Password",
+                    "type": "`$STRING`",
+                    "short": "Terminal password sent as Kennwort in TECS XML (optional)"
                 },
                 {
                     "name": "responseCode",
-                    "short": "Response code - 00 for success, otherwise error code",
-                    "type": "`$STRING`"
+                    "title": "Response Code",
+                    "type": "`$STRING`",
+                    "short": "Response code - 00 for success, otherwise error code"
                 },
                 {
                     "name": "responseMessage",
-                    "short": "Response message - 'Approved' for success, error description otherwise",
-                    "type": "`$STRING`"
+                    "title": "Response Message",
+                    "type": "`$STRING`",
+                    "short": "Response message - 'Approved' for success, error description otherwise"
                 },
                 {
                     "name": "terminalId",
+                    "title": "Terminal Id",
+                    "type": "`$STRING`",
                     "op": {
                         "create": {
                             "req": true,
                             "type": "`$STRING`"
                         }
                     },
-                    "short": "Terminal ID used for the transaction",
-                    "type": "`$STRING`"
+                    "short": "Terminal ID used for the transaction"
                 },
                 {
                     "name": "transactionId",
-                    "short": "Transaction ID generated by the backend",
-                    "type": "`$STRING`"
+                    "title": "Transaction Id",
+                    "type": "`$STRING`",
+                    "short": "Transaction ID generated by the backend"
                 },
                 {
                     "name": "txtype",
+                    "title": "Txtype",
+                    "type": "`$STRING`",
                     "req": true,
-                    "short": "Transaction type",
-                    "type": "`$STRING`"
+                    "short": "Transaction type"
                 }
             ],
             "name": "payment_manual",
@@ -2217,7 +2601,6 @@ class Config {
                     "name": "create",
                     "points": [
                         {
-                            "args": {},
                             "kind": "http",
                             "method": "POST",
                             "orig": "/public/paymentManual",
@@ -2229,15 +2612,17 @@ class Config {
                                     "lit": "paymentManual"
                                 }
                             ],
-                            "select": {},
+                            "parts": [
+                                "public",
+                                "paymentManual"
+                            ],
+                            "rename": {},
                             "transform": {
                                 "req": "`reqdata`",
                                 "res": "`body`"
                             },
-                            "parts": [
-                                "public",
-                                "paymentManual"
-                            ]
+                            "args": {},
+                            "select": {}
                         }
                     ]
                 }
@@ -2249,70 +2634,82 @@ class Config {
         "payment_sred": {
             "fields": [
                 {
-                    "format": "int32",
                     "name": "amount",
+                    "title": "Amount",
+                    "type": "`$INTEGER`",
                     "req": true,
                     "short": "Transaction amount in minor units (cents)",
-                    "type": "`$INTEGER`"
+                    "format": "int32"
                 },
                 {
                     "name": "currency",
+                    "title": "Currency",
+                    "type": "`$STRING`",
                     "req": true,
-                    "short": "Currency code - 3 uppercase letters (ISO 4217)",
-                    "type": "`$STRING`"
+                    "short": "Currency code - 3 uppercase letters (ISO 4217)"
                 },
                 {
                     "name": "device",
-                    "short": "Device type that provided the SRED payload",
-                    "type": "`$STRING`"
+                    "title": "Device",
+                    "type": "`$STRING`",
+                    "short": "Device type that provided the SRED payload"
                 },
                 {
                     "name": "devicePayload",
+                    "title": "Device Payload",
+                    "type": "`$STRING`",
                     "req": true,
-                    "short": "SRED encrypted device payload from the device (minimum 32 characters)",
-                    "type": "`$STRING`"
+                    "short": "SRED encrypted device payload from the device (minimum 32 characters)"
                 },
                 {
                     "name": "expDate",
-                    "short": "Card expiry date in MMYY format",
-                    "type": "`$STRING`"
+                    "title": "Exp Date",
+                    "type": "`$STRING`",
+                    "short": "Card expiry date in MMYY format"
                 },
                 {
                     "name": "mode",
-                    "short": "Decryption mode",
-                    "type": "`$STRING`"
+                    "title": "Mode",
+                    "type": "`$STRING`",
+                    "short": "Decryption mode"
                 },
                 {
                     "name": "panMasked",
-                    "short": "Masked PAN (first 6 and last 4 digits)",
-                    "type": "`$STRING`"
+                    "title": "Pan Masked",
+                    "type": "`$STRING`",
+                    "short": "Masked PAN (first 6 and last 4 digits)"
                 },
                 {
                     "name": "password",
-                    "short": "Terminal password sent as Kennwort in TECS XML (optional)",
-                    "type": "`$STRING`"
+                    "title": "Password",
+                    "type": "`$STRING`",
+                    "short": "Terminal password sent as Kennwort in TECS XML (optional)"
                 },
                 {
                     "name": "serial",
-                    "short": "Device serial number",
-                    "type": "`$STRING`"
+                    "title": "Serial",
+                    "type": "`$STRING`",
+                    "short": "Device serial number"
                 },
                 {
                     "name": "serviceCode",
-                    "short": "Service code from the card",
-                    "type": "`$STRING`"
+                    "title": "Service Code",
+                    "type": "`$STRING`",
+                    "short": "Service code from the card"
                 },
                 {
                     "name": "terminalId",
+                    "title": "Terminal Id",
+                    "type": "`$STRING`",
                     "req": true,
-                    "short": "Terminal ID - 8 digits",
-                    "type": "`$STRING`"
+                    "short": "Terminal ID - 8 digits"
                 },
                 {
                     "name": "txtype",
+                    "title": "Txtype",
+                    "type": "`$STRING`",
                     "req": true,
-                    "short": "Transaction type",
-                    "type": "`$STRING`"
+                    "short": "Transaction type"
                 }
             ],
             "name": "payment_sred",
@@ -2322,7 +2719,6 @@ class Config {
                     "name": "create",
                     "points": [
                         {
-                            "args": {},
                             "kind": "http",
                             "method": "POST",
                             "orig": "/public/paymentSred",
@@ -2334,15 +2730,17 @@ class Config {
                                     "lit": "paymentSred"
                                 }
                             ],
-                            "select": {},
+                            "parts": [
+                                "public",
+                                "paymentSred"
+                            ],
+                            "rename": {},
                             "transform": {
                                 "req": "`reqdata`",
                                 "res": "`body.sred`"
                             },
-                            "parts": [
-                                "public",
-                                "paymentSred"
-                            ]
+                            "args": {},
+                            "select": {}
                         }
                     ]
                 }
@@ -2355,209 +2753,251 @@ class Config {
             "fields": [
                 {
                     "name": "acquirerId",
+                    "title": "Acquirer Id",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "acquirerName",
+                    "title": "Acquirer Name",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "actualBonusPoints",
+                    "title": "Actual Bonus Points",
                     "type": "`$STRING`"
                 },
                 {
-                    "format": "int32",
                     "name": "amount",
+                    "title": "Amount",
+                    "type": "`$INTEGER`",
                     "op": {
                         "create": {
                             "req": true,
                             "type": "`$INTEGER`"
                         }
                     },
-                    "type": "`$INTEGER`"
+                    "format": "int32"
                 },
                 {
                     "name": "authorizationCode",
+                    "title": "Authorization Code",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "balanceAmount",
+                    "title": "Balance Amount",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "cardBrand",
+                    "title": "Card Brand",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "cardNumber",
+                    "title": "Card Number",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "cardNumberReference",
-                    "req": true,
-                    "type": "`$STRING`"
+                    "title": "Card Number Reference",
+                    "type": "`$STRING`",
+                    "req": true
                 },
                 {
-                    "format": "int32",
                     "name": "clientId",
+                    "title": "Client Id",
+                    "type": "`$INTEGER`",
                     "req": true,
-                    "type": "`$INTEGER`"
+                    "format": "int32"
                 },
                 {
                     "name": "currency",
-                    "req": true,
-                    "type": "`$STRING`"
+                    "title": "Currency",
+                    "type": "`$STRING`",
+                    "req": true
                 },
                 {
                     "name": "cvc",
+                    "title": "Cvc",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "ecData",
+                    "title": "Ec Data",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "ecrData",
+                    "title": "Ecr Data",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "emvData",
+                    "title": "Emv Data",
                     "type": "`$STRING`"
                 },
                 {
-                    "format": "int64",
                     "name": "exchangeFee",
-                    "type": "`$INTEGER`"
+                    "title": "Exchange Fee",
+                    "type": "`$INTEGER`",
+                    "format": "int64"
                 },
                 {
                     "name": "exchangeRate",
+                    "title": "Exchange Rate",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "languageCode",
+                    "title": "Language Code",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "merchantAddress",
+                    "title": "Merchant Address",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "merchantName",
+                    "title": "Merchant Name",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "merchantNumber",
+                    "title": "Merchant Number",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "messageType",
+                    "title": "Message Type",
                     "type": "`$STRING`"
                 },
                 {
-                    "format": "int32",
                     "name": "originalTraceNumber",
-                    "type": "`$INTEGER`"
+                    "title": "Original Trace Number",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
                     "name": "originalTransactionId",
+                    "title": "Original Transaction Id",
+                    "type": "`$STRING`",
                     "op": {
                         "create": {
                             "req": true,
                             "type": "`$STRING`"
                         }
-                    },
-                    "type": "`$STRING`"
+                    }
                 },
                 {
                     "name": "password",
+                    "title": "Password",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "paymentReason",
+                    "title": "Payment Reason",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "receiptFooter",
+                    "title": "Receipt Footer",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "receiptHeader",
+                    "title": "Receipt Header",
                     "type": "`$STRING`"
                 },
                 {
-                    "format": "int32",
                     "name": "receiptLayout",
-                    "type": "`$INTEGER`"
+                    "title": "Receipt Layout",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
                     "name": "receiptNumber",
-                    "req": true,
-                    "type": "`$STRING`"
+                    "title": "Receipt Number",
+                    "type": "`$STRING`",
+                    "req": true
                 },
                 {
-                    "format": "int32",
                     "name": "responseCode",
-                    "type": "`$INTEGER`"
+                    "title": "Response Code",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
                     "name": "responseMessage",
+                    "title": "Response Message",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "serialNumber",
+                    "title": "Serial Number",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "svc",
+                    "title": "Svc",
                     "type": "`$STRING`"
                 },
                 {
-                    "format": "int32",
                     "name": "terminalId",
+                    "title": "Terminal Id",
+                    "type": "`$INTEGER`",
                     "req": true,
-                    "type": "`$INTEGER`"
+                    "format": "int32"
                 },
                 {
                     "name": "terminalLocation",
+                    "title": "Terminal Location",
                     "type": "`$STRING`"
                 },
                 {
-                    "format": "int32",
                     "name": "traceNumber",
-                    "type": "`$INTEGER`"
+                    "title": "Trace Number",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
-                    "format": "date-time",
                     "name": "transactionDate",
+                    "title": "Transaction Date",
+                    "type": "`$STRING`",
                     "op": {
                         "create": {
                             "req": true,
                             "type": "`$STRING`"
                         }
                     },
-                    "type": "`$STRING`"
+                    "format": "date-time"
                 },
                 {
                     "name": "transactionId",
+                    "title": "Transaction Id",
+                    "type": "`$STRING`",
                     "op": {
                         "create": {
                             "req": true,
                             "type": "`$STRING`"
                         }
-                    },
-                    "type": "`$STRING`"
+                    }
                 },
                 {
                     "name": "transactionType",
-                    "req": true,
-                    "type": "`$STRING`"
+                    "title": "Transaction Type",
+                    "type": "`$STRING`",
+                    "req": true
                 },
                 {
                     "name": "txType",
+                    "title": "Tx Type",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "userData",
+                    "title": "User Data",
                     "type": "`$STRING`"
                 }
             ],
@@ -2568,7 +3008,6 @@ class Config {
                     "name": "create",
                     "points": [
                         {
-                            "args": {},
                             "kind": "http",
                             "method": "POST",
                             "orig": "/public/paymentTransaction",
@@ -2580,18 +3019,19 @@ class Config {
                                     "lit": "paymentTransaction"
                                 }
                             ],
-                            "select": {},
+                            "parts": [
+                                "public",
+                                "paymentTransaction"
+                            ],
+                            "rename": {},
                             "transform": {
                                 "req": "`reqdata`",
                                 "res": "`body`"
                             },
-                            "parts": [
-                                "public",
-                                "paymentTransaction"
-                            ]
+                            "args": {},
+                            "select": {}
                         },
                         {
-                            "args": {},
                             "kind": "http",
                             "method": "POST",
                             "orig": "/public/preAuthCompletionTransaction",
@@ -2603,15 +3043,17 @@ class Config {
                                     "lit": "preAuthCompletionTransaction"
                                 }
                             ],
-                            "select": {},
+                            "parts": [
+                                "public",
+                                "preAuthCompletionTransaction"
+                            ],
+                            "rename": {},
                             "transform": {
                                 "req": "`reqdata`",
                                 "res": "`body`"
                             },
-                            "parts": [
-                                "public",
-                                "preAuthCompletionTransaction"
-                            ]
+                            "args": {},
+                            "select": {}
                         }
                     ]
                 }
@@ -2624,35 +3066,42 @@ class Config {
             "fields": [
                 {
                     "name": "corporateUuid",
+                    "title": "Corporate Uuid",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "packageOrderUuid",
+                    "title": "Package Order Uuid",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "productOrderUuid",
+                    "title": "Product Order Uuid",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "reactivationReason",
-                    "req": true,
-                    "type": "`$STRING`"
+                    "title": "Reactivation Reason",
+                    "type": "`$STRING`",
+                    "req": true
                 },
                 {
-                    "format": "int32",
                     "name": "responseCode",
-                    "type": "`$INTEGER`"
+                    "title": "Response Code",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
                     "name": "responseMessage",
+                    "title": "Response Message",
                     "type": "`$STRING`"
                 },
                 {
-                    "format": "int32",
                     "name": "terminalId",
+                    "title": "Terminal Id",
+                    "type": "`$INTEGER`",
                     "req": true,
-                    "type": "`$INTEGER`"
+                    "format": "int32"
                 }
             ],
             "name": "reactivate_terminal",
@@ -2662,7 +3111,6 @@ class Config {
                     "name": "create",
                     "points": [
                         {
-                            "args": {},
                             "kind": "http",
                             "method": "POST",
                             "orig": "/reactivateTerminal",
@@ -2671,14 +3119,16 @@ class Config {
                                     "lit": "reactivateTerminal"
                                 }
                             ],
-                            "select": {},
+                            "parts": [
+                                "reactivateTerminal"
+                            ],
+                            "rename": {},
                             "transform": {
                                 "req": "`reqdata`",
                                 "res": "`body`"
                             },
-                            "parts": [
-                                "reactivateTerminal"
-                            ]
+                            "args": {},
+                            "select": {}
                         }
                     ]
                 }
@@ -2691,199 +3141,239 @@ class Config {
             "fields": [
                 {
                     "name": "acquirerId",
+                    "title": "Acquirer Id",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "acquirerName",
+                    "title": "Acquirer Name",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "actualBonusPoints",
+                    "title": "Actual Bonus Points",
                     "type": "`$STRING`"
                 },
                 {
-                    "format": "int32",
                     "name": "amount",
+                    "title": "Amount",
+                    "type": "`$INTEGER`",
                     "op": {
                         "create": {
                             "req": true,
                             "type": "`$INTEGER`"
                         }
                     },
-                    "type": "`$INTEGER`"
+                    "format": "int32"
                 },
                 {
                     "name": "authorizationCode",
+                    "title": "Authorization Code",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "balanceAmount",
+                    "title": "Balance Amount",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "cardBrand",
+                    "title": "Card Brand",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "cardNumber",
+                    "title": "Card Number",
                     "type": "`$STRING`"
                 },
                 {
-                    "format": "int32",
                     "name": "clientId",
+                    "title": "Client Id",
+                    "type": "`$INTEGER`",
                     "req": true,
-                    "type": "`$INTEGER`"
+                    "format": "int32"
                 },
                 {
                     "name": "currency",
-                    "req": true,
-                    "type": "`$STRING`"
+                    "title": "Currency",
+                    "type": "`$STRING`",
+                    "req": true
                 },
                 {
                     "name": "cvc",
+                    "title": "Cvc",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "ecData",
+                    "title": "Ec Data",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "ecrData",
+                    "title": "Ecr Data",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "emvData",
+                    "title": "Emv Data",
                     "type": "`$STRING`"
                 },
                 {
-                    "format": "int64",
                     "name": "exchangeFee",
-                    "type": "`$INTEGER`"
+                    "title": "Exchange Fee",
+                    "type": "`$INTEGER`",
+                    "format": "int64"
                 },
                 {
                     "name": "exchangeRate",
+                    "title": "Exchange Rate",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "languageCode",
+                    "title": "Language Code",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "merchantAddress",
+                    "title": "Merchant Address",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "merchantName",
+                    "title": "Merchant Name",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "merchantNumber",
+                    "title": "Merchant Number",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "messageType",
+                    "title": "Message Type",
                     "type": "`$STRING`"
                 },
                 {
-                    "format": "int32",
                     "name": "originalTraceNumber",
-                    "type": "`$INTEGER`"
+                    "title": "Original Trace Number",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
                     "name": "originalTransactionId",
+                    "title": "Original Transaction Id",
+                    "type": "`$STRING`",
                     "op": {
                         "create": {
                             "req": true,
                             "type": "`$STRING`"
                         }
-                    },
-                    "type": "`$STRING`"
+                    }
                 },
                 {
                     "name": "password",
+                    "title": "Password",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "paymentReason",
+                    "title": "Payment Reason",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "receiptFooter",
+                    "title": "Receipt Footer",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "receiptHeader",
+                    "title": "Receipt Header",
                     "type": "`$STRING`"
                 },
                 {
-                    "format": "int32",
                     "name": "receiptLayout",
-                    "type": "`$INTEGER`"
+                    "title": "Receipt Layout",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
                     "name": "receiptNumber",
-                    "req": true,
-                    "type": "`$STRING`"
+                    "title": "Receipt Number",
+                    "type": "`$STRING`",
+                    "req": true
                 },
                 {
-                    "format": "int32",
                     "name": "responseCode",
-                    "type": "`$INTEGER`"
+                    "title": "Response Code",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
                     "name": "responseMessage",
+                    "title": "Response Message",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "serialNumber",
+                    "title": "Serial Number",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "svc",
+                    "title": "Svc",
                     "type": "`$STRING`"
                 },
                 {
-                    "format": "int32",
                     "name": "terminalId",
+                    "title": "Terminal Id",
+                    "type": "`$INTEGER`",
                     "req": true,
-                    "type": "`$INTEGER`"
+                    "format": "int32"
                 },
                 {
                     "name": "terminalLocation",
+                    "title": "Terminal Location",
                     "type": "`$STRING`"
                 },
                 {
-                    "format": "int32",
                     "name": "traceNumber",
-                    "type": "`$INTEGER`"
+                    "title": "Trace Number",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
-                    "format": "date-time",
                     "name": "transactionDate",
+                    "title": "Transaction Date",
+                    "type": "`$STRING`",
                     "op": {
                         "create": {
                             "req": true,
                             "type": "`$STRING`"
                         }
                     },
-                    "type": "`$STRING`"
+                    "format": "date-time"
                 },
                 {
                     "name": "transactionId",
+                    "title": "Transaction Id",
+                    "type": "`$STRING`",
                     "op": {
                         "create": {
                             "req": true,
                             "type": "`$STRING`"
                         }
-                    },
-                    "type": "`$STRING`"
+                    }
                 },
                 {
                     "name": "txType",
+                    "title": "Tx Type",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "userData",
+                    "title": "User Data",
                     "type": "`$STRING`"
                 }
             ],
@@ -2894,7 +3384,6 @@ class Config {
                     "name": "create",
                     "points": [
                         {
-                            "args": {},
                             "kind": "http",
                             "method": "POST",
                             "orig": "/public/refundTransaction",
@@ -2906,15 +3395,17 @@ class Config {
                                     "lit": "refundTransaction"
                                 }
                             ],
-                            "select": {},
+                            "parts": [
+                                "public",
+                                "refundTransaction"
+                            ],
+                            "rename": {},
                             "transform": {
                                 "req": "`reqdata`",
                                 "res": "`body`"
                             },
-                            "parts": [
-                                "public",
-                                "refundTransaction"
-                            ]
+                            "args": {},
+                            "select": {}
                         }
                     ]
                 }
@@ -2927,41 +3418,49 @@ class Config {
             "fields": [
                 {
                     "name": "corporateUuid",
-                    "req": true,
-                    "type": "`$STRING`"
+                    "title": "Corporate Uuid",
+                    "type": "`$STRING`",
+                    "req": true
                 },
                 {
                     "name": "packageOrderUuid",
-                    "req": true,
-                    "type": "`$STRING`"
+                    "title": "Package Order Uuid",
+                    "type": "`$STRING`",
+                    "req": true
                 },
                 {
-                    "format": "int32",
                     "name": "partnerId",
-                    "type": "`$INTEGER`"
+                    "title": "Partner Id",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
                     "name": "partnerName",
+                    "title": "Partner Name",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "productOrderUuid",
-                    "req": true,
-                    "type": "`$STRING`"
+                    "title": "Product Order Uuid",
+                    "type": "`$STRING`",
+                    "req": true
                 },
                 {
-                    "format": "int32",
                     "name": "responseCode",
-                    "type": "`$INTEGER`"
+                    "title": "Response Code",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
                     "name": "responseMessage",
+                    "title": "Response Message",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "templateName",
-                    "req": true,
-                    "type": "`$STRING`"
+                    "title": "Template Name",
+                    "type": "`$STRING`",
+                    "req": true
                 }
             ],
             "name": "register_tecs_company",
@@ -2971,7 +3470,6 @@ class Config {
                     "name": "create",
                     "points": [
                         {
-                            "args": {},
                             "kind": "http",
                             "method": "POST",
                             "orig": "/registerTecsCompany",
@@ -2980,14 +3478,16 @@ class Config {
                                     "lit": "registerTecsCompany"
                                 }
                             ],
-                            "select": {},
+                            "parts": [
+                                "registerTecsCompany"
+                            ],
+                            "rename": {},
                             "transform": {
                                 "req": "`reqdata`",
                                 "res": "`body`"
                             },
-                            "parts": [
-                                "registerTecsCompany"
-                            ]
+                            "args": {},
+                            "select": {}
                         }
                     ]
                 }
@@ -3000,83 +3500,101 @@ class Config {
             "fields": [
                 {
                     "name": "additionalData",
+                    "title": "Additional Data",
                     "type": "`$OBJECT`"
                 },
                 {
                     "name": "corporateUuid",
-                    "req": true,
-                    "type": "`$STRING`"
+                    "title": "Corporate Uuid",
+                    "type": "`$STRING`",
+                    "req": true
                 },
                 {
                     "name": "packageOrderUuid",
-                    "req": true,
-                    "type": "`$STRING`"
+                    "title": "Package Order Uuid",
+                    "type": "`$STRING`",
+                    "req": true
                 },
                 {
                     "name": "productOrderUuid",
-                    "req": true,
-                    "type": "`$STRING`"
+                    "title": "Product Order Uuid",
+                    "type": "`$STRING`",
+                    "req": true
                 },
                 {
-                    "format": "int32",
                     "name": "responseCode",
-                    "type": "`$INTEGER`"
+                    "title": "Response Code",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
                     "name": "responseMessage",
+                    "title": "Response Message",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "tecsWebSecretKey",
+                    "title": "Tecs Web Secret Key",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "templateName",
-                    "req": true,
-                    "type": "`$STRING`"
+                    "title": "Template Name",
+                    "type": "`$STRING`",
+                    "req": true
                 },
                 {
                     "name": "terminalCountryCode",
-                    "req": true,
-                    "type": "`$STRING`"
+                    "title": "Terminal Country Code",
+                    "type": "`$STRING`",
+                    "req": true
                 },
                 {
-                    "format": "int32",
                     "name": "terminalId",
-                    "type": "`$INTEGER`"
+                    "title": "Terminal Id",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
                     "name": "terminalIdAcq",
+                    "title": "Terminal Id Acq",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "terminalLanguageCode",
-                    "req": true,
-                    "type": "`$STRING`"
+                    "title": "Terminal Language Code",
+                    "type": "`$STRING`",
+                    "req": true
                 },
                 {
                     "name": "terminalLocation",
-                    "req": true,
-                    "type": "`$STRING`"
+                    "title": "Terminal Location",
+                    "type": "`$STRING`",
+                    "req": true
                 },
                 {
                     "name": "terminalSerialNumber",
+                    "title": "Terminal Serial Number",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "tokenIOAlias",
+                    "title": "Token Io Alias",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "tokenIOIban",
+                    "title": "Token Io Iban",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "tokenIOMemberId",
+                    "title": "Token Io Member Id",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "webShopUrl",
+                    "title": "Web Shop Url",
                     "type": "`$STRING`"
                 }
             ],
@@ -3087,7 +3605,6 @@ class Config {
                     "name": "create",
                     "points": [
                         {
-                            "args": {},
                             "kind": "http",
                             "method": "POST",
                             "orig": "/registerTerminal",
@@ -3096,14 +3613,16 @@ class Config {
                                     "lit": "registerTerminal"
                                 }
                             ],
-                            "select": {},
+                            "parts": [
+                                "registerTerminal"
+                            ],
+                            "rename": {},
                             "transform": {
                                 "req": "`reqdata`",
                                 "res": "`body`"
                             },
-                            "parts": [
-                                "registerTerminal"
-                            ]
+                            "args": {},
+                            "select": {}
                         }
                     ]
                 }
@@ -3116,51 +3635,61 @@ class Config {
             "fields": [
                 {
                     "name": "cardBrandReportData",
+                    "title": "Card Brand Report Data",
                     "type": "`$ARRAY`"
                 },
                 {
                     "name": "clearingDateFrom",
+                    "title": "Clearing Date From",
+                    "type": "`$STRING`",
                     "req": true,
-                    "short": "Date and time in the format yyyy-MM-dd'T'HH:mm:ss",
-                    "type": "`$STRING`"
+                    "short": "Date and time in the format yyyy-MM-dd'T'HH:mm:ss"
                 },
                 {
                     "name": "clearingDateTo",
+                    "title": "Clearing Date To",
+                    "type": "`$STRING`",
                     "req": true,
-                    "short": "Date and time in the format yyyy-MM-dd'T'HH:mm:ss",
-                    "type": "`$STRING`"
+                    "short": "Date and time in the format yyyy-MM-dd'T'HH:mm:ss"
                 },
                 {
                     "name": "corporateId",
-                    "req": true,
-                    "type": "`$STRING`"
+                    "title": "Corporate Id",
+                    "type": "`$STRING`",
+                    "req": true
                 },
                 {
                     "name": "currency",
-                    "req": true,
-                    "type": "`$STRING`"
+                    "title": "Currency",
+                    "type": "`$STRING`",
+                    "req": true
                 },
                 {
-                    "format": "int32",
                     "name": "responseCode",
-                    "type": "`$INTEGER`"
+                    "title": "Response Code",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
                     "name": "responseMessage",
+                    "title": "Response Message",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "sumOverCreditTx",
+                    "title": "Sum Over Credit Tx",
                     "type": "`$OBJECT`"
                 },
                 {
                     "name": "sumOverDebitTx",
+                    "title": "Sum Over Debit Tx",
                     "type": "`$OBJECT`"
                 },
                 {
-                    "format": "int32",
                     "name": "terminalId",
-                    "type": "`$INTEGER`"
+                    "title": "Terminal Id",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 }
             ],
             "name": "report_data",
@@ -3170,7 +3699,6 @@ class Config {
                     "name": "create",
                     "points": [
                         {
-                            "args": {},
                             "kind": "http",
                             "method": "POST",
                             "orig": "/public/digitalservices/reportData",
@@ -3185,16 +3713,18 @@ class Config {
                                     "lit": "reportData"
                                 }
                             ],
-                            "select": {},
-                            "transform": {
-                                "req": "`reqdata`",
-                                "res": "`body`"
-                            },
                             "parts": [
                                 "public",
                                 "digitalservices",
                                 "reportData"
-                            ]
+                            ],
+                            "rename": {},
+                            "transform": {
+                                "req": "`reqdata`",
+                                "res": "`body`"
+                            },
+                            "args": {},
+                            "select": {}
                         }
                     ]
                 }
@@ -3207,227 +3737,277 @@ class Config {
             "fields": [
                 {
                     "name": "acquirerName",
+                    "title": "Acquirer Name",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "acquirerTerminalId",
+                    "title": "Acquirer Terminal Id",
                     "type": "`$STRING`"
                 },
                 {
-                    "format": "int32",
                     "name": "amount",
-                    "type": "`$INTEGER`"
+                    "title": "Amount",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
                     "name": "applicationCryptogram",
+                    "title": "Application Cryptogram",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "authorizationCode",
-                    "short": "Authorization code returned by the acquirer; null when not available",
+                    "title": "Authorization Code",
                     "type": [
                         "`$ONE`",
                         [
                             "`$STRING`",
                             "`$NULL`"
                         ]
-                    ]
+                    ],
+                    "short": "Authorization code returned by the acquirer; null when not available"
                 },
                 {
-                    "format": "date-time",
                     "name": "authorizationDate",
-                    "type": "`$STRING`"
+                    "title": "Authorization Date",
+                    "type": "`$STRING`",
+                    "format": "date-time"
                 },
                 {
                     "name": "cardBrand",
+                    "title": "Card Brand",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "cardEntry",
+                    "title": "Card Entry",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "cardExpiration",
+                    "title": "Card Expiration",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "cardNumber",
+                    "title": "Card Number",
                     "type": "`$STRING`"
                 },
                 {
-                    "format": "int32",
                     "name": "clearingAmount",
-                    "type": "`$INTEGER`"
+                    "title": "Clearing Amount",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
                     "name": "clearingBatchId",
+                    "title": "Clearing Batch Id",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "clearingCurrency",
+                    "title": "Clearing Currency",
                     "type": "`$STRING`"
                 },
                 {
-                    "format": "date-time",
                     "name": "clearingDate",
-                    "type": "`$STRING`"
+                    "title": "Clearing Date",
+                    "type": "`$STRING`",
+                    "format": "date-time"
                 },
                 {
-                    "format": "date-time",
                     "name": "clearingProcessedDate",
-                    "type": "`$STRING`"
+                    "title": "Clearing Processed Date",
+                    "type": "`$STRING`",
+                    "format": "date-time"
                 },
                 {
                     "name": "clearingStatus",
+                    "title": "Clearing Status",
                     "type": "`$STRING`"
                 },
                 {
-                    "format": "int32",
                     "name": "clientId",
-                    "type": "`$INTEGER`"
+                    "title": "Client Id",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
                     "name": "currency",
+                    "title": "Currency",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "cvm",
+                    "title": "Cvm",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "ecrData",
+                    "title": "Ecr Data",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "emvApplicationId",
+                    "title": "Emv Application Id",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "emvApplicationLabel",
+                    "title": "Emv Application Label",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "merchantName",
+                    "title": "Merchant Name",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "merchantNumber",
+                    "title": "Merchant Number",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "originalClientId",
+                    "title": "Original Client Id",
                     "type": "`$STRING`"
                 },
                 {
-                    "format": "int32",
                     "name": "originalTerminalId",
-                    "type": "`$INTEGER`"
+                    "title": "Original Terminal Id",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
                     "name": "originalTransactionId",
+                    "title": "Original Transaction Id",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "paymentReason",
+                    "title": "Payment Reason",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "receiptNumber",
+                    "title": "Receipt Number",
                     "type": "`$STRING`"
                 },
                 {
-                    "format": "int32",
                     "name": "responseCode",
-                    "type": "`$INTEGER`"
+                    "title": "Response Code",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
                     "name": "responseCodeFromAS",
+                    "title": "Response Code From As",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "responseMessage",
+                    "title": "Response Message",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "retrievalReferenceNumber",
+                    "title": "Retrieval Reference Number",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "serviceCode",
+                    "title": "Service Code",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "settlementStatus",
+                    "title": "Settlement Status",
                     "type": "`$STRING`"
                 },
                 {
-                    "format": "int32",
                     "name": "sourceId",
-                    "type": "`$INTEGER`"
+                    "title": "Source Id",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
-                    "format": "int32",
                     "name": "tecsengineResponseCode",
-                    "type": "`$INTEGER`"
+                    "title": "Tecsengine Response Code",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
                     "name": "tecsengineResponseText",
+                    "title": "Tecsengine Response Text",
                     "type": "`$STRING`"
                 },
                 {
-                    "format": "date-time",
                     "name": "terminalEndOfDayDate",
-                    "type": "`$STRING`"
+                    "title": "Terminal End Of Day Date",
+                    "type": "`$STRING`",
+                    "format": "date-time"
                 },
                 {
-                    "format": "int32",
                     "name": "terminalId",
-                    "type": "`$INTEGER`"
+                    "title": "Terminal Id",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
                     "name": "terminalLocation",
+                    "title": "Terminal Location",
                     "type": "`$STRING`"
                 },
                 {
-                    "format": "int32",
                     "name": "tipAmount",
-                    "type": "`$INTEGER`"
+                    "title": "Tip Amount",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
-                    "format": "int32",
                     "name": "traceNumber",
-                    "type": "`$INTEGER`"
+                    "title": "Trace Number",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
-                    "format": "date-time",
                     "name": "transactionClearingDate",
-                    "type": "`$STRING`"
+                    "title": "Transaction Clearing Date",
+                    "type": "`$STRING`",
+                    "format": "date-time"
                 },
                 {
-                    "format": "date-time",
                     "name": "transactionDate",
-                    "type": "`$STRING`"
+                    "title": "Transaction Date",
+                    "type": "`$STRING`",
+                    "format": "date-time"
                 },
                 {
                     "name": "transactionId",
+                    "title": "Transaction Id",
                     "type": "`$STRING`"
                 },
                 {
-                    "format": "int64",
                     "name": "transactionSeqNumber",
-                    "type": "`$INTEGER`"
+                    "title": "Transaction Seq Number",
+                    "type": "`$INTEGER`",
+                    "format": "int64"
                 },
                 {
-                    "format": "date-time",
                     "name": "transactionServerDate",
-                    "type": "`$STRING`"
+                    "title": "Transaction Server Date",
+                    "type": "`$STRING`",
+                    "format": "date-time"
                 },
                 {
                     "name": "transactionSource",
+                    "title": "Transaction Source",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "transactionType",
+                    "title": "Transaction Type",
                     "type": "`$STRING`"
                 }
             ],
@@ -3438,7 +4018,6 @@ class Config {
                     "name": "create",
                     "points": [
                         {
-                            "args": {},
                             "kind": "http",
                             "method": "POST",
                             "orig": "/public/statusTransaction",
@@ -3450,15 +4029,17 @@ class Config {
                                     "lit": "statusTransaction"
                                 }
                             ],
-                            "select": {},
+                            "parts": [
+                                "public",
+                                "statusTransaction"
+                            ],
+                            "rename": {},
                             "transform": {
                                 "req": "`reqdata`",
                                 "res": "`body`"
                             },
-                            "parts": [
-                                "public",
-                                "statusTransaction"
-                            ]
+                            "args": {},
+                            "select": {}
                         }
                     ]
                 }
@@ -3471,28 +4052,34 @@ class Config {
             "fields": [
                 {
                     "name": "acqTabNexo",
+                    "title": "Acq Tab Nexo",
                     "type": "`$OBJECT`"
                 },
                 {
                     "name": "configVersion",
+                    "title": "Config Version",
                     "type": "`$STRING`"
                 },
                 {
-                    "format": "int32",
                     "name": "responseCode",
-                    "type": "`$INTEGER`"
+                    "title": "Response Code",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
                     "name": "responseMessage",
+                    "title": "Response Message",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "serialNumber",
-                    "req": true,
-                    "type": "`$STRING`"
+                    "title": "Serial Number",
+                    "type": "`$STRING`",
+                    "req": true
                 },
                 {
                     "name": "tidSent",
+                    "title": "Tid Sent",
                     "type": "`$STRING`"
                 }
             ],
@@ -3503,7 +4090,6 @@ class Config {
                     "name": "create",
                     "points": [
                         {
-                            "args": {},
                             "kind": "http",
                             "method": "POST",
                             "orig": "/storeTerminalParameters",
@@ -3512,14 +4098,16 @@ class Config {
                                     "lit": "storeTerminalParameters"
                                 }
                             ],
-                            "select": {},
+                            "parts": [
+                                "storeTerminalParameters"
+                            ],
+                            "rename": {},
                             "transform": {
                                 "req": "`reqdata`",
                                 "res": "`body`"
                             },
-                            "parts": [
-                                "storeTerminalParameters"
-                            ]
+                            "args": {},
+                            "select": {}
                         }
                     ]
                 }
@@ -3532,24 +4120,29 @@ class Config {
             "fields": [
                 {
                     "name": "deviceSerialNumber",
-                    "req": true,
-                    "type": "`$ARRAY`"
+                    "title": "Device Serial Number",
+                    "type": "`$ARRAY`",
+                    "req": true
                 },
                 {
                     "name": "duplicateTerminalIds",
+                    "title": "Duplicate Terminal Ids",
                     "type": "`$ARRAY`"
                 },
                 {
-                    "format": "int32",
                     "name": "responseCode",
-                    "type": "`$INTEGER`"
+                    "title": "Response Code",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
                     "name": "responseMessage",
+                    "title": "Response Message",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "terminals",
+                    "title": "Terminals",
                     "type": "`$ARRAY`"
                 }
             ],
@@ -3560,7 +4153,6 @@ class Config {
                     "name": "create",
                     "points": [
                         {
-                            "args": {},
                             "kind": "http",
                             "method": "POST",
                             "orig": "/public/getTerminalId",
@@ -3572,15 +4164,17 @@ class Config {
                                     "lit": "getTerminalId"
                                 }
                             ],
-                            "select": {},
+                            "parts": [
+                                "public",
+                                "getTerminalId"
+                            ],
+                            "rename": {},
                             "transform": {
                                 "req": "`reqdata`",
                                 "res": "`body`"
                             },
-                            "parts": [
-                                "public",
-                                "getTerminalId"
-                            ]
+                            "args": {},
+                            "select": {}
                         }
                     ]
                 }
@@ -3593,125 +4187,154 @@ class Config {
             "fields": [
                 {
                     "name": "3DSecure",
+                    "title": "3 D Secure",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "authorizationCode",
+                    "title": "Authorization Code",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "cardBrand",
+                    "title": "Card Brand",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "clearingAmountFrom",
+                    "title": "Clearing Amount From",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "clearingAmountTo",
+                    "title": "Clearing Amount To",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "clearingCurrency",
+                    "title": "Clearing Currency",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "clearingStatus",
+                    "title": "Clearing Status",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "corporateUUID",
+                    "title": "Corporate Uuid",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "orderByTransactionDate",
+                    "title": "Order By Transaction Date",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "pagination",
+                    "title": "Pagination",
                     "type": "`$OBJECT`"
                 },
                 {
                     "name": "paymentTokenPublicId",
+                    "title": "Payment Token Public Id",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "receiptNumber",
+                    "title": "Receipt Number",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "referencedTransactionId",
+                    "title": "Referenced Transaction Id",
                     "type": "`$STRING`"
                 },
                 {
-                    "format": "int32",
                     "name": "responseCode",
-                    "type": "`$INTEGER`"
+                    "title": "Response Code",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
                     "name": "responseMessage",
+                    "title": "Response Message",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "retrievalReferenceNumber",
+                    "title": "Retrieval Reference Number",
                     "type": "`$STRING`"
                 },
                 {
-                    "format": "int32",
                     "name": "sourceId",
-                    "type": "`$INTEGER`"
+                    "title": "Source Id",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
                     "name": "tecsengineResponseCodeFrom",
+                    "title": "Tecsengine Response Code From",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "tecsengineResponseCodeTo",
+                    "title": "Tecsengine Response Code To",
                     "type": "`$STRING`"
                 },
                 {
-                    "format": "int32",
                     "name": "terminalId",
-                    "type": "`$INTEGER`"
+                    "title": "Terminal Id",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
                     "name": "traceNumber",
+                    "title": "Trace Number",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "transactionAmountFrom",
+                    "title": "Transaction Amount From",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "transactionAmountTo",
+                    "title": "Transaction Amount To",
                     "type": "`$STRING`"
                 },
                 {
-                    "format": "date-time",
                     "name": "transactionDateFrom",
-                    "type": "`$STRING`"
+                    "title": "Transaction Date From",
+                    "type": "`$STRING`",
+                    "format": "date-time"
                 },
                 {
-                    "format": "date-time",
                     "name": "transactionDateTo",
-                    "type": "`$STRING`"
+                    "title": "Transaction Date To",
+                    "type": "`$STRING`",
+                    "format": "date-time"
                 },
                 {
                     "name": "transactionHistories",
+                    "title": "Transaction Histories",
                     "type": "`$ARRAY`"
                 },
                 {
                     "name": "transactionId",
+                    "title": "Transaction Id",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "transactionType",
+                    "title": "Transaction Type",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "wallet",
-                    "short": "Filter by wallet type.",
-                    "type": "`$STRING`"
+                    "title": "Wallet",
+                    "type": "`$STRING`",
+                    "short": "Filter by wallet type."
                 }
             ],
             "name": "transaction_history",
@@ -3721,7 +4344,6 @@ class Config {
                     "name": "create",
                     "points": [
                         {
-                            "args": {},
                             "kind": "http",
                             "method": "POST",
                             "orig": "/public/mcom/transactionHistory",
@@ -3736,19 +4358,20 @@ class Config {
                                     "lit": "transactionHistory"
                                 }
                             ],
-                            "select": {},
-                            "transform": {
-                                "req": "`reqdata`",
-                                "res": "`body`"
-                            },
                             "parts": [
                                 "public",
                                 "mcom",
                                 "transactionHistory"
-                            ]
+                            ],
+                            "rename": {},
+                            "transform": {
+                                "req": "`reqdata`",
+                                "res": "`body`"
+                            },
+                            "args": {},
+                            "select": {}
                         },
                         {
-                            "args": {},
                             "kind": "http",
                             "method": "POST",
                             "orig": "/public/transactionHistory",
@@ -3760,116 +4383,17 @@ class Config {
                                     "lit": "transactionHistory"
                                 }
                             ],
-                            "select": {},
-                            "transform": {
-                                "req": "`reqdata`",
-                                "res": "`body`"
-                            },
                             "parts": [
                                 "public",
                                 "transactionHistory"
-                            ]
-                        }
-                    ]
-                }
-            },
-            "relations": {
-                "ancestors": []
-            }
-        },
-        "transactions_count": {
-            "fields": [
-                {
-                    "name": "period",
-                    "type": "`$STRING`"
-                },
-                {
-                    "format": "int32",
-                    "name": "responseCode",
-                    "type": "`$INTEGER`"
-                },
-                {
-                    "name": "responseMessage",
-                    "type": "`$STRING`"
-                },
-                {
-                    "format": "date-time",
-                    "name": "transactionDateFrom",
-                    "op": {
-                        "create": {
-                            "req": true,
-                            "type": "`$STRING`"
-                        }
-                    },
-                    "type": "`$STRING`"
-                },
-                {
-                    "format": "date-time",
-                    "name": "transactionDateTo",
-                    "op": {
-                        "create": {
-                            "req": true,
-                            "type": "`$STRING`"
-                        }
-                    },
-                    "type": "`$STRING`"
-                },
-                {
-                    "name": "transactionsCount",
-                    "type": "`$ARRAY`"
-                }
-            ],
-            "name": "transactions_count",
-            "op": {
-                "create": {
-                    "input": "data",
-                    "name": "create",
-                    "points": [
-                        {
-                            "args": {},
-                            "kind": "http",
-                            "method": "POST",
-                            "orig": "/public/countAuthorisedTransactions",
-                            "segments": [
-                                {
-                                    "lit": "public"
-                                },
-                                {
-                                    "lit": "countAuthorisedTransactions"
-                                }
                             ],
-                            "select": {},
+                            "rename": {},
                             "transform": {
                                 "req": "`reqdata`",
                                 "res": "`body`"
                             },
-                            "parts": [
-                                "public",
-                                "countAuthorisedTransactions"
-                            ]
-                        },
-                        {
                             "args": {},
-                            "kind": "http",
-                            "method": "POST",
-                            "orig": "/public/countNotAuthorisedTransactions",
-                            "segments": [
-                                {
-                                    "lit": "public"
-                                },
-                                {
-                                    "lit": "countNotAuthorisedTransactions"
-                                }
-                            ],
-                            "select": {},
-                            "transform": {
-                                "req": "`reqdata`",
-                                "res": "`body`"
-                            },
-                            "parts": [
-                                "public",
-                                "countNotAuthorisedTransactions"
-                            ]
+                            "select": {}
                         }
                     ]
                 }
@@ -3882,41 +4406,47 @@ class Config {
             "fields": [
                 {
                     "name": "period",
+                    "title": "Period",
                     "type": "`$STRING`"
                 },
                 {
-                    "format": "int32",
                     "name": "responseCode",
-                    "type": "`$INTEGER`"
+                    "title": "Response Code",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
                     "name": "responseMessage",
+                    "title": "Response Message",
                     "type": "`$STRING`"
                 },
                 {
-                    "format": "date-time",
                     "name": "transactionDateFrom",
+                    "title": "Transaction Date From",
+                    "type": "`$STRING`",
                     "op": {
                         "create": {
                             "req": true,
                             "type": "`$STRING`"
                         }
                     },
-                    "type": "`$STRING`"
+                    "format": "date-time"
                 },
                 {
-                    "format": "date-time",
                     "name": "transactionDateTo",
+                    "title": "Transaction Date To",
+                    "type": "`$STRING`",
                     "op": {
                         "create": {
                             "req": true,
                             "type": "`$STRING`"
                         }
                     },
-                    "type": "`$STRING`"
+                    "format": "date-time"
                 },
                 {
                     "name": "transactionsCount",
+                    "title": "Transactions Count",
                     "type": "`$ARRAY`"
                 }
             ],
@@ -3927,7 +4457,6 @@ class Config {
                     "name": "create",
                     "points": [
                         {
-                            "args": {},
                             "kind": "http",
                             "method": "POST",
                             "orig": "/public/countTransactionsByCardBrand",
@@ -3939,15 +4468,17 @@ class Config {
                                     "lit": "countTransactionsByCardBrand"
                                 }
                             ],
-                            "select": {},
+                            "parts": [
+                                "public",
+                                "countTransactionsByCardBrand"
+                            ],
+                            "rename": {},
                             "transform": {
                                 "req": "`reqdata`",
                                 "res": "`body`"
                             },
-                            "parts": [
-                                "public",
-                                "countTransactionsByCardBrand"
-                            ]
+                            "args": {},
+                            "select": {}
                         }
                     ]
                 }
@@ -3960,41 +4491,47 @@ class Config {
             "fields": [
                 {
                     "name": "period",
+                    "title": "Period",
                     "type": "`$STRING`"
                 },
                 {
-                    "format": "int32",
                     "name": "responseCode",
-                    "type": "`$INTEGER`"
+                    "title": "Response Code",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
                     "name": "responseMessage",
+                    "title": "Response Message",
                     "type": "`$STRING`"
                 },
                 {
-                    "format": "date-time",
                     "name": "transactionDateFrom",
+                    "title": "Transaction Date From",
+                    "type": "`$STRING`",
                     "op": {
                         "create": {
                             "req": true,
                             "type": "`$STRING`"
                         }
                     },
-                    "type": "`$STRING`"
+                    "format": "date-time"
                 },
                 {
-                    "format": "date-time",
                     "name": "transactionDateTo",
+                    "title": "Transaction Date To",
+                    "type": "`$STRING`",
                     "op": {
                         "create": {
                             "req": true,
                             "type": "`$STRING`"
                         }
                     },
-                    "type": "`$STRING`"
+                    "format": "date-time"
                 },
                 {
                     "name": "turnovers",
+                    "title": "Turnovers",
                     "type": "`$ARRAY`"
                 }
             ],
@@ -4005,7 +4542,6 @@ class Config {
                     "name": "create",
                     "points": [
                         {
-                            "args": {},
                             "kind": "http",
                             "method": "POST",
                             "orig": "/public/transactionTurnover",
@@ -4017,15 +4553,17 @@ class Config {
                                     "lit": "transactionTurnover"
                                 }
                             ],
-                            "select": {},
+                            "parts": [
+                                "public",
+                                "transactionTurnover"
+                            ],
+                            "rename": {},
                             "transform": {
                                 "req": "`reqdata`",
                                 "res": "`body`"
                             },
-                            "parts": [
-                                "public",
-                                "transactionTurnover"
-                            ]
+                            "args": {},
+                            "select": {}
                         }
                     ]
                 }
@@ -4038,48 +4576,59 @@ class Config {
             "fields": [
                 {
                     "name": "city",
+                    "title": "City",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "corporateUuid",
-                    "req": true,
-                    "type": "`$STRING`"
+                    "title": "Corporate Uuid",
+                    "type": "`$STRING`",
+                    "req": true
                 },
                 {
                     "name": "country",
+                    "title": "Country",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "merchantCategoryCode",
+                    "title": "Merchant Category Code",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "name",
+                    "title": "Name",
                     "type": "`$STRING`"
                 },
                 {
-                    "format": "int32",
                     "name": "responseCode",
-                    "type": "`$INTEGER`"
+                    "title": "Response Code",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
                     "name": "responseMessage",
+                    "title": "Response Message",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "state",
+                    "title": "State",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "street",
+                    "title": "Street",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "vuNummer",
+                    "title": "Vu Nummer",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "zipcode",
+                    "title": "Zipcode",
                     "type": "`$STRING`"
                 }
             ],
@@ -4090,7 +4639,6 @@ class Config {
                     "name": "create",
                     "points": [
                         {
-                            "args": {},
                             "kind": "http",
                             "method": "POST",
                             "orig": "/public/updateMerchant",
@@ -4102,15 +4650,17 @@ class Config {
                                     "lit": "updateMerchant"
                                 }
                             ],
-                            "select": {},
+                            "parts": [
+                                "public",
+                                "updateMerchant"
+                            ],
+                            "rename": {},
                             "transform": {
                                 "req": "`reqdata`",
                                 "res": "`body`"
                             },
-                            "parts": [
-                                "public",
-                                "updateMerchant"
-                            ]
+                            "args": {},
+                            "select": {}
                         }
                     ]
                 }
@@ -4122,23 +4672,27 @@ class Config {
         "update_template_xml": {
             "fields": [
                 {
-                    "format": "int32",
                     "name": "responseCode",
-                    "type": "`$INTEGER`"
+                    "title": "Response Code",
+                    "type": "`$INTEGER`",
+                    "format": "int32"
                 },
                 {
                     "name": "responseMessage",
+                    "title": "Response Message",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "templateName",
-                    "req": true,
-                    "type": "`$STRING`"
+                    "title": "Template Name",
+                    "type": "`$STRING`",
+                    "req": true
                 },
                 {
                     "name": "templateXml",
-                    "req": true,
-                    "type": "`$STRING`"
+                    "title": "Template Xml",
+                    "type": "`$STRING`",
+                    "req": true
                 }
             ],
             "name": "update_template_xml",
@@ -4148,7 +4702,6 @@ class Config {
                     "name": "create",
                     "points": [
                         {
-                            "args": {},
                             "kind": "http",
                             "method": "POST",
                             "orig": "/public/updateTemplateXml",
@@ -4160,15 +4713,17 @@ class Config {
                                     "lit": "updateTemplateXml"
                                 }
                             ],
-                            "select": {},
+                            "parts": [
+                                "public",
+                                "updateTemplateXml"
+                            ],
+                            "rename": {},
                             "transform": {
                                 "req": "`reqdata`",
                                 "res": "`body`"
                             },
-                            "parts": [
-                                "public",
-                                "updateTemplateXml"
-                            ]
+                            "args": {},
+                            "select": {}
                         }
                     ]
                 }
@@ -4181,14 +4736,17 @@ class Config {
             "fields": [
                 {
                     "name": "appName",
+                    "title": "App Name",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "buildDate",
+                    "title": "Build Date",
                     "type": "`$STRING`"
                 },
                 {
                     "name": "version",
+                    "title": "Version",
                     "type": "`$STRING`"
                 }
             ],
@@ -4199,7 +4757,6 @@ class Config {
                     "name": "load",
                     "points": [
                         {
-                            "args": {},
                             "kind": "http",
                             "method": "GET",
                             "orig": "/public/version",
@@ -4211,15 +4768,17 @@ class Config {
                                     "lit": "version"
                                 }
                             ],
-                            "select": {},
+                            "parts": [
+                                "public",
+                                "version"
+                            ],
+                            "rename": {},
                             "transform": {
                                 "req": "`reqdata`",
                                 "res": "`body`"
                             },
-                            "parts": [
-                                "public",
-                                "version"
-                            ]
+                            "args": {},
+                            "select": {}
                         }
                     ]
                 }

@@ -1,0 +1,149 @@
+# Entity: register_terminal
+
+main: kit: entity: register_terminal: {
+
+  alias: field: {}
+
+  fields: {
+    additionalData: {
+      h: "Additional Data"
+      n: "additionalData"
+      r: false
+      t: "`$OBJECT`"
+    }
+    corporateUuid: {
+      h: "Corporate Uuid"
+      n: "corporateUuid"
+      r: true
+      t: "`$STRING`"
+    }
+    packageOrderUuid: {
+      h: "Package Order Uuid"
+      n: "packageOrderUuid"
+      r: true
+      t: "`$STRING`"
+    }
+    productOrderUuid: {
+      h: "Product Order Uuid"
+      n: "productOrderUuid"
+      r: true
+      t: "`$STRING`"
+    }
+    responseCode: {
+      fo: "int32"
+      h: "Response Code"
+      n: "responseCode"
+      r: false
+      t: "`$INTEGER`"
+    }
+    responseMessage: {
+      h: "Response Message"
+      n: "responseMessage"
+      r: false
+      t: "`$STRING`"
+    }
+    tecsWebSecretKey: {
+      h: "Tecs Web Secret Key"
+      n: "tecsWebSecretKey"
+      r: false
+      t: "`$STRING`"
+    }
+    templateName: {
+      h: "Template Name"
+      n: "templateName"
+      r: true
+      t: "`$STRING`"
+    }
+    terminalCountryCode: {
+      h: "Terminal Country Code"
+      n: "terminalCountryCode"
+      r: true
+      t: "`$STRING`"
+    }
+    terminalId: {
+      fo: "int32"
+      h: "Terminal Id"
+      n: "terminalId"
+      r: false
+      t: "`$INTEGER`"
+    }
+    terminalIdAcq: {
+      h: "Terminal Id Acq"
+      n: "terminalIdAcq"
+      r: false
+      t: "`$STRING`"
+    }
+    terminalLanguageCode: {
+      h: "Terminal Language Code"
+      n: "terminalLanguageCode"
+      r: true
+      t: "`$STRING`"
+    }
+    terminalLocation: {
+      h: "Terminal Location"
+      n: "terminalLocation"
+      r: true
+      t: "`$STRING`"
+    }
+    terminalSerialNumber: {
+      h: "Terminal Serial Number"
+      n: "terminalSerialNumber"
+      r: false
+      t: "`$STRING`"
+    }
+    tokenIOAlias: {
+      h: "Token Io Alias"
+      n: "tokenIOAlias"
+      r: false
+      t: "`$STRING`"
+    }
+    tokenIOIban: {
+      h: "Token Io Iban"
+      n: "tokenIOIban"
+      r: false
+      t: "`$STRING`"
+    }
+    tokenIOMemberId: {
+      h: "Token Io Member Id"
+      n: "tokenIOMemberId"
+      r: false
+      t: "`$STRING`"
+    }
+    webShopUrl: {
+      h: "Web Shop Url"
+      n: "webShopUrl"
+      r: false
+      t: "`$STRING`"
+    }
+  }
+
+  name: "register_terminal"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /registerTerminal"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/registerTerminal"
+          s: [
+            {
+              lit: "registerTerminal"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

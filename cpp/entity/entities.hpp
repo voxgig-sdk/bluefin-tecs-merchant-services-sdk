@@ -5,6 +5,8 @@
 
 #include "cancel_transaction.hpp"
 #include "check_card_black_listed.hpp"
+#include "count_authorised_transaction.hpp"
+#include "count_not_authorised_transaction.hpp"
 #include "create_product.hpp"
 #include "deactivate_terminal.hpp"
 #include "digital_services_api.hpp"
@@ -36,7 +38,6 @@
 #include "store_terminal_parameter.hpp"
 #include "terminal_id.hpp"
 #include "transaction_history.hpp"
-#include "transactions_count.hpp"
 #include "transactions_count_card_brand.hpp"
 #include "transactions_turnover.hpp"
 #include "update_merchant.hpp"

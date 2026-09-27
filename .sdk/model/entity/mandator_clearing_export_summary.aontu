@@ -1,0 +1,78 @@
+# Entity: mandator_clearing_export_summary
+
+main: kit: entity: mandator_clearing_export_summary: {
+
+  alias: field: {}
+
+  fields: {
+    clearingDateFrom: {
+      h: "Clearing Date From"
+      n: "clearingDateFrom"
+      r: true
+      sh: "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz"
+      t: "`$STRING`"
+    }
+    clearingDateTo: {
+      h: "Clearing Date To"
+      n: "clearingDateTo"
+      r: true
+      sh: "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz"
+      t: "`$STRING`"
+    }
+    records: {
+      h: "Records"
+      n: "records"
+      r: false
+      t: "`$ARRAY`"
+    }
+    responseCode: {
+      fo: "int32"
+      h: "Response Code"
+      n: "responseCode"
+      r: false
+      t: "`$INTEGER`"
+    }
+    responseMessage: {
+      h: "Response Message"
+      n: "responseMessage"
+      r: false
+      t: "`$STRING`"
+    }
+  }
+
+  name: "mandator_clearing_export_summary"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /public/digitalservices/mandatorClearingExportSummary"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/public/digitalservices/mandatorClearingExportSummary"
+          s: [
+            {
+              lit: "public"
+            }
+            {
+              lit: "digitalservices"
+            }
+            {
+              lit: "mandatorClearingExportSummary"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

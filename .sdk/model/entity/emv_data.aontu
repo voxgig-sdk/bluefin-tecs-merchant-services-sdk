@@ -1,0 +1,80 @@
+# Entity: emv_data
+
+main: kit: entity: emv_data: {
+
+  alias: field: {}
+
+  fields: {
+    emvData: {
+      h: "Emv Data"
+      n: "emvData"
+      r: false
+      t: "`$STRING`"
+    }
+    responseCode: {
+      fo: "int32"
+      h: "Response Code"
+      n: "responseCode"
+      r: false
+      t: "`$INTEGER`"
+    }
+    responseMessage: {
+      h: "Response Message"
+      n: "responseMessage"
+      r: false
+      t: "`$STRING`"
+    }
+    terminalId: {
+      fo: "int32"
+      h: "Terminal Id"
+      n: "terminalId"
+      r: true
+      t: "`$INTEGER`"
+    }
+    transactionId: {
+      h: "Transaction Id"
+      n: "transactionId"
+      r: true
+      t: "`$STRING`"
+    }
+    transactionType: {
+      h: "Transaction Type"
+      n: "transactionType"
+      r: true
+      t: "`$STRING`"
+    }
+  }
+
+  name: "emv_data"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /public/getEmvData"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/public/getEmvData"
+          s: [
+            {
+              lit: "public"
+            }
+            {
+              lit: "getEmvData"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

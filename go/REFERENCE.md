@@ -56,6 +56,14 @@ Create a new `CancelTransaction` entity instance. Pass `nil` for no initial data
 
 Create a new `CheckCardBlackListed` entity instance. Pass `nil` for no initial data.
 
+#### `CountAuthorisedTransaction(data map[string]any) BluefinTecsMerchantServicesEntity`
+
+Create a new `CountAuthorisedTransaction` entity instance. Pass `nil` for no initial data.
+
+#### `CountNotAuthorisedTransaction(data map[string]any) BluefinTecsMerchantServicesEntity`
+
+Create a new `CountNotAuthorisedTransaction` entity instance. Pass `nil` for no initial data.
+
 #### `CreateProduct(data map[string]any) BluefinTecsMerchantServicesEntity`
 
 Create a new `CreateProduct` entity instance. Pass `nil` for no initial data.
@@ -179,10 +187,6 @@ Create a new `TerminalId` entity instance. Pass `nil` for no initial data.
 #### `TransactionHistory(data map[string]any) BluefinTecsMerchantServicesEntity`
 
 Create a new `TransactionHistory` entity instance. Pass `nil` for no initial data.
-
-#### `TransactionsCount(data map[string]any) BluefinTecsMerchantServicesEntity`
-
-Create a new `TransactionsCount` entity instance. Pass `nil` for no initial data.
 
 #### `TransactionsCountCardBrand(data map[string]any) BluefinTecsMerchantServicesEntity`
 
@@ -425,6 +429,142 @@ Get or set the entity match criteria. Works the same as `Data()`.
 #### `Make() Entity`
 
 Create a new `CheckCardBlackListedEntity` instance with the same client and
+options.
+
+#### `GetName() string`
+
+Return the entity name.
+
+
+---
+
+## CountAuthorisedTransactionEntity
+
+```go
+countAuthorisedTransaction := client.CountAuthorisedTransaction(nil)
+fmt.Println(countAuthorisedTransaction.GetName()) // "count_authorised_transaction"
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `period` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
+| `transactionDateFrom` | `string` | No |  |
+| `transactionDateTo` | `string` | No |  |
+| `transactionsCount` | `[]any` | No |  |
+
+### Field Usage by Operation
+
+| Field | create |
+| --- | --- |
+| `period` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `transactionDateFrom` | Yes |
+| `transactionDateTo` | Yes |
+| `transactionsCount` | - |
+
+### Operations
+
+#### `Create(reqdata, ctrl map[string]any) (any, error)`
+
+Create a new entity with the given data.
+
+```go
+result, err := client.CountAuthorisedTransaction(nil).Create(map[string]any{
+}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
+```
+
+### Common Methods
+
+#### `Data(args ...any) any`
+
+Get or set the entity data. When called with data, sets the entity's
+internal data and returns the current data. When called without
+arguments, returns a copy of the current data.
+
+#### `Match(args ...any) any`
+
+Get or set the entity match criteria. Works the same as `Data()`.
+
+#### `Make() Entity`
+
+Create a new `CountAuthorisedTransactionEntity` instance with the same client and
+options.
+
+#### `GetName() string`
+
+Return the entity name.
+
+
+---
+
+## CountNotAuthorisedTransactionEntity
+
+```go
+countNotAuthorisedTransaction := client.CountNotAuthorisedTransaction(nil)
+fmt.Println(countNotAuthorisedTransaction.GetName()) // "count_not_authorised_transaction"
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `period` | `string` | No |  |
+| `responseCode` | `int` | No |  |
+| `responseMessage` | `string` | No |  |
+| `transactionDateFrom` | `string` | No |  |
+| `transactionDateTo` | `string` | No |  |
+| `transactionsCount` | `[]any` | No |  |
+
+### Field Usage by Operation
+
+| Field | create |
+| --- | --- |
+| `period` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `transactionDateFrom` | Yes |
+| `transactionDateTo` | Yes |
+| `transactionsCount` | - |
+
+### Operations
+
+#### `Create(reqdata, ctrl map[string]any) (any, error)`
+
+Create a new entity with the given data.
+
+```go
+result, err := client.CountNotAuthorisedTransaction(nil).Create(map[string]any{
+}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
+```
+
+### Common Methods
+
+#### `Data(args ...any) any`
+
+Get or set the entity data. When called with data, sets the entity's
+internal data and returns the current data. When called without
+arguments, returns a copy of the current data.
+
+#### `Match(args ...any) any`
+
+Get or set the entity match criteria. Works the same as `Data()`.
+
+#### `Make() Entity`
+
+Create a new `CountNotAuthorisedTransactionEntity` instance with the same client and
 options.
 
 #### `GetName() string`
@@ -2610,74 +2750,6 @@ Return the entity name.
 
 ---
 
-## TransactionsCountEntity
-
-```go
-transactionsCount := client.TransactionsCount(nil)
-fmt.Println(transactionsCount.GetName()) // "transactions_count"
-```
-
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `period` | `string` | No |  |
-| `responseCode` | `int` | No |  |
-| `responseMessage` | `string` | No |  |
-| `transactionDateFrom` | `string` | No |  |
-| `transactionDateTo` | `string` | No |  |
-| `transactionsCount` | `[]any` | No |  |
-
-### Field Usage by Operation
-
-| Field | create |
-| --- | --- |
-| `period` | - |
-| `responseCode` | - |
-| `responseMessage` | - |
-| `transactionDateFrom` | Yes |
-| `transactionDateTo` | Yes |
-| `transactionsCount` | - |
-
-### Operations
-
-#### `Create(reqdata, ctrl map[string]any) (any, error)`
-
-Create a new entity with the given data.
-
-```go
-result, err := client.TransactionsCount(nil).Create(map[string]any{
-}, nil)
-if err != nil {
-    panic(err)
-}
-fmt.Println(result)
-```
-
-### Common Methods
-
-#### `Data(args ...any) any`
-
-Get or set the entity data. When called with data, sets the entity's
-internal data and returns the current data. When called without
-arguments, returns a copy of the current data.
-
-#### `Match(args ...any) any`
-
-Get or set the entity match criteria. Works the same as `Data()`.
-
-#### `Make() Entity`
-
-Create a new `TransactionsCountEntity` instance with the same client and
-options.
-
-#### `GetName() string`
-
-Return the entity name.
-
-
----
-
 ## TransactionsCountCardBrandEntity
 
 ```go
@@ -2991,18 +3063,18 @@ Return the entity name.
 
 | Feature | Version | Description |
 | --- | --- | --- |
-| `audit` | 0.0.1 | Structured audit trail of operations |
-| `clienttrack` | 0.0.1 | Client identity and per-request correlation headers |
-| `debug` | 0.0.1 | Request/response capture ring buffer for debugging |
-| `idempotency` | 0.0.1 | Idempotency keys for safe retries of mutating operations |
-| `log` | 0.0.1 | Structured request and response logging |
-| `metrics` | 0.0.1 | Statistics capture: per-operation counters and latency |
-| `paging` | 0.0.1 | Pagination signals for list operations |
-| `ratelimit` | 0.0.1 | Client-side rate limiting via a token bucket |
-| `retry` | 0.0.1 | Automatic retry of transient failures with exponential backoff |
-| `telemetry` | 0.0.1 | Distributed tracing spans with W3C trace-context propagation |
-| `test` | 0.0.1 | In-memory mock transport for testing without a live server |
-| `timeout` | 0.0.1 | Per-request timeout with transport abort |
+| `audit` | 0.0.1 | Audit trail |
+| `clienttrack` | 0.0.1 | Client tracking |
+| `debug` | 0.0.1 | Debug capture |
+| `idempotency` | 0.0.1 | Idempotency |
+| `log` | 0.0.1 | Logging |
+| `metrics` | 0.0.1 | Metrics |
+| `paging` | 0.0.1 | Paging |
+| `ratelimit` | 0.0.1 | Rate limiting |
+| `retry` | 0.0.1 | Retry |
+| `telemetry` | 0.0.1 | Telemetry |
+| `test` | 0.0.1 | Test transport |
+| `timeout` | 0.0.1 | Timeout |
 
 
 Features are activated via the `feature` option:
@@ -3052,7 +3124,7 @@ rather than the transport, so their order does not affect what they observe.
 
 #### `audit`
 
-Structured audit trail of operations.
+Audit trail.
 
 **Configuration**
 
@@ -3083,7 +3155,7 @@ its default unless you name it.
 
 #### `clienttrack`
 
-Client identity and per-request correlation headers.
+Client tracking.
 
 **Configuration**
 
@@ -3115,7 +3187,7 @@ its default unless you name it.
 
 #### `debug`
 
-Request/response capture ring buffer for debugging.
+Debug capture.
 
 **Configuration**
 
@@ -3146,7 +3218,7 @@ its default unless you name it.
 
 #### `idempotency`
 
-Idempotency keys for safe retries of mutating operations.
+Idempotency.
 
 **Configuration**
 
@@ -3177,7 +3249,7 @@ its default unless you name it.
 
 #### `log`
 
-Structured request and response logging.
+Logging.
 
 **Configuration**
 
@@ -3206,7 +3278,7 @@ its default unless you name it.
 
 #### `metrics`
 
-Statistics capture: per-operation counters and latency.
+Metrics.
 
 **Configuration**
 
@@ -3234,7 +3306,7 @@ its default unless you name it.
 
 #### `paging`
 
-Pagination signals for list operations.
+Paging.
 
 **Configuration**
 
@@ -3269,7 +3341,7 @@ its default unless you name it.
 
 #### `ratelimit`
 
-Client-side rate limiting via a token bucket.
+Rate limiting.
 
 **Configuration**
 
@@ -3300,7 +3372,7 @@ its default unless you name it.
 
 #### `retry`
 
-Automatic retry of transient failures with exponential backoff.
+Retry.
 
 **Configuration**
 
@@ -3334,7 +3406,7 @@ its default unless you name it.
 
 #### `telemetry`
 
-Distributed tracing spans with W3C trace-context propagation.
+Telemetry.
 
 **Configuration**
 
@@ -3365,7 +3437,7 @@ its default unless you name it.
 
 #### `test`
 
-In-memory mock transport for testing without a live server.
+Test transport.
 
 **Configuration**
 
@@ -3396,7 +3468,7 @@ its default unless you name it.
 
 #### `timeout`
 
-Per-request timeout with transport abort.
+Timeout.
 
 **Configuration**
 

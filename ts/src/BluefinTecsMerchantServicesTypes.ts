@@ -1,7 +1,7 @@
 // Typed models for the BluefinTecsMerchantServices SDK.
 //
-// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
-// params (op.<name>.points[].args.params[]). Field/param types come from the
+// GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+// params (op.<name>.points[].g.params[]). Field/param types come from the
 // canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 
@@ -101,6 +101,42 @@ export interface CheckCardBlackListedCreateData {
   cardNo?: string
   responseCode?: number
   responseMessage?: string
+}
+
+export interface CountAuthorisedTransaction {
+  period?: string
+  responseCode?: number
+  responseMessage?: string
+  transactionDateFrom?: string
+  transactionDateTo?: string
+  transactionsCount?: any[]
+}
+
+export interface CountAuthorisedTransactionCreateData {
+  period?: string
+  responseCode?: number
+  responseMessage?: string
+  transactionDateFrom?: string
+  transactionDateTo?: string
+  transactionsCount?: any[]
+}
+
+export interface CountNotAuthorisedTransaction {
+  period?: string
+  responseCode?: number
+  responseMessage?: string
+  transactionDateFrom?: string
+  transactionDateTo?: string
+  transactionsCount?: any[]
+}
+
+export interface CountNotAuthorisedTransactionCreateData {
+  period?: string
+  responseCode?: number
+  responseMessage?: string
+  transactionDateFrom?: string
+  transactionDateTo?: string
+  transactionsCount?: any[]
 }
 
 export interface CreateProduct {
@@ -1069,24 +1105,6 @@ export interface TransactionHistoryCreateData {
   transactionId?: string
   transactionType?: string
   wallet?: string
-}
-
-export interface TransactionsCount {
-  period?: string
-  responseCode?: number
-  responseMessage?: string
-  transactionDateFrom?: string
-  transactionDateTo?: string
-  transactionsCount?: any[]
-}
-
-export interface TransactionsCountCreateData {
-  period?: string
-  responseCode?: number
-  responseMessage?: string
-  transactionDateFrom?: string
-  transactionDateTo?: string
-  transactionsCount?: any[]
 }
 
 export interface TransactionsCountCardBrand {

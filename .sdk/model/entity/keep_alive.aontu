@@ -1,0 +1,104 @@
+# Entity: keep_alive
+
+main: kit: entity: keep_alive: {
+
+  alias: field: {}
+
+  fields: {
+    hwserialno: {
+      h: "Hwserialno"
+      n: "hwserialno"
+      r: false
+      t: "`$STRING`"
+    }
+    kaDateTimeFrom: {
+      h: "Ka Date Time From"
+      n: "kaDateTimeFrom"
+      r: false
+      t: "`$STRING`"
+    }
+    kaDateTimeTo: {
+      h: "Ka Date Time To"
+      n: "kaDateTimeTo"
+      r: false
+      t: "`$STRING`"
+    }
+    keepAliveData: {
+      h: "Keep Alive Data"
+      n: "keepAliveData"
+      r: false
+      t: "`$ARRAY`"
+    }
+    pagination: {
+      h: "Pagination"
+      n: "pagination"
+      r: false
+      t: "`$OBJECT`"
+    }
+    responseCode: {
+      fo: "int32"
+      h: "Response Code"
+      n: "responseCode"
+      r: false
+      t: "`$INTEGER`"
+    }
+    responseMessage: {
+      h: "Response Message"
+      n: "responseMessage"
+      r: false
+      t: "`$STRING`"
+    }
+    terminalDateTimeFrom: {
+      h: "Terminal Date Time From"
+      n: "terminalDateTimeFrom"
+      r: false
+      t: "`$STRING`"
+    }
+    terminalDateTimeTo: {
+      h: "Terminal Date Time To"
+      n: "terminalDateTimeTo"
+      r: false
+      t: "`$STRING`"
+    }
+    terminalId: {
+      fo: "int32"
+      h: "Terminal Id"
+      n: "terminalId"
+      r: false
+      t: "`$INTEGER`"
+    }
+  }
+
+  name: "keep_alive"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /public/keepalive"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/public/keepalive"
+          s: [
+            {
+              lit: "public"
+            }
+            {
+              lit: "keepalive"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

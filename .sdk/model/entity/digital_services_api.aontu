@@ -1,0 +1,195 @@
+# Entity: digital_services_api
+
+main: kit: entity: digital_services_api: {
+
+  alias: field: {}
+
+  fields: {
+    clearingDateFrom: {
+      h: "Clearing Date From"
+      n: "clearingDateFrom"
+      r: true
+      sh: "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz"
+      t: "`$STRING`"
+    }
+    clearingDateTo: {
+      h: "Clearing Date To"
+      n: "clearingDateTo"
+      r: true
+      sh: "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz"
+      t: "`$STRING`"
+    }
+    responseCode: {
+      fo: "int32"
+      h: "Response Code"
+      n: "responseCode"
+      r: false
+      t: "`$INTEGER`"
+    }
+    responseMessage: {
+      h: "Response Message"
+      n: "responseMessage"
+      r: false
+      t: "`$STRING`"
+    }
+    txCount: {
+      fo: "int32"
+      h: "Tx Count"
+      n: "txCount"
+      r: false
+      t: "`$INTEGER`"
+    }
+    txIdEnd: {
+      h: "Tx Id End"
+      n: "txIdEnd"
+      r: false
+      t: "`$STRING`"
+    }
+    txIdStart: {
+      h: "Tx Id Start"
+      n: "txIdStart"
+      r: false
+      t: "`$STRING`"
+    }
+    txSeqNoEnd: {
+      fo: "int32"
+      h: "Tx Seq No End"
+      n: "txSeqNoEnd"
+      r: false
+      t: "`$INTEGER`"
+    }
+    txSeqNoStart: {
+      fo: "int32"
+      h: "Tx Seq No Start"
+      n: "txSeqNoStart"
+      r: false
+      t: "`$INTEGER`"
+    }
+    txTotal: {
+      fo: "int32"
+      h: "Tx Total"
+      n: "txTotal"
+      r: false
+      t: "`$INTEGER`"
+    }
+  }
+
+  name: "digital_services_api"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /public/digitalservices/mandatorClearingExportDownload/{fileId}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "file_id"
+                or: "file_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/public/digitalservices/mandatorClearingExportDownload/{fileId}"
+          q: {
+            exist: [
+              "file_id"
+            ]
+          }
+          r: {
+            param: {
+              fileId: "file_id"
+            }
+          }
+          s: [
+            {
+              lit: "public"
+            }
+            {
+              lit: "digitalservices"
+            }
+            {
+              lit: "mandatorClearingExportDownload"
+            }
+            {
+              var: "file_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /public/digitalservices/mandatorClearingExportMetadata"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/public/digitalservices/mandatorClearingExportMetadata"
+          s: [
+            {
+              lit: "public"
+            }
+            {
+              lit: "digitalservices"
+            }
+            {
+              lit: "mandatorClearingExportMetadata"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /public/digitalservices/mandatorClearingExportDownload/status"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/public/digitalservices/mandatorClearingExportDownload/status"
+          s: [
+            {
+              lit: "public"
+            }
+            {
+              lit: "digitalservices"
+            }
+            {
+              lit: "mandatorClearingExportDownload"
+            }
+            {
+              lit: "status"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.mandator_clearing_export_download")]
+  ]
+
+}

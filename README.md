@@ -12,13 +12,13 @@ Learn more about Voxgig SDKs at [voxgig.com/sdk](https://voxgig.com/sdk/).
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua, C, Clojure, C++, C#, Dart, Elixir, Haskell, Java, JavaScript, Kotlin, Lean, OCaml, Perl, Rust, Scala, Swift, Zig SDKs, a CLI with an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
 
-> **Features:** `audit`, `clienttrack`, `debug`, `idempotency`, `log`, `metrics`, `paging`, `ratelimit`, `retry`, `telemetry`, `test`, `timeout` — opt-in,
+> **Features:** `undefined`, `undefined`, `undefined`, `undefined`, `undefined`, `undefined`, `undefined`, `undefined`, `undefined`, `undefined`, `undefined`, `undefined` — opt-in,
 > inactive until switched on, and configured per client. See the Features
 > section of any SDK README below for what each one does.
 
 ## Entities, not endpoints
 
-This SDK exposes the API as **39 semantic entities** that you
+This SDK exposes the API as **40 semantic entities** that you
 call directly, instead of assembling URL paths and query strings. See the [Entities](#entities) table below for the full list. Entities are
 **Capitalised** to mark them as the primary surface, each with the operations they
 support (`load`, `create`):
@@ -287,29 +287,29 @@ switch (client.digital_services_api(h.vnull()).load(h.vnull(), h.vnull())) {
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/bluefin-tecs-merchant-services` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk/releases) |
-| Python | `voxgig-sdk-bluefin-tecs-merchant-services` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk/releases) |
-| PHP | `voxgig-sdk/bluefin-tecs-merchant-services` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk/releases) |
+| TypeScript | `@voxgig-sdk/bluefin-tecs-merchant-services-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk/tags) |
+| Python | `voxgig-sdk-bluefin-tecs-merchant-services-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk/tags) |
+| PHP | `voxgig-sdk/bluefin-tecs-merchant-services-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk/go` | `go get github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk/go@latest` |
-| Ruby | `voxgig-sdk-bluefin-tecs-merchant-services` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk/releases) |
-| Lua | `voxgig-sdk-bluefin-tecs-merchant-services` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk/releases) |
-| C | `voxgig-sdk-bluefin-tecs-merchant-services` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk/releases) |
-| Clojure | `voxgig-sdk-bluefin-tecs-merchant-services` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk/releases) |
-| C++ | `voxgig-sdk-bluefin-tecs-merchant-services` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk/releases) |
-| C# | `voxgig-sdk-bluefin-tecs-merchant-services` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk/releases) |
-| Dart | `voxgig-sdk-bluefin-tecs-merchant-services` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk/releases) |
-| Elixir | `voxgig-sdk-bluefin-tecs-merchant-services` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk/releases) |
-| Haskell | `voxgig-sdk-bluefin-tecs-merchant-services` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk/releases) |
-| Java | `voxgig-sdk-bluefin-tecs-merchant-services` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk/releases) |
-| JavaScript | `@voxgig-sdk/bluefin-tecs-merchant-services-js` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk/releases) |
-| Kotlin | `voxgig-sdk-bluefin-tecs-merchant-services` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk/releases) |
-| Lean | `voxgig-sdk-bluefin-tecs-merchant-services` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk/releases) |
-| OCaml | `voxgig-sdk-bluefin-tecs-merchant-services` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk/releases) |
-| Perl | `voxgig-sdk-bluefin-tecs-merchant-services` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk/releases) |
-| Rust | `voxgig-sdk-bluefin-tecs-merchant-services` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk/releases) |
-| Scala | `voxgig-sdk-bluefin-tecs-merchant-services` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk/releases) |
-| Swift | `voxgig-sdk-bluefin-tecs-merchant-services` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk/releases) |
-| Zig | `voxgig-sdk-bluefin-tecs-merchant-services` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk/releases) |
+| Ruby | `voxgig-sdk-bluefin-tecs-merchant-services-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk/tags) |
+| Lua | `voxgig-sdk-bluefin-tecs-merchant-services-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk/tags) |
+| C | `voxgig-sdk-bluefin-tecs-merchant-services-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk/tags) |
+| Clojure | `voxgig-sdk-bluefin-tecs-merchant-services-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk/tags) |
+| C++ | `voxgig-sdk-bluefin-tecs-merchant-services-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk/tags) |
+| C# | `voxgig-sdk-bluefin-tecs-merchant-services-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk/tags) |
+| Dart | `voxgig-sdk-bluefin-tecs-merchant-services-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk/tags) |
+| Elixir | `voxgig-sdk-bluefin-tecs-merchant-services-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk/tags) |
+| Haskell | `voxgig-sdk-bluefin-tecs-merchant-services-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk/tags) |
+| Java | `voxgig-sdk-bluefin-tecs-merchant-services-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk/tags) |
+| JavaScript | `@voxgig-sdk/bluefin-tecs-merchant-services-sdk-js` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk/tags) |
+| Kotlin | `voxgig-sdk-bluefin-tecs-merchant-services-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk/tags) |
+| Lean | `voxgig-sdk-bluefin-tecs-merchant-services-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk/tags) |
+| OCaml | `voxgig-sdk-bluefin-tecs-merchant-services-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk/tags) |
+| Perl | `voxgig-sdk-bluefin-tecs-merchant-services-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk/tags) |
+| Rust | `voxgig-sdk-bluefin-tecs-merchant-services-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk/tags) |
+| Scala | `voxgig-sdk-bluefin-tecs-merchant-services-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk/tags) |
+| Swift | `voxgig-sdk-bluefin-tecs-merchant-services-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk/tags) |
+| Zig | `voxgig-sdk-bluefin-tecs-merchant-services-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk/go-cli` | `go install github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk/go-cli/cmd/bluefin-tecs-merchant-services@latest` |
 | Go MCP server | `github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk/go-mcp` | `go get github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk/go-mcp@latest` |
 
@@ -318,7 +318,7 @@ switch (client.digital_services_api(h.vnull()).load(h.vnull(), h.vnull())) {
 ### TypeScript
 
 ```ts
-import { BluefinTecsMerchantServicesSDK } from '@voxgig-sdk/bluefin-tecs-merchant-services'
+import { BluefinTecsMerchantServicesSDK } from '@voxgig-sdk/bluefin-tecs-merchant-services-sdk'
 
 const client = new BluefinTecsMerchantServicesSDK({
   apikey: process.env.BLUEFIN_TECS_MERCHANT_SERVICES_APIKEY,
@@ -360,12 +360,14 @@ Then add it to your agent's MCP config (Claude Desktop, Cursor, etc.):
 
 ## Entities
 
-The API exposes 39 entities:
+The API exposes 40 entities:
 
 | Entity | Description | API path |
 | --- | --- | --- |
 | **CancelTransaction** | The CancelTransaction entity (create). | `/public/cancelTransaction` |
 | **CheckCardBlackListed** | The CheckCardBlackListed entity (create). | `/checkCardBlackListed` |
+| **CountAuthorisedTransaction** | The CountAuthorisedTransaction entity (create). | `/public/countAuthorisedTransactions` |
+| **CountNotAuthorisedTransaction** | The CountNotAuthorisedTransaction entity (create). | `/public/countNotAuthorisedTransactions` |
 | **CreateProduct** | The CreateProduct entity (create). | `/createProduct` |
 | **DeactivateTerminal** | The DeactivateTerminal entity (create). | `/deactivateTerminal` |
 | **DigitalServicesApi** | The DigitalServicesApi entity (create, load). | `/public/digitalservices/mandatorClearingExportDownload/status` |
@@ -397,7 +399,6 @@ The API exposes 39 entities:
 | **StoreTerminalParameter** | The StoreTerminalParameter entity (create). | `/storeTerminalParameters` |
 | **TerminalId** | The TerminalId entity (create). | `/public/getTerminalId` |
 | **TransactionHistory** | The TransactionHistory entity (create). | `/public/mcom/transactionHistory` |
-| **TransactionsCount** | The TransactionsCount entity (create). | `/public/countAuthorisedTransactions` |
 | **TransactionsCountCardBrand** | The TransactionsCountCardBrand entity (create). | `/public/countTransactionsByCardBrand` |
 | **TransactionsTurnover** | The TransactionsTurnover entity (create). | `/public/transactionTurnover` |
 | **UpdateMerchant** | The UpdateMerchant entity (create). | `/public/updateMerchant` |
@@ -568,7 +569,7 @@ BluefinTecsMerchantServicesSDK client = new BluefinTecsMerchantServicesSDK(optio
 ### JavaScript
 
 ```js
-const { BluefinTecsMerchantServicesSDK } = require('@voxgig-sdk/bluefin-tecs-merchant-services-js')
+const { BluefinTecsMerchantServicesSDK } = require('@voxgig-sdk/bluefin-tecs-merchant-services-sdk-js')
 
 const client = new BluefinTecsMerchantServicesSDK({
   apikey: process.env.BLUEFIN_TECS_MERCHANT_SERVICES_APIKEY,
@@ -933,18 +934,18 @@ forking the SDK.
 
 | Feature | Purpose |
 | --- | --- |
-| **AuditFeature** | Structured audit trail of operations |
-| **ClienttrackFeature** | Client identity and per-request correlation headers |
-| **DebugFeature** | Request/response capture ring buffer for debugging |
-| **IdempotencyFeature** | Idempotency keys for safe retries of mutating operations |
-| **LogFeature** | Structured request and response logging |
-| **MetricsFeature** | Statistics capture: per-operation counters and latency |
-| **PagingFeature** | Pagination signals for list operations |
-| **RatelimitFeature** | Client-side rate limiting via a token bucket |
-| **RetryFeature** | Automatic retry of transient failures with exponential backoff |
-| **TelemetryFeature** | Distributed tracing spans with W3C trace-context propagation |
-| **TestFeature** | In-memory mock transport for testing without a live server |
-| **TimeoutFeature** | Per-request timeout with transport abort |
+| **AuditFeature** | Audit trail |
+| **ClienttrackFeature** | Client tracking |
+| **DebugFeature** | Debug capture |
+| **IdempotencyFeature** | Idempotency |
+| **LogFeature** | Logging |
+| **MetricsFeature** | Metrics |
+| **PagingFeature** | Paging |
+| **RatelimitFeature** | Rate limiting |
+| **RetryFeature** | Retry |
+| **TelemetryFeature** | Telemetry |
+| **TestFeature** | Test transport |
+| **TimeoutFeature** | Timeout |
 
 Pass custom features via the `extend` option at construction time.
 

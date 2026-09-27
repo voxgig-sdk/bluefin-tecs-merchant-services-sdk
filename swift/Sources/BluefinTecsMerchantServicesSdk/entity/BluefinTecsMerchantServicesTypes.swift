@@ -1,7 +1,7 @@
 // Typed models for the BluefinTecsMerchantServices SDK.
 //
-// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
-// params (op.<name>.points[].args.params[]). Field/param types are mapped
+// GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+// params (op.<name>.points[].g.params[]). Field/param types are mapped
 // from the canonical type sentinels. Do not edit by hand.
 //
 // These are DOCUMENTARY: the SDK runtime is dynamic (ops take/return the
@@ -110,6 +110,46 @@ public struct CheckCardBlackListedCreateData {
   public var cardNo: String?
   public var responseCode: Int?
   public var responseMessage: String?
+}
+
+/// CountAuthorisedTransaction is the typed data model for the count_authorised_transaction entity.
+public struct CountAuthorisedTransaction {
+  public var period: String?
+  public var responseCode: Int?
+  public var responseMessage: String?
+  public var transactionDateFrom: String?
+  public var transactionDateTo: String?
+  public var transactionsCount: [Value]?
+}
+
+/// CountAuthorisedTransactionCreateData is the typed request payload for CountAuthorisedTransaction.create.
+public struct CountAuthorisedTransactionCreateData {
+  public var period: String?
+  public var responseCode: Int?
+  public var responseMessage: String?
+  public var transactionDateFrom: String?
+  public var transactionDateTo: String?
+  public var transactionsCount: [Value]?
+}
+
+/// CountNotAuthorisedTransaction is the typed data model for the count_not_authorised_transaction entity.
+public struct CountNotAuthorisedTransaction {
+  public var period: String?
+  public var responseCode: Int?
+  public var responseMessage: String?
+  public var transactionDateFrom: String?
+  public var transactionDateTo: String?
+  public var transactionsCount: [Value]?
+}
+
+/// CountNotAuthorisedTransactionCreateData is the typed request payload for CountNotAuthorisedTransaction.create.
+public struct CountNotAuthorisedTransactionCreateData {
+  public var period: String?
+  public var responseCode: Int?
+  public var responseMessage: String?
+  public var transactionDateFrom: String?
+  public var transactionDateTo: String?
+  public var transactionsCount: [Value]?
 }
 
 /// CreateProduct is the typed data model for the create_product entity.
@@ -1142,26 +1182,6 @@ public struct TransactionHistoryCreateData {
   public var transactionId: String?
   public var transactionType: String?
   public var wallet: String?
-}
-
-/// TransactionsCount is the typed data model for the transactions_count entity.
-public struct TransactionsCount {
-  public var period: String?
-  public var responseCode: Int?
-  public var responseMessage: String?
-  public var transactionDateFrom: String?
-  public var transactionDateTo: String?
-  public var transactionsCount: [Value]?
-}
-
-/// TransactionsCountCreateData is the typed request payload for TransactionsCount.create.
-public struct TransactionsCountCreateData {
-  public var period: String?
-  public var responseCode: Int?
-  public var responseMessage: String?
-  public var transactionDateFrom: String?
-  public var transactionDateTo: String?
-  public var transactionsCount: [Value]?
 }
 
 /// TransactionsCountCardBrand is the typed data model for the transactions_count_card_brand entity.

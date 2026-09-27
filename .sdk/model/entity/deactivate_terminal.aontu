@@ -1,0 +1,83 @@
+# Entity: deactivate_terminal
+
+main: kit: entity: deactivate_terminal: {
+
+  alias: field: {}
+
+  fields: {
+    corporateUuid: {
+      h: "Corporate Uuid"
+      n: "corporateUuid"
+      r: false
+      t: "`$STRING`"
+    }
+    deactivationReason: {
+      h: "Deactivation Reason"
+      n: "deactivationReason"
+      r: true
+      t: "`$STRING`"
+    }
+    packageOrderUuid: {
+      h: "Package Order Uuid"
+      n: "packageOrderUuid"
+      r: false
+      t: "`$STRING`"
+    }
+    productOrderUuid: {
+      h: "Product Order Uuid"
+      n: "productOrderUuid"
+      r: false
+      t: "`$STRING`"
+    }
+    responseCode: {
+      fo: "int32"
+      h: "Response Code"
+      n: "responseCode"
+      r: false
+      t: "`$INTEGER`"
+    }
+    responseMessage: {
+      h: "Response Message"
+      n: "responseMessage"
+      r: false
+      t: "`$STRING`"
+    }
+    terminalId: {
+      fo: "int32"
+      h: "Terminal Id"
+      n: "terminalId"
+      r: true
+      t: "`$INTEGER`"
+    }
+  }
+
+  name: "deactivate_terminal"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /deactivateTerminal"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/deactivateTerminal"
+          s: [
+            {
+              lit: "deactivateTerminal"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

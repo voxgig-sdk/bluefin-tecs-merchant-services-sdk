@@ -10,6 +10,8 @@ object SdkEntityTestMain {
 
     CancelTransactionEntityTest.run(rep)
     CheckCardBlackListedEntityTest.run(rep)
+    CountAuthorisedTransactionEntityTest.run(rep)
+    CountNotAuthorisedTransactionEntityTest.run(rep)
     CreateProductEntityTest.run(rep)
     DeactivateTerminalEntityTest.run(rep)
     DigitalServicesApiEntityTest.run(rep)
@@ -43,7 +45,6 @@ object SdkEntityTestMain {
     StoreTerminalParameterEntityTest.run(rep)
     TerminalIdEntityTest.run(rep)
     TransactionHistoryEntityTest.run(rep)
-    TransactionsCountEntityTest.run(rep)
     TransactionsCountCardBrandEntityTest.run(rep)
     TransactionsTurnoverEntityTest.run(rep)
     UpdateMerchantEntityTest.run(rep)

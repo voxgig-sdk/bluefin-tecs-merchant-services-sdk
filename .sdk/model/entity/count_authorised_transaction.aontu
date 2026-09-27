@@ -1,0 +1,93 @@
+# Entity: count_authorised_transaction
+
+main: kit: entity: count_authorised_transaction: {
+
+  alias: field: {}
+
+  fields: {
+    period: {
+      h: "Period"
+      n: "period"
+      r: false
+      t: "`$STRING`"
+    }
+    responseCode: {
+      fo: "int32"
+      h: "Response Code"
+      n: "responseCode"
+      r: false
+      t: "`$INTEGER`"
+    }
+    responseMessage: {
+      h: "Response Message"
+      n: "responseMessage"
+      r: false
+      t: "`$STRING`"
+    }
+    transactionDateFrom: {
+      fo: "date-time"
+      h: "Transaction Date From"
+      n: "transactionDateFrom"
+      op: {
+        create: {
+          req: true
+          type: "`$STRING`"
+        }
+      }
+      r: false
+      t: "`$STRING`"
+    }
+    transactionDateTo: {
+      fo: "date-time"
+      h: "Transaction Date To"
+      n: "transactionDateTo"
+      op: {
+        create: {
+          req: true
+          type: "`$STRING`"
+        }
+      }
+      r: false
+      t: "`$STRING`"
+    }
+    transactionsCount: {
+      h: "Transactions Count"
+      n: "transactionsCount"
+      r: false
+      t: "`$ARRAY`"
+    }
+  }
+
+  name: "count_authorised_transaction"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /public/countAuthorisedTransactions"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/public/countAuthorisedTransactions"
+          s: [
+            {
+              lit: "public"
+            }
+            {
+              lit: "countAuthorisedTransactions"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

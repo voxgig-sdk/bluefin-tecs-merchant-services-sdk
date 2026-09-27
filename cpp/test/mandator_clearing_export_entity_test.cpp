@@ -50,7 +50,7 @@ static MandatorClearingExportSetup mandator_clearing_export_basic_setup(const Va
 
   MandatorClearingExportSetup s;
   s.client = client;
-  s.data = entity_data;
+  s.d = entity_data;
   s.idmap = idmap_resolved;
   s.env = env;
   s.live = live;

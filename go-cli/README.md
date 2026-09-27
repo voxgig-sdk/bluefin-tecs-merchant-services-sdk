@@ -94,7 +94,7 @@ make build-all   # linux/darwin/windows x amd64/arm64, under dist/<os>-<arch>/
 ### Discover the available entities
 
 `/help` in the REPL prints the full entity list, or see [Entities](#entities)
-below — this SDK exposes 39 entities.
+below — this SDK exposes 40 entities.
 
 ## Reference
 
@@ -147,9 +147,9 @@ Meta-commands use the `/` prefix (everything else on a line is evaluated as boru
 
 ### Entities
 
-The 39 entities this SDK exposes (any is valid as `<entity>`):
+The 40 entities this SDK exposes (any is valid as `<entity>`):
 
-cancel_transaction check_card_black_listed create_product deactivate_terminal digital_services_api ec_data_ecom ecom_parameter ecr_data emv_data enable_acquiring get_merchant_contract_number get_template_xml introduce_mandator introduce_package keep_alive list_terminal mandator_clearing_export mandator_clearing_export_download mandator_clearing_export_summary merchant_portal_services_api move_tid payment_manual payment_sred pre_auth_transaction_completion reactivate_terminal refund_transaction register_tecs_company register_terminal report_data status_transaction store_terminal_parameter terminal_id transaction_history transactions_count transactions_count_card_brand transactions_turnover update_merchant update_template_xml version
+cancel_transaction check_card_black_listed count_authorised_transaction count_not_authorised_transaction create_product deactivate_terminal digital_services_api ec_data_ecom ecom_parameter ecr_data emv_data enable_acquiring get_merchant_contract_number get_template_xml introduce_mandator introduce_package keep_alive list_terminal mandator_clearing_export mandator_clearing_export_download mandator_clearing_export_summary merchant_portal_services_api move_tid payment_manual payment_sred pre_auth_transaction_completion reactivate_terminal refund_transaction register_tecs_company register_terminal report_data status_transaction store_terminal_parameter terminal_id transaction_history transactions_count_card_brand transactions_turnover update_merchant update_template_xml version
 
 ## Explanation
 

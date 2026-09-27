@@ -15,6 +15,8 @@ import 'custom_test.dart' as custom_test;
 import 'readme_examples_test.dart' as readme_examples_test;
 import 'entity/cancel_transaction/CancelTransactionEntity_test.dart' as cancel_transaction_entity_test;
 import 'entity/check_card_black_listed/CheckCardBlackListedEntity_test.dart' as check_card_black_listed_entity_test;
+import 'entity/count_authorised_transaction/CountAuthorisedTransactionEntity_test.dart' as count_authorised_transaction_entity_test;
+import 'entity/count_not_authorised_transaction/CountNotAuthorisedTransactionEntity_test.dart' as count_not_authorised_transaction_entity_test;
 import 'entity/create_product/CreateProductEntity_test.dart' as create_product_entity_test;
 import 'entity/deactivate_terminal/DeactivateTerminalEntity_test.dart' as deactivate_terminal_entity_test;
 import 'entity/digital_services_api/DigitalServicesApiEntity_test.dart' as digital_services_api_entity_test;
@@ -48,7 +50,6 @@ import 'entity/status_transaction/StatusTransactionEntity_test.dart' as status_t
 import 'entity/store_terminal_parameter/StoreTerminalParameterEntity_test.dart' as store_terminal_parameter_entity_test;
 import 'entity/terminal_id/TerminalIdEntity_test.dart' as terminal_id_entity_test;
 import 'entity/transaction_history/TransactionHistoryEntity_test.dart' as transaction_history_entity_test;
-import 'entity/transactions_count/TransactionsCountEntity_test.dart' as transactions_count_entity_test;
 import 'entity/transactions_count_card_brand/TransactionsCountCardBrandEntity_test.dart' as transactions_count_card_brand_entity_test;
 import 'entity/transactions_turnover/TransactionsTurnoverEntity_test.dart' as transactions_turnover_entity_test;
 import 'entity/update_merchant/UpdateMerchantEntity_test.dart' as update_merchant_entity_test;
@@ -68,6 +69,8 @@ Future<void> main() async {
   readme_examples_test.tests();
   cancel_transaction_entity_test.tests();
   check_card_black_listed_entity_test.tests();
+  count_authorised_transaction_entity_test.tests();
+  count_not_authorised_transaction_entity_test.tests();
   create_product_entity_test.tests();
   deactivate_terminal_entity_test.tests();
   digital_services_api_entity_test.tests();
@@ -101,7 +104,6 @@ Future<void> main() async {
   store_terminal_parameter_entity_test.tests();
   terminal_id_entity_test.tests();
   transaction_history_entity_test.tests();
-  transactions_count_entity_test.tests();
   transactions_count_card_brand_entity_test.tests();
   transactions_turnover_entity_test.tests();
   update_merchant_entity_test.tests();

@@ -1,0 +1,58 @@
+# Entity: introduce_mandator
+
+main: kit: entity: introduce_mandator: {
+
+  alias: field: {}
+
+  fields: {
+    mandatorName: {
+      h: "Mandator Name"
+      n: "mandatorName"
+      r: true
+      t: "`$STRING`"
+    }
+    responseCode: {
+      fo: "int32"
+      h: "Response Code"
+      n: "responseCode"
+      r: false
+      t: "`$INTEGER`"
+    }
+    responseMessage: {
+      h: "Response Message"
+      n: "responseMessage"
+      r: false
+      t: "`$STRING`"
+    }
+  }
+
+  name: "introduce_mandator"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /introduceMandator"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/introduceMandator"
+          s: [
+            {
+              lit: "introduceMandator"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

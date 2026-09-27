@@ -3,8 +3,8 @@ declare(strict_types=1);
 
 // Typed models for the BluefinTecsMerchantServices SDK.
 //
-// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
-// params (op.<name>.points[].args.params[]). Field/param types come from the
+// GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+// params (op.<name>.points[].g.params[]). Field/param types come from the
 // canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 //
@@ -116,6 +116,50 @@ class CheckCardBlackListedCreateData
     public ?string $cardNo = null;
     public ?int $responseCode = null;
     public ?string $responseMessage = null;
+}
+
+/** CountAuthorisedTransaction entity data model. */
+class CountAuthorisedTransaction
+{
+    public ?string $period = null;
+    public ?int $responseCode = null;
+    public ?string $responseMessage = null;
+    public ?string $transactionDateFrom = null;
+    public ?string $transactionDateTo = null;
+    public ?array $transactionsCount = null;
+}
+
+/** Request payload for CountAuthorisedTransaction#create. */
+class CountAuthorisedTransactionCreateData
+{
+    public ?string $period = null;
+    public ?int $responseCode = null;
+    public ?string $responseMessage = null;
+    public ?string $transactionDateFrom = null;
+    public ?string $transactionDateTo = null;
+    public ?array $transactionsCount = null;
+}
+
+/** CountNotAuthorisedTransaction entity data model. */
+class CountNotAuthorisedTransaction
+{
+    public ?string $period = null;
+    public ?int $responseCode = null;
+    public ?string $responseMessage = null;
+    public ?string $transactionDateFrom = null;
+    public ?string $transactionDateTo = null;
+    public ?array $transactionsCount = null;
+}
+
+/** Request payload for CountNotAuthorisedTransaction#create. */
+class CountNotAuthorisedTransactionCreateData
+{
+    public ?string $period = null;
+    public ?int $responseCode = null;
+    public ?string $responseMessage = null;
+    public ?string $transactionDateFrom = null;
+    public ?string $transactionDateTo = null;
+    public ?array $transactionsCount = null;
 }
 
 /** CreateProduct entity data model. */
@@ -1208,28 +1252,6 @@ class TransactionHistoryCreateData
     public ?string $transactionId = null;
     public ?string $transactionType = null;
     public ?string $wallet = null;
-}
-
-/** TransactionsCount entity data model. */
-class TransactionsCount
-{
-    public ?string $period = null;
-    public ?int $responseCode = null;
-    public ?string $responseMessage = null;
-    public ?string $transactionDateFrom = null;
-    public ?string $transactionDateTo = null;
-    public ?array $transactionsCount = null;
-}
-
-/** Request payload for TransactionsCount#create. */
-class TransactionsCountCreateData
-{
-    public ?string $period = null;
-    public ?int $responseCode = null;
-    public ?string $responseMessage = null;
-    public ?string $transactionDateFrom = null;
-    public ?string $transactionDateTo = null;
-    public ?array $transactionsCount = null;
 }
 
 /** TransactionsCountCardBrand entity data model. */

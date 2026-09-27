@@ -29,6 +29,24 @@ class BluefinTecsMerchantServicesSDK(options: MutableMap<String, Any?>?) : SdkCl
   }
 
   /**
+   * Returns a count_authorised_transaction entity bound to this client.
+   * Idiomatic usage: client.countAuthorisedTransaction(null).list(null, null) or
+   * client.countAuthorisedTransaction(null).load(mutableMapOf("id" to ...), null).
+   */
+  fun countAuthorisedTransaction(entopts: MutableMap<String, Any?>?): SdkEntity {
+    return voxgig.bluefintecsmerchantservicessdk.entity.CountAuthorisedTransactionEntity(this, entopts)
+  }
+
+  /**
+   * Returns a count_not_authorised_transaction entity bound to this client.
+   * Idiomatic usage: client.countNotAuthorisedTransaction(null).list(null, null) or
+   * client.countNotAuthorisedTransaction(null).load(mutableMapOf("id" to ...), null).
+   */
+  fun countNotAuthorisedTransaction(entopts: MutableMap<String, Any?>?): SdkEntity {
+    return voxgig.bluefintecsmerchantservicessdk.entity.CountNotAuthorisedTransactionEntity(this, entopts)
+  }
+
+  /**
    * Returns a create_product entity bound to this client.
    * Idiomatic usage: client.createProduct(null).list(null, null) or
    * client.createProduct(null).load(mutableMapOf("id" to ...), null).
@@ -305,15 +323,6 @@ class BluefinTecsMerchantServicesSDK(options: MutableMap<String, Any?>?) : SdkCl
    */
   fun transactionHistory(entopts: MutableMap<String, Any?>?): SdkEntity {
     return voxgig.bluefintecsmerchantservicessdk.entity.TransactionHistoryEntity(this, entopts)
-  }
-
-  /**
-   * Returns a transactions_count entity bound to this client.
-   * Idiomatic usage: client.transactionsCount(null).list(null, null) or
-   * client.transactionsCount(null).load(mutableMapOf("id" to ...), null).
-   */
-  fun transactionsCount(entopts: MutableMap<String, Any?>?): SdkEntity {
-    return voxgig.bluefintecsmerchantservicessdk.entity.TransactionsCountEntity(this, entopts)
   }
 
   /**

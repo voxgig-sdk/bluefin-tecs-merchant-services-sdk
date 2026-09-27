@@ -50,7 +50,7 @@ static MandatorClearingExportDownloadSetup mandator_clearing_export_download_bas
 
   MandatorClearingExportDownloadSetup s;
   s.client = client;
-  s.data = entity_data;
+  s.d = entity_data;
   s.idmap = idmap_resolved;
   s.env = env;
   s.live = live;

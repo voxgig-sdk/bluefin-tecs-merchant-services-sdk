@@ -8,6 +8,8 @@
 <details open><summary>API</summary><a href="../api/index.html">API overview</a>
 <a href="../api/cancel_transaction.html">CancelTransaction</a>
 <a href="../api/check_card_black_listed.html">CheckCardBlackListed</a>
+<a href="../api/count_authorised_transaction.html">CountAuthorisedTransaction</a>
+<a href="../api/count_not_authorised_transaction.html">CountNotAuthorisedTransaction</a>
 <a href="../api/create_product.html">CreateProduct</a>
 <a href="../api/deactivate_terminal.html">DeactivateTerminal</a>
 <a href="../api/digital_services_api.html">DigitalServicesApi</a>
@@ -40,7 +42,6 @@
 <a href="../api/store_terminal_parameter.html">StoreTerminalParameter</a>
 <a href="../api/terminal_id.html">TerminalId</a>
 <a href="../api/transaction_history.html">TransactionHistory</a>
-<a href="../api/transactions_count.html">TransactionsCount</a>
 <a href="../api/transactions_count_card_brand.html">TransactionsCountCardBrand</a>
 <a href="../api/transactions_turnover.html">TransactionsTurnover</a>
 <a href="../api/update_merchant.html">UpdateMerchant</a>
@@ -75,18 +76,18 @@
 <a href="../sdks/zig.html">Zig</a></details>
 <details><summary>Tools</summary><a href="../tools/go-cli.html">Go CLI</a>
 <a href="../tools/go-mcp.html">Go MCP server</a></details>
-<details><summary>Features</summary><a href="../features/audit.html">Structured audit trail of operations</a>
-<a href="../features/clienttrack.html">Client identity and per-request correlation headers</a>
-<a href="../features/debug.html">Request/response capture ring buffer for debugging</a>
-<a href="../features/idempotency.html">Idempotency keys for safe retries of mutating operations</a>
-<a href="../features/log.html">Structured request and response logging</a>
-<a href="../features/metrics.html">Statistics capture: per-operation counters and latency</a>
-<a href="../features/paging.html">Pagination signals for list operations</a>
-<a href="../features/ratelimit.html">Client-side rate limiting via a token bucket</a>
-<a href="../features/retry.html">Automatic retry of transient failures with exponential backoff</a>
-<a href="../features/telemetry.html">Distributed tracing spans with W3C trace-context propagation</a>
-<a href="../features/test.html">In-memory mock transport for testing without a live server</a>
-<a href="../features/timeout.html">Per-request timeout with transport abort</a></details></nav><main id="content"><div class="page-context"><span class="section-dot" aria-hidden="true"></span>API</div><h1 id="preauthtransactioncompletion">PreAuthTransactionCompletion</h1>
+<details><summary>Features</summary><a href="../features/audit.html">Audit trail</a>
+<a href="../features/clienttrack.html">Client tracking</a>
+<a href="../features/debug.html">Debug capture</a>
+<a href="../features/idempotency.html">Idempotency</a>
+<a href="../features/log.html">Logging</a>
+<a href="../features/metrics.html">Metrics</a>
+<a href="../features/paging.html">Paging</a>
+<a href="../features/ratelimit.html">Rate limiting</a>
+<a href="../features/retry.html">Retry</a>
+<a href="../features/telemetry.html">Telemetry</a>
+<a href="../features/test.html">Test transport</a>
+<a href="../features/timeout.html">Timeout</a></details></nav><main id="content"><div class="page-context"><span class="section-dot" aria-hidden="true"></span>API</div><h1 id="preauthtransactioncompletion">PreAuthTransactionCompletion</h1>
 <h2 id="operations">Operations</h2>
 <p>Every route this entity exposes. Each route links to its own reference on this page.</p>
 <table>
@@ -113,6 +114,40 @@
 </tr>
 </tbody>
 </table>
+<h2 id="examples">Examples</h2>
+<p>One example per SDK, generated from the API model. The argument names are the parameters and fields of this entity, and the values are placeholders. The examples are not compiled or executed.</p>
+<h3 id="golang">Golang</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/go.html#set-up-the-client">Golang setup</a>, then call the operations:</p>
+<pre><code class="language-go">created, err := client.PreAuthTransactionCompletion(nil).Create(map[string]any{&quot;cardNumberReference&quot;: &quot;example&quot;, &quot;clientId&quot;: 1, &quot;currency&quot;: &quot;example&quot;, &quot;receiptNumber&quot;: &quot;example&quot;, &quot;terminalId&quot;: 1, &quot;transactionType&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(created)
+</code></pre>
+<h3 id="javascript">JavaScript</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/js.html#set-up-the-client">JavaScript setup</a>, then call the operations:</p>
+<pre><code class="language-js">const created = await client.PreAuthTransactionCompletion().create({ cardNumberReference: &quot;example&quot;, clientId: 1, currency: &quot;example&quot;, receiptNumber: &quot;example&quot;, terminalId: 1, transactionType: &quot;example&quot; })
+</code></pre>
+<h3 id="lua">Lua</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/lua.html#set-up-the-client">Lua setup</a>, then call the operations:</p>
+<pre><code class="language-lua">local created, err = client:PreAuthTransactionCompletion():create({ cardNumberReference = &quot;example&quot;, clientId = 1, currency = &quot;example&quot;, receiptNumber = &quot;example&quot;, terminalId = 1, transactionType = &quot;example&quot; })
+</code></pre>
+<h3 id="php">PHP</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/php.html#set-up-the-client">PHP setup</a>, then call the operations:</p>
+<pre><code class="language-php">$created = $client-&gt;PreAuthTransactionCompletion()-&gt;create([&quot;cardNumberReference&quot; =&gt; &quot;example&quot;, &quot;clientId&quot; =&gt; 1, &quot;currency&quot; =&gt; &quot;example&quot;, &quot;receiptNumber&quot; =&gt; &quot;example&quot;, &quot;terminalId&quot; =&gt; 1, &quot;transactionType&quot; =&gt; &quot;example&quot;]);
+</code></pre>
+<h3 id="python">Python</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/py.html#set-up-the-client">Python setup</a>, then call the operations:</p>
+<pre><code class="language-py">created = client.PreAuthTransactionCompletion().create({ &quot;cardNumberReference&quot;: &quot;example&quot;, &quot;clientId&quot;: 1, &quot;currency&quot;: &quot;example&quot;, &quot;receiptNumber&quot;: &quot;example&quot;, &quot;terminalId&quot;: 1, &quot;transactionType&quot;: &quot;example&quot; })
+</code></pre>
+<h3 id="ruby">Ruby</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/rb.html#set-up-the-client">Ruby setup</a>, then call the operations:</p>
+<pre><code class="language-rb">created = client.PreAuthTransactionCompletion.create({ &quot;cardNumberReference&quot; =&gt; &quot;example&quot;, &quot;clientId&quot; =&gt; 1, &quot;currency&quot; =&gt; &quot;example&quot;, &quot;receiptNumber&quot; =&gt; &quot;example&quot;, &quot;terminalId&quot; =&gt; 1, &quot;transactionType&quot; =&gt; &quot;example&quot; })
+</code></pre>
+<h3 id="typescript">TypeScript</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/ts.html#set-up-the-client">TypeScript setup</a>, then call the operations:</p>
+<pre><code class="language-ts">const created = await client.PreAuthTransactionCompletion().create({ cardNumberReference: &quot;example&quot;, clientId: 1, currency: &quot;example&quot;, receiptNumber: &quot;example&quot;, terminalId: 1, transactionType: &quot;example&quot; })
+</code></pre>
 <h2 id="fields">Fields</h2>
 <table>
 <thead>
@@ -128,253 +163,253 @@
 <td><code>acquirerId</code></td>
 <td><code>string</code></td>
 <td>No</td>
-<td></td>
+<td>Acquirer Id</td>
 </tr>
 <tr>
 <td><code>acquirerName</code></td>
 <td><code>string</code></td>
 <td>No</td>
-<td></td>
+<td>Acquirer Name</td>
 </tr>
 <tr>
 <td><code>actualBonusPoints</code></td>
 <td><code>string</code></td>
 <td>No</td>
-<td></td>
+<td>Actual Bonus Points</td>
 </tr>
 <tr>
 <td><code>amount</code></td>
 <td><code>integer</code></td>
 <td>No</td>
-<td></td>
+<td>Amount</td>
 </tr>
 <tr>
 <td><code>authorizationCode</code></td>
 <td><code>string</code></td>
 <td>No</td>
-<td></td>
+<td>Authorization Code</td>
 </tr>
 <tr>
 <td><code>balanceAmount</code></td>
 <td><code>string</code></td>
 <td>No</td>
-<td></td>
+<td>Balance Amount</td>
 </tr>
 <tr>
 <td><code>cardBrand</code></td>
 <td><code>string</code></td>
 <td>No</td>
-<td></td>
+<td>Card Brand</td>
 </tr>
 <tr>
 <td><code>cardNumber</code></td>
 <td><code>string</code></td>
 <td>No</td>
-<td></td>
+<td>Card Number</td>
 </tr>
 <tr>
 <td><code>cardNumberReference</code></td>
 <td><code>string</code></td>
 <td>Yes</td>
-<td></td>
+<td>Card Number Reference</td>
 </tr>
 <tr>
 <td><code>clientId</code></td>
 <td><code>integer</code></td>
 <td>Yes</td>
-<td></td>
+<td>Client Id</td>
 </tr>
 <tr>
 <td><code>currency</code></td>
 <td><code>string</code></td>
 <td>Yes</td>
-<td></td>
+<td>Currency</td>
 </tr>
 <tr>
 <td><code>cvc</code></td>
 <td><code>string</code></td>
 <td>No</td>
-<td></td>
+<td>Cvc</td>
 </tr>
 <tr>
 <td><code>ecData</code></td>
 <td><code>string</code></td>
 <td>No</td>
-<td></td>
+<td>Ec Data</td>
 </tr>
 <tr>
 <td><code>ecrData</code></td>
 <td><code>string</code></td>
 <td>No</td>
-<td></td>
+<td>Ecr Data</td>
 </tr>
 <tr>
 <td><code>emvData</code></td>
 <td><code>string</code></td>
 <td>No</td>
-<td></td>
+<td>Emv Data</td>
 </tr>
 <tr>
 <td><code>exchangeFee</code></td>
 <td><code>integer</code></td>
 <td>No</td>
-<td></td>
+<td>Exchange Fee</td>
 </tr>
 <tr>
 <td><code>exchangeRate</code></td>
 <td><code>string</code></td>
 <td>No</td>
-<td></td>
+<td>Exchange Rate</td>
 </tr>
 <tr>
 <td><code>languageCode</code></td>
 <td><code>string</code></td>
 <td>No</td>
-<td></td>
+<td>Language Code</td>
 </tr>
 <tr>
 <td><code>merchantAddress</code></td>
 <td><code>string</code></td>
 <td>No</td>
-<td></td>
+<td>Merchant Address</td>
 </tr>
 <tr>
 <td><code>merchantName</code></td>
 <td><code>string</code></td>
 <td>No</td>
-<td></td>
+<td>Merchant Name</td>
 </tr>
 <tr>
 <td><code>merchantNumber</code></td>
 <td><code>string</code></td>
 <td>No</td>
-<td></td>
+<td>Merchant Number</td>
 </tr>
 <tr>
 <td><code>messageType</code></td>
 <td><code>string</code></td>
 <td>No</td>
-<td></td>
+<td>Message Type</td>
 </tr>
 <tr>
 <td><code>originalTraceNumber</code></td>
 <td><code>integer</code></td>
 <td>No</td>
-<td></td>
+<td>Original Trace Number</td>
 </tr>
 <tr>
 <td><code>originalTransactionId</code></td>
 <td><code>string</code></td>
 <td>No</td>
-<td></td>
+<td>Original Transaction Id</td>
 </tr>
 <tr>
 <td><code>password</code></td>
 <td><code>string</code></td>
 <td>No</td>
-<td></td>
+<td>Password</td>
 </tr>
 <tr>
 <td><code>paymentReason</code></td>
 <td><code>string</code></td>
 <td>No</td>
-<td></td>
+<td>Payment Reason</td>
 </tr>
 <tr>
 <td><code>receiptFooter</code></td>
 <td><code>string</code></td>
 <td>No</td>
-<td></td>
+<td>Receipt Footer</td>
 </tr>
 <tr>
 <td><code>receiptHeader</code></td>
 <td><code>string</code></td>
 <td>No</td>
-<td></td>
+<td>Receipt Header</td>
 </tr>
 <tr>
 <td><code>receiptLayout</code></td>
 <td><code>integer</code></td>
 <td>No</td>
-<td></td>
+<td>Receipt Layout</td>
 </tr>
 <tr>
 <td><code>receiptNumber</code></td>
 <td><code>string</code></td>
 <td>Yes</td>
-<td></td>
+<td>Receipt Number</td>
 </tr>
 <tr>
 <td><code>responseCode</code></td>
 <td><code>integer</code></td>
 <td>No</td>
-<td></td>
+<td>Response Code</td>
 </tr>
 <tr>
 <td><code>responseMessage</code></td>
 <td><code>string</code></td>
 <td>No</td>
-<td></td>
+<td>Response Message</td>
 </tr>
 <tr>
 <td><code>serialNumber</code></td>
 <td><code>string</code></td>
 <td>No</td>
-<td></td>
+<td>Serial Number</td>
 </tr>
 <tr>
 <td><code>svc</code></td>
 <td><code>string</code></td>
 <td>No</td>
-<td></td>
+<td>Svc</td>
 </tr>
 <tr>
 <td><code>terminalId</code></td>
 <td><code>integer</code></td>
 <td>Yes</td>
-<td></td>
+<td>Terminal Id</td>
 </tr>
 <tr>
 <td><code>terminalLocation</code></td>
 <td><code>string</code></td>
 <td>No</td>
-<td></td>
+<td>Terminal Location</td>
 </tr>
 <tr>
 <td><code>traceNumber</code></td>
 <td><code>integer</code></td>
 <td>No</td>
-<td></td>
+<td>Trace Number</td>
 </tr>
 <tr>
 <td><code>transactionDate</code></td>
 <td><code>string</code></td>
 <td>No</td>
-<td></td>
+<td>Transaction Date</td>
 </tr>
 <tr>
 <td><code>transactionId</code></td>
 <td><code>string</code></td>
 <td>No</td>
-<td></td>
+<td>Transaction Id</td>
 </tr>
 <tr>
 <td><code>transactionType</code></td>
 <td><code>string</code></td>
 <td>Yes</td>
-<td></td>
+<td>Transaction Type</td>
 </tr>
 <tr>
 <td><code>txType</code></td>
 <td><code>string</code></td>
 <td>No</td>
-<td></td>
+<td>Tx Type</td>
 </tr>
 <tr>
 <td><code>userData</code></td>
 <td><code>string</code></td>
 <td>No</td>
-<td></td>
+<td>User Data</td>
 </tr>
 </tbody>
 </table>

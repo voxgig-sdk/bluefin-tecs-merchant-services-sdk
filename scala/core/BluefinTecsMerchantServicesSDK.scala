@@ -27,6 +27,22 @@ class BluefinTecsMerchantServicesSDK(options: JMap[String, Object]) extends SdkC
     new voxgig.bluefintecsmerchantservicessdk.entity.CheckCardBlackListedEntity(this, entopts)
 
   /**
+   * Returns a count_authorised_transaction entity bound to this client.
+   * Idiomatic usage: client.countAuthorisedTransaction(null).list(null, null) or
+   * client.countAuthorisedTransaction(null).load(java.util.Map.of("id", ...), null).
+   */
+  def countAuthorisedTransaction(entopts: java.util.Map[String, Object]): SdkEntity =
+    new voxgig.bluefintecsmerchantservicessdk.entity.CountAuthorisedTransactionEntity(this, entopts)
+
+  /**
+   * Returns a count_not_authorised_transaction entity bound to this client.
+   * Idiomatic usage: client.countNotAuthorisedTransaction(null).list(null, null) or
+   * client.countNotAuthorisedTransaction(null).load(java.util.Map.of("id", ...), null).
+   */
+  def countNotAuthorisedTransaction(entopts: java.util.Map[String, Object]): SdkEntity =
+    new voxgig.bluefintecsmerchantservicessdk.entity.CountNotAuthorisedTransactionEntity(this, entopts)
+
+  /**
    * Returns a create_product entity bound to this client.
    * Idiomatic usage: client.createProduct(null).list(null, null) or
    * client.createProduct(null).load(java.util.Map.of("id", ...), null).
@@ -273,14 +289,6 @@ class BluefinTecsMerchantServicesSDK(options: JMap[String, Object]) extends SdkC
    */
   def transactionHistory(entopts: java.util.Map[String, Object]): SdkEntity =
     new voxgig.bluefintecsmerchantservicessdk.entity.TransactionHistoryEntity(this, entopts)
-
-  /**
-   * Returns a transactions_count entity bound to this client.
-   * Idiomatic usage: client.transactionsCount(null).list(null, null) or
-   * client.transactionsCount(null).load(java.util.Map.of("id", ...), null).
-   */
-  def transactionsCount(entopts: java.util.Map[String, Object]): SdkEntity =
-    new voxgig.bluefintecsmerchantservicessdk.entity.TransactionsCountEntity(this, entopts)
 
   /**
    * Returns a transactions_count_card_brand entity bound to this client.

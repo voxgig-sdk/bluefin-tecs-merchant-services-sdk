@@ -52,6 +52,14 @@ let cancel_transaction (client : sdk_client) (entopts : value) : entity_obj =
 let check_card_black_listed (client : sdk_client) (entopts : value) : entity_obj =
   Sdk_entity_check_card_black_listed.make client entopts
 
+(* CountAuthorisedTransaction entity bound to a client:  count_authorised_transaction client entopts *)
+let count_authorised_transaction (client : sdk_client) (entopts : value) : entity_obj =
+  Sdk_entity_count_authorised_transaction.make client entopts
+
+(* CountNotAuthorisedTransaction entity bound to a client:  count_not_authorised_transaction client entopts *)
+let count_not_authorised_transaction (client : sdk_client) (entopts : value) : entity_obj =
+  Sdk_entity_count_not_authorised_transaction.make client entopts
+
 (* CreateProduct entity bound to a client:  create_product client entopts *)
 let create_product (client : sdk_client) (entopts : value) : entity_obj =
   Sdk_entity_create_product.make client entopts
@@ -176,10 +184,6 @@ let terminal_id (client : sdk_client) (entopts : value) : entity_obj =
 let transaction_history (client : sdk_client) (entopts : value) : entity_obj =
   Sdk_entity_transaction_history.make client entopts
 
-(* TransactionsCount entity bound to a client:  transactions_count client entopts *)
-let transactions_count (client : sdk_client) (entopts : value) : entity_obj =
-  Sdk_entity_transactions_count.make client entopts
-
 (* TransactionsCountCardBrand entity bound to a client:  transactions_count_card_brand client entopts *)
 let transactions_count_card_brand (client : sdk_client) (entopts : value) : entity_obj =
   Sdk_entity_transactions_count_card_brand.make client entopts
@@ -205,6 +209,8 @@ let entity (client : sdk_client) (name : string) (entopts : value) : entity_obj 
   match name with
   | "cancel_transaction" -> Some (Sdk_entity_cancel_transaction.make client entopts)
   | "check_card_black_listed" -> Some (Sdk_entity_check_card_black_listed.make client entopts)
+  | "count_authorised_transaction" -> Some (Sdk_entity_count_authorised_transaction.make client entopts)
+  | "count_not_authorised_transaction" -> Some (Sdk_entity_count_not_authorised_transaction.make client entopts)
   | "create_product" -> Some (Sdk_entity_create_product.make client entopts)
   | "deactivate_terminal" -> Some (Sdk_entity_deactivate_terminal.make client entopts)
   | "digital_services_api" -> Some (Sdk_entity_digital_services_api.make client entopts)
@@ -236,7 +242,6 @@ let entity (client : sdk_client) (name : string) (entopts : value) : entity_obj 
   | "store_terminal_parameter" -> Some (Sdk_entity_store_terminal_parameter.make client entopts)
   | "terminal_id" -> Some (Sdk_entity_terminal_id.make client entopts)
   | "transaction_history" -> Some (Sdk_entity_transaction_history.make client entopts)
-  | "transactions_count" -> Some (Sdk_entity_transactions_count.make client entopts)
   | "transactions_count_card_brand" -> Some (Sdk_entity_transactions_count_card_brand.make client entopts)
   | "transactions_turnover" -> Some (Sdk_entity_transactions_turnover.make client entopts)
   | "update_merchant" -> Some (Sdk_entity_update_merchant.make client entopts)

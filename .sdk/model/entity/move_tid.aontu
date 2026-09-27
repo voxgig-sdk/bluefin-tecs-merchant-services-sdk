@@ -1,0 +1,70 @@
+# Entity: move_tid
+
+main: kit: entity: move_tid: {
+
+  alias: field: {}
+
+  fields: {
+    productorderuuids: {
+      h: "Productorderuuids"
+      n: "productorderuuids"
+      r: true
+      t: "`$ARRAY`"
+    }
+    responseCode: {
+      fo: "int32"
+      h: "Response Code"
+      n: "responseCode"
+      r: false
+      t: "`$INTEGER`"
+    }
+    responseMessage: {
+      h: "Response Message"
+      n: "responseMessage"
+      r: false
+      t: "`$STRING`"
+    }
+    targetPackageorderuuid: {
+      h: "Target Packageorderuuid"
+      n: "targetPackageorderuuid"
+      r: false
+      t: "`$STRING`"
+    }
+    targetProductorderuuid: {
+      h: "Target Productorderuuid"
+      n: "targetProductorderuuid"
+      r: false
+      t: "`$STRING`"
+    }
+  }
+
+  name: "move_tid"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /moveTid"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/moveTid"
+          s: [
+            {
+              lit: "moveTid"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

@@ -167,6 +167,8 @@ let make_config () : value =
       ("entity", (jo [
         ("cancel_transaction", (empty_map ()));
         ("check_card_black_listed", (empty_map ()));
+        ("count_authorised_transaction", (empty_map ()));
+        ("count_not_authorised_transaction", (empty_map ()));
         ("create_product", (empty_map ()));
         ("deactivate_terminal", (empty_map ()));
         ("digital_services_api", (empty_map ()));
@@ -198,7 +200,6 @@ let make_config () : value =
         ("store_terminal_parameter", (empty_map ()));
         ("terminal_id", (empty_map ()));
         ("transaction_history", (empty_map ()));
-        ("transactions_count", (empty_map ()));
         ("transactions_count_card_brand", (empty_map ()));
         ("transactions_turnover", (empty_map ()));
         ("update_merchant", (empty_map ()));
@@ -209,156 +210,196 @@ let make_config () : value =
         ("fields", (ja [
           (jo [
             ("name", (Str "acquirerId"));
+            ("title", (Str "Acquirer Id"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "acquirerName"));
+            ("title", (Str "Acquirer Name"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "actualBonusPoints"));
+            ("title", (Str "Actual Bonus Points"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "amount"));
+            ("title", (Str "Amount"));
+            ("type", (Str "`$INTEGER`"));
             ("op", (jo [
               ("create", (jo [
                 ("req", (Bool true));
                 ("type", (Str "`$INTEGER`")) ])) ]));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "authorizationCode"));
+            ("title", (Str "Authorization Code"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "balanceAmount"));
+            ("title", (Str "Balance Amount"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "cardBrand"));
+            ("title", (Str "Card Brand"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "cardNumber"));
+            ("title", (Str "Card Number"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "clientId"));
+            ("title", (Str "Client Id"));
+            ("type", (Str "`$INTEGER`"));
             ("req", (Bool true));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "currency"));
-            ("req", (Bool true));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Currency"));
+            ("type", (Str "`$STRING`"));
+            ("req", (Bool true)) ]);
           (jo [
             ("name", (Str "cvc"));
+            ("title", (Str "Cvc"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "ecData"));
+            ("title", (Str "Ec Data"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "ecrData"));
+            ("title", (Str "Ecr Data"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "emvData"));
+            ("title", (Str "Emv Data"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int64"));
             ("name", (Str "exchangeFee"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Exchange Fee"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int64")) ]);
           (jo [
             ("name", (Str "exchangeRate"));
+            ("title", (Str "Exchange Rate"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "languageCode"));
+            ("title", (Str "Language Code"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "merchantAddress"));
+            ("title", (Str "Merchant Address"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "merchantName"));
+            ("title", (Str "Merchant Name"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "merchantNumber"));
+            ("title", (Str "Merchant Number"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "messageType"));
+            ("title", (Str "Message Type"));
+            ("type", (Str "`$STRING`"));
             ("op", (jo [
               ("create", (jo [
                 ("req", (Bool true));
-                ("type", (Str "`$STRING`")) ])) ]));
-            ("type", (Str "`$STRING`")) ]);
+                ("type", (Str "`$STRING`")) ])) ])) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "originalTraceNumber"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Original Trace Number"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "originalTransactionId"));
+            ("title", (Str "Original Transaction Id"));
+            ("type", (Str "`$STRING`"));
             ("op", (jo [
               ("create", (jo [
                 ("req", (Bool true));
-                ("type", (Str "`$STRING`")) ])) ]));
-            ("type", (Str "`$STRING`")) ]);
+                ("type", (Str "`$STRING`")) ])) ])) ]);
           (jo [
             ("name", (Str "password"));
+            ("title", (Str "Password"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "paymentReason"));
+            ("title", (Str "Payment Reason"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "receiptFooter"));
+            ("title", (Str "Receipt Footer"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "receiptHeader"));
+            ("title", (Str "Receipt Header"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "receiptLayout"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Receipt Layout"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "receiptNumber"));
-            ("req", (Bool true));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Receipt Number"));
+            ("type", (Str "`$STRING`"));
+            ("req", (Bool true)) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "responseMessage"));
+            ("title", (Str "Response Message"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "serialNumber"));
+            ("title", (Str "Serial Number"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "svc"));
+            ("title", (Str "Svc"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "terminalId"));
+            ("title", (Str "Terminal Id"));
+            ("type", (Str "`$INTEGER`"));
             ("req", (Bool true));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "terminalLocation"));
+            ("title", (Str "Terminal Location"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "traceNumber"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Trace Number"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
-            ("format", (Str "date-time"));
             ("name", (Str "transactionDate"));
+            ("title", (Str "Transaction Date"));
+            ("type", (Str "`$STRING`"));
             ("op", (jo [
               ("create", (jo [
                 ("req", (Bool true));
                 ("type", (Str "`$STRING`")) ])) ]));
-            ("type", (Str "`$STRING`")) ]);
+            ("format", (Str "date-time")) ]);
           (jo [
             ("name", (Str "transactionId"));
+            ("title", (Str "Transaction Id"));
+            ("type", (Str "`$STRING`"));
             ("op", (jo [
               ("create", (jo [
                 ("req", (Bool true));
-                ("type", (Str "`$STRING`")) ])) ]));
-            ("type", (Str "`$STRING`")) ]);
+                ("type", (Str "`$STRING`")) ])) ])) ]);
           (jo [
             ("name", (Str "txType"));
+            ("title", (Str "Tx Type"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "userData"));
+            ("title", (Str "User Data"));
             ("type", (Str "`$STRING`")) ]) ]));
         ("name", (Str "cancel_transaction"));
         ("op", (jo [
@@ -367,7 +408,6 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (empty_map ()));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/public/cancelTransaction"));
@@ -376,26 +416,31 @@ let make_config () : value =
                     ("lit", (Str "public")) ]);
                   (jo [
                     ("lit", (Str "cancelTransaction")) ]) ]));
-                ("select", (empty_map ()));
+                ("parts", (ja [
+                  (Str "public");
+                  (Str "cancelTransaction") ]));
+                ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
-                ("parts", (ja [
-                  (Str "public");
-                  (Str "cancelTransaction") ])) ]) ])) ])) ]));
+                ("args", (empty_map ()));
+                ("select", (empty_map ())) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("check_card_black_listed", (jo [
         ("fields", (ja [
           (jo [
             ("name", (Str "cardNo"));
+            ("title", (Str "Card No"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "responseMessage"));
+            ("title", (Str "Response Message"));
             ("type", (Str "`$STRING`")) ]) ]));
         ("name", (Str "check_card_black_listed"));
         ("op", (jo [
@@ -404,59 +449,193 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (jo [
-                  ("header", (ja [
-                    (jo [
-                      ("kind", (Str "header"));
-                      ("name", (Str "authorization"));
-                      ("orig", (Str "authorization"));
-                      ("reqd", (Bool true));
-                      ("type", (Str "`$STRING`")) ]) ])) ]));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/checkCardBlackListed"));
                 ("segments", (ja [
                   (jo [
                     ("lit", (Str "checkCardBlackListed")) ]) ]));
-                ("select", (jo [
-                  ("exist", (ja [
-                    (Str "authorization") ])) ]));
+                ("parts", (ja [
+                  (Str "checkCardBlackListed") ]));
+                ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
+                ("args", (jo [
+                  ("header", (ja [
+                    (jo [
+                      ("name", (Str "authorization"));
+                      ("orig", (Str "authorization"));
+                      ("type", (Str "`$STRING`"));
+                      ("kind", (Str "header"));
+                      ("reqd", (Bool true)) ]) ])) ]));
+                ("select", (jo [
+                  ("exist", (ja [
+                    (Str "authorization") ])) ])) ]) ])) ])) ]));
+        ("relations", (jo [
+          ("ancestors", (empty_list ())) ])) ]));
+      ("count_authorised_transaction", (jo [
+        ("fields", (ja [
+          (jo [
+            ("name", (Str "period"));
+            ("title", (Str "Period"));
+            ("type", (Str "`$STRING`")) ]);
+          (jo [
+            ("name", (Str "responseCode"));
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
+          (jo [
+            ("name", (Str "responseMessage"));
+            ("title", (Str "Response Message"));
+            ("type", (Str "`$STRING`")) ]);
+          (jo [
+            ("name", (Str "transactionDateFrom"));
+            ("title", (Str "Transaction Date From"));
+            ("type", (Str "`$STRING`"));
+            ("op", (jo [
+              ("create", (jo [
+                ("req", (Bool true));
+                ("type", (Str "`$STRING`")) ])) ]));
+            ("format", (Str "date-time")) ]);
+          (jo [
+            ("name", (Str "transactionDateTo"));
+            ("title", (Str "Transaction Date To"));
+            ("type", (Str "`$STRING`"));
+            ("op", (jo [
+              ("create", (jo [
+                ("req", (Bool true));
+                ("type", (Str "`$STRING`")) ])) ]));
+            ("format", (Str "date-time")) ]);
+          (jo [
+            ("name", (Str "transactionsCount"));
+            ("title", (Str "Transactions Count"));
+            ("type", (Str "`$ARRAY`")) ]) ]));
+        ("name", (Str "count_authorised_transaction"));
+        ("op", (jo [
+          ("create", (jo [
+            ("input", (Str "data"));
+            ("name", (Str "create"));
+            ("points", (ja [
+              (jo [
+                ("kind", (Str "http"));
+                ("method", (Str "POST"));
+                ("orig", (Str "/public/countAuthorisedTransactions"));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "public")) ]);
+                  (jo [
+                    ("lit", (Str "countAuthorisedTransactions")) ]) ]));
                 ("parts", (ja [
-                  (Str "checkCardBlackListed") ])) ]) ])) ])) ]));
+                  (Str "public");
+                  (Str "countAuthorisedTransactions") ]));
+                ("rename", (empty_map ()));
+                ("transform", (jo [
+                  ("req", (Str "`reqdata`"));
+                  ("res", (Str "`body`")) ]));
+                ("args", (empty_map ()));
+                ("select", (empty_map ())) ]) ])) ])) ]));
+        ("relations", (jo [
+          ("ancestors", (empty_list ())) ])) ]));
+      ("count_not_authorised_transaction", (jo [
+        ("fields", (ja [
+          (jo [
+            ("name", (Str "period"));
+            ("title", (Str "Period"));
+            ("type", (Str "`$STRING`")) ]);
+          (jo [
+            ("name", (Str "responseCode"));
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
+          (jo [
+            ("name", (Str "responseMessage"));
+            ("title", (Str "Response Message"));
+            ("type", (Str "`$STRING`")) ]);
+          (jo [
+            ("name", (Str "transactionDateFrom"));
+            ("title", (Str "Transaction Date From"));
+            ("type", (Str "`$STRING`"));
+            ("op", (jo [
+              ("create", (jo [
+                ("req", (Bool true));
+                ("type", (Str "`$STRING`")) ])) ]));
+            ("format", (Str "date-time")) ]);
+          (jo [
+            ("name", (Str "transactionDateTo"));
+            ("title", (Str "Transaction Date To"));
+            ("type", (Str "`$STRING`"));
+            ("op", (jo [
+              ("create", (jo [
+                ("req", (Bool true));
+                ("type", (Str "`$STRING`")) ])) ]));
+            ("format", (Str "date-time")) ]);
+          (jo [
+            ("name", (Str "transactionsCount"));
+            ("title", (Str "Transactions Count"));
+            ("type", (Str "`$ARRAY`")) ]) ]));
+        ("name", (Str "count_not_authorised_transaction"));
+        ("op", (jo [
+          ("create", (jo [
+            ("input", (Str "data"));
+            ("name", (Str "create"));
+            ("points", (ja [
+              (jo [
+                ("kind", (Str "http"));
+                ("method", (Str "POST"));
+                ("orig", (Str "/public/countNotAuthorisedTransactions"));
+                ("segments", (ja [
+                  (jo [
+                    ("lit", (Str "public")) ]);
+                  (jo [
+                    ("lit", (Str "countNotAuthorisedTransactions")) ]) ]));
+                ("parts", (ja [
+                  (Str "public");
+                  (Str "countNotAuthorisedTransactions") ]));
+                ("rename", (empty_map ()));
+                ("transform", (jo [
+                  ("req", (Str "`reqdata`"));
+                  ("res", (Str "`body`")) ]));
+                ("args", (empty_map ()));
+                ("select", (empty_map ())) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("create_product", (jo [
         ("fields", (ja [
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "acquirerId"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Acquirer Id"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "responseMessage"));
+            ("title", (Str "Response Message"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "templateName"));
-            ("req", (Bool true));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Template Name"));
+            ("type", (Str "`$STRING`"));
+            ("req", (Bool true)) ]);
           (jo [
             ("name", (Str "templateType"));
-            ("req", (Bool true));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Template Type"));
+            ("type", (Str "`$STRING`"));
+            ("req", (Bool true)) ]);
           (jo [
             ("name", (Str "templateXml"));
-            ("req", (Bool true));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Template Xml"));
+            ("type", (Str "`$STRING`"));
+            ("req", (Bool true)) ]);
           (jo [
             ("name", (Str "terminalType"));
-            ("req", (Bool true));
-            ("type", (Str "`$STRING`")) ]) ]));
+            ("title", (Str "Terminal Type"));
+            ("type", (Str "`$STRING`"));
+            ("req", (Bool true)) ]) ]));
         ("name", (Str "create_product"));
         ("op", (jo [
           ("create", (jo [
@@ -464,48 +643,56 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (empty_map ()));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/createProduct"));
                 ("segments", (ja [
                   (jo [
                     ("lit", (Str "createProduct")) ]) ]));
-                ("select", (empty_map ()));
+                ("parts", (ja [
+                  (Str "createProduct") ]));
+                ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
-                ("parts", (ja [
-                  (Str "createProduct") ])) ]) ])) ])) ]));
+                ("args", (empty_map ()));
+                ("select", (empty_map ())) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("deactivate_terminal", (jo [
         ("fields", (ja [
           (jo [
             ("name", (Str "corporateUuid"));
+            ("title", (Str "Corporate Uuid"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "deactivationReason"));
-            ("req", (Bool true));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Deactivation Reason"));
+            ("type", (Str "`$STRING`"));
+            ("req", (Bool true)) ]);
           (jo [
             ("name", (Str "packageOrderUuid"));
+            ("title", (Str "Package Order Uuid"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "productOrderUuid"));
+            ("title", (Str "Product Order Uuid"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "responseMessage"));
+            ("title", (Str "Response Message"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "terminalId"));
+            ("title", (Str "Terminal Id"));
+            ("type", (Str "`$INTEGER`"));
             ("req", (Bool true));
-            ("type", (Str "`$INTEGER`")) ]) ]));
+            ("format", (Str "int32")) ]) ]));
         ("name", (Str "deactivate_terminal"));
         ("op", (jo [
           ("create", (jo [
@@ -513,62 +700,73 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (empty_map ()));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/deactivateTerminal"));
                 ("segments", (ja [
                   (jo [
                     ("lit", (Str "deactivateTerminal")) ]) ]));
-                ("select", (empty_map ()));
+                ("parts", (ja [
+                  (Str "deactivateTerminal") ]));
+                ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
-                ("parts", (ja [
-                  (Str "deactivateTerminal") ])) ]) ])) ])) ]));
+                ("args", (empty_map ()));
+                ("select", (empty_map ())) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("digital_services_api", (jo [
         ("fields", (ja [
           (jo [
             ("name", (Str "clearingDateFrom"));
+            ("title", (Str "Clearing Date From"));
+            ("type", (Str "`$STRING`"));
             ("req", (Bool true));
-            ("short", (Str "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz"));
-            ("type", (Str "`$STRING`")) ]);
+            ("short", (Str "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz")) ]);
           (jo [
             ("name", (Str "clearingDateTo"));
+            ("title", (Str "Clearing Date To"));
+            ("type", (Str "`$STRING`"));
             ("req", (Bool true));
-            ("short", (Str "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz"));
-            ("type", (Str "`$STRING`")) ]);
+            ("short", (Str "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "responseMessage"));
+            ("title", (Str "Response Message"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "txCount"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Tx Count"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "txIdEnd"));
+            ("title", (Str "Tx Id End"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "txIdStart"));
+            ("title", (Str "Tx Id Start"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "txSeqNoEnd"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Tx Seq No End"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "txSeqNoStart"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Tx Seq No Start"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "txTotal"));
-            ("type", (Str "`$INTEGER`")) ]) ]));
+            ("title", (Str "Tx Total"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]) ]));
         ("name", (Str "digital_services_api"));
         ("op", (jo [
           ("create", (jo [
@@ -576,20 +774,9 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (jo [
-                  ("params", (ja [
-                    (jo [
-                      ("kind", (Str "param"));
-                      ("name", (Str "file_id"));
-                      ("orig", (Str "file_id"));
-                      ("reqd", (Bool true));
-                      ("type", (Str "`$STRING`")) ]) ])) ]));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/public/digitalservices/mandatorClearingExportDownload/{fileId}"));
-                ("rename", (jo [
-                  ("param", (jo [
-                    ("fileId", (Str "file_id")) ])) ]));
                 ("segments", (ja [
                   (jo [
                     ("lit", (Str "public")) ]);
@@ -599,19 +786,29 @@ let make_config () : value =
                     ("lit", (Str "mandatorClearingExportDownload")) ]);
                   (jo [
                     ("var", (Str "file_id")) ]) ]));
-                ("select", (jo [
-                  ("exist", (ja [
-                    (Str "file_id") ])) ]));
-                ("transform", (jo [
-                  ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ]));
                 ("parts", (ja [
                   (Str "public");
                   (Str "digitalservices");
                   (Str "mandatorClearingExportDownload");
-                  (Str "{file_id}") ])) ]);
+                  (Str "{file_id}") ]));
+                ("rename", (jo [
+                  ("param", (jo [
+                    ("fileId", (Str "file_id")) ])) ]));
+                ("transform", (jo [
+                  ("req", (Str "`reqdata`"));
+                  ("res", (Str "`body`")) ]));
+                ("args", (jo [
+                  ("params", (ja [
+                    (jo [
+                      ("name", (Str "file_id"));
+                      ("orig", (Str "file_id"));
+                      ("type", (Str "`$STRING`"));
+                      ("kind", (Str "param"));
+                      ("reqd", (Bool true)) ]) ])) ]));
+                ("select", (jo [
+                  ("exist", (ja [
+                    (Str "file_id") ])) ])) ]);
               (jo [
-                ("args", (empty_map ()));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/public/digitalservices/mandatorClearingExportMetadata"));
@@ -622,20 +819,21 @@ let make_config () : value =
                     ("lit", (Str "digitalservices")) ]);
                   (jo [
                     ("lit", (Str "mandatorClearingExportMetadata")) ]) ]));
-                ("select", (empty_map ()));
-                ("transform", (jo [
-                  ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ]));
                 ("parts", (ja [
                   (Str "public");
                   (Str "digitalservices");
-                  (Str "mandatorClearingExportMetadata") ])) ]) ])) ]));
+                  (Str "mandatorClearingExportMetadata") ]));
+                ("rename", (empty_map ()));
+                ("transform", (jo [
+                  ("req", (Str "`reqdata`"));
+                  ("res", (Str "`body`")) ]));
+                ("args", (empty_map ()));
+                ("select", (empty_map ())) ]) ])) ]));
           ("load", (jo [
             ("input", (Str "data"));
             ("name", (Str "load"));
             ("points", (ja [
               (jo [
-                ("args", (empty_map ()));
                 ("kind", (Str "http"));
                 ("method", (Str "GET"));
                 ("orig", (Str "/public/digitalservices/mandatorClearingExportDownload/status"));
@@ -648,44 +846,52 @@ let make_config () : value =
                     ("lit", (Str "mandatorClearingExportDownload")) ]);
                   (jo [
                     ("lit", (Str "status")) ]) ]));
-                ("select", (empty_map ()));
-                ("transform", (jo [
-                  ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ]));
                 ("parts", (ja [
                   (Str "public");
                   (Str "digitalservices");
                   (Str "mandatorClearingExportDownload");
-                  (Str "status") ])) ]) ])) ])) ]));
+                  (Str "status") ]));
+                ("rename", (empty_map ()));
+                ("transform", (jo [
+                  ("req", (Str "`reqdata`"));
+                  ("res", (Str "`body`")) ]));
+                ("args", (empty_map ()));
+                ("select", (empty_map ())) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (ja [
             (ja [
-              (Str "mandator_clearing_export_download") ]) ])) ])) ]));
+              (Str "$.main.kit.entity.mandator_clearing_export_download") ]) ])) ])) ]));
       ("ec_data_ecom", (jo [
         ("fields", (ja [
           (jo [
             ("name", (Str "ecomData"));
+            ("title", (Str "Ecom Data"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "responseMessage"));
+            ("title", (Str "Response Message"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "terminalId"));
+            ("title", (Str "Terminal Id"));
+            ("type", (Str "`$INTEGER`"));
             ("req", (Bool true));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "transactionId"));
-            ("req", (Bool true));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Transaction Id"));
+            ("type", (Str "`$STRING`"));
+            ("req", (Bool true)) ]);
           (jo [
             ("name", (Str "transactionType"));
-            ("req", (Bool true));
-            ("type", (Str "`$STRING`")) ]) ]));
+            ("title", (Str "Transaction Type"));
+            ("type", (Str "`$STRING`"));
+            ("req", (Bool true)) ]) ]));
         ("name", (Str "ec_data_ecom"));
         ("op", (jo [
           ("create", (jo [
@@ -693,7 +899,6 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (empty_map ()));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/public/getEcData"));
@@ -702,35 +907,42 @@ let make_config () : value =
                     ("lit", (Str "public")) ]);
                   (jo [
                     ("lit", (Str "getEcData")) ]) ]));
-                ("select", (empty_map ()));
+                ("parts", (ja [
+                  (Str "public");
+                  (Str "getEcData") ]));
+                ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
-                ("parts", (ja [
-                  (Str "public");
-                  (Str "getEcData") ])) ]) ])) ])) ]));
+                ("args", (empty_map ()));
+                ("select", (empty_map ())) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("ecom_parameter", (jo [
         ("fields", (ja [
           (jo [
             ("name", (Str "ecomPass"));
+            ("title", (Str "Ecom Pass"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "ecomSkey"));
+            ("title", (Str "Ecom Skey"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "responseMessage"));
+            ("title", (Str "Response Message"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "terminalId"));
+            ("title", (Str "Terminal Id"));
+            ("type", (Str "`$INTEGER`"));
             ("req", (Bool true));
-            ("type", (Str "`$INTEGER`")) ]) ]));
+            ("format", (Str "int32")) ]) ]));
         ("name", (Str "ecom_parameter"));
         ("op", (jo [
           ("create", (jo [
@@ -738,7 +950,6 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (empty_map ()));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/public/getEcomParameters"));
@@ -747,40 +958,48 @@ let make_config () : value =
                     ("lit", (Str "public")) ]);
                   (jo [
                     ("lit", (Str "getEcomParameters")) ]) ]));
-                ("select", (empty_map ()));
+                ("parts", (ja [
+                  (Str "public");
+                  (Str "getEcomParameters") ]));
+                ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
-                ("parts", (ja [
-                  (Str "public");
-                  (Str "getEcomParameters") ])) ]) ])) ])) ]));
+                ("args", (empty_map ()));
+                ("select", (empty_map ())) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("ecr_data", (jo [
         ("fields", (ja [
           (jo [
             ("name", (Str "ecrData"));
+            ("title", (Str "Ecr Data"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "responseMessage"));
+            ("title", (Str "Response Message"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "terminalId"));
+            ("title", (Str "Terminal Id"));
+            ("type", (Str "`$INTEGER`"));
             ("req", (Bool true));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "transactionId"));
-            ("req", (Bool true));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Transaction Id"));
+            ("type", (Str "`$STRING`"));
+            ("req", (Bool true)) ]);
           (jo [
             ("name", (Str "transactionType"));
-            ("req", (Bool true));
-            ("type", (Str "`$STRING`")) ]) ]));
+            ("title", (Str "Transaction Type"));
+            ("type", (Str "`$STRING`"));
+            ("req", (Bool true)) ]) ]));
         ("name", (Str "ecr_data"));
         ("op", (jo [
           ("create", (jo [
@@ -788,7 +1007,6 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (empty_map ()));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/public/getEcrData"));
@@ -797,40 +1015,48 @@ let make_config () : value =
                     ("lit", (Str "public")) ]);
                   (jo [
                     ("lit", (Str "getEcrData")) ]) ]));
-                ("select", (empty_map ()));
+                ("parts", (ja [
+                  (Str "public");
+                  (Str "getEcrData") ]));
+                ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
-                ("parts", (ja [
-                  (Str "public");
-                  (Str "getEcrData") ])) ]) ])) ])) ]));
+                ("args", (empty_map ()));
+                ("select", (empty_map ())) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("emv_data", (jo [
         ("fields", (ja [
           (jo [
             ("name", (Str "emvData"));
+            ("title", (Str "Emv Data"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "responseMessage"));
+            ("title", (Str "Response Message"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "terminalId"));
+            ("title", (Str "Terminal Id"));
+            ("type", (Str "`$INTEGER`"));
             ("req", (Bool true));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "transactionId"));
-            ("req", (Bool true));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Transaction Id"));
+            ("type", (Str "`$STRING`"));
+            ("req", (Bool true)) ]);
           (jo [
             ("name", (Str "transactionType"));
-            ("req", (Bool true));
-            ("type", (Str "`$STRING`")) ]) ]));
+            ("title", (Str "Transaction Type"));
+            ("type", (Str "`$STRING`"));
+            ("req", (Bool true)) ]) ]));
         ("name", (Str "emv_data"));
         ("op", (jo [
           ("create", (jo [
@@ -838,7 +1064,6 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (empty_map ()));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/public/getEmvData"));
@@ -847,68 +1072,84 @@ let make_config () : value =
                     ("lit", (Str "public")) ]);
                   (jo [
                     ("lit", (Str "getEmvData")) ]) ]));
-                ("select", (empty_map ()));
+                ("parts", (ja [
+                  (Str "public");
+                  (Str "getEmvData") ]));
+                ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
-                ("parts", (ja [
-                  (Str "public");
-                  (Str "getEmvData") ])) ]) ])) ])) ]));
+                ("args", (empty_map ()));
+                ("select", (empty_map ())) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("enable_acquiring", (jo [
         ("fields", (ja [
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "accountNo"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Account No"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "additionalData"));
+            ("title", (Str "Additional Data"));
             ("type", (Str "`$OBJECT`")) ]);
           (jo [
             ("name", (Str "corporateUuid"));
-            ("req", (Bool true));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Corporate Uuid"));
+            ("type", (Str "`$STRING`"));
+            ("req", (Bool true)) ]);
           (jo [
             ("name", (Str "currency"));
-            ("req", (Bool true));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Currency"));
+            ("type", (Str "`$STRING`"));
+            ("req", (Bool true)) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "merchantCategoryCode"));
+            ("title", (Str "Merchant Category Code"));
+            ("type", (Str "`$INTEGER`"));
             ("req", (Bool true));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "packageOrderUuid"));
-            ("req", (Bool true));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Package Order Uuid"));
+            ("type", (Str "`$STRING`"));
+            ("req", (Bool true)) ]);
           (jo [
             ("name", (Str "productOrderUuid"));
-            ("req", (Bool true));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Product Order Uuid"));
+            ("type", (Str "`$STRING`"));
+            ("req", (Bool true)) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "responseMessage"));
+            ("title", (Str "Response Message"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "sortingCode"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Sorting Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "templateName"));
-            ("req", (Bool true));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Template Name"));
+            ("type", (Str "`$STRING`"));
+            ("req", (Bool true)) ]);
           (jo [
             ("name", (Str "terminalIdAcq"));
+            ("title", (Str "Terminal Id Acq"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "terminalIds"));
+            ("title", (Str "Terminal Ids"));
             ("type", (Str "`$ARRAY`")) ]);
           (jo [
             ("name", (Str "vuNummer"));
+            ("title", (Str "Vu Nummer"));
             ("type", (Str "`$STRING`")) ]) ]));
         ("name", (Str "enable_acquiring"));
         ("op", (jo [
@@ -917,33 +1158,37 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (empty_map ()));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/enableAcquiring"));
                 ("segments", (ja [
                   (jo [
                     ("lit", (Str "enableAcquiring")) ]) ]));
-                ("select", (empty_map ()));
+                ("parts", (ja [
+                  (Str "enableAcquiring") ]));
+                ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
-                ("parts", (ja [
-                  (Str "enableAcquiring") ])) ]) ])) ])) ]));
+                ("args", (empty_map ()));
+                ("select", (empty_map ())) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("get_merchant_contract_number", (jo [
         ("fields", (ja [
           (jo [
             ("name", (Str "merchantContractNumber"));
-            ("req", (Bool true));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Merchant Contract Number"));
+            ("type", (Str "`$STRING`"));
+            ("req", (Bool true)) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "responseMessage"));
+            ("title", (Str "Response Message"));
             ("type", (Str "`$STRING`")) ]) ]));
         ("name", (Str "get_merchant_contract_number"));
         ("op", (jo [
@@ -952,34 +1197,38 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (empty_map ()));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/getMerchantContractNumber"));
                 ("segments", (ja [
                   (jo [
                     ("lit", (Str "getMerchantContractNumber")) ]) ]));
-                ("select", (empty_map ()));
+                ("parts", (ja [
+                  (Str "getMerchantContractNumber") ]));
+                ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
-                ("parts", (ja [
-                  (Str "getMerchantContractNumber") ])) ]) ])) ])) ]));
+                ("args", (empty_map ()));
+                ("select", (empty_map ())) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("get_template_xml", (jo [
         ("fields", (ja [
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "responseMessage"));
+            ("title", (Str "Response Message"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "templateName"));
-            ("req", (Bool true));
-            ("type", (Str "`$STRING`")) ]) ]));
+            ("title", (Str "Template Name"));
+            ("type", (Str "`$STRING`"));
+            ("req", (Bool true)) ]) ]));
         ("name", (Str "get_template_xml"));
         ("op", (jo [
           ("create", (jo [
@@ -987,7 +1236,6 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (empty_map ()));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/public/getTemplateXml"));
@@ -996,27 +1244,32 @@ let make_config () : value =
                     ("lit", (Str "public")) ]);
                   (jo [
                     ("lit", (Str "getTemplateXml")) ]) ]));
-                ("select", (empty_map ()));
+                ("parts", (ja [
+                  (Str "public");
+                  (Str "getTemplateXml") ]));
+                ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
-                ("parts", (ja [
-                  (Str "public");
-                  (Str "getTemplateXml") ])) ]) ])) ])) ]));
+                ("args", (empty_map ()));
+                ("select", (empty_map ())) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("introduce_mandator", (jo [
         ("fields", (ja [
           (jo [
             ("name", (Str "mandatorName"));
-            ("req", (Bool true));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Mandator Name"));
+            ("type", (Str "`$STRING`"));
+            ("req", (Bool true)) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "responseMessage"));
+            ("title", (Str "Response Message"));
             ("type", (Str "`$STRING`")) ]) ]));
         ("name", (Str "introduce_mandator"));
         ("op", (jo [
@@ -1025,34 +1278,38 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (empty_map ()));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/introduceMandator"));
                 ("segments", (ja [
                   (jo [
                     ("lit", (Str "introduceMandator")) ]) ]));
-                ("select", (empty_map ()));
+                ("parts", (ja [
+                  (Str "introduceMandator") ]));
+                ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
-                ("parts", (ja [
-                  (Str "introduceMandator") ])) ]) ])) ])) ]));
+                ("args", (empty_map ()));
+                ("select", (empty_map ())) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("introduce_package", (jo [
         ("fields", (ja [
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "responseMessage"));
+            ("title", (Str "Response Message"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "terminalTemplateDescription"));
-            ("req", (Bool true));
-            ("type", (Str "`$STRING`")) ]) ]));
+            ("title", (Str "Terminal Template Description"));
+            ("type", (Str "`$STRING`"));
+            ("req", (Bool true)) ]) ]));
         ("name", (Str "introduce_package"));
         ("op", (jo [
           ("create", (jo [
@@ -1060,55 +1317,66 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (empty_map ()));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/introducePackage"));
                 ("segments", (ja [
                   (jo [
                     ("lit", (Str "introducePackage")) ]) ]));
-                ("select", (empty_map ()));
+                ("parts", (ja [
+                  (Str "introducePackage") ]));
+                ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
-                ("parts", (ja [
-                  (Str "introducePackage") ])) ]) ])) ])) ]));
+                ("args", (empty_map ()));
+                ("select", (empty_map ())) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("keep_alive", (jo [
         ("fields", (ja [
           (jo [
             ("name", (Str "hwserialno"));
+            ("title", (Str "Hwserialno"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "kaDateTimeFrom"));
+            ("title", (Str "Ka Date Time From"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "kaDateTimeTo"));
+            ("title", (Str "Ka Date Time To"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "keepAliveData"));
+            ("title", (Str "Keep Alive Data"));
             ("type", (Str "`$ARRAY`")) ]);
           (jo [
             ("name", (Str "pagination"));
+            ("title", (Str "Pagination"));
             ("type", (Str "`$OBJECT`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "responseMessage"));
+            ("title", (Str "Response Message"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "terminalDateTimeFrom"));
+            ("title", (Str "Terminal Date Time From"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "terminalDateTimeTo"));
+            ("title", (Str "Terminal Date Time To"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "terminalId"));
-            ("type", (Str "`$INTEGER`")) ]) ]));
+            ("title", (Str "Terminal Id"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]) ]));
         ("name", (Str "keep_alive"));
         ("op", (jo [
           ("create", (jo [
@@ -1116,7 +1384,6 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (empty_map ()));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/public/keepalive"));
@@ -1125,35 +1392,43 @@ let make_config () : value =
                     ("lit", (Str "public")) ]);
                   (jo [
                     ("lit", (Str "keepalive")) ]) ]));
-                ("select", (empty_map ()));
+                ("parts", (ja [
+                  (Str "public");
+                  (Str "keepalive") ]));
+                ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
-                ("parts", (ja [
-                  (Str "public");
-                  (Str "keepalive") ])) ]) ])) ])) ]));
+                ("args", (empty_map ()));
+                ("select", (empty_map ())) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("list_terminal", (jo [
         ("fields", (ja [
           (jo [
             ("name", (Str "corporateUuid"));
+            ("title", (Str "Corporate Uuid"));
             ("type", (Str "`$ARRAY`")) ]);
           (jo [
             ("name", (Str "filter"));
+            ("title", (Str "Filter"));
             ("type", (Str "`$OBJECT`")) ]);
           (jo [
             ("name", (Str "pagination"));
+            ("title", (Str "Pagination"));
             ("type", (Str "`$OBJECT`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "responseMessage"));
+            ("title", (Str "Response Message"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "terminals"));
+            ("title", (Str "Terminals"));
             ("type", (Str "`$ARRAY`")) ]) ]));
         ("name", (Str "list_terminal"));
         ("op", (jo [
@@ -1162,7 +1437,6 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (empty_map ()));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/public/listTerminals"));
@@ -1171,39 +1445,47 @@ let make_config () : value =
                     ("lit", (Str "public")) ]);
                   (jo [
                     ("lit", (Str "listTerminals")) ]) ]));
-                ("select", (empty_map ()));
+                ("parts", (ja [
+                  (Str "public");
+                  (Str "listTerminals") ]));
+                ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
-                ("parts", (ja [
-                  (Str "public");
-                  (Str "listTerminals") ])) ]) ])) ])) ]));
+                ("args", (empty_map ()));
+                ("select", (empty_map ())) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("mandator_clearing_export", (jo [
         ("fields", (ja [
           (jo [
             ("name", (Str "clearingDateFrom"));
+            ("title", (Str "Clearing Date From"));
+            ("type", (Str "`$STRING`"));
             ("req", (Bool true));
-            ("short", (Str "Date and time in the format yyyy-MM-dd'T'HH:mm:ssZ"));
-            ("type", (Str "`$STRING`")) ]);
+            ("short", (Str "Date and time in the format yyyy-MM-dd'T'HH:mm:ssZ")) ]);
           (jo [
             ("name", (Str "clearingDateTo"));
+            ("title", (Str "Clearing Date To"));
+            ("type", (Str "`$STRING`"));
             ("req", (Bool true));
-            ("short", (Str "Date and time in the format yyyy-MM-dd'T'HH:mm:ssZ"));
-            ("type", (Str "`$STRING`")) ]);
+            ("short", (Str "Date and time in the format yyyy-MM-dd'T'HH:mm:ssZ")) ]);
           (jo [
             ("name", (Str "pagination"));
+            ("title", (Str "Pagination"));
             ("type", (Str "`$OBJECT`")) ]);
           (jo [
             ("name", (Str "records"));
+            ("title", (Str "Records"));
             ("type", (Str "`$ARRAY`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "responseMessage"));
+            ("title", (Str "Response Message"));
             ("type", (Str "`$STRING`")) ]) ]));
         ("name", (Str "mandator_clearing_export"));
         ("op", (jo [
@@ -1212,7 +1494,6 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (empty_map ()));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/public/digitalservices/mandatorClearingExport"));
@@ -1223,52 +1504,62 @@ let make_config () : value =
                     ("lit", (Str "digitalservices")) ]);
                   (jo [
                     ("lit", (Str "mandatorClearingExport")) ]) ]));
-                ("select", (empty_map ()));
-                ("transform", (jo [
-                  ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ]));
                 ("parts", (ja [
                   (Str "public");
                   (Str "digitalservices");
-                  (Str "mandatorClearingExport") ])) ]) ])) ])) ]));
+                  (Str "mandatorClearingExport") ]));
+                ("rename", (empty_map ()));
+                ("transform", (jo [
+                  ("req", (Str "`reqdata`"));
+                  ("res", (Str "`body`")) ]));
+                ("args", (empty_map ()));
+                ("select", (empty_map ())) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("mandator_clearing_export_download", (jo [
         ("fields", (ja [
           (jo [
-            ("format", (Str "date-time"));
             ("name", (Str "clearingDateFrom"));
+            ("title", (Str "Clearing Date From"));
+            ("type", (Str "`$STRING`"));
             ("req", (Bool true));
             ("short", (Str "Start date for clearing export (inclusive)"));
-            ("type", (Str "`$STRING`")) ]);
+            ("format", (Str "date-time")) ]);
           (jo [
-            ("format", (Str "date-time"));
             ("name", (Str "clearingDateTo"));
+            ("title", (Str "Clearing Date To"));
+            ("type", (Str "`$STRING`"));
             ("req", (Bool true));
             ("short", (Str "End date for clearing export (inclusive)"));
-            ("type", (Str "`$STRING`")) ]);
+            ("format", (Str "date-time")) ]);
           (jo [
             ("name", (Str "fileId"));
-            ("short", (Str "Unique file identifier for tracking and downloading"));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "File Id"));
+            ("type", (Str "`$STRING`"));
+            ("short", (Str "Unique file identifier for tracking and downloading")) ]);
           (jo [
             ("name", (Str "filenameTemplate"));
-            ("short", (Str "Optional filename template for the export file"));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Filename Template"));
+            ("type", (Str "`$STRING`"));
+            ("short", (Str "Optional filename template for the export file")) ]);
           (jo [
             ("name", (Str "id"));
+            ("title", (Str "Id"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "responseMessage"));
+            ("title", (Str "Response Message"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "status"));
-            ("short", (Str "Processing status of the export request"));
-            ("type", (Str "`$STRING`")) ]) ]));
+            ("title", (Str "Status"));
+            ("type", (Str "`$STRING`"));
+            ("short", (Str "Processing status of the export request")) ]) ]));
         ("id", (jo [
           ("field", (Str "id"));
           ("name", (Str "id")) ]));
@@ -1279,7 +1570,6 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (empty_map ()));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/public/digitalservices/mandatorClearingExportDownload"));
@@ -1290,33 +1580,24 @@ let make_config () : value =
                     ("lit", (Str "digitalservices")) ]);
                   (jo [
                     ("lit", (Str "mandatorClearingExportDownload")) ]) ]));
-                ("select", (empty_map ()));
-                ("transform", (jo [
-                  ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ]));
                 ("parts", (ja [
                   (Str "public");
                   (Str "digitalservices");
-                  (Str "mandatorClearingExportDownload") ])) ]) ])) ]));
+                  (Str "mandatorClearingExportDownload") ]));
+                ("rename", (empty_map ()));
+                ("transform", (jo [
+                  ("req", (Str "`reqdata`"));
+                  ("res", (Str "`body`")) ]));
+                ("args", (empty_map ()));
+                ("select", (empty_map ())) ]) ])) ]));
           ("load", (jo [
             ("input", (Str "data"));
             ("name", (Str "load"));
             ("points", (ja [
               (jo [
-                ("args", (jo [
-                  ("params", (ja [
-                    (jo [
-                      ("kind", (Str "param"));
-                      ("name", (Str "id"));
-                      ("orig", (Str "file_id"));
-                      ("reqd", (Bool true));
-                      ("type", (Str "`$STRING`")) ]) ])) ]));
                 ("kind", (Str "http"));
                 ("method", (Str "GET"));
                 ("orig", (Str "/public/digitalservices/mandatorClearingExportDownload/{fileId}"));
-                ("rename", (jo [
-                  ("param", (jo [
-                    ("fileId", (Str "id")) ])) ]));
                 ("segments", (ja [
                   (jo [
                     ("lit", (Str "public")) ]);
@@ -1326,40 +1607,56 @@ let make_config () : value =
                     ("lit", (Str "mandatorClearingExportDownload")) ]);
                   (jo [
                     ("var", (Str "id")) ]) ]));
-                ("select", (jo [
-                  ("exist", (ja [
-                    (Str "id") ])) ]));
-                ("transform", (jo [
-                  ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ]));
                 ("parts", (ja [
                   (Str "public");
                   (Str "digitalservices");
                   (Str "mandatorClearingExportDownload");
-                  (Str "{id}") ])) ]) ])) ])) ]));
+                  (Str "{id}") ]));
+                ("rename", (jo [
+                  ("param", (jo [
+                    ("fileId", (Str "id")) ])) ]));
+                ("transform", (jo [
+                  ("req", (Str "`reqdata`"));
+                  ("res", (Str "`body`")) ]));
+                ("args", (jo [
+                  ("params", (ja [
+                    (jo [
+                      ("name", (Str "id"));
+                      ("orig", (Str "file_id"));
+                      ("type", (Str "`$STRING`"));
+                      ("kind", (Str "param"));
+                      ("reqd", (Bool true)) ]) ])) ]));
+                ("select", (jo [
+                  ("exist", (ja [
+                    (Str "id") ])) ])) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("mandator_clearing_export_summary", (jo [
         ("fields", (ja [
           (jo [
             ("name", (Str "clearingDateFrom"));
+            ("title", (Str "Clearing Date From"));
+            ("type", (Str "`$STRING`"));
             ("req", (Bool true));
-            ("short", (Str "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz"));
-            ("type", (Str "`$STRING`")) ]);
+            ("short", (Str "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz")) ]);
           (jo [
             ("name", (Str "clearingDateTo"));
+            ("title", (Str "Clearing Date To"));
+            ("type", (Str "`$STRING`"));
             ("req", (Bool true));
-            ("short", (Str "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz"));
-            ("type", (Str "`$STRING`")) ]);
+            ("short", (Str "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz")) ]);
           (jo [
             ("name", (Str "records"));
+            ("title", (Str "Records"));
             ("type", (Str "`$ARRAY`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "responseMessage"));
+            ("title", (Str "Response Message"));
             ("type", (Str "`$STRING`")) ]) ]));
         ("name", (Str "mandator_clearing_export_summary"));
         ("op", (jo [
@@ -1368,7 +1665,6 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (empty_map ()));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/public/digitalservices/mandatorClearingExportSummary"));
@@ -1379,98 +1675,125 @@ let make_config () : value =
                     ("lit", (Str "digitalservices")) ]);
                   (jo [
                     ("lit", (Str "mandatorClearingExportSummary")) ]) ]));
-                ("select", (empty_map ()));
-                ("transform", (jo [
-                  ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ]));
                 ("parts", (ja [
                   (Str "public");
                   (Str "digitalservices");
-                  (Str "mandatorClearingExportSummary") ])) ]) ])) ])) ]));
+                  (Str "mandatorClearingExportSummary") ]));
+                ("rename", (empty_map ()));
+                ("transform", (jo [
+                  ("req", (Str "`reqdata`"));
+                  ("res", (Str "`body`")) ]));
+                ("args", (empty_map ()));
+                ("select", (empty_map ())) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("merchant_portal_services_api", (jo [
         ("fields", (ja [
           (jo [
             ("name", (Str "3DSecure"));
+            ("title", (Str "3 D Secure"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "authorizationCode"));
+            ("title", (Str "Authorization Code"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "cardBrand"));
+            ("title", (Str "Card Brand"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "clearingAmountFrom"));
+            ("title", (Str "Clearing Amount From"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "clearingAmountTo"));
+            ("title", (Str "Clearing Amount To"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "clearingCurrency"));
+            ("title", (Str "Clearing Currency"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "clearingStatus"));
+            ("title", (Str "Clearing Status"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "corporateUUID"));
+            ("title", (Str "Corporate Uuid"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "orderByTransactionDate"));
+            ("title", (Str "Order By Transaction Date"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "pagination"));
+            ("title", (Str "Pagination"));
             ("type", (Str "`$OBJECT`")) ]);
           (jo [
             ("name", (Str "receiptNumber"));
+            ("title", (Str "Receipt Number"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "referencedTransactionId"));
+            ("title", (Str "Referenced Transaction Id"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "retrievalReferenceNumber"));
+            ("title", (Str "Retrieval Reference Number"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "sourceId"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Source Id"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "tecsengineResponseCodeFrom"));
+            ("title", (Str "Tecsengine Response Code From"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "tecsengineResponseCodeTo"));
+            ("title", (Str "Tecsengine Response Code To"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "terminalId"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Terminal Id"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "traceNumber"));
+            ("title", (Str "Trace Number"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "transactionAmountFrom"));
+            ("title", (Str "Transaction Amount From"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "transactionAmountTo"));
+            ("title", (Str "Transaction Amount To"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "date-time"));
             ("name", (Str "transactionDateFrom"));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Transaction Date From"));
+            ("type", (Str "`$STRING`"));
+            ("format", (Str "date-time")) ]);
           (jo [
-            ("format", (Str "date-time"));
             ("name", (Str "transactionDateTo"));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Transaction Date To"));
+            ("type", (Str "`$STRING`"));
+            ("format", (Str "date-time")) ]);
           (jo [
             ("name", (Str "transactionId"));
+            ("title", (Str "Transaction Id"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "transactionType"));
+            ("title", (Str "Transaction Type"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "wallet"));
-            ("short", (Str "Filter by wallet type."));
-            ("type", (Str "`$STRING`")) ]) ]));
+            ("title", (Str "Wallet"));
+            ("type", (Str "`$STRING`"));
+            ("short", (Str "Filter by wallet type.")) ]) ]));
         ("name", (Str "merchant_portal_services_api"));
         ("op", (jo [
           ("create", (jo [
@@ -1478,7 +1801,6 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (empty_map ()));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/public/transactionHistoryCsv"));
@@ -1487,33 +1809,40 @@ let make_config () : value =
                     ("lit", (Str "public")) ]);
                   (jo [
                     ("lit", (Str "transactionHistoryCsv")) ]) ]));
-                ("select", (empty_map ()));
+                ("parts", (ja [
+                  (Str "public");
+                  (Str "transactionHistoryCsv") ]));
+                ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
-                ("parts", (ja [
-                  (Str "public");
-                  (Str "transactionHistoryCsv") ])) ]) ])) ])) ]));
+                ("args", (empty_map ()));
+                ("select", (empty_map ())) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("move_tid", (jo [
         ("fields", (ja [
           (jo [
             ("name", (Str "productorderuuids"));
-            ("req", (Bool true));
-            ("type", (Str "`$ARRAY`")) ]);
+            ("title", (Str "Productorderuuids"));
+            ("type", (Str "`$ARRAY`"));
+            ("req", (Bool true)) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "responseMessage"));
+            ("title", (Str "Response Message"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "targetPackageorderuuid"));
+            ("title", (Str "Target Packageorderuuid"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "targetProductorderuuid"));
+            ("title", (Str "Target Productorderuuid"));
             ("type", (Str "`$STRING`")) ]) ]));
         ("name", (Str "move_tid"));
         ("op", (jo [
@@ -1522,101 +1851,119 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (empty_map ()));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/moveTid"));
                 ("segments", (ja [
                   (jo [
                     ("lit", (Str "moveTid")) ]) ]));
-                ("select", (empty_map ()));
+                ("parts", (ja [
+                  (Str "moveTid") ]));
+                ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
-                ("parts", (ja [
-                  (Str "moveTid") ])) ]) ])) ])) ]));
+                ("args", (empty_map ()));
+                ("select", (empty_map ())) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("payment_manual", (jo [
         ("fields", (ja [
           (jo [
             ("name", (Str "acquirerName"));
-            ("short", (Str "Acquirer name parsed from KKG field"));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Acquirer Name"));
+            ("type", (Str "`$STRING`"));
+            ("short", (Str "Acquirer name parsed from KKG field")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "amount"));
+            ("title", (Str "Amount"));
+            ("type", (Str "`$INTEGER`"));
             ("req", (Bool true));
             ("short", (Str "Transaction amount in minor units (cents)"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "authorizationNumber"));
-            ("short", (Str "Authorization number from the gateway"));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Authorization Number"));
+            ("type", (Str "`$STRING`"));
+            ("short", (Str "Authorization number from the gateway")) ]);
           (jo [
             ("name", (Str "cardNumber"));
+            ("title", (Str "Card Number"));
+            ("type", (Str "`$STRING`"));
             ("req", (Bool true));
-            ("short", (Str "Card number - 12 to 19 digits, must pass Luhn validation"));
-            ("type", (Str "`$STRING`")) ]);
+            ("short", (Str "Card number - 12 to 19 digits, must pass Luhn validation")) ]);
           (jo [
             ("name", (Str "cardType"));
-            ("short", (Str "Card type parsed from KKG field"));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Card Type"));
+            ("type", (Str "`$STRING`"));
+            ("short", (Str "Card type parsed from KKG field")) ]);
           (jo [
             ("name", (Str "currency"));
+            ("title", (Str "Currency"));
+            ("type", (Str "`$STRING`"));
             ("req", (Bool true));
-            ("short", (Str "Currency code - 3 uppercase letters (ISO 4217)"));
-            ("type", (Str "`$STRING`")) ]);
+            ("short", (Str "Currency code - 3 uppercase letters (ISO 4217)")) ]);
           (jo [
             ("name", (Str "cvc"));
-            ("short", (Str "Card verification code - 3-4 digits (optional)"));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Cvc"));
+            ("type", (Str "`$STRING`"));
+            ("short", (Str "Card verification code - 3-4 digits (optional)")) ]);
           (jo [
             ("name", (Str "dateTimeTx"));
-            ("short", (Str "Date and time of the transaction"));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Date Time Tx"));
+            ("type", (Str "`$STRING`"));
+            ("short", (Str "Date and time of the transaction")) ]);
           (jo [
             ("name", (Str "expDate"));
+            ("title", (Str "Exp Date"));
+            ("type", (Str "`$STRING`"));
             ("req", (Bool true));
-            ("short", (Str "Card expiry date in MMYY format"));
-            ("type", (Str "`$STRING`")) ]);
+            ("short", (Str "Card expiry date in MMYY format")) ]);
           (jo [
             ("name", (Str "merchantId"));
-            ("short", (Str "Merchant ID (VU-NUMMER)"));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Merchant Id"));
+            ("type", (Str "`$STRING`"));
+            ("short", (Str "Merchant ID (VU-NUMMER)")) ]);
           (jo [
             ("name", (Str "originalTransactionId"));
-            ("short", (Str "Original transaction ID from gateway"));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Original Transaction Id"));
+            ("type", (Str "`$STRING`"));
+            ("short", (Str "Original transaction ID from gateway")) ]);
           (jo [
             ("name", (Str "password"));
-            ("short", (Str "Terminal password sent as Kennwort in TECS XML (optional)"));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Password"));
+            ("type", (Str "`$STRING`"));
+            ("short", (Str "Terminal password sent as Kennwort in TECS XML (optional)")) ]);
           (jo [
             ("name", (Str "responseCode"));
-            ("short", (Str "Response code - 00 for success, otherwise error code"));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$STRING`"));
+            ("short", (Str "Response code - 00 for success, otherwise error code")) ]);
           (jo [
             ("name", (Str "responseMessage"));
-            ("short", (Str "Response message - 'Approved' for success, error description otherwise"));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Response Message"));
+            ("type", (Str "`$STRING`"));
+            ("short", (Str "Response message - 'Approved' for success, error description otherwise")) ]);
           (jo [
             ("name", (Str "terminalId"));
+            ("title", (Str "Terminal Id"));
+            ("type", (Str "`$STRING`"));
             ("op", (jo [
               ("create", (jo [
                 ("req", (Bool true));
                 ("type", (Str "`$STRING`")) ])) ]));
-            ("short", (Str "Terminal ID used for the transaction"));
-            ("type", (Str "`$STRING`")) ]);
+            ("short", (Str "Terminal ID used for the transaction")) ]);
           (jo [
             ("name", (Str "transactionId"));
-            ("short", (Str "Transaction ID generated by the backend"));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Transaction Id"));
+            ("type", (Str "`$STRING`"));
+            ("short", (Str "Transaction ID generated by the backend")) ]);
           (jo [
             ("name", (Str "txtype"));
+            ("title", (Str "Txtype"));
+            ("type", (Str "`$STRING`"));
             ("req", (Bool true));
-            ("short", (Str "Transaction type"));
-            ("type", (Str "`$STRING`")) ]) ]));
+            ("short", (Str "Transaction type")) ]) ]));
         ("name", (Str "payment_manual"));
         ("op", (jo [
           ("create", (jo [
@@ -1624,7 +1971,6 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (empty_map ()));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/public/paymentManual"));
@@ -1633,71 +1979,85 @@ let make_config () : value =
                     ("lit", (Str "public")) ]);
                   (jo [
                     ("lit", (Str "paymentManual")) ]) ]));
-                ("select", (empty_map ()));
+                ("parts", (ja [
+                  (Str "public");
+                  (Str "paymentManual") ]));
+                ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
-                ("parts", (ja [
-                  (Str "public");
-                  (Str "paymentManual") ])) ]) ])) ])) ]));
+                ("args", (empty_map ()));
+                ("select", (empty_map ())) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("payment_sred", (jo [
         ("fields", (ja [
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "amount"));
+            ("title", (Str "Amount"));
+            ("type", (Str "`$INTEGER`"));
             ("req", (Bool true));
             ("short", (Str "Transaction amount in minor units (cents)"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "currency"));
+            ("title", (Str "Currency"));
+            ("type", (Str "`$STRING`"));
             ("req", (Bool true));
-            ("short", (Str "Currency code - 3 uppercase letters (ISO 4217)"));
-            ("type", (Str "`$STRING`")) ]);
+            ("short", (Str "Currency code - 3 uppercase letters (ISO 4217)")) ]);
           (jo [
             ("name", (Str "device"));
-            ("short", (Str "Device type that provided the SRED payload"));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Device"));
+            ("type", (Str "`$STRING`"));
+            ("short", (Str "Device type that provided the SRED payload")) ]);
           (jo [
             ("name", (Str "devicePayload"));
+            ("title", (Str "Device Payload"));
+            ("type", (Str "`$STRING`"));
             ("req", (Bool true));
-            ("short", (Str "SRED encrypted device payload from the device (minimum 32 characters)"));
-            ("type", (Str "`$STRING`")) ]);
+            ("short", (Str "SRED encrypted device payload from the device (minimum 32 characters)")) ]);
           (jo [
             ("name", (Str "expDate"));
-            ("short", (Str "Card expiry date in MMYY format"));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Exp Date"));
+            ("type", (Str "`$STRING`"));
+            ("short", (Str "Card expiry date in MMYY format")) ]);
           (jo [
             ("name", (Str "mode"));
-            ("short", (Str "Decryption mode"));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Mode"));
+            ("type", (Str "`$STRING`"));
+            ("short", (Str "Decryption mode")) ]);
           (jo [
             ("name", (Str "panMasked"));
-            ("short", (Str "Masked PAN (first 6 and last 4 digits)"));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Pan Masked"));
+            ("type", (Str "`$STRING`"));
+            ("short", (Str "Masked PAN (first 6 and last 4 digits)")) ]);
           (jo [
             ("name", (Str "password"));
-            ("short", (Str "Terminal password sent as Kennwort in TECS XML (optional)"));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Password"));
+            ("type", (Str "`$STRING`"));
+            ("short", (Str "Terminal password sent as Kennwort in TECS XML (optional)")) ]);
           (jo [
             ("name", (Str "serial"));
-            ("short", (Str "Device serial number"));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Serial"));
+            ("type", (Str "`$STRING`"));
+            ("short", (Str "Device serial number")) ]);
           (jo [
             ("name", (Str "serviceCode"));
-            ("short", (Str "Service code from the card"));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Service Code"));
+            ("type", (Str "`$STRING`"));
+            ("short", (Str "Service code from the card")) ]);
           (jo [
             ("name", (Str "terminalId"));
+            ("title", (Str "Terminal Id"));
+            ("type", (Str "`$STRING`"));
             ("req", (Bool true));
-            ("short", (Str "Terminal ID - 8 digits"));
-            ("type", (Str "`$STRING`")) ]);
+            ("short", (Str "Terminal ID - 8 digits")) ]);
           (jo [
             ("name", (Str "txtype"));
+            ("title", (Str "Txtype"));
+            ("type", (Str "`$STRING`"));
             ("req", (Bool true));
-            ("short", (Str "Transaction type"));
-            ("type", (Str "`$STRING`")) ]) ]));
+            ("short", (Str "Transaction type")) ]) ]));
         ("name", (Str "payment_sred"));
         ("op", (jo [
           ("create", (jo [
@@ -1705,7 +2065,6 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (empty_map ()));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/public/paymentSred"));
@@ -1714,173 +2073,217 @@ let make_config () : value =
                     ("lit", (Str "public")) ]);
                   (jo [
                     ("lit", (Str "paymentSred")) ]) ]));
-                ("select", (empty_map ()));
+                ("parts", (ja [
+                  (Str "public");
+                  (Str "paymentSred") ]));
+                ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body.sred`")) ]));
-                ("parts", (ja [
-                  (Str "public");
-                  (Str "paymentSred") ])) ]) ])) ])) ]));
+                ("args", (empty_map ()));
+                ("select", (empty_map ())) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("pre_auth_transaction_completion", (jo [
         ("fields", (ja [
           (jo [
             ("name", (Str "acquirerId"));
+            ("title", (Str "Acquirer Id"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "acquirerName"));
+            ("title", (Str "Acquirer Name"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "actualBonusPoints"));
+            ("title", (Str "Actual Bonus Points"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "amount"));
+            ("title", (Str "Amount"));
+            ("type", (Str "`$INTEGER`"));
             ("op", (jo [
               ("create", (jo [
                 ("req", (Bool true));
                 ("type", (Str "`$INTEGER`")) ])) ]));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "authorizationCode"));
+            ("title", (Str "Authorization Code"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "balanceAmount"));
+            ("title", (Str "Balance Amount"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "cardBrand"));
+            ("title", (Str "Card Brand"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "cardNumber"));
+            ("title", (Str "Card Number"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "cardNumberReference"));
-            ("req", (Bool true));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Card Number Reference"));
+            ("type", (Str "`$STRING`"));
+            ("req", (Bool true)) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "clientId"));
+            ("title", (Str "Client Id"));
+            ("type", (Str "`$INTEGER`"));
             ("req", (Bool true));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "currency"));
-            ("req", (Bool true));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Currency"));
+            ("type", (Str "`$STRING`"));
+            ("req", (Bool true)) ]);
           (jo [
             ("name", (Str "cvc"));
+            ("title", (Str "Cvc"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "ecData"));
+            ("title", (Str "Ec Data"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "ecrData"));
+            ("title", (Str "Ecr Data"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "emvData"));
+            ("title", (Str "Emv Data"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int64"));
             ("name", (Str "exchangeFee"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Exchange Fee"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int64")) ]);
           (jo [
             ("name", (Str "exchangeRate"));
+            ("title", (Str "Exchange Rate"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "languageCode"));
+            ("title", (Str "Language Code"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "merchantAddress"));
+            ("title", (Str "Merchant Address"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "merchantName"));
+            ("title", (Str "Merchant Name"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "merchantNumber"));
+            ("title", (Str "Merchant Number"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "messageType"));
+            ("title", (Str "Message Type"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "originalTraceNumber"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Original Trace Number"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "originalTransactionId"));
+            ("title", (Str "Original Transaction Id"));
+            ("type", (Str "`$STRING`"));
             ("op", (jo [
               ("create", (jo [
                 ("req", (Bool true));
-                ("type", (Str "`$STRING`")) ])) ]));
-            ("type", (Str "`$STRING`")) ]);
+                ("type", (Str "`$STRING`")) ])) ])) ]);
           (jo [
             ("name", (Str "password"));
+            ("title", (Str "Password"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "paymentReason"));
+            ("title", (Str "Payment Reason"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "receiptFooter"));
+            ("title", (Str "Receipt Footer"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "receiptHeader"));
+            ("title", (Str "Receipt Header"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "receiptLayout"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Receipt Layout"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "receiptNumber"));
-            ("req", (Bool true));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Receipt Number"));
+            ("type", (Str "`$STRING`"));
+            ("req", (Bool true)) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "responseMessage"));
+            ("title", (Str "Response Message"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "serialNumber"));
+            ("title", (Str "Serial Number"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "svc"));
+            ("title", (Str "Svc"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "terminalId"));
+            ("title", (Str "Terminal Id"));
+            ("type", (Str "`$INTEGER`"));
             ("req", (Bool true));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "terminalLocation"));
+            ("title", (Str "Terminal Location"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "traceNumber"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Trace Number"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
-            ("format", (Str "date-time"));
             ("name", (Str "transactionDate"));
+            ("title", (Str "Transaction Date"));
+            ("type", (Str "`$STRING`"));
             ("op", (jo [
               ("create", (jo [
                 ("req", (Bool true));
                 ("type", (Str "`$STRING`")) ])) ]));
-            ("type", (Str "`$STRING`")) ]);
+            ("format", (Str "date-time")) ]);
           (jo [
             ("name", (Str "transactionId"));
+            ("title", (Str "Transaction Id"));
+            ("type", (Str "`$STRING`"));
             ("op", (jo [
               ("create", (jo [
                 ("req", (Bool true));
-                ("type", (Str "`$STRING`")) ])) ]));
-            ("type", (Str "`$STRING`")) ]);
+                ("type", (Str "`$STRING`")) ])) ])) ]);
           (jo [
             ("name", (Str "transactionType"));
-            ("req", (Bool true));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Transaction Type"));
+            ("type", (Str "`$STRING`"));
+            ("req", (Bool true)) ]);
           (jo [
             ("name", (Str "txType"));
+            ("title", (Str "Tx Type"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "userData"));
+            ("title", (Str "User Data"));
             ("type", (Str "`$STRING`")) ]) ]));
         ("name", (Str "pre_auth_transaction_completion"));
         ("op", (jo [
@@ -1889,7 +2292,6 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (empty_map ()));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/public/paymentTransaction"));
@@ -1898,15 +2300,16 @@ let make_config () : value =
                     ("lit", (Str "public")) ]);
                   (jo [
                     ("lit", (Str "paymentTransaction")) ]) ]));
-                ("select", (empty_map ()));
+                ("parts", (ja [
+                  (Str "public");
+                  (Str "paymentTransaction") ]));
+                ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
-                ("parts", (ja [
-                  (Str "public");
-                  (Str "paymentTransaction") ])) ]);
-              (jo [
                 ("args", (empty_map ()));
+                ("select", (empty_map ())) ]);
+              (jo [
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/public/preAuthCompletionTransaction"));
@@ -1915,42 +2318,51 @@ let make_config () : value =
                     ("lit", (Str "public")) ]);
                   (jo [
                     ("lit", (Str "preAuthCompletionTransaction")) ]) ]));
-                ("select", (empty_map ()));
+                ("parts", (ja [
+                  (Str "public");
+                  (Str "preAuthCompletionTransaction") ]));
+                ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
-                ("parts", (ja [
-                  (Str "public");
-                  (Str "preAuthCompletionTransaction") ])) ]) ])) ])) ]));
+                ("args", (empty_map ()));
+                ("select", (empty_map ())) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("reactivate_terminal", (jo [
         ("fields", (ja [
           (jo [
             ("name", (Str "corporateUuid"));
+            ("title", (Str "Corporate Uuid"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "packageOrderUuid"));
+            ("title", (Str "Package Order Uuid"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "productOrderUuid"));
+            ("title", (Str "Product Order Uuid"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "reactivationReason"));
-            ("req", (Bool true));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Reactivation Reason"));
+            ("type", (Str "`$STRING`"));
+            ("req", (Bool true)) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "responseMessage"));
+            ("title", (Str "Response Message"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "terminalId"));
+            ("title", (Str "Terminal Id"));
+            ("type", (Str "`$INTEGER`"));
             ("req", (Bool true));
-            ("type", (Str "`$INTEGER`")) ]) ]));
+            ("format", (Str "int32")) ]) ]));
         ("name", (Str "reactivate_terminal"));
         ("op", (jo [
           ("create", (jo [
@@ -1958,171 +2370,212 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (empty_map ()));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/reactivateTerminal"));
                 ("segments", (ja [
                   (jo [
                     ("lit", (Str "reactivateTerminal")) ]) ]));
-                ("select", (empty_map ()));
+                ("parts", (ja [
+                  (Str "reactivateTerminal") ]));
+                ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
-                ("parts", (ja [
-                  (Str "reactivateTerminal") ])) ]) ])) ])) ]));
+                ("args", (empty_map ()));
+                ("select", (empty_map ())) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("refund_transaction", (jo [
         ("fields", (ja [
           (jo [
             ("name", (Str "acquirerId"));
+            ("title", (Str "Acquirer Id"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "acquirerName"));
+            ("title", (Str "Acquirer Name"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "actualBonusPoints"));
+            ("title", (Str "Actual Bonus Points"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "amount"));
+            ("title", (Str "Amount"));
+            ("type", (Str "`$INTEGER`"));
             ("op", (jo [
               ("create", (jo [
                 ("req", (Bool true));
                 ("type", (Str "`$INTEGER`")) ])) ]));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "authorizationCode"));
+            ("title", (Str "Authorization Code"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "balanceAmount"));
+            ("title", (Str "Balance Amount"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "cardBrand"));
+            ("title", (Str "Card Brand"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "cardNumber"));
+            ("title", (Str "Card Number"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "clientId"));
+            ("title", (Str "Client Id"));
+            ("type", (Str "`$INTEGER`"));
             ("req", (Bool true));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "currency"));
-            ("req", (Bool true));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Currency"));
+            ("type", (Str "`$STRING`"));
+            ("req", (Bool true)) ]);
           (jo [
             ("name", (Str "cvc"));
+            ("title", (Str "Cvc"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "ecData"));
+            ("title", (Str "Ec Data"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "ecrData"));
+            ("title", (Str "Ecr Data"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "emvData"));
+            ("title", (Str "Emv Data"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int64"));
             ("name", (Str "exchangeFee"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Exchange Fee"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int64")) ]);
           (jo [
             ("name", (Str "exchangeRate"));
+            ("title", (Str "Exchange Rate"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "languageCode"));
+            ("title", (Str "Language Code"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "merchantAddress"));
+            ("title", (Str "Merchant Address"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "merchantName"));
+            ("title", (Str "Merchant Name"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "merchantNumber"));
+            ("title", (Str "Merchant Number"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "messageType"));
+            ("title", (Str "Message Type"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "originalTraceNumber"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Original Trace Number"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "originalTransactionId"));
+            ("title", (Str "Original Transaction Id"));
+            ("type", (Str "`$STRING`"));
             ("op", (jo [
               ("create", (jo [
                 ("req", (Bool true));
-                ("type", (Str "`$STRING`")) ])) ]));
-            ("type", (Str "`$STRING`")) ]);
+                ("type", (Str "`$STRING`")) ])) ])) ]);
           (jo [
             ("name", (Str "password"));
+            ("title", (Str "Password"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "paymentReason"));
+            ("title", (Str "Payment Reason"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "receiptFooter"));
+            ("title", (Str "Receipt Footer"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "receiptHeader"));
+            ("title", (Str "Receipt Header"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "receiptLayout"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Receipt Layout"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "receiptNumber"));
-            ("req", (Bool true));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Receipt Number"));
+            ("type", (Str "`$STRING`"));
+            ("req", (Bool true)) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "responseMessage"));
+            ("title", (Str "Response Message"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "serialNumber"));
+            ("title", (Str "Serial Number"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "svc"));
+            ("title", (Str "Svc"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "terminalId"));
+            ("title", (Str "Terminal Id"));
+            ("type", (Str "`$INTEGER`"));
             ("req", (Bool true));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "terminalLocation"));
+            ("title", (Str "Terminal Location"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "traceNumber"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Trace Number"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
-            ("format", (Str "date-time"));
             ("name", (Str "transactionDate"));
+            ("title", (Str "Transaction Date"));
+            ("type", (Str "`$STRING`"));
             ("op", (jo [
               ("create", (jo [
                 ("req", (Bool true));
                 ("type", (Str "`$STRING`")) ])) ]));
-            ("type", (Str "`$STRING`")) ]);
+            ("format", (Str "date-time")) ]);
           (jo [
             ("name", (Str "transactionId"));
+            ("title", (Str "Transaction Id"));
+            ("type", (Str "`$STRING`"));
             ("op", (jo [
               ("create", (jo [
                 ("req", (Bool true));
-                ("type", (Str "`$STRING`")) ])) ]));
-            ("type", (Str "`$STRING`")) ]);
+                ("type", (Str "`$STRING`")) ])) ])) ]);
           (jo [
             ("name", (Str "txType"));
+            ("title", (Str "Tx Type"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "userData"));
+            ("title", (Str "User Data"));
             ("type", (Str "`$STRING`")) ]) ]));
         ("name", (Str "refund_transaction"));
         ("op", (jo [
@@ -2131,7 +2584,6 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (empty_map ()));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/public/refundTransaction"));
@@ -2140,47 +2592,57 @@ let make_config () : value =
                     ("lit", (Str "public")) ]);
                   (jo [
                     ("lit", (Str "refundTransaction")) ]) ]));
-                ("select", (empty_map ()));
+                ("parts", (ja [
+                  (Str "public");
+                  (Str "refundTransaction") ]));
+                ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
-                ("parts", (ja [
-                  (Str "public");
-                  (Str "refundTransaction") ])) ]) ])) ])) ]));
+                ("args", (empty_map ()));
+                ("select", (empty_map ())) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("register_tecs_company", (jo [
         ("fields", (ja [
           (jo [
             ("name", (Str "corporateUuid"));
-            ("req", (Bool true));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Corporate Uuid"));
+            ("type", (Str "`$STRING`"));
+            ("req", (Bool true)) ]);
           (jo [
             ("name", (Str "packageOrderUuid"));
-            ("req", (Bool true));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Package Order Uuid"));
+            ("type", (Str "`$STRING`"));
+            ("req", (Bool true)) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "partnerId"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Partner Id"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "partnerName"));
+            ("title", (Str "Partner Name"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "productOrderUuid"));
-            ("req", (Bool true));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Product Order Uuid"));
+            ("type", (Str "`$STRING`"));
+            ("req", (Bool true)) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "responseMessage"));
+            ("title", (Str "Response Message"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "templateName"));
-            ("req", (Bool true));
-            ("type", (Str "`$STRING`")) ]) ]));
+            ("title", (Str "Template Name"));
+            ("type", (Str "`$STRING`"));
+            ("req", (Bool true)) ]) ]));
         ("name", (Str "register_tecs_company"));
         ("op", (jo [
           ("create", (jo [
@@ -2188,85 +2650,104 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (empty_map ()));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/registerTecsCompany"));
                 ("segments", (ja [
                   (jo [
                     ("lit", (Str "registerTecsCompany")) ]) ]));
-                ("select", (empty_map ()));
+                ("parts", (ja [
+                  (Str "registerTecsCompany") ]));
+                ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
-                ("parts", (ja [
-                  (Str "registerTecsCompany") ])) ]) ])) ])) ]));
+                ("args", (empty_map ()));
+                ("select", (empty_map ())) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("register_terminal", (jo [
         ("fields", (ja [
           (jo [
             ("name", (Str "additionalData"));
+            ("title", (Str "Additional Data"));
             ("type", (Str "`$OBJECT`")) ]);
           (jo [
             ("name", (Str "corporateUuid"));
-            ("req", (Bool true));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Corporate Uuid"));
+            ("type", (Str "`$STRING`"));
+            ("req", (Bool true)) ]);
           (jo [
             ("name", (Str "packageOrderUuid"));
-            ("req", (Bool true));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Package Order Uuid"));
+            ("type", (Str "`$STRING`"));
+            ("req", (Bool true)) ]);
           (jo [
             ("name", (Str "productOrderUuid"));
-            ("req", (Bool true));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Product Order Uuid"));
+            ("type", (Str "`$STRING`"));
+            ("req", (Bool true)) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "responseMessage"));
+            ("title", (Str "Response Message"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "tecsWebSecretKey"));
+            ("title", (Str "Tecs Web Secret Key"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "templateName"));
-            ("req", (Bool true));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Template Name"));
+            ("type", (Str "`$STRING`"));
+            ("req", (Bool true)) ]);
           (jo [
             ("name", (Str "terminalCountryCode"));
-            ("req", (Bool true));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Terminal Country Code"));
+            ("type", (Str "`$STRING`"));
+            ("req", (Bool true)) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "terminalId"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Terminal Id"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "terminalIdAcq"));
+            ("title", (Str "Terminal Id Acq"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "terminalLanguageCode"));
-            ("req", (Bool true));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Terminal Language Code"));
+            ("type", (Str "`$STRING`"));
+            ("req", (Bool true)) ]);
           (jo [
             ("name", (Str "terminalLocation"));
-            ("req", (Bool true));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Terminal Location"));
+            ("type", (Str "`$STRING`"));
+            ("req", (Bool true)) ]);
           (jo [
             ("name", (Str "terminalSerialNumber"));
+            ("title", (Str "Terminal Serial Number"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "tokenIOAlias"));
+            ("title", (Str "Token Io Alias"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "tokenIOIban"));
+            ("title", (Str "Token Io Iban"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "tokenIOMemberId"));
+            ("title", (Str "Token Io Member Id"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "webShopUrl"));
+            ("title", (Str "Web Shop Url"));
             ("type", (Str "`$STRING`")) ]) ]));
         ("name", (Str "register_terminal"));
         ("op", (jo [
@@ -2275,61 +2756,72 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (empty_map ()));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/registerTerminal"));
                 ("segments", (ja [
                   (jo [
                     ("lit", (Str "registerTerminal")) ]) ]));
-                ("select", (empty_map ()));
+                ("parts", (ja [
+                  (Str "registerTerminal") ]));
+                ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
-                ("parts", (ja [
-                  (Str "registerTerminal") ])) ]) ])) ])) ]));
+                ("args", (empty_map ()));
+                ("select", (empty_map ())) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("report_data", (jo [
         ("fields", (ja [
           (jo [
             ("name", (Str "cardBrandReportData"));
+            ("title", (Str "Card Brand Report Data"));
             ("type", (Str "`$ARRAY`")) ]);
           (jo [
             ("name", (Str "clearingDateFrom"));
+            ("title", (Str "Clearing Date From"));
+            ("type", (Str "`$STRING`"));
             ("req", (Bool true));
-            ("short", (Str "Date and time in the format yyyy-MM-dd'T'HH:mm:ss"));
-            ("type", (Str "`$STRING`")) ]);
+            ("short", (Str "Date and time in the format yyyy-MM-dd'T'HH:mm:ss")) ]);
           (jo [
             ("name", (Str "clearingDateTo"));
+            ("title", (Str "Clearing Date To"));
+            ("type", (Str "`$STRING`"));
             ("req", (Bool true));
-            ("short", (Str "Date and time in the format yyyy-MM-dd'T'HH:mm:ss"));
-            ("type", (Str "`$STRING`")) ]);
+            ("short", (Str "Date and time in the format yyyy-MM-dd'T'HH:mm:ss")) ]);
           (jo [
             ("name", (Str "corporateId"));
-            ("req", (Bool true));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Corporate Id"));
+            ("type", (Str "`$STRING`"));
+            ("req", (Bool true)) ]);
           (jo [
             ("name", (Str "currency"));
-            ("req", (Bool true));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Currency"));
+            ("type", (Str "`$STRING`"));
+            ("req", (Bool true)) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "responseMessage"));
+            ("title", (Str "Response Message"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "sumOverCreditTx"));
+            ("title", (Str "Sum Over Credit Tx"));
             ("type", (Str "`$OBJECT`")) ]);
           (jo [
             ("name", (Str "sumOverDebitTx"));
+            ("title", (Str "Sum Over Debit Tx"));
             ("type", (Str "`$OBJECT`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "terminalId"));
-            ("type", (Str "`$INTEGER`")) ]) ]));
+            ("title", (Str "Terminal Id"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]) ]));
         ("name", (Str "report_data"));
         ("op", (jo [
           ("create", (jo [
@@ -2337,7 +2829,6 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (empty_map ()));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/public/digitalservices/reportData"));
@@ -2348,190 +2839,242 @@ let make_config () : value =
                     ("lit", (Str "digitalservices")) ]);
                   (jo [
                     ("lit", (Str "reportData")) ]) ]));
-                ("select", (empty_map ()));
-                ("transform", (jo [
-                  ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ]));
                 ("parts", (ja [
                   (Str "public");
                   (Str "digitalservices");
-                  (Str "reportData") ])) ]) ])) ])) ]));
+                  (Str "reportData") ]));
+                ("rename", (empty_map ()));
+                ("transform", (jo [
+                  ("req", (Str "`reqdata`"));
+                  ("res", (Str "`body`")) ]));
+                ("args", (empty_map ()));
+                ("select", (empty_map ())) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("status_transaction", (jo [
         ("fields", (ja [
           (jo [
             ("name", (Str "acquirerName"));
+            ("title", (Str "Acquirer Name"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "acquirerTerminalId"));
+            ("title", (Str "Acquirer Terminal Id"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "amount"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Amount"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "applicationCryptogram"));
+            ("title", (Str "Application Cryptogram"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "authorizationCode"));
-            ("short", (Str "Authorization code returned by the acquirer; null when not available"));
+            ("title", (Str "Authorization Code"));
             ("type", (ja [
               (Str "`$ONE`");
               (ja [
                 (Str "`$STRING`");
-                (Str "`$NULL`") ]) ])) ]);
+                (Str "`$NULL`") ]) ]));
+            ("short", (Str "Authorization code returned by the acquirer; null when not available")) ]);
           (jo [
-            ("format", (Str "date-time"));
             ("name", (Str "authorizationDate"));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Authorization Date"));
+            ("type", (Str "`$STRING`"));
+            ("format", (Str "date-time")) ]);
           (jo [
             ("name", (Str "cardBrand"));
+            ("title", (Str "Card Brand"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "cardEntry"));
+            ("title", (Str "Card Entry"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "cardExpiration"));
+            ("title", (Str "Card Expiration"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "cardNumber"));
+            ("title", (Str "Card Number"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "clearingAmount"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Clearing Amount"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "clearingBatchId"));
+            ("title", (Str "Clearing Batch Id"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "clearingCurrency"));
+            ("title", (Str "Clearing Currency"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "date-time"));
             ("name", (Str "clearingDate"));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Clearing Date"));
+            ("type", (Str "`$STRING`"));
+            ("format", (Str "date-time")) ]);
           (jo [
-            ("format", (Str "date-time"));
             ("name", (Str "clearingProcessedDate"));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Clearing Processed Date"));
+            ("type", (Str "`$STRING`"));
+            ("format", (Str "date-time")) ]);
           (jo [
             ("name", (Str "clearingStatus"));
+            ("title", (Str "Clearing Status"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "clientId"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Client Id"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "currency"));
+            ("title", (Str "Currency"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "cvm"));
+            ("title", (Str "Cvm"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "ecrData"));
+            ("title", (Str "Ecr Data"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "emvApplicationId"));
+            ("title", (Str "Emv Application Id"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "emvApplicationLabel"));
+            ("title", (Str "Emv Application Label"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "merchantName"));
+            ("title", (Str "Merchant Name"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "merchantNumber"));
+            ("title", (Str "Merchant Number"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "originalClientId"));
+            ("title", (Str "Original Client Id"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "originalTerminalId"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Original Terminal Id"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "originalTransactionId"));
+            ("title", (Str "Original Transaction Id"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "paymentReason"));
+            ("title", (Str "Payment Reason"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "receiptNumber"));
+            ("title", (Str "Receipt Number"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "responseCodeFromAS"));
+            ("title", (Str "Response Code From As"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "responseMessage"));
+            ("title", (Str "Response Message"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "retrievalReferenceNumber"));
+            ("title", (Str "Retrieval Reference Number"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "serviceCode"));
+            ("title", (Str "Service Code"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "settlementStatus"));
+            ("title", (Str "Settlement Status"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "sourceId"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Source Id"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "tecsengineResponseCode"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Tecsengine Response Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "tecsengineResponseText"));
+            ("title", (Str "Tecsengine Response Text"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "date-time"));
             ("name", (Str "terminalEndOfDayDate"));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Terminal End Of Day Date"));
+            ("type", (Str "`$STRING`"));
+            ("format", (Str "date-time")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "terminalId"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Terminal Id"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "terminalLocation"));
+            ("title", (Str "Terminal Location"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "tipAmount"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Tip Amount"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "traceNumber"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Trace Number"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
-            ("format", (Str "date-time"));
             ("name", (Str "transactionClearingDate"));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Transaction Clearing Date"));
+            ("type", (Str "`$STRING`"));
+            ("format", (Str "date-time")) ]);
           (jo [
-            ("format", (Str "date-time"));
             ("name", (Str "transactionDate"));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Transaction Date"));
+            ("type", (Str "`$STRING`"));
+            ("format", (Str "date-time")) ]);
           (jo [
             ("name", (Str "transactionId"));
+            ("title", (Str "Transaction Id"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int64"));
             ("name", (Str "transactionSeqNumber"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Transaction Seq Number"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int64")) ]);
           (jo [
-            ("format", (Str "date-time"));
             ("name", (Str "transactionServerDate"));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Transaction Server Date"));
+            ("type", (Str "`$STRING`"));
+            ("format", (Str "date-time")) ]);
           (jo [
             ("name", (Str "transactionSource"));
+            ("title", (Str "Transaction Source"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "transactionType"));
+            ("title", (Str "Transaction Type"));
             ("type", (Str "`$STRING`")) ]) ]));
         ("name", (Str "status_transaction"));
         ("op", (jo [
@@ -2540,7 +3083,6 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (empty_map ()));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/public/statusTransaction"));
@@ -2549,36 +3091,44 @@ let make_config () : value =
                     ("lit", (Str "public")) ]);
                   (jo [
                     ("lit", (Str "statusTransaction")) ]) ]));
-                ("select", (empty_map ()));
+                ("parts", (ja [
+                  (Str "public");
+                  (Str "statusTransaction") ]));
+                ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
-                ("parts", (ja [
-                  (Str "public");
-                  (Str "statusTransaction") ])) ]) ])) ])) ]));
+                ("args", (empty_map ()));
+                ("select", (empty_map ())) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("store_terminal_parameter", (jo [
         ("fields", (ja [
           (jo [
             ("name", (Str "acqTabNexo"));
+            ("title", (Str "Acq Tab Nexo"));
             ("type", (Str "`$OBJECT`")) ]);
           (jo [
             ("name", (Str "configVersion"));
+            ("title", (Str "Config Version"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "responseMessage"));
+            ("title", (Str "Response Message"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "serialNumber"));
-            ("req", (Bool true));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Serial Number"));
+            ("type", (Str "`$STRING`"));
+            ("req", (Bool true)) ]);
           (jo [
             ("name", (Str "tidSent"));
+            ("title", (Str "Tid Sent"));
             ("type", (Str "`$STRING`")) ]) ]));
         ("name", (Str "store_terminal_parameter"));
         ("op", (jo [
@@ -2587,39 +3137,45 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (empty_map ()));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/storeTerminalParameters"));
                 ("segments", (ja [
                   (jo [
                     ("lit", (Str "storeTerminalParameters")) ]) ]));
-                ("select", (empty_map ()));
+                ("parts", (ja [
+                  (Str "storeTerminalParameters") ]));
+                ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
-                ("parts", (ja [
-                  (Str "storeTerminalParameters") ])) ]) ])) ])) ]));
+                ("args", (empty_map ()));
+                ("select", (empty_map ())) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("terminal_id", (jo [
         ("fields", (ja [
           (jo [
             ("name", (Str "deviceSerialNumber"));
-            ("req", (Bool true));
-            ("type", (Str "`$ARRAY`")) ]);
+            ("title", (Str "Device Serial Number"));
+            ("type", (Str "`$ARRAY`"));
+            ("req", (Bool true)) ]);
           (jo [
             ("name", (Str "duplicateTerminalIds"));
+            ("title", (Str "Duplicate Terminal Ids"));
             ("type", (Str "`$ARRAY`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "responseMessage"));
+            ("title", (Str "Response Message"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "terminals"));
+            ("title", (Str "Terminals"));
             ("type", (Str "`$ARRAY`")) ]) ]));
         ("name", (Str "terminal_id"));
         ("op", (jo [
@@ -2628,7 +3184,6 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (empty_map ()));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/public/getTerminalId"));
@@ -2637,110 +3192,141 @@ let make_config () : value =
                     ("lit", (Str "public")) ]);
                   (jo [
                     ("lit", (Str "getTerminalId")) ]) ]));
-                ("select", (empty_map ()));
+                ("parts", (ja [
+                  (Str "public");
+                  (Str "getTerminalId") ]));
+                ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
-                ("parts", (ja [
-                  (Str "public");
-                  (Str "getTerminalId") ])) ]) ])) ])) ]));
+                ("args", (empty_map ()));
+                ("select", (empty_map ())) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("transaction_history", (jo [
         ("fields", (ja [
           (jo [
             ("name", (Str "3DSecure"));
+            ("title", (Str "3 D Secure"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "authorizationCode"));
+            ("title", (Str "Authorization Code"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "cardBrand"));
+            ("title", (Str "Card Brand"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "clearingAmountFrom"));
+            ("title", (Str "Clearing Amount From"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "clearingAmountTo"));
+            ("title", (Str "Clearing Amount To"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "clearingCurrency"));
+            ("title", (Str "Clearing Currency"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "clearingStatus"));
+            ("title", (Str "Clearing Status"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "corporateUUID"));
+            ("title", (Str "Corporate Uuid"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "orderByTransactionDate"));
+            ("title", (Str "Order By Transaction Date"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "pagination"));
+            ("title", (Str "Pagination"));
             ("type", (Str "`$OBJECT`")) ]);
           (jo [
             ("name", (Str "paymentTokenPublicId"));
+            ("title", (Str "Payment Token Public Id"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "receiptNumber"));
+            ("title", (Str "Receipt Number"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "referencedTransactionId"));
+            ("title", (Str "Referenced Transaction Id"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "responseMessage"));
+            ("title", (Str "Response Message"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "retrievalReferenceNumber"));
+            ("title", (Str "Retrieval Reference Number"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "sourceId"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Source Id"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "tecsengineResponseCodeFrom"));
+            ("title", (Str "Tecsengine Response Code From"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "tecsengineResponseCodeTo"));
+            ("title", (Str "Tecsengine Response Code To"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "terminalId"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Terminal Id"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "traceNumber"));
+            ("title", (Str "Trace Number"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "transactionAmountFrom"));
+            ("title", (Str "Transaction Amount From"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "transactionAmountTo"));
+            ("title", (Str "Transaction Amount To"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "date-time"));
             ("name", (Str "transactionDateFrom"));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Transaction Date From"));
+            ("type", (Str "`$STRING`"));
+            ("format", (Str "date-time")) ]);
           (jo [
-            ("format", (Str "date-time"));
             ("name", (Str "transactionDateTo"));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Transaction Date To"));
+            ("type", (Str "`$STRING`"));
+            ("format", (Str "date-time")) ]);
           (jo [
             ("name", (Str "transactionHistories"));
+            ("title", (Str "Transaction Histories"));
             ("type", (Str "`$ARRAY`")) ]);
           (jo [
             ("name", (Str "transactionId"));
+            ("title", (Str "Transaction Id"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "transactionType"));
+            ("title", (Str "Transaction Type"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "wallet"));
-            ("short", (Str "Filter by wallet type."));
-            ("type", (Str "`$STRING`")) ]) ]));
+            ("title", (Str "Wallet"));
+            ("type", (Str "`$STRING`"));
+            ("short", (Str "Filter by wallet type.")) ]) ]));
         ("name", (Str "transaction_history"));
         ("op", (jo [
           ("create", (jo [
@@ -2748,7 +3334,6 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (empty_map ()));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/public/mcom/transactionHistory"));
@@ -2759,16 +3344,17 @@ let make_config () : value =
                     ("lit", (Str "mcom")) ]);
                   (jo [
                     ("lit", (Str "transactionHistory")) ]) ]));
-                ("select", (empty_map ()));
-                ("transform", (jo [
-                  ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ]));
                 ("parts", (ja [
                   (Str "public");
                   (Str "mcom");
-                  (Str "transactionHistory") ])) ]);
-              (jo [
+                  (Str "transactionHistory") ]));
+                ("rename", (empty_map ()));
+                ("transform", (jo [
+                  ("req", (Str "`reqdata`"));
+                  ("res", (Str "`body`")) ]));
                 ("args", (empty_map ()));
+                ("select", (empty_map ())) ]);
+              (jo [
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/public/transactionHistory"));
@@ -2777,118 +3363,53 @@ let make_config () : value =
                     ("lit", (Str "public")) ]);
                   (jo [
                     ("lit", (Str "transactionHistory")) ]) ]));
-                ("select", (empty_map ()));
+                ("parts", (ja [
+                  (Str "public");
+                  (Str "transactionHistory") ]));
+                ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
-                ("parts", (ja [
-                  (Str "public");
-                  (Str "transactionHistory") ])) ]) ])) ])) ]));
-        ("relations", (jo [
-          ("ancestors", (empty_list ())) ])) ]));
-      ("transactions_count", (jo [
-        ("fields", (ja [
-          (jo [
-            ("name", (Str "period"));
-            ("type", (Str "`$STRING`")) ]);
-          (jo [
-            ("format", (Str "int32"));
-            ("name", (Str "responseCode"));
-            ("type", (Str "`$INTEGER`")) ]);
-          (jo [
-            ("name", (Str "responseMessage"));
-            ("type", (Str "`$STRING`")) ]);
-          (jo [
-            ("format", (Str "date-time"));
-            ("name", (Str "transactionDateFrom"));
-            ("op", (jo [
-              ("create", (jo [
-                ("req", (Bool true));
-                ("type", (Str "`$STRING`")) ])) ]));
-            ("type", (Str "`$STRING`")) ]);
-          (jo [
-            ("format", (Str "date-time"));
-            ("name", (Str "transactionDateTo"));
-            ("op", (jo [
-              ("create", (jo [
-                ("req", (Bool true));
-                ("type", (Str "`$STRING`")) ])) ]));
-            ("type", (Str "`$STRING`")) ]);
-          (jo [
-            ("name", (Str "transactionsCount"));
-            ("type", (Str "`$ARRAY`")) ]) ]));
-        ("name", (Str "transactions_count"));
-        ("op", (jo [
-          ("create", (jo [
-            ("input", (Str "data"));
-            ("name", (Str "create"));
-            ("points", (ja [
-              (jo [
                 ("args", (empty_map ()));
-                ("kind", (Str "http"));
-                ("method", (Str "POST"));
-                ("orig", (Str "/public/countAuthorisedTransactions"));
-                ("segments", (ja [
-                  (jo [
-                    ("lit", (Str "public")) ]);
-                  (jo [
-                    ("lit", (Str "countAuthorisedTransactions")) ]) ]));
-                ("select", (empty_map ()));
-                ("transform", (jo [
-                  ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ]));
-                ("parts", (ja [
-                  (Str "public");
-                  (Str "countAuthorisedTransactions") ])) ]);
-              (jo [
-                ("args", (empty_map ()));
-                ("kind", (Str "http"));
-                ("method", (Str "POST"));
-                ("orig", (Str "/public/countNotAuthorisedTransactions"));
-                ("segments", (ja [
-                  (jo [
-                    ("lit", (Str "public")) ]);
-                  (jo [
-                    ("lit", (Str "countNotAuthorisedTransactions")) ]) ]));
-                ("select", (empty_map ()));
-                ("transform", (jo [
-                  ("req", (Str "`reqdata`"));
-                  ("res", (Str "`body`")) ]));
-                ("parts", (ja [
-                  (Str "public");
-                  (Str "countNotAuthorisedTransactions") ])) ]) ])) ])) ]));
+                ("select", (empty_map ())) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("transactions_count_card_brand", (jo [
         ("fields", (ja [
           (jo [
             ("name", (Str "period"));
+            ("title", (Str "Period"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "responseMessage"));
+            ("title", (Str "Response Message"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "date-time"));
             ("name", (Str "transactionDateFrom"));
+            ("title", (Str "Transaction Date From"));
+            ("type", (Str "`$STRING`"));
             ("op", (jo [
               ("create", (jo [
                 ("req", (Bool true));
                 ("type", (Str "`$STRING`")) ])) ]));
-            ("type", (Str "`$STRING`")) ]);
+            ("format", (Str "date-time")) ]);
           (jo [
-            ("format", (Str "date-time"));
             ("name", (Str "transactionDateTo"));
+            ("title", (Str "Transaction Date To"));
+            ("type", (Str "`$STRING`"));
             ("op", (jo [
               ("create", (jo [
                 ("req", (Bool true));
                 ("type", (Str "`$STRING`")) ])) ]));
-            ("type", (Str "`$STRING`")) ]);
+            ("format", (Str "date-time")) ]);
           (jo [
             ("name", (Str "transactionsCount"));
+            ("title", (Str "Transactions Count"));
             ("type", (Str "`$ARRAY`")) ]) ]));
         ("name", (Str "transactions_count_card_brand"));
         ("op", (jo [
@@ -2897,7 +3418,6 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (empty_map ()));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/public/countTransactionsByCardBrand"));
@@ -2906,45 +3426,53 @@ let make_config () : value =
                     ("lit", (Str "public")) ]);
                   (jo [
                     ("lit", (Str "countTransactionsByCardBrand")) ]) ]));
-                ("select", (empty_map ()));
+                ("parts", (ja [
+                  (Str "public");
+                  (Str "countTransactionsByCardBrand") ]));
+                ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
-                ("parts", (ja [
-                  (Str "public");
-                  (Str "countTransactionsByCardBrand") ])) ]) ])) ])) ]));
+                ("args", (empty_map ()));
+                ("select", (empty_map ())) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("transactions_turnover", (jo [
         ("fields", (ja [
           (jo [
             ("name", (Str "period"));
+            ("title", (Str "Period"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "responseMessage"));
+            ("title", (Str "Response Message"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "date-time"));
             ("name", (Str "transactionDateFrom"));
+            ("title", (Str "Transaction Date From"));
+            ("type", (Str "`$STRING`"));
             ("op", (jo [
               ("create", (jo [
                 ("req", (Bool true));
                 ("type", (Str "`$STRING`")) ])) ]));
-            ("type", (Str "`$STRING`")) ]);
+            ("format", (Str "date-time")) ]);
           (jo [
-            ("format", (Str "date-time"));
             ("name", (Str "transactionDateTo"));
+            ("title", (Str "Transaction Date To"));
+            ("type", (Str "`$STRING`"));
             ("op", (jo [
               ("create", (jo [
                 ("req", (Bool true));
                 ("type", (Str "`$STRING`")) ])) ]));
-            ("type", (Str "`$STRING`")) ]);
+            ("format", (Str "date-time")) ]);
           (jo [
             ("name", (Str "turnovers"));
+            ("title", (Str "Turnovers"));
             ("type", (Str "`$ARRAY`")) ]) ]));
         ("name", (Str "transactions_turnover"));
         ("op", (jo [
@@ -2953,7 +3481,6 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (empty_map ()));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/public/transactionTurnover"));
@@ -2962,51 +3489,64 @@ let make_config () : value =
                     ("lit", (Str "public")) ]);
                   (jo [
                     ("lit", (Str "transactionTurnover")) ]) ]));
-                ("select", (empty_map ()));
+                ("parts", (ja [
+                  (Str "public");
+                  (Str "transactionTurnover") ]));
+                ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
-                ("parts", (ja [
-                  (Str "public");
-                  (Str "transactionTurnover") ])) ]) ])) ])) ]));
+                ("args", (empty_map ()));
+                ("select", (empty_map ())) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("update_merchant", (jo [
         ("fields", (ja [
           (jo [
             ("name", (Str "city"));
+            ("title", (Str "City"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "corporateUuid"));
-            ("req", (Bool true));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Corporate Uuid"));
+            ("type", (Str "`$STRING`"));
+            ("req", (Bool true)) ]);
           (jo [
             ("name", (Str "country"));
+            ("title", (Str "Country"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "merchantCategoryCode"));
+            ("title", (Str "Merchant Category Code"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "name"));
+            ("title", (Str "Name"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "responseMessage"));
+            ("title", (Str "Response Message"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "state"));
+            ("title", (Str "State"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "street"));
+            ("title", (Str "Street"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "vuNummer"));
+            ("title", (Str "Vu Nummer"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "zipcode"));
+            ("title", (Str "Zipcode"));
             ("type", (Str "`$STRING`")) ]) ]));
         ("name", (Str "update_merchant"));
         ("op", (jo [
@@ -3015,7 +3555,6 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (empty_map ()));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/public/updateMerchant"));
@@ -3024,32 +3563,38 @@ let make_config () : value =
                     ("lit", (Str "public")) ]);
                   (jo [
                     ("lit", (Str "updateMerchant")) ]) ]));
-                ("select", (empty_map ()));
+                ("parts", (ja [
+                  (Str "public");
+                  (Str "updateMerchant") ]));
+                ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
-                ("parts", (ja [
-                  (Str "public");
-                  (Str "updateMerchant") ])) ]) ])) ])) ]));
+                ("args", (empty_map ()));
+                ("select", (empty_map ())) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("update_template_xml", (jo [
         ("fields", (ja [
           (jo [
-            ("format", (Str "int32"));
             ("name", (Str "responseCode"));
-            ("type", (Str "`$INTEGER`")) ]);
+            ("title", (Str "Response Code"));
+            ("type", (Str "`$INTEGER`"));
+            ("format", (Str "int32")) ]);
           (jo [
             ("name", (Str "responseMessage"));
+            ("title", (Str "Response Message"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "templateName"));
-            ("req", (Bool true));
-            ("type", (Str "`$STRING`")) ]);
+            ("title", (Str "Template Name"));
+            ("type", (Str "`$STRING`"));
+            ("req", (Bool true)) ]);
           (jo [
             ("name", (Str "templateXml"));
-            ("req", (Bool true));
-            ("type", (Str "`$STRING`")) ]) ]));
+            ("title", (Str "Template Xml"));
+            ("type", (Str "`$STRING`"));
+            ("req", (Bool true)) ]) ]));
         ("name", (Str "update_template_xml"));
         ("op", (jo [
           ("create", (jo [
@@ -3057,7 +3602,6 @@ let make_config () : value =
             ("name", (Str "create"));
             ("points", (ja [
               (jo [
-                ("args", (empty_map ()));
                 ("kind", (Str "http"));
                 ("method", (Str "POST"));
                 ("orig", (Str "/public/updateTemplateXml"));
@@ -3066,25 +3610,30 @@ let make_config () : value =
                     ("lit", (Str "public")) ]);
                   (jo [
                     ("lit", (Str "updateTemplateXml")) ]) ]));
-                ("select", (empty_map ()));
+                ("parts", (ja [
+                  (Str "public");
+                  (Str "updateTemplateXml") ]));
+                ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
-                ("parts", (ja [
-                  (Str "public");
-                  (Str "updateTemplateXml") ])) ]) ])) ])) ]));
+                ("args", (empty_map ()));
+                ("select", (empty_map ())) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ]));
       ("version", (jo [
         ("fields", (ja [
           (jo [
             ("name", (Str "appName"));
+            ("title", (Str "App Name"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "buildDate"));
+            ("title", (Str "Build Date"));
             ("type", (Str "`$STRING`")) ]);
           (jo [
             ("name", (Str "version"));
+            ("title", (Str "Version"));
             ("type", (Str "`$STRING`")) ]) ]));
         ("name", (Str "version"));
         ("op", (jo [
@@ -3093,7 +3642,6 @@ let make_config () : value =
             ("name", (Str "load"));
             ("points", (ja [
               (jo [
-                ("args", (empty_map ()));
                 ("kind", (Str "http"));
                 ("method", (Str "GET"));
                 ("orig", (Str "/public/version"));
@@ -3102,13 +3650,15 @@ let make_config () : value =
                     ("lit", (Str "public")) ]);
                   (jo [
                     ("lit", (Str "version")) ]) ]));
-                ("select", (empty_map ()));
+                ("parts", (ja [
+                  (Str "public");
+                  (Str "version") ]));
+                ("rename", (empty_map ()));
                 ("transform", (jo [
                   ("req", (Str "`reqdata`"));
                   ("res", (Str "`body`")) ]));
-                ("parts", (ja [
-                  (Str "public");
-                  (Str "version") ])) ]) ])) ])) ]));
+                ("args", (empty_map ()));
+                ("select", (empty_map ())) ]) ])) ])) ]));
         ("relations", (jo [
           ("ancestors", (empty_list ())) ])) ])) ])) ])
 

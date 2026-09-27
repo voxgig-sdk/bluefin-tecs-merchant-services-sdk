@@ -1,0 +1,73 @@
+# Entity: terminal_id
+
+main: kit: entity: terminal_id: {
+
+  alias: field: {}
+
+  fields: {
+    deviceSerialNumber: {
+      h: "Device Serial Number"
+      n: "deviceSerialNumber"
+      r: true
+      t: "`$ARRAY`"
+    }
+    duplicateTerminalIds: {
+      h: "Duplicate Terminal Ids"
+      n: "duplicateTerminalIds"
+      r: false
+      t: "`$ARRAY`"
+    }
+    responseCode: {
+      fo: "int32"
+      h: "Response Code"
+      n: "responseCode"
+      r: false
+      t: "`$INTEGER`"
+    }
+    responseMessage: {
+      h: "Response Message"
+      n: "responseMessage"
+      r: false
+      t: "`$STRING`"
+    }
+    terminals: {
+      h: "Terminals"
+      n: "terminals"
+      r: false
+      t: "`$ARRAY`"
+    }
+  }
+
+  name: "terminal_id"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /public/getTerminalId"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/public/getTerminalId"
+          s: [
+            {
+              lit: "public"
+            }
+            {
+              lit: "getTerminalId"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

@@ -1,0 +1,79 @@
+# Entity: list_terminal
+
+main: kit: entity: list_terminal: {
+
+  alias: field: {}
+
+  fields: {
+    corporateUuid: {
+      h: "Corporate Uuid"
+      n: "corporateUuid"
+      r: false
+      t: "`$ARRAY`"
+    }
+    filter: {
+      h: "Filter"
+      n: "filter"
+      r: false
+      t: "`$OBJECT`"
+    }
+    pagination: {
+      h: "Pagination"
+      n: "pagination"
+      r: false
+      t: "`$OBJECT`"
+    }
+    responseCode: {
+      fo: "int32"
+      h: "Response Code"
+      n: "responseCode"
+      r: false
+      t: "`$INTEGER`"
+    }
+    responseMessage: {
+      h: "Response Message"
+      n: "responseMessage"
+      r: false
+      t: "`$STRING`"
+    }
+    terminals: {
+      h: "Terminals"
+      n: "terminals"
+      r: false
+      t: "`$ARRAY`"
+    }
+  }
+
+  name: "list_terminal"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /public/listTerminals"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/public/listTerminals"
+          s: [
+            {
+              lit: "public"
+            }
+            {
+              lit: "listTerminals"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

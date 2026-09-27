@@ -1,0 +1,52 @@
+{
+  "existing": {
+    "count_authorised_transaction": {
+      "COUNT_AUTHORISED_TRANSACTION00": {
+        "period": "s3c",
+        "responseCode": 61,
+        "responseMessage": "s3e",
+        "transactionDateFrom": "s3f",
+        "transactionDateTo": "s40",
+        "transactionsCount": [],
+        "id": "COUNT_AUTHORISED_TRANSACTION00"
+      },
+      "COUNT_AUTHORISED_TRANSACTION01": {
+        "period": "s78",
+        "responseCode": 121,
+        "responseMessage": "s7a",
+        "transactionDateFrom": "s7b",
+        "transactionDateTo": "s7c",
+        "transactionsCount": [],
+        "id": "COUNT_AUTHORISED_TRANSACTION01"
+      },
+      "COUNT_AUTHORISED_TRANSACTION02": {
+        "period": "sb4",
+        "responseCode": 181,
+        "responseMessage": "sb6",
+        "transactionDateFrom": "sb7",
+        "transactionDateTo": "sb8",
+        "transactionsCount": [],
+        "id": "COUNT_AUTHORISED_TRANSACTION02"
+      }
+    }
+  },
+  "new": {
+    "count_authorised_transaction": {
+      "count_authorised_transaction_ref01": {
+        "period": "sf0",
+        "responseCode": 241,
+        "responseMessage": "sf2",
+        "transactionDateFrom": "sf3",
+        "transactionDateTo": "sf4",
+        "transactionsCount": []
+      }
+    }
+  },
+  "requests": {
+    "POST /public/countAuthorisedTransactions": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

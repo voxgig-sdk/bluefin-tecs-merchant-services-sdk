@@ -2,6 +2,8 @@
 
 const { CancelTransactionEntity } = require('./entity/CancelTransactionEntity')
 const { CheckCardBlackListedEntity } = require('./entity/CheckCardBlackListedEntity')
+const { CountAuthorisedTransactionEntity } = require('./entity/CountAuthorisedTransactionEntity')
+const { CountNotAuthorisedTransactionEntity } = require('./entity/CountNotAuthorisedTransactionEntity')
 const { CreateProductEntity } = require('./entity/CreateProductEntity')
 const { DeactivateTerminalEntity } = require('./entity/DeactivateTerminalEntity')
 const { DigitalServicesApiEntity } = require('./entity/DigitalServicesApiEntity')
@@ -33,7 +35,6 @@ const { StatusTransactionEntity } = require('./entity/StatusTransactionEntity')
 const { StoreTerminalParameterEntity } = require('./entity/StoreTerminalParameterEntity')
 const { TerminalIdEntity } = require('./entity/TerminalIdEntity')
 const { TransactionHistoryEntity } = require('./entity/TransactionHistoryEntity')
-const { TransactionsCountEntity } = require('./entity/TransactionsCountEntity')
 const { TransactionsCountCardBrandEntity } = require('./entity/TransactionsCountCardBrandEntity')
 const { TransactionsTurnoverEntity } = require('./entity/TransactionsTurnoverEntity')
 const { UpdateMerchantEntity } = require('./entity/UpdateMerchantEntity')
@@ -349,6 +350,24 @@ class BluefinTecsMerchantServicesSDK {
   }
 
 
+  // Entity access: `client.CountAuthorisedTransaction().list()` / `client.CountAuthorisedTransaction().load({ id })`.
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  CountAuthorisedTransaction(entopts) {
+    const self = this
+    return new CountAuthorisedTransactionEntity(self, entopts)
+  }
+
+
+  // Entity access: `client.CountNotAuthorisedTransaction().list()` / `client.CountNotAuthorisedTransaction().load({ id })`.
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  CountNotAuthorisedTransaction(entopts) {
+    const self = this
+    return new CountNotAuthorisedTransactionEntity(self, entopts)
+  }
+
+
   // Entity access: `client.CreateProduct().list()` / `client.CreateProduct().load({ id })`.
   // The argument is the entity OPTIONS object (passed to the entity
   // constructor as entopts), not initial entity data.
@@ -625,15 +644,6 @@ class BluefinTecsMerchantServicesSDK {
   TransactionHistory(entopts) {
     const self = this
     return new TransactionHistoryEntity(self, entopts)
-  }
-
-
-  // Entity access: `client.TransactionsCount().list()` / `client.TransactionsCount().load({ id })`.
-  // The argument is the entity OPTIONS object (passed to the entity
-  // constructor as entopts), not initial entity data.
-  TransactionsCount(entopts) {
-    const self = this
-    return new TransactionsCountEntity(self, entopts)
   }
 
 

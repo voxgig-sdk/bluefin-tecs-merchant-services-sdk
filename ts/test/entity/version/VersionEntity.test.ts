@@ -25,10 +25,6 @@ import {
 } from '../../utility'
 
 
-// AFTER the imports on purpose: TypeScript hoists `import` above any
-// statement in the emitted CommonJS, so a loader placed above them would
-// run only after every imported module had already been evaluated - and
-// anything reading process.env at module scope would miss these values.
 loadEnvLocal(__dirname + '/../../../.env.local')
 
 
@@ -55,7 +51,7 @@ describe('VersionEntity', async () => {
     
     const setup = basicSetup()
     if (setup.live) {
-      return runLiveEntity(setup, {"active":true,"alias":{"field":{}},"fields":[{"active":true,"name":"appName","req":false,"type":"`$STRING`","index$":0},{"active":true,"name":"buildDate","req":false,"type":"`$STRING`","index$":1},{"active":true,"name":"version","req":false,"type":"`$STRING`","index$":2}],"name":"version","op":{"load":{"input":"data","name":"load","points":[{"active":true,"args":{},"contract":{"id":"GET /public/version","json":"{\"operationId\":\"getVersion\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"appName\":{\"type\":\"string\"},\"buildDate\":{\"type\":\"string\"},\"version\":{\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Successful operation\"}},\"securitySchemes\":{\"basic-key\":{\"scheme\":\"basic\",\"type\":\"http\"},\"bearer-key\":{\"bearerFormat\":\"JWT\",\"scheme\":\"bearer\",\"type\":\"http\"},\"tecsweb-key\":{\"description\":\"TecsWeb token\",\"in\":\"header\",\"name\":\"TecsWebToken\",\"type\":\"apiKey\"}},\"securitySource\":\"unspecified\"}","source":"openapi3","version":1},"kind":"http","method":"GET","orig":"/public/version","segments":[{"lit":"public"},{"lit":"version"}],"select":{},"transform":{"req":"`reqdata`","res":"`body`"},"index$":0}],"key$":"load"}},"relations":{"ancestors":[]},"key$":"version","name__orig":"version","Name":"Version","name_":"version","name-":"version","NAME":"VERSION","index$":38}, {"active":true,"entity":"version","key$":"BasicVersionFlow","kind":"basic","name":"BasicVersionFlow","param":{},"step":[{"active":true,"data":{},"input":{"ref":"version_ref01","srcdatavar":"version_ref01_data","suffix":"_dt0"},"match":{},"op":"load","spec":[],"valid":[{"apply":"TextFieldMark","def":{"mark":"Mark01-version_ref01"}}],"index$":0}]}, 'Version')
+      return runLiveEntity(setup, {"active":true,"alias":{"field":{}},"fields":{"appName":{"a":true,"h":"App Name","n":"appName","r":false,"t":"`$STRING`","key$":"appName","index$":0},"buildDate":{"a":true,"h":"Build Date","n":"buildDate","r":false,"t":"`$STRING`","key$":"buildDate","index$":1},"version":{"a":true,"h":"Version","n":"version","r":false,"t":"`$STRING`","key$":"version","index$":2}},"name":"version","op":{"load":{"input":"data","name":"load","points":[{"a":true,"co":{"id":"GET /public/version","source":"openapi3","version":2},"g":{},"k":"http","m":"GET","o":"/public/version","q":{},"r":{},"s":[{"lit":"public"},{"lit":"version"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":0}],"key$":"load"}},"relations":{"ancestors":[]},"key$":"version","name__orig":"version","Name":"Version","name_":"version","name-":"version","NAME":"VERSION","index$":39}, {"active":true,"entity":"version","key$":"BasicVersionFlow","kind":"basic","name":"BasicVersionFlow","param":{},"step":[{"a":true,"d":{},"i":{"ref":"version_ref01","srcdatavar":"version_ref01_data","suffix":"_dt0"},"m":{},"o":"load","s":[],"v":[{"apply":"TextFieldMark","def":{"mark":"Mark01-version_ref01"}}],"index$":0}]}, 'Version', {"GET /public/version":{"protocol":"http","parameters":[]}})
     }
     const client = setup.client
     const struct = setup.struct

@@ -50,7 +50,7 @@ static StoreTerminalParameterSetup store_terminal_parameter_basic_setup(const Va
 
   StoreTerminalParameterSetup s;
   s.client = client;
-  s.data = entity_data;
+  s.d = entity_data;
   s.idmap = idmap_resolved;
   s.env = env;
   s.live = live;

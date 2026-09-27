@@ -1,7 +1,7 @@
 # Typed models for the BluefinTecsMerchantServices SDK.
 #
-# GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
-# params (op.<name>.points[].args.params[]). Member types come from the
+# GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+# params (op.<name>.points[].g.params[]). Member types come from the
 # canonical type sentinels. The SDK carries data as string-keyed struct value
 # nodes, so each alias is an open string-keyed map; the @typedoc member lists
 # document the concrete shapes. Do not edit by hand.
@@ -128,6 +128,58 @@ defmodule BluefinTecsMerchantServices.Types do
     * `"responseMessage"` — String.t() (optional)
   """
   @type check_card_black_listed_create_data :: %{optional(String.t()) => any()}
+
+  @typedoc """
+  CountAuthorisedTransaction entity data model.
+
+  Members:
+    * `"period"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"transactionDateFrom"` — String.t() (optional)
+    * `"transactionDateTo"` — String.t() (optional)
+    * `"transactionsCount"` — list() (optional)
+  """
+  @type count_authorised_transaction :: %{optional(String.t()) => any()}
+
+  @typedoc """
+  Request payload for CountAuthorisedTransaction create.
+
+  Members:
+    * `"period"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"transactionDateFrom"` — String.t() (optional)
+    * `"transactionDateTo"` — String.t() (optional)
+    * `"transactionsCount"` — list() (optional)
+  """
+  @type count_authorised_transaction_create_data :: %{optional(String.t()) => any()}
+
+  @typedoc """
+  CountNotAuthorisedTransaction entity data model.
+
+  Members:
+    * `"period"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"transactionDateFrom"` — String.t() (optional)
+    * `"transactionDateTo"` — String.t() (optional)
+    * `"transactionsCount"` — list() (optional)
+  """
+  @type count_not_authorised_transaction :: %{optional(String.t()) => any()}
+
+  @typedoc """
+  Request payload for CountNotAuthorisedTransaction create.
+
+  Members:
+    * `"period"` — String.t() (optional)
+    * `"responseCode"` — integer() (optional)
+    * `"responseMessage"` — String.t() (optional)
+    * `"transactionDateFrom"` — String.t() (optional)
+    * `"transactionDateTo"` — String.t() (optional)
+    * `"transactionsCount"` — list() (optional)
+  """
+  @type count_not_authorised_transaction_create_data :: %{optional(String.t()) => any()}
 
   @typedoc """
   CreateProduct entity data model.
@@ -1352,32 +1404,6 @@ defmodule BluefinTecsMerchantServices.Types do
     * `"wallet"` — String.t() (optional)
   """
   @type transaction_history_create_data :: %{optional(String.t()) => any()}
-
-  @typedoc """
-  TransactionsCount entity data model.
-
-  Members:
-    * `"period"` — String.t() (optional)
-    * `"responseCode"` — integer() (optional)
-    * `"responseMessage"` — String.t() (optional)
-    * `"transactionDateFrom"` — String.t() (optional)
-    * `"transactionDateTo"` — String.t() (optional)
-    * `"transactionsCount"` — list() (optional)
-  """
-  @type transactions_count :: %{optional(String.t()) => any()}
-
-  @typedoc """
-  Request payload for TransactionsCount create.
-
-  Members:
-    * `"period"` — String.t() (optional)
-    * `"responseCode"` — integer() (optional)
-    * `"responseMessage"` — String.t() (optional)
-    * `"transactionDateFrom"` — String.t() (optional)
-    * `"transactionDateTo"` — String.t() (optional)
-    * `"transactionsCount"` — list() (optional)
-  """
-  @type transactions_count_create_data :: %{optional(String.t()) => any()}
 
   @typedoc """
   TransactionsCountCardBrand entity data model.

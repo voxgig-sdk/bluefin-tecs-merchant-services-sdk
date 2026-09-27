@@ -1,0 +1,58 @@
+# Entity: introduce_package
+
+main: kit: entity: introduce_package: {
+
+  alias: field: {}
+
+  fields: {
+    responseCode: {
+      fo: "int32"
+      h: "Response Code"
+      n: "responseCode"
+      r: false
+      t: "`$INTEGER`"
+    }
+    responseMessage: {
+      h: "Response Message"
+      n: "responseMessage"
+      r: false
+      t: "`$STRING`"
+    }
+    terminalTemplateDescription: {
+      h: "Terminal Template Description"
+      n: "terminalTemplateDescription"
+      r: true
+      t: "`$STRING`"
+    }
+  }
+
+  name: "introduce_package"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /introducePackage"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/introducePackage"
+          s: [
+            {
+              lit: "introducePackage"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

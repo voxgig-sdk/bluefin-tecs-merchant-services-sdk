@@ -37,6 +37,14 @@ namespace Check_card_black_listed
   def create (c d co : Value) : SIO Value := SdkRuntime.opCreate c "check_card_black_listed" d co
 end Check_card_black_listed
 
+namespace Count_authorised_transaction
+  def create (c d co : Value) : SIO Value := SdkRuntime.opCreate c "count_authorised_transaction" d co
+end Count_authorised_transaction
+
+namespace Count_not_authorised_transaction
+  def create (c d co : Value) : SIO Value := SdkRuntime.opCreate c "count_not_authorised_transaction" d co
+end Count_not_authorised_transaction
+
 namespace Create_product
   def create (c d co : Value) : SIO Value := SdkRuntime.opCreate c "create_product" d co
 end Create_product
@@ -162,10 +170,6 @@ end Terminal_id
 namespace Transaction_history
   def create (c d co : Value) : SIO Value := SdkRuntime.opCreate c "transaction_history" d co
 end Transaction_history
-
-namespace Transactions_count
-  def create (c d co : Value) : SIO Value := SdkRuntime.opCreate c "transactions_count" d co
-end Transactions_count
 
 namespace Transactions_count_card_brand
   def create (c d co : Value) : SIO Value := SdkRuntime.opCreate c "transactions_count_card_brand" d co

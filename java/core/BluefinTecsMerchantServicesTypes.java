@@ -2,8 +2,8 @@ package voxgig.bluefintecsmerchantservicessdk.core;
 
 // Typed reference models for the BluefinTecsMerchantServices SDK.
 //
-// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
-// params (op.<name>.points[].args.params[]). Field/param types come from the
+// GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+// params (op.<name>.points[].g.params[]). Field/param types come from the
 // canonical type sentinels (source of truth: @voxgig/apidef VALID_CANON). Do
 // not edit by hand.
 //
@@ -27,6 +27,14 @@ public final class BluefinTecsMerchantServicesTypes {
   public record CheckCardBlackListed(String cardNo, Long responseCode, String responseMessage) {}
 
   public record CheckCardBlackListedCreateData(String cardNo, Long responseCode, String responseMessage) {}
+
+  public record CountAuthorisedTransaction(String period, Long responseCode, String responseMessage, String transactionDateFrom, String transactionDateTo, List<Object> transactionsCount) {}
+
+  public record CountAuthorisedTransactionCreateData(String period, Long responseCode, String responseMessage, String transactionDateFrom, String transactionDateTo, List<Object> transactionsCount) {}
+
+  public record CountNotAuthorisedTransaction(String period, Long responseCode, String responseMessage, String transactionDateFrom, String transactionDateTo, List<Object> transactionsCount) {}
+
+  public record CountNotAuthorisedTransactionCreateData(String period, Long responseCode, String responseMessage, String transactionDateFrom, String transactionDateTo, List<Object> transactionsCount) {}
 
   public record CreateProduct(Long acquirerId, Long responseCode, String responseMessage, String templateName, String templateType, String templateXml, String terminalType) {}
 
@@ -155,10 +163,6 @@ public final class BluefinTecsMerchantServicesTypes {
   public record TransactionHistory(String authorizationCode, String cardBrand, String clearingAmountFrom, String clearingAmountTo, String clearingCurrency, String clearingStatus, String corporateUUID, String orderByTransactionDate, Map<String, Object> pagination, String paymentTokenPublicId, String receiptNumber, String referencedTransactionId, Long responseCode, String responseMessage, String retrievalReferenceNumber, Long sourceId, String tecsengineResponseCodeFrom, String tecsengineResponseCodeTo, Long terminalId, String traceNumber, String transactionAmountFrom, String transactionAmountTo, String transactionDateFrom, String transactionDateTo, List<Object> transactionHistories, String transactionId, String transactionType, String wallet) {}
 
   public record TransactionHistoryCreateData(String authorizationCode, String cardBrand, String clearingAmountFrom, String clearingAmountTo, String clearingCurrency, String clearingStatus, String corporateUUID, String orderByTransactionDate, Map<String, Object> pagination, String paymentTokenPublicId, String receiptNumber, String referencedTransactionId, Long responseCode, String responseMessage, String retrievalReferenceNumber, Long sourceId, String tecsengineResponseCodeFrom, String tecsengineResponseCodeTo, Long terminalId, String traceNumber, String transactionAmountFrom, String transactionAmountTo, String transactionDateFrom, String transactionDateTo, List<Object> transactionHistories, String transactionId, String transactionType, String wallet) {}
-
-  public record TransactionsCount(String period, Long responseCode, String responseMessage, String transactionDateFrom, String transactionDateTo, List<Object> transactionsCount) {}
-
-  public record TransactionsCountCreateData(String period, Long responseCode, String responseMessage, String transactionDateFrom, String transactionDateTo, List<Object> transactionsCount) {}
 
   public record TransactionsCountCardBrand(String period, Long responseCode, String responseMessage, String transactionDateFrom, String transactionDateTo, List<Object> transactionsCount) {}
 

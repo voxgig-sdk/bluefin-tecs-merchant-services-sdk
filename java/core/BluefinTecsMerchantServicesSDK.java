@@ -37,6 +37,24 @@ public class BluefinTecsMerchantServicesSDK extends SdkClient {
   }
 
   /**
+   * Returns a count_authorised_transaction entity bound to this client.
+   * Idiomatic usage: client.countAuthorisedTransaction(null).list(null, null) or
+   * client.countAuthorisedTransaction(null).load(Map.of("id", ...), null).
+   */
+  public SdkEntity countAuthorisedTransaction(Map<String, Object> entopts) {
+    return new voxgig.bluefintecsmerchantservicessdk.entity.CountAuthorisedTransactionEntity(this, entopts);
+  }
+
+  /**
+   * Returns a count_not_authorised_transaction entity bound to this client.
+   * Idiomatic usage: client.countNotAuthorisedTransaction(null).list(null, null) or
+   * client.countNotAuthorisedTransaction(null).load(Map.of("id", ...), null).
+   */
+  public SdkEntity countNotAuthorisedTransaction(Map<String, Object> entopts) {
+    return new voxgig.bluefintecsmerchantservicessdk.entity.CountNotAuthorisedTransactionEntity(this, entopts);
+  }
+
+  /**
    * Returns a create_product entity bound to this client.
    * Idiomatic usage: client.createProduct(null).list(null, null) or
    * client.createProduct(null).load(Map.of("id", ...), null).
@@ -313,15 +331,6 @@ public class BluefinTecsMerchantServicesSDK extends SdkClient {
    */
   public SdkEntity transactionHistory(Map<String, Object> entopts) {
     return new voxgig.bluefintecsmerchantservicessdk.entity.TransactionHistoryEntity(this, entopts);
-  }
-
-  /**
-   * Returns a transactions_count entity bound to this client.
-   * Idiomatic usage: client.transactionsCount(null).list(null, null) or
-   * client.transactionsCount(null).load(Map.of("id", ...), null).
-   */
-  public SdkEntity transactionsCount(Map<String, Object> entopts) {
-    return new voxgig.bluefintecsmerchantservicessdk.entity.TransactionsCountEntity(this, entopts);
   }
 
   /**

@@ -1,0 +1,80 @@
+# Entity: ec_data_ecom
+
+main: kit: entity: ec_data_ecom: {
+
+  alias: field: {}
+
+  fields: {
+    ecomData: {
+      h: "Ecom Data"
+      n: "ecomData"
+      r: false
+      t: "`$STRING`"
+    }
+    responseCode: {
+      fo: "int32"
+      h: "Response Code"
+      n: "responseCode"
+      r: false
+      t: "`$INTEGER`"
+    }
+    responseMessage: {
+      h: "Response Message"
+      n: "responseMessage"
+      r: false
+      t: "`$STRING`"
+    }
+    terminalId: {
+      fo: "int32"
+      h: "Terminal Id"
+      n: "terminalId"
+      r: true
+      t: "`$INTEGER`"
+    }
+    transactionId: {
+      h: "Transaction Id"
+      n: "transactionId"
+      r: true
+      t: "`$STRING`"
+    }
+    transactionType: {
+      h: "Transaction Type"
+      n: "transactionType"
+      r: true
+      t: "`$STRING`"
+    }
+  }
+
+  name: "ec_data_ecom"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /public/getEcData"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/public/getEcData"
+          s: [
+            {
+              lit: "public"
+            }
+            {
+              lit: "getEcData"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

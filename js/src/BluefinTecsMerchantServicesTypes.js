@@ -1,7 +1,7 @@
 // Typed models for the BluefinTecsMerchantServices SDK (JSDoc typedefs).
 //
-// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
-// params (op.<name>.points[].args.params[]). Field/param types come from the
+// GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+// params (op.<name>.points[].g.params[]). Field/param types come from the
 // canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 // @voxgig/apidef VALID_CANON). Annotations only — no runtime effect. Do not
 // edit by hand.
@@ -106,6 +106,46 @@
  * @property {string} [cardNo]
  * @property {number} [responseCode]
  * @property {string} [responseMessage]
+ */
+
+/**
+ * @typedef {Object} CountAuthorisedTransaction
+ * @property {string} [period]
+ * @property {number} [responseCode]
+ * @property {string} [responseMessage]
+ * @property {string} [transactionDateFrom]
+ * @property {string} [transactionDateTo]
+ * @property {Array} [transactionsCount]
+ */
+
+/**
+ * @typedef {Object} CountAuthorisedTransactionCreateData
+ * @property {string} [period]
+ * @property {number} [responseCode]
+ * @property {string} [responseMessage]
+ * @property {string} [transactionDateFrom]
+ * @property {string} [transactionDateTo]
+ * @property {Array} [transactionsCount]
+ */
+
+/**
+ * @typedef {Object} CountNotAuthorisedTransaction
+ * @property {string} [period]
+ * @property {number} [responseCode]
+ * @property {string} [responseMessage]
+ * @property {string} [transactionDateFrom]
+ * @property {string} [transactionDateTo]
+ * @property {Array} [transactionsCount]
+ */
+
+/**
+ * @typedef {Object} CountNotAuthorisedTransactionCreateData
+ * @property {string} [period]
+ * @property {number} [responseCode]
+ * @property {string} [responseMessage]
+ * @property {string} [transactionDateFrom]
+ * @property {string} [transactionDateTo]
+ * @property {Array} [transactionsCount]
  */
 
 /**
@@ -1138,26 +1178,6 @@
  * @property {string} [transactionId]
  * @property {string} [transactionType]
  * @property {string} [wallet]
- */
-
-/**
- * @typedef {Object} TransactionsCount
- * @property {string} [period]
- * @property {number} [responseCode]
- * @property {string} [responseMessage]
- * @property {string} [transactionDateFrom]
- * @property {string} [transactionDateTo]
- * @property {Array} [transactionsCount]
- */
-
-/**
- * @typedef {Object} TransactionsCountCreateData
- * @property {string} [period]
- * @property {number} [responseCode]
- * @property {string} [responseMessage]
- * @property {string} [transactionDateFrom]
- * @property {string} [transactionDateTo]
- * @property {Array} [transactionsCount]
  */
 
 /**

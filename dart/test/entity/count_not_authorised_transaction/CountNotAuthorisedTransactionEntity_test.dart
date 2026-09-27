@@ -1,0 +1,139 @@
+// ignore_for_file: unused_import, unused_local_variable, non_constant_identifier_names
+
+import 'dart:convert';
+import 'dart:io';
+
+import '../../harness.dart';
+import '../../utility.dart';
+
+import '../../../lib/BluefinTecsMerchantServicesSDK.dart';
+import '../../../lib/utility/voxgig_struct.dart' as vs;
+
+void tests() {
+  describe('CountNotAuthorisedTransactionEntity', () {
+    test('instance', (t) async {
+      final testsdk = BluefinTecsMerchantServicesSDK.test();
+      final ent = testsdk.CountNotAuthorisedTransaction();
+      ok(null != ent);
+    });
+
+
+
+    test('basic', (t) async {
+
+      final live = 'TRUE' == Platform.environment['BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE'];
+      for (final op in ['create']) {
+        if (maybeSkipControl(t, 'entityOp', 'count_not_authorised_transaction.' + op, live)) {
+          return;
+        }
+      }
+
+      final setup = basicSetup();
+      // The basic flow consumes synthetic IDs and field values from the
+      // fixture (entity TestData.json). Those don't exist on the live API.
+      // Skip live runs unless the user provided a real ENTID env override.
+      if (true == setup['syntheticOnly']) {
+        t.skip('live entity test uses synthetic IDs from fixture — set BLUEFIN_TECS_MERCHANT_SERVICES_TEST_COUNT_NOT_AUTHORISED_TRANSACTION_ENTID JSON to run live');
+        return;
+      }
+      final client = setup['client'];
+      final struct = setup['struct'];
+
+      final isempty = struct.isempty;
+      final select = struct.select;
+
+
+      // CREATE
+      final count_not_authorised_transaction_ref01_ent = client.CountNotAuthorisedTransaction();
+      dynamic count_not_authorised_transaction_ref01_data = setup['data']['new']['count_not_authorised_transaction']['count_not_authorised_transaction_ref01'];
+
+      count_not_authorised_transaction_ref01_data = (await count_not_authorised_transaction_ref01_ent.create(count_not_authorised_transaction_ref01_data)).data();
+      ok(null != count_not_authorised_transaction_ref01_data);
+
+
+    });
+  });
+}
+
+
+Map<String, dynamic> basicSetup([dynamic extra]) {
+  final options = <String, dynamic>{};
+
+  final entityDataFile = resolveTestPath(
+      '../.sdk/test/entity/count_not_authorised_transaction/CountNotAuthorisedTransactionTestData.json');
+
+  final entityDataSource = File(entityDataFile).readAsStringSync();
+
+  final entityData = jsonDecode(entityDataSource);
+
+  options['entity'] = entityData['existing'];
+
+  var client = BluefinTecsMerchantServicesSDK.test(options, extra);
+  final struct = client.utility().struct;
+  final merge = struct.merge;
+  final transform = struct.transform;
+
+  dynamic idmap = transform(
+      <dynamic>['count_not_authorised_transaction01', 'count_not_authorised_transaction02', 'count_not_authorised_transaction03'],
+      <String, dynamic>{
+        '`\$PACK`': <dynamic>[
+          '',
+          <String, dynamic>{
+            '`\$KEY`': '`\$COPY`',
+            '`\$VAL`': <dynamic>['`\$FORMAT`', 'upper', '`\$COPY`'],
+          }
+        ]
+      });
+
+  // Detect whether the user provided a real ENTID JSON via env var. The
+  // basic flow consumes synthetic IDs from the fixture file; without an
+  // override those synthetic IDs reach the live API and 4xx. Surface this
+  // to the test so it can skip rather than fail.
+  final idmapEnvVal =
+      Platform.environment['BLUEFIN_TECS_MERCHANT_SERVICES_TEST_COUNT_NOT_AUTHORISED_TRANSACTION_ENTID'];
+  final idmapOverridden =
+      null != idmapEnvVal && idmapEnvVal.trim().startsWith('{');
+
+  final env = envOverride({
+    'BLUEFIN_TECS_MERCHANT_SERVICES_TEST_COUNT_NOT_AUTHORISED_TRANSACTION_ENTID': idmap,
+    'BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE': 'FALSE',
+    'BLUEFIN_TECS_MERCHANT_SERVICES_TEST_EXPLAIN': 'FALSE',
+    'BLUEFIN_TECS_MERCHANT_SERVICES_APIKEY': '',
+  });
+
+  idmap = env['BLUEFIN_TECS_MERCHANT_SERVICES_TEST_COUNT_NOT_AUTHORISED_TRANSACTION_ENTID'];
+
+  final live = 'TRUE' == env['BLUEFIN_TECS_MERCHANT_SERVICES_TEST_LIVE'];
+
+  if (live) {
+    client = BluefinTecsMerchantServicesSDK(merge([
+      // FIRST, so the generated fields below win: sdk-test-control.json's
+      // test.client.options adds to the live client, it does not redirect it.
+      liveClientOptions(),
+      <String, dynamic>{
+        'apikey': env['BLUEFIN_TECS_MERCHANT_SERVICES_APIKEY'],
+      },
+      // 'extra ?? {}', not a bare 'extra': merge returns null when the last
+      // entry is null, and basicSetup is normally called with no argument at
+      // all - so a bare 'extra' silently discarded the apikey and server
+      // values above and handed the SDK null.
+      extra ?? <String, dynamic>{}
+    ]));
+  }
+
+  final setup = <String, dynamic>{
+    'idmap': idmap,
+    'env': env,
+    'options': options,
+    'client': client,
+    'struct': struct,
+    'data': entityData,
+    'explain': 'TRUE' == env['BLUEFIN_TECS_MERCHANT_SERVICES_TEST_EXPLAIN'],
+    'live': live,
+    'syntheticOnly': live && !idmapOverridden,
+    'now': DateTime.now().millisecondsSinceEpoch,
+  };
+
+  return setup;
+}
+

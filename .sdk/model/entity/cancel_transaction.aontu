@@ -1,0 +1,321 @@
+# Entity: cancel_transaction
+
+main: kit: entity: cancel_transaction: {
+
+  alias: field: {}
+
+  fields: {
+    acquirerId: {
+      h: "Acquirer Id"
+      n: "acquirerId"
+      r: false
+      t: "`$STRING`"
+    }
+    acquirerName: {
+      h: "Acquirer Name"
+      n: "acquirerName"
+      r: false
+      t: "`$STRING`"
+    }
+    actualBonusPoints: {
+      h: "Actual Bonus Points"
+      n: "actualBonusPoints"
+      r: false
+      t: "`$STRING`"
+    }
+    amount: {
+      fo: "int32"
+      h: "Amount"
+      n: "amount"
+      op: {
+        create: {
+          req: true
+          type: "`$INTEGER`"
+        }
+      }
+      r: false
+      t: "`$INTEGER`"
+    }
+    authorizationCode: {
+      h: "Authorization Code"
+      n: "authorizationCode"
+      r: false
+      t: "`$STRING`"
+    }
+    balanceAmount: {
+      h: "Balance Amount"
+      n: "balanceAmount"
+      r: false
+      t: "`$STRING`"
+    }
+    cardBrand: {
+      h: "Card Brand"
+      n: "cardBrand"
+      r: false
+      t: "`$STRING`"
+    }
+    cardNumber: {
+      h: "Card Number"
+      n: "cardNumber"
+      r: false
+      t: "`$STRING`"
+    }
+    clientId: {
+      fo: "int32"
+      h: "Client Id"
+      n: "clientId"
+      r: true
+      t: "`$INTEGER`"
+    }
+    currency: {
+      h: "Currency"
+      n: "currency"
+      r: true
+      t: "`$STRING`"
+    }
+    cvc: {
+      h: "Cvc"
+      n: "cvc"
+      r: false
+      t: "`$STRING`"
+    }
+    ecData: {
+      h: "Ec Data"
+      n: "ecData"
+      r: false
+      t: "`$STRING`"
+    }
+    ecrData: {
+      h: "Ecr Data"
+      n: "ecrData"
+      r: false
+      t: "`$STRING`"
+    }
+    emvData: {
+      h: "Emv Data"
+      n: "emvData"
+      r: false
+      t: "`$STRING`"
+    }
+    exchangeFee: {
+      fo: "int64"
+      h: "Exchange Fee"
+      n: "exchangeFee"
+      r: false
+      t: "`$INTEGER`"
+    }
+    exchangeRate: {
+      h: "Exchange Rate"
+      n: "exchangeRate"
+      r: false
+      t: "`$STRING`"
+    }
+    languageCode: {
+      h: "Language Code"
+      n: "languageCode"
+      r: false
+      t: "`$STRING`"
+    }
+    merchantAddress: {
+      h: "Merchant Address"
+      n: "merchantAddress"
+      r: false
+      t: "`$STRING`"
+    }
+    merchantName: {
+      h: "Merchant Name"
+      n: "merchantName"
+      r: false
+      t: "`$STRING`"
+    }
+    merchantNumber: {
+      h: "Merchant Number"
+      n: "merchantNumber"
+      r: false
+      t: "`$STRING`"
+    }
+    messageType: {
+      h: "Message Type"
+      n: "messageType"
+      op: {
+        create: {
+          req: true
+          type: "`$STRING`"
+        }
+      }
+      r: false
+      t: "`$STRING`"
+    }
+    originalTraceNumber: {
+      fo: "int32"
+      h: "Original Trace Number"
+      n: "originalTraceNumber"
+      r: false
+      t: "`$INTEGER`"
+    }
+    originalTransactionId: {
+      h: "Original Transaction Id"
+      n: "originalTransactionId"
+      op: {
+        create: {
+          req: true
+          type: "`$STRING`"
+        }
+      }
+      r: false
+      t: "`$STRING`"
+    }
+    password: {
+      h: "Password"
+      n: "password"
+      r: false
+      t: "`$STRING`"
+    }
+    paymentReason: {
+      h: "Payment Reason"
+      n: "paymentReason"
+      r: false
+      t: "`$STRING`"
+    }
+    receiptFooter: {
+      h: "Receipt Footer"
+      n: "receiptFooter"
+      r: false
+      t: "`$STRING`"
+    }
+    receiptHeader: {
+      h: "Receipt Header"
+      n: "receiptHeader"
+      r: false
+      t: "`$STRING`"
+    }
+    receiptLayout: {
+      fo: "int32"
+      h: "Receipt Layout"
+      n: "receiptLayout"
+      r: false
+      t: "`$INTEGER`"
+    }
+    receiptNumber: {
+      h: "Receipt Number"
+      n: "receiptNumber"
+      r: true
+      t: "`$STRING`"
+    }
+    responseCode: {
+      fo: "int32"
+      h: "Response Code"
+      n: "responseCode"
+      r: false
+      t: "`$INTEGER`"
+    }
+    responseMessage: {
+      h: "Response Message"
+      n: "responseMessage"
+      r: false
+      t: "`$STRING`"
+    }
+    serialNumber: {
+      h: "Serial Number"
+      n: "serialNumber"
+      r: false
+      t: "`$STRING`"
+    }
+    svc: {
+      h: "Svc"
+      n: "svc"
+      r: false
+      t: "`$STRING`"
+    }
+    terminalId: {
+      fo: "int32"
+      h: "Terminal Id"
+      n: "terminalId"
+      r: true
+      t: "`$INTEGER`"
+    }
+    terminalLocation: {
+      h: "Terminal Location"
+      n: "terminalLocation"
+      r: false
+      t: "`$STRING`"
+    }
+    traceNumber: {
+      fo: "int32"
+      h: "Trace Number"
+      n: "traceNumber"
+      r: false
+      t: "`$INTEGER`"
+    }
+    transactionDate: {
+      fo: "date-time"
+      h: "Transaction Date"
+      n: "transactionDate"
+      op: {
+        create: {
+          req: true
+          type: "`$STRING`"
+        }
+      }
+      r: false
+      t: "`$STRING`"
+    }
+    transactionId: {
+      h: "Transaction Id"
+      n: "transactionId"
+      op: {
+        create: {
+          req: true
+          type: "`$STRING`"
+        }
+      }
+      r: false
+      t: "`$STRING`"
+    }
+    txType: {
+      h: "Tx Type"
+      n: "txType"
+      r: false
+      t: "`$STRING`"
+    }
+    userData: {
+      h: "User Data"
+      n: "userData"
+      r: false
+      t: "`$STRING`"
+    }
+  }
+
+  name: "cancel_transaction"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /public/cancelTransaction"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/public/cancelTransaction"
+          s: [
+            {
+              lit: "public"
+            }
+            {
+              lit: "cancelTransaction"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

@@ -2,6 +2,8 @@
 
 import 'entity/CancelTransactionEntity.dart';
 import 'entity/CheckCardBlackListedEntity.dart';
+import 'entity/CountAuthorisedTransactionEntity.dart';
+import 'entity/CountNotAuthorisedTransactionEntity.dart';
 import 'entity/CreateProductEntity.dart';
 import 'entity/DeactivateTerminalEntity.dart';
 import 'entity/DigitalServicesApiEntity.dart';
@@ -33,7 +35,6 @@ import 'entity/StatusTransactionEntity.dart';
 import 'entity/StoreTerminalParameterEntity.dart';
 import 'entity/TerminalIdEntity.dart';
 import 'entity/TransactionHistoryEntity.dart';
-import 'entity/TransactionsCountEntity.dart';
 import 'entity/TransactionsCountCardBrandEntity.dart';
 import 'entity/TransactionsTurnoverEntity.dart';
 import 'entity/UpdateMerchantEntity.dart';
@@ -44,6 +45,8 @@ import 'entity/VersionEntity.dart';
 export 'BluefinTecsMerchantServicesTypes.dart';
 export 'entity/CancelTransactionEntity.dart';
 export 'entity/CheckCardBlackListedEntity.dart';
+export 'entity/CountAuthorisedTransactionEntity.dart';
+export 'entity/CountNotAuthorisedTransactionEntity.dart';
 export 'entity/CreateProductEntity.dart';
 export 'entity/DeactivateTerminalEntity.dart';
 export 'entity/DigitalServicesApiEntity.dart';
@@ -75,7 +78,6 @@ export 'entity/StatusTransactionEntity.dart';
 export 'entity/StoreTerminalParameterEntity.dart';
 export 'entity/TerminalIdEntity.dart';
 export 'entity/TransactionHistoryEntity.dart';
-export 'entity/TransactionsCountEntity.dart';
 export 'entity/TransactionsCountCardBrandEntity.dart';
 export 'entity/TransactionsTurnoverEntity.dart';
 export 'entity/UpdateMerchantEntity.dart';
@@ -399,6 +401,18 @@ class BluefinTecsMerchantServicesSDK {
   }
 
 
+  // Entity access: `client.CountAuthorisedTransaction().list()` / `client.CountAuthorisedTransaction().load({'id': ...})`.
+  CountAuthorisedTransactionEntity CountAuthorisedTransaction([dynamic entopts]) {
+    return CountAuthorisedTransactionEntity(this, entopts);
+  }
+
+
+  // Entity access: `client.CountNotAuthorisedTransaction().list()` / `client.CountNotAuthorisedTransaction().load({'id': ...})`.
+  CountNotAuthorisedTransactionEntity CountNotAuthorisedTransaction([dynamic entopts]) {
+    return CountNotAuthorisedTransactionEntity(this, entopts);
+  }
+
+
   // Entity access: `client.CreateProduct().list()` / `client.CreateProduct().load({'id': ...})`.
   CreateProductEntity CreateProduct([dynamic entopts]) {
     return CreateProductEntity(this, entopts);
@@ -582,12 +596,6 @@ class BluefinTecsMerchantServicesSDK {
   // Entity access: `client.TransactionHistory().list()` / `client.TransactionHistory().load({'id': ...})`.
   TransactionHistoryEntity TransactionHistory([dynamic entopts]) {
     return TransactionHistoryEntity(this, entopts);
-  }
-
-
-  // Entity access: `client.TransactionsCount().list()` / `client.TransactionsCount().load({'id': ...})`.
-  TransactionsCountEntity TransactionsCount([dynamic entopts]) {
-    return TransactionsCountEntity(this, entopts);
   }
 
 

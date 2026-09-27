@@ -2,8 +2,8 @@ package voxgig.bluefintecsmerchantservicessdk.core
 
 // Typed reference models for the BluefinTecsMerchantServices SDK.
 //
-// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
-// params (op.<name>.points[].args.params[]). Field/param types come from the
+// GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+// params (op.<name>.points[].g.params[]). Field/param types come from the
 // canonical type sentinels (source of truth: @voxgig/apidef VALID_CANON). Do
 // not edit by hand.
 //
@@ -23,6 +23,14 @@ object BluefinTecsMerchantServicesTypes {
   final case class CheckCardBlackListed(cardNo: String, responseCode: java.lang.Long, responseMessage: String)
 
   final case class CheckCardBlackListedCreateData(cardNo: String, responseCode: java.lang.Long, responseMessage: String)
+
+  final case class CountAuthorisedTransaction(period: String, responseCode: java.lang.Long, responseMessage: String, transactionDateFrom: String, transactionDateTo: String, transactionsCount: java.util.List[Object])
+
+  final case class CountAuthorisedTransactionCreateData(period: String, responseCode: java.lang.Long, responseMessage: String, transactionDateFrom: String, transactionDateTo: String, transactionsCount: java.util.List[Object])
+
+  final case class CountNotAuthorisedTransaction(period: String, responseCode: java.lang.Long, responseMessage: String, transactionDateFrom: String, transactionDateTo: String, transactionsCount: java.util.List[Object])
+
+  final case class CountNotAuthorisedTransactionCreateData(period: String, responseCode: java.lang.Long, responseMessage: String, transactionDateFrom: String, transactionDateTo: String, transactionsCount: java.util.List[Object])
 
   final case class CreateProduct(acquirerId: java.lang.Long, responseCode: java.lang.Long, responseMessage: String, templateName: String, templateType: String, templateXml: String, terminalType: String)
 
@@ -151,10 +159,6 @@ object BluefinTecsMerchantServicesTypes {
   final case class TransactionHistory(authorizationCode: String, cardBrand: String, clearingAmountFrom: String, clearingAmountTo: String, clearingCurrency: String, clearingStatus: String, corporateUUID: String, orderByTransactionDate: String, pagination: java.util.Map[String, Object], paymentTokenPublicId: String, receiptNumber: String, referencedTransactionId: String, responseCode: java.lang.Long, responseMessage: String, retrievalReferenceNumber: String, sourceId: java.lang.Long, tecsengineResponseCodeFrom: String, tecsengineResponseCodeTo: String, terminalId: java.lang.Long, traceNumber: String, transactionAmountFrom: String, transactionAmountTo: String, transactionDateFrom: String, transactionDateTo: String, transactionHistories: java.util.List[Object], transactionId: String, transactionType: String, wallet: String)
 
   final case class TransactionHistoryCreateData(authorizationCode: String, cardBrand: String, clearingAmountFrom: String, clearingAmountTo: String, clearingCurrency: String, clearingStatus: String, corporateUUID: String, orderByTransactionDate: String, pagination: java.util.Map[String, Object], paymentTokenPublicId: String, receiptNumber: String, referencedTransactionId: String, responseCode: java.lang.Long, responseMessage: String, retrievalReferenceNumber: String, sourceId: java.lang.Long, tecsengineResponseCodeFrom: String, tecsengineResponseCodeTo: String, terminalId: java.lang.Long, traceNumber: String, transactionAmountFrom: String, transactionAmountTo: String, transactionDateFrom: String, transactionDateTo: String, transactionHistories: java.util.List[Object], transactionId: String, transactionType: String, wallet: String)
-
-  final case class TransactionsCount(period: String, responseCode: java.lang.Long, responseMessage: String, transactionDateFrom: String, transactionDateTo: String, transactionsCount: java.util.List[Object])
-
-  final case class TransactionsCountCreateData(period: String, responseCode: java.lang.Long, responseMessage: String, transactionDateFrom: String, transactionDateTo: String, transactionsCount: java.util.List[Object])
 
   final case class TransactionsCountCardBrand(period: String, responseCode: java.lang.Long, responseMessage: String, transactionDateFrom: String, transactionDateTo: String, transactionsCount: java.util.List[Object])
 

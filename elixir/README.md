@@ -231,6 +231,8 @@ Creates a test-mode client with mock transport. Both arguments may be `nil`.
 | `direct` | `(client, fetchargs) :: map()` | Build and send an HTTP request. Returns a result node (branch on `ok`). |
 | `cancel_transaction` | `(client, entopts \\ nil) :: entity` | Create a CancelTransaction entity handle. |
 | `check_card_black_listed` | `(client, entopts \\ nil) :: entity` | Create a CheckCardBlackListed entity handle. |
+| `count_authorised_transaction` | `(client, entopts \\ nil) :: entity` | Create a CountAuthorisedTransaction entity handle. |
+| `count_not_authorised_transaction` | `(client, entopts \\ nil) :: entity` | Create a CountNotAuthorisedTransaction entity handle. |
 | `create_product` | `(client, entopts \\ nil) :: entity` | Create a CreateProduct entity handle. |
 | `deactivate_terminal` | `(client, entopts \\ nil) :: entity` | Create a DeactivateTerminal entity handle. |
 | `digital_services_api` | `(client, entopts \\ nil) :: entity` | Create a DigitalServicesApi entity handle. |
@@ -262,7 +264,6 @@ Creates a test-mode client with mock transport. Both arguments may be `nil`.
 | `store_terminal_parameter` | `(client, entopts \\ nil) :: entity` | Create a StoreTerminalParameter entity handle. |
 | `terminal_id` | `(client, entopts \\ nil) :: entity` | Create a TerminalId entity handle. |
 | `transaction_history` | `(client, entopts \\ nil) :: entity` | Create a TransactionHistory entity handle. |
-| `transactions_count` | `(client, entopts \\ nil) :: entity` | Create a TransactionsCount entity handle. |
 | `transactions_count_card_brand` | `(client, entopts \\ nil) :: entity` | Create a TransactionsCountCardBrand entity handle. |
 | `transactions_turnover` | `(client, entopts \\ nil) :: entity` | Create a TransactionsTurnover entity handle. |
 | `update_merchant` | `(client, entopts \\ nil) :: entity` | Create an UpdateMerchant entity handle. |
@@ -364,6 +365,36 @@ API path: `/public/cancelTransaction`
 Operations: Create.
 
 API path: `/checkCardBlackListed`
+
+#### CountAuthorisedTransaction
+
+| Field | Description |
+| --- | --- |
+| `period` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `transactionDateFrom` |  |
+| `transactionDateTo` |  |
+| `transactionsCount` |  |
+
+Operations: Create.
+
+API path: `/public/countAuthorisedTransactions`
+
+#### CountNotAuthorisedTransaction
+
+| Field | Description |
+| --- | --- |
+| `period` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `transactionDateFrom` |  |
+| `transactionDateTo` |  |
+| `transactionsCount` |  |
+
+Operations: Create.
+
+API path: `/public/countNotAuthorisedTransactions`
 
 #### CreateProduct
 
@@ -1026,21 +1057,6 @@ Operations: Create.
 
 API path: `/public/mcom/transactionHistory`
 
-#### TransactionsCount
-
-| Field | Description |
-| --- | --- |
-| `period` |  |
-| `responseCode` |  |
-| `responseMessage` |  |
-| `transactionDateFrom` |  |
-| `transactionDateTo` |  |
-| `transactionsCount` |  |
-
-Operations: Create.
-
-API path: `/public/countAuthorisedTransactions`
-
 #### TransactionsCountCardBrand
 
 | Field | Description |
@@ -1215,6 +1231,66 @@ Create a handle: `check_card_black_listed = BluefinTecsMerchantServices.check_ca
 ```elixir
 check_card_black_listed = BluefinTecsMerchantServices.check_card_black_listed(sdk)
 record = BluefinTecsMerchantServices.Entity.CheckCardBlackListed.create(check_card_black_listed, BluefinTecsMerchantServices.Helpers.deep(%{
+}))
+```
+
+
+### CountAuthorisedTransaction
+
+Create a handle: `count_authorised_transaction = BluefinTecsMerchantServices.count_authorised_transaction(sdk)`
+
+#### Operations
+
+| Method | Description |
+| --- | --- |
+| `create(entity, data)` | Create a new entity with the given data. |
+
+#### Fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `period` | `String.t()` |  |
+| `responseCode` | `integer()` |  |
+| `responseMessage` | `String.t()` |  |
+| `transactionDateFrom` | `String.t()` |  |
+| `transactionDateTo` | `String.t()` |  |
+| `transactionsCount` | `list()` |  |
+
+#### Example: Create
+
+```elixir
+count_authorised_transaction = BluefinTecsMerchantServices.count_authorised_transaction(sdk)
+record = BluefinTecsMerchantServices.Entity.CountAuthorisedTransaction.create(count_authorised_transaction, BluefinTecsMerchantServices.Helpers.deep(%{
+}))
+```
+
+
+### CountNotAuthorisedTransaction
+
+Create a handle: `count_not_authorised_transaction = BluefinTecsMerchantServices.count_not_authorised_transaction(sdk)`
+
+#### Operations
+
+| Method | Description |
+| --- | --- |
+| `create(entity, data)` | Create a new entity with the given data. |
+
+#### Fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `period` | `String.t()` |  |
+| `responseCode` | `integer()` |  |
+| `responseMessage` | `String.t()` |  |
+| `transactionDateFrom` | `String.t()` |  |
+| `transactionDateTo` | `String.t()` |  |
+| `transactionsCount` | `list()` |  |
+
+#### Example: Create
+
+```elixir
+count_not_authorised_transaction = BluefinTecsMerchantServices.count_not_authorised_transaction(sdk)
+record = BluefinTecsMerchantServices.Entity.CountNotAuthorisedTransaction.create(count_not_authorised_transaction, BluefinTecsMerchantServices.Helpers.deep(%{
 }))
 ```
 
@@ -2436,36 +2512,6 @@ record = BluefinTecsMerchantServices.Entity.TransactionHistory.create(transactio
 ```
 
 
-### TransactionsCount
-
-Create a handle: `transactions_count = BluefinTecsMerchantServices.transactions_count(sdk)`
-
-#### Operations
-
-| Method | Description |
-| --- | --- |
-| `create(entity, data)` | Create a new entity with the given data. |
-
-#### Fields
-
-| Field | Type | Description |
-| --- | --- | --- |
-| `period` | `String.t()` |  |
-| `responseCode` | `integer()` |  |
-| `responseMessage` | `String.t()` |  |
-| `transactionDateFrom` | `String.t()` |  |
-| `transactionDateTo` | `String.t()` |  |
-| `transactionsCount` | `list()` |  |
-
-#### Example: Create
-
-```elixir
-transactions_count = BluefinTecsMerchantServices.transactions_count(sdk)
-record = BluefinTecsMerchantServices.Entity.TransactionsCount.create(transactions_count, BluefinTecsMerchantServices.Helpers.deep(%{
-}))
-```
-
-
 ### TransactionsCountCardBrand
 
 Create a handle: `transactions_count_card_brand = BluefinTecsMerchantServices.transactions_count_card_brand(sdk)`
@@ -2628,18 +2674,18 @@ above:
 
 | Feature | What it does |
 |---|---|
-| [`audit`](#audit) | Structured audit trail of operations |
-| [`clienttrack`](#clienttrack) | Client identity and per-request correlation headers |
-| [`debug`](#debug) | Request/response capture ring buffer for debugging |
-| [`idempotency`](#idempotency) | Idempotency keys for safe retries of mutating operations |
-| [`log`](#log) | Structured request and response logging |
-| [`metrics`](#metrics) | Statistics capture: per-operation counters and latency |
-| [`paging`](#paging) | Pagination signals for list operations |
-| [`ratelimit`](#ratelimit) | Client-side rate limiting via a token bucket |
-| [`retry`](#retry) | Automatic retry of transient failures with exponential backoff |
-| [`telemetry`](#telemetry) | Distributed tracing spans with W3C trace-context propagation |
-| [`test`](#test) | In-memory mock transport for testing without a live server |
-| [`timeout`](#timeout) | Per-request timeout with transport abort |
+| [`audit`](#audit) | Audit trail |
+| [`clienttrack`](#clienttrack) | Client tracking |
+| [`debug`](#debug) | Debug capture |
+| [`idempotency`](#idempotency) | Idempotency |
+| [`log`](#log) | Logging |
+| [`metrics`](#metrics) | Metrics |
+| [`paging`](#paging) | Paging |
+| [`ratelimit`](#ratelimit) | Rate limiting |
+| [`retry`](#retry) | Retry |
+| [`telemetry`](#telemetry) | Telemetry |
+| [`test`](#test) | Test transport |
+| [`timeout`](#timeout) | Timeout |
 
 > **Order matters for `ratelimit`, `retry`, `timeout`.** These wrap the
 > transport, so each one wraps whatever is already installed: the order you
@@ -2648,7 +2694,7 @@ above:
 
 ### audit
 
-Structured audit trail of operations.
+Audit trail.
 
 | Option | Default |
 |---|---|
@@ -2660,7 +2706,7 @@ Set `feature.audit.active` to enable it, then override any of the options above.
 
 ### clienttrack
 
-Client identity and per-request correlation headers.
+Client tracking.
 
 | Option | Default |
 |---|---|
@@ -2671,7 +2717,7 @@ Set `feature.clienttrack.active` to enable it, then override any of the options 
 
 ### debug
 
-Request/response capture ring buffer for debugging.
+Debug capture.
 
 | Option | Default |
 |---|---|
@@ -2683,7 +2729,7 @@ Set `feature.debug.active` to enable it, then override any of the options above.
 
 ### idempotency
 
-Idempotency keys for safe retries of mutating operations.
+Idempotency.
 
 | Option | Default |
 |---|---|
@@ -2696,7 +2742,7 @@ Set `feature.idempotency.active` to enable it, then override any of the options 
 
 ### log
 
-Structured request and response logging.
+Logging.
 
 | Option | Default |
 |---|---|
@@ -2706,7 +2752,7 @@ Set `feature.log.active` to enable it, then override any of the options above.
 
 ### metrics
 
-Statistics capture: per-operation counters and latency.
+Metrics.
 
 | Option | Default |
 |---|---|
@@ -2716,7 +2762,7 @@ Set `feature.metrics.active` to enable it, then override any of the options abov
 
 ### paging
 
-Pagination signals for list operations.
+Paging.
 
 | Option | Default |
 |---|---|
@@ -2732,7 +2778,7 @@ Set `feature.paging.active` to enable it, then override any of the options above
 
 ### ratelimit
 
-Client-side rate limiting via a token bucket.
+Rate limiting.
 
 | Option | Default |
 |---|---|
@@ -2748,7 +2794,7 @@ activated earlier.
 
 ### retry
 
-Automatic retry of transient failures with exponential backoff.
+Retry.
 
 | Option | Default |
 |---|---|
@@ -2767,7 +2813,7 @@ activated earlier.
 
 ### telemetry
 
-Distributed tracing spans with W3C trace-context propagation.
+Telemetry.
 
 | Option | Default |
 |---|---|
@@ -2777,7 +2823,7 @@ Set `feature.telemetry.active` to enable it, then override any of the options ab
 
 ### test
 
-In-memory mock transport for testing without a live server.
+Test transport.
 
 | Option | Default |
 |---|---|
@@ -2787,7 +2833,7 @@ Set `feature.test.active` to enable it, then override any of the options above.
 
 ### timeout
 
-Per-request timeout with transport abort.
+Timeout.
 
 | Option | Default |
 |---|---|
@@ -2839,18 +2885,18 @@ a function that receives the context.
 
 The SDK ships with built-in features:
 
-- **AuditFeature**: Structured audit trail of operations
-- **ClienttrackFeature**: Client identity and per-request correlation headers
-- **DebugFeature**: Request/response capture ring buffer for debugging
-- **IdempotencyFeature**: Idempotency keys for safe retries of mutating operations
-- **LogFeature**: Structured request and response logging
-- **MetricsFeature**: Statistics capture: per-operation counters and latency
-- **PagingFeature**: Pagination signals for list operations
-- **RatelimitFeature**: Client-side rate limiting via a token bucket
-- **RetryFeature**: Automatic retry of transient failures with exponential backoff
-- **TelemetryFeature**: Distributed tracing spans with W3C trace-context propagation
-- **TestFeature**: In-memory mock transport for testing without a live server
-- **TimeoutFeature**: Per-request timeout with transport abort
+- **AuditFeature**: Audit trail
+- **ClienttrackFeature**: Client tracking
+- **DebugFeature**: Debug capture
+- **IdempotencyFeature**: Idempotency
+- **LogFeature**: Logging
+- **MetricsFeature**: Metrics
+- **PagingFeature**: Paging
+- **RatelimitFeature**: Rate limiting
+- **RetryFeature**: Retry
+- **TelemetryFeature**: Telemetry
+- **TestFeature**: Test transport
+- **TimeoutFeature**: Timeout
 
 Features are initialized in order. Hooks fire in the order features
 were added, so later features can override earlier ones.
@@ -2874,6 +2920,7 @@ elixir/
 ├── lib/
 │   ├── bluefin-tecs-merchant-services.ex                 -- Main SDK module (entity factories)
 │   ├── config.ex                 -- Resolved configuration
+│   ├── schema.ex                 -- Generated option + entity specs
 │   ├── features.ex               -- Feature factory
 │   ├── pipeline.ex               -- Operation pipeline
 │   └── bluefin-tecs-merchant-services/

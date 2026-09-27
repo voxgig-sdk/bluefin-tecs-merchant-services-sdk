@@ -53,6 +53,16 @@ Create a new `CancelTransaction` entity instance (returns
 Create a new `CheckCardBlackListed` entity instance (returns
 `BluefinTecsMerchantServicesEntityBase`). Pass `null` for no initial options.
 
+#### `CountAuthorisedTransaction(entopts = null)`
+
+Create a new `CountAuthorisedTransaction` entity instance (returns
+`BluefinTecsMerchantServicesEntityBase`). Pass `null` for no initial options.
+
+#### `CountNotAuthorisedTransaction(entopts = null)`
+
+Create a new `CountNotAuthorisedTransaction` entity instance (returns
+`BluefinTecsMerchantServicesEntityBase`). Pass `null` for no initial options.
+
 #### `CreateProduct(entopts = null)`
 
 Create a new `CreateProduct` entity instance (returns
@@ -206,11 +216,6 @@ Create a new `TerminalId` entity instance (returns
 #### `TransactionHistory(entopts = null)`
 
 Create a new `TransactionHistory` entity instance (returns
-`BluefinTecsMerchantServicesEntityBase`). Pass `null` for no initial options.
-
-#### `TransactionsCount(entopts = null)`
-
-Create a new `TransactionsCount` entity instance (returns
 `BluefinTecsMerchantServicesEntityBase`). Pass `null` for no initial options.
 
 #### `TransactionsCountCardBrand(entopts = null)`
@@ -445,6 +450,128 @@ Get or set the entity match criteria.
 #### `Make() -> IEntity`
 
 Create a new `CheckCardBlackListed` entity instance with the same options.
+
+#### `GetName() -> string`
+
+Return the entity name.
+
+
+---
+
+## CountAuthorisedTransaction
+
+```csharp
+var countAuthorisedTransaction = client.CountAuthorisedTransaction();
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `period` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `transactionDateFrom` | `string` | No |  |
+| `transactionDateTo` | `string` | No |  |
+| `transactionsCount` | `List<object?>` | No |  |
+
+### Field Usage by Operation
+
+| Field | create |
+| --- | --- |
+| `period` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `transactionDateFrom` | Yes |
+| `transactionDateTo` | Yes |
+| `transactionsCount` | - |
+
+### Operations
+
+#### `Create(reqdata, ctrl = null) -> object?`
+
+Create a new entity with the given data. Returns the created entity data and raises on error.
+
+```csharp
+var result = client.CountAuthorisedTransaction().Create(new Dictionary<string, object?>
+{
+});
+```
+
+### Common Methods
+
+#### `Data(newdata = null) -> object?`
+
+Get or set the entity data.
+
+#### `Match(newmatch = null) -> object?`
+
+Get or set the entity match criteria.
+
+#### `Make() -> IEntity`
+
+Create a new `CountAuthorisedTransaction` entity instance with the same options.
+
+#### `GetName() -> string`
+
+Return the entity name.
+
+
+---
+
+## CountNotAuthorisedTransaction
+
+```csharp
+var countNotAuthorisedTransaction = client.CountNotAuthorisedTransaction();
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `period` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `transactionDateFrom` | `string` | No |  |
+| `transactionDateTo` | `string` | No |  |
+| `transactionsCount` | `List<object?>` | No |  |
+
+### Field Usage by Operation
+
+| Field | create |
+| --- | --- |
+| `period` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `transactionDateFrom` | Yes |
+| `transactionDateTo` | Yes |
+| `transactionsCount` | - |
+
+### Operations
+
+#### `Create(reqdata, ctrl = null) -> object?`
+
+Create a new entity with the given data. Returns the created entity data and raises on error.
+
+```csharp
+var result = client.CountNotAuthorisedTransaction().Create(new Dictionary<string, object?>
+{
+});
+```
+
+### Common Methods
+
+#### `Data(newdata = null) -> object?`
+
+Get or set the entity data.
+
+#### `Match(newmatch = null) -> object?`
+
+Get or set the entity match criteria.
+
+#### `Make() -> IEntity`
+
+Create a new `CountNotAuthorisedTransaction` entity instance with the same options.
 
 #### `GetName() -> string`
 
@@ -2404,67 +2531,6 @@ Return the entity name.
 
 ---
 
-## TransactionsCount
-
-```csharp
-var transactionsCount = client.TransactionsCount();
-```
-
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `period` | `string` | No |  |
-| `responseCode` | `long` | No |  |
-| `responseMessage` | `string` | No |  |
-| `transactionDateFrom` | `string` | No |  |
-| `transactionDateTo` | `string` | No |  |
-| `transactionsCount` | `List<object?>` | No |  |
-
-### Field Usage by Operation
-
-| Field | create |
-| --- | --- |
-| `period` | - |
-| `responseCode` | - |
-| `responseMessage` | - |
-| `transactionDateFrom` | Yes |
-| `transactionDateTo` | Yes |
-| `transactionsCount` | - |
-
-### Operations
-
-#### `Create(reqdata, ctrl = null) -> object?`
-
-Create a new entity with the given data. Returns the created entity data and raises on error.
-
-```csharp
-var result = client.TransactionsCount().Create(new Dictionary<string, object?>
-{
-});
-```
-
-### Common Methods
-
-#### `Data(newdata = null) -> object?`
-
-Get or set the entity data.
-
-#### `Match(newmatch = null) -> object?`
-
-Get or set the entity match criteria.
-
-#### `Make() -> IEntity`
-
-Create a new `TransactionsCount` entity instance with the same options.
-
-#### `GetName() -> string`
-
-Return the entity name.
-
-
----
-
 ## TransactionsCountCardBrand
 
 ```csharp
@@ -2742,18 +2808,18 @@ Return the entity name.
 
 | Feature | Version | Description |
 | --- | --- | --- |
-| `audit` | 0.0.1 | Structured audit trail of operations |
-| `clienttrack` | 0.0.1 | Client identity and per-request correlation headers |
-| `debug` | 0.0.1 | Request/response capture ring buffer for debugging |
-| `idempotency` | 0.0.1 | Idempotency keys for safe retries of mutating operations |
-| `log` | 0.0.1 | Structured request and response logging |
-| `metrics` | 0.0.1 | Statistics capture: per-operation counters and latency |
-| `paging` | 0.0.1 | Pagination signals for list operations |
-| `ratelimit` | 0.0.1 | Client-side rate limiting via a token bucket |
-| `retry` | 0.0.1 | Automatic retry of transient failures with exponential backoff |
-| `telemetry` | 0.0.1 | Distributed tracing spans with W3C trace-context propagation |
-| `test` | 0.0.1 | In-memory mock transport for testing without a live server |
-| `timeout` | 0.0.1 | Per-request timeout with transport abort |
+| `audit` | 0.0.1 | Audit trail |
+| `clienttrack` | 0.0.1 | Client tracking |
+| `debug` | 0.0.1 | Debug capture |
+| `idempotency` | 0.0.1 | Idempotency |
+| `log` | 0.0.1 | Logging |
+| `metrics` | 0.0.1 | Metrics |
+| `paging` | 0.0.1 | Paging |
+| `ratelimit` | 0.0.1 | Rate limiting |
+| `retry` | 0.0.1 | Retry |
+| `telemetry` | 0.0.1 | Telemetry |
+| `test` | 0.0.1 | Test transport |
+| `timeout` | 0.0.1 | Timeout |
 
 
 Features are activated via the `feature` option:
@@ -2805,7 +2871,7 @@ rather than the transport, so their order does not affect what they observe.
 
 #### `audit`
 
-Structured audit trail of operations.
+Audit trail.
 
 **Configuration**
 
@@ -2836,7 +2902,7 @@ its default unless you name it.
 
 #### `clienttrack`
 
-Client identity and per-request correlation headers.
+Client tracking.
 
 **Configuration**
 
@@ -2868,7 +2934,7 @@ its default unless you name it.
 
 #### `debug`
 
-Request/response capture ring buffer for debugging.
+Debug capture.
 
 **Configuration**
 
@@ -2899,7 +2965,7 @@ its default unless you name it.
 
 #### `idempotency`
 
-Idempotency keys for safe retries of mutating operations.
+Idempotency.
 
 **Configuration**
 
@@ -2930,7 +2996,7 @@ its default unless you name it.
 
 #### `log`
 
-Structured request and response logging.
+Logging.
 
 **Configuration**
 
@@ -2959,7 +3025,7 @@ its default unless you name it.
 
 #### `metrics`
 
-Statistics capture: per-operation counters and latency.
+Metrics.
 
 **Configuration**
 
@@ -2987,7 +3053,7 @@ its default unless you name it.
 
 #### `paging`
 
-Pagination signals for list operations.
+Paging.
 
 **Configuration**
 
@@ -3022,7 +3088,7 @@ its default unless you name it.
 
 #### `ratelimit`
 
-Client-side rate limiting via a token bucket.
+Rate limiting.
 
 **Configuration**
 
@@ -3053,7 +3119,7 @@ its default unless you name it.
 
 #### `retry`
 
-Automatic retry of transient failures with exponential backoff.
+Retry.
 
 **Configuration**
 
@@ -3087,7 +3153,7 @@ its default unless you name it.
 
 #### `telemetry`
 
-Distributed tracing spans with W3C trace-context propagation.
+Telemetry.
 
 **Configuration**
 
@@ -3118,7 +3184,7 @@ its default unless you name it.
 
 #### `test`
 
-In-memory mock transport for testing without a live server.
+Test transport.
 
 **Configuration**
 
@@ -3149,7 +3215,7 @@ its default unless you name it.
 
 #### `timeout`
 
-Per-request timeout with transport abort.
+Timeout.
 
 **Configuration**
 

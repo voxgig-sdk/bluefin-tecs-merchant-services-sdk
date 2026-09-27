@@ -7,6 +7,8 @@
             [voxgig.struct :as vs]
             [sdk.entity.cancel_transaction :as e-cancel_transaction]
             [sdk.entity.check_card_black_listed :as e-check_card_black_listed]
+            [sdk.entity.count_authorised_transaction :as e-count_authorised_transaction]
+            [sdk.entity.count_not_authorised_transaction :as e-count_not_authorised_transaction]
             [sdk.entity.create_product :as e-create_product]
             [sdk.entity.deactivate_terminal :as e-deactivate_terminal]
             [sdk.entity.digital_services_api :as e-digital_services_api]
@@ -38,7 +40,6 @@
             [sdk.entity.store_terminal_parameter :as e-store_terminal_parameter]
             [sdk.entity.terminal_id :as e-terminal_id]
             [sdk.entity.transaction_history :as e-transaction_history]
-            [sdk.entity.transactions_count :as e-transactions_count]
             [sdk.entity.transactions_count_card_brand :as e-transactions_count_card_brand]
             [sdk.entity.transactions_turnover :as e-transactions_turnover]
             [sdk.entity.update_merchant :as e-update_merchant]
@@ -65,6 +66,30 @@
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/check_card_black_listed sdk nil)]
              (let [res (e-check_card_black_listed/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
+             )))
+  (t/run-check rec "gen-exists-count_authorised_transaction"
+    (fn [] (let [sdk (api/test-sdk nil nil)]
+             (t/is-true (some? (api/count_authorised_transaction sdk nil)) "count_authorised_transaction accessor present"))))
+  (t/run-check rec "gen-smoke-count_authorised_transaction"
+    (fn [] (let [sdk (api/test-sdk nil nil)
+                 ent (api/count_authorised_transaction sdk nil)]
+             (let [res (e-count_authorised_transaction/create ent (vs/jm "name" "smoke") nil)
+                   rec (if (map? res) ((:data-get res)) res)]
+               ;; create resolves to the ENTITY; the record is data-get.
+               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
+               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
+             )))
+  (t/run-check rec "gen-exists-count_not_authorised_transaction"
+    (fn [] (let [sdk (api/test-sdk nil nil)]
+             (t/is-true (some? (api/count_not_authorised_transaction sdk nil)) "count_not_authorised_transaction accessor present"))))
+  (t/run-check rec "gen-smoke-count_not_authorised_transaction"
+    (fn [] (let [sdk (api/test-sdk nil nil)
+                 ent (api/count_not_authorised_transaction sdk nil)]
+             (let [res (e-count_not_authorised_transaction/create ent (vs/jm "name" "smoke") nil)
                    rec (if (map? res) ((:data-get res)) res)]
                ;; create resolves to the ENTITY; the record is data-get.
                (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
@@ -437,18 +462,6 @@
     (fn [] (let [sdk (api/test-sdk nil nil)
                  ent (api/transaction_history sdk nil)]
              (let [res (e-transaction_history/create ent (vs/jm "name" "smoke") nil)
-                   rec (if (map? res) ((:data-get res)) res)]
-               ;; create resolves to the ENTITY; the record is data-get.
-               (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")
-               (t/is-true (some? (vs/getprop rec "id")) "created record has an id"))
-             )))
-  (t/run-check rec "gen-exists-transactions_count"
-    (fn [] (let [sdk (api/test-sdk nil nil)]
-             (t/is-true (some? (api/transactions_count sdk nil)) "transactions_count accessor present"))))
-  (t/run-check rec "gen-smoke-transactions_count"
-    (fn [] (let [sdk (api/test-sdk nil nil)
-                 ent (api/transactions_count sdk nil)]
-             (let [res (e-transactions_count/create ent (vs/jm "name" "smoke") nil)
                    rec (if (map? res) ((:data-get res)) res)]
                ;; create resolves to the ENTITY; the record is data-get.
                (t/is-true (vs/ismap rec) "create resolves to an entity carrying a record")

@@ -264,7 +264,6 @@ func (sdk *BluefinTecsMerchantServicesSDK) rawRequest(fetchargs map[string]any) 
 		if !noBody {
 			if jf := vs.GetProp(fm, "json"); jf != nil {
 				if f, ok := jf.(func() any); ok {
-					// f() returns nil on parse error in our fetcher.
 					jsonData = f()
 				}
 			}
@@ -281,17 +280,6 @@ func (sdk *BluefinTecsMerchantServicesSDK) rawRequest(fetchargs map[string]any) 
 	return map[string]any{"ok": false, "err": ctx.MakeError("direct_invalid", "invalid response type")}, nil
 }
 
-// Raw GraphQL access: the pressure valve that makes the generated surface's
-// deliberate omissions (per-call selection sets, typed filter builders,
-// batching, subscriptions) livable — the whole schema stays reachable.
-//
-// Thin wrapper over the same prepare/fetch path Direct uses, with the one
-// thing raw Direct cannot do for GraphQL: a GraphQL failure rides HTTP 200
-// as a top-level `errors` array, so status alone would report a failed query
-// as ok.
-//
-// NOTE: like Direct, this bypasses the feature pipeline — no retry,
-// ratelimit or paging features apply.
 func (sdk *BluefinTecsMerchantServicesSDK) Graphql(
 	query string, variables map[string]any, ctrl map[string]any,
 ) (map[string]any, error) {
@@ -351,6 +339,22 @@ func (sdk *BluefinTecsMerchantServicesSDK) CancelTransaction(data map[string]any
 // client.CheckCardBlackListed(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *BluefinTecsMerchantServicesSDK) CheckCardBlackListed(data map[string]any) BluefinTecsMerchantServicesEntity {
 	return NewCheckCardBlackListedEntityFunc(sdk, data)
+}
+
+
+// CountAuthorisedTransaction returns a CountAuthorisedTransaction entity bound to this client.
+// Idiomatic usage: client.CountAuthorisedTransaction(nil).List(nil, nil) or
+// client.CountAuthorisedTransaction(nil).Load(map[string]any{"id": ...}, nil).
+func (sdk *BluefinTecsMerchantServicesSDK) CountAuthorisedTransaction(data map[string]any) BluefinTecsMerchantServicesEntity {
+	return NewCountAuthorisedTransactionEntityFunc(sdk, data)
+}
+
+
+// CountNotAuthorisedTransaction returns a CountNotAuthorisedTransaction entity bound to this client.
+// Idiomatic usage: client.CountNotAuthorisedTransaction(nil).List(nil, nil) or
+// client.CountNotAuthorisedTransaction(nil).Load(map[string]any{"id": ...}, nil).
+func (sdk *BluefinTecsMerchantServicesSDK) CountNotAuthorisedTransaction(data map[string]any) BluefinTecsMerchantServicesEntity {
+	return NewCountNotAuthorisedTransactionEntityFunc(sdk, data)
 }
 
 
@@ -599,14 +603,6 @@ func (sdk *BluefinTecsMerchantServicesSDK) TerminalId(data map[string]any) Bluef
 // client.TransactionHistory(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *BluefinTecsMerchantServicesSDK) TransactionHistory(data map[string]any) BluefinTecsMerchantServicesEntity {
 	return NewTransactionHistoryEntityFunc(sdk, data)
-}
-
-
-// TransactionsCount returns a TransactionsCount entity bound to this client.
-// Idiomatic usage: client.TransactionsCount(nil).List(nil, nil) or
-// client.TransactionsCount(nil).Load(map[string]any{"id": ...}, nil).
-func (sdk *BluefinTecsMerchantServicesSDK) TransactionsCount(data map[string]any) BluefinTecsMerchantServicesEntity {
-	return NewTransactionsCountEntityFunc(sdk, data)
 }
 
 

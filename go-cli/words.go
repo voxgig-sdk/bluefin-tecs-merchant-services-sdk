@@ -9,18 +9,6 @@ import (
 	sdk "github.com/voxgig-sdk/bluefin-tecs-merchant-services-sdk/go"
 )
 
-// registerSDKWords installs three native boru words bound to the SDK:
-// list / load / update. Each is declared with two overloads matching
-// the signature  [query?:(Node or Scalar) entity:atom]:
-//
-//   [entity:Atom]            — no query (e.g. `list book`)
-//   [query:Any entity:Atom]  — query is any Node or Scalar (e.g.
-//                              `load {id:1} book`, `load 1 book`)
-//
-// The entity slot is /q-quoted so a bareword `book` parses as the
-// Atom "book" rather than dispatching as an undefined word. Both
-// overloads are all-forward (BarrierAllForward), so args are collected
-// from the tokens following the word.
 func registerSDKWords(r *eng.Registry, client *sdk.BluefinTecsMerchantServicesSDK) {
 	for _, op := range []string{"list", "load", "update"} {
 		op := op
@@ -93,6 +81,10 @@ func entityFor(client *sdk.BluefinTecsMerchantServicesSDK, name string) (sdk.Blu
 		return client.CancelTransaction(nil), nil
 	case "check_card_black_listed":
 		return client.CheckCardBlackListed(nil), nil
+	case "count_authorised_transaction":
+		return client.CountAuthorisedTransaction(nil), nil
+	case "count_not_authorised_transaction":
+		return client.CountNotAuthorisedTransaction(nil), nil
 	case "create_product":
 		return client.CreateProduct(nil), nil
 	case "deactivate_terminal":
@@ -155,8 +147,6 @@ func entityFor(client *sdk.BluefinTecsMerchantServicesSDK, name string) (sdk.Blu
 		return client.TerminalId(nil), nil
 	case "transaction_history":
 		return client.TransactionHistory(nil), nil
-	case "transactions_count":
-		return client.TransactionsCount(nil), nil
 	case "transactions_count_card_brand":
 		return client.TransactionsCountCardBrand(nil), nil
 	case "transactions_turnover":

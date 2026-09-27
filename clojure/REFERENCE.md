@@ -50,6 +50,14 @@ Create a new `CancelTransaction` entity instance. Pass `nil` for no initial data
 
 Create a new `CheckCardBlackListed` entity instance. Pass `nil` for no initial data.
 
+#### `(api/count_authorised_transaction client data)`
+
+Create a new `CountAuthorisedTransaction` entity instance. Pass `nil` for no initial data.
+
+#### `(api/count_not_authorised_transaction client data)`
+
+Create a new `CountNotAuthorisedTransaction` entity instance. Pass `nil` for no initial data.
+
 #### `(api/create_product client data)`
 
 Create a new `CreateProduct` entity instance. Pass `nil` for no initial data.
@@ -173,10 +181,6 @@ Create a new `TerminalId` entity instance. Pass `nil` for no initial data.
 #### `(api/transaction_history client data)`
 
 Create a new `TransactionHistory` entity instance. Pass `nil` for no initial data.
-
-#### `(api/transactions_count client data)`
-
-Create a new `TransactionsCount` entity instance. Pass `nil` for no initial data.
 
 #### `(api/transactions_count_card_brand client data)`
 
@@ -430,6 +434,156 @@ Set the entity match criteria.
 #### `((:make ent)) -> entity`
 
 Create a new `CheckCardBlackListed` entity instance with the same options.
+
+#### `((:get-name ent)) -> string`
+
+Return the entity name.
+
+
+---
+
+## CountAuthorisedTransaction
+
+```clojure
+(require '[sdk.entity.count_authorised_transaction :as e-count_authorised_transaction])
+
+(def count_authorised_transaction (api/count_authorised_transaction client nil))
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `period` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `transactionDateFrom` | `string` | No |  |
+| `transactionDateTo` | `string` | No |  |
+| `transactionsCount` | `vector` | No |  |
+
+### Field Usage by Operation
+
+| Field | create |
+| --- | --- |
+| `period` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `transactionDateFrom` | Yes |
+| `transactionDateTo` | Yes |
+| `transactionsCount` | - |
+
+### Operations
+
+#### `(create ent reqdata ctrl) -> map`
+
+Create a new entity with the given data. Returns the created entity data and raises on error.
+
+```clojure
+(def result
+  (e-count_authorised_transaction/create (api/count_authorised_transaction client nil)
+    (vs/jm
+      )
+    nil))
+```
+
+### Common Members
+
+State accessors are stored on the entity map and called via keyword lookup.
+
+#### `((:data-get ent)) -> map`
+
+Get the entity data.
+
+#### `((:data-set ent) data)`
+
+Set the entity data.
+
+#### `((:match-get ent)) -> map`
+
+Get the entity match criteria.
+
+#### `((:match-set ent) match)`
+
+Set the entity match criteria.
+
+#### `((:make ent)) -> entity`
+
+Create a new `CountAuthorisedTransaction` entity instance with the same options.
+
+#### `((:get-name ent)) -> string`
+
+Return the entity name.
+
+
+---
+
+## CountNotAuthorisedTransaction
+
+```clojure
+(require '[sdk.entity.count_not_authorised_transaction :as e-count_not_authorised_transaction])
+
+(def count_not_authorised_transaction (api/count_not_authorised_transaction client nil))
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `period` | `string` | No |  |
+| `responseCode` | `long` | No |  |
+| `responseMessage` | `string` | No |  |
+| `transactionDateFrom` | `string` | No |  |
+| `transactionDateTo` | `string` | No |  |
+| `transactionsCount` | `vector` | No |  |
+
+### Field Usage by Operation
+
+| Field | create |
+| --- | --- |
+| `period` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `transactionDateFrom` | Yes |
+| `transactionDateTo` | Yes |
+| `transactionsCount` | - |
+
+### Operations
+
+#### `(create ent reqdata ctrl) -> map`
+
+Create a new entity with the given data. Returns the created entity data and raises on error.
+
+```clojure
+(def result
+  (e-count_not_authorised_transaction/create (api/count_not_authorised_transaction client nil)
+    (vs/jm
+      )
+    nil))
+```
+
+### Common Members
+
+State accessors are stored on the entity map and called via keyword lookup.
+
+#### `((:data-get ent)) -> map`
+
+Get the entity data.
+
+#### `((:data-set ent) data)`
+
+Set the entity data.
+
+#### `((:match-get ent)) -> map`
+
+Get the entity match criteria.
+
+#### `((:match-set ent) match)`
+
+Set the entity match criteria.
+
+#### `((:make ent)) -> entity`
+
+Create a new `CountNotAuthorisedTransaction` entity instance with the same options.
 
 #### `((:get-name ent)) -> string`
 
@@ -2823,81 +2977,6 @@ Return the entity name.
 
 ---
 
-## TransactionsCount
-
-```clojure
-(require '[sdk.entity.transactions_count :as e-transactions_count])
-
-(def transactions_count (api/transactions_count client nil))
-```
-
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `period` | `string` | No |  |
-| `responseCode` | `long` | No |  |
-| `responseMessage` | `string` | No |  |
-| `transactionDateFrom` | `string` | No |  |
-| `transactionDateTo` | `string` | No |  |
-| `transactionsCount` | `vector` | No |  |
-
-### Field Usage by Operation
-
-| Field | create |
-| --- | --- |
-| `period` | - |
-| `responseCode` | - |
-| `responseMessage` | - |
-| `transactionDateFrom` | Yes |
-| `transactionDateTo` | Yes |
-| `transactionsCount` | - |
-
-### Operations
-
-#### `(create ent reqdata ctrl) -> map`
-
-Create a new entity with the given data. Returns the created entity data and raises on error.
-
-```clojure
-(def result
-  (e-transactions_count/create (api/transactions_count client nil)
-    (vs/jm
-      )
-    nil))
-```
-
-### Common Members
-
-State accessors are stored on the entity map and called via keyword lookup.
-
-#### `((:data-get ent)) -> map`
-
-Get the entity data.
-
-#### `((:data-set ent) data)`
-
-Set the entity data.
-
-#### `((:match-get ent)) -> map`
-
-Get the entity match criteria.
-
-#### `((:match-set ent) match)`
-
-Set the entity match criteria.
-
-#### `((:make ent)) -> entity`
-
-Create a new `TransactionsCount` entity instance with the same options.
-
-#### `((:get-name ent)) -> string`
-
-Return the entity name.
-
-
----
-
 ## TransactionsCountCardBrand
 
 ```clojure
@@ -3243,18 +3322,18 @@ Return the entity name.
 
 | Feature | Version | Description |
 | --- | --- | --- |
-| `audit` | 0.0.1 | Structured audit trail of operations |
-| `clienttrack` | 0.0.1 | Client identity and per-request correlation headers |
-| `debug` | 0.0.1 | Request/response capture ring buffer for debugging |
-| `idempotency` | 0.0.1 | Idempotency keys for safe retries of mutating operations |
-| `log` | 0.0.1 | Structured request and response logging |
-| `metrics` | 0.0.1 | Statistics capture: per-operation counters and latency |
-| `paging` | 0.0.1 | Pagination signals for list operations |
-| `ratelimit` | 0.0.1 | Client-side rate limiting via a token bucket |
-| `retry` | 0.0.1 | Automatic retry of transient failures with exponential backoff |
-| `telemetry` | 0.0.1 | Distributed tracing spans with W3C trace-context propagation |
-| `test` | 0.0.1 | In-memory mock transport for testing without a live server |
-| `timeout` | 0.0.1 | Per-request timeout with transport abort |
+| `audit` | 0.0.1 | Audit trail |
+| `clienttrack` | 0.0.1 | Client tracking |
+| `debug` | 0.0.1 | Debug capture |
+| `idempotency` | 0.0.1 | Idempotency |
+| `log` | 0.0.1 | Logging |
+| `metrics` | 0.0.1 | Metrics |
+| `paging` | 0.0.1 | Paging |
+| `ratelimit` | 0.0.1 | Rate limiting |
+| `retry` | 0.0.1 | Retry |
+| `telemetry` | 0.0.1 | Telemetry |
+| `test` | 0.0.1 | Test transport |
+| `timeout` | 0.0.1 | Timeout |
 
 
 Features are activated via the `feature` option:
@@ -3305,7 +3384,7 @@ rather than the transport, so their order does not affect what they observe.
 
 #### `audit`
 
-Structured audit trail of operations.
+Audit trail.
 
 **Configuration**
 
@@ -3336,7 +3415,7 @@ its default unless you name it.
 
 #### `clienttrack`
 
-Client identity and per-request correlation headers.
+Client tracking.
 
 **Configuration**
 
@@ -3368,7 +3447,7 @@ its default unless you name it.
 
 #### `debug`
 
-Request/response capture ring buffer for debugging.
+Debug capture.
 
 **Configuration**
 
@@ -3399,7 +3478,7 @@ its default unless you name it.
 
 #### `idempotency`
 
-Idempotency keys for safe retries of mutating operations.
+Idempotency.
 
 **Configuration**
 
@@ -3430,7 +3509,7 @@ its default unless you name it.
 
 #### `log`
 
-Structured request and response logging.
+Logging.
 
 **Configuration**
 
@@ -3459,7 +3538,7 @@ its default unless you name it.
 
 #### `metrics`
 
-Statistics capture: per-operation counters and latency.
+Metrics.
 
 **Configuration**
 
@@ -3487,7 +3566,7 @@ its default unless you name it.
 
 #### `paging`
 
-Pagination signals for list operations.
+Paging.
 
 **Configuration**
 
@@ -3522,7 +3601,7 @@ its default unless you name it.
 
 #### `ratelimit`
 
-Client-side rate limiting via a token bucket.
+Rate limiting.
 
 **Configuration**
 
@@ -3553,7 +3632,7 @@ its default unless you name it.
 
 #### `retry`
 
-Automatic retry of transient failures with exponential backoff.
+Retry.
 
 **Configuration**
 
@@ -3587,7 +3666,7 @@ its default unless you name it.
 
 #### `telemetry`
 
-Distributed tracing spans with W3C trace-context propagation.
+Telemetry.
 
 **Configuration**
 
@@ -3618,7 +3697,7 @@ its default unless you name it.
 
 #### `test`
 
-In-memory mock transport for testing without a live server.
+Test transport.
 
 **Configuration**
 
@@ -3649,7 +3728,7 @@ its default unless you name it.
 
 #### `timeout`
 
-Per-request timeout with transport abort.
+Timeout.
 
 **Configuration**
 

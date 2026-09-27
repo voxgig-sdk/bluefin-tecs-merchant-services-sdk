@@ -27,6 +27,16 @@ public:
     return std::make_shared<CheckCardBlackListedEntity>(this, entopts);
   }
 
+  // CountAuthorisedTransaction entity bound to this client.
+  std::shared_ptr<CountAuthorisedTransactionEntity> count_authorised_transaction(Value entopts = Value::undef()) {
+    return std::make_shared<CountAuthorisedTransactionEntity>(this, entopts);
+  }
+
+  // CountNotAuthorisedTransaction entity bound to this client.
+  std::shared_ptr<CountNotAuthorisedTransactionEntity> count_not_authorised_transaction(Value entopts = Value::undef()) {
+    return std::make_shared<CountNotAuthorisedTransactionEntity>(this, entopts);
+  }
+
   // CreateProduct entity bound to this client.
   std::shared_ptr<CreateProductEntity> create_product(Value entopts = Value::undef()) {
     return std::make_shared<CreateProductEntity>(this, entopts);
@@ -180,11 +190,6 @@ public:
   // TransactionHistory entity bound to this client.
   std::shared_ptr<TransactionHistoryEntity> transaction_history(Value entopts = Value::undef()) {
     return std::make_shared<TransactionHistoryEntity>(this, entopts);
-  }
-
-  // TransactionsCount entity bound to this client.
-  std::shared_ptr<TransactionsCountEntity> transactions_count(Value entopts = Value::undef()) {
-    return std::make_shared<TransactionsCountEntity>(this, entopts);
   }
 
   // TransactionsCountCardBrand entity bound to this client.

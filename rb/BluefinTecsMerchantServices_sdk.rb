@@ -303,6 +303,20 @@ class BluefinTecsMerchantServicesSDK
   end
 
 
+  # Canonical facade: client.CountAuthorisedTransaction.list / client.CountAuthorisedTransaction.load({ "id" => ... })
+  def CountAuthorisedTransaction(data = nil)
+    require_relative 'entity/count_authorised_transaction_entity'
+    CountAuthorisedTransactionEntity.new(self, data)
+  end
+
+
+  # Canonical facade: client.CountNotAuthorisedTransaction.list / client.CountNotAuthorisedTransaction.load({ "id" => ... })
+  def CountNotAuthorisedTransaction(data = nil)
+    require_relative 'entity/count_not_authorised_transaction_entity'
+    CountNotAuthorisedTransactionEntity.new(self, data)
+  end
+
+
   # Canonical facade: client.CreateProduct.list / client.CreateProduct.load({ "id" => ... })
   def CreateProduct(data = nil)
     require_relative 'entity/create_product_entity'
@@ -517,13 +531,6 @@ class BluefinTecsMerchantServicesSDK
   def TransactionHistory(data = nil)
     require_relative 'entity/transaction_history_entity'
     TransactionHistoryEntity.new(self, data)
-  end
-
-
-  # Canonical facade: client.TransactionsCount.list / client.TransactionsCount.load({ "id" => ... })
-  def TransactionsCount(data = nil)
-    require_relative 'entity/transactions_count_entity'
-    TransactionsCountEntity.new(self, data)
   end
 
 

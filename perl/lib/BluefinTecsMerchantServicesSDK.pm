@@ -339,6 +339,22 @@ sub CheckCardBlackListed {
 }
 
 
+# Canonical facade: $client->CountAuthorisedTransaction->list / ->load({ 'id' => ... })
+sub CountAuthorisedTransaction {
+  my ($self, $data) = @_;
+  require(Cwd::abs_path("$DIR/../entity/count_authorised_transaction_entity.pm"));
+  return CountAuthorisedTransactionEntity->new($self, $data);
+}
+
+
+# Canonical facade: $client->CountNotAuthorisedTransaction->list / ->load({ 'id' => ... })
+sub CountNotAuthorisedTransaction {
+  my ($self, $data) = @_;
+  require(Cwd::abs_path("$DIR/../entity/count_not_authorised_transaction_entity.pm"));
+  return CountNotAuthorisedTransactionEntity->new($self, $data);
+}
+
+
 # Canonical facade: $client->CreateProduct->list / ->load({ 'id' => ... })
 sub CreateProduct {
   my ($self, $data) = @_;
@@ -584,14 +600,6 @@ sub TransactionHistory {
   my ($self, $data) = @_;
   require(Cwd::abs_path("$DIR/../entity/transaction_history_entity.pm"));
   return TransactionHistoryEntity->new($self, $data);
-}
-
-
-# Canonical facade: $client->TransactionsCount->list / ->load({ 'id' => ... })
-sub TransactionsCount {
-  my ($self, $data) = @_;
-  require(Cwd::abs_path("$DIR/../entity/transactions_count_entity.pm"));
-  return TransactionsCountEntity->new($self, $data);
 }
 
 

@@ -379,6 +379,22 @@ public class BluefinTecsMerchantServicesSDK
         return new global::BluefinTecsMerchantServicesSdk.Entity.CheckCardBlackListedEntity(this, entopts);
     }
 
+    // CountAuthorisedTransaction returns a CountAuthorisedTransaction entity bound to this client.
+    // Idiomatic usage: client.CountAuthorisedTransaction().List(null) or
+    // client.CountAuthorisedTransaction().Load(new() { ["id"] = ... }).
+    public BluefinTecsMerchantServicesEntityBase CountAuthorisedTransaction(Dictionary<string, object?>? entopts = null)
+    {
+        return new global::BluefinTecsMerchantServicesSdk.Entity.CountAuthorisedTransactionEntity(this, entopts);
+    }
+
+    // CountNotAuthorisedTransaction returns a CountNotAuthorisedTransaction entity bound to this client.
+    // Idiomatic usage: client.CountNotAuthorisedTransaction().List(null) or
+    // client.CountNotAuthorisedTransaction().Load(new() { ["id"] = ... }).
+    public BluefinTecsMerchantServicesEntityBase CountNotAuthorisedTransaction(Dictionary<string, object?>? entopts = null)
+    {
+        return new global::BluefinTecsMerchantServicesSdk.Entity.CountNotAuthorisedTransactionEntity(this, entopts);
+    }
+
     // CreateProduct returns a CreateProduct entity bound to this client.
     // Idiomatic usage: client.CreateProduct().List(null) or
     // client.CreateProduct().Load(new() { ["id"] = ... }).
@@ -625,14 +641,6 @@ public class BluefinTecsMerchantServicesSDK
     public BluefinTecsMerchantServicesEntityBase TransactionHistory(Dictionary<string, object?>? entopts = null)
     {
         return new global::BluefinTecsMerchantServicesSdk.Entity.TransactionHistoryEntity(this, entopts);
-    }
-
-    // TransactionsCount returns a TransactionsCount entity bound to this client.
-    // Idiomatic usage: client.TransactionsCount().List(null) or
-    // client.TransactionsCount().Load(new() { ["id"] = ... }).
-    public BluefinTecsMerchantServicesEntityBase TransactionsCount(Dictionary<string, object?>? entopts = null)
-    {
-        return new global::BluefinTecsMerchantServicesSdk.Entity.TransactionsCountEntity(this, entopts);
     }
 
     // TransactionsCountCardBrand returns a TransactionsCountCardBrand entity bound to this client.

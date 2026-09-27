@@ -1,0 +1,159 @@
+# Entity: mandator_clearing_export_download
+
+main: kit: entity: mandator_clearing_export_download: {
+
+  alias: field: {}
+
+  fields: {
+    clearingDateFrom: {
+      fo: "date-time"
+      h: "Clearing Date From"
+      n: "clearingDateFrom"
+      r: true
+      sh: "Start date for clearing export (inclusive)"
+      t: "`$STRING`"
+    }
+    clearingDateTo: {
+      fo: "date-time"
+      h: "Clearing Date To"
+      n: "clearingDateTo"
+      r: true
+      sh: "End date for clearing export (inclusive)"
+      t: "`$STRING`"
+    }
+    fileId: {
+      h: "File Id"
+      n: "fileId"
+      r: false
+      sh: "Unique file identifier for tracking and downloading"
+      t: "`$STRING`"
+    }
+    filenameTemplate: {
+      h: "Filename Template"
+      n: "filenameTemplate"
+      r: false
+      sh: "Optional filename template for the export file"
+      t: "`$STRING`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      t: "`$STRING`"
+    }
+    responseCode: {
+      fo: "int32"
+      h: "Response Code"
+      n: "responseCode"
+      r: false
+      t: "`$INTEGER`"
+    }
+    responseMessage: {
+      h: "Response Message"
+      n: "responseMessage"
+      r: false
+      t: "`$STRING`"
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      r: false
+      sh: "Processing status of the export request"
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "mandator_clearing_export_download"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /public/digitalservices/mandatorClearingExportDownload"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/public/digitalservices/mandatorClearingExportDownload"
+          s: [
+            {
+              lit: "public"
+            }
+            {
+              lit: "digitalservices"
+            }
+            {
+              lit: "mandatorClearingExportDownload"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /public/digitalservices/mandatorClearingExportDownload/{fileId}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "file_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/public/digitalservices/mandatorClearingExportDownload/{fileId}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              fileId: "id"
+            }
+          }
+          s: [
+            {
+              lit: "public"
+            }
+            {
+              lit: "digitalservices"
+            }
+            {
+              lit: "mandatorClearingExportDownload"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

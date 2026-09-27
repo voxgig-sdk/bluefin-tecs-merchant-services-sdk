@@ -1,0 +1,83 @@
+# Entity: reactivate_terminal
+
+main: kit: entity: reactivate_terminal: {
+
+  alias: field: {}
+
+  fields: {
+    corporateUuid: {
+      h: "Corporate Uuid"
+      n: "corporateUuid"
+      r: false
+      t: "`$STRING`"
+    }
+    packageOrderUuid: {
+      h: "Package Order Uuid"
+      n: "packageOrderUuid"
+      r: false
+      t: "`$STRING`"
+    }
+    productOrderUuid: {
+      h: "Product Order Uuid"
+      n: "productOrderUuid"
+      r: false
+      t: "`$STRING`"
+    }
+    reactivationReason: {
+      h: "Reactivation Reason"
+      n: "reactivationReason"
+      r: true
+      t: "`$STRING`"
+    }
+    responseCode: {
+      fo: "int32"
+      h: "Response Code"
+      n: "responseCode"
+      r: false
+      t: "`$INTEGER`"
+    }
+    responseMessage: {
+      h: "Response Message"
+      n: "responseMessage"
+      r: false
+      t: "`$STRING`"
+    }
+    terminalId: {
+      fo: "int32"
+      h: "Terminal Id"
+      n: "terminalId"
+      r: true
+      t: "`$INTEGER`"
+    }
+  }
+
+  name: "reactivate_terminal"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /reactivateTerminal"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/reactivateTerminal"
+          s: [
+            {
+              lit: "reactivateTerminal"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

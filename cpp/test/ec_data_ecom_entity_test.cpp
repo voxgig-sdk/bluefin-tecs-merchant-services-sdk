@@ -50,7 +50,7 @@ static EcDataEcomSetup ec_data_ecom_basic_setup(const Value& extra) {
 
   EcDataEcomSetup s;
   s.client = client;
-  s.data = entity_data;
+  s.d = entity_data;
   s.idmap = idmap_resolved;
   s.env = env;
   s.live = live;

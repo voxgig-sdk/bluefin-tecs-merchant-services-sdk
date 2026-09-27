@@ -1,7 +1,7 @@
 // Typed models for the BluefinTecsMerchantServices SDK.
 //
-// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
-// params (op.<name>.points[].args.params[]). Field/param types come from the
+// GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+// params (op.<name>.points[].g.params[]). Field/param types come from the
 // canonical type sentinels (source of truth: @voxgig/apidef VALID_CANON).
 // Do not edit by hand.
 //
@@ -661,6 +661,230 @@ class CheckCardBlackListedCreateData {
     }
     if (null != responseMessage) {
       m['responseMessage'] = responseMessage;
+    }
+    return m;
+  }
+}
+
+class CountAuthorisedTransaction {
+  /// STRING
+  String? period;
+  /// INTEGER
+  int? responseCode;
+  /// STRING
+  String? responseMessage;
+  /// STRING
+  String? transactionDateFrom;
+  /// STRING
+  String? transactionDateTo;
+  /// ARRAY
+  List<dynamic>? transactionsCount;
+
+  CountAuthorisedTransaction({
+    this.period,
+    this.responseCode,
+    this.responseMessage,
+    this.transactionDateFrom,
+    this.transactionDateTo,
+    this.transactionsCount,
+  });
+
+  factory CountAuthorisedTransaction.fromMap(Map<String, dynamic> m) => CountAuthorisedTransaction(
+        period: m['period'] is String ? m['period'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        transactionDateFrom: m['transactionDateFrom'] is String ? m['transactionDateFrom'] : null,
+        transactionDateTo: m['transactionDateTo'] is String ? m['transactionDateTo'] : null,
+        transactionsCount: m['transactionsCount'] is List<dynamic> ? m['transactionsCount'] : null,
+      );
+
+  Map<String, dynamic> toMap() {
+    final m = <String, dynamic>{};
+    if (null != period) {
+      m['period'] = period;
+    }
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
+    }
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
+    }
+    if (null != transactionDateFrom) {
+      m['transactionDateFrom'] = transactionDateFrom;
+    }
+    if (null != transactionDateTo) {
+      m['transactionDateTo'] = transactionDateTo;
+    }
+    if (null != transactionsCount) {
+      m['transactionsCount'] = transactionsCount;
+    }
+    return m;
+  }
+}
+
+class CountAuthorisedTransactionCreateData {
+  /// STRING
+  String? period;
+  /// INTEGER
+  int? responseCode;
+  /// STRING
+  String? responseMessage;
+  /// STRING
+  String? transactionDateFrom;
+  /// STRING
+  String? transactionDateTo;
+  /// ARRAY
+  List<dynamic>? transactionsCount;
+
+  CountAuthorisedTransactionCreateData({
+    this.period,
+    this.responseCode,
+    this.responseMessage,
+    this.transactionDateFrom,
+    this.transactionDateTo,
+    this.transactionsCount,
+  });
+
+  factory CountAuthorisedTransactionCreateData.fromMap(Map<String, dynamic> m) => CountAuthorisedTransactionCreateData(
+        period: m['period'] is String ? m['period'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        transactionDateFrom: m['transactionDateFrom'] is String ? m['transactionDateFrom'] : null,
+        transactionDateTo: m['transactionDateTo'] is String ? m['transactionDateTo'] : null,
+        transactionsCount: m['transactionsCount'] is List<dynamic> ? m['transactionsCount'] : null,
+      );
+
+  Map<String, dynamic> toMap() {
+    final m = <String, dynamic>{};
+    if (null != period) {
+      m['period'] = period;
+    }
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
+    }
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
+    }
+    if (null != transactionDateFrom) {
+      m['transactionDateFrom'] = transactionDateFrom;
+    }
+    if (null != transactionDateTo) {
+      m['transactionDateTo'] = transactionDateTo;
+    }
+    if (null != transactionsCount) {
+      m['transactionsCount'] = transactionsCount;
+    }
+    return m;
+  }
+}
+
+class CountNotAuthorisedTransaction {
+  /// STRING
+  String? period;
+  /// INTEGER
+  int? responseCode;
+  /// STRING
+  String? responseMessage;
+  /// STRING
+  String? transactionDateFrom;
+  /// STRING
+  String? transactionDateTo;
+  /// ARRAY
+  List<dynamic>? transactionsCount;
+
+  CountNotAuthorisedTransaction({
+    this.period,
+    this.responseCode,
+    this.responseMessage,
+    this.transactionDateFrom,
+    this.transactionDateTo,
+    this.transactionsCount,
+  });
+
+  factory CountNotAuthorisedTransaction.fromMap(Map<String, dynamic> m) => CountNotAuthorisedTransaction(
+        period: m['period'] is String ? m['period'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        transactionDateFrom: m['transactionDateFrom'] is String ? m['transactionDateFrom'] : null,
+        transactionDateTo: m['transactionDateTo'] is String ? m['transactionDateTo'] : null,
+        transactionsCount: m['transactionsCount'] is List<dynamic> ? m['transactionsCount'] : null,
+      );
+
+  Map<String, dynamic> toMap() {
+    final m = <String, dynamic>{};
+    if (null != period) {
+      m['period'] = period;
+    }
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
+    }
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
+    }
+    if (null != transactionDateFrom) {
+      m['transactionDateFrom'] = transactionDateFrom;
+    }
+    if (null != transactionDateTo) {
+      m['transactionDateTo'] = transactionDateTo;
+    }
+    if (null != transactionsCount) {
+      m['transactionsCount'] = transactionsCount;
+    }
+    return m;
+  }
+}
+
+class CountNotAuthorisedTransactionCreateData {
+  /// STRING
+  String? period;
+  /// INTEGER
+  int? responseCode;
+  /// STRING
+  String? responseMessage;
+  /// STRING
+  String? transactionDateFrom;
+  /// STRING
+  String? transactionDateTo;
+  /// ARRAY
+  List<dynamic>? transactionsCount;
+
+  CountNotAuthorisedTransactionCreateData({
+    this.period,
+    this.responseCode,
+    this.responseMessage,
+    this.transactionDateFrom,
+    this.transactionDateTo,
+    this.transactionsCount,
+  });
+
+  factory CountNotAuthorisedTransactionCreateData.fromMap(Map<String, dynamic> m) => CountNotAuthorisedTransactionCreateData(
+        period: m['period'] is String ? m['period'] : null,
+        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
+        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
+        transactionDateFrom: m['transactionDateFrom'] is String ? m['transactionDateFrom'] : null,
+        transactionDateTo: m['transactionDateTo'] is String ? m['transactionDateTo'] : null,
+        transactionsCount: m['transactionsCount'] is List<dynamic> ? m['transactionsCount'] : null,
+      );
+
+  Map<String, dynamic> toMap() {
+    final m = <String, dynamic>{};
+    if (null != period) {
+      m['period'] = period;
+    }
+    if (null != responseCode) {
+      m['responseCode'] = responseCode;
+    }
+    if (null != responseMessage) {
+      m['responseMessage'] = responseMessage;
+    }
+    if (null != transactionDateFrom) {
+      m['transactionDateFrom'] = transactionDateFrom;
+    }
+    if (null != transactionDateTo) {
+      m['transactionDateTo'] = transactionDateTo;
+    }
+    if (null != transactionsCount) {
+      m['transactionsCount'] = transactionsCount;
     }
     return m;
   }
@@ -6961,118 +7185,6 @@ class TransactionHistoryCreateData {
     }
     if (null != wallet) {
       m['wallet'] = wallet;
-    }
-    return m;
-  }
-}
-
-class TransactionsCount {
-  /// STRING
-  String? period;
-  /// INTEGER
-  int? responseCode;
-  /// STRING
-  String? responseMessage;
-  /// STRING
-  String? transactionDateFrom;
-  /// STRING
-  String? transactionDateTo;
-  /// ARRAY
-  List<dynamic>? transactionsCount;
-
-  TransactionsCount({
-    this.period,
-    this.responseCode,
-    this.responseMessage,
-    this.transactionDateFrom,
-    this.transactionDateTo,
-    this.transactionsCount,
-  });
-
-  factory TransactionsCount.fromMap(Map<String, dynamic> m) => TransactionsCount(
-        period: m['period'] is String ? m['period'] : null,
-        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
-        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
-        transactionDateFrom: m['transactionDateFrom'] is String ? m['transactionDateFrom'] : null,
-        transactionDateTo: m['transactionDateTo'] is String ? m['transactionDateTo'] : null,
-        transactionsCount: m['transactionsCount'] is List<dynamic> ? m['transactionsCount'] : null,
-      );
-
-  Map<String, dynamic> toMap() {
-    final m = <String, dynamic>{};
-    if (null != period) {
-      m['period'] = period;
-    }
-    if (null != responseCode) {
-      m['responseCode'] = responseCode;
-    }
-    if (null != responseMessage) {
-      m['responseMessage'] = responseMessage;
-    }
-    if (null != transactionDateFrom) {
-      m['transactionDateFrom'] = transactionDateFrom;
-    }
-    if (null != transactionDateTo) {
-      m['transactionDateTo'] = transactionDateTo;
-    }
-    if (null != transactionsCount) {
-      m['transactionsCount'] = transactionsCount;
-    }
-    return m;
-  }
-}
-
-class TransactionsCountCreateData {
-  /// STRING
-  String? period;
-  /// INTEGER
-  int? responseCode;
-  /// STRING
-  String? responseMessage;
-  /// STRING
-  String? transactionDateFrom;
-  /// STRING
-  String? transactionDateTo;
-  /// ARRAY
-  List<dynamic>? transactionsCount;
-
-  TransactionsCountCreateData({
-    this.period,
-    this.responseCode,
-    this.responseMessage,
-    this.transactionDateFrom,
-    this.transactionDateTo,
-    this.transactionsCount,
-  });
-
-  factory TransactionsCountCreateData.fromMap(Map<String, dynamic> m) => TransactionsCountCreateData(
-        period: m['period'] is String ? m['period'] : null,
-        responseCode: m['responseCode'] is int ? m['responseCode'] : null,
-        responseMessage: m['responseMessage'] is String ? m['responseMessage'] : null,
-        transactionDateFrom: m['transactionDateFrom'] is String ? m['transactionDateFrom'] : null,
-        transactionDateTo: m['transactionDateTo'] is String ? m['transactionDateTo'] : null,
-        transactionsCount: m['transactionsCount'] is List<dynamic> ? m['transactionsCount'] : null,
-      );
-
-  Map<String, dynamic> toMap() {
-    final m = <String, dynamic>{};
-    if (null != period) {
-      m['period'] = period;
-    }
-    if (null != responseCode) {
-      m['responseCode'] = responseCode;
-    }
-    if (null != responseMessage) {
-      m['responseMessage'] = responseMessage;
-    }
-    if (null != transactionDateFrom) {
-      m['transactionDateFrom'] = transactionDateFrom;
-    }
-    if (null != transactionDateTo) {
-      m['transactionDateTo'] = transactionDateTo;
-    }
-    if (null != transactionsCount) {
-      m['transactionsCount'] = transactionsCount;
     }
     return m;
   }

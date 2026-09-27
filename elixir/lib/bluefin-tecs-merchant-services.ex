@@ -311,6 +311,16 @@ defmodule BluefinTecsMerchantServices do
     BluefinTecsMerchantServices.Entity.CheckCardBlackListed.new(client, entopts)
   end
 
+  @doc "Entity factory for count_authorised_transaction."
+  def count_authorised_transaction(client, entopts \\ nil) do
+    BluefinTecsMerchantServices.Entity.CountAuthorisedTransaction.new(client, entopts)
+  end
+
+  @doc "Entity factory for count_not_authorised_transaction."
+  def count_not_authorised_transaction(client, entopts \\ nil) do
+    BluefinTecsMerchantServices.Entity.CountNotAuthorisedTransaction.new(client, entopts)
+  end
+
   @doc "Entity factory for create_product."
   def create_product(client, entopts \\ nil) do
     BluefinTecsMerchantServices.Entity.CreateProduct.new(client, entopts)
@@ -464,11 +474,6 @@ defmodule BluefinTecsMerchantServices do
   @doc "Entity factory for transaction_history."
   def transaction_history(client, entopts \\ nil) do
     BluefinTecsMerchantServices.Entity.TransactionHistory.new(client, entopts)
-  end
-
-  @doc "Entity factory for transactions_count."
-  def transactions_count(client, entopts \\ nil) do
-    BluefinTecsMerchantServices.Entity.TransactionsCount.new(client, entopts)
   end
 
   @doc "Entity factory for transactions_count_card_brand."

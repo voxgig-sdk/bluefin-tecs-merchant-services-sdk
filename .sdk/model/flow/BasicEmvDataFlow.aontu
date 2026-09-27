@@ -1,0 +1,18 @@
+# BasicEmvDataFlow
+
+main: kit: flow: BasicEmvDataFlow:
+{
+  entity: "emv_data",
+  kind: "basic",
+  name: "BasicEmvDataFlow",
+  step: [
+    {
+      i: {
+        ref: "emv_data_ref01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicEmvDataFlow"
+}

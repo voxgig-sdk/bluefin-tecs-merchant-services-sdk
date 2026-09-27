@@ -1,0 +1,80 @@
+# Entity: ecr_data
+
+main: kit: entity: ecr_data: {
+
+  alias: field: {}
+
+  fields: {
+    ecrData: {
+      h: "Ecr Data"
+      n: "ecrData"
+      r: false
+      t: "`$STRING`"
+    }
+    responseCode: {
+      fo: "int32"
+      h: "Response Code"
+      n: "responseCode"
+      r: false
+      t: "`$INTEGER`"
+    }
+    responseMessage: {
+      h: "Response Message"
+      n: "responseMessage"
+      r: false
+      t: "`$STRING`"
+    }
+    terminalId: {
+      fo: "int32"
+      h: "Terminal Id"
+      n: "terminalId"
+      r: true
+      t: "`$INTEGER`"
+    }
+    transactionId: {
+      h: "Transaction Id"
+      n: "transactionId"
+      r: true
+      t: "`$STRING`"
+    }
+    transactionType: {
+      h: "Transaction Type"
+      n: "transactionType"
+      r: true
+      t: "`$STRING`"
+    }
+  }
+
+  name: "ecr_data"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /public/getEcrData"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/public/getEcrData"
+          s: [
+            {
+              lit: "public"
+            }
+            {
+              lit: "getEcrData"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

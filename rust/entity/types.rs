@@ -1,7 +1,7 @@
 // Typed models for the BluefinTecsMerchantServices SDK.
 //
-// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
-// params (op.<name>.points[].args.params[]). Field/param types are mapped
+// GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+// params (op.<name>.points[].g.params[]). Field/param types are mapped
 // from the canonical type sentinels. Do not edit by hand.
 //
 // These are DOCUMENTARY: the SDK runtime is dynamic (ops take/return the
@@ -115,6 +115,50 @@ pub struct CheckCardBlackListedCreateData {
     pub cardno: Option<String>,
     pub responsecode: Option<i64>,
     pub responsemessage: Option<String>,
+}
+
+/// CountAuthorisedTransaction is the typed data model for the count_authorised_transaction entity.
+#[derive(Debug, Clone)]
+pub struct CountAuthorisedTransaction {
+    pub period: Option<String>,
+    pub responsecode: Option<i64>,
+    pub responsemessage: Option<String>,
+    pub transactiondatefrom: Option<String>,
+    pub transactiondateto: Option<String>,
+    pub transactionscount: Option<Vec<Value>>,
+}
+
+/// CountAuthorisedTransactionCreateData is the typed request payload for CountAuthorisedTransaction.create.
+#[derive(Debug, Clone)]
+pub struct CountAuthorisedTransactionCreateData {
+    pub period: Option<String>,
+    pub responsecode: Option<i64>,
+    pub responsemessage: Option<String>,
+    pub transactiondatefrom: Option<String>,
+    pub transactiondateto: Option<String>,
+    pub transactionscount: Option<Vec<Value>>,
+}
+
+/// CountNotAuthorisedTransaction is the typed data model for the count_not_authorised_transaction entity.
+#[derive(Debug, Clone)]
+pub struct CountNotAuthorisedTransaction {
+    pub period: Option<String>,
+    pub responsecode: Option<i64>,
+    pub responsemessage: Option<String>,
+    pub transactiondatefrom: Option<String>,
+    pub transactiondateto: Option<String>,
+    pub transactionscount: Option<Vec<Value>>,
+}
+
+/// CountNotAuthorisedTransactionCreateData is the typed request payload for CountNotAuthorisedTransaction.create.
+#[derive(Debug, Clone)]
+pub struct CountNotAuthorisedTransactionCreateData {
+    pub period: Option<String>,
+    pub responsecode: Option<i64>,
+    pub responsemessage: Option<String>,
+    pub transactiondatefrom: Option<String>,
+    pub transactiondateto: Option<String>,
+    pub transactionscount: Option<Vec<Value>>,
 }
 
 /// CreateProduct is the typed data model for the create_product entity.
@@ -1211,28 +1255,6 @@ pub struct TransactionHistoryCreateData {
     pub transactionid: Option<String>,
     pub transactiontype: Option<String>,
     pub wallet: Option<String>,
-}
-
-/// TransactionsCount is the typed data model for the transactions_count entity.
-#[derive(Debug, Clone)]
-pub struct TransactionsCount {
-    pub period: Option<String>,
-    pub responsecode: Option<i64>,
-    pub responsemessage: Option<String>,
-    pub transactiondatefrom: Option<String>,
-    pub transactiondateto: Option<String>,
-    pub transactionscount: Option<Vec<Value>>,
-}
-
-/// TransactionsCountCreateData is the typed request payload for TransactionsCount.create.
-#[derive(Debug, Clone)]
-pub struct TransactionsCountCreateData {
-    pub period: Option<String>,
-    pub responsecode: Option<i64>,
-    pub responsemessage: Option<String>,
-    pub transactiondatefrom: Option<String>,
-    pub transactiondateto: Option<String>,
-    pub transactionscount: Option<Vec<Value>>,
 }
 
 /// TransactionsCountCardBrand is the typed data model for the transactions_count_card_brand entity.

@@ -1,0 +1,93 @@
+# Entity: transactions_count_card_brand
+
+main: kit: entity: transactions_count_card_brand: {
+
+  alias: field: {}
+
+  fields: {
+    period: {
+      h: "Period"
+      n: "period"
+      r: false
+      t: "`$STRING`"
+    }
+    responseCode: {
+      fo: "int32"
+      h: "Response Code"
+      n: "responseCode"
+      r: false
+      t: "`$INTEGER`"
+    }
+    responseMessage: {
+      h: "Response Message"
+      n: "responseMessage"
+      r: false
+      t: "`$STRING`"
+    }
+    transactionDateFrom: {
+      fo: "date-time"
+      h: "Transaction Date From"
+      n: "transactionDateFrom"
+      op: {
+        create: {
+          req: true
+          type: "`$STRING`"
+        }
+      }
+      r: false
+      t: "`$STRING`"
+    }
+    transactionDateTo: {
+      fo: "date-time"
+      h: "Transaction Date To"
+      n: "transactionDateTo"
+      op: {
+        create: {
+          req: true
+          type: "`$STRING`"
+        }
+      }
+      r: false
+      t: "`$STRING`"
+    }
+    transactionsCount: {
+      h: "Transactions Count"
+      n: "transactionsCount"
+      r: false
+      t: "`$ARRAY`"
+    }
+  }
+
+  name: "transactions_count_card_brand"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /public/countTransactionsByCardBrand"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/public/countTransactionsByCardBrand"
+          s: [
+            {
+              lit: "public"
+            }
+            {
+              lit: "countTransactionsByCardBrand"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

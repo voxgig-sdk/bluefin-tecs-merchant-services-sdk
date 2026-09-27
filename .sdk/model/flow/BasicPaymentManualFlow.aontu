@@ -1,0 +1,18 @@
+# BasicPaymentManualFlow
+
+main: kit: flow: BasicPaymentManualFlow:
+{
+  entity: "payment_manual",
+  kind: "basic",
+  name: "BasicPaymentManualFlow",
+  step: [
+    {
+      i: {
+        ref: "payment_manual_ref01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicPaymentManualFlow"
+}

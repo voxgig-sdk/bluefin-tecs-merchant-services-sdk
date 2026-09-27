@@ -213,6 +213,8 @@ Creates a test-mode client with mock transport. Both arguments may be
 | `direct` | `(fetchargs: Value) Value` | Build and send an HTTP request. Returns a result map (branch on `ok`). |
 | `cancel_transaction` | `(entopts: Value) *CancelTransactionEntity` | Create a CancelTransaction entity instance. |
 | `check_card_black_listed` | `(entopts: Value) *CheckCardBlackListedEntity` | Create a CheckCardBlackListed entity instance. |
+| `count_authorised_transaction` | `(entopts: Value) *CountAuthorisedTransactionEntity` | Create a CountAuthorisedTransaction entity instance. |
+| `count_not_authorised_transaction` | `(entopts: Value) *CountNotAuthorisedTransactionEntity` | Create a CountNotAuthorisedTransaction entity instance. |
 | `create_product` | `(entopts: Value) *CreateProductEntity` | Create a CreateProduct entity instance. |
 | `deactivate_terminal` | `(entopts: Value) *DeactivateTerminalEntity` | Create a DeactivateTerminal entity instance. |
 | `digital_services_api` | `(entopts: Value) *DigitalServicesApiEntity` | Create a DigitalServicesApi entity instance. |
@@ -244,7 +246,6 @@ Creates a test-mode client with mock transport. Both arguments may be
 | `store_terminal_parameter` | `(entopts: Value) *StoreTerminalParameterEntity` | Create a StoreTerminalParameter entity instance. |
 | `terminal_id` | `(entopts: Value) *TerminalIdEntity` | Create a TerminalId entity instance. |
 | `transaction_history` | `(entopts: Value) *TransactionHistoryEntity` | Create a TransactionHistory entity instance. |
-| `transactions_count` | `(entopts: Value) *TransactionsCountEntity` | Create a TransactionsCount entity instance. |
 | `transactions_count_card_brand` | `(entopts: Value) *TransactionsCountCardBrandEntity` | Create a TransactionsCountCardBrand entity instance. |
 | `transactions_turnover` | `(entopts: Value) *TransactionsTurnoverEntity` | Create a TransactionsTurnover entity instance. |
 | `update_merchant` | `(entopts: Value) *UpdateMerchantEntity` | Create an UpdateMerchant entity instance. |
@@ -345,6 +346,36 @@ API path: `/public/cancelTransaction`
 Operations: Create.
 
 API path: `/checkCardBlackListed`
+
+#### CountAuthorisedTransaction
+
+| Field | Description |
+| --- | --- |
+| `period` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `transactionDateFrom` |  |
+| `transactionDateTo` |  |
+| `transactionsCount` |  |
+
+Operations: Create.
+
+API path: `/public/countAuthorisedTransactions`
+
+#### CountNotAuthorisedTransaction
+
+| Field | Description |
+| --- | --- |
+| `period` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `transactionDateFrom` |  |
+| `transactionDateTo` |  |
+| `transactionsCount` |  |
+
+Operations: Create.
+
+API path: `/public/countNotAuthorisedTransactions`
 
 #### CreateProduct
 
@@ -1007,21 +1038,6 @@ Operations: Create.
 
 API path: `/public/mcom/transactionHistory`
 
-#### TransactionsCount
-
-| Field | Description |
-| --- | --- |
-| `period` |  |
-| `responseCode` |  |
-| `responseMessage` |  |
-| `transactionDateFrom` |  |
-| `transactionDateTo` |  |
-| `transactionsCount` |  |
-
-Operations: Create.
-
-API path: `/public/countAuthorisedTransactions`
-
 #### TransactionsCountCardBrand
 
 | Field | Description |
@@ -1202,6 +1218,76 @@ carries the result `Value`, `.err => |e|` carries the branded error.
 switch (client.check_card_black_listed(h.vnull()).create(h.jo(&.{
 }), h.vnull())) {
     .ok => |check_card_black_listed| std.debug.print("{s}\n", .{h.stringify(check_card_black_listed)}),
+    .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
+}
+```
+
+
+### CountAuthorisedTransaction
+
+Create an instance: `const count_authorised_transaction = client.count_authorised_transaction(h.vnull());`
+
+#### Operations
+
+| Method | Description |
+| --- | --- |
+| `create(reqdata, ctrl)` | Create a new entity with the given data. |
+
+Each operation returns an `OpResult` — `switch` on it: `.ok => |data|`
+carries the result `Value`, `.err => |e|` carries the branded error.
+
+#### Fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `period` | `[]const u8` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
+| `transactionDateFrom` | `[]const u8` |  |
+| `transactionDateTo` | `[]const u8` |  |
+| `transactionsCount` | `Value (array)` |  |
+
+#### Example: Create
+
+```zig
+switch (client.count_authorised_transaction(h.vnull()).create(h.jo(&.{
+}), h.vnull())) {
+    .ok => |count_authorised_transaction| std.debug.print("{s}\n", .{h.stringify(count_authorised_transaction)}),
+    .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
+}
+```
+
+
+### CountNotAuthorisedTransaction
+
+Create an instance: `const count_not_authorised_transaction = client.count_not_authorised_transaction(h.vnull());`
+
+#### Operations
+
+| Method | Description |
+| --- | --- |
+| `create(reqdata, ctrl)` | Create a new entity with the given data. |
+
+Each operation returns an `OpResult` — `switch` on it: `.ok => |data|`
+carries the result `Value`, `.err => |e|` carries the branded error.
+
+#### Fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `period` | `[]const u8` |  |
+| `responseCode` | `i64` |  |
+| `responseMessage` | `[]const u8` |  |
+| `transactionDateFrom` | `[]const u8` |  |
+| `transactionDateTo` | `[]const u8` |  |
+| `transactionsCount` | `Value (array)` |  |
+
+#### Example: Create
+
+```zig
+switch (client.count_not_authorised_transaction(h.vnull()).create(h.jo(&.{
+}), h.vnull())) {
+    .ok => |count_not_authorised_transaction| std.debug.print("{s}\n", .{h.stringify(count_not_authorised_transaction)}),
     .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
 }
 ```
@@ -2583,41 +2669,6 @@ switch (client.transaction_history(h.vnull()).create(h.jo(&.{
 ```
 
 
-### TransactionsCount
-
-Create an instance: `const transactions_count = client.transactions_count(h.vnull());`
-
-#### Operations
-
-| Method | Description |
-| --- | --- |
-| `create(reqdata, ctrl)` | Create a new entity with the given data. |
-
-Each operation returns an `OpResult` — `switch` on it: `.ok => |data|`
-carries the result `Value`, `.err => |e|` carries the branded error.
-
-#### Fields
-
-| Field | Type | Description |
-| --- | --- | --- |
-| `period` | `[]const u8` |  |
-| `responseCode` | `i64` |  |
-| `responseMessage` | `[]const u8` |  |
-| `transactionDateFrom` | `[]const u8` |  |
-| `transactionDateTo` | `[]const u8` |  |
-| `transactionsCount` | `Value (array)` |  |
-
-#### Example: Create
-
-```zig
-switch (client.transactions_count(h.vnull()).create(h.jo(&.{
-}), h.vnull())) {
-    .ok => |transactions_count| std.debug.print("{s}\n", .{h.stringify(transactions_count)}),
-    .err => |e| std.debug.print("create failed: {s}\n", .{e.msg}),
-}
-```
-
-
 ### TransactionsCountCardBrand
 
 Create an instance: `const transactions_count_card_brand = client.transactions_count_card_brand(h.vnull());`
@@ -2805,18 +2856,18 @@ above:
 
 | Feature | What it does |
 |---|---|
-| [`audit`](#audit) | Structured audit trail of operations |
-| [`clienttrack`](#clienttrack) | Client identity and per-request correlation headers |
-| [`debug`](#debug) | Request/response capture ring buffer for debugging |
-| [`idempotency`](#idempotency) | Idempotency keys for safe retries of mutating operations |
-| [`log`](#log) | Structured request and response logging |
-| [`metrics`](#metrics) | Statistics capture: per-operation counters and latency |
-| [`paging`](#paging) | Pagination signals for list operations |
-| [`ratelimit`](#ratelimit) | Client-side rate limiting via a token bucket |
-| [`retry`](#retry) | Automatic retry of transient failures with exponential backoff |
-| [`telemetry`](#telemetry) | Distributed tracing spans with W3C trace-context propagation |
-| [`test`](#test) | In-memory mock transport for testing without a live server |
-| [`timeout`](#timeout) | Per-request timeout with transport abort |
+| [`audit`](#audit) | Audit trail |
+| [`clienttrack`](#clienttrack) | Client tracking |
+| [`debug`](#debug) | Debug capture |
+| [`idempotency`](#idempotency) | Idempotency |
+| [`log`](#log) | Logging |
+| [`metrics`](#metrics) | Metrics |
+| [`paging`](#paging) | Paging |
+| [`ratelimit`](#ratelimit) | Rate limiting |
+| [`retry`](#retry) | Retry |
+| [`telemetry`](#telemetry) | Telemetry |
+| [`test`](#test) | Test transport |
+| [`timeout`](#timeout) | Timeout |
 
 > **Order matters for `ratelimit`, `retry`, `timeout`.** These wrap the
 > transport, so each one wraps whatever is already installed: the order you
@@ -2825,7 +2876,7 @@ above:
 
 ### audit
 
-Structured audit trail of operations.
+Audit trail.
 
 | Option | Default |
 |---|---|
@@ -2837,7 +2888,7 @@ Set `feature.audit.active` to enable it, then override any of the options above.
 
 ### clienttrack
 
-Client identity and per-request correlation headers.
+Client tracking.
 
 | Option | Default |
 |---|---|
@@ -2848,7 +2899,7 @@ Set `feature.clienttrack.active` to enable it, then override any of the options 
 
 ### debug
 
-Request/response capture ring buffer for debugging.
+Debug capture.
 
 | Option | Default |
 |---|---|
@@ -2860,7 +2911,7 @@ Set `feature.debug.active` to enable it, then override any of the options above.
 
 ### idempotency
 
-Idempotency keys for safe retries of mutating operations.
+Idempotency.
 
 | Option | Default |
 |---|---|
@@ -2873,7 +2924,7 @@ Set `feature.idempotency.active` to enable it, then override any of the options 
 
 ### log
 
-Structured request and response logging.
+Logging.
 
 | Option | Default |
 |---|---|
@@ -2883,7 +2934,7 @@ Set `feature.log.active` to enable it, then override any of the options above.
 
 ### metrics
 
-Statistics capture: per-operation counters and latency.
+Metrics.
 
 | Option | Default |
 |---|---|
@@ -2893,7 +2944,7 @@ Set `feature.metrics.active` to enable it, then override any of the options abov
 
 ### paging
 
-Pagination signals for list operations.
+Paging.
 
 | Option | Default |
 |---|---|
@@ -2909,7 +2960,7 @@ Set `feature.paging.active` to enable it, then override any of the options above
 
 ### ratelimit
 
-Client-side rate limiting via a token bucket.
+Rate limiting.
 
 | Option | Default |
 |---|---|
@@ -2925,7 +2976,7 @@ activated earlier.
 
 ### retry
 
-Automatic retry of transient failures with exponential backoff.
+Retry.
 
 | Option | Default |
 |---|---|
@@ -2944,7 +2995,7 @@ activated earlier.
 
 ### telemetry
 
-Distributed tracing spans with W3C trace-context propagation.
+Telemetry.
 
 | Option | Default |
 |---|---|
@@ -2954,7 +3005,7 @@ Set `feature.telemetry.active` to enable it, then override any of the options ab
 
 ### test
 
-In-memory mock transport for testing without a live server.
+Test transport.
 
 | Option | Default |
 |---|---|
@@ -2964,7 +3015,7 @@ Set `feature.test.active` to enable it, then override any of the options above.
 
 ### timeout
 
-Per-request timeout with transport abort.
+Timeout.
 
 | Option | Default |
 |---|---|
@@ -3016,18 +3067,18 @@ a function that receives the context.
 
 The SDK ships with built-in features:
 
-- **AuditFeature**: Structured audit trail of operations
-- **ClienttrackFeature**: Client identity and per-request correlation headers
-- **DebugFeature**: Request/response capture ring buffer for debugging
-- **IdempotencyFeature**: Idempotency keys for safe retries of mutating operations
-- **LogFeature**: Structured request and response logging
-- **MetricsFeature**: Statistics capture: per-operation counters and latency
-- **PagingFeature**: Pagination signals for list operations
-- **RatelimitFeature**: Client-side rate limiting via a token bucket
-- **RetryFeature**: Automatic retry of transient failures with exponential backoff
-- **TelemetryFeature**: Distributed tracing spans with W3C trace-context propagation
-- **TestFeature**: In-memory mock transport for testing without a live server
-- **TimeoutFeature**: Per-request timeout with transport abort
+- **AuditFeature**: Audit trail
+- **ClienttrackFeature**: Client tracking
+- **DebugFeature**: Debug capture
+- **IdempotencyFeature**: Idempotency
+- **LogFeature**: Logging
+- **MetricsFeature**: Metrics
+- **PagingFeature**: Paging
+- **RatelimitFeature**: Rate limiting
+- **RetryFeature**: Retry
+- **TelemetryFeature**: Telemetry
+- **TestFeature**: Test transport
+- **TimeoutFeature**: Timeout
 
 Features are initialized in order. Hooks fire in the order features
 were added, so later features can override earlier ones.

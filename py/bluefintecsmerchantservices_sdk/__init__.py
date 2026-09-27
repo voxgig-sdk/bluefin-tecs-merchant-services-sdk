@@ -319,6 +319,18 @@ class BluefinTecsMerchantServicesSDK:
         return CheckCardBlackListedEntity(self, data)
 
 
+    def CountAuthorisedTransaction(self, data=None) -> "CountAuthorisedTransactionEntity":
+        """Entity factory: client.CountAuthorisedTransaction().list() / client.CountAuthorisedTransaction().load({"id": ...})."""
+        from bluefintecsmerchantservices_sdk.entity.count_authorised_transaction_entity import CountAuthorisedTransactionEntity
+        return CountAuthorisedTransactionEntity(self, data)
+
+
+    def CountNotAuthorisedTransaction(self, data=None) -> "CountNotAuthorisedTransactionEntity":
+        """Entity factory: client.CountNotAuthorisedTransaction().list() / client.CountNotAuthorisedTransaction().load({"id": ...})."""
+        from bluefintecsmerchantservices_sdk.entity.count_not_authorised_transaction_entity import CountNotAuthorisedTransactionEntity
+        return CountNotAuthorisedTransactionEntity(self, data)
+
+
     def CreateProduct(self, data=None) -> "CreateProductEntity":
         """Entity factory: client.CreateProduct().list() / client.CreateProduct().load({"id": ...})."""
         from bluefintecsmerchantservices_sdk.entity.create_product_entity import CreateProductEntity
@@ -505,12 +517,6 @@ class BluefinTecsMerchantServicesSDK:
         return TransactionHistoryEntity(self, data)
 
 
-    def TransactionsCount(self, data=None) -> "TransactionsCountEntity":
-        """Entity factory: client.TransactionsCount().list() / client.TransactionsCount().load({"id": ...})."""
-        from bluefintecsmerchantservices_sdk.entity.transactions_count_entity import TransactionsCountEntity
-        return TransactionsCountEntity(self, data)
-
-
     def TransactionsCountCardBrand(self, data=None) -> "TransactionsCountCardBrandEntity":
         """Entity factory: client.TransactionsCountCardBrand().list() / client.TransactionsCountCardBrand().load({"id": ...})."""
         from bluefintecsmerchantservices_sdk.entity.transactions_count_card_brand_entity import TransactionsCountCardBrandEntity
@@ -570,6 +576,8 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
     from bluefintecsmerchantservices_sdk.entity.cancel_transaction_entity import CancelTransactionEntity
     from bluefintecsmerchantservices_sdk.entity.check_card_black_listed_entity import CheckCardBlackListedEntity
+    from bluefintecsmerchantservices_sdk.entity.count_authorised_transaction_entity import CountAuthorisedTransactionEntity
+    from bluefintecsmerchantservices_sdk.entity.count_not_authorised_transaction_entity import CountNotAuthorisedTransactionEntity
     from bluefintecsmerchantservices_sdk.entity.create_product_entity import CreateProductEntity
     from bluefintecsmerchantservices_sdk.entity.deactivate_terminal_entity import DeactivateTerminalEntity
     from bluefintecsmerchantservices_sdk.entity.digital_services_api_entity import DigitalServicesApiEntity
@@ -601,7 +609,6 @@ if TYPE_CHECKING:
     from bluefintecsmerchantservices_sdk.entity.store_terminal_parameter_entity import StoreTerminalParameterEntity
     from bluefintecsmerchantservices_sdk.entity.terminal_id_entity import TerminalIdEntity
     from bluefintecsmerchantservices_sdk.entity.transaction_history_entity import TransactionHistoryEntity
-    from bluefintecsmerchantservices_sdk.entity.transactions_count_entity import TransactionsCountEntity
     from bluefintecsmerchantservices_sdk.entity.transactions_count_card_brand_entity import TransactionsCountCardBrandEntity
     from bluefintecsmerchantservices_sdk.entity.transactions_turnover_entity import TransactionsTurnoverEntity
     from bluefintecsmerchantservices_sdk.entity.update_merchant_entity import UpdateMerchantEntity

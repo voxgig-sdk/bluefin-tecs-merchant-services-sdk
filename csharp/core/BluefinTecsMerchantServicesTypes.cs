@@ -1,7 +1,7 @@
 // Typed reference models for the BluefinTecsMerchantServices SDK.
 //
-// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
-// params (op.<name>.points[].args.params[]). Field/param types come from the
+// GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+// params (op.<name>.points[].g.params[]). Field/param types come from the
 // canonical type sentinels (source of truth: @voxgig/apidef VALID_CANON). Do
 // not edit by hand.
 //
@@ -113,6 +113,46 @@ public record CheckCardBlackListedCreateData
     public string? cardNo { get; init; }
     public long? responseCode { get; init; }
     public string? responseMessage { get; init; }
+}
+
+public record CountAuthorisedTransaction
+{
+    public string? period { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public string? transactionDateFrom { get; init; }
+    public string? transactionDateTo { get; init; }
+    public List<object?>? transactionsCount { get; init; }
+}
+
+public record CountAuthorisedTransactionCreateData
+{
+    public string? period { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public string? transactionDateFrom { get; init; }
+    public string? transactionDateTo { get; init; }
+    public List<object?>? transactionsCount { get; init; }
+}
+
+public record CountNotAuthorisedTransaction
+{
+    public string? period { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public string? transactionDateFrom { get; init; }
+    public string? transactionDateTo { get; init; }
+    public List<object?>? transactionsCount { get; init; }
+}
+
+public record CountNotAuthorisedTransactionCreateData
+{
+    public string? period { get; init; }
+    public long? responseCode { get; init; }
+    public string? responseMessage { get; init; }
+    public string? transactionDateFrom { get; init; }
+    public string? transactionDateTo { get; init; }
+    public List<object?>? transactionsCount { get; init; }
 }
 
 public record CreateProduct
@@ -1141,26 +1181,6 @@ public record TransactionHistoryCreateData
     public string? transactionId { get; init; }
     public string? transactionType { get; init; }
     public string? wallet { get; init; }
-}
-
-public record TransactionsCount
-{
-    public string? period { get; init; }
-    public long? responseCode { get; init; }
-    public string? responseMessage { get; init; }
-    public string? transactionDateFrom { get; init; }
-    public string? transactionDateTo { get; init; }
-    public List<object?>? transactionsCount { get; init; }
-}
-
-public record TransactionsCountCreateData
-{
-    public string? period { get; init; }
-    public long? responseCode { get; init; }
-    public string? responseMessage { get; init; }
-    public string? transactionDateFrom { get; init; }
-    public string? transactionDateTo { get; init; }
-    public List<object?>? transactionsCount { get; init; }
 }
 
 public record TransactionsCountCardBrand

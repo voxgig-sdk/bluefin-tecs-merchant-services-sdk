@@ -92,6 +92,38 @@ export interface CheckCardBlackListedCreateData {
     responseCode?: number;
     responseMessage?: string;
 }
+export interface CountAuthorisedTransaction {
+    period?: string;
+    responseCode?: number;
+    responseMessage?: string;
+    transactionDateFrom?: string;
+    transactionDateTo?: string;
+    transactionsCount?: any[];
+}
+export interface CountAuthorisedTransactionCreateData {
+    period?: string;
+    responseCode?: number;
+    responseMessage?: string;
+    transactionDateFrom?: string;
+    transactionDateTo?: string;
+    transactionsCount?: any[];
+}
+export interface CountNotAuthorisedTransaction {
+    period?: string;
+    responseCode?: number;
+    responseMessage?: string;
+    transactionDateFrom?: string;
+    transactionDateTo?: string;
+    transactionsCount?: any[];
+}
+export interface CountNotAuthorisedTransactionCreateData {
+    period?: string;
+    responseCode?: number;
+    responseMessage?: string;
+    transactionDateFrom?: string;
+    transactionDateTo?: string;
+    transactionsCount?: any[];
+}
 export interface CreateProduct {
     acquirerId?: number;
     responseCode?: number;
@@ -995,22 +1027,6 @@ export interface TransactionHistoryCreateData {
     transactionId?: string;
     transactionType?: string;
     wallet?: string;
-}
-export interface TransactionsCount {
-    period?: string;
-    responseCode?: number;
-    responseMessage?: string;
-    transactionDateFrom?: string;
-    transactionDateTo?: string;
-    transactionsCount?: any[];
-}
-export interface TransactionsCountCreateData {
-    period?: string;
-    responseCode?: number;
-    responseMessage?: string;
-    transactionDateFrom?: string;
-    transactionDateTo?: string;
-    transactionsCount?: any[];
 }
 export interface TransactionsCountCardBrand {
     period?: string;

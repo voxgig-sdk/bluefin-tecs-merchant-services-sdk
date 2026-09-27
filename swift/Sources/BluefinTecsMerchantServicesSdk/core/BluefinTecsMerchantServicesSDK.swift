@@ -311,6 +311,20 @@ public final class BluefinTecsMerchantServicesSDK {
     return CheckCardBlackListedEntity(self, entopts)
   }
 
+  // CountAuthorisedTransaction returns a CountAuthorisedTransaction entity bound to this client.
+  // Idiomatic usage: try client.CountAuthorisedTransaction().list(nil) or
+  // try client.CountAuthorisedTransaction().load(vm(("id", .string("..."))), nil).
+  public func CountAuthorisedTransaction(_ entopts: VMap? = nil) -> BluefinTecsMerchantServicesEntityBase {
+    return CountAuthorisedTransactionEntity(self, entopts)
+  }
+
+  // CountNotAuthorisedTransaction returns a CountNotAuthorisedTransaction entity bound to this client.
+  // Idiomatic usage: try client.CountNotAuthorisedTransaction().list(nil) or
+  // try client.CountNotAuthorisedTransaction().load(vm(("id", .string("..."))), nil).
+  public func CountNotAuthorisedTransaction(_ entopts: VMap? = nil) -> BluefinTecsMerchantServicesEntityBase {
+    return CountNotAuthorisedTransactionEntity(self, entopts)
+  }
+
   // CreateProduct returns a CreateProduct entity bound to this client.
   // Idiomatic usage: try client.CreateProduct().list(nil) or
   // try client.CreateProduct().load(vm(("id", .string("..."))), nil).
@@ -526,13 +540,6 @@ public final class BluefinTecsMerchantServicesSDK {
   // try client.TransactionHistory().load(vm(("id", .string("..."))), nil).
   public func TransactionHistory(_ entopts: VMap? = nil) -> BluefinTecsMerchantServicesEntityBase {
     return TransactionHistoryEntity(self, entopts)
-  }
-
-  // TransactionsCount returns a TransactionsCount entity bound to this client.
-  // Idiomatic usage: try client.TransactionsCount().list(nil) or
-  // try client.TransactionsCount().load(vm(("id", .string("..."))), nil).
-  public func TransactionsCount(_ entopts: VMap? = nil) -> BluefinTecsMerchantServicesEntityBase {
-    return TransactionsCountEntity(self, entopts)
   }
 
   // TransactionsCountCardBrand returns a TransactionsCountCardBrand entity bound to this client.

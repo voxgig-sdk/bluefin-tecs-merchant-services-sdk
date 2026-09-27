@@ -1,0 +1,18 @@
+# BasicTransactionHistoryFlow
+
+main: kit: flow: BasicTransactionHistoryFlow:
+{
+  entity: "transaction_history",
+  kind: "basic",
+  name: "BasicTransactionHistoryFlow",
+  step: [
+    {
+      i: {
+        ref: "transaction_history_ref01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicTransactionHistoryFlow"
+}

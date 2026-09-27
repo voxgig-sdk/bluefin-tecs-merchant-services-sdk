@@ -1,0 +1,18 @@
+# BasicDeactivateTerminalFlow
+
+main: kit: flow: BasicDeactivateTerminalFlow:
+{
+  entity: "deactivate_terminal",
+  kind: "basic",
+  name: "BasicDeactivateTerminalFlow",
+  step: [
+    {
+      i: {
+        ref: "deactivate_terminal_ref01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicDeactivateTerminalFlow"
+}

@@ -377,6 +377,42 @@ class BluefinTecsMerchantServicesSDK
     }
 
 
+    private $_count_authorised_transaction = null;
+
+    // Canonical facade: $client->CountAuthorisedTransaction()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->count_authorised_transaction()
+    // resolves here too.
+    public function CountAuthorisedTransaction($data = null)
+    {
+        require_once __DIR__ . '/entity/count_authorised_transaction_entity.php';
+        if ($data === null) {
+            if ($this->_count_authorised_transaction === null) {
+                $this->_count_authorised_transaction = new CountAuthorisedTransactionEntity($this, null);
+            }
+            return $this->_count_authorised_transaction;
+        }
+        return new CountAuthorisedTransactionEntity($this, $data);
+    }
+
+
+    private $_count_not_authorised_transaction = null;
+
+    // Canonical facade: $client->CountNotAuthorisedTransaction()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->count_not_authorised_transaction()
+    // resolves here too.
+    public function CountNotAuthorisedTransaction($data = null)
+    {
+        require_once __DIR__ . '/entity/count_not_authorised_transaction_entity.php';
+        if ($data === null) {
+            if ($this->_count_not_authorised_transaction === null) {
+                $this->_count_not_authorised_transaction = new CountNotAuthorisedTransactionEntity($this, null);
+            }
+            return $this->_count_not_authorised_transaction;
+        }
+        return new CountNotAuthorisedTransactionEntity($this, $data);
+    }
+
+
     private $_create_product = null;
 
     // Canonical facade: $client->CreateProduct()->list() / ->load(["id" => ...]).
@@ -932,24 +968,6 @@ class BluefinTecsMerchantServicesSDK
             return $this->_transaction_history;
         }
         return new TransactionHistoryEntity($this, $data);
-    }
-
-
-    private $_transactions_count = null;
-
-    // Canonical facade: $client->TransactionsCount()->list() / ->load(["id" => ...]).
-    // PHP method names are case-insensitive, so lowercase $client->transactions_count()
-    // resolves here too.
-    public function TransactionsCount($data = null)
-    {
-        require_once __DIR__ . '/entity/transactions_count_entity.php';
-        if ($data === null) {
-            if ($this->_transactions_count === null) {
-                $this->_transactions_count = new TransactionsCountEntity($this, null);
-            }
-            return $this->_transactions_count;
-        }
-        return new TransactionsCountEntity($this, $data);
     }
 
 

@@ -1,0 +1,83 @@
+# Entity: create_product
+
+main: kit: entity: create_product: {
+
+  alias: field: {}
+
+  fields: {
+    acquirerId: {
+      fo: "int32"
+      h: "Acquirer Id"
+      n: "acquirerId"
+      r: false
+      t: "`$INTEGER`"
+    }
+    responseCode: {
+      fo: "int32"
+      h: "Response Code"
+      n: "responseCode"
+      r: false
+      t: "`$INTEGER`"
+    }
+    responseMessage: {
+      h: "Response Message"
+      n: "responseMessage"
+      r: false
+      t: "`$STRING`"
+    }
+    templateName: {
+      h: "Template Name"
+      n: "templateName"
+      r: true
+      t: "`$STRING`"
+    }
+    templateType: {
+      h: "Template Type"
+      n: "templateType"
+      r: true
+      t: "`$STRING`"
+    }
+    templateXml: {
+      h: "Template Xml"
+      n: "templateXml"
+      r: true
+      t: "`$STRING`"
+    }
+    terminalType: {
+      h: "Terminal Type"
+      n: "terminalType"
+      r: true
+      t: "`$STRING`"
+    }
+  }
+
+  name: "create_product"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /createProduct"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/createProduct"
+          s: [
+            {
+              lit: "createProduct"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

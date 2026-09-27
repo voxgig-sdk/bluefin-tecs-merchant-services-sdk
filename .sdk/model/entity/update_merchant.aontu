@@ -1,0 +1,109 @@
+# Entity: update_merchant
+
+main: kit: entity: update_merchant: {
+
+  alias: field: {}
+
+  fields: {
+    city: {
+      h: "City"
+      n: "city"
+      r: false
+      t: "`$STRING`"
+    }
+    corporateUuid: {
+      h: "Corporate Uuid"
+      n: "corporateUuid"
+      r: true
+      t: "`$STRING`"
+    }
+    country: {
+      h: "Country"
+      n: "country"
+      r: false
+      t: "`$STRING`"
+    }
+    merchantCategoryCode: {
+      h: "Merchant Category Code"
+      n: "merchantCategoryCode"
+      r: false
+      t: "`$STRING`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: false
+      t: "`$STRING`"
+    }
+    responseCode: {
+      fo: "int32"
+      h: "Response Code"
+      n: "responseCode"
+      r: false
+      t: "`$INTEGER`"
+    }
+    responseMessage: {
+      h: "Response Message"
+      n: "responseMessage"
+      r: false
+      t: "`$STRING`"
+    }
+    state: {
+      h: "State"
+      n: "state"
+      r: false
+      t: "`$STRING`"
+    }
+    street: {
+      h: "Street"
+      n: "street"
+      r: false
+      t: "`$STRING`"
+    }
+    vuNummer: {
+      h: "Vu Nummer"
+      n: "vuNummer"
+      r: false
+      t: "`$STRING`"
+    }
+    zipcode: {
+      h: "Zipcode"
+      n: "zipcode"
+      r: false
+      t: "`$STRING`"
+    }
+  }
+
+  name: "update_merchant"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /public/updateMerchant"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/public/updateMerchant"
+          s: [
+            {
+              lit: "public"
+            }
+            {
+              lit: "updateMerchant"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

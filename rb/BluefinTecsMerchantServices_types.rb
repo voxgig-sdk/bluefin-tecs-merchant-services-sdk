@@ -2,8 +2,8 @@
 
 # Typed models for the BluefinTecsMerchantServices SDK.
 #
-# GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
-# params (op.<name>.points[].args.params[]). Member types come from the
+# GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+# params (op.<name>.points[].g.params[]). Member types come from the
 # canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 # @voxgig/apidef VALID_CANON). Ruby types are unenforced; these YARD
 # annotations document the shapes. Do not edit by hand.
@@ -369,6 +369,122 @@ CheckCardBlackListedCreateData = Struct.new(
   :cardNo,
   :responseCode,
   :responseMessage,
+  keyword_init: true
+)
+
+# CountAuthorisedTransaction entity data model.
+#
+# @!attribute [rw] period
+#   @return [String, nil]
+#
+# @!attribute [rw] responseCode
+#   @return [Integer, nil]
+#
+# @!attribute [rw] responseMessage
+#   @return [String, nil]
+#
+# @!attribute [rw] transactionDateFrom
+#   @return [String, nil]
+#
+# @!attribute [rw] transactionDateTo
+#   @return [String, nil]
+#
+# @!attribute [rw] transactionsCount
+#   @return [Array, nil]
+CountAuthorisedTransaction = Struct.new(
+  :period,
+  :responseCode,
+  :responseMessage,
+  :transactionDateFrom,
+  :transactionDateTo,
+  :transactionsCount,
+  keyword_init: true
+)
+
+# Request payload for CountAuthorisedTransaction#create.
+#
+# @!attribute [rw] period
+#   @return [String, nil]
+#
+# @!attribute [rw] responseCode
+#   @return [Integer, nil]
+#
+# @!attribute [rw] responseMessage
+#   @return [String, nil]
+#
+# @!attribute [rw] transactionDateFrom
+#   @return [String, nil]
+#
+# @!attribute [rw] transactionDateTo
+#   @return [String, nil]
+#
+# @!attribute [rw] transactionsCount
+#   @return [Array, nil]
+CountAuthorisedTransactionCreateData = Struct.new(
+  :period,
+  :responseCode,
+  :responseMessage,
+  :transactionDateFrom,
+  :transactionDateTo,
+  :transactionsCount,
+  keyword_init: true
+)
+
+# CountNotAuthorisedTransaction entity data model.
+#
+# @!attribute [rw] period
+#   @return [String, nil]
+#
+# @!attribute [rw] responseCode
+#   @return [Integer, nil]
+#
+# @!attribute [rw] responseMessage
+#   @return [String, nil]
+#
+# @!attribute [rw] transactionDateFrom
+#   @return [String, nil]
+#
+# @!attribute [rw] transactionDateTo
+#   @return [String, nil]
+#
+# @!attribute [rw] transactionsCount
+#   @return [Array, nil]
+CountNotAuthorisedTransaction = Struct.new(
+  :period,
+  :responseCode,
+  :responseMessage,
+  :transactionDateFrom,
+  :transactionDateTo,
+  :transactionsCount,
+  keyword_init: true
+)
+
+# Request payload for CountNotAuthorisedTransaction#create.
+#
+# @!attribute [rw] period
+#   @return [String, nil]
+#
+# @!attribute [rw] responseCode
+#   @return [Integer, nil]
+#
+# @!attribute [rw] responseMessage
+#   @return [String, nil]
+#
+# @!attribute [rw] transactionDateFrom
+#   @return [String, nil]
+#
+# @!attribute [rw] transactionDateTo
+#   @return [String, nil]
+#
+# @!attribute [rw] transactionsCount
+#   @return [Array, nil]
+CountNotAuthorisedTransactionCreateData = Struct.new(
+  :period,
+  :responseCode,
+  :responseMessage,
+  :transactionDateFrom,
+  :transactionDateTo,
+  :transactionsCount,
   keyword_init: true
 )
 
@@ -3793,64 +3909,6 @@ TransactionHistoryCreateData = Struct.new(
   :transactionId,
   :transactionType,
   :wallet,
-  keyword_init: true
-)
-
-# TransactionsCount entity data model.
-#
-# @!attribute [rw] period
-#   @return [String, nil]
-#
-# @!attribute [rw] responseCode
-#   @return [Integer, nil]
-#
-# @!attribute [rw] responseMessage
-#   @return [String, nil]
-#
-# @!attribute [rw] transactionDateFrom
-#   @return [String, nil]
-#
-# @!attribute [rw] transactionDateTo
-#   @return [String, nil]
-#
-# @!attribute [rw] transactionsCount
-#   @return [Array, nil]
-TransactionsCount = Struct.new(
-  :period,
-  :responseCode,
-  :responseMessage,
-  :transactionDateFrom,
-  :transactionDateTo,
-  :transactionsCount,
-  keyword_init: true
-)
-
-# Request payload for TransactionsCount#create.
-#
-# @!attribute [rw] period
-#   @return [String, nil]
-#
-# @!attribute [rw] responseCode
-#   @return [Integer, nil]
-#
-# @!attribute [rw] responseMessage
-#   @return [String, nil]
-#
-# @!attribute [rw] transactionDateFrom
-#   @return [String, nil]
-#
-# @!attribute [rw] transactionDateTo
-#   @return [String, nil]
-#
-# @!attribute [rw] transactionsCount
-#   @return [Array, nil]
-TransactionsCountCreateData = Struct.new(
-  :period,
-  :responseCode,
-  :responseMessage,
-  :transactionDateFrom,
-  :transactionDateTo,
-  :transactionsCount,
   keyword_init: true
 )
 

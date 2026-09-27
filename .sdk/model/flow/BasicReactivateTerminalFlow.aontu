@@ -1,0 +1,18 @@
+# BasicReactivateTerminalFlow
+
+main: kit: flow: BasicReactivateTerminalFlow:
+{
+  entity: "reactivate_terminal",
+  kind: "basic",
+  name: "BasicReactivateTerminalFlow",
+  step: [
+    {
+      i: {
+        ref: "reactivate_terminal_ref01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicReactivateTerminalFlow"
+}

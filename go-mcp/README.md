@@ -129,7 +129,7 @@ Both tools take the same argument object:
 
 | Field | Type | Notes |
 |-------|------|-------|
-| `entity` | string | One of the 39 supported entities (see below). |
+| `entity` | string | One of the 40 supported entities (see below). |
 | `query` | object | Optional match map. `{"id":N}` for load; omit or `{}` for list. |
 
 JSON schemas are emitted by the SDK from the `Args` struct's `json` /
@@ -151,9 +151,9 @@ JSON schemas are emitted by the SDK from the `Args` struct's `json` /
 
 ### Entities
 
-The 39 entities valid as the `entity` argument:
+The 40 entities valid as the `entity` argument:
 
-cancel_transaction | check_card_black_listed | create_product | deactivate_terminal | digital_services_api | ec_data_ecom | ecom_parameter | ecr_data | emv_data | enable_acquiring | get_merchant_contract_number | get_template_xml | introduce_mandator | introduce_package | keep_alive | list_terminal | mandator_clearing_export | mandator_clearing_export_download | mandator_clearing_export_summary | merchant_portal_services_api | move_tid | payment_manual | payment_sred | pre_auth_transaction_completion | reactivate_terminal | refund_transaction | register_tecs_company | register_terminal | report_data | status_transaction | store_terminal_parameter | terminal_id | transaction_history | transactions_count | transactions_count_card_brand | transactions_turnover | update_merchant | update_template_xml | version
+cancel_transaction | check_card_black_listed | count_authorised_transaction | count_not_authorised_transaction | create_product | deactivate_terminal | digital_services_api | ec_data_ecom | ecom_parameter | ecr_data | emv_data | enable_acquiring | get_merchant_contract_number | get_template_xml | introduce_mandator | introduce_package | keep_alive | list_terminal | mandator_clearing_export | mandator_clearing_export_download | mandator_clearing_export_summary | merchant_portal_services_api | move_tid | payment_manual | payment_sred | pre_auth_transaction_completion | reactivate_terminal | refund_transaction | register_tecs_company | register_terminal | report_data | status_transaction | store_terminal_parameter | terminal_id | transaction_history | transactions_count_card_brand | transactions_turnover | update_merchant | update_template_xml | version
 
 ### Smoke test via HTTP (raw JSON-RPC)
 

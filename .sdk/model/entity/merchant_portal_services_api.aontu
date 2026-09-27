@@ -1,0 +1,197 @@
+# Entity: merchant_portal_services_api
+
+main: kit: entity: merchant_portal_services_api: {
+
+  alias: field: {}
+
+  fields: {
+    "3DSecure": {
+      h: "3 D Secure"
+      n: "3DSecure"
+      r: false
+      t: "`$STRING`"
+    }
+    authorizationCode: {
+      h: "Authorization Code"
+      n: "authorizationCode"
+      r: false
+      t: "`$STRING`"
+    }
+    cardBrand: {
+      h: "Card Brand"
+      n: "cardBrand"
+      r: false
+      t: "`$STRING`"
+    }
+    clearingAmountFrom: {
+      h: "Clearing Amount From"
+      n: "clearingAmountFrom"
+      r: false
+      t: "`$STRING`"
+    }
+    clearingAmountTo: {
+      h: "Clearing Amount To"
+      n: "clearingAmountTo"
+      r: false
+      t: "`$STRING`"
+    }
+    clearingCurrency: {
+      h: "Clearing Currency"
+      n: "clearingCurrency"
+      r: false
+      t: "`$STRING`"
+    }
+    clearingStatus: {
+      h: "Clearing Status"
+      n: "clearingStatus"
+      r: false
+      t: "`$STRING`"
+    }
+    corporateUUID: {
+      h: "Corporate Uuid"
+      n: "corporateUUID"
+      r: false
+      t: "`$STRING`"
+    }
+    orderByTransactionDate: {
+      h: "Order By Transaction Date"
+      n: "orderByTransactionDate"
+      r: false
+      t: "`$STRING`"
+    }
+    pagination: {
+      h: "Pagination"
+      n: "pagination"
+      r: false
+      t: "`$OBJECT`"
+    }
+    receiptNumber: {
+      h: "Receipt Number"
+      n: "receiptNumber"
+      r: false
+      t: "`$STRING`"
+    }
+    referencedTransactionId: {
+      h: "Referenced Transaction Id"
+      n: "referencedTransactionId"
+      r: false
+      t: "`$STRING`"
+    }
+    retrievalReferenceNumber: {
+      h: "Retrieval Reference Number"
+      n: "retrievalReferenceNumber"
+      r: false
+      t: "`$STRING`"
+    }
+    sourceId: {
+      fo: "int32"
+      h: "Source Id"
+      n: "sourceId"
+      r: false
+      t: "`$INTEGER`"
+    }
+    tecsengineResponseCodeFrom: {
+      h: "Tecsengine Response Code From"
+      n: "tecsengineResponseCodeFrom"
+      r: false
+      t: "`$STRING`"
+    }
+    tecsengineResponseCodeTo: {
+      h: "Tecsengine Response Code To"
+      n: "tecsengineResponseCodeTo"
+      r: false
+      t: "`$STRING`"
+    }
+    terminalId: {
+      fo: "int32"
+      h: "Terminal Id"
+      n: "terminalId"
+      r: false
+      t: "`$INTEGER`"
+    }
+    traceNumber: {
+      h: "Trace Number"
+      n: "traceNumber"
+      r: false
+      t: "`$STRING`"
+    }
+    transactionAmountFrom: {
+      h: "Transaction Amount From"
+      n: "transactionAmountFrom"
+      r: false
+      t: "`$STRING`"
+    }
+    transactionAmountTo: {
+      h: "Transaction Amount To"
+      n: "transactionAmountTo"
+      r: false
+      t: "`$STRING`"
+    }
+    transactionDateFrom: {
+      fo: "date-time"
+      h: "Transaction Date From"
+      n: "transactionDateFrom"
+      r: false
+      t: "`$STRING`"
+    }
+    transactionDateTo: {
+      fo: "date-time"
+      h: "Transaction Date To"
+      n: "transactionDateTo"
+      r: false
+      t: "`$STRING`"
+    }
+    transactionId: {
+      h: "Transaction Id"
+      n: "transactionId"
+      r: false
+      t: "`$STRING`"
+    }
+    transactionType: {
+      h: "Transaction Type"
+      n: "transactionType"
+      r: false
+      t: "`$STRING`"
+    }
+    wallet: {
+      h: "Wallet"
+      n: "wallet"
+      r: false
+      sh: "Filter by wallet type."
+      t: "`$STRING`"
+    }
+  }
+
+  name: "merchant_portal_services_api"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /public/transactionHistoryCsv"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/public/transactionHistoryCsv"
+          s: [
+            {
+              lit: "public"
+            }
+            {
+              lit: "transactionHistoryCsv"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

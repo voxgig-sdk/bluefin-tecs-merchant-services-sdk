@@ -6,7 +6,7 @@ Merchant Services
 
 This guide introduces the API, the client libraries, and the companion tools in this repository. Start with the API capabilities, choose a client for your application, and use the linked reference when you need exact request and response details.
 
-The selected API surface contains 39 entities and 45 HTTP routes. There are 23 SDK targets and 2 companion tools.
+The selected API surface contains 40 entities and 45 HTTP routes. There are 23 SDK targets and 2 companion tools.
 
 An entity groups related API operations. An operation can have several routes with different inputs or authentication requirements. The SDK exposes the entity and its operations using the conventions of the selected language.
 
@@ -19,6 +19,18 @@ Results: Successful operation.
 SDK operations: `create`.
 
 ### [CheckCardBlackListed](docs/api/check_card_black_listed.html)
+
+Results: Successful operation.
+
+SDK operations: `create`.
+
+### [CountAuthorisedTransaction](docs/api/count_authorised_transaction.html)
+
+Results: Successful operation.
+
+SDK operations: `create`.
+
+### [CountNotAuthorisedTransaction](docs/api/count_not_authorised_transaction.html)
 
 Results: Successful operation.
 
@@ -266,12 +278,6 @@ Key fields to recognise:
 
 - `wallet`: Filter by wallet type.
 
-### [TransactionsCount](docs/api/transactions_count.html)
-
-Results: Successful operation.
-
-SDK operations: `create`.
-
 ### [TransactionsCountCardBrand](docs/api/transactions_count_card_brand.html)
 
 Results: Successful operation.
@@ -310,6 +316,8 @@ Use this map to locate a capability. Consult the entity reference before supplyi
 | --- | --- | --- | --- |
 | [CancelTransaction](docs/api/cancel_transaction.html) | `create` | `POST /public/cancelTransaction` | Required |
 | [CheckCardBlackListed](docs/api/check_card_black_listed.html) | `create` | `POST /checkCardBlackListed` | Required |
+| [CountAuthorisedTransaction](docs/api/count_authorised_transaction.html) | `create` | `POST /public/countAuthorisedTransactions` | Required |
+| [CountNotAuthorisedTransaction](docs/api/count_not_authorised_transaction.html) | `create` | `POST /public/countNotAuthorisedTransactions` | Required |
 | [CreateProduct](docs/api/create_product.html) | `create` | `POST /createProduct` | Required |
 | [DeactivateTerminal](docs/api/deactivate_terminal.html) | `create` | `POST /deactivateTerminal` | Required |
 | [DigitalServicesApi](docs/api/digital_services_api.html) | `create` | `POST /public/digitalservices/mandatorClearingExportDownload/{fileId}` | Required |
@@ -346,8 +354,6 @@ Use this map to locate a capability. Consult the entity reference before supplyi
 | [TerminalId](docs/api/terminal_id.html) | `create` | `POST /public/getTerminalId` | Required |
 | [TransactionHistory](docs/api/transaction_history.html) | `create` | `POST /public/mcom/transactionHistory` | Required |
 | [TransactionHistory](docs/api/transaction_history.html) | `create` | `POST /public/transactionHistory` | Required |
-| [TransactionsCount](docs/api/transactions_count.html) | `create` | `POST /public/countAuthorisedTransactions` | Required |
-| [TransactionsCount](docs/api/transactions_count.html) | `create` | `POST /public/countNotAuthorisedTransactions` | Required |
 | [TransactionsCountCardBrand](docs/api/transactions_count_card_brand.html) | `create` | `POST /public/countTransactionsByCardBrand` | Required |
 | [TransactionsTurnover](docs/api/transactions_turnover.html) | `create` | `POST /public/transactionTurnover` | Required |
 | [UpdateMerchant](docs/api/update_merchant.html) | `create` | `POST /public/updateMerchant` | Required |

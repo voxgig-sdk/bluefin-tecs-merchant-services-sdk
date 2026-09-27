@@ -1,0 +1,367 @@
+# Entity: status_transaction
+
+main: kit: entity: status_transaction: {
+
+  alias: field: {}
+
+  fields: {
+    acquirerName: {
+      h: "Acquirer Name"
+      n: "acquirerName"
+      r: false
+      t: "`$STRING`"
+    }
+    acquirerTerminalId: {
+      h: "Acquirer Terminal Id"
+      n: "acquirerTerminalId"
+      r: false
+      t: "`$STRING`"
+    }
+    amount: {
+      fo: "int32"
+      h: "Amount"
+      n: "amount"
+      r: false
+      t: "`$INTEGER`"
+    }
+    applicationCryptogram: {
+      h: "Application Cryptogram"
+      n: "applicationCryptogram"
+      r: false
+      t: "`$STRING`"
+    }
+    authorizationCode: {
+      h: "Authorization Code"
+      n: "authorizationCode"
+      r: false
+      sh: "Authorization code returned by the acquirer; null when not available"
+      t: [
+        "`$ONE`"
+        [
+          "`$STRING`"
+          "`$NULL`"
+        ]
+      ]
+    }
+    authorizationDate: {
+      fo: "date-time"
+      h: "Authorization Date"
+      n: "authorizationDate"
+      r: false
+      t: "`$STRING`"
+    }
+    cardBrand: {
+      h: "Card Brand"
+      n: "cardBrand"
+      r: false
+      t: "`$STRING`"
+    }
+    cardEntry: {
+      h: "Card Entry"
+      n: "cardEntry"
+      r: false
+      t: "`$STRING`"
+    }
+    cardExpiration: {
+      h: "Card Expiration"
+      n: "cardExpiration"
+      r: false
+      t: "`$STRING`"
+    }
+    cardNumber: {
+      h: "Card Number"
+      n: "cardNumber"
+      r: false
+      t: "`$STRING`"
+    }
+    clearingAmount: {
+      fo: "int32"
+      h: "Clearing Amount"
+      n: "clearingAmount"
+      r: false
+      t: "`$INTEGER`"
+    }
+    clearingBatchId: {
+      h: "Clearing Batch Id"
+      n: "clearingBatchId"
+      r: false
+      t: "`$STRING`"
+    }
+    clearingCurrency: {
+      h: "Clearing Currency"
+      n: "clearingCurrency"
+      r: false
+      t: "`$STRING`"
+    }
+    clearingDate: {
+      fo: "date-time"
+      h: "Clearing Date"
+      n: "clearingDate"
+      r: false
+      t: "`$STRING`"
+    }
+    clearingProcessedDate: {
+      fo: "date-time"
+      h: "Clearing Processed Date"
+      n: "clearingProcessedDate"
+      r: false
+      t: "`$STRING`"
+    }
+    clearingStatus: {
+      h: "Clearing Status"
+      n: "clearingStatus"
+      r: false
+      t: "`$STRING`"
+    }
+    clientId: {
+      fo: "int32"
+      h: "Client Id"
+      n: "clientId"
+      r: false
+      t: "`$INTEGER`"
+    }
+    currency: {
+      h: "Currency"
+      n: "currency"
+      r: false
+      t: "`$STRING`"
+    }
+    cvm: {
+      h: "Cvm"
+      n: "cvm"
+      r: false
+      t: "`$STRING`"
+    }
+    ecrData: {
+      h: "Ecr Data"
+      n: "ecrData"
+      r: false
+      t: "`$STRING`"
+    }
+    emvApplicationId: {
+      h: "Emv Application Id"
+      n: "emvApplicationId"
+      r: false
+      t: "`$STRING`"
+    }
+    emvApplicationLabel: {
+      h: "Emv Application Label"
+      n: "emvApplicationLabel"
+      r: false
+      t: "`$STRING`"
+    }
+    merchantName: {
+      h: "Merchant Name"
+      n: "merchantName"
+      r: false
+      t: "`$STRING`"
+    }
+    merchantNumber: {
+      h: "Merchant Number"
+      n: "merchantNumber"
+      r: false
+      t: "`$STRING`"
+    }
+    originalClientId: {
+      h: "Original Client Id"
+      n: "originalClientId"
+      r: false
+      t: "`$STRING`"
+    }
+    originalTerminalId: {
+      fo: "int32"
+      h: "Original Terminal Id"
+      n: "originalTerminalId"
+      r: false
+      t: "`$INTEGER`"
+    }
+    originalTransactionId: {
+      h: "Original Transaction Id"
+      n: "originalTransactionId"
+      r: false
+      t: "`$STRING`"
+    }
+    paymentReason: {
+      h: "Payment Reason"
+      n: "paymentReason"
+      r: false
+      t: "`$STRING`"
+    }
+    receiptNumber: {
+      h: "Receipt Number"
+      n: "receiptNumber"
+      r: false
+      t: "`$STRING`"
+    }
+    responseCode: {
+      fo: "int32"
+      h: "Response Code"
+      n: "responseCode"
+      r: false
+      t: "`$INTEGER`"
+    }
+    responseCodeFromAS: {
+      h: "Response Code From As"
+      n: "responseCodeFromAS"
+      r: false
+      t: "`$STRING`"
+    }
+    responseMessage: {
+      h: "Response Message"
+      n: "responseMessage"
+      r: false
+      t: "`$STRING`"
+    }
+    retrievalReferenceNumber: {
+      h: "Retrieval Reference Number"
+      n: "retrievalReferenceNumber"
+      r: false
+      t: "`$STRING`"
+    }
+    serviceCode: {
+      h: "Service Code"
+      n: "serviceCode"
+      r: false
+      t: "`$STRING`"
+    }
+    settlementStatus: {
+      h: "Settlement Status"
+      n: "settlementStatus"
+      r: false
+      t: "`$STRING`"
+    }
+    sourceId: {
+      fo: "int32"
+      h: "Source Id"
+      n: "sourceId"
+      r: false
+      t: "`$INTEGER`"
+    }
+    tecsengineResponseCode: {
+      fo: "int32"
+      h: "Tecsengine Response Code"
+      n: "tecsengineResponseCode"
+      r: false
+      t: "`$INTEGER`"
+    }
+    tecsengineResponseText: {
+      h: "Tecsengine Response Text"
+      n: "tecsengineResponseText"
+      r: false
+      t: "`$STRING`"
+    }
+    terminalEndOfDayDate: {
+      fo: "date-time"
+      h: "Terminal End Of Day Date"
+      n: "terminalEndOfDayDate"
+      r: false
+      t: "`$STRING`"
+    }
+    terminalId: {
+      fo: "int32"
+      h: "Terminal Id"
+      n: "terminalId"
+      r: false
+      t: "`$INTEGER`"
+    }
+    terminalLocation: {
+      h: "Terminal Location"
+      n: "terminalLocation"
+      r: false
+      t: "`$STRING`"
+    }
+    tipAmount: {
+      fo: "int32"
+      h: "Tip Amount"
+      n: "tipAmount"
+      r: false
+      t: "`$INTEGER`"
+    }
+    traceNumber: {
+      fo: "int32"
+      h: "Trace Number"
+      n: "traceNumber"
+      r: false
+      t: "`$INTEGER`"
+    }
+    transactionClearingDate: {
+      fo: "date-time"
+      h: "Transaction Clearing Date"
+      n: "transactionClearingDate"
+      r: false
+      t: "`$STRING`"
+    }
+    transactionDate: {
+      fo: "date-time"
+      h: "Transaction Date"
+      n: "transactionDate"
+      r: false
+      t: "`$STRING`"
+    }
+    transactionId: {
+      h: "Transaction Id"
+      n: "transactionId"
+      r: false
+      t: "`$STRING`"
+    }
+    transactionSeqNumber: {
+      fo: "int64"
+      h: "Transaction Seq Number"
+      n: "transactionSeqNumber"
+      r: false
+      t: "`$INTEGER`"
+    }
+    transactionServerDate: {
+      fo: "date-time"
+      h: "Transaction Server Date"
+      n: "transactionServerDate"
+      r: false
+      t: "`$STRING`"
+    }
+    transactionSource: {
+      h: "Transaction Source"
+      n: "transactionSource"
+      r: false
+      t: "`$STRING`"
+    }
+    transactionType: {
+      h: "Transaction Type"
+      n: "transactionType"
+      r: false
+      t: "`$STRING`"
+    }
+  }
+
+  name: "status_transaction"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /public/statusTransaction"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/public/statusTransaction"
+          s: [
+            {
+              lit: "public"
+            }
+            {
+              lit: "statusTransaction"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

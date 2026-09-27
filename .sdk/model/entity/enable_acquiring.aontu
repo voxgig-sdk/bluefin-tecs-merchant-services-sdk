@@ -1,0 +1,127 @@
+# Entity: enable_acquiring
+
+main: kit: entity: enable_acquiring: {
+
+  alias: field: {}
+
+  fields: {
+    accountNo: {
+      fo: "int32"
+      h: "Account No"
+      n: "accountNo"
+      r: false
+      t: "`$INTEGER`"
+    }
+    additionalData: {
+      h: "Additional Data"
+      n: "additionalData"
+      r: false
+      t: "`$OBJECT`"
+    }
+    corporateUuid: {
+      h: "Corporate Uuid"
+      n: "corporateUuid"
+      r: true
+      t: "`$STRING`"
+    }
+    currency: {
+      h: "Currency"
+      n: "currency"
+      r: true
+      t: "`$STRING`"
+    }
+    merchantCategoryCode: {
+      fo: "int32"
+      h: "Merchant Category Code"
+      n: "merchantCategoryCode"
+      r: true
+      t: "`$INTEGER`"
+    }
+    packageOrderUuid: {
+      h: "Package Order Uuid"
+      n: "packageOrderUuid"
+      r: true
+      t: "`$STRING`"
+    }
+    productOrderUuid: {
+      h: "Product Order Uuid"
+      n: "productOrderUuid"
+      r: true
+      t: "`$STRING`"
+    }
+    responseCode: {
+      fo: "int32"
+      h: "Response Code"
+      n: "responseCode"
+      r: false
+      t: "`$INTEGER`"
+    }
+    responseMessage: {
+      h: "Response Message"
+      n: "responseMessage"
+      r: false
+      t: "`$STRING`"
+    }
+    sortingCode: {
+      fo: "int32"
+      h: "Sorting Code"
+      n: "sortingCode"
+      r: false
+      t: "`$INTEGER`"
+    }
+    templateName: {
+      h: "Template Name"
+      n: "templateName"
+      r: true
+      t: "`$STRING`"
+    }
+    terminalIdAcq: {
+      h: "Terminal Id Acq"
+      n: "terminalIdAcq"
+      r: false
+      t: "`$STRING`"
+    }
+    terminalIds: {
+      h: "Terminal Ids"
+      n: "terminalIds"
+      r: false
+      t: "`$ARRAY`"
+    }
+    vuNummer: {
+      h: "Vu Nummer"
+      n: "vuNummer"
+      r: false
+      t: "`$STRING`"
+    }
+  }
+
+  name: "enable_acquiring"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /enableAcquiring"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/enableAcquiring"
+          s: [
+            {
+              lit: "enableAcquiring"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

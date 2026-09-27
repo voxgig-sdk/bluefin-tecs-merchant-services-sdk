@@ -256,6 +256,8 @@ public static class SdkConfig
                 {
                     ["cancel_transaction"] = new Dictionary<string, object?>(),
                     ["check_card_black_listed"] = new Dictionary<string, object?>(),
+                    ["count_authorised_transaction"] = new Dictionary<string, object?>(),
+                    ["count_not_authorised_transaction"] = new Dictionary<string, object?>(),
                     ["create_product"] = new Dictionary<string, object?>(),
                     ["deactivate_terminal"] = new Dictionary<string, object?>(),
                     ["digital_services_api"] = new Dictionary<string, object?>(),
@@ -287,7 +289,6 @@ public static class SdkConfig
                     ["store_terminal_parameter"] = new Dictionary<string, object?>(),
                     ["terminal_id"] = new Dictionary<string, object?>(),
                     ["transaction_history"] = new Dictionary<string, object?>(),
-                    ["transactions_count"] = new Dictionary<string, object?>(),
                     ["transactions_count_card_brand"] = new Dictionary<string, object?>(),
                     ["transactions_turnover"] = new Dictionary<string, object?>(),
                     ["update_merchant"] = new Dictionary<string, object?>(),
@@ -304,22 +305,26 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "acquirerId",
+                            ["title"] = "Acquirer Id",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "acquirerName",
+                            ["title"] = "Acquirer Name",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "actualBonusPoints",
+                            ["title"] = "Actual Bonus Points",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "amount",
+                            ["title"] = "Amount",
+                            ["type"] = "`$INTEGER`",
                             ["op"] = new Dictionary<string, object?>
                             {
                                 ["create"] = new Dictionary<string, object?>
@@ -328,95 +333,113 @@ public static class SdkConfig
                                     ["type"] = "`$INTEGER`",
                                 },
                             },
-                            ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "authorizationCode",
+                            ["title"] = "Authorization Code",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "balanceAmount",
+                            ["title"] = "Balance Amount",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "cardBrand",
+                            ["title"] = "Card Brand",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "cardNumber",
+                            ["title"] = "Card Number",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "clientId",
-                            ["req"] = true,
+                            ["title"] = "Client Id",
                             ["type"] = "`$INTEGER`",
+                            ["req"] = true,
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "currency",
-                            ["req"] = true,
+                            ["title"] = "Currency",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "cvc",
+                            ["title"] = "Cvc",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "ecData",
+                            ["title"] = "Ec Data",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "ecrData",
+                            ["title"] = "Ecr Data",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "emvData",
+                            ["title"] = "Emv Data",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int64",
                             ["name"] = "exchangeFee",
+                            ["title"] = "Exchange Fee",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int64",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "exchangeRate",
+                            ["title"] = "Exchange Rate",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "languageCode",
+                            ["title"] = "Language Code",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "merchantAddress",
+                            ["title"] = "Merchant Address",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "merchantName",
+                            ["title"] = "Merchant Name",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "merchantNumber",
+                            ["title"] = "Merchant Number",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "messageType",
+                            ["title"] = "Message Type",
+                            ["type"] = "`$STRING`",
                             ["op"] = new Dictionary<string, object?>
                             {
                                 ["create"] = new Dictionary<string, object?>
@@ -425,17 +448,19 @@ public static class SdkConfig
                                     ["type"] = "`$STRING`",
                                 },
                             },
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "originalTraceNumber",
+                            ["title"] = "Original Trace Number",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "originalTransactionId",
+                            ["title"] = "Original Transaction Id",
+                            ["type"] = "`$STRING`",
                             ["op"] = new Dictionary<string, object?>
                             {
                                 ["create"] = new Dictionary<string, object?>
@@ -444,83 +469,96 @@ public static class SdkConfig
                                     ["type"] = "`$STRING`",
                                 },
                             },
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "password",
+                            ["title"] = "Password",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "paymentReason",
+                            ["title"] = "Payment Reason",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "receiptFooter",
+                            ["title"] = "Receipt Footer",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "receiptHeader",
+                            ["title"] = "Receipt Header",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "receiptLayout",
+                            ["title"] = "Receipt Layout",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "receiptNumber",
-                            ["req"] = true,
+                            ["title"] = "Receipt Number",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "serialNumber",
+                            ["title"] = "Serial Number",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "svc",
+                            ["title"] = "Svc",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "terminalId",
-                            ["req"] = true,
+                            ["title"] = "Terminal Id",
                             ["type"] = "`$INTEGER`",
+                            ["req"] = true,
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "terminalLocation",
+                            ["title"] = "Terminal Location",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "traceNumber",
+                            ["title"] = "Trace Number",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "date-time",
                             ["name"] = "transactionDate",
+                            ["title"] = "Transaction Date",
+                            ["type"] = "`$STRING`",
                             ["op"] = new Dictionary<string, object?>
                             {
                                 ["create"] = new Dictionary<string, object?>
@@ -529,11 +567,13 @@ public static class SdkConfig
                                     ["type"] = "`$STRING`",
                                 },
                             },
-                            ["type"] = "`$STRING`",
+                            ["format"] = "date-time",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "transactionId",
+                            ["title"] = "Transaction Id",
+                            ["type"] = "`$STRING`",
                             ["op"] = new Dictionary<string, object?>
                             {
                                 ["create"] = new Dictionary<string, object?>
@@ -542,16 +582,17 @@ public static class SdkConfig
                                     ["type"] = "`$STRING`",
                                 },
                             },
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "txType",
+                            ["title"] = "Tx Type",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "userData",
+                            ["title"] = "User Data",
                             ["type"] = "`$STRING`",
                         },
                     },
@@ -566,7 +607,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>(),
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/public/cancelTransaction",
@@ -581,17 +621,19 @@ public static class SdkConfig
                                             ["lit"] = "cancelTransaction",
                                         },
                                     },
-                                    ["select"] = new Dictionary<string, object?>(),
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
                                     ["parts"] = new List<object?>
                                     {
                                         "public",
                                         "cancelTransaction",
                                     },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>(),
+                                    ["select"] = new Dictionary<string, object?>(),
                                 },
                             },
                         },
@@ -608,17 +650,20 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "cardNo",
+                            ["title"] = "Card No",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
                             ["type"] = "`$STRING`",
                         },
                     },
@@ -633,20 +678,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["header"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "header",
-                                                ["name"] = "authorization",
-                                                ["orig"] = "authorization",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/checkCardBlackListed",
@@ -657,6 +688,30 @@ public static class SdkConfig
                                             ["lit"] = "checkCardBlackListed",
                                         },
                                     },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "checkCardBlackListed",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["header"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "authorization",
+                                                ["orig"] = "authorization",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "header",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
                                     ["select"] = new Dictionary<string, object?>
                                     {
                                         ["exist"] = new List<object?>
@@ -664,15 +719,220 @@ public static class SdkConfig
                                             "authorization",
                                         },
                                     },
+                                },
+                            },
+                        },
+                    },
+                    ["relations"] = new Dictionary<string, object?>
+                    {
+                        ["ancestors"] = new List<object?>(),
+                    },
+                },
+                ["count_authorised_transaction"] = new Dictionary<string, object?>
+                {
+                    ["fields"] = new List<object?>
+                    {
+                        new Dictionary<string, object?>
+                        {
+                            ["name"] = "period",
+                            ["title"] = "Period",
+                            ["type"] = "`$STRING`",
+                        },
+                        new Dictionary<string, object?>
+                        {
+                            ["name"] = "responseCode",
+                            ["title"] = "Response Code",
+                            ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
+                        },
+                        new Dictionary<string, object?>
+                        {
+                            ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
+                            ["type"] = "`$STRING`",
+                        },
+                        new Dictionary<string, object?>
+                        {
+                            ["name"] = "transactionDateFrom",
+                            ["title"] = "Transaction Date From",
+                            ["type"] = "`$STRING`",
+                            ["op"] = new Dictionary<string, object?>
+                            {
+                                ["create"] = new Dictionary<string, object?>
+                                {
+                                    ["req"] = true,
+                                    ["type"] = "`$STRING`",
+                                },
+                            },
+                            ["format"] = "date-time",
+                        },
+                        new Dictionary<string, object?>
+                        {
+                            ["name"] = "transactionDateTo",
+                            ["title"] = "Transaction Date To",
+                            ["type"] = "`$STRING`",
+                            ["op"] = new Dictionary<string, object?>
+                            {
+                                ["create"] = new Dictionary<string, object?>
+                                {
+                                    ["req"] = true,
+                                    ["type"] = "`$STRING`",
+                                },
+                            },
+                            ["format"] = "date-time",
+                        },
+                        new Dictionary<string, object?>
+                        {
+                            ["name"] = "transactionsCount",
+                            ["title"] = "Transactions Count",
+                            ["type"] = "`$ARRAY`",
+                        },
+                    },
+                    ["name"] = "count_authorised_transaction",
+                    ["op"] = new Dictionary<string, object?>
+                    {
+                        ["create"] = new Dictionary<string, object?>
+                        {
+                            ["input"] = "data",
+                            ["name"] = "create",
+                            ["points"] = new List<object?>
+                            {
+                                new Dictionary<string, object?>
+                                {
+                                    ["kind"] = "http",
+                                    ["method"] = "POST",
+                                    ["orig"] = "/public/countAuthorisedTransactions",
+                                    ["segments"] = new List<object?>
+                                    {
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "public",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "countAuthorisedTransactions",
+                                        },
+                                    },
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "public",
+                                        "countAuthorisedTransactions",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
                                     },
+                                    ["args"] = new Dictionary<string, object?>(),
+                                    ["select"] = new Dictionary<string, object?>(),
+                                },
+                            },
+                        },
+                    },
+                    ["relations"] = new Dictionary<string, object?>
+                    {
+                        ["ancestors"] = new List<object?>(),
+                    },
+                },
+                ["count_not_authorised_transaction"] = new Dictionary<string, object?>
+                {
+                    ["fields"] = new List<object?>
+                    {
+                        new Dictionary<string, object?>
+                        {
+                            ["name"] = "period",
+                            ["title"] = "Period",
+                            ["type"] = "`$STRING`",
+                        },
+                        new Dictionary<string, object?>
+                        {
+                            ["name"] = "responseCode",
+                            ["title"] = "Response Code",
+                            ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
+                        },
+                        new Dictionary<string, object?>
+                        {
+                            ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
+                            ["type"] = "`$STRING`",
+                        },
+                        new Dictionary<string, object?>
+                        {
+                            ["name"] = "transactionDateFrom",
+                            ["title"] = "Transaction Date From",
+                            ["type"] = "`$STRING`",
+                            ["op"] = new Dictionary<string, object?>
+                            {
+                                ["create"] = new Dictionary<string, object?>
+                                {
+                                    ["req"] = true,
+                                    ["type"] = "`$STRING`",
+                                },
+                            },
+                            ["format"] = "date-time",
+                        },
+                        new Dictionary<string, object?>
+                        {
+                            ["name"] = "transactionDateTo",
+                            ["title"] = "Transaction Date To",
+                            ["type"] = "`$STRING`",
+                            ["op"] = new Dictionary<string, object?>
+                            {
+                                ["create"] = new Dictionary<string, object?>
+                                {
+                                    ["req"] = true,
+                                    ["type"] = "`$STRING`",
+                                },
+                            },
+                            ["format"] = "date-time",
+                        },
+                        new Dictionary<string, object?>
+                        {
+                            ["name"] = "transactionsCount",
+                            ["title"] = "Transactions Count",
+                            ["type"] = "`$ARRAY`",
+                        },
+                    },
+                    ["name"] = "count_not_authorised_transaction",
+                    ["op"] = new Dictionary<string, object?>
+                    {
+                        ["create"] = new Dictionary<string, object?>
+                        {
+                            ["input"] = "data",
+                            ["name"] = "create",
+                            ["points"] = new List<object?>
+                            {
+                                new Dictionary<string, object?>
+                                {
+                                    ["kind"] = "http",
+                                    ["method"] = "POST",
+                                    ["orig"] = "/public/countNotAuthorisedTransactions",
+                                    ["segments"] = new List<object?>
+                                    {
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "public",
+                                        },
+                                        new Dictionary<string, object?>
+                                        {
+                                            ["lit"] = "countNotAuthorisedTransactions",
+                                        },
+                                    },
                                     ["parts"] = new List<object?>
                                     {
-                                        "checkCardBlackListed",
+                                        "public",
+                                        "countNotAuthorisedTransactions",
                                     },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>(),
+                                    ["select"] = new Dictionary<string, object?>(),
                                 },
                             },
                         },
@@ -688,44 +948,51 @@ public static class SdkConfig
                     {
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "acquirerId",
+                            ["title"] = "Acquirer Id",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "templateName",
-                            ["req"] = true,
+                            ["title"] = "Template Name",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "templateType",
-                            ["req"] = true,
+                            ["title"] = "Template Type",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "templateXml",
-                            ["req"] = true,
+                            ["title"] = "Template Xml",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "terminalType",
-                            ["req"] = true,
+                            ["title"] = "Terminal Type",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                     },
                     ["name"] = "create_product",
@@ -739,7 +1006,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>(),
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/createProduct",
@@ -750,16 +1016,18 @@ public static class SdkConfig
                                             ["lit"] = "createProduct",
                                         },
                                     },
-                                    ["select"] = new Dictionary<string, object?>(),
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "createProduct",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
                                     },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "createProduct",
-                                    },
+                                    ["args"] = new Dictionary<string, object?>(),
+                                    ["select"] = new Dictionary<string, object?>(),
                                 },
                             },
                         },
@@ -776,41 +1044,48 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "corporateUuid",
+                            ["title"] = "Corporate Uuid",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "deactivationReason",
-                            ["req"] = true,
+                            ["title"] = "Deactivation Reason",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "packageOrderUuid",
+                            ["title"] = "Package Order Uuid",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "productOrderUuid",
+                            ["title"] = "Product Order Uuid",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "terminalId",
-                            ["req"] = true,
+                            ["title"] = "Terminal Id",
                             ["type"] = "`$INTEGER`",
+                            ["req"] = true,
+                            ["format"] = "int32",
                         },
                     },
                     ["name"] = "deactivate_terminal",
@@ -824,7 +1099,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>(),
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/deactivateTerminal",
@@ -835,16 +1109,18 @@ public static class SdkConfig
                                             ["lit"] = "deactivateTerminal",
                                         },
                                     },
-                                    ["select"] = new Dictionary<string, object?>(),
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "deactivateTerminal",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
                                     },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "deactivateTerminal",
-                                    },
+                                    ["args"] = new Dictionary<string, object?>(),
+                                    ["select"] = new Dictionary<string, object?>(),
                                 },
                             },
                         },
@@ -861,61 +1137,71 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "clearingDateFrom",
+                            ["title"] = "Clearing Date From",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz",
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "clearingDateTo",
+                            ["title"] = "Clearing Date To",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz",
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "txCount",
+                            ["title"] = "Tx Count",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "txIdEnd",
+                            ["title"] = "Tx Id End",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "txIdStart",
+                            ["title"] = "Tx Id Start",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "txSeqNoEnd",
+                            ["title"] = "Tx Seq No End",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "txSeqNoStart",
+                            ["title"] = "Tx Seq No Start",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "txTotal",
+                            ["title"] = "Tx Total",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                     },
                     ["name"] = "digital_services_api",
@@ -929,30 +1215,9 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["params"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "param",
-                                                ["name"] = "file_id",
-                                                ["orig"] = "file_id",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/public/digitalservices/mandatorClearingExportDownload/{fileId}",
-                                    ["rename"] = new Dictionary<string, object?>
-                                    {
-                                        ["param"] = new Dictionary<string, object?>
-                                        {
-                                            ["fileId"] = "file_id",
-                                        },
-                                    },
                                     ["segments"] = new List<object?>
                                     {
                                         new Dictionary<string, object?>
@@ -972,18 +1237,6 @@ public static class SdkConfig
                                             ["var"] = "file_id",
                                         },
                                     },
-                                    ["select"] = new Dictionary<string, object?>
-                                    {
-                                        ["exist"] = new List<object?>
-                                        {
-                                            "file_id",
-                                        },
-                                    },
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
                                     ["parts"] = new List<object?>
                                     {
                                         "public",
@@ -991,10 +1244,42 @@ public static class SdkConfig
                                         "mandatorClearingExportDownload",
                                         "{file_id}",
                                     },
+                                    ["rename"] = new Dictionary<string, object?>
+                                    {
+                                        ["param"] = new Dictionary<string, object?>
+                                        {
+                                            ["fileId"] = "file_id",
+                                        },
+                                    },
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>
+                                    {
+                                        ["params"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "file_id",
+                                                ["orig"] = "file_id",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "param",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
+                                    ["select"] = new Dictionary<string, object?>
+                                    {
+                                        ["exist"] = new List<object?>
+                                        {
+                                            "file_id",
+                                        },
+                                    },
                                 },
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>(),
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/public/digitalservices/mandatorClearingExportMetadata",
@@ -1013,18 +1298,20 @@ public static class SdkConfig
                                             ["lit"] = "mandatorClearingExportMetadata",
                                         },
                                     },
-                                    ["select"] = new Dictionary<string, object?>(),
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
                                     ["parts"] = new List<object?>
                                     {
                                         "public",
                                         "digitalservices",
                                         "mandatorClearingExportMetadata",
                                     },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>(),
+                                    ["select"] = new Dictionary<string, object?>(),
                                 },
                             },
                         },
@@ -1036,7 +1323,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>(),
                                     ["kind"] = "http",
                                     ["method"] = "GET",
                                     ["orig"] = "/public/digitalservices/mandatorClearingExportDownload/status",
@@ -1059,12 +1345,6 @@ public static class SdkConfig
                                             ["lit"] = "status",
                                         },
                                     },
-                                    ["select"] = new Dictionary<string, object?>(),
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
                                     ["parts"] = new List<object?>
                                     {
                                         "public",
@@ -1072,6 +1352,14 @@ public static class SdkConfig
                                         "mandatorClearingExportDownload",
                                         "status",
                                     },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>(),
+                                    ["select"] = new Dictionary<string, object?>(),
                                 },
                             },
                         },
@@ -1082,7 +1370,7 @@ public static class SdkConfig
                         {
                             new List<object?>
                             {
-                                "mandator_clearing_export_download",
+                                "$.main.kit.entity.mandator_clearing_export_download",
                             },
                         },
                     },
@@ -1094,37 +1382,43 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "ecomData",
+                            ["title"] = "Ecom Data",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "terminalId",
-                            ["req"] = true,
+                            ["title"] = "Terminal Id",
                             ["type"] = "`$INTEGER`",
+                            ["req"] = true,
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "transactionId",
-                            ["req"] = true,
+                            ["title"] = "Transaction Id",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "transactionType",
-                            ["req"] = true,
+                            ["title"] = "Transaction Type",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                     },
                     ["name"] = "ec_data_ecom",
@@ -1138,7 +1432,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>(),
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/public/getEcData",
@@ -1153,17 +1446,19 @@ public static class SdkConfig
                                             ["lit"] = "getEcData",
                                         },
                                     },
-                                    ["select"] = new Dictionary<string, object?>(),
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
                                     ["parts"] = new List<object?>
                                     {
                                         "public",
                                         "getEcData",
                                     },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>(),
+                                    ["select"] = new Dictionary<string, object?>(),
                                 },
                             },
                         },
@@ -1180,30 +1475,35 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "ecomPass",
+                            ["title"] = "Ecom Pass",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "ecomSkey",
+                            ["title"] = "Ecom Skey",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "terminalId",
-                            ["req"] = true,
+                            ["title"] = "Terminal Id",
                             ["type"] = "`$INTEGER`",
+                            ["req"] = true,
+                            ["format"] = "int32",
                         },
                     },
                     ["name"] = "ecom_parameter",
@@ -1217,7 +1517,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>(),
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/public/getEcomParameters",
@@ -1232,17 +1531,19 @@ public static class SdkConfig
                                             ["lit"] = "getEcomParameters",
                                         },
                                     },
-                                    ["select"] = new Dictionary<string, object?>(),
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
                                     ["parts"] = new List<object?>
                                     {
                                         "public",
                                         "getEcomParameters",
                                     },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>(),
+                                    ["select"] = new Dictionary<string, object?>(),
                                 },
                             },
                         },
@@ -1259,37 +1560,43 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "ecrData",
+                            ["title"] = "Ecr Data",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "terminalId",
-                            ["req"] = true,
+                            ["title"] = "Terminal Id",
                             ["type"] = "`$INTEGER`",
+                            ["req"] = true,
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "transactionId",
-                            ["req"] = true,
+                            ["title"] = "Transaction Id",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "transactionType",
-                            ["req"] = true,
+                            ["title"] = "Transaction Type",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                     },
                     ["name"] = "ecr_data",
@@ -1303,7 +1610,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>(),
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/public/getEcrData",
@@ -1318,17 +1624,19 @@ public static class SdkConfig
                                             ["lit"] = "getEcrData",
                                         },
                                     },
-                                    ["select"] = new Dictionary<string, object?>(),
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
                                     ["parts"] = new List<object?>
                                     {
                                         "public",
                                         "getEcrData",
                                     },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>(),
+                                    ["select"] = new Dictionary<string, object?>(),
                                 },
                             },
                         },
@@ -1345,37 +1653,43 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "emvData",
+                            ["title"] = "Emv Data",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "terminalId",
-                            ["req"] = true,
+                            ["title"] = "Terminal Id",
                             ["type"] = "`$INTEGER`",
+                            ["req"] = true,
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "transactionId",
-                            ["req"] = true,
+                            ["title"] = "Transaction Id",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "transactionType",
-                            ["req"] = true,
+                            ["title"] = "Transaction Type",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                     },
                     ["name"] = "emv_data",
@@ -1389,7 +1703,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>(),
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/public/getEmvData",
@@ -1404,17 +1717,19 @@ public static class SdkConfig
                                             ["lit"] = "getEmvData",
                                         },
                                     },
-                                    ["select"] = new Dictionary<string, object?>(),
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
                                     ["parts"] = new List<object?>
                                     {
                                         "public",
                                         "getEmvData",
                                     },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>(),
+                                    ["select"] = new Dictionary<string, object?>(),
                                 },
                             },
                         },
@@ -1430,82 +1745,96 @@ public static class SdkConfig
                     {
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "accountNo",
+                            ["title"] = "Account No",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "additionalData",
+                            ["title"] = "Additional Data",
                             ["type"] = "`$OBJECT`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "corporateUuid",
-                            ["req"] = true,
+                            ["title"] = "Corporate Uuid",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "currency",
-                            ["req"] = true,
+                            ["title"] = "Currency",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "merchantCategoryCode",
-                            ["req"] = true,
+                            ["title"] = "Merchant Category Code",
                             ["type"] = "`$INTEGER`",
+                            ["req"] = true,
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "packageOrderUuid",
-                            ["req"] = true,
+                            ["title"] = "Package Order Uuid",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "productOrderUuid",
-                            ["req"] = true,
+                            ["title"] = "Product Order Uuid",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "sortingCode",
+                            ["title"] = "Sorting Code",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "templateName",
-                            ["req"] = true,
+                            ["title"] = "Template Name",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "terminalIdAcq",
+                            ["title"] = "Terminal Id Acq",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "terminalIds",
+                            ["title"] = "Terminal Ids",
                             ["type"] = "`$ARRAY`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "vuNummer",
+                            ["title"] = "Vu Nummer",
                             ["type"] = "`$STRING`",
                         },
                     },
@@ -1520,7 +1849,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>(),
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/enableAcquiring",
@@ -1531,16 +1859,18 @@ public static class SdkConfig
                                             ["lit"] = "enableAcquiring",
                                         },
                                     },
-                                    ["select"] = new Dictionary<string, object?>(),
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "enableAcquiring",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
                                     },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "enableAcquiring",
-                                    },
+                                    ["args"] = new Dictionary<string, object?>(),
+                                    ["select"] = new Dictionary<string, object?>(),
                                 },
                             },
                         },
@@ -1557,18 +1887,21 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "merchantContractNumber",
-                            ["req"] = true,
+                            ["title"] = "Merchant Contract Number",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
                             ["type"] = "`$STRING`",
                         },
                     },
@@ -1583,7 +1916,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>(),
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/getMerchantContractNumber",
@@ -1594,16 +1926,18 @@ public static class SdkConfig
                                             ["lit"] = "getMerchantContractNumber",
                                         },
                                     },
-                                    ["select"] = new Dictionary<string, object?>(),
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "getMerchantContractNumber",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
                                     },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "getMerchantContractNumber",
-                                    },
+                                    ["args"] = new Dictionary<string, object?>(),
+                                    ["select"] = new Dictionary<string, object?>(),
                                 },
                             },
                         },
@@ -1619,20 +1953,23 @@ public static class SdkConfig
                     {
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "templateName",
-                            ["req"] = true,
+                            ["title"] = "Template Name",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                     },
                     ["name"] = "get_template_xml",
@@ -1646,7 +1983,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>(),
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/public/getTemplateXml",
@@ -1661,17 +1997,19 @@ public static class SdkConfig
                                             ["lit"] = "getTemplateXml",
                                         },
                                     },
-                                    ["select"] = new Dictionary<string, object?>(),
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
                                     ["parts"] = new List<object?>
                                     {
                                         "public",
                                         "getTemplateXml",
                                     },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>(),
+                                    ["select"] = new Dictionary<string, object?>(),
                                 },
                             },
                         },
@@ -1688,18 +2026,21 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "mandatorName",
-                            ["req"] = true,
+                            ["title"] = "Mandator Name",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
                             ["type"] = "`$STRING`",
                         },
                     },
@@ -1714,7 +2055,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>(),
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/introduceMandator",
@@ -1725,16 +2065,18 @@ public static class SdkConfig
                                             ["lit"] = "introduceMandator",
                                         },
                                     },
-                                    ["select"] = new Dictionary<string, object?>(),
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "introduceMandator",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
                                     },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "introduceMandator",
-                                    },
+                                    ["args"] = new Dictionary<string, object?>(),
+                                    ["select"] = new Dictionary<string, object?>(),
                                 },
                             },
                         },
@@ -1750,20 +2092,23 @@ public static class SdkConfig
                     {
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "terminalTemplateDescription",
-                            ["req"] = true,
+                            ["title"] = "Terminal Template Description",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                     },
                     ["name"] = "introduce_package",
@@ -1777,7 +2122,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>(),
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/introducePackage",
@@ -1788,16 +2132,18 @@ public static class SdkConfig
                                             ["lit"] = "introducePackage",
                                         },
                                     },
-                                    ["select"] = new Dictionary<string, object?>(),
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "introducePackage",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
                                     },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "introducePackage",
-                                    },
+                                    ["args"] = new Dictionary<string, object?>(),
+                                    ["select"] = new Dictionary<string, object?>(),
                                 },
                             },
                         },
@@ -1814,54 +2160,64 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "hwserialno",
+                            ["title"] = "Hwserialno",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "kaDateTimeFrom",
+                            ["title"] = "Ka Date Time From",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "kaDateTimeTo",
+                            ["title"] = "Ka Date Time To",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "keepAliveData",
+                            ["title"] = "Keep Alive Data",
                             ["type"] = "`$ARRAY`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "pagination",
+                            ["title"] = "Pagination",
                             ["type"] = "`$OBJECT`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "terminalDateTimeFrom",
+                            ["title"] = "Terminal Date Time From",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "terminalDateTimeTo",
+                            ["title"] = "Terminal Date Time To",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "terminalId",
+                            ["title"] = "Terminal Id",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                     },
                     ["name"] = "keep_alive",
@@ -1875,7 +2231,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>(),
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/public/keepalive",
@@ -1890,17 +2245,19 @@ public static class SdkConfig
                                             ["lit"] = "keepalive",
                                         },
                                     },
-                                    ["select"] = new Dictionary<string, object?>(),
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
                                     ["parts"] = new List<object?>
                                     {
                                         "public",
                                         "keepalive",
                                     },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>(),
+                                    ["select"] = new Dictionary<string, object?>(),
                                 },
                             },
                         },
@@ -1917,32 +2274,38 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "corporateUuid",
+                            ["title"] = "Corporate Uuid",
                             ["type"] = "`$ARRAY`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "filter",
+                            ["title"] = "Filter",
                             ["type"] = "`$OBJECT`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "pagination",
+                            ["title"] = "Pagination",
                             ["type"] = "`$OBJECT`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "terminals",
+                            ["title"] = "Terminals",
                             ["type"] = "`$ARRAY`",
                         },
                     },
@@ -1957,7 +2320,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>(),
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/public/listTerminals",
@@ -1972,17 +2334,19 @@ public static class SdkConfig
                                             ["lit"] = "listTerminals",
                                         },
                                     },
-                                    ["select"] = new Dictionary<string, object?>(),
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
                                     ["parts"] = new List<object?>
                                     {
                                         "public",
                                         "listTerminals",
                                     },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>(),
+                                    ["select"] = new Dictionary<string, object?>(),
                                 },
                             },
                         },
@@ -1999,36 +2363,42 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "clearingDateFrom",
+                            ["title"] = "Clearing Date From",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "Date and time in the format yyyy-MM-dd'T'HH:mm:ssZ",
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "clearingDateTo",
+                            ["title"] = "Clearing Date To",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "Date and time in the format yyyy-MM-dd'T'HH:mm:ssZ",
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "pagination",
+                            ["title"] = "Pagination",
                             ["type"] = "`$OBJECT`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "records",
+                            ["title"] = "Records",
                             ["type"] = "`$ARRAY`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
                             ["type"] = "`$STRING`",
                         },
                     },
@@ -2043,7 +2413,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>(),
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/public/digitalservices/mandatorClearingExport",
@@ -2062,18 +2431,20 @@ public static class SdkConfig
                                             ["lit"] = "mandatorClearingExport",
                                         },
                                     },
-                                    ["select"] = new Dictionary<string, object?>(),
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
                                     ["parts"] = new List<object?>
                                     {
                                         "public",
                                         "digitalservices",
                                         "mandatorClearingExport",
                                     },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>(),
+                                    ["select"] = new Dictionary<string, object?>(),
                                 },
                             },
                         },
@@ -2089,53 +2460,61 @@ public static class SdkConfig
                     {
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "date-time",
                             ["name"] = "clearingDateFrom",
+                            ["title"] = "Clearing Date From",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "Start date for clearing export (inclusive)",
-                            ["type"] = "`$STRING`",
+                            ["format"] = "date-time",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "date-time",
                             ["name"] = "clearingDateTo",
+                            ["title"] = "Clearing Date To",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "End date for clearing export (inclusive)",
-                            ["type"] = "`$STRING`",
+                            ["format"] = "date-time",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "fileId",
-                            ["short"] = "Unique file identifier for tracking and downloading",
+                            ["title"] = "File Id",
                             ["type"] = "`$STRING`",
+                            ["short"] = "Unique file identifier for tracking and downloading",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "filenameTemplate",
-                            ["short"] = "Optional filename template for the export file",
+                            ["title"] = "Filename Template",
                             ["type"] = "`$STRING`",
+                            ["short"] = "Optional filename template for the export file",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "id",
+                            ["title"] = "Id",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "status",
-                            ["short"] = "Processing status of the export request",
+                            ["title"] = "Status",
                             ["type"] = "`$STRING`",
+                            ["short"] = "Processing status of the export request",
                         },
                     },
                     ["id"] = new Dictionary<string, object?>
@@ -2154,7 +2533,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>(),
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/public/digitalservices/mandatorClearingExportDownload",
@@ -2173,18 +2551,20 @@ public static class SdkConfig
                                             ["lit"] = "mandatorClearingExportDownload",
                                         },
                                     },
-                                    ["select"] = new Dictionary<string, object?>(),
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
                                     ["parts"] = new List<object?>
                                     {
                                         "public",
                                         "digitalservices",
                                         "mandatorClearingExportDownload",
                                     },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>(),
+                                    ["select"] = new Dictionary<string, object?>(),
                                 },
                             },
                         },
@@ -2196,30 +2576,9 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>
-                                    {
-                                        ["params"] = new List<object?>
-                                        {
-                                            new Dictionary<string, object?>
-                                            {
-                                                ["kind"] = "param",
-                                                ["name"] = "id",
-                                                ["orig"] = "file_id",
-                                                ["reqd"] = true,
-                                                ["type"] = "`$STRING`",
-                                            },
-                                        },
-                                    },
                                     ["kind"] = "http",
                                     ["method"] = "GET",
                                     ["orig"] = "/public/digitalservices/mandatorClearingExportDownload/{fileId}",
-                                    ["rename"] = new Dictionary<string, object?>
-                                    {
-                                        ["param"] = new Dictionary<string, object?>
-                                        {
-                                            ["fileId"] = "id",
-                                        },
-                                    },
                                     ["segments"] = new List<object?>
                                     {
                                         new Dictionary<string, object?>
@@ -2239,11 +2598,18 @@ public static class SdkConfig
                                             ["var"] = "id",
                                         },
                                     },
-                                    ["select"] = new Dictionary<string, object?>
+                                    ["parts"] = new List<object?>
                                     {
-                                        ["exist"] = new List<object?>
+                                        "public",
+                                        "digitalservices",
+                                        "mandatorClearingExportDownload",
+                                        "{id}",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>
+                                    {
+                                        ["param"] = new Dictionary<string, object?>
                                         {
-                                            "id",
+                                            ["fileId"] = "id",
                                         },
                                     },
                                     ["transform"] = new Dictionary<string, object?>
@@ -2251,12 +2617,26 @@ public static class SdkConfig
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
                                     },
-                                    ["parts"] = new List<object?>
+                                    ["args"] = new Dictionary<string, object?>
                                     {
-                                        "public",
-                                        "digitalservices",
-                                        "mandatorClearingExportDownload",
-                                        "{id}",
+                                        ["params"] = new List<object?>
+                                        {
+                                            new Dictionary<string, object?>
+                                            {
+                                                ["name"] = "id",
+                                                ["orig"] = "file_id",
+                                                ["type"] = "`$STRING`",
+                                                ["kind"] = "param",
+                                                ["reqd"] = true,
+                                            },
+                                        },
+                                    },
+                                    ["select"] = new Dictionary<string, object?>
+                                    {
+                                        ["exist"] = new List<object?>
+                                        {
+                                            "id",
+                                        },
                                     },
                                 },
                             },
@@ -2274,31 +2654,36 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "clearingDateFrom",
+                            ["title"] = "Clearing Date From",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz",
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "clearingDateTo",
+                            ["title"] = "Clearing Date To",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "Date and time in the format yyyy-MM-dd'T'HH:mm:ssz",
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "records",
+                            ["title"] = "Records",
                             ["type"] = "`$ARRAY`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
                             ["type"] = "`$STRING`",
                         },
                     },
@@ -2313,7 +2698,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>(),
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/public/digitalservices/mandatorClearingExportSummary",
@@ -2332,18 +2716,20 @@ public static class SdkConfig
                                             ["lit"] = "mandatorClearingExportSummary",
                                         },
                                     },
-                                    ["select"] = new Dictionary<string, object?>(),
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
                                     ["parts"] = new List<object?>
                                     {
                                         "public",
                                         "digitalservices",
                                         "mandatorClearingExportSummary",
                                     },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>(),
+                                    ["select"] = new Dictionary<string, object?>(),
                                 },
                             },
                         },
@@ -2360,132 +2746,157 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "3DSecure",
+                            ["title"] = "3 D Secure",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "authorizationCode",
+                            ["title"] = "Authorization Code",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "cardBrand",
+                            ["title"] = "Card Brand",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "clearingAmountFrom",
+                            ["title"] = "Clearing Amount From",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "clearingAmountTo",
+                            ["title"] = "Clearing Amount To",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "clearingCurrency",
+                            ["title"] = "Clearing Currency",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "clearingStatus",
+                            ["title"] = "Clearing Status",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "corporateUUID",
+                            ["title"] = "Corporate Uuid",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "orderByTransactionDate",
+                            ["title"] = "Order By Transaction Date",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "pagination",
+                            ["title"] = "Pagination",
                             ["type"] = "`$OBJECT`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "receiptNumber",
+                            ["title"] = "Receipt Number",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "referencedTransactionId",
+                            ["title"] = "Referenced Transaction Id",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "retrievalReferenceNumber",
+                            ["title"] = "Retrieval Reference Number",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "sourceId",
+                            ["title"] = "Source Id",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "tecsengineResponseCodeFrom",
+                            ["title"] = "Tecsengine Response Code From",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "tecsengineResponseCodeTo",
+                            ["title"] = "Tecsengine Response Code To",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "terminalId",
+                            ["title"] = "Terminal Id",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "traceNumber",
+                            ["title"] = "Trace Number",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "transactionAmountFrom",
+                            ["title"] = "Transaction Amount From",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "transactionAmountTo",
+                            ["title"] = "Transaction Amount To",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "date-time",
                             ["name"] = "transactionDateFrom",
+                            ["title"] = "Transaction Date From",
                             ["type"] = "`$STRING`",
+                            ["format"] = "date-time",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "date-time",
                             ["name"] = "transactionDateTo",
+                            ["title"] = "Transaction Date To",
                             ["type"] = "`$STRING`",
+                            ["format"] = "date-time",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "transactionId",
+                            ["title"] = "Transaction Id",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "transactionType",
+                            ["title"] = "Transaction Type",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "wallet",
-                            ["short"] = "Filter by wallet type.",
+                            ["title"] = "Wallet",
                             ["type"] = "`$STRING`",
+                            ["short"] = "Filter by wallet type.",
                         },
                     },
                     ["name"] = "merchant_portal_services_api",
@@ -2499,7 +2910,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>(),
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/public/transactionHistoryCsv",
@@ -2514,17 +2924,19 @@ public static class SdkConfig
                                             ["lit"] = "transactionHistoryCsv",
                                         },
                                     },
-                                    ["select"] = new Dictionary<string, object?>(),
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
                                     ["parts"] = new List<object?>
                                     {
                                         "public",
                                         "transactionHistoryCsv",
                                     },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>(),
+                                    ["select"] = new Dictionary<string, object?>(),
                                 },
                             },
                         },
@@ -2541,28 +2953,33 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "productorderuuids",
-                            ["req"] = true,
+                            ["title"] = "Productorderuuids",
                             ["type"] = "`$ARRAY`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "targetPackageorderuuid",
+                            ["title"] = "Target Packageorderuuid",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "targetProductorderuuid",
+                            ["title"] = "Target Productorderuuid",
                             ["type"] = "`$STRING`",
                         },
                     },
@@ -2577,7 +2994,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>(),
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/moveTid",
@@ -2588,16 +3004,18 @@ public static class SdkConfig
                                             ["lit"] = "moveTid",
                                         },
                                     },
-                                    ["select"] = new Dictionary<string, object?>(),
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "moveTid",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
                                     },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "moveTid",
-                                    },
+                                    ["args"] = new Dictionary<string, object?>(),
+                                    ["select"] = new Dictionary<string, object?>(),
                                 },
                             },
                         },
@@ -2614,95 +3032,111 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "acquirerName",
-                            ["short"] = "Acquirer name parsed from KKG field",
+                            ["title"] = "Acquirer Name",
                             ["type"] = "`$STRING`",
+                            ["short"] = "Acquirer name parsed from KKG field",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "amount",
+                            ["title"] = "Amount",
+                            ["type"] = "`$INTEGER`",
                             ["req"] = true,
                             ["short"] = "Transaction amount in minor units (cents)",
-                            ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "authorizationNumber",
-                            ["short"] = "Authorization number from the gateway",
+                            ["title"] = "Authorization Number",
                             ["type"] = "`$STRING`",
+                            ["short"] = "Authorization number from the gateway",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "cardNumber",
+                            ["title"] = "Card Number",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "Card number - 12 to 19 digits, must pass Luhn validation",
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "cardType",
-                            ["short"] = "Card type parsed from KKG field",
+                            ["title"] = "Card Type",
                             ["type"] = "`$STRING`",
+                            ["short"] = "Card type parsed from KKG field",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "currency",
+                            ["title"] = "Currency",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "Currency code - 3 uppercase letters (ISO 4217)",
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "cvc",
-                            ["short"] = "Card verification code - 3-4 digits (optional)",
+                            ["title"] = "Cvc",
                             ["type"] = "`$STRING`",
+                            ["short"] = "Card verification code - 3-4 digits (optional)",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "dateTimeTx",
-                            ["short"] = "Date and time of the transaction",
+                            ["title"] = "Date Time Tx",
                             ["type"] = "`$STRING`",
+                            ["short"] = "Date and time of the transaction",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "expDate",
+                            ["title"] = "Exp Date",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "Card expiry date in MMYY format",
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "merchantId",
-                            ["short"] = "Merchant ID (VU-NUMMER)",
+                            ["title"] = "Merchant Id",
                             ["type"] = "`$STRING`",
+                            ["short"] = "Merchant ID (VU-NUMMER)",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "originalTransactionId",
-                            ["short"] = "Original transaction ID from gateway",
+                            ["title"] = "Original Transaction Id",
                             ["type"] = "`$STRING`",
+                            ["short"] = "Original transaction ID from gateway",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "password",
-                            ["short"] = "Terminal password sent as Kennwort in TECS XML (optional)",
+                            ["title"] = "Password",
                             ["type"] = "`$STRING`",
+                            ["short"] = "Terminal password sent as Kennwort in TECS XML (optional)",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseCode",
-                            ["short"] = "Response code - 00 for success, otherwise error code",
+                            ["title"] = "Response Code",
                             ["type"] = "`$STRING`",
+                            ["short"] = "Response code - 00 for success, otherwise error code",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
-                            ["short"] = "Response message - 'Approved' for success, error description otherwise",
+                            ["title"] = "Response Message",
                             ["type"] = "`$STRING`",
+                            ["short"] = "Response message - 'Approved' for success, error description otherwise",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "terminalId",
+                            ["title"] = "Terminal Id",
+                            ["type"] = "`$STRING`",
                             ["op"] = new Dictionary<string, object?>
                             {
                                 ["create"] = new Dictionary<string, object?>
@@ -2712,20 +3146,21 @@ public static class SdkConfig
                                 },
                             },
                             ["short"] = "Terminal ID used for the transaction",
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "transactionId",
-                            ["short"] = "Transaction ID generated by the backend",
+                            ["title"] = "Transaction Id",
                             ["type"] = "`$STRING`",
+                            ["short"] = "Transaction ID generated by the backend",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "txtype",
+                            ["title"] = "Txtype",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "Transaction type",
-                            ["type"] = "`$STRING`",
                         },
                     },
                     ["name"] = "payment_manual",
@@ -2739,7 +3174,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>(),
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/public/paymentManual",
@@ -2754,17 +3188,19 @@ public static class SdkConfig
                                             ["lit"] = "paymentManual",
                                         },
                                     },
-                                    ["select"] = new Dictionary<string, object?>(),
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
                                     ["parts"] = new List<object?>
                                     {
                                         "public",
                                         "paymentManual",
                                     },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>(),
+                                    ["select"] = new Dictionary<string, object?>(),
                                 },
                             },
                         },
@@ -2780,81 +3216,93 @@ public static class SdkConfig
                     {
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "amount",
+                            ["title"] = "Amount",
+                            ["type"] = "`$INTEGER`",
                             ["req"] = true,
                             ["short"] = "Transaction amount in minor units (cents)",
-                            ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "currency",
+                            ["title"] = "Currency",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "Currency code - 3 uppercase letters (ISO 4217)",
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "device",
-                            ["short"] = "Device type that provided the SRED payload",
+                            ["title"] = "Device",
                             ["type"] = "`$STRING`",
+                            ["short"] = "Device type that provided the SRED payload",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "devicePayload",
+                            ["title"] = "Device Payload",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "SRED encrypted device payload from the device (minimum 32 characters)",
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "expDate",
-                            ["short"] = "Card expiry date in MMYY format",
+                            ["title"] = "Exp Date",
                             ["type"] = "`$STRING`",
+                            ["short"] = "Card expiry date in MMYY format",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "mode",
-                            ["short"] = "Decryption mode",
+                            ["title"] = "Mode",
                             ["type"] = "`$STRING`",
+                            ["short"] = "Decryption mode",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "panMasked",
-                            ["short"] = "Masked PAN (first 6 and last 4 digits)",
+                            ["title"] = "Pan Masked",
                             ["type"] = "`$STRING`",
+                            ["short"] = "Masked PAN (first 6 and last 4 digits)",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "password",
-                            ["short"] = "Terminal password sent as Kennwort in TECS XML (optional)",
+                            ["title"] = "Password",
                             ["type"] = "`$STRING`",
+                            ["short"] = "Terminal password sent as Kennwort in TECS XML (optional)",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "serial",
-                            ["short"] = "Device serial number",
+                            ["title"] = "Serial",
                             ["type"] = "`$STRING`",
+                            ["short"] = "Device serial number",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "serviceCode",
-                            ["short"] = "Service code from the card",
+                            ["title"] = "Service Code",
                             ["type"] = "`$STRING`",
+                            ["short"] = "Service code from the card",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "terminalId",
+                            ["title"] = "Terminal Id",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "Terminal ID - 8 digits",
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "txtype",
+                            ["title"] = "Txtype",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "Transaction type",
-                            ["type"] = "`$STRING`",
                         },
                     },
                     ["name"] = "payment_sred",
@@ -2868,7 +3316,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>(),
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/public/paymentSred",
@@ -2883,17 +3330,19 @@ public static class SdkConfig
                                             ["lit"] = "paymentSred",
                                         },
                                     },
-                                    ["select"] = new Dictionary<string, object?>(),
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body.sred`",
-                                    },
                                     ["parts"] = new List<object?>
                                     {
                                         "public",
                                         "paymentSred",
                                     },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body.sred`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>(),
+                                    ["select"] = new Dictionary<string, object?>(),
                                 },
                             },
                         },
@@ -2910,22 +3359,26 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "acquirerId",
+                            ["title"] = "Acquirer Id",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "acquirerName",
+                            ["title"] = "Acquirer Name",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "actualBonusPoints",
+                            ["title"] = "Actual Bonus Points",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "amount",
+                            ["title"] = "Amount",
+                            ["type"] = "`$INTEGER`",
                             ["op"] = new Dictionary<string, object?>
                             {
                                 ["create"] = new Dictionary<string, object?>
@@ -2934,112 +3387,133 @@ public static class SdkConfig
                                     ["type"] = "`$INTEGER`",
                                 },
                             },
-                            ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "authorizationCode",
+                            ["title"] = "Authorization Code",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "balanceAmount",
+                            ["title"] = "Balance Amount",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "cardBrand",
+                            ["title"] = "Card Brand",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "cardNumber",
+                            ["title"] = "Card Number",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "cardNumberReference",
-                            ["req"] = true,
+                            ["title"] = "Card Number Reference",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "clientId",
-                            ["req"] = true,
+                            ["title"] = "Client Id",
                             ["type"] = "`$INTEGER`",
+                            ["req"] = true,
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "currency",
-                            ["req"] = true,
+                            ["title"] = "Currency",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "cvc",
+                            ["title"] = "Cvc",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "ecData",
+                            ["title"] = "Ec Data",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "ecrData",
+                            ["title"] = "Ecr Data",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "emvData",
+                            ["title"] = "Emv Data",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int64",
                             ["name"] = "exchangeFee",
+                            ["title"] = "Exchange Fee",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int64",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "exchangeRate",
+                            ["title"] = "Exchange Rate",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "languageCode",
+                            ["title"] = "Language Code",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "merchantAddress",
+                            ["title"] = "Merchant Address",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "merchantName",
+                            ["title"] = "Merchant Name",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "merchantNumber",
+                            ["title"] = "Merchant Number",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "messageType",
+                            ["title"] = "Message Type",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "originalTraceNumber",
+                            ["title"] = "Original Trace Number",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "originalTransactionId",
+                            ["title"] = "Original Transaction Id",
+                            ["type"] = "`$STRING`",
                             ["op"] = new Dictionary<string, object?>
                             {
                                 ["create"] = new Dictionary<string, object?>
@@ -3048,83 +3522,96 @@ public static class SdkConfig
                                     ["type"] = "`$STRING`",
                                 },
                             },
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "password",
+                            ["title"] = "Password",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "paymentReason",
+                            ["title"] = "Payment Reason",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "receiptFooter",
+                            ["title"] = "Receipt Footer",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "receiptHeader",
+                            ["title"] = "Receipt Header",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "receiptLayout",
+                            ["title"] = "Receipt Layout",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "receiptNumber",
-                            ["req"] = true,
+                            ["title"] = "Receipt Number",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "serialNumber",
+                            ["title"] = "Serial Number",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "svc",
+                            ["title"] = "Svc",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "terminalId",
-                            ["req"] = true,
+                            ["title"] = "Terminal Id",
                             ["type"] = "`$INTEGER`",
+                            ["req"] = true,
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "terminalLocation",
+                            ["title"] = "Terminal Location",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "traceNumber",
+                            ["title"] = "Trace Number",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "date-time",
                             ["name"] = "transactionDate",
+                            ["title"] = "Transaction Date",
+                            ["type"] = "`$STRING`",
                             ["op"] = new Dictionary<string, object?>
                             {
                                 ["create"] = new Dictionary<string, object?>
@@ -3133,11 +3620,13 @@ public static class SdkConfig
                                     ["type"] = "`$STRING`",
                                 },
                             },
-                            ["type"] = "`$STRING`",
+                            ["format"] = "date-time",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "transactionId",
+                            ["title"] = "Transaction Id",
+                            ["type"] = "`$STRING`",
                             ["op"] = new Dictionary<string, object?>
                             {
                                 ["create"] = new Dictionary<string, object?>
@@ -3146,22 +3635,24 @@ public static class SdkConfig
                                     ["type"] = "`$STRING`",
                                 },
                             },
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "transactionType",
-                            ["req"] = true,
+                            ["title"] = "Transaction Type",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "txType",
+                            ["title"] = "Tx Type",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "userData",
+                            ["title"] = "User Data",
                             ["type"] = "`$STRING`",
                         },
                     },
@@ -3176,7 +3667,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>(),
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/public/paymentTransaction",
@@ -3191,21 +3681,22 @@ public static class SdkConfig
                                             ["lit"] = "paymentTransaction",
                                         },
                                     },
-                                    ["select"] = new Dictionary<string, object?>(),
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
                                     ["parts"] = new List<object?>
                                     {
                                         "public",
                                         "paymentTransaction",
                                     },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>(),
+                                    ["select"] = new Dictionary<string, object?>(),
                                 },
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>(),
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/public/preAuthCompletionTransaction",
@@ -3220,17 +3711,19 @@ public static class SdkConfig
                                             ["lit"] = "preAuthCompletionTransaction",
                                         },
                                     },
-                                    ["select"] = new Dictionary<string, object?>(),
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
                                     ["parts"] = new List<object?>
                                     {
                                         "public",
                                         "preAuthCompletionTransaction",
                                     },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>(),
+                                    ["select"] = new Dictionary<string, object?>(),
                                 },
                             },
                         },
@@ -3247,41 +3740,48 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "corporateUuid",
+                            ["title"] = "Corporate Uuid",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "packageOrderUuid",
+                            ["title"] = "Package Order Uuid",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "productOrderUuid",
+                            ["title"] = "Product Order Uuid",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "reactivationReason",
-                            ["req"] = true,
+                            ["title"] = "Reactivation Reason",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "terminalId",
-                            ["req"] = true,
+                            ["title"] = "Terminal Id",
                             ["type"] = "`$INTEGER`",
+                            ["req"] = true,
+                            ["format"] = "int32",
                         },
                     },
                     ["name"] = "reactivate_terminal",
@@ -3295,7 +3795,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>(),
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/reactivateTerminal",
@@ -3306,16 +3805,18 @@ public static class SdkConfig
                                             ["lit"] = "reactivateTerminal",
                                         },
                                     },
-                                    ["select"] = new Dictionary<string, object?>(),
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "reactivateTerminal",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
                                     },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "reactivateTerminal",
-                                    },
+                                    ["args"] = new Dictionary<string, object?>(),
+                                    ["select"] = new Dictionary<string, object?>(),
                                 },
                             },
                         },
@@ -3332,22 +3833,26 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "acquirerId",
+                            ["title"] = "Acquirer Id",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "acquirerName",
+                            ["title"] = "Acquirer Name",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "actualBonusPoints",
+                            ["title"] = "Actual Bonus Points",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "amount",
+                            ["title"] = "Amount",
+                            ["type"] = "`$INTEGER`",
                             ["op"] = new Dictionary<string, object?>
                             {
                                 ["create"] = new Dictionary<string, object?>
@@ -3356,106 +3861,126 @@ public static class SdkConfig
                                     ["type"] = "`$INTEGER`",
                                 },
                             },
-                            ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "authorizationCode",
+                            ["title"] = "Authorization Code",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "balanceAmount",
+                            ["title"] = "Balance Amount",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "cardBrand",
+                            ["title"] = "Card Brand",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "cardNumber",
+                            ["title"] = "Card Number",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "clientId",
-                            ["req"] = true,
+                            ["title"] = "Client Id",
                             ["type"] = "`$INTEGER`",
+                            ["req"] = true,
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "currency",
-                            ["req"] = true,
+                            ["title"] = "Currency",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "cvc",
+                            ["title"] = "Cvc",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "ecData",
+                            ["title"] = "Ec Data",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "ecrData",
+                            ["title"] = "Ecr Data",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "emvData",
+                            ["title"] = "Emv Data",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int64",
                             ["name"] = "exchangeFee",
+                            ["title"] = "Exchange Fee",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int64",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "exchangeRate",
+                            ["title"] = "Exchange Rate",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "languageCode",
+                            ["title"] = "Language Code",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "merchantAddress",
+                            ["title"] = "Merchant Address",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "merchantName",
+                            ["title"] = "Merchant Name",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "merchantNumber",
+                            ["title"] = "Merchant Number",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "messageType",
+                            ["title"] = "Message Type",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "originalTraceNumber",
+                            ["title"] = "Original Trace Number",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "originalTransactionId",
+                            ["title"] = "Original Transaction Id",
+                            ["type"] = "`$STRING`",
                             ["op"] = new Dictionary<string, object?>
                             {
                                 ["create"] = new Dictionary<string, object?>
@@ -3464,83 +3989,96 @@ public static class SdkConfig
                                     ["type"] = "`$STRING`",
                                 },
                             },
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "password",
+                            ["title"] = "Password",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "paymentReason",
+                            ["title"] = "Payment Reason",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "receiptFooter",
+                            ["title"] = "Receipt Footer",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "receiptHeader",
+                            ["title"] = "Receipt Header",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "receiptLayout",
+                            ["title"] = "Receipt Layout",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "receiptNumber",
-                            ["req"] = true,
+                            ["title"] = "Receipt Number",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "serialNumber",
+                            ["title"] = "Serial Number",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "svc",
+                            ["title"] = "Svc",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "terminalId",
-                            ["req"] = true,
+                            ["title"] = "Terminal Id",
                             ["type"] = "`$INTEGER`",
+                            ["req"] = true,
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "terminalLocation",
+                            ["title"] = "Terminal Location",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "traceNumber",
+                            ["title"] = "Trace Number",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "date-time",
                             ["name"] = "transactionDate",
+                            ["title"] = "Transaction Date",
+                            ["type"] = "`$STRING`",
                             ["op"] = new Dictionary<string, object?>
                             {
                                 ["create"] = new Dictionary<string, object?>
@@ -3549,11 +4087,13 @@ public static class SdkConfig
                                     ["type"] = "`$STRING`",
                                 },
                             },
-                            ["type"] = "`$STRING`",
+                            ["format"] = "date-time",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "transactionId",
+                            ["title"] = "Transaction Id",
+                            ["type"] = "`$STRING`",
                             ["op"] = new Dictionary<string, object?>
                             {
                                 ["create"] = new Dictionary<string, object?>
@@ -3562,16 +4102,17 @@ public static class SdkConfig
                                     ["type"] = "`$STRING`",
                                 },
                             },
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "txType",
+                            ["title"] = "Tx Type",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "userData",
+                            ["title"] = "User Data",
                             ["type"] = "`$STRING`",
                         },
                     },
@@ -3586,7 +4127,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>(),
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/public/refundTransaction",
@@ -3601,17 +4141,19 @@ public static class SdkConfig
                                             ["lit"] = "refundTransaction",
                                         },
                                     },
-                                    ["select"] = new Dictionary<string, object?>(),
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
                                     ["parts"] = new List<object?>
                                     {
                                         "public",
                                         "refundTransaction",
                                     },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>(),
+                                    ["select"] = new Dictionary<string, object?>(),
                                 },
                             },
                         },
@@ -3628,48 +4170,56 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "corporateUuid",
-                            ["req"] = true,
+                            ["title"] = "Corporate Uuid",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "packageOrderUuid",
-                            ["req"] = true,
+                            ["title"] = "Package Order Uuid",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "partnerId",
+                            ["title"] = "Partner Id",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "partnerName",
+                            ["title"] = "Partner Name",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "productOrderUuid",
-                            ["req"] = true,
+                            ["title"] = "Product Order Uuid",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "templateName",
-                            ["req"] = true,
+                            ["title"] = "Template Name",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                     },
                     ["name"] = "register_tecs_company",
@@ -3683,7 +4233,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>(),
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/registerTecsCompany",
@@ -3694,16 +4243,18 @@ public static class SdkConfig
                                             ["lit"] = "registerTecsCompany",
                                         },
                                     },
-                                    ["select"] = new Dictionary<string, object?>(),
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "registerTecsCompany",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
                                     },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "registerTecsCompany",
-                                    },
+                                    ["args"] = new Dictionary<string, object?>(),
+                                    ["select"] = new Dictionary<string, object?>(),
                                 },
                             },
                         },
@@ -3720,100 +4271,118 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "additionalData",
+                            ["title"] = "Additional Data",
                             ["type"] = "`$OBJECT`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "corporateUuid",
-                            ["req"] = true,
+                            ["title"] = "Corporate Uuid",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "packageOrderUuid",
-                            ["req"] = true,
+                            ["title"] = "Package Order Uuid",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "productOrderUuid",
-                            ["req"] = true,
+                            ["title"] = "Product Order Uuid",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "tecsWebSecretKey",
+                            ["title"] = "Tecs Web Secret Key",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "templateName",
-                            ["req"] = true,
+                            ["title"] = "Template Name",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "terminalCountryCode",
-                            ["req"] = true,
+                            ["title"] = "Terminal Country Code",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "terminalId",
+                            ["title"] = "Terminal Id",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "terminalIdAcq",
+                            ["title"] = "Terminal Id Acq",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "terminalLanguageCode",
-                            ["req"] = true,
+                            ["title"] = "Terminal Language Code",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "terminalLocation",
-                            ["req"] = true,
+                            ["title"] = "Terminal Location",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "terminalSerialNumber",
+                            ["title"] = "Terminal Serial Number",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "tokenIOAlias",
+                            ["title"] = "Token Io Alias",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "tokenIOIban",
+                            ["title"] = "Token Io Iban",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "tokenIOMemberId",
+                            ["title"] = "Token Io Member Id",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "webShopUrl",
+                            ["title"] = "Web Shop Url",
                             ["type"] = "`$STRING`",
                         },
                     },
@@ -3828,7 +4397,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>(),
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/registerTerminal",
@@ -3839,16 +4407,18 @@ public static class SdkConfig
                                             ["lit"] = "registerTerminal",
                                         },
                                     },
-                                    ["select"] = new Dictionary<string, object?>(),
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "registerTerminal",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
                                     },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "registerTerminal",
-                                    },
+                                    ["args"] = new Dictionary<string, object?>(),
+                                    ["select"] = new Dictionary<string, object?>(),
                                 },
                             },
                         },
@@ -3865,60 +4435,70 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "cardBrandReportData",
+                            ["title"] = "Card Brand Report Data",
                             ["type"] = "`$ARRAY`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "clearingDateFrom",
+                            ["title"] = "Clearing Date From",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "Date and time in the format yyyy-MM-dd'T'HH:mm:ss",
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "clearingDateTo",
+                            ["title"] = "Clearing Date To",
+                            ["type"] = "`$STRING`",
                             ["req"] = true,
                             ["short"] = "Date and time in the format yyyy-MM-dd'T'HH:mm:ss",
-                            ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "corporateId",
-                            ["req"] = true,
+                            ["title"] = "Corporate Id",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "currency",
-                            ["req"] = true,
+                            ["title"] = "Currency",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "sumOverCreditTx",
+                            ["title"] = "Sum Over Credit Tx",
                             ["type"] = "`$OBJECT`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "sumOverDebitTx",
+                            ["title"] = "Sum Over Debit Tx",
                             ["type"] = "`$OBJECT`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "terminalId",
+                            ["title"] = "Terminal Id",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                     },
                     ["name"] = "report_data",
@@ -3932,7 +4512,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>(),
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/public/digitalservices/reportData",
@@ -3951,18 +4530,20 @@ public static class SdkConfig
                                             ["lit"] = "reportData",
                                         },
                                     },
-                                    ["select"] = new Dictionary<string, object?>(),
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
                                     ["parts"] = new List<object?>
                                     {
                                         "public",
                                         "digitalservices",
                                         "reportData",
                                     },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>(),
+                                    ["select"] = new Dictionary<string, object?>(),
                                 },
                             },
                         },
@@ -3979,28 +4560,32 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "acquirerName",
+                            ["title"] = "Acquirer Name",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "acquirerTerminalId",
+                            ["title"] = "Acquirer Terminal Id",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "amount",
+                            ["title"] = "Amount",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "applicationCryptogram",
+                            ["title"] = "Application Cryptogram",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "authorizationCode",
-                            ["short"] = "Authorization code returned by the acquirer; null when not available",
+                            ["title"] = "Authorization Code",
                             ["type"] = new List<object?>
                             {
                                 "`$ONE`",
@@ -4010,247 +4595,293 @@ public static class SdkConfig
                                     "`$NULL`",
                                 },
                             },
+                            ["short"] = "Authorization code returned by the acquirer; null when not available",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "date-time",
                             ["name"] = "authorizationDate",
+                            ["title"] = "Authorization Date",
                             ["type"] = "`$STRING`",
+                            ["format"] = "date-time",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "cardBrand",
+                            ["title"] = "Card Brand",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "cardEntry",
+                            ["title"] = "Card Entry",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "cardExpiration",
+                            ["title"] = "Card Expiration",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "cardNumber",
+                            ["title"] = "Card Number",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "clearingAmount",
+                            ["title"] = "Clearing Amount",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "clearingBatchId",
+                            ["title"] = "Clearing Batch Id",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "clearingCurrency",
+                            ["title"] = "Clearing Currency",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "date-time",
                             ["name"] = "clearingDate",
+                            ["title"] = "Clearing Date",
                             ["type"] = "`$STRING`",
+                            ["format"] = "date-time",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "date-time",
                             ["name"] = "clearingProcessedDate",
+                            ["title"] = "Clearing Processed Date",
                             ["type"] = "`$STRING`",
+                            ["format"] = "date-time",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "clearingStatus",
+                            ["title"] = "Clearing Status",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "clientId",
+                            ["title"] = "Client Id",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "currency",
+                            ["title"] = "Currency",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "cvm",
+                            ["title"] = "Cvm",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "ecrData",
+                            ["title"] = "Ecr Data",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "emvApplicationId",
+                            ["title"] = "Emv Application Id",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "emvApplicationLabel",
+                            ["title"] = "Emv Application Label",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "merchantName",
+                            ["title"] = "Merchant Name",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "merchantNumber",
+                            ["title"] = "Merchant Number",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "originalClientId",
+                            ["title"] = "Original Client Id",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "originalTerminalId",
+                            ["title"] = "Original Terminal Id",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "originalTransactionId",
+                            ["title"] = "Original Transaction Id",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "paymentReason",
+                            ["title"] = "Payment Reason",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "receiptNumber",
+                            ["title"] = "Receipt Number",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseCodeFromAS",
+                            ["title"] = "Response Code From As",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "retrievalReferenceNumber",
+                            ["title"] = "Retrieval Reference Number",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "serviceCode",
+                            ["title"] = "Service Code",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "settlementStatus",
+                            ["title"] = "Settlement Status",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "sourceId",
+                            ["title"] = "Source Id",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "tecsengineResponseCode",
+                            ["title"] = "Tecsengine Response Code",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "tecsengineResponseText",
+                            ["title"] = "Tecsengine Response Text",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "date-time",
                             ["name"] = "terminalEndOfDayDate",
+                            ["title"] = "Terminal End Of Day Date",
                             ["type"] = "`$STRING`",
+                            ["format"] = "date-time",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "terminalId",
+                            ["title"] = "Terminal Id",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "terminalLocation",
+                            ["title"] = "Terminal Location",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "tipAmount",
+                            ["title"] = "Tip Amount",
                             ["type"] = "`$INTEGER`",
-                        },
-                        new Dictionary<string, object?>
-                        {
                             ["format"] = "int32",
+                        },
+                        new Dictionary<string, object?>
+                        {
                             ["name"] = "traceNumber",
+                            ["title"] = "Trace Number",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "date-time",
                             ["name"] = "transactionClearingDate",
+                            ["title"] = "Transaction Clearing Date",
                             ["type"] = "`$STRING`",
+                            ["format"] = "date-time",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "date-time",
                             ["name"] = "transactionDate",
+                            ["title"] = "Transaction Date",
                             ["type"] = "`$STRING`",
+                            ["format"] = "date-time",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "transactionId",
+                            ["title"] = "Transaction Id",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int64",
                             ["name"] = "transactionSeqNumber",
+                            ["title"] = "Transaction Seq Number",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int64",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "date-time",
                             ["name"] = "transactionServerDate",
+                            ["title"] = "Transaction Server Date",
                             ["type"] = "`$STRING`",
+                            ["format"] = "date-time",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "transactionSource",
+                            ["title"] = "Transaction Source",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "transactionType",
+                            ["title"] = "Transaction Type",
                             ["type"] = "`$STRING`",
                         },
                     },
@@ -4265,7 +4896,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>(),
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/public/statusTransaction",
@@ -4280,17 +4910,19 @@ public static class SdkConfig
                                             ["lit"] = "statusTransaction",
                                         },
                                     },
-                                    ["select"] = new Dictionary<string, object?>(),
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
                                     ["parts"] = new List<object?>
                                     {
                                         "public",
                                         "statusTransaction",
                                     },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>(),
+                                    ["select"] = new Dictionary<string, object?>(),
                                 },
                             },
                         },
@@ -4307,33 +4939,39 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "acqTabNexo",
+                            ["title"] = "Acq Tab Nexo",
                             ["type"] = "`$OBJECT`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "configVersion",
+                            ["title"] = "Config Version",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "serialNumber",
-                            ["req"] = true,
+                            ["title"] = "Serial Number",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "tidSent",
+                            ["title"] = "Tid Sent",
                             ["type"] = "`$STRING`",
                         },
                     },
@@ -4348,7 +4986,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>(),
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/storeTerminalParameters",
@@ -4359,16 +4996,18 @@ public static class SdkConfig
                                             ["lit"] = "storeTerminalParameters",
                                         },
                                     },
-                                    ["select"] = new Dictionary<string, object?>(),
+                                    ["parts"] = new List<object?>
+                                    {
+                                        "storeTerminalParameters",
+                                    },
+                                    ["rename"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
                                     },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "storeTerminalParameters",
-                                    },
+                                    ["args"] = new Dictionary<string, object?>(),
+                                    ["select"] = new Dictionary<string, object?>(),
                                 },
                             },
                         },
@@ -4385,28 +5024,33 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "deviceSerialNumber",
-                            ["req"] = true,
+                            ["title"] = "Device Serial Number",
                             ["type"] = "`$ARRAY`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "duplicateTerminalIds",
+                            ["title"] = "Duplicate Terminal Ids",
                             ["type"] = "`$ARRAY`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "terminals",
+                            ["title"] = "Terminals",
                             ["type"] = "`$ARRAY`",
                         },
                     },
@@ -4421,7 +5065,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>(),
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/public/getTerminalId",
@@ -4436,17 +5079,19 @@ public static class SdkConfig
                                             ["lit"] = "getTerminalId",
                                         },
                                     },
-                                    ["select"] = new Dictionary<string, object?>(),
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
                                     ["parts"] = new List<object?>
                                     {
                                         "public",
                                         "getTerminalId",
                                     },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>(),
+                                    ["select"] = new Dictionary<string, object?>(),
                                 },
                             },
                         },
@@ -4463,153 +5108,182 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "3DSecure",
+                            ["title"] = "3 D Secure",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "authorizationCode",
+                            ["title"] = "Authorization Code",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "cardBrand",
+                            ["title"] = "Card Brand",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "clearingAmountFrom",
+                            ["title"] = "Clearing Amount From",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "clearingAmountTo",
+                            ["title"] = "Clearing Amount To",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "clearingCurrency",
+                            ["title"] = "Clearing Currency",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "clearingStatus",
+                            ["title"] = "Clearing Status",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "corporateUUID",
+                            ["title"] = "Corporate Uuid",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "orderByTransactionDate",
+                            ["title"] = "Order By Transaction Date",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "pagination",
+                            ["title"] = "Pagination",
                             ["type"] = "`$OBJECT`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "paymentTokenPublicId",
+                            ["title"] = "Payment Token Public Id",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "receiptNumber",
+                            ["title"] = "Receipt Number",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "referencedTransactionId",
+                            ["title"] = "Referenced Transaction Id",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "retrievalReferenceNumber",
+                            ["title"] = "Retrieval Reference Number",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "sourceId",
+                            ["title"] = "Source Id",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "tecsengineResponseCodeFrom",
+                            ["title"] = "Tecsengine Response Code From",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "tecsengineResponseCodeTo",
+                            ["title"] = "Tecsengine Response Code To",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "terminalId",
+                            ["title"] = "Terminal Id",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "traceNumber",
+                            ["title"] = "Trace Number",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "transactionAmountFrom",
+                            ["title"] = "Transaction Amount From",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "transactionAmountTo",
+                            ["title"] = "Transaction Amount To",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "date-time",
                             ["name"] = "transactionDateFrom",
+                            ["title"] = "Transaction Date From",
                             ["type"] = "`$STRING`",
+                            ["format"] = "date-time",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "date-time",
                             ["name"] = "transactionDateTo",
+                            ["title"] = "Transaction Date To",
                             ["type"] = "`$STRING`",
+                            ["format"] = "date-time",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "transactionHistories",
+                            ["title"] = "Transaction Histories",
                             ["type"] = "`$ARRAY`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "transactionId",
+                            ["title"] = "Transaction Id",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "transactionType",
+                            ["title"] = "Transaction Type",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "wallet",
-                            ["short"] = "Filter by wallet type.",
+                            ["title"] = "Wallet",
                             ["type"] = "`$STRING`",
+                            ["short"] = "Filter by wallet type.",
                         },
                     },
                     ["name"] = "transaction_history",
@@ -4623,7 +5297,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>(),
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/public/mcom/transactionHistory",
@@ -4642,22 +5315,23 @@ public static class SdkConfig
                                             ["lit"] = "transactionHistory",
                                         },
                                     },
-                                    ["select"] = new Dictionary<string, object?>(),
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
                                     ["parts"] = new List<object?>
                                     {
                                         "public",
                                         "mcom",
                                         "transactionHistory",
                                     },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>(),
+                                    ["select"] = new Dictionary<string, object?>(),
                                 },
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>(),
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/public/transactionHistory",
@@ -4672,146 +5346,19 @@ public static class SdkConfig
                                             ["lit"] = "transactionHistory",
                                         },
                                     },
-                                    ["select"] = new Dictionary<string, object?>(),
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
                                     ["parts"] = new List<object?>
                                     {
                                         "public",
                                         "transactionHistory",
                                     },
-                                },
-                            },
-                        },
-                    },
-                    ["relations"] = new Dictionary<string, object?>
-                    {
-                        ["ancestors"] = new List<object?>(),
-                    },
-                },
-                ["transactions_count"] = new Dictionary<string, object?>
-                {
-                    ["fields"] = new List<object?>
-                    {
-                        new Dictionary<string, object?>
-                        {
-                            ["name"] = "period",
-                            ["type"] = "`$STRING`",
-                        },
-                        new Dictionary<string, object?>
-                        {
-                            ["format"] = "int32",
-                            ["name"] = "responseCode",
-                            ["type"] = "`$INTEGER`",
-                        },
-                        new Dictionary<string, object?>
-                        {
-                            ["name"] = "responseMessage",
-                            ["type"] = "`$STRING`",
-                        },
-                        new Dictionary<string, object?>
-                        {
-                            ["format"] = "date-time",
-                            ["name"] = "transactionDateFrom",
-                            ["op"] = new Dictionary<string, object?>
-                            {
-                                ["create"] = new Dictionary<string, object?>
-                                {
-                                    ["req"] = true,
-                                    ["type"] = "`$STRING`",
-                                },
-                            },
-                            ["type"] = "`$STRING`",
-                        },
-                        new Dictionary<string, object?>
-                        {
-                            ["format"] = "date-time",
-                            ["name"] = "transactionDateTo",
-                            ["op"] = new Dictionary<string, object?>
-                            {
-                                ["create"] = new Dictionary<string, object?>
-                                {
-                                    ["req"] = true,
-                                    ["type"] = "`$STRING`",
-                                },
-                            },
-                            ["type"] = "`$STRING`",
-                        },
-                        new Dictionary<string, object?>
-                        {
-                            ["name"] = "transactionsCount",
-                            ["type"] = "`$ARRAY`",
-                        },
-                    },
-                    ["name"] = "transactions_count",
-                    ["op"] = new Dictionary<string, object?>
-                    {
-                        ["create"] = new Dictionary<string, object?>
-                        {
-                            ["input"] = "data",
-                            ["name"] = "create",
-                            ["points"] = new List<object?>
-                            {
-                                new Dictionary<string, object?>
-                                {
-                                    ["args"] = new Dictionary<string, object?>(),
-                                    ["kind"] = "http",
-                                    ["method"] = "POST",
-                                    ["orig"] = "/public/countAuthorisedTransactions",
-                                    ["segments"] = new List<object?>
-                                    {
-                                        new Dictionary<string, object?>
-                                        {
-                                            ["lit"] = "public",
-                                        },
-                                        new Dictionary<string, object?>
-                                        {
-                                            ["lit"] = "countAuthorisedTransactions",
-                                        },
-                                    },
-                                    ["select"] = new Dictionary<string, object?>(),
+                                    ["rename"] = new Dictionary<string, object?>(),
                                     ["transform"] = new Dictionary<string, object?>
                                     {
                                         ["req"] = "`reqdata`",
                                         ["res"] = "`body`",
                                     },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "public",
-                                        "countAuthorisedTransactions",
-                                    },
-                                },
-                                new Dictionary<string, object?>
-                                {
                                     ["args"] = new Dictionary<string, object?>(),
-                                    ["kind"] = "http",
-                                    ["method"] = "POST",
-                                    ["orig"] = "/public/countNotAuthorisedTransactions",
-                                    ["segments"] = new List<object?>
-                                    {
-                                        new Dictionary<string, object?>
-                                        {
-                                            ["lit"] = "public",
-                                        },
-                                        new Dictionary<string, object?>
-                                        {
-                                            ["lit"] = "countNotAuthorisedTransactions",
-                                        },
-                                    },
                                     ["select"] = new Dictionary<string, object?>(),
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
-                                    ["parts"] = new List<object?>
-                                    {
-                                        "public",
-                                        "countNotAuthorisedTransactions",
-                                    },
                                 },
                             },
                         },
@@ -4828,23 +5375,27 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "period",
+                            ["title"] = "Period",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "date-time",
                             ["name"] = "transactionDateFrom",
+                            ["title"] = "Transaction Date From",
+                            ["type"] = "`$STRING`",
                             ["op"] = new Dictionary<string, object?>
                             {
                                 ["create"] = new Dictionary<string, object?>
@@ -4853,12 +5404,13 @@ public static class SdkConfig
                                     ["type"] = "`$STRING`",
                                 },
                             },
-                            ["type"] = "`$STRING`",
+                            ["format"] = "date-time",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "date-time",
                             ["name"] = "transactionDateTo",
+                            ["title"] = "Transaction Date To",
+                            ["type"] = "`$STRING`",
                             ["op"] = new Dictionary<string, object?>
                             {
                                 ["create"] = new Dictionary<string, object?>
@@ -4867,11 +5419,12 @@ public static class SdkConfig
                                     ["type"] = "`$STRING`",
                                 },
                             },
-                            ["type"] = "`$STRING`",
+                            ["format"] = "date-time",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "transactionsCount",
+                            ["title"] = "Transactions Count",
                             ["type"] = "`$ARRAY`",
                         },
                     },
@@ -4886,7 +5439,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>(),
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/public/countTransactionsByCardBrand",
@@ -4901,17 +5453,19 @@ public static class SdkConfig
                                             ["lit"] = "countTransactionsByCardBrand",
                                         },
                                     },
-                                    ["select"] = new Dictionary<string, object?>(),
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
                                     ["parts"] = new List<object?>
                                     {
                                         "public",
                                         "countTransactionsByCardBrand",
                                     },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>(),
+                                    ["select"] = new Dictionary<string, object?>(),
                                 },
                             },
                         },
@@ -4928,23 +5482,27 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "period",
+                            ["title"] = "Period",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "date-time",
                             ["name"] = "transactionDateFrom",
+                            ["title"] = "Transaction Date From",
+                            ["type"] = "`$STRING`",
                             ["op"] = new Dictionary<string, object?>
                             {
                                 ["create"] = new Dictionary<string, object?>
@@ -4953,12 +5511,13 @@ public static class SdkConfig
                                     ["type"] = "`$STRING`",
                                 },
                             },
-                            ["type"] = "`$STRING`",
+                            ["format"] = "date-time",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "date-time",
                             ["name"] = "transactionDateTo",
+                            ["title"] = "Transaction Date To",
+                            ["type"] = "`$STRING`",
                             ["op"] = new Dictionary<string, object?>
                             {
                                 ["create"] = new Dictionary<string, object?>
@@ -4967,11 +5526,12 @@ public static class SdkConfig
                                     ["type"] = "`$STRING`",
                                 },
                             },
-                            ["type"] = "`$STRING`",
+                            ["format"] = "date-time",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "turnovers",
+                            ["title"] = "Turnovers",
                             ["type"] = "`$ARRAY`",
                         },
                     },
@@ -4986,7 +5546,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>(),
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/public/transactionTurnover",
@@ -5001,17 +5560,19 @@ public static class SdkConfig
                                             ["lit"] = "transactionTurnover",
                                         },
                                     },
-                                    ["select"] = new Dictionary<string, object?>(),
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
                                     ["parts"] = new List<object?>
                                     {
                                         "public",
                                         "transactionTurnover",
                                     },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>(),
+                                    ["select"] = new Dictionary<string, object?>(),
                                 },
                             },
                         },
@@ -5028,58 +5589,69 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "city",
+                            ["title"] = "City",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "corporateUuid",
-                            ["req"] = true,
+                            ["title"] = "Corporate Uuid",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "country",
+                            ["title"] = "Country",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "merchantCategoryCode",
+                            ["title"] = "Merchant Category Code",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "name",
+                            ["title"] = "Name",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "state",
+                            ["title"] = "State",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "street",
+                            ["title"] = "Street",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "vuNummer",
+                            ["title"] = "Vu Nummer",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "zipcode",
+                            ["title"] = "Zipcode",
                             ["type"] = "`$STRING`",
                         },
                     },
@@ -5094,7 +5666,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>(),
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/public/updateMerchant",
@@ -5109,17 +5680,19 @@ public static class SdkConfig
                                             ["lit"] = "updateMerchant",
                                         },
                                     },
-                                    ["select"] = new Dictionary<string, object?>(),
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
                                     ["parts"] = new List<object?>
                                     {
                                         "public",
                                         "updateMerchant",
                                     },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>(),
+                                    ["select"] = new Dictionary<string, object?>(),
                                 },
                             },
                         },
@@ -5135,26 +5708,30 @@ public static class SdkConfig
                     {
                         new Dictionary<string, object?>
                         {
-                            ["format"] = "int32",
                             ["name"] = "responseCode",
+                            ["title"] = "Response Code",
                             ["type"] = "`$INTEGER`",
+                            ["format"] = "int32",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "responseMessage",
+                            ["title"] = "Response Message",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "templateName",
-                            ["req"] = true,
+                            ["title"] = "Template Name",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "templateXml",
-                            ["req"] = true,
+                            ["title"] = "Template Xml",
                             ["type"] = "`$STRING`",
+                            ["req"] = true,
                         },
                     },
                     ["name"] = "update_template_xml",
@@ -5168,7 +5745,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>(),
                                     ["kind"] = "http",
                                     ["method"] = "POST",
                                     ["orig"] = "/public/updateTemplateXml",
@@ -5183,17 +5759,19 @@ public static class SdkConfig
                                             ["lit"] = "updateTemplateXml",
                                         },
                                     },
-                                    ["select"] = new Dictionary<string, object?>(),
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
                                     ["parts"] = new List<object?>
                                     {
                                         "public",
                                         "updateTemplateXml",
                                     },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>(),
+                                    ["select"] = new Dictionary<string, object?>(),
                                 },
                             },
                         },
@@ -5210,16 +5788,19 @@ public static class SdkConfig
                         new Dictionary<string, object?>
                         {
                             ["name"] = "appName",
+                            ["title"] = "App Name",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "buildDate",
+                            ["title"] = "Build Date",
                             ["type"] = "`$STRING`",
                         },
                         new Dictionary<string, object?>
                         {
                             ["name"] = "version",
+                            ["title"] = "Version",
                             ["type"] = "`$STRING`",
                         },
                     },
@@ -5234,7 +5815,6 @@ public static class SdkConfig
                             {
                                 new Dictionary<string, object?>
                                 {
-                                    ["args"] = new Dictionary<string, object?>(),
                                     ["kind"] = "http",
                                     ["method"] = "GET",
                                     ["orig"] = "/public/version",
@@ -5249,17 +5829,19 @@ public static class SdkConfig
                                             ["lit"] = "version",
                                         },
                                     },
-                                    ["select"] = new Dictionary<string, object?>(),
-                                    ["transform"] = new Dictionary<string, object?>
-                                    {
-                                        ["req"] = "`reqdata`",
-                                        ["res"] = "`body`",
-                                    },
                                     ["parts"] = new List<object?>
                                     {
                                         "public",
                                         "version",
                                     },
+                                    ["rename"] = new Dictionary<string, object?>(),
+                                    ["transform"] = new Dictionary<string, object?>
+                                    {
+                                        ["req"] = "`reqdata`",
+                                        ["res"] = "`body`",
+                                    },
+                                    ["args"] = new Dictionary<string, object?>(),
+                                    ["select"] = new Dictionary<string, object?>(),
                                 },
                             },
                         },

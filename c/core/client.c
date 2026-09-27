@@ -304,6 +304,16 @@ Entity* bluefintecsmerchantservices_check_card_black_listed(BluefinTecsMerchantS
   return check_card_black_listed_entity_new(client, entopts);
 }
 
+// CountAuthorisedTransaction entity bound to this client.
+Entity* bluefintecsmerchantservices_count_authorised_transaction(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
+  return count_authorised_transaction_entity_new(client, entopts);
+}
+
+// CountNotAuthorisedTransaction entity bound to this client.
+Entity* bluefintecsmerchantservices_count_not_authorised_transaction(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
+  return count_not_authorised_transaction_entity_new(client, entopts);
+}
+
 // CreateProduct entity bound to this client.
 Entity* bluefintecsmerchantservices_create_product(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
   return create_product_entity_new(client, entopts);
@@ -457,11 +467,6 @@ Entity* bluefintecsmerchantservices_terminal_id(BluefinTecsMerchantServicesSDK* 
 // TransactionHistory entity bound to this client.
 Entity* bluefintecsmerchantservices_transaction_history(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
   return transaction_history_entity_new(client, entopts);
-}
-
-// TransactionsCount entity bound to this client.
-Entity* bluefintecsmerchantservices_transactions_count(BluefinTecsMerchantServicesSDK* client, voxgig_value* entopts) {
-  return transactions_count_entity_new(client, entopts);
 }
 
 // TransactionsCountCardBrand entity bound to this client.

@@ -55,6 +55,16 @@ initial options.
 Create a new `CheckCardBlackListedEntity` instance. Pass `Value::Noval` for no
 initial options.
 
+#### `count_authorised_transaction(entopts: Value) -> Rc<CountAuthorisedTransactionEntity>`
+
+Create a new `CountAuthorisedTransactionEntity` instance. Pass `Value::Noval` for no
+initial options.
+
+#### `count_not_authorised_transaction(entopts: Value) -> Rc<CountNotAuthorisedTransactionEntity>`
+
+Create a new `CountNotAuthorisedTransactionEntity` instance. Pass `Value::Noval` for no
+initial options.
+
 #### `create_product(entopts: Value) -> Rc<CreateProductEntity>`
 
 Create a new `CreateProductEntity` instance. Pass `Value::Noval` for no
@@ -208,11 +218,6 @@ initial options.
 #### `transaction_history(entopts: Value) -> Rc<TransactionHistoryEntity>`
 
 Create a new `TransactionHistoryEntity` instance. Pass `Value::Noval` for no
-initial options.
-
-#### `transactions_count(entopts: Value) -> Rc<TransactionsCountEntity>`
-
-Create a new `TransactionsCountEntity` instance. Pass `Value::Noval` for no
 initial options.
 
 #### `transactions_count_card_brand(entopts: Value) -> Rc<TransactionsCountCardBrandEntity>`
@@ -443,6 +448,126 @@ Get the entity match criteria. Pass `Some(&map)` to set it.
 #### `make() -> Rc<dyn Entity>`
 
 Create a new `CheckCardBlackListedEntity` instance with the same options.
+
+#### `get_name() -> String`
+
+Return the entity name.
+
+
+---
+
+## CountAuthorisedTransactionEntity
+
+```rust
+let count_authorised_transaction = client.count_authorised_transaction(Value::Noval);
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `period` | `String` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `String` | No |  |
+| `transactionDateFrom` | `String` | No |  |
+| `transactionDateTo` | `String` | No |  |
+| `transactionsCount` | `Vec<Value>` | No |  |
+
+### Field Usage by Operation
+
+| Field | create |
+| --- | --- |
+| `period` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `transactionDateFrom` | Yes |
+| `transactionDateTo` | Yes |
+| `transactionsCount` | - |
+
+### Operations
+
+#### `create(reqdata: Value, ctrl: Value) -> Result<Value, BluefinTecsMerchantServicesError>`
+
+Create a new entity with the given data. Returns the created entity data on `Ok` and `Err` on failure.
+
+```rust
+let result = client.count_authorised_transaction(Value::Noval).create(jo(vec![
+]), Value::Noval).unwrap();
+```
+
+### Common Methods
+
+#### `data(args: Option<&Value>) -> Value`
+
+Get the entity data. Pass `Some(&map)` to set it.
+
+#### `matchv(args: Option<&Value>) -> Value`
+
+Get the entity match criteria. Pass `Some(&map)` to set it.
+
+#### `make() -> Rc<dyn Entity>`
+
+Create a new `CountAuthorisedTransactionEntity` instance with the same options.
+
+#### `get_name() -> String`
+
+Return the entity name.
+
+
+---
+
+## CountNotAuthorisedTransactionEntity
+
+```rust
+let count_not_authorised_transaction = client.count_not_authorised_transaction(Value::Noval);
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `period` | `String` | No |  |
+| `responseCode` | `i64` | No |  |
+| `responseMessage` | `String` | No |  |
+| `transactionDateFrom` | `String` | No |  |
+| `transactionDateTo` | `String` | No |  |
+| `transactionsCount` | `Vec<Value>` | No |  |
+
+### Field Usage by Operation
+
+| Field | create |
+| --- | --- |
+| `period` | - |
+| `responseCode` | - |
+| `responseMessage` | - |
+| `transactionDateFrom` | Yes |
+| `transactionDateTo` | Yes |
+| `transactionsCount` | - |
+
+### Operations
+
+#### `create(reqdata: Value, ctrl: Value) -> Result<Value, BluefinTecsMerchantServicesError>`
+
+Create a new entity with the given data. Returns the created entity data on `Ok` and `Err` on failure.
+
+```rust
+let result = client.count_not_authorised_transaction(Value::Noval).create(jo(vec![
+]), Value::Noval).unwrap();
+```
+
+### Common Methods
+
+#### `data(args: Option<&Value>) -> Value`
+
+Get the entity data. Pass `Some(&map)` to set it.
+
+#### `matchv(args: Option<&Value>) -> Value`
+
+Get the entity match criteria. Pass `Some(&map)` to set it.
+
+#### `make() -> Rc<dyn Entity>`
+
+Create a new `CountNotAuthorisedTransactionEntity` instance with the same options.
 
 #### `get_name() -> String`
 
@@ -2371,66 +2496,6 @@ Return the entity name.
 
 ---
 
-## TransactionsCountEntity
-
-```rust
-let transactions_count = client.transactions_count(Value::Noval);
-```
-
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `period` | `String` | No |  |
-| `responseCode` | `i64` | No |  |
-| `responseMessage` | `String` | No |  |
-| `transactionDateFrom` | `String` | No |  |
-| `transactionDateTo` | `String` | No |  |
-| `transactionsCount` | `Vec<Value>` | No |  |
-
-### Field Usage by Operation
-
-| Field | create |
-| --- | --- |
-| `period` | - |
-| `responseCode` | - |
-| `responseMessage` | - |
-| `transactionDateFrom` | Yes |
-| `transactionDateTo` | Yes |
-| `transactionsCount` | - |
-
-### Operations
-
-#### `create(reqdata: Value, ctrl: Value) -> Result<Value, BluefinTecsMerchantServicesError>`
-
-Create a new entity with the given data. Returns the created entity data on `Ok` and `Err` on failure.
-
-```rust
-let result = client.transactions_count(Value::Noval).create(jo(vec![
-]), Value::Noval).unwrap();
-```
-
-### Common Methods
-
-#### `data(args: Option<&Value>) -> Value`
-
-Get the entity data. Pass `Some(&map)` to set it.
-
-#### `matchv(args: Option<&Value>) -> Value`
-
-Get the entity match criteria. Pass `Some(&map)` to set it.
-
-#### `make() -> Rc<dyn Entity>`
-
-Create a new `TransactionsCountEntity` instance with the same options.
-
-#### `get_name() -> String`
-
-Return the entity name.
-
-
----
-
 ## TransactionsCountCardBrandEntity
 
 ```rust
@@ -2704,18 +2769,18 @@ Return the entity name.
 
 | Feature | Version | Description |
 | --- | --- | --- |
-| `audit` | 0.0.1 | Structured audit trail of operations |
-| `clienttrack` | 0.0.1 | Client identity and per-request correlation headers |
-| `debug` | 0.0.1 | Request/response capture ring buffer for debugging |
-| `idempotency` | 0.0.1 | Idempotency keys for safe retries of mutating operations |
-| `log` | 0.0.1 | Structured request and response logging |
-| `metrics` | 0.0.1 | Statistics capture: per-operation counters and latency |
-| `paging` | 0.0.1 | Pagination signals for list operations |
-| `ratelimit` | 0.0.1 | Client-side rate limiting via a token bucket |
-| `retry` | 0.0.1 | Automatic retry of transient failures with exponential backoff |
-| `telemetry` | 0.0.1 | Distributed tracing spans with W3C trace-context propagation |
-| `test` | 0.0.1 | In-memory mock transport for testing without a live server |
-| `timeout` | 0.0.1 | Per-request timeout with transport abort |
+| `audit` | 0.0.1 | Audit trail |
+| `clienttrack` | 0.0.1 | Client tracking |
+| `debug` | 0.0.1 | Debug capture |
+| `idempotency` | 0.0.1 | Idempotency |
+| `log` | 0.0.1 | Logging |
+| `metrics` | 0.0.1 | Metrics |
+| `paging` | 0.0.1 | Paging |
+| `ratelimit` | 0.0.1 | Rate limiting |
+| `retry` | 0.0.1 | Retry |
+| `telemetry` | 0.0.1 | Telemetry |
+| `test` | 0.0.1 | Test transport |
+| `timeout` | 0.0.1 | Timeout |
 
 
 Features are activated via the `feature` option:
@@ -2765,7 +2830,7 @@ rather than the transport, so their order does not affect what they observe.
 
 #### `audit`
 
-Structured audit trail of operations.
+Audit trail.
 
 **Configuration**
 
@@ -2796,7 +2861,7 @@ its default unless you name it.
 
 #### `clienttrack`
 
-Client identity and per-request correlation headers.
+Client tracking.
 
 **Configuration**
 
@@ -2828,7 +2893,7 @@ its default unless you name it.
 
 #### `debug`
 
-Request/response capture ring buffer for debugging.
+Debug capture.
 
 **Configuration**
 
@@ -2859,7 +2924,7 @@ its default unless you name it.
 
 #### `idempotency`
 
-Idempotency keys for safe retries of mutating operations.
+Idempotency.
 
 **Configuration**
 
@@ -2890,7 +2955,7 @@ its default unless you name it.
 
 #### `log`
 
-Structured request and response logging.
+Logging.
 
 **Configuration**
 
@@ -2919,7 +2984,7 @@ its default unless you name it.
 
 #### `metrics`
 
-Statistics capture: per-operation counters and latency.
+Metrics.
 
 **Configuration**
 
@@ -2947,7 +3012,7 @@ its default unless you name it.
 
 #### `paging`
 
-Pagination signals for list operations.
+Paging.
 
 **Configuration**
 
@@ -2982,7 +3047,7 @@ its default unless you name it.
 
 #### `ratelimit`
 
-Client-side rate limiting via a token bucket.
+Rate limiting.
 
 **Configuration**
 
@@ -3013,7 +3078,7 @@ its default unless you name it.
 
 #### `retry`
 
-Automatic retry of transient failures with exponential backoff.
+Retry.
 
 **Configuration**
 
@@ -3047,7 +3112,7 @@ its default unless you name it.
 
 #### `telemetry`
 
-Distributed tracing spans with W3C trace-context propagation.
+Telemetry.
 
 **Configuration**
 
@@ -3078,7 +3143,7 @@ its default unless you name it.
 
 #### `test`
 
-In-memory mock transport for testing without a live server.
+Test transport.
 
 **Configuration**
 
@@ -3109,7 +3174,7 @@ its default unless you name it.
 
 #### `timeout`
 
-Per-request timeout with transport abort.
+Timeout.
 
 **Configuration**
 

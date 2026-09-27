@@ -2,6 +2,8 @@
 
 import { CancelTransactionEntity } from './entity/CancelTransactionEntity'
 import { CheckCardBlackListedEntity } from './entity/CheckCardBlackListedEntity'
+import { CountAuthorisedTransactionEntity } from './entity/CountAuthorisedTransactionEntity'
+import { CountNotAuthorisedTransactionEntity } from './entity/CountNotAuthorisedTransactionEntity'
 import { CreateProductEntity } from './entity/CreateProductEntity'
 import { DeactivateTerminalEntity } from './entity/DeactivateTerminalEntity'
 import { DigitalServicesApiEntity } from './entity/DigitalServicesApiEntity'
@@ -33,7 +35,6 @@ import { StatusTransactionEntity } from './entity/StatusTransactionEntity'
 import { StoreTerminalParameterEntity } from './entity/StoreTerminalParameterEntity'
 import { TerminalIdEntity } from './entity/TerminalIdEntity'
 import { TransactionHistoryEntity } from './entity/TransactionHistoryEntity'
-import { TransactionsCountEntity } from './entity/TransactionsCountEntity'
 import { TransactionsCountCardBrandEntity } from './entity/TransactionsCountCardBrandEntity'
 import { TransactionsTurnoverEntity } from './entity/TransactionsTurnoverEntity'
 import { UpdateMerchantEntity } from './entity/UpdateMerchantEntity'
@@ -162,7 +163,6 @@ class BluefinTecsMerchantServicesSDK {
 
     const options = this._options
 
-    // Build spec directly from SDK options + user-provided fetch args.
     const spec: any = {
       base: options.base,
       prefix: options.prefix,
@@ -178,7 +178,6 @@ class BluefinTecsMerchantServicesSDK {
 
     ctx.spec = spec
 
-    // Merge user-provided headers over SDK defaults.
     if (fetchargs.headers) {
       const uheaders = fetchargs.headers
       for (let key in uheaders) {
@@ -188,7 +187,6 @@ class BluefinTecsMerchantServicesSDK {
 
     
 
-    // Apply SDK auth (apikey, auth prefix, etc.)
     const authResult = prepareAuth(ctx)
     if (authResult instanceof Error) {
       return authResult
@@ -281,18 +279,6 @@ class BluefinTecsMerchantServicesSDK {
 
 
 
-  // Raw GraphQL access: the pressure valve that makes the generated
-  // surface's deliberate omissions (per-call selection sets, typed filter
-  // builders, batching, subscriptions) livable — the whole schema stays
-  // reachable.
-  //
-  // Thin wrapper over the same prepare/fetch path `direct` uses, with the
-  // one thing raw `direct` cannot do for GraphQL: a GraphQL failure rides
-  // HTTP 200 as a top-level `errors` array, so status alone would report a
-  // failed query as ok.
-  //
-  // NOTE: like `direct`, this bypasses the feature pipeline — no retry,
-  // ratelimit or paging features apply.
   async graphql(query: string, variables?: any, ctrl?: any) {
     const options = this._options
 
@@ -350,6 +336,24 @@ class BluefinTecsMerchantServicesSDK {
   CheckCardBlackListed(entopts?: Record<string, any>) {
     const self = this
     return new CheckCardBlackListedEntity(self, entopts)
+  }
+
+
+  // Entity access: `client.CountAuthorisedTransaction().list()` / `client.CountAuthorisedTransaction().load({ id })`.
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  CountAuthorisedTransaction(entopts?: Record<string, any>) {
+    const self = this
+    return new CountAuthorisedTransactionEntity(self, entopts)
+  }
+
+
+  // Entity access: `client.CountNotAuthorisedTransaction().list()` / `client.CountNotAuthorisedTransaction().load({ id })`.
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  CountNotAuthorisedTransaction(entopts?: Record<string, any>) {
+    const self = this
+    return new CountNotAuthorisedTransactionEntity(self, entopts)
   }
 
 
@@ -629,15 +633,6 @@ class BluefinTecsMerchantServicesSDK {
   TransactionHistory(entopts?: Record<string, any>) {
     const self = this
     return new TransactionHistoryEntity(self, entopts)
-  }
-
-
-  // Entity access: `client.TransactionsCount().list()` / `client.TransactionsCount().load({ id })`.
-  // The argument is the entity OPTIONS object (passed to the entity
-  // constructor as entopts), not initial entity data.
-  TransactionsCount(entopts?: Record<string, any>) {
-    const self = this
-    return new TransactionsCountEntity(self, entopts)
   }
 
 

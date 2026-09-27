@@ -1,0 +1,67 @@
+# Entity: update_template_xml
+
+main: kit: entity: update_template_xml: {
+
+  alias: field: {}
+
+  fields: {
+    responseCode: {
+      fo: "int32"
+      h: "Response Code"
+      n: "responseCode"
+      r: false
+      t: "`$INTEGER`"
+    }
+    responseMessage: {
+      h: "Response Message"
+      n: "responseMessage"
+      r: false
+      t: "`$STRING`"
+    }
+    templateName: {
+      h: "Template Name"
+      n: "templateName"
+      r: true
+      t: "`$STRING`"
+    }
+    templateXml: {
+      h: "Template Xml"
+      n: "templateXml"
+      r: true
+      t: "`$STRING`"
+    }
+  }
+
+  name: "update_template_xml"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /public/updateTemplateXml"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/public/updateTemplateXml"
+          s: [
+            {
+              lit: "public"
+            }
+            {
+              lit: "updateTemplateXml"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

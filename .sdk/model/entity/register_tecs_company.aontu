@@ -1,0 +1,89 @@
+# Entity: register_tecs_company
+
+main: kit: entity: register_tecs_company: {
+
+  alias: field: {}
+
+  fields: {
+    corporateUuid: {
+      h: "Corporate Uuid"
+      n: "corporateUuid"
+      r: true
+      t: "`$STRING`"
+    }
+    packageOrderUuid: {
+      h: "Package Order Uuid"
+      n: "packageOrderUuid"
+      r: true
+      t: "`$STRING`"
+    }
+    partnerId: {
+      fo: "int32"
+      h: "Partner Id"
+      n: "partnerId"
+      r: false
+      t: "`$INTEGER`"
+    }
+    partnerName: {
+      h: "Partner Name"
+      n: "partnerName"
+      r: false
+      t: "`$STRING`"
+    }
+    productOrderUuid: {
+      h: "Product Order Uuid"
+      n: "productOrderUuid"
+      r: true
+      t: "`$STRING`"
+    }
+    responseCode: {
+      fo: "int32"
+      h: "Response Code"
+      n: "responseCode"
+      r: false
+      t: "`$INTEGER`"
+    }
+    responseMessage: {
+      h: "Response Message"
+      n: "responseMessage"
+      r: false
+      t: "`$STRING`"
+    }
+    templateName: {
+      h: "Template Name"
+      n: "templateName"
+      r: true
+      t: "`$STRING`"
+    }
+  }
+
+  name: "register_tecs_company"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /registerTecsCompany"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/registerTecsCompany"
+          s: [
+            {
+              lit: "registerTecsCompany"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

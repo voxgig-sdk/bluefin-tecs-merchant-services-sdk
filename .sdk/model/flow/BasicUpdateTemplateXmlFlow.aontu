@@ -1,0 +1,18 @@
+# BasicUpdateTemplateXmlFlow
+
+main: kit: flow: BasicUpdateTemplateXmlFlow:
+{
+  entity: "update_template_xml",
+  kind: "basic",
+  name: "BasicUpdateTemplateXmlFlow",
+  step: [
+    {
+      i: {
+        ref: "update_template_xml_ref01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicUpdateTemplateXmlFlow"
+}

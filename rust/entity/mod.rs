@@ -2,6 +2,8 @@
 
 pub mod cancel_transaction;
 pub mod check_card_black_listed;
+pub mod count_authorised_transaction;
+pub mod count_not_authorised_transaction;
 pub mod create_product;
 pub mod deactivate_terminal;
 pub mod digital_services_api;
@@ -33,7 +35,6 @@ pub mod status_transaction;
 pub mod store_terminal_parameter;
 pub mod terminal_id;
 pub mod transaction_history;
-pub mod transactions_count;
 pub mod transactions_count_card_brand;
 pub mod transactions_turnover;
 pub mod update_merchant;
@@ -43,6 +44,8 @@ pub mod types;
 
 pub use cancel_transaction::CancelTransactionEntity;
 pub use check_card_black_listed::CheckCardBlackListedEntity;
+pub use count_authorised_transaction::CountAuthorisedTransactionEntity;
+pub use count_not_authorised_transaction::CountNotAuthorisedTransactionEntity;
 pub use create_product::CreateProductEntity;
 pub use deactivate_terminal::DeactivateTerminalEntity;
 pub use digital_services_api::DigitalServicesApiEntity;
@@ -74,7 +77,6 @@ pub use status_transaction::StatusTransactionEntity;
 pub use store_terminal_parameter::StoreTerminalParameterEntity;
 pub use terminal_id::TerminalIdEntity;
 pub use transaction_history::TransactionHistoryEntity;
-pub use transactions_count::TransactionsCountEntity;
 pub use transactions_count_card_brand::TransactionsCountCardBrandEntity;
 pub use transactions_turnover::TransactionsTurnoverEntity;
 pub use update_merchant::UpdateMerchantEntity;

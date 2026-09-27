@@ -1,0 +1,18 @@
+# BasicCountAuthorisedTransactionFlow
+
+main: kit: flow: BasicCountAuthorisedTransactionFlow:
+{
+  entity: "count_authorised_transaction",
+  kind: "basic",
+  name: "BasicCountAuthorisedTransactionFlow",
+  step: [
+    {
+      i: {
+        ref: "count_authorised_transaction_ref01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicCountAuthorisedTransactionFlow"
+}

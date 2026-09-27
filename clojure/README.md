@@ -219,6 +219,8 @@ Creates a test-mode client with mock transport. Both arguments may be `nil`.
 | `direct` | `(client fetchargs) -> map` | Build and send an HTTP request. Returns a result map (branch on `ok`). |
 | `cancel_transaction` | `(client data) -> CancelTransaction entity` | Create a CancelTransaction entity instance. |
 | `check_card_black_listed` | `(client data) -> CheckCardBlackListed entity` | Create a CheckCardBlackListed entity instance. |
+| `count_authorised_transaction` | `(client data) -> CountAuthorisedTransaction entity` | Create a CountAuthorisedTransaction entity instance. |
+| `count_not_authorised_transaction` | `(client data) -> CountNotAuthorisedTransaction entity` | Create a CountNotAuthorisedTransaction entity instance. |
 | `create_product` | `(client data) -> CreateProduct entity` | Create a CreateProduct entity instance. |
 | `deactivate_terminal` | `(client data) -> DeactivateTerminal entity` | Create a DeactivateTerminal entity instance. |
 | `digital_services_api` | `(client data) -> DigitalServicesApi entity` | Create a DigitalServicesApi entity instance. |
@@ -250,7 +252,6 @@ Creates a test-mode client with mock transport. Both arguments may be `nil`.
 | `store_terminal_parameter` | `(client data) -> StoreTerminalParameter entity` | Create a StoreTerminalParameter entity instance. |
 | `terminal_id` | `(client data) -> TerminalId entity` | Create a TerminalId entity instance. |
 | `transaction_history` | `(client data) -> TransactionHistory entity` | Create a TransactionHistory entity instance. |
-| `transactions_count` | `(client data) -> TransactionsCount entity` | Create a TransactionsCount entity instance. |
 | `transactions_count_card_brand` | `(client data) -> TransactionsCountCardBrand entity` | Create a TransactionsCountCardBrand entity instance. |
 | `transactions_turnover` | `(client data) -> TransactionsTurnover entity` | Create a TransactionsTurnover entity instance. |
 | `update_merchant` | `(client data) -> UpdateMerchant entity` | Create an UpdateMerchant entity instance. |
@@ -357,6 +358,36 @@ API path: `/public/cancelTransaction`
 Operations: Create.
 
 API path: `/checkCardBlackListed`
+
+#### CountAuthorisedTransaction
+
+| Field | Description |
+| --- | --- |
+| `period` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `transactionDateFrom` |  |
+| `transactionDateTo` |  |
+| `transactionsCount` |  |
+
+Operations: Create.
+
+API path: `/public/countAuthorisedTransactions`
+
+#### CountNotAuthorisedTransaction
+
+| Field | Description |
+| --- | --- |
+| `period` |  |
+| `responseCode` |  |
+| `responseMessage` |  |
+| `transactionDateFrom` |  |
+| `transactionDateTo` |  |
+| `transactionsCount` |  |
+
+Operations: Create.
+
+API path: `/public/countNotAuthorisedTransactions`
 
 #### CreateProduct
 
@@ -1019,21 +1050,6 @@ Operations: Create.
 
 API path: `/public/mcom/transactionHistory`
 
-#### TransactionsCount
-
-| Field | Description |
-| --- | --- |
-| `period` |  |
-| `responseCode` |  |
-| `responseMessage` |  |
-| `transactionDateFrom` |  |
-| `transactionDateTo` |  |
-| `transactionsCount` |  |
-
-Operations: Create.
-
-API path: `/public/countAuthorisedTransactions`
-
 #### TransactionsCountCardBrand
 
 | Field | Description |
@@ -1207,6 +1223,70 @@ Create an instance: `(def check_card_black_listed (api/check_card_black_listed c
 ```clojure
 (def check_card_black_listed
   (e-check_card_black_listed/create (api/check_card_black_listed client nil)
+    (vs/jm
+      )
+    nil))
+```
+
+
+### CountAuthorisedTransaction
+
+Create an instance: `(def count_authorised_transaction (api/count_authorised_transaction client nil))`
+
+#### Operations
+
+| Method | Description |
+| --- | --- |
+| `(create ent data ctrl)` | Create a new entity with the given data. |
+
+#### Fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `period` | `string` |  |
+| `responseCode` | `long` |  |
+| `responseMessage` | `string` |  |
+| `transactionDateFrom` | `string` |  |
+| `transactionDateTo` | `string` |  |
+| `transactionsCount` | `vector` |  |
+
+#### Example: Create
+
+```clojure
+(def count_authorised_transaction
+  (e-count_authorised_transaction/create (api/count_authorised_transaction client nil)
+    (vs/jm
+      )
+    nil))
+```
+
+
+### CountNotAuthorisedTransaction
+
+Create an instance: `(def count_not_authorised_transaction (api/count_not_authorised_transaction client nil))`
+
+#### Operations
+
+| Method | Description |
+| --- | --- |
+| `(create ent data ctrl)` | Create a new entity with the given data. |
+
+#### Fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `period` | `string` |  |
+| `responseCode` | `long` |  |
+| `responseMessage` | `string` |  |
+| `transactionDateFrom` | `string` |  |
+| `transactionDateTo` | `string` |  |
+| `transactionsCount` | `vector` |  |
+
+#### Example: Create
+
+```clojure
+(def count_not_authorised_transaction
+  (e-count_not_authorised_transaction/create (api/count_not_authorised_transaction client nil)
     (vs/jm
       )
     nil))
@@ -2490,38 +2570,6 @@ Create an instance: `(def transaction_history (api/transaction_history client ni
 ```
 
 
-### TransactionsCount
-
-Create an instance: `(def transactions_count (api/transactions_count client nil))`
-
-#### Operations
-
-| Method | Description |
-| --- | --- |
-| `(create ent data ctrl)` | Create a new entity with the given data. |
-
-#### Fields
-
-| Field | Type | Description |
-| --- | --- | --- |
-| `period` | `string` |  |
-| `responseCode` | `long` |  |
-| `responseMessage` | `string` |  |
-| `transactionDateFrom` | `string` |  |
-| `transactionDateTo` | `string` |  |
-| `transactionsCount` | `vector` |  |
-
-#### Example: Create
-
-```clojure
-(def transactions_count
-  (e-transactions_count/create (api/transactions_count client nil)
-    (vs/jm
-      )
-    nil))
-```
-
-
 ### TransactionsCountCardBrand
 
 Create an instance: `(def transactions_count_card_brand (api/transactions_count_card_brand client nil))`
@@ -2691,18 +2739,18 @@ above:
 
 | Feature | What it does |
 |---|---|
-| [`audit`](#audit) | Structured audit trail of operations |
-| [`clienttrack`](#clienttrack) | Client identity and per-request correlation headers |
-| [`debug`](#debug) | Request/response capture ring buffer for debugging |
-| [`idempotency`](#idempotency) | Idempotency keys for safe retries of mutating operations |
-| [`log`](#log) | Structured request and response logging |
-| [`metrics`](#metrics) | Statistics capture: per-operation counters and latency |
-| [`paging`](#paging) | Pagination signals for list operations |
-| [`ratelimit`](#ratelimit) | Client-side rate limiting via a token bucket |
-| [`retry`](#retry) | Automatic retry of transient failures with exponential backoff |
-| [`telemetry`](#telemetry) | Distributed tracing spans with W3C trace-context propagation |
-| [`test`](#test) | In-memory mock transport for testing without a live server |
-| [`timeout`](#timeout) | Per-request timeout with transport abort |
+| [`audit`](#audit) | Audit trail |
+| [`clienttrack`](#clienttrack) | Client tracking |
+| [`debug`](#debug) | Debug capture |
+| [`idempotency`](#idempotency) | Idempotency |
+| [`log`](#log) | Logging |
+| [`metrics`](#metrics) | Metrics |
+| [`paging`](#paging) | Paging |
+| [`ratelimit`](#ratelimit) | Rate limiting |
+| [`retry`](#retry) | Retry |
+| [`telemetry`](#telemetry) | Telemetry |
+| [`test`](#test) | Test transport |
+| [`timeout`](#timeout) | Timeout |
 
 > **Order matters for `ratelimit`, `retry`, `timeout`.** These wrap the
 > transport, so each one wraps whatever is already installed: the order you
@@ -2711,7 +2759,7 @@ above:
 
 ### audit
 
-Structured audit trail of operations.
+Audit trail.
 
 | Option | Default |
 |---|---|
@@ -2723,7 +2771,7 @@ Set `feature.audit.active` to enable it, then override any of the options above.
 
 ### clienttrack
 
-Client identity and per-request correlation headers.
+Client tracking.
 
 | Option | Default |
 |---|---|
@@ -2734,7 +2782,7 @@ Set `feature.clienttrack.active` to enable it, then override any of the options 
 
 ### debug
 
-Request/response capture ring buffer for debugging.
+Debug capture.
 
 | Option | Default |
 |---|---|
@@ -2746,7 +2794,7 @@ Set `feature.debug.active` to enable it, then override any of the options above.
 
 ### idempotency
 
-Idempotency keys for safe retries of mutating operations.
+Idempotency.
 
 | Option | Default |
 |---|---|
@@ -2759,7 +2807,7 @@ Set `feature.idempotency.active` to enable it, then override any of the options 
 
 ### log
 
-Structured request and response logging.
+Logging.
 
 | Option | Default |
 |---|---|
@@ -2769,7 +2817,7 @@ Set `feature.log.active` to enable it, then override any of the options above.
 
 ### metrics
 
-Statistics capture: per-operation counters and latency.
+Metrics.
 
 | Option | Default |
 |---|---|
@@ -2779,7 +2827,7 @@ Set `feature.metrics.active` to enable it, then override any of the options abov
 
 ### paging
 
-Pagination signals for list operations.
+Paging.
 
 | Option | Default |
 |---|---|
@@ -2795,7 +2843,7 @@ Set `feature.paging.active` to enable it, then override any of the options above
 
 ### ratelimit
 
-Client-side rate limiting via a token bucket.
+Rate limiting.
 
 | Option | Default |
 |---|---|
@@ -2811,7 +2859,7 @@ activated earlier.
 
 ### retry
 
-Automatic retry of transient failures with exponential backoff.
+Retry.
 
 | Option | Default |
 |---|---|
@@ -2830,7 +2878,7 @@ activated earlier.
 
 ### telemetry
 
-Distributed tracing spans with W3C trace-context propagation.
+Telemetry.
 
 | Option | Default |
 |---|---|
@@ -2840,7 +2888,7 @@ Set `feature.telemetry.active` to enable it, then override any of the options ab
 
 ### test
 
-In-memory mock transport for testing without a live server.
+Test transport.
 
 | Option | Default |
 |---|---|
@@ -2850,7 +2898,7 @@ Set `feature.test.active` to enable it, then override any of the options above.
 
 ### timeout
 
-Per-request timeout with transport abort.
+Timeout.
 
 | Option | Default |
 |---|---|
@@ -2902,18 +2950,18 @@ a function that receives the context.
 
 The SDK ships with built-in features:
 
-- **AuditFeature**: Structured audit trail of operations
-- **ClienttrackFeature**: Client identity and per-request correlation headers
-- **DebugFeature**: Request/response capture ring buffer for debugging
-- **IdempotencyFeature**: Idempotency keys for safe retries of mutating operations
-- **LogFeature**: Structured request and response logging
-- **MetricsFeature**: Statistics capture: per-operation counters and latency
-- **PagingFeature**: Pagination signals for list operations
-- **RatelimitFeature**: Client-side rate limiting via a token bucket
-- **RetryFeature**: Automatic retry of transient failures with exponential backoff
-- **TelemetryFeature**: Distributed tracing spans with W3C trace-context propagation
-- **TestFeature**: In-memory mock transport for testing without a live server
-- **TimeoutFeature**: Per-request timeout with transport abort
+- **AuditFeature**: Audit trail
+- **ClienttrackFeature**: Client tracking
+- **DebugFeature**: Debug capture
+- **IdempotencyFeature**: Idempotency
+- **LogFeature**: Logging
+- **MetricsFeature**: Metrics
+- **PagingFeature**: Paging
+- **RatelimitFeature**: Rate limiting
+- **RetryFeature**: Retry
+- **TelemetryFeature**: Telemetry
+- **TestFeature**: Test transport
+- **TimeoutFeature**: Timeout
 
 Features are initialized in order. Hooks fire in the order features
 were added, so later features can override earlier ones.
@@ -2936,6 +2984,7 @@ clojure/
 ├── src/sdk/api.clj        -- public API namespace (entity accessors)
 ├── src/sdk/client.clj     -- client constructors (make-sdk, test-sdk)
 ├── src/sdk/config.clj     -- generated configuration
+├── src/sdk/schema.clj     -- generated option + entity specs
 ├── src/sdk/core.clj       -- core types, context and pipeline
 ├── src/sdk/features.clj   -- feature factory
 ├── src/sdk/entity/        -- entity namespaces (one per entity)

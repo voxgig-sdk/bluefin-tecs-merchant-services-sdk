@@ -1,0 +1,74 @@
+# Entity: ecom_parameter
+
+main: kit: entity: ecom_parameter: {
+
+  alias: field: {}
+
+  fields: {
+    ecomPass: {
+      h: "Ecom Pass"
+      n: "ecomPass"
+      r: false
+      t: "`$STRING`"
+    }
+    ecomSkey: {
+      h: "Ecom Skey"
+      n: "ecomSkey"
+      r: false
+      t: "`$STRING`"
+    }
+    responseCode: {
+      fo: "int32"
+      h: "Response Code"
+      n: "responseCode"
+      r: false
+      t: "`$INTEGER`"
+    }
+    responseMessage: {
+      h: "Response Message"
+      n: "responseMessage"
+      r: false
+      t: "`$STRING`"
+    }
+    terminalId: {
+      fo: "int32"
+      h: "Terminal Id"
+      n: "terminalId"
+      r: true
+      t: "`$INTEGER`"
+    }
+  }
+
+  name: "ecom_parameter"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /public/getEcomParameters"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/public/getEcomParameters"
+          s: [
+            {
+              lit: "public"
+            }
+            {
+              lit: "getEcomParameters"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}
